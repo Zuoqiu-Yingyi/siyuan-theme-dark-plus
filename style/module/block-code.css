@@ -1,0 +1,16 @@
+/* 代码块 */
+@import url(./config.css);
+
+.b3-typography .code-block,
+.protyle-wysiwyg .code-block {
+    background-color: var(--custom-transparent-lighter);
+}
+
+.b3-typography .hljs,
+.protyle-wysiwyg .hljs {
+    background-color: #0000;
+}
+
+.protyle-linenumber {
+    background-color: #0000;
+}

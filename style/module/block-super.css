@@ -1,0 +1,28 @@
+/* 超级块 */
+@import url(./config.css);
+
+/* REF [roeseth/Siyuan-Golden-Topaz-Refined](https://github.com/roeseth/Siyuan-Golden-Topaz-Refined) */
+/* 调整超级块中元素间距 */
+.b3-typography [data-node-id].sb,
+.protyle-wysiwyg [data-node-id].sb {
+    /* background-color: var(--b3-theme-background-secondary); */
+    background-color: var(--custom-transparent-lighter);
+    /* 水平阴影 垂直阴影 [blur<模糊距离>] [spread<阴影大小>] [color] [inset] */
+    box-shadow: 0.25rem 0.25rem 0.5rem var(--b3-theme-background);
+    border-radius: var(--custom-border-radius);
+    padding: var(--custom-block-padding);
+    /* margin-bottom: 16px; */
+}
+
+.b3-typography .sb div[data-node-id],
+.protyle-wysiwyg .sb div[data-node-id] {
+    border-radius: var(--custom-border-radius);
+}
+
+.b3-typography [data-node-id].sb[data-sb-layout="col"] .sb,
+.b3-typography [data-node-id].sb[data-sb-layout="row"] .sb,
+.protyle-wysiwyg [data-node-id].sb[data-sb-layout="col"] .sb,
+.protyle-wysiwyg [data-node-id].sb[data-sb-layout="row"] .sb {
+    margin: var(--custom-block-padding);
+    /* margin-bottom: 16px; */
+}

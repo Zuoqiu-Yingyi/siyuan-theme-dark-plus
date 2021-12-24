@@ -1,0 +1,20 @@
+/* 超链接 */
+@import url(./config.css);
+
+/* 超链接前标志 */
+.protyle-wysiwyg [data-node-id] span[data-type='a']:not(:empty)::before,
+.b3-typography a::before {
+    content: "";
+    background-image: url('../../icon/unknown.svg');
+    width: 1em;
+    height: 1em;
+    margin: -0.125em 0.125em 0.125em -0.125em;
+    padding: 0;
+}
+
+/* 超链接 */
+.protyle-wysiwyg [data-node-id] span[data-type='a']:not(:empty),
+.b3-typography a {
+    margin: 0;
+    padding: 0;
+}

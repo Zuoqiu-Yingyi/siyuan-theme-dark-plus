@@ -1,0 +1,37 @@
+/* 数学公式 */
+@import url(./config.css);
+
+/* 行内公式 */
+/* .protyle-wysiwyg [data-node-id] span[data-type='inline-math'] {
+    font-size: var(--custom-math-inline);
+}
+
+.b3-typography span[data-subtype="math"] {
+    font-size: var(--custom-math-inline);
+} */
+
+/* 行内分式 */
+/* [data-type='inline-math'] .mfrac {
+    font-size: var(--custom-math-inline);
+}
+
+[data-type='inline-math'] span.sqrt .mfrac {
+    font-size: var(--custom-math-inline);
+} */
+
+/* 公式块公式 */
+/* .b3-typography div[data-subtype="math"],
+.protyle-wysiwyg div[data-subtype="math"] {
+    font-size: var(--custom-math-inline);
+} */
+
+/* 公式整体 */
+.b3-typography .katex,
+.protyle-wysiwyg .katex {
+    font-size: var(--custom-math-size);
+}
+
+/* 公式子项(上标, 下标等) */
+.katex .msupsub {
+    font-size: var(--custom-math-sub-size);
+}

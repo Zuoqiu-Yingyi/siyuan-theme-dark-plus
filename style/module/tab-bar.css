@@ -1,0 +1,33 @@
+/* 页签 */
+@import url("./config.css");
+
+/*页签*/
+.fn__flex-column.fn__flex.fn__flex-1 .layout-tab-bar {
+    background-color: var(--custom-transparent);
+    flex-wrap: wrap;
+}
+
+/*页签项*/
+.layout-tab-bar .item {
+    flex: none;
+    background-color: transparent;
+    box-shadow: none;
+    border: 2px solid var(--b3-list-hover);
+    border-radius: var(--custom-border-radius);
+}
+
+/*被选中的页签项*/
+.layout-tab-bar .item--focus {
+    background-color: var(--b3-list-hover);
+    box-shadow: none;
+    border: 2px solid var(--b3-list-hover);
+    border-bottom: 2px solid var(--custom-secondary);
+    border-radius: var(--custom-border-radius);
+}
+
+/* 多窗口foucs的标签页 */
+.layout__wnd--active .layout-tab-bar .item--focus {
+    box-shadow: none;
+    border: 2px solid var(--custom-secondary);
+    border-radius: var(--custom-border-radius);
+}

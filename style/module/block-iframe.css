@@ -1,0 +1,13 @@
+@import url("./config.css");
+
+/* iframe */
+.iframe-content audio {
+
+}
+
+.iframe-content iframe {
+    background-color: white;
+}
+
+.iframe-content video {
+}

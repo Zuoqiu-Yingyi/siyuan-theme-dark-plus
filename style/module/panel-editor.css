@@ -1,0 +1,13 @@
+/* 编辑区面板 */
+@import url("./config.css");
+
+
+/*编辑区文件名*/
+.protyle-title__input {
+    background: #0000 !important;
+}
+
+/*编辑区*/
+.protyle {
+    background: #0000 !important;
+}
