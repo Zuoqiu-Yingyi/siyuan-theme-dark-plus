@@ -1,0 +1,56 @@
+@import url("./config.css");
+
+.protyle-wysiwyg *[custom-type="table"] .protyle-action {
+    display: table-cell;
+}
+
+.protyle-wysiwyg *[custom-type="table"] ， .protyle-wysiwyg *[custom-type="table"] .list,
+.protyle-wysiwyg *[custom-type="table"] .li .list {
+    border-style: solid;
+    border-width: 0px;
+    padding: 0px !important;
+    margin: 0px !important;
+    width: 100%;
+    height: inherit !important;
+    display: table-column-group;
+    outline: solid rgba(0, 0, 0, 1) 1px;
+    overflow-block: hidden;
+}
+
+.protyle-wysiwyg *[custom-type="table"] .li {
+    font-size: large !important;
+    border-style: solid;
+    border-width: 0px;
+    padding: 0px !important;
+    margin: 0px !important;
+    width: 100%;
+    min-height: 36px;
+    display: -webkit-flex;
+    outline: solid rgba(0, 0, 0, 1) 1px;
+    overflow-x: auto;
+}
+
+.protyle-wysiwyg *[custom-type="table"] .p {
+    width: min-content;
+    min-width: 200px;
+    margin-right: 0px;
+    margin-left: 0px;
+    display: table-cell;
+}
+
+.protyle-wysiwyg *[custom-type="table"] .div {
+    width: min-content;
+    min-width: 20px !important;
+}
+
+.protyle-wysiwyg *[custom-type="table"] .li::first-line .p {
+    width: 100% !important;
+}
+
+.protyle-wysiwyg *[custom-type="table"] .list:last-child:first-child~li .p {
+    width: 100% !important;
+}
+
+.protyle-wysiwyg *[custom-type="table"] .protyle.attr:last-child:nth-child(3) .p {
+    width: 100% !important;
+}

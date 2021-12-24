@@ -1,0 +1,56 @@
+/* 标签 */
+@import url("./config.css");
+
+/* 标签 */
+/* .protyle-wysiwyg [data-node-id] span[data-type='tag']:not(:empty) {
+    display: inline-flex;
+    border-bottom: 0px solid var(--b3-protyle-inline-tag-color);
+    font-size: 87.5%;
+    text-decoration: none !important;
+    color: var(--b3-protyle-inline-tag-color);
+    background-color: var(--b3-protyle-inline-tag-background);
+    border-radius: 0.3em;
+    padding: 0em 0.375em 0.08em !important;
+    margin: 0em 0.25em;
+    transform: translateY(-1.5px);
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    z-index: 20;
+} */
+
+.protyle-wysiwyg [data-node-id] span[data-type="tag"] {
+    font-size: 1em;
+    border-bottom: transparent;
+    background-color: var(--b3-protyle-inline-tag-background);
+    color: var(--b3-protyle-inline-tag-color);
+    border-radius: 1em;
+    padding: 0 0.5em 2px 0.5em;
+}
+
+.protyle-wysiwyg [data-node-id] span[data-type="tag"]:before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin: 0.125em 0.125em -0.125em -0.125em;
+    background: url(../../icon/tag.svg);
+    background-size: cover;
+}
+
+/* 悬浮样式 */
+.protyle-wysiwyg [data-node-id] span[data-type='tag']:hover {
+    color: var(--b3-theme-on-background);
+    padding-bottom: 2px;
+    animation: waveMove 1s infinite linear;
+    background: url(../../icon/wavy-line.svg) repeat-x 0 100%;
+    background-size: 16px auto;
+    /* 悬浮放大 */
+    /* transform: scale(1.125); */
+    /* background-color: var(--b3-protyle-inline-tag-background); */
+}
+
+/* 标签#号 */
+/* .protyle-wysiwyg [data-node-id] span[data-type='tag']:not(:empty)::before {
+    content: "#";
+} */

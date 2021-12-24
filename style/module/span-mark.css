@@ -1,0 +1,14 @@
+/* 标记(挖空) */
+@import url(./config.css);
+
+.protyle-wysiwyg mark {
+    background-color: var(--b3-theme-primary-lighter);
+    color: transparent;
+    transition: all .2s linear 0ms;
+}
+
+.protyle-wysiwyg [data-node-id] [spellcheck="false"] mark:hover {
+    background-color: transparent;
+    color: var(--custom-secondary);
+    font-weight: bold;
+}

@@ -1,0 +1,25 @@
+/* 弹出菜单 */
+@import url(./config.css);
+
+/* 菜单底色 */
+#commonMenu,
+#commonMenu>.b3-menu__item>.b3-menu__submenu {
+    background-color: var(--custom-transparent-deep);
+    backdrop-filter: var(--backdrop-flow-filter);
+}
+
+/* 菜单项 */
+#commonMenu>.b3-menu__item,
+#commonMenu>.b3-menu__item>.b3-menu__submenu .b3-menu__item {
+    background-color: transparent;
+}
+
+/* 菜单分割线 */
+.b3-menu__separator {
+    height: 2px;
+}
+
+/* 鼠标悬停菜单项 */
+.b3-menu__item--current {
+    background-color: var(--custom-transparent-lighter) !important;
+}

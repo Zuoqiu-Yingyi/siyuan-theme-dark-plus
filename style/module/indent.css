@@ -1,0 +1,27 @@
+/* 缩进 */
+@import url("./config.css");
+
+/* 缩进线样式 */
+/* .protyle-wysiwyg [data-node-id].li>[data-node-id]:before {
+    width: 2px;
+    background-color: var(--b3-border-color);
+} */
+
+.protyle-wysiwyg [data-node-id].li>[data-node-id].list:before {
+    /* left: -2px; */
+    left: 0;
+}
+
+.protyle-wysiwyg [data-node-id].li>div:nth-child(2):before {
+    top: 34px;
+    background-color: #0000;
+}
+
+/* 列表缩进 */
+
+.protyle-wysiwyg [data-node-id].li>.list {
+    margin-left: 1em !important;
+    padding-left: 1em;
+    padding-top: 0;
+    padding-bottom: 0;
+}

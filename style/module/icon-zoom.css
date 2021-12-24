@@ -1,0 +1,29 @@
+/* 引入参数配置 */
+@import url("config.css");
+
+/* -------------------------------- 聚焦放大 BEGIN -------------------------------- */
+/* 文件树文档图标悬浮放大 */
+.b3-list--files .b3-list-item__icon {
+    transition: all 0.1s ease-in-out;
+}
+
+.b3-list--files .b3-list-item__icon:hover {
+    transform: scale(1.25);
+    transition: all 0.1s ease-in-out;
+}
+
+/* dock栏和顶部图标放大动效 */
+.dock--vertical .dock__item:hover svg,
+.toolbar__item:hover svg,
+.block__icon:hover svg {
+    transform: scale(1.25);
+    transition: all 0.1s ease-in-out;
+}
+
+/* 标题图标放大，提示可以块悬浮窗 */
+.file-tree .b3-list-item__graphic.popover__block:hover {
+    transform: scale(1.25);
+    transition: all 0.1s ease-in-out;
+}
+
+/* -------------------------------- 聚焦放大 END -------------------------------- */

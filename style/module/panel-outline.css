@@ -1,0 +1,41 @@
+/* 大纲面板 */
+
+@import url(./config.css);
+
+/* 区分大纲中的各级标题 */
+
+/* 文档标题 */
+.file-tree ul.b3-list.b3-list--background [data-type="NodeDocument"][data-treetype="outline"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-type="NodeDocument"][data-treetype="outline"] {
+    color: var(--b3-theme-on-primary);
+}
+
+.file-tree ul.b3-list.b3-list--background [data-subtype="h1"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h1"] {
+    color: var(--custom-h1-color);
+}
+
+.file-tree ul.b3-list.b3-list--background [data-subtype="h2"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h2"] {
+    color: var(--custom-h2-color);
+}
+
+.file-tree ul.b3-list.b3-list--background [data-subtype="h3"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h3"] {
+    color: var(--custom-h3-color);
+}
+
+.file-tree ul.b3-list.b3-list--background [data-subtype="h4"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h4"] {
+    color: var(--custom-h4-color);
+}
+
+.file-tree ul.b3-list.b3-list--background [data-subtype="h5"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h5"] {
+    color: var(--custom-h5-color);
+}
+
+.file-tree ul.b3-list.b3-list--background [data-subtype="h6"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h6"] {
+    color: var(--custom-h6-color);
+}

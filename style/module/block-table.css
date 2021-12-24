@@ -1,0 +1,7 @@
+/* 表格块 */
+@import url(./config.css);
+
+.b3-typography table,
+.protyle-wysiwyg table {
+    background-color: var(--custom-transparent-lighter);
+}

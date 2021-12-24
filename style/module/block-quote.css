@@ -1,0 +1,9 @@
+/* 引述块 */
+@import url(./config.css);
+
+.b3-typography blockquote,
+.b3-typography .bq,
+.protyle-wysiwyg blockquote,
+.protyle-wysiwyg .bq {
+    background-color: var(--custom-transparent-lighter);
+}

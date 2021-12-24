@@ -1,0 +1,41 @@
+/* 全局页面 */
+@import url("./config.css");
+
+/* 背景图片 */
+body.fn__flex-column {
+    background-image: var(--custom-background-image) !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+}
+
+/*全屏模式*/
+.fn__flex-1.protyle.fullscreen {
+    background-image: var(--custom-background-image) !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+}
+
+.fn__flex-1.protyle.fullscreen .protyle-content {
+    background-color: var(--custom-transparent) !important;
+    backdrop-filter: var(--backdrop-filter);
+}
+
+/*最底层*/
+.layout-tab-container {
+    background-color: var(--custom-transparent) !important;
+}
+
+.layout-tab-container .fn__flex-1 {
+    background-color: transparent !important;
+    backdrop-filter: var(--backdrop-filter);
+}
+
+.fn__flex-1.fn__flex [data-type='wnd'] {
+    min-height: 0%;
+    margin: var(--custom-panel-distance);
+    border-radius: var(--custom-border-radius);
+}

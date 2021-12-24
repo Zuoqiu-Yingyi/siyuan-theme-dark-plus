@@ -1,0 +1,11 @@
+/* 行内代码 */
+@import url(./config.css);
+
+.protyle-wysiwyg [data-node-id] code,
+.protyle-wysiwyg code:not(.hljs),
+.b3-typography code:not(.hljs) {
+    font-size: 1em;
+    font-family: var(--b3-font-family-code);
+    margin: 0 0.25em;
+    padding: 0.125em 0.25em;
+}

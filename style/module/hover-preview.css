@@ -1,0 +1,39 @@
+/* 块引用卡片 */
+@import url("./config.css");
+
+.block__popover {
+    background-color: #0000;
+}
+
+.block__popover.block__popover--move.block__popover--open {
+    min-height: 50% !important;
+    margin: 0px auto;
+    /* margin: 10px; */
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: var(--custom-border-radius);
+    box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.5)
+}
+
+.block__popover.block__popover--move.block__popover--open::before {
+    content: '';
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+    background: var(--custom-transparent-deep) !important;
+    backdrop-filter: var(--backdrop-flow-filter);
+}
+
+.block__icons.block__icons--border {
+    background-color: var(--custom-components);
+}
+
+.b3-typography code:not(.hljs),
+.protyle-wysiwyg code:not(.hljs) {
+    background-color: var(--b3-theme-primary-lighter);
+}

@@ -1,0 +1,18 @@
+/* 功能区分隔线 */
+
+@import url("./config.css");
+
+.layout__resize {
+    cursor: row-resize;
+    margin: var(--custom-separator-distance-compensation) 0;
+    height: var(--custom-panel-distance);
+    width: 100%;
+    position: relative;
+}
+
+.layout__resize--lr {
+    cursor: col-resize;
+    width: var(--custom-panel-distance);
+    margin: 0 var(--custom-separator-distance-compensation);
+    height: auto;
+}
