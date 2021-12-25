@@ -1,5 +1,16 @@
 # 🌙Dark+
 
+<center>
+
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Zuoqiu-Yingyi/siyuan-theme-dark-plus?include_prereleases)
+![GitHub Release Date](https://img.shields.io/github/release-date/Zuoqiu-Yingyi/siyuan-theme-dark-plus)
+![GitHub](https://img.shields.io/github/license/Zuoqiu-Yingyi/siyuan-theme-dark-plus)
+![GitHub last commit](https://img.shields.io/github/last-commit/Zuoqiu-Yingyi/siyuan-theme-dark-plus)
+![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hy/Zuoqiu-Yingyi/siyuan-theme-dark-plus?label=hits)
+![GitHub all releases](https://img.shields.io/github/downloads/Zuoqiu-Yingyi/siyuan-theme-dark-plus/total)
+
+</center>
+
 [思源笔记](https://github.com/siyuan-note/siyuan)的一款暗黑主题  
 A dark theme of [SiYuan Note](https://github.com/siyuan-note/siyuan).
 
@@ -19,8 +30,8 @@ A dark theme of [SiYuan Note](https://github.com/siyuan-note/siyuan).
 
 ### 自动安装 | AUTO INSTALL
 
-该挂件已在[思源笔记社区集市](https://github.com/siyuan-note/bazaar)上架, 可直接在集市中安装  
-The widget has been put on the shelves at [SiYuan community bazaar](https://github.com/siyuan-note/bazaar) and can be installed directly in the Bazaar.
+该主题已在[思源笔记社区集市](https://github.com/siyuan-note/bazaar)上架, 可直接在集市中安装  
+The theme has been put on the shelves at [SiYuan community bazaar](https://github.com/siyuan-note/bazaar) and can be installed directly in the Bazaar.
 
 ### 手动安装 | MANUAL INSTALL
 
@@ -37,7 +48,6 @@ Download the release package in [Releases](https://github.com/Zuoqiu-Yingyi/widg
 | **[Crowds21](https://github.com/Crowds21)**         | [Crowds21/Cliff-Light](https://github.com/Crowds21/Cliff-Light)                                                                                       | *Unknown*         |
 | **[Zhangwuji](https://ld246.com/member/Zhangwuji)** | [希望能够增加根据大纲生成思维导图的功能](https://ld246.com/article/1640259008838/comment/1640304551938#:~:text=fontxiugaidark.rar)                    | *Unknown*         |
 
-
 ## 更改日志 | CHANGE LOGS
 
-[CHANGELOGS](CHANGELOGS.md).
+[CHANGELOGS](CHANGELOGS.md)
