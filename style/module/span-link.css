@@ -5,13 +5,17 @@
 .protyle-wysiwyg [data-node-id] span[data-type='a']:not(:empty)::before,
 .b3-typography a::before {
     content: "";
+    display: inline-block;
+    position: relative;
+
     background-image: url('../../icon/unknown.svg');
-    background-size: 1em auto;
+    background-size: 0.875em auto;
     background-repeat: no-repeat;
     background-position: center;
-    width: 1em;
+
+    width: 0.875em;
     height: 1em;
-    margin: 0;
+    margin: 0.125em 0.125em -0.125em 0;
     padding: 0;
 }
 
