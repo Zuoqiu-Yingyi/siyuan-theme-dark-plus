@@ -6,9 +6,12 @@
 .b3-typography a::before {
     content: "";
     background-image: url('../../icon/unknown.svg');
+    background-size: 1em auto;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 1em;
     height: 1em;
-    margin: -0.125em 0.125em 0.125em -0.125em;
+    margin: 0;
     padding: 0;
 }
 
