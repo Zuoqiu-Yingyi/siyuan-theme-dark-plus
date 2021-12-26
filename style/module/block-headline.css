@@ -40,7 +40,7 @@ h5,
 .b3-typography h1:before {
     display: block;
     float: left;
-    font-size: 50%;
+    font-size: var(--custom-h-num-font-size);
     counter-increment: h1-count;
     content: counter(h1-count) "\00A0";
 }
@@ -49,7 +49,7 @@ h5,
 .b3-typography h2:before {
     display: block;
     float: left;
-    font-size: 50%;
+    font-size: var(--custom-h-num-font-size);
     counter-increment: h2-count;
     content: counter(h1-count) "."counter(h2-count) "\00A0";
 }
@@ -58,7 +58,7 @@ h5,
 .b3-typography h3:before {
     display: block;
     float: left;
-    font-size: 50%;
+    font-size: var(--custom-h-num-font-size);
     counter-increment: h3-count;
     content: counter(h1-count) "."counter(h2-count) "."counter(h3-count) "\00A0";
 }
@@ -67,7 +67,7 @@ h5,
 .b3-typography h4:before {
     display: block;
     float: left;
-    font-size: 50%;
+    font-size: var(--custom-h-num-font-size);
     counter-increment: h4-count;
     content: counter(h1-count) "."counter(h2-count) "."counter(h3-count) "."counter(h4-count) "\00A0";
 }
@@ -76,7 +76,7 @@ h5,
 .b3-typography h5:before {
     display: block;
     float: left;
-    font-size: 50%;
+    font-size: var(--custom-h-num-font-size);
     counter-increment: h5-count;
     content: counter(h1-count) "."counter(h2-count) "."counter(h3-count) "."counter(h4-count) "."counter(h5-count) "\00A0";
 }
@@ -85,7 +85,7 @@ h5,
 .b3-typography h6:before {
     display: block;
     float: left;
-    font-size: 50%;
+    font-size: var(--custom-h-num-font-size);
     counter-increment: h6-count;
     content: counter(h1-count) "."counter(h2-count) "."counter(h3-count) "."counter(h4-count) "."counter(h5-count) "."counter(h6-count) "\00A0";
 }
