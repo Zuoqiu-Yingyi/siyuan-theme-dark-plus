@@ -34,6 +34,7 @@
 /* 悬浮元素 */
 @import url(./style/module/hover-preview.css);
 @import url(./style/module/hover-menu.css);
+@import url(./style/module/hover-search.css);
 
 /* 图标 */
 @import url(./style/module/icon-link.css);

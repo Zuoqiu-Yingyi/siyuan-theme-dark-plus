@@ -98,12 +98,16 @@
     --custom-h4-mark: "⁴";
     --custom-h5-mark: "⁵";
     --custom-h6-mark: "⁶";
+
     /* --custom-h1-mark: "₁";
     --custom-h2-mark: "₂";
     --custom-h3-mark: "₃";
     --custom-h4-mark: "₄";
     --custom-h5-mark: "₅";
     --custom-h6-mark: "₆"; */
+
+    /* 标题标号缩放大小 */
+    --custom-h-num-font-size: 50%;
 
     /* 子标题及其对应大纲颜色 */
     --custom-h1-color: var(--b3-theme-on-background);
