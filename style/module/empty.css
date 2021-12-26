@@ -81,7 +81,7 @@
     position: relative;
     width: 35vmin;
     height: 35vmin;
-    background: linear-gradient(120deg, #0000 0%, #4444 100%);
+    background: linear-gradient(120deg, #0000 0%, #1111 100%);
     opacity: .8;
     margin: 25vh auto;
     border-radius: 35%;
@@ -95,7 +95,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg, #0000 0%, #4444 100%);
+    background: linear-gradient(180deg, #0000 0%, #1111 100%);
     opacity: .8;
     box-shadow: 5px 5px 90px #FFF4;
     border-radius: 35%;
@@ -108,7 +108,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(60deg, #0000 0%, #4444 100%);
+    background: linear-gradient(60deg, #0000 0%, #1111 100%);
     opacity: .8;
     box-shadow: 5px 5px 60px #FFF8;
     border-radius: 35%;
