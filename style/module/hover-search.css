@@ -2,7 +2,7 @@
 @import url(./config.css);
 
 /* 悬浮搜索菜单 */
-.b3-menu {
+.b3-menu.b3-list.b3-list--background {
     background-color: var(--custom-transparent-deep);
     backdrop-filter: var(--backdrop-flow-filter);
     width: auto !important;
