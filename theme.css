@@ -39,7 +39,10 @@
 @import url(./style/module/icon-link.css);
 @import url(./style/module/icon-zoom.css);
 
+/* 缩进 */
 @import url(./style/module/indent.css);
+
+/* 数学公式 */
 @import url(./style/module/math.css);
 
 /* 面板 */
@@ -59,6 +62,9 @@
 
 /* 页签栏 */
 @import url(./style/module/tab-bar.css);
+
+/* 测试 */
+@import url(./style/module/test.css);
 
 /* 顶部工具栏 */
 @import url(./style/module/toolbar.css);

@@ -2,3 +2,76 @@
 
 @import url(./config.css);
 
+/** 文档名起始
+ *  data-name ^="<设置的字符的URL编码>"
+ */
+
+/* .b3-list--files li[data-type="navigation-file"][data-name ^="XXX"]>.b3-list-item__text {
+    color: green;
+} */
+
+/* ^* */
+.b3-list--files li[data-type="navigation-file"][data-name ^="*"]>.b3-list-item__text {
+    color: var(--custom-doctree-begin-asterisk-color);
+}
+
+/* ^# */
+.b3-list--files li[data-type="navigation-file"][data-name ^="%23"]>.b3-list-item__text {
+    color: var(--custom-doctree-begin-sharp-color);
+}
+
+/* ^? */
+.b3-list--files li[data-type="navigation-file"][data-name ^="%3F"]>.b3-list-item__text {
+    color: var(--custom-doctree-begin-question-color);
+}
+
+/* ^! */
+.b3-list--files li[data-type="navigation-file"][data-name ^="!"]>.b3-list-item__text {
+    color: var(--custom-doctree-begin-exclamation-color);
+}
+
+/* ^@ */
+.b3-list--files li[data-type="navigation-file"][data-name ^="%40"]>.b3-list-item__text {
+    color: var(--custom-doctree-begin-at-color);
+}
+
+/* ^. */
+.b3-list--files li[data-type="navigation-file"][data-name ^="."]>.b3-list-item__text {
+    color: var(--custom-doctree-begin-period-color);
+}
+
+/** 文档名包含
+ *  data-name *="<设置的字符的URL编码>"
+ */
+
+/* .b3-list--files li[data-type="navigation-file"][data-name *="XXX"]>.b3-list-item__text {
+    color: blue;
+} */
+
+/** 文档名末尾
+ *  data-name $="<设置的字符的URL编码>.sy"
+ */
+
+/* .b3-list--files li[data-type="navigation-file"][data-name $="XXX.sy"]>.b3-list-item__text {
+    color: red;
+} */
+
+/* * $ */
+.b3-list--files li[data-type="navigation-file"][data-name $="*.sy"]>.b3-list-item__text {
+    color: var(--custom-doctree-end-asterisk-color);
+}
+
+/* # $ */
+.b3-list--files li[data-type="navigation-file"][data-name $="%23.sy"]>.b3-list-item__text {
+    color: var(--custom-doctree-end-sharp-color);
+}
+
+/* ? $ */
+.b3-list--files li[data-type="navigation-file"][data-name $="%3F.sy"]>.b3-list-item__text {
+    color: var(--custom-doctree-end-question-color);
+}
+
+/* ! $ */
+.b3-list--files li[data-type="navigation-file"][data-name $="!.sy"]>.b3-list-item__text {
+    color: var(--custom-doctree-end-exclamation-color);
+}

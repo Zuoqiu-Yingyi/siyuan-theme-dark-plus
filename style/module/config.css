@@ -3,6 +3,7 @@
 /* 导入基础配置 */
 @import url("../root/midnight-root.css");
 
+/* 自定义属性 */
 :root {
     /* 自定义标准颜色(Office 标准颜色) */
     --custom-color-0: #C00000;
@@ -186,11 +187,42 @@
     --custom-empty-t: "这里是空的 (´･-･)ﾉ☑";
     --custom-empty-u: "这里是空的 (´･-･)ﾉ◉";
     --custom-empty-o: "这里是空的 (´･-･)ﾉ①";
+
+    /* 文档树匹配文档颜色 */
+    /* * */
+    --custom-doctree-end-asterisk-color: var(--b3-card-success-color);
+    /* # */
+    --custom-doctree-end-sharp-color: var(--b3-card-info-color);
+    /* ? */
+    --custom-doctree-end-question-color: var(--b3-card-warning-color);
+    /* ! */
+    --custom-doctree-end-exclamation-color: var(--b3-card-error-color);
+
+    /* * */
+    --custom-doctree-begin-asterisk-color: var(--custom-color-9-3);
+    /* # */
+    --custom-doctree-begin-sharp-color: var(--custom-color-8-3);
+    /* ? */
+    --custom-doctree-begin-question-color: var(--custom-color-4-0);
+    /* ! */
+    --custom-doctree-begin-exclamation-color: var(--custom-color-6-0);
+    /* @ */
+    --custom-doctree-begin-at-color: var(--custom-color-5-0);
+    /* . */
+    --custom-doctree-begin-period-color: #0000;
 }
 
+@font-face {
+    font-family: "Win10 Emoji";
+    font-style: normal;
+    src: url("../../fonts/seguiemj.ttf");
+}
+
+/* 更改属性 */
 :root {
     /* 字体 */
-    --b3-font-family: "Sarasa Mono SC",
+    --b3-font-family:
+        "Sarasa Mono SC",
         "quote",
         "Helvetica Neue",
         "Luxi Sans",
@@ -198,13 +230,18 @@
         "Hiragino Sans GB",
         "Microsoft Yahei",
         sans-serif,
+
+        "Win10 Emoji",
         "Apple Color Emoji",
         "Segoe UI Emoji",
         "Noto Color Emoji",
         "Segoe UI Symbol",
         "Android Emoji",
-        "EmojiSymbols";
-    --b3-font-family-code: "Sarasa Mono SC",
+        "EmojiSymbols",
+        "Win10 Emoji";
+
+    --b3-font-family-code:
+        "Sarasa Mono SC",
         "JetBrainsMono-Regular",
         mononoki,
         Consolas,
@@ -212,16 +249,33 @@
         Menlo,
         Courier,
         monospace,
+
+        "Win10 Emoji",
         "Apple Color Emoji",
         "Segoe UI Emoji",
         "Noto Color Emoji",
         "Segoe UI Symbol",
         "Android Emoji",
-        "EmojiSymbols";
-    --b3-font-family-graph: "Sarasa Mono SC",
+        "EmojiSymbols",
+        "Win10 Emoji";
+
+    --b3-font-family-graph:
+        "Sarasa Mono SC",
         mononoki;
-    --b3-font-family-math: KaTeX_Math;
-    /* --b3-font-family-emoji: "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "Apple Color Emoji", "Twemoji Mozilla", "Noto Color Emoji", "Android Emoji"; */
+
+    --b3-font-family-math:
+        KaTeX_Math,
+        KaTeX_Main;
+
+    --b3-font-family-emoji:
+        "Win10 Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        "Segoe UI",
+        "Apple Color Emoji",
+        "Twemoji Mozilla",
+        "Noto Color Emoji",
+        "Android Emoji";
 
     /* 双向链接颜色 */
     --b3-protyle-inline-blockref-color: var(--b3-font-color12);
