@@ -69,3 +69,6 @@
 
 /* 顶部工具栏 */
 @import url(./style/module/toolbar.css);
+
+/* 自定义配置 */
+@import url(/widgets/custom.css);
