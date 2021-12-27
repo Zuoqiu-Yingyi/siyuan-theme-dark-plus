@@ -8,6 +8,7 @@ body.fn__flex-column {
     background-repeat: no-repeat !important;
     background-position: center !important;
     background-attachment: fixed !important;
+    border: none;
 }
 
 /*全屏模式*/
