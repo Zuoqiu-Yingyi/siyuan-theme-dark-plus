@@ -4,10 +4,10 @@
 
 /*编辑区文件名*/
 .protyle-title__input {
-    background: #0000 !important;
+    background: transparent;
 }
 
 /*编辑区*/
 .protyle {
-    background: #0000 !important;
+    background: transparent;
 }

@@ -3,8 +3,7 @@
 
 /* 左侧菜单栏 */
 #dockLeft {
-    background-color: var(--custom-components) !important;
-    box-shadow: 5px 0px 5px 2px rgba(0, 0, 0, 0.7);
+    background-color: var(--custom-transparent) !important;
 }
 
 /* .block__icons--active {
@@ -13,6 +12,5 @@
 
 /* 右侧菜单栏 */
 #dockRight {
-    background-color: var(--custom-components) !important;
-    box-shadow: -5px 0px 5px 2px rgba(0, 0, 0, 0.7);
+    background-color: var(--custom-transparent) !important;
 }
