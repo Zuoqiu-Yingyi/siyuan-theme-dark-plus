@@ -106,10 +106,10 @@
     --custom-h5-mark: "₅";
     --custom-h6-mark: "₆"; */
 
-    /* 标题标号缩放大小 */
+    /* 标题序号缩放 | Title ordinal scaling */
     --custom-h-num-font-size: 50%;
 
-    /* 子标题及其对应大纲颜色 */
+    /* 子标题及其对应大纲颜色 | Subheadings and their corresponding outline colors */
     --custom-h1-color: var(--b3-theme-on-background);
     --custom-h2-color: var(--b3-card-info-color);
     --custom-h3-color: var(--b3-card-warning-color);
@@ -117,7 +117,7 @@
     --custom-h5-color: var(--b3-card-error-color);
     --custom-h6-color: var(--custom-color-8-3);
 
-    /* 引用标记 */
+    /* 块引用标记 | Block reference mark */
     /* --custom-quote-l: "「";
     --custom-quote-r: "」"; */
 
@@ -128,71 +128,74 @@
     --custom-quote-l: "⸢";
     --custom-quote-r: "⸥";
 
-    /* 背景图片 */
+    /* 背景图片 | Background image */
     --custom-background-image: url('../../images/background (05).jpg');
 
-    /* 对话框背景图片 */
+    /* 对话框背景图片 | Dialog background image */
+    /* 暂未使用 | Not used yet */
     --custom-background-image-dialog: url('../../images/background (01).jpg');
 
-    /* 背景图片滤波器 */
+    /* 背景图片滤波器 | Background image filter */
     /* --backdrop-filter: blur(16px); */
     --backdrop-filter: none;
 
-    /* 悬浮面板滤波器(卡片块引, 右键菜单) */
+    /* 悬浮面板滤波器(引用预览, 菜单) | Hover panel filters (reference preview, menu)*/
     /* --backdrop-flow-filter: blur(16px); */
     --backdrop-flow-filter: none;
 
-    /* 不同功能面板间隔距离 */
+    /* 功能面板间隔距离 | Function panel spacing distance */
     --custom-panel-distance: 8px;
-    /* 功能面板分隔线补偿距离 */
+
+    /* 功能面板分隔线补偿距离 | Function panel dividers compensate for distance
+     * 需要设置为 --custom-panel-distance 的负值 | A negative value of --custom-panel-distance is required
+     */
     --custom-separator-distance-compensation: -8px;
 
-    /* 超级块内边距 */
+    /* 超级块内边距 | The inner margin of the superblock */
     --custom-block-padding: 8px;
 
-    /* 圆角弧度 */
+    /* 圆角弧度 | Rounded arc */
     --custom-border-radius: 4px;
 
-    /*-2层透明度*/
+    /* 透明组件颜色 | Transparent component color */
     --custom-transparent-lighter: #3338;
-    /*-1层透明度*/
     --custom-transparent-light: #222A;
-    /*0层透明度*/
     --custom-transparent: #222C;
-    /*1层透明度*/
     --custom-transparent-deep: #222D;
-    /*2层透明度*/
     --custom-transparent-deeper: #222E;
 
-    /*不透明的组件*/
+    /* 不透明的组件颜色 | Opaque component color */
     --custom-components-light: #333;
     --custom-components: #222;
     --custom-components-deep: #111;
 
-    /*亮色*/
-    --custom-secondary: var(--b3-font-color12);
+    /* 鲜明颜色 | Striking color */
+    --custom-striking-color: var(--b3-font-color12);
 
-    /* 公式缩放比例 */
+    /* 数学公式整体缩放比例 | The overall scale of the mathematical formula */
     --custom-math-size: 100%;
+
+    /* 数学公式上下标缩放比例 | The mathematical formula superscript scaling */
     --custom-math-sub-size: 100%;
 
-    /* 块引用标志颜色 */
+    /* 块引用标志颜色 | Block reference flag color */
     --custom-ref-mark-color: var(--b3-protyle-inline-link-color);
 
-    /* 空行提示 */
+    /* 空行聚焦提示 | Blank line focus prompt */
     --custom-empty-focus-p: "´･-･)ﾉ㊫";
     --custom-empty-focus-c: "´･-･)ﾉ↹";
     --custom-empty-focus-t: "´･-･)ﾉ☑";
     --custom-empty-focus-u: "´･-･)ﾉ◉";
     --custom-empty-focus-o: "´･-･)ﾉ①";
 
+    /* 空行提示 | Blank line prompt */
     --custom-empty-p: "这里是空的 (´･-･)ﾉ㊫";
     --custom-empty-c: "这里是空的 (´･-･)ﾉ↹";
     --custom-empty-t: "这里是空的 (´･-･)ﾉ☑";
     --custom-empty-u: "这里是空的 (´･-･)ﾉ◉";
     --custom-empty-o: "这里是空的 (´･-･)ﾉ①";
 
-    /* 文档树匹配文档颜色 */
+    /* 文档树匹配标题颜色(文档标题尾匹配) | Document tree match header color (document end-of-title match) */
     /* * */
     --custom-doctree-end-asterisk-color: var(--b3-card-success-color);
     /* # */
@@ -202,6 +205,7 @@
     /* ! */
     --custom-doctree-end-exclamation-color: var(--b3-card-error-color);
 
+    /* 文档树匹配文档标题颜色(文档标题头匹配) | Document tree matches document title color (document header match) */
     /* * */
     --custom-doctree-begin-asterisk-color: var(--custom-color-9-3);
     /* # */

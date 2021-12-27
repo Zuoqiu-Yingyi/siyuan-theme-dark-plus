@@ -22,13 +22,13 @@
     background-color: var(--b3-list-hover);
     box-shadow: none;
     border: 2px solid var(--b3-list-hover);
-    border-bottom: 2px solid var(--custom-secondary);
+    border-bottom: 2px solid var(--custom-striking-color);
     border-radius: var(--custom-border-radius);
 }
 
 /* 多窗口foucs的标签页 */
 .layout__wnd--active .layout-tab-bar .item--focus {
     box-shadow: none;
-    border: 2px solid var(--custom-secondary);
+    border: 2px solid var(--custom-striking-color);
     border-radius: var(--custom-border-radius);
 }

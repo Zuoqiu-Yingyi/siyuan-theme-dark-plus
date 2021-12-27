@@ -10,6 +10,6 @@
 
 .protyle-wysiwyg [data-node-id] [spellcheck="false"] mark:hover {
     background-color: transparent;
-    color: var(--custom-secondary);
+    color: var(--custom-striking-color);
     font-weight: bold;
 }

@@ -18,6 +18,125 @@ A dark theme of [SiYuan Note](https://github.com/siyuan-note/siyuan).
 
 ![preview](./preview.png)
 
+## 自定义配置 | CUSTOM CONFIG
+
+1. 创建文件 `<工作空间>/data/widgets/custom.css`  
+   Create a file `<workspace>/data/widgets/custom.css`
+2. 在文件 `<工作空间>/data/widgets/custom.css` 中定义的值将覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/module/config.css` 中对应的值  
+   The value defined in file `<workspace>/data/widgets/custom.css` overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/module/config.css`.
+
+### 配置示例 | CONFIG EXAMPLE
+```css
+:root {
+    /* 标题序号缩放 | Title ordinal scaling */
+    --custom-h-num-font-size: 50%;
+
+    /* 子标题及其对应大纲颜色 | Subheadings and their corresponding outline colors */
+    --custom-h1-color: var(--b3-theme-on-background);
+    --custom-h2-color: var(--b3-card-info-color);
+    --custom-h3-color: var(--b3-card-warning-color);
+    --custom-h4-color: var(--b3-card-success-color);
+    --custom-h5-color: var(--b3-card-error-color);
+    --custom-h6-color: var(--custom-color-8-3);
+
+    /* 块引用标记 | Block reference mark */
+    --custom-quote-l: "⸢";
+    --custom-quote-r: "⸥";
+
+    /* 背景图片 | Background image */
+    --custom-background-image: url('../../images/background (05).jpg');
+
+    /* 对话框背景图片 | Dialog background image */
+    /* 暂未使用 | Not used yet */
+    --custom-background-image-dialog: url('../../images/background (01).jpg');
+
+    /* 背景图片滤波器 | Background image filter */
+    /* --backdrop-filter: blur(16px); */
+    --backdrop-filter: none;
+
+    /* 悬浮面板滤波器(引用预览, 菜单) | Hover panel filters (reference preview, menu)*/
+    /* --backdrop-flow-filter: blur(16px); */
+    --backdrop-flow-filter: none;
+
+    /* 功能面板间隔距离 | Function panel spacing distance */
+    --custom-panel-distance: 8px;
+
+    /* 功能面板分隔线补偿距离 | Function panel dividers compensate for distance
+     * 需要设置为 --custom-panel-distance 的负值 | A negative value of --custom-panel-distance is required
+     */
+    --custom-separator-distance-compensation: -8px;
+
+    /* 超级块内边距 | The inner margin of the superblock */
+    --custom-block-padding: 8px;
+
+    /* 圆角弧度 | Rounded arc */
+    --custom-border-radius: 4px;
+
+    /* 透明组件颜色 | Transparent component color */
+    --custom-transparent-lighter: #3338;
+    --custom-transparent-light: #222A;
+    --custom-transparent: #222C;
+    --custom-transparent-deep: #222D;
+    --custom-transparent-deeper: #222E;
+
+    /* 不透明的组件颜色 | Opaque component color */
+    --custom-components-light: #333;
+    --custom-components: #222;
+    --custom-components-deep: #111;
+
+    /* 鲜明颜色 | Striking color */
+    --custom-striking-color: var(--b3-font-color12);
+
+    /* 数学公式整体缩放比例 | The overall scale of the mathematical formula */
+    --custom-math-size: 100%;
+
+    /* 数学公式上下标缩放比例 | The mathematical formula superscript scaling */
+    --custom-math-sub-size: 100%;
+
+    /* 块引用标志颜色 | Block reference flag color */
+    --custom-ref-mark-color: var(--b3-protyle-inline-link-color);
+
+    /* 空行聚焦提示 | Blank line focus prompt */
+    --custom-empty-focus-p: "´･-･)ﾉ㊫";
+    --custom-empty-focus-c: "´･-･)ﾉ↹";
+    --custom-empty-focus-t: "´･-･)ﾉ☑";
+    --custom-empty-focus-u: "´･-･)ﾉ◉";
+    --custom-empty-focus-o: "´･-･)ﾉ①";
+
+    /* 空行提示 | Blank line prompt */
+    --custom-empty-p: "这里是空的 (´･-･)ﾉ㊫";
+    --custom-empty-c: "这里是空的 (´･-･)ﾉ↹";
+    --custom-empty-t: "这里是空的 (´･-･)ﾉ☑";
+    --custom-empty-u: "这里是空的 (´･-･)ﾉ◉";
+    --custom-empty-o: "这里是空的 (´･-･)ﾉ①";
+
+    /* 文档树匹配标题颜色(文档标题尾匹配) | Document tree match header color (document end-of-title match) */
+    /* * */
+    --custom-doctree-end-asterisk-color: var(--b3-card-success-color);
+    /* # */
+    --custom-doctree-end-sharp-color: var(--b3-card-info-color);
+    /* ? */
+    --custom-doctree-end-question-color: var(--b3-card-warning-color);
+    /* ! */
+    --custom-doctree-end-exclamation-color: var(--b3-card-error-color);
+
+    /* 文档树匹配文档标题颜色(文档标题头匹配) | Document tree matches document title color (document header match) */
+    /* * */
+    --custom-doctree-begin-asterisk-color: var(--custom-color-9-3);
+    /* # */
+    --custom-doctree-begin-sharp-color: var(--custom-color-8-3);
+    /* ? */
+    --custom-doctree-begin-question-color: var(--custom-color-4-0);
+    /* ! */
+    --custom-doctree-begin-exclamation-color: var(--custom-color-6-0);
+    /* @ */
+    --custom-doctree-begin-at-color: var(--custom-color-5-0);
+    /* . */
+    --custom-doctree-begin-period-color: #0000;
+}
+```
+
+
 ## 介绍 | INTRODUCTION
 
 在写了在写了~
@@ -25,6 +144,9 @@ A dark theme of [SiYuan Note](https://github.com/siyuan-note/siyuan).
 ## 计划 | TODO
 
 - [ ] 介绍
+  - [x] 自定义配置
+    - [x] 教程
+    - [x] 示例
 
 ## 开始 | START
 
