@@ -3,6 +3,7 @@
  * 需要对一个列表容器设置自定义属性 type: table
  * 详情请参考: [土法列表表格-这回原理我也说不清了 · 语雀](https: //www.yuque.com/siyuannote/docs/yev84m)
  */
+
 @import url(./config.css);
 @import url(/widgets/custom.css);
 
