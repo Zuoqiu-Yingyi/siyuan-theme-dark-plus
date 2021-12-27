@@ -1,16 +1,17 @@
 /* 侧边菜单栏 */
-@import url("./config.css");
+@import url(./config.css);
 
 /* 左侧菜单栏 */
 #dockLeft {
-    background-color: var(--custom-transparent) !important;
+    background-color: var(--custom-transparent);
 }
 
-/* .block__icons--active {
-    background-color: none;
-} */
+/* 聚焦的侧边面板标题 */
+.block__icons--active {
+    background-color: var(--b3-list-hover);
+}
 
 /* 右侧菜单栏 */
 #dockRight {
-    background-color: var(--custom-transparent) !important;
+    background-color: var(--custom-transparent);
 }

@@ -1,7 +1,7 @@
 /* 配置文件 */
 
 /* 导入基础配置 */
-@import url("../root/midnight-root.css");
+@import url(../root/midnight-root.css);
 
 /* 自定义属性 */
 :root {

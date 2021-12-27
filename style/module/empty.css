@@ -1,5 +1,5 @@
 /* 空白提示 */
-@import url("./config.css");
+@import url(./config.css);
 
 /* 聚焦提示 */
 .protyle-wysiwyg [data-node-id]:not(.code-block)>[spellcheck="false"]:focus:empty:after {
