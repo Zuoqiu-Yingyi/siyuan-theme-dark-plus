@@ -2,6 +2,7 @@
 
 - 修复悬浮预览窗口无法拖动的问题 | Fixed an issue where the hover preview window could not be dragged.
 - 修复窗口周围白色边框问题 | Fixed an issue with white borders around windows.
+- 高亮聚焦的侧边功能面板的标题栏 | Highlight the title bar of the focused side feature panel.
 
 ## v0.1.2/2021-12-27
 

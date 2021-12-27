@@ -1,6 +1,6 @@
 /* 功能区分隔线 */
 
-@import url("./config.css");
+@import url(./config.css);
 
 .layout__resize {
     cursor: row-resize;
