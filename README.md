@@ -26,6 +26,7 @@ A dark theme of [SiYuan Note](https://github.com/siyuan-note/siyuan).
    The value defined in file `<workspace>/data/widgets/custom.css` overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/module/config.css`.
 
 ### 配置示例 | CONFIG EXAMPLE
+
 ```css
 :root {
     /* 标题序号缩放 | Title ordinal scaling */
@@ -43,12 +44,16 @@ A dark theme of [SiYuan Note](https://github.com/siyuan-note/siyuan).
     --custom-quote-l: "⸢";
     --custom-quote-r: "⸥";
 
-    /* 背景图片 | Background image */
-    --custom-background-image: url('../../images/background (05).jpg');
+    /* 背景图片 | Background image
+     * 可使用绝对路径 | You can use absolute paths.
+     */
+    --custom-background-image: url("/appearance/themes/Dark+/images/background (05).jpg");
 
-    /* 对话框背景图片 | Dialog background image */
+    /* 对话框背景图片 | Dialog background image
+     * 可使用绝对路径 | You can use absolute paths.
+     */
     /* 暂未使用 | Not used yet */
-    --custom-background-image-dialog: url('../../images/background (01).jpg');
+    --custom-background-image-dialog: url("/appearance/themes/Dark+/images/background (01).jpg");
 
     /* 背景图片滤波器 | Background image filter */
     /* --backdrop-filter: blur(16px); */
@@ -139,7 +144,13 @@ A dark theme of [SiYuan Note](https://github.com/siyuan-note/siyuan).
 
 ## 介绍 | INTRODUCTION
 
-在写了在写了~
+- 在其他主题中引用本主题模块  
+  Reference this theme modules in other themes.
+  - 在 `<工作空间>/conf/appearance/themes/Dark+/theme.css` 文件中直接粘贴所需模块到其他主题的 `theme.css` 文件或 `custom.css` 文件中  
+    Paste the desired module into `theme.css` file or `custom.css` file for another theme in the `<workspace>/conf/appearance/themes/Dark+/theme.css` file.
+  - 在其他主题中引用本主题模块时, 自定义配置文件 `<工作空间>/data/widgets/custom.css` 同样有效  
+    Custom configuration files `<workspace>/data/widgets/custom.css` also work when this theme modules were referenced in other theme modules.
+
 
 ## 计划 | TODO
 
@@ -147,6 +158,7 @@ A dark theme of [SiYuan Note](https://github.com/siyuan-note/siyuan).
   - [x] 自定义配置
     - [x] 教程
     - [x] 示例
+  - [x] 在其他主题中引用样式 
 
 ## 开始 | START
 
