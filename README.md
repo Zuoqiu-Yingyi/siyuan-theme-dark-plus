@@ -50,4 +50,4 @@ Download the release package in [Releases](https://github.com/Zuoqiu-Yingyi/widg
 
 ## 更改日志 | CHANGE LOGS
 
-[CHANGELOGS](CHANGELOGS.md)
+[CHANGELOG](CHANGELOG.md)
