@@ -1,5 +1,7 @@
 /* 引入参数配置 */
-@import url("config.css");
+
+@import url(./config.css);
+@import url(/widgets/custom.css);
 
 /* -------------------------------- 聚焦放大 BEGIN -------------------------------- */
 /* 文件树文档图标悬浮放大 */
