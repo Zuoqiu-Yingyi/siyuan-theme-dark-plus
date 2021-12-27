@@ -170,7 +170,7 @@ The theme has been put on the shelves at [SiYuan community bazaar](https://githu
 ### 手动安装 | MANUAL INSTALL
 
 在 [Releases](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/releases) 中下载发行包, 解压后放到思源笔记 `<工作空间>/conf/appearance/themes/` 目录下  
-Download the release package in [Releases](https://github.com/Zuoqiu-Yingyi/widget-brython-editor/releases), unzip it and place it in the `<workspace>/conf/appearance/themes/` directory of SiYuan Note.
+Download the release package in [Releases](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/releases), unzip it and place it in the `<workspace>/conf/appearance/themes/` directory of SiYuan Note.
 
 ## 参考 & 感谢 | REFERENCE & THANKS
 
