@@ -1,74 +1,71 @@
 /* 引入各配置模块 */
 
 /* 块级元素 */
-@import url(./style/module/block-code.css);
-@import url(./style/module/block-embed.css);
-@import url(./style/module/block-headline.css);
-@import url(./style/module/block-iframe.css);
-@import url(./style/module/block-quote.css);
-@import url(./style/module/block-super.css);
-@import url(./style/module/block-table.css);
+@import url(/appearance/themes/Dark+/style/module/block-code.css);
+@import url(/appearance/themes/Dark+/style/module/block-embed.css);
+@import url(/appearance/themes/Dark+/style/module/block-headline.css);
+@import url(/appearance/themes/Dark+/style/module/block-iframe.css);
+@import url(/appearance/themes/Dark+/style/module/block-quote.css);
+@import url(/appearance/themes/Dark+/style/module/block-super.css);
+@import url(/appearance/themes/Dark+/style/module/block-table.css);
 
 /* 面包屑 */
-@import url(./style/module/bread-crumb.css);
+@import url(/appearance/themes/Dark+/style/module/bread-crumb.css);
 
 /* 配置文件 */
-@import url(./style/module/config.css);
+@import url(/appearance/themes/Dark+/style/module/config.css);
 
 /* 自定义元素 */
-@import url(./style/module/custom-kanban.css);
-@import url(./style/module/custom-table.css);
+@import url(/appearance/themes/Dark+/style/module/custom-kanban.css);
+@import url(/appearance/themes/Dark+/style/module/custom-table.css);
 
 /* 对话框元素 */
-@import url(./style/module/dialog.css);
+@import url(/appearance/themes/Dark+/style/module/dialog.css);
 
 /* 边栏 */
-@import url(./style/module/docker.css);
+@import url(/appearance/themes/Dark+/style/module/docker.css);
 
 /* 空白页面与空白行 */
-@import url(./style/module/empty.css);
+@import url(/appearance/themes/Dark+/style/module/empty.css);
 
 /* 全局 */
-@import url(./style/module/global.css);
+@import url(/appearance/themes/Dark+/style/module/global.css);
 
 /* 悬浮元素 */
-@import url(./style/module/hover-preview.css);
-@import url(./style/module/hover-menu.css);
-@import url(./style/module/hover-search.css);
+@import url(/appearance/themes/Dark+/style/module/hover-preview.css);
+@import url(/appearance/themes/Dark+/style/module/hover-menu.css);
+@import url(/appearance/themes/Dark+/style/module/hover-search.css);
 
 /* 图标 */
-@import url(./style/module/icon-link.css);
-@import url(./style/module/icon-zoom.css);
+@import url(/appearance/themes/Dark+/style/module/icon-link.css);
+@import url(/appearance/themes/Dark+/style/module/icon-zoom.css);
 
 /* 缩进 */
-@import url(./style/module/indent.css);
+@import url(/appearance/themes/Dark+/style/module/indent.css);
 
 /* 数学公式 */
-@import url(./style/module/math.css);
+@import url(/appearance/themes/Dark+/style/module/math.css);
 
 /* 面板 */
-@import url(./style/module/panel-doctree.css);
-@import url(./style/module/panel-editor.css);
-@import url(./style/module/panel-graph.css);
-@import url(./style/module/panel-outline.css);
-@import url(./style/module/panel-separator.css);
+@import url(/appearance/themes/Dark+/style/module/panel-doctree.css);
+@import url(/appearance/themes/Dark+/style/module/panel-editor.css);
+@import url(/appearance/themes/Dark+/style/module/panel-graph.css);
+@import url(/appearance/themes/Dark+/style/module/panel-outline.css);
+@import url(/appearance/themes/Dark+/style/module/panel-separator.css);
 
 /* 行内元素 */
-@import url(./style/module/span-code.css);
-@import url(./style/module/span-kbd.css);
-@import url(./style/module/span-link.css);
-@import url(./style/module/span-mark.css);
-@import url(./style/module/span-ref.css);
-@import url(./style/module/span-tag.css);
+@import url(/appearance/themes/Dark+/style/module/span-code.css);
+@import url(/appearance/themes/Dark+/style/module/span-kbd.css);
+@import url(/appearance/themes/Dark+/style/module/span-link.css);
+@import url(/appearance/themes/Dark+/style/module/span-mark.css);
+@import url(/appearance/themes/Dark+/style/module/span-ref.css);
+@import url(/appearance/themes/Dark+/style/module/span-tag.css);
 
 /* 页签栏 */
-@import url(./style/module/tab-bar.css);
+@import url(/appearance/themes/Dark+/style/module/tab-bar.css);
 
 /* 测试 */
-@import url(./style/module/test.css);
+@import url(/appearance/themes/Dark+/style/module/test.css);
 
 /* 顶部工具栏 */
-@import url(./style/module/toolbar.css);
-
-/* 自定义配置 */
-@import url(/widgets/custom.css);
+@import url(/appearance/themes/Dark+/style/module/toolbar.css);

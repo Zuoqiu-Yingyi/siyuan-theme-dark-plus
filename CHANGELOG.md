@@ -5,6 +5,7 @@
 - 高亮聚焦的侧边功能面板的标题栏 | Highlight the title bar of the focused side feature panel.
 - 令 `data/widgets/custom.css` 中自定义配置字段覆盖 `conf\appearance\themes\Dark+\style\module\config.css` 中对应的默认配置 | Cause the custom configuration field in file `data/widgets/custom.css` to override the default configuration in file `conf\appearance\themes\Dark+\style\module\config.css`.
 - 完善配置选项示例 | Refine the configuration options for examples.
+- 将所有模块的引用 URL 设置为相对根目录路径 | Set the reference URL of all modules to a relative root path.
 
 ## v0.1.2/2021-12-27
 
