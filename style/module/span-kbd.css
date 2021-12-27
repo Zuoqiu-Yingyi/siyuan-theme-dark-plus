@@ -1,5 +1,6 @@
 /* 键盘样式 */
 @import url(./config.css);
+@import url(/widgets/custom.css);
 
 .b3-typography kbd,
 .protyle-wysiwyg kbd {

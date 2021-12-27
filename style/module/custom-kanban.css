@@ -1,5 +1,6 @@
 /* 自定义看板 */
 @import url(./config.css);
+@import url(/widgets/custom.css);
 
 /* 通过在主题文件头部用 @import:url(css片段路径使用)* /
 /* 文档中带有 board 属性且值为 "容器" 的超级块会被渲染级为看板 */
