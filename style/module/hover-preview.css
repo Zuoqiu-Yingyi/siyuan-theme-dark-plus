@@ -1,5 +1,6 @@
 /* 块引用卡片 */
 @import url(./config.css);
+@import url(/widgets/custom.css);
 
 .block__popover {
     background-color: transparent;

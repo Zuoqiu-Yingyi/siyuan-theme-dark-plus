@@ -1,5 +1,6 @@
 /* 超链接 */
 @import url(./config.css);
+@import url(/widgets/custom.css);
 
 /* 超链接前标志 */
 .protyle-wysiwyg [data-node-id] span[data-type='a']:not(:empty)::before,

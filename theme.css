@@ -64,5 +64,8 @@
 /* 页签栏 */
 @import url(./style/module/tab-bar.css);
 
+/* 测试 */
+@import url(./style/module/test.css);
+
 /* 顶部工具栏 */
 @import url(./style/module/toolbar.css);

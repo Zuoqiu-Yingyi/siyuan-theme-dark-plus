@@ -1,5 +1,6 @@
 /* 数学公式 */
 @import url(./config.css);
+@import url(/widgets/custom.css);
 
 /* 行内公式 */
 /* .protyle-wysiwyg [data-node-id] span[data-type='inline-math'] {

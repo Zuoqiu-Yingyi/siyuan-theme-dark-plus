@@ -1,5 +1,6 @@
 /* 顶部工具栏 */
 @import url(./config.css);
+@import url(/widgets/custom.css);
 
 /*顶端菜单栏*/
 .toolbar {

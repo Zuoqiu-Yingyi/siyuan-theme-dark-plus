@@ -1,6 +1,7 @@
 /* 大纲面板 */
 
 @import url(./config.css);
+@import url(/widgets/custom.css);
 
 /* 区分大纲中的各级标题 */
 

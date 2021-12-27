@@ -1,5 +1,6 @@
 /* 侧边菜单栏 */
 @import url(./config.css);
+@import url(/widgets/custom.css);
 
 /* 左侧菜单栏 */
 #dockLeft {

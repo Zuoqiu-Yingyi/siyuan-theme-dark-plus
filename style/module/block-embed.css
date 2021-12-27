@@ -1,5 +1,6 @@
 /* 嵌入块 */
 @import url(./config.css);
+@import url(/widgets/custom.css);
 
 .protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"] {
     background-color: var(--custom-transparent-lighter);

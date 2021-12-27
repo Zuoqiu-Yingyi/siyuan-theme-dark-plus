@@ -1,5 +1,6 @@
 /* 行内代码 */
 @import url(./config.css);
+@import url(/widgets/custom.css);
 
 .protyle-wysiwyg [data-node-id] code,
 .protyle-wysiwyg code:not(.hljs),

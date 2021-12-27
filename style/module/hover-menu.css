@@ -1,5 +1,6 @@
 /* 弹出菜单 */
 @import url(./config.css);
+@import url(/widgets/custom.css);
 
 /* 菜单底色 */
 #commonMenu,
