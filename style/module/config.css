@@ -293,7 +293,7 @@
     --b3-protyle-inline-tag-background: var(--b3-font-background9);
 
     /* 线条 */
-    --b3-border-color: var(--b3-theme-on-surface);
+    --b3-border-color: var(--b3-scroll-color);
 }
 
 /*动画效果*/

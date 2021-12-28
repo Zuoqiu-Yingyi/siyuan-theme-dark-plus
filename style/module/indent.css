@@ -16,7 +16,7 @@
 
 .protyle-wysiwyg [data-node-id].li>div:nth-child(2):before {
     top: 34px;
-    background-color: #0000;
+    /* background-color: #0000; */
 }
 
 /* 列表缩进 */
