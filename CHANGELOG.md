@@ -5,6 +5,7 @@
 - 添加 `--custom-list-guides-distance-compensation` 属性用于在非默认字号下手动调整列表缩进辅助线的位置 | Added the `-custom-list-guides-distance-compensation` attribute to manually adjust the position of list indentation guides under non-default font sizes.
 - 调整标题空行光标位置 | Adjusts the position of the header blank line cursor.
 - 移除列表中标题块的自动编号功能 | Removes the auto-numbering feature for title blocks in the list.
+- 将自定义配置文件添加到 `theme.css` 末尾以获得更高优先级 | Add a custom profile to the end of `theme.css` for higher priority.
 
 ## v0.1.3/2021-12-28
 
