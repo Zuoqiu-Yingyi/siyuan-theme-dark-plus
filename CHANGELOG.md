@@ -4,6 +4,7 @@
 - 将水平分隔线调整为双实线 | Adjust the horizontal divider line to a double solid line.
 - 添加 `--custom-list-guides-distance-compensation` 属性用于在非默认字号下手动调整列表缩进辅助线的位置 | Added the `-custom-list-guides-distance-compensation` attribute to manually adjust the position of list indentation guides under non-default font sizes.
 - 调整标题空行光标位置 | Adjusts the position of the header blank line cursor.
+- 移除列表中标题块的自动编号功能 | Removes the auto-numbering feature for title blocks in the list.
 
 ## v0.1.3/2021-12-28
 
