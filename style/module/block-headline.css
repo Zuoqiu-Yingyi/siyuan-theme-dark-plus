@@ -118,6 +118,15 @@ h5,
     padding-left: 3em;
 }
 
+.protyle-wysiwyg [data-node-id].li>.protyle-action~.h1>[spellcheck="false"]:focus:empty,
+.protyle-wysiwyg [data-node-id].li>.protyle-action~.h2>[spellcheck="false"]:focus:empty,
+.protyle-wysiwyg [data-node-id].li>.protyle-action~.h3>[spellcheck="false"]:focus:empty,
+.protyle-wysiwyg [data-node-id].li>.protyle-action~.h4>[spellcheck="false"]:focus:empty,
+.protyle-wysiwyg [data-node-id].li>.protyle-action~.h5>[spellcheck="false"]:focus:empty,
+.protyle-wysiwyg [data-node-id].li>.protyle-action~.h6>[spellcheck="false"]:focus:empty {
+    padding-left: 0;
+}
+
 /* 标题颜色标识 */
 
 .protyle-wysiwyg [data-node-id].h1,
