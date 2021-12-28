@@ -4,6 +4,7 @@
 @import url(/appearance/themes/Dark+/style/module/block-code.css);
 @import url(/appearance/themes/Dark+/style/module/block-embed.css);
 @import url(/appearance/themes/Dark+/style/module/block-headline.css);
+@import url(/appearance/themes/Dark+/style/module/block-hr.css);
 @import url(/appearance/themes/Dark+/style/module/block-iframe.css);
 @import url(/appearance/themes/Dark+/style/module/block-quote.css);
 @import url(/appearance/themes/Dark+/style/module/block-super.css);
@@ -69,3 +70,4 @@
 
 /* 顶部工具栏 */
 @import url(/appearance/themes/Dark+/style/module/toolbar.css);
+

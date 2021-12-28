@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+- 调整默认的 `--b3-border-color` 颜色为 `--b3-scroll-color` | Adjust the default `--b3-border-color` color to `--b3-scroll-color`.
+- 将水平分隔线调整为双实线 | Adjust the horizontal divider line to a double solid line.
+
 ## v0.1.3/2021-12-28
 
 - 修复悬浮预览窗口无法拖动的问题 | Fixed an issue where the hover preview window could not be dragged.
