@@ -71,3 +71,5 @@
 /* 顶部工具栏 */
 @import url(/appearance/themes/Dark+/style/module/toolbar.css);
 
+/* 自定义配置 */
+@import url(/widgets/custom.css);
