@@ -92,6 +92,32 @@ h5,
     content: counter(h1-count) "."counter(h2-count) "."counter(h3-count) "."counter(h4-count) "."counter(h5-count) "."counter(h6-count) "\00A0";
 }
 
+/* 调整标题空行光标位置 */
+
+.protyle-wysiwyg .h1>[spellcheck="false"]:focus:empty {
+    padding-left: 0.5em;
+}
+
+.protyle-wysiwyg .h2>[spellcheck="false"]:focus:empty {
+    padding-left: 1em;
+}
+
+.protyle-wysiwyg .h3>[spellcheck="false"]:focus:empty {
+    padding-left: 1.5em;
+}
+
+.protyle-wysiwyg .h4>[spellcheck="false"]:focus:empty {
+    padding-left: 2em;
+}
+
+.protyle-wysiwyg .h5>[spellcheck="false"]:focus:empty {
+    padding-left: 2.5em;
+}
+
+.protyle-wysiwyg .h6>[spellcheck="false"]:focus:empty {
+    padding-left: 3em;
+}
+
 /* 标题颜色标识 */
 
 .protyle-wysiwyg [data-node-id].h1,
