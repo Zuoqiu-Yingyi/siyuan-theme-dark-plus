@@ -71,6 +71,13 @@ A dark theme of [SiYuan Note](https://github.com/siyuan-note/siyuan).
      */
     --custom-separator-distance-compensation: -8px;
 
+    /* 列表辅助线补偿距离 | List guides compensate for distance
+     * 列表辅助线仅在默认 16 px 字号下可以对齐,
+     其他字号需要手动补偿 | List guides can only be aligned at the default 16 px font size,
+     other font sizes need to be manually compensated
+     */
+    --custom-list-guides-distance-compensation: 0px;
+
     /* 超级块内边距 | The inner margin of the superblock */
     --custom-block-padding: 8px;
 
