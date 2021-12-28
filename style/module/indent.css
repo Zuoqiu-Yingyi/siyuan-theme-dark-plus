@@ -10,13 +10,7 @@
 } */
 
 .protyle-wysiwyg [data-node-id].li>[data-node-id].list:before {
-    /* left: -2px; */
-    left: 0;
-}
-
-.protyle-wysiwyg [data-node-id].li>div:nth-child(2):before {
-    top: 34px;
-    /* background-color: #0000; */
+    left: var(--custom-list-guides-distance-compensation);
 }
 
 /* 列表缩进 */
@@ -24,6 +18,4 @@
 .protyle-wysiwyg [data-node-id].li>.list {
     margin-left: 1em !important;
     padding-left: 1em;
-    padding-top: 0;
-    padding-bottom: 0;
 }
