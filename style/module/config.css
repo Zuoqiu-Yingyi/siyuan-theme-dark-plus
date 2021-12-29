@@ -1,4 +1,12 @@
 /* 配置文件 */
+/* 
+## 自定义配置方法 | CUSTOM CONFIG METHOD
+
+1. 创建文件 `<工作空间>/data/widgets/custom.css`  
+   Create a file `<workspace>/data/widgets/custom.css`
+2. 在文件 `<工作空间>/data/widgets/custom.css` 中定义的值将覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/module/config.css` 中对应的值  
+   The value defined in file `<workspace>/data/widgets/custom.css` overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/module/config.css`.
+*/
 
 /* 导入基础配置 */
 @import url(/appearance/themes/midnight/theme.json);
