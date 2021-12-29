@@ -10,17 +10,17 @@
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="bookxnotepro:"]:not(:empty)::before,
 .b3-typography a[href ^="bookxnotepro:"]::before {
-    background-image: url('../../icon/bookxnote.ico');
+    background-image: url('../../icon/bookxnote.ico') !important;
 }
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="es:"]:not(:empty)::before,
 .b3-typography a[href ^="es:"]::before {
-    background-image: url('../../icon/everything.svg');
+    background-image: url('../../icon/everything.svg') !important;
 }
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="file:"]:not(:empty)::before,
 .b3-typography a[href ^="file:"]::before {
-    background-image: url('../../icon/folder.svg');
+    background-image: url('../../icon/folder.svg') !important;
 }
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="http:"]:not(:empty)::before,
@@ -35,44 +35,44 @@
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="mailto:"]:not(:empty)::before,
 .b3-typography a[href ^="mailto:"]::before {
-    background-image: url('../../icon/mailto.svg');
+    background-image: url('../../icon/mailto.svg') !important;
 }
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="marginnote3app:"]:not(:empty)::before,
 .b3-typography a[href ^="marginnote3app:"]::before {
-    background-image: url('../../icon/marginnote.png');
+    background-image: url('../../icon/marginnote.png') !important;
 }
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="obsidian:"]:not(:empty)::before,
 .b3-typography a[href ^="obsidian:"]::before {
-    background-image: url('../../icon/obsidian.ico');
+    background-image: url('../../icon/obsidian.ico') !important;
 }
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="onenote:"]:not(:empty)::before,
 .b3-typography a[href ^="onenote:"]::before {
-    background-image: url('../../icon/onenote.svg');
+    background-image: url('../../icon/onenote.svg') !important;
 }
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="runpwsh:"]:not(:empty)::before,
 .b3-typography a[href ^="runpwsh:"]::before {
-    background-image: url('../../icon/pwsh.svg');
+    background-image: url('../../icon/pwsh.svg') !important;
 }
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="siyuan:"]:not(:empty)::before,
 .b3-typography a[href ^="siyuan:"]::before {
-    background-image: url('../../icon/siyuan.svg');
+    background-image: url('../../icon/siyuan.svg') !important;
 }
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="vscode:"]:not(:empty)::before,
 .b3-typography a[href ^="vscode:"]::before {
-    background-image: url('../../icon/vscode.svg');
+    background-image: url('../../icon/vscode.svg') !important;
 }
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="vscode:"][data-href $="/"]:not(:empty)::before,
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="vscode:"][data-href $="\\"]:not(:empty)::before,
 .b3-typography a[href ^="vscode:"][href $="/"]::before,
 .b3-typography a[href ^="vscode:"][href $="\\"]::before {
-    background-image: url('../../icon/vscode-folder.svg');
+    background-image: url('../../icon/vscode-folder.svg') !important;
 }
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="zotero:"]:not(:empty)::before,

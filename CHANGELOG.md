@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 提高超链接图标中 URL Scheme 的优先级 | Increase the priority of the URL Scheme in the hyperlink icon.
+
 ## v0.1.4/2021-12-29
 
 - 调整默认的 `--b3-border-color` 颜色为 `--b3-scroll-color` | Adjust the default `--b3-border-color` color to `--b3-scroll-color`.
