@@ -16,21 +16,25 @@
 }
 
 div[custom-type="table-title"]>div[contenteditable]:before {
+    color: var(--b3-theme-on-surface);
     counter-increment: table-count;
     content: "Table\0020"counter(table-count)"\0020";
 }
 
 div[custom-type="figure-title"]>div[contenteditable]:before {
+    color: var(--b3-theme-on-surface);
     counter-increment: figure-count;
     content: "Figure\0020"counter(figure-count)"\0020";
 }
 
 div[custom-type="表标题"]>div[contenteditable]:before {
+    color: var(--b3-theme-on-surface);
     counter-increment: table-count;
     content: "表\0020"counter(table-count)"\0020";
 }
 
 div[custom-type="图标题"]>div[contenteditable]:before {
+    color: var(--b3-theme-on-surface);
     counter-increment: figure-count;
     content: "图\0020"counter(figure-count)"\0020";
 }
