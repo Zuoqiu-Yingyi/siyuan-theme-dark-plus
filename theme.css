@@ -19,6 +19,7 @@
 /* 自定义元素 */
 @import url(/appearance/themes/Dark+/style/module/custom-kanban.css);
 @import url(/appearance/themes/Dark+/style/module/custom-table.css);
+@import url(/appearance/themes/Dark+/style/module/custom-autonum.css);
 
 /* 对话框元素 */
 @import url(/appearance/themes/Dark+/style/module/dialog.css);
