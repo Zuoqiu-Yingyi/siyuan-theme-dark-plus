@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 提高超链接图标中 URL Scheme 的优先级 | Increase the priority of the URL Scheme in the hyperlink icon.
+- 添加表标题与图标题自动编号功能 | Added auto-numbering feature of table titles and figure titles.
 
 ## v0.1.4/2021-12-29
 
