@@ -4,13 +4,13 @@
 @import url(/widgets/custom.css);
 
 /* iframe */
-.iframe-content audio {
+.iframe-content audio {}
 
-}
+.iframe-content iframe {}
 
-.iframe-content iframe {
-    background-color: white;
-}
+.iframe-content video {}
 
-.iframe-content video {
+.b3-typography iframe,
+.protyle-wysiwyg iframe {
+    background-color: var(--custom-transparent);
 }
