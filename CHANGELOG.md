@@ -3,6 +3,7 @@
 - 提高超链接图标中 URL Scheme 的优先级 | Increase the priority of the URL Scheme in the hyperlink icon.
 - 添加表标题与图标题自动编号功能 | Added auto-numbering feature of table titles and figure titles.
 - 添加 joplin USL Scheme 图标 | Add the joplin USL Scheme icon.
+- 调整 iframe 背景颜色为半透明 | Adjust the iframe background color to translucent.
 
 ## v0.1.4/2021-12-29
 
