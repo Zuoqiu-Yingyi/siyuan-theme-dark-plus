@@ -33,6 +33,11 @@
     background-image: url('../../icon/https.svg');
 }
 
+.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="joplin:"]:not(:empty)::before,
+.b3-typography a[href ^="joplin:"]::before {
+    background-image: url('../../icon/joplin.svg') !important;
+}
+
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="mailto:"]:not(:empty)::before,
 .b3-typography a[href ^="mailto:"]::before {
     background-image: url('../../icon/mailto.svg') !important;
