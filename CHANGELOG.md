@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+## v0.1.5/2022-01-02
+
 - 提高超链接图标中 URL Scheme 的优先级 | Increase the priority of the URL Scheme in the hyperlink icon.
 - 添加表标题与图标题自动编号功能 | Added auto-numbering feature of table titles and figure titles.
 - 添加 joplin USL Scheme 图标 | Add the joplin USL Scheme icon.
