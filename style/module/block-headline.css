@@ -13,42 +13,42 @@
     counter-reset: h1-count 0 h2-count 0 h3-count 0 h4-count 0 h5-count 0 h6-count 0;
 }
 
-.protyle-wysiwyg [data-node-id].h1,
+.protyle-wysiwyg>.h1,
 .b3-typography h1 {
     counter-increment: h1-count;
     counter-reset: h2-count 0;
 }
 
-.protyle-wysiwyg [data-node-id].h2,
+.protyle-wysiwyg>.h2,
 .b3-typography h2 {
     counter-increment: h2-count;
     counter-reset: h3-count 0;
 }
 
-.protyle-wysiwyg [data-node-id].h3,
+.protyle-wysiwyg>.h3,
 .b3-typography h3 {
     counter-increment: h3-count;
     counter-reset: h4-count 0;
 }
 
-.protyle-wysiwyg [data-node-id].h4,
+.protyle-wysiwyg>.h4,
 .b3-typography h4 {
     counter-increment: h4-count;
     counter-reset: h5-count 0;
 }
 
-.protyle-wysiwyg [data-node-id].h5,
+.protyle-wysiwyg>.h5,
 .b3-typography h5 {
     counter-increment: h5-count;
     counter-reset: h6-count 0;
 }
 
-.protyle-wysiwyg [data-node-id].h6,
+.protyle-wysiwyg>.h6,
 .b3-typography h6 {
     counter-increment: h6-count;
 }
 
-.protyle-wysiwyg [data-node-id].h1:before,
+.protyle-wysiwyg>.h1:before,
 .b3-typography h1:before {
     display: block;
     float: left;
@@ -56,7 +56,7 @@
     content: counter(h1-count) "\00A0";
 }
 
-.protyle-wysiwyg [data-node-id].h2:before,
+.protyle-wysiwyg>.h2:before,
 .b3-typography h2:before {
     display: block;
     float: left;
@@ -64,7 +64,7 @@
     content: counter(h1-count) "."counter(h2-count) "\00A0";
 }
 
-.protyle-wysiwyg [data-node-id].h3:before,
+.protyle-wysiwyg>.h3:before,
 .b3-typography h3:before {
     display: block;
     float: left;
@@ -72,7 +72,7 @@
     content: counter(h1-count) "."counter(h2-count) "."counter(h3-count) "\00A0";
 }
 
-.protyle-wysiwyg [data-node-id].h4:before,
+.protyle-wysiwyg>.h4:before,
 .b3-typography h4:before {
     display: block;
     float: left;
@@ -80,7 +80,7 @@
     content: counter(h1-count) "."counter(h2-count) "."counter(h3-count) "."counter(h4-count) "\00A0";
 }
 
-.protyle-wysiwyg [data-node-id].h5:before,
+.protyle-wysiwyg>.h5:before,
 .b3-typography h5:before {
     display: block;
     float: left;
@@ -88,7 +88,7 @@
     content: counter(h1-count) "."counter(h2-count) "."counter(h3-count) "."counter(h4-count) "."counter(h5-count) "\00A0";
 }
 
-.protyle-wysiwyg [data-node-id].h6:before,
+.protyle-wysiwyg>.h6:before,
 .b3-typography h6:before {
     display: block;
     float: left;
