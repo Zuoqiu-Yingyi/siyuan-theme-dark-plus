@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 添加 Quicker URL Scheme 图标 | Add the Quicker URL Scheme icon.
+- 修复文档树色彩渲染 | Fixed document tree color rendering.
 
 ## v0.1.5/2022-01-02
 
