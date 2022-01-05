@@ -2,6 +2,7 @@
 
 - 添加 Quicker URL Scheme 图标 | Add the Quicker URL Scheme icon.
 - 修复文档树色彩渲染 | Fixed document tree color rendering.
+- 添加基于超链接的行内备注图标 | Adds a hyperlink-based inline comment icon.
 
 ## v0.1.5/2022-01-02
 

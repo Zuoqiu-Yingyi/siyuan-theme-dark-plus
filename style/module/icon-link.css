@@ -6,6 +6,19 @@
 /* REF https://github.com/Achuan-2/siyuan-themes-tsundoku-dark/blob/c1362a39693703481c8acd3efab67eb390bb789a/theme.css#L2080 */
 /* -------------------------------- custom: 超链接 icon BEGIN -------------------------------- */
 
+/* 标题匹配 */
+
+.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="note"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="备注"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type='a'][data-title ^="note"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type='a'][data-title ^="备注"]:not(:empty)::before,
+.b3-typography a[href ^="note"]::before,
+.b3-typography a[href ^="备注"]::before,
+.b3-typography a[title ^="note"]::before,
+.b3-typography a[title ^="备注"]::before {
+    background-image: url(/appearance/themes/Dark+/icon/note.svg) !important;
+}
+
 /* -------------------------------- URL Scheme -------------------------------- */
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="bookxnotepro:"]:not(:empty)::before,
