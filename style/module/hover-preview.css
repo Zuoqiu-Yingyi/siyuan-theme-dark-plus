@@ -10,7 +10,7 @@
 .block__popover.block__popover--move.block__popover--open {
     min-height: 50%;
     border-radius: var(--custom-border-radius);
-    background: var(--custom-transparent-deep);
+    background-color: var(--custom-transparent-deep);
     backdrop-filter: var(--backdrop-flow-filter);
 }
 
