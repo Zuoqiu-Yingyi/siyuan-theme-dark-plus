@@ -3,13 +3,8 @@
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 
-/** 文档名起始
- *  data-name ^="<设置的字符的URL编码>"
- */
+/* 文档名起始 */
 
-/* li[data-type="navigation-file"][data-name ^="XXX"]>.b3-list-item__text {
-    color: green;
-} */
 
 /* ^* */
 li[data-type="navigation-file"][data-name ^="*"]>.b3-list-item__text {
@@ -17,12 +12,12 @@ li[data-type="navigation-file"][data-name ^="*"]>.b3-list-item__text {
 }
 
 /* ^# */
-li[data-type="navigation-file"][data-name ^="%23"]>.b3-list-item__text {
+li[data-type="navigation-file"][data-name ^="#"]>.b3-list-item__text {
     color: var(--custom-doctree-begin-sharp-color);
 }
 
 /* ^? */
-li[data-type="navigation-file"][data-name ^="%3F"]>.b3-list-item__text {
+li[data-type="navigation-file"][data-name ^="%?"]>.b3-list-item__text {
     color: var(--custom-doctree-begin-question-color);
 }
 
@@ -32,7 +27,7 @@ li[data-type="navigation-file"][data-name ^="!"]>.b3-list-item__text {
 }
 
 /* ^@ */
-li[data-type="navigation-file"][data-name ^="%40"]>.b3-list-item__text {
+li[data-type="navigation-file"][data-name ^="@"]>.b3-list-item__text {
     color: var(--custom-doctree-begin-at-color);
 }
 
@@ -63,12 +58,12 @@ li[data-type="navigation-file"][data-name $="*.sy"]>.b3-list-item__text {
 }
 
 /* # $ */
-li[data-type="navigation-file"][data-name $="%23.sy"]>.b3-list-item__text {
+li[data-type="navigation-file"][data-name $="#.sy"]>.b3-list-item__text {
     color: var(--custom-doctree-end-sharp-color);
 }
 
 /* ? $ */
-li[data-type="navigation-file"][data-name $="%3F.sy"]>.b3-list-item__text {
+li[data-type="navigation-file"][data-name $="?.sy"]>.b3-list-item__text {
     color: var(--custom-doctree-end-question-color);
 }
 
