@@ -66,6 +66,9 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     /* --backdrop-flow-filter: blur(16px); */
     --backdrop-flow-filter: none;
 
+    /* 悬浮预览窗口最小高度 | The minimum height of the hover preview window */
+    --custom-popover-min-height: none;
+
     /* 功能面板间隔距离 | Function panel spacing distance */
     --custom-panel-distance: 8px;
 
