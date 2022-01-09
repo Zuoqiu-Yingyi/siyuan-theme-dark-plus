@@ -4,5 +4,5 @@
 @import url(/widgets/custom.css);
 
 .graph {
-    background: transparent !important;
+    background: transparent;
 }

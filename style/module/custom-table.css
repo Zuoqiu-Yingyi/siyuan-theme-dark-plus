@@ -15,9 +15,9 @@
 .protyle-wysiwyg *[custom-type="table"] .list,
 .protyle-wysiwyg *[custom-type="table"] .li .list {
     border-style: solid;
-    border-width: 0px;
-    padding: 0px !important;
-    margin: 0px !important;
+    border-width: 0;
+    padding: 0 !important;
+    margin: 0 !important;
     width: 100%;
     height: inherit !important;
     display: table-column-group;
@@ -28,9 +28,9 @@
 .protyle-wysiwyg *[custom-type="table"] .li {
     font-size: large !important;
     border-style: solid;
-    border-width: 0px;
-    padding: 0px !important;
-    margin: 0px !important;
+    border-width: 0;
+    padding: 0 !important;
+    margin: 0 !important;
     width: 100%;
     min-height: 36px;
     display: -webkit-flex;
@@ -40,15 +40,15 @@
 
 .protyle-wysiwyg *[custom-type="table"] .p {
     width: min-content;
-    min-width: 200px;
-    margin-right: 0px;
-    margin-left: 0px;
+    min-width: 256px;
+    margin-right: 0;
+    margin-left: 0;
     display: table-cell;
 }
 
 .protyle-wysiwyg *[custom-type="table"] .div {
     width: min-content;
-    min-width: 20px !important;
+    min-width: 16px !important;
 }
 
 .protyle-wysiwyg *[custom-type="table"] .li::first-line .p {

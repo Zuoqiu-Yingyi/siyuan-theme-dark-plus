@@ -5,5 +5,20 @@
 
 .b3-typography table,
 .protyle-wysiwyg table {
-    background-color: var(--custom-transparent-lighter);
+    background-color: var(--custom-block-table-background-color);
+}
+
+.b3-typography table thead,
+.protyle-wysiwyg table thead {
+    background-color: var(--custom-block-table-thead-background-color);
+}
+
+.b3-typography table tbody tr:nth-child(2n+1),
+.protyle-wysiwyg table tbody tr:nth-child(2n-1) {
+    background-color: var(--custom-block-table-odd-background-color);
+}
+
+.b3-typography table tbody tr:nth-child(2n),
+.protyle-wysiwyg table tbody tr:nth-child(2n) {
+    background-color: var(--custom-block-table-even-background-color);
 }

@@ -8,7 +8,7 @@
 .b3-typography [data-node-id].sb,
 .protyle-wysiwyg [data-node-id].sb {
     /* background-color: var(--b3-theme-background-secondary); */
-    background-color: var(--custom-transparent-lighter);
+    background-color: var(--custom-block-super-background-color);
     /* 水平阴影 垂直阴影 [blur<模糊距离>] [spread<阴影大小>] [color] [inset] */
     box-shadow: 0.25rem 0.25rem 0.5rem var(--b3-theme-background);
     border-radius: var(--custom-border-radius);

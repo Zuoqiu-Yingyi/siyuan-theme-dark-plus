@@ -5,14 +5,14 @@
 
 .b3-typography .code-block,
 .protyle-wysiwyg .code-block {
-    background-color: var(--custom-transparent-lighter);
+    background-color: var(--custom-block-code-background-color);
 }
 
 .b3-typography .hljs,
 .protyle-wysiwyg .hljs {
-    background-color: #0000;
+    background-color: transparent;
 }
 
 .protyle-linenumber {
-    background-color: #0000;
+    background-color: transparent;
 }

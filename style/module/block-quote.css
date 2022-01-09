@@ -7,5 +7,5 @@
 .b3-typography .bq,
 .protyle-wysiwyg blockquote,
 .protyle-wysiwyg .bq {
-    background-color: var(--custom-transparent-lighter);
+    background-color: var(--custom-block-quote-background-color);
 }

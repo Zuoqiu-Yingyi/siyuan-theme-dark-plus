@@ -3,7 +3,7 @@
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 
-/*顶端菜单栏*/
+/* 顶端菜单栏 */
 .toolbar {
-    background-color: var(--custom-transparent) !important;
+    background-color: var(--custom-tool-bar-background-color);
 }

@@ -10,15 +10,15 @@
 .block__popover.block__popover--move.block__popover--open {
     min-height: var(--custom-popover-min-height);
     border-radius: var(--custom-border-radius);
-    background-color: var(--custom-transparent-deep);
-    backdrop-filter: var(--backdrop-flow-filter);
+    background-color: var(--custom-popover-background-color);
+    backdrop-filter: var(--custom-backdrop-popover-filter);
 }
 
 .block__icons.block__icons--border {
-    background-color: var(--custom-components);
+    background-color: var(--custom-popover-title-bar-background-color);
 }
 
 .b3-typography code:not(.hljs),
 .protyle-wysiwyg code:not(.hljs) {
-    background-color: var(--b3-theme-primary-lighter);
+    background-color: var(--custom-popover-breadcrumb-bar-background-color);
 }

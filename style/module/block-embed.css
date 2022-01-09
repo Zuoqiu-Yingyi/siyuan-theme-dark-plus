@@ -4,7 +4,7 @@
 @import url(/widgets/custom.css);
 
 .protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"] {
-    background-color: var(--custom-transparent-lighter);
+    background-color: var(--custom-block-embed-background-color);
 }
 
 /* 嵌入块间分隔线 */
