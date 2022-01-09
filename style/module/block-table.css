@@ -14,7 +14,7 @@
 }
 
 .b3-typography table tbody tr:nth-child(2n+1),
-.protyle-wysiwyg table tbody tr:nth-child(2n-1) {
+.protyle-wysiwyg table tbody tr:nth-child(2n+1) {
     background-color: var(--custom-block-table-odd-background-color);
 }
 
