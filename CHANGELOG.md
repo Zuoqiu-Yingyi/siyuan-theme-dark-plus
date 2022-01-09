@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 添加列表当前行辅助线 | Adds a guide to the current row of the list.
+
 ## v0.1.7/2022-01-10
 
 - 修复文档树色彩渲染 | Fixed document tree color rendering.

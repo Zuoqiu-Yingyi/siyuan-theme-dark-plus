@@ -19,3 +19,48 @@
     margin-left: 1em !important;
     padding-left: 1em;
 }
+
+/* 子弹流弧线 */
+.protyle-wysiwyg [data-node-id].li [data-node-id].li:focus-within>.protyle-action:before {
+    content: "";
+    left: -1em;
+    bottom: 1em;
+    position: absolute;
+    border-left: 2px solid var(--custom-striking-color);
+    border-bottom: 2px solid var(--custom-striking-color);
+    border-bottom-left-radius: 16px;
+}
+
+.protyle-wysiwyg [data-subtype="t"][data-node-id].li [data-node-id].li:focus-within>.protyle-action:before {
+    right: 1.5em;
+    top: -0.875em;
+}
+
+.protyle-wysiwyg [data-subtype="u"][data-node-id].li [data-node-id].li:focus-within>.protyle-action:before {
+    right: 1em;
+    top: -1.125em;
+}
+
+.protyle-wysiwyg [data-subtype="o"][data-node-id].li [data-node-id].li:focus-within>.protyle-action:before {
+    right: 1.750em;
+    top: -0.75em;
+}
+
+
+/* 子弹流直线 */
+.protyle-wysiwyg [data-node-id].li [data-node-id].list>[data-node-id]:before {
+    content: "";
+    position: absolute;
+    top: -0.75em;
+    bottom: 0;
+    border-left: 2px solid transparent;
+    left: -1em;
+}
+
+.protyle-wysiwyg [data-node-id].li [data-node-id].list:focus-within>[data-node-id]:not(:focus-within):before {
+    border-color: var(--custom-striking-color);
+}
+
+.protyle-wysiwyg [data-node-id].li [data-node-id].list:focus-within>[data-node-id]:focus-within~[data-node-id]:before {
+    border-color: transparent;
+}
