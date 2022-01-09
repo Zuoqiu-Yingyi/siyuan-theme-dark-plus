@@ -5,7 +5,7 @@
 
 /* 左侧菜单栏 */
 #dockLeft {
-    background-color: var(--custom-transparent);
+    background-color: var(--custom-dock-left-background-color);
 }
 
 /* 聚焦的侧边面板标题 */
@@ -15,5 +15,5 @@
 
 /* 右侧菜单栏 */
 #dockRight {
-    background-color: var(--custom-transparent);
+    background-color: var(--custom-dock-right-background-color);
 }

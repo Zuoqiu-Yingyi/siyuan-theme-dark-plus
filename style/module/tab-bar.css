@@ -5,7 +5,7 @@
 
 /*页签*/
 .fn__flex-column.fn__flex.fn__flex-1 .layout-tab-bar {
-    background-color: var(--custom-transparent);
+    background-color: var(--custom-tab-bar-background-color);
     flex-wrap: wrap;
 }
 

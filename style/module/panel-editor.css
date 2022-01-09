@@ -3,6 +3,38 @@
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 
+/* 全屏模式编辑区 */
+.fn__flex-1.protyle.fullscreen .protyle-content {
+    background-color: var(--custom-editor-background-color) !important;
+    backdrop-filter: var(--custom-backdrop-filter);
+}
+
+/* 编辑区 */
+.layout-tab-container {
+    background-color: var(--custom-editor-background-color) !important;
+}
+
+.layout-tab-container .fn__flex-1 {
+    background-color: transparent !important;
+    backdrop-filter: var(--custom-backdrop-filter);
+}
+
+.fn__flex-1.fn__flex [data-type='wnd'] {
+    min-height: 0%;
+    margin: var(--custom-panel-distance);
+    border-radius: var(--custom-border-radius);
+}
+
+/* 导航栏(面包屑) */
+.protyle-breadcrumb {
+    background-color: var(--custom-editor-breadcrumb-bar-background-color);
+    /* box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5); */
+}
+
+/* 导航栏文字 */
+.protyle-breadcrumb__item {
+    line-height: normal;
+}
 
 /*编辑区文件名*/
 .protyle-title__input {

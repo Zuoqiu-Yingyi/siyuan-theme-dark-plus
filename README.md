@@ -32,6 +32,25 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 ```css
 :root {
+
+    /* 标题层级标记与标题之间宽度 */
+    --custom-h-mark-blank: 4px;
+
+    /* 标题层级标记 */
+    --custom-h1-mark: "¹";
+    --custom-h2-mark: "²";
+    --custom-h3-mark: "³";
+    --custom-h4-mark: "⁴";
+    --custom-h5-mark: "⁵";
+    --custom-h6-mark: "⁶";
+
+    /* --custom-h1-mark: "₁";
+    --custom-h2-mark: "₂";
+    --custom-h3-mark: "₃";
+    --custom-h4-mark: "₄";
+    --custom-h5-mark: "₅";
+    --custom-h6-mark: "₆"; */
+
     /* 标题序号缩放 | Title ordinal scaling */
     --custom-h-num-font-size: 50%;
 
@@ -44,30 +63,36 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     --custom-h6-color: var(--custom-color-8-3);
 
     /* 块引用标记 | Block reference mark */
+    /* --custom-quote-l: "「";
+    --custom-quote-r: "」"; */
+
+    /* 
+     * ⸢: U+2E22
+     * ⸥: U+2E25
+     */
     --custom-quote-l: "⸢";
     --custom-quote-r: "⸥";
 
-    /* 背景图片 | Background image
-     * 可使用绝对路径 | You can use absolute paths.
-     */
+    /* 背景图片 | Background image */
     --custom-background-image: url("/appearance/themes/Dark+/images/background (05).jpg");
 
-    /* 对话框背景图片 | Dialog background image
-     * 可使用绝对路径 | You can use absolute paths.
-     */
+    /* 对话框背景图片 | Dialog background image */
     /* 暂未使用 | Not used yet */
     --custom-background-image-dialog: url("/appearance/themes/Dark+/images/background (01).jpg");
 
     /* 背景图片滤波器 | Background image filter */
-    /* --backdrop-filter: blur(16px); */
-    --backdrop-filter: none;
+    /* --custom-backdrop-filter: blur(16px); */
+    --custom-backdrop-filter: none;
 
     /* 悬浮面板滤波器(引用预览, 菜单) | Hover panel filters (reference preview, menu)*/
-    /* --backdrop-flow-filter: blur(16px); */
-    --backdrop-flow-filter: none;
+    /* --custom-backdrop-popover-filter: blur(2px); */
+    --custom-backdrop-popover-filter: none;
 
     /* 悬浮预览窗口最小高度 | The minimum height of the hover preview window */
-    --custom-popover-min-height: none;
+    --custom-popover-min-height: 50%;
+
+    /* 悬浮搜索菜单宽度 | The width of popover search menu */
+    --custom-popover-search-width: auto;
 
     /* 功能面板间隔距离 | Function panel spacing distance */
     --custom-panel-distance: 8px;
@@ -98,9 +123,70 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     --custom-transparent-deeper: #222E;
 
     /* 不透明的组件颜色 | Opaque component color */
-    --custom-components-light: #333;
+    --custom-components-light: #444;
     --custom-components: #222;
     --custom-components-deep: #111;
+
+    /* 左右菜单栏(功能坞)背景颜色 | Left and right menu bar (dock) background color */
+    --custom-dock-left-background-color: var(--custom-transparent);
+    --custom-dock-right-background-color: var(--custom-transparent);
+
+    /* 顶部工具栏背景颜色 | The background color of the top toolbar */
+    --custom-tool-bar-background-color: var(--custom-transparent);
+
+    /* 编辑区背景颜色 | The background color of the edit area */
+    --custom-editor-background-color: var(--custom-transparent);
+
+    /* 编辑区标题栏背景颜色 | The background color of the edit area title bar */
+    --custom-editor-title-bar-background-color: transparent;
+
+    /* 编辑区导航栏(面包屑)背景颜色 | The background color of the edit area navigation bar (breadcrumbs) */
+    --custom-editor-breadcrumb-bar-background-color: var(--custom-components);
+
+    /* 编辑区页签栏背景颜色 | The background color of the  edit area tab bar */
+    --custom-tab-bar-background-color: var(--custom-transparent);
+
+    /* 弹出窗口背景颜色 | The background color of the popover */
+    --custom-popover-background-color: var(--custom-editor-background-color);
+
+    /* 弹出窗口标题栏背景颜色 | The background color of the popover title bar */
+    --custom-popover-title-bar-background-color: var(--custom-editor-title-bar-background-color);
+
+    /* 弹出窗口导航栏(面包屑)背景颜色 | The background color of the popover navigation bar (breadcrumbs) */
+    --custom-popover-breadcrumb-bar-background-color: var(--custom-editor-breadcrumb-bar-background-color);
+
+
+    /* iframe 块背景颜色 | The background color of iframe block */
+    --custom-block-iframe-background-color: var(--custom-transparent);
+
+    /* 代码块背景颜色 | The background color of code block */
+    --custom-block-code-background-color: var(--custom-transparent-lighter);
+
+    /* 嵌入块背景颜色 | The background color of embed block */
+    --custom-block-embed-background-color: var(--custom-transparent-lighter);
+
+    /* 引述块背景颜色 | The background color of quote block */
+    --custom-block-quote-background-color: var(--custom-transparent-lighter);
+
+    /* 超级块背景颜色 | The background color of super block */
+    --custom-block-super-background-color: var(--custom-transparent-lighter);
+
+    /* 表格块背景颜色 | The background color of table block */
+    --custom-block-table-background-color: transparent;
+    /* 表头 | thead */
+    --custom-block-table-thead-background-color: var(--custom-components-light);
+    /* 奇数行 | odd line */
+    --custom-block-table-odd-background-color: var(--custom-transparent-lighter);
+    /* 偶数行 | even line */
+    --custom-block-table-even-background-color: var(--custom-transparent-light);
+
+
+    /* 弹出功能菜单背景颜色 | The background color of the popover function menu */
+    --custom-popover-function-menu-background-color: var(--custom-transparent-deep);
+
+    /* 弹出搜索菜单背景颜色 | The background color of the popover search menu */
+    --custom-popover-search-menu-background-color: var(--custom-transparent-deep);
+
 
     /* 鲜明颜色 | Striking color */
     --custom-striking-color: var(--b3-font-color12);
@@ -171,7 +257,8 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
   - [x] 自定义配置
     - [x] 教程
     - [x] 示例
-  - [x] 在其他主题中引用样式 
+  - [x] 在其他主题中引用样式
+  - [x] 将所有的半透明背景颜色在配置中集中设置
 
 ## 开始 | START
 
