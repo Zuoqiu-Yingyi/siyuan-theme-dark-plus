@@ -375,7 +375,7 @@
     --b3-protyle-inline-tag-background: var(--b3-font-background9);
 
     /* 线条 */
-    --b3-border-color: var(--b3-scroll-color);
+    --b3-border-color: var(--custom-components-light);
 }
 
 /*动画效果*/
