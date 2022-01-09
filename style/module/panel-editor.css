@@ -5,17 +5,18 @@
 
 /* 全屏模式编辑区 */
 .fn__flex-1.protyle.fullscreen .protyle-content {
-    background-color: var(--custom-editor-background-color) !important;
+    background-color: var(--custom-editor-background-color);
     backdrop-filter: var(--custom-backdrop-filter);
 }
 
 /* 编辑区 */
 .layout-tab-container {
-    background-color: var(--custom-editor-background-color) !important;
+    background-color: var(--custom-editor-background-color);
 }
 
-.layout-tab-container .fn__flex-1 {
-    background-color: transparent !important;
+.layout-tab-container .fn__flex-1,
+.layout-tab-container .protyle-preview {
+    background-color: transparent;
     backdrop-filter: var(--custom-backdrop-filter);
 }
 

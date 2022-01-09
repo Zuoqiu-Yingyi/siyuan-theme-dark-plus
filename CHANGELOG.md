@@ -3,6 +3,7 @@
 - 修复文档树色彩渲染 | Fixed document tree color rendering.
 - 添加悬浮预览窗口最小高度设置选项 | Adds the Option to set the minimum height of the hover preview window.
 - 添加更多可自定义的变量 | Add more customizable variables.
+- 导出预览模式添加半透明背景色 | Export preview mode adds a translucent background color.
 
 ## v0.1.6/2022-01-07
 
