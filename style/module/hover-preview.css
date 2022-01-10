@@ -17,8 +17,3 @@
 .block__icons.block__icons--border {
     background-color: var(--custom-popover-title-bar-background-color);
 }
-
-.b3-typography code:not(.hljs),
-.protyle-wysiwyg code:not(.hljs) {
-    background-color: var(--custom-popover-breadcrumb-bar-background-color);
-}
