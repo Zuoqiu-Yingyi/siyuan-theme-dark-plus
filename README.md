@@ -255,7 +255,6 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 }
 ```
 
-
 ## 介绍 | INTRODUCTION
 
 - 在其他主题中引用本主题模块  
@@ -296,6 +295,10 @@ Download the release package in [Releases](https://github.com/Zuoqiu-Yingyi/siyu
 | **[Morganwan90](https://github.com/Morganwan90)**   | [Morganwan90/Lightblue-siyuan-theme](https://github.com/Morganwan90/Lightblue-siyuan-theme)                                                           | *Unknown*         |
 | **[Crowds21](https://github.com/Crowds21)**         | [Crowds21/Cliff-Light](https://github.com/Crowds21/Cliff-Light)                                                                                       | *Unknown*         |
 | **[Zhangwuji](https://ld246.com/member/Zhangwuji)** | [希望能够增加根据大纲生成思维导图的功能](https://ld246.com/article/1640259008838/comment/1640304551938#:~:text=fontxiugaidark.rar)                    | *Unknown*         |
+| **[Morganwan90](https://github.com/Morganwan90)**   | [Morganwan90/Darkblue-siyuan-theme](https://github.com/Morganwan90/Darkblue-siyuan-theme)                                                             | *Unknown*         |
+
+注: 排序不分先后  
+ps: Sort in no particular order.
 
 ## 更改日志 | CHANGE LOGS
 
