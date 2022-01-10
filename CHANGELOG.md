@@ -4,6 +4,7 @@
 - 调整列表辅助线 | Adjust the list guides line.
 - 重命名 `/style/module/indent.css` 为 `/style/module/block-list.css` | Rename `/style/module/indent.css` to `/style/module/block-list.css`.
 - 修复行内代码背景颜色 | Fixed inline code background color.
+- 列表辅助线随字号自动调整 | List guides automatically adjust with the font size.
 
 ## v0.1.7/2022-01-10
 
