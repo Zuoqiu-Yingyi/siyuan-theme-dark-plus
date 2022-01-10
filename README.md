@@ -101,13 +101,6 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
      */
     --custom-separator-distance-compensation: -8px;
 
-    /* 列表辅助线补偿距离 | List guides compensate for distance
-     * 列表辅助线仅在默认 16 px 字号下可以对齐,
-     其他字号需要手动补偿 | List guides can only be aligned at the default 16 px font size,
-     other font sizes need to be manually compensated
-     */
-    --custom-list-guides-line-distance-compensation: 0px;
-
     /* 超级块内边距 | The inner margin of the superblock */
     --custom-block-padding: 8px;
 
@@ -121,14 +114,14 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     --custom-list-guides-line-width: 2px;
 
     /* 列表辅助线与上层节点的接缝 | The seams between the list guides line and the upper layer nodes */
-    --custom-list-guides-line-top-t: -0.75em;
-    --custom-list-guides-line-top-u: -1em;
-    --custom-list-guides-line-top-o: -0.75em;
+    --custom-list-guides-line-top-t: calc(-4px - 1em / 2);
+    --custom-list-guides-line-top-u: calc(-6px - 5em / 8);
+    --custom-list-guides-line-top-o: calc(-8px - 1em / 4);
 
     /* 列表辅助线与本层节点的接缝 | The seams between the list guides line and the local layer nodes */
-    --custom-list-guides-line-right-t: 1.625em;
-    --custom-list-guides-line-right-u: 1.375em;
-    --custom-list-guides-line-right-o: 1.875em;
+    --custom-list-guides-line-right-t: calc(21px + 5em / 16);
+    --custom-list-guides-line-right-u: calc(20px + 1em / 8);
+    --custom-list-guides-line-right-o: calc(16px + 1em);
 
     /* 透明组件颜色 | Transparent component color */
     --custom-transparent-lighter: #3338;
@@ -214,6 +207,9 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
     /* 块引用标志颜色 | Block reference flag color */
     --custom-ref-mark-color: var(--b3-protyle-inline-link-color);
+
+    /* 列表项聚焦颜色 | List item focus color */
+    --custom-list-item-color: var(--b3-protyle-inline-link-color);
 
     /* 空行聚焦提示 | Blank line focus prompt */
     --custom-empty-focus-p: "´･-･)ﾉ㊫";
