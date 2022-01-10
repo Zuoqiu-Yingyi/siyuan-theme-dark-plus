@@ -3,6 +3,7 @@
 - 添加列表当前行辅助线 | Adds a guide to the current row of the list.
 - 调整列表辅助线 | Adjust the list guides line.
 - 重命名 `/style/module/indent.css` 为 `/style/module/block-list.css` | Rename `/style/module/indent.css` to `/style/module/block-list.css`.
+- 修复行内代码背景颜色 | Fixed inline code background color.
 
 ## v0.1.7/2022-01-10
 

@@ -264,7 +264,6 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
   - 在其他主题中引用本主题模块时, 自定义配置文件 `<工作空间>/data/widgets/custom.css` 同样有效  
     Custom configuration files `<workspace>/data/widgets/custom.css` also work when this theme modules were referenced in other theme modules.
 
-
 ## 计划 | TODO
 
 - [ ] 介绍
