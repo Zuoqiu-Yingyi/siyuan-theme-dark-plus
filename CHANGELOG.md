@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+## v0.1.8/2022-01-11
+
 - 添加列表当前行辅助线 | Adds a guide to the current row of the list.
 - 调整列表辅助线 | Adjust the list guides line.
 - 重命名 `/style/module/indent.css` 为 `/style/module/block-list.css` | Rename `/style/module/indent.css` to `/style/module/block-list.css`.
