@@ -1,13 +1,13 @@
-/* 缩进 */
+/* 列表 */
 
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 
 /* 缩进线样式 */
-/* .protyle-wysiwyg [data-node-id].li>[data-node-id]:before {
+.protyle-wysiwyg [data-node-id].li>[data-node-id]:before {
     width: 2px;
     background-color: var(--b3-border-color);
-} */
+}
 
 .protyle-wysiwyg [data-node-id].li>[data-node-id].list:before {
     left: var(--custom-list-guides-distance-compensation);
@@ -32,30 +32,51 @@
 }
 
 .protyle-wysiwyg [data-subtype="t"][data-node-id].li [data-node-id].li:focus-within>.protyle-action:before {
-    right: 1.5em;
     top: -0.875em;
 }
 
 .protyle-wysiwyg [data-subtype="u"][data-node-id].li [data-node-id].li:focus-within>.protyle-action:before {
-    right: 1em;
     top: -1.125em;
 }
 
 .protyle-wysiwyg [data-subtype="o"][data-node-id].li [data-node-id].li:focus-within>.protyle-action:before {
-    right: 1.750em;
     top: -0.75em;
+}
+
+.protyle-wysiwyg [data-node-id].li [data-subtype="t"][data-node-id].li:focus-within>.protyle-action:before {
+    right: 1.5em;
+}
+
+.protyle-wysiwyg [data-node-id].li [data-subtype="u"][data-node-id].li:focus-within>.protyle-action:before {
+    right: 1em;
+}
+
+.protyle-wysiwyg [data-node-id].li [data-subtype="o"][data-node-id].li:focus-within>.protyle-action:before {
+    right: 1.750em;
 }
 
 
 /* 子弹流直线 */
-.protyle-wysiwyg [data-node-id].li [data-node-id].list>[data-node-id]:before {
+.protyle-wysiwyg [data-node-id].li>[data-node-id].list>[data-node-id]:before {
     content: "";
-    position: absolute;
-    top: -0.75em;
-    bottom: 0;
-    border-left: 2px solid transparent;
     left: -1em;
+    bottom: 0;
+    position: absolute;
+    border-left: 2px solid transparent;
 }
+
+.protyle-wysiwyg [data-subtype="t"][data-node-id].li>[data-node-id].list>[data-node-id]:before {
+    top: -0.875em;
+}
+
+.protyle-wysiwyg [data-subtype="u"][data-node-id].li>[data-node-id].list>[data-node-id]:before {
+    top: -1.125em;
+}
+
+.protyle-wysiwyg [data-subtype="o"][data-node-id].li>[data-node-id].list>[data-node-id]:before {
+    top: -0.75em;
+}
+
 
 .protyle-wysiwyg [data-node-id].li [data-node-id].list:focus-within>[data-node-id]:not(:focus-within):before {
     border-color: var(--custom-striking-color);
