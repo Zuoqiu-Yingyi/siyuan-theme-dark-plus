@@ -14,6 +14,16 @@
     left: calc(16px - 1em);
 }
 
+/* 修正列表内标题辅助线错位 */
+.protyle-wysiwyg [data-node-id].li>[data-node-id][data-type="NodeHeading"]:before {
+    left: -21px;
+}
+
+/* 修正列表内嵌入块辅助线错位 */
+.protyle-wysiwyg [data-node-id].li>[data-node-id][data-type="NodeBlockQueryEmbed"]:before {
+    left: -19px;
+}
+
 .protyle-wysiwyg [data-node-id].li>div:nth-child(2):before {
     top: calc(1em + 12px) !important;
     height: calc(100% - 1em) !important;

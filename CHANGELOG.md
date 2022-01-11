@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 修复多行列表项的辅助线渲染错误 | Fixed a guide rendering error for multi-line list items.
+- 修复列表项内标题块与嵌入块辅助线错误问题 | Fixed an issue where header blocks and embedded block guides within list items were incorrect.
 
 ## v0.1.8/2022-01-11
 
