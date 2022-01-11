@@ -114,14 +114,12 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     --custom-list-guides-line-width: 2px;
 
     /* 列表辅助线与上层节点的接缝 | The seams between the list guides line and the upper layer nodes */
-    --custom-list-guides-line-top-t: calc(-4px - 1em / 2);
-    --custom-list-guides-line-top-u: calc(-6px - 5em / 8);
-    --custom-list-guides-line-top-o: calc(-8px - 1em / 4);
+    --custom-list-guides-line-top: -4px;
 
     /* 列表辅助线与本层节点的接缝 | The seams between the list guides line and the local layer nodes */
-    --custom-list-guides-line-right-t: calc(21px + 5em / 16);
-    --custom-list-guides-line-right-u: calc(20px + 1em / 8);
-    --custom-list-guides-line-right-o: calc(16px + 1em);
+    --custom-list-guides-line-right-t: calc(22px + 5em / 16);
+    --custom-list-guides-line-right-u: calc(22px + 5em / 16);
+    --custom-list-guides-line-right-o: calc(14px + 1em);
 
     /* 透明组件颜色 | Transparent component color */
     --custom-transparent-lighter: #3338;
