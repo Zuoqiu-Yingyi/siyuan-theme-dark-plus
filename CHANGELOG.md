@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 修复多行列表项的辅助线渲染错误 | Fixed a guide rendering error for multi-line list items.
+
 ## v0.1.8/2022-01-11
 
 - 添加列表当前行辅助线 | Adds a guide to the current row of the list.
