@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 修复列表项内的多个块级元素中含有列表时高亮辅助线不显示问题 | Fixed an issue where highlighted guides were not displayed when multiple block-level elements within a list item contained lists.
+
 ## v0.1.10/2022-01-17
 
 - 修复列表项内具有多个块级元素时高亮辅助线不显示问题 | Fixed an issue where highlighted guides were not displayed when there were multiple block-level elements within a list item.
