@@ -30,7 +30,7 @@
     padding: 0 0.5em 2px 0.5em;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type="tag"]:before {
+.protyle-wysiwyg [data-node-id] span[data-type="tag"]::before {
     content: '';
     display: inline-block;
     width: 1em;

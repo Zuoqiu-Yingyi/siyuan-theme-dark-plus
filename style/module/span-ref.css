@@ -4,7 +4,7 @@
 @import url(/widgets/custom.css);
 
 /* REF https://github.com/Morganwan90/Lightblue-siyuan-theme/blob/d03e93da4130bfbc941cdd940683e97daf4d7bf1/theme.css#L786 */
-.protyle-wysiwyg [data-node-id] span[data-type="block-ref"]:before {
+.protyle-wysiwyg [data-node-id] span[data-type="block-ref"]::before {
     /*前半部分的符号*/
     content: var(--custom-quote-l);
 
@@ -20,7 +20,7 @@
     text-align: center;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type="block-ref"]:after {
+.protyle-wysiwyg [data-node-id] span[data-type="block-ref"]::after {
     /*后半部分的符号*/
     content: var(--custom-quote-r);
 
