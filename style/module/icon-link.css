@@ -86,6 +86,11 @@
     background-image: url(/appearance/themes/Dark+/icon/siyuan.svg) !important;
 }
 
+.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="ticktick:"]:not(:empty)::before,
+.b3-typography a[href ^="ticktick:"]::before {
+    background-image: url(/appearance/themes/Dark+/icon/ticktick.svg) !important;
+}
+
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="vscode:"]:not(:empty)::before,
 .b3-typography a[href ^="vscode:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/vscode.svg) !important;
