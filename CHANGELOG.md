@@ -4,6 +4,7 @@
 - 将 `:before` 与 `:after` 规范为 `::before` 与 `::after` | Normalize `:before` and `:after` as `::before` and `::after`.
 - 添加滴答清单 URL Scheme 图标 | Add ticktick list URL Scheme icon.
 - 添加侧边面板条目显示选项(过长条目自动换行显示) | Add side panel item display options (word wrap display).
+- 新增脚本加载函数 `addScript` | New script load function `addScript`.
 
 ## v0.1.10/2022-01-17
 
