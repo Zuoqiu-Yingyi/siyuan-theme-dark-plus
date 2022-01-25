@@ -223,6 +223,22 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     --custom-empty-u: "这里是空的 (´･-･)ﾉ◉";
     --custom-empty-o: "这里是空的 (´･-･)ﾉ①";
 
+    /* 面板内字段名显示样式 | The field name display style within the panel */
+
+    /* 折叠显示 | Collapsed display when the document name is too long */
+    /* --custom-backlink-display: table-cell; */
+    /* --custom-bookmark-display: table-cell; */
+    /* --custom-file-display: table-cell; */
+    /* --custom-outline-display: table-cell; */
+    /* --custom-tag-display: table-cell; */
+
+    /* 过长时仅显示部分名称(默认样式) | Only partial names are displayed when too long (default style) */
+    --custom-backlink-display: -webkit-box;
+    --custom-bookmark-display: -webkit-box;
+    --custom-file-display: -webkit-box;
+    --custom-outline-display: -webkit-box;
+    --custom-tag-display: -webkit-box;
+
     /* 文档树匹配标题颜色(文档标题尾匹配) | Document tree match header color (document end-of-title match) */
     /* * */
     --custom-doctree-end-asterisk-color: var(--b3-card-success-color);

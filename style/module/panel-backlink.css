@@ -1,0 +1,9 @@
+/* 反链面板 */
+
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+/* 过长反链条目显示样式 */
+.sy__backlink .b3-list-item__text {
+    display: var(--custom-backlink-display);
+}
