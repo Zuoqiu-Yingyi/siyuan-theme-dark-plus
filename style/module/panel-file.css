@@ -1,0 +1,76 @@
+/* 文档面板 */
+
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+/* 过长文档名显示样式 */
+.sy__file .b3-list-item__text {
+    display: var(--custom-file-display);
+}
+
+/* 文档名起始 */
+/* ^* */
+.sy__file li[data-type="navigation-file"][data-name ^="*"]>.b3-list-item__text {
+    color: var(--custom-doctree-begin-asterisk-color);
+}
+
+/* ^# */
+.sy__file li[data-type="navigation-file"][data-name ^="#"]>.b3-list-item__text {
+    color: var(--custom-doctree-begin-sharp-color);
+}
+
+/* ^? */
+.sy__file li[data-type="navigation-file"][data-name ^="%?"]>.b3-list-item__text {
+    color: var(--custom-doctree-begin-question-color);
+}
+
+/* ^! */
+.sy__file li[data-type="navigation-file"][data-name ^="!"]>.b3-list-item__text {
+    color: var(--custom-doctree-begin-exclamation-color);
+}
+
+/* ^@ */
+.sy__file li[data-type="navigation-file"][data-name ^="@"]>.b3-list-item__text {
+    color: var(--custom-doctree-begin-at-color);
+}
+
+/* ^. */
+.sy__file li[data-type="navigation-file"][data-name ^="."]>.b3-list-item__text {
+    color: var(--custom-doctree-begin-period-color);
+}
+
+/** 文档名包含
+ *  data-name *="<设置的字符的URL编码>"
+ */
+
+/* .sy__file li[data-type="navigation-file"][data-name *="XXX"]>.b3-list-item__text {
+    color: blue;
+} */
+
+/** 文档名末尾
+ *  data-name $="<设置的字符的URL编码>.sy"
+ */
+
+/* .sy__file li[data-type="navigation-file"][data-name $="XXX.sy"]>.b3-list-item__text {
+    color: red;
+} */
+
+/* * $ */
+.sy__file li[data-type="navigation-file"][data-name $="*.sy"]>.b3-list-item__text {
+    color: var(--custom-doctree-end-asterisk-color);
+}
+
+/* # $ */
+.sy__file li[data-type="navigation-file"][data-name $="#.sy"]>.b3-list-item__text {
+    color: var(--custom-doctree-end-sharp-color);
+}
+
+/* ? $ */
+.sy__file li[data-type="navigation-file"][data-name $="?.sy"]>.b3-list-item__text {
+    color: var(--custom-doctree-end-question-color);
+}
+
+/* ! $ */
+.sy__file li[data-type="navigation-file"][data-name $="!.sy"]>.b3-list-item__text {
+    color: var(--custom-doctree-end-exclamation-color);
+}

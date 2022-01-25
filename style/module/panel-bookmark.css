@@ -1,0 +1,9 @@
+/* 书签面板 */
+
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+/* 过长书签条目显示样式 */
+.sy__bookmark .b3-list-item__text {
+    display: var(--custom-bookmark-display);
+}
