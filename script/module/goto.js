@@ -34,15 +34,13 @@ function goto(id) {
         link.remove()
     }
     else {
-        setTimeout(async () => 窗口内打开思源块(id), 100)
+        setTimeout(async () => goto(id), 100)
     }
-
-
 }
 async function jumpToID() {
-    let url参数 = urlParser(window.location.href)
-    if (url参数) {
-        let id = url参数.id
+    let params = urlParser(window.location.href)
+    if (params) {
+        let id = params.id
         if (id) {
             this.goto(id)
         }
