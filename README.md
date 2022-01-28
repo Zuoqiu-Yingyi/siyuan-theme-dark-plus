@@ -6,6 +6,7 @@
 ![GitHub Release Date](https://img.shields.io/github/release-date/Zuoqiu-Yingyi/siyuan-theme-dark-plus)
 ![GitHub](https://img.shields.io/github/license/Zuoqiu-Yingyi/siyuan-theme-dark-plus)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Zuoqiu-Yingyi/siyuan-theme-dark-plus)
+![GitHub repo size](https://img.shields.io/github/repo-size/Zuoqiu-Yingyi/siyuan-theme-dark-plus)
 ![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hy/Zuoqiu-Yingyi/siyuan-theme-dark-plus?label=hits)
 ![GitHub all releases](https://img.shields.io/github/downloads/Zuoqiu-Yingyi/siyuan-theme-dark-plus/total)
 
@@ -273,6 +274,11 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     Paste the desired module into `theme.css` file or `custom.css` file for another theme in the `<workspace>/conf/appearance/themes/Dark+/theme.css` file.
   - 在其他主题中引用本主题模块时, 自定义配置文件 `<工作空间>/data/widgets/custom.css` 同样有效  
     Custom configuration files `<workspace>/data/widgets/custom.css` also work when this theme modules were referenced in other theme modules.
+- 使用 URL 参数 `id=<内容块 ID>` 从浏览器外跳转到 Web 端的指定块(必须已经打开至少一个页签)  
+  Jump from outside the browser to a specified block on the web side using the URL parameter `id=<content block ID>` (at least one tab must already be open)
+  - 示例: `http(s)://host:port/stage/build/desktop/?id=20220128124308-bancmue`  
+    exanple: `http(s)://host:port/stage/build/desktop/?id=20220128124308-bancmue`
+
 
 ## 计划 | TODO
 
