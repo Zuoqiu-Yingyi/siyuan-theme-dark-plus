@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 使用 URL 参数 `id` 跳转到指定的块 | Use the URL parameter `id` to jump to the specified block.
+- 移除废弃的 `MouseEvent.initMouseEvent()` 方法 | Remove the `MouseEvent.initMouseEvent()` deprecated method.
 
 ## v0.1.11/2022-01-25
 

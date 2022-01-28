@@ -28,13 +28,11 @@ function goto(id) {
     let target = doc.querySelector(".protyle-wysiwyg div[data-node-id] div[contenteditable]")
     if (target) {
         target.appendChild(link)
-        let event = doc.createEvent('MouseEvents')
-        event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-        link.dispatchEvent(event);
+        link.click()
         link.remove()
     }
     else {
-        setTimeout(async () => goto(id), 100)
+        setTimeout(async () => goto(id), 1000)
     }
 }
 async function jumpToID() {
