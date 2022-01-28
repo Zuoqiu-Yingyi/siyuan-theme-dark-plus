@@ -1,4 +1,4 @@
-function addScript(url) {
+function loadScript(url) {
     let script = document.createElement('script');
     script.setAttribute('type', 'module');
     script.setAttribute('src', url);
@@ -6,5 +6,5 @@ function addScript(url) {
 }
 
 (function () {
-
+    loadScript("/appearance/themes/Dark+/script/module/goto.js");
 })()

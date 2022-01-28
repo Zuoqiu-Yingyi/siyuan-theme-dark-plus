@@ -1,6 +1,8 @@
 # 更改日志 | CHANGE LOG
 
-## v0.1.10/2022-01-25
+- 使用 URL 参数 `id` 跳转到指定的块 | Use the URL parameter `id` to jump to the specified block.
+
+## v0.1.11/2022-01-25
 
 - 修复列表项内的多个块级元素中含有列表时高亮辅助线不显示问题 | Fixed an issue where highlighted guides were not displayed when multiple block-level elements within a list item contained lists.
 - 将 `:before` 与 `:after` 规范为 `::before` 与 `::after` | Normalize `:before` and `:after` as `::before` and `::after`.
