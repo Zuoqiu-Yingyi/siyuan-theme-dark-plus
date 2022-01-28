@@ -6,7 +6,7 @@ function urlParser(url) {
     const queryObj = {};
     const reg = /[?&]([^=&#]+)=([^&#]*)/g;
     const queryArr = url.match(reg) || [];
-    console.log(queryArr)
+    // console.log(queryArr)
     for (const i in queryArr) {
         if (Object.hasOwnProperty.call(queryArr, i)) {
             const query = queryArr[i].split('=');
@@ -21,7 +21,7 @@ function urlParser(url) {
 }
 function goto(id) {
     let doc = window.document
-    console.log(doc)
+    // console.log(doc)
     let link = doc.createElement("span")
     link.setAttribute("data-type", "block-ref")
     link.setAttribute("data-id", id)
@@ -42,7 +42,7 @@ async function jumpToID() {
     if (params) {
         let id = params.id
         if (id) {
-            this.goto(id)
+            goto(id)
         }
     }
 }
