@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+## v0.2.0/2022-01-29
+
 - 使用 URL 参数 `id` 跳转到指定的块 | Use the URL parameter `id` to jump to the specified block.
 - 移除废弃的 `MouseEvent.initMouseEvent()` 方法 | Remove the `MouseEvent.initMouseEvent()` deprecated method.
 - 添加连接到静态目录的链接图标 | Add link icons that connect to a static directory.
