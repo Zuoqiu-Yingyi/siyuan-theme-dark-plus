@@ -2,6 +2,25 @@
 
 - 使用 URL 参数 `id` 跳转到指定的块 | Use the URL parameter `id` to jump to the specified block.
 - 移除废弃的 `MouseEvent.initMouseEvent()` 方法 | Remove the `MouseEvent.initMouseEvent()` deprecated method.
+- 添加连接到静态目录的链接图标 | Add link icons that connect to a static directory.
+  - `assets/`: 资源文件目录 | Asset file directory
+    - `data/**/assets/`
+  - `emojis/`: 表情文件目录 | Emoji file directory
+    - `data/emojis/`
+  - `widgets/`: 挂件文件目录 | Widget file directory
+    - `data/widgets/`
+  - `appearance/`: 外观文件目录 | Appearance file directory
+    - `conf/appearance/`
+  - `export/`: 导出文件目录 | Export file directory
+    - `temp/export/`
+- 添加连接到资源文件夹内常见文件的链接图标 | Adds link icons that connect to common files within the assets folder.
+  - Word
+  - PowerPoint
+  - Excel
+  - Image
+  - Audio
+  - Video
+  - ZIP
 
 ## v0.1.11/2022-01-25
 
