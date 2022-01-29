@@ -268,6 +268,27 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 ## 介绍 | INTRODUCTION
 
+- 指向到思源 Web 静态文件服务目录的超链接显示图标  
+  Hyperlinks to the Siyuan Web Static File Service directory displays icons
+  - `assets/`: 资源文件目录 | Asset file directory
+    - `data/**/assets/`
+  - `emojis/`: 表情文件目录 | Emoji file directory
+    - `data/emojis/`
+  - `widgets/`: 挂件文件目录 | Widget file directory
+    - `data/widgets/`
+  - `appearance/`: 外观文件目录 | Appearance file directory
+    - `conf/appearance/`
+  - `export/`: 导出文件目录 | Export file directory
+    - `temp/export/`
+- 指向资源文件目录下常见文件的超链接显示图标  
+  Hyperlinks to common files under the resource file directory display icons
+  - Word
+  - PowerPoint
+  - Excel
+  - Image
+  - Audio
+  - Video
+  - ZIP
 - 在其他主题中引用本主题模块  
   Reference this theme modules in other themes.
   - 在 `<工作空间>/conf/appearance/themes/Dark+/theme.css` 文件中直接粘贴所需模块到其他主题的 `theme.css` 文件或 `custom.css` 文件中  
