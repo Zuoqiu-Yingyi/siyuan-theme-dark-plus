@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 编辑区内边距固定为自定义值 | The padding of editor pannel are fixed to custom values.
+
 ## v0.2.0/2022-01-29
 
 - 使用 URL 参数 `id` 跳转到指定的块 | Use the URL parameter `id` to jump to the specified block.
