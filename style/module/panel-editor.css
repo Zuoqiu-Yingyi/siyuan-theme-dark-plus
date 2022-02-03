@@ -26,6 +26,24 @@
     border-radius: var(--custom-border-radius);
 }
 
+/* 编辑区内部边距 */
+/* 文档标志 */
+.protyle-background__iconw {
+    left: var(--custom-editor-padding-left) !important;
+}
+/* 标题 */
+.protyle-content>.protyle-title {
+    margin-left: var(--custom-editor-padding-left) !important;
+    margin-right: var(--custom-editor-padding-right) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+/* 内容 */
+.protyle-content>.protyle-wysiwyg {
+    padding-left: var(--custom-editor-padding-left) !important;
+    padding-right: var(--custom-editor-padding-right) !important;
+}
+
 /* 导航栏(面包屑) */
 .protyle-breadcrumb {
     background-color: var(--custom-editor-breadcrumb-bar-background-color);

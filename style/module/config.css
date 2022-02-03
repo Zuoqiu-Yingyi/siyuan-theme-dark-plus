@@ -213,6 +213,10 @@
     /* 编辑区导航栏(面包屑)背景颜色 | The background color of the edit area navigation bar (breadcrumbs) */
     --custom-editor-breadcrumb-bar-background-color: var(--custom-components);
 
+    /* 编辑区内边距 | Padding of editor pannel */
+    --custom-editor-padding-left: 24px;
+    --custom-editor-padding-right: 24px;
+
     /* 编辑区页签栏背景颜色 | The background color of the  edit area tab bar */
     --custom-tab-bar-background-color: var(--custom-transparent);
 

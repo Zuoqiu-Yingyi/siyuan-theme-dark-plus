@@ -10,6 +10,7 @@ body.fn__flex-column {
     background-repeat: no-repeat !important;
     background-position: center !important;
     background-attachment: fixed !important;
+    background-color: transparent !important;
     border: none;
 }
 
@@ -20,4 +21,5 @@ body.fn__flex-column {
     background-repeat: no-repeat !important;
     background-position: center !important;
     background-attachment: fixed !important;
+    background-color: transparent !important;
 }
