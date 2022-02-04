@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 编辑区内边距固定为自定义值 | The padding of editor pannel are fixed to custom values.
+- 修复文档树标题颜色模块引用问题 | Fixed an issue with document tree title color module references.
 
 ## v0.2.0/2022-01-29
 
