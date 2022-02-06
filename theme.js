@@ -7,4 +7,5 @@ function loadScript(url) {
 
 (function () {
     loadScript("/appearance/themes/Dark+/script/module/goto.js");
+    loadScript("/appearance/themes/Dark+/script/module/style.js");
 })()
