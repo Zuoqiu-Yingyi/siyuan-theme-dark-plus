@@ -1,0 +1,30 @@
+/* 自定义文字排版模式 writing-mode
+REF [CSS writing-mode 属性 | 菜鸟教程](https: //www.runoob.com/cssref/css-pr-writing-mode.html)
+ * horizontal-tb：(默认)水平方向自上而下的书写方式。即 left-right-top-bottom
+ * vertical-rl：垂直方向自右而左的书写方式 | top-bottom-right-left
+ * vertical-lr：垂直方向自左而右的书写方式 | top-bottom-left-right
+ * sideways-rl：内容垂直方向从上到下排列
+ * sideways-lr：内容垂直方向从下到上排列
+ */
+
+.protyle-wysiwyg [data-node-id][custom-writing-mode="horizontal-tb"] {
+    writing-mode: horizontal-tb;
+}
+
+.protyle-wysiwyg [data-node-id][custom-writing-mode="vertical-rl"] {
+    writing-mode: vertical-rl;
+}
+
+.protyle-wysiwyg [data-node-id][custom-writing-mode="vertical-lr"] {
+    writing-mode: vertical-lr;
+}
+
+/* 无效 */
+.protyle-wysiwyg [data-node-id][custom-writing-mode="sideways-rl"] {
+    writing-mode: sideways-rl;
+}
+
+/* 无效 */
+.protyle-wysiwyg [data-node-id][custom-writing-mode="sideways-lr"] {
+    writing-mode: sideways-lr;
+}

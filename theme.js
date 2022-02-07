@@ -5,7 +5,9 @@ function loadScript(url) {
     document.getElementsByTagName('head')[0].appendChild(script);
 }
 
-(function () {
+(() => {
     loadScript("/appearance/themes/Dark+/script/module/goto.js");
     loadScript("/appearance/themes/Dark+/script/module/style.js");
+    loadScript("/widgets/custom.js");
+    // loadScript("/appearance/themes/Dark+/script/test/listener.js");
 })()
