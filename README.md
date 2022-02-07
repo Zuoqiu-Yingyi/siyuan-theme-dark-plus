@@ -357,6 +357,8 @@ export { custom };
       - `幼圆`
   - 其他自定义样式  
     Other custom attributes.
+    - 这些样式不会自动加载  
+      These styles are not loaded automatically.
     - 将自定义样式名添加到 `<工作空间>/data/widgets/custom.js` 的 `custom.styles`  
       Add the custom style name to `custom.styles` in `<workspace>/data/widgets/custom.js`.
     - 在块的自定义属性中添加自定义样式名与样式值  
