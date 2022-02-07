@@ -275,13 +275,13 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 #### custom.js
 
 ```js
-const config = {
+const custom = {
     styles: [
         'font-size', // 将块自定义属性 custom-font-size 渲染为该块的 css 属性
     ],
 };
 
-export { config };
+export { custom };
 
 ```
 
@@ -355,6 +355,14 @@ export { config };
       - `微软雅黑`
       - `新宋体`
       - `幼圆`
+  - 其他自定义样式  
+    Other custom attributes.
+    - 将自定义样式名添加到 `<工作空间>/data/widgets/custom.js` 的 `custom.styles`  
+      Add the custom style name to `custom.styles` in `<workspace>/data/widgets/custom.js`.
+    - 在块的自定义属性中添加自定义样式名与样式值  
+      Add custom style names and style values to the block's custom attributes.
+    - 使用快捷键 <kbd>F1</kbd> 渲染当前所有块的自定义样式  
+      Use the hot key <kbd>F1</kbd> to render the custom style of all current blocks.
 
 ## 计划 | TODO
 
