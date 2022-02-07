@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.3.0/2022-02-07
+
+- [v0.2.0 <=> v0.3.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.2.0...v0.3.0)
 - 编辑区内边距固定为自定义值 | The padding of editor pannel are fixed to custom values.
 - 修复文档树标题颜色模块引用问题 | Fixed an issue with document tree title color module references.
 - 使用自定义块属性渲染块样式 | Use custom block attributes to render the block style.
