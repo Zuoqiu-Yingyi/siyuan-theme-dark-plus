@@ -28,8 +28,14 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
    Create a file `<workspace>/data/widgets/custom.css`
 2. 在文件 `<工作空间>/data/widgets/custom.css` 中定义的值将覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/module/config.css` 中对应的值  
    The value defined in file `<workspace>/data/widgets/custom.css` overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/module/config.css`.
+3. 创建文件 `<工作空间>/data/widgets/custom.js`  
+   Create a file `<workspace>/data/widgets/custom.js`
+4. 在文件 `<工作空间>/data/widgets/custom.js` 中定义的值将覆盖 `<工作空间>/conf/appearance/themes/Dark+/script/module/config.js` 中对应的值  
+   The value defined in file `<workspace>/data/widgets/custom.js` overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/script/module/config.js`.
 
 ### 配置示例 | CONFIG EXAMPLE
+
+#### custom.css
 
 ```css
 :root {
@@ -266,6 +272,19 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 }
 ```
 
+#### custom.js
+
+```js
+const config = {
+    styles: [
+        'font-size', // 将块自定义属性 custom-font-size 渲染为该块的 css 属性
+    ],
+};
+
+export { config };
+
+```
+
 ## 介绍 | INTRODUCTION
 
 - 指向到思源 Web 静态文件服务目录的超链接显示图标  
@@ -299,7 +318,43 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
   Jump from outside the browser to a specified block on the web side using the URL parameter `id=<content block ID>` (at least one tab must already be open)
   - 示例: `http(s)://host:port/stage/build/desktop/?id=20220128124308-bancmue`  
     exanple: `http(s)://host:port/stage/build/desktop/?id=20220128124308-bancmue`
-
+- 块自定义属性
+  Block custom attributes.
+  - `style`
+    - 块样式 | block style
+    - 设置后单击 <kbd>确认</kbd> 按钮将该自定义属性设置为块样式属性  
+      After setting, click the <kbd>Confirm</kbd> button to set the custom attribute to a block style attribute.
+  - `writing-mode`
+    - 文本排版模式 | text layout mode
+    - 属性值 | attribute value
+      - `horizontal-tb`: (默认)水平方向自上而下的书写方式 | (default)left-right-top-bottom
+      - `vertical-rl`: 垂直方向自右而左的书写方式 | top-bottom-right-left
+      - `vertical-lr`: 垂直方向自左而右的书写方式 | top-bottom-left-right
+  - `font-family`
+    - 字体 | font
+    - 属性值: 字体名称  
+      Attribute value: Font name
+      - `等线`
+      - `方正舒体`
+      - `方正姚体`
+      - `仿宋`
+      - `黑体`
+      - `华文彩云`
+      - `华文仿宋`
+      - `华文琥珀`
+      - `华文楷体`
+      - `华文隶书`
+      - `华文宋体`
+      - `华文细黑`
+      - `华文新魏`
+      - `华文行楷`
+      - `华文中宋`
+      - `楷体`
+      - `隶属`
+      - `宋体`
+      - `微软雅黑`
+      - `新宋体`
+      - `幼圆`
 
 ## 计划 | TODO
 

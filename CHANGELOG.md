@@ -3,6 +3,11 @@
 - 编辑区内边距固定为自定义值 | The padding of editor pannel are fixed to custom values.
 - 修复文档树标题颜色模块引用问题 | Fixed an issue with document tree title color module references.
 - 使用自定义块属性渲染块样式 | Use custom block attributes to render the block style.
+- 添加块自定义属性样式 | Add block custom attribute styles.
+  - `font-family`: 字体 | font.
+  - `writing-mode`: 文本排版模式 | Text layout mode.
+- 使用文件 `/widgets/custom.js` 覆盖文件 `/appearance/themes/Dark+/script/module/config.js` 中的配置 | Use file `/widgets/custom.js` to overwrite the configuration in file `/appearance/themes/Dark+/script/module/config.js`.
+- 使用快捷键 <kbd>F1</kbd> 渲染自定义块属性指定的样式 | Use the hot key <kbd>F1</kbd> to render the style specified by the custom block attribute.
 
 ## v0.2.0/2022-01-29
 
