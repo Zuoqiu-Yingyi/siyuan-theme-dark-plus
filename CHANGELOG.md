@@ -1,5 +1,9 @@
 # 更改日志 | CHANGE LOG
 
+- 使用自定义属性 `type` = `query` 的 SQL 代码块从思源数据库中进行查询并将查询结果在其下方渲染为表格 | Use the sql code block of the custom attribute `type` = `query` to query from the siyuan database and render the query results below the code block as a table.
+  - 默认快捷键为 <kbd>Ctrl + F2</kbd> | The default shortcut key is <kbd>Ctrl + F2</kbd>.
+- 将渲染自定义块属性指定的样式的默认快捷键更改为 <kbd>Ctrl + F1</kbd> | Changes the default shortcut key for rendering the style specified by the custom block attribute to <kbd>Ctrl + F1</kbd>.
+
 ## v0.3.0/2022-02-07
 
 - [v0.2.0 <=> v0.3.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.2.0...v0.3.0)
