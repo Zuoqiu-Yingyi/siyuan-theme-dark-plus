@@ -107,38 +107,38 @@
 
 /* 调整标题空行光标位置 */
 
-.protyle-wysiwyg .h1>[spellcheck="false"]:focus:empty {
+.protyle-wysiwyg .h1>[spellcheck="false"]:empty {
     padding-left: 0.5em;
 }
 
-.protyle-wysiwyg .h2>[spellcheck="false"]:focus:empty {
+.protyle-wysiwyg .h2>[spellcheck="false"]:empty {
     padding-left: 1em;
 }
 
-.protyle-wysiwyg .h3>[spellcheck="false"]:focus:empty {
+.protyle-wysiwyg .h3>[spellcheck="false"]:empty {
     padding-left: 1.5em;
 }
 
-.protyle-wysiwyg .h4>[spellcheck="false"]:focus:empty {
+.protyle-wysiwyg .h4>[spellcheck="false"]:empty {
     padding-left: 2em;
 }
 
-.protyle-wysiwyg .h5>[spellcheck="false"]:focus:empty {
+.protyle-wysiwyg .h5>[spellcheck="false"]:empty {
     padding-left: 2.5em;
 }
 
-.protyle-wysiwyg .h6>[spellcheck="false"]:focus:empty {
+.protyle-wysiwyg .h6>[spellcheck="false"]:empty {
     padding-left: 3em;
 }
 
 /* 移除列表中标题的空行光标位置缩进 */
 
-.protyle-wysiwyg [data-node-id].li>.protyle-action~.h1>[spellcheck="false"]:focus:empty,
-.protyle-wysiwyg [data-node-id].li>.protyle-action~.h2>[spellcheck="false"]:focus:empty,
-.protyle-wysiwyg [data-node-id].li>.protyle-action~.h3>[spellcheck="false"]:focus:empty,
-.protyle-wysiwyg [data-node-id].li>.protyle-action~.h4>[spellcheck="false"]:focus:empty,
-.protyle-wysiwyg [data-node-id].li>.protyle-action~.h5>[spellcheck="false"]:focus:empty,
-.protyle-wysiwyg [data-node-id].li>.protyle-action~.h6>[spellcheck="false"]:focus:empty {
+.protyle-wysiwyg [data-node-id].li>.protyle-action~.h1>[spellcheck="false"]:empty,
+.protyle-wysiwyg [data-node-id].li>.protyle-action~.h2>[spellcheck="false"]:empty,
+.protyle-wysiwyg [data-node-id].li>.protyle-action~.h3>[spellcheck="false"]:empty,
+.protyle-wysiwyg [data-node-id].li>.protyle-action~.h4>[spellcheck="false"]:empty,
+.protyle-wysiwyg [data-node-id].li>.protyle-action~.h5>[spellcheck="false"]:empty,
+.protyle-wysiwyg [data-node-id].li>.protyle-action~.h6>[spellcheck="false"]:empty {
     padding-left: 0;
 }
 
