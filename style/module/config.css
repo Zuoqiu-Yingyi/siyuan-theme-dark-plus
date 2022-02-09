@@ -137,11 +137,11 @@
     --custom-quote-r: "⸥";
 
     /* 背景图片 | Background image */
-    --custom-background-image: url("/appearance/themes/Dark+/images/background (05).jpg");
+    --custom-background-image: url("/appearance/themes/Dark+/image/background (05).jpg");
 
     /* 对话框背景图片 | Dialog background image */
     /* 暂未使用 | Not used yet */
-    --custom-background-image-dialog: url("/appearance/themes/Dark+/images/background (01).jpg");
+    --custom-background-image-dialog: url("/appearance/themes/Dark+/image/background (01).jpg");
 
     /* 背景图片滤波器 | Background image filter */
     /* --custom-backdrop-filter: blur(16px); */

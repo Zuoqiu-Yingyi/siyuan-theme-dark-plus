@@ -49,8 +49,8 @@ export function timestampFormat(timestamp) {
 export function markdown2span(markdown) {
     // markdown 转 span
     if (typeof (markdown) == 'string') {
-        markdown.replace('|', '\\|');
-        return ReplaceCRLF(markdown, '<br />');
+        let temp = markdown.replaceAll('|', '\\|');
+        return ReplaceCRLF(temp, '<br />');
     }
     return markdown;
 }

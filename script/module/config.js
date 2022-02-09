@@ -21,11 +21,12 @@ export var config = {
         },
         maxlen: 64, // 查询结果每个字段最大长度
         maxrow: 3, // 查询结果每个字段最大行数
-        limit: 'len', // 查询结果字段限制, (null 为不限制, 'len' 为限制长度, 'row' 为限制行数)
+        limit: 'row', // 查询结果字段限制, (null 为不限制, 'len' 为限制长度, 'row' 为限制行数)
         CRLF: '<br />', // 换行符替换
         space: ' ', // 空白字符替换
         fields: [ // 需渲染的 blocks 表的字段, 顺序分先后
-            'content', // 去除了 Markdown 标记符的文本
+            // 'content', // 去除了 Markdown 标记符的文本
+            'markdown', // 包含完整 Markdown 标记符的文本
             'created', // 创建时间
             'updated', // 更新时间
             'type', // 内容块类型，参考((20210210103523-ombf290 "类型字段"))
@@ -45,10 +46,10 @@ export var config = {
             // 'ial', // 内联属性列表，形如 `{: name="value"}`
             // 'sort', // 排序权重, 数值越小排序越靠前
 
-            //// 'markdown', // 包含完整 Markdown 标记符的文本(该字段无法正常渲染)
         ],
         align: { // 查询结果字段对齐样式(':-' 左对齐, ':-:' 居中, '-:' 右对齐)
             content: ':-',
+            markdown: ':-',
             created: ':-:',
             updated: ':-:',
             type: ':-:',
@@ -67,8 +68,6 @@ export var config = {
             subtype: '-:',
             ial: ':-',
             sort: '-:',
-
-            markdown: ':-',
         },
         handler: { // 查询结果字段处理方法
             content: (row) => {
@@ -79,6 +78,16 @@ export var config = {
                         return markdown2span(ReplaceCRLF(cutString(row.content, undefined, config.query.maxrow), config.query.CRLF));
                         default:
                         return markdown2span(row.content);
+                }
+            },
+            markdown: (row) => {
+                switch (config.query.limit) {
+                    case 'len':
+                        return markdown2span(cutString(ReplaceSpace(row.markdown, config.query.space), config.query.maxlen));
+                    case 'row':
+                        return markdown2span(ReplaceCRLF(cutString(row.markdown, undefined, config.query.maxrow), config.query.CRLF));
+                    default:
+                        return markdown2span(row.markdown);
                 }
             },
             created: (row) => {
@@ -148,17 +157,6 @@ export var config = {
             },
             sort: (row) => {
                 return row.sort;
-            },
-
-            markdown: (row) => {
-                switch (config.query.limit) {
-                    case 'len':
-                        return markdown2span(cutString(ReplaceSpace(row.markdown, config.query.space), config.query.maxlen));
-                    case 'row':
-                        return markdown2span(ReplaceCRLF(cutString(row.markdown, undefined, config.query.maxrow), config.query.CRLF));
-                    default:
-                        return markdown2span(row.markdown);
-                }
             },
         },
         map: { // 映射表
