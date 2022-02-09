@@ -22,6 +22,16 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 ![preview](./preview.png)
 
+### 查询 | QUERY
+
+#### 内容块查询 | CONTENT BLOCK QUERY
+
+![内容块查询](image/README/1644419419908.png)
+
+#### 数据库查询 | DATABUSE QUERY
+
+![数据库查询](image/README/1644420736088.png)
+
 ## 自定义配置 | CUSTOM CONFIG
 
 1. 创建文件 `<工作空间>/data/widgets/custom.css`  
@@ -38,6 +48,10 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 #### custom.css
 
 ```css
+/* 路径 | Path
+ * <工作空间>/data/widgets/custom.css
+ * <workspace>/data/widgets/custom.css
+ */
 :root {
     /* 标题层级标记与标题之间宽度 */
     --custom-h-mark-blank: 4px;
@@ -80,11 +94,11 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     --custom-quote-r: "⸥";
 
     /* 背景图片 | Background image */
-    --custom-background-image: url("/appearance/themes/Dark+/images/background (05).jpg");
+    --custom-background-image: url("/appearance/themes/Dark+/image/background (05).jpg");
 
     /* 对话框背景图片 | Dialog background image */
     /* 暂未使用 | Not used yet */
-    --custom-background-image-dialog: url("/appearance/themes/Dark+/images/background (01).jpg");
+    --custom-background-image-dialog: url("/appearance/themes/Dark+/image/background (01).jpg");
 
     /* 背景图片滤波器 | Background image filter */
     /* --custom-backdrop-filter: blur(16px); */
@@ -96,6 +110,9 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
     /* 悬浮预览窗口最小高度 | The minimum height of the hover preview window */
     --custom-popover-min-height: 50%;
+
+    /* 悬浮预览窗口最大宽度 | The maximum width of the hover preview window */
+    --custom-popover-max-width: 50%;
 
     /* 悬浮搜索菜单宽度 | The width of popover search menu */
     --custom-popover-search-width: auto;
@@ -275,13 +292,219 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 #### custom.js
 
 ```js
-const custom = {
-    styles: [
-        'font-size', // 将块自定义属性 custom-font-size 渲染为该块的 css 属性
-    ],
-};
+/* 路径 | Path
+ * <工作空间>/data/widgets/custom.js
+ * <workspace>/data/widgets/custom.js
+ */
 
-export { custom };
+export var config = {
+    token: '', // API token, 无需填写
+    styles: [
+        // 渲染的自定义样式
+        'font-size',
+    ],
+    query: { // 查询配置
+        regs: {
+            blocks: /^\s*SELECT\s+\*\s+FROM\s+blocks.*/i, // 块查询的正则表达式
+        },
+        maxlen: 64, // 查询结果每个字段最大长度
+        maxrow: 3, // 查询结果每个字段最大行数
+        limit: 'row', // 查询结果字段限制, (null 为不限制, 'len' 为限制长度, 'row' 为限制行数)
+        CRLF: '<br />', // 换行符替换
+        space: ' ', // 空白字符替换
+        fields: [ // 需渲染的 blocks 表的字段, 顺序分先后
+            // 'content', // 去除了 Markdown 标记符的文本
+            'markdown', // 包含完整 Markdown 标记符的文本
+            'created', // 创建时间
+            'updated', // 更新时间
+            'type', // 内容块类型，参考((20210210103523-ombf290 "类型字段"))
+            'hpath', // 人类可读的内容块所在文档路径
+
+            // 'id', // 内容块 ID
+            // 'parent_id', // 双亲块 ID, 如果内容块是文档块则该字段为空
+            // 'root_id', // 文档块 ID
+            // 'box', // 笔记本 ID
+            // 'path', // 内容块所在文档路径
+            // 'name', // 内容块名称
+            // 'alias', // 内容块别名
+            // 'memo', // 内容块备注
+            // 'hash', // content 字段的 SHA256 校验和
+            // 'length', // markdown 字段文本长度
+            // 'subtype', // 内容块子类型，参考((20210210103411-tcbcjja "子类型字段"))
+            // 'ial', // 内联属性列表，形如 `{: name="value"}`
+            // 'sort', // 排序权重, 数值越小排序越靠前
+
+        ],
+        align: { // 查询结果字段对齐样式(':-' 左对齐, ':-:' 居中, '-:' 右对齐)
+            content: ':-',
+            markdown: ':-',
+            created: ':-:',
+            updated: ':-:',
+            type: ':-:',
+            hpath: ':-',
+
+            id: ':-:',
+            parent_id: ':-:',
+            root_id: ':-:',
+            hash: ':-:',
+            box: ':-:',
+            path: ':-',
+            name: ':-',
+            alias: ':-',
+            memo: ':-',
+            length: '-:',
+            subtype: '-:',
+            ial: ':-',
+            sort: '-:',
+        },
+        handler: { // 查询结果字段处理方法
+            content: (row) => {
+                switch (config.query.limit) {
+                    case 'len':
+                        return markdown2span(cutString(ReplaceSpace(row.content, config.query.space), config.query.maxlen));
+                    case 'row':
+                        return markdown2span(ReplaceCRLF(cutString(row.content, undefined, config.query.maxrow), config.query.CRLF));
+                        default:
+                        return markdown2span(row.content);
+                }
+            },
+            markdown: (row) => {
+                switch (config.query.limit) {
+                    case 'len':
+                        return markdown2span(cutString(ReplaceSpace(row.markdown, config.query.space), config.query.maxlen));
+                    case 'row':
+                        return markdown2span(ReplaceCRLF(cutString(row.markdown, undefined, config.query.maxrow), config.query.CRLF));
+                    default:
+                        return markdown2span(row.markdown);
+                }
+            },
+            created: (row) => {
+                return timestampFormat(row.created);
+            },
+            updated: (row) => {
+                return timestampFormat(row.updated);
+            },
+            type: (row) => {
+                return `((${row.id} "${config.query.map.blocktype[row.type]}"))`;
+            },
+            hpath: (row) => {
+                return `((${row.root_id} "${row.hpath}"))`;
+            },
+
+            id: (row) => {
+                return `((${row.id} "${row.id}"))`;
+            },
+            parent_id: (row) => {
+                if (isEmptyString(row.parent_id)) return '';
+                else return `((${row.parent_id} "${row.parent_id}"))`;
+            },
+            root_id: (row) => {
+                return `((${row.root_id} "${row.root_id}"))`;
+            },
+            hash: (row) => {
+                return `\`${row.hash}\``;
+            },
+            box: (row) => {
+                return `\`${row.box}\``;
+            },
+            path: (row) => {
+                return `\`${row.path}\``;
+            },
+            name: (row) => {
+                return markdown2span(row.name);
+            },
+            alias: (row) => {
+                return markdown2span(row.alias);
+            },
+            memo: (row) => {
+                return markdown2span(row.memo);
+            },
+            length: (row) => {
+                return row.length;
+            },
+            subtype: (row) => {
+                return config.query.map.subtype[row.subtype];
+            },
+            ial: (row) => {
+                let ial = ialParser(row.ial);
+                let ial_markdown = [];
+                for (let key of Object.keys(ial)) {
+                    switch (key) {
+                        case 'id':
+                        case 'updated':
+                            continue;
+                        case 'icon':
+                            ial_markdown.push(`\`${key}\`\: :${ial[key].replace(/\.\w+$/, '')}:`);
+                            break;
+                        default:
+                            ial_markdown.push(`\`${key}\`\: \`${ial[key]}\``);
+                            break;
+                    }
+                }
+                return ial_markdown.join(config.query.CRLF);
+            },
+            sort: (row) => {
+                return row.sort;
+            },
+        },
+        map: { // 映射表
+            blocktype: { // 块类型映射
+                d: '文档块',
+                h: '标题块',
+                l: '列表块',
+                i: '列表项',
+                c: '代码块',
+                m: '公式块',
+                t: '表格块',
+                b: '引述块',
+                s: '超级块',
+                p: '段落块',
+                tb: '分隔线',
+                video: '视频块',
+                audio: '音频块',
+                widget: '挂件块',
+                iframe: 'iframe',
+                query_embed: '嵌入块',
+                '': '',
+                null: '',
+                undefined: '',
+            },
+            subtype: { // 子类型映射
+                o: '有序列表',
+                u: '无序列表',
+                t: '任务列表',
+                h1: '一级标题',
+                h2: '二级标题',
+                h3: '三级标题',
+                h4: '四级标题',
+                h5: '五级标题',
+                h6: '六级标题',
+                '': '',
+                null: '',
+                undefined: '',
+            },
+        },
+    },
+    hotkeys: {
+        // 快捷键
+        render: {
+            // 渲染
+            ctrlKey: true,
+            metaKey: true,
+            shiftKey: false,
+            altKey: false,
+            key: 'F1',
+        },
+        query: {
+            // 查询
+            ctrlKey: true,
+            metaKey: true,
+            shiftKey: false,
+            altKey: false,
+            key: 'F2',
+        },
+    },
+};
 
 ```
 
@@ -320,41 +543,63 @@ export { custom };
     exanple: `http(s)://host:port/stage/build/desktop/?id=20220128124308-bancmue`
 - 块自定义属性
   Block custom attributes.
-  - `style`
+  - `type`: 属性名 | key
+    - `table`: 属性值 | value
+      - 适用于列表块 | Applies to list blocks
+      - 列表转换为表格 | convert list to table
+      - 详情请参考 [土法列表表格 · 语雀](https://www.yuque.com/siyuannote/docs/yev84m)  
+        For details, please refer to [Soil Law List Table - Yuque](https://www.yuque.com/siyuannote/docs/yev84m).
+    - `图标题` 或 `表标题` | `table-title` or `table-title`: 属性值 | value
+      - 适用于段落块 | Applies to paragraph blocks
+      - 图标题/表标题自动计数 | Figure titles/table titles are counted automatically
+    - `query`: 属性值 | value
+      - 适用于代码块 | Applies to code blocks
+      - 代码块中写入 SQL 语句 | Write SQL statements in a code block.
+      - 使用快捷键 <kbd>Ctrl + F2 / ⌘ + F2</kbd> 渲染查询结果为表格  
+        Use the hot key <kbd>Ctrl + F2 / ⌘ + F2</kbd> to render the query results as a table.
+      - 可以使用配置文件 `custom.js` 配置渲染样式  
+        Rendering styles can be configured using the configuration file `custom .js`
+  - `style`: 属性名 | key
+    - 适用于所有块 | Applies to all blocks
     - 块样式 | block style
     - 设置后单击 <kbd>确认</kbd> 按钮将该自定义属性设置为块样式属性  
       After setting, click the <kbd>Confirm</kbd> button to set the custom attribute to a block style attribute.
-  - `writing-mode`
+  - `writing-mode`: 属性名 | key
+    - 适用于所有块 | Applies to all blocks
     - 文本排版模式 | text layout mode
     - 属性值 | attribute value
-      - `horizontal-tb`: (默认)水平方向自上而下的书写方式 | (default)left-right-top-bottom
-      - `vertical-rl`: 垂直方向自右而左的书写方式 | top-bottom-right-left
-      - `vertical-lr`: 垂直方向自左而右的书写方式 | top-bottom-left-right
-  - `font-family`
+      - `horizontal-tb`: 属性值 | value
+        - (默认)水平方向自上而下的书写方式 | (default)left-right-top-bottom
+      - `vertical-rl`: 属性值 | value
+        - 垂直方向自右而左的书写方式 | top-bottom-right-left
+      - `vertical-lr`: 属性值 | value
+        - 垂直方向自左而右的书写方式 | top-bottom-left-right
+  - `font-family`: 属性名 | key
+    - 适用于所有块 | Applies to all blocks
     - 字体 | font
     - 属性值: 字体名称  
       Attribute value: Font name
-      - `等线`
-      - `方正舒体`
-      - `方正姚体`
-      - `仿宋`
-      - `黑体`
-      - `华文彩云`
-      - `华文仿宋`
-      - `华文琥珀`
-      - `华文楷体`
-      - `华文隶书`
-      - `华文宋体`
-      - `华文细黑`
-      - `华文新魏`
-      - `华文行楷`
-      - `华文中宋`
-      - `楷体`
-      - `隶属`
-      - `宋体`
-      - `微软雅黑`
-      - `新宋体`
-      - `幼圆`
+      - `等线`: 属性值 | value
+      - `方正舒体`: 属性值 | value
+      - `方正姚体`: 属性值 | value
+      - `仿宋`: 属性值 | value
+      - `黑体`: 属性值 | value
+      - `华文彩云`: 属性值 | value
+      - `华文仿宋`: 属性值 | value
+      - `华文琥珀`: 属性值 | value
+      - `华文楷体`: 属性值 | value
+      - `华文隶书`: 属性值 | value
+      - `华文宋体`: 属性值 | value
+      - `华文细黑`: 属性值 | value
+      - `华文新魏`: 属性值 | value
+      - `华文行楷`: 属性值 | value
+      - `华文中宋`: 属性值 | value
+      - `楷体`: 属性值 | value
+      - `隶属`: 属性值 | value
+      - `宋体`: 属性值 | value
+      - `微软雅黑`: 属性值 | value
+      - `新宋体`: 属性值 | value
+      - `幼圆`: 属性值 | value
   - 其他自定义样式  
     Other custom attributes.
     - 这些样式不会自动加载  
@@ -363,8 +608,8 @@ export { custom };
       Add the custom style name to `custom.styles` in `<workspace>/data/widgets/custom.js`.
     - 在块的自定义属性中添加自定义样式名与样式值  
       Add custom style names and style values to the block's custom attributes.
-    - 使用快捷键 <kbd>F1</kbd> 渲染当前所有块的自定义样式  
-      Use the hot key <kbd>F1</kbd> to render the custom style of all current blocks.
+    - 使用快捷键 <kbd>Ctrl + F1 / ⌘ + F1</kbd> 渲染当前所有块的自定义样式  
+      Use the hot key <kbd>Ctrl + F1 / ⌘ + F1</kbd> to render the custom style of all current blocks.
 
 ## 计划 | TODO
 
