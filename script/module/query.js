@@ -50,84 +50,8 @@ async function query() {
                 header.push('|    |');
                 align.push('| -: |');
                 for (let field of config.query.fields) { // 根据自定义字段列表，构造表头
-                    switch (field) {
-                        case 'type':
-                            header.push(' type |');
-                            align.push(' :-: |');
-                            break;
-                        case 'content':
-                            header.push(' content |');
-                            align.push(' :- |');
-                            break;
-                        case 'created':
-                            header.push(' created |');
-                            align.push(' :-: |');
-                            break;
-                        case 'updated':
-                            header.push(' updated |');
-                            align.push(' :-: |');
-                            break;
-                        case 'hash':
-                            header.push(' hash |');
-                            align.push(' :- |');
-                            break;
-                        case 'id':
-                            header.push(' id |');
-                            align.push(' :-: |');
-                            break;
-                        case 'parent_id':
-                            header.push(' parent_id |');
-                            align.push(' :-: |');
-                            break;
-                        case 'root_id':
-                            header.push(' root_id |');
-                            align.push(' :-: |');
-                            break;
-                        case 'box':
-                            header.push(' box |');
-                            align.push(' :-: |');
-                            break;
-                        case 'path':
-                            header.push(' path |');
-                            align.push(' :- |');
-                            break;
-                        case 'hpath':
-                            header.push(' hpath |');
-                            align.push(' :- |');
-                            break;
-                        case 'name':
-                            header.push(' name |');
-                            align.push(' :- |');
-                            break;
-                        case 'alias':
-                            header.push(' alias |');
-                            align.push(' :- |');
-                            break;
-                        case 'memo':
-                            header.push(' memo |');
-                            align.push(' :- |');
-                            break;
-                        case 'markdown':
-                            header.push(' markdown |');
-                            align.push(' :- |');
-                            break;
-                        case 'length':
-                            header.push(' length |');
-                            align.push(' -: |');
-                            break;
-                        case 'subtype':
-                            header.push(' subtype |');
-                            align.push(' :-: |');
-                            break;
-                        case 'ial':
-                            header.push(' ial |');
-                            align.push(' :- |');
-                            break;
-                        case 'sort':
-                            header.push(' sort |');
-                            align.push(' -: |');
-                            break;
-                    }
+                    header.push(` ${field} |`);
+                    align.push(` ${config.query.align[field]} |`);
                 }
                 markdown.push(header.join(''));
                 markdown.push(align.join(''));
@@ -141,7 +65,8 @@ async function query() {
                     let row_markdown = [];
                     row_markdown.push(`| ${i} |`);
                     for (let field of config.query.fields) { // 根据自定义字段列表，构造表格
-                        switch (field) {
+                        row_markdown.push(` ${config.query.handler[field](row)} |`);
+                        /* switch (field) {
                             case 'type':
                                 row_markdown.push(` ((${row.id} "${config.query.map.blocktype[row.type]}")) |`);
                                 break;
@@ -235,7 +160,7 @@ async function query() {
                             case 'sort':
                                 row_markdown.push(` ${row.sort} |`);
                                 break;
-                        }
+                        } */
                     }
 
                     markdown.push(row_markdown.join(''));
@@ -303,6 +228,7 @@ async function query() {
         }
     }
     catch (err) {
+        console.log(err);
         window.alert(`SQL 查询错误!\nThe SQL query error!\n${err}`);
     }
 }

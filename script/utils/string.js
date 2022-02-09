@@ -27,6 +27,11 @@ export function ialParser(ial) {
     return JSON.parse(`{${IAL.substr(3)}`);
 }
 
+export function isEmptyString(str) {
+    // 判断字符串是否为空
+    return str == null || str == '';
+}
+
 export function ReplaceCRLF(str, c) {
     // 换行符替换
     return str.replace(/[\r\n]+/g, c)
