@@ -3,49 +3,59 @@ import { isKey } from '/appearance/themes/Dark+/script/utils/hotkey.js';
 
 /* 渲染自定义样式 */
 function renderCustomStyle(styles) {
-    const layout__center = document.querySelector('.layout__center');
+    try {
+        const layout__center = document.querySelector('.layout__center');
 
-    for (let i in styles) {
-        let style = styles[i];
-        layout__center.querySelectorAll(`div[data-node-id][custom-${style}]`).forEach((item, i, obj) => {
-            let attr = item.getAttribute(`custom-${style}`);
-            item.querySelectorAll(`div[contenteditable][spellcheck]`).forEach((item, i, obj) => {
-                item.style[style] = attr;
+        for (let i in styles) {
+            let style = styles[i];
+            layout__center.querySelectorAll(`div[data-node-id][custom-${style}]`).forEach((item, i, obj) => {
+                let attr = item.getAttribute(`custom-${style}`);
+                item.querySelectorAll(`div[contenteditable][spellcheck]`).forEach((item, i, obj) => {
+                    item.style[style] = attr;
+                });
             });
-        });
+        }
+    }
+    catch (err) {
+        window.alert(`渲染自定义样式错误!\nRendering custom styles error\n${err}`);
     }
 }
 
 // 保存自定义样式
 function saveCustomStyle() {
-    const layout__center = document.querySelector('.layout__center');
-    layout__center.querySelectorAll(`div[data-node-id][custom-style]`).forEach((item, i, obj) => {
-        // item.style.cssText = item.getAttribute(`custom-style`);
-        let id = item.getAttribute('data-node-id');
-        let style = item.getAttribute('custom-style');
-        let request_body = {
-            id: id,
-            attrs: {
-                style: style,
-            },
-        }
-        // item.setAttribute('style', style);
-
-        // REF [js发送get 、post请求 - 牛奔 - 博客园](https://www.cnblogs.com/niuben/p/14676340.html)
-        var request = new XMLHttpRequest();// 第一步：创建需要的对象
-        request.open('POST', '/api/attr/setBlockAttrs', true); // 第二步：打开连接/***发送json格式文件必须设置请求头 ；如下 - */
-        request.setRequestHeader("Content-type", "application/json"); // 设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）var obj = { name: 'zhansgan', age: 18 };
-        request.send(JSON.stringify(request_body)); // 发送请求 将json写入send中
-
-        // 获取数据后的处理程序
-        request.onreadystatechange = function () { // 请求后的回调接口，可将请求成功后要执行的程序写在其中
-            if (request.readyState == 4 && request.status == 200) { // 验证请求是否发送成功
-                var response_body = JSON.parse(request.responseText); // 获取到服务端返回的数据
-                console.log(request_body, response_body);
-                if (response_body.code == 0) { item.setAttribute('style', style); }
+    try {
+        const layout__center = document.querySelector('.layout__center');
+        layout__center.querySelectorAll(`div[data-node-id][custom-style]`).forEach((item, i, obj) => {
+            // item.style.cssText = item.getAttribute(`custom-style`);
+            let id = item.getAttribute('data-node-id');
+            let style = item.getAttribute('custom-style');
+            let request_body = {
+                id: id,
+                attrs: {
+                    style: style,
+                },
             }
-        };
-    });
+            // item.setAttribute('style', style);
+
+            // REF [js发送get 、post请求 - 牛奔 - 博客园](https://www.cnblogs.com/niuben/p/14676340.html)
+            var request = new XMLHttpRequest();// 第一步：创建需要的对象
+            request.open('POST', '/api/attr/setBlockAttrs', true); // 第二步：打开连接/***发送json格式文件必须设置请求头 ；如下 - */
+            request.setRequestHeader("Content-type", "application/json"); // 设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）var obj = { name: 'zhansgan', age: 18 };
+            request.send(JSON.stringify(request_body)); // 发送请求 将json写入send中
+
+            // 获取数据后的处理程序
+            request.onreadystatechange = function () { // 请求后的回调接口，可将请求成功后要执行的程序写在其中
+                if (request.readyState == 4 && request.status == 200) { // 验证请求是否发送成功
+                    var response_body = JSON.parse(request.responseText); // 获取到服务端返回的数据
+                    console.log(request_body, response_body);
+                    if (response_body.code == 0) { item.setAttribute('style', style); }
+                }
+            };
+        });
+    }
+    catch (err) {
+        window.alert(`保存自定义样式错误!\Saving custom styles error\n${err}`);
+    }
 }
 
 function render() {
