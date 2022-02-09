@@ -138,7 +138,7 @@ async function query() {
     body.addEventListener('keydown', (e) => {
         // console.log(e);
         if (isKey(e, config.hotkeys.query)) {
-            setTimeout(query(), 0)
+            query();
         }
     });
 })();
