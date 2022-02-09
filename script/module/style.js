@@ -1,6 +1,5 @@
-import { custom } from '/widgets/custom.js';
 import { config } from '/appearance/themes/Dark+/script/module/config.js';
-
+import { isKey } from '/appearance/themes/Dark+/script/utils/hotkey.js';
 
 /* 渲染自定义样式 */
 function renderCustomStyle(styles) {
@@ -50,7 +49,7 @@ function saveCustomStyle() {
 }
 
 function render() {
-    renderCustomStyle(custom.styles || config.styles);
+    renderCustomStyle(config.styles);
 }
 
 (() => {
@@ -70,10 +69,10 @@ function render() {
     //     setTimeout(render(), 0);
     // });
 
-    // 使用快捷键 F1 渲染自定义样式
+    // 使用快捷键渲染自定义样式
     body.addEventListener('keydown', (e) => {
         // console.log(e);
-        if (e.key == 'F1') {
+        if (isKey(e, config.hotkeys.render)) {
             setTimeout(render(), 0)
         }
     });
