@@ -9,14 +9,7 @@ import {
     insertBlock,
     sql,
 } from '/appearance/themes/Dark+/script/utils/api.js';
-import {
-    cutString,
-    ReplaceSpace,
-    ReplaceCRLF,
-    ialParser,
-    markdown2span,
-    timestampFormat,
-} from '/appearance/themes/Dark+/script/utils/string.js';
+
 
 async function query() {
     try {
@@ -66,101 +59,6 @@ async function query() {
                     row_markdown.push(`| ${i} |`);
                     for (let field of config.query.fields) { // 根据自定义字段列表，构造表格
                         row_markdown.push(` ${config.query.handler[field](row)} |`);
-                        /* switch (field) {
-                            case 'type':
-                                row_markdown.push(` ((${row.id} "${config.query.map.blocktype[row.type]}")) |`);
-                                break;
-                            case 'content':
-                                switch (config.query.limit) {
-                                    case 'len':
-                                        row_markdown.push(` ${markdown2span(cutString(ReplaceSpace(row.content, config.query.space), config.query.maxlen))} |`);
-                                        break;
-                                    case 'row':
-                                        row_markdown.push(` ${markdown2span(ReplaceCRLF(cutString(row.content, undefined, config.query.maxrow), config.query.CRLF))} |`);
-                                        break;
-                                    default:
-                                        row_markdown.push(` ${markdown2span(row.content)} |`);
-                                        break;
-                                }
-                                break;
-                            case 'created':
-                                row_markdown.push(` ${timestampFormat(row.created)} |`);
-                                break;
-                            case 'updated':
-                                row_markdown.push(` ${timestampFormat(row.updated)} |`);
-                                break;
-                            case 'hpath':
-                                row_markdown.push(` ((${row.root_id} "${row.hpath}")) |`);
-                                break;
-
-                            case 'id':
-                                row_markdown.push(` ((${row.id} "${row.id}")) |`);
-                                break;
-                            case 'parent_id':
-                                row_markdown.push(` ((${row.parent_id} "${row.parent_id}")) |`);
-                                break;
-                            case 'root_id':
-                                row_markdown.push(` ((${row.root_id} "${row.root_id}")) |`);
-                                break;
-                            case 'hash':
-                                row_markdown.push(` \`${row.hash}\` |`);
-                                break;
-                            case 'box':
-                                row_markdown.push(` \`${row.box}\` |`);
-                                break;
-                            case 'path':
-                                row_markdown.push(` \`${row.path}\` |`);
-                                break;
-                            case 'name':
-                                row_markdown.push(` ${markdown2span(row.name)} |`);
-                                break;
-                            case 'alias':
-                                row_markdown.push(` ${markdown2span(row.alias)} |`);
-                                break;
-                            case 'memo':
-                                row_markdown.push(` ${markdown2span(row.memo)} |`);
-                                break;
-                            case 'markdown':
-                                switch (config.query.limit) {
-                                    case 'len':
-                                        row_markdown.push(` ${markdown2span(cutString(ReplaceSpace(row.markdown, config.query.space), config.query.maxlen))} |`);
-                                        break;
-                                    case 'row':
-                                        row_markdown.push(` ${markdown2span(ReplaceCRLF(cutString(row.markdown, undefined, config.query.maxrow), config.query.CRLF))} |`);
-                                        break;
-                                    default:
-                                        row_markdown.push(` ${markdown2span(row.markdown)} |`);
-                                        break;
-                                }
-                                break;
-                            case 'length':
-                                row_markdown.push(` ${row.length} |`);
-                                break;
-                            case 'subtype':
-                                row_markdown.push(` ${config.query.map.subtype[row.subtype]} |`);
-                                break;
-                            case 'ial':
-                                let ial = ialParser(row.ial);
-                                let ial_markdown = [];
-                                for (let key of Object.keys(ial)) {
-                                    switch (key) {
-                                        case 'id':
-                                        case 'updated':
-                                            continue;
-                                        case 'icon':
-                                            ial_markdown.push(`\`${key}\`\: :${ial[key].replace(/\.\w+$/, '')}:`);
-                                            break;
-                                        default:
-                                            ial_markdown.push(`\`${key}\`\: \`${ial[key]}\``);
-                                            break;
-                                    }
-                                }
-                                row_markdown.push(` ${ial_markdown.join(config.query.CRLF)} |`);
-                                break;
-                            case 'sort':
-                                row_markdown.push(` ${row.sort} |`);
-                                break;
-                        } */
                     }
 
                     markdown.push(row_markdown.join(''));

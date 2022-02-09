@@ -6,6 +6,7 @@
 - 添加错误捕获与弹窗提示 | Added error capture with pop-up hints.
 - 配置文件中添加查询结果对齐样式与渲染内容处理方法 | Adds query result alignment styles and rendered content handling methods to the configuration file.
 - 修复空白子标题块光标位置错误 | Fixed the cursor position error of blank subheading block.
+- 补充遗漏的块类型 | Supplement the missing block type.
 
 ## v0.3.0/2022-02-07
 
