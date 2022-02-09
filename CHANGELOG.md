@@ -4,6 +4,7 @@
   - 默认快捷键为 <kbd>Ctrl + F2</kbd> | The default shortcut key is <kbd>Ctrl + F2</kbd>.
 - 将渲染自定义块属性指定的样式的默认快捷键更改为 <kbd>Ctrl + F1</kbd> | Changes the default shortcut key for rendering the style specified by the custom block attribute to <kbd>Ctrl + F1</kbd>.
 - 添加错误捕获与弹窗提示 | Added error capture with pop-up hints.
+- 配置文件中添加查询结果对齐样式与渲染内容处理方法 | Adds query result alignment styles and rendered content handling methods to the configuration file.
 
 ## v0.3.0/2022-02-07
 
