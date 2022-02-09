@@ -25,10 +25,10 @@ export var config = {
         CRLF: '<br />', // 换行符替换
         space: ' ', // 空白字符替换
         fields: [ // 需渲染的 blocks 表的字段, 顺序分先后
-            'type', // 内容块类型，参考((20210210103523-ombf290 "类型字段"))
             'content', // 去除了 Markdown 标记符的文本
             'created', // 创建时间
             'updated', // 更新时间
+            'type', // 内容块类型，参考((20210210103523-ombf290 "类型字段"))
             'hpath', // 人类可读的内容块所在文档路径
 
             // 'id', // 内容块 ID
@@ -48,10 +48,10 @@ export var config = {
             //// 'markdown', // 包含完整 Markdown 标记符的文本(该字段无法正常渲染)
         ],
         align: { // 查询结果字段对齐样式(':-' 左对齐, ':-:' 居中, '-:' 右对齐)
-            type: ':-:',
             content: ':-',
             created: ':-:',
             updated: ':-:',
+            type: ':-:',
             hpath: ':-',
 
             id: ':-:',
@@ -71,16 +71,13 @@ export var config = {
             markdown: ':-',
         },
         handler: { // 查询结果字段处理方法
-            type: (row) => {
-                return `((${row.id} "${config.query.map.blocktype[row.type]}"))`;
-            },
             content: (row) => {
                 switch (config.query.limit) {
                     case 'len':
                         return markdown2span(cutString(ReplaceSpace(row.content, config.query.space), config.query.maxlen));
                     case 'row':
                         return markdown2span(ReplaceCRLF(cutString(row.content, undefined, config.query.maxrow), config.query.CRLF));
-                    default:
+                        default:
                         return markdown2span(row.content);
                 }
             },
@@ -89,6 +86,9 @@ export var config = {
             },
             updated: (row) => {
                 return timestampFormat(row.updated);
+            },
+            type: (row) => {
+                return `((${row.id} "${config.query.map.blocktype[row.type]}"))`;
             },
             hpath: (row) => {
                 return `((${row.root_id} "${row.hpath}"))`;
@@ -173,6 +173,12 @@ export var config = {
                 b: '引述块',
                 s: '超级块',
                 p: '段落块',
+                tb: '分隔线',
+                video: '视频块',
+                audio: '音频块',
+                widget: '挂件块',
+                iframe: 'iframe',
+                query_embed: '嵌入块',
                 '': '',
                 null: '',
                 undefined: '',

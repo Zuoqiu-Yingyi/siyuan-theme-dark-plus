@@ -17,6 +17,7 @@ function renderCustomStyle(styles) {
         }
     }
     catch (err) {
+        console.log(err);
         window.alert(`渲染自定义样式错误!\nRendering custom styles error\n${err}`);
     }
 }
@@ -54,6 +55,7 @@ function saveCustomStyle() {
         });
     }
     catch (err) {
+        console.log(err);
         window.alert(`保存自定义样式错误!\Saving custom styles error\n${err}`);
     }
 }

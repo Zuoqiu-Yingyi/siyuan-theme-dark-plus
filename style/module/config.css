@@ -154,6 +154,9 @@
     /* 悬浮预览窗口最小高度 | The minimum height of the hover preview window */
     --custom-popover-min-height: 50%;
 
+    /* 悬浮预览窗口最大宽度 | The maximum width of the hover preview window */
+    --custom-popover-max-width: 50%;
+
     /* 悬浮搜索菜单宽度 | The width of popover search menu */
     --custom-popover-search-width: auto;
 
