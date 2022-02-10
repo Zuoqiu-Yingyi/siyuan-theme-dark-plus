@@ -157,8 +157,8 @@
     /* 悬浮预览窗口最大宽度 | The maximum width of the hover preview window */
     --custom-popover-max-width: 50%;
 
-    /* 悬浮搜索菜单宽度 | The width of popover search menu */
-    --custom-popover-search-width: auto;
+    /* 悬浮菜单宽度 | The width of popover menu */
+    --custom-popover-menu-width: auto;
 
     /* 功能面板间隔距离 | Function panel spacing distance */
     --custom-panel-distance: 8px;
