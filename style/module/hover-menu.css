@@ -25,3 +25,11 @@
 .b3-menu__item--current {
     background-color: var(--b3-theme-background-light) !important;
 }
+
+/* 悬浮搜索菜单/功能菜单 */
+.b3-menu.b3-list.b3-list--background {
+    /* column-count: 4; */
+    background-color: var(--custom-popover-search-menu-background-color);
+    backdrop-filter: var(--custom-backdrop-popover-filter);
+    width: var(--custom-popover-menu-width) !important;
+}

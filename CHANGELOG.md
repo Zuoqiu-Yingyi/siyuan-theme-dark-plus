@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 移除 Query 功能(可使用挂件 [Query](https://github.com/Zuoqiu-Yingyi/widget-query) 实现) | Remove the Query feature (This can be implemented using widget [Query](https://github.com/Zuoqiu-Yingyi/widget-query)).
+
 ## v0.3.1/2022-02-10
 
 - [v0.3.0 <=> v0.3.1](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.0...v0.3.1)

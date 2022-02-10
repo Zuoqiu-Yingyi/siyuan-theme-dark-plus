@@ -85,7 +85,7 @@ function render() {
     body.addEventListener('keydown', (e) => {
         // console.log(e);
         if (isKey(e, config.hotkeys.render)) {
-            setTimeout(render(), 0)
+            render();
         }
     });
 })();
