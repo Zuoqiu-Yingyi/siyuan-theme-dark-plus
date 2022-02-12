@@ -299,19 +299,40 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 export var config = {
     token: '', // API token, 无需填写
-    styles: [
-        // 渲染的自定义样式
-        'font-size',
-    ],
+    style: {
+        enable: false, // 是否启用自定义样式渲染
+        attribute: 'custom-style', // 自定义块属性名称
+        styles: [
+            // 渲染的自定义样式
+            'font-size',
+        ],
+    },
+    timestamp: {
+        // 视频/音频时间戳
+        enable: true, // 是否启用时间戳
+        attribute: 'custom-time', // 自定义块属性名称
+    },
     hotkeys: {
         // 快捷键
-        render: {
-            // 渲染
-            ctrlKey: true,
-            metaKey: true,
-            shiftKey: false,
-            altKey: false,
-            key: 'F1',
+        style: {
+            render: {
+                // 渲染
+                ctrlKey: true,
+                metaKey: true,
+                shiftKey: false,
+                altKey: false,
+                key: 'F1',
+            },
+        },
+        timestamp: {
+            jump: {
+                // 跳转到指定时间点
+                ctrlKey: true,
+                metaKey: true,
+                shiftKey: false,
+                altKey: false,
+                type: 'click',
+            },
         },
     },
 };
@@ -353,6 +374,12 @@ export var config = {
     exanple: `http(s)://host:port/stage/build/desktop/?id=20220128124308-bancmue`
 - 块自定义属性
   Block custom attributes.
+  - `time`: 属性名 | key
+    - `<数字|number>`: 属性值 | value
+      - 适用于视频块/音频块 | Applies to video blocks and audio blocks
+      - 单位: 秒 | Units: Seconds
+      - 在视频块/音频块中设置该自定义属性后, 按住 <kbd>Ctrl</kbd> 后单击视频/音频块可以跳转到该属性所设置的时间戳  
+        After you set this custom attribute in a video/audio block, clicking the video/audio block while <kbd>ctrl-down</kbd> jumps to the point in time.
   - `type`: 属性名 | key
     - `table`: 属性值 | value
       - 适用于列表块 | Applies to list blocks
