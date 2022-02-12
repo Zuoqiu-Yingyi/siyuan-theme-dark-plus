@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 视频/音频跳转到指定时间点 | The video/audio jumps to the specified point in time.
+
 ## v0.3.2/2022-02-12
 
 - [v0.3.1 <=> v0.3.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.1...v0.3.2)

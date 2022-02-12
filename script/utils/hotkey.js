@@ -1,6 +1,7 @@
 /* 快捷键 */
 export {
     isKey, // 按键事件是否由指定快捷键触发
+    isEvent, // 事件是否由指定快捷键+操作触发
 }
 
 function isKey(keydownEvent, key) {
@@ -8,5 +9,13 @@ function isKey(keydownEvent, key) {
         && (keydownEvent.ctrlKey == key.ctrlKey || keydownEvent.metaKey == key.metaKey)
         && keydownEvent.shiftKey == key.shiftKey
         && keydownEvent.altKey == key.altKey
+    )
+}
+
+function isEvent(event, key) {
+    return (event.type == key.type
+        && (event.ctrlKey == key.ctrlKey || event.metaKey == key.metaKey)
+        && event.shiftKey == key.shiftKey
+        && event.altKey == key.altKey
     )
 }

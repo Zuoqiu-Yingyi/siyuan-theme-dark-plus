@@ -17,7 +17,7 @@ function renderCustomStyle(styles) {
         }
     }
     catch (err) {
-        console.log(err);
+        console.error(err);
         window.alert(`渲染自定义样式错误!\nRendering custom styles error\n${err}`);
     }
 }
@@ -26,10 +26,10 @@ function renderCustomStyle(styles) {
 function saveCustomStyle() {
     try {
         const layout__center = document.querySelector('.layout__center');
-        layout__center.querySelectorAll(`div[data-node-id][custom-style]`).forEach((item, i, obj) => {
-            // item.style.cssText = item.getAttribute(`custom-style`);
+        layout__center.querySelectorAll(`div[data-node-id][${config.style.attribute}]`).forEach((item, i, obj) => {
+            // item.style.cssText = item.getAttribute(config.style.attribute);
             let id = item.getAttribute('data-node-id');
-            let style = item.getAttribute('custom-style');
+            let style = item.getAttribute(config.style.attribute);
             let request_body = {
                 id: id,
                 attrs: {
@@ -55,37 +55,39 @@ function saveCustomStyle() {
         });
     }
     catch (err) {
-        console.log(err);
+        console.error(err);
         window.alert(`保存自定义样式错误!\Saving custom styles error\n${err}`);
     }
 }
 
 function render() {
-    renderCustomStyle(config.styles);
+    renderCustomStyle(config.style.styles);
 }
 
 (() => {
-    let body = document.querySelector('body');
+    if (config.style.enable) {
+        let body = document.querySelector('body');
 
-    // 块属性编辑窗口确认按钮保存自定义样式
-    body.addEventListener('click', (e) => {
-        let target = e.target;
-        if (target.nodeName.toLocaleLowerCase() == 'button' && target.className === 'b3-button b3-button--text') {
-            setTimeout(saveCustomStyle(), 0);
-        }
-    });
+        // 块属性编辑窗口确认按钮保存自定义样式
+        body.addEventListener('click', (e) => {
+            let target = e.target;
+            if (target.nodeName.toLocaleLowerCase() == 'button' && target.className === 'b3-button b3-button--text') {
+                setTimeout(saveCustomStyle, 0);
+            }
+        });
 
-    // 鼠标单击渲染自定义样式
-    // let layout__center = document.querySelector('.layout__center');
-    // layout__center.addEventListener('click', (e) => {
-    //     setTimeout(render(), 0);
-    // });
+        // 鼠标单击渲染自定义样式
+        // let layout__center = document.querySelector('.layout__center');
+        // layout__center.addEventListener('click', (e) => {
+        //     setTimeout(render(), 0);
+        // });
 
-    // 使用快捷键渲染自定义样式
-    body.addEventListener('keydown', (e) => {
-        // console.log(e);
-        if (isKey(e, config.hotkeys.render)) {
-            render();
-        }
-    });
+        // 使用快捷键渲染自定义样式
+        body.addEventListener('keydown', (e) => {
+            // console.log(e);
+            if (isKey(e, config.hotkeys.style.render)) {
+                setTimeout(render, 0);
+            }
+        });
+    }
 })();
