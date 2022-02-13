@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.3.4/2022-02-14
+
+- [v0.3.3 <=> v0.3.4](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.3...v0.3.4)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 使用快捷键 <kbd>Ctrl + 鼠标中键</kbd> 设置自定义块属性 | Use the shortcut keys <kbd>Ctrl + Middle Mouse Button</kbd> to set custom block properties.
 - 视频时间戳更改为通过 API 查询块属性 | The video timestamp changes to query the block attributes through the API.
