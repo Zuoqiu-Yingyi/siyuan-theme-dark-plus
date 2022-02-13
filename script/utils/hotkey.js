@@ -2,6 +2,7 @@
 export {
     isKey, // 按键事件是否由指定快捷键触发
     isEvent, // 事件是否由指定快捷键+操作触发
+    isButton, // 鼠标事件是否由指定快捷键+按键触发
 }
 
 function isKey(keydownEvent, key) {
@@ -14,6 +15,14 @@ function isKey(keydownEvent, key) {
 
 function isEvent(event, key) {
     return (event.type == key.type
+        && (event.ctrlKey == key.ctrlKey || event.metaKey == key.metaKey)
+        && event.shiftKey == key.shiftKey
+        && event.altKey == key.altKey
+    )
+}
+
+function isButton(event, key) {
+    return (event.button == key.button
         && (event.ctrlKey == key.ctrlKey || event.metaKey == key.metaKey)
         && event.shiftKey == key.shiftKey
         && event.altKey == key.altKey

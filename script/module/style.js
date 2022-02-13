@@ -65,29 +65,33 @@ function render() {
 }
 
 (() => {
-    if (config.style.enable) {
-        let body = document.querySelector('body');
+    try {
+        if (config.style.enable) {
+            let body = document.querySelector('body');
 
-        // 块属性编辑窗口确认按钮保存自定义样式
-        body.addEventListener('click', (e) => {
-            let target = e.target;
-            if (target.nodeName.toLocaleLowerCase() == 'button' && target.className === 'b3-button b3-button--text') {
-                setTimeout(saveCustomStyle, 0);
-            }
-        });
+            // 块属性编辑窗口确认按钮保存自定义样式
+            body.addEventListener('click', (e) => {
+                let target = e.target;
+                if (target.nodeName.toLocaleLowerCase() == 'button' && target.className === 'b3-button b3-button--text') {
+                    setTimeout(saveCustomStyle, 0);
+                }
+            });
 
-        // 鼠标单击渲染自定义样式
-        // let layout__center = document.querySelector('.layout__center');
-        // layout__center.addEventListener('click', (e) => {
-        //     setTimeout(render(), 0);
-        // });
+            // 鼠标单击渲染自定义样式
+            // let layout__center = document.querySelector('.layout__center');
+            // layout__center.addEventListener('click', (e) => {
+            //     setTimeout(render(), 0);
+            // });
 
-        // 使用快捷键渲染自定义样式
-        body.addEventListener('keydown', (e) => {
-            // console.log(e);
-            if (isKey(e, config.hotkeys.style.render)) {
-                setTimeout(render, 0);
-            }
-        });
+            // 使用快捷键渲染自定义样式
+            body.addEventListener('keydown', (e) => {
+                // console.log(e);
+                if (isKey(e, config.hotkeys.style.render)) {
+                    setTimeout(render, 0);
+                }
+            });
+        }
+    } catch (err) {
+        console.error(err);
     }
 })();

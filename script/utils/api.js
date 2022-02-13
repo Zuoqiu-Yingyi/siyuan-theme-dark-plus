@@ -2,7 +2,7 @@
    REF [cc-baselib/siYuanApi.js at main · leolee9086/cc-baselib](https://github.com/leolee9086/cc-baselib/blob/main/src/siYuanApi.js)
  */
 
-import { config } from '/appearance/themes/Dark+/script/module/config.js';
+import { config } from './../module/config.js';
 
 export {
     向思源请求数据 as request,
@@ -222,20 +222,12 @@ async function 以id获取思源块信息(内容块id) {
     return data[0]
 }
 
-async function 设置思源块属性(内容块id, 属性名, 属性值) {
-    let 真实属性名 = 属性名.slice(0)
-    if (属性名 != 'name' && 属性名 != 'alias' && 属性名 != 'memo' && 属性名 != 'bookmark' && 属性名 != 'style' && 属性名 != "data-assets") {
-        if (属性名.slice(0, 7) != "custom-") { 真实属性名 = "custom-" + 属性名 }
-    }
-    let 属性对象 = {}
-    属性对象[真实属性名] = 属性值
-
-    let data = {
+async function 设置思源块属性(内容块id, 属性对象) {
+    let url = '/api/attr/setBlockAttrs'
+    return 解析响应体(向思源请求数据(url, {
         id: 内容块id,
         attrs: 属性对象,
-    }
-    let url = '/api/attr/setBlockAttrs'
-    return 解析响应体(向思源请求数据(url, data))
+    }))
 }
 
 async function 以id获取文档块markdown(文档id) {

@@ -299,6 +299,11 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 export var config = {
     token: '', // API token, 无需填写
+    regs: {
+        // 正则表达式
+        url: /^siyuan:\/\/blocks\/\d{14}\-[0-9a-z]{7}$/, // 思源 URL Scheme 正则表达式
+        time: /^(\d+)(:[0-5]?[0-9]){0,2}$/, // 时间戳正则表达式
+    },
     style: {
         enable: false, // 是否启用自定义样式渲染
         attribute: 'custom-style', // 自定义块属性名称
@@ -312,11 +317,15 @@ export var config = {
         enable: true, // 是否启用时间戳
         attribute: 'custom-time', // 自定义块属性名称
     },
+    blockattrs: {
+        // 块属性操作
+        enable: true, // 是否启用块属性操作
+    },
     hotkeys: {
         // 快捷键
         style: {
             render: {
-                // 渲染
+                // 渲染(Ctrl + F1)
                 ctrlKey: true,
                 metaKey: true,
                 shiftKey: false,
@@ -326,7 +335,7 @@ export var config = {
         },
         timestamp: {
             jump: {
-                // 跳转到指定时间点
+                // 跳转到指定时间点(Ctrl + 单击)
                 ctrlKey: true,
                 metaKey: true,
                 shiftKey: false,
@@ -334,6 +343,16 @@ export var config = {
                 type: 'click',
             },
         },
+        blockattrs: {
+            set: {
+                // 设置块属性(Ctrl + 鼠标中键)
+                ctrlKey: true,
+                metaKey: true,
+                shiftKey: false,
+                altKey: false,
+                button: 1, // 鼠标中键
+            }
+        }
     },
 };
 
@@ -372,12 +391,25 @@ export var config = {
   Jump from outside the browser to a specified block on the web side using the URL parameter `id=<content block ID>` (at least one tab must already be open)
   - 示例: `http(s)://host:port/stage/build/desktop/?id=20220128124308-bancmue`  
     exanple: `http(s)://host:port/stage/build/desktop/?id=20220128124308-bancmue`
+- 使用超链接设置块属性  
+  Use hyperlinks to set block attributes.
+  - `超文本引用`: 指向想要设置块属性的块的超链接  
+    `href`: A hyperlink to the block for which you want to set the block attributes.
+    - 示例 | example: `siyuan://blocks/20220213230830-g1amobi`
+  - `标题`: `json` 格式的一组键值对  
+    `title`: A set of key-value pairs in `json` format.
+      - 示例 | example: `{"memo": "timestamp", "custom-time": "00:00:01"}`
+  - 使用快捷键 <kbd>Ctrl + 鼠标中键</kbd> 单击超链接设置自定义块属性  
+    Use the shortcut keys <kbd>Ctrl + Middle Mouse Button</kbd> click the hyperlink to set the custom block attributes.
 - 块自定义属性
   Block custom attributes.
   - `time`: 属性名 | key
-    - `<数字|number>`: 属性值 | value
+    - `<时间戳|timestamp>`: 属性值 | value
       - 适用于视频块/音频块 | Applies to video blocks and audio blocks
-      - 单位: 秒 | Units: Seconds
+      - 格式 | format
+        - `ss`: `ss >= 0`
+        - `mm:ss`: `mm >= 0 && 0 <= ss <= 59`
+        - `hh:mm:ss`: `hh >= 0 && 0 <= mm <= 59 && 0 <= ss <= 59`
       - 在视频块/音频块中设置该自定义属性后, 按住 <kbd>Ctrl</kbd> 后单击视频/音频块可以跳转到该属性所设置的时间戳  
         After you set this custom attribute in a video/audio block, clicking the video/audio block while <kbd>ctrl-down</kbd> jumps to the point in time.
   - `type`: 属性名 | key
