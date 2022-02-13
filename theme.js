@@ -6,9 +6,10 @@ function loadScript(url) {
 }
 
 (() => {
+    loadScript("/appearance/themes/Dark+/script/module/blockattrs.js");
     loadScript("/appearance/themes/Dark+/script/module/goto.js");
     loadScript("/appearance/themes/Dark+/script/module/style.js");
     loadScript("/appearance/themes/Dark+/script/module/timestamp.js");
 
     // loadScript("/appearance/themes/Dark+/script/test/listener.js");
-})()
+})();

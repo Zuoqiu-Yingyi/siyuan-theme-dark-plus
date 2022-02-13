@@ -1,34 +1,53 @@
 /* 视频/音频跳转到指定时间 */
 import { config } from '/appearance/themes/Dark+/script/module/config.js';
 import { isEvent } from '/appearance/themes/Dark+/script/utils/hotkey.js';
-import { isNum } from '/appearance/themes/Dark+/script/utils/misc.js';
+import {
+    isNum,
+    timestampParse,
+} from '/appearance/themes/Dark+/script/utils/misc.js';
+import { getBlockAttrs } from '/appearance/themes/Dark+/script/utils/api.js';
+
+async function jump(target) {
+    // console.log(target.dataset);
+    if (target.dataset.nodeId) {
+        switch (target.dataset.type) {
+            case 'NodeAudio':
+            case 'NodeVideo':
+                setTimeout(() => {
+                    getBlockAttrs(target.dataset.nodeId).then((attrs) => {
+                        // console.log(attrs);
+                        if (attrs) {
+                            let timestamp = attrs[config.timestamp.attribute];
+                            if (timestamp && config.regs.time.test(timestamp)) {
+                                let seconds = timestampParse(timestamp);
+                                target.firstElementChild.firstElementChild.currentTime = seconds;
+                            }
+                        }
+                    });
+                }, 0);
+                break;
+            default:
+                break;
+        }
+    }
+}
 
 (() => {
-    if (config.timestamp.enable) {
-        let body = document.querySelector('body');
-        // 块属性编辑窗口确认按钮保存自定义样式
-        body.addEventListener('click', (e) => {
-            try {
+    try {
+        if (config.timestamp.enable) {
+            let body = document.querySelector('body');
+
+            // 跳转到所单击块的时间戳
+            body.addEventListener('click', (e) => {
                 // console.log(e);
                 if (isEvent(e, config.hotkeys.timestamp.jump)) {
-                    var time = e.target.getAttribute(config.timestamp.attribute);
-                    if (isNum(time)) {
-                        switch (e.target.getAttribute('data-type')) {
-                            case 'NodeAudio':
-                            case 'NodeVideo':
-                                setTimeout(() => {
-                                    e.target.firstElementChild.firstElementChild.currentTime = time;
-                                }, 0);
-                                break;
-
-                            default:
-                                break;
-                        }
-                    }
+                    setTimeout(async () => {
+                        await jump(e.target);
+                    }, 0);
                 }
-            } catch (err) {
-                console.error(err);
-            }
-        }, true);
+            }, true);
+        }
+    } catch (err) {
+        console.error(err);
     }
 })();

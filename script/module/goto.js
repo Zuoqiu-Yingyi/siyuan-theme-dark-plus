@@ -44,4 +44,4 @@ async function jumpToID() {
         }
     }
 }
-window.onload = setTimeout(await jumpToID(), 0)
+window.onload = setTimeout(jumpToID, 0)
