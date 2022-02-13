@@ -1,5 +1,9 @@
 # 更改日志 | CHANGE LOG
 
+## v0.3.3/2022-02-13
+
+- [v0.3.2 <=> v0.3.3](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.2...v0.3.3)
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 视频/音频跳转到指定时间点 | The video/audio jumps to the specified point in time.
 
 ## v0.3.2/2022-02-12
