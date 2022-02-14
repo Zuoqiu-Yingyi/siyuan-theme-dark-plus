@@ -1,10 +1,7 @@
 /* 视频/音频跳转到指定时间 */
 import { config } from '/appearance/themes/Dark+/script/module/config.js';
 import { isEvent } from '/appearance/themes/Dark+/script/utils/hotkey.js';
-import {
-    isNum,
-    timestampParse,
-} from '/appearance/themes/Dark+/script/utils/misc.js';
+import { timestampParse } from '/appearance/themes/Dark+/script/utils/misc.js';
 import { getBlockAttrs } from '/appearance/themes/Dark+/script/utils/api.js';
 
 async function jump(target) {
