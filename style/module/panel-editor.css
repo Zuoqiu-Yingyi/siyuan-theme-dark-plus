@@ -3,7 +3,9 @@
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 
+/* 移动端编辑区 */
 /* 全屏模式编辑区 */
+#editor,
 .fn__flex-1.protyle.fullscreen .protyle-content {
     background-color: var(--custom-editor-background-color);
     backdrop-filter: var(--custom-backdrop-filter);
@@ -61,6 +63,6 @@
 }
 
 /*编辑区*/
-.protyle {
+.fn__flex-1.protyle {
     background: transparent;
 }

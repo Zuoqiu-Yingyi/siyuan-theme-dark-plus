@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 将文件引用路径更改为绝对路径 | Change the file reference path to an absolute path.
+- 为移动端背景图片添加半透明蒙版 | Add a translucent mask to the mobile background image.
 
 ## v0.3.4/2022-02-14
 
