@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 将文件引用路径更改为绝对路径 | Change the file reference path to an absolute path.
+
 ## v0.3.4/2022-02-14
 
 - [v0.3.3 <=> v0.3.4](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.3...v0.3.4)
