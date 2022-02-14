@@ -2,7 +2,7 @@
    REF [cc-baselib/siYuanApi.js at main · leolee9086/cc-baselib](https://github.com/leolee9086/cc-baselib/blob/main/src/siYuanApi.js)
  */
 
-import { config } from './../module/config.js';
+import { config } from '/appearance/themes/Dark+/script/module/config.js';
 
 export {
     向思源请求数据 as request,
