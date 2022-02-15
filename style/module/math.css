@@ -28,12 +28,20 @@
 } */
 
 /* 公式整体 */
-.b3-typography .katex,
-.protyle-wysiwyg .katex {
+.protyle-wysiwyg .katex,
+.b3-typography .katex {
     font-size: var(--custom-math-size);
 }
 
 /* 公式子项(上标, 下标等) */
 .katex .msupsub {
     font-size: var(--custom-math-sub-size);
+}
+
+/* 移除公式编号上移 */
+.protyle-wysiwyg .katex-display>.katex>.katex-html>.tag,
+.b3-typography .katex-display>.katex>.katex-html>.tag {
+    position: var(--custom-math-tag-position);
+    top: auto;
+    right: 0;
 }
