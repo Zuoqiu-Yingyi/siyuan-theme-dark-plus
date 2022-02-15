@@ -4,6 +4,9 @@
 - 为移动端背景图片添加半透明蒙版 | Add a translucent mask to the mobile background image.
 - 使用自定义块属性 `custom-type`: `danmaku` 设置滚动弹幕块样式 | Use the custom block attribute `custom-type`: `danmaku` to set the scrolling danmaku block style.
 - 钉住的标签页全部显示 | The pinned tabs are all displayed.
+- 添加公式编号位置设置选项 `-custom-math-tag-position` | Adds formula numbering position setting options `-custom-math-tag-position`.
+  - `absolute`: 公式过长时会被遮挡 | Formulas can be obscured when they are too long.
+  - `relative`: 公式过长时需要滑动滚动条才能看到编号 | Formulas that are too long require sliding the scroll bar to see.
 
 ## v0.3.4/2022-02-14
 

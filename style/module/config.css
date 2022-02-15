@@ -274,6 +274,16 @@
     /* 数学公式上下标缩放比例 | The mathematical formula superscript scaling */
     --custom-math-sub-size: 100%;
 
+    /* 数学公式编号的位置 | The position of the mathematical formula number */
+    /* 固定在页面右侧 | Pinned to the right side of the page
+     * - 公式过长时会被遮挡 | Formulas can be obscured when they are too long
+     */
+    --custom-math-tag-position: absolute;
+    /* 跟随在公式右侧 | Follow to the right of the formula
+     * - 公式过长时需要滑动滚动条才能看到编号 | Formulas that are too long require sliding the scroll bar to see
+     */
+    /* --custom-math-tag-position: relative; */
+
     /* 块引用标志颜色 | Block reference flag color */
     --custom-ref-mark-color: var(--b3-protyle-inline-link-color);
 
