@@ -33,3 +33,8 @@
     border: 2px solid var(--custom-striking-color);
     border-radius: var(--custom-border-radius);
 }
+
+/* 钉住的标签页全部显示 */
+.layout-tab-bar .item--pin .item__text {
+    width: auto;
+}
