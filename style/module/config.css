@@ -296,7 +296,7 @@
 
     /* 面板内字段名显示样式 | The field name display style within the panel */
 
-    /* 折叠显示 | Collapsed display when the document name is too long */
+    /* 折叠显示字段名 | Collapsed display when the field name is too long */
     /* --custom-backlink-display: table-cell; */
     /* --custom-bookmark-display: table-cell; */
     /* --custom-file-display: table-cell; */
@@ -333,6 +333,9 @@
     --custom-doctree-begin-at-color: var(--custom-color-5-0);
     /* . */
     --custom-doctree-begin-period-color: #0000;
+
+    /* 弹幕块移动周期 | Danmaku block movement cycle */
+    --custom-type-danmaku-time: 16s;
 }
 
 @font-face {
@@ -424,6 +427,7 @@
     }
 }
 
+/* 动态波浪线 */
 @keyframes waveMove {
     from {
         background-position: 0 100%;
@@ -431,5 +435,18 @@
 
     to {
         background-position: -20px 100%;
+    }
+}
+
+/* 滚动弹幕 */
+@keyframes danmaku {
+    0% {
+        transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
     }
 }

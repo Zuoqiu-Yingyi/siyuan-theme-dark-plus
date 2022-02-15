@@ -114,8 +114,8 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     /* 悬浮预览窗口最大宽度 | The maximum width of the hover preview window */
     --custom-popover-max-width: 50%;
 
-    /* 悬浮搜索菜单宽度 | The width of popover search menu */
-    --custom-popover-search-width: auto;
+    /* 悬浮菜单宽度 | The width of popover menu */
+    --custom-popover-menu-width: auto;
 
     /* 功能面板间隔距离 | Function panel spacing distance */
     --custom-panel-distance: 8px;
@@ -172,6 +172,10 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
     /* 编辑区导航栏(面包屑)背景颜色 | The background color of the edit area navigation bar (breadcrumbs) */
     --custom-editor-breadcrumb-bar-background-color: var(--custom-components);
+
+    /* 编辑区内边距 | Padding of editor pannel */
+    --custom-editor-padding-left: 24px;
+    --custom-editor-padding-right: 24px;
 
     /* 编辑区页签栏背景颜色 | The background color of the  edit area tab bar */
     --custom-tab-bar-background-color: var(--custom-transparent);
@@ -249,7 +253,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
     /* 面板内字段名显示样式 | The field name display style within the panel */
 
-    /* 折叠显示 | Collapsed display when the document name is too long */
+    /* 折叠显示字段名 | Collapsed display when the field name is too long */
     /* --custom-backlink-display: table-cell; */
     /* --custom-bookmark-display: table-cell; */
     /* --custom-file-display: table-cell; */
@@ -286,6 +290,9 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     --custom-doctree-begin-at-color: var(--custom-color-5-0);
     /* . */
     --custom-doctree-begin-period-color: #0000;
+
+    /* 弹幕块移动周期 | Danmaku block movement cycle */
+    --custom-type-danmaku-time: 16s;
 }
 ```
 
@@ -413,6 +420,10 @@ export var config = {
       - 在视频块/音频块中设置该自定义属性后, 按住 <kbd>Ctrl</kbd> 后单击视频/音频块可以跳转到该属性所设置的时间戳  
         After you set this custom attribute in a video/audio block, clicking the video/audio block while <kbd>ctrl-down</kbd> jumps to the point in time.
   - `type`: 属性名 | key
+    - `danmaku`: 属性值 | value
+      - 适用于所有块 | Applies to all blocks
+      - 将块设置为滚动弹幕样式  
+        Set the block to the scrolling danmaku block style.
     - `table`: 属性值 | value
       - 适用于列表块 | Applies to list blocks
       - 列表转换为表格 | convert list to table

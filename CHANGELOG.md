@@ -2,6 +2,7 @@
 
 - 将文件引用路径更改为绝对路径 | Change the file reference path to an absolute path.
 - 为移动端背景图片添加半透明蒙版 | Add a translucent mask to the mobile background image.
+- 使用自定义块属性 `custom-type`: `danmaku` 设置滚动弹幕块样式 | Use the custom block attribute `custom-type`: `danmaku` to set the scrolling danmaku block style.
 
 ## v0.3.4/2022-02-14
 
