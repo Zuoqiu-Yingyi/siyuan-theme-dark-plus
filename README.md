@@ -22,15 +22,130 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 ![preview](./preview.png)
 
-### 查询 | QUERY
 
-#### 内容块查询 | CONTENT BLOCK QUERY
+## 介绍 | INTRODUCTION
 
-![内容块查询](image/README/1644419419908.png)
-
-#### 数据库查询 | DATABUSE QUERY
-
-![数据库查询](image/README/1644420736088.png)
+- 指向到思源 Web 静态文件服务目录的超链接显示图标  
+  Hyperlinks to the Siyuan Web Static File Service directory displays icons
+  - `assets/`: 资源文件目录 | Asset file directory
+    - `data/**/assets/`
+  - `emojis/`: 表情文件目录 | Emoji file directory
+    - `data/emojis/`
+  - `widgets/`: 挂件文件目录 | Widget file directory
+    - `data/widgets/`
+  - `appearance/`: 外观文件目录 | Appearance file directory
+    - `conf/appearance/`
+  - `export/`: 导出文件目录 | Export file directory
+    - `temp/export/`
+- 指向资源文件目录下常见文件的超链接显示图标  
+  Hyperlinks to common files under the resource file directory display icons
+  - Word
+  - PowerPoint
+  - Excel
+  - Image
+  - Audio
+  - Video
+  - ZIP
+- 在其他主题中引用本主题模块  
+  Reference this theme modules in other themes.
+  - 在 `<工作空间>/conf/appearance/themes/Dark+/theme.css` 文件中直接粘贴所需模块到其他主题的 `theme.css` 文件或 `custom.css` 文件中  
+    Paste the desired module into `theme.css` file or `custom.css` file for another theme in the `<workspace>/conf/appearance/themes/Dark+/theme.css` file.
+  - 在其他主题中引用本主题模块时, 自定义配置文件 `<工作空间>/data/widgets/custom.css` 同样有效  
+    Custom configuration files `<workspace>/data/widgets/custom.css` also work when this theme modules were referenced in other theme modules.
+- 使用 URL 参数 `id=<内容块 ID>` 从浏览器外跳转到 Web 端的指定块(必须已经打开至少一个页签)  
+  Jump from outside the browser to a specified block on the web side using the URL parameter `id=<content block ID>` (at least one tab must already be open)
+  - 示例: `http(s)://host:port/stage/build/desktop/?id=20220128124308-bancmue`  
+    exanple: `http(s)://host:port/stage/build/desktop/?id=20220128124308-bancmue`
+- 使用超链接设置块属性  
+  Use hyperlinks to set block attributes.
+  - `超文本引用`: 指向想要设置块属性的块的超链接  
+    `href`: A hyperlink to the block for which you want to set the block attributes.
+    - 示例 | example: `siyuan://blocks/20220213230830-g1amobi`
+  - `标题`: `json` 格式的一组键值对  
+    `title`: A set of key-value pairs in `json` format.
+      - 示例 | example: `{"memo": "timestamp", "custom-time": "00:00:01"}`
+  - 使用快捷键 <kbd>Ctrl + 鼠标中键</kbd> 单击超链接设置自定义块属性  
+    Use the shortcut keys <kbd>Ctrl + Middle Mouse Button</kbd> click the hyperlink to set the custom block attributes.
+- 块自定义属性
+  Block custom attributes.
+  - `time`: 属性名 | key
+    - `<时间戳|timestamp>`: 属性值 | value
+      - 适用于视频块/音频块 | Applies to video blocks and audio blocks
+      - 格式 | format
+        - `ss`: `ss >= 0`
+        - `mm:ss`: `mm >= 0 && 0 <= ss <= 59`
+        - `hh:mm:ss`: `hh >= 0 && 0 <= mm <= 59 && 0 <= ss <= 59`
+      - 在视频块/音频块中设置该自定义属性后, 按住 <kbd>Ctrl</kbd> 后单击视频/音频块可以跳转到该属性所设置的时间戳  
+        After you set this custom attribute in a video/audio block, clicking the video/audio block while <kbd>ctrl-down</kbd> jumps to the point in time.
+  - `type`: 属性名 | key
+    - `danmaku`: 属性值 | value
+      - 适用于所有块 | Applies to all blocks
+      - 将块设置为滚动弹幕样式  
+        Set the block to the scrolling danmaku block style.
+    - `table`: 属性值 | value
+      - 适用于列表块 | Applies to list blocks
+      - 列表转换为表格 | convert list to table
+      - 详情请参考 [土法列表表格 · 语雀](https://www.yuque.com/siyuannote/docs/yev84m)  
+        For details, please refer to [Soil Law List Table - Yuque](https://www.yuque.com/siyuannote/docs/yev84m).
+    - `图标题` 或 `表标题` | `table-title` or `table-title`: 属性值 | value
+      - 适用于段落块 | Applies to paragraph blocks
+      - 图标题/表标题自动计数 | Figure titles/table titles are counted automatically
+  - `style`: 属性名 | key
+    - 适用于所有块 | Applies to all blocks
+    - 块样式 | block style
+    - 设置后单击 <kbd>确认</kbd> 按钮将该自定义属性设置为块样式属性  
+      After setting, click the <kbd>Confirm</kbd> button to set the custom attribute to a block style attribute.
+  - `list-guides`: 属性名 | key
+    - 适用于列表块 | Applies to list blocks
+    - 属性值可以设置为任意字符(不可为空)  
+      The attribute value can be set to any character(not nullable).
+    - 启用动态列表辅助线 | Enable dynamic list guides
+  - `writing-mode`: 属性名 | key
+    - 适用于所有块 | Applies to all blocks
+    - 文本排版模式 | text layout mode
+    - 属性值 | attribute value
+      - `horizontal-tb`: 属性值 | value
+        - (默认)水平方向自上而下的书写方式 | (default)left-right-top-bottom
+      - `vertical-rl`: 属性值 | value
+        - 垂直方向自右而左的书写方式 | top-bottom-right-left
+      - `vertical-lr`: 属性值 | value
+        - 垂直方向自左而右的书写方式 | top-bottom-left-right
+  - `font-family`: 属性名 | key
+    - 适用于所有块 | Applies to all blocks
+    - 字体 | font
+    - 属性值: 字体名称  
+      Attribute value: Font name
+      - `等线`: 属性值 | value
+      - `方正舒体`: 属性值 | value
+      - `方正姚体`: 属性值 | value
+      - `仿宋`: 属性值 | value
+      - `黑体`: 属性值 | value
+      - `华文彩云`: 属性值 | value
+      - `华文仿宋`: 属性值 | value
+      - `华文琥珀`: 属性值 | value
+      - `华文楷体`: 属性值 | value
+      - `华文隶书`: 属性值 | value
+      - `华文宋体`: 属性值 | value
+      - `华文细黑`: 属性值 | value
+      - `华文新魏`: 属性值 | value
+      - `华文行楷`: 属性值 | value
+      - `华文中宋`: 属性值 | value
+      - `楷体`: 属性值 | value
+      - `隶属`: 属性值 | value
+      - `宋体`: 属性值 | value
+      - `微软雅黑`: 属性值 | value
+      - `新宋体`: 属性值 | value
+      - `幼圆`: 属性值 | value
+  - 其他自定义样式  
+    Other custom attributes.
+    - 这些样式不会自动加载  
+      These styles are not loaded automatically.
+    - 将自定义样式名添加到 `<工作空间>/data/widgets/custom.js` 的 `custom.styles`  
+      Add the custom style name to `custom.styles` in `<workspace>/data/widgets/custom.js`.
+    - 在块的自定义属性中添加自定义样式名与样式值  
+      Add custom style names and style values to the block's custom attributes.
+    - 使用快捷键 <kbd>Ctrl + F1 / ⌘ + F1</kbd> 渲染当前所有块的自定义样式  
+      Use the hot key <kbd>Ctrl + F1 / ⌘ + F1</kbd> to render the custom style of all current blocks.
 
 ## 自定义配置 | CUSTOM CONFIG
 
@@ -374,125 +489,6 @@ export var config = {
 };
 
 ```
-
-## 介绍 | INTRODUCTION
-
-- 指向到思源 Web 静态文件服务目录的超链接显示图标  
-  Hyperlinks to the Siyuan Web Static File Service directory displays icons
-  - `assets/`: 资源文件目录 | Asset file directory
-    - `data/**/assets/`
-  - `emojis/`: 表情文件目录 | Emoji file directory
-    - `data/emojis/`
-  - `widgets/`: 挂件文件目录 | Widget file directory
-    - `data/widgets/`
-  - `appearance/`: 外观文件目录 | Appearance file directory
-    - `conf/appearance/`
-  - `export/`: 导出文件目录 | Export file directory
-    - `temp/export/`
-- 指向资源文件目录下常见文件的超链接显示图标  
-  Hyperlinks to common files under the resource file directory display icons
-  - Word
-  - PowerPoint
-  - Excel
-  - Image
-  - Audio
-  - Video
-  - ZIP
-- 在其他主题中引用本主题模块  
-  Reference this theme modules in other themes.
-  - 在 `<工作空间>/conf/appearance/themes/Dark+/theme.css` 文件中直接粘贴所需模块到其他主题的 `theme.css` 文件或 `custom.css` 文件中  
-    Paste the desired module into `theme.css` file or `custom.css` file for another theme in the `<workspace>/conf/appearance/themes/Dark+/theme.css` file.
-  - 在其他主题中引用本主题模块时, 自定义配置文件 `<工作空间>/data/widgets/custom.css` 同样有效  
-    Custom configuration files `<workspace>/data/widgets/custom.css` also work when this theme modules were referenced in other theme modules.
-- 使用 URL 参数 `id=<内容块 ID>` 从浏览器外跳转到 Web 端的指定块(必须已经打开至少一个页签)  
-  Jump from outside the browser to a specified block on the web side using the URL parameter `id=<content block ID>` (at least one tab must already be open)
-  - 示例: `http(s)://host:port/stage/build/desktop/?id=20220128124308-bancmue`  
-    exanple: `http(s)://host:port/stage/build/desktop/?id=20220128124308-bancmue`
-- 使用超链接设置块属性  
-  Use hyperlinks to set block attributes.
-  - `超文本引用`: 指向想要设置块属性的块的超链接  
-    `href`: A hyperlink to the block for which you want to set the block attributes.
-    - 示例 | example: `siyuan://blocks/20220213230830-g1amobi`
-  - `标题`: `json` 格式的一组键值对  
-    `title`: A set of key-value pairs in `json` format.
-      - 示例 | example: `{"memo": "timestamp", "custom-time": "00:00:01"}`
-  - 使用快捷键 <kbd>Ctrl + 鼠标中键</kbd> 单击超链接设置自定义块属性  
-    Use the shortcut keys <kbd>Ctrl + Middle Mouse Button</kbd> click the hyperlink to set the custom block attributes.
-- 块自定义属性
-  Block custom attributes.
-  - `time`: 属性名 | key
-    - `<时间戳|timestamp>`: 属性值 | value
-      - 适用于视频块/音频块 | Applies to video blocks and audio blocks
-      - 格式 | format
-        - `ss`: `ss >= 0`
-        - `mm:ss`: `mm >= 0 && 0 <= ss <= 59`
-        - `hh:mm:ss`: `hh >= 0 && 0 <= mm <= 59 && 0 <= ss <= 59`
-      - 在视频块/音频块中设置该自定义属性后, 按住 <kbd>Ctrl</kbd> 后单击视频/音频块可以跳转到该属性所设置的时间戳  
-        After you set this custom attribute in a video/audio block, clicking the video/audio block while <kbd>ctrl-down</kbd> jumps to the point in time.
-  - `type`: 属性名 | key
-    - `danmaku`: 属性值 | value
-      - 适用于所有块 | Applies to all blocks
-      - 将块设置为滚动弹幕样式  
-        Set the block to the scrolling danmaku block style.
-    - `table`: 属性值 | value
-      - 适用于列表块 | Applies to list blocks
-      - 列表转换为表格 | convert list to table
-      - 详情请参考 [土法列表表格 · 语雀](https://www.yuque.com/siyuannote/docs/yev84m)  
-        For details, please refer to [Soil Law List Table - Yuque](https://www.yuque.com/siyuannote/docs/yev84m).
-    - `图标题` 或 `表标题` | `table-title` or `table-title`: 属性值 | value
-      - 适用于段落块 | Applies to paragraph blocks
-      - 图标题/表标题自动计数 | Figure titles/table titles are counted automatically
-  - `style`: 属性名 | key
-    - 适用于所有块 | Applies to all blocks
-    - 块样式 | block style
-    - 设置后单击 <kbd>确认</kbd> 按钮将该自定义属性设置为块样式属性  
-      After setting, click the <kbd>Confirm</kbd> button to set the custom attribute to a block style attribute.
-  - `writing-mode`: 属性名 | key
-    - 适用于所有块 | Applies to all blocks
-    - 文本排版模式 | text layout mode
-    - 属性值 | attribute value
-      - `horizontal-tb`: 属性值 | value
-        - (默认)水平方向自上而下的书写方式 | (default)left-right-top-bottom
-      - `vertical-rl`: 属性值 | value
-        - 垂直方向自右而左的书写方式 | top-bottom-right-left
-      - `vertical-lr`: 属性值 | value
-        - 垂直方向自左而右的书写方式 | top-bottom-left-right
-  - `font-family`: 属性名 | key
-    - 适用于所有块 | Applies to all blocks
-    - 字体 | font
-    - 属性值: 字体名称  
-      Attribute value: Font name
-      - `等线`: 属性值 | value
-      - `方正舒体`: 属性值 | value
-      - `方正姚体`: 属性值 | value
-      - `仿宋`: 属性值 | value
-      - `黑体`: 属性值 | value
-      - `华文彩云`: 属性值 | value
-      - `华文仿宋`: 属性值 | value
-      - `华文琥珀`: 属性值 | value
-      - `华文楷体`: 属性值 | value
-      - `华文隶书`: 属性值 | value
-      - `华文宋体`: 属性值 | value
-      - `华文细黑`: 属性值 | value
-      - `华文新魏`: 属性值 | value
-      - `华文行楷`: 属性值 | value
-      - `华文中宋`: 属性值 | value
-      - `楷体`: 属性值 | value
-      - `隶属`: 属性值 | value
-      - `宋体`: 属性值 | value
-      - `微软雅黑`: 属性值 | value
-      - `新宋体`: 属性值 | value
-      - `幼圆`: 属性值 | value
-  - 其他自定义样式  
-    Other custom attributes.
-    - 这些样式不会自动加载  
-      These styles are not loaded automatically.
-    - 将自定义样式名添加到 `<工作空间>/data/widgets/custom.js` 的 `custom.styles`  
-      Add the custom style name to `custom.styles` in `<workspace>/data/widgets/custom.js`.
-    - 在块的自定义属性中添加自定义样式名与样式值  
-      Add custom style names and style values to the block's custom attributes.
-    - 使用快捷键 <kbd>Ctrl + F1 / ⌘ + F1</kbd> 渲染当前所有块的自定义样式  
-      Use the hot key <kbd>Ctrl + F1 / ⌘ + F1</kbd> to render the custom style of all current blocks.
 
 ## 计划 | TODO
 
