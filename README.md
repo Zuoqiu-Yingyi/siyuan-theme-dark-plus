@@ -240,6 +240,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
      * - 公式过长时需要滑动滚动条才能看到编号 | Formulas that are too long require sliding the scroll bar to see
      */
     /* --custom-math-tag-position: relative; */
+
     /* 块引用标志颜色 | Block reference flag color */
     --custom-ref-mark-color: var(--b3-protyle-inline-link-color);
 
