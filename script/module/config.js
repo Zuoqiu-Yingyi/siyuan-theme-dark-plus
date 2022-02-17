@@ -5,7 +5,7 @@ export var config = {
     regs: {
         // 正则表达式
         url: /^siyuan:\/\/blocks\/\d{14}\-[0-9a-z]{7}$/, // 思源 URL Scheme 正则表达式
-        time: /^(\d+)(:[0-5]?[0-9]){0,2}$/, // 时间戳正则表达式
+        time: /^(\d+)(:[0-5]?[0-9]){0,2}(\.\d*)?$/, // 时间戳正则表达式
     },
     style: {
         enable: false, // 是否启用自定义样式渲染
@@ -45,6 +45,14 @@ export var config = {
                 altKey: false,
                 type: 'click',
             },
+            create: {
+                // 新建时间戳
+                ctrlKey: true,
+                metaKey: true,
+                shiftKey: false,
+                altKey: false,
+                button: 1, // 鼠标中键
+            },
         },
         blockattrs: {
             set: {
@@ -54,8 +62,8 @@ export var config = {
                 shiftKey: false,
                 altKey: false,
                 button: 1, // 鼠标中键
-            }
-        }
+            },
+        },
     },
 };
 

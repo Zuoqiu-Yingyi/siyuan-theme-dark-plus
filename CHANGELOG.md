@@ -1,5 +1,9 @@
 # 更改日志 | CHANGE LOG
 
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
+- 使用快捷键 <kbd>Ctrl + 鼠标中键</kbd> 单击视频块将当前时间戳写入剪贴板 | Use the shortcut keys <kbd>Ctrl + Middle Mouse Button</kbd> click the video block to write the current timestamp to the clipboard.
+- 添加时间戳超链接图标 | Add a timestamp hyperlink icon.
+
 ## v0.3.5/2022-02-16
 
 - [v0.3.4 <=> v0.3.5](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.4...v0.3.5)

@@ -3,6 +3,9 @@ export {
     isNum, // 判断字符串是否为数字
     hoverPreview, // 悬浮预览指定块
     timestampParse, // 时间戳解析为秒数
+    url2id, // 块超链接转换为块 id
+    id2url, // 块 id 转换为块超链接
+    intPrefix, // 整数填充前导零
 }
 
 function isNum(str) {
@@ -47,7 +50,20 @@ function timestampParse(timestamp) {
     for (let num of nums) {
         // 计算时间戳(单位: 秒)
         time *= 60;
-        time += parseInt(num);
+        time += parseFloat(num);
     }
     return time;
+}
+
+function url2id(url) {
+    return url.substr(16);
+}
+
+function id2url(id) {
+    return `siyuan://blocks/${id}`;
+}
+
+function intPrefix(num, length) {
+    let s = `${num}`;
+    return s.length < length ? (Array(length).join('0') + num).slice(-length) : s;
 }
