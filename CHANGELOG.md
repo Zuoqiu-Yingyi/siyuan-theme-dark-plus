@@ -13,6 +13,7 @@
   - `relative`: 公式过长时需要滑动滚动条才能看到编号 | Formulas that are too long require sliding the scroll bar to see.
 - 使用自定义块属性 `custom-list-guides`: `<任意值>` 设置列表辅助线 | Use the custom block attribute `custom-type`: `<Any value>` to set the list guides.
 - 超级块鼠标悬浮时显示轮廓 | Displays an outline when the superblock is hovered.
+- 使用自定义块属性 `custom-table-width`: `auto` 设置表格宽度自动跟随文档宽度 | Use the custom block attribute `custom-table-width`: `auto` to set the table width automatically follows the document width.
 
 ## v0.3.4/2022-02-14
 

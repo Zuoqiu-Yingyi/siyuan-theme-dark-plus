@@ -100,15 +100,22 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     - 属性值可以设置为任意字符(不可为空)  
       The attribute value can be set to any character(not nullable).
     - 启用动态列表辅助线 | Enable dynamic list guides
+  - `table-width`: 属性名 | key
+    - 适用于表格块 | Applies to table blocks
+    - 设置表格宽度样式 | Sets the table width style.
+    - 属性值 | attribute value
+      - `auto`
+        - 表格宽度自动跟随文档宽度变化  
+          The table width automatically follows the document width.
   - `writing-mode`: 属性名 | key
     - 适用于所有块 | Applies to all blocks
     - 文本排版模式 | text layout mode
     - 属性值 | attribute value
-      - `horizontal-tb`: 属性值 | value
+      - `horizontal-tb`
         - (默认)水平方向自上而下的书写方式 | (default)left-right-top-bottom
-      - `vertical-rl`: 属性值 | value
+      - `vertical-rl`
         - 垂直方向自右而左的书写方式 | top-bottom-right-left
-      - `vertical-lr`: 属性值 | value
+      - `vertical-lr`
         - 垂直方向自左而右的书写方式 | top-bottom-left-right
   - `font-family`: 属性名 | key
     - 适用于所有块 | Applies to all blocks
