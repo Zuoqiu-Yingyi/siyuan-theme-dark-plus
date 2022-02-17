@@ -66,6 +66,8 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
       - 示例 | example: `{"memo": "timestamp", "custom-time": "00:00:01"}`
   - 使用快捷键 <kbd>Ctrl + 鼠标中键</kbd> 单击超链接设置自定义块属性  
     Use the shortcut keys <kbd>Ctrl + Middle Mouse Button</kbd> click the hyperlink to set the custom block attributes.
+- 使用快捷键 <kbd>Ctrl + 鼠标中键</kbd> 单击视频块将当前时间戳写入剪贴板  
+  Use the shortcut keys <kbd>Ctrl + Middle Mouse Button</kbd> click the video block to write the current timestamp to the clipboard.
 - 块自定义属性
   Block custom attributes.
   - `time`: 属性名 | key
