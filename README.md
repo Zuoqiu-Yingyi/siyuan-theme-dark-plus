@@ -103,10 +103,9 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
   - `table-width`: 属性名 | key
     - 适用于表格块 | Applies to table blocks
     - 设置表格宽度样式 | Sets the table width style.
-    - 属性值 | attribute value
-      - `auto`
-        - 表格宽度自动跟随文档宽度变化  
-          The table width automatically follows the document width.
+    - `auto`: 属性值 | value
+      - 表格宽度自动跟随文档宽度变化  
+        The table width automatically follows the document width.
   - `writing-mode`: 属性名 | key
     - 适用于所有块 | Applies to all blocks
     - 文本排版模式 | text layout mode
@@ -122,27 +121,27 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     - 字体 | font
     - 属性值: 字体名称  
       Attribute value: Font name
-      - `等线`: 属性值 | value
-      - `方正舒体`: 属性值 | value
-      - `方正姚体`: 属性值 | value
-      - `仿宋`: 属性值 | value
-      - `黑体`: 属性值 | value
-      - `华文彩云`: 属性值 | value
-      - `华文仿宋`: 属性值 | value
-      - `华文琥珀`: 属性值 | value
-      - `华文楷体`: 属性值 | value
-      - `华文隶书`: 属性值 | value
-      - `华文宋体`: 属性值 | value
-      - `华文细黑`: 属性值 | value
-      - `华文新魏`: 属性值 | value
-      - `华文行楷`: 属性值 | value
-      - `华文中宋`: 属性值 | value
-      - `楷体`: 属性值 | value
-      - `隶属`: 属性值 | value
-      - `宋体`: 属性值 | value
-      - `微软雅黑`: 属性值 | value
-      - `新宋体`: 属性值 | value
-      - `幼圆`: 属性值 | value
+      - `等线`
+      - `方正舒体`
+      - `方正姚体`
+      - `仿宋`
+      - `黑体`
+      - `华文彩云`
+      - `华文仿宋`
+      - `华文琥珀`
+      - `华文楷体`
+      - `华文隶书`
+      - `华文宋体`
+      - `华文细黑`
+      - `华文新魏`
+      - `华文行楷`
+      - `华文中宋`
+      - `楷体`
+      - `隶属`
+      - `宋体`
+      - `微软雅黑`
+      - `新宋体`
+      - `幼圆`
   - 其他自定义样式  
     Other custom attributes.
     - 这些样式不会自动加载  
