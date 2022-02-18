@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 修复列表渲染为表格样式 | Fixed list rendering to table style.
+
 ## v0.3.6/2022-02-18
 - [v0.3.5 <=> v0.3.6](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.5...v0.3.6)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
