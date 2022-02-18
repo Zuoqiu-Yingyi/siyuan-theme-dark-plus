@@ -1,0 +1,10 @@
+/* 表格自动调整宽度 */
+
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+/* 启用自动宽度 */
+.b3-typography table,
+.protyle-wysiwyg div.table[data-node-id][custom-table-width="auto"] table {
+    width: auto;
+}

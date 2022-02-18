@@ -26,9 +26,3 @@
 .protyle-wysiwyg table tbody tr:nth-child(2n) {
     background-color: var(--custom-block-table-even-background-color);
 }
-
-/* 启用自动宽度 */
-.b3-typography table,
-.protyle-wysiwyg div.table[data-node-id][custom-table-width="auto"] table {
-    width: auto;
-}

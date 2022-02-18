@@ -21,10 +21,6 @@
 }
 
 /* 超级块鼠标悬停时显示边框 */
-.protyle-wysiwyg div.sb[data-node-id] {
-    border: 1px solid transparent;
-}
-
 .protyle-wysiwyg div.sb[data-node-id]:hover {
-    border-color: var(--b3-theme-on-surface);
+    outline: 1px solid var(--b3-theme-on-surface);
 }
