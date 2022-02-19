@@ -4,6 +4,7 @@
 - 添加各式图标折叠时的样式 | Adds a style for various icons when collapsed.
 - 调整部分样式 | Adjust some of the styles.
 - 列表相对于段落调整为 `2em` 缩进 | The list is adjusted to a `2em` indentation relative to the paragraph.
+- 修复列表中的标题项对列表辅助线的干扰问题 | Fixed an issue where the header item in the list interfered with the list guides.
 
 ## v0.3.6/2022-02-18
 - [v0.3.5 <=> v0.3.6](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.5...v0.3.6)

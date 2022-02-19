@@ -7,7 +7,7 @@
 .protyle-wysiwyg [data-node-id].li>[data-node-id]::before {
     border-left: var(--custom-list-guides-line-width) solid var(--b3-border-color);
     background-color: transparent;
-    left: -18px;
+    left: calc(16px - 2em);
 }
 
 .protyle-wysiwyg [data-node-id].li>[data-node-id].list::before {
@@ -21,7 +21,7 @@
 
 /* 修正列表内嵌入块辅助线错位 */
 .protyle-wysiwyg [data-node-id].li>[data-node-id][data-type="NodeBlockQueryEmbed"]::before {
-    left: -19px;
+    left: calc(15px - 2em);
 }
 
 .protyle-wysiwyg [data-node-id].li>div:nth-child(2)::before {
@@ -35,7 +35,7 @@
     padding-left: 1em;
 }
 
-.protyle-wysiwyg [data-node-id].li>[data-node-id]:not(.list) {
+.protyle-wysiwyg [data-node-id].li>[data-node-id]:not(.list, [data-type="NodeHeading"]) {
     margin-left: 2em !important;
 }
 
