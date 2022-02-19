@@ -29,6 +29,9 @@
 /* 边栏 */
 @import url(/appearance/themes/Dark+/style/module/docker.css);
 
+/* 折叠 */
+@import url(/appearance/themes/Dark+/style/module/fold.css);
+
 /* 空白页面与空白行 */
 @import url(/appearance/themes/Dark+/style/module/empty.css);
 
