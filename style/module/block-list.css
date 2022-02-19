@@ -35,6 +35,10 @@
     padding-left: 1em;
 }
 
+.protyle-wysiwyg [data-node-id].li>[data-node-id]:not(.list) {
+    margin-left: 2em !important;
+}
+
 /* 子弹流弧线 */
 .protyle-wysiwyg div[custom-list-guides] [data-node-id].li>[data-node-id].list>[data-node-id].li:hover>.protyle-action::before {
     content: "";
