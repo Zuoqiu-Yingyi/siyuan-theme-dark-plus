@@ -1,11 +1,6 @@
-/* ------------------- 折叠样式 Start------------------- */
-.protyle-wysiwyg [data-node-id][fold="1"]:not(.li, .sb) {
-    overflow: visible !important;
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"].list .li:not(:first-child) {
-    display: none;
-}
+/* 折叠样式
+ * REF https: //github.com/UserZYF/zhang-light/blob/d309151036bafe324bcf9eb754829ebc93a88d03/theme.css#L1661
+ */
 
 .protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeIFrame"],
 .protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeWidget"],
@@ -152,5 +147,3 @@
 .protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="gitGraph"] div:first-child:before {
     content: "[Git Graph]";
 }
-
-/* -----------------------------折叠优化 End---------------- */

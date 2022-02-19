@@ -16,3 +16,13 @@
 .protyle-linenumber {
     background-color: transparent;
 }
+
+/* 代码块编辑时不闪
+ * REF https: //github.com/Achuan-2/siyuan-themes-tsundoku-light/blob/1aaa19fa3e6eebca4cb59606317d4bf1a23b0109/theme.css#L982
+ */
+.code-block .protyle-icons,
+.code-block .protyle-icons .protyle-action__copy,
+.code-block:hover .protyle-icons,
+.code-block:hover .protyle-icons .protyle-action__copy {
+    opacity: 1 !important;
+}

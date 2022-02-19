@@ -2,6 +2,7 @@
 
 - 修复列表渲染为表格样式 | Fixed list rendering to table style.
 - 添加各式图标折叠时的样式 | Adds a style for various icons when collapsed.
+- 调整部分样式 | Adjust some of the styles.
 
 ## v0.3.6/2022-02-18
 - [v0.3.5 <=> v0.3.6](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.5...v0.3.6)

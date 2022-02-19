@@ -3,8 +3,9 @@
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 
-.protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"] {
+.protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"] {
     background-color: var(--custom-block-embed-background-color);
+    outline: 2px solid var(--b3-border-color);
 }
 
 /* 嵌入块间分隔线 */

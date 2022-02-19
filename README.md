@@ -530,10 +530,11 @@ Download the release package in [Releases](https://github.com/Zuoqiu-Yingyi/siyu
 | **[Zhangwuji](https://ld246.com/member/Zhangwuji)** | [希望能够增加根据大纲生成思维导图的功能](https://ld246.com/article/1640259008838/comment/1640304551938#:~:text=fontxiugaidark.rar)                    | *Unknown*         |
 | **[Morganwan90](https://github.com/Morganwan90)**   | [Morganwan90/Darkblue-siyuan-theme](https://github.com/Morganwan90/Darkblue-siyuan-theme)                                                             | *Unknown*         |
 | **[leolee9086](https://github.com/leolee9086)**     | [leolee9086/cc-baselib](https://github.com/leolee9086/cc-baselib)                                                                                     | *Unknown*         |
+| **[UserZYF](https://github.com/UserZYF)**           | [UserZYF/zhang-light](https://github.com/UserZYF/zhang-light)                                                                                         | *Unknown*         |
 
 注: 排序不分先后  
 ps: Sort in no particular order.
 
 ## 更改日志 | CHANGE LOGS
 
-[CHANGELOG](CHANGELOG.md)
+[CHANGELOG](./CHANGELOG.md)
