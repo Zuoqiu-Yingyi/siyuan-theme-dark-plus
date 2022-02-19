@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.3.7/2022-02-20
+
+- [v0.3.6 <=> v0.3.7](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.6...v0.3.7)
 - 修复列表渲染为表格样式 | Fixed list rendering to table style.
 - 添加各式图标折叠时的样式 | Adds a style for various icons when collapsed.
 - 调整部分样式 | Adjust some of the styles.
@@ -7,6 +10,7 @@
 - 修复列表中的标题项对列表辅助线的干扰问题 | Fixed an issue where the header item in the list interfered with the list guides.
 
 ## v0.3.6/2022-02-18
+
 - [v0.3.5 <=> v0.3.6](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.5...v0.3.6)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 使用快捷键 <kbd>Ctrl + 鼠标中键</kbd> 单击视频块将当前时间戳写入剪贴板 | Use the shortcut keys <kbd>Ctrl + Middle Mouse Button</kbd> click the video block to write the current timestamp to the clipboard.
