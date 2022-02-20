@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 修复特定文档名颜色渲染问题 | Fixed color rendering issue for specific document names.
+
 ## v0.3.7/2022-02-20
 
 - [v0.3.6 <=> v0.3.7](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.6...v0.3.7)

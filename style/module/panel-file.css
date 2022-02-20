@@ -20,7 +20,7 @@
 }
 
 /* ^? */
-.sy__file li[data-type="navigation-file"][data-name ^="%?"]>.b3-list-item__text {
+.sy__file li[data-type="navigation-file"][data-name ^="?"]>.b3-list-item__text {
     color: var(--custom-doctree-begin-question-color);
 }
 
