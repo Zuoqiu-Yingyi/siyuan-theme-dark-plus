@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 修复特定文档名颜色渲染问题 | Fixed color rendering issue for specific document names.
+- 修复列表内引用块辅助线错位问题 | Fixed the issue of misalignment of reference block guides in the list.
 
 ## v0.3.7/2022-02-20
 
