@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.3.8/2022-02-24
+
+- [v0.3.7 <=> v0.3.8](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.7...v0.3.8)
 - 修复特定文档名颜色渲染问题 | Fixed color rendering issue for specific document names.
 - 修复列表内引用块辅助线错位问题 | Fixed the issue of misalignment of reference block guides in the list.
 
