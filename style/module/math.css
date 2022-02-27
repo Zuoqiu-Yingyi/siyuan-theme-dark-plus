@@ -42,6 +42,4 @@
 .protyle-wysiwyg .katex-display>.katex>.katex-html>.tag,
 .b3-typography .katex-display>.katex>.katex-html>.tag {
     position: var(--custom-math-tag-position);
-    top: auto;
-    right: 0;
 }
