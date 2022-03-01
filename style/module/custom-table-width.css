@@ -4,6 +4,10 @@
 @import url(/widgets/custom.css);
 
 /* 启用自动宽度 */
+.protyle-wysiwyg div.table[data-node-id][custom-table-width="auto"] {
+    width: 100%;
+}
+
 .b3-typography table,
 .protyle-wysiwyg div.table[data-node-id][custom-table-width="auto"] table {
     width: auto;

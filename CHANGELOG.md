@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 更换公式编号默认样式 | Replace the formula numbering default style.
+- 修复表格宽度自适应样式 | Fixed the table width adaptive style.
 
 ## v0.3.8/2022-02-24
 
