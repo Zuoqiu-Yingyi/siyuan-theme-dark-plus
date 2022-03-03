@@ -15,6 +15,7 @@
   - `table`
   - `Table`
   - `TABLE`
+- 使用文档块自定义属性 `custom-background` 设置自定义背景图片 | Use the document block custom attribute `custom-background` to set the custom background image.
 - 自定义样式属性可以设置为多个值(使用空格分隔) | Custom style properties can be set to multiple values (separated by spaces).
 - 使用自定义属性 `custom-title` 设置块标题 | Use the custom attribute `custom-title` to set the block title.
 

@@ -70,6 +70,10 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
   Use the shortcut keys <kbd>Ctrl + Middle Mouse Button</kbd> click the video block to write the current timestamp to the clipboard.
 - 块自定义属性
   Block custom attributes.
+  - `background`: 属性名 | key
+    - `01` ~ `12`: 属性值 | value
+    - 适用于文档块 | Applies to document blocks
+    - 设置文档的自定义背景图片 | Sets a custom background image for the document.
   - `auto-num-h`: 属性名 | key
     - `0`: 属性值 | value
     - 适用于文档块 | Applies to document blocks
@@ -449,6 +453,21 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
     /* 弹幕块移动周期 | Danmaku block movement cycle */
     --custom-type-danmaku-time: 16s;
+
+
+    /* 自定义背景图片路径 | The file path of customize background image. */
+    --custom-background-01: url("/appearance/themes/Dark+/image/background (01).jpg");
+    --custom-background-02: url("/appearance/themes/Dark+/image/background (02).jpg");
+    --custom-background-03: url("/appearance/themes/Dark+/image/background (03).jpg");
+    --custom-background-04: url("/appearance/themes/Dark+/image/background (04).jpg");
+    --custom-background-05: url("/appearance/themes/Dark+/image/background (05).jpg");
+    --custom-background-06: url("/appearance/themes/Dark+/image/background (06).jpg");
+    --custom-background-07: url("/appearance/themes/Dark+/image/background (07).jpg");
+    --custom-background-08: url("/appearance/themes/Dark+/image/background (08).jpg");
+    --custom-background-09: url("/appearance/themes/Dark+/image/background (09).jpg");
+    --custom-background-10: url("/appearance/themes/Dark+/image/background (10).jpg");
+    --custom-background-11: url("/appearance/themes/Dark+/image/background (11).jpg");
+    --custom-background-12: url("/appearance/themes/Dark+/image/background (12).jpg");
 }
 ```
 
