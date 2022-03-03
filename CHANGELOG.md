@@ -4,6 +4,7 @@
 
 - [v0.3.8 <=> v0.4.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.8...v0.4.0)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 更换公式编号默认样式 | Replace the formula numbering default style.
 - 修复表格宽度自适应样式 | Fixed the table width adaptive style.
 - 使用文档块的自定义属性 `custom-auto-num-h="0"` 取消指定文档的子标题自动编号 | Use the custom attribute of the document block `custom-auto-num-h="0"`  to unspecify the automatic numbering of Subheading.
@@ -22,6 +23,7 @@
 - 使用文档块自定义属性 `custom-background` 设置自定义背景图片 | Use the document block custom attribute `custom-background` to set the custom background image.
 - 自定义样式属性可以设置为多个值(使用空格分隔) | Custom style properties can be set to multiple values (separated by spaces).
 - 使用自定义属性 `custom-title` 设置块标题 | Use the custom attribute `custom-title` to set the block title.
+- 使用快捷键 <kbd>Ctrl + 鼠标左键</kbd> 单击 Iframe 块或挂件块重新加载块内容 | Use the hot keys <kbd>Ctrl + Left Mouse Button</kbd> click the iframe block or the widget block to reload the block contents.
 
 ## v0.3.8/2022-02-24
 

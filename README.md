@@ -66,8 +66,14 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
       - 示例 | example: `{"memo": "timestamp", "custom-time": "00:00:01"}`
   - 使用快捷键 <kbd>Ctrl + 鼠标中键</kbd> 单击超链接设置自定义块属性  
     Use the shortcut keys <kbd>Ctrl + Middle Mouse Button</kbd> click the hyperlink to set the custom block attributes.
-- 使用快捷键 <kbd>Ctrl + 鼠标中键</kbd> 单击视频块将当前时间戳写入剪贴板  
-  Use the shortcut keys <kbd>Ctrl + Middle Mouse Button</kbd> click the video block to write the current timestamp to the clipboard.
+- 使用快捷键 <kbd>Ctrl + 鼠标中键</kbd> 单击视频块/音频块将当前时间戳写入剪贴板  
+  Use the shortcut keys <kbd>Ctrl + Middle Mouse Button</kbd> click the video block or the audio block to write the current timestamp to the clipboard.
+- 使用快捷键 <kbd>Ctrl + 鼠标左键</kbd> 单击视频块/音频块跳转到自定义块属性 `time` 所设置的时间点  
+  Use the shortcut keys <kbd>Ctrl + Left Mouse Button</kbd> click the video block or the audio block to jump to the point in time set by the custom block attribute `time`.
+- 使用快捷键 <kbd>Ctrl + 鼠标左键</kbd> 单击 Iframe 块或挂件块重新加载块内容  
+  Use the shortcut keys <kbd>Ctrl + Left Mouse Button</kbd> click the iframe block or the widget block to reload the block contents.
+- 使用快捷键 <kbd>Ctrl + F5</kbd> 重新加载整个窗口  
+  Use the shortcut key <kbd>Ctrl + F5</kbd> to reload the entire window.
 - 块自定义属性
   Block custom attributes.
   - `background`: 属性名 | key
@@ -102,8 +108,11 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
       - 适用于视频块/音频块 | Applies to video blocks and audio blocks
       - 格式 | format
         - `ss`: `ss >= 0`
+        - `ss.ms`: `ss >= 0 && ms >= 0`
         - `mm:ss`: `mm >= 0 && 0 <= ss <= 59`
+        - `mm:ss.ms`: `mm >= 0 && 0 <= ss <= 59 && ms >= 0`
         - `hh:mm:ss`: `hh >= 0 && 0 <= mm <= 59 && 0 <= ss <= 59`
+        - `hh:mm:ss.ms`: `hh >= 0 && 0 <= mm <= 59 && 0 <= ss <= 59 && ms >= 0`
       - 在视频块/音频块中设置该自定义属性后, 按住 <kbd>Ctrl</kbd> 后单击视频/音频块可以跳转到该属性所设置的时间戳  
         After you set this custom attribute in a video/audio block, clicking the video/audio block while <kbd>ctrl-down</kbd> jumps to the point in time.
   - `type`: 属性名 | key
@@ -484,7 +493,7 @@ export var config = {
     regs: {
         // 正则表达式
         url: /^siyuan:\/\/blocks\/\d{14}\-[0-9a-z]{7}$/, // 思源 URL Scheme 正则表达式
-        time: /^(\d+)(:[0-5]?[0-9]){0,2}$/, // 时间戳正则表达式
+        time: /^(\d+)(:[0-5]?[0-9]){0,2}(\.\d*)?$/, // 时间戳正则表达式
     },
     style: {
         enable: false, // 是否启用自定义样式渲染
@@ -502,6 +511,10 @@ export var config = {
     blockattrs: {
         // 块属性操作
         enable: true, // 是否启用块属性操作
+    },
+    reload: {
+        // 重新加载
+        enable: true, // 是否启用重新加载
     },
     hotkeys: {
         // 快捷键
@@ -524,6 +537,14 @@ export var config = {
                 altKey: false,
                 type: 'click',
             },
+            create: {
+                // 新建时间戳(Ctrl + 鼠标中键)
+                ctrlKey: true,
+                metaKey: true,
+                shiftKey: false,
+                altKey: false,
+                button: 1, // 鼠标中键
+            },
         },
         blockattrs: {
             set: {
@@ -533,8 +554,26 @@ export var config = {
                 shiftKey: false,
                 altKey: false,
                 button: 1, // 鼠标中键
-            }
-        }
+            },
+        },
+        reload: {
+            window: {
+                // 刷新当前窗口(Ctrl + F5)
+                ctrlKey: true,
+                metaKey: true,
+                shiftKey: false,
+                altKey: false,
+                key: 'F5',
+            },
+            iframe: {
+                // 刷新 iframe 块(Ctrl + 单击)
+                ctrlKey: true,
+                metaKey: true,
+                shiftKey: false,
+                altKey: false,
+                type: 'click',
+            },
+        },
     },
 };
 
