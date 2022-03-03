@@ -12,29 +12,29 @@
  */
 .protyle-wysiwyg,
 .b3-typography {
-    counter-reset: table-count 0 figure-count 0;
+    counter-reset: table-counter 0 figure-counter 0;
 }
 
 div[custom-type~=table-title]>div[contenteditable]::before {
     color: var(--b3-theme-on-surface);
-    counter-increment: table-count;
-    content: "Table\0020"counter(table-count)"\0020";
+    counter-increment: table-counter;
+    content: "Table\0020"counter(table-counter)"\0020";
 }
 
 div[custom-type~=figure-title]>div[contenteditable]::before {
     color: var(--b3-theme-on-surface);
-    counter-increment: figure-count;
-    content: "Figure\0020"counter(figure-count)"\0020";
+    counter-increment: figure-counter;
+    content: "Figure\0020"counter(figure-counter)"\0020";
 }
 
 div[custom-type~=表标题]>div[contenteditable]::before {
     color: var(--b3-theme-on-surface);
-    counter-increment: table-count;
-    content: "表\0020"counter(table-count)"\0020";
+    counter-increment: table-counter;
+    content: "表\0020"counter(table-counter)"\0020";
 }
 
 div[custom-type~=图标题]>div[contenteditable]::before {
     color: var(--b3-theme-on-surface);
-    counter-increment: figure-count;
-    content: "图\0020"counter(figure-count)"\0020";
+    counter-increment: figure-counter;
+    content: "图\0020"counter(figure-counter)"\0020";
 }
