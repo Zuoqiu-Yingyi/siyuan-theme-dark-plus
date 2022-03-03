@@ -24,6 +24,10 @@ export var config = {
         // 块属性操作
         enable: true, // 是否启用块属性操作
     },
+    reload: {
+        // 重新加载
+        enable: true, // 是否启用重新加载
+    },
     hotkeys: {
         // 快捷键
         style: {
@@ -46,7 +50,7 @@ export var config = {
                 type: 'click',
             },
             create: {
-                // 新建时间戳
+                // 新建时间戳(Ctrl + 鼠标中键)
                 ctrlKey: true,
                 metaKey: true,
                 shiftKey: false,
@@ -62,6 +66,24 @@ export var config = {
                 shiftKey: false,
                 altKey: false,
                 button: 1, // 鼠标中键
+            },
+        },
+        reload: {
+            window: {
+                // 刷新当前窗口(Ctrl + F5)
+                ctrlKey: true,
+                metaKey: true,
+                shiftKey: false,
+                altKey: false,
+                key: 'F5',
+            },
+            iframe: {
+                // 刷新 iframe 块(Ctrl + 单击)
+                ctrlKey: true,
+                metaKey: true,
+                shiftKey: false,
+                altKey: false,
+                type: 'click',
             },
         },
     },
