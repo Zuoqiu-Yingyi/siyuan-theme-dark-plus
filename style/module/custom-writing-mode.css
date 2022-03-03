@@ -7,6 +7,9 @@ REF [CSS writing-mode 属性 | 菜鸟教程](https: //www.runoob.com/cssref/css-
  * sideways-lr：内容垂直方向从下到上排列
  */
 
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
 .protyle-wysiwyg [data-node-id][custom-writing-mode="horizontal-tb"] {
     writing-mode: horizontal-tb;
 }

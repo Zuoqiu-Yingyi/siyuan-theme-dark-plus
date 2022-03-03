@@ -9,7 +9,7 @@
     transition: all .2s linear 0ms;
 }
 
-.protyle-wysiwyg [data-node-id] [spellcheck="false"] mark:hover {
+.protyle-wysiwyg [data-node-id] [contenteditable] mark:hover {
     background-color: transparent;
     color: var(--custom-striking-color);
     font-weight: bold;

@@ -1,0 +1,24 @@
+/* 标题自动编号 */
+
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+/* 使用自定义文档块属性取消自动编号 */
+.protyle-wysiwyg[custom-auto-num-h="0"]>.h1::before,
+.protyle-wysiwyg[custom-auto-num-h="0"]>.h2::before,
+.protyle-wysiwyg[custom-auto-num-h="0"]>.h3::before,
+.protyle-wysiwyg[custom-auto-num-h="0"]>.h4::before,
+.protyle-wysiwyg[custom-auto-num-h="0"]>.h5::before,
+.protyle-wysiwyg[custom-auto-num-h="0"]>.h6::before {
+    content: "";
+}
+
+/* 使用自定义文档块属性时移除光标位置缩进 */
+.protyle-wysiwyg[custom-auto-num-h="0"] .h1>[contenteditable]:empty,
+.protyle-wysiwyg[custom-auto-num-h="0"] .h2>[contenteditable]:empty,
+.protyle-wysiwyg[custom-auto-num-h="0"] .h3>[contenteditable]:empty,
+.protyle-wysiwyg[custom-auto-num-h="0"] .h4>[contenteditable]:empty,
+.protyle-wysiwyg[custom-auto-num-h="0"] .h5>[contenteditable]:empty,
+.protyle-wysiwyg[custom-auto-num-h="0"] .h6>[contenteditable]:empty {
+    padding-left: 0;
+}

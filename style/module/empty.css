@@ -4,62 +4,62 @@
 @import url(/widgets/custom.css);
 
 /* 聚焦提示 */
-.protyle-wysiwyg [data-node-id]:not(.code-block)>[spellcheck="false"]:focus:empty::after {
+.protyle-wysiwyg [data-node-id]:not(.code-block)>[contenteditable]:focus:empty::after {
     /* 空段落 */
     content: var(--custom-empty-focus-p);
     color: var(--b3-theme-on-surface);
 }
 
-.protyle-wysiwyg .code-block>[spellcheck="false"]:focus:empty::after {
+.protyle-wysiwyg .code-block>[contenteditable]:focus:empty::after {
     /* 空代码块 */
     content: var(--custom-empty-focus-c);
     color: var(--b3-theme-on-surface);
 }
 
-.protyle-wysiwyg [data-subtype="t"]>.li>.p:nth-of-type(2)>[spellcheck="false"]:focus:empty::after {
+.protyle-wysiwyg [data-subtype="t"]>.li>.p:nth-of-type(2)>[contenteditable]:focus:empty::after {
     /* 空任务列表 */
     content: var(--custom-empty-focus-t);
     color: var(--b3-theme-on-surface);
 }
 
-.protyle-wysiwyg [data-subtype="u"]>.li>.p:nth-of-type(2)>[spellcheck="false"]:focus:empty::after {
+.protyle-wysiwyg [data-subtype="u"]>.li>.p:nth-of-type(2)>[contenteditable]:focus:empty::after {
     /* 空无序列表 */
     content: var(--custom-empty-focus-u);
     color: var(--b3-theme-on-surface);
 }
 
-.protyle-wysiwyg [data-subtype="o"]>.li>.p:nth-of-type(2)>[spellcheck="false"]:focus:empty::after {
+.protyle-wysiwyg [data-subtype="o"]>.li>.p:nth-of-type(2)>[contenteditable]:focus:empty::after {
     /* 空有序列表 */
     content: var(--custom-empty-focus-o);
     color: var(--b3-theme-on-surface);
 }
 
 /* 空白提示 */
-.protyle-wysiwyg [data-node-id]:not(.code-block)>[spellcheck="false"]:empty::after {
+.protyle-wysiwyg [data-node-id]:not(.code-block)>[contenteditable]:empty::after {
     /* 空段落 */
     content: var(--custom-empty-p);
     color: var(--b3-theme-on-surface);
 }
 
-.protyle-wysiwyg .code-block>[spellcheck="false"]:empty::after {
+.protyle-wysiwyg .code-block>[contenteditable]:empty::after {
     /* 空代码块 */
     content: var(--custom-empty-c);
     color: var(--b3-theme-on-surface);
 }
 
-.protyle-wysiwyg [data-subtype="t"]>.li>.p:nth-of-type(2)>[spellcheck="false"]:empty::after {
+.protyle-wysiwyg [data-subtype="t"]>.li>.p:nth-of-type(2)>[contenteditable]:empty::after {
     /* 空任务列表 */
     content: var(--custom-empty-t);
     color: var(--b3-theme-on-surface);
 }
 
-.protyle-wysiwyg [data-subtype="u"]>.li>.p:nth-of-type(2)>[spellcheck="false"]:empty::after {
+.protyle-wysiwyg [data-subtype="u"]>.li>.p:nth-of-type(2)>[contenteditable]:empty::after {
     /* 空无序列表 */
     content: var(--custom-empty-u);
     color: var(--b3-theme-on-surface);
 }
 
-.protyle-wysiwyg [data-subtype="o"]>.li>.p:nth-of-type(2)>[spellcheck="false"]:empty::after {
+.protyle-wysiwyg [data-subtype="o"]>.li>.p:nth-of-type(2)>[contenteditable]:empty::after {
     /* 空有序列表 */
     content: var(--custom-empty-o);
     color: var(--b3-theme-on-surface);
