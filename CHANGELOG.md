@@ -3,6 +3,12 @@
 - 更换公式编号默认样式 | Replace the formula numbering default style.
 - 修复表格宽度自适应样式 | Fixed the table width adaptive style.
 - 使用文档块的自定义属性 `custom-auto-num-h="0"` 取消指定文档的子标题自动编号 | Use the custom attribute of the document block `custom-auto-num-h="0"`  to unspecify the automatic numbering of Subheading.
+- 使用文档块自定义属性 `custom-auto-num-f` 设置图片自动编号 | Use the document block custom attribute `custom-auto-num-f` to set the picture autonumbering.
+  - `图`
+  - `Fig.`
+  - `figure`
+  - `Figure`
+  - `FIGURE`
 
 ## v0.3.8/2022-02-24
 
