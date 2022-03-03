@@ -1,0 +1,10 @@
+/* 块标题 */
+
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+div[data-node-id][custom-title]::before {
+    content: attr(custom-title);
+    text-align: center;
+    font-weight: bolder;
+}
