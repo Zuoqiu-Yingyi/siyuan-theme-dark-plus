@@ -96,6 +96,16 @@
     content: counter(h1-count) "."counter(h2-count) "."counter(h3-count) "."counter(h4-count) "."counter(h5-count) "."counter(h6-count) "\00A0";
 }
 
+/* 
+ * 使用自定义文档块属性取消自动编号
+ * 取消预览中列表中标题的自动编号
+ */
+.protyle-wysiwyg[custom-auto-num-h="0"]>.h1::before,
+.protyle-wysiwyg[custom-auto-num-h="0"]>.h2::before,
+.protyle-wysiwyg[custom-auto-num-h="0"]>.h3::before,
+.protyle-wysiwyg[custom-auto-num-h="0"]>.h4::before,
+.protyle-wysiwyg[custom-auto-num-h="0"]>.h5::before,
+.protyle-wysiwyg[custom-auto-num-h="0"]>.h6::before,
 .b3-typography li>h1::before,
 .b3-typography li>h2::before,
 .b3-typography li>h3::before,
@@ -131,8 +141,16 @@
     padding-left: 3em;
 }
 
-/* 移除列表中标题的空行光标位置缩进 */
-
+/* 
+ * 使用自定义文档块属性时移除光标位置缩进
+ * 移除列表中标题的空行光标位置缩进
+ */
+.protyle-wysiwyg[custom-auto-num-h="0"] .h1>[spellcheck="false"]:empty,
+.protyle-wysiwyg[custom-auto-num-h="0"] .h2>[spellcheck="false"]:empty,
+.protyle-wysiwyg[custom-auto-num-h="0"] .h3>[spellcheck="false"]:empty,
+.protyle-wysiwyg[custom-auto-num-h="0"] .h4>[spellcheck="false"]:empty,
+.protyle-wysiwyg[custom-auto-num-h="0"] .h5>[spellcheck="false"]:empty,
+.protyle-wysiwyg[custom-auto-num-h="0"] .h6>[spellcheck="false"]:empty,
 .protyle-wysiwyg [data-node-id].li>.protyle-action~.h1>[spellcheck="false"]:empty,
 .protyle-wysiwyg [data-node-id].li>.protyle-action~.h2>[spellcheck="false"]:empty,
 .protyle-wysiwyg [data-node-id].li>.protyle-action~.h3>[spellcheck="false"]:empty,
