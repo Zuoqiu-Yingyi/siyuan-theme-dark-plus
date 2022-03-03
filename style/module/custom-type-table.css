@@ -9,12 +9,12 @@
 @import url(/widgets/custom.css);
 
 /* --------------------------------------用自定义属性，列表转化为表格------------------------------------------- */
-.protyle-wysiwyg *[custom-type="table"] .protyle-action {
+.protyle-wysiwyg *[custom-type~=table] .protyle-action {
     display: table-cell;
 }
 
-.protyle-wysiwyg div.list[custom-type="table"] div.list,
-.protyle-wysiwyg div.list[custom-type="table"] div.li {
+.protyle-wysiwyg div.list[custom-type~=table] div.list,
+.protyle-wysiwyg div.list[custom-type~=table] div.li {
     border: 0;
     padding: 0;
     margin: 0;
@@ -23,29 +23,29 @@
 }
 
 /* 顶层列表块 */
-/* .protyle-wysiwyg div.list[custom-type="table"] {} */
+/* .protyle-wysiwyg div.list[custom-type~=table] {} */
 
 /* 嵌套列表块 */
-.protyle-wysiwyg div.list[custom-type="table"] div.list {
+.protyle-wysiwyg div.list[custom-type~=table] div.list {
     width: 100%;
 }
 
 /* 列表项 */
-.protyle-wysiwyg div.list[custom-type="table"] div.li {
+.protyle-wysiwyg div.list[custom-type~=table] div.li {
     width: auto;
     display: flex;
     overflow-x: auto;
 }
 
 /* 列表项内容 */
-.protyle-wysiwyg div.list[custom-type="table"] div[data-node-id]:not(.li, .list) {
+.protyle-wysiwyg div.list[custom-type~=table] div[data-node-id]:not(.li, .list) {
     min-width: 128px;
     width: auto;
     text-align: justify;
 }
 
 /* 去除辅助线 */
-.protyle-wysiwyg div.list[custom-type="table"] div.li>div:before {
+.protyle-wysiwyg div.list[custom-type~=table] div.li>div:before {
     display: none;
 }
 
