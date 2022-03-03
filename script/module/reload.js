@@ -33,6 +33,16 @@ async function reloadIframe(target) {
         if (config.timestamp.enable) {
             let body = document.querySelector('body');
 
+            // 重新加载整个窗口
+            body.addEventListener('keydown', (e) => {
+                // console.log(e);
+                if (isKey(e, config.hotkeys.reload.window)) {
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 0);
+                }
+            });
+
             // 重新加载 iframe
             body.addEventListener('click', (e) => {
                 // console.log(e);
