@@ -96,16 +96,7 @@
     content: counter(h1-count) "."counter(h2-count) "."counter(h3-count) "."counter(h4-count) "."counter(h5-count) "."counter(h6-count) "\00A0";
 }
 
-/* 
- * 使用自定义文档块属性取消自动编号
- * 取消预览中列表中标题的自动编号
- */
-.protyle-wysiwyg[custom-auto-num-h="0"]>.h1::before,
-.protyle-wysiwyg[custom-auto-num-h="0"]>.h2::before,
-.protyle-wysiwyg[custom-auto-num-h="0"]>.h3::before,
-.protyle-wysiwyg[custom-auto-num-h="0"]>.h4::before,
-.protyle-wysiwyg[custom-auto-num-h="0"]>.h5::before,
-.protyle-wysiwyg[custom-auto-num-h="0"]>.h6::before,
+/* 取消预览中列表中标题的自动编号 */
 .b3-typography li>h1::before,
 .b3-typography li>h2::before,
 .b3-typography li>h3::before,
@@ -117,46 +108,37 @@
 
 /* 调整标题空行光标位置 */
 
-.protyle-wysiwyg .h1>[spellcheck="false"]:empty {
+.protyle-wysiwyg .h1>[contenteditable]:empty {
     padding-left: 0.5em;
 }
 
-.protyle-wysiwyg .h2>[spellcheck="false"]:empty {
+.protyle-wysiwyg .h2>[contenteditable]:empty {
     padding-left: 1em;
 }
 
-.protyle-wysiwyg .h3>[spellcheck="false"]:empty {
+.protyle-wysiwyg .h3>[contenteditable]:empty {
     padding-left: 1.5em;
 }
 
-.protyle-wysiwyg .h4>[spellcheck="false"]:empty {
+.protyle-wysiwyg .h4>[contenteditable]:empty {
     padding-left: 2em;
 }
 
-.protyle-wysiwyg .h5>[spellcheck="false"]:empty {
+.protyle-wysiwyg .h5>[contenteditable]:empty {
     padding-left: 2.5em;
 }
 
-.protyle-wysiwyg .h6>[spellcheck="false"]:empty {
+.protyle-wysiwyg .h6>[contenteditable]:empty {
     padding-left: 3em;
 }
 
-/* 
- * 使用自定义文档块属性时移除光标位置缩进
- * 移除列表中标题的空行光标位置缩进
- */
-.protyle-wysiwyg[custom-auto-num-h="0"] .h1>[spellcheck="false"]:empty,
-.protyle-wysiwyg[custom-auto-num-h="0"] .h2>[spellcheck="false"]:empty,
-.protyle-wysiwyg[custom-auto-num-h="0"] .h3>[spellcheck="false"]:empty,
-.protyle-wysiwyg[custom-auto-num-h="0"] .h4>[spellcheck="false"]:empty,
-.protyle-wysiwyg[custom-auto-num-h="0"] .h5>[spellcheck="false"]:empty,
-.protyle-wysiwyg[custom-auto-num-h="0"] .h6>[spellcheck="false"]:empty,
-.protyle-wysiwyg [data-node-id].li>.protyle-action~.h1>[spellcheck="false"]:empty,
-.protyle-wysiwyg [data-node-id].li>.protyle-action~.h2>[spellcheck="false"]:empty,
-.protyle-wysiwyg [data-node-id].li>.protyle-action~.h3>[spellcheck="false"]:empty,
-.protyle-wysiwyg [data-node-id].li>.protyle-action~.h4>[spellcheck="false"]:empty,
-.protyle-wysiwyg [data-node-id].li>.protyle-action~.h5>[spellcheck="false"]:empty,
-.protyle-wysiwyg [data-node-id].li>.protyle-action~.h6>[spellcheck="false"]:empty {
+/* 移除列表中标题的空行光标位置缩进 */
+.protyle-wysiwyg [data-node-id].li>.protyle-action~.h1>[contenteditable]:empty,
+.protyle-wysiwyg [data-node-id].li>.protyle-action~.h2>[contenteditable]:empty,
+.protyle-wysiwyg [data-node-id].li>.protyle-action~.h3>[contenteditable]:empty,
+.protyle-wysiwyg [data-node-id].li>.protyle-action~.h4>[contenteditable]:empty,
+.protyle-wysiwyg [data-node-id].li>.protyle-action~.h5>[contenteditable]:empty,
+.protyle-wysiwyg [data-node-id].li>.protyle-action~.h6>[contenteditable]:empty {
     padding-left: 0;
 }
 
@@ -221,7 +203,7 @@
     margin-right: var(--custom-h-mark-blank);
 }
 
-.protyle-wysiwyg .h1>[spellcheck="false"]:focus:empty {
+.protyle-wysiwyg .h1>[contenteditable]:focus:empty {
     padding-left: 1rem;
 }
 
@@ -234,7 +216,7 @@
     margin-right: var(--custom-h-mark-blank);
 }
 
-.protyle-wysiwyg .h2>[spellcheck="false"]:focus:empty {
+.protyle-wysiwyg .h2>[contenteditable]:focus:empty {
     padding-left: 1rem;
 }
 
@@ -247,7 +229,7 @@
     margin-right: var(--custom-h-mark-blank);
 }
 
-.protyle-wysiwyg .h3>[spellcheck="false"]:focus:empty {
+.protyle-wysiwyg .h3>[contenteditable]:focus:empty {
     padding-left: 1rem;
 }
 
@@ -260,7 +242,7 @@
     margin-right: var(--custom-h-mark-blank);
 }
 
-.protyle-wysiwyg .h4>[spellcheck="false"]:focus:empty {
+.protyle-wysiwyg .h4>[contenteditable]:focus:empty {
     padding-left: 1rem;
 }
 
@@ -273,7 +255,7 @@
     margin-right: var(--custom-h-mark-blank);
 }
 
-.protyle-wysiwyg .h5>[spellcheck="false"]:focus:empty {
+.protyle-wysiwyg .h5>[contenteditable]:focus:empty {
     padding-left: 1rem;
 }
 
@@ -286,6 +268,6 @@
     margin-right: var(--custom-h-mark-blank);
 }
 
-.protyle-wysiwyg .h6>[spellcheck="false"]:focus:empty {
+.protyle-wysiwyg .h6>[contenteditable]:focus:empty {
     padding-left: 1rem;
 } */
