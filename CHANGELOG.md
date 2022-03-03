@@ -1,5 +1,9 @@
 # 更改日志 | CHANGE LOG
 
+## v0.4.0/2022-03-03
+
+- [v0.3.8 <=> v0.4.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.8...v0.4.0)
+- 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 更换公式编号默认样式 | Replace the formula numbering default style.
 - 修复表格宽度自适应样式 | Fixed the table width adaptive style.
 - 使用文档块的自定义属性 `custom-auto-num-h="0"` 取消指定文档的子标题自动编号 | Use the custom attribute of the document block `custom-auto-num-h="0"`  to unspecify the automatic numbering of Subheading.
