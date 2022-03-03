@@ -82,6 +82,17 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     - `FIGURE`: 属性值 | value
     - 适用于文档块 | Applies to document blocks
     - 启用该文档中图片的自动编号 | Enable automatic numbering of pictures in the document.
+  - `auto-num-t`: 属性名 | key
+    - `表`: 属性值 | value
+    - `Tab.`: 属性值 | value
+    - `table`: 属性值 | value
+    - `Table`: 属性值 | value
+    - `TABLE`: 属性值 | value
+    - 适用于文档块 | Applies to document blocks
+    - 启用该文档中表格的自动编号 | Enable automatic numbering of tables in the document.
+  - `title`: 属性名 | key
+    - 适用于所有块 | Applies to all blocks
+    - 在块的上方设置块标题 | Set the block title above the block.
   - `time`: 属性名 | key
     - `<时间戳|timestamp>`: 属性值 | value
       - 适用于视频块/音频块 | Applies to video blocks and audio blocks
