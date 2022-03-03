@@ -70,6 +70,18 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
   Use the shortcut keys <kbd>Ctrl + Middle Mouse Button</kbd> click the video block to write the current timestamp to the clipboard.
 - 块自定义属性
   Block custom attributes.
+  - `auto-num-h`: 属性名 | key
+    - `0`: 属性值 | value
+    - 适用于文档块 | Applies to document blocks
+    - 取消该文档的自动编号 | Cancels the automatic numbering of the document.
+  - `auto-num-f`: 属性名 | key
+    - `图`: 属性值 | value
+    - `Fig.`: 属性值 | value
+    - `figure`: 属性值 | value
+    - `Figure`: 属性值 | value
+    - `FIGURE`: 属性值 | value
+    - 适用于文档块 | Applies to document blocks
+    - 启用该文档中图片的自动编号 | Enable automatic numbering of pictures in the document.
   - `time`: 属性名 | key
     - `<时间戳|timestamp>`: 属性值 | value
       - 适用于视频块/音频块 | Applies to video blocks and audio blocks
