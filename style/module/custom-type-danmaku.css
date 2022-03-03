@@ -4,11 +4,11 @@
 @import url(/widgets/custom.css);
 
 /* 使用滚动动画 */
-.protyle-wysiwyg [data-node-id][custom-type="danmaku"] {
+.protyle-wysiwyg [data-node-id][custom-type~=danmaku] {
     animation: var(--custom-type-danmaku-time) danmaku linear infinite normal;
 }
 
 /* 鼠标悬浮时暂停 */
-.protyle-wysiwyg [data-node-id][custom-type="danmaku"]:hover {
+.protyle-wysiwyg [data-node-id][custom-type~=danmaku]:hover {
     animation-play-state: paused;
 }
