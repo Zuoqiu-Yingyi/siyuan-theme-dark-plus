@@ -12,11 +12,9 @@
 
 /* 鼠标悬浮显示轮廓 */
 .protyle-wysiwyg[custom-render~=outline] div[data-node-id] {
-    padding-top: 3px !important;
-    padding-right: 3px !important;
-    padding-bottom: 3px !important;
+    padding: 3px !important;
 }
 
 .protyle-wysiwyg[custom-render~=outline] div[data-node-id]:hover {
-    outline: 1px dotted var(--custom-striking-color);
+    outline: 1px dotted var(--b3-theme-on-surface);
 }
