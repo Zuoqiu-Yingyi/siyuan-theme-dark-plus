@@ -2,13 +2,13 @@
 
 <center>
 
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Zuoqiu-Yingyi/siyuan-theme-dark-plus?include_prereleases&style=flat-square)
-![GitHub Release Date](https://img.shields.io/github/release-date/Zuoqiu-Yingyi/siyuan-theme-dark-plus?style=flat-square)
-![GitHub](https://img.shields.io/github/license/Zuoqiu-Yingyi/siyuan-theme-dark-plus?style=flat-square)
-![GitHub last commit](https://img.shields.io/github/last-commit/Zuoqiu-Yingyi/siyuan-theme-dark-plus?style=flat-square)
+[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Zuoqiu-Yingyi/siyuan-theme-dark-plus?include_prereleases&style=flat-square)](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/releases/latest)
+[![GitHub Release Date](https://img.shields.io/github/release-date/Zuoqiu-Yingyi/siyuan-theme-dark-plus?style=flat-square)](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/releases/latest)
+[![GitHub License](https://img.shields.io/github/license/Zuoqiu-Yingyi/siyuan-theme-dark-plus?style=flat-square)](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/blob/main/LICENSE)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Zuoqiu-Yingyi/siyuan-theme-dark-plus?style=flat-square)](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/commits/main)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Zuoqiu-Yingyi/siyuan-theme-dark-plus?style=flat-square)
 ![hits](https://hits.b3log.org/Zuoqiu-Yingyi/siyuan-theme-dark-plus.svg)
-![GitHub all releases](https://img.shields.io/github/downloads/Zuoqiu-Yingyi/siyuan-theme-dark-plus/total?style=flat-square)
+[![GitHub all releases](https://img.shields.io/github/downloads/Zuoqiu-Yingyi/siyuan-theme-dark-plus/total?style=flat-square)](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/releases)
 
 </center>
 
