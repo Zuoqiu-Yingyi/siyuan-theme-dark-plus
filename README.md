@@ -22,7 +22,6 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 ![preview](./preview.png)
 
-
 ## 介绍 | INTRODUCTION
 
 - 指向到思源 Web 静态文件服务目录的超链接显示图标  
@@ -100,6 +99,12 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     - `TABLE`: 属性值 | value
     - 适用于文档块 | Applies to document blocks
     - 启用该文档中表格的自动编号 | Enable automatic numbering of tables in the document.
+  - `render`: 属性名 | key
+    - `id`: 属性值 | value
+      - 渲染每个块的块 ID | Renders the ID of each block.
+    - `outline`: 属性值 | value
+      - 渲染鼠标悬浮的块的轮廓 | Renders the outline of a hovering block.
+    - 适用于文档块 | Applies to document blocks
   - `title`: 属性名 | key
     - 适用于所有块 | Applies to all blocks
     - 在块的上方设置块标题 | Set the block title above the block.

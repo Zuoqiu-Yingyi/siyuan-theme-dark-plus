@@ -23,6 +23,9 @@
 - 使用文档块自定义属性 `custom-background` 设置自定义背景图片 | Use the document block custom attribute `custom-background` to set the custom background image.
 - 自定义样式属性可以设置为多个值(使用空格分隔) | Custom style properties can be set to multiple values (separated by spaces).
 - 使用自定义属性 `custom-title` 设置块标题 | Use the custom attribute `custom-title` to set the block title.
+- 使用文档块自定义属性 `custom-render` 设置块渲染样式 | Use the custom attribute of document block `custom-render` to set the block rendering style.
+  - `id`: 渲染每个块的块 ID | Renders the ID of each block.
+  - `outline`: 渲染鼠标悬浮的块的轮廓 | Renders the outline of a hovering block.
 - 使用快捷键 <kbd>Ctrl + F5</kbd> 重新加载整个窗口 | Use the hot key <kbd>Ctrl + F5</kbd> to reload the entire window.
 - 使用快捷键 <kbd>Ctrl + 鼠标左键</kbd> 单击 Iframe 块或挂件块重新加载块内容 | Use the hot keys <kbd>Ctrl + Left Mouse Button</kbd> click the iframe block or the widget block to reload the block contents.
 

@@ -1,0 +1,22 @@
+/* 块渲染样式 */
+
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+/* 显示块 ID */
+.protyle-wysiwyg[custom-render~=id] div[data-node-id]::after {
+    content: attr(data-node-id);
+    font-size: 12px;
+    text-align: right;
+}
+
+/* 鼠标悬浮显示轮廓 */
+.protyle-wysiwyg[custom-render~=outline] div[data-node-id] {
+    padding-top: 3px !important;
+    padding-right: 3px !important;
+    padding-bottom: 3px !important;
+}
+
+.protyle-wysiwyg[custom-render~=outline] div[data-node-id]:hover {
+    outline: 1px dotted var(--custom-striking-color);
+}
