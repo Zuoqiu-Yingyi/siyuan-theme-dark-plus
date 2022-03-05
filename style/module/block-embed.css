@@ -4,7 +4,7 @@
 @import url(/widgets/custom.css);
 
 .protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"] {
-    background-color: var(--custom-block-embed-background-color);
+    background-color: var(--custom-block-embed-background-color) !important;
     outline: 2px solid var(--b3-border-color);
 }
 
