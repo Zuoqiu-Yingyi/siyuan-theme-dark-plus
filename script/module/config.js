@@ -7,26 +7,56 @@ export var config = {
         url: /^siyuan:\/\/blocks\/\d{14}\-[0-9a-z]{7}$/, // 思源 URL Scheme 正则表达式
         time: /^(\d+)(:[0-5]?[0-9]){0,2}(\.\d*)?$/, // 时间戳正则表达式
     },
+    goto: {
+        enable: true, // 是否启用使用 URL 参数跳转指定块功能
+    },
     style: {
         enable: false, // 是否启用自定义样式渲染
+        save: {
+            enable: true, // 是否启用保存自定义样式
+        },
+        render: {
+            enable: true, // 是否启用自定义样式渲染
+            styles: [
+                // 渲染的自定义样式
+                'font-size',
+            ],
+        },
         attribute: 'custom-style', // 自定义块属性名称
-        styles: [
-            // 渲染的自定义样式
-            'font-size',
-        ],
     },
     timestamp: {
         // 视频/音频时间戳
         enable: true, // 是否启用时间戳
+        jump: {
+            enable: true, // 是否启用跳转
+        },
+        create: {
+            enable: true, // 是否启用生成时间戳
+        },
         attribute: 'custom-time', // 自定义块属性名称
     },
     blockattrs: {
         // 块属性操作
         enable: true, // 是否启用块属性操作
+        set: {
+            enable: true, // 是否启用设置块属性
+        },
     },
     reload: {
         // 重新加载
         enable: true, // 是否启用重新加载
+        window: {
+            enable: true, // 是否启用窗口重新加载
+        },
+        iframe: {
+            enable: true, // 是否启用 iframe 重新加载
+        },
+    },
+    copy: {
+        enable: true, // 是否启用复制扩展功能
+        all: {
+            enable: true, // 是否启用当前文档全文复制
+        },
     },
     hotkeys: {
         // 快捷键
@@ -84,6 +114,16 @@ export var config = {
                 shiftKey: false,
                 altKey: false,
                 type: 'click',
+            },
+        },
+        copyall: {
+            copy: {
+                // 复制当前文档全文(Shift + Alt + C)
+                ctrlKey: false,
+                metaKey: false,
+                shiftKey: true,
+                altKey: true,
+                key: 'C',
             },
         },
     },

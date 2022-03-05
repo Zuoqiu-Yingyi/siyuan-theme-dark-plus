@@ -30,28 +30,31 @@ async function reloadIframe(target) {
 
 (() => {
     try {
-        if (config.timestamp.enable) {
+        if (config.reload.enable) {
             let body = document.querySelector('body');
+            if (config.reload.window.enable) {
+                // 重新加载整个窗口
+                body.addEventListener('keydown', (e) => {
+                    // console.log(e);
+                    if (isKey(e, config.hotkeys.reload.window)) {
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 0);
+                    }
+                });
+            }
 
-            // 重新加载整个窗口
-            body.addEventListener('keydown', (e) => {
-                // console.log(e);
-                if (isKey(e, config.hotkeys.reload.window)) {
-                    setTimeout(() => {
-                        window.location.reload();
-                    }, 0);
-                }
-            });
-
-            // 重新加载 iframe
-            body.addEventListener('click', (e) => {
-                // console.log(e);
-                if (isEvent(e, config.hotkeys.reload.iframe)) {
-                    setTimeout(async () => {
-                        await reloadIframe(e.target);
-                    }, 0);
-                }
-            }, true);
+            if (config.reload.iframe.enable) {
+                // 重新加载 iframe
+                body.addEventListener('click', (e) => {
+                    // console.log(e);
+                    if (isEvent(e, config.hotkeys.reload.iframe)) {
+                        setTimeout(async () => {
+                            await reloadIframe(e.target);
+                        }, 0);
+                    }
+                }, true);
+            }
         }
     } catch (err) {
         console.error(err);

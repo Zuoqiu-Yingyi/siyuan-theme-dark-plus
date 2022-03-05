@@ -1,4 +1,5 @@
 /* 视频/音频跳转到指定时间 */
+
 import { config } from '/appearance/themes/Dark+/script/module/config.js';
 import {
     isEvent,
@@ -69,26 +70,29 @@ async function create(target) {
     try {
         if (config.timestamp.enable) {
             let body = document.querySelector('body');
+            if (config.timestamp.jump.enable) { 
+                // 跳转到所单击块的时间戳
+                body.addEventListener('click', (e) => {
+                    // console.log(e);
+                    if (isEvent(e, config.hotkeys.timestamp.jump)) {
+                        setTimeout(async () => {
+                            await jump(e.target);
+                        }, 0);
+                    }
+                }, true);
+            }
 
-            // 跳转到所单击块的时间戳
-            body.addEventListener('click', (e) => {
-                // console.log(e);
-                if (isEvent(e, config.hotkeys.timestamp.jump)) {
-                    setTimeout(async () => {
-                        await jump(e.target);
-                    }, 0);
-                }
-            }, true);
-
-            // 生成时间戳并写入剪贴板
-            body.addEventListener('mousedown', (e) => {
-                // console.log(e);
-                if (isButton(e, config.hotkeys.timestamp.create)) {
-                    setTimeout(async () => {
-                        await create(e.target);
-                    }, 0);
-                }
-            }, true);
+            if (config.timestamp.create.enable) {
+                // 生成时间戳并写入剪贴板
+                body.addEventListener('mousedown', (e) => {
+                    // console.log(e);
+                    if (isButton(e, config.hotkeys.timestamp.create)) {
+                        setTimeout(async () => {
+                            await create(e.target);
+                        }, 0);
+                    }
+                }, true);
+            }
         }
     } catch (err) {
         console.error(err);
