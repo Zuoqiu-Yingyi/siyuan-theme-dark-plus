@@ -26,3 +26,9 @@
 .protyle-wysiwyg table tbody tr:nth-child(2n) {
     background-color: var(--custom-block-table-even-background-color);
 }
+
+/* 高亮鼠标悬浮行 */
+.b3-typography table tbody tr:hover,
+.protyle-wysiwyg table tbody tr:hover {
+    background-color: var(--custom-block-table-hover-background-color);
+}

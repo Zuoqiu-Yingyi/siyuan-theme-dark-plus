@@ -28,6 +28,8 @@
   - `outline`: 渲染鼠标悬浮的块的轮廓 | Renders the outline of a hovering block.
 - 使用快捷键 <kbd>Ctrl + F5</kbd> 重新加载整个窗口 | Use the hot key <kbd>Ctrl + F5</kbd> to reload the entire window.
 - 使用快捷键 <kbd>Ctrl + 鼠标左键</kbd> 单击 Iframe 块或挂件块重新加载块内容 | Use the hot keys <kbd>Ctrl + Left Mouse Button</kbd> click the iframe block or the widget block to reload the block contents.
+- 修复嵌入块背景颜色失效问题 | Fixed the issue where the background color of the embedded block does not work.
+- 高亮鼠标悬浮的表格行 | Highlight the table row under the mouse.
 
 ## v0.3.8/2022-02-24
 
