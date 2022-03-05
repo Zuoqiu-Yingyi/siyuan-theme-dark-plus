@@ -73,6 +73,8 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
   Use the shortcut keys <kbd>Ctrl + Left Mouse Button</kbd> click the iframe block or the widget block to reload the block contents.
 - 使用快捷键 <kbd>Ctrl + F5</kbd> 重新加载整个窗口  
   Use the shortcut key <kbd>Ctrl + F5</kbd> to reload the entire window.
+- 使用快捷键 <kbd>Shift + Alt + C</kbd> 复制当前文档 markdown 全文至剪贴板  
+  Use the shortcut keys <kbd>Shift + Alt + C</kbd> to copy the full markdown text of the current document to the clipboard.
 - 块自定义属性
   Block custom attributes.
   - `background`: 属性名 | key
@@ -377,7 +379,8 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     --custom-block-table-odd-background-color: var(--custom-transparent-lighter);
     /* 偶数行 | even line */
     --custom-block-table-even-background-color: var(--custom-transparent-light);
-
+    /* 鼠标悬浮行 | hover line */
+    --custom-block-table-hover-background-color: var(--b3-theme-background-light);
 
     /* 弹出功能菜单背景颜色 | The background color of the popover function menu */
     --custom-popover-function-menu-background-color: var(--custom-transparent-deep);
@@ -399,11 +402,11 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     /* 固定在页面右侧 | Pinned to the right side of the page
      * - 公式过长时会被遮挡 | Formulas can be obscured when they are too long
      */
-    --custom-math-tag-position: absolute;
+    /* --custom-math-tag-position: absolute; */
     /* 跟随在公式右侧 | Follow to the right of the formula
      * - 公式过长时需要滑动滚动条才能看到编号 | Formulas that are too long require sliding the scroll bar to see
      */
-    /* --custom-math-tag-position: relative; */
+    --custom-math-tag-position: relative;
 
     /* 块引用标志颜色 | Block reference flag color */
     --custom-ref-mark-color: var(--b3-protyle-inline-link-color);
@@ -468,7 +471,6 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     /* 弹幕块移动周期 | Danmaku block movement cycle */
     --custom-type-danmaku-time: 16s;
 
-
     /* 自定义背景图片路径 | The file path of customize background image. */
     --custom-background-01: url("/appearance/themes/Dark+/image/background (01).jpg");
     --custom-background-02: url("/appearance/themes/Dark+/image/background (02).jpg");
@@ -483,6 +485,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     --custom-background-11: url("/appearance/themes/Dark+/image/background (11).jpg");
     --custom-background-12: url("/appearance/themes/Dark+/image/background (12).jpg");
 }
+
 ```
 
 #### custom.js
@@ -493,33 +496,63 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
  * <workspace>/data/widgets/custom.js
  */
 
-export var config = {
+xport var config = {
     token: '', // API token, 无需填写
     regs: {
         // 正则表达式
         url: /^siyuan:\/\/blocks\/\d{14}\-[0-9a-z]{7}$/, // 思源 URL Scheme 正则表达式
         time: /^(\d+)(:[0-5]?[0-9]){0,2}(\.\d*)?$/, // 时间戳正则表达式
     },
+    goto: {
+        enable: true, // 是否启用使用 URL 参数跳转指定块功能
+    },
     style: {
         enable: false, // 是否启用自定义样式渲染
+        save: {
+            enable: true, // 是否启用保存自定义样式
+        },
+        render: {
+            enable: true, // 是否启用自定义样式渲染
+            styles: [
+                // 渲染的自定义样式
+                'font-size',
+            ],
+        },
         attribute: 'custom-style', // 自定义块属性名称
-        styles: [
-            // 渲染的自定义样式
-            'font-size',
-        ],
     },
     timestamp: {
         // 视频/音频时间戳
         enable: true, // 是否启用时间戳
+        jump: {
+            enable: true, // 是否启用跳转
+        },
+        create: {
+            enable: true, // 是否启用生成时间戳
+        },
         attribute: 'custom-time', // 自定义块属性名称
     },
     blockattrs: {
         // 块属性操作
         enable: true, // 是否启用块属性操作
+        set: {
+            enable: true, // 是否启用设置块属性
+        },
     },
     reload: {
         // 重新加载
         enable: true, // 是否启用重新加载
+        window: {
+            enable: true, // 是否启用窗口重新加载
+        },
+        iframe: {
+            enable: true, // 是否启用 iframe 重新加载
+        },
+    },
+    copy: {
+        enable: true, // 是否启用复制扩展功能
+        all: {
+            enable: true, // 是否启用当前文档全文复制
+        },
     },
     hotkeys: {
         // 快捷键
@@ -577,6 +610,16 @@ export var config = {
                 shiftKey: false,
                 altKey: false,
                 type: 'click',
+            },
+        },
+        copy: {
+            all: {
+                // 复制当前文档全文(Shift + Alt + C)
+                ctrlKey: false,
+                metaKey: false,
+                shiftKey: true,
+                altKey: true,
+                key: 'C',
             },
         },
     },

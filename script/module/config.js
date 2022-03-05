@@ -116,8 +116,8 @@ export var config = {
                 type: 'click',
             },
         },
-        copyall: {
-            copy: {
+        copy: {
+            all: {
                 // 复制当前文档全文(Shift + Alt + C)
                 ctrlKey: false,
                 metaKey: false,
