@@ -1,6 +1,9 @@
 /** 使用形如 id=<块 ID> 的 URL 参数跳转到指定的块
  *  REF [leolee9086](https://github.com/leolee9086)
  */
+
+import { config } from '/appearance/themes/Dark+/script/module/config.js';
+
 function urlParser(url) {
     url = url || '';
     const queryObj = {};
@@ -19,6 +22,7 @@ function urlParser(url) {
     return queryObj;
 
 }
+
 function goto(id) {
     let doc = window.document
     // console.log(doc)
@@ -35,6 +39,7 @@ function goto(id) {
         setTimeout(async () => goto(id), 1000)
     }
 }
+
 async function jumpToID() {
     let params = urlParser(window.location.href)
     if (params) {
@@ -44,4 +49,14 @@ async function jumpToID() {
         }
     }
 }
-window.onload = setTimeout(jumpToID, 0)
+
+(() => {
+    try {
+        if (config.goto.enable) {
+            window.onload = setTimeout(jumpToID, 0)
+        }
+    } catch (err) {
+        console.error(err);
+    }
+})();
+
