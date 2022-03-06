@@ -52,10 +52,13 @@ export var config = {
             enable: true, // 是否启用 iframe 重新加载
         },
     },
-    copy: {
-        enable: true, // 是否启用复制扩展功能
-        all: {
-            enable: true, // 是否启用当前文档全文复制
+    doc: {
+        enable: true, // 是否启用文档扩展功能
+        copy: {
+            enable: true, // 是否启用当前文档全文复制功能
+        },
+        delete: {
+            enable: true, // 是否启用当前文档全文删除功能
         },
     },
     hotkeys: {
@@ -116,14 +119,22 @@ export var config = {
                 type: 'click',
             },
         },
-        copy: {
-            all: {
+        doc: {
+            copy: {
                 // 复制当前文档全文(Shift + Alt + C)
                 ctrlKey: false,
                 metaKey: false,
                 shiftKey: true,
                 altKey: true,
                 key: 'C',
+            },
+            delete: {
+                // 删除当前文档全文(Shift + Alt + D)
+                ctrlKey: false,
+                metaKey: false,
+                shiftKey: true,
+                altKey: true,
+                key: 'D',
             },
         },
     },

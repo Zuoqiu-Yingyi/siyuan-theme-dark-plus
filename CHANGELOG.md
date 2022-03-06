@@ -3,6 +3,7 @@
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 设置更细粒度的功能开关 | Set more fine-grained function switches.
 - 使用快捷键 <kbd>Shift + Alt + C</kbd> 复制当前文档 markdown 全文至剪贴板 | Use the shortcut keys <kbd>Shift + Alt + C</kbd> to copy the full markdown text of the current document to the clipboard.
+- 使用快捷键 <kbd>Shift + Alt + D</kbd> 删除当前文档全部内容 | Use the shortcut keys <kbd>Shift + Alt + D</kbd> to delete the full content of the current documen.
 
 ## v0.4.0/2022-03-03
 
