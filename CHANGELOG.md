@@ -1,11 +1,13 @@
 # 更改日志 | CHANGE LOG
 
 ## v0.4.1/2022-03-07
+
 - [v0.4.0 <=> v0.4.1](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.0...v0.4.1)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 设置更细粒度的功能开关 | Set more fine-grained function switches.
 - 使用快捷键 <kbd>Shift + Alt + C</kbd> 复制当前文档 markdown 全文至剪贴板 | Use the shortcut keys <kbd>Shift + Alt + C</kbd> to copy the full markdown text of the current document to the clipboard.
+- 使用快捷键 <kbd>Shift + Alt + X</kbd> 剪切当前文档 markdown 全文至剪贴板 | Use the shortcut keys <kbd>Shift + Alt + X</kbd> to cut the full markdown text of the current document to the clipboard.
 - 使用快捷键 <kbd>Shift + Alt + D</kbd> 删除当前文档全部内容 | Use the shortcut keys <kbd>Shift + Alt + D</kbd> to delete the full content of the current documen.
 - 添加图片元素的阴影 | Adds a shadow of a picture element.
 - 优化列表转表格功能 | Optimized the list to table function.

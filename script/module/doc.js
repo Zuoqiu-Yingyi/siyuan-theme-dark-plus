@@ -35,6 +35,25 @@ async function docDelete() {
     }
 }
 
+async function docCut() {
+    const background = document.querySelector('div.fn__flex-1.protyle:not(.fn__none)>div.protyle-content>div.protyle-background');
+    if (background) {
+        let id = background.getAttribute('data-node-id');
+        if (id) {
+            let data = await exportMdContent(id);
+            if (data) {
+                let content = data.content;
+                navigator.clipboard.writeText(content);
+                await updateBlock(
+                    id,
+                    'markdown',
+                    '',
+                );
+            }
+        }
+    }
+}
+
 (() => {
     try {
         if (config.doc.copy) {
@@ -54,8 +73,18 @@ async function docDelete() {
                 // 删除当前文档全文
                 body.addEventListener('keydown', (e) => {
                     if (isKey(e, config.hotkeys.doc.delete)) {
-                        console.log(e);
+                        // console.log(e);
                         setTimeout(docDelete, 0);
+                    }
+                });
+            }
+
+            if (config.doc.cut.enable) {
+                // 剪切当前文档全文
+                body.addEventListener('keydown', (e) => {
+                    if (isKey(e, config.hotkeys.doc.cut)) {
+                        // console.log(e);
+                        setTimeout(docCut, 0);
                     }
                 });
             }

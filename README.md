@@ -75,6 +75,10 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
   Use the shortcut key <kbd>Ctrl + F5</kbd> to reload the entire window.
 - 使用快捷键 <kbd>Shift + Alt + C</kbd> 复制当前文档 markdown 全文至剪贴板  
   Use the shortcut keys <kbd>Shift + Alt + C</kbd> to copy the full markdown text of the current document to the clipboard.
+- 使用快捷键 <kbd>Shift + Alt + X</kbd> 剪切当前文档 markdown 全文至剪贴板  
+  Use the shortcut keys <kbd>Shift + Alt + X</kbd> to cut the full markdown text of the current document to the clipboard.
+- 使用快捷键 <kbd>Shift + Alt + D</kbd> 删除当前文档全部内容  
+  Use the shortcut keys <kbd>Shift + Alt + D</kbd> to delete the full content of the current documen.
 - 块自定义属性
   Block custom attributes.
   - `background`: 属性名 | key
@@ -558,6 +562,9 @@ export var config = {
         delete: {
             enable: true, // 是否启用当前文档全文删除功能
         },
+        cut: {
+            enable: true, // 是否启用当前文档全文剪切功能
+        },
     },
     hotkeys: {
         // 快捷键
@@ -633,6 +640,14 @@ export var config = {
                 shiftKey: true,
                 altKey: true,
                 key: 'D',
+            },
+            cut: {
+                // 剪切当前文档全文(Shift + Alt + X)
+                ctrlKey: false,
+                metaKey: false,
+                shiftKey: true,
+                altKey: true,
+                key: 'X',
             },
         },
     },
