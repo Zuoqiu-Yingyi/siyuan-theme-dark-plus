@@ -7,11 +7,12 @@ import { config } from '/appearance/themes/Dark+/script/module/config.js';
 function goto(id) {
     let doc = window.document
     // console.log(doc)
-    let link = doc.createElement("span")
-    link.setAttribute("data-type", "block-ref")
-    link.setAttribute("data-id", id)
     let target = doc.querySelector("div.protyle-wysiwyg div[data-node-id] div[contenteditable]")
     if (target) {
+        let link = doc.createElement("span")
+        link.setAttribute("data-type", "block-ref")
+        link.setAttribute("data-id", id)
+
         target.appendChild(link)
         link.click()
         link.remove()
