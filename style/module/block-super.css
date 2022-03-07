@@ -8,8 +8,7 @@
 .protyle-wysiwyg div.sb[data-node-id] {
     /* background-color: var(--b3-theme-background-secondary); */
     background-color: var(--custom-block-super-background-color);
-    /* 水平阴影 垂直阴影 [blur<模糊距离>] [spread<阴影大小>] [color] [inset] */
-    box-shadow: 0.25rem 0.25rem 0.5rem var(--b3-theme-background);
+    box-shadow: var(--b3-theme-background) 0 0 var(--custom-box-shadow-spread);
     border-radius: var(--custom-border-radius);
     padding: var(--custom-block-padding);
     /* margin-bottom: 16px; */
