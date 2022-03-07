@@ -16,9 +16,6 @@ function goto(id) {
         link.click()
         link.remove()
     }
-    else {
-        setTimeout(async () => goto(id), 1000)
-    }
 }
 
 function jumpToID() {
