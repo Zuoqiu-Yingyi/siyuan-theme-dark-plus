@@ -10,7 +10,7 @@ function goto(id) {
     let link = doc.createElement("span")
     link.setAttribute("data-type", "block-ref")
     link.setAttribute("data-id", id)
-    let target = doc.querySelector(".protyle-wysiwyg div[data-node-id] div[contenteditable]")
+    let target = doc.querySelector("div.protyle-wysiwyg div[data-node-id] div[contenteditable]")
     if (target) {
         target.appendChild(link)
         link.click()
@@ -22,7 +22,7 @@ function jumpToID() {
     let url = new URL(window.location.href);
     let id = url.searchParams.get('id');
 
-    if (id.test(/\d{14}\-[0-9a-z]{7}/)) {
+    if (/\d{14}\-[0-9a-z]{7}/.test(id)) {
         goto(id)
     }
 }
