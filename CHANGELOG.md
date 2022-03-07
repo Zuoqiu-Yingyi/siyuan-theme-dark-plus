@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 重构使用 URL 参数 `id` 跳转到指定块 | The refactoring of using the URL parameter `id` to jump to the specified block.
+- 修复使用 URL 参数 `id` 跳转到指定块 | Fix the issue of using the URL parameter `id` to jump to the specified block.
 
 ## v0.4.1/2022-03-07
 
