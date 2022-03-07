@@ -1,11 +1,27 @@
 /* 杂项工具 */
 export {
+    goto, // 跳转到指定块
     isNum, // 判断字符串是否为数字
     hoverPreview, // 悬浮预览指定块
     timestampParse, // 时间戳解析为秒数
     url2id, // 块超链接转换为块 id
     id2url, // 块 id 转换为块超链接
     intPrefix, // 整数填充前导零
+}
+
+function goto(id) {
+    let doc = window.document
+    // console.log(doc)
+    let target = doc.querySelector("div.protyle-wysiwyg div[data-node-id] div[contenteditable]")
+    if (target) {
+        let link = doc.createElement("span")
+        link.setAttribute("data-type", "block-ref")
+        link.setAttribute("data-id", id)
+
+        target.appendChild(link)
+        link.click()
+        link.remove()
+    }
 }
 
 function isNum(str) {
