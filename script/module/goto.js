@@ -22,7 +22,7 @@ function jumpToID() {
     let url = new URL(window.location.href);
     let id = url.searchParams.get('id');
 
-    if (/\d{14}\-[0-9a-z]{7}/.test(id)) {
+    if (config.regs.id.test(id)) {
         goto(id)
     }
 }
