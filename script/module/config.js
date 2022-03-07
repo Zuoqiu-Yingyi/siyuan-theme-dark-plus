@@ -60,6 +60,9 @@ export var config = {
         delete: {
             enable: true, // 是否启用当前文档全文删除功能
         },
+        cut: {
+            enable: true, // 是否启用当前文档全文剪切功能
+        },
     },
     hotkeys: {
         // 快捷键
@@ -135,6 +138,14 @@ export var config = {
                 shiftKey: true,
                 altKey: true,
                 key: 'D',
+            },
+            cut: {
+                // 剪切当前文档全文(Shift + Alt + X)
+                ctrlKey: false,
+                metaKey: false,
+                shiftKey: true,
+                altKey: true,
+                key: 'X',
             },
         },
     },
