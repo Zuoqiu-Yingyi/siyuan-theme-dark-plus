@@ -17,7 +17,7 @@
 .protyle-wysiwyg div.list[custom-type~=table] div.li {
     border: 0;
     padding: 0;
-    margin: 0;
+    margin: 0 !important;
     height: 100%;
     outline: 1px solid var(--b3-theme-on-surface);
 }
@@ -34,14 +34,37 @@
 .protyle-wysiwyg div.list[custom-type~=table] div.li {
     width: auto;
     display: flex;
+    /* overflow-x: auto; */
+}
+
+/* 鼠标悬浮列表项 */
+.protyle-wysiwyg div.list[custom-type~=table] div.li:hover {
+    background-color: #FFF1;
+}
+
+/* 最顶层的列表项滚动 */
+.protyle-wysiwyg div.list[custom-type~=table]>div.li {
     overflow-x: auto;
 }
 
 /* 列表项内容 */
 .protyle-wysiwyg div.list[custom-type~=table] div[data-node-id]:not(.li, .list) {
+    margin-right: 1em;
+    align-items: center;
+    display: flex;
+    /* height: auto; */
+    /* width: 128px; */
     min-width: 128px;
-    width: auto;
+    max-width: 128px;
     text-align: justify;
+    box-sizing: border-box;
+}
+
+/* 列表项标志居中 */
+.protyle-wysiwyg div.list[custom-type~=table][data-node-id] div.protyle-action {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
 }
 
 /* 去除辅助线 */
