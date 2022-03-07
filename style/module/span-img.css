@@ -1,0 +1,15 @@
+/* 图片样式 */
+
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+.b3-typography .img>span:nth-child(2),
+.protyle-wysiwyg .img>span:nth-child(2) {
+    max-width: none;
+}
+.b3-typography img,
+.protyle-wysiwyg img {
+    box-shadow: var(--b3-theme-on-background) 0px 0px var(--custom-box-shadow-spread);
+    border-radius: var(--custom-border-radius);
+    padding: var(--custom-border-radius);
+}

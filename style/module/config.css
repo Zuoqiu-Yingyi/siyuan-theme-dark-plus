@@ -265,6 +265,8 @@
     /* 弹出搜索菜单背景颜色 | The background color of the popover search menu */
     --custom-popover-search-menu-background-color: var(--custom-transparent-deep);
 
+    /* 阴影散布宽度 | Shadow spread */
+    --custom-box-shadow-spread: 8px;
 
     /* 鲜明颜色 | Striking color */
     --custom-striking-color: var(--b3-font-color12);

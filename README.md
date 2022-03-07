@@ -388,6 +388,8 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     /* 弹出搜索菜单背景颜色 | The background color of the popover search menu */
     --custom-popover-search-menu-background-color: var(--custom-transparent-deep);
 
+    /* 阴影散布宽度 | Shadow spread */
+    --custom-box-shadow-spread: 8px;
 
     /* 鲜明颜色 | Striking color */
     --custom-striking-color: var(--b3-font-color12);
@@ -496,7 +498,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
  * <workspace>/data/widgets/custom.js
  */
 
-xport var config = {
+export var config = {
     token: '', // API token, 无需填写
     regs: {
         // 正则表达式
@@ -548,10 +550,13 @@ xport var config = {
             enable: true, // 是否启用 iframe 重新加载
         },
     },
-    copy: {
-        enable: true, // 是否启用复制扩展功能
-        all: {
-            enable: true, // 是否启用当前文档全文复制
+    doc: {
+        enable: true, // 是否启用文档扩展功能
+        copy: {
+            enable: true, // 是否启用当前文档全文复制功能
+        },
+        delete: {
+            enable: true, // 是否启用当前文档全文删除功能
         },
     },
     hotkeys: {
@@ -612,14 +617,22 @@ xport var config = {
                 type: 'click',
             },
         },
-        copy: {
-            all: {
+        doc: {
+            copy: {
                 // 复制当前文档全文(Shift + Alt + C)
                 ctrlKey: false,
                 metaKey: false,
                 shiftKey: true,
                 altKey: true,
                 key: 'C',
+            },
+            delete: {
+                // 删除当前文档全文(Shift + Alt + D)
+                ctrlKey: false,
+                metaKey: false,
+                shiftKey: true,
+                altKey: true,
+                key: 'D',
             },
         },
     },
