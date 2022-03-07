@@ -1,5 +1,6 @@
 # 更改日志 | CHANGE LOG
 
+- [v0.4.0 <=> v0.4.1](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.0...v0.4.1)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 设置更细粒度的功能开关 | Set more fine-grained function switches.
