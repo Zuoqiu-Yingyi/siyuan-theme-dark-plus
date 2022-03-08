@@ -96,6 +96,23 @@
     --custom-color-9-4: #538135;
     --custom-color-9-5: #375623;
 
+    /* 自定义护眼色(起点背景颜色) */
+    --custom-color-qidian-1-1: #FAF6ED;
+    --custom-color-qidian-1-2: #F7EED5;
+    --custom-color-qidian-1-3: #EAF4E9;
+    --custom-color-qidian-1-4: #E9F4F6;
+    --custom-color-qidian-1-5: #F6E9E8;
+    --custom-color-qidian-1-6: #E6E6E5;
+    --custom-color-qidian-1-7: #464847;
+
+    --custom-color-qidian-2-1: #EAE4D7;
+    --custom-color-qidian-2-2: #DFCEA2;
+    --custom-color-qidian-2-3: #CDDFCD;
+    --custom-color-qidian-2-4: #CFDDE1;
+    --custom-color-qidian-2-5: #EBCECE;
+    --custom-color-qidian-2-6: #D4D4D4;
+    --custom-color-qidian-2-7: #0F1011;
+
     /* 标题层级标记与标题之间宽度 */
     --custom-h-mark-blank: 4px;
 
