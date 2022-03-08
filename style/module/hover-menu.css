@@ -33,3 +33,35 @@
     backdrop-filter: var(--custom-backdrop-popover-filter);
     width: var(--custom-popover-menu-width) !important;
 }
+
+/* 悬浮搜索结果项 */
+div.b3-list>.b3-list-item {
+    padding: 0.25em auto;
+    border-bottom: 0.125em solid var(--b3-border-color);
+}
+
+/* 悬浮搜索结果文档可读路径 */
+div.b3-list>.b3-list-item>.b3-list-item__meta:not(.fn__flex) {
+    color: var(--b3-card-info-color);
+}
+div.b3-list>.b3-list-item>.b3-list-item__meta:not(.fn__flex) mark {
+    outline-color: var(--b3-card-info-color);
+}
+
+/* 悬浮搜索结果块属性 */
+div.b3-list>.b3-list-item>.b3-list-item__meta.fn__flex {
+    color: var(--b3-card-warning-color);
+}
+div.b3-list>.b3-list-item>.b3-list-item__meta.fn__flex mark {
+    outline-color: var(--b3-card-warning-color);
+}
+
+/* 悬浮搜索结果匹配关键词样式 */
+div.b3-list>.b3-list-item mark {
+    margin: 0 0.25em;
+    padding: 0 0.125em;
+    color: inherit;
+    background-color: transparent;
+    outline-width: 1px;
+    outline-style: solid;
+}
