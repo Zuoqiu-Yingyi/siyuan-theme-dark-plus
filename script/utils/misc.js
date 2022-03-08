@@ -1,5 +1,6 @@
 /* 杂项工具 */
 export {
+    HTMLDecode, // HTML 解码
     goto, // 跳转到指定块
     isNum, // 判断字符串是否为数字
     hoverPreview, // 悬浮预览指定块
@@ -7,6 +8,13 @@ export {
     url2id, // 块超链接转换为块 id
     id2url, // 块 id 转换为块超链接
     intPrefix, // 整数填充前导零
+}
+
+function HTMLDecode(text) {
+    // REF: [javascript处理HTML的Encode(转码)和Decode(解码)总结 - 孤傲苍狼 - 博客园](https://www.cnblogs.com/xdp-gacl/p/3722642.html)
+    let temp = document.createElement("div");
+    temp.innerHTML = text;
+    return temp.textContent;;
 }
 
 function goto(id) {

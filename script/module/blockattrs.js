@@ -3,7 +3,10 @@
 import { config } from '/appearance/themes/Dark+/script/module/config.js';
 import { setBlockAttrs } from '/appearance/themes/Dark+/script/utils/api.js';
 import { isButton } from '/appearance/themes/Dark+/script/utils/hotkey.js';
-import { url2id } from '/appearance/themes/Dark+/script/utils/misc.js';
+import {
+    url2id,
+    HTMLDecode,
+} from '/appearance/themes/Dark+/script/utils/misc.js';
 
 async function setter(target) {
     if (
@@ -12,8 +15,8 @@ async function setter(target) {
         && config.regs.url.test(target.dataset.href)
     ) {
         let id = url2id(target.dataset.href);
-        let attrs = JSON.parse(target.dataset.title.replaceAll('&quot;', '"'));
-        // console.log(id, attrs);
+        let attrs = eval(`(${HTMLDecode(target.dataset.title)})`);
+        // console.log(attrs);
         await setBlockAttrs(
             id,
             attrs,
