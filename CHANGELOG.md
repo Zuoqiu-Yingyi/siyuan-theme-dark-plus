@@ -5,6 +5,7 @@
 - 修复使用 URL 参数 `id` 跳转到指定块 | Fix the issue of using the URL parameter `id` to jump to the specified block.
 - 移除失效的列表辅助线 | Removes the stale list guide.
 - 修复使用超链接设置块属性无法解析非 ASCII 字符问题 | Fixed an issue where using hyperlinks to set block attributes could not parse non-ASCII characters.
+- 添加护眼配色色卡(起点背景颜色) | Add eye-care color palette (Qidian background color).
 
 ## v0.4.1/2022-03-07
 
