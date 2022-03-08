@@ -30,11 +30,6 @@
     left: calc(15px - 2em);
 }
 
-.protyle-wysiwyg [data-node-id].li>div:nth-child(2)::before {
-    top: calc(1em + 12px) !important;
-    height: calc(100% - 1em) !important;
-}
-
 /* 列表缩进 */
 .protyle-wysiwyg [data-node-id].li>.list {
     margin-left: 1em !important;
