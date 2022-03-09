@@ -7,6 +7,7 @@
 - 修复使用超链接设置块属性无法解析非 ASCII 字符问题 | Fixed an issue where using hyperlinks to set block attributes could not parse non-ASCII characters.
 - 添加护眼配色色卡(起点背景颜色) | Add eye-care color palette (Qidian background color).
 - 调整搜索结果高亮字段样式 | Adjust the search result highlight field style.
+- 移除失效的对代码块语言标签频闪问题的修复 | Remove a broken fix for strobe issues with language labels in code blocks.
 
 ## v0.4.1/2022-03-07
 
