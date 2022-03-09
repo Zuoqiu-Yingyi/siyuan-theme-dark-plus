@@ -57,6 +57,7 @@ div.b3-list>.b3-list-item>.b3-list-item__meta.fn__flex mark {
 }
 
 /* 悬浮搜索结果匹配关键词样式 */
+div.protyle-wysiwyg div[data-node-id] span[data-type="search-mark"],
 div.b3-list>.b3-list-item mark {
     margin: 0 0.25em;
     padding: 0 0.125em;

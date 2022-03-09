@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 调整搜索结果原文的高亮样式 | Adjust the highlight style of the original text of the search results.
+
 ## v0.4.2/2022-03-09
 
 - [v0.4.1 <=> v0.4.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.1...v0.4.2)
