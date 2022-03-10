@@ -6,6 +6,7 @@
 - 隔离不同应用的配置 | Isolate configurations for different apps.
 - 修复列表转换为表格宽度异常问题 | Fixed an issue where the list was converted to table width exception.
 - 为已完成任务列表项添加删除线 | Add strikethroughs to completed task list items.
+- 统一标记样式在编辑器与导出预览的背景颜色 | Uniform the background color of mark in the editor and export preview panel.
 
 ## v0.4.2/2022-03-09
 
