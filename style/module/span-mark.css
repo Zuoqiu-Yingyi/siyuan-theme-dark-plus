@@ -5,7 +5,7 @@
 
 .b3-typography mark,
 .protyle-wysiwyg mark {
-    background-color: var(--b3-theme-primary-lighter);
+    background-color: var(--cusotm-span-mark-background-color);
 }
 
 .protyle-wysiwyg mark {
