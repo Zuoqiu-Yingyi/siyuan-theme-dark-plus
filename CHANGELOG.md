@@ -5,6 +5,7 @@
 - 更改自定义配置文件覆盖默认配置文件方案为递归覆盖 | Change the custom configuration file override the default configuration file solution to recursive overrides.
 - 隔离不同应用的配置 | Isolate configurations for different apps.
 - 修复列表转换为表格宽度异常问题 | Fixed an issue where the list was converted to table width exception.
+- 为已完成任务列表项添加删除线 | Add strikethroughs to completed task list items.
 
 ## v0.4.2/2022-03-09
 
