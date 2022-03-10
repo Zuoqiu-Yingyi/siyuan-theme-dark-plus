@@ -1,5 +1,7 @@
 /* 配置文件(可以被 data/widgets/custom.js 覆盖) */
 
+import { merge } from '/appearance/themes/Dark+/script/utils/misc.js';
+
 export var config = {
     token: '', // API token, 无需填写
     regs: {
@@ -154,7 +156,9 @@ export var config = {
 
 try {
     let custom = await import('/widgets/custom.js');
-    config = custom.config != null ? custom.config : config;
+    if (custom.config != null) {
+        config = merge(config, custom.config);
+    }
 } catch (err) {
     console.log(err);
 } finally {
