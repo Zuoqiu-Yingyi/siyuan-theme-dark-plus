@@ -1,5 +1,6 @@
 /* 杂项工具 */
 export {
+    merge, // 递归合并对象
     HTMLDecode, // HTML 解码
     goto, // 跳转到指定块
     isNum, // 判断字符串是否为数字
@@ -8,6 +9,37 @@ export {
     url2id, // 块超链接转换为块 id
     id2url, // 块 id 转换为块超链接
     intPrefix, // 整数填充前导零
+}
+
+// REF [js - 对象递归合并merge - zc-lee - 博客园](https://www.cnblogs.com/zc-lee/p/15873611.html)
+function isObject(obj) {
+    return Object.prototype.toString.call(obj) === '[object Object]'
+}
+function isArray(arr) {
+    return Array.isArray(arr)
+}
+function merge(target, ...arg) {
+    return arg.reduce((acc, cur) => {
+        return Object.keys(cur).reduce((subAcc, key) => {
+            const srcVal = cur[key]
+            if (isObject(srcVal)) {
+                subAcc[key] = merge(subAcc[key] ? subAcc[key] : {}, srcVal)
+            } else if (isArray(srcVal)) {
+                // series: []，下层数组直接赋值
+                subAcc[key] = srcVal.map((item, idx) => {
+                    if (isObject(item)) {
+                        const curAccVal = subAcc[key] ? subAcc[key] : []
+                        return merge(curAccVal[idx] ? curAccVal[idx] : {}, item)
+                    } else {
+                        return item
+                    }
+                })
+            } else {
+                subAcc[key] = srcVal
+            }
+            return subAcc
+        }, acc)
+    }, target)
 }
 
 function HTMLDecode(text) {
