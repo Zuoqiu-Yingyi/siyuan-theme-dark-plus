@@ -166,4 +166,3 @@ try {
 } finally {
     console.log(config);
 }
-

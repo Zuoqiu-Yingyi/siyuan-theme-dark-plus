@@ -55,7 +55,7 @@
     /* height: auto; */
     /* width: 128px; */
     min-width: 128px;
-    max-width: 128px;
+    /* max-width: 128px; */
     text-align: justify;
     box-sizing: border-box;
 }
