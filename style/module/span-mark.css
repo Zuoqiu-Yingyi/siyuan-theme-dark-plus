@@ -3,13 +3,17 @@
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 
+.b3-typography mark,
 .protyle-wysiwyg mark {
     background-color: var(--b3-theme-primary-lighter);
-    color: transparent;
-    transition: all .2s linear 0ms;
 }
 
-.protyle-wysiwyg [data-node-id] [contenteditable] mark:hover {
+.protyle-wysiwyg mark {
+    color: transparent;
+    transition: all 200ms linear 0ms;
+}
+
+.protyle-wysiwyg mark:hover {
     background-color: transparent;
     color: var(--custom-striking-color);
     font-weight: bold;
