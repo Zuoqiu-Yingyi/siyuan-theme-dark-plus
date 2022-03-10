@@ -1,5 +1,6 @@
 # 更改日志 | CHANGE LOG
 
+- 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 调整搜索结果原文的高亮样式 | Adjust the highlight style of the original text of the search results.
 - 更改自定义配置文件覆盖默认配置文件方案为递归覆盖 | Change the custom configuration file override the default configuration file solution to recursive overrides.
@@ -7,6 +8,7 @@
 - 修复列表转换为表格宽度异常问题 | Fixed an issue where the list was converted to table width exception.
 - 为已完成任务列表项添加删除线 | Add strikethroughs to completed task list items.
 - 统一标记样式在编辑器与导出预览的背景颜色 | Uniform the background color of mark in the editor and export preview panel.
+- 调整删除线样式颜色 | Adjust the strikethrough style color.
 
 ## v0.4.2/2022-03-09
 

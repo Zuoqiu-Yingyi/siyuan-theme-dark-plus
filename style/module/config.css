@@ -205,6 +205,9 @@
     --custom-list-guides-line-right-u: calc(22px + 5em / 16);
     --custom-list-guides-line-right-o: calc(14px + 1em);
 
+    /* 已完成任务列表项颜色 | The color of completed task list item */
+    --custom-list-task-done-color: var(--b3-theme-on-surface);
+
     /* 透明组件颜色 | Transparent component color */
     --custom-transparent-lighter: #3338;
     --custom-transparent-light: #222A;
@@ -309,6 +312,12 @@
 
     /* 列表项聚焦颜色 | List item focus color */
     --custom-list-item-color: var(--b3-protyle-inline-link-color);
+
+    /* 标记文字背景颜色 | The background color of the marker text */
+    --cusotm-span-mark-background-color: var(--b3-theme-primary-lighter);
+
+    /* 删除线颜色 | The color of the strikethrough */
+    --cusotm-span-strikethrough-color: var(--b3-theme-on-surface);
 
     /* 空行聚焦提示 | Blank line focus prompt */
     --custom-empty-focus-p: "´･-･)ﾉ㊫";

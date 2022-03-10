@@ -42,8 +42,8 @@
 
 /* 已完成任务列表项删除线 */
 div[data-node-id].li.protyle-task--done>div[data-node-id].p {
-    text-decoration: line-through var(--b3-theme-on-surface);
-    color: var(--b3-theme-on-surface);
+    text-decoration: line-through var(--custom-list-task-done-color);
+    color: var(--custom-list-task-done-color);
 }
 
 /* .li.protyle-task--done .p strong {
