@@ -56,33 +56,33 @@ async function docCut() {
 
 (() => {
     try {
-        if (config.doc.copy) {
+        if (config.theme.doc.copy) {
             let body = document.querySelector('body');
 
-            if (config.doc.copy.enable) {
+            if (config.theme.doc.copy.enable) {
                 // 复制当前文档全部内容至剪贴板
                 body.addEventListener('keydown', (e) => {
                     // console.log(e);
-                    if (isKey(e, config.hotkeys.doc.copy)) {
+                    if (isKey(e, config.theme.hotkeys.doc.copy)) {
                         setTimeout(docCopy, 0);
                     }
                 });
             }
 
-            if (config.doc.delete.enable) {
+            if (config.theme.doc.delete.enable) {
                 // 删除当前文档全文
                 body.addEventListener('keydown', (e) => {
-                    if (isKey(e, config.hotkeys.doc.delete)) {
+                    if (isKey(e, config.theme.hotkeys.doc.delete)) {
                         // console.log(e);
                         setTimeout(docDelete, 0);
                     }
                 });
             }
 
-            if (config.doc.cut.enable) {
+            if (config.theme.doc.cut.enable) {
                 // 剪切当前文档全文
                 body.addEventListener('keydown', (e) => {
-                    if (isKey(e, config.hotkeys.doc.cut)) {
+                    if (isKey(e, config.theme.hotkeys.doc.cut)) {
                         // console.log(e);
                         setTimeout(docCut, 0);
                     }

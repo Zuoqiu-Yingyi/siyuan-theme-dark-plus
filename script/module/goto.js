@@ -9,14 +9,14 @@ function jumpToID() {
     let url = new URL(window.location.href);
     let id = url.searchParams.get('id');
 
-    if (config.regs.id.test(id)) {
+    if (config.theme.regs.id.test(id)) {
         goto(id)
     }
 }
 
 (() => {
     try {
-        if (config.goto.enable) {
+        if (config.theme.goto.enable) {
             window.onload = setTimeout(jumpToID, 0)
         }
     } catch (err) {
