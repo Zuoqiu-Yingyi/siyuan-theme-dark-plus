@@ -1,8 +1,10 @@
 # 更改日志 | CHANGE LOG
 
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 调整搜索结果原文的高亮样式 | Adjust the highlight style of the original text of the search results.
 - 更改自定义配置文件覆盖默认配置文件方案为递归覆盖 | Change the custom configuration file override the default configuration file solution to recursive overrides.
 - 隔离不同应用的配置 | Isolate configurations for different apps.
+- 修复列表转换为表格宽度异常问题 | Fixed an issue where the list was converted to table width exception.
 
 ## v0.4.2/2022-03-09
 
