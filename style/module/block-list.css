@@ -39,3 +39,14 @@
 .protyle-wysiwyg [data-node-id].li>[data-node-id]:not(.list, [data-type="NodeHeading"]) {
     margin-left: 2em !important;
 }
+
+/* 已完成任务列表项删除线 */
+div[data-node-id].li.protyle-task--done>div[data-node-id].p {
+    text-decoration: line-through var(--b3-theme-on-surface);
+    color: var(--b3-theme-on-surface);
+}
+
+/* .li.protyle-task--done .p strong {
+    color: var(--b3-theme-primary) !important;
+    background-color: transparent !important;
+} */
