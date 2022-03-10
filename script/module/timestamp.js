@@ -22,8 +22,8 @@ async function jump(target) {
                     getBlockAttrs(target.dataset.nodeId).then((attrs) => {
                         // console.log(attrs);
                         if (attrs) {
-                            let timestamp = attrs[config.timestamp.attribute];
-                            if (timestamp && config.regs.time.test(timestamp)) {
+                            let timestamp = attrs[config.theme.timestamp.attribute];
+                            if (timestamp && config.theme.regs.time.test(timestamp)) {
                                 let seconds = timestampParse(timestamp);
                                 target.firstElementChild.firstElementChild.currentTime = seconds;
                             }
@@ -55,7 +55,7 @@ async function create(target) {
                     let ms = seconds * 1000 % 1000 | 0;
                     let timestamp = `${intPrefix(h, 2)}:${intPrefix(m, 2)}:${intPrefix(s, 2)}.${intPrefix(ms, 3)}`;
 
-                    let hyperlink = `[${timestamp}](${id2url(id)} "{&quot;${config.timestamp.attribute}&quot;: &quot;${timestamp}&quot;}")`;
+                    let hyperlink = `[${timestamp}](${id2url(id)} "{&quot;${config.theme.timestamp.attribute}&quot;: &quot;${timestamp}&quot;}")`;
                     // console.log(hyperlink);
                     navigator.clipboard.writeText(hyperlink);
                 }, 0);
@@ -68,13 +68,13 @@ async function create(target) {
 
 (() => {
     try {
-        if (config.timestamp.enable) {
+        if (config.theme.timestamp.enable) {
             let body = document.querySelector('body');
-            if (config.timestamp.jump.enable) { 
+            if (config.theme.timestamp.jump.enable) { 
                 // 跳转到所单击块的时间戳
                 body.addEventListener('click', (e) => {
                     // console.log(e);
-                    if (isEvent(e, config.hotkeys.timestamp.jump)) {
+                    if (isEvent(e, config.theme.hotkeys.timestamp.jump)) {
                         setTimeout(async () => {
                             await jump(e.target);
                         }, 0);
@@ -82,11 +82,11 @@ async function create(target) {
                 }, true);
             }
 
-            if (config.timestamp.create.enable) {
+            if (config.theme.timestamp.create.enable) {
                 // 生成时间戳并写入剪贴板
                 body.addEventListener('mousedown', (e) => {
                     // console.log(e);
-                    if (isButton(e, config.hotkeys.timestamp.create)) {
+                    if (isButton(e, config.theme.hotkeys.timestamp.create)) {
                         setTimeout(async () => {
                             await create(e.target);
                         }, 0);

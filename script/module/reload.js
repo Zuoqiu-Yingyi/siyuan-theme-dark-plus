@@ -30,13 +30,13 @@ async function reloadIframe(target) {
 
 (() => {
     try {
-        if (config.reload.enable) {
+        if (config.theme.reload.enable) {
             let body = document.querySelector('body');
-            if (config.reload.window.enable) {
+            if (config.theme.reload.window.enable) {
                 // 重新加载整个窗口
                 body.addEventListener('keydown', (e) => {
                     // console.log(e);
-                    if (isKey(e, config.hotkeys.reload.window)) {
+                    if (isKey(e, config.theme.hotkeys.reload.window)) {
                         setTimeout(() => {
                             window.location.reload();
                         }, 0);
@@ -44,11 +44,11 @@ async function reloadIframe(target) {
                 });
             }
 
-            if (config.reload.iframe.enable) {
+            if (config.theme.reload.iframe.enable) {
                 // 重新加载 iframe
                 body.addEventListener('click', (e) => {
                     // console.log(e);
-                    if (isEvent(e, config.hotkeys.reload.iframe)) {
+                    if (isEvent(e, config.theme.hotkeys.reload.iframe)) {
                         setTimeout(async () => {
                             await reloadIframe(e.target);
                         }, 0);

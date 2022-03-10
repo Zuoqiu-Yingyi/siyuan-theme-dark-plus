@@ -28,10 +28,10 @@ function renderCustomStyle(styles) {
 function saveCustomStyle() {
     try {
         const layout__center = document.querySelector('.layout__center');
-        layout__center.querySelectorAll(`div[data-node-id][${config.style.attribute}]`).forEach((item, i, obj) => {
-            // item.style.cssText = item.getAttribute(config.style.attribute);
+        layout__center.querySelectorAll(`div[data-node-id][${config.theme.style.attribute}]`).forEach((item, i, obj) => {
+            // item.style.cssText = item.getAttribute(config.theme.style.attribute);
             let id = item.getAttribute('data-node-id');
-            let attr = item.getAttribute(config.style.attribute);
+            let attr = item.getAttribute(config.theme.style.attribute);
             let request_body = {
                 id: id,
                 attrs: {
@@ -63,15 +63,15 @@ function saveCustomStyle() {
 }
 
 function render() {
-    renderCustomStyle(config.style.render.styles);
+    renderCustomStyle(config.theme.style.render.styles);
 }
 
 (() => {
     try {
-        if (config.style.enable) {
+        if (config.theme.style.enable) {
             let body = document.querySelector('body');
 
-            if (config.style.save.enable) {
+            if (config.theme.style.save.enable) {
                 // 块属性编辑窗口确认按钮保存自定义样式
                 body.addEventListener('click', (e) => {
                     let target = e.target;
@@ -86,11 +86,11 @@ function render() {
             // layout__center.addEventListener('click', (e) => {
             //     setTimeout(render(), 0);
             // });
-            if (config.style.render.enable) {
+            if (config.theme.style.render.enable) {
                 // 使用快捷键渲染自定义样式
                 body.addEventListener('keydown', (e) => {
                     // console.log(e);
-                    if (isKey(e, config.hotkeys.style.render)) {
+                    if (isKey(e, config.theme.hotkeys.style.render)) {
                         setTimeout(render, 0);
                     }
                 });
