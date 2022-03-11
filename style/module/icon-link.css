@@ -80,7 +80,7 @@
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="quicker:"]:not(:empty)::before,
 .b3-typography a[href ^="quicker:"]::before {
-    background-image: url(/appearance/themes/Dark+/icon/Quicker.svg) !important;
+    background-image: url(/appearance/themes/Dark+/icon/quicker.svg) !important;
 }
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="runpwsh:"]:not(:empty)::before,
