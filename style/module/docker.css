@@ -3,17 +3,15 @@
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 
-/* 左侧菜单栏 */
-#dockLeft {
-    background-color: var(--custom-dock-left-background-color);
+/* 菜单栏 */
+#dockTop,
+#dockBottom,
+#dockLeft,
+#dockRight {
+    background-color: var(--custom-dock-background-color);
 }
 
 /* 聚焦的侧边面板标题 */
 .block__icons--active {
     background-color: var(--b3-list-hover);
-}
-
-/* 右侧菜单栏 */
-#dockRight {
-    background-color: var(--custom-dock-right-background-color);
 }
