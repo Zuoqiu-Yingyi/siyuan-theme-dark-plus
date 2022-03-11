@@ -1,11 +1,14 @@
 # 更改日志 | CHANGE LOG
 
+## v0.4.4/2022-03-12
+
+- [v0.4.3 <=> v0.4.4](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.3...v0.4.4)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 调整弹出菜单分隔线样式 | Adjust the style of the separator of the pop-up menu.
 - 添加 SuperMemo URL Scheme(`sm:`) 图标 | Add the SuperMemo URL Scheme(`sm:`) icon.
 - 调整上方菜单栏与下方菜单栏的背景颜色 | Adjust the background color of the top menu bar and the bottom menu bar.
 - 更新文档图片 | Update the document image.
-- 新增文档快捷键表格与自定义块属性表格 | Add a shortcut table and a custom block attribute table to the document.
+- 文档新增快捷键表格与自定义块属性表格 | A new shortcut table and a custom block attribute table have been added to the document.
 
 ## v0.4.3/2022-03-10
 
