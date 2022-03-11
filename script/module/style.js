@@ -6,7 +6,7 @@ import { isKey } from '/appearance/themes/Dark+/script/utils/hotkey.js';
 /* 渲染自定义样式 */
 function renderCustomStyle(styles) {
     try {
-        const layout__center = document.querySelector('.layout__center');
+        const layout__center = document.querySelector('div.fn__flex-1.protyle:not(.fn__none)');
 
         for (let i in styles) {
             let style = styles[i];
@@ -27,7 +27,7 @@ function renderCustomStyle(styles) {
 // 保存自定义样式
 function saveCustomStyle() {
     try {
-        const layout__center = document.querySelector('.layout__center');
+        const layout__center = document.querySelector('div.fn__flex-1.protyle:not(.fn__none)');
         layout__center.querySelectorAll(`div[data-node-id][${config.theme.style.attribute}]`).forEach((item, i, obj) => {
             // item.style.cssText = item.getAttribute(config.theme.style.attribute);
             let id = item.getAttribute('data-node-id');
