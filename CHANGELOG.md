@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+- 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
+- 调整弹出菜单分隔线样式 | Adjust the style of the separator of the pop-up menu.
+
 ## v0.4.3/2022-03-10
 
 - [v0.4.2 <=> v0.4.3](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.2...v0.4.3)

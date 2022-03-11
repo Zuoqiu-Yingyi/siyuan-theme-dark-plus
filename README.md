@@ -395,6 +395,9 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     /* 弹出搜索菜单背景颜色 | The background color of the popover search menu */
     --custom-popover-search-menu-background-color: var(--custom-transparent-deep);
 
+    /* 弹出搜索菜单分隔线颜色 | The color of the popover search menu */
+    --custom-popover-search-menu-separator-color: var(--b3-card-info-color);
+
     /* 阴影散布宽度 | Shadow spread */
     --custom-box-shadow-spread: 8px;
 

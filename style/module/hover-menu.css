@@ -19,6 +19,13 @@
 /* 菜单分割线 */
 .b3-menu__separator {
     height: 2px;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+/* 搜索菜单分隔线 */
+div.b3-menu__separator {
+    background-color: var(--custom-popover-search-menu-separator-color);
 }
 
 /* 鼠标悬停菜单项 */
@@ -29,6 +36,7 @@
 /* 悬浮搜索菜单/功能菜单 */
 .b3-menu.b3-list.b3-list--background {
     /* column-count: 4; */
+    /* max-height: 395px !important; */
     background-color: var(--custom-popover-search-menu-background-color);
     backdrop-filter: var(--custom-backdrop-popover-filter);
     width: var(--custom-popover-menu-width) !important;
@@ -36,13 +44,16 @@
 
 /* 悬浮搜索结果项 */
 div.b3-list>.b3-list-item {
-    padding: 0.25em auto;
-    border-bottom: 0.125em solid var(--b3-border-color);
+    padding-top: 0.25em;
+    border-bottom: 1px solid var(--b3-theme-on-surface);
 }
 
 /* 悬浮搜索结果文档可读路径 */
 div.b3-list>.b3-list-item>.b3-list-item__meta:not(.fn__flex) {
     color: var(--b3-card-info-color);
+    padding: 0;
+    margin: 0;
+    border: 0;
 }
 div.b3-list>.b3-list-item>.b3-list-item__meta:not(.fn__flex) mark {
     outline-color: var(--b3-card-info-color);
@@ -66,3 +77,21 @@ div.b3-list>.b3-list-item mark {
     outline-width: 1px;
     outline-style: solid;
 }
+
+/* 菜单分栏 */
+/* .b3-list.fn__flex-1.b3-list--background:not(#globalSearchList) {
+    column-count: 4;
+    column-gap: 5px;
+    min-width: 50vw !important;
+    font-size: 90%;
+    border: 0.05em solid #ffffff4d;
+}
+
+.b3-menu.b3-list.b3-list--background {
+    column-count: 4;
+    column-gap: 5px;
+    min-width: 50vw !important;
+    max-height: 480px !important;
+    border: var(--b3-border-column);
+    padding: 4px;
+} */
