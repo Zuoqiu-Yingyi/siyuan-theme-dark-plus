@@ -220,9 +220,8 @@
     --custom-components: #222;
     --custom-components-deep: #111;
 
-    /* 左右菜单栏(功能坞)背景颜色 | Left and right menu bar (dock) background color */
-    --custom-dock-left-background-color: var(--custom-transparent);
-    --custom-dock-right-background-color: var(--custom-transparent);
+    /* 菜单栏(功能坞)背景颜色 | Menu bar (dock) background color */
+    --custom-dock-background-color: var(--custom-transparent);
 
     /* 顶部工具栏背景颜色 | The background color of the top toolbar */
     --custom-tool-bar-background-color: var(--custom-transparent);
