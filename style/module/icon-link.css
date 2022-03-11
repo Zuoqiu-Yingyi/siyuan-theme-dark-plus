@@ -93,6 +93,11 @@
     background-image: url(/appearance/themes/Dark+/icon/siyuan.svg);
 }
 
+.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="sm:"]:not(:empty)::before,
+.b3-typography a[href ^="sm:"]::before {
+    background-image: url(/appearance/themes/Dark+/icon/supermemo.ico);
+}
+
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="ticktick:"]:not(:empty)::before,
 .b3-typography a[href ^="ticktick:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/ticktick.svg) !important;

@@ -2,6 +2,7 @@
 
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 调整弹出菜单分隔线样式 | Adjust the style of the separator of the pop-up menu.
+- 添加 SuperMemo URL Scheme(`sm:`) 图标 | Add the SuperMemo URL Scheme(`sm:`) icon.
 
 ## v0.4.3/2022-03-10
 
