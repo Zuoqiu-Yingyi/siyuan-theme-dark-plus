@@ -5,6 +5,7 @@
 - 添加 SuperMemo URL Scheme(`sm:`) 图标 | Add the SuperMemo URL Scheme(`sm:`) icon.
 - 调整上方菜单栏与下方菜单栏的背景颜色 | Adjust the background color of the top menu bar and the bottom menu bar.
 - 更新文档图片 | Update the document image.
+- 新增文档快捷键表格与自定义块属性表格 | Add a shortcut table and a custom block attribute table to the document.
 
 ## v0.4.3/2022-03-10
 
