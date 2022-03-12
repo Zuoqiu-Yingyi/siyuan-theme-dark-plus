@@ -68,6 +68,13 @@ export var config = {
                 enable: true, // 是否启用当前文档全文剪切功能
             },
         },
+        typewriter: {
+            // 打字机模式开关
+            enable: true,
+            switch: {
+                enable: true, // 是否启用打字机模式开关
+            },
+        },
         hotkeys: {
             // 快捷键
             style: {
@@ -150,6 +157,16 @@ export var config = {
                     shiftKey: true,
                     altKey: true,
                     key: 'X',
+                },
+            },
+            typewriter: {
+                switch: {
+                    // 打字机模式开关(Shift + Alt + T)
+                    ctrlKey: false,
+                    metaKey: false,
+                    shiftKey: true,
+                    altKey: true,
+                    key: 'T',
                 },
             },
         },

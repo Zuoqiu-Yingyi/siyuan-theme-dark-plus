@@ -21,6 +21,13 @@
     padding: 0;
 }
 
+/* 思源跳转内部的超链接特化 */
+.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="siyuan:"][data-href *="focus=1"]:not(:empty)::before,
+.b3-typography a[href ^="siyuan:"][href *="focus=1"]::before {
+    outline: 1px solid var(--b3-protyle-inline-link-color);
+    -moz-outline-radius: var(--custom-border-radius);
+}
+
 /* 超链接 */
 .protyle-wysiwyg [data-node-id] span[data-type='a']:not(:empty),
 .b3-typography a {

@@ -8,7 +8,7 @@ import {
 } from '/appearance/themes/Dark+/script/utils/api.js';
 
 async function docCopy() {
-    const background = document.querySelector('div.fn__flex-1.protyle:not(.fn__none)>div.protyle-content>div.protyle-background');
+    const background = document.querySelector('div.layout__wnd--active div.protyle:not(.fn__none)>div.protyle-content>div.protyle-background');
     if (background) {
         let id = background.getAttribute('data-node-id');
         if (id) {
@@ -22,7 +22,7 @@ async function docCopy() {
 }
 
 async function docDelete() {
-    const background = document.querySelector('div.fn__flex-1.protyle:not(.fn__none)>div.protyle-content>div.protyle-background');
+    const background = document.querySelector('div.layout__wnd--active div.protyle:not(.fn__none)>div.protyle-content>div.protyle-background');
     if (background) {
         let id = background.getAttribute('data-node-id');
         if (id) {
@@ -36,7 +36,7 @@ async function docDelete() {
 }
 
 async function docCut() {
-    const background = document.querySelector('div.fn__flex-1.protyle:not(.fn__none)>div.protyle-content>div.protyle-background');
+    const background = document.querySelector('div.layout__wnd--active div.protyle:not(.fn__none)>div.protyle-content>div.protyle-background');
     if (background) {
         let id = background.getAttribute('data-node-id');
         if (id) {
@@ -57,11 +57,11 @@ async function docCut() {
 (() => {
     try {
         if (config.theme.doc.copy) {
-            let body = document.querySelector('body');
+            let body = document.body;
 
             if (config.theme.doc.copy.enable) {
                 // 复制当前文档全部内容至剪贴板
-                body.addEventListener('keydown', (e) => {
+                body.addEventListener('keyup', (e) => {
                     // console.log(e);
                     if (isKey(e, config.theme.hotkeys.doc.copy)) {
                         setTimeout(docCopy, 0);
@@ -71,7 +71,7 @@ async function docCut() {
 
             if (config.theme.doc.delete.enable) {
                 // 删除当前文档全文
-                body.addEventListener('keydown', (e) => {
+                body.addEventListener('keyup', (e) => {
                     if (isKey(e, config.theme.hotkeys.doc.delete)) {
                         // console.log(e);
                         setTimeout(docDelete, 0);
@@ -81,7 +81,7 @@ async function docCut() {
 
             if (config.theme.doc.cut.enable) {
                 // 剪切当前文档全文
-                body.addEventListener('keydown', (e) => {
+                body.addEventListener('keyup', (e) => {
                     if (isKey(e, config.theme.hotkeys.doc.cut)) {
                         // console.log(e);
                         setTimeout(docCut, 0);

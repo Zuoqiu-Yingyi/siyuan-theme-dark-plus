@@ -27,7 +27,7 @@ async function setter(target) {
 (() => {
     try {
         if (config.theme.blockattrs.enable) {
-            let body = document.querySelector('body');
+            let body = document.body;
             if (config.theme.blockattrs.set.enable) {
                 // 设置块属性
                 body.addEventListener('mousedown', (e) => {
