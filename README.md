@@ -22,6 +22,16 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 ![preview](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/preview.png)
 
+![行级元素对齐](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/1647098220929.png)
+
+- 使用等宽字体时所有行内元素对齐 | All inline elements are aligned when using a monospaced font.
+- 行内元素样式适配所有字号 | Inline element styles are adapted to all font sizes.
+
+![列表缩进对齐](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/1647098536196.png)
+
+- 使用等宽字体时列表以 4 个半宽字符(2 个全宽字符)的宽度缩进 | When using a monospaced font, list indentation is 4 half-width characters (2 full-width characters).
+- 列表缩进样式适配所有字号 | List indentation styles are adapted to all font sizes.
+
 ## 介绍 | INTRODUCTION
 
 ### 快捷键 | SHORTCUT KEYS
@@ -641,6 +651,13 @@ export var config = {
                 enable: true, // 是否启用当前文档全文剪切功能
             },
         },
+        typewriter: {
+            // 打字机模式开关
+            enable: true,
+            switch: {
+                enable: true, // 是否启用打字机模式开关
+            },
+        },
         hotkeys: {
             // 快捷键
             style: {
@@ -723,6 +740,16 @@ export var config = {
                     shiftKey: true,
                     altKey: true,
                     key: 'X',
+                },
+            },
+            typewriter: {
+                switch: {
+                    // 打字机模式开关(Shift + Alt + T)
+                    ctrlKey: false,
+                    metaKey: false,
+                    shiftKey: true,
+                    altKey: true,
+                    key: 'T',
                 },
             },
         },

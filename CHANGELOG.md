@@ -1,8 +1,10 @@
 # 更改日志 | CHANGE LOG
 
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 为可聚焦的思源内部超链接添加样式 | Add styles to the focused hyperlinks of siyuan.
 - 使用快捷键 <kbd>Shift + Alt + T</kbd> 启动/关闭打字机模式 | Use the shortcut key <kbd>Ctrl/⌘ + F5</kbd> to turn on/off typewriter mode.
 - 将快捷键触发事件由 `keydown` 更改为 `keyup` | Change the event of the shortcut key from `keydown` to `keyup`.
+- 移除冗余配图, 新增元素对齐样式配图 | Remove redundant pictures, add element alignment style pictures.
 
 ## v0.4.4/2022-03-12
 
