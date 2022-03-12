@@ -34,6 +34,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 | <kbd>Ctrl/⌘ + 鼠标左键</kbd><br><kbd>Ctrl/⌘ + Lift Mouse Button</kbd>   | 挂件块/iframe块<br>widget block/iframe block | 重新加载块内容<br>reload the block contents                                                                    |
 | <kbd>Ctrl/⌘ + F1</kbd>                                                  | 当前文档<br>current document                 | 渲染当前文档所有块的自定义样式<br>render the custom style for all blocks in the current document               |
 | <kbd>Ctrl/⌘ + F5</kbd>                                                  | 整个窗口<br>entire window                    | 重新加载整个窗口<br>reload the entire window                                                                   |
+| <kbd>Shift + Alt + T</kbd>                                              | 整个窗口<br>entire window                    | 启动/关闭打字机模式<br>turn on/off typewriter mode                                                             |
 | <kbd>Shift + Alt + C</kbd>                                              | 当前文档<br>current document                 | 复制当前文档 markdown 全文至剪贴板<br>copy the full markdown text of the current document to the clipboard     |
 | <kbd>Shift + Alt + X</kbd>                                              | 当前文档<br>current document                 | 剪切当前文档 markdown 全文至剪贴板<br>cut the full markdown text of the current document to the clipboard      |
 | <kbd>Shift + Alt + D</kbd>                                              | 当前文档<br>current document                 | 复制当前文档全文<br>delete the full content of the current documen                                             |
@@ -43,13 +44,13 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 | 操作对象 \| Operational objectives         | 属性名 \| Attribute Name | 属性值 \| Attribute Value                                                                                                                                                                                                                                            | 功能 \| Function                                                                                                                                                                 |
 | :----------------------------------------- | :----------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 所有块<br>all types of blocks              | `font-family`            | `等线`<br>`方正舒体`<br>`方正姚体`<br>`仿宋`<br>`黑体`<br>`华文彩云`<br>`华文仿宋`<br>`华文琥珀`<br>`华文楷体`<br>`华文隶书`<br>`华文宋体`<br>`华文细黑`<br>`华文新魏`<br>`华文行楷`<br>`华文中宋`<br>`楷体`<br>`隶属`<br>`宋体`<br>`微软雅黑`<br>`新宋体`<br>`幼圆` | 设置块所用字体族<br>Sets the font family used by the block.                                                                                                                      |
-| 所有块<br>all types of blocks              | `style`                  | css 样式<br>CSS styles                                                                                                                                                                                                                                               | 设置块的自定义样式<br>Set a custom style for the block.                                                                                                                          |
 | 文档块<br>document blocks                  | `background`             | `01` ~ `12`                                                                                                                                                                                                                                                          | 设置文档的自定义背景图片<br>Sets a custom background image for the document.                                                                                                     |
 | 文档块<br>document blocks                  | `auto-num-h`             | `0`                                                                                                                                                                                                                                                                  | 禁用该文档子标题的自动编号<br>Disables automatic numbering of subheading in the document.                                                                                        |
 | 文档块<br>document blocks                  | `auto-num-f`             | `图`<br>`Fig.`<br>`figure`<br>`Figure`<br>`FIGURE`                                                                                                                                                                                                                   | 启用该文档中图片的自动编号<br>Enable automatic numbering of pictures in the document.                                                                                            |
 | 文档块<br>document blocks                  | `auto-num-t`             | `表`<br>`Tab.`<br>`table`<br>`Table`<br>`TABLE`                                                                                                                                                                                                                      | 启用该文档中表格的自动编号<br>Enable automatic numbering of tables in the document.                                                                                              |
 | 文档块<br>document blocks                  | `render`                 | `id`<br>(使用空格分隔多个属性值 \| Separate multiple attribute values with spaces)                                                                                                                                                                                   | 渲染每个块的块 ID<br>Renders the ID of each block.                                                                                                                               |
 | 文档块<br>document blocks                  | `render`                 | `outline`<br>(使用空格分隔多个属性值 \| Separate multiple attribute values with spaces)                                                                                                                                                                              | 渲染鼠标悬浮的块的轮廓<br>Renders the outline of a hovering block.                                                                                                               |
+| 非文档块<br>non-document blocks            | `style`                  | css 样式<br>CSS styles                                                                                                                                                                                                                                               | 设置块的自定义样式<br>Set a custom style for the block.                                                                                                                          |
 | 非文档块<br>non-document blocks            | `title`                  | 任何值<br>Any value                                                                                                                                                                                                                                                  | 设置块标题<br>Sets the title of the block.                                                                                                                                       |
 | 非文档块<br>non-document blocks            | `type`                   | `danmaku`<br>(使用空格分隔多个属性值 \| Separate multiple attribute values with spaces)                                                                                                                                                                              | 将块设置为滚动弹幕样式<br>Set the block to the scrolling danmaku block style.                                                                                                    |
 | 视频块/音频块<br>video blocks/audio blocks | `time`                   | `ss`<br>`ss.ms`<br>`mm:ss`<br>`mm:ss.ms`<br>`hh:mm:ss`<br>`hh:mm:ss.ms`                                                                                                                                                                                              | 时间戳<br>Timestamp.                                                                                                                                                             |
@@ -85,7 +86,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
   - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/video.svg" style="height: 1em; width=1em;" />: Video
   - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/zip.svg" style="height: 1em; width=1em;" />: ZIP
   - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/asset.svg" style="height: 1em; width=1em;" />: Other
-- 指向第三方资源 `URL Scheme`  
+- 指向第三方资源(`URL Scheme`)的超链接显示图标  
   Hyperlinks(`URL Scheme`) to the third-party resource displays icons.
   - <img alt="bookxnote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/bookxnote.ico" style="height: 1em; width=1em;" />: `bookxnotepro:` [BookxNote Pro](https://www.bookxnotepro.com/)
   - <img alt="everything" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/everything.svg" style="height: 1em; width=1em;" />: `es:` [Everything](https://www.voidtools.com/)
@@ -132,6 +133,8 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
   Use the shortcut keys <kbd>Ctrl/⌘ + Left Mouse Button</kbd> click the iframe block or the widget block to reload the block contents.
 - 使用快捷键 <kbd>Ctrl/⌘ + F5</kbd> 重新加载整个窗口  
   Use the shortcut key <kbd>Ctrl/⌘ + F5</kbd> to reload the entire window.
+- 使用快捷键 <kbd>Shift + Alt + T</kbd> 启动/关闭打字机模式  
+  Use the shortcut key <kbd>Ctrl/⌘ + F5</kbd> to turn on/off typewriter mode.
 - 使用快捷键 <kbd>Shift + Alt + C</kbd> 复制当前文档 markdown 全文至剪贴板  
   Use the shortcut keys <kbd>Shift + Alt + C</kbd> to copy the full markdown text of the current document to the clipboard.
 - 使用快捷键 <kbd>Shift + Alt + X</kbd> 剪切当前文档 markdown 全文至剪贴板  
@@ -166,11 +169,6 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
       - `微软雅黑`
       - `新宋体`
       - `幼圆`
-  - `style`: 属性名 | key
-    - 适用于所有块 | Applies to all blocks
-    - 块样式 | block style
-    - 设置后单击 <kbd>确认</kbd> 按钮将该自定义属性设置为块样式属性  
-      After setting, click the <kbd>Confirm</kbd> button to set the custom attribute to a block style attribute.
   - `background`: 属性名 | key
     - `01` ~ `12`: 属性值 | value
     - 适用于文档块 | Applies to document blocks
@@ -201,6 +199,11 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     - `outline`: 属性值 | value
       - 渲染鼠标悬浮的块的轮廓 | Renders the outline of a hovering block.
     - 适用于文档块 | Applies to document blocks
+  - `style`: 属性名 | key
+    - 适用于所有块 | Applies to all blocks
+    - 块样式 | block style
+    - 设置后单击 <kbd>确认</kbd> 按钮将该自定义属性设置为块样式属性  
+      After setting, click the <kbd>Confirm</kbd> button to set the custom attribute to a block style attribute.
   - `title`: 属性名 | key
     - 适用于所有块 | Applies to all blocks
     - 在块的上方设置块标题 | Set the block title above the block.

@@ -34,7 +34,7 @@ async function reloadIframe(target) {
             let body = document.querySelector('body');
             if (config.theme.reload.window.enable) {
                 // 重新加载整个窗口
-                body.addEventListener('keydown', (e) => {
+                body.addEventListener('keyup', (e) => {
                     // console.log(e);
                     if (isKey(e, config.theme.hotkeys.reload.window)) {
                         setTimeout(() => {

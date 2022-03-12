@@ -1,5 +1,9 @@
 # 更改日志 | CHANGE LOG
 
+- 为可聚焦的思源内部超链接添加样式 | Add styles to the focused hyperlinks of siyuan.
+- 使用快捷键 <kbd>Shift + Alt + T</kbd> 启动/关闭打字机模式 | Use the shortcut key <kbd>Ctrl/⌘ + F5</kbd> to turn on/off typewriter mode.
+- 将快捷键触发事件由 `keydown` 更改为 `keyup` | Change the event of the shortcut key from `keydown` to `keyup`.
+
 ## v0.4.4/2022-03-12
 
 - [v0.4.3 <=> v0.4.4](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.3...v0.4.4)

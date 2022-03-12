@@ -69,7 +69,7 @@ async function create(target) {
 (() => {
     try {
         if (config.theme.timestamp.enable) {
-            let body = document.querySelector('body');
+            let body = document.body;
             if (config.theme.timestamp.jump.enable) { 
                 // 跳转到所单击块的时间戳
                 body.addEventListener('click', (e) => {

@@ -5,11 +5,11 @@ export {
     isButton, // 鼠标事件是否由指定快捷键+按键触发
 }
 
-function isKey(keydownEvent, key) {
-    return (keydownEvent.key == key.key
-        && (keydownEvent.ctrlKey == key.ctrlKey || keydownEvent.metaKey == key.metaKey)
-        && keydownEvent.shiftKey == key.shiftKey
-        && keydownEvent.altKey == key.altKey
+function isKey(event, key) {
+    return (event.key == key.key
+        && (event.ctrlKey == key.ctrlKey || event.metaKey == key.metaKey)
+        && event.shiftKey == key.shiftKey
+        && event.altKey == key.altKey
     )
 }
 

@@ -69,7 +69,7 @@ function render() {
 (() => {
     try {
         if (config.theme.style.enable) {
-            let body = document.querySelector('body');
+            let body = document.body;
 
             if (config.theme.style.save.enable) {
                 // 块属性编辑窗口确认按钮保存自定义样式
@@ -88,7 +88,7 @@ function render() {
             // });
             if (config.theme.style.render.enable) {
                 // 使用快捷键渲染自定义样式
-                body.addEventListener('keydown', (e) => {
+                body.addEventListener('keyup', (e) => {
                     // console.log(e);
                     if (isKey(e, config.theme.hotkeys.style.render)) {
                         setTimeout(render, 0);

@@ -12,6 +12,7 @@ function loadScript(url) {
     loadScript("/appearance/themes/Dark+/script/module/reload.js");
     loadScript("/appearance/themes/Dark+/script/module/style.js");
     loadScript("/appearance/themes/Dark+/script/module/timestamp.js");
+    loadScript("/appearance/themes/Dark+/script/module/typewriter.js");
 
     // loadScript("/appearance/themes/Dark+/script/test/listener.js");
 })();
