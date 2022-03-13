@@ -5,6 +5,7 @@
 - 使用快捷键 <kbd>Shift + Alt + T</kbd> 启动/关闭打字机模式 | Use the shortcut key <kbd>Ctrl/⌘ + F5</kbd> to turn on/off typewriter mode.
 - 将快捷键触发事件由 `keydown` 更改为 `keyup` | Change the event of the shortcut key from `keydown` to `keyup`.
 - 移除冗余配图, 新增元素对齐样式配图 | Remove redundant pictures, add element alignment style pictures.
+- 修复自定义块属性 `custom-font-family` 中 `隶书` 字体名称错误 | Fix the font name of `隶书` in the custom block attribute `custom-font-family`.
 
 ## v0.4.4/2022-03-12
 
