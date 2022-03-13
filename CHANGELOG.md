@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.4.5/2022-03-13
+
+- [v0.4.4 <=> v0.4.5](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.4...v0.4.5)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 为可聚焦的思源内部超链接添加样式 | Add styles to the focused hyperlinks of siyuan.
 - 使用快捷键 <kbd>Shift + Alt + T</kbd> 启动/关闭打字机模式 | Use the shortcut key <kbd>Ctrl/⌘ + F5</kbd> to turn on/off typewriter mode.
