@@ -83,9 +83,9 @@
     font-family: "楷体";
 }
 
-.protyle-wysiwyg[custom-font-family="隶属"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="隶属"] {
-    font-family: "隶属";
+.protyle-wysiwyg[custom-font-family="隶书"] div[data-node-id],
+.protyle-wysiwyg div[data-node-id][custom-font-family="隶书"] {
+    font-family: "隶书";
 }
 
 .protyle-wysiwyg[custom-font-family="宋体"] div[data-node-id],

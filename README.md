@@ -24,13 +24,19 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 ![行级元素对齐](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/1647098220929.png)
 
-- 使用等宽字体时所有行内元素对齐 | All inline elements are aligned when using a monospaced font.
-- 行内元素样式适配所有字号 | Inline element styles are adapted to all font sizes.
+- 使用等宽字体时所有行内元素对齐  
+  All inline elements are aligned when using a monospaced font.
+- 行内元素样式适配所有字号  
+  Inline element styles are adapted to all font sizes.
 
 ![列表缩进对齐](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/1647098536196.png)
 
-- 使用等宽字体时列表以 4 个半宽字符(2 个全宽字符)的宽度缩进 | When using a monospaced font, list indentation is 4 half-width characters (2 full-width characters).
-- 列表缩进样式适配所有字号 | List indentation styles are adapted to all font sizes.
+- 使用等宽字体时列表以 4 个半宽字符(2 个全宽字符)的宽度缩进  
+  When using a monospaced font, list indentation is 4 half-width characters (2 full-width characters).
+- 列表缩进样式适配所有字号  
+  List indentation styles are adapted to all font sizes.
+
+常用中西文 2:1 等宽字体: `仿宋`, `黑体`, `楷体`, `隶书`, `宋体`, `新宋体`, `幼圆`
 
 ## 介绍 | INTRODUCTION
 
@@ -53,7 +59,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 | 操作对象 \| Operational objectives         | 属性名 \| Attribute Name | 属性值 \| Attribute Value                                                                                                                                                                                                                                            | 功能 \| Function                                                                                                                                                                 |
 | :----------------------------------------- | :----------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 所有块<br>all types of blocks              | `font-family`            | `等线`<br>`方正舒体`<br>`方正姚体`<br>`仿宋`<br>`黑体`<br>`华文彩云`<br>`华文仿宋`<br>`华文琥珀`<br>`华文楷体`<br>`华文隶书`<br>`华文宋体`<br>`华文细黑`<br>`华文新魏`<br>`华文行楷`<br>`华文中宋`<br>`楷体`<br>`隶属`<br>`宋体`<br>`微软雅黑`<br>`新宋体`<br>`幼圆` | 设置块所用字体族<br>Sets the font family used by the block.                                                                                                                      |
+| 所有块<br>all types of blocks              | `font-family`            | `等线`<br>`方正舒体`<br>`方正姚体`<br>`仿宋`<br>`黑体`<br>`华文彩云`<br>`华文仿宋`<br>`华文琥珀`<br>`华文楷体`<br>`华文隶书`<br>`华文宋体`<br>`华文细黑`<br>`华文新魏`<br>`华文行楷`<br>`华文中宋`<br>`楷体`<br>`隶书`<br>`宋体`<br>`微软雅黑`<br>`新宋体`<br>`幼圆` | 设置块所用字体族<br>Sets the font family used by the block.                                                                                                                      |
 | 文档块<br>document blocks                  | `background`             | `01` ~ `12`                                                                                                                                                                                                                                                          | 设置文档的自定义背景图片<br>Sets a custom background image for the document.                                                                                                     |
 | 文档块<br>document blocks                  | `auto-num-h`             | `0`                                                                                                                                                                                                                                                                  | 禁用该文档子标题的自动编号<br>Disables automatic numbering of subheading in the document.                                                                                        |
 | 文档块<br>document blocks                  | `auto-num-f`             | `图`<br>`Fig.`<br>`figure`<br>`Figure`<br>`FIGURE`                                                                                                                                                                                                                   | 启用该文档中图片的自动编号<br>Enable automatic numbering of pictures in the document.                                                                                            |
@@ -174,7 +180,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
       - `华文行楷`
       - `华文中宋`
       - `楷体`
-      - `隶属`
+      - `隶书`
       - `宋体`
       - `微软雅黑`
       - `新宋体`
