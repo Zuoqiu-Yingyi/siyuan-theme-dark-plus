@@ -53,7 +53,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 | <kbd>Shift + Alt + T</kbd>                                              | 整个窗口<br>entire window                    | 启动/关闭打字机模式<br>turn on/off typewriter mode                                                             |
 | <kbd>Shift + Alt + C</kbd>                                              | 当前文档<br>current document                 | 复制当前文档 markdown 全文至剪贴板<br>copy the full markdown text of the current document to the clipboard     |
 | <kbd>Shift + Alt + X</kbd>                                              | 当前文档<br>current document                 | 剪切当前文档 markdown 全文至剪贴板<br>cut the full markdown text of the current document to the clipboard      |
-| <kbd>Shift + Alt + D</kbd>                                              | 当前文档<br>current document                 | 复制当前文档全文<br>delete the full content of the current documen                                             |
+| <kbd>Shift + Alt + D</kbd>                                              | 当前文档<br>current document                 | 删除当前文档全文<br>delete the full content of the current documen                                             |
 
 ### 自定义块属性 | CUSTOM BLOCKS ATTRIBUTES
 
@@ -115,7 +115,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
   - <img alt="obsidian" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/obsidian.ico" style="height: 1em; width=1em;" />: `obsidian:` [Obsidian](https://obsidian.md/)
   - <img alt="onenote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/onenote.svg" style="height: 1em; width=1em;" />: `onenote:` [OneNote](https://www.onenote.com/)
   - <img alt="quicker" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/quicker.svg" style="height: 1em; width=1em;" />: `quicker:` [Quicker](https://getquicker.net/)
-  - <img alt="pwsh" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/pwsh.svg" style="height: 1em; width=1em;" />: `runpwsh:` [url-run-command](https://github.com/Zuoqiu-Yingyi/url-run-command)
+  - <img alt="pwsh" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/pwsh.svg" style="height: 1em; width=1em;" />: `runpwsh:` `runcmd:` [url-run-command](https://github.com/Zuoqiu-Yingyi/url-run-command)
   - <img alt="siyuan" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/siyuan.svg" style="height: 1em; width=1em;" />: `siyuan:` [思源笔记](https://b3log.org/siyuan/)
   - <img alt="supermemo" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/supermemo.ico" style="height: 1em; width=1em;" />: `sm:` [Super Memory](https://www.super-memory.com/)
   - <img alt="ticktick" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/ticktick.svg" style="height: 1em; width=1em;" />: `ticktick:` [TickTick](https://ticktick.com/)
