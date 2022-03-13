@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 新增 `runcmd` URL Scheme 超链接图标 | Added `runcmd` URL Scheme link icon.
+
 ## v0.4.5/2022-03-13
 
 - [v0.4.4 <=> v0.4.5](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.4...v0.4.5)
