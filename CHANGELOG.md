@@ -1,10 +1,13 @@
 # 更改日志 | CHANGE LOG
 
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
+- 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 新增 `runcmd` URL Scheme 超链接图标 | Added `runcmd` URL Scheme link icon.
 - 新增 [liquidtext](https://www.liquidtext.net/) 的 URL Scheme `lt` 超链接图标 | Added `lt` URL Scheme link icon for [liquidtext](https://www.liquidtext.net/).
 - 调整部分图标样式 | Adjusted some icon styles.
 - 打字机模式添加是否应用代码块的选项 | Added option to apply code block in typewriter mode.
+- 完善搜索结果列表展示样式 | Improved search result list display style.
+- 完善关键字匹配字段样式 | Improved keyword match field style.
 
 ## v0.4.5/2022-03-13
 
