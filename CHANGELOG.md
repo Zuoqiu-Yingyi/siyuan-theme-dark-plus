@@ -8,6 +8,7 @@
 - 打字机模式添加是否应用代码块的选项 | Added option to apply code block in typewriter mode.
 - 完善搜索结果列表展示样式 | Improved search result list display style.
 - 完善关键字匹配字段样式 | Improved keyword match field style.
+- 添加文档定义属性 `render: index` 与 `render: content` | Added custom document attributes `render: index` and `render: content`.
 
 ## v0.4.5/2022-03-13
 

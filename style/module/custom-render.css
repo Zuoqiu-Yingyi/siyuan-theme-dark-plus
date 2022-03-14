@@ -3,12 +3,59 @@
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 
+/*
+ * content: data-content (输入框中的内容)
+ * marker: data-marker (标志符)
+ * nodeId: data-node-id (块ID)
+ * nodeIndex: data-node-index (块索引)
+ * render: data-render (是否需要渲染: true)
+ * sbLayout: data-sb-layout (超级块布局: col, row)
+ * subtype: data-subtype (块子类型)
+ * type: data-type (块类型)
+ */
+
 /* 显示块 ID */
+.protyle-wysiwyg[custom-render~=content] div[data-node-id][data-content]::after {
+    content: attr(data-content);
+    font-size: 12px;
+    text-align: right;
+}
+.protyle-wysiwyg[custom-render~=marker] div[data-node-id][data-marker]::after {
+    content: attr(data-marker);
+    font-size: 12px;
+    text-align: right;
+}
 .protyle-wysiwyg[custom-render~=id] div[data-node-id]::after {
     content: attr(data-node-id);
     font-size: 12px;
     text-align: right;
 }
+.protyle-wysiwyg[custom-render~=index] div[data-node-id][data-node-index]::after {
+    content: attr(data-node-index);
+    font-size: 12px;
+    text-align: right;
+}
+.protyle-wysiwyg[custom-render~=render] div[data-node-id][data-render]::after {
+    content: attr(data-render);
+    font-size: 12px;
+    text-align: right;
+}
+.protyle-wysiwyg[custom-render~=layout] div[data-node-id][data-sb-layout]::after {
+    content: attr(data-sb-layout);
+    font-size: 12px;
+    text-align: right;
+}
+.protyle-wysiwyg[custom-render~=subtype] div[data-node-id][data-subtype]::after {
+    content: attr(data-subtype);
+    font-size: 12px;
+    text-align: right;
+}
+.protyle-wysiwyg[custom-render~=type] div[data-node-id][data-type]::after {
+    content: attr(data-type);
+    font-size: 12px;
+    text-align: right;
+}
+
 
 /* 鼠标悬浮显示轮廓 */
 .protyle-wysiwyg[custom-render~=outline] div[data-node-id] {
