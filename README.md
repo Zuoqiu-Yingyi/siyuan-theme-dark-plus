@@ -467,14 +467,25 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     /* 鼠标悬浮行 | hover line */
     --custom-block-table-hover-background-color: var(--b3-theme-background-light);
 
+    /* 弹出菜单 | popover menu */
     /* 弹出功能菜单背景颜色 | The background color of the popover function menu */
     --custom-popover-function-menu-background-color: var(--custom-transparent-deep);
-
-    /* 弹出搜索菜单背景颜色 | The background color of the popover search menu */
-    --custom-popover-search-menu-background-color: var(--custom-transparent-deep);
-
-    /* 弹出搜索菜单分隔线颜色 | The color of the popover search menu */
-    --custom-popover-search-menu-separator-color: var(--b3-card-info-color);
+    /* 弹出菜单背景颜色 | The background color of the popover menu */
+    --custom-popover-menu-background-color: var(--custom-transparent-deep);
+    /* 弹出菜单分隔线颜色 | The color of the popover menu */
+    --custom-popover-menu-separator-color: var(--b3-theme-on-surface);
+    /* 弹出菜单中块属性字段颜色 | The color of the search menu block attribute field */
+    --custom-popover-menu-attribute-color: var(--b3-card-warning-color);
+    /* 弹出菜单中路径字段颜色 | The color of the path field */
+    --custom-popover-menu-path-color: var(--b3-card-info-color);
+    /* 弹出菜单内边距宽度 | The padding width of the popover menu */
+    --custom-popover-menu-padding-width: 0.25em;
+    /* 弹出菜单轮廓宽度 | The outline width of the popover menu */
+    --custom-popover-menu-outline-width: 1px;
+    /* 弹出菜单轮廓样式 | The outline style of the popover menu */
+    --custom-popover-menu-outline-style: solid;
+    /* 弹出菜单轮廓颜色 | The outline color of the popover menu */
+    --custom-popover-menu-outline-color: var(--b3-scroll-color);
 
     /* 阴影散布宽度 | Shadow spread */
     --custom-box-shadow-spread: 8px;
@@ -509,6 +520,9 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
     /* 删除线颜色 | The color of the strikethrough */
     --cusotm-span-strikethrough-color: var(--b3-theme-on-surface);
+
+    /* 思源内部超链接颜色 | SiYuan internal hyperlink color */
+    --custom-span-siyuan-link-color: var(--custom-striking-color);
 
     /* 空行聚焦提示 | Blank line focus prompt */
     --custom-empty-focus-p: "´･-･)ﾉ㊫";
@@ -580,6 +594,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     --custom-background-10: url("/appearance/themes/Dark+/image/background (10).jpg");
     --custom-background-11: url("/appearance/themes/Dark+/image/background (11).jpg");
     --custom-background-12: url("/appearance/themes/Dark+/image/background (12).jpg");
+
 }
 
 ```

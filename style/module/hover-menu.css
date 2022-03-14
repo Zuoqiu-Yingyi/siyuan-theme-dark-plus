@@ -19,13 +19,10 @@
 /* 菜单分割线 */
 .b3-menu__separator {
     height: 2px;
-    margin: 0;
-    border: 0;
-    padding: 0;
 }
 /* 搜索菜单分隔线 */
 div.b3-menu__separator {
-    background-color: var(--custom-popover-search-menu-separator-color);
+    background-color: var(--custom-popover-menu-separator-color);
 }
 
 /* 鼠标悬停菜单项 */
@@ -34,48 +31,68 @@ div.b3-menu__separator {
 }
 
 /* 悬浮搜索菜单/功能菜单 */
-.b3-menu.b3-list.b3-list--background {
+div.b3-list.b3-list--background {
     /* column-count: 4; */
     /* max-height: 395px !important; */
-    background-color: var(--custom-popover-search-menu-background-color);
+    /* REF: [第一个子元素在未超过父元素高度的情况下设置margin-top导致出现竖向滚动条的问题_Andrasen的博客-CSDN博客](https://blog.csdn.net/Andrasen/article/details/105676175) */
+    padding: var(--custom-popover-menu-padding-width);
+    background-color: var(--custom-popover-menu-background-color);
     backdrop-filter: var(--custom-backdrop-popover-filter);
     width: var(--custom-popover-menu-width) !important;
+    outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
+    overflow-x: visible !important;
+}
+/* 补偿第一项 */
+div.b3-list.b3-list--background>*:first-child {
+    margin-top: 0 !important;
+}
+
+div.b3-list.b3-list--background>*:last-child {
+    margin-bottom: 0 !important;
 }
 
 /* 悬浮搜索结果项 */
-div.b3-list>.b3-list-item {
-    padding-top: 0.25em;
-    border-bottom: 1px solid var(--b3-theme-on-surface);
+div.b3-list>button.b3-list-item {
+    /* padding-top: var(--custom-popover-menu-padding-width); */
+    /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
+    margin: var(--custom-popover-menu-padding-width) auto !important;
+    /* padding: 0.5em; */
+    outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
+}
+
+/* 对话框搜索结果项 */
+div.b3-list>div.b3-list-item {
+    /* padding-top: var(--custom-popover-menu-padding-width); */
+    /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
+    margin: var(--custom-popover-menu-padding-width) 0;
+    /* padding: 0.5em; */
+    outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
 }
 
 /* 悬浮搜索结果文档可读路径 */
 div.b3-list>.b3-list-item>.b3-list-item__meta:not(.fn__flex) {
-    color: var(--b3-card-info-color);
-    padding: 0;
+    color: var(--custom-popover-menu-path-color);
     margin: 0;
     border: 0;
-}
-div.b3-list>.b3-list-item>.b3-list-item__meta:not(.fn__flex) mark {
-    outline-color: var(--b3-card-info-color);
+    padding: 0;
 }
 
 /* 悬浮搜索结果块属性 */
 div.b3-list>.b3-list-item>.b3-list-item__meta.fn__flex {
-    color: var(--b3-card-warning-color);
-}
-div.b3-list>.b3-list-item>.b3-list-item__meta.fn__flex mark {
-    outline-color: var(--b3-card-warning-color);
+    padding: 0.5em;
+    color: var(--custom-popover-menu-attribute-color);
 }
 
-/* 悬浮搜索结果匹配关键词样式 */
+/* 搜索结果匹配关键词样式 */
 div.protyle-wysiwyg div[data-node-id] span[data-type="search-mark"],
-div.b3-list>.b3-list-item mark {
+*.b3-list *.b3-list-item mark {
     margin: 0 0.25em;
+    border: 0;
     padding: 0 0.125em;
     color: inherit;
     background-color: transparent;
-    outline-width: 1px;
-    outline-style: solid;
+    outline-width: var(--custom-popover-menu-outline-width);
+    outline-style: var(--custom-popover-menu-outline-style);
 }
 
 /* 菜单分栏 */
