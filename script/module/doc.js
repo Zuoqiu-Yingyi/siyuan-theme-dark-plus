@@ -10,7 +10,7 @@ import {
 async function docCopy() {
     const background = document.querySelector('div.layout__wnd--active div.protyle:not(.fn__none)>div.protyle-content>div.protyle-background');
     if (background) {
-        let id = background.getAttribute('data-node-id');
+        let id = background.dataset.nodeId;
         if (id) {
             let data = await exportMdContent(id);
             if (data) {
@@ -24,7 +24,7 @@ async function docCopy() {
 async function docDelete() {
     const background = document.querySelector('div.layout__wnd--active div.protyle:not(.fn__none)>div.protyle-content>div.protyle-background');
     if (background) {
-        let id = background.getAttribute('data-node-id');
+        let id = background.dataset.nodeId;
         if (id) {
             await updateBlock(
                 id,
@@ -38,7 +38,7 @@ async function docDelete() {
 async function docCut() {
     const background = document.querySelector('div.layout__wnd--active div.protyle:not(.fn__none)>div.protyle-content>div.protyle-background');
     if (background) {
-        let id = background.getAttribute('data-node-id');
+        let id = background.dataset.nodeId;
         if (id) {
             let data = await exportMdContent(id);
             if (data) {
