@@ -23,9 +23,13 @@ function activate() {
                 else {
                     block = window.getSelection().focusNode.parentElement; // 当前光标
 
-                    while (block != null && block.getAttribute('data-node-id') == null) block = block.parentElement;
+                    while (block != null && block.dataset.nodeId == null) block = block.parentElement;
                 }
                 if (block == null || page == null) return;
+
+                if (config.theme.typewriter.NodeCodeBlock.enable == false
+                    && block.dataset.type == 'NodeCodeBlock'
+                ) return;
 
                 let block_height = block.clientHeight; // 当前块的高度
                 let block_bottom = block.getBoundingClientRect().bottom; // 当前块的底部

@@ -74,6 +74,9 @@ export var config = {
             switch: {
                 enable: true, // 是否启用打字机模式开关
             },
+            NodeCodeBlock: {
+                enable: false, // 是否在代码块中启用打字机模式
+            }
         },
         hotkeys: {
             // 快捷键

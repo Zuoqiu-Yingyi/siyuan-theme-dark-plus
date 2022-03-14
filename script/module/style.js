@@ -30,7 +30,7 @@ function saveCustomStyle() {
         const layout__center = document.querySelector('div.fn__flex-1.protyle:not(.fn__none)');
         layout__center.querySelectorAll(`div[data-node-id][${config.theme.style.attribute}]`).forEach((item, i, obj) => {
             // item.style.cssText = item.getAttribute(config.theme.style.attribute);
-            let id = item.getAttribute('data-node-id');
+            let id = item.dataset.nodeId;
             let attr = item.getAttribute(config.theme.style.attribute);
             let request_body = {
                 id: id,
