@@ -104,23 +104,24 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
   - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/asset.svg" style="height: 1em; width=1em;" />: Other
 - 指向第三方资源(`URL Scheme`)的超链接显示图标  
   Hyperlinks(`URL Scheme`) to the third-party resource displays icons.
-  - <img alt="bookxnote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/bookxnote.ico" style="height: 1em; width=1em;" />: `bookxnotepro:` [BookxNote Pro](https://www.bookxnotepro.com/)
+  - <img alt="bookxnote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/bookxnote.svg" style="height: 1em; width=1em;" />: `bookxnotepro:` [BookxNote Pro](https://www.bookxnotepro.com/)
   - <img alt="everything" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/everything.svg" style="height: 1em; width=1em;" />: `es:` [Everything](https://www.voidtools.com/)
   - <img alt="folder" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/folder.svg" style="height: 1em; width=1em;" />: `file:` [RFC 8089 - The "file" URI Scheme](https://datatracker.ietf.org/doc/html/rfc8089)
   - <img alt="http" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/http.svg" style="height: 1em; width=1em;" />: `http:` [RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1](https://datatracker.ietf.org/doc/html/rfc2616/)
   - <img alt="https" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/https.svg" style="height: 1em; width=1em;" />: `https:` [RFC 2818 - HTTP Over TLS](https://datatracker.ietf.org/doc/html/rfc2818)
   - <img alt="joplin" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/joplin.svg" style="height: 1em; width=1em;" />: `joplin:` [Joplin](https://joplinapp.org/)
+  - <img alt="liquidtext" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/liquidtext.svg" style="height: 1em; width=1em;" />: `lt:` [liquidtext](https://www.liquidtext.net/)
   - <img alt="mailto" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/mailto.svg" style="height: 1em; width=1em;" />: `mailto:` [RFC 6068 - The 'mailto' URI Scheme](https://datatracker.ietf.org/doc/html/rfc6068)
-  - <img alt="marginnote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/marginnote.png" style="height: 1em; width=1em;" />: `marginnote3app:` [Marginnote](https://www.marginnote.com/)
+  - <img alt="marginnote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/marginnote.svg" style="height: 1em; width=1em;" />: `marginnote3app:` [Marginnote](https://www.marginnote.com/)
   - <img alt="obsidian" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/obsidian.ico" style="height: 1em; width=1em;" />: `obsidian:` [Obsidian](https://obsidian.md/)
   - <img alt="onenote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/onenote.svg" style="height: 1em; width=1em;" />: `onenote:` [OneNote](https://www.onenote.com/)
   - <img alt="quicker" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/quicker.svg" style="height: 1em; width=1em;" />: `quicker:` [Quicker](https://getquicker.net/)
   - <img alt="pwsh" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/pwsh.svg" style="height: 1em; width=1em;" />: `runpwsh:` `runcmd:` [url-run-command](https://github.com/Zuoqiu-Yingyi/url-run-command)
   - <img alt="siyuan" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/siyuan.svg" style="height: 1em; width=1em;" />: `siyuan:` [思源笔记](https://b3log.org/siyuan/)
-  - <img alt="supermemo" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/supermemo.ico" style="height: 1em; width=1em;" />: `sm:` [Super Memory](https://www.super-memory.com/)
+  - <img alt="supermemo" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/supermemo.svg" style="height: 1em; width=1em;" />: `sm:` [Super Memory](https://www.super-memory.com/)
   - <img alt="ticktick" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/ticktick.svg" style="height: 1em; width=1em;" />: `ticktick:` [TickTick](https://ticktick.com/)
   - <img alt="vscode" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/vscode.svg" style="height: 1em; width=1em;" />: `vscode:` [Visual Studio Code](https://code.visualstudio.com/)
-  - <img alt="zotero" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/zotero.ico" style="height: 1em; width=1em;" />: `zotero:` [Zotero](https://www.zotero.org/)
+  - <img alt="zotero" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/zotero.svg" style="height: 1em; width=1em;" />: `zotero:` [Zotero](https://www.zotero.org/)
 - 在其他主题中引用本主题模块  
   Reference this theme modules in other themes.
   - 在 `<工作空间>/conf/appearance/themes/Dark+/theme.css` 文件中直接粘贴所需模块到其他主题的 `theme.css` 文件或 `custom.css` 文件中  
