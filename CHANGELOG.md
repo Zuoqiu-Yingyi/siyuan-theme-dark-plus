@@ -1,6 +1,8 @@
 # 更改日志 | CHANGE LOG
 
 - 新增 `runcmd` URL Scheme 超链接图标 | Added `runcmd` URL Scheme link icon.
+- 新增 [liquidtext](https://www.liquidtext.net/) 的 URL Scheme `lt` 超链接图标 | Added `lt` URL Scheme link icon for [liquidtext](https://www.liquidtext.net/).
+- 调整部分图标样式 | Adjusted some icon styles.
 
 ## v0.4.5/2022-03-13
 
