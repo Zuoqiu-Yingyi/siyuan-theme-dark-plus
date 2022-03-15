@@ -20,8 +20,5 @@
 
 /* PDF 引用链接鼠标悬浮样式 */
 .protyle-wysiwyg [data-node-id] span[data-type="file-annotation-ref"]:hover {
-    padding-bottom: 2px;
-    animation: waveMove 1s infinite linear;
-    background: url(/appearance/themes/Dark+/icon/wavy-line.svg) repeat-x 0 100%;
-    background-size: 16px auto;
+    border-bottom: 1px solid var(--custom-span-file-ref-color);
 }
