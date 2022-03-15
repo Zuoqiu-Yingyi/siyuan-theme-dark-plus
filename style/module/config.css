@@ -333,7 +333,7 @@
     --cusotm-span-strikethrough-color: var(--b3-theme-on-surface);
 
     /* 思源内部超链接颜色 | The color of SiYuan internal hyperlink */
-    --custom-span-siyuan-link-color: var(--b3-protyle-inline-blockref-color);
+    --custom-span-siyuan-link-color: var(--custom-color-8-3);
 
     /* 思源块引用颜色 | The color of SiYuan block reference */
     --custom-span-block-ref-color: var(--custom-striking-color);
