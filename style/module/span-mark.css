@@ -15,6 +15,7 @@
 
 .protyle-wysiwyg mark:hover {
     background-color: transparent;
-    color: var(--custom-striking-color);
-    font-weight: bold;
+    color: var(--custom-span-mark-color);
+    text-shadow:0 0 var(--custom-span-mark-shadow-width) var(--custom-span-mark-shadow-color);
+    /* font-weight: bold; */
 }

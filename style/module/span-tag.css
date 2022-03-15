@@ -27,7 +27,8 @@
     background-color: var(--custom-span-tag-background-color);
     color: var(--custom-span-tag-color);
     border-radius: 1em;
-    padding: 0 0.5em 2px 0.5em;
+    padding: 1px 0.5em 1px 0.5em;
+    transition: all 200ms linear 0ms;
 }
 
 .protyle-wysiwyg [data-node-id] span[data-type="tag"]::before {
@@ -42,11 +43,15 @@
 
 /* 悬浮样式 */
 .protyle-wysiwyg [data-node-id] span[data-type='tag']:hover {
-    color: var(--b3-theme-on-background);
+    /* color: var(--b3-theme-on-background); */
     padding-bottom: 2px;
-    animation: waveMove 1s infinite linear;
+    background-color: transparent;
+
+    /* 动态波浪线 */
+    /* animation: waveMove 1s infinite linear;
     background: url(/appearance/themes/Dark+/icon/wavy-line.svg) repeat-x 0 100%;
-    background-size: 16px auto;
+    background-size: 16px auto; */
+
     /* 悬浮放大 */
     /* transform: scale(1.125); */
     /* background-color: var(--b3-protyle-inline-tag-background); */
