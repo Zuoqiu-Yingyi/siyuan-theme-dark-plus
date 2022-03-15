@@ -12,6 +12,7 @@
 - 新增文件(PDF)注释引用元素样式 | Added file (PDF) annotation reference element style.
 - 特化思源内部超链接样式 | Specialized SiYuan internal link style.
 - 将部分文件引用路径更改为绝对路径 | Change the partial file reference path to an absolute path.
+- 调整导出中超链接样式 | Adjusted link style in export.
 
 ## v0.4.5/2022-03-13
 
