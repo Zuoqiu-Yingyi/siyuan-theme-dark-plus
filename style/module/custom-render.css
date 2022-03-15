@@ -20,36 +20,43 @@
     font-size: 12px;
     text-align: right;
 }
+
 .protyle-wysiwyg[custom-render~=marker] div[data-node-id][data-marker]::after {
     content: attr(data-marker);
     font-size: 12px;
     text-align: right;
 }
+
 .protyle-wysiwyg[custom-render~=id] div[data-node-id]::after {
     content: attr(data-node-id);
     font-size: 12px;
     text-align: right;
 }
+
 .protyle-wysiwyg[custom-render~=index] div[data-node-id][data-node-index]::after {
     content: attr(data-node-index);
     font-size: 12px;
     text-align: right;
 }
+
 .protyle-wysiwyg[custom-render~=render] div[data-node-id][data-render]::after {
     content: attr(data-render);
     font-size: 12px;
     text-align: right;
 }
+
 .protyle-wysiwyg[custom-render~=layout] div[data-node-id][data-sb-layout]::after {
     content: attr(data-sb-layout);
     font-size: 12px;
     text-align: right;
 }
+
 .protyle-wysiwyg[custom-render~=subtype] div[data-node-id][data-subtype]::after {
     content: attr(data-subtype);
     font-size: 12px;
     text-align: right;
 }
+
 .protyle-wysiwyg[custom-render~=type] div[data-node-id][data-type]::after {
     content: attr(data-type);
     font-size: 12px;

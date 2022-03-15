@@ -9,6 +9,8 @@
 - 完善搜索结果列表展示样式 | Improved search result list display style.
 - 完善关键字匹配字段样式 | Improved keyword match field style.
 - 添加文档定义属性 `render: index` 与 `render: content` | Added custom document attributes `render: index` and `render: content`.
+- 新增文件(PDF)注释引用元素样式 | Added file (PDF) annotation reference element style.
+- 特化思源内部超链接样式 | Specialized SiYuan internal link style.
 
 ## v0.4.5/2022-03-13
 
