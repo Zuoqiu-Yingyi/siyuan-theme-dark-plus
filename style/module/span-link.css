@@ -9,6 +9,7 @@
 .b3-typography a {
     margin: 0;
     padding: 0;
+    color: var(--b3-protyle-inline-link-color);
 }
 /* 超链接前标志 */
 .protyle-wysiwyg [data-node-id] span[data-type='file-annotation-ref']:not(:empty)::before,
@@ -30,10 +31,12 @@
 }
 
 /* 思源跳转内部的超链接特化 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="siyuan:"]:not(:empty) {
+.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="siyuan:"]:not(:empty),
+.b3-typography a[href ^="siyuan:"] {
     color: var(--custom-span-siyuan-link-color);
 }
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="siyuan:"]:not(:empty):hover {
+.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="siyuan:"]:not(:empty):hover,
+.b3-typography a[href ^="siyuan:"]:hover {
     border-color: var(--custom-span-siyuan-link-color);
 }
 
