@@ -528,19 +528,28 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     --cusotm-span-strikethrough-color: var(--b3-theme-on-surface);
 
     /* 思源内部超链接颜色 | The color of SiYuan internal hyperlink */
-    --custom-span-siyuan-link-color: var(--b3-protyle-inline-blockref-color);
+    --custom-span-siyuan-link-color: var(--custom-color-8-3);
 
     /* 思源块引用颜色 | The color of SiYuan block reference */
     --custom-span-block-ref-color: var(--custom-striking-color);
 
     /* 思源文件注释引用颜色 | The color of SiYuan file comment reference */
-    --custom-span-file-ref-color: var(--custom-span-block-ref-color);
+    --custom-span-file-ref-color: var(--b3-card-warning-color);
 
     /* 思源标签颜色 | The color of tag */
     --custom-span-tag-color: var(--b3-theme-on-primary);
 
     /* 思源标签背景颜色 | The background color of tag */
     --custom-span-tag-background-color: var(--b3-font-background9);
+
+    /* 思源标记颜色 | The color of mark */
+    --custom-span-mark-color: var(--b3-card-info-color);
+
+    /* 思源标记阴影颜色 | The shadow color of mark */
+    --custom-span-mark-shadow-color: var(--b3-theme-on-primary);
+
+    /* 思源标记阴影宽度 | The shadow width of mark */
+    --custom-span-mark-shadow-width: 4px;
 
     /* 空行聚焦提示 | Blank line focus prompt */
     --custom-empty-focus-p: "´･-･)ﾉ㊫";
