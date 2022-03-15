@@ -13,6 +13,7 @@
 - 特化思源内部超链接样式 | Specialized SiYuan internal link style.
 - 将部分文件引用路径更改为绝对路径 | Change the partial file reference path to an absolute path.
 - 调整导出中超链接样式 | Adjusted link style in export.
+- 调整思源内部超链接样式 | Adjusted SiYuan internal link style.
 
 ## v0.4.5/2022-03-13
 
