@@ -527,8 +527,20 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     /* 删除线颜色 | The color of the strikethrough */
     --cusotm-span-strikethrough-color: var(--b3-theme-on-surface);
 
-    /* 思源内部超链接颜色 | SiYuan internal hyperlink color */
-    --custom-span-siyuan-link-color: var(--custom-striking-color);
+    /* 思源内部超链接颜色 | The color of SiYuan internal hyperlink */
+    --custom-span-siyuan-link-color: var(--b3-protyle-inline-blockref-color);
+
+    /* 思源块引用颜色 | The color of SiYuan block reference */
+    --custom-span-block-ref-color: var(--custom-striking-color);
+
+    /* 思源文件注释引用颜色 | The color of SiYuan file comment reference */
+    --custom-span-file-ref-color: var(--custom-span-block-ref-color);
+
+    /* 思源标签颜色 | The color of tag */
+    --custom-span-tag-color: var(--b3-theme-on-primary);
+
+    /* 思源标签背景颜色 | The background color of tag */
+    --custom-span-tag-background-color: var(--b3-font-background9);
 
     /* 空行聚焦提示 | Blank line focus prompt */
     --custom-empty-focus-p: "´･-･)ﾉ㊫";
@@ -600,7 +612,6 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     --custom-background-10: url("/appearance/themes/Dark+/image/background (10).jpg");
     --custom-background-11: url("/appearance/themes/Dark+/image/background (11).jpg");
     --custom-background-12: url("/appearance/themes/Dark+/image/background (12).jpg");
-
 }
 
 ```

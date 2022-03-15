@@ -24,8 +24,8 @@
 .protyle-wysiwyg [data-node-id] span[data-type="tag"] {
     font-size: 1em;
     border-bottom: transparent;
-    background-color: var(--b3-protyle-inline-tag-background);
-    color: var(--b3-protyle-inline-tag-color);
+    background-color: var(--custom-span-tag-background-color);
+    color: var(--custom-span-tag-color);
     border-radius: 1em;
     padding: 0 0.5em 2px 0.5em;
 }

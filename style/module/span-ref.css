@@ -36,9 +36,13 @@
     text-align: center;
 }
 
+.protyle-wysiwyg [data-node-id] span[data-type="block-ref"] {
+    color: var(--custom-span-block-ref-color);
+}
+
 .protyle-wysiwyg [data-node-id] span[data-type="block-ref"]:hover {
     padding-bottom: 2px;
     animation: waveMove 1s infinite linear;
-    background: url(../../icon/wavy-line.svg) repeat-x 0 100%;
+    background: url(/appearance/themes/Dark+/icon/wavy-line.svg) repeat-x 0 100%;
     background-size: 16px auto;
 }
