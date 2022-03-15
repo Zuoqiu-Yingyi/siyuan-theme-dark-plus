@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.4.6/2022-03-15
+
+- [v0.4.5 <=> v0.4.6](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.5...v0.4.6)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 新增 `runcmd` URL Scheme 超链接图标 | Added `runcmd` URL Scheme link icon.
