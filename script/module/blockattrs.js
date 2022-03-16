@@ -1,12 +1,12 @@
 /* 块属性操作 */
 
-import { config } from '/appearance/themes/Dark+/script/module/config.js';
-import { setBlockAttrs } from '/appearance/themes/Dark+/script/utils/api.js';
-import { isButton } from '/appearance/themes/Dark+/script/utils/hotkey.js';
+import { config } from './config.js';
+import { setBlockAttrs } from './../utils/api.js';
+import { isButton } from './../utils/hotkey.js';
 import {
     url2id,
     HTMLDecode,
-} from '/appearance/themes/Dark+/script/utils/misc.js';
+} from './../utils/misc.js';
 
 async function setter(target) {
     if (

@@ -1,6 +1,6 @@
 /* 配置文件(可以被 data/widgets/custom.js 覆盖) */
 
-import { merge } from '/appearance/themes/Dark+/script/utils/misc.js';
+import { merge } from './../utils/misc.js';
 
 export var config = {
     token: '', // API token, 无需填写
@@ -77,6 +77,10 @@ export var config = {
             NodeCodeBlock: {
                 enable: false, // 是否在代码块中启用打字机模式
             }
+        },
+        comment: {
+            // 评论功能开关
+            enable: true,
         },
         hotkeys: {
             // 快捷键

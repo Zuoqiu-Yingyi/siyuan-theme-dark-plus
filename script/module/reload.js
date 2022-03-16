@@ -4,11 +4,11 @@
  * REF [JS/jQuery 刷新 iframe 的方法 | 菜鸟教程](https://www.runoob.com/w3cnote/js-jquery-refresh-iframe.html)
  */
 
-import { config } from '/appearance/themes/Dark+/script/module/config.js';
+import { config } from './config.js';
 import {
     isKey,
     isEvent,
-} from '/appearance/themes/Dark+/script/utils/hotkey.js';
+} from './../utils/hotkey.js';
 
 async function reloadIframe(target) {
     // console.log(target.dataset);
