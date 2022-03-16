@@ -541,6 +541,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
     /* 思源标签背景颜色 | The background color of tag */
     --custom-span-tag-background-color: var(--b3-font-background9);
+    --custom-span-doc-tag-background-color: var(--b3-theme-primary-lighter);
 
     /* 思源标记颜色 | The color of mark */
     --custom-span-mark-color: var(--b3-card-info-color);

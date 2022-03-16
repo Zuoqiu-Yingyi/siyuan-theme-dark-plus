@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 调整文档标签样式 | Adjusted the style of the document tags.
+
 ## v0.4.6/2022-03-15
 
 - [v0.4.5 <=> v0.4.6](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.5...v0.4.6)
