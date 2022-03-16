@@ -108,6 +108,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
   Hyperlinks(`URL Scheme`) to the third-party resource displays icons.
   - <img alt="bookxnote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/bookxnote.svg" style="height: 1em; width=1em;" />: `bookxnotepro:` [BookxNote Pro](https://www.bookxnotepro.com/)
   - <img alt="everything" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/everything.svg" style="height: 1em; width=1em;" />: `es:` [Everything](https://www.voidtools.com/)
+  - <img alt="evernote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/evernote.svg" style="height: 1em; width=1em;" />: `evernote:` [Evernote](https://www.evernote.com/)
   - <img alt="folder" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/folder.svg" style="height: 1em; width=1em;" />: `file:` [RFC 8089 - The "file" URI Scheme](https://datatracker.ietf.org/doc/html/rfc8089)
   - <img alt="http" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/http.svg" style="height: 1em; width=1em;" />: `http:` [RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1](https://datatracker.ietf.org/doc/html/rfc2616/)
   - <img alt="https" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/https.svg" style="height: 1em; width=1em;" />: `https:` [RFC 2818 - HTTP Over TLS](https://datatracker.ietf.org/doc/html/rfc2818)

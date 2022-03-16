@@ -38,6 +38,11 @@
     background-image: url(/appearance/themes/Dark+/icon/everything.svg) !important;
 }
 
+.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="evernote:"]:not(:empty)::before,
+.b3-typography a[href ^="evernote:"]::before {
+    background-image: url(/appearance/themes/Dark+/icon/evernote.svg) !important;
+}
+
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="file:"]:not(:empty)::before,
 .b3-typography a[href ^="file:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/folder.svg) !important;

@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 调整文档标签样式 | Adjusted the style of the document tags.
+- 新增 `evernote` URL Scheme 超链接图标 | Added `evernote` URL Scheme link icon.
 
 ## v0.4.6/2022-03-15
 
