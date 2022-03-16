@@ -42,7 +42,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 ### 贡献者介绍 | CONTRIBUTOR INTRODUCTION
 
-| 功能 \| Function                            | 作者 \| Author                          | 项目 \| Project                                                                                                                        |
+| 功能 \| Function                            | 贡献者 \| Contributor                   | 项目 \| Project                                                                                                                        |
 | :------------------------------------------ | :-------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------- |
 | 行内评论与注释<br>inline comments and notes | [langzhou](https://github.com/langzhou) | [siyuan-note/siyuan-comment at main · langzhou/siyuan-note · GitHub](https://github.com/langzhou/siyuan-note/tree/main/siyuan-comment) |
 

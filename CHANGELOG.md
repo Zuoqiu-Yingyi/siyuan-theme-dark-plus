@@ -5,6 +5,7 @@
 - 调整文档标签样式 | Adjusted the style of the document tags.
 - 新增 `evernote` URL Scheme 超链接图标 | Added `evernote` URL Scheme link icon.
 - 新增行内评论功能 | Added inline comment function. (REF: [siyuan-note/siyuan-comment at main · langzhou/siyuan-note · GitHub](https://github.com/langzhou/siyuan-note/tree/main/siyuan-comment))
+- 调整行内评论样式 | Adjusted the style of the inline comment.
 
 ## v0.4.6/2022-03-15
 
