@@ -131,7 +131,13 @@ class Comment {
       let selection = getSelection()
       let range = this.range
       let start = range.startContainer
-      let block = start.parentElement.parentElement //由于没有一炮三响了，所以列表项上无法在属性弹框中看到存储的评论内容
+      while (start != null && (start.dataset == null || start.dataset.nodeId == null)) {
+        start = start.parentElement
+      }
+      if (start == null) {
+        return
+      }
+      let block = start //由于没有一炮三响了，所以列表项上无法在属性弹框中看到存储的评论内容
       let txt = range.toString() //引用的内容
       range.deleteContents()
       let strongNode = document.createElement('strong')
