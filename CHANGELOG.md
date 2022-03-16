@@ -6,6 +6,7 @@
 - 新增 `evernote` URL Scheme 超链接图标 | Added `evernote` URL Scheme link icon.
 - 新增行内评论功能 | Added inline comment function. (REF: [siyuan-note/siyuan-comment at main · langzhou/siyuan-note · GitHub](https://github.com/langzhou/siyuan-note/tree/main/siyuan-comment))
 - 调整行内评论样式 | Adjusted the style of the inline comment.
+- 修复行内评论与其他行内元素重叠问题 | Fixed the overlap problem of the inline comment and other inline elements.
 
 ## v0.4.6/2022-03-15
 
