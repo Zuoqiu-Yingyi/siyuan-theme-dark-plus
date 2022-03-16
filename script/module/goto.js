@@ -2,8 +2,8 @@
  *  REF [leolee9086](https://github.com/leolee9086)
  */
 
-import { config } from '/appearance/themes/Dark+/script/module/config.js';
-import { goto } from '/appearance/themes/Dark+/script/utils/misc.js';
+import { config } from './config.js';
+import { goto } from './../utils/misc.js';
 
 function jumpToID() {
     let url = new URL(window.location.href);

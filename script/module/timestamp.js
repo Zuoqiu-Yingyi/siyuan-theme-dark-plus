@@ -1,16 +1,16 @@
 /* 视频/音频跳转到指定时间 */
 
-import { config } from '/appearance/themes/Dark+/script/module/config.js';
+import { config } from './config.js';
 import {
     isEvent,
     isButton,
-} from '/appearance/themes/Dark+/script/utils/hotkey.js';
-import { getBlockAttrs } from '/appearance/themes/Dark+/script/utils/api.js';
+} from './../utils/hotkey.js';
+import { getBlockAttrs } from './../utils/api.js';
 import {
     timestampParse,
     id2url,
     intPrefix,
-} from '/appearance/themes/Dark+/script/utils/misc.js';
+} from './../utils/misc.js';
 
 async function jump(target) {
     // console.log(target.dataset);

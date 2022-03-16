@@ -1,7 +1,10 @@
 # 更改日志 | CHANGE LOG
 
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
+- 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 调整文档标签样式 | Adjusted the style of the document tags.
 - 新增 `evernote` URL Scheme 超链接图标 | Added `evernote` URL Scheme link icon.
+- 新增行内评论功能 | Added inline comment function. (REF: [siyuan-note/siyuan-comment at main · langzhou/siyuan-note · GitHub](https://github.com/langzhou/siyuan-note/tree/main/siyuan-comment))
 
 ## v0.4.6/2022-03-15
 

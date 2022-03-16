@@ -1,11 +1,11 @@
 /* 复制加强 */
 
-import { config } from '/appearance/themes/Dark+/script/module/config.js';
-import { isKey } from '/appearance/themes/Dark+/script/utils/hotkey.js';
+import { config } from './config.js';
+import { isKey } from './../utils/hotkey.js';
 import {
     exportMdContent,
     updateBlock,
-} from '/appearance/themes/Dark+/script/utils/api.js';
+} from './../utils/api.js';
 
 async function docCopy() {
     const background = document.querySelector('div.layout__wnd--active div.protyle:not(.fn__none)>div.protyle-content>div.protyle-background');

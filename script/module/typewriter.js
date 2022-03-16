@@ -1,5 +1,5 @@
-import { config } from '/appearance/themes/Dark+/script/module/config.js';
-import { isKey } from '/appearance/themes/Dark+/script/utils/hotkey.js';
+import { config } from './config.js';
+import { isKey } from './../utils/hotkey.js';
 
 var enable = false;
 
