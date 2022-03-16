@@ -40,6 +40,12 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 ## 介绍 | INTRODUCTION
 
+### 贡献者介绍 | CONTRIBUTOR INTRODUCTION
+
+| 功能 \| Function                            | 作者 \| Author                          | 项目 \| Project                                                                                                                        |
+| :------------------------------------------ | :-------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------- |
+| 行内评论与注释<br>inline comments and notes | [langzhou](https://github.com/langzhou) | [siyuan-note/siyuan-comment at main · langzhou/siyuan-note · GitHub](https://github.com/langzhou/siyuan-note/tree/main/siyuan-comment) |
+
 ### 快捷键 | SHORTCUT KEYS
 
 | 快捷键 \| Shortcut Key                                                  | 操作对象 \| Operational objectives           | 功能 \| Function                                                                                               |
@@ -287,13 +293,6 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
       Add custom style names and style values to the block's custom attributes.
     - 使用快捷键 <kbd>Ctrl + F1 / ⌘ + F1</kbd> 渲染当前所有块的自定义样式  
       Use the hot key <kbd>Ctrl + F1 / ⌘ + F1</kbd> to render the custom style of all current blocks.
-
-### 引用功能 | REFERENCE FUNCTION
-
-| 功能 \| Function                            | 作者 \| Author                          | 项目 \| Project                                                                                                                        |
-| :------------------------------------------ | :-------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------- |
-| 行内评论与注释<br>inline comments and notes | [langzhou](https://github.com/langzhou) | [siyuan-note/siyuan-comment at main · langzhou/siyuan-note · GitHub](https://github.com/langzhou/siyuan-note/tree/main/siyuan-comment) |
-
 
 ## 自定义配置 | CUSTOM CONFIG
 
