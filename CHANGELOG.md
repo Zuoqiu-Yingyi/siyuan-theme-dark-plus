@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.5.0/2022-03-17
+
+- [v0.4.6 <=> v0.5.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.6...v0.5.0)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 调整文档标签样式 | Adjusted the style of the document tags.
