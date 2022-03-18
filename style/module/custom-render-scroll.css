@@ -31,4 +31,5 @@
     position: sticky;
     top: 1px;
     outline: 1px solid var(--b3-theme-primary);
+    z-index: 1;
 }
