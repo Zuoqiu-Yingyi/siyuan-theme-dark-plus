@@ -1,0 +1,34 @@
+/* 块过长时设置块内纵向滚动条 */
+
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+/* 滚动条轨道样式 */
+.protyle-wysiwyg [data-node-id][custom-render~=scroll]:not([data-type="NodeTable"])::-webkit-scrollbar-track,
+.protyle-wysiwyg [data-node-id][custom-render~=scroll][data-type="NodeTable"] table::-webkit-scrollbar-track,
+.protyle-wysiwyg[custom-render~=scroll]>div[data-node-id]:not([data-type="NodeTable"])::-webkit-scrollbar-track,
+.protyle-wysiwyg[custom-render~=scroll]>div[data-node-id][data-type="NodeTable"] table::-webkit-scrollbar-track {
+    background-color: var(--custom-scroll-track-background-color);
+    border-radius: var(--custom-border-radius);
+}
+
+/* 为指定块添加纵向滚动条 */
+.protyle-wysiwyg[custom-render~=scroll]>div[data-node-id]:not([data-type="NodeTable"]),
+.protyle-wysiwyg [data-node-id][custom-render~=scroll]:not([data-type="NodeTable"]) {
+    overflow-y: auto;
+    max-height: 50vh;
+}
+
+.protyle-wysiwyg[custom-render~=scroll]>div[data-node-id][data-type="NodeTable"] table,
+.protyle-wysiwyg [data-node-id][custom-render~=scroll][data-type="NodeTable"] table {
+    position: relative;
+    overflow-y: auto;
+    max-height: 50vh;
+}
+
+.protyle-wysiwyg[custom-render~=scroll]>div[data-node-id][data-type="NodeTable"] table>thead,
+.protyle-wysiwyg [data-node-id][custom-render~=scroll][data-type="NodeTable"] table>thead {
+    position: sticky;
+    top: 1px;
+    outline: 1px solid var(--b3-theme-primary);
+}

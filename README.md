@@ -66,6 +66,8 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 | 操作对象 \| Operational objectives         | 属性名 \| Attribute Name | 属性值 \| Attribute Value                                                                                                                                                                                                                                            | 功能 \| Function                                                                                                                                                                 |
 | :----------------------------------------- | :----------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 所有块<br>all types of blocks              | `font-family`            | `等线`<br>`方正舒体`<br>`方正姚体`<br>`仿宋`<br>`黑体`<br>`华文彩云`<br>`华文仿宋`<br>`华文琥珀`<br>`华文楷体`<br>`华文隶书`<br>`华文宋体`<br>`华文细黑`<br>`华文新魏`<br>`华文行楷`<br>`华文中宋`<br>`楷体`<br>`隶书`<br>`宋体`<br>`微软雅黑`<br>`新宋体`<br>`幼圆` | 设置块所用字体族<br>Sets the font family used by the block.                                                                                                                      |
+| 所有块<br>all types of blocks              | `render`                 | `danmaku`<br>(可以使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                  | 将块设置为滚动弹幕样式<br>Set the block to the scrolling danmaku block style.                                                                                                    |
+| 所有块<br>all types of blocks              | `render`                 | `scroll`<br>(可以使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                   | 为过长块设置纵向滚动条<br>Set the vertical scroll bar for the overly long block.                                                                                                 |
 | 文档块<br>document blocks                  | `background`             | `01` ~ `12`                                                                                                                                                                                                                                                          | 设置文档的自定义背景图片<br>Sets a custom background image for the document.                                                                                                     |
 | 文档块<br>document blocks                  | `auto-num-h`             | `0`                                                                                                                                                                                                                                                                  | 禁用该文档子标题的自动编号<br>Disables automatic numbering of subheading in the document.                                                                                        |
 | 文档块<br>document blocks                  | `auto-num-f`             | `图`<br>`Fig.`<br>`figure`<br>`Figure`<br>`FIGURE`                                                                                                                                                                                                                   | 启用该文档中图片的自动编号<br>Enable automatic numbering of pictures in the document.                                                                                            |
@@ -76,7 +78,6 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 | 文档块<br>document blocks                  | `render`                 | `outline`<br>(使用空格分隔多个属性值 \| Separate multiple attribute values with spaces)                                                                                                                                                                              | 渲染鼠标悬浮的块的轮廓<br>Renders the outline of a hovering block.                                                                                                               |
 | 非文档块<br>non-document blocks            | `style`                  | css 样式<br>CSS styles                                                                                                                                                                                                                                               | 设置块的自定义样式<br>Set a custom style for the block.                                                                                                                          |
 | 非文档块<br>non-document blocks            | `title`                  | 任何值<br>Any value                                                                                                                                                                                                                                                  | 设置块标题<br>Sets the title of the block.                                                                                                                                       |
-| 非文档块<br>non-document blocks            | `type`                   | `danmaku`<br>(使用空格分隔多个属性值 \| Separate multiple attribute values with spaces)                                                                                                                                                                              | 将块设置为滚动弹幕样式<br>Set the block to the scrolling danmaku block style.                                                                                                    |
 | 视频块/音频块<br>video blocks/audio blocks | `time`                   | `ss`<br>`ss.ms`<br>`mm:ss`<br>`mm:ss.ms`<br>`hh:mm:ss`<br>`hh:mm:ss.ms`                                                                                                                                                                                              | 时间戳<br>Timestamp.                                                                                                                                                             |
 | 列表块<br>list blocks                      | `type`                   | `table`<br>(使用空格分隔多个属性值 \| Separate multiple attribute values with spaces)                                                                                                                                                                                | 列表渲染为表格<br>Renders the list as a table.                                                                                                                                   |
 | 列表块<br>list blocks                      | `list-guides`            | 任何值<br>Any value                                                                                                                                                                                                                                                  | 启用动态列表辅助线<br>Enable dynamic list guides.                                                                                                                                |
@@ -195,6 +196,21 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
       - `微软雅黑`
       - `新宋体`
       - `幼圆`
+  - `render`: 属性名 | key
+    - `danmaku`: 属性值 | value
+      - 适用于所有块 | Applies to all blocks
+        - 若为文档块, 将当前文档中所有最顶级的块设置为滚动弹幕样式  
+          If the block is a document block, set all the top-level blocks in the current document to the scrolling danmaku block style.
+        - 若为非文档块, 将当前块设置为滚动弹幕样式  
+          If the block is not a document block, set the current block to the scrolling danmaku block style.
+      - 将块设置为滚动弹幕样式  
+        Set the block to the scrolling danmaku block style.
+    - `scroll`: 属性值 | value
+      - 适用于所有块 | Applies to all blocks
+        - 若为文档块, 为当前文档中所有最顶级的块添加滚动条  
+          If the block is a document block, add scroll bars to all the top-level blocks in the current document.
+        - 若为非文档块, 为当前块添加滚动条  
+          If the block is not a document block, add a scroll bar to the current block.
   - `background`: 属性名 | key
     - `01` ~ `12`: 属性值 | value
     - 适用于文档块 | Applies to document blocks
@@ -255,10 +271,6 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
       - 列表渲染为表格 | Renders the list as a table
       - 详情请参考 [土法列表表格 · 语雀](https://www.yuque.com/siyuannote/docs/yev84m)  
         For details, please refer to [Soil Law List Table - Yuque](https://www.yuque.com/siyuannote/docs/yev84m).
-    - `danmaku`: 属性值 | value
-      - 适用于所有块 | Applies to all blocks
-      - 将块设置为滚动弹幕样式  
-        Set the block to the scrolling danmaku block style.
     - `图标题` 或 `表标题` | `figure-title` or `table-title`: 属性值 | value
       - 适用于段落块 | Applies to paragraph blocks
       - 图标题/表标题自动计数 | Figure titles/table titles are counted automatically

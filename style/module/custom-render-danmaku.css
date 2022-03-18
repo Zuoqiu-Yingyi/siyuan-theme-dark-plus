@@ -1,0 +1,16 @@
+/* 滚动弹幕块 */
+
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+/* 使用滚动动画 */
+.protyle-wysiwyg[custom-render~=danmaku]>div[data-node-id],
+.protyle-wysiwyg [data-node-id][custom-render~=danmaku] {
+    animation: var(--custom-render-danmaku-time) danmaku linear infinite normal;
+}
+
+/* 鼠标悬浮时暂停 */
+.protyle-wysiwyg[custom-render~=danmaku]>div[data-node-id]:hover,
+.protyle-wysiwyg [data-node-id][custom-render~=danmaku]:hover {
+    animation-play-state: paused;
+}
