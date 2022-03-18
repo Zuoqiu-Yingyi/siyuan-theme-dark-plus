@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.5.1/2022-03-18
+
+- [v0.5.0 <=> v0.5.1](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.0...v0.5.1)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 使用自定义块属性 `custom-render: scroll` 为过高的块设置滚动条 | Use the custom block attribute `custom-render: scroll` to set the scroll bar for blocks that are too tall.
