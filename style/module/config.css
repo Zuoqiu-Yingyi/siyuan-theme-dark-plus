@@ -417,6 +417,9 @@
     /* 滚动条轨道背景颜色 | The background color of scroll track */
     --custom-scroll-track-background-color: var(--b3-border-color);
 
+    /* 表格单元格等宽启用时单元格宽度 | Table cell width when cell monospaced function is enabled */
+    --custom-table-cell-monospaced-width: 256px;
+
     /* 自定义背景图片路径 | The file path of customize background image. */
     --custom-background-01: url("/appearance/themes/Dark+/image/background (01).jpg");
     --custom-background-02: url("/appearance/themes/Dark+/image/background (02).jpg");
