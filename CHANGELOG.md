@@ -6,6 +6,7 @@
 - 将自定义块属性 `custom-type: danmaku` 重命名为 `custom-render: danmaku` | Rename the custom block attribute `custom-type: danmaku` to `custom-render: danmaku`.
 - 修复滚动时表格头未遮盖部分元素问题 | Fix the issue of the table header not covering the part of the element when scrolling.
 - 打字机模式添加代码块与表格块的单独开关 | Add a separate switch for code blocks and table blocks in the typewriter mode.
+- 修复导出预览模式中非最顶级的标题自动编号问题 | Fix the issue of automatically numbering the non-top-level headings in the export preview mode.
 
 ## v0.5.0/2022-03-17
 

@@ -14,42 +14,42 @@
 }
 
 .protyle-wysiwyg>.h1,
-.b3-typography h1 {
+.b3-typography>h1 {
     counter-increment: h1-counter;
     counter-reset: h2-counter 0;
 }
 
 .protyle-wysiwyg>.h2,
-.b3-typography h2 {
+.b3-typography>h2 {
     counter-increment: h2-counter;
     counter-reset: h3-counter 0;
 }
 
 .protyle-wysiwyg>.h3,
-.b3-typography h3 {
+.b3-typography>h3 {
     counter-increment: h3-counter;
     counter-reset: h4-counter 0;
 }
 
 .protyle-wysiwyg>.h4,
-.b3-typography h4 {
+.b3-typography>h4 {
     counter-increment: h4-counter;
     counter-reset: h5-counter 0;
 }
 
 .protyle-wysiwyg>.h5,
-.b3-typography h5 {
+.b3-typography>h5 {
     counter-increment: h5-counter;
     counter-reset: h6-counter 0;
 }
 
 .protyle-wysiwyg>.h6,
-.b3-typography h6 {
+.b3-typography>h6 {
     counter-increment: h6-counter;
 }
 
 .protyle-wysiwyg>.h1::before,
-.b3-typography h1::before {
+.b3-typography>h1::before {
     display: block;
     float: left;
     font-size: var(--custom-h-num-font-size);
@@ -57,7 +57,7 @@
 }
 
 .protyle-wysiwyg>.h2::before,
-.b3-typography h2::before {
+.b3-typography>h2::before {
     display: block;
     float: left;
     font-size: var(--custom-h-num-font-size);
@@ -65,7 +65,7 @@
 }
 
 .protyle-wysiwyg>.h3::before,
-.b3-typography h3::before {
+.b3-typography>h3::before {
     display: block;
     float: left;
     font-size: var(--custom-h-num-font-size);
@@ -73,7 +73,7 @@
 }
 
 .protyle-wysiwyg>.h4::before,
-.b3-typography h4::before {
+.b3-typography>h4::before {
     display: block;
     float: left;
     font-size: var(--custom-h-num-font-size);
@@ -81,7 +81,7 @@
 }
 
 .protyle-wysiwyg>.h5::before,
-.b3-typography h5::before {
+.b3-typography>h5::before {
     display: block;
     float: left;
     font-size: var(--custom-h-num-font-size);
@@ -89,57 +89,36 @@
 }
 
 .protyle-wysiwyg>.h6::before,
-.b3-typography h6::before {
+.b3-typography>h6::before {
     display: block;
     float: left;
     font-size: var(--custom-h-num-font-size);
     content: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "."counter(h4-counter) "."counter(h5-counter) "."counter(h6-counter) "\00A0";
 }
 
-/* 取消预览中列表中标题的自动编号 */
-.b3-typography li>h1::before,
-.b3-typography li>h2::before,
-.b3-typography li>h3::before,
-.b3-typography li>h4::before,
-.b3-typography li>h5::before,
-.b3-typography li>h6::before {
-    content: "";
-}
-
 /* 调整标题空行光标位置 */
-
-.protyle-wysiwyg .h1>[contenteditable]:empty {
+.protyle-wysiwyg>.h1>[contenteditable]:empty {
     padding-left: 0.5em;
 }
 
-.protyle-wysiwyg .h2>[contenteditable]:empty {
+.protyle-wysiwyg>.h2>[contenteditable]:empty {
     padding-left: 1em;
 }
 
-.protyle-wysiwyg .h3>[contenteditable]:empty {
+.protyle-wysiwyg>.h3>[contenteditable]:empty {
     padding-left: 1.5em;
 }
 
-.protyle-wysiwyg .h4>[contenteditable]:empty {
+.protyle-wysiwyg>.h4>[contenteditable]:empty {
     padding-left: 2em;
 }
 
-.protyle-wysiwyg .h5>[contenteditable]:empty {
+.protyle-wysiwyg>.h5>[contenteditable]:empty {
     padding-left: 2.5em;
 }
 
-.protyle-wysiwyg .h6>[contenteditable]:empty {
+.protyle-wysiwyg>.h6>[contenteditable]:empty {
     padding-left: 3em;
-}
-
-/* 移除列表中标题的空行光标位置缩进 */
-.protyle-wysiwyg [data-node-id].li>.protyle-action~.h1>[contenteditable]:empty,
-.protyle-wysiwyg [data-node-id].li>.protyle-action~.h2>[contenteditable]:empty,
-.protyle-wysiwyg [data-node-id].li>.protyle-action~.h3>[contenteditable]:empty,
-.protyle-wysiwyg [data-node-id].li>.protyle-action~.h4>[contenteditable]:empty,
-.protyle-wysiwyg [data-node-id].li>.protyle-action~.h5>[contenteditable]:empty,
-.protyle-wysiwyg [data-node-id].li>.protyle-action~.h6>[contenteditable]:empty {
-    padding-left: 0;
 }
 
 /* 标题颜色标识 */
