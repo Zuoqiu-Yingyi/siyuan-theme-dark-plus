@@ -1,5 +1,9 @@
 # 更改日志 | CHANGE LOG
 
+- 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
+- 使用自定义块属性 `custom-render: scroll` 为过高的块设置滚动条 | Use the custom block attribute `custom-render: scroll` to set the scroll bar for blocks that are too tall.
+- 将自定义块属性 `custom-type: danmaku` 重命名为 `custom-render: danmaku` | Rename the custom block attribute `custom-type: danmaku` to `custom-render: danmaku`.
+
 ## v0.5.0/2022-03-17
 
 - [v0.4.6 <=> v0.5.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.6...v0.5.0)

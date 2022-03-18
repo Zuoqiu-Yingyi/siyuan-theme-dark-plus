@@ -22,10 +22,11 @@
 @import url(/appearance/themes/Dark+/style/module/custom-board-kanban.css);
 @import url(/appearance/themes/Dark+/style/module/custom-font-family.css);
 @import url(/appearance/themes/Dark+/style/module/custom-list-guides.css);
+@import url(/appearance/themes/Dark+/style/module/custom-render-danmaku.css);
+@import url(/appearance/themes/Dark+/style/module/custom-render-scroll.css);
 @import url(/appearance/themes/Dark+/style/module/custom-render.css);
 @import url(/appearance/themes/Dark+/style/module/custom-table-width.css);
 @import url(/appearance/themes/Dark+/style/module/custom-title.css);
-@import url(/appearance/themes/Dark+/style/module/custom-type-danmaku.css);
 @import url(/appearance/themes/Dark+/style/module/custom-type-table.css);
 @import url(/appearance/themes/Dark+/style/module/custom-type-title.css);
 @import url(/appearance/themes/Dark+/style/module/custom-writing-mode.css);

@@ -412,7 +412,10 @@
     --custom-doctree-begin-period-color: #0000;
 
     /* 弹幕块移动周期 | Danmaku block movement cycle */
-    --custom-type-danmaku-time: 16s;
+    --custom-render-danmaku-time: 16s;
+
+    /* 滚动条轨道背景颜色 | The background color of scroll track */
+    --custom-scroll-track-background-color: var(--b3-border-color);
 
     /* 自定义背景图片路径 | The file path of customize background image. */
     --custom-background-01: url("/appearance/themes/Dark+/image/background (01).jpg");
