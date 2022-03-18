@@ -626,7 +626,10 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     --custom-doctree-begin-period-color: #0000;
 
     /* 弹幕块移动周期 | Danmaku block movement cycle */
-    --custom-type-danmaku-time: 16s;
+    --custom-render-danmaku-time: 16s;
+
+    /* 滚动条轨道背景颜色 | The background color of scroll track */
+    --custom-scroll-track-background-color: var(--b3-border-color);
 
     /* 自定义背景图片路径 | The file path of customize background image. */
     --custom-background-01: url("/appearance/themes/Dark+/image/background (01).jpg");
@@ -724,10 +727,14 @@ export var config = {
             enable: true,
             switch: {
                 enable: true, // 是否启用打字机模式开关
+                NodeCodeBlock: {
+                    enable: false, // 是否在代码块中启用打字机模式
+                },
+                NodeTable: {
+                    enable: true, // 是否在表格块中启用打字机模式
+                    mode: 'row', // 打字机模式，`row`: 聚焦行, 'table': 聚焦表格
+                },
             },
-            NodeCodeBlock: {
-                enable: false, // 是否在代码块中启用打字机模式
-            }
         },
         comment: {
             // 评论功能开关

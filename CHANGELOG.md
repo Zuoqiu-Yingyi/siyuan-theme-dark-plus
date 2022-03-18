@@ -1,9 +1,11 @@
 # 更改日志 | CHANGE LOG
 
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 使用自定义块属性 `custom-render: scroll` 为过高的块设置滚动条 | Use the custom block attribute `custom-render: scroll` to set the scroll bar for blocks that are too tall.
 - 将自定义块属性 `custom-type: danmaku` 重命名为 `custom-render: danmaku` | Rename the custom block attribute `custom-type: danmaku` to `custom-render: danmaku`.
 - 修复滚动时表格头未遮盖部分元素问题 | Fix the issue of the table header not covering the part of the element when scrolling.
+- 打字机模式添加代码块与表格块的单独开关 | Add a separate switch for code blocks and table blocks in the typewriter mode.
 
 ## v0.5.0/2022-03-17
 

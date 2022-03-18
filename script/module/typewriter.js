@@ -15,10 +15,20 @@ function activate() {
                 let page = editor.parentElement;
                 // let page = document.activeElement.parentElement;
                 if (document.activeElement.nodeName == 'TABLE') {
+                    if (config.theme.typewriter.switch.NodeTable.enable == false) return;
                     // 表格获取焦点
                     block = window.getSelection().focusNode.parentElement;
-
-                    while (block != null && block.nodeName != 'TD') block = block.parentElement;
+                    switch (config.theme.typewriter.switch.NodeTable.mode) {
+                        // 表格聚焦模式
+                        case 'row': // 聚焦行
+                            while (block != null && block.nodeName != 'TD') block = block.parentElement;
+                            break;
+                        case 'table': // 聚焦表格
+                            while (block != null && block.dataset.nodeId == null) block = block.parentElement;
+                            break;
+                        default:
+                            return;
+                    }
                 }
                 else {
                     block = window.getSelection().focusNode.parentElement; // 当前光标
@@ -27,7 +37,7 @@ function activate() {
                 }
                 if (block == null || page == null) return;
 
-                if (config.theme.typewriter.NodeCodeBlock.enable == false
+                if (config.theme.typewriter.switch.NodeCodeBlock.enable == false
                     && block.dataset.type == 'NodeCodeBlock'
                 ) return;
 
