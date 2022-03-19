@@ -3,13 +3,28 @@
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 
-.b3-typography .img>span:nth-child(2),
-.protyle-wysiwyg .img>span:nth-child(2) {
-    max-width: none;
+/* 图片与前后文字之间间隙 */
+.b3-typography span.img,
+.protyle-wysiwyg span.img {
+    /* padding: 0 0.125em; */
+    max-width: none !important;
 }
-.b3-typography img,
-.protyle-wysiwyg img {
-    box-shadow: var(--b3-theme-on-background) 0px 0px var(--custom-box-shadow-spread);
+
+/* .protyle-wysiwyg span.img>span:nth-child(1),
+.protyle-wysiwyg span.img>span:nth-child(3) {
+    max-width: 0;
+} */
+
+/* 图片样式 */
+.b3-typography img:not(img.emoji),
+.protyle-wysiwyg img:not(img.emoji) {
+    box-shadow: var(--b3-theme-on-background) 0 0 var(--custom-box-shadow-spread);
     border-radius: var(--custom-border-radius);
     padding: var(--custom-border-radius);
+    box-sizing: border-box;
+}
+
+/* 图片尺寸调整控件 */
+.protyle-wysiwyg span.img>span>span.protyle-action__drag {
+    right: calc(4px + var(--custom-border-radius)) !important;
 }
