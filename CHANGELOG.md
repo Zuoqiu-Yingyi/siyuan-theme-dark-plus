@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+- 修复图文混排无法对齐问题 | Fixed the issue that mixed text and graphics could not be aligned.
+- 修复图片尺寸调整控件偏移问题 | Fixed an issue with the offset of the image sizing control.
+
 ## v0.5.1/2022-03-18
 
 - [v0.5.0 <=> v0.5.1](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.0...v0.5.1)
