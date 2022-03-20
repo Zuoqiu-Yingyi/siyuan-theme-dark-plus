@@ -4,6 +4,7 @@
 @import url(/widgets/custom.css);
 
 .protyle-wysiwyg[custom-auto-num-t="表"],
+.protyle-wysiwyg[custom-auto-num-t="表格"],
 .protyle-wysiwyg[custom-auto-num-t="Tab."],
 .protyle-wysiwyg[custom-auto-num-t="table"],
 .protyle-wysiwyg[custom-auto-num-t="Table"],
@@ -18,6 +19,10 @@
 
 .protyle-wysiwyg[custom-auto-num-t="表"] div[data-node-id][data-type="NodeTable"] table::before {
     content: "表\0020"counter(t-counter)"\0020";
+}
+
+.protyle-wysiwyg[custom-auto-num-t="表格"] div[data-node-id][data-type="NodeTable"] table::before {
+    content: "表格\0020"counter(t-counter)"\0020";
 }
 
 .protyle-wysiwyg[custom-auto-num-t="Tab."] div[data-node-id][data-type="NodeTable"] table::before {

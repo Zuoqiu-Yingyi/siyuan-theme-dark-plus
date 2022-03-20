@@ -4,6 +4,7 @@
 @import url(/widgets/custom.css);
 
 .protyle-wysiwyg[custom-auto-num-f="图"],
+.protyle-wysiwyg[custom-auto-num-f="图片"],
 .protyle-wysiwyg[custom-auto-num-f="Fig."],
 .protyle-wysiwyg[custom-auto-num-f="figure"],
 .protyle-wysiwyg[custom-auto-num-f="Figure"],
@@ -18,6 +19,10 @@
 
 .protyle-wysiwyg[custom-auto-num-f="图"] div[data-node-id] span.protyle-action__title::before {
     content: "图\0020"counter(f-counter)"\0020";
+}
+
+.protyle-wysiwyg[custom-auto-num-f="图片"] div[data-node-id] span.protyle-action__title::before {
+    content: "图片\0020"counter(f-counter)"\0020";
 }
 
 .protyle-wysiwyg[custom-auto-num-f="Fig."] div[data-node-id] span.protyle-action__title::before {
