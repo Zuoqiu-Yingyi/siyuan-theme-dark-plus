@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.5.2/2022-03-21
+
+- [v0.5.1 <=> v0.5.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.1...v0.5.2)
 - 修复图文混排无法对齐问题 | Fixed the issue that mixed text and graphics could not be aligned.
 - 修复图片尺寸调整控件偏移问题 | Fixed an issue with the offset of the image sizing control.
 - 将 README.md 中 `<br>` 替换为 `<br/>` | Replaced `<br>` in README.md with `<br/>`.
