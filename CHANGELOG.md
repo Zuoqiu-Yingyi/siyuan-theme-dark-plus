@@ -8,6 +8,7 @@
 - 将 README.md 中 `<br>` 替换为 `<br/>` | Replaced `<br>` in README.md with `<br/>`.
 - 添加图标题与表标题名称 `图片` 与 `表格` | Added the icon title and table title `图片` and `表格`.
 - 调整使用自定义块属性 `type: 表标题` 的样式 | Adjusted the style of the custom block attribute `type: table-title`.
+- 将 CSS 选择器 `[contenteditable]` 替换为 `[contenteditable][spellcheck]` | Replaced CSS selector `[contenteditable]` with `[contenteditable][spellcheck]`.
 
 ## v0.5.1/2022-03-18
 

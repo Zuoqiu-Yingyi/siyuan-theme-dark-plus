@@ -97,27 +97,27 @@
 }
 
 /* 调整标题空行光标位置 */
-.protyle-wysiwyg>.h1>[contenteditable]:empty {
+.protyle-wysiwyg>.h1>[contenteditable][spellcheck]:empty {
     padding-left: 0.5em;
 }
 
-.protyle-wysiwyg>.h2>[contenteditable]:empty {
+.protyle-wysiwyg>.h2>[contenteditable][spellcheck]:empty {
     padding-left: 1em;
 }
 
-.protyle-wysiwyg>.h3>[contenteditable]:empty {
+.protyle-wysiwyg>.h3>[contenteditable][spellcheck]:empty {
     padding-left: 1.5em;
 }
 
-.protyle-wysiwyg>.h4>[contenteditable]:empty {
+.protyle-wysiwyg>.h4>[contenteditable][spellcheck]:empty {
     padding-left: 2em;
 }
 
-.protyle-wysiwyg>.h5>[contenteditable]:empty {
+.protyle-wysiwyg>.h5>[contenteditable][spellcheck]:empty {
     padding-left: 2.5em;
 }
 
-.protyle-wysiwyg>.h6>[contenteditable]:empty {
+.protyle-wysiwyg>.h6>[contenteditable][spellcheck]:empty {
     padding-left: 3em;
 }
 
@@ -182,7 +182,7 @@
     margin-right: var(--custom-h-mark-blank);
 }
 
-.protyle-wysiwyg .h1>[contenteditable]:focus:empty {
+.protyle-wysiwyg .h1>[contenteditable][spellcheck]:focus:empty {
     padding-left: 1rem;
 }
 
@@ -195,7 +195,7 @@
     margin-right: var(--custom-h-mark-blank);
 }
 
-.protyle-wysiwyg .h2>[contenteditable]:focus:empty {
+.protyle-wysiwyg .h2>[contenteditable][spellcheck]:focus:empty {
     padding-left: 1rem;
 }
 
@@ -208,7 +208,7 @@
     margin-right: var(--custom-h-mark-blank);
 }
 
-.protyle-wysiwyg .h3>[contenteditable]:focus:empty {
+.protyle-wysiwyg .h3>[contenteditable][spellcheck]:focus:empty {
     padding-left: 1rem;
 }
 
@@ -221,7 +221,7 @@
     margin-right: var(--custom-h-mark-blank);
 }
 
-.protyle-wysiwyg .h4>[contenteditable]:focus:empty {
+.protyle-wysiwyg .h4>[contenteditable][spellcheck]:focus:empty {
     padding-left: 1rem;
 }
 
@@ -234,7 +234,7 @@
     margin-right: var(--custom-h-mark-blank);
 }
 
-.protyle-wysiwyg .h5>[contenteditable]:focus:empty {
+.protyle-wysiwyg .h5>[contenteditable][spellcheck]:focus:empty {
     padding-left: 1rem;
 }
 
@@ -247,6 +247,6 @@
     margin-right: var(--custom-h-mark-blank);
 }
 
-.protyle-wysiwyg .h6>[contenteditable]:focus:empty {
+.protyle-wysiwyg .h6>[contenteditable][spellcheck]:focus:empty {
     padding-left: 1rem;
 } */
