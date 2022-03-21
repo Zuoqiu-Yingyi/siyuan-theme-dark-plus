@@ -53,7 +53,7 @@ function HTMLDecode(text) {
 function goto(id) {
     let doc = window.document
     // console.log(doc)
-    let target = doc.querySelector("div.protyle-wysiwyg div[data-node-id] div[contenteditable]")
+    let target = doc.querySelector("div.protyle-wysiwyg div[data-node-id] div[contenteditable][spellcheck]")
     if (target) {
         let link = doc.createElement("span")
         link.setAttribute("data-type", "block-ref")
@@ -81,7 +81,7 @@ function hoverPreview(id, screenX, screenY) {
 
     // 编辑器面板
     let editor = document.querySelector(
-        ".protyle-wysiwyg div[data-node-id] div[contenteditable]"
+        ".protyle-wysiwyg div[data-node-id] div[contenteditable][spellcheck]"
     );
     editor.appendChild(virtual_ref);
 

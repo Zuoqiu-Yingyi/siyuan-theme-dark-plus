@@ -14,11 +14,11 @@
 }
 
 /* 使用自定义文档块属性时移除光标位置缩进 */
-.protyle-wysiwyg[custom-auto-num-h="0"] .h1>[contenteditable]:empty,
-.protyle-wysiwyg[custom-auto-num-h="0"] .h2>[contenteditable]:empty,
-.protyle-wysiwyg[custom-auto-num-h="0"] .h3>[contenteditable]:empty,
-.protyle-wysiwyg[custom-auto-num-h="0"] .h4>[contenteditable]:empty,
-.protyle-wysiwyg[custom-auto-num-h="0"] .h5>[contenteditable]:empty,
-.protyle-wysiwyg[custom-auto-num-h="0"] .h6>[contenteditable]:empty {
+.protyle-wysiwyg[custom-auto-num-h="0"] .h1>[contenteditable][spellcheck]:empty,
+.protyle-wysiwyg[custom-auto-num-h="0"] .h2>[contenteditable][spellcheck]:empty,
+.protyle-wysiwyg[custom-auto-num-h="0"] .h3>[contenteditable][spellcheck]:empty,
+.protyle-wysiwyg[custom-auto-num-h="0"] .h4>[contenteditable][spellcheck]:empty,
+.protyle-wysiwyg[custom-auto-num-h="0"] .h5>[contenteditable][spellcheck]:empty,
+.protyle-wysiwyg[custom-auto-num-h="0"] .h6>[contenteditable][spellcheck]:empty {
     padding-left: 0;
 }
