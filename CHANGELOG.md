@@ -7,6 +7,7 @@
 - 修复图片尺寸调整控件偏移问题 | Fixed an issue with the offset of the image sizing control.
 - 将 README.md 中 `<br>` 替换为 `<br/>` | Replaced `<br>` in README.md with `<br/>`.
 - 添加图标题与表标题名称 `图片` 与 `表格` | Added the icon title and table title `图片` and `表格`.
+- 调整使用自定义块属性 `type: 表标题` 的样式 | Adjusted the style of the custom block attribute `type: table-title`.
 
 ## v0.5.1/2022-03-18
 
