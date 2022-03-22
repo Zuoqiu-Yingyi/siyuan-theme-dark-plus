@@ -41,3 +41,9 @@ div.b3-dialog__container>div:nth-child(3),
 div.b3-dialog__container div.b3-dialog__header {
     background-color: var(--custom-dialog-background-color);
 }
+
+/* 自定义属性名称全宽显示 */
+div.b3-dialog__container label.customItem>span.ft__on-surface.fn__flex-center {
+    min-width: 100px;
+    width: auto !important;
+}

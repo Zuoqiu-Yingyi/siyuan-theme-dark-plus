@@ -4,6 +4,7 @@
 - 为对话框添加背景图片 | Add background image for dialogs.
 - 修复块属性设置对话框头部颜色问题 | Fix the issue of the header color of the block attribute setting dialog.
 - 将批注标题由四级标题调整为一级标题 | Change the title of notes from a fourth-level title to a first-level title.
+- 调整块属性面板中自定义属性值标签的宽度为自适应 | Adjust the width of the label of the custom attribute value in the block attribute panel to be adaptive.
 
 ## v0.5.2/2022-03-21
 
