@@ -3,13 +3,14 @@
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 
-/*页签*/
-.fn__flex-column.fn__flex.fn__flex-1 .layout-tab-bar {
+/* 页签 */
+/* .fn__flex-column.fn__flex.fn__flex-1 .layout-tab-bar { */
+.layout-tab-bar {
     background-color: var(--custom-tab-bar-background-color);
     flex-wrap: wrap;
 }
 
-/*页签项*/
+/* 页签项 */
 .layout-tab-bar .item {
     flex: none;
     background-color: transparent;
@@ -18,7 +19,7 @@
     border-radius: var(--custom-border-radius);
 }
 
-/*被选中的页签项*/
+/* 被选中的页签项 */
 .layout-tab-bar .item--focus {
     background-color: var(--b3-list-hover);
     box-shadow: none;
@@ -27,8 +28,9 @@
     border-radius: var(--custom-border-radius);
 }
 
-/* 多窗口foucs的标签页 */
-.layout__wnd--active .layout-tab-bar .item--focus {
+/* 多窗口被选中的页签项 & 集市被选中的页签项 */
+.layout__wnd--active .layout-tab-bar .item--focus,
+.b3-tab-container .layout-tab-bar .item--focus {
     box-shadow: none;
     border: 2px solid var(--custom-striking-color);
     border-radius: var(--custom-border-radius);

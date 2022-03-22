@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+- 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
+- 为对话框添加背景图片 | Add background image for dialogs.
+
 ## v0.5.2/2022-03-21
 
 - [v0.5.1 <=> v0.5.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.1...v0.5.2)

@@ -377,7 +377,6 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     --custom-background-image: url("/appearance/themes/Dark+/image/background (05).jpg");
 
     /* 对话框背景图片 | Dialog background image */
-    /* 暂未使用 | Not used yet */
     --custom-background-image-dialog: url("/appearance/themes/Dark+/image/background (01).jpg");
 
     /* 背景图片滤波器 | Background image filter */
@@ -471,6 +470,11 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     /* 弹出窗口导航栏(面包屑)背景颜色 | The background color of the popover navigation bar (breadcrumbs) */
     --custom-popover-breadcrumb-bar-background-color: var(--custom-editor-breadcrumb-bar-background-color);
 
+    /* 对话框遮罩背景颜色 | Dialog scrim background color */
+    --custom-dialog-scrim-background-color: var(--custom-transparent-light);
+
+    /* 对话框背景颜色 | Dialog background color */
+    --custom-dialog-background-color: var(--custom-transparent);
 
     /* iframe 块背景颜色 | The background color of iframe block */
     --custom-block-iframe-background-color: var(--custom-transparent);
