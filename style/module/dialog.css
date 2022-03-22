@@ -35,7 +35,8 @@ div.b3-dialog__container #searchPreview,
 div.b3-dialog__container div.search__header,
 div.b3-dialog__container div.search__header>input,
 div.b3-dialog__container div.fn__flex>ul.b3-list>li.b3-list-item:not(.b3-list-item--focus),
-div.b3-dialog__container div.fn__flex>div.b3-tab-container
+div.b3-dialog__container div.fn__flex>div.b3-tab-container,
+div.b3-dialog__container div.fn__flex>div.b3-tab-container div.config-account__center--text
 {
     background-color: transparent;
 }
