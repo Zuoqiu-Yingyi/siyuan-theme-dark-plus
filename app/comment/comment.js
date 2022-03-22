@@ -485,7 +485,9 @@ ${commentMd}
     if (!this.box) { this.createBox() }
 
     // 首先根据点击事件来源决定哪些情况下要弹出 box
-    if (target.getAttribute('data-type') == 'comment' || parent.getAttribute('data-type') == 'comment' || grandParent.getAttribute('data-type') == 'comment') {
+    if (target != null && target.dataset.type == 'comment'
+      || parent != null && parent.dataset.type == 'comment'
+      || grandParent != null && grandParent.dataset.type == 'comment') {
       // 1)点击 toolbar 图标触发
       e.stopPropagation()
       let selection = getSelection(),
