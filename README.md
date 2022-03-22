@@ -44,7 +44,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 | 功能 \| Function                             | 贡献者 \| Contributor                   | 项目 \| Project                                                                                                                        |
 | :------------------------------------------- | :-------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------- |
-| 行内评论与注释<br/>inline comments and notes | [langzhou](https://github.com/langzhou) | [siyuan-note/siyuan-comment at main · langzhou/siyuan-note · GitHub](https://github.com/langzhou/siyuan-note/tree/main/siyuan-comment) |
+| 行内批注与注释<br/>inline comments and notes | [langzhou](https://github.com/langzhou) | [siyuan-note/siyuan-comment at main · langzhou/siyuan-note · GitHub](https://github.com/langzhou/siyuan-note/tree/main/siyuan-comment) |
 
 ### 快捷键 | SHORTCUT KEYS
 
@@ -750,7 +750,7 @@ export var config = {
             },
         },
         comment: {
-            // 评论功能开关
+            // 批注功能开关
             enable: true,
         },
         hotkeys: {

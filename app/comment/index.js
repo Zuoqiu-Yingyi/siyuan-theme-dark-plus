@@ -1,5 +1,5 @@
 /**
- * 行内评论功能
+ * 行内批注功能
  * REF: [siyuan-note/siyuan-comment at main · langzhou/siyuan-note · GitHub](https://github.com/langzhou/siyuan-note/tree/main/siyuan-comment)
  */
 

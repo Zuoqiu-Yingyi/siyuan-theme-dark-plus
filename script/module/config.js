@@ -83,7 +83,7 @@ export var config = {
             },
         },
         comment: {
-            // 评论功能开关
+            // 批注功能开关
             enable: true,
         },
         hotkeys: {
