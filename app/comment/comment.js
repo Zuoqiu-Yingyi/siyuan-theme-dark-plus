@@ -19,9 +19,9 @@ class Comment {
 
   constructor() {
     this.icons = config.icons
-    this.isShow = false //是否弹出评论框
-    setTimeout(() => this.appendToolbarBtn(), 1000) //添加 toolbar 评论按钮
-    // setTimeout(()=>this.resolveCommentNodes(),1000) //等待文章内容加载完整后解析评论span todo
+    this.isShow = false //是否弹出批注框
+    setTimeout(() => this.appendToolbarBtn(), 1000) //添加 toolbar 批注按钮
+    // setTimeout(()=>this.resolveCommentNodes(),1000) //等待文章内容加载完整后解析批注span todo
   }
 
   async handleKeyDown(e) {
@@ -32,7 +32,7 @@ class Comment {
     //   this.showBox(e)
     // }
 
-    // 回车键提交评论
+    // 回车键提交批注
     if (this.isShow && e.key == 'Enter') {
       e.preventDefault()
       e.stopPropagation()
@@ -46,7 +46,7 @@ class Comment {
   }
 
   /**
-   * 渲染弹出框内的评论列表
+   * 渲染弹出框内的批注列表
    * @param {*} node
    * @param {*} from 点击来源位置
    */
@@ -80,8 +80,8 @@ class Comment {
                 <div class="header">
                   <div class="date">${formatSYDate(comments[key]['created'])}</div>
                   <div class="actions">
-                    <div class="delete-comment" data-quote-id="${quoteId}" data-comment-id="${comments[key]['block_id']}">移除评论</div>
-                    <div class="delete-comment" data-quote-id="${quoteId}" data-comment-id="${comments[key]['block_id']}"><a href="siyuan://blocks/${comments[key]['block_id']}">跳转到评论</a></div>
+                    <div class="delete-comment" data-quote-id="${quoteId}" data-comment-id="${comments[key]['block_id']}">移除批注</div>
+                    <div class="delete-comment" data-quote-id="${quoteId}" data-comment-id="${comments[key]['block_id']}"><a href="siyuan://blocks/${comments[key]['block_id']}">跳转到批注</a></div>
                   </div>
                 </div>
                 <div class="comment">${comments[key]['content']}</div>
@@ -89,7 +89,7 @@ class Comment {
             `
             }
           } else {
-            html += `<div class="list-item"><div class="header"><div class="date">暂无评论</div></div></div>`
+            html += `<div class="list-item"><div class="header"><div class="date">暂无批注</div></div></div>`
           }
 
           this.input.setAttribute('data-quote-id', quoteId)
@@ -104,20 +104,20 @@ class Comment {
   }
 
   /**
-   * 提交评论
+   * 提交批注
    * @returns
    */
   async submitComment() {
     // 输入框内容为空
     if (!this.input.innerText) {
       this.hiddenBox()
-      console.log('未填写评论内容');
+      console.log('未填写批注内容');
       return
     }
     // 如果已有 quoteid，则是追加，否则是新增
     let quoteId = this.input.getAttribute('data-quote-id')
     if (quoteId) {
-      //追加评论
+      //追加批注
       let blockId = document.querySelector(`div[custom-${quoteId}]`).getAttribute('data-node-id') //comment 所在 block
       let quoteText = document.querySelector(`strong[style*="quote-${quoteId}"]`).innerText
       this.appendBlocks(quoteText, blockId, quoteId)
@@ -127,7 +127,7 @@ class Comment {
       this.hiddenBox()
 
     } else {
-      //全新评论
+      //全新批注
       let selection = getSelection()
       let range = this.range
       let start = range.startContainer
@@ -137,7 +137,7 @@ class Comment {
       if (start == null) {
         return
       }
-      let block = start //由于没有一炮三响了，所以列表项上无法在属性弹框中看到存储的评论内容
+      let block = start //由于没有一炮三响了，所以列表项上无法在属性弹框中看到存储的批注内容
       let txt = range.toString() //引用的内容
       range.deleteContents()
       let strongNode = document.createElement('strong')
@@ -169,14 +169,14 @@ class Comment {
     let activeEditor = document.querySelector('.fn__flex-column.fn__flex.fn__flex-1.layout__wnd--active') //获得当前光标所在页面
     let docId = activeEditor.querySelector('.fn__flex-1.protyle:not(.fn__none) .protyle-background').getAttribute('data-node-id'); //获得当前编辑的文章 id
 
-    // 批注 h4 标题
+    // 批注 h1 标题
     // let headerHtml = `<div data-subtype="h4" data-node-id="${createBlockId()}" data-type="NodeHeading" class="h4" style="comment-header" updated="${createBlockId(false)}"><div contenteditable="true" spellcheck="false">批注</div><div class="protyle-attr" contenteditable="false"></div></div>`
     let headerMd = `
-#### 批注
+# 批注
 {: custom-quote-type="${config.attrs.type.heading}"}
 `
 
-    // 评论内容块
+    // 批注内容块
     // let commentHtml = `<div data-node-id="${createBlockId()}" custom-quote-id="${quoteId}" data-type="NodeParagraph" class="p" updated="${createBlockId(false)}" data-eof="true"><div contenteditable="true" spellcheck="false">${this.input.innerHTML}</div><div class="protyle-attr"></div></div>`
     let commentMd = `
 ${this.input.innerHTML}
@@ -228,7 +228,7 @@ ${this.input.innerHTML}
     // console.log(res)
     if (res && res.code == 0) {
       if (res.data.length == 0) {
-        // 没有关联当前评论的超级块(容器块)，则添加
+        // 没有关联当前批注的超级块(容器块)，则添加
         let containerMd = `
 {{{row
 ${quoteMd}
@@ -245,7 +245,7 @@ ${commentMd}
       }
     }
 
-    // 如果已经存在之前的引文评论，则直接在其下方插入新评论
+    // 如果已经存在之前的引文批注，则直接在其下方插入新批注
     // let existQuote = activeEditor.querySelector(`.fn__flex-1.protyle:not(.fn__none) .bq[custom-quote-id*="${quoteId}"]`)
     // if(existQuote){
     //   await this.insertBlockDom(commentHtml, existQuote.getAttribute('data-node-id'))
@@ -256,11 +256,11 @@ ${commentMd}
 
   }
 
-  /* 评论列表事件，主要是移除评论和引文 */
+  /* 批注列表事件，主要是移除批注和引文 */
   async handleListEvents(e) {
     e.stopPropagation()
     let target = e.target
-    // 删除评论
+    // 删除批注
     if (target.className == 'delete-comment') {
       let quoteId = target.getAttribute('data-quote-id')
       let commentId = target.getAttribute('data-comment-id')
@@ -295,7 +295,7 @@ ${commentMd}
         saveViaTransaction()
       }
 
-      // 移除文章末尾评论内容
+      // 移除文章末尾批注内容
       // let nodes = document.querySelectorAll(`div[custom-quote-id="${quoteId}"]`)
       // if(nodes){
       //   for(var node of nodes) {
@@ -386,7 +386,7 @@ ${commentMd}
   }
 
   /**
-   * TODO: 评论输入框支持粘贴内容块链接
+   * TODO: 批注输入框支持粘贴内容块链接
    * @param {*} e
    */
   handlePaste(e) {
@@ -496,7 +496,7 @@ ${commentMd}
         // 需要进一步判断选取是否是在 strong 标签里面
         let start = range.startContainer, end = range.endContainer
         if (start.parentElement.tagName == 'STRONG' || end.parentElement.tagName == 'STRONG') {
-          snackbar('请在非评论区操作', 'warning')
+          snackbar('请在非批注区操作', 'warning')
         } else if (!range.toString()) {
           snackbar('没有选中内容', 'danger')
         } else {
@@ -532,7 +532,7 @@ ${commentMd}
         this.input.focus()
       }
 
-      this.renderCommentsHtml(target, from) //获取评论列表
+      this.renderCommentsHtml(target, from) //获取批注列表
 
       // 如果是从 toolbar 触发，box 的坐标不参照事件坐标，而是参照文本选区坐标
       if (from == 'toolbar') {
@@ -546,7 +546,7 @@ ${commentMd}
   }
 
   /**
-   * 创建评论框
+   * 创建批注框
    */
   createBox() {
     let fragment = document.createDocumentFragment()
@@ -568,12 +568,12 @@ ${commentMd}
 
     this.btn = document.createElement('div')
     this.btn.className = 'btn'
-    this.btn.innerText = '评论'
+    this.btn.innerText = '批注'
     this.btn.addEventListener('click', async () => this.submitComment())
     this.add.appendChild(this.input)
     this.add.appendChild(this.btn)
 
-    //遮罩层，用于实现点击空白处关闭评论框
+    //遮罩层，用于实现点击空白处关闭批注框
     this.overlay = document.createElement('div')
     this.overlay.className = 'lz-overlay'
     this.overlay.addEventListener('click', () => this.hiddenBox())
@@ -587,7 +587,7 @@ ${commentMd}
   }
 
   /**
-   * 关闭评论框
+   * 关闭批注框
    */
   hiddenBox() {
     if (this.box) {
@@ -637,7 +637,7 @@ ${commentMd}
     let btn = document.createElement('button')
     btn.className = 'protyle-toolbar__item b3-tooltips b3-tooltips__n'
     btn.setAttribute('data-type', 'comment')
-    btn.setAttribute('aria-label', '评论')
+    btn.setAttribute('aria-label', '批注')
     btn.innerHTML = this.icons.comment
     btn.addEventListener('click', (e) => {
       btn.parentElement.classList.add('fn__none') //关闭 toolbar

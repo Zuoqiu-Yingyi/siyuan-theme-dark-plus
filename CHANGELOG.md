@@ -3,6 +3,7 @@
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 为对话框添加背景图片 | Add background image for dialogs.
 - 修复块属性设置对话框头部颜色问题 | Fix the issue of the header color of the block attribute setting dialog.
+- 将批注标题由四级标题调整为一级标题 | Change the title of notes from a fourth-level title to a first-level title.
 
 ## v0.5.2/2022-03-21
 
