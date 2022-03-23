@@ -356,6 +356,7 @@ strong[style*="quote"]:hover{
   transition: all ease-in-out 500ms;
 }
 
+/* 批注显示批注时间 */
 .protyle-wysiwyg div[data-node-id][custom-quote-time]::before {
   content: attr(custom-quote-time);
   font-size: 12px;

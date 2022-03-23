@@ -182,7 +182,7 @@
     /* 功能面板分隔线补偿距离 | Function panel dividers compensate for distance
      * 需要设置为 --custom-panel-distance 的负值 | A negative value of --custom-panel-distance is required
      */
-    --custom-separator-distance-compensation: -8px;
+    --custom-separator-distance-compensation: calc(0px - var(--custom-panel-distance));
 
     /* 超级块内边距 | The inner margin of the superblock */
     --custom-block-padding: 8px;
@@ -377,7 +377,7 @@
 
     /* 面板内字段名显示样式 | The field name display style within the panel */
 
-    /* 折叠显示字段名 | Collapsed display when the field name is too long */
+    /* 自动换行显示字段名 | Wrap displays the field names */
     /* --custom-backlink-display: table-cell; */
     /* --custom-bookmark-display: table-cell; */
     /* --custom-file-display: table-cell; */
