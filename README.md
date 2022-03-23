@@ -402,7 +402,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     /* 功能面板分隔线补偿距离 | Function panel dividers compensate for distance
      * 需要设置为 --custom-panel-distance 的负值 | A negative value of --custom-panel-distance is required
      */
-    --custom-separator-distance-compensation: -8px;
+    --custom-separator-distance-compensation: calc(0px - var(--custom-panel-distance));
 
     /* 超级块内边距 | The inner margin of the superblock */
     --custom-block-padding: 8px;
@@ -597,7 +597,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
     /* 面板内字段名显示样式 | The field name display style within the panel */
 
-    /* 折叠显示字段名 | Collapsed display when the field name is too long */
+    /* 自动换行显示字段名 | Wrap displays the field names */
     /* --custom-backlink-display: table-cell; */
     /* --custom-bookmark-display: table-cell; */
     /* --custom-file-display: table-cell; */
@@ -643,7 +643,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
     /* 表格单元格等宽启用时单元格宽度 | Table cell width when cell monospaced function is enabled */
     --custom-table-cell-monospaced-width: 256px;
-    
+
     /* 自定义背景图片路径 | The file path of customize background image. */
     --custom-background-01: url("/appearance/themes/Dark+/image/background (01).jpg");
     --custom-background-02: url("/appearance/themes/Dark+/image/background (02).jpg");

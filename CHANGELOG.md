@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.5.3/2022-03-23
+
+- [v0.5.2 <=> v0.5.3](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.2...v0.5.3)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 为对话框添加背景图片 | Add background image for dialogs.
 - 修复块属性设置对话框头部颜色问题 | Fix the issue of the header color of the block attribute setting dialog.
