@@ -67,6 +67,14 @@ export var config = {
             cut: {
                 enable: true, // 是否启用当前文档全文剪切功能
             },
+            outline: {
+                enable: true, // 是否启用当前文档大纲复制功能
+                style: {
+                    // 大纲样式
+                    content: 'link', // 内容样式('text': 文本, 'link': 链接, 'ref': 块引用)
+                },
+                top: 'h', // 大纲最顶层块类型('d': 文档块, 'h': 标题块)
+            },
         },
         typewriter: {
             // 打字机模式开关
@@ -168,6 +176,32 @@ export var config = {
                     shiftKey: true,
                     altKey: true,
                     key: 'X',
+                },
+                outline: {
+                    o: {
+                        // 复制当前文档大纲(有序列表)至剪贴板(Ctrl + Shift + Alt + O)
+                        ctrlKey: true,
+                        metaKey: true,
+                        shiftKey: true,
+                        altKey: true,
+                        key: 'O',
+                    },
+                    u: {
+                        // 复制当前文档大纲(无序列表)至剪贴板(Ctrl + Shift + Alt + U)
+                        ctrlKey: true,
+                        metaKey: true,
+                        shiftKey: true,
+                        altKey: true,
+                        key: 'U',
+                    },
+                    t: {
+                        // 复制当前文档大纲(任务列表)至剪贴板(Ctrl + Shift + Alt + T)
+                        ctrlKey: true,
+                        metaKey: true,
+                        shiftKey: true,
+                        altKey: true,
+                        key: 'T',
+                    },
                 },
             },
             typewriter: {
