@@ -62,7 +62,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 | <kbd>Shift + Alt + D</kbd>                                               | 当前文档<br/>current document                 | 删除当前文档全文<br/>delete the full content of the current documen                                             |
 | <kbd>Ctrl/⌘ + Shift + Alt + O</kbd>                                      | 当前文档<br/>current document                 | 复制当前文档大纲为有序列表<br/>copy the current document outline as an ordered list                             |
 | <kbd>Ctrl/⌘ + Shift + Alt + U</kbd>                                      | 当前文档<br/>current document                 | 复制当前文档大纲为无序列表<br/>copy the current document outline as an unordered list                           |
-| <kbd>Ctrl/⌘ + Shift + Alt + T</kbd>                                      | 当前文档<br/>current document                 | 复制当前文档大纲为有任务列表<br/>copy the current document outline as a task list                               |
+| <kbd>Ctrl/⌘ + Shift + Alt + T</kbd>                                      | 当前文档<br/>current document                 | 复制当前文档大纲为任务列表<br/>copy the current document outline as a task list                               |
 
 ### 自定义块属性 | CUSTOM BLOCKS ATTRIBUTES
 
@@ -175,9 +175,9 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + O</kbd> 复制当前文档大纲为有序列表  
   Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + O</kbd> to copy the current document outline as an ordered list.
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + U</kbd> 复制当前文档大纲为无序列表  
-  Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + O</kbd> to copy the current document outline as an unordered list.
+  Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + U</kbd> to copy the current document outline as an unordered list.
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + T</kbd> 复制当前文档大纲为任务列表  
-  Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + O</kbd> to copy the current document outline as a task list.
+  Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + T</kbd> to copy the current document outline as a task list.
 - 块自定义属性
   Block custom attributes.
   - `font-family`: 属性名 | key
