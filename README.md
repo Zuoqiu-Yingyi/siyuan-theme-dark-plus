@@ -60,6 +60,9 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 | <kbd>Shift + Alt + C</kbd>                                               | 当前文档<br/>current document                 | 复制当前文档 markdown 全文至剪贴板<br/>copy the full markdown text of the current document to the clipboard     |
 | <kbd>Shift + Alt + X</kbd>                                               | 当前文档<br/>current document                 | 剪切当前文档 markdown 全文至剪贴板<br/>cut the full markdown text of the current document to the clipboard      |
 | <kbd>Shift + Alt + D</kbd>                                               | 当前文档<br/>current document                 | 删除当前文档全文<br/>delete the full content of the current documen                                             |
+| <kbd>Ctrl/⌘ + Shift + Alt + O</kbd>                                      | 当前文档<br/>current document                 | 复制当前文档大纲为有序列表<br/>copy the current document outline as an ordered list                             |
+| <kbd>Ctrl/⌘ + Shift + Alt + U</kbd>                                      | 当前文档<br/>current document                 | 复制当前文档大纲为无序列表<br/>copy the current document outline as an unordered list                           |
+| <kbd>Ctrl/⌘ + Shift + Alt + T</kbd>                                      | 当前文档<br/>current document                 | 复制当前文档大纲为有任务列表<br/>copy the current document outline as a task list                               |
 
 ### 自定义块属性 | CUSTOM BLOCKS ATTRIBUTES
 
@@ -169,6 +172,12 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
   Use the shortcut keys <kbd>Shift + Alt + X</kbd> to cut the full markdown text of the current document to the clipboard.
 - 使用快捷键 <kbd>Shift + Alt + D</kbd> 删除当前文档全部内容  
   Use the shortcut keys <kbd>Shift + Alt + D</kbd> to delete the full content of the current documen.
+- 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + O</kbd> 复制当前文档大纲为有序列表  
+  Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + O</kbd> to copy the current document outline as an ordered list.
+- 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + U</kbd> 复制当前文档大纲为无序列表  
+  Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + O</kbd> to copy the current document outline as an unordered list.
+- 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + T</kbd> 复制当前文档大纲为任务列表  
+  Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + O</kbd> to copy the current document outline as a task list.
 - 块自定义属性
   Block custom attributes.
   - `font-family`: 属性名 | key
@@ -734,6 +743,14 @@ export var config = {
             cut: {
                 enable: true, // 是否启用当前文档全文剪切功能
             },
+            outline: {
+                enable: true, // 是否启用当前文档大纲复制功能
+                style: {
+                    // 大纲样式
+                    content: 'link', // 内容样式('text': 文本, 'link': 链接, 'ref': 块引用)
+                },
+                top: 'h', // 大纲最顶层块类型('d': 文档块, 'h': 标题块)
+            },
         },
         typewriter: {
             // 打字机模式开关
@@ -835,6 +852,32 @@ export var config = {
                     shiftKey: true,
                     altKey: true,
                     key: 'X',
+                },
+                outline: {
+                    o: {
+                        // 复制当前文档大纲(有序列表)至剪贴板(Ctrl + Shift + Alt + O)
+                        ctrlKey: true,
+                        metaKey: true,
+                        shiftKey: true,
+                        altKey: true,
+                        key: 'O',
+                    },
+                    u: {
+                        // 复制当前文档大纲(无序列表)至剪贴板(Ctrl + Shift + Alt + U)
+                        ctrlKey: true,
+                        metaKey: true,
+                        shiftKey: true,
+                        altKey: true,
+                        key: 'U',
+                    },
+                    t: {
+                        // 复制当前文档大纲(任务列表)至剪贴板(Ctrl + Shift + Alt + T)
+                        ctrlKey: true,
+                        metaKey: true,
+                        shiftKey: true,
+                        altKey: true,
+                        key: 'T',
+                    },
                 },
             },
             typewriter: {
