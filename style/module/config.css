@@ -420,6 +420,9 @@
 
     /* 滚动条轨道背景颜色 | The background color of scroll track */
     --custom-scroll-track-background-color: var(--b3-border-color);
+    
+    /* 过长块的溢出高度 | The overflow height of a overly long block */
+    --custom-scroll-max-height: 50vh;
 
     /* 表格单元格等宽启用时单元格宽度 | Table cell width when cell monospaced function is enabled */
     --custom-table-cell-monospaced-width: 256px;
