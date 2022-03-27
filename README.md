@@ -8,7 +8,9 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/Zuoqiu-Yingyi/siyuan-theme-dark-plus?style=flat-square)](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/commits/main)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Zuoqiu-Yingyi/siyuan-theme-dark-plus?style=flat-square)
 ![hits](https://hits.b3log.org/Zuoqiu-Yingyi/siyuan-theme-dark-plus.svg)
-[![GitHub all releases](https://img.shields.io/github/downloads/Zuoqiu-Yingyi/siyuan-theme-dark-plus/total?style=flat-square)](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/releases)
+[![GitHub all releases](https://img.shields.io/github/downloads/Zuoqiu-Yingyi/siyuan-theme-dark-plus/total?style=flat-square)](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/releases)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#贡献者--contributor)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 </center>
 
@@ -46,6 +48,19 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 | :------------------------------------------- | :-------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------- |
 | 行内批注与注释<br/>inline comments and notes | [langzhou](https://github.com/langzhou) | [siyuan-note/siyuan-comment at main · langzhou/siyuan-note · GitHub](https://github.com/langzhou/siyuan-note/tree/main/siyuan-comment) |
 
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+注: 该表格使用 [All Contributors · GitHub](https://github.com/all-contributors) 自动生成, 请到 [emoji key](https://allcontributors.org/docs/en/emoji-key) 查看贡献类型  
+PS: The table is generated automatically using [All Contributors · GitHub](https://github.com/all-contributors), go to [emoji key](https://allcontributors.org/docs/en/emoji-key) to see the contribution type.
+
 ### 快捷键 | SHORTCUT KEYS
 
 | 快捷键 \| Shortcut Key                                                   | 操作对象 \| Operational objectives            | 功能 \| Function                                                                                                |
@@ -62,7 +77,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 | <kbd>Shift + Alt + D</kbd>                                               | 当前文档<br/>current document                 | 删除当前文档全文<br/>delete the full content of the current documen                                             |
 | <kbd>Ctrl/⌘ + Shift + Alt + O</kbd>                                      | 当前文档<br/>current document                 | 复制当前文档大纲为有序列表<br/>copy the current document outline as an ordered list                             |
 | <kbd>Ctrl/⌘ + Shift + Alt + U</kbd>                                      | 当前文档<br/>current document                 | 复制当前文档大纲为无序列表<br/>copy the current document outline as an unordered list                           |
-| <kbd>Ctrl/⌘ + Shift + Alt + T</kbd>                                      | 当前文档<br/>current document                 | 复制当前文档大纲为任务列表<br/>copy the current document outline as a task list                               |
+| <kbd>Ctrl/⌘ + Shift + Alt + T</kbd>                                      | 当前文档<br/>current document                 | 复制当前文档大纲为任务列表<br/>copy the current document outline as a task list                                 |
 
 ### 自定义块属性 | CUSTOM BLOCKS ATTRIBUTES
 
@@ -649,6 +664,9 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
     /* 滚动条轨道背景颜色 | The background color of scroll track */
     --custom-scroll-track-background-color: var(--b3-border-color);
+
+    /* 过长块的溢出高度 | The overflow height of a overly long block */
+    --custom-scroll-max-height: 50vh;
 
     /* 表格单元格等宽启用时单元格宽度 | Table cell width when cell monospaced function is enabled */
     --custom-table-cell-monospaced-width: 256px;

@@ -4,6 +4,7 @@
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + O</kbd> 复制当前文档大纲为有序列表 | Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + O</kbd> to copy the current document outline as an ordered list.
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + U</kbd> 复制当前文档大纲为无序列表 | Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + U</kbd> to copy the current document outline as an unordered list.
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + T</kbd> 复制当前文档大纲为任务列表 | Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + T</kbd> to copy the current document outline as a task list.
+- 使用 [All Contributors · GitHub](https://github.com/all-contributors) 自动生成贡献者列表 | Use [All Contributors · GitHub](https://github.com/all-contributors) automatically generates a table of contributors.
 
 ## v0.5.3/2022-03-23
 
