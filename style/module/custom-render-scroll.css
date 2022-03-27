@@ -16,14 +16,14 @@
 .protyle-wysiwyg[custom-render~=scroll]>div[data-node-id]:not([data-type="NodeTable"]),
 .protyle-wysiwyg [data-node-id][custom-render~=scroll]:not([data-type="NodeTable"]) {
     overflow-y: auto;
-    max-height: var(--custom-max-height);
+    max-height: var(--custom-scroll-max-height);
 }
 
 .protyle-wysiwyg[custom-render~=scroll]>div[data-node-id][data-type="NodeTable"] table,
 .protyle-wysiwyg [data-node-id][custom-render~=scroll][data-type="NodeTable"] table {
     position: relative;
     overflow-y: auto;
-    max-height: var(--custom-max-height);
+    max-height: var(--custom-scroll-max-height);
 }
 
 .protyle-wysiwyg[custom-render~=scroll]>div[data-node-id][data-type="NodeTable"] table>thead,
