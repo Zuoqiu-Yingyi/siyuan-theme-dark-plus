@@ -1,4 +1,7 @@
 # 🌙Dark+
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <center>
 
@@ -49,9 +52,13 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 | 行内批注与注释<br/>inline comments and notes | [langzhou](https://github.com/langzhou) | [siyuan-note/siyuan-comment at main · langzhou/siyuan-note · GitHub](https://github.com/langzhou/siyuan-note/tree/main/siyuan-comment) |
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/tswwe"><img src="https://avatars.githubusercontent.com/u/36465489?v=4?s=100" width="100px;" alt=""/><br /><sub><b>thxnder</b></sub></a><br /><a href="https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/commits?author=tswwe" title="Code">💻</a></td>
+  </tr>
+</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
@@ -955,3 +962,16 @@ ps: Sort in no particular order.
 ## 更改日志 | CHANGE LOGS
 
 [CHANGELOG](./CHANGELOG.md)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
