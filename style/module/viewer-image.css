@@ -1,0 +1,8 @@
+/* 图片预览窗口 */
+
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+body>div.viewer-container {
+    background-color: var(--custom-viewer-image-background-color);
+}

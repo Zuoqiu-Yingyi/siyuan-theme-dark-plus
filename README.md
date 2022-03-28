@@ -550,6 +550,10 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
     /* 弹出菜单轮廓颜色 | The outline color of the popover menu */
     --custom-popover-menu-outline-color: var(--b3-scroll-color);
 
+    /* 预览窗口 | preview window */
+    /* 图片预览窗口背景颜色 | The background color of the image preview window */
+    --custom-viewer-image-background-color: var(--custom-transparent-light);
+
     /* 阴影散布宽度 | Shadow spread */
     --custom-box-shadow-spread: 8px;
 

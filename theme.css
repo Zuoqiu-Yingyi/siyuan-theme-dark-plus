@@ -85,5 +85,8 @@
 /* 顶部工具栏 */
 @import url(/appearance/themes/Dark+/style/module/toolbar.css);
 
+/* 预览窗口 */
+@import url(/appearance/themes/Dark+/style/module/viewer-image.css);
+
 /* 自定义配置 */
 @import url(/widgets/custom.css);
