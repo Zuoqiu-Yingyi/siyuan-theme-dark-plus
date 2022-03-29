@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 修复复制当前文档大纲为有序列表时序号错误问题 | Fixed the issue that the number of the list was wrong when copying the current document outline as an ordered list.
+
 ## v0.5.4/2022-03-29
 
 - [v0.5.3 <=> v0.5.4](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.3...v0.5.4)

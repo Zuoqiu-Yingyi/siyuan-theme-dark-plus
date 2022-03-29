@@ -84,15 +84,16 @@ function outlineCopy(mode) {
                     let text = node.querySelector('.b3-list-item__text').innerText;
                     let id = node.dataset.nodeId;
                     markdown.push(`${' '.repeat(deep * 4)}${mark(++index)}${content(text, id)}`);
-                    break;
+                    return index;
                 case 'UL':
                     markdown.push('');
-                    for (index in node.childNodes) {
-                        outlineParser(node.childNodes[index], deep + 1, index);
+                    let child_index = 0;
+                    for (let child of node.childNodes) {
+                        child_index = outlineParser(child, deep + 1, child_index);
                     }
-                    break;
+                    return index;
                 default:
-                    return;
+                    return 0;
             }
         }
 
