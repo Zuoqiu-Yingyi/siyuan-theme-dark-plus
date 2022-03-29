@@ -12,6 +12,26 @@ import {
 import { getBlockAttrs } from './../utils/api.js';
 import { timestampParse } from './../utils/misc.js';
 
+function bilibiliTimestamp(url, seconds) {
+    // BiliBili 视频时间戳
+    if (seconds == null || seconds == 0) {
+        url.searchParams.delete('t');
+    } else {
+        url.searchParams.set('t', seconds);
+    }
+}
+
+function youtubeTimestamp(url, seconds = null) {
+    // YouTube 视频时间戳
+    if (seconds == null || (seconds | 0) == 0) {
+        url.searchParams.delete('start');
+        url.searchParams.delete('autoplay');
+    } else {
+        url.searchParams.set('start', seconds | 0);
+        url.searchParams.set('autoplay', 1);
+    }
+}
+
 async function reloadIframe(target) {
     // console.log(target.dataset);
     if (target.dataset.nodeId) {
@@ -25,35 +45,43 @@ async function reloadIframe(target) {
                             let href = target.firstElementChild.firstElementChild.src;
                             // console.log(attrs);
                             if (attrs) {
+                                let src = target.firstElementChild.firstElementChild.src;
+                                let url = new URL(src);
                                 let timestamp = attrs[config.theme.timestamp.attribute];
                                 if (config.theme.regs.time.test(timestamp)) {
                                     // 块自定义属性中有时间戳
-                                    let src = target.firstElementChild.firstElementChild.src;
-                                    let url = new URL(src);
-                                    let second = timestampParse(timestamp);
+                                    let seconds = timestampParse(timestamp);
                                     switch (url.hostname) {
                                         case 'player.bilibili.com':
                                             // 如果是 B 站视频
-                                            if (second == 0) url.searchParams.delete('t');
-                                            else url.searchParams.set('t', second);
-                                            href = url.href;
+                                            bilibiliTimestamp(url, seconds);
                                             break;
                                         case 'www.youtube.com':
                                             // 如果是 YouTube 视频
                                             // REF [YouTube | How to configure iFrame parameters](https://fernandosarachaga.com/en/youtube-how-to-configure-iframe-parameters/)
-                                            if (second == 0) {
-                                                url.searchParams.delete('start');
-                                                url.searchParams.delete('autoplay');
-                                            } else {
-                                                url.searchParams.set('start', second | 0);
-                                                url.searchParams.set('autoplay', 1);
-                                            }
-                                            href = url.href;
+                                            youtubeTimestamp(url, seconds);
                                             break;
                                         default:
                                             break;
                                     }
+                                } else {
+                                    // 块自定义属性中没有时间戳
+                                    switch (url.hostname) {
+                                        case 'player.bilibili.com':
+                                            // 如果是 B 站视频
+                                            bilibiliTimestamp(url);
+                                            break;
+                                        case 'www.youtube.com':
+                                            // 如果是 YouTube 视频
+                                            // REF [YouTube | How to configure iFrame parameters](https://fernandosarachaga.com/en/youtube-how-to-configure-iframe-parameters/)
+                                            youtubeTimestamp(url);
+                                            break;
+                                        default:
+                                            break;
+                                    }
+
                                 }
+                                href = url.href
                             }
                             target.firstElementChild.firstElementChild.src = href;
                         });

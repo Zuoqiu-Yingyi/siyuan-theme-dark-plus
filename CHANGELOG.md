@@ -3,6 +3,7 @@
 - 修复复制当前文档大纲为有序列表时序号错误问题 | Fixed the issue that the number of the list was wrong when copying the current document outline as an ordered list.
 - 视频时间戳跳转支持 Bilibili 与 YouTube | Video timestamp jump supports Bilibili and YouTube.
 - 视频时间戳生成支持 Bilibili 与 YouTube | Video timestamp generation supports Bilibili and YouTube.
+- 删除 iframe 块的 `custom-time` 自定义属性后使用快捷键 <kbd>Ctrl + 鼠标左键</kbd> 单击 iframe 块移除 Bilibili 与 YouTube 的视频时间戳 | Remove the Bilibili and YouTube video timestamp after removing the `custom-time` attribute of the iframe block and using the shortcut keys <kbd>Ctrl + Left Mouse Button</kbd> click the iframe block.
 
 ## v0.5.4/2022-03-29
 
