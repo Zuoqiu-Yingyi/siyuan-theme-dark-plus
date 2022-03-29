@@ -67,21 +67,21 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 
 ### 快捷键 | SHORTCUT KEYS
 
-| 快捷键 \| Shortcut Key                                                   | 操作对象 \| Operational objectives            | 功能 \| Function                                                                                                |
-| :----------------------------------------------------------------------- | :-------------------------------------------- | :-------------------------------------------------------------------------------------------------------------- |
-| <kbd>Ctrl/⌘ + 鼠标中键</kbd><br/><kbd>Ctrl/⌘ + Middle Mouse Button</kbd> | 超链接<br/>hyperlink                          | 设置自定义块属性<br/>set the custom block attributes                                                            |
-| <kbd>Ctrl/⌘ + 鼠标中键</kbd><br/><kbd>Ctrl/⌘ + Middle Mouse Button</kbd> | 视频块/音频块<br/>video block/audio block     | 将当前时间戳写入剪贴板<br/>write the current timestamp to the clipboard                                         |
-| <kbd>Ctrl/⌘ + 鼠标左键</kbd><br/><kbd>Ctrl/⌘ + Lift Mouse Button</kbd>   | 视频块/音频块<br/>video block/audio block     | 跳转到自定义块属性 `time` 所设置的时间点<br/>jump to the point in time set by the custom block attribute `time` |
-| <kbd>Ctrl/⌘ + 鼠标左键</kbd><br/><kbd>Ctrl/⌘ + Lift Mouse Button</kbd>   | 挂件块/iframe块<br/>widget block/iframe block | 重新加载块内容<br/>reload the block contents                                                                    |
-| <kbd>Ctrl/⌘ + F1</kbd>                                                   | 当前文档<br/>current document                 | 渲染当前文档所有块的自定义样式<br/>render the custom style for all blocks in the current document               |
-| <kbd>Ctrl/⌘ + F5</kbd>                                                   | 整个窗口<br/>entire window                    | 重新加载整个窗口<br/>reload the entire window                                                                   |
-| <kbd>Shift + Alt + T</kbd>                                               | 整个窗口<br/>entire window                    | 启动/关闭打字机模式<br/>turn on/off typewriter mode                                                             |
-| <kbd>Shift + Alt + C</kbd>                                               | 当前文档<br/>current document                 | 复制当前文档 markdown 全文至剪贴板<br/>copy the full markdown text of the current document to the clipboard     |
-| <kbd>Shift + Alt + X</kbd>                                               | 当前文档<br/>current document                 | 剪切当前文档 markdown 全文至剪贴板<br/>cut the full markdown text of the current document to the clipboard      |
-| <kbd>Shift + Alt + D</kbd>                                               | 当前文档<br/>current document                 | 删除当前文档全文<br/>delete the full content of the current documen                                             |
-| <kbd>Ctrl/⌘ + Shift + Alt + O</kbd>                                      | 当前文档<br/>current document                 | 复制当前文档大纲为有序列表<br/>copy the current document outline as an ordered list                             |
-| <kbd>Ctrl/⌘ + Shift + Alt + U</kbd>                                      | 当前文档<br/>current document                 | 复制当前文档大纲为无序列表<br/>copy the current document outline as an unordered list                           |
-| <kbd>Ctrl/⌘ + Shift + Alt + T</kbd>                                      | 当前文档<br/>current document                 | 复制当前文档大纲为任务列表<br/>copy the current document outline as a task list                                 |
+| 快捷键 \| Shortcut Key                                                   | 操作对象 \| Operational objectives                              | 功能 \| Function                                                                                                |
+| :----------------------------------------------------------------------- | :-------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------- |
+| <kbd>Ctrl/⌘ + 鼠标中键</kbd><br/><kbd>Ctrl/⌘ + Middle Mouse Button</kbd> | 超链接<br/>hyperlink                                            | 设置自定义块属性<br/>set the custom block attributes                                                            |
+| <kbd>Ctrl/⌘ + 鼠标中键</kbd><br/><kbd>Ctrl/⌘ + Middle Mouse Button</kbd> | 视频块/音频块/iframe块<br/>video block/audio block/iframe block | 将当前时间戳写入剪贴板<br/>write the current timestamp to the clipboard                                         |
+| <kbd>Ctrl/⌘ + 鼠标左键</kbd><br/><kbd>Ctrl/⌘ + Lift Mouse Button</kbd>   | 视频块/音频块/iframe块<br/>video block/audio block/iframe block | 跳转到自定义块属性 `time` 所设置的时间点<br/>jump to the point in time set by the custom block attribute `time` |
+| <kbd>Ctrl/⌘ + 鼠标左键</kbd><br/><kbd>Ctrl/⌘ + Lift Mouse Button</kbd>   | 挂件块/iframe块<br/>widget block/iframe block                   | 重新加载块内容<br/>reload the block contents                                                                    |
+| <kbd>Ctrl/⌘ + F1</kbd>                                                   | 当前文档<br/>current document                                   | 渲染当前文档所有块的自定义样式<br/>render the custom style for all blocks in the current document               |
+| <kbd>Ctrl/⌘ + F5</kbd>                                                   | 整个窗口<br/>entire window                                      | 重新加载整个窗口<br/>reload the entire window                                                                   |
+| <kbd>Shift + Alt + T</kbd>                                               | 整个窗口<br/>entire window                                      | 启动/关闭打字机模式<br/>turn on/off typewriter mode                                                             |
+| <kbd>Shift + Alt + C</kbd>                                               | 当前文档<br/>current document                                   | 复制当前文档 markdown 全文至剪贴板<br/>copy the full markdown text of the current document to the clipboard     |
+| <kbd>Shift + Alt + X</kbd>                                               | 当前文档<br/>current document                                   | 剪切当前文档 markdown 全文至剪贴板<br/>cut the full markdown text of the current document to the clipboard      |
+| <kbd>Shift + Alt + D</kbd>                                               | 当前文档<br/>current document                                   | 删除当前文档全文<br/>delete the full content of the current documen                                             |
+| <kbd>Ctrl/⌘ + Shift + Alt + O</kbd>                                      | 当前文档<br/>current document                                   | 复制当前文档大纲为有序列表<br/>copy the current document outline as an ordered list                             |
+| <kbd>Ctrl/⌘ + Shift + Alt + U</kbd>                                      | 当前文档<br/>current document                                   | 复制当前文档大纲为无序列表<br/>copy the current document outline as an unordered list                           |
+| <kbd>Ctrl/⌘ + Shift + Alt + T</kbd>                                      | 当前文档<br/>current document                                   | 复制当前文档大纲为任务列表<br/>copy the current document outline as a task list                                 |
 
 ### 自定义块属性 | CUSTOM BLOCKS ATTRIBUTES
 
@@ -177,8 +177,10 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
     Use the shortcut keys <kbd>Ctrl/⌘ + Middle Mouse Button</kbd> click the hyperlink to set the custom block attributes.
 - 使用快捷键 <kbd>Ctrl/⌘ + 鼠标中键</kbd> 单击视频块/音频块将当前时间戳写入剪贴板  
   Use the shortcut keys <kbd>Ctrl/⌘ + Middle Mouse Button</kbd> click the video block or the audio block to write the current timestamp to the clipboard.
-- 使用快捷键 <kbd>Ctrl/⌘ + 鼠标左键</kbd> 单击视频块/音频块跳转到自定义块属性 `time` 所设置的时间点  
-  Use the shortcut keys <kbd>Ctrl/⌘ + Left Mouse Button</kbd> click the video block or the audio block to jump to the point in time set by the custom block attribute `time`.
+- 使用快捷键 <kbd>Ctrl/⌘ + 鼠标中键</kbd> 单击 iframe 块将自定义块属性 `time` 所设置的时间点格式化为时间戳并写入剪贴板  
+  Use the shortcut keys <kbd>Ctrl/⌘ + Middle Mouse Button</kbd> click the iframe block to format the point in time set by the custom block attribute `time` as a timestamp and writes it to the clipboard.
+- 使用快捷键 <kbd>Ctrl/⌘ + 鼠标左键</kbd> 单击视频块/音频块/iframe 块跳转到自定义块属性 `time` 所设置的时间点  
+  Use the shortcut keys <kbd>Ctrl/⌘ + Left Mouse Button</kbd> click the video block, the audio block or iframe block to jump to the point in time set by the custom block attribute `time`.
 - 使用快捷键 <kbd>Ctrl/⌘ + 鼠标左键</kbd> 单击 Iframe 块或挂件块重新加载块内容  
   Use the shortcut keys <kbd>Ctrl/⌘ + Left Mouse Button</kbd> click the iframe block or the widget block to reload the block contents.
 - 使用快捷键 <kbd>Ctrl/⌘ + F5</kbd> 重新加载整个窗口  

@@ -7,6 +7,7 @@ export {
     isNum, // 判断字符串是否为数字
     hoverPreview, // 悬浮预览指定块
     timestampParse, // 时间戳解析为秒数
+    timestampFormat, // 时间格式化为时间戳
     url2id, // 块超链接转换为块 id
     id2url, // 块 id 转换为块超链接
     intPrefix, // 整数填充前导零
@@ -110,6 +111,15 @@ function timestampParse(timestamp) {
         time += parseFloat(num);
     }
     return time;
+}
+
+function timestampFormat(seconds) {
+    let h = seconds / 3600 | 0;
+    let m = (seconds % 3600) / 60 | 0;
+    let s = seconds % 60 | 0;
+    let ms = seconds * 1000 % 1000 | 0;
+    let timestamp = `${intPrefix(h, 2)}:${intPrefix(m, 2)}:${intPrefix(s, 2)}.${intPrefix(ms, 3)}`;
+    return timestamp;
 }
 
 function url2id(url) {
