@@ -25,6 +25,7 @@
     }
   ],
   "contributorsPerLine": 7,
+  "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-orange.svg?style=flat-square)](#贡献者介绍--contributor-introduction)",
   "projectName": "siyuan-theme-dark-plus",
   "projectOwner": "Zuoqiu-Yingyi",
   "repoType": "github",
