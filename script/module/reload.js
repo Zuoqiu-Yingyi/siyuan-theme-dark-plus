@@ -12,7 +12,7 @@ import {
 import { getBlockAttrs } from './../utils/api.js';
 import { timestampParse } from './../utils/misc.js';
 
-function bilibiliTimestamp(url, seconds) {
+function bilibiliTimestamp(url, seconds = null) {
     // BiliBili 视频时间戳
     if (seconds == null || seconds == 0) {
         url.searchParams.delete('t');

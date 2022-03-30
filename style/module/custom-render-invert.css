@@ -1,0 +1,10 @@
+/* 反色 */
+
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+/* 图片反色 */
+.protyle-wysiwyg[custom-render~=invert] img:not(.emoji),
+.protyle-wysiwyg [data-node-id][custom-render~=invert] img:not(.emoji) {
+    filter: var(--custom-image-filter-invert);
+}

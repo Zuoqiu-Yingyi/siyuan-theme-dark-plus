@@ -2,6 +2,7 @@
 
 export {
     merge, // 递归合并对象
+    styleHandle, // 样式标签处理
     HTMLDecode, // HTML 解码
     goto, // 跳转到指定块
     isNum, // 判断字符串是否为数字
@@ -44,11 +45,23 @@ function merge(target, ...arg) {
     }, target)
 }
 
+function styleHandle(id, content) {
+    let style = document.getElementById(id);
+    if (style) {
+        style.remove();
+    } else {
+        style = document.createElement('style');
+        style.id = id;
+        style.innerHTML = content;
+        document.head.appendChild(style);
+    }
+}
+
 function HTMLDecode(text) {
     // REF: [javascript处理HTML的Encode(转码)和Decode(解码)总结 - 孤傲苍狼 - 博客园](https://www.cnblogs.com/xdp-gacl/p/3722642.html)
     let temp = document.createElement("div");
     temp.innerHTML = text;
-    return temp.textContent;;
+    return temp.textContent;
 }
 
 function goto(id) {
