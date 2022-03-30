@@ -9,7 +9,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/Zuoqiu-Yingyi/siyuan-theme-dark-plus?style=flat-square)
 ![hits](https://hits.b3log.org/Zuoqiu-Yingyi/siyuan-theme-dark-plus.svg)
 [![GitHub all releases](https://img.shields.io/github/downloads/Zuoqiu-Yingyi/siyuan-theme-dark-plus/total?style=flat-square)](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/releases)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#贡献者介绍--contributor-introduction)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 </center>
