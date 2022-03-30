@@ -76,6 +76,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | <kbd>Ctrl/⌘ + F1</kbd>                                                   | 当前文档<br/>current document                                   | 渲染当前文档所有块的自定义样式<br/>render the custom style for all blocks in the current document               |
 | <kbd>Ctrl/⌘ + F5</kbd>                                                   | 整个窗口<br/>entire window                                      | 重新加载整个窗口<br/>reload the entire window                                                                   |
 | <kbd>Shift + Alt + T</kbd>                                               | 整个窗口<br/>entire window                                      | 启动/关闭打字机模式<br/>turn on/off typewriter mode                                                             |
+| <kbd>Shift + Alt + I</kbd>                                               | 整个窗口<br/>entire window                                      | 启动/关闭反色模式<br/>turn on/off invert color mode                                                             |
 | <kbd>Shift + Alt + C</kbd>                                               | 当前文档<br/>current document                                   | 复制当前文档 markdown 全文至剪贴板<br/>copy the full markdown text of the current document to the clipboard     |
 | <kbd>Shift + Alt + X</kbd>                                               | 当前文档<br/>current document                                   | 剪切当前文档 markdown 全文至剪贴板<br/>cut the full markdown text of the current document to the clipboard      |
 | <kbd>Shift + Alt + D</kbd>                                               | 当前文档<br/>current document                                   | 删除当前文档全文<br/>delete the full content of the current documen                                             |
@@ -90,6 +91,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | 所有块<br/>all types of blocks              | `font-family`            | `等线`<br/>`方正舒体`<br/>`方正姚体`<br/>`仿宋`<br/>`黑体`<br/>`华文彩云`<br/>`华文仿宋`<br/>`华文琥珀`<br/>`华文楷体`<br/>`华文隶书`<br/>`华文宋体`<br/>`华文细黑`<br/>`华文新魏`<br/>`华文行楷`<br/>`华文中宋`<br/>`楷体`<br/>`隶书`<br/>`宋体`<br/>`微软雅黑`<br/>`新宋体`<br/>`幼圆` | 设置块所用字体族<br/>Sets the font family used by the block.                                                                                                                       |
 | 所有块<br/>all types of blocks              | `render`                 | `danmaku`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                                       | 将块设置为滚动弹幕样式<br/>Set the block to the scrolling danmaku block style.                                                                                                     |
 | 所有块<br/>all types of blocks              | `render`                 | `scroll`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                                        | 为过长块设置纵向滚动条<br/>Set the vertical scroll bar for the overly long block.                                                                                                  |
+| 所有块<br/>all types of blocks              | `render`                 | `invert`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                                        | 将图片渲染为反色<br/>Render all images as inverted colors.                                                                                                                         |
 | 文档块<br/>document blocks                  | `background`             | `01` ~ `12`                                                                                                                                                                                                                                                                              | 设置文档的自定义背景图片<br/>Sets a custom background image for the document.                                                                                                      |
 | 文档块<br/>document blocks                  | `auto-num-h`             | `0`                                                                                                                                                                                                                                                                                      | 禁用该文档子标题的自动编号<br/>Disables automatic numbering of subheading in the document.                                                                                         |
 | 文档块<br/>document blocks                  | `auto-num-f`             | `图`<br/>`图片`<br/>`Fig.`<br/>`figure`<br/>`Figure`<br/>`FIGURE`                                                                                                                                                                                                                        | 启用该文档中图片的自动编号<br/>Enable automatic numbering of pictures in the document.                                                                                             |
@@ -186,7 +188,9 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 - 使用快捷键 <kbd>Ctrl/⌘ + F5</kbd> 重新加载整个窗口  
   Use the shortcut key <kbd>Ctrl/⌘ + F5</kbd> to reload the entire window.
 - 使用快捷键 <kbd>Shift + Alt + T</kbd> 启动/关闭打字机模式  
-  Use the shortcut key <kbd>Ctrl/⌘ + F5</kbd> to turn on/off typewriter mode.
+  Use the shortcut key <kbd>Shift + Alt + T</kbd> to turn on/off typewriter mode.
+- 使用快捷键 <kbd>Shift + Alt + I</kbd> 启动/关闭反色模式  
+  Use the shortcut key <kbd>Shift + Alt + I</kbd> to turn on/off invert color mode.
 - 使用快捷键 <kbd>Shift + Alt + C</kbd> 复制当前文档 markdown 全文至剪贴板  
   Use the shortcut keys <kbd>Shift + Alt + C</kbd> to copy the full markdown text of the current document to the clipboard.
 - 使用快捷键 <kbd>Shift + Alt + X</kbd> 剪切当前文档 markdown 全文至剪贴板  
@@ -242,6 +246,12 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
           If the block is a document block, add scroll bars to all the top-level blocks in the current document.
         - 若为非文档块, 为当前块添加滚动条  
           If the block is not a document block, add a scroll bar to the current block.
+    - `invert`: 属性值 | value
+      - 适用于所有块 | Applies to all blocks
+        - 若为文档块, 将当前文档中所有图片渲染为反色  
+          If the block is a document block, render all images in the current document as inverted colors.
+        - 若为非文档块, 将当前块中所有图片渲染为反色  
+          If the block is not a document block, render all images in the current block as inverted colors.
   - `background`: 属性名 | key
     - `01` ~ `12`: 属性值 | value
     - 适用于文档块 | Applies to document blocks
@@ -408,6 +418,9 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 
     /* 对话框背景图片 | Dialog background image */
     --custom-background-image-dialog: url("/appearance/themes/Dark+/image/background (01).jpg");
+
+    /* 图片反色滤波器 | Image inverted filter */
+    --custom-image-filter-invert: invert(100%);
 
     /* 背景图片滤波器 | Background image filter */
     /* --custom-backdrop-filter: blur(16px); */
@@ -794,6 +807,16 @@ export var config = {
                 },
             },
         },
+        invert: {
+            // 反色功能开关
+            enable: true,
+            img: {
+                // 图片反色
+                enable: true,
+                id: 'custom-invert-img', // 图片反色 ID
+                content: 'img:not(.emoji) {filter: invert(100%);}', // 样式标签内容
+            },
+        },
         comment: {
             // 批注功能开关
             enable: true,
@@ -916,6 +939,16 @@ export var config = {
                     shiftKey: true,
                     altKey: true,
                     key: 'T',
+                },
+            },
+            invert: {
+                switch: {
+                    // 反色开关(Shift + Alt + I)
+                    ctrlKey: false,
+                    metaKey: false,
+                    shiftKey: true,
+                    altKey: true,
+                    key: 'I',
                 },
             },
         },

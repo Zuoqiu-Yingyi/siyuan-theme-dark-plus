@@ -90,6 +90,16 @@ export var config = {
                 },
             },
         },
+        invert: {
+            // 反色功能开关
+            enable: true,
+            img: {
+                // 图片反色
+                enable: true,
+                id: 'custom-invert-img', // 图片反色 ID
+                content: 'img:not(.emoji) {filter: invert(100%);}', // 样式标签内容
+            },
+        },
         comment: {
             // 批注功能开关
             enable: true,
@@ -212,6 +222,16 @@ export var config = {
                     shiftKey: true,
                     altKey: true,
                     key: 'T',
+                },
+            },
+            invert: {
+                switch: {
+                    // 反色开关(Shift + Alt + I)
+                    ctrlKey: false,
+                    metaKey: false,
+                    shiftKey: true,
+                    altKey: true,
+                    key: 'I',
                 },
             },
         },

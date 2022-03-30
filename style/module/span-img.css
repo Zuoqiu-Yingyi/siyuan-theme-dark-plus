@@ -16,8 +16,8 @@
 } */
 
 /* 图片样式 */
-.b3-typography img:not(img.emoji),
-.protyle-wysiwyg img:not(img.emoji) {
+.b3-typography img:not(.emoji),
+.protyle-wysiwyg img:not(.emoji) {
     box-shadow: var(--b3-theme-on-background) 0 0 var(--custom-box-shadow-spread);
     border-radius: var(--custom-border-radius);
     padding: var(--custom-border-radius);

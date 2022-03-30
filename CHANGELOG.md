@@ -1,9 +1,13 @@
 # 更改日志 | CHANGE LOG
 
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
+- 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 修复复制当前文档大纲为有序列表时序号错误问题 | Fixed the issue that the number of the list was wrong when copying the current document outline as an ordered list.
 - 视频时间戳跳转支持 Bilibili 与 YouTube | Video timestamp jump supports Bilibili and YouTube.
 - 视频时间戳生成支持 Bilibili 与 YouTube | Video timestamp generation supports Bilibili and YouTube.
 - 删除 iframe 块的 `custom-time` 自定义属性后使用快捷键 <kbd>Ctrl + 鼠标左键</kbd> 单击 iframe 块移除 Bilibili 与 YouTube 的视频时间戳 | Remove the Bilibili and YouTube video timestamp after removing the `custom-time` attribute of the iframe block and using the shortcut keys <kbd>Ctrl + Left Mouse Button</kbd> click the iframe block.
+- 使用快捷键 <kbd>Shift + Alt + I</kbd> 将所有图片渲染为反色 | Use the shortcut keys <kbd>Shift + Alt + I</kbd> to render all images as inverted.
+- 使用自定义块属性 `custom-render: invert` 将图片渲染为反色 | Use the custom block attribute `custom-render: invert` to render images as inverted.
 
 ## v0.5.4/2022-03-29
 

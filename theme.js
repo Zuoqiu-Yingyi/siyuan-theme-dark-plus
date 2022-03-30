@@ -19,6 +19,7 @@ function loadStyle(url) {
     loadScript("/appearance/themes/Dark+/script/module/blockattrs.js");
     loadScript("/appearance/themes/Dark+/script/module/doc.js");
     loadScript("/appearance/themes/Dark+/script/module/goto.js");
+    loadScript("/appearance/themes/Dark+/script/module/invert.js");
     loadScript("/appearance/themes/Dark+/script/module/reload.js");
     loadScript("/appearance/themes/Dark+/script/module/style.js");
     loadScript("/appearance/themes/Dark+/script/module/timestamp.js");
