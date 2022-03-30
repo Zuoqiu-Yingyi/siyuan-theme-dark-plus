@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.5.5/2022-03-30
+
+- [v0.5.4 <=> v0.5.5](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.4...v0.5.5)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 修复复制当前文档大纲为有序列表时序号错误问题 | Fixed the issue that the number of the list was wrong when copying the current document outline as an ordered list.
