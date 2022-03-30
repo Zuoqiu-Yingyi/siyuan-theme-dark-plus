@@ -9,7 +9,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/Zuoqiu-Yingyi/siyuan-theme-dark-plus?style=flat-square)
 ![hits](https://hits.b3log.org/Zuoqiu-Yingyi/siyuan-theme-dark-plus.svg)
 [![GitHub all releases](https://img.shields.io/github/downloads/Zuoqiu-Yingyi/siyuan-theme-dark-plus/total?style=flat-square)](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/releases)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#贡献者介绍--contributor-introduction)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 </center>
@@ -54,6 +54,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 <table>
   <tr>
     <td align="center"><a href="https://github.com/tswwe"><img src="https://avatars.githubusercontent.com/u/36465489?v=4?s=100" width="100px;" alt=""/><br /><sub><b>thxnder</b></sub></a><br /><a href="https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/commits?author=tswwe" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/langzhou"><img src="https://avatars.githubusercontent.com/u/6987229?v=4?s=100" width="100px;" alt=""/><br /><sub><b>langzhou</b></sub></a><br /><a href="https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/commits?author=langzhou" title="Code">💻</a></td>
   </tr>
 </table>
 
