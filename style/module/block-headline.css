@@ -50,75 +50,75 @@
 
 .protyle-wysiwyg>.h1::before,
 .b3-typography>h1::before {
-    display: block;
+    display: block !important;
     float: left;
     font-size: var(--custom-h-num-font-size);
-    content: counter(h1-counter) "\00A0";
+    content: counter(h1-counter) "\00A0" !important;
 }
 
 .protyle-wysiwyg>.h2::before,
 .b3-typography>h2::before {
-    display: block;
+    display: block !important;
     float: left;
     font-size: var(--custom-h-num-font-size);
-    content: counter(h1-counter) "."counter(h2-counter) "\00A0";
+    content: counter(h1-counter) "."counter(h2-counter) "\00A0" !important;
 }
 
 .protyle-wysiwyg>.h3::before,
 .b3-typography>h3::before {
-    display: block;
+    display: block !important;
     float: left;
     font-size: var(--custom-h-num-font-size);
-    content: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "\00A0";
+    content: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "\00A0" !important;
 }
 
 .protyle-wysiwyg>.h4::before,
 .b3-typography>h4::before {
-    display: block;
+    display: block !important;
     float: left;
     font-size: var(--custom-h-num-font-size);
-    content: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "."counter(h4-counter) "\00A0";
+    content: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "."counter(h4-counter) "\00A0" !important;
 }
 
 .protyle-wysiwyg>.h5::before,
 .b3-typography>h5::before {
-    display: block;
+    display: block !important;
     float: left;
     font-size: var(--custom-h-num-font-size);
-    content: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "."counter(h4-counter) "."counter(h5-counter) "\00A0";
+    content: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "."counter(h4-counter) "."counter(h5-counter) "\00A0" !important;
 }
 
 .protyle-wysiwyg>.h6::before,
 .b3-typography>h6::before {
-    display: block;
+    display: block !important;
     float: left;
     font-size: var(--custom-h-num-font-size);
-    content: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "."counter(h4-counter) "."counter(h5-counter) "."counter(h6-counter) "\00A0";
+    content: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "."counter(h4-counter) "."counter(h5-counter) "."counter(h6-counter) "\00A0" !important;
 }
 
 /* 调整标题空行光标位置 */
 .protyle-wysiwyg>.h1>[contenteditable][spellcheck]:empty {
-    padding-left: 0.5em;
+    padding-left: var(--custom-h1-indentation);
 }
 
 .protyle-wysiwyg>.h2>[contenteditable][spellcheck]:empty {
-    padding-left: 1em;
+    padding-left: var(--custom-h2-indentation);
 }
 
 .protyle-wysiwyg>.h3>[contenteditable][spellcheck]:empty {
-    padding-left: 1.5em;
+    padding-left: var(--custom-h3-indentation);
 }
 
 .protyle-wysiwyg>.h4>[contenteditable][spellcheck]:empty {
-    padding-left: 2em;
+    padding-left: var(--custom-h4-indentation);
 }
 
 .protyle-wysiwyg>.h5>[contenteditable][spellcheck]:empty {
-    padding-left: 2.5em;
+    padding-left: var(--custom-h5-indentation);
 }
 
 .protyle-wysiwyg>.h6>[contenteditable][spellcheck]:empty {
-    padding-left: 3em;
+    padding-left: var(--custom-h6-indentation);
 }
 
 /* 标题颜色标识 */

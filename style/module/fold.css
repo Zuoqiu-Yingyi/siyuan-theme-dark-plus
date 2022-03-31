@@ -2,6 +2,47 @@
  * REF https: //github.com/UserZYF/zhang-light/blob/d309151036bafe324bcf9eb754829ebc93a88d03/theme.css#L1661
  */
 
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+/* 子标题折叠样式 */
+/* 移除子标题折叠原有样式 */
+.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeHeading"]::before {
+    content: none;
+    height: auto;
+    width: auto;
+    background: none;
+    display: none;
+    position: static;
+    left: auto;
+    top: auto;
+    border-radius: 0;
+    margin-top: 0;
+}
+/* 添加子标题折叠标记 */
+.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeHeading"]::after {
+    content: var(--custom-h-fold-mark);
+}
+/* 子标题折叠标记缩进 */
+/* .protyle-wysiwyg>.h1[data-node-id][fold="1"]::after {
+    padding-left: var(--custom-h1-indentation);
+}
+.protyle-wysiwyg>.h2[data-node-id][fold="1"]::after {
+    padding-left: var(--custom-h2-indentation);
+}
+.protyle-wysiwyg>.h3[data-node-id][fold="1"]::after {
+    padding-left: var(--custom-h3-indentation);
+}
+.protyle-wysiwyg>.h4[data-node-id][fold="1"]::after {
+    padding-left: var(--custom-h4-indentation);
+}
+.protyle-wysiwyg>.h5[data-node-id][fold="1"]::after {
+    padding-left: var(--custom-h5-indentation);
+}
+.protyle-wysiwyg>.h6[data-node-id][fold="1"]::after {
+    padding-left: var(--custom-h6-indentation);
+} */
+
 .protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeIFrame"],
 .protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeWidget"],
 .protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeVideo"],
