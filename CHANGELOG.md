@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.5.6/2022-03-31
+
+- [v0.5.5 <=> v0.5.6](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.5...v0.5.6)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 修复 `.all-contributorsrc` 文件配置问题 | Fix the configuration problem of the `.all-contributorsrc` file.
 - 完善图片, 音频与视频文件扩展名 | Improve the extension of the image, audio and video files.
