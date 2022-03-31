@@ -1,8 +1,10 @@
 # 更改日志 | CHANGE LOG
 
+- 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 修复 `.all-contributorsrc` 文件配置问题 | Fix the configuration problem of the `.all-contributorsrc` file.
 - 完善图片, 音频与视频文件扩展名 | Improve the extension of the image, audio and video files.
 - 调整面板分隔线 | Adjust the panel separator.
+- 悬浮文本输入框背景颜色设置为半透明 | The background color of the floating text input box is set to translucent.
 
 ## v0.5.5/2022-03-30
 
