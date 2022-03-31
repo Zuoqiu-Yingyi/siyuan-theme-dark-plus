@@ -7,6 +7,7 @@
 - 悬浮文本输入框背景颜色设置为半透明 | The background color of the floating text input box is set to translucent.
 - 修复行内批注功能在移动端界面失效问题 | Fixed the issue that the inline annotation function failed in the mobile interface.
 - 优化移动端侧边面板 | Optimize the mobile side panel.
+- 添加标题折叠标记 | Add a title collapse mark.
 
 ## v0.5.5/2022-03-30
 

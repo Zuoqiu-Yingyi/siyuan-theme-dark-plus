@@ -377,7 +377,13 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
     /* 标题层级标记与标题之间宽度 */
     --custom-h-mark-blank: 4px;
 
-    /* 标题层级标记 */
+    /* 子标题折叠标记 | Subheadings collapse marker */
+    /* REF [箭头图案 - Unicode 字符百科](https://unicode-table.com/cn/sets/arrow-symbols/) 
+     * ⭿ ⭱ ⭳ ↥ ↧ ↨ ⭻ ⇞ ⭽ ↕ ⇝ ⬳ ⟿ ⇼ ⮉ ⮋ ...
+     */
+    --custom-h-fold-mark: "⭿";
+
+    /* 子标题层级标记 | Subheading level markers */
     --custom-h1-mark: "¹";
     --custom-h2-mark: "²";
     --custom-h3-mark: "³";
@@ -392,7 +398,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
     --custom-h5-mark: "₅";
     --custom-h6-mark: "₆"; */
 
-    /* 标题序号缩放 | Title ordinal scaling */
+    /* 子标题序号缩放 | Subheadings ordinal scaling */
     --custom-h-num-font-size: 50%;
 
     /* 子标题及其对应大纲颜色 | Subheadings and their corresponding outline colors */
@@ -402,6 +408,14 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
     --custom-h4-color: var(--b3-card-success-color);
     --custom-h5-color: var(--b3-card-error-color);
     --custom-h6-color: var(--custom-color-8-3);
+
+    /* 子标题缩进宽度 | The width of the subheading indentation */
+    --custom-h1-indentation: 0.5em;
+    --custom-h2-indentation: 1em;
+    --custom-h3-indentation: 1.5em;
+    --custom-h4-indentation: 2em;
+    --custom-h5-indentation: 2.5em;
+    --custom-h6-indentation: 3em;
 
     /* 块引用标记 | Block reference mark */
     /* --custom-quote-l: "「";
