@@ -40,13 +40,12 @@ async function reloadIframe(target) {
                 if (config.theme.timestamp.jump.enable) {
                     // 视频网站时间戳
                     // let timestamp = target.getAttribute(config.theme.timestamp.attribute);
-                    setTimeout(() => {
+                    setTimeout(async () => {
                         getBlockAttrs(target.dataset.nodeId).then((attrs) => {
                             let href = target.firstElementChild.firstElementChild.src;
                             // console.log(attrs);
                             if (attrs) {
-                                let src = target.firstElementChild.firstElementChild.src;
-                                let url = new URL(src);
+                                let url = new URL(href);
                                 let timestamp = attrs[config.theme.timestamp.attribute];
                                 if (config.theme.regs.time.test(timestamp)) {
                                     // 块自定义属性中有时间戳
@@ -79,9 +78,8 @@ async function reloadIframe(target) {
                                         default:
                                             break;
                                     }
-
                                 }
-                                href = url.href
+                                href = url.href;
                             }
                             target.firstElementChild.firstElementChild.src = href;
                         });
