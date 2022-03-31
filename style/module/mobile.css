@@ -1,0 +1,15 @@
+/* 移动端优化 */
+
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+/* 移动端编辑区 */
+#editor {
+    background-color: var(--custom-editor-background-color);
+    backdrop-filter: var(--custom-backdrop-filter);
+}
+
+/* 移动端侧边面板 */
+#sidebar {
+    background-color: var(--custom-popover-background-color);
+}
