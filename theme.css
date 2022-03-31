@@ -60,6 +60,9 @@
 /* 数学公式 */
 @import url(/appearance/themes/Dark+/style/module/math.css);
 
+/* 移动端 */
+@import url(/appearance/themes/Dark+/style/module/mobile.css);
+
 /* 面板 */
 @import url(/appearance/themes/Dark+/style/module/panel-backlink.css);
 @import url(/appearance/themes/Dark+/style/module/panel-bookmark.css);

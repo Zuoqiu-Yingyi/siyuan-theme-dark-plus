@@ -6,6 +6,7 @@
 - 调整面板分隔线 | Adjust the panel separator.
 - 悬浮文本输入框背景颜色设置为半透明 | The background color of the floating text input box is set to translucent.
 - 修复行内批注功能在移动端界面失效问题 | Fixed the issue that the inline annotation function failed in the mobile interface.
+- 优化移动端侧边面板 | Optimize the mobile side panel.
 
 ## v0.5.5/2022-03-30
 
