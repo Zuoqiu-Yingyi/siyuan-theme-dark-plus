@@ -3,12 +3,11 @@
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 
-.layout__resize {
+.layout__resize:not(.layout__resize--lr) {
     cursor: row-resize;
     margin: var(--custom-separator-distance-compensation) 0;
     height: var(--custom-panel-distance);
-    width: 100%;
-    position: relative;
+    width: auto;
 }
 
 .layout__resize--lr {
