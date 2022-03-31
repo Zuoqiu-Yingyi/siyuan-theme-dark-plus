@@ -468,9 +468,6 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
     --custom-list-guides-line-right-u: calc(22px + 5em / 16);
     --custom-list-guides-line-right-o: calc(14px + 1em);
 
-    /* 已完成任务列表项颜色 | The color of completed task list item */
-    --custom-list-task-done-color: var(--b3-theme-on-surface);
-
     /* 透明组件颜色 | Transparent component color */
     --custom-transparent-lighter: #3338;
     --custom-transparent-light: #222A;
@@ -482,6 +479,9 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
     --custom-components-light: #444;
     --custom-components: #222;
     --custom-components-deep: #111;
+
+    /* 已完成任务列表项颜色 | The color of completed task list item */
+    --custom-list-task-done-color: var(--b3-theme-on-surface);
 
     /* 菜单栏(功能坞)背景颜色 | Menu bar (dock) background color */
     --custom-dock-background-color: var(--custom-transparent);
@@ -509,7 +509,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
     --custom-popover-background-color: var(--custom-editor-background-color);
 
     /* 弹出窗口标题栏背景颜色 | The background color of the popover title bar */
-    --custom-popover-title-bar-background-color: var(--custom-editor-title-bar-background-color);
+    --custom-popover-title-bar-background-color: var(--b3-theme-surface);
 
     /* 弹出窗口导航栏(面包屑)背景颜色 | The background color of the popover navigation bar (breadcrumbs) */
     --custom-popover-breadcrumb-bar-background-color: var(--custom-editor-breadcrumb-bar-background-color);
