@@ -81,9 +81,11 @@ function outlineCopy(mode) {
             // 大纲解析器
             switch (node.nodeName) {
                 case 'LI':
-                    let text = node.querySelector('.b3-list-item__text').innerText;
-                    let id = node.dataset.nodeId;
-                    markdown.push(`${' '.repeat(deep * 4)}${mark(++index)}${content(text, id)}`);
+                    let id = node.dataset.nodeId; // 块 ID
+                    let text = node.querySelector('.b3-list-item__text').innerText; // 块内容
+                    let level = parseInt(/^h(\d+)$/.exec(node.dataset.subtype)[1]); // 标题级别
+                    let headline = config.theme.doc.outline.headline; // 标题级别标志配置选项
+                    markdown.push(`${' '.repeat(deep * 4)}${mark(++index)}${headline.handler(level, headline.enable)}${content(text, id)}`);
                     return index;
                 case 'UL':
                     markdown.push('');
