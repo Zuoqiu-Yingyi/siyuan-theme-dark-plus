@@ -4,9 +4,9 @@
 @import url(/widgets/custom.css);
 
 div.layout-tab-container div.protyle-util {
-    background-color: transparent;
+    background-color: var(--custom-popover-background-color);
 }
 
 div.layout-tab-container div.protyle-util>div>textarea {
-    background-color: var(--custom-popover-background-color);
+    background-color: transparent;
 }
