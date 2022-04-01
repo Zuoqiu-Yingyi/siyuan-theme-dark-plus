@@ -1,6 +1,6 @@
-function loadScript(url) {
+function loadScript(url, type = 'module') {
     let script = document.createElement('script');
-    script.setAttribute('type', 'module');
+    script.setAttribute('type', type);
     script.setAttribute('src', url);
     document.head.appendChild(script);
 }

@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
+- 复制当前文档大纲可选择添加标题级别标记 `#` | Copy the current document outline with the option of adding a heading level mark `#`.
+
 ## v0.5.6/2022-03-31
 
 - [v0.5.5 <=> v0.5.6](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.5...v0.5.6)
