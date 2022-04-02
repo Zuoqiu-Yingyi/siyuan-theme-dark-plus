@@ -5,12 +5,12 @@
 
 .protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"] {
     background-color: var(--custom-block-embed-background-color) !important;
-    outline: 2px solid var(--b3-border-color);
+    outline: 2px solid var(--custom-line-color);
 }
 
 /* 嵌入块间分隔线 */
 .protyle-wysiwyg__embed {
-    /* border-top: 1px dashed var(--b3-border-color); */
-    border-top: 4px double var(--b3-border-color);
+    /* border-top: 1px dashed var(--custom-line-color); */
+    border-top: 4px double var(--custom-line-color);
     position: relative;
 }

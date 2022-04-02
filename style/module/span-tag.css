@@ -46,7 +46,7 @@ div.protyle-background__tags>div.item::before,
     width: 1em;
     height: 1em;
     margin: 0.125em 0.125em -0.125em -0.125em;
-    background: url(/appearance/themes/Dark+/icon/tag.svg);
+    background: var(--custom-span-tag-icon);
     background-size: cover;
 }
 

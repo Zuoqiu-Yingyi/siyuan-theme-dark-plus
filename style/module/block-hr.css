@@ -4,5 +4,5 @@
 @import url(/widgets/custom.css);
 
 .protyle-wysiwyg [data-node-id].hr>div {
-    border-bottom: 4px double var(--b3-border-color);
+    border-bottom: 4px double var(--custom-line-color);
 }

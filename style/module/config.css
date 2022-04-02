@@ -8,8 +8,8 @@
    The value defined in file `<workspace>/data/widgets/custom.css` overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/module/config.css`.
 */
 
-/* 导入基础配置 */
-@import url(/appearance/themes/midnight/theme.css);
+/* 导入基础配色(如果需要导入其他配色, 请修改 URL) */
+/* @import url(/appearance/themes/midnight/theme.css); */
 
 /* 自定义属性 */
 :root {
@@ -278,6 +278,8 @@
 
     /* 代码块背景颜色 | The background color of code block */
     --custom-block-code-background-color: var(--custom-transparent-lighter);
+    /* 代码块行号背景颜色 | The background color of code block linenumber */
+    --custom-block-code-linenumber-background-color: var(--custom-transparent);
 
     /* 嵌入块背景颜色 | The background color of embed block */
     --custom-block-embed-background-color: var(--custom-transparent-lighter);
@@ -329,6 +331,9 @@
     /* 鲜明颜色 | Striking color */
     --custom-striking-color: var(--b3-font-color12);
 
+    /* 自定义线条颜色 | Line color */
+    --custom-line-color: var(--b3-scroll-color);
+
     /* 数学公式整体缩放比例 | The overall scale of the mathematical formula */
     --custom-math-size: 100%;
 
@@ -365,6 +370,9 @@
 
     /* 思源文件注释引用颜色 | The color of SiYuan file comment reference */
     --custom-span-file-ref-color: var(--b3-card-warning-color);
+
+    /* 思源标签图标 | The icon of tag */
+    --custom-span-tag-icon: url(/appearance/themes/Dark+/icon/tag.svg);
 
     /* 思源标签颜色 | The color of tag */
     --custom-span-tag-color: var(--b3-theme-on-primary);

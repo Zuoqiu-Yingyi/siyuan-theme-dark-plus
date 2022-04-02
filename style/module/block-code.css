@@ -8,6 +8,11 @@
     background-color: var(--custom-block-code-background-color);
 }
 
+.b3-typography .protyle-linenumber__rows,
+.protyle-wysiwyg .protyle-linenumber__rows {
+    background-color: var(--custom-block-code-linenumber-background-color);
+}
+
 .b3-typography .hljs,
 .protyle-wysiwyg .hljs {
     background-color: transparent;
