@@ -589,7 +589,8 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
     /* 弹出菜单轮廓颜色 | The outline color of the popover menu */
     --custom-popover-menu-outline-color: var(--b3-scroll-color);
     /* 弹出菜单输入框最小宽度 | The min width of the popover menu input */
-    --custom-popover-menu-input-min-width: 50vw;
+    /* --custom-popover-menu-input-min-width: 50vw; */
+    --custom-popover-menu-input-min-width: none;
 
     /* 预览窗口 | preview window */
     /* 图片预览窗口背景颜色 | The background color of the image preview window */
