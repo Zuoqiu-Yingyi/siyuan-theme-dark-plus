@@ -14,8 +14,8 @@
 
 </center>
 
-[思源笔记](https://github.com/siyuan-note/siyuan)的一款暗黑主题  
-A dark theme of [SiYuan Note](https://github.com/siyuan-note/siyuan).
+[思源笔记](https://github.com/siyuan-note/siyuan)的一款深色主题(同时支持浅色模式, 没想到吧~)  
+A dark theme(also supports light mode, can you imagine that ~) of [SiYuan Note](https://github.com/siyuan-note/siyuan).
 
 现已上架[思源笔记社区集市](https://github.com/siyuan-note/bazaar), 如果您需要订阅[思源笔记](https://github.com/siyuan-note/siyuan)增值服务，欢迎使用我的推荐码: **h0sc9rc**  
 It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.com/siyuan-note/bazaar). If you need to subscribe to the value-added services of [siyuan note](https://github.com/siyuan-note/siyuan/blob/master/README_en_US.md), please use my referral code: **h0sc9rc**
@@ -363,9 +363,13 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
    Create a file `<workspace>/data/widgets/custom.css`
 2. 在文件 `<工作空间>/data/widgets/custom.css` 中定义的值将覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/module/config.css` 中对应的值  
    The value defined in file `<workspace>/data/widgets/custom.css` overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/module/config.css`.
-3. 创建文件 `<工作空间>/data/widgets/custom.js`  
+3. 创建文件 `<工作空间>/data/widgets/custom-light.css`  
+   Create a file `<workspace>/data/widgets/custom-light.css`
+4. 在文件 `<工作空间>/data/widgets/custom-light.css` 中定义的值将覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/color/light.css` 中对应的值  
+   The value defined in file `<workspace>/data/widgets/custom-light.css` overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/color/light.css`.
+5. 创建文件 `<工作空间>/data/widgets/custom.js`  
    Create a file `<workspace>/data/widgets/custom.js`
-4. 在文件 `<工作空间>/data/widgets/custom.js` 中定义的值将覆盖 `<工作空间>/conf/appearance/themes/Dark+/script/module/config.js` 中对应的值  
+6. 在文件 `<工作空间>/data/widgets/custom.js` 中定义的值将覆盖 `<工作空间>/conf/appearance/themes/Dark+/script/module/config.js` 中对应的值  
    The value defined in file `<workspace>/data/widgets/custom.js` overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/script/module/config.js`.
 
 ### 配置示例 | CONFIG EXAMPLE
@@ -543,6 +547,8 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 
     /* 代码块背景颜色 | The background color of code block */
     --custom-block-code-background-color: var(--custom-transparent-lighter);
+    /* 代码块行号背景颜色 | The background color of code block linenumber */
+    --custom-block-code-linenumber-background-color: var(--custom-transparent);
 
     /* 嵌入块背景颜色 | The background color of embed block */
     --custom-block-embed-background-color: var(--custom-transparent-lighter);
@@ -594,6 +600,9 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
     /* 鲜明颜色 | Striking color */
     --custom-striking-color: var(--b3-font-color12);
 
+    /* 自定义线条颜色 | Line color */
+    --custom-line-color: var(--b3-scroll-color);
+
     /* 数学公式整体缩放比例 | The overall scale of the mathematical formula */
     --custom-math-size: 100%;
 
@@ -630,6 +639,9 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 
     /* 思源文件注释引用颜色 | The color of SiYuan file comment reference */
     --custom-span-file-ref-color: var(--b3-card-warning-color);
+
+    /* 思源标签图标 | The icon of tag */
+    --custom-span-tag-icon: url(/appearance/themes/Dark+/icon/tag.svg);
 
     /* 思源标签颜色 | The color of tag */
     --custom-span-tag-color: var(--b3-theme-on-primary);
