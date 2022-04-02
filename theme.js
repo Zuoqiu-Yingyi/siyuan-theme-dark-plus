@@ -30,14 +30,14 @@ function themeMode() {
 
 const ID_CUSTOM_STYLE = 'customStyle';
 
-function changeThemeMode() {
+function changeThemeMode(hrefLight, hrefDark) {
     let href = null;
     switch (themeMode()) {
         case 'light':
-            href = `/appearance/themes/Dark+/style/color/light.css`;
+            href = hrefLight;
             break;
         case 'dark':
-            href = `/appearance/themes/Dark+/style/color/dark.css`;
+            href = hrefDark;
             break;
         default:
     }
@@ -51,7 +51,10 @@ function changeThemeMode() {
 }
 
 (() => {
-    changeThemeMode();
+    changeThemeMode(
+        `/appearance/themes/Dark+/style/color/light.css`,
+        `/appearance/themes/Dark+/style/color/dark.css`
+    );
 
     loadScript("/widgets/custom.js");
 
