@@ -44,3 +44,6 @@
     /* 思源标签背景颜色 | The background color of tag */
     --custom-span-tag-background-color: var(--b3-font-background9);
 }
+
+/* 自定义配置 */
+@import url(/widgets/custom-light.css);
