@@ -11,7 +11,7 @@
 - 调整浅色主题背景图片 | Adjust the light theme background image.
 - 为 `README.md` 添加深色模式与浅色模式预览图 | Add a dark mode and a light mode preview for the `README.md`.
 - 完善自定义配置文件说明 | Refine custom profile descriptions.
-- 将弹出菜单中的输入框最小宽度设置为 `50vw` | Set the minimum input box width in the pop-up menu to `50vw`.
+- 添加弹出菜单中的输入框最小宽度设置项 `--custom-popover-menu-input-min-width` | Adds an input box minimum width setting item in the pop-up menu `--custom-popover-menu-input-min-width`.
 
 ## v0.5.7/2022-04-02
 
