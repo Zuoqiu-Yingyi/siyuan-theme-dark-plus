@@ -111,8 +111,18 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | 段落块<br/>paragraph blocks                 | `type`                   | `图标题`<br/>`表标题`<br/>`figure-title`<br/>`table-title`<br/>(使用空格分隔多个属性值 \| Separate multiple attribute values with spaces)                                                                                                                                                | 图标题/表标题自动计数<br/>Figure titles/table titles are counted automatically.                                                                                                    |
 | 段落块<br/>paragraph blocks                 | `writing-mode`           | `horizontal-tb`<br/>`vertical-rl`<br/>`vertical-lr`                                                                                                                                                                                                                                      | (默认)从左到右自上而下的书写方式 \| (default)left-right-top-bottom<br/>从上到下自右而左的书写方式 \| top-bottom-right-left<br/>从上到下自左而右的书写方式 \| top-bottom-left-right |
 
-
 ### 功能介绍 | FUNCTIONAL DESCRIPTION
+
+- 在其他主题中引用本主题模块  
+  Reference this theme modules in other themes.
+  - 在 `<工作空间>/conf/appearance/themes/Dark+/theme.css` 文件中直接粘贴所需模块到其他主题的 `theme.css` 文件或 `custom.css` 文件中  
+    Paste the desired module into `theme.css` file or `custom.css` file for another theme in the `<workspace>/conf/appearance/themes/Dark+/theme.css` file.
+  - 将 `<工作空间>/conf/appearance/themes/Dark+/theme.js` 文件复制到其他主题的目录下  
+    Copy the `<workspace>/conf/appearance/themes/Dark+/theme.js` file to the directory of the other theme.
+  - 在其他主题中引用本主题模块时, 自定义配置文件 `<工作空间>/data/widgets/custom.css` 与 `<工作空间>/data/widgets/custom.js` 依然生效  
+    Custom configuration files `<workspace>/data/widgets/custom.css` and `<workspace>/data/widgets/custom.js` also work when this theme modules were referenced in other theme modules.
+
+---
 
 - 指向到思源 Web 静态文件服务目录的超链接显示图标  
   Hyperlinks to the Siyuan Web Static File Service directory displays icons.
@@ -158,12 +168,6 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   - <img alt="ticktick" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/ticktick.svg" style="height: 1em; width=1em;" />: `ticktick:` [TickTick](https://ticktick.com/)
   - <img alt="vscode" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/vscode.svg" style="height: 1em; width=1em;" />: `vscode:` [Visual Studio Code](https://code.visualstudio.com/)
   - <img alt="zotero" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/zotero.svg" style="height: 1em; width=1em;" />: `zotero:` [Zotero](https://www.zotero.org/)
-- 在其他主题中引用本主题模块  
-  Reference this theme modules in other themes.
-  - 在 `<工作空间>/conf/appearance/themes/Dark+/theme.css` 文件中直接粘贴所需模块到其他主题的 `theme.css` 文件或 `custom.css` 文件中  
-    Paste the desired module into `theme.css` file or `custom.css` file for another theme in the `<workspace>/conf/appearance/themes/Dark+/theme.css` file.
-  - 在其他主题中引用本主题模块时, 自定义配置文件 `<工作空间>/data/widgets/custom.css` 同样有效  
-    Custom configuration files `<workspace>/data/widgets/custom.css` also work when this theme modules were referenced in other theme modules.
 - 使用 URL 参数 `id=<内容块 ID>` 从浏览器外跳转到 Web 端的指定块(必须已经打开至少一个页签)  
   Jump from outside the browser to a specified block on the web side using the URL parameter `id=<content block ID>` (at least one tab must already be open)
   - 示例: `http(s)://host:port/stage/build/desktop/?id=20220128124308-bancmue`  
