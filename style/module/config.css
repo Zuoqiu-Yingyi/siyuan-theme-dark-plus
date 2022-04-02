@@ -299,7 +299,10 @@
     /* 偶数行 | even line */
     --custom-block-table-even-background-color: var(--custom-transparent-light);
     /* 鼠标悬浮行 | hover line */
-    --custom-block-table-hover-background-color: var(--b3-theme-background-light);
+    --custom-block-table-hover-background-color: var(--custom-components-light);
+
+    /* 列表转换成的表格鼠标悬浮背景颜色 | The background color of the mouse hover row of the table converted by a list */
+    --custom-list-table-hover-background-color: #FFF1;
 
     /* 弹出菜单 | popover menu */
     /* 弹出功能菜单背景颜色 | The background color of the popover function menu */

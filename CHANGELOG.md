@@ -5,6 +5,7 @@
 - 为虚拟引用元素添加背景色 | Adds a background color to the virtual reference element.
 - 添加浅色模式 | Adds the mode of light color.
 - 支持浅色模式与深色模式自定义样式配置文件引用 | Supports light mode and dark mode custom style profile references.
+- 调整浅色主题背景图片 | Adjust the light theme background image.
 
 ## v0.5.7/2022-04-02
 
