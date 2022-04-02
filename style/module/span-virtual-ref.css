@@ -1,0 +1,8 @@
+/* 虚拟引用 */
+
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+.protyle-wysiwyg [data-node-id] span[data-type="virtual-block-ref"]:hover {
+    background-color: var(--custom-span-virtual-ref-background-color);
+}
