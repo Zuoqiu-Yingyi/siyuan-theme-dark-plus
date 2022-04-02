@@ -361,18 +361,12 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 
 ## 自定义配置 | CUSTOM CONFIG
 
-1. 创建文件 `<工作空间>/data/widgets/custom.css`  
-   Create a file `<workspace>/data/widgets/custom.css`
-2. 在文件 `<工作空间>/data/widgets/custom.css` 中定义的值将覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/module/config.css` 中对应的值  
-   The value defined in file `<workspace>/data/widgets/custom.css` overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/module/config.css`.
-3. 创建文件 `<工作空间>/data/widgets/custom-light.css`  
-   Create a file `<workspace>/data/widgets/custom-light.css`
-4. 在文件 `<工作空间>/data/widgets/custom-light.css` 中定义的值将覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/color/light.css` 中对应的值  
-   The value defined in file `<workspace>/data/widgets/custom-light.css` overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/color/light.css`.
-5. 创建文件 `<工作空间>/data/widgets/custom.js`  
-   Create a file `<workspace>/data/widgets/custom.js`
-6. 在文件 `<工作空间>/data/widgets/custom.js` 中定义的值将覆盖 `<工作空间>/conf/appearance/themes/Dark+/script/module/config.js` 中对应的值  
-   The value defined in file `<workspace>/data/widgets/custom.js` overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/script/module/config.js`.
+| 自定义配置文件 \| Custom configuration files          | 说明 \| Product                                                                                                                                                                                                                                                |
+| :---------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `<工作空间(workspace)>/data/widgets/custom.js`        | 主题功能配置选项, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/module/config.js` 中对应的值<br/>Theme feature configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/module/config.js`         |
+| `<工作空间(workspace)>/data/widgets/custom.css`       | 主题共用样式配置, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/module/config.css` 中对应的值<br/>Themes share style configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/module/config.css`  |
+| `<工作空间(workspace)>/data/widgets/custom-light.css` | 主题浅色样式配置, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/color/light.css` 中对应的值<br/>Theme light color style configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/color/light.css` |
+| `<工作空间(workspace)>/data/widgets/custom-dark.css`  | 主题深色样式配置, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/color/dark.css` 中对应的值<br/>Theme dark color style configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/color/dark.css`    |
 
 ### 配置示例 | CONFIG EXAMPLE
 
