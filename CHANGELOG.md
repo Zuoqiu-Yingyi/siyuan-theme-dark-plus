@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 修复基础配色文件引用问题 | Fixed an issue with the underlying color matching file reference.
+
 ## v0.5.7/2022-04-02
 
 - [v0.5.6 <=> v0.5.7](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.6...v0.5.7)

@@ -9,7 +9,7 @@
 */
 
 /* 导入基础配置 */
-@import url(/appearance/themes/midnight/theme.json);
+@import url(/appearance/themes/midnight/theme.css);
 
 /* 自定义属性 */
 :root {
