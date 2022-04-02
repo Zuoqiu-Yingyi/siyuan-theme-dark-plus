@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 修复菜单项输入框选择器使用错误问题 | Fixed an issue where the menu item input box selector was used incorrectly.
+
 ## v0.6.0/2022-04-02
 
 - [v0.5.7 <=> v0.6.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.7...v0.6.0)
