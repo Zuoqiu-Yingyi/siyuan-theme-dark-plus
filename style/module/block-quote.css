@@ -8,5 +8,5 @@
 .protyle-wysiwyg blockquote,
 .protyle-wysiwyg .bq {
     background-color: var(--custom-block-quote-background-color);
-    border-left-width: 3px;
+    border-left: 3px solid var(--custom-line-color);
 }

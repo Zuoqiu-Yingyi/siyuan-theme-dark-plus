@@ -13,7 +13,7 @@
 /* 文档标题 */
 .sy__outline ul.b3-list.b3-list--background [data-type="NodeDocument"][data-treetype="outline"] .b3-list-item__text,
 .sy__outline ul.b3-list.b3-list--background [data-type="NodeDocument"][data-treetype="outline"] {
-    color: var(--b3-theme-on-primary);
+    color: var(--b3-theme-on-background);
 }
 
 .sy__outline ul.b3-list.b3-list--background [data-subtype="h1"] .b3-list-item__text,
