@@ -22,9 +22,9 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 ## 预览 | PREVIEW
 
-![深色](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/preview-dark.png)
+![浅色](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/preview-light.png)
 
-![浅色](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/preview-light.png)
+![深色](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/preview-dark.png)
 
 ![行级元素对齐](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/1647098220929.png)
 

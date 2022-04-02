@@ -1,11 +1,15 @@
 # 更改日志 | CHANGE LOG
 
+## v0.6.0/2022-04-02
+
+- [v0.5.7 <=> v0.6.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.7...v0.6.0)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 修复基础配色文件引用问题 | Fixed an issue with the underlying color matching file reference.
 - 为虚拟引用元素添加背景色 | Adds a background color to the virtual reference element.
 - 添加浅色模式 | Adds the mode of light color.
 - 支持浅色模式与深色模式自定义样式配置文件引用 | Supports light mode and dark mode custom style profile references.
 - 调整浅色主题背景图片 | Adjust the light theme background image.
+- 为 `README.md` 添加深色模式与浅色模式预览图 | Add a dark mode and a light mode preview for the `README.md`.
 
 ## v0.5.7/2022-04-02
 
