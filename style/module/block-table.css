@@ -10,6 +10,10 @@
 }
 
 /* 表头背景颜色 */
+.b3-typography table thead>tr,
+.protyle-wysiwyg table thead>tr {
+    background-color: transparent;
+}
 .b3-typography table thead,
 .protyle-wysiwyg table thead {
     background-color: var(--custom-block-table-thead-background-color);

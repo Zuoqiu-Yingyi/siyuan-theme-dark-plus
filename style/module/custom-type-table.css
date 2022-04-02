@@ -39,7 +39,7 @@
 
 /* 鼠标悬浮列表项 */
 .protyle-wysiwyg div.list[custom-type~=table] div.li:hover {
-    background-color: #FFF1;
+    background-color: var(--custom-list-table-hover-background-color);
 }
 
 /* 最顶层的列表项滚动 */

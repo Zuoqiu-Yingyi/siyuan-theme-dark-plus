@@ -14,15 +14,17 @@
 
 </center>
 
-[思源笔记](https://github.com/siyuan-note/siyuan)的一款深色主题(同时支持浅色模式, 没想到吧~)  
-A dark theme(also supports light mode, can you imagine that ~) of [SiYuan Note](https://github.com/siyuan-note/siyuan).
+[思源笔记](https://github.com/siyuan-note/siyuan)的一款深色主题 (同时支持浅色模式, 没想到吧~)  
+A dark theme (which also supports light mode, can you imagine that ~) of [SiYuan Note](https://github.com/siyuan-note/siyuan).
 
 现已上架[思源笔记社区集市](https://github.com/siyuan-note/bazaar), 如果您需要订阅[思源笔记](https://github.com/siyuan-note/siyuan)增值服务，欢迎使用我的推荐码: **h0sc9rc**  
 It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.com/siyuan-note/bazaar). If you need to subscribe to the value-added services of [siyuan note](https://github.com/siyuan-note/siyuan/blob/master/README_en_US.md), please use my referral code: **h0sc9rc**
 
 ## 预览 | PREVIEW
 
-![preview](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/preview.png)
+![深色](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/preview-dark.png)
+
+![浅色](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/preview-light.png)
 
 ![行级元素对齐](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/1647098220929.png)
 
@@ -569,6 +571,9 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
     --custom-block-table-even-background-color: var(--custom-transparent-light);
     /* 鼠标悬浮行 | hover line */
     --custom-block-table-hover-background-color: var(--b3-theme-background-light);
+
+    /* 列表转换成的表格鼠标悬浮背景颜色 | The background color of the mouse hover row of the table converted by a list */
+    --custom-list-table-hover-background-color: #FFF1;
 
     /* 弹出菜单 | popover menu */
     /* 弹出功能菜单背景颜色 | The background color of the popover function menu */
