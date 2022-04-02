@@ -10,6 +10,7 @@
 - 支持浅色模式与深色模式自定义样式配置文件引用 | Supports light mode and dark mode custom style profile references.
 - 调整浅色主题背景图片 | Adjust the light theme background image.
 - 为 `README.md` 添加深色模式与浅色模式预览图 | Add a dark mode and a light mode preview for the `README.md`.
+- 完善自定义配置文件说明 | Refine custom profile descriptions.
 
 ## v0.5.7/2022-04-02
 
