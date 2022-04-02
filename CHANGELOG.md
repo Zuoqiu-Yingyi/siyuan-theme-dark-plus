@@ -1,6 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+- 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 修复基础配色文件引用问题 | Fixed an issue with the underlying color matching file reference.
+- 为虚拟引用元素添加背景色 | Adds a background color to the virtual reference element.
 
 ## v0.5.7/2022-04-02
 
