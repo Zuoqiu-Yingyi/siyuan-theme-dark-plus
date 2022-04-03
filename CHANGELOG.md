@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+- 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
+- 为集市资源自述文件预览设置背景颜色 | Sets the background color for the Bazaar Resource Readme Preview.
+
 ## v0.6.1/2022-04-03
 
 - [v0.6.0 <=> v0.6.1](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.6.0...v0.6.1)
