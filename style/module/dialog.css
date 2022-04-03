@@ -42,6 +42,11 @@ div.b3-dialog__container div.b3-dialog__header {
     background-color: var(--custom-dialog-background-color);
 }
 
+/* 主题预览对话框 */
+#configBazaarReadme {
+    background-color: var(--custom-dialog-readme-background-color);
+}
+
 /* 自定义属性名称全宽显示 */
 div.b3-dialog__container label.customItem>span.ft__on-surface.fn__flex-center {
     min-width: 100px;

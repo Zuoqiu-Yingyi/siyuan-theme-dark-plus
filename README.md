@@ -793,6 +793,9 @@ export var config = {
 
     /* 对话框背景颜色 | Dialog background color */
     --custom-dialog-background-color: var(--custom-transparent);
+    
+    /* 对话框自述页面背景颜色 | Dialog readme page background color */
+    --custom-dialog-readme-background-color: var(--custom-transparent-deeper);
 
     /* iframe 块背景颜色 | The background color of iframe block */
     --custom-block-iframe-background-color: var(--custom-transparent);
