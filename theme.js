@@ -17,11 +17,10 @@ function loadStyle(url, id) {
 function themeMode() {
     let style = document.getElementById('themeDefaultStyle');
     let url = new URL(style.getAttribute('href'));
-    switch (url.pathname) {
-        case '/appearance/themes/daylight/theme.css':
+    switch (true) {
+        case window.matchMedia('(prefers-color-scheme: light)').matches:
             return 'light';
-
-        case '/appearance/themes/midnight/theme.css':
+        case window.matchMedia('(prefers-color-scheme: dark)').matches:
             return 'dark';
         default:
             return null;

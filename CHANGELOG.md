@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 修复菜单项输入框选择器使用错误问题 | Fixed an issue where the menu item input box selector was used incorrectly.
+- 调整判断当前主题的方法 | Adjusted the method used to determine the current theme.
 
 ## v0.6.0/2022-04-02
 
