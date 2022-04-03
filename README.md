@@ -370,383 +370,6 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 
 ### 配置示例 | CONFIG EXAMPLE
 
-#### custom.css
-
-```css
-/* 路径 | Path
- * <工作空间>/data/widgets/custom.css
- * <workspace>/data/widgets/custom.css
- */
-:root {
-    /* 标题层级标记与标题之间宽度 */
-    --custom-h-mark-blank: 4px;
-
-    /* 子标题折叠标记 | Subheadings collapse marker */
-    /* REF [箭头图案 - Unicode 字符百科](https://unicode-table.com/cn/sets/arrow-symbols/) 
-     * ⭿ ⭱ ⭳ ↥ ↧ ↨ ⭻ ⇞ ⭽ ↕ ⇝ ⬳ ⟿ ⇼ ⮉ ⮋ ...
-     */
-    --custom-h-fold-mark: "⭿";
-
-    /* 子标题层级标记 | Subheading level markers */
-    --custom-h1-mark: "¹";
-    --custom-h2-mark: "²";
-    --custom-h3-mark: "³";
-    --custom-h4-mark: "⁴";
-    --custom-h5-mark: "⁵";
-    --custom-h6-mark: "⁶";
-
-    /* --custom-h1-mark: "₁";
-    --custom-h2-mark: "₂";
-    --custom-h3-mark: "₃";
-    --custom-h4-mark: "₄";
-    --custom-h5-mark: "₅";
-    --custom-h6-mark: "₆"; */
-
-    /* 子标题序号缩放 | Subheadings ordinal scaling */
-    --custom-h-num-font-size: 50%;
-
-    /* 子标题及其对应大纲颜色 | Subheadings and their corresponding outline colors */
-    --custom-h1-color: var(--b3-theme-on-background);
-    --custom-h2-color: var(--b3-card-info-color);
-    --custom-h3-color: var(--b3-card-warning-color);
-    --custom-h4-color: var(--b3-card-success-color);
-    --custom-h5-color: var(--b3-card-error-color);
-    --custom-h6-color: var(--custom-color-8-3);
-
-    /* 子标题缩进宽度 | The width of the subheading indentation */
-    --custom-h1-indentation: 0.5em;
-    --custom-h2-indentation: 1em;
-    --custom-h3-indentation: 1.5em;
-    --custom-h4-indentation: 2em;
-    --custom-h5-indentation: 2.5em;
-    --custom-h6-indentation: 3em;
-
-    /* 块引用标记 | Block reference mark */
-    /* --custom-quote-l: "「";
-    --custom-quote-r: "」"; */
-
-    /* 
-     * ⸢: U+2E22
-     * ⸥: U+2E25
-     */
-    --custom-quote-l: "⸢";
-    --custom-quote-r: "⸥";
-
-    /* 背景图片 | Background image */
-    --custom-background-image: url("/appearance/themes/Dark+/image/background (05).jpg");
-
-    /* 对话框背景图片 | Dialog background image */
-    --custom-background-image-dialog: url("/appearance/themes/Dark+/image/background (01).jpg");
-
-    /* 图片反色滤波器 | Image inverted filter */
-    --custom-image-filter-invert: invert(100%);
-
-    /* 背景图片滤波器 | Background image filter */
-    /* --custom-backdrop-filter: blur(16px); */
-    --custom-backdrop-filter: none;
-
-    /* 悬浮面板滤波器(引用预览, 菜单) | Hover panel filters (reference preview, menu)*/
-    /* --custom-backdrop-popover-filter: blur(2px); */
-    --custom-backdrop-popover-filter: none;
-
-    /* 悬浮预览窗口最小高度 | The minimum height of the hover preview window */
-    --custom-popover-min-height: 50%;
-
-    /* 悬浮预览窗口最大宽度 | The maximum width of the hover preview window */
-    --custom-popover-max-width: 50%;
-
-    /* 悬浮菜单宽度 | The width of popover menu */
-    --custom-popover-menu-width: auto;
-
-    /* 功能面板间隔距离 | Function panel spacing distance */
-    --custom-panel-distance: 8px;
-
-    /* 功能面板分隔线补偿距离 | Function panel dividers compensate for distance
-     * 需要设置为 --custom-panel-distance 的负值 | A negative value of --custom-panel-distance is required
-     */
-    --custom-separator-distance-compensation: calc(0px - var(--custom-panel-distance));
-
-    /* 超级块内边距 | The inner margin of the superblock */
-    --custom-block-padding: 8px;
-
-    /* 圆角弧度 | Rounded arc */
-    --custom-border-radius: 4px;
-
-    /* 列表辅助线弧度 | Rounded arc of list guides line */
-    --custom-list-guides-line-radius: 16px;
-
-    /* 列表辅助线宽度 | The width of list guides line */
-    --custom-list-guides-line-width: 2px;
-
-    /* 列表辅助线与上层节点的接缝 | The seams between the list guides line and the upper layer nodes */
-    --custom-list-guides-line-top: -4px;
-
-    /* 列表辅助线与本层节点的接缝 | The seams between the list guides line and the local layer nodes */
-    --custom-list-guides-line-right-t: calc(22px + 5em / 16);
-    --custom-list-guides-line-right-u: calc(22px + 5em / 16);
-    --custom-list-guides-line-right-o: calc(14px + 1em);
-
-    /* 透明组件颜色 | Transparent component color */
-    --custom-transparent-lighter: #3338;
-    --custom-transparent-light: #222A;
-    --custom-transparent: #222C;
-    --custom-transparent-deep: #222D;
-    --custom-transparent-deeper: #222E;
-
-    /* 不透明的组件颜色 | Opaque component color */
-    --custom-components-light: #444;
-    --custom-components: #222;
-    --custom-components-deep: #111;
-
-    /* 已完成任务列表项颜色 | The color of completed task list item */
-    --custom-list-task-done-color: var(--b3-theme-on-surface);
-
-    /* 菜单栏(功能坞)背景颜色 | Menu bar (dock) background color */
-    --custom-dock-background-color: var(--custom-transparent);
-
-    /* 顶部工具栏背景颜色 | The background color of the top toolbar */
-    --custom-tool-bar-background-color: var(--custom-transparent);
-
-    /* 编辑区背景颜色 | The background color of the edit area */
-    --custom-editor-background-color: var(--custom-transparent);
-
-    /* 编辑区标题栏背景颜色 | The background color of the edit area title bar */
-    --custom-editor-title-bar-background-color: transparent;
-
-    /* 编辑区导航栏(面包屑)背景颜色 | The background color of the edit area navigation bar (breadcrumbs) */
-    --custom-editor-breadcrumb-bar-background-color: var(--custom-components);
-
-    /* 编辑区内边距 | Padding of editor pannel */
-    --custom-editor-padding-left: 24px;
-    --custom-editor-padding-right: 24px;
-
-    /* 编辑区页签栏背景颜色 | The background color of the  edit area tab bar */
-    --custom-tab-bar-background-color: var(--custom-transparent);
-
-    /* 弹出窗口背景颜色 | The background color of the popover */
-    --custom-popover-background-color: var(--custom-editor-background-color);
-
-    /* 弹出窗口标题栏背景颜色 | The background color of the popover title bar */
-    --custom-popover-title-bar-background-color: var(--b3-theme-surface);
-
-    /* 弹出窗口导航栏(面包屑)背景颜色 | The background color of the popover navigation bar (breadcrumbs) */
-    --custom-popover-breadcrumb-bar-background-color: var(--custom-editor-breadcrumb-bar-background-color);
-
-    /* 对话框遮罩背景颜色 | Dialog scrim background color */
-    --custom-dialog-scrim-background-color: var(--custom-transparent-light);
-
-    /* 对话框背景颜色 | Dialog background color */
-    --custom-dialog-background-color: var(--custom-transparent);
-
-    /* iframe 块背景颜色 | The background color of iframe block */
-    --custom-block-iframe-background-color: var(--custom-transparent);
-
-    /* 代码块背景颜色 | The background color of code block */
-    --custom-block-code-background-color: var(--custom-transparent-lighter);
-    /* 代码块行号背景颜色 | The background color of code block linenumber */
-    --custom-block-code-linenumber-background-color: var(--custom-transparent);
-
-    /* 嵌入块背景颜色 | The background color of embed block */
-    --custom-block-embed-background-color: var(--custom-transparent-lighter);
-
-    /* 引述块背景颜色 | The background color of quote block */
-    --custom-block-quote-background-color: var(--custom-transparent-lighter);
-
-    /* 超级块背景颜色 | The background color of super block */
-    --custom-block-super-background-color: var(--custom-transparent-lighter);
-
-    /* 表格块背景颜色 | The background color of table block */
-    --custom-block-table-background-color: transparent;
-    /* 表头 | thead */
-    --custom-block-table-thead-background-color: var(--custom-components-light);
-    /* 奇数行 | odd line */
-    --custom-block-table-odd-background-color: var(--custom-transparent-lighter);
-    /* 偶数行 | even line */
-    --custom-block-table-even-background-color: var(--custom-transparent-light);
-    /* 鼠标悬浮行 | hover line */
-    --custom-block-table-hover-background-color: var(--b3-theme-background-light);
-
-    /* 列表转换成的表格鼠标悬浮背景颜色 | The background color of the mouse hover row of the table converted by a list */
-    --custom-list-table-hover-background-color: #FFF1;
-
-    /* 弹出菜单 | popover menu */
-    /* 弹出功能菜单背景颜色 | The background color of the popover function menu */
-    --custom-popover-function-menu-background-color: var(--custom-transparent-deep);
-    /* 弹出菜单背景颜色 | The background color of the popover menu */
-    --custom-popover-menu-background-color: var(--custom-transparent-deep);
-    /* 弹出菜单分隔线颜色 | The color of the popover menu */
-    --custom-popover-menu-separator-color: var(--b3-theme-on-surface);
-    /* 弹出菜单中块属性字段颜色 | The color of the search menu block attribute field */
-    --custom-popover-menu-attribute-color: var(--b3-card-warning-color);
-    /* 弹出菜单中路径字段颜色 | The color of the path field */
-    --custom-popover-menu-path-color: var(--b3-card-info-color);
-    /* 弹出菜单内边距宽度 | The padding width of the popover menu */
-    --custom-popover-menu-padding-width: 0.25em;
-    /* 弹出菜单轮廓宽度 | The outline width of the popover menu */
-    --custom-popover-menu-outline-width: 1px;
-    /* 弹出菜单轮廓样式 | The outline style of the popover menu */
-    --custom-popover-menu-outline-style: solid;
-    /* 弹出菜单轮廓颜色 | The outline color of the popover menu */
-    --custom-popover-menu-outline-color: var(--b3-scroll-color);
-    /* 弹出菜单输入框最小宽度 | The min width of the popover menu input */
-    /* --custom-popover-menu-input-min-width: 50vw; */
-    --custom-popover-menu-input-min-width: none;
-
-    /* 预览窗口 | preview window */
-    /* 图片预览窗口背景颜色 | The background color of the image preview window */
-    --custom-viewer-image-background-color: var(--custom-transparent-light);
-
-    /* 阴影散布宽度 | Shadow spread */
-    --custom-box-shadow-spread: 8px;
-
-    /* 鲜明颜色 | Striking color */
-    --custom-striking-color: var(--b3-font-color12);
-
-    /* 自定义线条颜色 | Line color */
-    --custom-line-color: var(--b3-scroll-color);
-
-    /* 数学公式整体缩放比例 | The overall scale of the mathematical formula */
-    --custom-math-size: 100%;
-
-    /* 数学公式上下标缩放比例 | The mathematical formula superscript scaling */
-    --custom-math-sub-size: 100%;
-
-    /* 数学公式编号的位置 | The position of the mathematical formula number */
-    /* 固定在页面右侧 | Pinned to the right side of the page
-     * - 公式过长时会被遮挡 | Formulas can be obscured when they are too long
-     */
-    /* --custom-math-tag-position: absolute; */
-    /* 跟随在公式右侧 | Follow to the right of the formula
-     * - 公式过长时需要滑动滚动条才能看到编号 | Formulas that are too long require sliding the scroll bar to see
-     */
-    --custom-math-tag-position: relative;
-
-    /* 块引用标志颜色 | Block reference flag color */
-    --custom-ref-mark-color: var(--b3-protyle-inline-link-color);
-
-    /* 列表项聚焦颜色 | List item focus color */
-    --custom-list-item-color: var(--b3-protyle-inline-link-color);
-
-    /* 标记文字背景颜色 | The background color of the marker text */
-    --cusotm-span-mark-background-color: var(--b3-theme-primary-lighter);
-
-    /* 删除线颜色 | The color of the strikethrough */
-    --cusotm-span-strikethrough-color: var(--b3-theme-on-surface);
-
-    /* 思源内部超链接颜色 | The color of SiYuan internal hyperlink */
-    --custom-span-siyuan-link-color: var(--custom-color-8-3);
-
-    /* 思源块引用颜色 | The color of SiYuan block reference */
-    --custom-span-block-ref-color: var(--custom-striking-color);
-
-    /* 思源文件注释引用颜色 | The color of SiYuan file comment reference */
-    --custom-span-file-ref-color: var(--b3-card-warning-color);
-
-    /* 思源标签图标 | The icon of tag */
-    --custom-span-tag-icon: url(/appearance/themes/Dark+/icon/tag.svg);
-
-    /* 思源标签颜色 | The color of tag */
-    --custom-span-tag-color: var(--b3-theme-on-primary);
-
-    /* 思源标签背景颜色 | The background color of tag */
-    --custom-span-tag-background-color: var(--b3-font-background9);
-    --custom-span-doc-tag-background-color: var(--b3-theme-primary-lighter);
-
-    /* 思源虚拟引用背景颜色 | The background color of virtual block ref */
-    --custom-span-virtual-ref-background-color: var(--custom-components-light);
-
-    /* 思源标记颜色 | The color of mark */
-    --custom-span-mark-color: var(--b3-card-info-color);
-
-    /* 思源标记阴影颜色 | The shadow color of mark */
-    --custom-span-mark-shadow-color: var(--b3-theme-on-primary);
-
-    /* 思源标记阴影宽度 | The shadow width of mark */
-    --custom-span-mark-shadow-width: 4px;
-
-    /* 空行聚焦提示 | Blank line focus prompt */
-    --custom-empty-focus-p: "´･-･)ﾉ㊫";
-    --custom-empty-focus-c: "´･-･)ﾉ↹";
-    --custom-empty-focus-t: "´･-･)ﾉ☑";
-    --custom-empty-focus-u: "´･-･)ﾉ◉";
-    --custom-empty-focus-o: "´･-･)ﾉ①";
-
-    /* 空行提示 | Blank line prompt */
-    --custom-empty-p: "这里是空的 (´･-･)ﾉ㊫";
-    --custom-empty-c: "这里是空的 (´･-･)ﾉ↹";
-    --custom-empty-t: "这里是空的 (´･-･)ﾉ☑";
-    --custom-empty-u: "这里是空的 (´･-･)ﾉ◉";
-    --custom-empty-o: "这里是空的 (´･-･)ﾉ①";
-
-    /* 面板内字段名显示样式 | The field name display style within the panel */
-
-    /* 自动换行显示字段名 | Wrap displays the field names */
-    /* --custom-backlink-display: table-cell; */
-    /* --custom-bookmark-display: table-cell; */
-    /* --custom-file-display: table-cell; */
-    /* --custom-outline-display: table-cell; */
-    /* --custom-tag-display: table-cell; */
-
-    /* 过长时仅显示部分名称(默认样式) | Only partial names are displayed when too long (default style) */
-    --custom-backlink-display: -webkit-box;
-    --custom-bookmark-display: -webkit-box;
-    --custom-file-display: -webkit-box;
-    --custom-outline-display: -webkit-box;
-    --custom-tag-display: -webkit-box;
-
-    /* 文档树匹配标题颜色(文档标题尾匹配) | Document tree match header color (document end-of-title match) */
-    /* * */
-    --custom-doctree-end-asterisk-color: var(--b3-card-success-color);
-    /* # */
-    --custom-doctree-end-sharp-color: var(--b3-card-info-color);
-    /* ? */
-    --custom-doctree-end-question-color: var(--b3-card-warning-color);
-    /* ! */
-    --custom-doctree-end-exclamation-color: var(--b3-card-error-color);
-
-    /* 文档树匹配文档标题颜色(文档标题头匹配) | Document tree matches document title color (document header match) */
-    /* * */
-    --custom-doctree-begin-asterisk-color: var(--custom-color-9-3);
-    /* # */
-    --custom-doctree-begin-sharp-color: var(--custom-color-8-3);
-    /* ? */
-    --custom-doctree-begin-question-color: var(--custom-color-4-0);
-    /* ! */
-    --custom-doctree-begin-exclamation-color: var(--custom-color-6-0);
-    /* @ */
-    --custom-doctree-begin-at-color: var(--custom-color-5-0);
-    /* . */
-    --custom-doctree-begin-period-color: #0000;
-
-    /* 弹幕块移动周期 | Danmaku block movement cycle */
-    --custom-render-danmaku-time: 16s;
-
-    /* 滚动条轨道背景颜色 | The background color of scroll track */
-    --custom-scroll-track-background-color: var(--b3-border-color);
-
-    /* 过长块的溢出高度 | The overflow height of a overly long block */
-    --custom-scroll-max-height: 50vh;
-
-    /* 表格单元格等宽启用时单元格宽度 | Table cell width when cell monospaced function is enabled */
-    --custom-table-cell-monospaced-width: 256px;
-
-    /* 自定义背景图片路径 | The file path of customize background image. */
-    --custom-background-01: url("/appearance/themes/Dark+/image/background (01).jpg");
-    --custom-background-02: url("/appearance/themes/Dark+/image/background (02).jpg");
-    --custom-background-03: url("/appearance/themes/Dark+/image/background (03).jpg");
-    --custom-background-04: url("/appearance/themes/Dark+/image/background (04).jpg");
-    --custom-background-05: url("/appearance/themes/Dark+/image/background (05).jpg");
-    --custom-background-06: url("/appearance/themes/Dark+/image/background (06).jpg");
-    --custom-background-07: url("/appearance/themes/Dark+/image/background (07).jpg");
-    --custom-background-08: url("/appearance/themes/Dark+/image/background (08).jpg");
-    --custom-background-09: url("/appearance/themes/Dark+/image/background (09).jpg");
-    --custom-background-10: url("/appearance/themes/Dark+/image/background (10).jpg");
-    --custom-background-11: url("/appearance/themes/Dark+/image/background (11).jpg");
-    --custom-background-12: url("/appearance/themes/Dark+/image/background (12).jpg");
-}
-
-```
-
 #### custom.js
 
 ```js
@@ -995,6 +618,449 @@ export var config = {
     },
 };
 
+```
+
+#### custom.css
+
+```css
+/* 路径 | Path
+ * <工作空间>/data/widgets/custom.css
+ * <workspace>/data/widgets/custom.css
+ */
+:root {
+    /* 标题层级标记与标题之间宽度 */
+    --custom-h-mark-blank: 4px;
+
+    /* 子标题折叠标记 | Subheadings collapse marker */
+    /* REF [箭头图案 - Unicode 字符百科](https://unicode-table.com/cn/sets/arrow-symbols/) 
+     * ⭿ ⭱ ⭳ ↥ ↧ ↨ ⭻ ⇞ ⭽ ↕ ⇝ ⬳ ⟿ ⇼ ⮉ ⮋ ...
+     */
+    --custom-h-fold-mark: "⭿";
+
+    /* 子标题层级标记 | Subheading level markers */
+    --custom-h1-mark: "¹";
+    --custom-h2-mark: "²";
+    --custom-h3-mark: "³";
+    --custom-h4-mark: "⁴";
+    --custom-h5-mark: "⁵";
+    --custom-h6-mark: "⁶";
+
+    /* --custom-h1-mark: "₁";
+    --custom-h2-mark: "₂";
+    --custom-h3-mark: "₃";
+    --custom-h4-mark: "₄";
+    --custom-h5-mark: "₅";
+    --custom-h6-mark: "₆"; */
+
+    /* 子标题序号缩放 | Subheadings ordinal scaling */
+    --custom-h-num-font-size: 50%;
+
+    /* 子标题及其对应大纲颜色 | Subheadings and their corresponding outline colors */
+    --custom-h1-color: var(--b3-theme-on-background);
+    --custom-h2-color: var(--b3-card-info-color);
+    --custom-h3-color: var(--b3-card-warning-color);
+    --custom-h4-color: var(--b3-card-success-color);
+    --custom-h5-color: var(--b3-card-error-color);
+    --custom-h6-color: var(--custom-color-8-3);
+
+    /* 子标题缩进宽度 | The width of the subheading indentation */
+    --custom-h1-indentation: 0.5em;
+    --custom-h2-indentation: 1em;
+    --custom-h3-indentation: 1.5em;
+    --custom-h4-indentation: 2em;
+    --custom-h5-indentation: 2.5em;
+    --custom-h6-indentation: 3em;
+
+    /* 块引用标记 | Block reference mark */
+    /* --custom-quote-l: "「";
+    --custom-quote-r: "」"; */
+
+    /* 
+     * ⸢: U+2E22
+     * ⸥: U+2E25
+     */
+    --custom-quote-l: "⸢";
+    --custom-quote-r: "⸥";
+
+    /* 背景图片 | Background image */
+    --custom-background-image: url("/appearance/themes/Dark+/image/background (05).jpg");
+
+    /* 对话框背景图片 | Dialog background image */
+    --custom-background-image-dialog: url("/appearance/themes/Dark+/image/background (01).jpg");
+
+    /* 标签图标 | The icon of tag */
+    --custom-span-tag-icon: url(/appearance/themes/Dark+/icon/tag.svg);
+
+    /* 块引用波浪线动画图标 | The icon of wavy line animation */
+    --custom-span-ref-animation-icon: url(/appearance/themes/Dark+/icon/wavy-line.svg);
+
+    /* 图片反色滤波器 | Image inverted filter */
+    --custom-image-filter-invert: invert(100%);
+
+    /* 背景图片滤波器 | Background image filter */
+    /* --custom-backdrop-filter: blur(16px); */
+    --custom-backdrop-filter: none;
+
+    /* 悬浮面板滤波器(引用预览, 菜单) | Hover panel filters (reference preview, menu)*/
+    /* --custom-backdrop-popover-filter: blur(2px); */
+    --custom-backdrop-popover-filter: none;
+
+    /* 悬浮预览窗口最小高度 | The minimum height of the hover preview window */
+    --custom-popover-min-height: 50%;
+
+    /* 悬浮预览窗口最大宽度 | The maximum width of the hover preview window */
+    --custom-popover-max-width: 50%;
+
+    /* 悬浮菜单宽度 | The width of popover menu */
+    --custom-popover-menu-width: auto;
+
+    /* 功能面板间隔距离 | Function panel spacing distance */
+    --custom-panel-distance: 8px;
+
+    /* 功能面板分隔线补偿距离 | Function panel dividers compensate for distance
+     * 需要设置为 --custom-panel-distance 的负值 | A negative value of --custom-panel-distance is required
+     */
+    --custom-separator-distance-compensation: calc(0px - var(--custom-panel-distance));
+
+    /* 超级块内边距 | The inner margin of the superblock */
+    --custom-block-padding: 8px;
+
+    /* 圆角弧度 | Rounded arc */
+    --custom-border-radius: 4px;
+
+    /* 列表辅助线弧度 | Rounded arc of list guides line */
+    --custom-list-guides-line-radius: 16px;
+
+    /* 列表辅助线宽度 | The width of list guides line */
+    --custom-list-guides-line-width: 2px;
+
+    /* 列表辅助线与上层节点的接缝 | The seams between the list guides line and the upper layer nodes */
+    --custom-list-guides-line-top: -4px;
+
+    /* 列表辅助线与本层节点的接缝 | The seams between the list guides line and the local layer nodes */
+    --custom-list-guides-line-right-t: calc(22px + 5em / 16);
+    --custom-list-guides-line-right-u: calc(22px + 5em / 16);
+    --custom-list-guides-line-right-o: calc(14px + 1em);
+
+    /* 透明组件颜色 | Transparent component color */
+    --custom-transparent-lighter: #3338;
+    --custom-transparent-light: #222A;
+    --custom-transparent: #222C;
+    --custom-transparent-deep: #222D;
+    --custom-transparent-deeper: #222E;
+
+    /* 不透明的组件颜色 | Opaque component color */
+    --custom-components-light: #444;
+    --custom-components: #222;
+    --custom-components-deep: #111;
+
+    /* 已完成任务列表项颜色 | The color of completed task list item */
+    --custom-list-task-done-color: var(--b3-theme-on-surface);
+
+    /* 菜单栏(功能坞)背景颜色 | Menu bar (dock) background color */
+    --custom-dock-background-color: var(--custom-transparent);
+
+    /* 顶部工具栏背景颜色 | The background color of the top toolbar */
+    --custom-tool-bar-background-color: var(--custom-transparent);
+
+    /* 编辑区背景颜色 | The background color of the edit area */
+    --custom-editor-background-color: var(--custom-transparent);
+
+    /* 编辑区标题栏背景颜色 | The background color of the edit area title bar */
+    --custom-editor-title-bar-background-color: transparent;
+
+    /* 编辑区导航栏(面包屑)背景颜色 | The background color of the edit area navigation bar (breadcrumbs) */
+    --custom-editor-breadcrumb-bar-background-color: var(--custom-components);
+
+    /* 编辑区内边距 | Padding of editor pannel */
+    --custom-editor-padding-left: 24px;
+    --custom-editor-padding-right: 24px;
+
+    /* 编辑区页签栏背景颜色 | The background color of the  edit area tab bar */
+    --custom-tab-bar-background-color: var(--custom-transparent);
+
+    /* 弹出窗口背景颜色 | The background color of the popover */
+    --custom-popover-background-color: var(--custom-editor-background-color);
+
+    /* 弹出窗口标题栏背景颜色 | The background color of the popover title bar */
+    --custom-popover-title-bar-background-color: var(--b3-theme-surface);
+
+    /* 弹出窗口导航栏(面包屑)背景颜色 | The background color of the popover navigation bar (breadcrumbs) */
+    --custom-popover-breadcrumb-bar-background-color: var(--custom-editor-breadcrumb-bar-background-color);
+
+    /* 对话框遮罩背景颜色 | Dialog scrim background color */
+    --custom-dialog-scrim-background-color: var(--custom-transparent-light);
+
+    /* 对话框背景颜色 | Dialog background color */
+    --custom-dialog-background-color: var(--custom-transparent);
+
+    /* iframe 块背景颜色 | The background color of iframe block */
+    --custom-block-iframe-background-color: var(--custom-transparent);
+
+    /* 代码块背景颜色 | The background color of code block */
+    --custom-block-code-background-color: var(--custom-transparent-lighter);
+    /* 代码块行号背景颜色 | The background color of code block linenumber */
+    --custom-block-code-linenumber-background-color: var(--custom-transparent);
+
+    /* 嵌入块背景颜色 | The background color of embed block */
+    --custom-block-embed-background-color: var(--custom-transparent-lighter);
+
+    /* 引述块背景颜色 | The background color of quote block */
+    --custom-block-quote-background-color: var(--custom-transparent-lighter);
+
+    /* 超级块背景颜色 | The background color of super block */
+    --custom-block-super-background-color: var(--custom-transparent-lighter);
+
+    /* 表格块背景颜色 | The background color of table block */
+    --custom-block-table-background-color: transparent;
+    /* 表头 | thead */
+    --custom-block-table-thead-background-color: var(--custom-components-light);
+    /* 奇数行 | odd line */
+    --custom-block-table-odd-background-color: var(--custom-transparent-lighter);
+    /* 偶数行 | even line */
+    --custom-block-table-even-background-color: var(--custom-transparent-light);
+    /* 鼠标悬浮行 | hover line */
+    --custom-block-table-hover-background-color: var(--custom-components-light);
+
+    /* 列表转换成的表格鼠标悬浮背景颜色 | The background color of the mouse hover row of the table converted by a list */
+    --custom-list-table-hover-background-color: #FFF1;
+
+    /* 弹出菜单 | popover menu */
+    /* 弹出功能菜单背景颜色 | The background color of the popover function menu */
+    --custom-popover-function-menu-background-color: var(--custom-transparent-deep);
+    /* 弹出菜单背景颜色 | The background color of the popover menu */
+    --custom-popover-menu-background-color: var(--custom-transparent-deep);
+    /* 弹出菜单分隔线颜色 | The color of the popover menu */
+    --custom-popover-menu-separator-color: var(--b3-theme-on-surface);
+    /* 弹出菜单中块属性字段颜色 | The color of the search menu block attribute field */
+    --custom-popover-menu-attribute-color: var(--b3-card-warning-color);
+    /* 弹出菜单中路径字段颜色 | The color of the path field */
+    --custom-popover-menu-path-color: var(--b3-card-info-color);
+    /* 弹出菜单内边距宽度 | The padding width of the popover menu */
+    --custom-popover-menu-padding-width: 0.25em;
+    /* 弹出菜单轮廓宽度 | The outline width of the popover menu */
+    --custom-popover-menu-outline-width: 1px;
+    /* 弹出菜单轮廓样式 | The outline style of the popover menu */
+    --custom-popover-menu-outline-style: solid;
+    /* 弹出菜单轮廓颜色 | The outline color of the popover menu */
+    --custom-popover-menu-outline-color: var(--b3-scroll-color);
+    /* 弹出菜单输入框最小宽度 | The min width of the popover menu input */
+    /* --custom-popover-menu-input-min-width: 50vw; */
+    --custom-popover-menu-input-min-width: none;
+
+    /* 预览窗口 | preview window */
+    /* 图片预览窗口背景颜色 | The background color of the image preview window */
+    --custom-viewer-image-background-color: var(--custom-transparent-light);
+
+    /* 阴影散布宽度 | Shadow spread */
+    --custom-box-shadow-spread: 8px;
+
+    /* 鲜明颜色 | Striking color */
+    --custom-striking-color: var(--b3-font-color12);
+
+    /* 自定义线条颜色 | Line color */
+    --custom-line-color: var(--b3-scroll-color);
+
+    /* 数学公式整体缩放比例 | The overall scale of the mathematical formula */
+    --custom-math-size: 100%;
+
+    /* 数学公式上下标缩放比例 | The mathematical formula superscript scaling */
+    --custom-math-sub-size: 100%;
+
+    /* 数学公式编号的位置 | The position of the mathematical formula number */
+    /* 固定在页面右侧 | Pinned to the right side of the page
+     * - 公式过长时会被遮挡 | Formulas can be obscured when they are too long
+     */
+    /* --custom-math-tag-position: absolute; */
+    /* 跟随在公式右侧 | Follow to the right of the formula
+     * - 公式过长时需要滑动滚动条才能看到编号 | Formulas that are too long require sliding the scroll bar to see
+     */
+    --custom-math-tag-position: relative;
+
+    /* 块引用标志颜色 | Block reference flag color */
+    --custom-ref-mark-color: var(--b3-protyle-inline-link-color);
+
+    /* 列表项聚焦颜色 | List item focus color */
+    --custom-list-item-color: var(--b3-protyle-inline-link-color);
+
+    /* 标记文字背景颜色 | The background color of the marker text */
+    --cusotm-span-mark-background-color: var(--b3-theme-primary-lighter);
+
+    /* 删除线颜色 | The color of the strikethrough */
+    --cusotm-span-strikethrough-color: var(--b3-theme-on-surface);
+
+    /* 思源内部超链接颜色 | The color of SiYuan internal hyperlink */
+    --custom-span-siyuan-link-color: var(--custom-color-8-3);
+
+    /* 思源块引用颜色 | The color of SiYuan block reference */
+    --custom-span-block-ref-color: var(--custom-striking-color);
+
+    /* 思源文件注释引用颜色 | The color of SiYuan file comment reference */
+    --custom-span-file-ref-color: var(--b3-card-warning-color);
+
+    /* 思源标签颜色 | The color of tag */
+    --custom-span-tag-color: var(--b3-theme-on-primary);
+
+    /* 思源标签背景颜色 | The background color of tag */
+    --custom-span-tag-background-color: var(--b3-font-background9);
+    --custom-span-doc-tag-background-color: var(--b3-theme-primary-lighter);
+
+    /* 思源虚拟引用背景颜色 | The background color of virtual block ref */
+    --custom-span-virtual-ref-background-color: var(--custom-components-light);
+
+    /* 思源标记颜色 | The color of mark */
+    --custom-span-mark-color: var(--b3-card-info-color);
+
+    /* 思源标记阴影颜色 | The shadow color of mark */
+    --custom-span-mark-shadow-color: var(--b3-theme-on-primary);
+
+    /* 思源标记阴影宽度 | The shadow width of mark */
+    --custom-span-mark-shadow-width: 4px;
+
+    /* 空行聚焦提示 | Blank line focus prompt */
+    --custom-empty-focus-p: "´･-･)ﾉ㊫";
+    --custom-empty-focus-c: "´･-･)ﾉ↹";
+    --custom-empty-focus-t: "´･-･)ﾉ☑";
+    --custom-empty-focus-u: "´･-･)ﾉ◉";
+    --custom-empty-focus-o: "´･-･)ﾉ①";
+
+    /* 空行提示 | Blank line prompt */
+    --custom-empty-p: "这里是空的 (´･-･)ﾉ㊫";
+    --custom-empty-c: "这里是空的 (´･-･)ﾉ↹";
+    --custom-empty-t: "这里是空的 (´･-･)ﾉ☑";
+    --custom-empty-u: "这里是空的 (´･-･)ﾉ◉";
+    --custom-empty-o: "这里是空的 (´･-･)ﾉ①";
+
+    /* 面板内字段名显示样式 | The field name display style within the panel */
+
+    /* 自动换行显示字段名 | Wrap displays the field names */
+    /* --custom-backlink-display: table-cell; */
+    /* --custom-bookmark-display: table-cell; */
+    /* --custom-file-display: table-cell; */
+    /* --custom-outline-display: table-cell; */
+    /* --custom-tag-display: table-cell; */
+
+    /* 过长时仅显示部分名称(默认样式) | Only partial names are displayed when too long (default style) */
+    --custom-backlink-display: -webkit-box;
+    --custom-bookmark-display: -webkit-box;
+    --custom-file-display: -webkit-box;
+    --custom-outline-display: -webkit-box;
+    --custom-tag-display: -webkit-box;
+
+    /* 文档树匹配标题颜色(文档标题尾匹配) | Document tree match header color (document end-of-title match) */
+    /* * */
+    --custom-doctree-end-asterisk-color: var(--b3-card-success-color);
+    /* # */
+    --custom-doctree-end-sharp-color: var(--b3-card-info-color);
+    /* ? */
+    --custom-doctree-end-question-color: var(--b3-card-warning-color);
+    /* ! */
+    --custom-doctree-end-exclamation-color: var(--b3-card-error-color);
+
+    /* 文档树匹配文档标题颜色(文档标题头匹配) | Document tree matches document title color (document header match) */
+    /* * */
+    --custom-doctree-begin-asterisk-color: var(--custom-color-9-3);
+    /* # */
+    --custom-doctree-begin-sharp-color: var(--custom-color-8-3);
+    /* ? */
+    --custom-doctree-begin-question-color: var(--custom-color-4-0);
+    /* ! */
+    --custom-doctree-begin-exclamation-color: var(--custom-color-6-0);
+    /* @ */
+    --custom-doctree-begin-at-color: var(--custom-color-5-0);
+    /* . */
+    --custom-doctree-begin-period-color: #0000;
+
+    /* 弹幕块移动周期 | Danmaku block movement cycle */
+    --custom-render-danmaku-time: 16s;
+
+    /* 滚动条轨道背景颜色 | The background color of scroll track */
+    --custom-scroll-track-background-color: var(--b3-border-color);
+
+    /* 过长块的溢出高度 | The overflow height of a overly long block */
+    --custom-scroll-max-height: 50vh;
+
+    /* 表格单元格等宽启用时单元格宽度 | Table cell width when cell monospaced function is enabled */
+    --custom-table-cell-monospaced-width: 256px;
+
+    /* 自定义背景图片路径 | The file path of customize background image. */
+    --custom-background-01: url("/appearance/themes/Dark+/image/background (01).jpg");
+    --custom-background-02: url("/appearance/themes/Dark+/image/background (02).jpg");
+    --custom-background-03: url("/appearance/themes/Dark+/image/background (03).jpg");
+    --custom-background-04: url("/appearance/themes/Dark+/image/background (04).jpg");
+    --custom-background-05: url("/appearance/themes/Dark+/image/background (05).jpg");
+    --custom-background-06: url("/appearance/themes/Dark+/image/background (06).jpg");
+    --custom-background-07: url("/appearance/themes/Dark+/image/background (07).jpg");
+    --custom-background-08: url("/appearance/themes/Dark+/image/background (08).jpg");
+    --custom-background-09: url("/appearance/themes/Dark+/image/background (09).jpg");
+    --custom-background-10: url("/appearance/themes/Dark+/image/background (10).jpg");
+    --custom-background-11: url("/appearance/themes/Dark+/image/background (11).jpg");
+    --custom-background-12: url("/appearance/themes/Dark+/image/background (12).jpg");
+}
+
+```
+
+#### custom-light.css
+
+```css
+/* 路径 | Path
+ * <工作空间>/data/widgets/custom-light.css
+ * <workspace>/data/widgets/custom-light.css
+ */
+:root {
+    /* 背景图片 */
+    --custom-background-image: url("/appearance/themes/Dark+/image/light/background (05).jpeg");
+
+    /* 对话框背景图片 */
+    --custom-background-image-dialog: url("/appearance/themes/Dark+/image/light/background (01).jpeg");
+
+    /* 标签图标 | The icon of tag */
+    --custom-span-tag-icon: url(/appearance/themes/Dark+/icon/tag-light.svg);
+
+    /* 块引用波浪线动画图标 | The icon of wavy line animation */
+    --custom-span-ref-animation-icon: url(/appearance/themes/Dark+/icon/wavy-line-light.svg);
+
+    /* 透明组件颜色 | Transparent component color */
+    --custom-transparent-lighter: #1111;
+    --custom-transparent-light: #2222;
+    --custom-transparent: #EEEC;
+    --custom-transparent-deep: #EEED;
+    --custom-transparent-deeper: #EEEE;
+
+    /* 不透明的组件颜色 | Opaque component color */
+    --custom-components-light: #CCC;
+    --custom-components: #DDD;
+    --custom-components-deep: #EEE;
+
+    /* 鲜明颜色 | Striking color */
+    --custom-striking-color: var(--b3-graph-listitem-point);
+
+    /* 思源块引用颜色 | The color of SiYuan block reference */
+    --custom-span-block-ref-color: var(--custom-striking-color);
+
+    /* 思源内部超链接颜色 | The color of SiYuan internal hyperlink */
+    --custom-span-siyuan-link-color: var(--b3-protyle-inline-blockref-color);
+
+    /* 子标题及其对应大纲颜色 | Subheadings and their corresponding outline colors */
+    /* --custom-h1-color: var(--custom-color-3-0); */
+    --custom-h2-color: var(--custom-color-4-4);
+    --custom-h3-color: var(--custom-color-7-4);
+    --custom-h4-color: var(--custom-color-9-0);
+    --custom-h5-color: var(--custom-color-6-0);
+    --custom-h6-color: var(--custom-color-8-0);
+
+    /* 代码块行号背景颜色 | The background color of code block linenumber */
+    --custom-block-code-linenumber-background-color: var(--custom-transparent-light);
+
+    /* 思源标签颜色 | The color of tag */
+    --custom-span-tag-color: var(--b3-theme-on-surface);
+
+    /* 思源标签背景颜色 | The background color of tag */
+    --custom-span-tag-background-color: var(--b3-font-background9);
+
+    /* 列表转换成的表格鼠标悬浮背景颜色 | The background color of the mouse hover row of the table converted by a list */
+    --custom-list-table-hover-background-color: #0001;
+}
 ```
 
 ## 计划 | TODO
