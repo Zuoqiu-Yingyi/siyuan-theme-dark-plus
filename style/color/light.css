@@ -1,3 +1,5 @@
+/* 浅色主题配置 */
+
 :root {
     /* 背景图片 */
     --custom-background-image: url("/appearance/themes/Dark+/image/light/background (05).jpeg");
@@ -52,6 +54,3 @@
     /* 列表转换成的表格鼠标悬浮背景颜色 | The background color of the mouse hover row of the table converted by a list */
     --custom-list-table-hover-background-color: #0001;
 }
-
-/* 自定义配置 */
-@import url(/widgets/custom-light.css);

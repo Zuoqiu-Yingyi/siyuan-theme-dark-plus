@@ -11,9 +11,6 @@
 @import url(/appearance/themes/Dark+/style/module/block-super.css);
 @import url(/appearance/themes/Dark+/style/module/block-table.css);
 
-/* 配置文件 */
-@import url(/appearance/themes/Dark+/style/module/config.css);
-
 /* 自定义属性 */
 @import url(/appearance/themes/Dark+/style/module/custom-auto-num-h.css);
 @import url(/appearance/themes/Dark+/style/module/custom-auto-num-f.css);
@@ -94,5 +91,8 @@
 /* 预览窗口 */
 @import url(/appearance/themes/Dark+/style/module/viewer-image.css);
 
-/* 自定义配置 */
+/* 配置文件 */
+@import url(/appearance/themes/Dark+/style/module/config.css);
+
+/* 自定义配置文件 */
 @import url(/widgets/custom.css);

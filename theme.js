@@ -25,32 +25,60 @@ function themeMode() {
     }
 }
 
+const ID_COLOR_STYLE = 'colorStyle';
 const ID_CUSTOM_STYLE = 'customStyle';
 
-function changeThemeMode(hrefLight, hrefDark) {
-    let href = null;
+function loadTheme(
+    colorStyleID,
+    colorStyleHref,
+    customStyleID,
+    customStyleHref,
+) {
+    let style = document.getElementById(colorStyleID);
+    if (style) {
+        style.setAttribute('href', colorStyleHref);
+    }
+    else {
+        loadStyle(colorStyleHref, colorStyleID);
+    }
+
+    style = document.getElementById(customStyleID);
+    if (style) {
+        style.setAttribute('href', customStyleHref);
+    }
+    else {
+        loadStyle(customStyleHref, customStyleID);
+    }
+}
+
+function changeThemeMode(
+    lightStyle,
+    darkStyle,
+    customLightStyle,
+    customDarkStyle,
+) {
+    let href_color = null;
+    let href_custom = null;
     switch (themeMode()) {
         case 'light':
-            href = hrefLight;
+            href_color = lightStyle;
+            href_custom = customLightStyle;
             break;
         case 'dark':
         default:
-            href = hrefDark;
+            href_color = darkStyle;
+            href_custom = customDarkStyle;
             break;
     }
-    let style = document.getElementById(ID_CUSTOM_STYLE);
-    if (style) {
-        style.setAttribute('href', href);
-    }
-    else {
-        loadStyle(href, ID_CUSTOM_STYLE);
-    }
+    loadTheme(ID_COLOR_STYLE, href_color, ID_CUSTOM_STYLE, href_custom);
 }
 
 (() => {
     changeThemeMode(
         `/appearance/themes/Dark+/style/color/light.css`,
-        `/appearance/themes/Dark+/style/color/dark.css`
+        `/appearance/themes/Dark+/style/color/dark.css`,
+        `/widgets/custom-light.css`,
+        `/widgets/custom-dark.css`,
     );
 
     loadScript("/widgets/custom.js");

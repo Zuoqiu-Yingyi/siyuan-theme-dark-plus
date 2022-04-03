@@ -6,6 +6,7 @@
 - 调整判断当前主题的方法 | Adjusted the method used to determine the current theme.
 - 将默认主题模式设置为深色模式 | Set the default theme mode to dark mode.
 - 改进浅色模式块引用波浪线动画图标 | Improved the wave animation icon for the light mode block reference element.
+- 修复自定义配置文件 `custom-light.css` 与 `custom-dark.css` 失效问题 | Fixed an issue where the custom configuration file `custom-light.css` and `custom-dark.css` were not working.
 
 ## v0.6.0/2022-04-02
 
