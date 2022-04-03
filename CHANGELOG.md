@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.6.1/2022-04-03
+
+- [v0.6.0 <=> v0.6.1](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.6.0...v0.6.1)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 配置文件 `light.css` 有变更 | There are changes to the configuration file `light.css`.
 - 修复菜单项输入框选择器使用错误问题 | Fixed an issue where the menu item input box selector was used incorrectly.
