@@ -2,6 +2,7 @@
 
 - 修复菜单项输入框选择器使用错误问题 | Fixed an issue where the menu item input box selector was used incorrectly.
 - 调整判断当前主题的方法 | Adjusted the method used to determine the current theme.
+- 将默认主题模式设置为深色模式 | Set the default theme mode to dark mode.
 
 ## v0.6.0/2022-04-02
 

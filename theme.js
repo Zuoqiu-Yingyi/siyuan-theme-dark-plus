@@ -15,8 +15,6 @@ function loadStyle(url, id) {
 }
 
 function themeMode() {
-    let style = document.getElementById('themeDefaultStyle');
-    let url = new URL(style.getAttribute('href'));
     switch (true) {
         case window.matchMedia('(prefers-color-scheme: light)').matches:
             return 'light';
@@ -36,9 +34,9 @@ function changeThemeMode(hrefLight, hrefDark) {
             href = hrefLight;
             break;
         case 'dark':
+        default:
             href = hrefDark;
             break;
-        default:
     }
     let style = document.getElementById(ID_CUSTOM_STYLE);
     if (style) {
