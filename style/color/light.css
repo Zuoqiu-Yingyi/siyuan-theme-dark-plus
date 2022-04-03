@@ -1,5 +1,7 @@
 /* 浅色主题配置 */
 
+/* @import url(/appearance/themes/daylight/theme.css); */
+
 :root {
     /* 背景图片 */
     --custom-background-image: url("/appearance/themes/Dark+/image/light/background (05).jpeg");

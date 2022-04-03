@@ -5,7 +5,7 @@
  */
 function loadScript(url, type = 'module') {
     let script = document.createElement('script');
-    script.setAttribute('type', type);
+    if (type) script.setAttribute('type', type);
     script.setAttribute('src', url);
     document.head.appendChild(script);
 }
@@ -15,9 +15,9 @@ function loadScript(url, type = 'module') {
  * @param {string} url 样式地址
  * @param {string} id 样式 ID
  */
-function loadStyle(url, id) {
+function loadStyle(url, id = null) {
     let style = document.createElement('link');
-    style.setAttribute('id', id);
+    if (id) style.setAttribute('id', id);
     style.setAttribute('type', 'text/css');
     style.setAttribute('rel', 'stylesheet');
     style.setAttribute('href', url);
@@ -47,10 +47,23 @@ const ID_CUSTOM_STYLE = 'customStyle';
  * @returns {string} light 或 dark
  */
 function themeMode() {
-    switch (true) {
-        case window.matchMedia('(prefers-color-scheme: light)').matches:
+    /* 根据浏览器主题判断颜色模式 */
+    // switch (true) {
+    //     case window.matchMedia('(prefers-color-scheme: light)').matches:
+    //         return 'light';
+    //     case window.matchMedia('(prefers-color-scheme: dark)').matches:
+    //         return 'dark';
+    //     default:
+    //         return null;
+    // }
+
+    /* 根据思源加载的配色文件判断颜色模式 */
+    let style = document.getElementById('themeDefaultStyle');
+    let url = new URL(style.getAttribute('href'));
+    switch (url.pathname) {
+        case '/appearance/themes/daylight/theme.css':
             return 'light';
-        case window.matchMedia('(prefers-color-scheme: dark)').matches:
+        case '/appearance/themes/midnight/theme.css':
             return 'dark';
         default:
             return null;
@@ -88,6 +101,7 @@ function changeThemeMode(
 }
 
 (() => {
+    /* 根据当前主题模式加载样式配置文件 */
     changeThemeMode(
         `/appearance/themes/Dark+/style/color/light.css`,
         `/appearance/themes/Dark+/style/color/dark.css`,
@@ -95,8 +109,7 @@ function changeThemeMode(
         `/widgets/custom-dark.css`,
     );
 
-    loadScript("/widgets/custom.js");
-
+    /* 加载主题功能 */
     loadScript("/appearance/themes/Dark+/script/module/blockattrs.js");
     loadScript("/appearance/themes/Dark+/script/module/doc.js");
     loadScript("/appearance/themes/Dark+/script/module/goto.js");
@@ -106,6 +119,10 @@ function changeThemeMode(
     loadScript("/appearance/themes/Dark+/script/module/timestamp.js");
     loadScript("/appearance/themes/Dark+/script/module/typewriter.js");
 
+    /* 加载独立应用 */
     loadScript("/appearance/themes/Dark+/app/comment/index.js");
     // loadScript("/appearance/themes/Dark+/script/test/listener.js");
+
+    /* 加载自定义配置文件 */
+    loadScript("/widgets/custom.js");
 })();
