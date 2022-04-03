@@ -1,3 +1,8 @@
+/**
+ * 加载脚本文件
+ * @param {string} url 脚本地址
+ * @param {string} type 脚本类型
+ */
 function loadScript(url, type = 'module') {
     let script = document.createElement('script');
     script.setAttribute('type', type);
@@ -5,6 +10,11 @@ function loadScript(url, type = 'module') {
     document.head.appendChild(script);
 }
 
+/**
+ * 加载样式文件
+ * @param {string} url 样式地址
+ * @param {string} id 样式 ID
+ */
 function loadStyle(url, id) {
     let style = document.createElement('link');
     style.setAttribute('id', id);
@@ -14,6 +24,28 @@ function loadStyle(url, id) {
     document.head.appendChild(style);
 }
 
+/**
+ * 更新样式文件
+ * @param {string} id 样式文件 ID
+ * @param {string} href 样式文件地址
+ */
+function updateStyle(id, href) {
+    let style = document.getElementById(id);
+    if (style) {
+        style.setAttribute('href', href);
+    }
+    else {
+        loadStyle(href, id);
+    }
+}
+
+const ID_COLOR_STYLE = 'colorStyle';
+const ID_CUSTOM_STYLE = 'customStyle';
+
+/**
+ * 获取主题模式
+ * @returns {string} light 或 dark
+ */
 function themeMode() {
     switch (true) {
         case window.matchMedia('(prefers-color-scheme: light)').matches:
@@ -25,32 +57,13 @@ function themeMode() {
     }
 }
 
-const ID_COLOR_STYLE = 'colorStyle';
-const ID_CUSTOM_STYLE = 'customStyle';
-
-function loadTheme(
-    colorStyleID,
-    colorStyleHref,
-    customStyleID,
-    customStyleHref,
-) {
-    let style = document.getElementById(colorStyleID);
-    if (style) {
-        style.setAttribute('href', colorStyleHref);
-    }
-    else {
-        loadStyle(colorStyleHref, colorStyleID);
-    }
-
-    style = document.getElementById(customStyleID);
-    if (style) {
-        style.setAttribute('href', customStyleHref);
-    }
-    else {
-        loadStyle(customStyleHref, customStyleID);
-    }
-}
-
+/**
+ * 更换主题模式
+ * @param {string} lightStyle 浅色主题配置文件路径
+ * @param {string} darkStyle 深色主题配置文件路径
+ * @param {string} customLightStyle 浅色主题自定义配置文件路径
+ * @param {string} customDarkStyle 深色主题自定义配置文件路径
+ */
 function changeThemeMode(
     lightStyle,
     darkStyle,
@@ -70,7 +83,8 @@ function changeThemeMode(
             href_custom = customDarkStyle;
             break;
     }
-    loadTheme(ID_COLOR_STYLE, href_color, ID_CUSTOM_STYLE, href_custom);
+    updateStyle(ID_COLOR_STYLE, href_color);
+    updateStyle(ID_CUSTOM_STYLE, href_custom);
 }
 
 (() => {
