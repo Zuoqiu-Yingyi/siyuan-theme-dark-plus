@@ -53,6 +53,11 @@ div.b3-dialog__container label.customItem>span.ft__on-surface.fn__flex-center {
     width: auto !important;
 }
 
+/* 关闭按钮 */
+svg.b3-dialog__close:hover {
+    background-color: var(--b3-theme-on-surface);
+}
+
 /** 搜索对话框
  *  REF: [siyuan-themes-tsundoku-dark/ctrlP.css at main · Achuan-2/siyuan-themes-tsundoku-dark](https: //github.com/Achuan-2/siyuan-themes-tsundoku-dark/blob/main/style/ctrlP.css)
  */
@@ -63,12 +68,7 @@ body>div[data-key]>.b3-dialog>.b3-dialog__container>div>.fn__flex>.fn__flex-colu
     height: var(--custom-dialog-search-height) !important;
 }
 
-/* 关闭按钮 */
-body>div[data-key]>.b3-dialog>.b3-dialog__container>svg.b3-dialog__close:hover {
-    background-color: var(--b3-theme-on-surface);
-}
-
-/* 调整关闭按钮位置, 避免被遮挡 */
+/* 调整搜索框关闭按钮位置, 避免被遮挡 */
 body>div[data-key]>.b3-dialog>.b3-dialog__container>svg.b3-dialog__close {
     right: calc((100vw - var(--custom-dialog-search-width)) / -2);
 }
