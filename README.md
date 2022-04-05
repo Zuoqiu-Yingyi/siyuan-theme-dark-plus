@@ -793,6 +793,10 @@ export var config = {
 
     /* 对话框背景颜色 | Dialog background color */
     --custom-dialog-background-color: var(--custom-transparent);
+
+    /* 搜索对话框尺寸 | The size of the search dialog box. */
+    --custom-dialog-search-width: 96vw;
+    --custom-dialog-search-height: 96vh;
     
     /* 对话框自述页面背景颜色 | Dialog readme page background color */
     --custom-dialog-readme-background-color: var(--custom-transparent-deeper);
@@ -1000,7 +1004,6 @@ export var config = {
     --custom-background-11: url("/appearance/themes/Dark+/image/background (11).jpg");
     --custom-background-12: url("/appearance/themes/Dark+/image/background (12).jpg");
 }
-
 ```
 
 #### custom-light.css

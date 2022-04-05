@@ -39,8 +39,6 @@ div.b3-menu__separator {
 
 /* 悬浮搜索菜单/功能菜单 */
 div.b3-list.b3-list--background {
-    /* column-count: 4; */
-    /* max-height: 395px !important; */
     /* REF: [第一个子元素在未超过父元素高度的情况下设置margin-top导致出现竖向滚动条的问题_Andrasen的博客-CSDN博客](https://blog.csdn.net/Andrasen/article/details/105676175) */
     padding: var(--custom-popover-menu-padding-width);
     background-color: var(--custom-popover-menu-background-color);
@@ -48,6 +46,11 @@ div.b3-list.b3-list--background {
     width: var(--custom-popover-menu-width) !important;
     outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
     overflow-x: visible !important;
+}
+div.b3-list.b3-list--background:not(#searchList) {
+    /* column-count: 4; */
+    /* max-height: 395px !important; */
+    width: var(--custom-popover-menu-width) !important;
 }
 
 /* 补偿第一项 */
