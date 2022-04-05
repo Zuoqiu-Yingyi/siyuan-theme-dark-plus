@@ -2,6 +2,7 @@
 
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 为集市资源自述文件预览设置背景颜色 | Sets the background color for the Bazaar Resource Readme Preview.
+- 窗口较宽时搜索对话框并排显示搜索结果 | When the window is wide, the search results of the search dialog are displayed in a row.
 
 ## v0.6.1/2022-04-03
 
