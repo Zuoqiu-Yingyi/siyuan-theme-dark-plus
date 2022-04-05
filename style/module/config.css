@@ -219,6 +219,9 @@
     /* 列表辅助线宽度 | The width of list guides line */
     --custom-list-guides-line-width: 2px;
 
+    /* 列表辅助线颜色 | The color of list guides line */
+    --custom-list-guides-line-color: var(--b3-theme-background-light);
+
     /* 列表辅助线与上层节点的接缝 | The seams between the list guides line and the upper layer nodes */
     --custom-list-guides-line-top: -4px;
 
