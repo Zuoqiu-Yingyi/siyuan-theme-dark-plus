@@ -68,13 +68,9 @@ body>div[data-key]>.b3-dialog>.b3-dialog__container>svg.b3-dialog__close:hover {
     background-color: var(--b3-theme-on-surface);
 }
 
-/* 窗口较窄 */
-@media screen and (max-width: 1280px) {
-
-    /* 调整关闭按钮位置, 避免被遮挡 */
-    body>div[data-key]>.b3-dialog>.b3-dialog__container>svg.b3-dialog__close {
-        right: calc((100vw - var(--custom-dialog-search-width)) / -2);
-    }
+/* 调整关闭按钮位置, 避免被遮挡 */
+body>div[data-key]>.b3-dialog>.b3-dialog__container>svg.b3-dialog__close {
+    right: calc((100vw - var(--custom-dialog-search-width)) / -2);
 }
 
 /* 窗口较宽时并排显示搜索结果 */
