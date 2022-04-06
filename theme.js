@@ -109,6 +109,9 @@ function changeThemeMode(
         `/widgets/custom-dark.css`,
     );
 
+    /* 加载 HTML 块中使用的小工具 */
+    loadScript("/appearance/themes/Dark+/script/module/html.js", "text/javascript");
+
     /* 加载主题功能 */
     loadScript("/appearance/themes/Dark+/script/module/blockattrs.js");
     loadScript("/appearance/themes/Dark+/script/module/doc.js");
