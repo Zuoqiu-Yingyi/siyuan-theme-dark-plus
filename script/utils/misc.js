@@ -12,6 +12,8 @@ export {
     url2id, // 块超链接转换为块 id
     id2url, // 块 id 转换为块超链接
     intPrefix, // 整数填充前导零
+    shuffle, // 打乱数组
+    createLookIterator, // 创建循环迭代器
 }
 
 // REF [js - 对象递归合并merge - zc-lee - 博客园](https://www.cnblogs.com/zc-lee/p/15873611.html)
@@ -146,4 +148,20 @@ function id2url(id) {
 function intPrefix(num, length) {
     let s = `${num}`;
     return s.length < length ? (Array(length).join('0') + num).slice(-length) : s;
+}
+
+function shuffle(arr) {
+    // REF [如何将一个 JavaScript 数组打乱顺序？ - troy351的回答 - 知乎](https://www.zhihu.com/question/68330851/answer/262111061)
+    for (let i = 1; i < arr.length; i++) {
+        const random = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[random]] = [arr[random], arr[i]];
+    }
+    return arr;
+}
+
+function* createLookIterator(items) {
+    // REF [ES6中的迭代器(Iterator)和生成器(Generator) - 小火柴的蓝色理想 - 博客园](https://www.cnblogs.com/xiaohuochai/p/7253466.html)
+    for (let i = 0; true; i = (i + 1) % items.length) {
+        yield items[i];
+    }
 }

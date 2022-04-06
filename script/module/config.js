@@ -104,6 +104,43 @@ export var config = {
                 content: 'img:not(.emoji) {filter: invert(100%);}', // 样式标签内容
             },
         },
+        background: {
+            // 背景图片功能开关
+            enable: true,
+            image: {
+                enable: true, // 是否启用背景图片更改功能
+                random: {
+                    enable: true, // 随机背景图片
+                    light: 'https://source.unsplash.com/random/1920x1080/?simple', // 随机亮色背景图片 URL
+                    dark: 'https://source.unsplash.com/random/1920x1080/?dark', // 随机暗色背景图片 URL
+                },
+                custom: {
+                    enable: true, // 自定义背景图片
+                    light: [ // 自定义亮色背景图片 URL 列表
+                        '/appearance/themes/Dark+/image/light/background (01).jpeg',
+                        '/appearance/themes/Dark+/image/light/background (02).jpeg',
+                        '/appearance/themes/Dark+/image/light/background (03).jpeg',
+                        '/appearance/themes/Dark+/image/light/background (04).jpeg',
+                        '/appearance/themes/Dark+/image/light/background (05).jpeg',
+                        '/appearance/themes/Dark+/image/light/background (06).jpeg',
+                    ],
+                    dark: [ // 自定义暗色背景图片 URL 列表
+                        '/appearance/themes/Dark+/image/background (01).jpg',
+                        '/appearance/themes/Dark+/image/background (02).jpg',
+                        '/appearance/themes/Dark+/image/background (03).jpg',
+                        '/appearance/themes/Dark+/image/background (04).jpg',
+                        '/appearance/themes/Dark+/image/background (05).jpg',
+                        '/appearance/themes/Dark+/image/background (06).jpg',
+                        '/appearance/themes/Dark+/image/background (07).jpg',
+                        '/appearance/themes/Dark+/image/background (08).jpg',
+                        '/appearance/themes/Dark+/image/background (09).jpg',
+                        '/appearance/themes/Dark+/image/background (10).jpg',
+                        '/appearance/themes/Dark+/image/background (11).jpg',
+                        '/appearance/themes/Dark+/image/background (12).jpg',
+                    ],
+                },
+            },
+        },
         comment: {
             // 批注功能开关
             enable: true,
@@ -236,6 +273,26 @@ export var config = {
                     shiftKey: true,
                     altKey: true,
                     key: 'I',
+                },
+            },
+            background: {
+                image: {
+                    random: {
+                        // 随机背景图片(Shift + Alt + R)
+                        ctrlKey: false,
+                        metaKey: false,
+                        shiftKey: true,
+                        altKey: true,
+                        key: 'R',
+                    },
+                    custom: {
+                        // 自定义背景图片(Ctrl + Shift + Alt + I)
+                        ctrlKey: true,
+                        metaKey: true,
+                        shiftKey: true,
+                        altKey: true,
+                        key: 'R',
+                    },
                 },
             },
         },

@@ -6,6 +6,9 @@
 - 调整搜索对话框关闭按钮, 避免被遮挡 | Adjust the close button of the search dialog to avoid being covered.
 - 调整列表辅助线颜色为不透明颜色 | Adjust the color of the list helper line to opaque color.
 - 添加 HTML 块中使用的工具函数 `runcmd(commands: string)` | Add the function `runcmd(commands: string))` to use in HTML blocks.
+- 使用快捷键 <kbd>Shift + Alt + R</kbd> 使用随机背景图片(来源: [Beautiful Free Images & Pictures | Unsplash](https://unsplash.com/)) | Use the shortcut <kbd>Shift + Alt + R</kbd> to use the random background image (source: [Beautiful Free Images & Pictures | Unsplash](https://unsplash.com/)).
+- 使用快捷键 <kbd>Ctrl + Shift + Alt + R</kbd> 使用随机内置背景图片 | Use the shortcut <kbd>Ctrl + Shift + Alt + R</kbd> to use the random built-in background image.
+
 
 ## v0.6.1/2022-04-03
 

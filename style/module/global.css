@@ -5,21 +5,21 @@
 
 /* 背景图片 */
 body.fn__flex-column {
-    background-image: var(--custom-background-image) !important;
+    background-image: var(--custom-background-image);
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
     background-attachment: fixed !important;
-    background-color: transparent !important;
+    background-color: transparent;
     border: none;
 }
 
 /* 全屏模式 */
 .fn__flex-1.protyle.fullscreen {
-    background-image: var(--custom-background-image) !important;
+    background-image: var(--custom-background-image);
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
     background-attachment: fixed !important;
-    background-color: transparent !important;
+    background-color: transparent;
 }
