@@ -5,6 +5,7 @@
 - 窗口较宽时搜索对话框并排显示搜索结果 | When the window is wide, the search results of the search dialog are displayed in a row.
 - 调整搜索对话框关闭按钮, 避免被遮挡 | Adjust the close button of the search dialog to avoid being covered.
 - 调整列表辅助线颜色为不透明颜色 | Adjust the color of the list helper line to opaque color.
+- 添加 HTML 块中使用的工具函数 `runcmd(commands: string)` | Add the function `runcmd(commands: string))` to use in HTML blocks.
 
 ## v0.6.1/2022-04-03
 
