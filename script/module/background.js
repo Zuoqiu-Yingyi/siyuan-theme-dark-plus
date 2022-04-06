@@ -9,15 +9,16 @@ import {
 
 function changeBackground(background, mode = 'image') {
     // console.log(background);
+    let element = document.querySelector('.fn__flex-1.protyle.fullscreen') || document.body;
     switch (mode) {
         case 'color':
-            document.body.style.backgroundColor = `transparent`;
-            document.body.style.backgroundColor = `${background}`;
+            element.style.backgroundColor = ``;
+            element.style.backgroundColor = `${background}`;
             break;
         case 'image':
         default:
-            document.body.style.backgroundImage = `none`;
-            document.body.style.backgroundImage = `url("${background}")`;
+            element.style.backgroundImage = ``;
+            element.style.backgroundImage = `url("${background}")`;
             break;
     }
 }

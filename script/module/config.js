@@ -111,8 +111,8 @@ export var config = {
                 enable: true, // 是否启用背景图片更改功能
                 random: {
                     enable: true, // 随机背景图片
-                    light: 'https://source.unsplash.com/random/1920x1080/?simple', // 随机亮色背景图片 URL
-                    dark: 'https://source.unsplash.com/random/1920x1080/?dark', // 随机暗色背景图片 URL
+                    light: 'https://source.unsplash.com/random/1920x1080/?bright', // 随机亮色背景图片 URL
+                    dark: 'https://source.unsplash.com/random/1920x1080/?night', // 随机暗色背景图片 URL
                 },
                 custom: {
                     enable: true, // 自定义背景图片
