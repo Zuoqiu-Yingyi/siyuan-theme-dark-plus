@@ -1,5 +1,9 @@
 # 更改日志 | CHANGE LOG
 
+## v0.6.2/2022-04-06
+
+- [v0.6.1 <=> v0.6.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.6.1...v0.6.2)
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 为集市资源自述文件预览设置背景颜色 | Sets the background color for the Bazaar Resource Readme Preview.
 - 窗口较宽时搜索对话框并排显示搜索结果 | When the window is wide, the search results of the search dialog are displayed in a row.
@@ -8,7 +12,6 @@
 - 添加 HTML 块中使用的工具函数 `runcmd(commands: string)` | Add the function `runcmd(commands: string))` to use in HTML blocks.
 - 使用快捷键 <kbd>Shift + Alt + R</kbd> 使用随机背景图片(来源: [Beautiful Free Images & Pictures | Unsplash](https://unsplash.com/)) | Use the shortcut <kbd>Shift + Alt + R</kbd> to use the random background image (source: [Beautiful Free Images & Pictures | Unsplash](https://unsplash.com/)).
 - 使用快捷键 <kbd>Ctrl + Shift + Alt + R</kbd> 使用随机内置背景图片 | Use the shortcut <kbd>Ctrl + Shift + Alt + R</kbd> to use the random built-in background image.
-
 
 ## v0.6.1/2022-04-03
 
