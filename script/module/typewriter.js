@@ -10,36 +10,50 @@ function activate() {
     if (protyle_wysiwyg.length > 0) {
         for (let editor of protyle_wysiwyg) {
             editor.onkeyup = (e, t) => {
-                let block = null;
-                // 当前页面
-                let page = editor.parentElement;
-                // let page = document.activeElement.parentElement;
-                if (document.activeElement.nodeName == 'TABLE') {
-                    if (config.theme.typewriter.switch.NodeTable.enable == false) return;
-                    // 表格获取焦点
-                    block = window.getSelection().focusNode.parentElement;
-                    switch (config.theme.typewriter.switch.NodeTable.mode) {
-                        // 表格聚焦模式
-                        case 'row': // 聚焦行
-                            while (block != null && block.nodeName != 'TD') block = block.parentElement;
-                            break;
-                        case 'table': // 聚焦表格
-                            while (block != null && block.dataset.nodeId == null) block = block.parentElement;
-                            break;
-                        default:
-                            return;
-                    }
-                }
-                else {
-                    block = window.getSelection().focusNode.parentElement; // 当前光标
+                let block = window.getSelection().focusNode.parentElement; // 当前光标
+                let page = editor.parentElement; // 当前页面
 
-                    while (block != null && block.dataset.nodeId == null) block = block.parentElement;
-                }
+                while (block != null && block.dataset.nodeId == null) block = block.parentElement;
+
                 if (block == null || page == null) return;
 
-                if (config.theme.typewriter.switch.NodeCodeBlock.enable == false
-                    && block.dataset.type == 'NodeCodeBlock'
-                ) return;
+                let focus = window.getSelection().focusNode.parentElement;
+                switch (block.dataset.type) {
+                    case 'NodeCodeBlock':
+                        if (config.theme.typewriter.switch.NodeCodeBlock.enable == false) return;
+
+                        /* 代码块焦点 */
+                        switch (config.theme.typewriter.switch.NodeCodeBlock.mode) {
+                            // 表格聚焦模式
+                            case 'row': // 聚焦行
+                                if (focus != null && focus.nodeName == 'SPAN') block = focus || block;
+                                else return;
+                                break;
+                            case 'block': // 聚焦块
+                            default:
+                                break;
+                        }
+
+                        break;
+                    case 'NodeTable':
+                        if (config.theme.typewriter.switch.NodeTable.enable == false) return;
+
+                        /* 表格焦点 */
+                        switch (config.theme.typewriter.switch.NodeTable.mode) {
+                            // 表格聚焦模式
+                            case 'row': // 聚焦行
+                                while (focus != null && focus.nodeName != 'TR') focus = focus.parentElement;
+                                block = focus || block;
+                                break;
+                            case 'block': // 聚焦块
+                            default:
+                                break;
+                        }
+
+                        break;
+                    default:
+                        break;
+                }
 
                 let block_height = block.clientHeight; // 当前块的高度
                 let block_bottom = block.getBoundingClientRect().bottom; // 当前块的底部

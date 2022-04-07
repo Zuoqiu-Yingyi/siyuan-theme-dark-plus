@@ -471,10 +471,11 @@ export var config = {
                 enable: true, // 是否启用打字机模式开关
                 NodeCodeBlock: {
                     enable: false, // 是否在代码块中启用打字机模式
+                    mode: 'row', // 打字机模式，`row`: 聚焦行, 'block': 聚焦代码块
                 },
                 NodeTable: {
                     enable: true, // 是否在表格块中启用打字机模式
-                    mode: 'row', // 打字机模式，`row`: 聚焦行, 'table': 聚焦表格
+                    mode: 'row', // 打字机模式，`row`: 聚焦行, 'block': 聚焦表格块
                 },
             },
         },
