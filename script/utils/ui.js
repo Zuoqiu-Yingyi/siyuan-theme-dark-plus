@@ -13,11 +13,13 @@ function toolbarItemListPush(item) {
 
     let toolbar = document.getElementById('toolbar');
     let referenceNode = document.getElementById('windowControls');
-    toolbarItemList = toolbarItemList.sort((a, b) => a.index - b.index);
-    for (let item of toolbarItemList) {
-        let node = document.getElementById(item.id);
-        if (node) toolbar.insertBefore(node, referenceNode);
-        else toolbar.insertBefore(item.node, referenceNode);
+    if (toolbar && referenceNode) {
+        toolbarItemList = toolbarItemList.sort((a, b) => a.index - b.index);
+        for (let item of toolbarItemList) {
+            let node = document.getElementById(item.id);
+            if (node) toolbar.insertBefore(node, referenceNode);
+            else toolbar.insertBefore(item.node, referenceNode);
+        }
     }
 }
 
@@ -81,11 +83,13 @@ function toolbarItemChangeStatu(
     node = node || document.getElementById(id);
     switch (mode.toUpperCase()) {
         case 'SVG':
-            if (enable) {
-                node.firstElementChild.classList.add(svgClassList[svgClassIndex]);
-            }
-            else {
-                node.firstElementChild.classList.remove(svgClassList[svgClassIndex]);
+            if (svgClassIndex > 0) {
+                if (enable) {
+                    node.firstElementChild.classList.add(svgClassList[svgClassIndex]);
+                }
+                else {
+                    node.firstElementChild.classList.remove(svgClassList[svgClassIndex]);
+                }
             }
             break;
         case 'DIV':

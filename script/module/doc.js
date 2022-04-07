@@ -125,28 +125,37 @@ setTimeout(() => {
             let body = document.body;
 
             if (config.theme.doc.outline.enable) {
+                if (config.theme.doc.outline.o.enable) { }
                 // 复制当前文档大纲
-                let Fn_outlineCopy = toolbarItemInit(
-                    config.theme.doc.outline.toolbar,
+                let Fn_outlineCopy_u = toolbarItemInit(
+                    config.theme.doc.outline.u.toolbar,
+                    () => outlineCopy('u'),
+                );
+                let Fn_outlineCopy_o = toolbarItemInit(
+                    config.theme.doc.outline.o.toolbar,
                     () => outlineCopy('o'),
+                );
+                let Fn_outlineCopy_t = toolbarItemInit(
+                    config.theme.doc.outline.t.toolbar,
+                    () => outlineCopy('t'),
                 );
 
                 body.addEventListener('keyup', (e) => {
-                    if (isKey(e, config.theme.hotkeys.doc.outline.o)) {
+                    if (isKey(e, config.theme.hotkeys.doc.outline.u)) {
                         // console.log(e);
-                        Fn_outlineCopy();
+                        Fn_outlineCopy_u();
                     }
                 });
                 body.addEventListener('keyup', (e) => {
-                    if (isKey(e, config.theme.hotkeys.doc.outline.u)) {
+                    if (isKey(e, config.theme.hotkeys.doc.outline.o)) {
                         // console.log(e);
-                        setTimeout(() => outlineCopy('u'), 0);
+                        Fn_outlineCopy_o();
                     }
                 });
                 body.addEventListener('keyup', (e) => {
                     if (isKey(e, config.theme.hotkeys.doc.outline.t)) {
                         // console.log(e);
-                        setTimeout(() => outlineCopy('t'), 0);
+                        Fn_outlineCopy_t();
                     }
                 });
             }
@@ -183,10 +192,15 @@ setTimeout(() => {
 
             if (config.theme.doc.cut.enable) {
                 // 剪切当前文档全文
+                let Fn_docCut = toolbarItemInit(
+                    config.theme.doc.cut.toolbar,
+                    docCut,
+                );
+
                 body.addEventListener('keyup', (e) => {
                     if (isKey(e, config.theme.hotkeys.doc.cut)) {
                         // console.log(e);
-                        setTimeout(docCut, 0);
+                        Fn_docCut();
                     }
                 });
             }

@@ -24,7 +24,7 @@ export var config = {
                 toolbar: { // 菜单栏
                     enable: true,
                     id: 'theme-style-render',
-                    label: '渲染自定义样式\nRender custom styles',
+                    label: '渲染自定义样式 [Ctrl + F1]\nRender custom styles',
                     icon: '#iconTheme',
                     index: 1,
                 },
@@ -61,7 +61,7 @@ export var config = {
                 toolbar: { // 菜单栏
                     enable: true,
                     id: 'theme-reload-window',
-                    label: '重新加载窗口\nReload the window',
+                    label: '重新加载窗口 [Ctrl + F5]\nReload the window',
                     icon: '#iconRefresh',
                     index: 0,
                 },
@@ -72,37 +72,37 @@ export var config = {
         },
         doc: {
             enable: true, // 是否启用文档扩展功能
-            copy: {
-                enable: true, // 是否启用当前文档全文复制功能
-                toolbar: { // 菜单栏
-                    enable: true,
-                    id: 'theme-doc-copy',
-                    label: '复制当前文档 Markdown\nCopy the current document Markdown',
-                    icon: '#iconCopy',
-                    index: 3,
-                },
-            },
-            delete: {
-                enable: true, // 是否启用当前文档全文删除功能
-                toolbar: { // 菜单栏
-                    enable: false,
-                    id: 'theme-doc-delete',
-                    label: '删除当前文档内容\nDelete the current document content',
-                    icon: '#iconTrashcan',
-                    index: 4,
-                },
-            },
-            cut: {
-                enable: true, // 是否启用当前文档全文剪切功能
-            },
             outline: {
                 enable: true, // 是否启用当前文档大纲复制功能
-                toolbar: { // 菜单栏
-                    enable: true,
-                    id: 'theme-doc-outline',
-                    label: '复制当前文档大纲\nCopy the current document outline',
-                    icon: '#iconList',
-                    index: 2,
+                u: {
+                    enable: true, // 无序列表
+                    toolbar: { // 菜单栏
+                        enable: true,
+                        id: 'theme-doc-outline-u',
+                        label: '复制当前文档大纲为无序列表 [Ctrl + Shift + Alt + U]\nCopy the current document outline as an unordered list',
+                        icon: '#iconList',
+                        index: 2,
+                    },
+                },
+                o: {
+                    enable: true, // 有序列表
+                    toolbar: { // 菜单栏
+                        enable: true,
+                        id: 'theme-doc-outline-o',
+                        label: '复制当前文档大纲为有序列表 [Ctrl + Shift + Alt + O]\nCopy the current document outline as an ordered list',
+                        icon: '#iconOrderedList',
+                        index: 3,
+                    },
+                },
+                t: {
+                    enable: true, // 任务列表
+                    toolbar: { // 菜单栏
+                        enable: true,
+                        id: 'theme-doc-outline-t',
+                        label: '复制当前文档大纲为任务列表 [Ctrl + Shift + Alt + T]\nCopy the current document outline as a task list',
+                        icon: '#iconCheck',
+                        index: 4,
+                    },
                 },
                 style: {
                     // 大纲样式
@@ -114,6 +114,36 @@ export var config = {
                 },
                 top: 'h', // 大纲最顶层块类型('d': 文档块, 'h': 标题块)
             },
+            copy: {
+                enable: true, // 是否启用当前文档全文复制功能
+                toolbar: { // 菜单栏
+                    enable: true,
+                    id: 'theme-doc-copy',
+                    label: '复制当前文档内容 (Markdown) [Shift + Alt + C]\nCopy the current document content (Markdown)',
+                    icon: '#iconCopy',
+                    index: 5,
+                },
+            },
+            delete: {
+                enable: true, // 是否启用当前文档全文删除功能
+                toolbar: { // 菜单栏
+                    enable: false,
+                    id: 'theme-doc-delete',
+                    label: '删除当前文档内容 [Shift + Alt + D]\nDelete the current document content',
+                    icon: '#iconTrashcan',
+                    index: 7,
+                },
+            },
+            cut: {
+                enable: true, // 是否启用当前文档全文剪切功能
+                toolbar: { // 菜单栏
+                    enable: false,
+                    id: 'theme-doc-cut',
+                    label: '剪切当前文档内容 (Markdown) [Shift + Alt + X]\nDelete the current document content (Markdown)',
+                    icon: '#iconCut',
+                    index: 6,
+                },
+            },
         },
         typewriter: {
             // 打字机模式开关
@@ -123,7 +153,7 @@ export var config = {
                 toolbar: { // 菜单栏
                     enable: true,
                     id: 'theme-typewriter-switch',
-                    label: '打字机模式\nTypewriter mode',
+                    label: '打字机模式 [Shift + Alt + T]\nTypewriter mode',
                     icon: '#iconKeymap',
                     index: -1,
                 },
@@ -143,7 +173,7 @@ export var config = {
             toolbar: { // 菜单栏
                 enable: true,
                 id: 'theme-invert',
-                label: '反色显示图片与 PDFs\nDisplay images and PDFs in reverse color',
+                label: '反色显示 PDFs 与图片 [Shift + Alt + I]\nDisplay PDFs and images in reverse color',
                 icon: '#iconMoon',
                 index: -2,
             },
@@ -174,9 +204,9 @@ export var config = {
                     toolbar: { // 菜单栏
                         enable: true,
                         id: 'theme-background-image-random',
-                        label: '更换背景图片(网络)\nChange Background Image (Network)',
+                        label: '更换背景图片 (网络) [Shift + Alt + R]\nChange background image (Web)',
                         icon: '#iconImage',
-                        index: 5,
+                        index: 8,
                     },
                     light: 'https://source.unsplash.com/random/1920x1080/?bright', // 随机亮色背景图片 URL
                     dark: 'https://source.unsplash.com/random/1920x1080/?night', // 随机暗色背景图片 URL
@@ -186,9 +216,9 @@ export var config = {
                     toolbar: { // 菜单栏
                         enable: true,
                         id: 'theme-background-image-custom',
-                        label: '更换背景图片(自定义)\nChange Background Image (Custom)',
+                        label: '更换背景图片 (自定义) [Ctrl + Shift + Alt + R]\nChange background image (Custom)',
                         icon: '#iconImage',
-                        index: 6,
+                        index: 9,
                     },
                     random: true, // 是否随机选择自定义背景图片
                     default: false, // 是否默认使用自定义背景图片
@@ -281,7 +311,7 @@ export var config = {
             },
             doc: {
                 copy: {
-                    // 复制当前文档全文(Shift + Alt + C)
+                    // 复制当前文档全文([Shift + Alt + C])
                     ctrlKey: false,
                     metaKey: false,
                     shiftKey: true,
@@ -289,7 +319,7 @@ export var config = {
                     key: 'C',
                 },
                 delete: {
-                    // 删除当前文档全文(Shift + Alt + D)
+                    // 删除当前文档全文([Shift + Alt + D])
                     ctrlKey: false,
                     metaKey: false,
                     shiftKey: true,
@@ -297,7 +327,7 @@ export var config = {
                     key: 'D',
                 },
                 cut: {
-                    // 剪切当前文档全文(Shift + Alt + X)
+                    // 剪切当前文档全文([Shift + Alt + X])
                     ctrlKey: false,
                     metaKey: false,
                     shiftKey: true,
@@ -305,24 +335,24 @@ export var config = {
                     key: 'X',
                 },
                 outline: {
-                    o: {
-                        // 复制当前文档大纲(有序列表)至剪贴板(Ctrl + Shift + Alt + O)
-                        ctrlKey: true,
-                        metaKey: true,
-                        shiftKey: true,
-                        altKey: true,
-                        key: 'O',
-                    },
                     u: {
-                        // 复制当前文档大纲(无序列表)至剪贴板(Ctrl + Shift + Alt + U)
+                        // 复制当前文档大纲(无序列表)至剪贴板([Ctrl + Shift + Alt + U])
                         ctrlKey: true,
                         metaKey: true,
                         shiftKey: true,
                         altKey: true,
                         key: 'U',
                     },
+                    o: {
+                        // 复制当前文档大纲(有序列表)至剪贴板([Ctrl + Shift + Alt + O])
+                        ctrlKey: true,
+                        metaKey: true,
+                        shiftKey: true,
+                        altKey: true,
+                        key: 'O',
+                    },
                     t: {
-                        // 复制当前文档大纲(任务列表)至剪贴板(Ctrl + Shift + Alt + T)
+                        // 复制当前文档大纲(任务列表)至剪贴板([Ctrl + Shift + Alt + T])
                         ctrlKey: true,
                         metaKey: true,
                         shiftKey: true,
@@ -333,7 +363,7 @@ export var config = {
             },
             typewriter: {
                 switch: {
-                    // 打字机模式开关(Shift + Alt + T)
+                    // 打字机模式开关([Shift + Alt + T])
                     ctrlKey: false,
                     metaKey: false,
                     shiftKey: true,
@@ -343,7 +373,7 @@ export var config = {
             },
             invert: {
                 switch: {
-                    // 反色开关(Shift + Alt + I)
+                    // 反色开关([Shift + Alt + I])
                     ctrlKey: false,
                     metaKey: false,
                     shiftKey: true,
@@ -354,7 +384,7 @@ export var config = {
             background: {
                 image: {
                     random: {
-                        // 随机背景图片(Shift + Alt + R)
+                        // 更换网络背景图片([Shift + Alt + R])
                         ctrlKey: false,
                         metaKey: false,
                         shiftKey: true,
@@ -362,7 +392,7 @@ export var config = {
                         key: 'R',
                     },
                     custom: {
-                        // 自定义背景图片(Ctrl + Shift + Alt + I)
+                        // 更换自定义背景图片([Ctrl + Shift + Alt + I])
                         ctrlKey: true,
                         metaKey: true,
                         shiftKey: true,
