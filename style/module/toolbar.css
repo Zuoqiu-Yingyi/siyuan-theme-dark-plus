@@ -3,7 +3,12 @@
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 
-/* 顶端菜单栏 */
+/* 顶部工具栏 */
 .toolbar {
     background-color: var(--custom-tool-bar-background-color);
+}
+
+/* 顶部工具栏标题 */
+#drag {
+    padding-right: 0 !important;
 }

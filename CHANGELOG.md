@@ -4,6 +4,7 @@
 - 完善打字机模式对代码块与表格的支持 | Improved support for code blocks and table blocks in the typewriter mode.
 - 为自定义背景是图片功能添加随机开关与默认启用开关 | Added a random switch and a default switch for the background image feature.
 - 在窗口工具栏中添加主题功能按钮 | Added theme buttons to the toolbar of window.
+- 完善反色功能 | Improved the reverse color feature.
 
 ## v0.6.2/2022-04-06
 
