@@ -117,6 +117,8 @@ export var config = {
                 },
                 custom: {
                     enable: true, // 自定义背景图片
+                    random: true, // 是否随机选择自定义背景图片
+                    default: false, // 是否默认使用自定义背景图片
                     light: [ // 自定义亮色背景图片 URL 列表
                         '/appearance/themes/Dark+/image/light/background (01).jpeg',
                         '/appearance/themes/Dark+/image/light/background (02).jpeg',

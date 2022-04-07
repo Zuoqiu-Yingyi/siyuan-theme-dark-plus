@@ -2,6 +2,7 @@
 
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 完善打字机模式对代码块与表格的支持 | Improved support for code blocks and table blocks in the typewriter mode.
+- 为自定义背景是图片功能添加随机开关与默认启用开关 | Added a random switch and a default switch for the background image feature.
 
 ## v0.6.2/2022-04-06
 

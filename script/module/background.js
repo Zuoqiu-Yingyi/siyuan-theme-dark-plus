@@ -64,9 +64,17 @@ function customBackground(lightIter, darkIter) {
                     });
                 }
                 if (config.theme.background.image.custom.enable) {
-                    const light_iter = createLookIterator(shuffle(config.theme.background.image.custom.light.slice()));
-                    const dark_iter = createLookIterator(shuffle(config.theme.background.image.custom.dark.slice()));
-                    // 自定义背景图片
+                    const light_iter = config.theme.background.image.custom.random
+                        ? createLookIterator(shuffle(config.theme.background.image.custom.light.slice()))
+                        : createLookIterator(config.theme.background.image.custom.light.slice());
+                    const dark_iter = config.theme.background.image.custom.random
+                        ? createLookIterator(shuffle(config.theme.background.image.custom.dark.slice()))
+                        : createLookIterator(config.theme.background.image.custom.dark.slice());
+
+                    // 是否默认启用自定义背景图片
+                    if (config.theme.background.image.custom.default) customBackground(light_iter, dark_iter);
+
+                    // 使用快捷键切换自定义背景图片
                     body.addEventListener('keyup', (e) => {
                         // console.log(e);
                         if (isKey(e, config.theme.hotkeys.background.image.custom)) {
