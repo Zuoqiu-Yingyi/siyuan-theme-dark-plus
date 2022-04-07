@@ -75,7 +75,10 @@ const MAP = {
 function outlineCopy(mode) {
     const outline = document.querySelector('.sy__outline .b3-list.b3-list--background');
     const content = MAP.outline.style.content[config.theme.doc.outline.style.content];
-    if (outline) {
+    if (outline
+        && outline.firstElementChild
+        && !outline.firstElementChild.classList.contains('b3-list--empty')
+    ) {
         let mark = MAP.outline.style.list[mode];
         let markdown = [];
         function outlineParser(node, deep = 0, index = 0) {
