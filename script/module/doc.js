@@ -2,6 +2,7 @@
 
 import { config } from './config.js';
 import { isKey } from './../utils/hotkey.js';
+import { toolbarItemInit } from './../utils/ui.js';
 import {
     exportMdContent,
     updateBlock,
@@ -115,47 +116,22 @@ function outlineCopy(mode) {
 }
 
 
-(() => {
+setTimeout(() => {
     try {
-        if (config.theme.doc.copy) {
+        if (config.theme.doc.enable) {
             let body = document.body;
-
-            if (config.theme.doc.copy.enable) {
-                // 复制当前文档全部内容至剪贴板
-                body.addEventListener('keyup', (e) => {
-                    // console.log(e);
-                    if (isKey(e, config.theme.hotkeys.doc.copy)) {
-                        setTimeout(docCopy, 0);
-                    }
-                });
-            }
-
-            if (config.theme.doc.delete.enable) {
-                // 删除当前文档全文
-                body.addEventListener('keyup', (e) => {
-                    if (isKey(e, config.theme.hotkeys.doc.delete)) {
-                        // console.log(e);
-                        setTimeout(docDelete, 0);
-                    }
-                });
-            }
-
-            if (config.theme.doc.cut.enable) {
-                // 剪切当前文档全文
-                body.addEventListener('keyup', (e) => {
-                    if (isKey(e, config.theme.hotkeys.doc.cut)) {
-                        // console.log(e);
-                        setTimeout(docCut, 0);
-                    }
-                });
-            }
 
             if (config.theme.doc.outline.enable) {
                 // 复制当前文档大纲
+                let Fn_outlineCopy = toolbarItemInit(
+                    config.theme.doc.outline.toolbar,
+                    () => outlineCopy('o'),
+                );
+
                 body.addEventListener('keyup', (e) => {
                     if (isKey(e, config.theme.hotkeys.doc.outline.o)) {
                         // console.log(e);
-                        setTimeout(() => outlineCopy('o'), 0);
+                        Fn_outlineCopy();
                     }
                 });
                 body.addEventListener('keyup', (e) => {
@@ -171,8 +147,48 @@ function outlineCopy(mode) {
                     }
                 });
             }
+
+            if (config.theme.doc.copy.enable) {
+                // 复制当前文档全文
+                let Fn_docCopy = toolbarItemInit(
+                    config.theme.doc.copy.toolbar,
+                    docCopy,
+                );
+
+                body.addEventListener('keyup', (e) => {
+                    // console.log(e);
+                    if (isKey(e, config.theme.hotkeys.doc.copy)) {
+                        Fn_docCopy();
+                    }
+                });
+            }
+
+            if (config.theme.doc.delete.enable) {
+                // 删除当前文档全文
+                let Fn_docDelete = toolbarItemInit(
+                    config.theme.doc.delete.toolbar,
+                    docDelete,
+                );
+
+                body.addEventListener('keyup', (e) => {
+                    if (isKey(e, config.theme.hotkeys.doc.delete)) {
+                        // console.log(e);
+                        Fn_docDelete();
+                    }
+                });
+            }
+
+            if (config.theme.doc.cut.enable) {
+                // 剪切当前文档全文
+                body.addEventListener('keyup', (e) => {
+                    if (isKey(e, config.theme.hotkeys.doc.cut)) {
+                        // console.log(e);
+                        setTimeout(docCut, 0);
+                    }
+                });
+            }
         }
     } catch (err) {
         console.error(err);
     }
-})();
+}, 0);

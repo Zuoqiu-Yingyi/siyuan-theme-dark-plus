@@ -47,15 +47,17 @@ function merge(target, ...arg) {
     }, target)
 }
 
-function styleHandle(id, content) {
+function styleHandle(id, innerHTML) {
     let style = document.getElementById(id);
     if (style) {
         style.remove();
+        return false;
     } else {
         style = document.createElement('style');
         style.id = id;
-        style.innerHTML = content;
+        style.innerHTML = innerHTML;
         document.head.appendChild(style);
+        return true;
     }
 }
 

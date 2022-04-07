@@ -3,6 +3,10 @@
 import { config } from './config.js';
 import { isKey } from './../utils/hotkey.js';
 import {
+    toolbarItemInit,
+    toolbarItemChangeStatu,
+} from './../utils/ui.js';
+import {
     shuffle,
     createLookIterator,
 } from './../utils/misc.js';
@@ -49,17 +53,22 @@ function customBackground(lightIter, darkIter) {
     }
 }
 
-(() => {
+setTimeout(() => {
     try {
         if (config.theme.background.enable) {
             let body = document.body;
             if (config.theme.background.image.enable) {
                 if (config.theme.background.image.random.enable) {
+                    let Fn_randomBackground = toolbarItemInit(
+                        config.theme.background.image.random.toolbar,
+                        randomBackground,
+                    );
+
                     // 随机背景图片
                     body.addEventListener('keyup', (e) => {
                         // console.log(e);
                         if (isKey(e, config.theme.hotkeys.background.image.random)) {
-                            setTimeout(randomBackground, 0);
+                            Fn_randomBackground();
                         }
                     });
                 }
@@ -71,14 +80,19 @@ function customBackground(lightIter, darkIter) {
                         ? createLookIterator(shuffle(config.theme.background.image.custom.dark.slice()))
                         : createLookIterator(config.theme.background.image.custom.dark.slice());
 
+                    let Fn_customBackground = toolbarItemInit(
+                        config.theme.background.image.custom.toolbar,
+                        () => customBackground(light_iter, dark_iter),
+                        2,
+                    );
                     // 是否默认启用自定义背景图片
-                    if (config.theme.background.image.custom.default) customBackground(light_iter, dark_iter);
+                    if (config.theme.background.image.custom.default) Fn_customBackground();
 
                     // 使用快捷键切换自定义背景图片
                     body.addEventListener('keyup', (e) => {
                         // console.log(e);
                         if (isKey(e, config.theme.hotkeys.background.image.custom)) {
-                            setTimeout(() => customBackground(light_iter, dark_iter), 0);
+                            Fn_customBackground();
                         }
                     });
                 }
@@ -87,4 +101,4 @@ function customBackground(lightIter, darkIter) {
     } catch (err) {
         console.error(err);
     }
-})();
+}, 0);

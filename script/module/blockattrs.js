@@ -24,7 +24,7 @@ async function setter(target) {
     }
 }
 
-(() => {
+setTimeout(() => {
     try {
         if (config.theme.blockattrs.enable) {
             let body = document.body;
@@ -44,4 +44,4 @@ async function setter(target) {
     } catch (err) {
         console.error(err);
     }
-})();
+}, 0);

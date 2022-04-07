@@ -71,7 +71,7 @@ async function create(target) {
     }
 }
 
-(() => {
+setTimeout(() => {
     try {
         if (config.theme.timestamp.enable) {
             let body = document.body;
@@ -102,4 +102,4 @@ async function create(target) {
     } catch (err) {
         console.error(err);
     }
-})();
+}, 0);
