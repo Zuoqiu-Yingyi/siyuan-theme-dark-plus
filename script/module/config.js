@@ -143,7 +143,7 @@ export var config = {
             toolbar: { // 菜单栏
                 enable: true,
                 id: 'theme-invert',
-                label: '反色显示\nDisplay in reverse color',
+                label: '反色显示图片与 PDFs\nDisplay images and PDFs in reverse color',
                 icon: '#iconMoon',
                 index: -2,
             },
@@ -152,7 +152,15 @@ export var config = {
                 enable: true,
                 style: {
                     id: 'theme-invert-img-style', // 图片反色 ID
-                    innerHTML: 'img:not(.emoji) {filter: invert(100%);}span.b3-list-item__icon>img {filter: none;}', // 样式标签内容
+                    innerHTML: 'img:not(.emoji, .thumbnailImage), div.thumbnailSelectionRing {filter: invert(100%);}div.protyle-background__icon>img,span.b3-list-item__icon>img {filter: none;}', // 样式标签内容
+                },
+            },
+            viewer: {
+                // PDF 预览反色
+                enable: true,
+                style: {
+                    id: 'theme-invert-viewer-style', // 图片反色 ID
+                    innerHTML: '#viewer {filter: invert(100%);}', // 样式标签内容
                 },
             },
         },

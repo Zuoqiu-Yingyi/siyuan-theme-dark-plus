@@ -461,7 +461,7 @@ export var config = {
                 toolbar: { // 菜单栏
                     enable: true,
                     id: 'theme-doc-copy',
-                    label: '复制当前文档 Markdown\nCopy the current document Markdown',
+                    label: '复制当前文档内容 (Markdown)\nCopy the content of the current document (Markdown)',
                     icon: '#iconCopy',
                     index: 3,
                 },
@@ -471,7 +471,7 @@ export var config = {
                 toolbar: { // 菜单栏
                     enable: false,
                     id: 'theme-doc-delete',
-                    label: '删除当前文档内容\nDelete the current document content',
+                    label: '删除当前文档内容\nDelete the content of the current document',
                     icon: '#iconTrashcan',
                     index: 4,
                 },
@@ -484,7 +484,7 @@ export var config = {
                 toolbar: { // 菜单栏
                     enable: true,
                     id: 'theme-doc-outline',
-                    label: '复制当前文档大纲\nCopy the current document outline',
+                    label: '复制当前文档大纲\nCopy the outline of the current document',
                     icon: '#iconList',
                     index: 2,
                 },
@@ -527,7 +527,7 @@ export var config = {
             toolbar: { // 菜单栏
                 enable: true,
                 id: 'theme-invert',
-                label: '反色显示\nDisplay in reverse color',
+                label: '反色显示图片与 PDFs\nDisplay images and PDFs in reverse color',
                 icon: '#iconMoon',
                 index: -2,
             },
@@ -536,7 +536,15 @@ export var config = {
                 enable: true,
                 style: {
                     id: 'theme-invert-img-style', // 图片反色 ID
-                    innerHTML: 'img:not(.emoji) {filter: invert(100%);}span.b3-list-item__icon>img {filter: none;}', // 样式标签内容
+                    innerHTML: 'img:not(.emoji, .thumbnailImage), div.thumbnailSelectionRing {filter: invert(100%);}div.protyle-background__icon>img,span.b3-list-item__icon>img {filter: none;}', // 样式标签内容
+                },
+            },
+            viewer: {
+                // PDF 预览反色
+                enable: true,
+                style: {
+                    id: 'theme-invert-viewer-style', // 图片反色 ID
+                    innerHTML: '#viewer {filter: invert(100%);}', // 样式标签内容
                 },
             },
         },
