@@ -1,5 +1,9 @@
 import { config } from './config.js';
 import { isKey } from './../utils/hotkey.js';
+import {
+    toolbarItemInit,
+    toolbarItemChangeStatu,
+} from './../utils/ui.js';
 
 var enable = false;
 
@@ -76,6 +80,14 @@ function typewriterEnable() {
     var layouts = document.getElementById('layouts');
     if (layouts != null) {
         enable = !enable;
+        // 更改菜单栏按钮状态
+        toolbarItemChangeStatu(
+            config.theme.typewriter.switch.toolbar.id,
+            enable,
+            'SVG',
+            null,
+            1,
+        );
         if (enable) {
             setTimeout(activate, 0);
             layouts.onclick = (e, t) => {
@@ -92,16 +104,21 @@ function typewriterEnable() {
     }
 }
 
-(() => {
+setTimeout(() => {
     try {
         if (config.theme.typewriter.enable) {
             let body = document.body;
             if (config.theme.typewriter.switch.enable) {
-                // 启动打字机模式开关
+                let Fn_typewriterEnable = toolbarItemInit(
+                    config.theme.typewriter.switch.toolbar,
+                    typewriterEnable,
+                );
+
+                // 使用快捷键开/关打字机模式
                 body.addEventListener('keyup', (e) => {
                     // console.log(e);
                     if (isKey(e, config.theme.hotkeys.typewriter.switch)) {
-                        setTimeout(typewriterEnable, 0);
+                        Fn_typewriterEnable();
                     }
                 });
             }
@@ -109,4 +126,4 @@ function typewriterEnable() {
     } catch (err) {
         console.error(err);
     }
-})();
+}, 0);

@@ -14,7 +14,7 @@ function jumpToID() {
     }
 }
 
-(() => {
+setTimeout(() => {
     try {
         if (config.theme.goto.enable) {
             window.onload = setTimeout(jumpToID, 0)
@@ -22,4 +22,4 @@ function jumpToID() {
     } catch (err) {
         console.error(err);
     }
-})();
+}, 0);

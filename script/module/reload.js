@@ -11,6 +11,7 @@ import {
 } from './../utils/hotkey.js';
 import { getBlockAttrs } from './../utils/api.js';
 import { timestampParse } from './../utils/misc.js';
+import { toolbarItemInit } from './../utils/ui.js';
 
 function bilibiliTimestamp(url, seconds = null) {
     // BiliBili 视频时间戳
@@ -99,18 +100,21 @@ async function reloadIframe(target) {
     }
 }
 
-(() => {
+setTimeout(() => {
     try {
         if (config.theme.reload.enable) {
             let body = document.querySelector('body');
             if (config.theme.reload.window.enable) {
-                // 重新加载整个窗口
+                let Fn_reload = toolbarItemInit(
+                    config.theme.reload.window.toolbar,
+                    () => window.location.reload(),
+                );
+                
+                // 使用快捷键重新加载整个窗口
                 body.addEventListener('keyup', (e) => {
                     // console.log(e);
                     if (isKey(e, config.theme.hotkeys.reload.window)) {
-                        setTimeout(() => {
-                            window.location.reload();
-                        }, 0);
+                        Fn_reload();
                     }
                 });
             }
@@ -130,4 +134,4 @@ async function reloadIframe(target) {
     } catch (err) {
         console.error(err);
     }
-})();
+}, 0);

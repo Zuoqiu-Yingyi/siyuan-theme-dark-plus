@@ -405,6 +405,13 @@ export var config = {
             },
             render: {
                 enable: true, // 是否启用自定义样式渲染
+                toolbar: { // 菜单栏
+                    enable: true,
+                    id: 'theme-style-render',
+                    label: '渲染自定义样式\nRender custom styles',
+                    icon: '#iconTheme',
+                    index: 1,
+                },
                 styles: [
                     // 渲染的自定义样式
                     'font-size',
@@ -435,6 +442,13 @@ export var config = {
             enable: true, // 是否启用重新加载
             window: {
                 enable: true, // 是否启用窗口重新加载
+                toolbar: { // 菜单栏
+                    enable: true,
+                    id: 'theme-reload-window',
+                    label: '重新加载窗口\nReload the window',
+                    icon: '#iconRefresh',
+                    index: 0,
+                },
             },
             iframe: {
                 enable: true, // 是否启用 iframe 重新加载
@@ -444,15 +458,36 @@ export var config = {
             enable: true, // 是否启用文档扩展功能
             copy: {
                 enable: true, // 是否启用当前文档全文复制功能
+                toolbar: { // 菜单栏
+                    enable: true,
+                    id: 'theme-doc-copy',
+                    label: '复制当前文档 Markdown\nCopy the current document Markdown',
+                    icon: '#iconCopy',
+                    index: 3,
+                },
             },
             delete: {
                 enable: true, // 是否启用当前文档全文删除功能
+                toolbar: { // 菜单栏
+                    enable: false,
+                    id: 'theme-doc-delete',
+                    label: '删除当前文档内容\nDelete the current document content',
+                    icon: '#iconTrashcan',
+                    index: 4,
+                },
             },
             cut: {
                 enable: true, // 是否启用当前文档全文剪切功能
             },
             outline: {
                 enable: true, // 是否启用当前文档大纲复制功能
+                toolbar: { // 菜单栏
+                    enable: true,
+                    id: 'theme-doc-outline',
+                    label: '复制当前文档大纲\nCopy the current document outline',
+                    icon: '#iconList',
+                    index: 2,
+                },
                 style: {
                     // 大纲样式
                     content: 'link', // 内容样式('text': 文本, 'link': 链接, 'ref': 块引用)
@@ -469,6 +504,13 @@ export var config = {
             enable: true,
             switch: {
                 enable: true, // 是否启用打字机模式开关
+                toolbar: { // 菜单栏
+                    enable: true,
+                    id: 'theme-typewriter-switch',
+                    label: '打字机模式\nTypewriter mode',
+                    icon: '#iconKeymap',
+                    index: -1,
+                },
                 NodeCodeBlock: {
                     enable: false, // 是否在代码块中启用打字机模式
                     mode: 'row', // 打字机模式，`row`: 聚焦行, 'block': 聚焦代码块
@@ -482,11 +524,20 @@ export var config = {
         invert: {
             // 反色功能开关
             enable: true,
+            toolbar: { // 菜单栏
+                enable: true,
+                id: 'theme-invert',
+                label: '反色显示\nDisplay in reverse color',
+                icon: '#iconMoon',
+                index: -2,
+            },
             img: {
                 // 图片反色
                 enable: true,
-                id: 'custom-invert-img', // 图片反色 ID
-                content: 'img:not(.emoji) {filter: invert(100%);}', // 样式标签内容
+                style: {
+                    id: 'theme-invert-img-style', // 图片反色 ID
+                    innerHTML: 'img:not(.emoji) {filter: invert(100%);}span.b3-list-item__icon>img {filter: none;}', // 样式标签内容
+                },
             },
         },
         background: {
@@ -496,11 +547,25 @@ export var config = {
                 enable: true, // 是否启用背景图片更改功能
                 random: {
                     enable: true, // 随机背景图片
+                    toolbar: { // 菜单栏
+                        enable: true,
+                        id: 'theme-background-image-random',
+                        label: '更换背景图片(网络)\nChange Background Image (Network)',
+                        icon: '#iconImage',
+                        index: 5,
+                    },
                     light: 'https://source.unsplash.com/random/1920x1080/?bright', // 随机亮色背景图片 URL
                     dark: 'https://source.unsplash.com/random/1920x1080/?night', // 随机暗色背景图片 URL
                 },
                 custom: {
                     enable: true, // 自定义背景图片
+                    toolbar: { // 菜单栏
+                        enable: true,
+                        id: 'theme-background-image-custom',
+                        label: '更换背景图片(自定义)\nChange Background Image (Custom)',
+                        icon: '#iconImage',
+                        index: 6,
+                    },
                     random: true, // 是否随机选择自定义背景图片
                     default: false, // 是否默认使用自定义背景图片
                     light: [ // 自定义亮色背景图片 URL 列表

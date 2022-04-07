@@ -2,6 +2,7 @@
 
 import { config } from './config.js';
 import { isKey } from './../utils/hotkey.js';
+import { toolbarItemInit } from './../utils/ui.js';
 
 /* 渲染自定义样式 */
 function renderCustomStyle(styles) {
@@ -66,7 +67,7 @@ function render() {
     renderCustomStyle(config.theme.style.render.styles);
 }
 
-(() => {
+setTimeout(() => {
     try {
         if (config.theme.style.enable) {
             let body = document.body;
@@ -87,11 +88,16 @@ function render() {
             //     setTimeout(render(), 0);
             // });
             if (config.theme.style.render.enable) {
+                let Fn_render = toolbarItemInit(
+                    config.theme.reload.window.toolbar,
+                    render,
+                );
+
                 // 使用快捷键渲染自定义样式
                 body.addEventListener('keyup', (e) => {
                     // console.log(e);
                     if (isKey(e, config.theme.hotkeys.style.render)) {
-                        setTimeout(render, 0);
+                        Fn_render();
                     }
                 });
             }
@@ -99,4 +105,4 @@ function render() {
     } catch (err) {
         console.error(err);
     }
-})();
+}, 0);
