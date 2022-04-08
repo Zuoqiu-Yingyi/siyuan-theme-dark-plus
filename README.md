@@ -577,6 +577,22 @@ export var config = {
                     innerHTML: '#viewer {filter: invert(100%);}', // 样式标签内容
                 },
             },
+            iframe: {
+                // iframe 反色
+                enable: true,
+                style: {
+                    id: 'theme-invert-iframe-style', // 图片反色 ID
+                    innerHTML: 'iframe {filter: invert(100%);}', // 样式标签内容
+                },
+            },
+            video: {
+                // 视频反色
+                enable: true,
+                style: {
+                    id: 'theme-invert-video-style', // 图片反色 ID
+                    innerHTML: 'video {filter: invert(100%);}', // 样式标签内容
+                },
+            },
         },
         background: {
             // 背景图片功能开关
