@@ -173,7 +173,7 @@ export var config = {
             toolbar: { // 菜单栏
                 enable: true,
                 id: 'theme-invert',
-                label: '反色显示 PDFs 与图片 [Shift + Alt + I]\nDisplay PDFs and images in reverse color',
+                label: '反色显示 [Shift + Alt + I]\nDisplay in reverse color',
                 icon: '#iconMoon',
                 index: -2,
             },
@@ -191,6 +191,22 @@ export var config = {
                 style: {
                     id: 'theme-invert-viewer-style', // 图片反色 ID
                     innerHTML: '#viewer {filter: invert(100%);}', // 样式标签内容
+                },
+            },
+            iframe: {
+                // iframe 反色
+                enable: true,
+                style: {
+                    id: 'theme-invert-iframe-style', // 图片反色 ID
+                    innerHTML: 'iframe {filter: invert(100%);}', // 样式标签内容
+                },
+            },
+            video: {
+                // 视频反色
+                enable: true,
+                style: {
+                    id: 'theme-invert-video-style', // 图片反色 ID
+                    innerHTML: 'video {filter: invert(100%);}', // 样式标签内容
                 },
             },
         },
