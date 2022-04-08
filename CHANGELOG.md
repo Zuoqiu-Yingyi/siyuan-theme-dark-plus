@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
+- 添加网络图片 URL 列表 | Added network image URL list.
+
 ## v0.7.0/2022-04-08
 
 - [v0.6.2 <=> v0.7.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.6.2...v0.7.0)
