@@ -199,8 +199,8 @@ export var config = {
             enable: true,
             image: {
                 enable: true, // 是否启用背景图片更改功能
-                random: {
-                    enable: true, // 随机背景图片
+                web: {
+                    enable: true, // 网络背景图片
                     toolbar: { // 菜单栏
                         enable: true,
                         id: 'theme-background-image-random',
@@ -208,8 +208,18 @@ export var config = {
                         icon: '#iconImage',
                         index: 8,
                     },
-                    light: 'https://source.unsplash.com/random/1920x1080/?bright', // 随机亮色背景图片 URL
-                    dark: 'https://source.unsplash.com/random/1920x1080/?night', // 随机暗色背景图片 URL
+                    random: true, // 是否随机切换网络背景图片 URL
+                    light: [ // 随机亮色背景图片 URL
+                        'https://source.unsplash.com/random/1920x1080/?bright',
+                        'https://api.dujin.org/bing/1920.php',
+                        'https://unsplash.it/1920/1080?random',
+                        // 'https://api.ixiaowai.cn/gqapi/gqapi.php⁠⁠⁠⁠⁠⁠',
+                    ],
+                    dark: [ // 随机暗色背景图片 URL
+                        'https://source.unsplash.com/random/1920x1080/?night',
+                        'https://source.unsplash.com/random/1920x1080/?starry',
+                        'https://source.unsplash.com/random/1920x1080/?dark',
+                    ],
                 },
                 custom: {
                     enable: true, // 自定义背景图片
@@ -383,7 +393,7 @@ export var config = {
             },
             background: {
                 image: {
-                    random: {
+                    web: {
                         // 更换网络背景图片([Shift + Alt + R])
                         ctrlKey: false,
                         metaKey: false,
