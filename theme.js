@@ -3,10 +3,12 @@
  * @param {string} url 脚本地址
  * @param {string} type 脚本类型
  */
-function loadScript(url, type = 'module') {
+function loadScript(src, type = 'module', async = false, defer = false) {
     let script = document.createElement('script');
     if (type) script.setAttribute('type', type);
-    script.setAttribute('src', url);
+    if (async) script.setAttribute('async', true);
+    if (defer) script.setAttribute('defer', true);
+    script.setAttribute('src', src);
     document.head.appendChild(script);
 }
 
@@ -125,8 +127,10 @@ function changeThemeMode(
 
     /* 加载独立应用 */
     loadScript("/appearance/themes/Dark+/app/comment/index.js");
-    // loadScript("/appearance/themes/Dark+/script/test/listener.js");
 
     /* 加载自定义配置文件 */
     loadScript("/widgets/custom.js");
+
+    /* 加载测试模块 */
+    // loadScript("/appearance/themes/Dark+/script/test/listener.js");
 })();
