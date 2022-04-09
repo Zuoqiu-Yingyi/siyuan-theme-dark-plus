@@ -22,13 +22,12 @@
 
 /* 修正列表内引用块辅助线错位 */
 .protyle-wysiwyg [data-node-id].li>[data-node-id][data-type="NodeBlockquote"]::before {
-    /* left: -51px; */
     left: calc(13px - 2em);
 }
 
 /* 修正列表内嵌入块辅助线错位 */
 .protyle-wysiwyg [data-node-id].li>[data-node-id][data-type="NodeBlockQueryEmbed"]::before {
-    left: calc(15px - 2em);
+    left: calc(16px - 2em);
 }
 
 /* 列表缩进 */
