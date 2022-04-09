@@ -7,6 +7,22 @@ export {
 
 var toolbarItemList = [];
 
+/**
+ * 重置节点, 可所有监听器
+ * @node (HTMLElementNode): DOM 节点
+ * @withChildren (boolean): 是否移除子元素节点
+ */
+function recreateNode(node, withChildren = false) {
+    if (withChildren) {
+        node.parentNode.replaceChild(node.cloneNode(true), node);
+    }
+    else {
+        let newNode = node.cloneNode(false);
+        while (node.hasChildNodes()) newNode.appendChild(node.firstChild);
+        node.parentNode.replaceChild(newNode, node);
+    }
+}
+
 /* 工具栏添加 */
 function toolbarItemListPush(item) {
     toolbarItemList.push(item);
@@ -71,6 +87,7 @@ const svgClassList = [
  * @type (string): 工具栏项类型
  * @node (element): 工具栏项节点
  * @svgClassIndex (int): svg 样式索引
+ * @listener (function): 监听器
  * @return (void): 无返回值
  */
 function toolbarItemChangeStatu(
@@ -79,6 +96,7 @@ function toolbarItemChangeStatu(
     mode = 'DIV',
     node = null,
     svgClassIndex = 0,
+    listener = null,
 ) {
     node = node || document.getElementById(id);
     switch (mode.toUpperCase()) {
@@ -97,9 +115,11 @@ function toolbarItemChangeStatu(
         default:
             if (enable) {
                 node.classList.remove('toolbar__item--disabled');
+                listener && listener();
             }
             else {
                 node.classList.add('toolbar__item--disabled');
+                recreateNode(node);
             }
             break;
     }
@@ -117,6 +137,7 @@ function toolbarItemInit(toolbarConfig, handler, svgClassIndex = 0) {
 
     // 在工具栏添加按钮
     let node = toolbarItemInsert(toolbarConfig);
+    let listener = () => node.addEventListener('click', (_) => fn());
 
     // 是否禁用该按钮
     toolbarItemChangeStatu(
@@ -124,6 +145,8 @@ function toolbarItemInit(toolbarConfig, handler, svgClassIndex = 0) {
         toolbarConfig.enable,
         'BUTTON',
         node,
+        null,
+        listener,
     )
 
     // 是否设置颜色
@@ -136,7 +159,5 @@ function toolbarItemInit(toolbarConfig, handler, svgClassIndex = 0) {
             svgClassIndex,
         )
     }
-    // 使用按钮渲染自定义样式
-    node.addEventListener('click', (_) => fn());
     return fn;
 }
