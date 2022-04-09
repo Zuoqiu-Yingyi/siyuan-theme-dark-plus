@@ -6,6 +6,7 @@
 - 添加在 HTML 块的 shadowRoot 中获取当前块的工具 `This(customID)` | Added tool `This(customID)` to get the current block in the shadowRoot of HTML block.
 - 修复列表中嵌入块辅助线问题 | Fixed the issue of guides with embed blocks in the list.
 - 移除被禁用的工具栏项的功能 | Removed the function of disabled toolbar items.
+- 调整工具栏按钮的顺序 | Reordered the toolbar buttons.
 
 ## v0.7.0/2022-04-08
 

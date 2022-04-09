@@ -465,7 +465,7 @@ export var config = {
                         id: 'theme-doc-outline-u',
                         label: '复制当前文档大纲为无序列表 [Ctrl + Shift + Alt + U]\nCopy the current document outline as an unordered list',
                         icon: '#iconList',
-                        index: 2,
+                        index: 4,
                     },
                 },
                 o: {
@@ -475,7 +475,7 @@ export var config = {
                         id: 'theme-doc-outline-o',
                         label: '复制当前文档大纲为有序列表 [Ctrl + Shift + Alt + O]\nCopy the current document outline as an ordered list',
                         icon: '#iconOrderedList',
-                        index: 3,
+                        index: 5,
                     },
                 },
                 t: {
@@ -485,7 +485,7 @@ export var config = {
                         id: 'theme-doc-outline-t',
                         label: '复制当前文档大纲为任务列表 [Ctrl + Shift + Alt + T]\nCopy the current document outline as a task list',
                         icon: '#iconCheck',
-                        index: 4,
+                        index: 6,
                     },
                 },
                 style: {
@@ -505,7 +505,7 @@ export var config = {
                     id: 'theme-doc-copy',
                     label: '复制当前文档内容 (Markdown) [Shift + Alt + C]\nCopy the current document content (Markdown)',
                     icon: '#iconCopy',
-                    index: 5,
+                    index: 7,
                 },
             },
             delete: {
@@ -515,7 +515,7 @@ export var config = {
                     id: 'theme-doc-delete',
                     label: '删除当前文档内容 [Shift + Alt + D]\nDelete the current document content',
                     icon: '#iconTrashcan',
-                    index: 7,
+                    index: 9,
                 },
             },
             cut: {
@@ -525,7 +525,7 @@ export var config = {
                     id: 'theme-doc-cut',
                     label: '剪切当前文档内容 (Markdown) [Shift + Alt + X]\nDelete the current document content (Markdown)',
                     icon: '#iconCut',
-                    index: 6,
+                    index: 8,
                 },
             },
         },
@@ -606,7 +606,7 @@ export var config = {
                         id: 'theme-background-image-random',
                         label: '更换背景图片 (网络) [Shift + Alt + R]\nChange background image (Web)',
                         icon: '#iconImage',
-                        index: 8,
+                        index: 2,
                     },
                     random: true, // 是否随机切换网络背景图片 URL
                     light: [ // 随机亮色背景图片 URL
@@ -628,7 +628,7 @@ export var config = {
                         id: 'theme-background-image-custom',
                         label: '更换背景图片 (自定义) [Ctrl + Shift + Alt + R]\nChange background image (Custom)',
                         icon: '#iconImage',
-                        index: 9,
+                        index: 3,
                     },
                     random: true, // 是否随机选择自定义背景图片
                     default: false, // 是否默认使用自定义背景图片
