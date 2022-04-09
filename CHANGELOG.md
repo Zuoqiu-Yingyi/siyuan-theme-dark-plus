@@ -3,7 +3,8 @@
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 添加网络图片 URL 列表 | Added network image URL list.
 - 反色支持 iframe 与视频资源 | Inverted color feature supports iframes and video resources.
-- 添加在 HTML 块的 shadowRoot 中获取当前块的工具 `This(customID)` | Added tool `This(customID)` to get the current block in the shadowRoot of HTML block. .
+- 添加在 HTML 块的 shadowRoot 中获取当前块的工具 `This(customID)` | Added tool `This(customID)` to get the current block in the shadowRoot of HTML block.
+- 修复列表中嵌入块辅助线问题 | Fixed the issue of guides with embed blocks in the list.
 
 ## v0.7.0/2022-04-08
 

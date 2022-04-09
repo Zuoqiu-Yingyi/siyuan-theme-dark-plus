@@ -14,6 +14,7 @@ function runcmd(commands) {
  * @returns {string} id 当前 HTML 块 ID
  * @returns {HTMLElement} block 当前 HTML 块
  * @returns {HTMLElement} shadowRoot 当前 HTML 块 shadowRoot
+ * @returns {null} null 当前 HTML 块不存在
  */
 function This(customID) {
     let protyle = document.querySelector(`protyle-html[data-content*="${customID}"]`);
@@ -25,4 +26,5 @@ function This(customID) {
             shadowRoot: protyle.shadowRoot,
         };
     }
+    else return null;
 }
