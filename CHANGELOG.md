@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.7.1/2022-04-09
+
+- [v0.7.0 <=> v0.7.1](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.7.0...v0.7.1)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 添加网络图片 URL 列表 | Added network image URL list.
 - 反色支持 iframe 与视频资源 | Inverted color feature supports iframes and video resources.
