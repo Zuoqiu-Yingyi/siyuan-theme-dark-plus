@@ -64,3 +64,18 @@
 .fn__flex-1.protyle {
     background: transparent;
 }
+
+/* 拖拽 */
+
+.protyle-wysiwyg .dragover__top {
+    box-shadow: 0 -4px 0 var(--custom-drag-top-shadow-color);
+}
+.protyle-wysiwyg .dragover__bottom {
+    box-shadow: 0 4px 0 var(--custom-drag-bottom-shadow-color);
+}
+.protyle-wysiwyg .dragover__left {
+    box-shadow: -4px 0 0 var(--custom-drag-left-shadow-color);
+}
+.protyle-wysiwyg .dragover__right {
+    box-shadow: 4px 0 0 var(--custom-drag-right-shadow-color);
+}
