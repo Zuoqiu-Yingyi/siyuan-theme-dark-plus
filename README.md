@@ -1124,6 +1124,12 @@ export var config = {
     /* 思源标记阴影宽度 | The shadow width of mark */
     --custom-span-mark-shadow-width: 4px;
 
+    /* 拖拽参考线颜色 | The color of drag guide */
+    --custom-drag-top-shadow-color: var(--b3-theme-primary-lighter);
+    --custom-drag-bottom-shadow-color: var(--b3-theme-primary-lighter);
+    --custom-drag-left-shadow-color: var(--custom-striking-color);
+    --custom-drag-right-shadow-color: var(--custom-striking-color);
+
     /* 空行聚焦提示 | Blank line focus prompt */
     --custom-empty-focus-p: "´･-･)ﾉ㊫";
     --custom-empty-focus-c: "´･-･)ﾉ↹";
