@@ -13,13 +13,15 @@ var toolbarItemList = [];
  * @withChildren (boolean): 是否移除子元素节点
  */
 function recreateNode(node, withChildren = false) {
-    if (withChildren) {
-        node.parentNode.replaceChild(node.cloneNode(true), node);
-    }
-    else {
-        let newNode = node.cloneNode(false);
-        while (node.hasChildNodes()) newNode.appendChild(node.firstChild);
-        node.parentNode.replaceChild(newNode, node);
+    if (node && node.parentNode) {
+        if (withChildren) {
+            node.parentNode.replaceChild(node.cloneNode(true), node);
+        }
+        else {
+            let newNode = node.cloneNode(false);
+            while (node.hasChildNodes()) newNode.appendChild(node.firstChild);
+            node.parentNode.replaceChild(newNode, node);
+        }
     }
 }
 
@@ -29,7 +31,7 @@ function toolbarItemListPush(item) {
 
     let toolbar = document.getElementById('toolbar');
     let referenceNode = document.getElementById('windowControls');
-    if (toolbar && referenceNode) {
+    if (window.clientMode() !== 'mobile' && toolbar && referenceNode) {
         toolbarItemList = toolbarItemList.sort((a, b) => a.index - b.index);
         for (let item of toolbarItemList) {
             let node = document.getElementById(item.id);

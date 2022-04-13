@@ -10,7 +10,15 @@ function jumpToID() {
     let id = url.searchParams.get('id');
 
     if (config.theme.regs.id.test(id)) {
-        goto(id)
+        // console.log(id);
+        try {
+            goto(id);
+        } catch (e) {
+            if (e.message === id) {
+                setTimeout(jumpToID, 1000);
+            }
+            else throw e;
+        }
     }
 }
 
