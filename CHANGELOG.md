@@ -4,6 +4,7 @@
 - 生成超级块动作的拖拽参考线使用鲜明颜色标记 | The draggable guide line for generating super blocks is marked with striking color.
 - 扩展自定义块属性样式值 | The custom block attribute style values are extended.
 - 完善使用 URL 参数 `id` 跳转指定块功能 | Improved the function of jumping to the specified block using URL parameter `id`.
+- 添加在新窗口打开函数 | Added the function of opening in a new window.
 
 ## v0.7.1/2022-04-09
 

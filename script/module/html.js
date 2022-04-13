@@ -1,5 +1,9 @@
 /* 在 HTML 块中使用的小工具 */
 
+const {
+    BrowserWindow,
+} = require('@electron/remote');
+
 /* 运行系统命令 */
 function runcmd(commands) {
     if (window.confirm(commands) && require) {
@@ -27,4 +31,59 @@ function This(customID) {
         };
     }
     else return null;
+}
+
+/**
+ * 新窗口打开
+ * @mode (string): 打开窗口模式('app', 'desktop', 'mobile')
+ * @urlParams (object): URL 参数
+ * @windowParams (object): 窗体参数
+ * @closeCallback (function): 关闭窗口时的回调函数
+ * @return (BrowserWindow): 窗口对象
+ */
+function openNewWindow(
+    mode = 'mobile',
+    urlParams = {},
+    windowParams = {
+        width: 720,
+        height: 480,
+        frame: true, //是否显示边缘框
+        fullscreen: false //是否全屏显示
+    },
+    closeCallback = null,
+) {
+    let url = new URL(window.location.href);
+
+    // 设置窗口模式
+    switch (mode.toLowerCase()) {
+        case 'app':
+            return;
+        case 'desktop':
+        case 'mobile':
+            url.pathname = `/stage/build/${mode.toLowerCase()}/`;
+            break;
+        default:
+            break;
+    }
+
+    // 设置 URL 参数
+    for (let param of Object.keys(urlParams)) {
+        url.searchParams.set(param, urlParams[param]);
+    }
+    try {
+        // 新建窗口(Electron 环境)
+        newWin = new BrowserWindow(windowParams)
+
+        newWin.loadURL(url.href);
+        newWin.on('close', () => {
+            newWin = null;
+            closeCallback && closeCallback();
+        })
+        return newWin;
+    }
+    catch (e) {
+        // 新建标签页(Web 环境)
+        window.open(url.href, "_blank");
+        return;
+    }
 }
