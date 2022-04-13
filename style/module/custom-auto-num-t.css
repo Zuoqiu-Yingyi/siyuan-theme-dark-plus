@@ -18,25 +18,25 @@
 }
 
 .protyle-wysiwyg[custom-auto-num-t="表"] div[data-node-id][data-type="NodeTable"] table::before {
-    content: "表\0020"counter(t-counter)"\0020";
+    content: "表\0020" counter(t-counter) "\0020";
 }
 
 .protyle-wysiwyg[custom-auto-num-t="表格"] div[data-node-id][data-type="NodeTable"] table::before {
-    content: "表格\0020"counter(t-counter)"\0020";
+    content: "表格\0020" counter(t-counter) "\0020";
 }
 
 .protyle-wysiwyg[custom-auto-num-t="Tab."] div[data-node-id][data-type="NodeTable"] table::before {
-    content: "Tab.\0020"counter(t-counter)"\0020";
+    content: "Tab.\0020" counter(t-counter) "\0020";
 }
 
 .protyle-wysiwyg[custom-auto-num-t="table"] div[data-node-id][data-type="NodeTable"] table::before {
-    content: "table\0020"counter(t-counter)"\0020";
+    content: "table\0020" counter(t-counter) "\0020";
 }
 
 .protyle-wysiwyg[custom-auto-num-t="Table"] div[data-node-id][data-type="NodeTable"] table::before {
-    content: "Table\0020"counter(t-counter)"\0020";
+    content: "Table\0020" counter(t-counter) "\0020";
 }
 
 .protyle-wysiwyg[custom-auto-num-t="TABLE"] div[data-node-id][data-type="NodeTable"] table::before {
-    content: "TABLE\0020"counter(t-counter)"\0020";
+    content: "TABLE\0020" counter(t-counter) "\0020";
 }
