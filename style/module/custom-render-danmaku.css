@@ -5,12 +5,16 @@
 
 /* 使用滚动动画 */
 .protyle-wysiwyg[custom-render~=danmaku]>div[data-node-id],
-.protyle-wysiwyg [data-node-id][custom-render~=danmaku] {
+.protyle-wysiwyg[custom-render~=弹幕]>div[data-node-id],
+.protyle-wysiwyg [data-node-id][custom-render~=danmaku],
+.protyle-wysiwyg [data-node-id][custom-render~=弹幕] {
     animation: var(--custom-render-danmaku-time) danmaku linear infinite normal;
 }
 
 /* 鼠标悬浮时暂停 */
 .protyle-wysiwyg[custom-render~=danmaku]>div[data-node-id]:hover,
-.protyle-wysiwyg [data-node-id][custom-render~=danmaku]:hover {
+.protyle-wysiwyg[custom-render~=弹幕]>div[data-node-id]:hover,
+.protyle-wysiwyg [data-node-id][custom-render~=danmaku]:hover,
+.protyle-wysiwyg [data-node-id][custom-render~=弹幕]:hover {
     animation-play-state: paused;
 }

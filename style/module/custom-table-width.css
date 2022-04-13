@@ -4,18 +4,22 @@
 @import url(/widgets/custom.css);
 
 /* 启用自动宽度 */
-.protyle-wysiwyg div.table[data-node-id][custom-table-width~=auto] {
+.protyle-wysiwyg div.table[data-node-id][custom-table-width~=auto],
+.protyle-wysiwyg div.table[data-node-id][custom-table-width~=自动] {
     width: 100%;
 }
 
-.protyle-wysiwyg div.table[data-node-id][custom-table-width~=auto] table {
+.protyle-wysiwyg div.table[data-node-id][custom-table-width~=auto] table,
+.protyle-wysiwyg div.table[data-node-id][custom-table-width~=自动] table {
     width: auto;
 }
 
 /* 启用等宽 */
-.protyle-wysiwyg div.table[data-node-id][custom-table-width~=monospaced] table {
+.protyle-wysiwyg div.table[data-node-id][custom-table-width~=monospaced] table,
+.protyle-wysiwyg div.table[data-node-id][custom-table-width~=等宽] table {
     table-layout: fixed;
 }
-.protyle-wysiwyg div.table[data-node-id][custom-table-width~=monospaced] table td {
+.protyle-wysiwyg div.table[data-node-id][custom-table-width~=monospaced] table td,
+.protyle-wysiwyg div.table[data-node-id][custom-table-width~=等宽] table td {
     width: var(--custom-table-cell-monospaced-width);
 }

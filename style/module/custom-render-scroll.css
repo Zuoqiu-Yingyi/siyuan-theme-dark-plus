@@ -6,28 +6,48 @@
 /* 滚动条轨道样式 */
 .protyle-wysiwyg [data-node-id][custom-render~=scroll]:not([data-type="NodeTable"])::-webkit-scrollbar-track,
 .protyle-wysiwyg [data-node-id][custom-render~=scroll][data-type="NodeTable"] table::-webkit-scrollbar-track,
+.protyle-wysiwyg [data-node-id][custom-render~=滚屏]:not([data-type="NodeTable"])::-webkit-scrollbar-track,
+.protyle-wysiwyg [data-node-id][custom-render~=滚屏][data-type="NodeTable"] table::-webkit-scrollbar-track,
+.protyle-wysiwyg [data-node-id][custom-render~=滚动]:not([data-type="NodeTable"])::-webkit-scrollbar-track,
+.protyle-wysiwyg [data-node-id][custom-render~=滚动][data-type="NodeTable"] table::-webkit-scrollbar-track,
 .protyle-wysiwyg[custom-render~=scroll]>div[data-node-id]:not([data-type="NodeTable"])::-webkit-scrollbar-track,
-.protyle-wysiwyg[custom-render~=scroll]>div[data-node-id][data-type="NodeTable"] table::-webkit-scrollbar-track {
+.protyle-wysiwyg[custom-render~=scroll]>div[data-node-id][data-type="NodeTable"] table::-webkit-scrollbar-track,
+.protyle-wysiwyg[custom-render~=滚屏]>div[data-node-id]:not([data-type="NodeTable"])::-webkit-scrollbar-track,
+.protyle-wysiwyg[custom-render~=滚屏]>div[data-node-id][data-type="NodeTable"] table::-webkit-scrollbar-track,
+.protyle-wysiwyg[custom-render~=滚动]>div[data-node-id]:not([data-type="NodeTable"])::-webkit-scrollbar-track,
+.protyle-wysiwyg[custom-render~=滚动]>div[data-node-id][data-type="NodeTable"] table::-webkit-scrollbar-track {
     background-color: var(--custom-scroll-track-background-color);
     border-radius: var(--custom-border-radius);
 }
 
 /* 为指定块添加纵向滚动条 */
 .protyle-wysiwyg[custom-render~=scroll]>div[data-node-id]:not([data-type="NodeTable"]),
-.protyle-wysiwyg [data-node-id][custom-render~=scroll]:not([data-type="NodeTable"]) {
+.protyle-wysiwyg[custom-render~=滚屏]>div[data-node-id]:not([data-type="NodeTable"]),
+.protyle-wysiwyg[custom-render~=滚动]>div[data-node-id]:not([data-type="NodeTable"]),
+.protyle-wysiwyg [data-node-id][custom-render~=scroll]:not([data-type="NodeTable"]),
+.protyle-wysiwyg [data-node-id][custom-render~=滚屏]:not([data-type="NodeTable"]),
+.protyle-wysiwyg [data-node-id][custom-render~=滚动]:not([data-type="NodeTable"]) {
     overflow-y: auto;
     max-height: var(--custom-scroll-max-height);
 }
 
 .protyle-wysiwyg[custom-render~=scroll]>div[data-node-id][data-type="NodeTable"] table,
-.protyle-wysiwyg [data-node-id][custom-render~=scroll][data-type="NodeTable"] table {
+.protyle-wysiwyg[custom-render~=滚屏]>div[data-node-id][data-type="NodeTable"] table,
+.protyle-wysiwyg[custom-render~=滚动]>div[data-node-id][data-type="NodeTable"] table,
+.protyle-wysiwyg [data-node-id][custom-render~=scroll][data-type="NodeTable"] table,
+.protyle-wysiwyg [data-node-id][custom-render~=滚屏][data-type="NodeTable"] table,
+.protyle-wysiwyg [data-node-id][custom-render~=滚动][data-type="NodeTable"] table {
     position: relative;
     overflow-y: auto;
     max-height: var(--custom-scroll-max-height);
 }
 
 .protyle-wysiwyg[custom-render~=scroll]>div[data-node-id][data-type="NodeTable"] table>thead,
-.protyle-wysiwyg [data-node-id][custom-render~=scroll][data-type="NodeTable"] table>thead {
+.protyle-wysiwyg[custom-render~=滚屏]>div[data-node-id][data-type="NodeTable"] table>thead,
+.protyle-wysiwyg[custom-render~=滚动]>div[data-node-id][data-type="NodeTable"] table>thead,
+.protyle-wysiwyg [data-node-id][custom-render~=scroll][data-type="NodeTable"] table>thead,
+.protyle-wysiwyg [data-node-id][custom-render~=滚屏][data-type="NodeTable"] table>thead,
+.protyle-wysiwyg [data-node-id][custom-render~=滚动][data-type="NodeTable"] table>thead {
     position: sticky;
     top: 1px;
     outline: 1px solid var(--b3-theme-primary);
