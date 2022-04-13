@@ -27,20 +27,20 @@
 
 .protyle-wysiwyg div[data-node-id][custom-type~=table-title]>div.protyle-attr[contenteditable]::after {
     color: var(--b3-theme-on-surface);
-    content: "Table\0020"counter(table-counter);
+    content: "Table\0020" counter(table-counter);
 }
 
 .protyle-wysiwyg div[data-node-id][custom-type~=figure-title]>div.protyle-attr[contenteditable]::after {
     color: var(--b3-theme-on-surface);
-    content: "Figure\0020"counter(figure-counter);
+    content: "Figure\0020" counter(figure-counter);
 }
 
 .protyle-wysiwyg div[data-node-id][custom-type~=表标题]>div.protyle-attr[contenteditable]::after {
     color: var(--b3-theme-on-surface);
-    content: "表\0020"counter(table-counter);
+    content: "表\0020" counter(table-counter);
 }
 
 .protyle-wysiwyg div[data-node-id][custom-type~=图标题]>div.protyle-attr[contenteditable]::after {
     color: var(--b3-theme-on-surface);
-    content: "图\0020"counter(figure-counter);
+    content: "图\0020" counter(figure-counter);
 }

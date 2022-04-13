@@ -46,7 +46,7 @@
 }
 
 .sb[custom-board="容器"] .sb .list .li::after {
-    content: "deadline:"attr(custom-deadline)"|""memo:"attr(memo);
+    content: "deadline:" attr(custom-deadline) "|" "memo:" attr(memo);
     font-size: 10px;
     display: inline;
     color: var(--b3-theme-on-surface);

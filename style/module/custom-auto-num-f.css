@@ -18,25 +18,25 @@
 }
 
 .protyle-wysiwyg[custom-auto-num-f="图"] div[data-node-id] span.protyle-action__title::before {
-    content: "图\0020"counter(f-counter)"\0020";
+    content: "图\0020" counter(f-counter) "\0020";
 }
 
 .protyle-wysiwyg[custom-auto-num-f="图片"] div[data-node-id] span.protyle-action__title::before {
-    content: "图片\0020"counter(f-counter)"\0020";
+    content: "图片\0020" counter(f-counter) "\0020";
 }
 
 .protyle-wysiwyg[custom-auto-num-f="Fig."] div[data-node-id] span.protyle-action__title::before {
-    content: "Fig.\0020"counter(f-counter)"\0020";
+    content: "Fig.\0020" counter(f-counter) "\0020";
 }
 
 .protyle-wysiwyg[custom-auto-num-f="figure"] div[data-node-id] span.protyle-action__title::before {
-    content: "figure\0020"counter(f-counter)"\0020";
+    content: "figure\0020" counter(f-counter) "\0020";
 }
 
 .protyle-wysiwyg[custom-auto-num-f="Figure"] div[data-node-id] span.protyle-action__title::before {
-    content: "Figure\0020"counter(f-counter)"\0020";
+    content: "Figure\0020" counter(f-counter) "\0020";
 }
 
 .protyle-wysiwyg[custom-auto-num-f="FIGURE"] div[data-node-id] span.protyle-action__title::before {
-    content: "FIGURE\0020"counter(f-counter)"\0020";
+    content: "FIGURE\0020" counter(f-counter) "\0020";
 }
