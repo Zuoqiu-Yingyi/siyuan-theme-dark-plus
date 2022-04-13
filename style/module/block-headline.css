@@ -53,7 +53,7 @@
     display: block !important;
     float: left;
     font-size: var(--custom-h-num-font-size);
-    content: counter(h1-counter) "\00A0" !important;
+    content: counter(h1-counter) "\00A0";
 }
 
 .protyle-wysiwyg>.h2::before,
@@ -61,7 +61,7 @@
     display: block !important;
     float: left;
     font-size: var(--custom-h-num-font-size);
-    content: counter(h1-counter) "."counter(h2-counter) "\00A0" !important;
+    content: counter(h1-counter) "." counter(h2-counter) "\00A0";
 }
 
 .protyle-wysiwyg>.h3::before,
@@ -69,7 +69,7 @@
     display: block !important;
     float: left;
     font-size: var(--custom-h-num-font-size);
-    content: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "\00A0" !important;
+    content: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) "\00A0";
 }
 
 .protyle-wysiwyg>.h4::before,
@@ -77,7 +77,7 @@
     display: block !important;
     float: left;
     font-size: var(--custom-h-num-font-size);
-    content: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "."counter(h4-counter) "\00A0" !important;
+    content: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) "\00A0";
 }
 
 .protyle-wysiwyg>.h5::before,
@@ -85,7 +85,7 @@
     display: block !important;
     float: left;
     font-size: var(--custom-h-num-font-size);
-    content: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "."counter(h4-counter) "."counter(h5-counter) "\00A0" !important;
+    content: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) "." counter(h5-counter) "\00A0";
 }
 
 .protyle-wysiwyg>.h6::before,
@@ -93,7 +93,7 @@
     display: block !important;
     float: left;
     font-size: var(--custom-h-num-font-size);
-    content: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "."counter(h4-counter) "."counter(h5-counter) "."counter(h6-counter) "\00A0" !important;
+    content: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) "." counter(h5-counter) "." counter(h6-counter) "\00A0";
 }
 
 /* 调整标题空行光标位置 */

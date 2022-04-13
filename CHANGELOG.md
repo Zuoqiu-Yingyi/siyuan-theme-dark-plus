@@ -2,6 +2,7 @@
 
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 生成超级块动作的拖拽参考线使用鲜明颜色标记 | The draggable guide line for generating super blocks is marked with striking color.
+- 扩展自定义块属性样式值 | The custom block attribute style values are extended.
 
 ## v0.7.1/2022-04-09
 

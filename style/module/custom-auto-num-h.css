@@ -4,21 +4,17 @@
 @import url(/widgets/custom.css);
 
 /* 使用自定义文档块属性取消自动编号 */
-.protyle-wysiwyg[custom-auto-num-h="0"]>.h1::before,
-.protyle-wysiwyg[custom-auto-num-h="0"]>.h2::before,
-.protyle-wysiwyg[custom-auto-num-h="0"]>.h3::before,
-.protyle-wysiwyg[custom-auto-num-h="0"]>.h4::before,
-.protyle-wysiwyg[custom-auto-num-h="0"]>.h5::before,
-.protyle-wysiwyg[custom-auto-num-h="0"]>.h6::before {
+.protyle-wysiwyg[custom-auto-num-h="0"]>[data-node-id][data-type="NodeHeading"]::before,
+.protyle-wysiwyg[custom-auto-num-h="false"]>[data-node-id][data-type="NodeHeading"]::before,
+.protyle-wysiwyg[custom-auto-num-h="禁用"]>[data-node-id][data-type="NodeHeading"]::before,
+.protyle-wysiwyg[custom-auto-num-h="关闭"]>[data-node-id][data-type="NodeHeading"]::before {
     content: "";
 }
 
 /* 使用自定义文档块属性时移除光标位置缩进 */
-.protyle-wysiwyg[custom-auto-num-h="0"] .h1>[contenteditable][spellcheck]:empty,
-.protyle-wysiwyg[custom-auto-num-h="0"] .h2>[contenteditable][spellcheck]:empty,
-.protyle-wysiwyg[custom-auto-num-h="0"] .h3>[contenteditable][spellcheck]:empty,
-.protyle-wysiwyg[custom-auto-num-h="0"] .h4>[contenteditable][spellcheck]:empty,
-.protyle-wysiwyg[custom-auto-num-h="0"] .h5>[contenteditable][spellcheck]:empty,
-.protyle-wysiwyg[custom-auto-num-h="0"] .h6>[contenteditable][spellcheck]:empty {
+.protyle-wysiwyg[custom-auto-num-h="0"] [data-node-id][data-type="NodeHeading"]>[contenteditable][spellcheck]:empty,
+.protyle-wysiwyg[custom-auto-num-h="false"] [data-node-id][data-type="NodeHeading"]>[contenteditable][spellcheck]:empty,
+.protyle-wysiwyg[custom-auto-num-h="禁用"] [data-node-id][data-type="NodeHeading"]>[contenteditable][spellcheck]:empty,
+.protyle-wysiwyg[custom-auto-num-h="关闭"] [data-node-id][data-type="NodeHeading"]>[contenteditable][spellcheck]:empty {
     padding-left: 0;
 }
