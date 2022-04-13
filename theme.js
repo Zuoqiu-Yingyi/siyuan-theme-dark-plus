@@ -73,6 +73,24 @@ function themeMode() {
 }
 
 /**
+ * 获取客户端模式
+ * @returns {string} 'app' 或 'desktop' 或 'mobile'
+ */
+function clientMode() {
+    let url = new URL(window.location.href);
+    switch (true) {
+        case url.pathname.startsWith('/stage/build/app'):
+            return 'app';
+        case url.pathname.startsWith('/stage/build/desktop'):
+            return 'desktop';
+        case url.pathname.startsWith('/stage/build/mobile'):
+            return 'mobile';
+        default:
+            return null;
+    }
+}
+
+/**
  * 更换主题模式
  * @param {string} lightStyle 浅色主题配置文件路径
  * @param {string} darkStyle 深色主题配置文件路径
@@ -113,7 +131,7 @@ function changeThemeMode(
 
     /* 加载 HTML 块中使用的小工具 */
     loadScript("/appearance/themes/Dark+/script/module/html.js", "text/javascript");
-
+    
     /* 加载主题功能 */
     loadScript("/appearance/themes/Dark+/script/module/background.js");
     loadScript("/appearance/themes/Dark+/script/module/blockattrs.js");
@@ -124,7 +142,8 @@ function changeThemeMode(
     loadScript("/appearance/themes/Dark+/script/module/style.js");
     loadScript("/appearance/themes/Dark+/script/module/timestamp.js");
     loadScript("/appearance/themes/Dark+/script/module/typewriter.js");
-
+    loadScript("/appearance/themes/Dark+/script/module/window.js", "text/javascript");
+    
     /* 加载独立应用 */
     loadScript("/appearance/themes/Dark+/app/comment/index.js");
 
