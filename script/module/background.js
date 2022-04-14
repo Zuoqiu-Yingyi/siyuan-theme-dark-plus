@@ -4,7 +4,6 @@ import { config } from './config.js';
 import { isKey } from './../utils/hotkey.js';
 import {
     toolbarItemInit,
-    toolbarItemChangeStatu,
 } from './../utils/ui.js';
 import {
     shuffle,
@@ -29,7 +28,7 @@ function changeBackground(background, mode = 'image') {
 
 function switchBackground(lightIter, darkIter) {
     // console.log(customBackground);
-    switch (window.themeMode()) {
+    switch (window.theme.themeMode()) {
         case 'light':
             changeBackground(lightIter.next().value);
             break;
@@ -43,7 +42,6 @@ function switchBackground(lightIter, darkIter) {
 setTimeout(() => {
     try {
         if (config.theme.background.enable) {
-            let body = document.body;
             if (config.theme.background.image.enable) {
                 if (config.theme.background.image.web.enable) {
                     const WEB_LIGHT_ITER = config.theme.background.image.web.random
@@ -59,12 +57,12 @@ setTimeout(() => {
                     );
 
                     // 随机背景图片
-                    body.addEventListener('keyup', (e) => {
+                    window.addEventListener('keyup', (e) => {
                         // console.log(e);
                         if (isKey(e, config.theme.hotkeys.background.image.web)) {
                             Fn_webBackground();
                         }
-                    });
+                    }, true);
                 }
                 if (config.theme.background.image.custom.enable) {
                     const CUSTOM_LIGHT_ITER = config.theme.background.image.custom.random
@@ -83,12 +81,12 @@ setTimeout(() => {
                     if (config.theme.background.image.custom.default) Fn_customBackground();
 
                     // 使用快捷键切换自定义背景图片
-                    body.addEventListener('keyup', (e) => {
+                    window.addEventListener('keyup', (e) => {
                         // console.log(e);
                         if (isKey(e, config.theme.hotkeys.background.image.custom)) {
                             Fn_customBackground();
                         }
-                    });
+                    }, true);
                 }
             }
         }

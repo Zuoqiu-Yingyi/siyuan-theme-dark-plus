@@ -1,11 +1,7 @@
 /* 在 HTML 块中使用的小工具 */
 
-const {
-    BrowserWindow,
-} = require('@electron/remote');
-
 /* 运行系统命令 */
-function runcmd(commands) {
+window.theme.runcmd = function (commands) {
     if (window.confirm(commands) && require) {
         commands = `start powershell -c ${commands.replaceAll('\n', '; ')}pause`;
         require('child_process').exec(commands, null);
@@ -20,7 +16,7 @@ function runcmd(commands) {
  * @returns {HTMLElement} shadowRoot 当前 HTML 块 shadowRoot
  * @returns {null} null 当前 HTML 块不存在
  */
-function This(customID) {
+window.theme.This = function (customID) {
     let protyle = document.querySelector(`protyle-html[data-content*="${customID}"]`);
     if (protyle) {
         let block = protyle.parentElement.parentElement;
@@ -36,34 +32,43 @@ function This(customID) {
 /**
  * 新窗口打开
  * @mode (string): 打开窗口模式('app', 'desktop', 'mobile')
+ * @url (string): URL
  * @urlParams (object): URL 参数
  * @windowParams (object): 窗体参数
  * @closeCallback (function): 关闭窗口时的回调函数
  * @return (BrowserWindow): 窗口对象
  */
-function openNewWindow(
+window.theme.openNewWindow = function (
     mode = 'mobile',
+    url = window.location.href,
     urlParams = {},
     windowParams = {
         width: 720,
         height: 480,
-        frame: true, //是否显示边缘框
-        fullscreen: false //是否全屏显示
+        frame: true, // 是否显示边缘框
+        fullscreen: false // 是否全屏显示
     },
     closeCallback = null,
 ) {
-    let url = new URL(window.location.href);
+    try {
+        url = new URL(url);
+    }
+    catch (e) {
+        return null;
+    }
 
     // 设置窗口模式
-    switch (mode.toLowerCase()) {
-        case 'app':
-            return;
-        case 'desktop':
-        case 'mobile':
-            url.pathname = `/stage/build/${mode.toLowerCase()}/`;
-            break;
-        default:
-            break;
+    if (mode) {
+        switch (mode.toLowerCase()) {
+            case 'app':
+                return;
+            case 'desktop':
+            case 'mobile':
+                url.pathname = `/stage/build/${mode.toLowerCase()}/`;
+                break;
+            default:
+                break;
+        }
     }
 
     // 设置 URL 参数
@@ -71,6 +76,7 @@ function openNewWindow(
         url.searchParams.set(param, urlParams[param]);
     }
     try {
+        const { BrowserWindow } = require('@electron/remote');
         // 新建窗口(Electron 环境)
         newWin = new BrowserWindow(windowParams)
 

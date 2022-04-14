@@ -16,6 +16,8 @@ export {
     createLookIterator, // 创建循环迭代器
 }
 
+import { config } from './../module/config.js';
+
 // REF [js - 对象递归合并merge - zc-lee - 博客园](https://www.cnblogs.com/zc-lee/p/15873611.html)
 function isObject(obj) {
     return Object.prototype.toString.call(obj) === '[object Object]'
@@ -68,19 +70,32 @@ function HTMLDecode(text) {
     return temp.textContent;
 }
 
-function goto(id) {
+function goto(id, focus = false) {
     let doc = window.document;
-    // console.log(doc)
-    let target = doc.querySelector("div.protyle-wysiwyg div[data-node-id] div[contenteditable][spellcheck]");
-    if (target) {
-        let link = doc.createElement("span");
-        link.setAttribute("data-type", "block-ref");
-        link.setAttribute("data-id", id);
-        target.appendChild(link);
-        link.click();
-        link.remove();
+    if (parseInt(focus) === 1) {
+        let target = doc.querySelector('.protyle-breadcrumb>.protyle-breadcrumb__bar');
+        if (target) {
+            let item = doc.createElement("span");
+            item.setAttribute("data-node-id", id);
+            target.appendChild(item);
+            item.click();
+            item.remove();
+        }
+        else throw new Error(id);
     }
-    else throw new Error(id);
+    else {
+        let target = doc.querySelector('div.protyle-wysiwyg div[data-node-id] div[contenteditable][spellcheck]');
+        if (target) {
+            let link = doc.createElement("span");
+            link.setAttribute("data-type", "block-ref");
+            link.setAttribute("data-id", id);
+            target.appendChild(link);
+            link.click();
+            link.remove();
+        }
+        else throw new Error(id);
+    }
+    // console.log(doc)
 }
 
 function isNum(str) {
@@ -140,11 +155,17 @@ function timestampFormat(seconds) {
 }
 
 function url2id(url) {
-    return url.substr(16);
+    let results = config.theme.regs.url.exec(url);
+    // console.log(results);
+    if (results && results.length >= 2) { 
+        return results[1];
+    }
+    return null;
 }
 
-function id2url(id) {
-    return `siyuan://blocks/${id}`;
+function id2url(id, focus = 0) {
+    if (parseInt(focus) === 1) return `siyuan://blocks/${id}/?focus=1`;
+    else return `siyuan://blocks/${id}`;
 }
 
 function intPrefix(num, length) {

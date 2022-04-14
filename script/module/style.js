@@ -70,16 +70,14 @@ function render() {
 setTimeout(() => {
     try {
         if (config.theme.style.enable) {
-            let body = document.body;
-
             if (config.theme.style.save.enable) {
                 // 块属性编辑窗口确认按钮保存自定义样式
-                body.addEventListener('click', (e) => {
+                window.addEventListener('click', (e) => {
                     let target = e.target;
                     if (target.nodeName.toLocaleLowerCase() == 'button' && target.className === 'b3-button b3-button--text') {
                         setTimeout(saveCustomStyle, 0);
                     }
-                });
+                }, true);
             }
 
             // 鼠标单击渲染自定义样式
@@ -94,12 +92,12 @@ setTimeout(() => {
                 );
 
                 // 使用快捷键渲染自定义样式
-                body.addEventListener('keyup', (e) => {
+                window.addEventListener('keyup', (e) => {
                     // console.log(e);
                     if (isKey(e, config.theme.hotkeys.style.render)) {
                         Fn_render();
                     }
-                });
+                }, true);
             }
         }
     } catch (err) {

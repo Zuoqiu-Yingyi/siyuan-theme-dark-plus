@@ -1,5 +1,6 @@
 import { config } from './config.js';
 import { isKey } from './../utils/hotkey.js';
+import { getFocusedBlock } from './../utils/dom.js';
 import {
     toolbarItemInit,
     toolbarItemChangeStatu,
@@ -14,10 +15,8 @@ function activate() {
     if (protyle_wysiwyg.length > 0) {
         for (let editor of protyle_wysiwyg) {
             editor.onkeyup = (e, t) => {
-                let block = window.getSelection().focusNode.parentElement; // 当前光标
+                let block = getFocusedBlock(); // 当前光标所在块
                 let page = editor.parentElement; // 当前页面
-
-                while (block != null && block.dataset.nodeId == null) block = block.parentElement;
 
                 if (block == null || page == null) return;
 
@@ -85,7 +84,7 @@ function typewriterEnable() {
             config.theme.typewriter.switch.toolbar.id,
             enable,
             'SVG',
-            null,
+            undefined,
             1,
         );
         if (enable) {
@@ -107,7 +106,6 @@ function typewriterEnable() {
 setTimeout(() => {
     try {
         if (config.theme.typewriter.enable) {
-            let body = document.body;
             if (config.theme.typewriter.switch.enable) {
                 let Fn_typewriterEnable = toolbarItemInit(
                     config.theme.typewriter.switch.toolbar,
@@ -115,12 +113,12 @@ setTimeout(() => {
                 );
 
                 // 使用快捷键开/关打字机模式
-                body.addEventListener('keyup', (e) => {
+                window.addEventListener('keyup', (e) => {
                     // console.log(e);
                     if (isKey(e, config.theme.hotkeys.typewriter.switch)) {
                         Fn_typewriterEnable();
                     }
-                });
+                }, true);
             }
         }
     } catch (err) {

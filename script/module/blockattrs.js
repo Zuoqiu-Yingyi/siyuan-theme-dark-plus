@@ -27,10 +27,9 @@ async function setter(target) {
 setTimeout(() => {
     try {
         if (config.theme.blockattrs.enable) {
-            let body = document.body;
             if (config.theme.blockattrs.set.enable) {
                 // 设置块属性
-                body.addEventListener('mousedown', (e) => {
+                window.addEventListener('mousedown', (e) => {
                     // console.log(e);
                     if (isButton(e, config.theme.hotkeys.blockattrs.set)) {
                         // console.log(e);
