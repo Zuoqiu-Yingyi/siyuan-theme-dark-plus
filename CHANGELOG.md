@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.7.2/2022-04-15
+
+- [v0.7.1 <=> v0.7.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.7.1...v0.7.2)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 生成超级块动作的拖拽参考线使用鲜明颜色标记 | The draggable guide line for generating super blocks is marked with striking color.
