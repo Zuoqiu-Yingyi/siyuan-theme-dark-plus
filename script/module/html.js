@@ -52,44 +52,46 @@ window.theme.openNewWindow = function (
 ) {
     try {
         url = new URL(url);
+        // 设置窗口模式
+        if (mode) {
+            switch (mode.toLowerCase()) {
+                case 'app':
+                    return;
+                case 'desktop':
+                case 'mobile':
+                    url.pathname = `/stage/build/${mode.toLowerCase()}/`;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        // 设置 URL 参数
+        for (let param of Object.keys(urlParams)) {
+            url.searchParams.set(param, urlParams[param]);
+        }
+
+        // 打开新窗口
+        try {
+            const { BrowserWindow } = require('@electron/remote');
+            // 新建窗口(Electron 环境)
+            newWin = new BrowserWindow(windowParams)
+
+            newWin.loadURL(url.href);
+            newWin.on('close', () => {
+                newWin = null;
+                closeCallback && closeCallback();
+            })
+            return newWin;
+        }
+        catch (e) {
+            // 新建标签页(Web 环境)
+            window.open(url.href, "_blank");
+            return null;
+        }
     }
     catch (e) {
         return null;
     }
 
-    // 设置窗口模式
-    if (mode) {
-        switch (mode.toLowerCase()) {
-            case 'app':
-                return;
-            case 'desktop':
-            case 'mobile':
-                url.pathname = `/stage/build/${mode.toLowerCase()}/`;
-                break;
-            default:
-                break;
-        }
-    }
-
-    // 设置 URL 参数
-    for (let param of Object.keys(urlParams)) {
-        url.searchParams.set(param, urlParams[param]);
-    }
-    try {
-        const { BrowserWindow } = require('@electron/remote');
-        // 新建窗口(Electron 环境)
-        newWin = new BrowserWindow(windowParams)
-
-        newWin.loadURL(url.href);
-        newWin.on('close', () => {
-            newWin = null;
-            closeCallback && closeCallback();
-        })
-        return newWin;
-    }
-    catch (e) {
-        // 新建标签页(Web 环境)
-        window.open(url.href, "_blank");
-        return;
-    }
 }
