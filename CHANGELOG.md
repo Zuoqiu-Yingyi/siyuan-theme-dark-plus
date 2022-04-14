@@ -8,6 +8,7 @@
 - 添加在新窗口打开函数 | Added the function of opening in a new window.
 - 使用 <kbd>鼠标中键</kbd> 与 <kbd>Shift + 鼠标中键</kbd> 打开新窗口 | Use <kbd>Middle Mouse Button</kbd> and <kbd>Shift + Middle Mouse Button</kbd> to open a new window.
 - 优化新窗口打开方法 | Improved the method of opening in a new window.
+- 新窗口默认置顶 | The new window is set to the top.
 
 ## v0.7.1/2022-04-09
 
