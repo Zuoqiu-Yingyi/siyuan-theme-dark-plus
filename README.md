@@ -672,7 +672,8 @@ export var config = {
                     width: 720, // 窗口宽度
                     height: 480, // 窗口高度
                     frame: true, // 是否显示边缘框
-                    fullscreen: false // 是否全屏显示
+                    fullscreen: false, // 是否全屏显示
+                    alwaysOnTop: true, // 是否置顶显示
                 },
                 panel: {
                     enable: true, // 打开一个新窗口

@@ -70,7 +70,7 @@ function HTMLDecode(text) {
     return temp.textContent;
 }
 
-function goto(id, focus = false) {
+function goto(id, focus = 0) {
     let doc = window.document;
     if (parseInt(focus) === 1) {
         let target = doc.querySelector('.protyle-breadcrumb>.protyle-breadcrumb__bar');
