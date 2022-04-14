@@ -8,14 +8,15 @@ import { goto } from './../utils/misc.js';
 function jumpToID() {
     let url = new URL(window.location.href);
     let id = url.searchParams.get('id');
+    let focus = url.searchParams.get('focus');
 
     if (config.theme.regs.id.test(id)) {
         // console.log(id);
         try {
-            goto(id);
+            goto(id, focus);
         } catch (e) {
             if (e.message === id) {
-                setTimeout(jumpToID, 1000);
+                setTimeout(jumpToID, 500);
             }
             else throw e;
         }
@@ -25,7 +26,7 @@ function jumpToID() {
 setTimeout(() => {
     try {
         if (config.theme.goto.enable) {
-            window.onload = setTimeout(jumpToID, 0)
+            window.onload = setTimeout(jumpToID, 0);
         }
     } catch (err) {
         console.error(err);

@@ -31,7 +31,7 @@ function toolbarItemListPush(item) {
 
     let toolbar = document.getElementById('toolbar');
     let referenceNode = document.getElementById('windowControls');
-    if (window.clientMode() !== 'mobile' && toolbar && referenceNode) {
+    if (window.theme.clientMode() !== 'mobile' && toolbar && referenceNode) {
         toolbarItemList = toolbarItemList.sort((a, b) => a.index - b.index);
         for (let item of toolbarItemList) {
             let node = document.getElementById(item.id);
@@ -147,7 +147,7 @@ function toolbarItemInit(toolbarConfig, handler, svgClassIndex = 0) {
         toolbarConfig.enable,
         'BUTTON',
         node,
-        null,
+        undefined,
         listener,
     )
 

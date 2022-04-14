@@ -7,7 +7,7 @@ export var config = {
     theme: {
         regs: {
             // 正则表达式
-            url: /^siyuan:\/\/blocks\/\d{14}\-[0-9a-z]{7}$/, // 思源 URL Scheme 正则表达式
+            url: /^siyuan:\/\/blocks\/(\d{14}\-[0-9a-z]{7})\/*(?:(?:\?)(\w+=\w+)(?:(?:\&)(\w+=\w+))+)?$/, // 思源 URL Scheme 正则表达式
             time: /^(\d+)(:[0-5]?[0-9]){0,2}(\.\d*)?$/, // 时间戳正则表达式
             id: /^\d{14}\-[0-9a-z]{7}$/, // 块 ID 正则表达式
         },
@@ -26,7 +26,7 @@ export var config = {
                     id: 'theme-style-render',
                     label: '渲染自定义样式 [Ctrl + F1]\nRender custom styles',
                     icon: '#iconTheme',
-                    index: 1,
+                    index: 3,
                 },
                 styles: [
                     // 渲染的自定义样式
@@ -81,7 +81,7 @@ export var config = {
                         id: 'theme-doc-outline-u',
                         label: '复制当前文档大纲为无序列表 [Ctrl + Shift + Alt + U]\nCopy the current document outline as an unordered list',
                         icon: '#iconList',
-                        index: 4,
+                        index: 7,
                     },
                 },
                 o: {
@@ -91,7 +91,7 @@ export var config = {
                         id: 'theme-doc-outline-o',
                         label: '复制当前文档大纲为有序列表 [Ctrl + Shift + Alt + O]\nCopy the current document outline as an ordered list',
                         icon: '#iconOrderedList',
-                        index: 5,
+                        index: 8,
                     },
                 },
                 t: {
@@ -101,7 +101,7 @@ export var config = {
                         id: 'theme-doc-outline-t',
                         label: '复制当前文档大纲为任务列表 [Ctrl + Shift + Alt + T]\nCopy the current document outline as a task list',
                         icon: '#iconCheck',
-                        index: 6,
+                        index: 9,
                     },
                 },
                 style: {
@@ -121,7 +121,7 @@ export var config = {
                     id: 'theme-doc-copy',
                     label: '复制当前文档内容 (Markdown) [Shift + Alt + C]\nCopy the current document content (Markdown)',
                     icon: '#iconCopy',
-                    index: 7,
+                    index: 10,
                 },
             },
             delete: {
@@ -131,7 +131,7 @@ export var config = {
                     id: 'theme-doc-delete',
                     label: '删除当前文档内容 [Shift + Alt + D]\nDelete the current document content',
                     icon: '#iconTrashcan',
-                    index: 9,
+                    index: 12,
                 },
             },
             cut: {
@@ -141,7 +141,7 @@ export var config = {
                     id: 'theme-doc-cut',
                     label: '剪切当前文档内容 (Markdown) [Shift + Alt + X]\nDelete the current document content (Markdown)',
                     icon: '#iconCut',
-                    index: 8,
+                    index: 11,
                 },
             },
         },
@@ -222,7 +222,7 @@ export var config = {
                         id: 'theme-background-image-random',
                         label: '更换背景图片 (网络) [Shift + Alt + R]\nChange background image (Web)',
                         icon: '#iconImage',
-                        index: 2,
+                        index: 5,
                     },
                     random: true, // 是否随机切换网络背景图片 URL
                     light: [ // 随机亮色背景图片 URL
@@ -244,7 +244,7 @@ export var config = {
                         id: 'theme-background-image-custom',
                         label: '更换背景图片 (自定义) [Ctrl + Shift + Alt + R]\nChange background image (Custom)',
                         icon: '#iconImage',
-                        index: 3,
+                        index: 6,
                     },
                     random: true, // 是否随机选择自定义背景图片
                     default: false, // 是否默认使用自定义背景图片
@@ -270,6 +270,65 @@ export var config = {
                         '/appearance/themes/Dark+/image/background (11).jpg',
                         '/appearance/themes/Dark+/image/background (12).jpg',
                     ],
+                },
+            },
+        },
+        window: {
+            enable: true, // 窗口功能开关
+            open: {
+                enable: true, // 打开窗口功能开关
+                windowParams: {
+                    // 窗口参数
+                    width: 720, // 窗口宽度
+                    height: 480, // 窗口高度
+                    frame: true, // 是否显示边缘框
+                    fullscreen: false // 是否全屏显示
+                },
+                panel: {
+                    enable: true, // 打开一个新窗口
+                    url: null, // 新窗口的 URL, 值 null 则为 '/stage/build/desktop/'
+                    toolbar: { // 菜单栏
+                        enable: true,
+                        id: 'theme-window-open-panel',
+                        label: '打开一个新窗口\nOpen a new window',
+                        icon: '#iconExport',
+                        index: 1,
+                    },
+                },
+                block: {
+                    // 新窗口打开当前块, 否则打开当前文档
+                    enable: true,
+                    outfocus: {
+                        // 新窗口打开当前块, 否则打开当前文档
+                        enable: true,
+                        toolbar: { // 菜单栏
+                            enable: true,
+                            id: 'theme-window-open-block-outfocus',
+                            label: '在新窗口打开当前块 [Shift + Alt + N]\nOpen the current block in a new window',
+                            icon: '#iconExport',
+                            index: 2,
+                        },
+                    },
+                    infocus: {
+                        // 新窗口打开当前块并聚焦, 否则打开当前文档
+                        enable: true,
+                        toolbar: { // 菜单栏
+                            enable: true,
+                            id: 'theme-window-open-block-infocus',
+                            label: '在新窗口打开当前块并聚焦 [Ctrl + Shift + Alt + N]\nOpen the current block in a new window and focuses',
+                            icon: '#iconExport',
+                            index: 3,
+                        },
+                    },
+                },
+                link: {
+                    enable: true, // 新窗口打开当链接/块引用
+                    outfocus: {
+                        enable: true, // 不聚焦
+                    },
+                    infocus: {
+                        enable: true, // 聚焦
+                    },
                 },
             },
         },
@@ -337,7 +396,7 @@ export var config = {
             },
             doc: {
                 copy: {
-                    // 复制当前文档全文([Shift + Alt + C])
+                    // 复制当前文档全文(Shift + Alt + C)
                     ctrlKey: false,
                     metaKey: false,
                     shiftKey: true,
@@ -345,7 +404,7 @@ export var config = {
                     key: 'C',
                 },
                 delete: {
-                    // 删除当前文档全文([Shift + Alt + D])
+                    // 删除当前文档全文(Shift + Alt + D)
                     ctrlKey: false,
                     metaKey: false,
                     shiftKey: true,
@@ -353,7 +412,7 @@ export var config = {
                     key: 'D',
                 },
                 cut: {
-                    // 剪切当前文档全文([Shift + Alt + X])
+                    // 剪切当前文档全文(Shift + Alt + X)
                     ctrlKey: false,
                     metaKey: false,
                     shiftKey: true,
@@ -362,7 +421,7 @@ export var config = {
                 },
                 outline: {
                     u: {
-                        // 复制当前文档大纲(无序列表)至剪贴板([Ctrl + Shift + Alt + U])
+                        // 复制当前文档大纲(无序列表)至剪贴板(Ctrl + Shift + Alt + U)
                         ctrlKey: true,
                         metaKey: true,
                         shiftKey: true,
@@ -370,7 +429,7 @@ export var config = {
                         key: 'U',
                     },
                     o: {
-                        // 复制当前文档大纲(有序列表)至剪贴板([Ctrl + Shift + Alt + O])
+                        // 复制当前文档大纲(有序列表)至剪贴板(Ctrl + Shift + Alt + O)
                         ctrlKey: true,
                         metaKey: true,
                         shiftKey: true,
@@ -378,7 +437,7 @@ export var config = {
                         key: 'O',
                     },
                     t: {
-                        // 复制当前文档大纲(任务列表)至剪贴板([Ctrl + Shift + Alt + T])
+                        // 复制当前文档大纲(任务列表)至剪贴板(Ctrl + Shift + Alt + T)
                         ctrlKey: true,
                         metaKey: true,
                         shiftKey: true,
@@ -389,7 +448,7 @@ export var config = {
             },
             typewriter: {
                 switch: {
-                    // 打字机模式开关([Shift + Alt + T])
+                    // 打字机模式开关(Shift + Alt + T)
                     ctrlKey: false,
                     metaKey: false,
                     shiftKey: true,
@@ -399,7 +458,7 @@ export var config = {
             },
             invert: {
                 switch: {
-                    // 反色开关([Shift + Alt + I])
+                    // 反色开关(Shift + Alt + I)
                     ctrlKey: false,
                     metaKey: false,
                     shiftKey: true,
@@ -410,7 +469,7 @@ export var config = {
             background: {
                 image: {
                     web: {
-                        // 更换网络背景图片([Shift + Alt + R])
+                        // 更换网络背景图片(Shift + Alt + R)
                         ctrlKey: false,
                         metaKey: false,
                         shiftKey: true,
@@ -418,12 +477,52 @@ export var config = {
                         key: 'R',
                     },
                     custom: {
-                        // 更换自定义背景图片([Ctrl + Shift + Alt + I])
+                        // 更换自定义背景图片(Ctrl + Shift + Alt + I)
                         ctrlKey: true,
                         metaKey: true,
                         shiftKey: true,
                         altKey: true,
                         key: 'R',
+                    },
+                },
+            },
+            window: {
+                open: {
+                    block: {
+                        outfocus: {
+                            // 新窗口打开当前块, 否则打开当前文档(Shift + Alt + N)
+                            ctrlKey: false,
+                            metaKey: false,
+                            shiftKey: true,
+                            altKey: true,
+                            key: 'N',
+                        },
+                        infocus: {
+                            // 新窗口打开当前块并聚焦, 否则打开当前文档(Ctrl + Shift + Alt + N)
+                            ctrlKey: true,
+                            metaKey: true,
+                            shiftKey: true,
+                            altKey: true,
+                            key: 'N',
+                        },
+                    },
+                    link: {
+                        outfocus: {
+                            // 新窗口打开链接(鼠标中键)
+                            ctrlKey: false,
+                            metaKey: false,
+                            shiftKey: false,
+                            altKey: false,
+                            button: 1, // 鼠标中键
+                        },
+                        infocus: {
+                            // 新窗口打开链接并聚焦(Shift + 鼠标中键)
+                            ctrlKey: false,
+                            metaKey: false,
+                            shiftKey: true,
+                            altKey: false,
+                            button: 1, // 鼠标中键
+                        },
                     },
                 },
             },

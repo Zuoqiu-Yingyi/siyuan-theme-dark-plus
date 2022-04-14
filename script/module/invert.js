@@ -23,7 +23,7 @@ function invertEnable() {
         config.theme.invert.toolbar.id,
         enable,
         'SVG',
-        null,
+        undefined,
         1,
     );
 }
@@ -31,19 +31,17 @@ function invertEnable() {
 setTimeout(() => {
     try {
         if (config.theme.invert.enable) {
-            let body = document.body;
-
             let Fn_invertEnable = toolbarItemInit(
                 config.theme.invert.toolbar,
                 invertEnable,
             );
             // 使用快捷键启用反色模式
-            body.addEventListener('keyup', (e) => {
+            window.addEventListener('keyup', (e) => {
                 // console.log(e);
                 if (isKey(e, config.theme.hotkeys.invert.switch)) {
                     Fn_invertEnable();
                 }
-            });
+            }, true);
         }
     } catch (err) {
         console.error(err);

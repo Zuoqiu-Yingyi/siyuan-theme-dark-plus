@@ -103,7 +103,6 @@ async function reloadIframe(target) {
 setTimeout(() => {
     try {
         if (config.theme.reload.enable) {
-            let body = document.querySelector('body');
             if (config.theme.reload.window.enable) {
                 let Fn_reload = toolbarItemInit(
                     config.theme.reload.window.toolbar,
@@ -111,17 +110,17 @@ setTimeout(() => {
                 );
                 
                 // 使用快捷键重新加载整个窗口
-                body.addEventListener('keyup', (e) => {
+                window.addEventListener('keyup', (e) => {
                     // console.log(e);
                     if (isKey(e, config.theme.hotkeys.reload.window)) {
                         Fn_reload();
                     }
-                });
+                }, true);
             }
 
             if (config.theme.reload.iframe.enable) {
                 // 重新加载 iframe
-                body.addEventListener('click', (e) => {
+                window.addEventListener('click', (e) => {
                     // console.log(e);
                     if (isEvent(e, config.theme.hotkeys.reload.iframe)) {
                         setTimeout(async () => {

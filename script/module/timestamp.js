@@ -74,10 +74,9 @@ async function create(target) {
 setTimeout(() => {
     try {
         if (config.theme.timestamp.enable) {
-            let body = document.body;
             if (config.theme.timestamp.jump.enable) {
                 // 跳转到所单击块的时间戳
-                body.addEventListener('click', (e) => {
+                window.addEventListener('click', (e) => {
                     // console.log(e);
                     if (isEvent(e, config.theme.hotkeys.timestamp.jump)) {
                         setTimeout(async () => {
@@ -89,7 +88,7 @@ setTimeout(() => {
 
             if (config.theme.timestamp.create.enable) {
                 // 生成时间戳并写入剪贴板
-                body.addEventListener('mousedown', (e) => {
+                window.addEventListener('mousedown', (e) => {
                     // console.log(e);
                     if (isButton(e, config.theme.hotkeys.timestamp.create)) {
                         setTimeout(async () => {

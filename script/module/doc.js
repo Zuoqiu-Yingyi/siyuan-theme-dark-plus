@@ -3,54 +3,46 @@
 import { config } from './config.js';
 import { isKey } from './../utils/hotkey.js';
 import { toolbarItemInit } from './../utils/ui.js';
+import { getFocusedDocID } from './../utils/dom.js';
 import {
     exportMdContent,
     updateBlock,
 } from './../utils/api.js';
 
 async function docCopy() {
-    const background = document.querySelector('div.layout__wnd--active div.protyle:not(.fn__none)>div.protyle-content>div.protyle-background');
-    if (background) {
-        let id = background.dataset.nodeId;
-        if (id) {
-            let data = await exportMdContent(id);
-            if (data) {
-                let content = data.content;
-                navigator.clipboard.writeText(content);
-            }
+    let id = getFocusedDocID();
+    if (id) {
+        let data = await exportMdContent(id);
+        if (data) {
+            let content = data.content;
+            navigator.clipboard.writeText(content);
         }
     }
 }
 
 async function docDelete() {
-    const background = document.querySelector('div.layout__wnd--active div.protyle:not(.fn__none)>div.protyle-content>div.protyle-background');
-    if (background) {
-        let id = background.dataset.nodeId;
-        if (id) {
+    let id = getFocusedDocID();
+    if (id) {
+        await updateBlock(
+            id,
+            'markdown',
+            '',
+        );
+    }
+}
+
+async function docCut() {
+    let id = getFocusedDocID();
+    if (id) {
+        let data = await exportMdContent(id);
+        if (data) {
+            let content = data.content;
+            navigator.clipboard.writeText(content);
             await updateBlock(
                 id,
                 'markdown',
                 '',
             );
-        }
-    }
-}
-
-async function docCut() {
-    const background = document.querySelector('div.layout__wnd--active div.protyle:not(.fn__none)>div.protyle-content>div.protyle-background');
-    if (background) {
-        let id = background.dataset.nodeId;
-        if (id) {
-            let data = await exportMdContent(id);
-            if (data) {
-                let content = data.content;
-                navigator.clipboard.writeText(content);
-                await updateBlock(
-                    id,
-                    'markdown',
-                    '',
-                );
-            }
         }
     }
 }
@@ -122,7 +114,6 @@ function outlineCopy(mode) {
 setTimeout(() => {
     try {
         if (config.theme.doc.enable) {
-            let body = document.body;
 
             if (config.theme.doc.outline.enable) {
                 if (config.theme.doc.outline.o.enable) { }
@@ -140,24 +131,24 @@ setTimeout(() => {
                     () => outlineCopy('t'),
                 );
 
-                body.addEventListener('keyup', (e) => {
+                window.addEventListener('keyup', (e) => {
                     if (isKey(e, config.theme.hotkeys.doc.outline.u)) {
                         // console.log(e);
                         Fn_outlineCopy_u();
                     }
-                });
-                body.addEventListener('keyup', (e) => {
+                }, true);
+                window.addEventListener('keyup', (e) => {
                     if (isKey(e, config.theme.hotkeys.doc.outline.o)) {
                         // console.log(e);
                         Fn_outlineCopy_o();
                     }
-                });
-                body.addEventListener('keyup', (e) => {
+                }, true);
+                window.addEventListener('keyup', (e) => {
                     if (isKey(e, config.theme.hotkeys.doc.outline.t)) {
                         // console.log(e);
                         Fn_outlineCopy_t();
                     }
-                });
+                }, true);
             }
 
             if (config.theme.doc.copy.enable) {
@@ -167,12 +158,12 @@ setTimeout(() => {
                     docCopy,
                 );
 
-                body.addEventListener('keyup', (e) => {
+                window.addEventListener('keyup', (e) => {
                     // console.log(e);
                     if (isKey(e, config.theme.hotkeys.doc.copy)) {
                         Fn_docCopy();
                     }
-                });
+                }, true);
             }
 
             if (config.theme.doc.delete.enable) {
@@ -182,12 +173,12 @@ setTimeout(() => {
                     docDelete,
                 );
 
-                body.addEventListener('keyup', (e) => {
+                window.addEventListener('keyup', (e) => {
                     if (isKey(e, config.theme.hotkeys.doc.delete)) {
                         // console.log(e);
                         Fn_docDelete();
                     }
-                });
+                }, true);
             }
 
             if (config.theme.doc.cut.enable) {
@@ -197,12 +188,12 @@ setTimeout(() => {
                     docCut,
                 );
 
-                body.addEventListener('keyup', (e) => {
+                window.addEventListener('keyup', (e) => {
                     if (isKey(e, config.theme.hotkeys.doc.cut)) {
                         // console.log(e);
                         Fn_docCut();
                     }
-                });
+                }, true);
             }
         }
     } catch (err) {
