@@ -299,6 +299,7 @@ export var config = {
                 block: {
                     // 新窗口打开当前块, 否则打开当前文档
                     enable: true,
+                    editable: true, // 新窗口默认是否可编辑
                     outfocus: {
                         // 新窗口打开当前块, 否则打开当前文档
                         enable: true,

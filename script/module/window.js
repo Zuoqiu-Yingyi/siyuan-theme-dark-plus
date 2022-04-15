@@ -28,12 +28,18 @@ function open(id = getFocusedID(), urlParams = {}) {
 
 function outfocus(id = getFocusedID()) {
     // 打开新窗口
-    open(id);
+    open(id, {
+        focus: 0,
+        editable: (config.theme.window.open.block.editable ? 1 : 0),
+    });
 }
 
 function infocus(id = getFocusedID()) {
     // 打开新窗口并聚焦块
-    open(id, { focus: 1 });
+    open(id, {
+        focus: 1,
+        editable: (config.theme.window.open.block.editable ? 1 : 0),
+    });
 }
 
 

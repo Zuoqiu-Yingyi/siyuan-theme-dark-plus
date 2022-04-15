@@ -70,32 +70,62 @@ function HTMLDecode(text) {
     return temp.textContent;
 }
 
-function goto(id, focus = 0) {
-    let doc = window.document;
-    if (parseInt(focus) === 1) {
-        let target = doc.querySelector('.protyle-breadcrumb>.protyle-breadcrumb__bar');
-        if (target) {
-            let item = doc.createElement("span");
-            item.setAttribute("data-node-id", id);
-            target.appendChild(item);
-            item.click();
-            item.remove();
-        }
-        else throw new Error(id);
+function gotoOutfocus(id) { // 跳转到指定块
+    let breadcrumbs = document.querySelector('.protyle-breadcrumb>.protyle-breadcrumb__bar');
+    if (breadcrumbs) {
+        let crumb = document.createElement("span");
+        crumb.setAttribute("data-node-id", id);
+        breadcrumbs.appendChild(crumb);
+        crumb.click();
+        crumb.remove();
     }
-    else {
-        let target = doc.querySelector('div.protyle-wysiwyg div[data-node-id] div[contenteditable][spellcheck]');
-        if (target) {
-            let link = doc.createElement("span");
-            link.setAttribute("data-type", "block-ref");
-            link.setAttribute("data-id", id);
-            target.appendChild(link);
-            link.click();
-            link.remove();
-        }
-        else throw new Error(id);
+    else throw new Error(id);
+}
+
+function gotoInfocus(id) { // 跳转到指定块并聚焦
+    let editor = document.querySelector('div.protyle-wysiwyg div[data-node-id] div[contenteditable][spellcheck]');
+    if (editor) {
+        let link = document.createElement("span");
+        link.setAttribute("data-type", "block-ref");
+        link.setAttribute("data-id", id);
+        editor.appendChild(link);
+        link.click();
+        link.remove();
     }
-    // console.log(doc)
+    else throw new Error(id);
+}
+
+/**
+ * 切换编辑模式
+ * @param {number} mode 0: 只读模式, 1: 编辑模式
+ */
+function changeEditMode(mode = 0) { // 切换编辑模式
+    let toolbarEdit = document.getElementById('toolbarEdit');
+    if (toolbarEdit) {
+        let editable = toolbarEdit.firstElementChild.getAttribute('xlink:href') === '#iconPreview';
+
+        let event = new MouseEvent('click');
+        switch (mode) {
+            case 0:
+                if (editable) toolbarEdit.dispatchEvent(event);
+                else return;
+            case 1:
+                if (!editable) toolbarEdit.dispatchEvent(event);
+                else return;
+            default:
+                throw new Error(`/script/utils/misc.js changeEditMode(${mode})`);
+        }
+    }
+}
+
+function goto(id, focus = 0, editable = 0) {
+    // 是否聚焦
+    if (parseInt(focus) === 1) gotoInfocus(id);
+    else gotoOutfocus(id);
+
+    // 是否可编辑
+    if (parseInt(editable) === 1) setTimeout(() => changeEditMode(1), 0);
+    else setTimeout(() => changeEditMode(0), 0);
 }
 
 function isNum(str) {
@@ -157,7 +187,7 @@ function timestampFormat(seconds) {
 function url2id(url) {
     let results = config.theme.regs.url.exec(url);
     // console.log(results);
-    if (results && results.length >= 2) { 
+    if (results && results.length >= 2) {
         return results[1];
     }
     return null;
