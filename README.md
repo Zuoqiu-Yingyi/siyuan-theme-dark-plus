@@ -80,12 +80,14 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | <kbd>Ctrl/⌘ + 鼠标左键</kbd><br/><kbd>Ctrl/⌘ + Lift Mouse Button</kbd>   | 挂件块/iframe块<br/>widget block/iframe block                   | 重新加载块内容<br/>reload the block contents                                                                    |
 | <kbd>Ctrl/⌘ + F1</kbd>                                                   | 当前文档<br/>current document                                   | 渲染当前文档所有块的自定义样式<br/>render the custom style for all blocks in the current document               |
 | <kbd>Ctrl/⌘ + F5</kbd>                                                   | 整个窗口<br/>entire window                                      | 重新加载整个窗口<br/>reload the entire window                                                                   |
+| <kbd>Shift + Alt + N</kbd>                                               | 整个窗口<br/>entire window                                      | 在新窗口打开光标所在块<br/>open the block where the cursor is located in a new window                           |
 | <kbd>Shift + Alt + R</kbd>                                               | 整个窗口<br/>entire window                                      | 使用网络背景图片<br/>use the web background images                                                              |
 | <kbd>Shift + Alt + T</kbd>                                               | 整个窗口<br/>entire window                                      | 启动/关闭打字机模式<br/>turn on/off typewriter mode                                                             |
 | <kbd>Shift + Alt + I</kbd>                                               | 整个窗口<br/>entire window                                      | 启动/关闭反色模式<br/>turn on/off invert color mode                                                             |
 | <kbd>Shift + Alt + C</kbd>                                               | 当前文档<br/>current document                                   | 复制当前文档 markdown 全文至剪贴板<br/>copy the full markdown text of the current document to the clipboard     |
 | <kbd>Shift + Alt + X</kbd>                                               | 当前文档<br/>current document                                   | 剪切当前文档 markdown 全文至剪贴板<br/>cut the full markdown text of the current document to the clipboard      |
 | <kbd>Shift + Alt + D</kbd>                                               | 当前文档<br/>current document                                   | 删除当前文档全文<br/>delete the full content of the current documen                                             |
+| <kbd>Ctrl/⌘ + Shift + Alt + N</kbd>                                      | 整个窗口<br/>entire window                                      | 在新窗口打开光标所在块并聚焦<br/>open the block and focus where the cursor is located in a new window           |
 | <kbd>Ctrl/⌘ + Shift + Alt + R</kbd>                                      | 整个窗口<br/>entire window                                      | 使用自定义背景图片<br/>use the custom background images                                                         |
 | <kbd>Ctrl/⌘ + Shift + Alt + O</kbd>                                      | 当前文档<br/>current document                                   | 复制当前文档大纲为有序列表<br/>copy the current document outline as an ordered list                             |
 | <kbd>Ctrl/⌘ + Shift + Alt + U</kbd>                                      | 当前文档<br/>current document                                   | 复制当前文档大纲为无序列表<br/>copy the current document outline as an unordered list                           |
@@ -202,6 +204,8 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   Use the shortcut keys <kbd>Ctrl/⌘ + Left Mouse Button</kbd> click the iframe block or the widget block to reload the block contents.
 - 使用快捷键 <kbd>Ctrl/⌘ + F5</kbd> 重新加载整个窗口  
   Use the shortcut key <kbd>Ctrl/⌘ + F5</kbd> to reload the entire window.
+- 使用快捷键 <kbd>Shift + Alt + N</kbd> 在新窗口打开光标所在块  
+  Use the shortcut key <kbd>Shift + Alt + N</kbd> to open the block where the cursor is located in a new window.
 - 使用快捷键 <kbd>Shift + Alt + R</kbd> 使用网络背景图片  
   Use the shortcut key <kbd>Shift + Alt + R</kbd> to use the web background images.
   - 图片来源: [Beautiful Free Images & Pictures | Unsplash](https://unsplash.com/)  
@@ -218,6 +222,8 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   Use the shortcut keys <kbd>Shift + Alt + D</kbd> to delete the full content of the current documen.
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + R</kbd> 使用自定义背景图片  
   Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + R</kbd> to use the custom background images.
+- 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + N</kbd> 在新窗口打开光标所在块并聚焦  
+  Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + R</kbd> to open the block where the cursor is located in a new window.
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + O</kbd> 复制当前文档大纲为有序列表  
   Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + O</kbd> to copy the current document outline as an ordered list.
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + U</kbd> 复制当前文档大纲为无序列表  
