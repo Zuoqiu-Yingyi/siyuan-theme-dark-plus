@@ -9,11 +9,12 @@ function jumpToID() {
     let url = new URL(window.location.href);
     let id = url.searchParams.get('id');
     let focus = url.searchParams.get('focus');
+    let editable = url.searchParams.get('editable');
 
     if (config.theme.regs.id.test(id)) {
         // console.log(id);
         try {
-            goto(id, focus);
+            goto(id, focus, editable);
         } catch (e) {
             if (e.message === id) {
                 setTimeout(jumpToID, 500);
