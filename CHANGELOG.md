@@ -4,6 +4,8 @@
 - 添加配置选项 `editable` 控制新窗口的编辑器是否可编辑 | Add configuration option `editable` to control whether the editor is editable in new windows.
 - 修复新窗口 URL 参数解析问题 | Fix the URL parameter parsing problem in new windows.
 - 关闭通过 `打开新窗口` 工具栏按钮打开的新窗口的置顶功能 | Disable the pin feature of the new window opened by the `Open a new window` toolbar button.
+- 优化工具栏按钮的提示信息 | Optimize the tooltip of the toolbar buttons.
+- 优化反色模式的样式加载方式 | Optimize the style loading method of the inverted mode.
 
 ## v0.7.2/2022-04-15
 
