@@ -6,6 +6,7 @@
 - 关闭通过 `打开新窗口` 工具栏按钮打开的新窗口的置顶功能 | Disable the pin feature of the new window opened by the `Open a new window` toolbar button.
 - 优化工具栏按钮的提示信息 | Optimize the tooltip of the toolbar buttons.
 - 优化反色模式的样式加载方式 | Optimize the style loading method of the inverted mode.
+- 修复工具栏按钮快捷键提示信息显示问题 | Fix the shortcut tooltip display issue of the toolbar buttons.
 
 ## v0.7.2/2022-04-15
 
