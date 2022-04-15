@@ -70,19 +70,8 @@ function HTMLDecode(text) {
     return temp.textContent;
 }
 
-function gotoOutfocus(id) { // 跳转到指定块
-    let breadcrumbs = document.querySelector('.protyle-breadcrumb>.protyle-breadcrumb__bar');
-    if (breadcrumbs) {
-        let crumb = document.createElement("span");
-        crumb.setAttribute("data-node-id", id);
-        breadcrumbs.appendChild(crumb);
-        crumb.click();
-        crumb.remove();
-    }
-    else throw new Error(id);
-}
 
-function gotoInfocus(id) { // 跳转到指定块并聚焦
+function gotoOutfocus(id) { // 跳转到指定块
     let editor = document.querySelector('div.protyle-wysiwyg div[data-node-id] div[contenteditable][spellcheck]');
     if (editor) {
         let link = document.createElement("span");
@@ -91,6 +80,18 @@ function gotoInfocus(id) { // 跳转到指定块并聚焦
         editor.appendChild(link);
         link.click();
         link.remove();
+    }
+    else throw new Error(id);
+}
+
+function gotoInfocus(id) { // 跳转到指定块并聚焦
+    let breadcrumbs = document.querySelector('.protyle-breadcrumb>.protyle-breadcrumb__bar');
+    if (breadcrumbs) {
+        let crumb = document.createElement("span");
+        crumb.setAttribute("data-node-id", id);
+        breadcrumbs.appendChild(crumb);
+        crumb.click();
+        crumb.remove();
     }
     else throw new Error(id);
 }

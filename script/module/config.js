@@ -284,6 +284,7 @@ export var config = {
                     frame: true, // 是否显示边缘框
                     fullscreen: false, // 是否全屏显示
                     alwaysOnTop: true, // 是否置顶显示
+                    autoHideMenuBar: true, // 是否隐藏菜单栏(使用 Alt 显示)
                 },
                 panel: {
                     enable: true, // 打开一个新窗口
@@ -299,7 +300,7 @@ export var config = {
                 block: {
                     // 新窗口打开当前块, 否则打开当前文档
                     enable: true,
-                    editable: true, // 新窗口默认是否可编辑
+                    editable: false, // 新窗口默认是否可编辑
                     outfocus: {
                         // 新窗口打开当前块, 否则打开当前文档
                         enable: true,
