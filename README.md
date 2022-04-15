@@ -420,7 +420,14 @@ export var config = {
                 toolbar: { // 菜单栏
                     enable: true,
                     id: 'theme-style-render',
-                    label: '渲染自定义样式 [Ctrl + F1]\nRender custom styles',
+                    hotkey: () => config.theme.hotkeys.style.render,
+                    label: {
+                        zh_CN: '渲染自定义样式 Ctrl + F1',
+                        zh_CNT: null,
+                        fr_FR: null,
+                        en_US: null,
+                        other: 'Render Custom Styles [Ctrl + F1]',
+                    },
                     icon: '#iconTheme',
                     index: 3,
                 },
@@ -457,7 +464,14 @@ export var config = {
                 toolbar: { // 菜单栏
                     enable: true,
                     id: 'theme-reload-window',
-                    label: '重新加载窗口 [Ctrl + F5]\nReload the window',
+                    hotkey: () => config.theme.hotkeys.reload.window,
+                    label: {
+                        zh_CN: '重新加载窗口 Ctrl + F5',
+                        zh_CNT: null,
+                        fr_FR: null,
+                        en_US: null,
+                        other: 'Reload the Window [Ctrl + F5]',
+                    },
                     icon: '#iconRefresh',
                     index: 0,
                 },
@@ -475,7 +489,14 @@ export var config = {
                     toolbar: { // 菜单栏
                         enable: true,
                         id: 'theme-doc-outline-u',
-                        label: '复制当前文档大纲为无序列表 [Ctrl + Shift + Alt + U]\nCopy the current document outline as an unordered list',
+                        hotkey: () => config.theme.hotkeys.doc.outline.u,
+                        label: {
+                            zh_CN: '复制当前文档大纲为无序列表 Ctrl + Shift + Alt + U',
+                            zh_CNT: null,
+                            fr_FR: null,
+                            en_US: null,
+                            other: 'Copy the Current Document Outline as an Unordered List [Ctrl + Shift + Alt + U]',
+                        },
                         icon: '#iconList',
                         index: 7,
                     },
@@ -485,7 +506,14 @@ export var config = {
                     toolbar: { // 菜单栏
                         enable: true,
                         id: 'theme-doc-outline-o',
-                        label: '复制当前文档大纲为有序列表 [Ctrl + Shift + Alt + O]\nCopy the current document outline as an ordered list',
+                        hotkey: () => config.theme.hotkeys.doc.outline.o,
+                        label: {
+                            zh_CN: '复制当前文档大纲为有序列表 Ctrl + Shift + Alt + U',
+                            zh_CNT: null,
+                            fr_FR: null,
+                            en_US: null,
+                            other: 'Copy the Current Document Outline as an Ordered List [Ctrl + Shift + Alt + O]',
+                        },
                         icon: '#iconOrderedList',
                         index: 8,
                     },
@@ -495,7 +523,14 @@ export var config = {
                     toolbar: { // 菜单栏
                         enable: true,
                         id: 'theme-doc-outline-t',
-                        label: '复制当前文档大纲为任务列表 [Ctrl + Shift + Alt + T]\nCopy the current document outline as a task list',
+                        hotkey: () => config.theme.hotkeys.doc.outline.t,
+                        label: {
+                            zh_CN: '复制当前文档大纲为任务列表 Ctrl + Shift + Alt + T',
+                            zh_CNT: null,
+                            fr_FR: null,
+                            en_US: null,
+                            other: 'Copy the Current Document Outline as a Task List [Ctrl + Shift + Alt + T]',
+                        },
                         icon: '#iconCheck',
                         index: 9,
                     },
@@ -515,7 +550,14 @@ export var config = {
                 toolbar: { // 菜单栏
                     enable: true,
                     id: 'theme-doc-copy',
-                    label: '复制当前文档内容 (Markdown) [Shift + Alt + C]\nCopy the current document content (Markdown)',
+                    hotkey: () => config.theme.hotkeys.doc.copy,
+                    label: {
+                        zh_CN: '复制当前文档内容 (Markdown) Shift + Alt + C',
+                        zh_CNT: null,
+                        fr_FR: null,
+                        en_US: null,
+                        other: 'Copy the Current Document Content (Markdown) [Shift + Alt + C]',
+                    },
                     icon: '#iconCopy',
                     index: 10,
                 },
@@ -525,7 +567,14 @@ export var config = {
                 toolbar: { // 菜单栏
                     enable: false,
                     id: 'theme-doc-delete',
-                    label: '删除当前文档内容 [Shift + Alt + D]\nDelete the current document content',
+                    hotkey: () => config.theme.hotkeys.doc.delete,
+                    label: {
+                        zh_CN: '删除当前文档内容 Shift + Alt + D',
+                        zh_CNT: null,
+                        fr_FR: null,
+                        en_US: null,
+                        other: 'Delete the Current Document Content [Shift + Alt + D]',
+                    },
                     icon: '#iconTrashcan',
                     index: 12,
                 },
@@ -535,7 +584,14 @@ export var config = {
                 toolbar: { // 菜单栏
                     enable: false,
                     id: 'theme-doc-cut',
-                    label: '剪切当前文档内容 (Markdown) [Shift + Alt + X]\nDelete the current document content (Markdown)',
+                    hotkey: () => config.theme.hotkeys.doc.cut,
+                    label: {
+                        zh_CN: '剪切当前文档内容 (Markdown) Shift + Alt + X',
+                        zh_CNT: null,
+                        fr_FR: null,
+                        en_US: null,
+                        other: 'Cut the Current Document Content (Markdown) [Shift + Alt + X]',
+                    },
                     icon: '#iconCut',
                     index: 11,
                 },
@@ -549,7 +605,14 @@ export var config = {
                 toolbar: { // 菜单栏
                     enable: true,
                     id: 'theme-typewriter-switch',
-                    label: '打字机模式 [Shift + Alt + T]\nTypewriter mode',
+                    hotkey: () => config.theme.hotkeys.typewriter.switch,
+                    label: {
+                        zh_CN: '打字机模式 Shift + Alt + T',
+                        zh_CNT: null,
+                        fr_FR: null,
+                        en_US: null,
+                        other: 'Typewriter Mode [Shift + Alt + T]',
+                    },
                     icon: '#iconKeymap',
                     index: -1,
                 },
@@ -569,40 +632,50 @@ export var config = {
             toolbar: { // 菜单栏
                 enable: true,
                 id: 'theme-invert',
-                label: '反色显示 [Shift + Alt + I]\nDisplay in reverse color',
+                hotkey: () => config.theme.hotkeys.invert,
+                label: {
+                    zh_CN: '反色显示 Shift + Alt + I',
+                    zh_CNT: null,
+                    fr_FR: null,
+                    en_US: null,
+                    other: 'Display in Inverse Color [Shift + Alt + I]',
+                },
                 icon: '#iconMoon',
                 index: -2,
             },
-            img: {
-                // 图片反色
-                enable: true,
-                style: {
-                    id: 'theme-invert-img-style', // 图片反色 ID
-                    innerHTML: 'img:not(.emoji, .thumbnailImage), div.thumbnailSelectionRing {filter: invert(100%);}div.protyle-background__icon>img,span.b3-list-item__icon>img {filter: none;}', // 样式标签内容
+            elements: {
+                // 反色元素
+                img: {
+                    // 图片反色
+                    enable: true,
+                    style: {
+                        id: 'theme-invert-img-style',
+                        innerHTML: 'img:not(.emoji, .thumbnailImage), div.thumbnailSelectionRing {filter: invert(100%);}div.protyle-background__icon>img,span.b3-list-item__icon>img {filter: none;}', // 样式标签内容
+                    },
                 },
-            },
-            viewer: {
-                // PDF 预览反色
-                enable: true,
-                style: {
-                    id: 'theme-invert-viewer-style', // 图片反色 ID
-                    innerHTML: '#viewer {filter: invert(100%);}', // 样式标签内容
+                viewer: {
+                    // PDF 预览反色
+                    enable: true,
+                    style: {
+                        id: 'theme-invert-viewer-style',
+                        innerHTML: '#viewer {filter: invert(100%);}',
+                    },
                 },
-            },
-            iframe: {
-                // iframe 反色
-                enable: true,
-                style: {
-                    id: 'theme-invert-iframe-style', // 图片反色 ID
-                    innerHTML: 'iframe {filter: invert(100%);}', // 样式标签内容
+                iframe: {
+                    // iframe 反色
+                    enable: true,
+                    style: {
+                        id: 'theme-invert-iframe-style',
+                        innerHTML: 'iframe {filter: invert(100%);}',
+                    },
                 },
-            },
-            video: {
-                // 视频反色
-                enable: true,
-                style: {
-                    id: 'theme-invert-video-style', // 图片反色 ID
-                    innerHTML: 'video {filter: invert(100%);}', // 样式标签内容
+                video: {
+                    // 视频反色
+                    enable: true,
+                    style: {
+                        id: 'theme-invert-video-style',
+                        innerHTML: 'video {filter: invert(100%);}',
+                    },
                 },
             },
         },
@@ -615,8 +688,15 @@ export var config = {
                     enable: true, // 网络背景图片
                     toolbar: { // 菜单栏
                         enable: true,
-                        id: 'theme-background-image-random',
-                        label: '更换背景图片 (网络) [Shift + Alt + R]\nChange background image (Web)',
+                        id: 'theme-background-image-web',
+                        hotkey: () => config.theme.hotkeys.background.image.web,
+                        label: {
+                            zh_CN: '更换背景图片 (网络) Shift + Alt + R',
+                            zh_CNT: null,
+                            fr_FR: null,
+                            en_US: null,
+                            other: 'Change Background Image (Web) [Shift + Alt + R]',
+                        },
                         icon: '#iconImage',
                         index: 5,
                     },
@@ -638,7 +718,14 @@ export var config = {
                     toolbar: { // 菜单栏
                         enable: true,
                         id: 'theme-background-image-custom',
-                        label: '更换背景图片 (自定义) [Ctrl + Shift + Alt + R]\nChange background image (Custom)',
+                        hotkey: () => config.theme.hotkeys.background.image.custom,
+                        label: {
+                            zh_CN: '更换背景图片 (自定义) Ctrl + Shift + Alt + R',
+                            zh_CNT: null,
+                            fr_FR: null,
+                            en_US: null,
+                            other: 'Change Background Image (Custom) [Ctrl + Shift + Alt + R]',
+                        },
                         icon: '#iconImage',
                         index: 6,
                     },
@@ -680,6 +767,7 @@ export var config = {
                     frame: true, // 是否显示边缘框
                     fullscreen: false, // 是否全屏显示
                     alwaysOnTop: true, // 是否置顶显示
+                    autoHideMenuBar: true, // 是否隐藏菜单栏(使用 Alt 显示)
                 },
                 panel: {
                     enable: true, // 打开一个新窗口
@@ -687,7 +775,13 @@ export var config = {
                     toolbar: { // 菜单栏
                         enable: true,
                         id: 'theme-window-open-panel',
-                        label: '打开一个新窗口\nOpen a new window',
+                        label: {
+                            zh_CN: '打开一个新窗口',
+                            zh_CNT: null,
+                            fr_FR: null,
+                            en_US: null,
+                            other: 'Open a New Window',
+                        },
                         icon: '#iconExport',
                         index: 1,
                     },
@@ -702,7 +796,14 @@ export var config = {
                         toolbar: { // 菜单栏
                             enable: true,
                             id: 'theme-window-open-block-outfocus',
-                            label: '在新窗口打开当前块 [Shift + Alt + N]\nOpen the current block in a new window',
+                            hotkey: () => config.theme.hotkeys.window.open.block.outfocus,
+                            label: {
+                                zh_CN: '在新窗口打开当前块 Shift + Alt + N',
+                                zh_CNT: null,
+                                fr_FR: null,
+                                en_US: null,
+                                other: 'Open the Current Block in a New Window [Shift + Alt + N]',
+                            },
                             icon: '#iconExport',
                             index: 2,
                         },
@@ -713,7 +814,14 @@ export var config = {
                         toolbar: { // 菜单栏
                             enable: true,
                             id: 'theme-window-open-block-infocus',
-                            label: '在新窗口打开当前块并聚焦 [Ctrl + Shift + Alt + N]\nOpen the current block in a new window and focuses',
+                            hotkey: () => config.theme.hotkeys.window.open.block.infocus,
+                            label: {
+                                zh_CN: '在新窗口打开当前块并聚焦 Ctrl + Shift + Alt + N',
+                                zh_CNT: null,
+                                fr_FR: null,
+                                en_US: null,
+                                other: 'Open the Current Block in a New Window and Focus [Ctrl + Shift + Alt + N]',
+                            },
                             icon: '#iconExport',
                             index: 3,
                         },
@@ -855,14 +963,12 @@ export var config = {
                 },
             },
             invert: {
-                switch: {
-                    // 反色开关(Shift + Alt + I)
-                    ctrlKey: false,
-                    metaKey: false,
-                    shiftKey: true,
-                    altKey: true,
-                    key: 'I',
-                },
+                // 反色开关(Shift + Alt + I)
+                ctrlKey: false,
+                metaKey: false,
+                shiftKey: true,
+                altKey: true,
+                key: 'I',
             },
             background: {
                 image: {

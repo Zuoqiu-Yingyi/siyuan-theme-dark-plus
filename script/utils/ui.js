@@ -5,6 +5,8 @@ export {
     toolbarItemChangeStatu, // 工具栏项状态改变
 }
 
+import { printHotKey } from './hotkey.js';
+
 var toolbarItemList = [];
 
 /**
@@ -48,9 +50,13 @@ function toolbarItemListPush(item) {
  */
 function toolbarItemInsert(toolbarConfig) {
     let node = document.createElement('BUTTON');
+    let language = window.theme.languageMode();
+    let label = toolbarConfig.label[language] || toolbarConfig.label.other;
+    label += toolbarConfig.hotkey ? ` [${printHotKey(toolbarConfig.hotkey())}]` : '';
+
     node.id = toolbarConfig.id;
     node.className = "toolbar__item b3-tooltips b3-tooltips__sw";
-    node.setAttribute('aria-label', toolbarConfig.label);
+    node.setAttribute('aria-label', label);
     node.innerHTML = `
         <svg>
             <use xlink:href="${toolbarConfig.icon}"></use>

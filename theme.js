@@ -93,6 +93,53 @@ window.theme.clientMode = function () {
 }
 
 /**
+ * 获取语言模式
+ * @returns {string} 'zh_CN', 'zh_CNT', 'fr_FR', 'en_US'
+ */
+window.theme.languageMode = function () {
+    switch (window.siyuan.languages.config) {
+        case '设置':
+            return 'zh_CN';
+        case '設置':
+            return 'zh_CNT';
+        case 'Paramètres':
+            return 'fr_FR';
+        case 'Settings':
+            return 'en_US';
+        default:
+            return null;
+    }
+}
+
+/**
+ * 获取操作系统
+ * @returns {string} 'zh_CN', 'zh_CNT', 'fr_FR', 'en_US'
+ */
+window.theme.OS = function () {
+    var sUserAgent = navigator.userAgent;
+    var isWin = (navigator.platform == "Win32") || (navigator.platform == "Windows");
+    var isMac = (navigator.platform == "Mac68K") || (navigator.platform == "MacPPC") || (navigator.platform == "Macintosh") || (navigator.platform == "MacIntel");
+    if (isMac) return "MacOS";
+    var isUnix = (navigator.platform == "X11") && !isWin && !isMac;
+    if (isUnix) return "Unix";
+    var isLinux = (String(navigator.platform).indexOf("Linux") > -1);
+    if (isLinux) return "Linux";
+    if (isWin) {
+        var isWin2K = sUserAgent.indexOf("Windows NT 5.0") > -1 || sUserAgent.indexOf("Windows 2000") > -1;
+        if (isWin2K) return "Windows2000";
+        var isWinXP = sUserAgent.indexOf("Windows NT 5.1") > -1 || sUserAgent.indexOf("Windows XP") > -1;
+        if (isWinXP) return "WindowsXP";
+        var isWin2003 = sUserAgent.indexOf("Windows NT 5.2") > -1 || sUserAgent.indexOf("Windows 2003") > -1;
+        if (isWin2003) return "Windows2003";
+        var isWinVista = sUserAgent.indexOf("Windows NT 6.0") > -1 || sUserAgent.indexOf("Windows Vista") > -1;
+        if (isWinVista) return "Windows Vista";
+        var isWin7 = sUserAgent.indexOf("Windows NT 6.1") > -1 || sUserAgent.indexOf("Windows 7") > -1;
+        if (isWin7) return "Windows7";
+    }
+    return "other";
+}
+
+/**
  * 更换主题模式
  * @param {string} lightStyle 浅色主题配置文件路径
  * @param {string} darkStyle 深色主题配置文件路径
