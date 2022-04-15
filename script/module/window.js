@@ -51,12 +51,14 @@ setTimeout(() => {
                     toolbarItemInit(
                         config.theme.window.open.panel.toolbar,
                         () => {
+                            let windowParams = Object.assign({}, config.theme.window.open.windowParams);
+                            windowParams.alwaysOnTop = false; // 关闭置顶
                             if (config.theme.window.open.panel.url) {
                                 window.theme.openNewWindow(
                                     'browser',
                                     config.theme.window.open.panel.url,
                                     undefined,
-                                    config.theme.window.open.windowParams,
+                                    windowParams,
                                 );
                             }
                             else {
@@ -64,7 +66,7 @@ setTimeout(() => {
                                     'desktop',
                                     undefined,
                                     undefined,
-                                    config.theme.window.open.windowParams,
+                                    windowParams,
                                 );
                             }
                         },
