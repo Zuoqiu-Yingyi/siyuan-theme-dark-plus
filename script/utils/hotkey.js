@@ -52,16 +52,16 @@ function printHotKey(key) {
         alt = '⌥';
     }
 
-    let hotkey = '';
+    let hotkey = [];
     if (key.ctrlKey) {
-        hotkey += ctrl;
+        hotkey.push(ctrl);
     }
     if (key.shiftKey) {
-        hotkey += shift;
+        hotkey.push(shift);
     }
     if (key.altKey) {
-        hotkey += alt;
+        hotkey.push(alt);
     }
-    hotkey += key.key || key.type || MOUSE_BUTTON_MAP[key.button];
-    return hotkey;
+    hotkey.push(key.key || key.type || MOUSE_BUTTON_MAP[key.button]);
+    return hotkey.join(' + ');
 }
