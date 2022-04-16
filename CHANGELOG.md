@@ -19,6 +19,7 @@
 - 修复列表表格单元格宽度问题 | Fix the width issue of the table cells in the list.
 - 移除导图列表无效样式 | Remove the invalid style of the mind map list.
 - 表格列表与导图列表内的容器块内容恢复纵向排列 | Restore the vertical layout of the container block content of the table list and mind map list.
+- 将列表脑图横向滚动条更改为自动显示 | Change the horizontal scrollbar of the list mind map to auto show.
 
 ## v0.7.2/2022-04-15
 
