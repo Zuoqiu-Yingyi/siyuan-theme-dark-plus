@@ -16,6 +16,7 @@
   - `custom-type: map`
   - `custom-type: mindmap`
 - 使用快捷键 <kbd>Shift + Alt + G</kbd> 开启/关闭列表辅助线 | Use the shortcut <kbd>Shift + Alt + G</kbd> to open/close the list guides line.
+- 修复列表表格单元格宽度问题 | Fix the width issue of the table cells in the list.
 
 ## v0.7.2/2022-04-15
 
