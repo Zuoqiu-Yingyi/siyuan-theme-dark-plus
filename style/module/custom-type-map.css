@@ -40,6 +40,19 @@
     display: flex;
 }
 
+/* 列表项内的容器块恢复上下排列 */
+.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li>div[data-node-id].sb,
+.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].li>div[data-node-id].sb,
+.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].li>div[data-node-id].sb,
+.protyle-wysiwyg *[custom-type~=map].list [data-node-id].li>div[data-node-id].sb,
+
+.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li>div[data-node-id].bq,
+.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].li>div[data-node-id].bq,
+.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].li>div[data-node-id].bq,
+.protyle-wysiwyg *[custom-type~=map].list [data-node-id].li>div[data-node-id].bq {
+    display: block;
+}
+
 /* 文字框 */
 .protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li>div[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
 .protyle-wysiwyg *[custom-type~=导图].list [data-node-id].li>div[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],

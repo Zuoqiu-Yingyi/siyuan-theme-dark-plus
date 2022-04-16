@@ -46,18 +46,22 @@
 }
 
 /* 列表项内容 */
-.protyle-wysiwyg *[custom-type~=table].list [data-node-id]:not(.li, .list),
-.protyle-wysiwyg *[custom-type~=表格].list [data-node-id]:not(.li, .list) {
+.protyle-wysiwyg *[custom-type~=table].list [data-node-id].li>[data-node-id]:not(.li, .list),
+.protyle-wysiwyg *[custom-type~=表格].list [data-node-id].li>[data-node-id]:not(.li, .list) {
     margin-right: 0.5em;
     align-items: center;
     display: flex;
-    /* height: auto; */
-    /* width: 128px; */
     min-width: 128px;
-    /* max-width: 128px; */
     text-align: justify;
-    box-sizing: border-box;
     flex-shrink: 0;
+}
+
+/* 列表项内的容器块恢复上下排列 */
+.protyle-wysiwyg *[custom-type~=table].list [data-node-id].li>[data-node-id].sb,
+.protyle-wysiwyg *[custom-type~=table].list [data-node-id].li>[data-node-id].bq,
+.protyle-wysiwyg *[custom-type~=表格].list [data-node-id].li>[data-node-id].sb,
+.protyle-wysiwyg *[custom-type~=表格].list [data-node-id].li>[data-node-id].bq {
+    display: block;
 }
 
 /* 列表项标志居中 */
