@@ -8,7 +8,7 @@
 .protyle-wysiwyg *[custom-type~=导图].list,
 .protyle-wysiwyg *[custom-type~=mind-map].list,
 .protyle-wysiwyg *[custom-type~=map].list {
-    overflow-x: scroll;
+    overflow-x: auto;
     padding-top: 2em;
     padding-bottom: 2em;
 }
