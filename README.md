@@ -49,6 +49,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 | 功能 \| Function                             | 贡献者 \| Contributor                   | 项目 \| Project                                                                                                                        |
 | :------------------------------------------- | :-------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------- |
 | 行内批注与注释<br/>inline comments and notes | [langzhou](https://github.com/langzhou) | [siyuan-note/siyuan-comment at main · langzhou/siyuan-note · GitHub](https://github.com/langzhou/siyuan-note/tree/main/siyuan-comment) |
+| 列表脑图<br/>list mind maps                  | [royc01](https://github.com/royc01)     | [royc01/notion-theme: notion复刻](https://github.com/royc01/notion-theme)                                                              |
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -85,7 +86,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | <kbd>Shift + Alt + R</kbd>                                               | 整个窗口<br/>entire window                                      | 使用网络背景图片<br/>use the web background images                                                              |
 | <kbd>Shift + Alt + T</kbd>                                               | 整个窗口<br/>entire window                                      | 启动/关闭打字机模式<br/>turn on/off typewriter mode                                                             |
 | <kbd>Shift + Alt + I</kbd>                                               | 整个窗口<br/>entire window                                      | 启动/关闭反色模式<br/>turn on/off invert color mode                                                             |
-| <kbd>Shift + Alt + G</kbd>                                               | 整个窗口<br/>entire window                                      | 启动/关闭列表辅助线(列表, 表格列表, 思维导图列表)<br/>turn on/off list guides (list, table list, mind map list)             |
+| <kbd>Shift + Alt + G</kbd>                                               | 整个窗口<br/>entire window                                      | 启动/关闭列表辅助线(列表, 表格列表, 思维导图列表)<br/>turn on/off list guides (list, table list, mind map list) |
 | <kbd>Shift + Alt + C</kbd>                                               | 当前文档<br/>current document                                   | 复制当前文档 markdown 全文至剪贴板<br/>copy the full markdown text of the current document to the clipboard     |
 | <kbd>Shift + Alt + X</kbd>                                               | 当前文档<br/>current document                                   | 剪切当前文档 markdown 全文至剪贴板<br/>cut the full markdown text of the current document to the clipboard      |
 | <kbd>Shift + Alt + D</kbd>                                               | 当前文档<br/>current document                                   | 删除当前文档全文<br/>delete the full content of the current documen                                             |
