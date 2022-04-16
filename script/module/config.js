@@ -15,15 +15,43 @@ export var config = {
             enable: true, // 是否启用使用 URL 参数跳转指定块功能
         },
         style: {
-            enable: false, // 是否启用自定义样式渲染
+            enable: true, // 是否启用自定义样式渲染
             save: {
-                enable: true, // 是否启用保存自定义样式
+                enable: false, // 是否启用保存自定义样式
             },
-            render: {
-                enable: true, // 是否启用自定义样式渲染
+            guides: {
+                enable: true, // 是否启用辅助样式
                 toolbar: { // 菜单栏
                     enable: true,
-                    id: 'theme-style-render',
+                    id: 'toolbar-theme-style-guides',
+                    hotkey: () => config.theme.hotkeys.style.guides,
+                    label: {
+                        zh_CN: '列表辅助线',
+                        zh_CNT: null,
+                        fr_FR: null,
+                        en_US: null,
+                        other: 'List Guides',
+                    },
+                    icon: '#iconSort',
+                    index: -3,
+                },
+                elements: {
+                    // 应用辅助线样式的元素
+                    list: {
+                        // 列表辅助线
+                        enable: true,
+                        style: {
+                            id: 'theme-style-guides-elements-list-style',
+                            href: '/appearance/themes/Dark+/style/dynamic-module/guides-list.css', // 样式文件 URL
+                        },
+                    },
+                },
+            },
+            render: {
+                enable: false, // 是否启用自定义样式渲染
+                toolbar: { // 菜单栏
+                    enable: true,
+                    id: 'toolbar-theme-style-render',
                     hotkey: () => config.theme.hotkeys.style.render,
                     label: {
                         zh_CN: '渲染自定义样式',
@@ -67,7 +95,7 @@ export var config = {
                 enable: true, // 是否启用窗口重新加载
                 toolbar: { // 菜单栏
                     enable: true,
-                    id: 'theme-reload-window',
+                    id: 'toolbar-theme-reload-window',
                     hotkey: () => config.theme.hotkeys.reload.window,
                     label: {
                         zh_CN: '重新加载窗口',
@@ -92,7 +120,7 @@ export var config = {
                     enable: true, // 无序列表
                     toolbar: { // 菜单栏
                         enable: true,
-                        id: 'theme-doc-outline-u',
+                        id: 'toolbar-theme-doc-outline-u',
                         hotkey: () => config.theme.hotkeys.doc.outline.u,
                         label: {
                             zh_CN: '复制当前文档大纲为无序列表',
@@ -109,7 +137,7 @@ export var config = {
                     enable: true, // 有序列表
                     toolbar: { // 菜单栏
                         enable: true,
-                        id: 'theme-doc-outline-o',
+                        id: 'toolbar-theme-doc-outline-o',
                         hotkey: () => config.theme.hotkeys.doc.outline.o,
                         label: {
                             zh_CN: '复制当前文档大纲为有序列表',
@@ -126,7 +154,7 @@ export var config = {
                     enable: true, // 任务列表
                     toolbar: { // 菜单栏
                         enable: true,
-                        id: 'theme-doc-outline-t',
+                        id: 'toolbar-theme-doc-outline-t',
                         hotkey: () => config.theme.hotkeys.doc.outline.t,
                         label: {
                             zh_CN: '复制当前文档大纲为任务列表',
@@ -153,7 +181,7 @@ export var config = {
                 enable: true, // 是否启用当前文档全文复制功能
                 toolbar: { // 菜单栏
                     enable: true,
-                    id: 'theme-doc-copy',
+                    id: 'toolbar-theme-doc-copy',
                     hotkey: () => config.theme.hotkeys.doc.copy,
                     label: {
                         zh_CN: '复制当前文档内容 (Markdown)',
@@ -170,7 +198,7 @@ export var config = {
                 enable: true, // 是否启用当前文档全文删除功能
                 toolbar: { // 菜单栏
                     enable: false,
-                    id: 'theme-doc-delete',
+                    id: 'toolbar-theme-doc-delete',
                     hotkey: () => config.theme.hotkeys.doc.delete,
                     label: {
                         zh_CN: '删除当前文档内容',
@@ -187,7 +215,7 @@ export var config = {
                 enable: true, // 是否启用当前文档全文剪切功能
                 toolbar: { // 菜单栏
                     enable: false,
-                    id: 'theme-doc-cut',
+                    id: 'toolbar-theme-doc-cut',
                     hotkey: () => config.theme.hotkeys.doc.cut,
                     label: {
                         zh_CN: '剪切当前文档内容 (Markdown)',
@@ -208,7 +236,7 @@ export var config = {
                 enable: true, // 是否启用打字机模式开关
                 toolbar: { // 菜单栏
                     enable: true,
-                    id: 'theme-typewriter-switch',
+                    id: 'toolbar-theme-typewriter-switch',
                     hotkey: () => config.theme.hotkeys.typewriter.switch,
                     label: {
                         zh_CN: '打字机模式',
@@ -235,7 +263,7 @@ export var config = {
             enable: true,
             toolbar: { // 菜单栏
                 enable: true,
-                id: 'theme-invert',
+                id: 'toolbar-theme-invert',
                 hotkey: () => config.theme.hotkeys.invert,
                 label: {
                     zh_CN: '反色显示',
@@ -253,7 +281,7 @@ export var config = {
                     // 图片反色
                     enable: true,
                     style: {
-                        id: 'theme-invert-img-style',
+                        id: 'theme-invert-elements-img-style',
                         innerHTML: 'img:not(.emoji, .thumbnailImage), div.thumbnailSelectionRing {filter: invert(100%);}div.protyle-background__icon>img,span.b3-list-item__icon>img {filter: none;}', // 样式标签内容
                     },
                 },
@@ -261,7 +289,7 @@ export var config = {
                     // PDF 预览反色
                     enable: true,
                     style: {
-                        id: 'theme-invert-viewer-style',
+                        id: 'theme-invert-elements-viewer-style',
                         innerHTML: '#viewer {filter: invert(100%);}',
                     },
                 },
@@ -269,7 +297,7 @@ export var config = {
                     // iframe 反色
                     enable: true,
                     style: {
-                        id: 'theme-invert-iframe-style',
+                        id: 'theme-invert-elements-iframe-style',
                         innerHTML: 'iframe {filter: invert(100%);}',
                     },
                 },
@@ -277,7 +305,7 @@ export var config = {
                     // 视频反色
                     enable: true,
                     style: {
-                        id: 'theme-invert-video-style',
+                        id: 'theme-invert-elements-video-style',
                         innerHTML: 'video {filter: invert(100%);}',
                     },
                 },
@@ -292,7 +320,7 @@ export var config = {
                     enable: true, // 网络背景图片
                     toolbar: { // 菜单栏
                         enable: true,
-                        id: 'theme-background-image-web',
+                        id: 'toolbar-theme-background-image-web',
                         hotkey: () => config.theme.hotkeys.background.image.web,
                         label: {
                             zh_CN: '更换背景图片 (网络)',
@@ -321,7 +349,7 @@ export var config = {
                     enable: true, // 自定义背景图片
                     toolbar: { // 菜单栏
                         enable: true,
-                        id: 'theme-background-image-custom',
+                        id: 'toolbar-theme-background-image-custom',
                         hotkey: () => config.theme.hotkeys.background.image.custom,
                         label: {
                             zh_CN: '更换背景图片 (自定义)',
@@ -378,7 +406,7 @@ export var config = {
                     url: null, // 新窗口的 URL, 值 null 则为 '/stage/build/desktop/'
                     toolbar: { // 菜单栏
                         enable: true,
-                        id: 'theme-window-open-panel',
+                        id: 'toolbar-theme-window-open-panel',
                         label: {
                             zh_CN: '打开一个新窗口',
                             zh_CNT: null,
@@ -399,7 +427,7 @@ export var config = {
                         enable: true,
                         toolbar: { // 菜单栏
                             enable: true,
-                            id: 'theme-window-open-block-outfocus',
+                            id: 'toolbar-theme-window-open-block-outfocus',
                             hotkey: () => config.theme.hotkeys.window.open.block.outfocus,
                             label: {
                                 zh_CN: '在新窗口打开当前块',
@@ -417,7 +445,7 @@ export var config = {
                         enable: true,
                         toolbar: { // 菜单栏
                             enable: true,
-                            id: 'theme-window-open-block-infocus',
+                            id: 'toolbar-theme-window-open-block-infocus',
                             hotkey: () => config.theme.hotkeys.window.open.block.infocus,
                             label: {
                                 zh_CN: '在新窗口打开当前块并聚焦',
@@ -456,6 +484,14 @@ export var config = {
                     shiftKey: false,
                     altKey: false,
                     key: 'F1',
+                },
+                guides: {
+                    // 辅助样式(Shift + Alt + G)
+                    ctrlKey: false,
+                    metaKey: false,
+                    shiftKey: true,
+                    altKey: true,
+                    key: 'G',
                 },
             },
             timestamp: {
