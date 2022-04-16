@@ -30,6 +30,12 @@
     left: calc(16px - 2em);
 }
 
+/* 修正列表接头处辅助线错误 */
+.protyle-wysiwyg [data-node-id].li>div:nth-child(2):before {
+    top: calc(12px + 1em) !important;
+    height: calc(100% - 8px - 1em) !important;
+}
+
 /* 列表缩进 */
 .protyle-wysiwyg [data-node-id].li>.list {
     margin-left: 1em !important;

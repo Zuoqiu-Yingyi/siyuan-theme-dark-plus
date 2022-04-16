@@ -7,6 +7,12 @@
 - 优化工具栏按钮的提示信息 | Optimize the tooltip of the toolbar buttons.
 - 优化反色模式的样式加载方式 | Optimize the style loading method of the inverted mode.
 - 修复工具栏按钮快捷键提示信息显示问题 | Fix the shortcut tooltip display issue of the toolbar buttons.
+- 使用自定义块属性将列表转换为思维导图 | Use the custom block attribute to convert the list to a mind map.
+  - `custom-type: 导图`
+  - `custom-type: 思维导图`
+  - `custom-type: map`
+  - `custom-type: mindmap`
+- 使用快捷键 <kbd>Shift + Alt + G</kbd> 开启/关闭列表辅助线 | Use the shortcut <kbd>Shift + Alt + G</kbd> to open/close the list guides line.
 
 ## v0.7.2/2022-04-15
 

@@ -49,17 +49,29 @@ function merge(target, ...arg) {
     }, target)
 }
 
-function styleHandle(id, innerHTML) {
+function styleHandle(id, innerHTML = null, href = null) {
     let style = document.getElementById(id);
     if (style) {
         style.remove();
         return false;
     } else {
-        style = document.createElement('style');
-        style.id = id;
-        style.innerHTML = innerHTML;
-        document.head.appendChild(style);
-        return true;
+        if (innerHTML) {
+            style = document.createElement('style');
+            style.id = id;
+            style.innerHTML = innerHTML;
+            document.head.appendChild(style);
+            return true;
+        }
+        if (href) {
+            style = document.createElement('link');
+            style.id = id;
+            style.rel = 'stylesheet';
+            style.type = 'text/css';
+            style.href = href;
+            document.head.appendChild(style);
+            return true;
+        }
+        return false;
     }
 }
 
