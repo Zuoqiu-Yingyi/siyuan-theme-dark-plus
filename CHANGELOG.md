@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.7.3/2022-04-16
+
+- [v0.7.2 <=> v0.7.3](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.7.2...v0.7.3)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 添加配置选项 `editable` 控制新窗口的编辑器是否可编辑 | Add configuration option `editable` to control whether the editor is editable in new windows.
 - 修复新窗口 URL 参数解析问题 | Fix the URL parameter parsing problem in new windows.
