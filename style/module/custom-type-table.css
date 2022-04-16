@@ -61,8 +61,8 @@
 }
 
 /* 列表项标志居中 */
-.protyle-wysiwyg *[custom-type~=table].list[data-node-id] div.protyle-action,
-.protyle-wysiwyg *[custom-type~=表格].list[data-node-id] div.protyle-action {
+.protyle-wysiwyg *[custom-type~=table].list div.protyle-action,
+.protyle-wysiwyg *[custom-type~=表格].list div.protyle-action {
     position: absolute;
     top: calc(50% - 0.125em);
     transform: translate(0, -50%);
