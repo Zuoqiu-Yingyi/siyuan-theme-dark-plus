@@ -4,60 +4,67 @@
  */
 
 /* 导图块样式 */
-.protyle-wysiwyg *[custom-type~=思维导图].list,
-.protyle-wysiwyg *[custom-type~=导图].list,
-.protyle-wysiwyg *[custom-type~=mind-map].list,
-.protyle-wysiwyg *[custom-type~=map].list {
+.protyle-content *[custom-type~=思维导图].list,
+.protyle-content *[custom-type~=导图].list,
+.protyle-content *[custom-type~=脑图].list,
+.protyle-content *[custom-type~=mind-map].list,
+.protyle-content *[custom-type~=map].list {
     overflow-x: auto;
     padding-top: 2em;
     padding-bottom: 2em;
 }
 
 /* 整个导图列表取消缩进 */
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].list,
-.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].list,
-.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].list,
-.protyle-wysiwyg *[custom-type~=map].list [data-node-id].list {
+.protyle-content *[custom-type~=思维导图] [data-node-id].list,
+.protyle-content *[custom-type~=导图] [data-node-id].list,
+.protyle-content *[custom-type~=脑图] [data-node-id].list,
+.protyle-content *[custom-type~=mind-map] [data-node-id].list,
+.protyle-content *[custom-type~=map] [data-node-id].list {
     margin: 0;
     padding: 0 0 0 1em;
     transition: all 500ms;
 }
 
 /* 列表项文字设置居中 */
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li,
-.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].li,
-.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].li,
-.protyle-wysiwyg *[custom-type~=map].list [data-node-id].li {
+.protyle-content *[custom-type~=思维导图] [data-node-id].li,
+.protyle-content *[custom-type~=导图] [data-node-id].li,
+.protyle-content *[custom-type~=脑图] [data-node-id].li,
+.protyle-content *[custom-type~=mind-map] [data-node-id].li,
+.protyle-content *[custom-type~=map] [data-node-id].li {
     display: flex;
 }
 
 /* 叶子节点 */
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li>div[data-node-id]:not(.li, .list),
-.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].li>div[data-node-id]:not(.li, .list),
-.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].li>div[data-node-id]:not(.li, .list),
-.protyle-wysiwyg *[custom-type~=map].list [data-node-id].li>div[data-node-id]:not(.li, .list) {
+.protyle-content *[custom-type~=思维导图] [data-node-id].li>div[data-node-id]:not(.li, .list),
+.protyle-content *[custom-type~=导图] [data-node-id].li>div[data-node-id]:not(.li, .list),
+.protyle-content *[custom-type~=脑图] [data-node-id].li>div[data-node-id]:not(.li, .list),
+.protyle-content *[custom-type~=mind-map] [data-node-id].li>div[data-node-id]:not(.li, .list),
+.protyle-content *[custom-type~=map] [data-node-id].li>div[data-node-id]:not(.li, .list) {
     align-items: center;
     display: flex;
 }
 
 /* 列表项内的容器块恢复上下排列 */
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li>div[data-node-id].sb,
-.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].li>div[data-node-id].sb,
-.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].li>div[data-node-id].sb,
-.protyle-wysiwyg *[custom-type~=map].list [data-node-id].li>div[data-node-id].sb,
+.protyle-content *[custom-type~=思维导图] [data-node-id].li>div[data-node-id].sb,
+.protyle-content *[custom-type~=导图] [data-node-id].li>div[data-node-id].sb,
+.protyle-content *[custom-type~=脑图] [data-node-id].li>div[data-node-id].sb,
+.protyle-content *[custom-type~=mind-map] [data-node-id].li>div[data-node-id].sb,
+.protyle-content *[custom-type~=map] [data-node-id].li>div[data-node-id].sb,
 
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li>div[data-node-id].bq,
-.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].li>div[data-node-id].bq,
-.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].li>div[data-node-id].bq,
-.protyle-wysiwyg *[custom-type~=map].list [data-node-id].li>div[data-node-id].bq {
+.protyle-content *[custom-type~=思维导图] [data-node-id].li>div[data-node-id].bq,
+.protyle-content *[custom-type~=导图] [data-node-id].li>div[data-node-id].bq,
+.protyle-content *[custom-type~=脑图] [data-node-id].li>div[data-node-id].bq,
+.protyle-content *[custom-type~=mind-map] [data-node-id].li>div[data-node-id].bq,
+.protyle-content *[custom-type~=map] [data-node-id].li>div[data-node-id].bq {
     display: block;
 }
 
 /* 文字框 */
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li>div[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
-.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].li>div[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
-.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].li>div[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
-.protyle-wysiwyg *[custom-type~=map].list [data-node-id].li>div[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck] {
+.protyle-content *[custom-type~=思维导图] [data-node-id].li>div[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
+.protyle-content *[custom-type~=导图] [data-node-id].li>div[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
+.protyle-content *[custom-type~=脑图] [data-node-id].li>div[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
+.protyle-content *[custom-type~=mind-map] [data-node-id].li>div[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
+.protyle-content *[custom-type~=map] [data-node-id].li>div[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck] {
     /* 保留换行 */
     white-space: pre;
     outline: 1px solid var(--b3-theme-on-surface);
@@ -66,18 +73,20 @@
 }
 
 /* 去除竖线 */
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li>[data-node-id]::before,
-.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].li>[data-node-id]::before,
-.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].li>[data-node-id]::before,
-.protyle-wysiwyg *[custom-type~=map].list [data-node-id].li>[data-node-id]::before {
+.protyle-content *[custom-type~=思维导图] [data-node-id].li>[data-node-id]::before,
+.protyle-content *[custom-type~=导图] [data-node-id].li>[data-node-id]::before,
+.protyle-content *[custom-type~=脑图] [data-node-id].li>[data-node-id]::before,
+.protyle-content *[custom-type~=mind-map] [data-node-id].li>[data-node-id]::before,
+.protyle-content *[custom-type~=map] [data-node-id].li>[data-node-id]::before {
     display: none;
 }
 
 /* 表格项标志 */
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li>div.protyle-action,
-.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].li>div.protyle-action,
-.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].li>div.protyle-action,
-.protyle-wysiwyg *[custom-type~=map].list [data-node-id].li>div.protyle-action {
+.protyle-content *[custom-type~=思维导图] [data-node-id].li>div.protyle-action,
+.protyle-content *[custom-type~=导图] [data-node-id].li>div.protyle-action,
+.protyle-content *[custom-type~=脑图] [data-node-id].li>div.protyle-action,
+.protyle-content *[custom-type~=mind-map] [data-node-id].li>div.protyle-action,
+.protyle-content *[custom-type~=map] [data-node-id].li>div.protyle-action {
     top: calc(50% - 12px);
     position: absolute;
     transform: translate(0, -50%);
@@ -86,24 +95,27 @@
 }
 
 /* 无序列表标志 */
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-subtype="u"][data-node-id].li>div.protyle-action,
-.protyle-wysiwyg *[custom-type~=导图].list [data-subtype="u"][data-node-id].li>div.protyle-action,
-.protyle-wysiwyg *[custom-type~=mind-map].list [data-subtype="u"][data-node-id].li>div.protyle-action,
-.protyle-wysiwyg *[custom-type~=map].list [data-subtype="u"][data-node-id].li>div.protyle-action {
+.protyle-content *[custom-type~=思维导图] [data-subtype="u"][data-node-id].li>div.protyle-action,
+.protyle-content *[custom-type~=导图] [data-subtype="u"][data-node-id].li>div.protyle-action,
+.protyle-content *[custom-type~=脑图] [data-subtype="u"][data-node-id].li>div.protyle-action,
+.protyle-content *[custom-type~=mind-map] [data-subtype="u"][data-node-id].li>div.protyle-action,
+.protyle-content *[custom-type~=map] [data-subtype="u"][data-node-id].li>div.protyle-action {
     top: calc(50%);
     left: calc(2em - 16px);
 }
 
 /* 导航线 */
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li::before,
-.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].li::before,
-.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].li::before,
-.protyle-wysiwyg *[custom-type~=map].list [data-node-id].li::before,
+.protyle-content *[custom-type~=思维导图] [data-node-id].li::before,
+.protyle-content *[custom-type~=导图] [data-node-id].li::before,
+.protyle-content *[custom-type~=脑图] [data-node-id].li::before,
+.protyle-content *[custom-type~=mind-map] [data-node-id].li::before,
+.protyle-content *[custom-type~=map] [data-node-id].li::before,
 
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li::after,
-.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].li::after,
-.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].li::after,
-.protyle-wysiwyg *[custom-type~=map].list [data-node-id].li::after {
+.protyle-content *[custom-type~=思维导图] [data-node-id].li::after,
+.protyle-content *[custom-type~=导图] [data-node-id].li::after,
+.protyle-content *[custom-type~=脑图] [data-node-id].li::after,
+.protyle-content *[custom-type~=mind-map] [data-node-id].li::after,
+.protyle-content *[custom-type~=map] [data-node-id].li::after {
     content: "";
     position: absolute;
     height: calc(50% - var(--custom-list-guides-line-width) / 2);
@@ -112,28 +124,31 @@
 }
 
 /* 上导航线 */
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li::before,
-.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].li::before,
-.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].li::before,
-.protyle-wysiwyg *[custom-type~=map].list [data-node-id].li::before {
+.protyle-content *[custom-type~=思维导图] [data-node-id].li::before,
+.protyle-content *[custom-type~=导图] [data-node-id].li::before,
+.protyle-content *[custom-type~=脑图] [data-node-id].li::before,
+.protyle-content *[custom-type~=mind-map] [data-node-id].li::before,
+.protyle-content *[custom-type~=map] [data-node-id].li::before {
     top: 50%;
     border-top: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
 }
 
 /* 下导航线 */
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li::after,
-.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].li::after,
-.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].li::after,
-.protyle-wysiwyg *[custom-type~=map].list [data-node-id].li::after {
+.protyle-content *[custom-type~=思维导图] [data-node-id].li::after,
+.protyle-content *[custom-type~=导图] [data-node-id].li::after,
+.protyle-content *[custom-type~=脑图] [data-node-id].li::after,
+.protyle-content *[custom-type~=mind-map] [data-node-id].li::after,
+.protyle-content *[custom-type~=map] [data-node-id].li::after {
     /* bottom: 50%; */
     border-bottom: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
 }
 
 /* 后继承线 */
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].list::after,
-.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].list::after,
-.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].list::after,
-.protyle-wysiwyg *[custom-type~=map].list [data-node-id].list::after {
+.protyle-content *[custom-type~=思维导图] [data-node-id].list::after,
+.protyle-content *[custom-type~=导图] [data-node-id].list::after,
+.protyle-content *[custom-type~=脑图] [data-node-id].list::after,
+.protyle-content *[custom-type~=mind-map] [data-node-id].list::after,
+.protyle-content *[custom-type~=map] [data-node-id].list::after {
     content: "";
     position: absolute;
     left: -1em;
@@ -144,66 +159,92 @@
 }
 
 /* 单个子项直线 */
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li:first-child:nth-last-child(2)::after,
-.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].li:first-child:nth-last-child(2)::after,
-.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].li:first-child:nth-last-child(2)::after,
-.protyle-wysiwyg *[custom-type~=map].list [data-node-id].li:first-child:nth-last-child(2)::after {
+.protyle-content *[custom-type~=思维导图] [data-node-id].li:first-child:nth-last-child(2)::after,
+.protyle-content *[custom-type~=导图] [data-node-id].li:first-child:nth-last-child(2)::after,
+.protyle-content *[custom-type~=脑图] [data-node-id].li:first-child:nth-last-child(2)::after,
+.protyle-content *[custom-type~=mind-map] [data-node-id].li:first-child:nth-last-child(2)::after,
+.protyle-content *[custom-type~=map] [data-node-id].li:first-child:nth-last-child(2)::after {
     border-radius: 0;
     height: calc(50% - var(--custom-list-guides-line-width) / 8);
 }
 
 /* 修复单子项导航线错位问题 */
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li>div:nth-child(2) {
+.protyle-content *[custom-type~=思维导图] [data-node-id].li>div:nth-child(2) {
     margin-top: 4px !important;
 }
 
 /* 单子项居中 */
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li:first-child:nth-last-child(2),
-.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].li:first-child:nth-last-child(2),
-.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].li:first-child:nth-last-child(2),
-.protyle-wysiwyg *[custom-type~=map].list [data-node-id].li:first-child:nth-last-child(2) {
-    top: 0;
+.protyle-content *[custom-type~=思维导图] [data-node-id].li:first-child:nth-last-child(2),
+.protyle-content *[custom-type~=导图] [data-node-id].li:first-child:nth-last-child(2),
+.protyle-content *[custom-type~=脑图] [data-node-id].li:first-child:nth-last-child(2),
+.protyle-content *[custom-type~=mind-map] [data-node-id].li:first-child:nth-last-child(2),
+.protyle-content *[custom-type~=map] [data-node-id].li:first-child:nth-last-child(2) {
+    top: 50%;
+    transform: translate(0, -50%);
 }
 
 /* 取消多余线条 */
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li:first-child::after,
-.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].li:first-child::after,
-.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].li:first-child::after,
-.protyle-wysiwyg *[custom-type~=map].list [data-node-id].li:first-child::after,
+.protyle-content *[custom-type~=思维导图] [data-node-id].li:first-child::after,
+.protyle-content *[custom-type~=导图] [data-node-id].li:first-child::after,
+.protyle-content *[custom-type~=脑图] [data-node-id].li:first-child::after,
+.protyle-content *[custom-type~=mind-map] [data-node-id].li:first-child::after,
+.protyle-content *[custom-type~=map] [data-node-id].li:first-child::after,
 
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li:nth-last-child(2)::before,
-.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].li:nth-last-child(2)::before,
-.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].li:nth-last-child(2)::before,
-.protyle-wysiwyg *[custom-type~=map].list [data-node-id].li:nth-last-child(2)::before {
+.protyle-content *[custom-type~=思维导图] [data-node-id].li:nth-last-child(2)::before,
+.protyle-content *[custom-type~=导图] [data-node-id].li:nth-last-child(2)::before,
+.protyle-content *[custom-type~=脑图] [data-node-id].li:nth-last-child(2)::before,
+.protyle-content *[custom-type~=mind-map] [data-node-id].li:nth-last-child(2)::before,
+.protyle-content *[custom-type~=map] [data-node-id].li:nth-last-child(2)::before {
     border: none;
 }
 
 /* 上框线 */
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li:first-child::before,
-.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].li:first-child::before,
-.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].li:first-child::before,
-.protyle-wysiwyg *[custom-type~=map].list [data-node-id].li:first-child::before {
+.protyle-content *[custom-type~=思维导图] [data-node-id].li:first-child::before,
+.protyle-content *[custom-type~=导图] [data-node-id].li:first-child::before,
+.protyle-content *[custom-type~=脑图] [data-node-id].li:first-child::before,
+.protyle-content *[custom-type~=mind-map] [data-node-id].li:first-child::before,
+.protyle-content *[custom-type~=map] [data-node-id].li:first-child::before {
     border-top-left-radius: var(--custom-border-radius);
 }
 
 /* 下框线 */
-.protyle-wysiwyg *[custom-type~=思维导图].list [data-node-id].li:nth-last-child(2)::after,
-.protyle-wysiwyg *[custom-type~=导图].list [data-node-id].li:nth-last-child(2)::after,
-.protyle-wysiwyg *[custom-type~=mind-map].list [data-node-id].li:nth-last-child(2)::after,
-.protyle-wysiwyg *[custom-type~=map].list [data-node-id].li:nth-last-child(2)::after {
+.protyle-content *[custom-type~=思维导图] [data-node-id].li:nth-last-child(2)::after,
+.protyle-content *[custom-type~=导图] [data-node-id].li:nth-last-child(2)::after,
+.protyle-content *[custom-type~=脑图] [data-node-id].li:nth-last-child(2)::after,
+.protyle-content *[custom-type~=mind-map] [data-node-id].li:nth-last-child(2)::after,
+.protyle-content *[custom-type~=map] [data-node-id].li:nth-last-child(2)::after {
     border-bottom: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
     border-bottom-left-radius: var(--custom-border-radius);
 }
 
 /* 取消根目录线 */
-.protyle-wysiwyg *[custom-type~=思维导图].list>[data-node-id].li::after,
-.protyle-wysiwyg *[custom-type~=导图].list>[data-node-id].li::after,
-.protyle-wysiwyg *[custom-type~=mind-map].list>[data-node-id].li::after,
-.protyle-wysiwyg *[custom-type~=map].list>[data-node-id].li::after,
+/* 列表块属性 */
+/* .protyle-content *[custom-type~=思维导图]>[data-node-id].li::after,
+.protyle-content *[custom-type~=导图]>[data-node-id].li::after,
+.protyle-content *[custom-type~=脑图]>[data-node-id].li::after,
+.protyle-content *[custom-type~=mind-map]>[data-node-id].li::after,
+.protyle-content *[custom-type~=map]>[data-node-id].li::after,
 
-.protyle-wysiwyg *[custom-type~=思维导图].list>[data-node-id].li::before,
-.protyle-wysiwyg *[custom-type~=导图].list>[data-node-id].li::before,
-.protyle-wysiwyg *[custom-type~=mind-map].list>[data-node-id].li::before,
-.protyle-wysiwyg *[custom-type~=map].list>[data-node-id].li::before {
+.protyle-content *[custom-type~=思维导图]>[data-node-id].li::before,
+.protyle-content *[custom-type~=导图]>[data-node-id].li::before,
+.protyle-content *[custom-type~=脑图]>[data-node-id].li::before,
+.protyle-content *[custom-type~=mind-map]>[data-node-id].li::before,
+.protyle-content *[custom-type~=map]>[data-node-id].li::before {
     display: none;
 }
+*/
+
+/* 文档属性 */
+/* .protyle-content *[custom-type~=思维导图]>[data-node-id].list>[data-node-id].li::after,
+.protyle-content *[custom-type~=导图]>[data-node-id].list>[data-node-id].li::after,
+.protyle-content *[custom-type~=脑图]>[data-node-id].list>[data-node-id].li::after,
+.protyle-content *[custom-type~=mind-map]>[data-node-id].list>[data-node-id].li::after,
+.protyle-content *[custom-type~=map]>[data-node-id].list>[data-node-id].li::after,
+
+.protyle-content *[custom-type~=思维导图]>[data-node-id].list>[data-node-id].li::before,
+.protyle-content *[custom-type~=导图]>[data-node-id].list>[data-node-id].li::before,
+.protyle-content *[custom-type~=脑图]>[data-node-id].list>[data-node-id].li::before,
+.protyle-content *[custom-type~=mind-map]>[data-node-id].list>[data-node-id].li::before,
+.protyle-content *[custom-type~=map]>[data-node-id].list>[data-node-id].li::before {
+    display: none;
+} */
