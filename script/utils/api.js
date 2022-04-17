@@ -49,6 +49,8 @@ export {
     删除块 as deleteBlock,
     更新块 as updateBlock,
     以id获取思源块信息 as getBlockByID,
+
+    获取系统字体列表 as getSysFonts,
 };
 
 async function 向思源请求数据(url, data) {
@@ -414,4 +416,9 @@ async function 删除块(id) {
             id: id,
         },
     ))
+}
+
+async function 获取系统字体列表() { 
+    let url = '/api/system/getSysFonts'
+    return 解析响应体(向思源请求数据(url))
 }

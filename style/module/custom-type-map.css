@@ -10,8 +10,8 @@
 .protyle-content *[custom-type~=mind-map].list,
 .protyle-content *[custom-type~=map].list {
     overflow-x: auto;
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 /* 整个导图列表取消缩进 */
@@ -181,6 +181,27 @@
 .protyle-content *[custom-type~=map] [data-node-id].li:first-child:nth-last-child(2) {
     top: 50%;
     transform: translate(0, -50%);
+}
+/* 修复顶层列表项错位问题 */
+.protyle-content *[custom-type~=思维导图].list>[data-node-id].li:first-child:nth-last-child(2),
+.protyle-content *[custom-type~=导图].list>[data-node-id].li:first-child:nth-last-child(2),
+.protyle-content *[custom-type~=脑图].list>[data-node-id].li:first-child:nth-last-child(2),
+.protyle-content *[custom-type~=mind-map].list>[data-node-id].li:first-child:nth-last-child(2),
+.protyle-content *[custom-type~=map].list>[data-node-id].li:first-child:nth-last-child(2),
+
+.protyle-content *[custom-type~=思维导图]>[data-node-id].list>[data-node-id].li:first-child:nth-last-child(2),
+.protyle-content *[custom-type~=导图]>[data-node-id].list>[data-node-id].li:first-child:nth-last-child(2),
+.protyle-content *[custom-type~=脑图]>[data-node-id].list>[data-node-id].li:first-child:nth-last-child(2),
+.protyle-content *[custom-type~=mind-map]>[data-node-id].list>[data-node-id].li:first-child:nth-last-child(2),
+.protyle-content *[custom-type~=map]>[data-node-id].list>[data-node-id].li:first-child:nth-last-child(2),
+
+.protyle-content *[custom-type~=思维导图] [data-node-id]:not(.li)>[data-node-id].list>[data-node-id].li:first-child:nth-last-child(2),
+.protyle-content *[custom-type~=导图] [data-node-id]:not(.li)>[data-node-id].list>[data-node-id].li:first-child:nth-last-child(2),
+.protyle-content *[custom-type~=脑图] [data-node-id]:not(.li)>[data-node-id].list>[data-node-id].li:first-child:nth-last-child(2),
+.protyle-content *[custom-type~=mind-map] [data-node-id]:not(.li)>[data-node-id].list>[data-node-id].li:first-child:nth-last-child(2),
+.protyle-content *[custom-type~=map] [data-node-id]:not(.li)>[data-node-id].list>[data-node-id].li:first-child:nth-last-child(2) {
+    top: 0;
+    transform: none;
 }
 
 /* 取消多余线条 */

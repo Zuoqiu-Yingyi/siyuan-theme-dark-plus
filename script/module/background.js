@@ -7,7 +7,7 @@ import {
 } from './../utils/ui.js';
 import {
     shuffle,
-    createLookIterator,
+    Iterator,
 } from './../utils/misc.js';
 
 function changeBackground(background, mode = 'image') {
@@ -28,7 +28,7 @@ function changeBackground(background, mode = 'image') {
 
 function switchBackground(lightIter, darkIter) {
     // console.log(customBackground);
-    switch (window.theme.themeMode()) {
+    switch (window.theme.themeMode) {
         case 'light':
             changeBackground(lightIter.next().value);
             break;
@@ -45,11 +45,11 @@ setTimeout(() => {
             if (config.theme.background.image.enable) {
                 if (config.theme.background.image.web.enable) {
                     const WEB_LIGHT_ITER = config.theme.background.image.web.random
-                        ? createLookIterator(shuffle(config.theme.background.image.web.light.slice()))
-                        : createLookIterator(config.theme.background.image.web.light.slice());
+                        ? Iterator(shuffle(config.theme.background.image.web.light.slice()), true)
+                        : Iterator(config.theme.background.image.web.light.slice(), true);
                     const WEB_DARK_ITER = config.theme.background.image.web.random
-                        ? createLookIterator(shuffle(config.theme.background.image.web.dark.slice()))
-                        : createLookIterator(config.theme.background.image.web.dark.slice());
+                        ? Iterator(shuffle(config.theme.background.image.web.dark.slice()), true)
+                        : Iterator(config.theme.background.image.web.dark.slice(), true);
 
                     let Fn_webBackground = toolbarItemInit(
                         config.theme.background.image.web.toolbar,
@@ -66,11 +66,11 @@ setTimeout(() => {
                 }
                 if (config.theme.background.image.custom.enable) {
                     const CUSTOM_LIGHT_ITER = config.theme.background.image.custom.random
-                        ? createLookIterator(shuffle(config.theme.background.image.custom.light.slice()))
-                        : createLookIterator(config.theme.background.image.custom.light.slice());
+                        ? Iterator(shuffle(config.theme.background.image.custom.light.slice()), true)
+                        : Iterator(config.theme.background.image.custom.light.slice(), true);
                     const CUSTOM_DARK_ITER = config.theme.background.image.custom.random
-                        ? createLookIterator(shuffle(config.theme.background.image.custom.dark.slice()))
-                        : createLookIterator(config.theme.background.image.custom.dark.slice());
+                        ? Iterator(shuffle(config.theme.background.image.custom.dark.slice()), true)
+                        : Iterator(config.theme.background.image.custom.dark.slice(), true);
 
                     let Fn_customBackground = toolbarItemInit(
                         config.theme.background.image.custom.toolbar,
