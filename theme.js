@@ -50,7 +50,7 @@ window.theme.ID_CUSTOM_STYLE = 'customStyle';
  * 获取主题模式
  * @returns {string} light 或 dark
  */
-window.theme.themeMode = function () {
+window.theme.themeMode = (() => {
     /* 根据浏览器主题判断颜色模式 */
     // switch (true) {
     //     case window.matchMedia('(prefers-color-scheme: light)').matches:
@@ -60,25 +60,22 @@ window.theme.themeMode = function () {
     //     default:
     //         return null;
     // }
-
-    /* 根据思源加载的配色文件判断颜色模式 */
-    let style = document.getElementById('themeDefaultStyle');
-    let url = new URL(style.getAttribute('href'));
-    switch (url.pathname) {
-        case '/appearance/themes/daylight/theme.css':
+    /* 根据配置选项判断主题 */
+    switch (window.siyuan.config.appearance.mode) {
+        case 0:
             return 'light';
-        case '/appearance/themes/midnight/theme.css':
+        case 1:
             return 'dark';
         default:
             return null;
     }
-}
+})();
 
 /**
  * 获取客户端模式
  * @returns {string} 'app' 或 'desktop' 或 'mobile'
  */
-window.theme.clientMode = function () {
+window.theme.clientMode = (() => {
     let url = new URL(window.location.href);
     switch (true) {
         case url.pathname.startsWith('/stage/build/app'):
@@ -90,54 +87,18 @@ window.theme.clientMode = function () {
         default:
             return null;
     }
-}
+})();
 
 /**
  * 获取语言模式
  * @returns {string} 'zh_CN', 'zh_CNT', 'fr_FR', 'en_US'
  */
-window.theme.languageMode = function () {
-    switch (window.siyuan.languages.config) {
-        case '设置':
-            return 'zh_CN';
-        case '設置':
-            return 'zh_CNT';
-        case 'Paramètres':
-            return 'fr_FR';
-        case 'Settings':
-            return 'en_US';
-        default:
-            return null;
-    }
-}
+window.theme.languageMode = (() => window.siyuan.config.lang)();
 
 /**
  * 获取操作系统
- * @returns {string} 'zh_CN', 'zh_CNT', 'fr_FR', 'en_US'
  */
-window.theme.OS = function () {
-    var sUserAgent = navigator.userAgent;
-    var isWin = (navigator.platform == "Win32") || (navigator.platform == "Windows");
-    var isMac = (navigator.platform == "Mac68K") || (navigator.platform == "MacPPC") || (navigator.platform == "Macintosh") || (navigator.platform == "MacIntel");
-    if (isMac) return "MacOS";
-    var isUnix = (navigator.platform == "X11") && !isWin && !isMac;
-    if (isUnix) return "Unix";
-    var isLinux = (String(navigator.platform).indexOf("Linux") > -1);
-    if (isLinux) return "Linux";
-    if (isWin) {
-        var isWin2K = sUserAgent.indexOf("Windows NT 5.0") > -1 || sUserAgent.indexOf("Windows 2000") > -1;
-        if (isWin2K) return "Windows2000";
-        var isWinXP = sUserAgent.indexOf("Windows NT 5.1") > -1 || sUserAgent.indexOf("Windows XP") > -1;
-        if (isWinXP) return "WindowsXP";
-        var isWin2003 = sUserAgent.indexOf("Windows NT 5.2") > -1 || sUserAgent.indexOf("Windows 2003") > -1;
-        if (isWin2003) return "Windows2003";
-        var isWinVista = sUserAgent.indexOf("Windows NT 6.0") > -1 || sUserAgent.indexOf("Windows Vista") > -1;
-        if (isWinVista) return "Windows Vista";
-        var isWin7 = sUserAgent.indexOf("Windows NT 6.1") > -1 || sUserAgent.indexOf("Windows 7") > -1;
-        if (isWin7) return "Windows7";
-    }
-    return "other";
-}
+window.theme.OS = (() => window.siyuan.config.system.os)();
 
 /**
  * 更换主题模式
@@ -154,7 +115,7 @@ window.theme.changeThemeMode = function (
 ) {
     let href_color = null;
     let href_custom = null;
-    switch (window.theme.themeMode()) {
+    switch (window.theme.themeMode) {
         case 'light':
             href_color = lightStyle;
             href_custom = customLightStyle;
@@ -186,6 +147,7 @@ window.theme.loadScript("/appearance/themes/Dark+/script/module/blockattrs.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/doc.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/goto.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/invert.js");
+window.theme.loadScript("/appearance/themes/Dark+/script/module/menu.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/reload.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/style.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/timestamp.js");

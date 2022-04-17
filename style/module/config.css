@@ -481,8 +481,8 @@
     /* 过长块的溢出高度 | The overflow height of a overly long block */
     --custom-scroll-max-height: 50vh;
 
-    /* 表格单元格等宽启用时单元格宽度 | Table cell width when cell monospaced function is enabled */
-    --custom-table-cell-monospaced-width: 256px;
+    /* 表格单元格等宽启用时单元格宽度 | Table cell width when cell equal function is enabled */
+    --custom-table-cell-equal-width: 256px;
 
     /* 自定义背景图片路径 | The file path of customize background image. */
     --custom-background-01: url("/appearance/themes/Dark+/image/background (01).jpg");

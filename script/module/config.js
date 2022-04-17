@@ -32,7 +32,7 @@ export var config = {
                         en_US: null,
                         other: 'List Guides',
                     },
-                    icon: '#iconSort',
+                    icon: '#iconIndent',
                     index: -3,
                 },
                 elements: {
@@ -470,6 +470,675 @@ export var config = {
                 },
             },
         },
+        menu: {
+            enable: true, // 菜单功能开关
+            block: {
+                enable: true, // 块菜单功能开关
+                toolbar: { // 菜单栏
+                    enable: true,
+                    id: 'toolbar-theme-menu-block',
+                    hotkey: () => config.theme.hotkeys.menu.block,
+                    label: {
+                        zh_CN: '块菜单增强',
+                        zh_CNT: null,
+                        fr_FR: null,
+                        en_US: null,
+                        other: 'Block Menu Enhancements',
+                    },
+                    icon: '#iconMenu',
+                    index: -4,
+                },
+                items: [ // 块菜单项
+                    {
+                        enable: true, // 是否启用菜单项
+                        prefixSeparator: true, // 是否添加前缀分隔线
+                        suffixSeparator: false, // 是否添加后缀分隔线
+                        type: null, // 哪些类型的块启用, 值 null 则全部启用
+                        id: 'theme-menu-block-common-font', // 菜单项 ID
+                        mode: "button",  // 菜单项类型
+                        icon: "#iconFont",  // 菜单项图标
+                        label: {  // 菜单项标签
+                            zh_CN: "常用字体",
+                            other: "Common Fonts",
+                        },
+                        accelerator: "",  // 菜单项快捷键
+                        click: {  // 菜单项点击事件
+                            enable: false, // 是否启用点击事件
+                        },
+                        itemsLoad: true, // 是否加载子菜单
+                        itemsIcon: "#iconRight", 
+                        items: [
+                            {
+                                enable: true,
+                                type: null,
+                                mode: "button",
+                                icon: "#iconFont",
+                                label: {
+                                    zh_CN: "默认字体",
+                                    other: "Default Font",
+                                    style: `font-family: "${window.siyuan.config.editor.fontFamily}"`,
+                                },
+                                accelerator: window.siyuan.config.editor.fontFamily,
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-delete',
+                                            params: {
+                                                'style': null,
+                                                'custom-font-family': null,
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                        ],
+                    },
+                    {
+                        enable: true,
+                        prefixSeparator: false,
+                        suffixSeparator: false,
+                        type: null,
+                        id: 'theme-menu-block-other-font',
+                        mode: "button",
+                        icon: "#iconFont",
+                        label: {
+                            zh_CN: "其他字体",
+                            other: "Other Fonts",
+                        },
+                        accelerator: "",
+                        click: {
+                            enable: true,
+                            callback: null,
+                            tasks: [
+                                {
+                                    type: 'menu-unfold', // 展开菜单
+                                    params: {
+                                        id: 'theme-menu-block-other-font',
+                                        item: () => config.theme.menu.block.items[1],
+                                    }
+                                },
+                            ],
+                        },
+                        itemsLoad: false,
+                        itemsIcon: {
+                            fold: "#iconFullscreen",
+                            unfold: "#iconContract",
+                        },
+                        items: [
+                        ],
+                    },
+                    {
+                        enable: true,
+                        prefixSeparator: true,
+                        suffixSeparator: false,
+                        type: null,
+                        id: 'theme-menu-block-more',
+                        mode: "button",
+                        icon: "#iconMore",
+                        label: {
+                            zh_CN: "更多",
+                            other: "More",
+                        },
+                        accelerator: "",
+                        click: {
+                            enable: false,
+                        },
+                        itemsLoad: true,
+                        itemsIcon: "#iconRight",
+                        items: [ // 子菜单项列表
+                            {
+                                enable: true,
+                                type: null,
+                                mode: "button",
+                                icon: "#iconBefore",
+                                label: {
+                                    zh_CN: "弹幕",
+                                    other: "Danmaku",
+                                },
+                                accelerator: "render: danmaku",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-switch',
+                                            params: {
+                                                'custom-render': [
+                                                    'danmaku',
+                                                    null,
+                                                ],
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: null,
+                                mode: "button",
+                                icon: "#iconScrollWrapped",
+                                label: {
+                                    zh_CN: "滚屏显示",
+                                    other: "Scrolling Display",
+                                },
+                                accelerator: "render: scroll",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-switch',
+                                            params: {
+                                                'custom-render': [
+                                                    'scroll',
+                                                    null,
+                                                ],
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: null,
+                                mode: "separator",
+                            },
+                            {
+                                enable: true, // 是否启用子菜单项
+                                type: { // 在哪些块启用菜单项
+                                    NodeDocument: {
+                                        enable: true, // 是否在该块类型启用菜单项
+                                    },
+                                },
+                                mode: "button", // 模式: button, separator
+                                icon: "#iconH1", // 子菜单项图标
+                                label: {
+                                    zh_CN: "标题自动编号",
+                                    other: "Automatic Headling Numbering",
+                                },
+                                accelerator: "auto-num-h: 0", // 子菜单项快捷键
+                                click: { // 子菜单项点击事件
+                                    enable: true, // 是否启用点击事件
+                                    callback: null, // 点击事件回调(优先使用)
+                                    // callback: (id) => {}, // 示例
+                                    tasks: [ // 点击事件任务列表(次优使用)
+                                        {
+                                            type: 'attr-switch', // 任务处理方法名(属性值切换)
+                                            params: { // 任务处理方法参数
+                                                'custom-auto-num-h': [
+                                                    '0',
+                                                    null,
+                                                ],
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "button",
+                                icon: "#iconImage",
+                                label: {
+                                    zh_CN: "图片自动编号",
+                                    other: "Automatic Picture Numbering",
+                                },
+                                accelerator: "auto-num-f: Fig.",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-switch',
+                                            params: {
+                                                'custom-auto-num-f': [
+                                                    '图',
+                                                    '图片',
+                                                    'Fig.',
+                                                    'figure',
+                                                    'Figure',
+                                                    'FIGURE',
+                                                    null,
+                                                ],
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "button",
+                                icon: "#iconTable",
+                                label: {
+                                    zh_CN: "表格自动编号",
+                                    other: "Automatic Table Numbering",
+                                },
+                                accelerator: "auto-num-t: Tab.",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-switch',
+                                            params: {
+                                                'custom-auto-num-t': [
+                                                    '表',
+                                                    '表格',
+                                                    'Tab.',
+                                                    'table',
+                                                    'Table',
+                                                    'TABLE',
+                                                    null,
+                                                ],
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "separator",
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "button",
+                                icon: "#iconInfo",
+                                label: {
+                                    zh_CN: "显示 ID",
+                                    other: "Display ID",
+                                },
+                                accelerator: "render: id",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-switch',
+                                            params: {
+                                                'custom-render': [
+                                                    'id',
+                                                    null,
+                                                ],
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "button",
+                                icon: "#iconLink",
+                                label: {
+                                    zh_CN: "显示超链接",
+                                    other: "Display Hypertext ",
+                                },
+                                accelerator: "render: href",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-switch',
+                                            params: {
+                                                'custom-render': [
+                                                    'href',
+                                                    null,
+                                                ],
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "separator",
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "button",
+                                icon: "#iconSpreadOdd",
+                                label: {
+                                    zh_CN: "显示块序号",
+                                    other: "Display Block Number",
+                                },
+                                accelerator: "render: index",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-switch',
+                                            params: {
+                                                'custom-render': [
+                                                    'index',
+                                                    null,
+                                                ],
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "button",
+                                icon: "#iconMarkdown",
+                                label: {
+                                    zh_CN: "显示块内容",
+                                    other: "Display Block Content",
+                                },
+                                accelerator: "render: content",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-switch',
+                                            params: {
+                                                'custom-render': [
+                                                    'content',
+                                                    null,
+                                                ],
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "button",
+                                icon: "#iconMax",
+                                label: {
+                                    zh_CN: "显示块轮廓",
+                                    other: "Display Block Outline",
+                                },
+                                accelerator: "render: outline",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-switch',
+                                            params: {
+                                                'custom-render': [
+                                                    'outline',
+                                                    null,
+                                                ],
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeList: {
+                                        enable: true, // 是否在该块类型启用菜单项
+                                        subtype: { // 是否在该子类型启用菜单项
+                                            u: true,
+                                            o: true,
+                                            t: true,
+                                        },
+                                    },
+                                },
+                                mode: "button",
+                                icon: "#iconIndent",
+                                label: {
+                                    zh_CN: "列表辅助线",
+                                    other: "List Guides",
+                                },
+                                accelerator: "list-guides: 1",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-switch',
+                                            params: {
+                                                'custom-list-guides': [
+                                                    '1',
+                                                    null,
+                                                ],
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeList: {
+                                        enable: true,
+                                    },
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "separator",
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeList: {
+                                        enable: true,
+                                    },
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "button",
+                                icon: "#iconList",
+                                label: {
+                                    zh_CN: "列表-默认视图",
+                                    other: "List-Default View",
+                                },
+                                accelerator: "",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-update', // 覆盖属性值
+                                            params: {
+                                                'custom-type': null,
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeList: {
+                                        enable: true,
+                                    },
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "button",
+                                icon: "#iconGraph",
+                                label: {
+                                    zh_CN: "列表-脑图视图",
+                                    other: "List-Mind Map View",
+                                },
+                                accelerator: "type: map",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+
+                                    tasks: [
+                                        {
+                                            type: 'attr-update',
+                                            params: {
+                                                'custom-type': 'map',
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeList: {
+                                        enable: true,
+                                    },
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "button",
+                                icon: "#iconTable",
+                                label: {
+                                    zh_CN: "列表-表格视图",
+                                    other: "List-Table View",
+                                },
+                                accelerator: "type: table",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+
+                                    tasks: [
+                                        {
+                                            type: 'attr-update',
+                                            params: {
+                                                'custom-type': 'table',
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeTable: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "button",
+                                icon: "#iconFullscreen",
+                                label: {
+                                    zh_CN: "默认宽度",
+                                    other: "Full Width",
+                                },
+                                accelerator: "",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-update',
+                                            params: {
+                                                'custom-table-width': null,
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeTable: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "button",
+                                icon: "#iconContract",
+                                label: {
+                                    zh_CN: "自动宽度",
+                                    other: "Automatic Width",
+                                },
+                                accelerator: "table-width: auto",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-update',
+                                            params: {
+                                                'custom-table-width': 'auto',
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeTable: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "button",
+                                icon: "#iconPause",
+                                label: {
+                                    zh_CN: "全等宽度",
+                                    other: "Equal Width",
+                                },
+                                accelerator: "table-width: equal",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-update',
+                                            params: {
+                                                'custom-table-width': 'equal',
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                        ],
+                    },
+                ],
+            },
+        },
         comment: {
             // 批注功能开关
             enable: true,
@@ -668,6 +1337,16 @@ export var config = {
                             button: 1, // 鼠标中键
                         },
                     },
+                },
+            },
+            menu: {
+                block: {
+                    // 块菜单开关(Shift + Alt + M)
+                    ctrlKey: false,
+                    metaKey: false,
+                    shiftKey: true,
+                    altKey: true,
+                    key: 'M',
                 },
             },
         },

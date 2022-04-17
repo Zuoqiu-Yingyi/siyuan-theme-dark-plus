@@ -29,14 +29,14 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 ![行级元素对齐](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/1647098220929.png)
 
 - 使用等宽字体时所有行内元素对齐  
-  All inline elements are aligned when using a monospaced font.
+  All inline elements are aligned when using a equal font.
 - 行内元素样式适配所有字号  
   Inline element styles are adapted to all font sizes.
 
 ![列表缩进对齐](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/1647098536196.png)
 
 - 使用等宽字体时列表以 4 个半宽字符(2 个全宽字符)的宽度缩进  
-  When using a monospaced font, list indentation is 4 half-width characters (2 full-width characters).
+  When using a equal font, list indentation is 4 half-width characters (2 full-width characters).
 - 列表缩进样式适配所有字号  
   List indentation styles are adapted to all font sizes.
 
@@ -109,6 +109,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | 文档块<br/>document blocks                        | `auto-num-f`             | `图`<br/>`图片`<br/>`Fig.`<br/>`figure`<br/>`Figure`<br/>`FIGURE`                                                                                                                                                                                                                        | 启用该文档中图片的自动编号<br/>Enable automatic numbering of pictures in the document.                                                                                             |
 | 文档块<br/>document blocks                        | `auto-num-t`             | `表`<br/>`表格`<br/>`Tab.`<br/>`table`<br/>`Table`<br/>`TABLE`                                                                                                                                                                                                                           | 启用该文档中表格的自动编号<br/>Enable automatic numbering of tables in the document.                                                                                               |
 | 文档块<br/>document blocks                        | `render`                 | `id`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                                            | 渲染每个块的块 ID<br/>Renders the ID of each block.                                                                                                                                |
+| 文档块<br/>document blocks                        | `render`                 | `href`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                                          | 渲染超链接的 URL<br/>Renders the URL of each hyperlink.                                                                                                                            |
 | 文档块<br/>document blocks                        | `render`                 | `index`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                                         | 渲染当前块在文档中的序号<br/>Renders the ordinal number of the current block in the document.                                                                                      |
 | 文档块<br/>document blocks                        | `render`                 | `content`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                                       | 渲染输入框中的内容<br/>Renders the contents of the input box.                                                                                                                      |
 | 文档块<br/>document blocks                        | `render`                 | `outline`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                                       | 渲染鼠标悬浮的块的轮廓<br/>Renders the outline of a hovering block.                                                                                                                |
@@ -119,7 +120,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | 列表块 & 文档块<br/>list blocks & document blocks | `type`                   | `脑图`<br/>`map`<br/>`导图`<br/>`mind-map`<br/>`思维导图`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                       | 列表渲染为思维导图<br/>Renders the list as a mind map.                                                                                                                             |
 | 列表块<br/>list blocks                            | `list-guides`            | 任何值<br/>Any value                                                                                                                                                                                                                                                                     | 启用动态列表辅助线<br/>Enable dynamic list guides.                                                                                                                                 |
 | 表格块<br/>table blocks                           | `table-width`            | `auto`<br/>`自动`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                               | 启动表格内容自动换行<br/>Enable table content wraps.                                                                                                                               |
-| 表格块<br/>table blocks                           | `table-width`            | `monospaced`<br/>`等宽`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                         | 启动单元格等宽<br/>Enable monospaced cell.                                                                                                                                         |
+| 表格块<br/>table blocks                           | `table-width`            | `equal`<br/>`等宽`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                              | 启动单元格等宽<br/>Enable equal cell.                                                                                                                                              |
 | 段落块<br/>paragraph blocks                       | `type`                   | `图标题`<br/>`表标题`<br/>`figure-title`<br/>`table-title`<br/>(使用空格分隔多个属性值 \| Separate multiple attribute values with spaces)                                                                                                                                                | 图标题/表标题自动计数<br/>Figure titles/table titles are counted automatically.                                                                                                    |
 | 段落块<br/>paragraph blocks                       | `writing-mode`           | `horizontal-tb`<br/>`vertical-rl`<br/>`vertical-lr`                                                                                                                                                                                                                                      | (默认)从左到右自上而下的书写方式 \| (default)left-right-top-bottom<br/>从上到下自右而左的书写方式 \| top-bottom-right-left<br/>从上到下自左而右的书写方式 \| top-bottom-left-right |
 
@@ -368,9 +369,9 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
     - `auto` / `自动`: 属性值 | value
       - 表格宽度自动跟随文档宽度变化  
         The table width automatically follows the document width.
-    - `monospaced` / `等宽`: 属性值 | value
+    - `equal` / `等宽`: 属性值 | value
       - 单元格等宽  
-        Cell is monospaced.
+        Cell is equal width.
   - `writing-mode`: 属性名 | key
     - 适用于所有块 | Applies to all blocks
     - 文本排版模式 | text layout mode
@@ -1461,8 +1462,8 @@ export var config = {
     /* 过长块的溢出高度 | The overflow height of a overly long block */
     --custom-scroll-max-height: 50vh;
 
-    /* 表格单元格等宽启用时单元格宽度 | Table cell width when cell monospaced function is enabled */
-    --custom-table-cell-monospaced-width: 256px;
+    /* 表格单元格等宽启用时单元格宽度 | Table cell width when cell equal function is enabled */
+    --custom-table-cell-equal-width: 256px;
 
     /* 自定义背景图片路径 | The file path of customize background image. */
     --custom-background-01: url("/appearance/themes/Dark+/image/background (01).jpg");

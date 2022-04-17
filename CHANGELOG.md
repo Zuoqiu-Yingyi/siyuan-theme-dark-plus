@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
+- 使用快捷键 <kbd>Shift + Alt + M</kbd> 启用/关闭块标菜单增强功能 | Use the shortcut <kbd>Shift + Alt + M</kbd> to enable/disable the block menu enhancement feature.
+
 ## v0.7.3/2022-04-16
 
 - [v0.7.2 <=> v0.7.3](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.7.2...v0.7.3)

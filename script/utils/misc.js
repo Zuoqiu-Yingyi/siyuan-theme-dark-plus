@@ -13,7 +13,7 @@ export {
     id2url, // 块 id 转换为块超链接
     intPrefix, // 整数填充前导零
     shuffle, // 打乱数组
-    createLookIterator, // 创建循环迭代器
+    Iterator, // 创建循环迭代器
 }
 
 import { config } from './../module/config.js';
@@ -225,9 +225,16 @@ function shuffle(arr) {
     return arr;
 }
 
-function* createLookIterator(items) {
+function* Iterator(items, loop = false) {
     // REF [ES6中的迭代器(Iterator)和生成器(Generator) - 小火柴的蓝色理想 - 博客园](https://www.cnblogs.com/xiaohuochai/p/7253466.html)
-    for (let i = 0; true; i = (i + 1) % items.length) {
-        yield items[i];
+    if (loop) { 
+        for (let i = 0; true; i = (i + 1) % items.length) {
+            yield items[i];
+        }
+    }
+    else {
+        for (let i = 0; i < items.length; ++i) {
+            yield items[i];
+        }
     }
 }

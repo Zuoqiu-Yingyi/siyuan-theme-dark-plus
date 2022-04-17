@@ -9,7 +9,10 @@ export {
     getFocusedID, // 获得焦点所在的块 ID, 否则获得焦点所在文档的 ID
     getTargetBlockID, // 获得目标的块 ID
     getTargetHref, // 获得目标超链接
-}
+    getBlockMark, // 获得块标记
+    getBlockSelected, // 获得块选中
+    setBlockDOMAttrs, // 设置块属性
+};
 
 import { url2id } from './misc.js';
 import { config } from './../module/config.js';
@@ -109,7 +112,7 @@ function getTargetBlockID(target) {
 
 /**
  * 获得目标超链接
- * @target {HTMLElement} 目标
+ * @param {HTMLElement} target 目标
  * @returns {string} 超链接
  * @returns {null} 没有找到超链接
  */
@@ -123,4 +126,80 @@ function getTargetHref(target) {
         }
     }
     return href;
+}
+
+/**
+ * 获得块标所对应的块 ID
+ * @param {HTMLElement} target 目标
+ * @returns {
+ *     id: string, // 块 ID
+ *     type: string, // 块类型
+ *     subtype: string, // 块子类型(若没有则为 null)
+ * }
+ * @returns {null} 没有找到块 ID
+ */
+function getBlockMark(target) {
+    let node = target;
+    if (node.localName === 'use') node = node.parentElement;
+    if (node.localName === 'svg') node = node.parentElement;
+
+    // 非文档块块标
+    if (node.localName === 'button'
+        && node.getAttribute('draggable') === 'true'
+        && node.dataset.nodeId
+        && node.dataset.type
+    ) return {
+        id: node.dataset.nodeId,
+        type: node.dataset.type,
+        subtype: node.dataset.subtype,
+    };
+
+    // 文档块块标
+    if (node.localName === 'span'
+        && node.parentElement.parentElement.firstElementChild.dataset.nodeId
+        && node.parentElement.parentElement.lastElementChild.dataset.docType
+    ) return {
+        id: node.parentElement.parentElement.firstElementChild.dataset.nodeId,
+        type: node.parentElement.parentElement.lastElementChild.dataset.docType,
+        subtype: null,
+    };
+
+    return null;
+}
+
+/**
+ * 获得所选择的块对应的块 ID
+ * @returns {string} 块 ID
+ * @returns {
+ *     id: string, // 块 ID
+ *     type: string, // 块类型
+ *     subtype: string, // 块子类型(若没有则为 null)
+ * }
+ * @returns {null} 没有找到块 ID */
+function getBlockSelected() {
+    let node_list = document.querySelectorAll('.protyle-wysiwyg--select');
+    if (node_list.length === 1 && node_list[0].dataset.nodeId != null) return {
+        id: node_list[0].dataset.nodeId,
+        type: node_list[0].dataset.type,
+        subtype: node_list[0].dataset.subtype,
+    };
+    return null;
+}
+
+/**
+ * 设置 DOM 中的块属性
+ * @param {string} id 块 ID
+ * @param {object} attrs 块属性 dict
+ */
+function setBlockDOMAttrs(id, attrs) {
+    let block = document.querySelector(`div.protyle-content div[data-node-id="${id}"]`);
+    if (block) {
+        if (block.className === 'protyle-background') block = block.nextElementSibling.nextElementSibling;
+        // console.log(attrs);
+        for (let key of Object.keys(attrs)) {
+            if (attrs[key]) block.setAttribute(key, attrs[key]);
+            else block.removeAttribute(key);
+        }
+    }
+    // console.log(block);
 }
