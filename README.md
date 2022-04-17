@@ -345,11 +345,15 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
     - `表格` / `title`: 属性值 | value
       - 适用于列表块与文档块 | Applies to list blocks and document blocks
       - 列表渲染为表格 | Renders the list as a table
+      - 需要在列表项内纵向排版时, 需要在列表项中插入一个容器块(引述块, 超级块)  
+        Please insert a container block (quote block, super block) in list item when it need to lay out vertically.
       - 详情请参考 [土法列表表格 · 语雀](https://www.yuque.com/siyuannote/docs/yev84m)  
         For details, please refer to [Soil Law List Table - Yuque](https://www.yuque.com/siyuannote/docs/yev84m).
     - `脑图` / `导图` / `思维导图` / `map` / `mind-map`: 属性值 | value
       - 适用于列表块与文档块 | Applies to list blocks and document blocks
       - 列表渲染为思维导图 | Renders the list as a mind-map
+      - 需要在列表项内纵向排版时, 需要在列表项中插入一个容器块(引述块, 超级块)  
+        Please insert a container block (quote block, super block) in list item when it need to lay out vertically.
     - `图标题` 或 `表标题` | `figure-title` or `table-title`: 属性值 | value
       - 适用于段落块 | Applies to paragraph blocks
       - 图标题/表标题自动计数 | Figure titles/table titles are counted automatically
