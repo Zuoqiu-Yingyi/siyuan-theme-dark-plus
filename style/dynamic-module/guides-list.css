@@ -7,20 +7,20 @@
 /* 👇👇👇 表格列表辅助线 👇👇👇 */
 
 /* 鼠标悬浮列表项 */
-.protyle-wysiwyg *[data-node-id][custom-type~=table].list [data-node-id].li:hover,
-.protyle-wysiwyg *[data-node-id][custom-type~=表格].list [data-node-id].li:hover {
+.protyle-wysiwyg *[custom-type~=table] [data-node-id].li:hover,
+.protyle-wysiwyg *[custom-type~=表格] [data-node-id].li:hover {
     background-color: var(--custom-list-table-hover-background-color);
 }
 
 /* 鼠标悬浮上级节点轮廓高亮 */
-/* .protyle-wysiwyg *[data-node-id][custom-type~=table].list [data-node-id].li:hover,
-.protyle-wysiwyg *[data-node-id][custom-type~=表格].list [data-node-id].li:hover {
+/* .protyle-wysiwyg *[custom-type~=table].list [data-node-id].li:hover,
+.protyle-wysiwyg *[custom-type~=表格].list [data-node-id].li:hover {
     outline-color: var(--custom-striking-color);
 } */
 
 /* 鼠标悬浮下级节点轮廓高亮 */
-/* .protyle-wysiwyg *[data-node-id][custom-type~=table].list [data-node-id].li:hover~[data-node-id].list [data-node-id].li,
-.protyle-wysiwyg *[data-node-id][custom-type~=表格].list [data-node-id].li:hover~[data-node-id].list [data-node-id].li {
+/* .protyle-wysiwyg *[custom-type~=table].list [data-node-id].li:hover~[data-node-id].list [data-node-id].li,
+.protyle-wysiwyg *[custom-type~=表格].list [data-node-id].li:hover~[data-node-id].list [data-node-id].li {
     outline-color: var(--b3-theme-primary);
 } */
 
@@ -29,84 +29,98 @@
 /* 👇👇👇 导图列表辅助线 👇👇👇 */
 
 /* 鼠标悬浮上级节点轮廓高亮 */
-.protyle-wysiwyg *[data-node-id][custom-type~=导图].list [data-node-id].li:hover>div[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
-.protyle-wysiwyg *[data-node-id][custom-type~=思维导图].list [data-node-id].li:hover>div[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
-.protyle-wysiwyg *[data-node-id][custom-type~=map].list [data-node-id].li:hover>div[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
-.protyle-wysiwyg *[data-node-id][custom-type~=mind-map].list [data-node-id].li:hover>div[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck] {
+.protyle-wysiwyg *[custom-type~=脑图] [data-node-id].li:hover>div[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
+.protyle-wysiwyg *[custom-type~=导图] [data-node-id].li:hover>div[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
+.protyle-wysiwyg *[custom-type~=思维导图] [data-node-id].li:hover>div[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
+.protyle-wysiwyg *[custom-type~=map] [data-node-id].li:hover>div[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
+.protyle-wysiwyg *[custom-type~=mind-map] [data-node-id].li:hover>div[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck] {
     outline-color: var(--custom-striking-color);
 }
 
 /* 鼠标悬浮当前节点高亮 */
-.protyle-wysiwyg *[data-node-id][custom-type~=导图].list [data-node-id].li>div[data-node-id]:not(.li, .list):hover>div[contenteditable][spellcheck],
-.protyle-wysiwyg *[data-node-id][custom-type~=思维导图].list [data-node-id].li>div[data-node-id]:not(.li, .list):hover>div[contenteditable][spellcheck],
-.protyle-wysiwyg *[data-node-id][custom-type~=map].list [data-node-id].li>div[data-node-id]:not(.li, .list):hover>div[contenteditable][spellcheck],
-.protyle-wysiwyg *[data-node-id][custom-type~=mind-map].list [data-node-id].li>div[data-node-id]:not(.li, .list):hover>div[contenteditable][spellcheck] {
+.protyle-wysiwyg *[custom-type~=脑图] [data-node-id].li>div[data-node-id]:not(.li, .list):hover>div[contenteditable][spellcheck],
+.protyle-wysiwyg *[custom-type~=导图] [data-node-id].li>div[data-node-id]:not(.li, .list):hover>div[contenteditable][spellcheck],
+.protyle-wysiwyg *[custom-type~=思维导图] [data-node-id].li>div[data-node-id]:not(.li, .list):hover>div[contenteditable][spellcheck],
+.protyle-wysiwyg *[custom-type~=map] [data-node-id].li>div[data-node-id]:not(.li, .list):hover>div[contenteditable][spellcheck],
+.protyle-wysiwyg *[custom-type~=mind-map] [data-node-id].li>div[data-node-id]:not(.li, .list):hover>div[contenteditable][spellcheck] {
     background-color: var(--b3-theme-background);
     outline-color: var(--b3-theme-primary);
 }
 
 /* 鼠标悬浮下级节点轮廓高亮 */
-.protyle-wysiwyg *[data-node-id][custom-type~=导图].list [data-node-id]:hover+[data-node-id].list [data-node-id].li>[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
-.protyle-wysiwyg *[data-node-id][custom-type~=思维导图].list [data-node-id]:hover+[data-node-id].list [data-node-id].li>[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
-.protyle-wysiwyg *[data-node-id][custom-type~=map].list [data-node-id]:hover+[data-node-id].list [data-node-id].li>[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
-.protyle-wysiwyg *[data-node-id][custom-type~=mind-map].list [data-node-id]:hover+[data-node-id].list [data-node-id].li>[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck] {
+.protyle-wysiwyg *[custom-type~=脑图] [data-node-id]:hover+[data-node-id].list [data-node-id].li>[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
+.protyle-wysiwyg *[custom-type~=导图] [data-node-id]:hover+[data-node-id].list [data-node-id].li>[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
+.protyle-wysiwyg *[custom-type~=思维导图] [data-node-id]:hover+[data-node-id].list [data-node-id].li>[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
+.protyle-wysiwyg *[custom-type~=map] [data-node-id]:hover+[data-node-id].list [data-node-id].li>[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck],
+.protyle-wysiwyg *[custom-type~=mind-map] [data-node-id]:hover+[data-node-id].list [data-node-id].li>[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck] {
     outline-color: var(--b3-theme-primary);
 }
 
 /* 鼠标悬浮列表项 */
-.protyle-wysiwyg *[data-node-id][custom-type~=导图].list div.li:hover,
-.protyle-wysiwyg *[data-node-id][custom-type~=思维导图].list div.li:hover,
-.protyle-wysiwyg *[data-node-id][custom-type~=map].list div.li:hover,
-.protyle-wysiwyg *[data-node-id][custom-type~=mind-map].list div.li:hover {
+.protyle-wysiwyg *[custom-type~=脑图] div.li:hover,
+.protyle-wysiwyg *[custom-type~=导图] div.li:hover,
+.protyle-wysiwyg *[custom-type~=思维导图] div.li:hover,
+.protyle-wysiwyg *[custom-type~=map] div.li:hover,
+.protyle-wysiwyg *[custom-type~=mind-map] div.li:hover {
     background-color: var(--custom-list-table-hover-background-color);
     transition: all 500ms;
 }
 
 /* 导航线高亮 */
-/* .protyle-wysiwyg *[data-node-id][custom-type~=导图].list [data-node-id].li:hover::before,
-.protyle-wysiwyg *[data-node-id][custom-type~=导图].list [data-node-id].li:hover::after,
-.protyle-wysiwyg *[data-node-id][custom-type~=导图].list [data-node-id].list:hover::after,
-.protyle-wysiwyg *[data-node-id][custom-type~=导图].list [data-node-id].li:nth-last-child(2):hover::after,
+/* .protyle-wysiwyg *[custom-type~=脑图] [data-node-id].li:hover::before,
+.protyle-wysiwyg *[custom-type~=脑图] [data-node-id].li:hover::after,
+.protyle-wysiwyg *[custom-type~=脑图] [data-node-id].list:hover::after,
+.protyle-wysiwyg *[custom-type~=脑图] [data-node-id].li:nth-last-child(2):hover::after,
 
-.protyle-wysiwyg *[data-node-id][custom-type~=思维导图].list [data-node-id].li:hover::before,
-.protyle-wysiwyg *[data-node-id][custom-type~=思维导图].list [data-node-id].li:hover::after,
-.protyle-wysiwyg *[data-node-id][custom-type~=思维导图].list [data-node-id].list:hover::after,
-.protyle-wysiwyg *[data-node-id][custom-type~=思维导图].list [data-node-id].li:nth-last-child(2):hover::after,
+.protyle-wysiwyg *[custom-type~=导图] [data-node-id].li:hover::before,
+.protyle-wysiwyg *[custom-type~=导图] [data-node-id].li:hover::after,
+.protyle-wysiwyg *[custom-type~=导图] [data-node-id].list:hover::after,
+.protyle-wysiwyg *[custom-type~=导图] [data-node-id].li:nth-last-child(2):hover::after,
 
-.protyle-wysiwyg *[data-node-id][custom-type~=map].list [data-node-id].li:hover::before,
-.protyle-wysiwyg *[data-node-id][custom-type~=map].list [data-node-id].li:hover::after,
-.protyle-wysiwyg *[data-node-id][custom-type~=map].list [data-node-id].list:hover::after,
-.protyle-wysiwyg *[data-node-id][custom-type~=map].list [data-node-id].li:nth-last-child(2):hover::after,
+.protyle-wysiwyg *[custom-type~=思维导图] [data-node-id].li:hover::before,
+.protyle-wysiwyg *[custom-type~=思维导图] [data-node-id].li:hover::after,
+.protyle-wysiwyg *[custom-type~=思维导图] [data-node-id].list:hover::after,
+.protyle-wysiwyg *[custom-type~=思维导图] [data-node-id].li:nth-last-child(2):hover::after,
 
-.protyle-wysiwyg *[data-node-id][custom-type~=mind-map].list [data-node-id].li:hover::before,
-.protyle-wysiwyg *[data-node-id][custom-type~=mind-map].list [data-node-id].li:hover::after,
-.protyle-wysiwyg *[data-node-id][custom-type~=mind-map].list [data-node-id].list:hover::after,
-.protyle-wysiwyg *[data-node-id][custom-type~=mind-map].list [data-node-id].li:nth-last-child(2):hover::after {
+.protyle-wysiwyg *[custom-type~=map] [data-node-id].li:hover::before,
+.protyle-wysiwyg *[custom-type~=map] [data-node-id].li:hover::after,
+.protyle-wysiwyg *[custom-type~=map] [data-node-id].list:hover::after,
+.protyle-wysiwyg *[custom-type~=map] [data-node-id].li:nth-last-child(2):hover::after,
+
+.protyle-wysiwyg *[custom-type~=mind-map] [data-node-id].li:hover::before,
+.protyle-wysiwyg *[custom-type~=mind-map] [data-node-id].li:hover::after,
+.protyle-wysiwyg *[custom-type~=mind-map] [data-node-id].list:hover::after,
+.protyle-wysiwyg *[custom-type~=mind-map] [data-node-id].li:nth-last-child(2):hover::after {
     border-color: var(--custom-striking-color);
     transition: all 500ms;
 }
 */
 
 /* 继承线高亮 */
-.protyle-wysiwyg *[data-node-id][custom-type~=导图].list [data-node-id]:hover~[data-node-id].list::after,
-.protyle-wysiwyg *[data-node-id][custom-type~=导图].list [data-node-id]:hover~[data-node-id].list [data-node-id].li::after,
-.protyle-wysiwyg *[data-node-id][custom-type~=导图].list [data-node-id]:hover~[data-node-id].list [data-node-id].li::before,
-.protyle-wysiwyg *[data-node-id][custom-type~=导图].list [data-node-id]:hover~[data-node-id].list [data-node-id].list::after,
+.protyle-wysiwyg *[custom-type~=脑图] [data-node-id]:hover~[data-node-id].list::after,
+.protyle-wysiwyg *[custom-type~=脑图] [data-node-id]:hover~[data-node-id].list [data-node-id].li::after,
+.protyle-wysiwyg *[custom-type~=脑图] [data-node-id]:hover~[data-node-id].list [data-node-id].li::before,
+.protyle-wysiwyg *[custom-type~=脑图] [data-node-id]:hover~[data-node-id].list [data-node-id].list::after,
 
-.protyle-wysiwyg *[data-node-id][custom-type~=思维导图].list [data-node-id]:hover~[data-node-id].list::after,
-.protyle-wysiwyg *[data-node-id][custom-type~=思维导图].list [data-node-id]:hover~[data-node-id].list [data-node-id].li::after,
-.protyle-wysiwyg *[data-node-id][custom-type~=思维导图].list [data-node-id]:hover~[data-node-id].list [data-node-id].li::before,
-.protyle-wysiwyg *[data-node-id][custom-type~=思维导图].list [data-node-id]:hover~[data-node-id].list [data-node-id].list::after,
+.protyle-wysiwyg *[custom-type~=导图] [data-node-id]:hover~[data-node-id].list::after,
+.protyle-wysiwyg *[custom-type~=导图] [data-node-id]:hover~[data-node-id].list [data-node-id].li::after,
+.protyle-wysiwyg *[custom-type~=导图] [data-node-id]:hover~[data-node-id].list [data-node-id].li::before,
+.protyle-wysiwyg *[custom-type~=导图] [data-node-id]:hover~[data-node-id].list [data-node-id].list::after,
 
-.protyle-wysiwyg *[data-node-id][custom-type~=map].list [data-node-id]:hover~[data-node-id].list::after,
-.protyle-wysiwyg *[data-node-id][custom-type~=map].list [data-node-id]:hover~[data-node-id].list [data-node-id].li::after,
-.protyle-wysiwyg *[data-node-id][custom-type~=map].list [data-node-id]:hover~[data-node-id].list [data-node-id].li::before,
-.protyle-wysiwyg *[data-node-id][custom-type~=map].list [data-node-id]:hover~[data-node-id].list [data-node-id].list::after,
+.protyle-wysiwyg *[custom-type~=思维导图] [data-node-id]:hover~[data-node-id].list::after,
+.protyle-wysiwyg *[custom-type~=思维导图] [data-node-id]:hover~[data-node-id].list [data-node-id].li::after,
+.protyle-wysiwyg *[custom-type~=思维导图] [data-node-id]:hover~[data-node-id].list [data-node-id].li::before,
+.protyle-wysiwyg *[custom-type~=思维导图] [data-node-id]:hover~[data-node-id].list [data-node-id].list::after,
 
-.protyle-wysiwyg *[data-node-id][custom-type~=mind-map].list [data-node-id]:hover~[data-node-id].list::after,
-.protyle-wysiwyg *[data-node-id][custom-type~=mind-map].list [data-node-id]:hover~[data-node-id].list [data-node-id].li::after,
-.protyle-wysiwyg *[data-node-id][custom-type~=mind-map].list [data-node-id]:hover~[data-node-id].list [data-node-id].li::before,
-.protyle-wysiwyg *[data-node-id][custom-type~=mind-map].list [data-node-id]:hover~[data-node-id].list [data-node-id].list::after {
+.protyle-wysiwyg *[custom-type~=map] [data-node-id]:hover~[data-node-id].list::after,
+.protyle-wysiwyg *[custom-type~=map] [data-node-id]:hover~[data-node-id].list [data-node-id].li::after,
+.protyle-wysiwyg *[custom-type~=map] [data-node-id]:hover~[data-node-id].list [data-node-id].li::before,
+.protyle-wysiwyg *[custom-type~=map] [data-node-id]:hover~[data-node-id].list [data-node-id].list::after,
+
+.protyle-wysiwyg *[custom-type~=mind-map] [data-node-id]:hover~[data-node-id].list::after,
+.protyle-wysiwyg *[custom-type~=mind-map] [data-node-id]:hover~[data-node-id].list [data-node-id].li::after,
+.protyle-wysiwyg *[custom-type~=mind-map] [data-node-id]:hover~[data-node-id].list [data-node-id].li::before,
+.protyle-wysiwyg *[custom-type~=mind-map] [data-node-id]:hover~[data-node-id].list [data-node-id].list::after {
     border-color: var(--b3-theme-primary);
 }
 
