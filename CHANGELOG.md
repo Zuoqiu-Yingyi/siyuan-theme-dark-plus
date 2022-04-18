@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 修复块菜单中的其他字体子菜单项无法选择问题 | Fixed an issue where other font submenu items in the block menu could not be selected.
+
 ## v0.8.0/2022-04-18
 
 - [v0.7.3 <=> v0.8.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.7.3...v0.8.0)

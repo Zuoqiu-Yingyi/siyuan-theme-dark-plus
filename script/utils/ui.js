@@ -258,11 +258,16 @@ function isBlockTypeEnabled(config, type, subtype) {
     return true;
 }
 
+/**
+ * 判断是否单击了子菜单项
+ */
+function isClickSubMenuItem(node, target) {
+    return node.lastElementChild.contains(target.parentNode);
+}
 // 任务处理器
-// TODO
 const TASK_HANDLER = {
     /* 插入属性值中空格分隔的一项 */
-    'attr-insert': async (id, params) => {
+    'attr-insert': async (e, id, params) => {
         // console.log('attr-insert');
         let old_attrs = await getBlockAttrs(id);
         let new_attrs = {};
@@ -282,7 +287,7 @@ const TASK_HANDLER = {
         setBlockAttrs(id, new_attrs);
     },
     /* 删除属性值中空格分隔的一项 */
-    'attr-delete': async (id, params) => {
+    'attr-delete': async (e, id, params) => {
         // console.log('attr-delete');
         let old_attrs = await getBlockAttrs(id);
         let new_attrs = {};
@@ -306,13 +311,13 @@ const TASK_HANDLER = {
         setBlockAttrs(id, new_attrs);
     },
     /* 覆盖整个属性值 */
-    'attr-update': async (id, params) => {
+    'attr-update': async (e, id, params) => {
         // console.log('attr-update');
         setBlockDOMAttrs(id, params);
         setBlockAttrs(id, params);
     },
     /* 切换属性值中空格分隔的一项 */
-    'attr-switch': async (id, params) => {
+    'attr-switch': async (e, id, params) => {
         // console.log('attr-switch');
         let old_attrs = await getBlockAttrs(id);
         let new_attrs = {};
@@ -340,11 +345,13 @@ const TASK_HANDLER = {
         setBlockAttrs(id, new_attrs);
     },
     /* 子菜单展开 */
-    'menu-unfold': async (id, params) => {
+    'menu-unfold': async (e, id, params) => {
+        let menuItem = window.siyuan.menus.menu.element.querySelector(`#${params.id}`);
+        if (isClickSubMenuItem(menuItem, e.target)) return; // 单击了子菜单项, 不触发上级菜单项
+
         let item = params.item();
         item.itemsLoad = !item.itemsLoad;
-        item = window.siyuan.menus.menu.element.querySelector(`#${params.id}`);
-        item.remove();
+        menuItem.remove();
     }
 };
 
@@ -397,14 +404,14 @@ function createMenuItemNode(language, config, id, type, subtype, className = 'b3
                 }
             }
             if (config.click.enable) {
-                if (config.click.callback) node.addEventListener('click', async () => await config.click.callback(id));
+                if (config.click.callback) node.addEventListener('click', async (e) => await config.click.callback(e, id));
                 else {
                     let handlers = [];
                     config.click.tasks.forEach((task) => {
-                        if (TASK_HANDLER[task.type]) handlers.push(() => TASK_HANDLER[task.type](id, task.params));
+                        if (TASK_HANDLER[task.type]) handlers.push(async (e) => TASK_HANDLER[task.type](e, id, task.params));
                     });
-                    node.addEventListener('click', (_) => {
-                        handlers.forEach((handler) => handler());
+                    node.addEventListener('click', (e) => {
+                        handlers.forEach((handler) => handler(e));
                     });
                 }
             };
