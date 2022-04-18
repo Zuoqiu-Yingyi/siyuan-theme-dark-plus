@@ -494,7 +494,7 @@ For more configuration items, see [config.css](./style/module/config.css).
 更多配置项请参考 [config.css](./style/module/config.css) 与 [light.css](./style/color/light.css)  
 For more configuration items, see [config.css](./style/module/config.css) and [light.css](./style/color/light.css).
 
-#### custom-light.css
+#### custom-dark.css
 
 ```css
 /**
