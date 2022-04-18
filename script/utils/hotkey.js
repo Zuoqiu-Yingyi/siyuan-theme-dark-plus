@@ -4,7 +4,7 @@ export {
     isEvent, // 事件是否由指定快捷键+操作触发
     isButton, // 鼠标事件是否由指定快捷键+按键触发
     printHotKey, // 打印快捷键
-}
+};
 
 function isKey(event, key) {
     return (event.key == key.key
