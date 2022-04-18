@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.8.1/2022-04-19
+
+- [v0.8.0 <=> v0.8.1](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.8.0...v0.8.1)
 - 修复块菜单中的其他字体子菜单项无法选择问题 | Fixed an issue where other font submenu items in the block menu could not be selected.
 - 修复块菜单中的其他字体无法保存问题 | Fixed an issue where other font could not be saved.
 - 修复块菜单通用项分隔线冗余问题 | Fixed an issue where the common items separator line was redundant.
