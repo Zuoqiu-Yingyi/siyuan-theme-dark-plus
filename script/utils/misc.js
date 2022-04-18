@@ -14,7 +14,7 @@ export {
     intPrefix, // 整数填充前导零
     shuffle, // 打乱数组
     Iterator, // 创建循环迭代器
-}
+};
 
 import { config } from './../module/config.js';
 
