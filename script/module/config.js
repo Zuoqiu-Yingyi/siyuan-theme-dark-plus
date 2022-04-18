@@ -506,7 +506,7 @@ export var config = {
                             enable: false, // 是否启用点击事件
                         },
                         itemsLoad: true, // 是否加载子菜单
-                        itemsIcon: "#iconRight", 
+                        itemsIcon: "#iconRight",
                         items: [
                             {
                                 enable: true,
@@ -650,7 +650,17 @@ export var config = {
                             },
                             {
                                 enable: true,
-                                type: null,
+                                type: {
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
+                                    NodeList: {
+                                        enable: true,
+                                    },
+                                    NodeTable: {
+                                        enable: true,
+                                    },
+                                },
                                 mode: "separator",
                             },
                             {
