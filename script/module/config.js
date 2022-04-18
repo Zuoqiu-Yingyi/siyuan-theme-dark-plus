@@ -524,9 +524,17 @@ export var config = {
                                     callback: null,
                                     tasks: [
                                         {
-                                            type: 'attr-delete',
+                                            type: 'attr-replace',
                                             params: {
-                                                'style': null,
+                                                'style': {
+                                                    regexp: /\s*font-family:.*?;/g,
+                                                    substr: '',
+                                                },
+                                            },
+                                        },
+                                        {
+                                            type: 'attr-update',
+                                            params: {
                                                 'custom-font-family': null,
                                             },
                                         },

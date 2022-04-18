@@ -266,7 +266,73 @@ function isClickSubMenuItem(node, target) {
 }
 // 任务处理器
 const TASK_HANDLER = {
-    /* 插入属性值中空格分隔的一项 */
+    /**
+     *  替换属性中的子字符串
+     *  @params: {
+     *      'key': {
+     *          regexp: //, // 匹配正则
+     *          substr: "", // 替换的字符串
+     *      },
+     *  }
+     */
+    'attr-replace': async (e, id, params) => {
+        // console.log('attr-replace');
+        let old_attrs = await getBlockAttrs(id);
+        let new_attrs = {};
+        for (let attr of Object.keys(params)) {
+            if (old_attrs[attr]) {
+                // 如果属性不为空, 添加到末尾
+                new_attrs[attr] = old_attrs[attr].replace(params[attr].regexp, params[attr].substr);
+            }
+        }
+        setBlockDOMAttrs(id, new_attrs);
+        setBlockAttrs(id, new_attrs);
+    },
+    /**
+     * 设置属性
+     *  @params: {
+     *      'key': {
+     *          regexp: RegExp, // 待删除的字段值正则, 可选
+     *          value: "", // 设置的字段值
+     *      },
+     *  }
+     */
+    'attr-set': async (e, id, params) => {
+        // console.log('attr-set');
+        let old_attrs = await getBlockAttrs(id);
+        let new_attrs = {};
+        for (let attr of Object.keys(params)) {
+            if (old_attrs[attr]) {
+                // 如果属性不为空, 添加移除原字段值后添加新字段值
+                new_attrs[attr] = old_attrs[attr].replace(params[attr].regexp, '') + params[attr].value;
+            }
+            else {
+                // 如果属性不存在, 则直接插入
+                new_attrs[attr] = params[attr].value;
+            }
+        }
+        setBlockDOMAttrs(id, new_attrs);
+        setBlockAttrs(id, new_attrs);
+    },
+    /* 在后方插入属性 */
+    'attr-append': async (e, id, params) => {
+        // console.log('attr-append');
+        let old_attrs = await getBlockAttrs(id);
+        let new_attrs = {};
+        for (let attr of Object.keys(params)) {
+            if (old_attrs[attr]) {
+                // 如果属性不为空, 添加到末尾
+                new_attrs[attr] = old_attrs[attr] + params[attr];
+            }
+            else {
+                // 如果属性不存在, 则直接插入
+                new_attrs[attr] = params[attr];
+            }
+        }
+        setBlockDOMAttrs(id, new_attrs);
+        setBlockAttrs(id, new_attrs);
+    },
+    /* 插入属性值中空格分隔的一项(插入单词) */
     'attr-insert': async (e, id, params) => {
         // console.log('attr-insert');
         let old_attrs = await getBlockAttrs(id);
