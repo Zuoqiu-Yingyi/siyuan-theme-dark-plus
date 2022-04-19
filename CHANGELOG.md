@@ -1,7 +1,5 @@
 # 更改日志 | CHANGE LOG
 
-- 重构使用鼠标中键打开新窗口功能 | Refactor the function to open new windows using the middle mouse button.
-
 ## v0.8.2/2022-04-20
 
 - [v0.8.1 <=> v0.8.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.8.1...v0.8.2)
@@ -13,6 +11,8 @@
 - 为块移动对话框应用搜索列表样式 | The search list style is applied to the block move dialog.
 - 自动加载/保存主题功能状态配置 | Automatically load and save the theme function status configuration.
 - 添加 `在新窗口打开` 块菜单项 | Add the `Open in a new window` block menu item.
+- 重构使用鼠标中键打开新窗口功能 | Refactor the function to open new windows using the middle mouse button.
+- 修复设置页面列表项背景颜色问题 | Fix the background color of the list items in the settings page.
 
 ## v0.8.1/2022-04-19
 
