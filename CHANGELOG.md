@@ -9,6 +9,7 @@
 - 修复更新块属性值为 `null` 时无法使用 API 取消块属性的问题 | Fixed an issue where the API could not cancel the block attribute value when the value is `null`.
 - `/` 菜单分列显示 | The `/` menu is split into two columns.
 - 为块移动对话框应用搜索列表样式 | The search list style is applied to the block move dialog.
+- 自动加载/保存主题功能状态配置 | Automatically load and save the theme function status configuration.
 
 ## v0.8.1/2022-04-19
 

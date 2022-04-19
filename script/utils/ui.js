@@ -6,7 +6,11 @@ export {
     blockMenuInit, // 右键菜单初始化
     CommonMenuObserver, // 右键菜单管理
 };
-
+import {
+    config,
+    custom,
+    saveCustomFile,
+} from '../module/config.js';
 import { printHotKey } from './hotkey.js';
 import { setBlockDOMAttrs } from './dom.js';
 import { Iterator } from './misc.js';
@@ -38,7 +42,6 @@ function recreateNode(node, withChildren = false) {
 /* 工具栏添加 */
 function toolbarItemListPush(item) {
     toolbarItemList.push(item);
-
     let toolbar = document.getElementById('toolbar');
     let referenceNode = document.getElementById('windowControls');
     if (window.theme.clientMode !== 'mobile' && toolbar && referenceNode) {
@@ -48,6 +51,15 @@ function toolbarItemListPush(item) {
             if (node) toolbar.insertBefore(node, referenceNode);
             else toolbar.insertBefore(item.node, referenceNode);
         }
+    }
+
+    if (custom.theme.toolbar[item.id]) {
+        // 存在自定义配置
+        const conf = custom.theme.toolbar[item.id];
+        // console.log(conf, conf.state, conf.state == null);
+        const state = conf.state == null ? conf.default : conf.state;
+        // console.log(state);
+        if (state) setTimeout(() => item.node.click(), 0);
     }
 }
 
@@ -123,6 +135,10 @@ function toolbarItemChangeStatu(
                 }
                 else {
                     node.firstElementChild.classList.remove(svgClassList[svgClassIndex]);
+                }
+                if (custom.theme.toolbar[id]) {
+                    custom.theme.toolbar[id].state = enable;
+                    setTimeout(async () => saveCustomFile(custom), 0);
                 }
             }
             break;

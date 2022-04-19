@@ -55,11 +55,11 @@ div.b3-menu__separator {
 }
 
 /* 补偿第一项 */
-.b3-list.b3-list--background>*:first-child {
+.b3-list.b3-list--background>.b3-list-item:first-child {
     margin-top: 0 !important;
 }
 
-.b3-list.b3-list--background>*:last-child {
+.b3-list.b3-list--background>.b3-list-item:last-child {
     margin-bottom: 0 !important;
 }
 
