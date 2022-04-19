@@ -379,6 +379,8 @@ const TASK_HANDLER = {
     /* 覆盖整个属性值 */
     'attr-update': async (e, id, params) => {
         // console.log('attr-update');
+        for (const [key, value] of Object.entries(params))
+            if (!value) params[key] = '';
         setBlockDOMAttrs(id, params);
         setBlockAttrs(id, params);
     },
