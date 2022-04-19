@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 重构使用鼠标中键打开新窗口功能 | Refactor the function to open new windows using the middle mouse button.
+
 ## v0.8.2/2022-04-20
 
 - [v0.8.1 <=> v0.8.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.8.1...v0.8.2)
