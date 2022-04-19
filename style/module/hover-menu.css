@@ -123,7 +123,7 @@
 
 /* 搜索结果匹配关键词样式 */
 .protyle-wysiwyg [data-node-id] span[data-type="search-mark"],
-.b3-list.b3-list--background:not(ul) .b3-list-item mark {
+.b3-list.b3-list--background .b3-list-item mark {
     margin: 0 0.25em;
     border: 0;
     padding: 0 0.125em;

@@ -14,6 +14,7 @@
 - 重构使用鼠标中键打开新窗口功能 | Refactor the function to open new windows using the middle mouse button.
 - 修复设置页面列表项背景颜色问题 | Fix the background color of the list items in the settings page.
 - 移除功能面板中各项的轮廓 | Remove the outline of each item in the function panel.
+- 修复提及面板匹配关键字突出显示样式 | Fix the highlighting style of the keyword in the mention panel. 
 
 ## v0.8.1/2022-04-19
 
