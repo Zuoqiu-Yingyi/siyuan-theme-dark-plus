@@ -1,6 +1,6 @@
 # 更改日志 | CHANGE LOG
 
-## v0.8.2/2022-04-19
+## v0.8.2/2022-04-20
 
 - [v0.8.1 <=> v0.8.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.8.1...v0.8.2)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
@@ -10,6 +10,7 @@
 - `/` 菜单分列显示 | The `/` menu is split into two columns.
 - 为块移动对话框应用搜索列表样式 | The search list style is applied to the block move dialog.
 - 自动加载/保存主题功能状态配置 | Automatically load and save the theme function status configuration.
+- 添加 `在新窗口打开` 块菜单项 | Add the `Open in a new window` block menu item.
 
 ## v0.8.1/2022-04-19
 

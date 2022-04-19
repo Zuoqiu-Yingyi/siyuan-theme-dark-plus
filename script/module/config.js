@@ -497,7 +497,7 @@ export var config = {
                     index: -4,
                 },
                 items: [ // 块菜单项
-                    {
+                    { // 常用字体设置
                         enable: true, // 是否启用菜单项
                         prefixSeparator: true, // 是否添加前缀分隔线
                         suffixSeparator: false, // 是否添加后缀分隔线
@@ -551,7 +551,7 @@ export var config = {
                             },
                         ],
                     },
-                    {
+                    { // 其他字体设置
                         enable: true,
                         prefixSeparator: false,
                         suffixSeparator: false,
@@ -585,7 +585,7 @@ export var config = {
                         items: [
                         ],
                     },
-                    {
+                    { // 其他功能
                         enable: true,
                         prefixSeparator: true,
                         suffixSeparator: false,
@@ -604,6 +604,55 @@ export var config = {
                         itemsLoad: true,
                         itemsIcon: "#iconRight",
                         items: [ // 子菜单项列表
+                            {
+                                enable: true,
+                                type: null,
+                                mode: "button",
+                                icon: "#iconExport",
+                                label: {
+                                    zh_CN: "在新窗口打开",
+                                    other: "Open in a New Window",
+                                },
+                                accelerator: () => config.theme.hotkeys.window.open.block.outfocus,
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'window-open',
+                                            params: {},
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: null,
+                                mode: "button",
+                                icon: "#iconExport",
+                                label: {
+                                    zh_CN: "在新窗口打开并聚焦",
+                                    other: "Open in a New Window and Focus",
+                                },
+                                accelerator: () => config.theme.hotkeys.window.open.block.infocus,
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'window-open',
+                                            params: {
+                                                focus: true,
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: null,
+                                mode: "separator",
+                            },
                             {
                                 enable: true,
                                 type: null,

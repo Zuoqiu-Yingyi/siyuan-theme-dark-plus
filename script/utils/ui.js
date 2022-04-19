@@ -436,7 +436,16 @@ const TASK_HANDLER = {
         let item = params.item();
         item.itemsLoad = !item.itemsLoad;
         menuItem.remove();
-    }
+    },
+    /* 在新窗口打开 */
+    'window-open': async (e, id, params) => {
+        window.theme.openNewWindow(
+            undefined,
+            undefined,
+            Object.assign(params, { id: id }),
+            config.theme.window.open.windowParams,
+        );
+    },
 };
 
 /**
@@ -454,7 +463,9 @@ function createMenuItemNode(language, config, id, type, subtype, className = 'b3
             if (config.id) node.id = config.id;
             node.appendChild(createMenuItemIconNode(config.icon));
             node.appendChild(createMenuItemLabelNode(config.label[language] || config.label.other, config.label.style));
-            if (config.accelerator) node.appendChild(createMenuItemAcceleratorNode(config.accelerator));
+            let accelerator = config.accelerator;
+            if (typeof accelerator === 'function') accelerator = printHotKey(accelerator(id));
+            if (typeof accelerator === 'string') node.appendChild(createMenuItemAcceleratorNode(accelerator));
             if (config.itemsIcon) {
                 switch (typeof (config.itemsIcon)) {
                     case 'string':
