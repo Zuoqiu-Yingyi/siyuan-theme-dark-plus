@@ -100,12 +100,14 @@ function getTargetBlockID(target) {
             || config.theme.regs.id.test(element.dataset.nodeId)
             || config.theme.regs.id.test(element.dataset.oid)
             || config.theme.regs.id.test(element.dataset.id)
+            || config.theme.regs.id.test(element.dataset.rootId)
         )) element = element.parentElement;
 
     if (element != null) {
         if (config.theme.regs.id.test(element.dataset.nodeId)) return element.dataset.nodeId;
         if (config.theme.regs.id.test(element.dataset.oid)) return element.dataset.oid;
         if (config.theme.regs.id.test(element.dataset.id)) return element.dataset.id;
+        if (config.theme.regs.id.test(element.dataset.oid)) return element.dataset.rootId;
         if (config.theme.regs.url.test(element.dataset.href)) return url2id(element.dataset.href);
         return element.dataset.href;
     }
