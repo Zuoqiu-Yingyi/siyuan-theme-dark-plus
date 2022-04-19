@@ -51,6 +51,8 @@ export {
     以id获取思源块信息 as getBlockByID,
 
     获取系统字体列表 as getSysFonts,
+    获取文件 as getFile,
+    写入文件 as putFile,
 };
 
 async function 向思源请求数据(url, data) {
@@ -418,7 +420,44 @@ async function 删除块(id) {
     ))
 }
 
-async function 获取系统字体列表() { 
+async function 获取系统字体列表() {
     let url = '/api/system/getSysFonts'
     return 解析响应体(向思源请求数据(url))
+}
+
+async function 获取文件(path) {
+    const response = await fetch(
+        '/api/file/getFile', {
+        method: "POST",
+        headers: {
+            Authorization: `Token ${config.token}`,
+        },
+        body: JSON.stringify({
+            path: path,
+        }),
+    });
+    if (response.status === 200)
+        return response;
+    else return null;
+}
+
+async function 写入文件(path, filedata, isDir = false, modTime = Date.now()) {
+    let blob = new Blob([filedata]);
+    let file = new File([blob], path.split('/').pop());
+    let formdata = new FormData();
+    formdata.append("path", path);
+    formdata.append("file", file);
+    formdata.append("isDir", isDir);
+    formdata.append("modTime", modTime);
+    const response = await fetch(
+        "/api/file/putFile", {
+        body: formdata,
+        method: "POST",
+        headers: {
+            Authorization: `Token ${config.token}`,
+        },
+    });
+    if (response.status === 200)
+        return await response.json();
+    else return null;
 }

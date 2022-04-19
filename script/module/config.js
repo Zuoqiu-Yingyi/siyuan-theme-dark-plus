@@ -1,9 +1,17 @@
 /* 配置文件(可以被 data/widgets/custom.js 覆盖) */
 
 import { merge } from './../utils/misc.js';
+import {
+    getFile,
+    putFile,
+} from './../utils/api.js';
 
 export var config = {
     token: '', // API token, 无需填写
+    custom: {
+        // 自定义配置
+        path: '/data/widgets/custom.json', // 自定义配置文件路径
+    },
     theme: {
         regs: {
             // 正则表达式
@@ -1407,13 +1415,33 @@ export var config = {
     },
 };
 
+export var custom = {
+    theme: {
+        toolbar: {
+        },
+    },
+};
+
+export async function saveCustomFile(custom, path = config.custom.path) {
+    const r = await putFile(path, JSON.stringify(custom, undefined, 4));
+    // console.log(r);
+}
+
 try {
-    let custom = await import('/widgets/custom.js');
-    if (custom.config != null) {
-        config = merge(config, custom.config);
+    let temp = await import('/widgets/custom.js');
+    if (temp.config != null) {
+        config = merge(config, temp.config);
     }
+    custom.theme.toolbar[config.theme.menu.block.toolbar.id] = { default: false };
+    custom.theme.toolbar[config.theme.style.guides.toolbar.id] = { default: false };
+    custom.theme.toolbar[config.theme.invert.toolbar.id] = { default: false };
+    custom.theme.toolbar[config.theme.typewriter.switch.toolbar.id] = { default: false };
+    temp = await getFile(config.custom.path);
+    temp = await temp.json();
+    custom = merge(custom, temp);
 } catch (err) {
     console.log(err);
 } finally {
     console.log(config);
+    console.log(custom);
 }
