@@ -1,12 +1,14 @@
 # 更改日志 | CHANGE LOG
 
+- 修复列表辅助线错位问题 | Fixed an issue where the list guides line was misplaced.
+- 完善鼠标中键打开新窗口时获取块 ID 方法 | Improved the method to get the block ID when opening a new window with the middle mouse button.
+
 ## v0.8.1/2022-04-19
 
 - [v0.8.0 <=> v0.8.1](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.8.0...v0.8.1)
 - 修复块菜单中的其他字体子菜单项无法选择问题 | Fixed an issue where other font submenu items in the block menu could not be selected.
 - 修复块菜单中的其他字体无法保存问题 | Fixed an issue where other font could not be saved.
 - 修复块菜单通用项分隔线冗余问题 | Fixed an issue where the common items separator line was redundant.
-- 修复列表辅助线错位问题 | Fixed an issue where the list guides line was misplaced.
 
 ## v0.8.0/2022-04-18
 
