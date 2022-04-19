@@ -970,10 +970,19 @@ export var config = {
                             {
                                 enable: true,
                                 type: {
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
                                     NodeList: {
                                         enable: true,
                                     },
-                                    NodeDocument: {
+                                    NodeSuperBlock: {
+                                        enable: true,
+                                    },
+                                    NodeBlockquote: {
+                                        enable: true,
+                                    },
+                                    NodeBlockQueryEmbed: {
                                         enable: true,
                                     },
                                 },
@@ -982,10 +991,19 @@ export var config = {
                             {
                                 enable: true,
                                 type: {
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
                                     NodeList: {
                                         enable: true,
                                     },
-                                    NodeDocument: {
+                                    NodeSuperBlock: {
+                                        enable: true,
+                                    },
+                                    NodeBlockquote: {
+                                        enable: true,
+                                    },
+                                    NodeBlockQueryEmbed: {
                                         enable: true,
                                     },
                                 },
@@ -1012,10 +1030,19 @@ export var config = {
                             {
                                 enable: true,
                                 type: {
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
                                     NodeList: {
                                         enable: true,
                                     },
-                                    NodeDocument: {
+                                    NodeSuperBlock: {
+                                        enable: true,
+                                    },
+                                    NodeBlockquote: {
+                                        enable: true,
+                                    },
+                                    NodeBlockQueryEmbed: {
                                         enable: true,
                                     },
                                 },
@@ -1043,10 +1070,19 @@ export var config = {
                             {
                                 enable: true,
                                 type: {
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
                                     NodeList: {
                                         enable: true,
                                     },
-                                    NodeDocument: {
+                                    NodeSuperBlock: {
+                                        enable: true,
+                                    },
+                                    NodeBlockquote: {
+                                        enable: true,
+                                    },
+                                    NodeBlockQueryEmbed: {
                                         enable: true,
                                     },
                                 },

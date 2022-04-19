@@ -1,7 +1,9 @@
 # 更改日志 | CHANGE LOG
 
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 修复列表辅助线错位问题 | Fixed an issue where the list guides line was misplaced.
 - 完善鼠标中键打开新窗口时获取块 ID 方法 | Improved the method to get the block ID when opening a new window with the middle mouse button.
+- 修复更新块属性值为 `null` 时无法使用 API 取消块属性的问题 | Fixed an issue where the API could not cancel the block attribute value when the value is `null`.
 
 ## v0.8.1/2022-04-19
 
