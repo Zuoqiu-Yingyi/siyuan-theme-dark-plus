@@ -133,11 +133,11 @@ function changeEditMode(mode = 0) { // 切换编辑模式
 
 function goto(id, focus = 0, editable = 0) {
     // 是否聚焦
-    if (parseInt(focus) === 1) gotoInfocus(id);
+    if (parseInt(focus) === 1 || focus === 'true') gotoInfocus(id);
     else gotoOutfocus(id);
 
     // 是否可编辑
-    if (parseInt(editable) === 1) setTimeout(() => changeEditMode(1), 0);
+    if (parseInt(editable) === 1 || editable === 'true') setTimeout(() => changeEditMode(1), 0);
     else setTimeout(() => changeEditMode(0), 0);
 }
 
@@ -227,7 +227,7 @@ function shuffle(arr) {
 
 function* Iterator(items, loop = false) {
     // REF [ES6中的迭代器(Iterator)和生成器(Generator) - 小火柴的蓝色理想 - 博客园](https://www.cnblogs.com/xiaohuochai/p/7253466.html)
-    if (loop) { 
+    if (loop) {
         for (let i = 0; true; i = (i + 1) % items.length) {
             yield items[i];
         }
