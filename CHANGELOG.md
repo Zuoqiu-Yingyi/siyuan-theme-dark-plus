@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.8.2/2022-04-19
+
+- [v0.8.1 <=> v0.8.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.8.1...v0.8.2)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 修复列表辅助线错位问题 | Fixed an issue where the list guides line was misplaced.
 - 完善鼠标中键打开新窗口时获取块 ID 方法 | Improved the method to get the block ID when opening a new window with the middle mouse button.
