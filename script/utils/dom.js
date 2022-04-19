@@ -96,7 +96,8 @@ function getFocusedID() {
 function getTargetBlockID(target) {
     let element = target;
     while (element != null
-        && !(element.dataset.href
+        && !(element.localName === 'a' && element.href
+            || element.dataset.href
             || config.theme.regs.id.test(element.dataset.nodeId)
             || config.theme.regs.id.test(element.dataset.oid)
             || config.theme.regs.id.test(element.dataset.id)
@@ -109,7 +110,8 @@ function getTargetBlockID(target) {
         if (config.theme.regs.id.test(element.dataset.id)) return element.dataset.id;
         if (config.theme.regs.id.test(element.dataset.oid)) return element.dataset.rootId;
         if (config.theme.regs.url.test(element.dataset.href)) return url2id(element.dataset.href);
-        return element.dataset.href;
+        if (config.theme.regs.url.test(element.href)) return url2id(element.href);
+        return element.href || element.dataset.href || null;
     }
     else return null;
 }
@@ -122,13 +124,12 @@ function getTargetBlockID(target) {
  */
 function getTargetHref(target) {
     let href = null;
-    if (target.nodeName.toUpperCase() === 'SPAN') {
-        if (
-            target.dataset.type === 'a'
-        ) {
-            href = target.dataset.href;
-        }
-    }
+    if (target.localName === 'span'
+        && target.dataset.href
+    ) href = target.dataset.href;
+    if (target.localName === 'a'
+        && target.href
+    ) href = target.href;
     return href;
 }
 

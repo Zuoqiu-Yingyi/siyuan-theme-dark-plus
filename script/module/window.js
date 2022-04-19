@@ -42,6 +42,25 @@ function infocus(id = getFocusedID()) {
     });
 }
 
+function middleClick(e, fn) {
+    let target = getTargetBlockID(e.target);
+    if (target) {
+        // 目标非空, 是 ID 或者链接
+        if (config.theme.regs.id.test(target)) {
+            // 是 ID
+            fn(target);
+        }
+        else {
+            // 是链接
+            window.theme.openNewWindow(
+                'browser',
+                target,
+                undefined,
+                config.theme.window.open.windowParams,
+            );
+        }
+    }
+}
 
 setTimeout(() => {
     try {
@@ -108,25 +127,7 @@ setTimeout(() => {
                             // console.log(e);
                             if (isButton(e, config.theme.hotkeys.window.open.link.outfocus)) {
                                 // console.log(e);
-                                setTimeout(() => {
-                                    let target = getTargetBlockID(e.target);
-                                    if (target) {
-                                        // 目标非空, 是 ID 或者链接
-                                        if (config.theme.regs.id.test(target)) {
-                                            // 是 ID
-                                            outfocus(target);
-                                        }
-                                        else {
-                                            // 是链接
-                                            window.theme.openNewWindow(
-                                                'browser',
-                                                target,
-                                                undefined,
-                                                config.theme.window.open.windowParams,
-                                            );
-                                        }
-                                    }
-                                }, 0);
+                                setTimeout(() => middleClick(e, outfocus), 0);
                             }
                         }, true);
                     }
@@ -135,9 +136,7 @@ setTimeout(() => {
                             // console.log(e);
                             if (isButton(e, config.theme.hotkeys.window.open.link.infocus)) {
                                 // console.log(e);
-                                setTimeout(() => {
-                                    infocus(getTargetBlockID(e.target));
-                                }, 0);
+                                setTimeout(() => middleClick(e, infocus), 0);
                             }
                         }, true);
                     }
