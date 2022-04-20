@@ -12,6 +12,7 @@ export {
     getBlockMark, // 获得块标记
     getBlockSelected, // 获得块选中
     setBlockDOMAttrs, // 设置块属性
+    setFontSize, // 设置字体大小
 };
 
 import { url2id } from './misc.js';
@@ -207,4 +208,19 @@ function setBlockDOMAttrs(id, attrs) {
         }
     }
     // console.log(block);
+}
+
+/**
+ * 设置编辑器字号
+ * @param {number} size 字号
+ * @returns {number} 设置后的字号
+ * @returns {null} 没有找到字号
+ */
+function setFontSize(size) {
+    let style = document.getElementById('editorFontSize');
+    if (style) {
+        style.innerHTML = style.innerHTML.replace(config.theme.regs.fontsize, size);
+        return parseInt(config.theme.regs.fontsize.exec(style.innerHTML));
+    }
+    return null;
 }

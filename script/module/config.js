@@ -18,6 +18,7 @@ export var config = {
             url: /^siyuan:\/\/blocks\/(\d{14}\-[0-9a-z]{7})\/*(?:(?:\?)(\w+=\w+)(?:(?:\&)(\w+=\w+))+)?$/, // 思源 URL Scheme 正则表达式
             time: /^(\d+)(:[0-5]?[0-9]){0,2}(\.\d*)?$/, // 时间戳正则表达式
             id: /^\d{14}\-[0-9a-z]{7}$/, // 块 ID 正则表达式
+            fontsize: /(?<=\.b3-typography|protyle-wysiwyg|protyle-title\s*\{\s*font-size\s*:\s*)(\d+)(?=px(?:\s+\!important)?(?:\s*;|\}))/,
         },
         goto: {
             enable: true, // 是否启用使用 URL 参数跳转指定块功能
@@ -476,6 +477,15 @@ export var config = {
                         enable: true, // 聚焦
                     },
                 },
+            },
+        },
+        wheel: {
+            enable: true, // 滚轮功能开关
+            zoom: {
+                enable: true, // 滚轮缩放功能开关
+                threshold: 100, // 滚轮缩放阈值
+                min: 9, // 最小字号(px)
+                max: 72, // 最大字号(px)
             },
         },
         menu: {
@@ -1458,6 +1468,16 @@ export var config = {
                     shiftKey: true,
                     altKey: true,
                     key: 'M',
+                },
+            },
+            wheel: {
+                zoom: {
+                    // 鼠标滚轮缩放(Ctrl + wheel)
+                    ctrlKey: true,
+                    metaKey: true,
+                    shiftKey: false,
+                    altKey: false,
+                    type: 'mousewheel',
                 },
             },
         },

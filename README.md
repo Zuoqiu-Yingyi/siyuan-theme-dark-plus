@@ -76,6 +76,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | :----------------------------------------------------------------------- | :-------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------- |
 | <kbd>鼠标中键</kbd><br/><kbd>Middle Mouse Button</kbd>                   | 整个窗口<br/>entire window                                      | 在新窗口打开块或超链接<br/>open the block or hyperlink in a new window                                          |
 | <kbd>Shift + 鼠标中键</kbd><br/><kbd>Shift + Middle Mouse Button</kbd>   | 整个窗口<br/>entire window                                      | 在新窗口打开块并聚焦<br/>open the block in a new window and focus                                               |
+| <kbd>Ctrl/⌘ + 鼠标滚轮</kbd><br/><kbd>Ctrl/⌘ + Mouse Wheel</kbd>         | 整个窗口<br/>entire window                                      | 调整编辑区字体大小<br/>adjust the edit area font size                                                           |
 | <kbd>Ctrl/⌘ + 鼠标中键</kbd><br/><kbd>Ctrl/⌘ + Middle Mouse Button</kbd> | 超链接<br/>hyperlink                                            | 设置自定义块属性<br/>set the custom block attributes                                                            |
 | <kbd>Ctrl/⌘ + 鼠标中键</kbd><br/><kbd>Ctrl/⌘ + Middle Mouse Button</kbd> | 视频块/音频块/iframe块<br/>video block/audio block/iframe block | 将当前时间戳写入剪贴板<br/>write the current timestamp to the clipboard                                         |
 | <kbd>Ctrl/⌘ + 鼠标左键</kbd><br/><kbd>Ctrl/⌘ + Lift Mouse Button</kbd>   | 视频块/音频块/iframe块<br/>video block/audio block/iframe block | 跳转到自定义块属性 `time` 所设置的时间点<br/>jump to the point in time set by the custom block attribute `time` |
@@ -190,6 +191,8 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   Click on a block/link/block-reference to open a new window using the <kbd>Middle Mouse Button</kbd>.
 - 使用 <kbd>Shift + 鼠标中键</kbd> 单击块/超链接/块引用在新窗口打开并聚焦  
   Click on a block/link/block-reference to open a window and focus using the <kbd>Shift + Middle Mouse Button</kbd>.
+- 使用快捷键 <kbd>Ctrl/⌘ + 鼠标滚轮</kbd> 可以调整编辑区字体大小  
+  Use the shortcut keys <kbd>Ctrl/⌘ + Mouse Wheel</kbd> to adjust the edit area font size.
 - 使用超链接设置块属性  
   Use hyperlinks to set block attributes.
   - `超文本引用`: 指向想要设置块属性的块的超链接  
