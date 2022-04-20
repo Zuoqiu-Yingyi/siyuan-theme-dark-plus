@@ -12,6 +12,7 @@ import {
   insertBlock,
   appendBlock,
   deleteBlock,
+  setBlockAttrs,
 } from './network.js'
 
 
@@ -115,10 +116,10 @@ class Comment {
       return
     }
     // 如果已有 quoteid，则是追加，否则是新增
-    let quoteId = this.input.getAttribute('data-quote-id')
+    let quoteId = this.input.dataset.quoteId
     if (quoteId) {
       //追加批注
-      let blockId = document.querySelector(`div[custom-${quoteId}]`).getAttribute('data-node-id') //comment 所在 block
+      let blockId = document.querySelector(`.protyle-wysiwyg [custom-${quoteId}]`).dataset.nodeId //comment 所在 block
       let quoteText = document.querySelector(`strong[style*="quote-${quoteId}"]`).innerText
       this.appendBlocks(quoteText, blockId, quoteId)
       let selection = getSelection()
@@ -146,7 +147,15 @@ class Comment {
       this.appendBlocks(txt, block.dataset.nodeId, quoteId)
       strongNode.setAttribute('style', 'quote-' + quoteId)
 
-      block.setAttribute('custom-' + quoteId, "true")
+      let attr = { key: `custom-${quoteId}`, value: "true" }
+      block.setAttribute(attr.key, attr.value)
+      // 使用 API 设置块属性
+      await setBlockAttrs({
+        id: block.dataset.nodeId,
+        attrs: {
+          [attr.key]: attr.value,
+        },
+      })
       range.insertNode(strongNode)
       range.setStartAfter(strongNode)
       range.collapse(true) //取消文本选择状态
@@ -249,7 +258,7 @@ ${commentMd}
     // 如果已经存在之前的引文批注，则直接在其下方插入新批注
     // let existQuote = activeEditor.querySelector(`.fn__flex-1.protyle:not(.fn__none) .bq[custom-quote-id*="${quoteId}"]`)
     // if(existQuote){
-    //   await this.insertBlockDom(commentHtml, existQuote.getAttribute('data-node-id'))
+    //   await this.insertBlockDom(commentHtml, existQuote.dataset.nodeId)
     // }else{
     //   await this.appendBlockDom(quoteHtml, docId)
     //   await this.appendBlockDom(commentHtml, docId)
@@ -263,22 +272,33 @@ ${commentMd}
     let target = e.target
     // 删除批注
     if (target.className == 'delete-comment') {
-      let quoteId = target.getAttribute('data-quote-id')
-      let commentId = target.getAttribute('data-comment-id')
-      let block = document.querySelector(`[custom-${quoteId}]`)
+      // 移除批注按钮
+      let quoteId = target.dataset.quoteId
+      let commentId = target.dataset.commentId
+      let block = document.querySelector(`.protyle-wysiwyg [custom-${quoteId}]`)
       deleteBlock(commentId)
       target.parentNode.parentNode.parentNode.remove()
       return
     }
 
     if (target.className == 'delete-quote') {
-      let quoteId = target.getAttribute('data-quote-id'),
+      // 移除引文按钮, 移除批注块与原文块中的批注 ID 属性
+      let quoteId = target.dataset.quoteId,
         quoteNode = document.querySelector(`strong[style*="quote-${quoteId}"]`),
-        block = document.querySelector(`[data-node-id][custom-${quoteId}]`)
+        block = document.querySelector(`.protyle-wysiwyg [data-node-id][custom-${quoteId}]`)
       let blockId = block.dataset.nodeId
       if (block) {
         // 移除 block 中的属性
-        block.removeAttribute(`custom-${quoteId}`)
+        let attr_key = `custom-${quoteId}`
+        block.removeAttribute(attr_key)
+        // TODO: 使用 API 移除属块性
+        // 使用 API 移除块属性
+        await setBlockAttrs({
+          id: block.dataset.nodeId,
+          attrs: {
+            [attr_key]: '',
+          },
+        })
       }
       if (quoteNode) {
         // 移除 strong 标签
@@ -300,7 +320,7 @@ ${commentMd}
       // let nodes = document.querySelectorAll(`div[custom-quote-id="${quoteId}"]`)
       // if(nodes){
       //   for(var node of nodes) {
-      //     let blockId = node.getAttribute('data-node-id')
+      //     let blockId = node.dataset.nodeId
       //     if(blockId){
       //       deleteBlock(blockId)
       //     }
