@@ -152,6 +152,7 @@ window.theme.loadScript("/appearance/themes/Dark+/script/module/reload.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/style.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/timestamp.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/typewriter.js");
+window.theme.loadScript("/appearance/themes/Dark+/script/module/wheel.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/window.js");
 
 /* 加载独立应用 */
