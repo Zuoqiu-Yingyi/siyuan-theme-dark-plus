@@ -58,10 +58,14 @@
     flex-shrink: 0;
 }
 
-/* 列表项内的容器块恢复上下排列 */
+/* 列表项内的容器块与嵌入恢复上下排列 */
+.protyle-content *[custom-type~=table] [data-node-id].li>[data-node-id][data-type="NodeBlockQueryEmbed"],
+.protyle-content *[custom-type~=表格] [data-node-id].li>[data-node-id][data-type="NodeBlockQueryEmbed"],
+
 .protyle-content *[custom-type~=table] [data-node-id].li>[data-node-id].sb,
-.protyle-content *[custom-type~=table] [data-node-id].li>[data-node-id].bq,
 .protyle-content *[custom-type~=表格] [data-node-id].li>[data-node-id].sb,
+
+.protyle-content *[custom-type~=table] [data-node-id].li>[data-node-id].bq,
 .protyle-content *[custom-type~=表格] [data-node-id].li>[data-node-id].bq {
     display: block;
 }

@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 列表表格视图与脑图视图内列表项中嵌入块保持纵向排列 | The embedded blocks whitch in list items in a table view or a mind-map view are arranged in portrait orientation.
+
 ## v0.8.2/2022-04-20
 
 - [v0.8.1 <=> v0.8.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.8.1...v0.8.2)
@@ -14,7 +16,7 @@
 - 重构使用鼠标中键打开新窗口功能 | Refactor the function to open new windows using the middle mouse button.
 - 修复设置页面列表项背景颜色问题 | Fix the background color of the list items in the settings page.
 - 移除功能面板中各项的轮廓 | Remove the outline of each item in the function panel.
-- 修复提及面板匹配关键字突出显示样式 | Fix the highlighting style of the keyword in the mention panel. 
+- 修复提及面板匹配关键字突出显示样式 | Fix the highlighting style of the keyword in the mention panel.
 
 ## v0.8.1/2022-04-19
 

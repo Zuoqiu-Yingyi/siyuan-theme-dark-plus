@@ -44,7 +44,13 @@
     display: flex;
 }
 
-/* 列表项内的容器块恢复上下排列 */
+/* 列表项内的容器块与嵌入块恢复上下排列 */
+.protyle-content *[custom-type~=思维导图] [data-node-id].li>div[data-node-id][data-type="NodeBlockQueryEmbed"],
+.protyle-content *[custom-type~=导图] [data-node-id].li>div[data-node-id][data-type="NodeBlockQueryEmbed"],
+.protyle-content *[custom-type~=脑图] [data-node-id].li>div[data-node-id][data-type="NodeBlockQueryEmbed"],
+.protyle-content *[custom-type~=mind-map] [data-node-id].li>div[data-node-id][data-type="NodeBlockQueryEmbed"],
+.protyle-content *[custom-type~=map] [data-node-id].li>div[data-node-id][data-type="NodeBlockQueryEmbed"],
+
 .protyle-content *[custom-type~=思维导图] [data-node-id].li>div[data-node-id].sb,
 .protyle-content *[custom-type~=导图] [data-node-id].li>div[data-node-id].sb,
 .protyle-content *[custom-type~=脑图] [data-node-id].li>div[data-node-id].sb,
