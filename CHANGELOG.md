@@ -4,6 +4,8 @@
 - 使用快捷键 <kbd>Ctrl/⌘ + 鼠标滚轮</kbd> 调整编辑区字体大小 | Use the shortcut keys <kbd>Ctrl/⌘ + Mouse Wheel</kbd> to adjust the edit area font size.
 - 修复批注功能块属性无法写入问题 | Fix the issue that the annotation block properties can't be written.
 - 调整鼠标悬浮列表项的背景颜色 | Adjust the background color of the list item when the mouse hovers.
+- 添加自定义块属性 `mark: 显示` 与一项块菜单项以显示标记文本 | Add the custom block property `mark: display` and a block menu item to show the mark text.
+- 添加介绍视频 | Add a introduction video.
 
 ## v0.8.2/2022-04-20
 

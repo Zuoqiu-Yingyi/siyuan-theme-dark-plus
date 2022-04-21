@@ -44,6 +44,21 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 ## 介绍 | INTRODUCTION
 
+### 介绍视频 | INTRODUCTION VIDEO
+
+<iframe src="//player.bilibili.com/player.html?aid=980804170&bvid=BV1u44y1G7Y2&cid=581072653&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+感谢 [君の富士山爆发](https://space.bilibili.com/250665585#/) 朋友制作的视频  
+Thanks to [君の富士山爆发](https://space.bilibili.com/250665585#/) for making the video.
+
+同时推荐一下视频作者制作的精美主题  
+Recommend the video author's beautiful theme.
+- [UserZYF/Chrome-A4: 思源笔记的一个主题，chrome标签样式+A4纸张大小](https://github.com/UserZYF/Chrome-A4)
+- [UserZYF/zhang-light: 思源笔记的一款主题](https://github.com/UserZYF/zhang-light)
+- [UserZYF/zhang-dark: 一款思源笔记的夜间主题](https://github.com/UserZYF/zhang-dark)
+- [UserZYF/blue-dog: 思源笔记的主题，蓝色](https://github.com/UserZYF/blue-dog)
+- [UserZYF/green-elephant: 一款“绿象”配色的思源笔记主题](https://github.com/UserZYF/green-elephant)
+
 ### 贡献者介绍 | CONTRIBUTOR INTRODUCTION
 
 | 功能 \| Function                             | 贡献者 \| Contributor                   | 项目 \| Project                                                                                                                        |
@@ -107,6 +122,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | 所有块<br/>all types of blocks                    | `render`                 | `danmaku`<br/>`弹幕`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                            | 将块设置为滚动弹幕样式<br/>Set the block to the scrolling danmaku block style.                                                                                                     |
 | 所有块<br/>all types of blocks                    | `render`                 | `scroll`<br/>`滚屏`<br/>`滚动`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                  | 为过长块设置纵向滚动条<br/>Set the vertical scroll bar for the overly long block.                                                                                                  |
 | 所有块<br/>all types of blocks                    | `render`                 | `invert`<br/>`反色`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                             | 将图片渲染为反色<br/>Render all images as inverted colors.                                                                                                                         |
+| 所有块<br/>all types of blocks                    | `mark`                   | `display`<br/>`显示`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                            | 显示标记文本<br/>Display marked text.                                                                                                                                              |
 | 文档块<br/>document blocks                        | `background`             | `01` ~ `12`                                                                                                                                                                                                                                                                              | 设置文档的自定义背景图片<br/>Sets a custom background image for the document.                                                                                                      |
 | 文档块<br/>document blocks                        | `auto-num-h`             | `0`<br/>`false`<br/>`禁用`<br/>`关闭`<br/>                                                                                                                                                                                                                                               | 禁用该文档子标题的自动编号<br/>Disables automatic numbering of subheading in the document.                                                                                         |
 | 文档块<br/>document blocks                        | `auto-num-f`             | `图`<br/>`图片`<br/>`Fig.`<br/>`figure`<br/>`Figure`<br/>`FIGURE`                                                                                                                                                                                                                        | 启用该文档中图片的自动编号<br/>Enable automatic numbering of pictures in the document.                                                                                             |
@@ -293,6 +309,10 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
           If the block is a document block, render all images in the current document as inverted colors.
         - 若为非文档块, 将当前块中所有图片渲染为反色  
           If the block is not a document block, render all images in the current block as inverted colors.
+  - `mark`: 属性名 | key
+    - `display` / `显示`: 属性值 | value
+    - 适用于所有块 | Applies to all blocks
+    - 显示标记文本 | Display marked text.
   - `background`: 属性名 | key
     - `01` ~ `12`: 属性值 | value
     - 适用于文档块 | Applies to document blocks
