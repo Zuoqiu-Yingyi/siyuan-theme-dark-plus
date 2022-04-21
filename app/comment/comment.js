@@ -291,7 +291,6 @@ ${commentMd}
         // 移除 block 中的属性
         let attr_key = `custom-${quoteId}`
         block.removeAttribute(attr_key)
-        // TODO: 使用 API 移除属块性
         // 使用 API 移除块属性
         await setBlockAttrs({
           id: block.dataset.nodeId,

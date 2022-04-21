@@ -721,6 +721,93 @@ export var config = {
                                     NodeDocument: {
                                         enable: true,
                                     },
+                                    NodeBlockQueryEmbed: {
+                                        enable: true,
+                                    },
+                                    NodeBlockquote: {
+                                        enable: true,
+                                    },
+                                    NodeList: {
+                                        enable: true,
+                                    },
+                                    NodeListItem: {
+                                        enable: true,
+                                    },
+                                    NodeSuperBlock: {
+                                        enable: true,
+                                    },
+                                    NodeHeading: {
+                                        enable: true,
+                                    },
+                                    NodeParagraph: {
+                                        enable: true,
+                                    },
+                                    NodeTable: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "separator",
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
+                                    NodeBlockQueryEmbed: {
+                                        enable: true,
+                                    },
+                                    NodeBlockquote: {
+                                        enable: true,
+                                    },
+                                    NodeList: {
+                                        enable: true,
+                                    },
+                                    NodeListItem: {
+                                        enable: true,
+                                    },
+                                    NodeSuperBlock: {
+                                        enable: true,
+                                    },
+                                    NodeHeading: {
+                                        enable: true,
+                                    },
+                                    NodeParagraph: {
+                                        enable: true,
+                                    },
+                                    NodeTable: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "button",
+                                icon: "#iconScrollWrapped",
+                                label: {
+                                    zh_CN: "显示标记文本",
+                                    other: "Display Marked Text",
+                                },
+                                accelerator: "mark: display",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-switch',
+                                            params: {
+                                                'custom-mark': [
+                                                    'display',
+                                                    null,
+                                                ],
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
                                     NodeList: {
                                         enable: true,
                                     },

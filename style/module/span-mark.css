@@ -4,18 +4,21 @@
 @import url(/widgets/custom.css);
 
 .b3-typography mark,
-.protyle-wysiwyg mark {
+.protyle-content mark {
     background-color: var(--cusotm-span-mark-background-color);
 }
 
-.protyle-wysiwyg mark {
+.protyle-content mark {
     color: transparent;
     transition: all 200ms linear 0ms;
 }
 
-.protyle-wysiwyg mark:hover {
+
+.protyle-content [custom-mark~=display] mark,
+.protyle-content [custom-mark~=显示] mark,
+.protyle-content mark:hover {
     background-color: transparent;
     color: var(--custom-span-mark-color);
-    text-shadow:0 0 var(--custom-span-mark-shadow-width) var(--custom-span-mark-shadow-color);
+    text-shadow: 0 0 var(--custom-span-mark-shadow-width) var(--custom-span-mark-shadow-color);
     /* font-weight: bold; */
 }
