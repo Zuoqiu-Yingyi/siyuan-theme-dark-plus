@@ -88,7 +88,7 @@ setTimeout(() => {
 
             if (config.theme.timestamp.create.enable) {
                 // 生成时间戳并写入剪贴板
-                window.addEventListener('mousedown', (e) => {
+                window.addEventListener('mouseup', (e) => {
                     // console.log(e);
                     if (isButton(e, config.theme.hotkeys.timestamp.create)) {
                         setTimeout(async () => {
