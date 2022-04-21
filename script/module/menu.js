@@ -77,7 +77,12 @@ function blockMenuCallback(mutationList, observer) {
                     block.type,
                     block.subtype,
                 );
-                if (items) items.forEach(item => block_menu_observer.menuNode.insertBefore(item, mutation.previousSibling));
+                if (items) {
+                    let menu = block_menu_observer.menuNode;
+                    items.forEach(item => menu.insertBefore(item, mutation.previousSibling));
+                    let delta = menu.getBoundingClientRect().bottom - menu.parentElement.getBoundingClientRect().bottom;
+                    if (delta > 0) menu.style.top = `${parseFloat(menu.style.top) - delta}px`;
+                };
             }
             break;
         }

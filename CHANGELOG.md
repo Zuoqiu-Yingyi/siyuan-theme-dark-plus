@@ -2,10 +2,11 @@
 
 - 列表表格视图与脑图视图内列表项中嵌入块保持纵向排列 | The embedded blocks whitch in list items in a table view or a mind-map view are arranged in portrait orientation.
 - 使用快捷键 <kbd>Ctrl/⌘ + 鼠标滚轮</kbd> 调整编辑区字体大小 | Use the shortcut keys <kbd>Ctrl/⌘ + Mouse Wheel</kbd> to adjust the edit area font size.
-- 修复批注功能块属性无法写入问题 | Fix the issue that the annotation block properties can't be written.
+- #10 修复批注功能块属性无法写入问题 | Fix the issue that the annotation block properties can't be written.
 - 调整鼠标悬浮列表项的背景颜色 | Adjust the background color of the list item when the mouse hovers.
-- 添加自定义块属性 `mark: 显示` 与一项块菜单项以显示标记文本 | Add the custom block property `mark: display` and a block menu item to show the mark text.
+- #22 添加自定义块属性 `mark: 显示` 与一项块菜单项以显示标记文本 | Add the custom block property `mark: display` and a block menu item to show the mark text.
 - 添加介绍视频 | Add a introduction video.
+- #24 修复块菜单面板超出可视窗口问题 | Fix the issue that the block menu panel is out of the visible window.
 
 ## v0.8.2/2022-04-20
 

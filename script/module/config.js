@@ -488,6 +488,18 @@ export var config = {
                 max: 72, // 最大字号(px)
             },
         },
+        editor: {
+            enable: true, // 编辑器功能开关
+            params: { // 编辑器参数
+                copyWithSyntaxHighlighting: false, // 是否复制为富文本
+                fontFamily: 'Sarasa Mono SC', // 字体
+                fontLigatures: true, // 是否启用字体连字
+                readOnly: false, // 是否只读
+                tabSize: 4, // Tab 制表符缩进大小
+                value: '', // 初始文本
+                wordWrap: 'off', // 是否自动换行 "on" | "off" | "wordWrapColumn" | "bounded"
+            },
+        },
         menu: {
             enable: true, // 菜单功能开关
             block: {
