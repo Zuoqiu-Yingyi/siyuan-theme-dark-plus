@@ -35,6 +35,8 @@ window.theme.This = function (customID) {
  * @url (string): URL
  * @urlParams (object): URL 参数
  * @windowParams (object): 窗体参数
+ * @pathname (string): URL 路径名
+ * @hash (string): URL hash
  * @closeCallback (function): 关闭窗口时的回调函数
  * @return (BrowserWindow): 窗口对象
  */
@@ -48,6 +50,8 @@ window.theme.openNewWindow = function (
         frame: true, // 是否显示边缘框
         fullscreen: false // 是否全屏显示
     },
+    pathname = null,
+    hash = null,
     closeCallback = null,
 ) {
     try {
@@ -65,18 +69,19 @@ window.theme.openNewWindow = function (
                     break;
             }
         }
-
+        if (pathname) url.pathname = pathname;
+        if (hash) url.hash = hash;
         // 设置 URL 参数
         for (let param of Object.keys(urlParams)) {
             url.searchParams.set(param, urlParams[param]);
         }
-
         // 打开新窗口
         try {
             const { BrowserWindow } = require('@electron/remote');
             // 新建窗口(Electron 环境)
             newWin = new BrowserWindow(windowParams)
-
+            
+            console.log(url.href);
             newWin.loadURL(url.href);
             newWin.on('close', () => {
                 newWin = null;

@@ -7,26 +7,29 @@ export {
 };
 
 function isKey(event, key) {
-    return (event.key == key.key
-        && (event.ctrlKey == key.ctrlKey || event.metaKey == key.metaKey)
-        && event.shiftKey == key.shiftKey
-        && event.altKey == key.altKey
+    return (event.key === key.key
+        && event.altKey === key.Alt
+        && event.shiftKey === key.Shift
+        && (event.ctrlKey || event.metaKey) === key.CtrlCmd
+        && (event.ctrlKey || event.metaKey) === key.WinCtrl
     )
 }
 
 function isEvent(event, key) {
-    return (event.type == key.type
-        && (event.ctrlKey == key.ctrlKey || event.metaKey == key.metaKey)
-        && event.shiftKey == key.shiftKey
-        && event.altKey == key.altKey
+    return (event.type === key.type
+        && event.altKey === key.Alt
+        && event.shiftKey === key.Shift
+        && (event.ctrlKey || event.metaKey) === key.CtrlCmd
+        && (event.ctrlKey || event.metaKey) === key.WinCtrl
     )
 }
 
 function isButton(event, key) {
-    return (event.button == key.button
-        && (event.ctrlKey == key.ctrlKey || event.metaKey == key.metaKey)
-        && event.shiftKey == key.shiftKey
-        && event.altKey == key.altKey
+    return (event.button === key.button
+        && event.altKey === key.Alt
+        && event.shiftKey === key.Shift
+        && (event.ctrlKey || event.metaKey) === key.CtrlCmd
+        && (event.ctrlKey || event.metaKey) === key.WinCtrl
     )
 }
 
@@ -53,13 +56,13 @@ function printHotKey(key) {
     }
 
     let hotkey = [];
-    if (key.ctrlKey) {
+    if (key.CtrlCmd) {
         hotkey.push(ctrl);
     }
-    if (key.shiftKey) {
+    if (key.Shift) {
         hotkey.push(shift);
     }
-    if (key.altKey) {
+    if (key.Alt) {
         hotkey.push(alt);
     }
     hotkey.push(key.key || key.type || MOUSE_BUTTON_MAP[key.button]);

@@ -42,17 +42,18 @@ function infocus(id = getFocusedID()) {
     });
 }
 
-function middleClick(e, fn) {
+function middleClick(e, fn1, fn2 = null) {
     let target = getTargetBlockID(e.target);
     if (target) {
         // 目标非空, 是 ID 或者链接
         if (config.theme.regs.id.test(target)) {
             // 是 ID
-            fn(target);
+            fn1(target);
         }
         else {
             // 是链接
-            window.theme.openNewWindow(
+            if (fn2) fn2(target);
+            else window.theme.openNewWindow(
                 'browser',
                 target,
                 undefined,
@@ -123,7 +124,7 @@ setTimeout(() => {
                 }
                 if (config.theme.window.open.link.enable) {
                     if (config.theme.window.open.link.outfocus.enable) {
-                        window.addEventListener('mousedown', (e) => {
+                        window.addEventListener('mouseup', (e) => {
                             // console.log(e);
                             if (isButton(e, config.theme.hotkeys.window.open.link.outfocus)) {
                                 // console.log(e);
@@ -132,11 +133,52 @@ setTimeout(() => {
                         }, true);
                     }
                     if (config.theme.window.open.link.infocus.enable) {
-                        window.addEventListener('mousedown', (e) => {
+                        window.addEventListener('mouseup', (e) => {
                             // console.log(e);
                             if (isButton(e, config.theme.hotkeys.window.open.link.infocus)) {
                                 // console.log(e);
                                 setTimeout(() => middleClick(e, infocus), 0);
+                            }
+                        }, true);
+                    }
+                    if (config.theme.window.open.link.editor.enable) {
+                        window.addEventListener('mouseup', (e) => {
+                            // console.log(e);
+                            if (isButton(e, config.theme.hotkeys.window.open.link.editor)) {
+                                // console.log(e);
+                                setTimeout(() => middleClick(
+                                    e,
+                                    id => {
+                                        window.theme.openNewWindow(
+                                            'browser',
+                                            undefined,
+                                            {
+                                                id: id,
+                                                mode: 'block',
+                                                lang: window.theme.languageMode,
+                                                theme: window.siyuan.config.appearance.mode,
+                                                tabSize: window.siyuan.config.editor.codeTabSpaces,
+                                            },
+                                            config.theme.window.open.windowParams,
+                                            '/appearance/themes/Dark+/app/editor/',
+                                        );
+                                    },
+                                    href => {
+                                        window.theme.openNewWindow(
+                                            'browser',
+                                            undefined,
+                                            {
+                                                mode: 'assets',
+                                                path: encodeURI(href),
+                                                lang: window.theme.languageMode,
+                                                theme: window.siyuan.config.appearance.mode,
+                                                tabSize: window.siyuan.config.editor.codeTabSpaces,
+                                            },
+                                            config.theme.window.open.windowParams,
+                                            '/appearance/themes/Dark+/app/editor/',
+                                        );
+                                    },
+                                ), 0);
                             }
                         }, true);
                     }

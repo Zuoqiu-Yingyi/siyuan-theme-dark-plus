@@ -7,6 +7,7 @@
 - #22 添加自定义块属性 `mark: 显示` 与一项块菜单项以显示标记文本 | Add the custom block property `mark: display` and a block menu item to show the mark text.
 - 添加介绍视频 | Add a introduction video.
 - #24 修复块菜单面板超出可视窗口问题 | Fix the issue that the block menu panel is out of the visible window.
+- 使用 <kbd>Alt + 鼠标中键</kbd> 单击块或资源文件链接, 在新窗口使用 Monaco 编辑器打开 | Use the shortcut key <kbd>Alt + Mouse Middle Button</kbd> to open the block or asset file in a new window using Monaco Editor.
 
 ## v0.8.2/2022-04-20
 

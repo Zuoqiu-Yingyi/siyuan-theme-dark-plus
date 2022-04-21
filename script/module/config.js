@@ -476,6 +476,9 @@ export var config = {
                     infocus: {
                         enable: true, // 聚焦
                     },
+                    editor: {
+                        enable: true, // 使用编辑器打开
+                    },
                 },
             },
         },
@@ -486,18 +489,6 @@ export var config = {
                 threshold: 100, // 滚轮缩放阈值
                 min: 9, // 最小字号(px)
                 max: 72, // 最大字号(px)
-            },
-        },
-        editor: {
-            enable: true, // 编辑器功能开关
-            params: { // 编辑器参数
-                copyWithSyntaxHighlighting: false, // 是否复制为富文本
-                fontFamily: 'Sarasa Mono SC', // 字体
-                fontLigatures: true, // 是否启用字体连字
-                readOnly: false, // 是否只读
-                tabSize: 4, // Tab 制表符缩进大小
-                value: '', // 初始文本
-                wordWrap: 'off', // 是否自动换行 "on" | "off" | "wordWrapColumn" | "bounded"
             },
         },
         menu: {
@@ -1368,115 +1359,115 @@ export var config = {
             style: {
                 render: {
                     // 渲染(Ctrl + F1)
-                    ctrlKey: true,
-                    metaKey: true,
-                    shiftKey: false,
-                    altKey: false,
+                    CtrlCmd: true,
+                    WinCtrl: false,
+                    Shift: false,
+                    Alt: false,
                     key: 'F1',
                 },
                 guides: {
                     // 辅助样式(Shift + Alt + G)
-                    ctrlKey: false,
-                    metaKey: false,
-                    shiftKey: true,
-                    altKey: true,
+                    CtrlCmd: false,
+                    WinCtrl: false,
+                    Shift: true,
+                    Alt: true,
                     key: 'G',
                 },
             },
             timestamp: {
                 jump: {
                     // 跳转到指定时间点(Ctrl + 单击)
-                    ctrlKey: true,
-                    metaKey: true,
-                    shiftKey: false,
-                    altKey: false,
+                    CtrlCmd: true,
+                    WinCtrl: false,
+                    Shift: false,
+                    Alt: false,
                     type: 'click',
                 },
                 create: {
                     // 新建时间戳(Ctrl + 鼠标中键)
-                    ctrlKey: true,
-                    metaKey: true,
-                    shiftKey: false,
-                    altKey: false,
+                    CtrlCmd: true,
+                    WinCtrl: false,
+                    Shift: false,
+                    Alt: false,
                     button: 1, // 鼠标中键
                 },
             },
             blockattrs: {
                 set: {
                     // 设置块属性(Ctrl + 鼠标中键)
-                    ctrlKey: true,
-                    metaKey: true,
-                    shiftKey: false,
-                    altKey: false,
+                    CtrlCmd: true,
+                    WinCtrl: false,
+                    Shift: false,
+                    Alt: false,
                     button: 1, // 鼠标中键
                 },
             },
             reload: {
                 window: {
                     // 刷新当前窗口(Ctrl + F5)
-                    ctrlKey: true,
-                    metaKey: true,
-                    shiftKey: false,
-                    altKey: false,
+                    CtrlCmd: true,
+                    WinCtrl: false,
+                    Shift: false,
+                    Alt: false,
                     key: 'F5',
                 },
                 iframe: {
                     // 刷新 iframe 块(Ctrl + 单击)
-                    ctrlKey: true,
-                    metaKey: true,
-                    shiftKey: false,
-                    altKey: false,
+                    CtrlCmd: true,
+                    WinCtrl: false,
+                    Shift: false,
+                    Alt: false,
                     type: 'click',
                 },
             },
             doc: {
                 copy: {
                     // 复制当前文档全文(Shift + Alt + C)
-                    ctrlKey: false,
-                    metaKey: false,
-                    shiftKey: true,
-                    altKey: true,
+                    CtrlCmd: false,
+                    WinCtrl: false,
+                    Shift: true,
+                    Alt: true,
                     key: 'C',
                 },
                 delete: {
                     // 删除当前文档全文(Shift + Alt + D)
-                    ctrlKey: false,
-                    metaKey: false,
-                    shiftKey: true,
-                    altKey: true,
+                    CtrlCmd: false,
+                    WinCtrl: false,
+                    Shift: true,
+                    Alt: true,
                     key: 'D',
                 },
                 cut: {
                     // 剪切当前文档全文(Shift + Alt + X)
-                    ctrlKey: false,
-                    metaKey: false,
-                    shiftKey: true,
-                    altKey: true,
+                    CtrlCmd: false,
+                    WinCtrl: false,
+                    Shift: true,
+                    Alt: true,
                     key: 'X',
                 },
                 outline: {
                     u: {
                         // 复制当前文档大纲(无序列表)至剪贴板(Ctrl + Shift + Alt + U)
-                        ctrlKey: true,
-                        metaKey: true,
-                        shiftKey: true,
-                        altKey: true,
+                        CtrlCmd: true,
+                        WinCtrl: false,
+                        Shift: true,
+                        Alt: true,
                         key: 'U',
                     },
                     o: {
                         // 复制当前文档大纲(有序列表)至剪贴板(Ctrl + Shift + Alt + O)
-                        ctrlKey: true,
-                        metaKey: true,
-                        shiftKey: true,
-                        altKey: true,
+                        CtrlCmd: true,
+                        WinCtrl: false,
+                        Shift: true,
+                        Alt: true,
                         key: 'O',
                     },
                     t: {
                         // 复制当前文档大纲(任务列表)至剪贴板(Ctrl + Shift + Alt + T)
-                        ctrlKey: true,
-                        metaKey: true,
-                        shiftKey: true,
-                        altKey: true,
+                        CtrlCmd: true,
+                        WinCtrl: false,
+                        Shift: true,
+                        Alt: true,
                         key: 'T',
                     },
                 },
@@ -1484,37 +1475,37 @@ export var config = {
             typewriter: {
                 switch: {
                     // 打字机模式开关(Shift + Alt + T)
-                    ctrlKey: false,
-                    metaKey: false,
-                    shiftKey: true,
-                    altKey: true,
+                    CtrlCmd: false,
+                    WinCtrl: false,
+                    Shift: true,
+                    Alt: true,
                     key: 'T',
                 },
             },
             invert: {
                 // 反色开关(Shift + Alt + I)
-                ctrlKey: false,
-                metaKey: false,
-                shiftKey: true,
-                altKey: true,
+                CtrlCmd: false,
+                WinCtrl: false,
+                Shift: true,
+                Alt: true,
                 key: 'I',
             },
             background: {
                 image: {
                     web: {
                         // 更换网络背景图片(Shift + Alt + R)
-                        ctrlKey: false,
-                        metaKey: false,
-                        shiftKey: true,
-                        altKey: true,
+                        CtrlCmd: false,
+                        WinCtrl: false,
+                        Shift: true,
+                        Alt: true,
                         key: 'R',
                     },
                     custom: {
                         // 更换自定义背景图片(Ctrl + Shift + Alt + I)
-                        ctrlKey: true,
-                        metaKey: true,
-                        shiftKey: true,
-                        altKey: true,
+                        CtrlCmd: true,
+                        WinCtrl: false,
+                        Shift: true,
+                        Alt: true,
                         key: 'R',
                     },
                 },
@@ -1524,36 +1515,44 @@ export var config = {
                     block: {
                         outfocus: {
                             // 新窗口打开当前块, 否则打开当前文档(Shift + Alt + N)
-                            ctrlKey: false,
-                            metaKey: false,
-                            shiftKey: true,
-                            altKey: true,
+                            CtrlCmd: false,
+                            WinCtrl: false,
+                            Shift: true,
+                            Alt: true,
                             key: 'N',
                         },
                         infocus: {
                             // 新窗口打开当前块并聚焦, 否则打开当前文档(Ctrl + Shift + Alt + N)
-                            ctrlKey: true,
-                            metaKey: true,
-                            shiftKey: true,
-                            altKey: true,
+                            CtrlCmd: true,
+                            WinCtrl: false,
+                            Shift: true,
+                            Alt: true,
                             key: 'N',
                         },
                     },
                     link: {
                         outfocus: {
                             // 新窗口打开链接(鼠标中键)
-                            ctrlKey: false,
-                            metaKey: false,
-                            shiftKey: false,
-                            altKey: false,
+                            CtrlCmd: false,
+                            WinCtrl: false,
+                            Shift: false,
+                            Alt: false,
                             button: 1, // 鼠标中键
                         },
                         infocus: {
                             // 新窗口打开链接并聚焦(Shift + 鼠标中键)
-                            ctrlKey: false,
-                            metaKey: false,
-                            shiftKey: true,
-                            altKey: false,
+                            CtrlCmd: false,
+                            WinCtrl: false,
+                            Shift: true,
+                            Alt: false,
+                            button: 1, // 鼠标中键
+                        },
+                        editor: {
+                            // 新窗口打开链接并聚焦(Shift + 鼠标中键)
+                            CtrlCmd: false,
+                            WinCtrl: false,
+                            Shift: false,
+                            Alt: true,
                             button: 1, // 鼠标中键
                         },
                     },
@@ -1562,20 +1561,20 @@ export var config = {
             menu: {
                 block: {
                     // 块菜单开关(Shift + Alt + M)
-                    ctrlKey: false,
-                    metaKey: false,
-                    shiftKey: true,
-                    altKey: true,
+                    CtrlCmd: false,
+                    WinCtrl: false,
+                    Shift: true,
+                    Alt: true,
                     key: 'M',
                 },
             },
             wheel: {
                 zoom: {
                     // 鼠标滚轮缩放(Ctrl + wheel)
-                    ctrlKey: true,
-                    metaKey: true,
-                    shiftKey: false,
-                    altKey: false,
+                    CtrlCmd: true,
+                    WinCtrl: false,
+                    Shift: false,
+                    Alt: false,
                     type: 'mousewheel',
                 },
             },

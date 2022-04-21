@@ -11,4 +11,5 @@
 /script/test
 
 # 编辑器
-/app/editor
+# /app/editor
+/app/min-maps
