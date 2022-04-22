@@ -172,6 +172,7 @@ setTimeout(async () => {
                                                     mode: 'block',
                                                     lang: window.theme.languageMode,
                                                     theme: window.siyuan.config.appearance.mode,
+                                                    fontFamily: encodeURI(window.siyuan.config.editor.fontFamily),
                                                     tabSize: window.siyuan.config.editor.codeTabSpaces,
                                                 },
                                                 config.theme.window.open.windowParams,

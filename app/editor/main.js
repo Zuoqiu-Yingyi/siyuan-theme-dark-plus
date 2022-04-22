@@ -348,7 +348,7 @@ window.onload = () => {
                                 theme: config.MAP.THEMES[window.editor.params.theme]
                                     || config.MAP.THEMES.default
                                     || 'vs', // 主题
-                                value: window.editor.params.tabSize || 4, // 初始值
+                                tabSize: window.editor.params.tabSize || 4, // 缩进
                                 value: window.editor.params.value, // 初始值
                             }, // URL params 配置
                         ),
