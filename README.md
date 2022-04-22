@@ -92,6 +92,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | :----------------------------------------------------------------------- | :-------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------- |
 | <kbd>鼠标中键</kbd><br/><kbd>Middle Mouse Button</kbd>                   | 整个窗口<br/>entire window                                      | 在新窗口打开块或超链接<br/>open the block or hyperlink in a new window                                          |
 | <kbd>Shift + 鼠标中键</kbd><br/><kbd>Shift + Middle Mouse Button</kbd>   | 整个窗口<br/>entire window                                      | 在新窗口打开块并聚焦<br/>open the block in a new window and focus                                               |
+| <kbd>Alt + 鼠标中键</kbd><br/><kbd>Alt + Middle Mouse Button</kbd>       | 整个窗口<br/>entire window                                      | 在新窗口打开 Monaco 编辑器并编辑单击的内容<br/>Open the Monaco Editor in a new window and edit the content      |
 | <kbd>Ctrl/⌘ + 鼠标滚轮</kbd><br/><kbd>Ctrl/⌘ + Mouse Wheel</kbd>         | 整个窗口<br/>entire window                                      | 调整编辑区字体大小<br/>adjust the edit area font size                                                           |
 | <kbd>Ctrl/⌘ + 鼠标中键</kbd><br/><kbd>Ctrl/⌘ + Middle Mouse Button</kbd> | 超链接<br/>hyperlink                                            | 设置自定义块属性<br/>set the custom block attributes                                                            |
 | <kbd>Ctrl/⌘ + 鼠标中键</kbd><br/><kbd>Ctrl/⌘ + Middle Mouse Button</kbd> | 视频块/音频块/iframe块<br/>video block/audio block/iframe block | 将当前时间戳写入剪贴板<br/>write the current timestamp to the clipboard                                         |
@@ -208,6 +209,8 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   Click on a block/link/block-reference to open a new window using the <kbd>Middle Mouse Button</kbd>.
 - 使用 <kbd>Shift + 鼠标中键</kbd> 单击块/超链接/块引用在新窗口打开并聚焦  
   Click on a block/link/block-reference to open a window and focus using the <kbd>Shift + Middle Mouse Button</kbd>.
+- 使用 <kbd>Alt + 鼠标中键</kbd> 单击块/超链接/块引用在新窗口打开 [Monaco 编辑器](https://github.com/microsoft/monaco-editor)并编辑源代码  
+  Click on a block/link/block-reference to open [Monaco Editor](https://github.com/microsoft/monaco-editor) in a new window and edit source code using the <kbd>Alt + Middle Mouse Button</kbd>.
 - 使用快捷键 <kbd>Ctrl/⌘ + 鼠标滚轮</kbd> 可以调整编辑区字体大小  
   Use the shortcut keys <kbd>Ctrl/⌘ + Mouse Wheel</kbd> to adjust the edit area font size.
 - 使用超链接设置块属性  
@@ -566,18 +569,19 @@ Download the release package in [Releases](https://github.com/Zuoqiu-Yingyi/siyu
 
 ## 参考 & 感谢 | REFERENCE & THANKS
 
-| 作者 \| Author                                      | 项目 \| Project                                                                                                                                       | 许可证 \| License |
-| :-------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------- |
-| **[Achuan-2](https://github.com/Achuan-2)**         | [Achuan-2/siyuan-themes-tsundoku-dark: a editor theme for siyuan note](https://github.com/Achuan-2/siyuan-themes-tsundoku-dark)                       | *Unknown*         |
-| **[roeseth](https://github.com/roeseth)**           | [roeseth/Siyuan-Golden-Topaz-Refined: A ported Golen Topaz theme for Siyuan note with tweaks](https://github.com/roeseth/Siyuan-Golden-Topaz-Refined) | *Unknown*         |
-| **[Morganwan90](https://github.com/Morganwan90)**   | [Morganwan90/Lightblue-siyuan-theme](https://github.com/Morganwan90/Lightblue-siyuan-theme)                                                           | *Unknown*         |
-| **[Crowds21](https://github.com/Crowds21)**         | [Crowds21/Cliff-Light](https://github.com/Crowds21/Cliff-Light)                                                                                       | *Unknown*         |
-| **[Zhangwuji](https://ld246.com/member/Zhangwuji)** | [希望能够增加根据大纲生成思维导图的功能](https://ld246.com/article/1640259008838/comment/1640304551938#:~:text=fontxiugaidark.rar)                    | *Unknown*         |
-| **[Morganwan90](https://github.com/Morganwan90)**   | [Morganwan90/Darkblue-siyuan-theme](https://github.com/Morganwan90/Darkblue-siyuan-theme)                                                             | *Unknown*         |
-| **[leolee9086](https://github.com/leolee9086)**     | [leolee9086/cc-baselib](https://github.com/leolee9086/cc-baselib)                                                                                     | *Unknown*         |
-| **[UserZYF](https://github.com/UserZYF)**           | [UserZYF/zhang-light](https://github.com/UserZYF/zhang-light)                                                                                         | *Unknown*         |
-| **[langzhou](https://github.com/langzhou)**         | [langzhou/siyuan-note](https://github.com/langzhou/siyuan-note)                                                                                       | *Unknown*         |
-| **[royc01](https://github.com/royc01)**             | [royc01/notion-theme](https://github.com/royc01/notion-theme)                                                                                         | *Unknown*         |
+| 作者 \| Author                                      | 项目 \| Project                                                                                                                                       | 许可证 \| License                                                                 |
+| :-------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------- |
+| **[Achuan-2](https://github.com/Achuan-2)**         | [Achuan-2/siyuan-themes-tsundoku-dark: a editor theme for siyuan note](https://github.com/Achuan-2/siyuan-themes-tsundoku-dark)                       | *Unknown*                                                                         |
+| **[roeseth](https://github.com/roeseth)**           | [roeseth/Siyuan-Golden-Topaz-Refined: A ported Golen Topaz theme for Siyuan note with tweaks](https://github.com/roeseth/Siyuan-Golden-Topaz-Refined) | *Unknown*                                                                         |
+| **[Morganwan90](https://github.com/Morganwan90)**   | [Morganwan90/Lightblue-siyuan-theme](https://github.com/Morganwan90/Lightblue-siyuan-theme)                                                           | *Unknown*                                                                         |
+| **[Crowds21](https://github.com/Crowds21)**         | [Crowds21/Cliff-Light](https://github.com/Crowds21/Cliff-Light)                                                                                       | *Unknown*                                                                         |
+| **[Zhangwuji](https://ld246.com/member/Zhangwuji)** | [希望能够增加根据大纲生成思维导图的功能](https://ld246.com/article/1640259008838/comment/1640304551938#:~:text=fontxiugaidark.rar)                    | *Unknown*                                                                         |
+| **[Morganwan90](https://github.com/Morganwan90)**   | [Morganwan90/Darkblue-siyuan-theme](https://github.com/Morganwan90/Darkblue-siyuan-theme)                                                             | *Unknown*                                                                         |
+| **[leolee9086](https://github.com/leolee9086)**     | [leolee9086/cc-baselib](https://github.com/leolee9086/cc-baselib)                                                                                     | *Unknown*                                                                         |
+| **[UserZYF](https://github.com/UserZYF)**           | [UserZYF/zhang-light](https://github.com/UserZYF/zhang-light)                                                                                         | *Unknown*                                                                         |
+| **[langzhou](https://github.com/langzhou)**         | [langzhou/siyuan-note](https://github.com/langzhou/siyuan-note)                                                                                       | *Unknown*                                                                         |
+| **[royc01](https://github.com/royc01)**             | [royc01/notion-theme](https://github.com/royc01/notion-theme)                                                                                         | *Unknown*                                                                         |
+| **[Microsoft](https://github.com/microsoft)**       | [microsoft/monaco-editor](https://github.com/microsoft/monaco-editor)                                                                                 | *[MIT License](https://github.com/microsoft/monaco-editor/blob/main/LICENSE.txt)* |
 
 注: 排序不分先后  
 ps: Sort in no particular order.

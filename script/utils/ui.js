@@ -127,33 +127,35 @@ function toolbarItemChangeStatu(
     listener = null,
 ) {
     node = node || document.getElementById(id);
-    switch (mode.toUpperCase()) {
-        case 'SVG':
-            if (svgClassIndex > 0) {
+    if (node) {
+        switch (mode.toUpperCase()) {
+            case 'SVG':
+                if (svgClassIndex > 0) {
+                    if (enable) {
+                        node.firstElementChild.classList.add(svgClassList[svgClassIndex]);
+                    }
+                    else {
+                        node.firstElementChild.classList.remove(svgClassList[svgClassIndex]);
+                    }
+                    if (custom.theme.toolbar[id]) {
+                        custom.theme.toolbar[id].state = enable;
+                        setTimeout(async () => saveCustomFile(custom), 0);
+                    }
+                }
+                break;
+            case 'DIV':
+            case 'BUTTON':
+            default:
                 if (enable) {
-                    node.firstElementChild.classList.add(svgClassList[svgClassIndex]);
+                    node.classList.remove('toolbar__item--disabled');
+                    listener && listener();
                 }
                 else {
-                    node.firstElementChild.classList.remove(svgClassList[svgClassIndex]);
+                    node.classList.add('toolbar__item--disabled');
+                    recreateNode(node);
                 }
-                if (custom.theme.toolbar[id]) {
-                    custom.theme.toolbar[id].state = enable;
-                    setTimeout(async () => saveCustomFile(custom), 0);
-                }
-            }
-            break;
-        case 'DIV':
-        case 'BUTTON':
-        default:
-            if (enable) {
-                node.classList.remove('toolbar__item--disabled');
-                listener && listener();
-            }
-            else {
-                node.classList.add('toolbar__item--disabled');
-                recreateNode(node);
-            }
-            break;
+                break;
+        }
     }
 }
 

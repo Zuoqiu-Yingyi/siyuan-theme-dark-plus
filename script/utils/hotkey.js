@@ -6,12 +6,13 @@ export {
     printHotKey, // 打印快捷键
 };
 
+/* 不支持 WinCtrl + 非 CtrlCmd 组合键 */
 function isKey(event, key) {
     return (event.key === key.key
         && event.altKey === key.Alt
         && event.shiftKey === key.Shift
         && (event.ctrlKey || event.metaKey) === key.CtrlCmd
-        && (event.ctrlKey || event.metaKey) === key.WinCtrl
+        && (event.ctrlKey && event.metaKey) === key.WinCtrl
     )
 }
 
@@ -20,7 +21,7 @@ function isEvent(event, key) {
         && event.altKey === key.Alt
         && event.shiftKey === key.Shift
         && (event.ctrlKey || event.metaKey) === key.CtrlCmd
-        && (event.ctrlKey || event.metaKey) === key.WinCtrl
+        && (event.ctrlKey && event.metaKey) === key.WinCtrl
     )
 }
 
@@ -29,7 +30,7 @@ function isButton(event, key) {
         && event.altKey === key.Alt
         && event.shiftKey === key.Shift
         && (event.ctrlKey || event.metaKey) === key.CtrlCmd
-        && (event.ctrlKey || event.metaKey) === key.WinCtrl
+        && (event.ctrlKey && event.metaKey) === key.WinCtrl
     )
 }
 

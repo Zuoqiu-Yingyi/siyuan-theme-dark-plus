@@ -9,6 +9,7 @@ export {
     exportMdContent,
     getFile,
     getAsset,
+    getLocalFile,
     putFile,
 };
 
@@ -73,6 +74,17 @@ async function getFile(path, token = config.token) {
             path: path,
         }),
     });
+    if (response.status === 200)
+        return response;
+    else return null;
+}
+
+async function getLocalFile(path) {
+    const response = await fetch(
+        path.startsWith('file://') ? path : `file://${path}`,
+        {
+            method: "GET",
+        });
     if (response.status === 200)
         return response;
     else return null;

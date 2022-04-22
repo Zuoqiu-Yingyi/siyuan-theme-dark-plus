@@ -1,5 +1,7 @@
 import { config } from './js/config.js';
-import { Iterator } from './js/utils.js';
+import {
+    Iterator,
+} from './js/utils.js';
 import {
     queryBlock,
     queryAsset,
@@ -8,6 +10,7 @@ import {
     updateBlock,
     getFile,
     putFile,
+    getAsset,
 } from './js/api.js';
 
 async function init(params) {
@@ -18,9 +21,27 @@ async function init(params) {
     let n; // 笔记本
     let t; // 临时
     switch (params.mode) {
-        case 'assets':
-            // TODO 完整 URL 资源
-            if (params.url) return;
+        case 'web': // 网络文件
+            // TODO 网络文件
+            params.mode = 'none';
+            return;
+        case 'assets': // 资源文件
+            switch (true) {
+                case params.path.startsWith('http://'):
+                case params.path.startsWith('https://'):
+                    r = await getAsset(params.path);
+                    if (r) {
+                        params.mode = 'web';
+                        params.value = await r.text();
+                    }
+                    else {
+                        params.mode = 'none';
+                        return;
+                    }
+                    return;
+                default:
+                    break;
+            }
 
             switch (true) {
                 case params.path.startsWith('assets/'):
@@ -75,17 +96,35 @@ async function init(params) {
                     params.path = `/temp${params.path}`;
                     break;
             }
-            params.path.replaceAll('\\', '/').replaceAll('//', '/');
-            r = await getFile(params.path);
+        case 'localfile': // 本地文件
+            params.path.replaceAll('\\', '/').replaceAll('//', '/'); // 相对于思源工作空间的路径
+            // 完整文件路径
+            if (!params.url) params.url = `${params.workspace}${params.path}`.replaceAll('\\', '/').replaceAll('//', '/');
+            r = await getFile(params.path); // 获取文件内容
             if (r) {
-                params.mode = 'assets';
-                params.value = await r.text();
-                params.language = params.path.substring(params.path.lastIndexOf('.') + 1);
+                params.value = await r.text(); // 文件内容
+                let filename = params.url.split('/').pop(); // 文件名
+                let ext = filename.lastIndexOf('.') > 0 ? filename.split('.').pop() : null; // 文件扩展名
+                if (params.language === 'default' && ext) params.language = ext; // 如果没有设置语言, 则根据文件扩展名设置语言
+                params.breadcrumb.set(
+                    `Ⓕ${config.MAP.LABELS.mode[params.mode][params.lang] || config.MAP.LABELS.mode[params.mode].default}`,
+                    `🄿${params.url}`.replaceAll('/', ' > '),
+                    filename,
+                    params.url,
+                    `file://${params.url}`,
+                    `file://${params.url}`,
+                ); // 设置面包屑
             }
-            else return;
+            else {
+                params.mode = 'none';
+                return;
+            };
             break;
-        case 'block':
-            if (!config.regs.id.test(window.editor.params.id)) return;
+        case 'block': // 块
+            if (!config.regs.id.test(window.editor.params.id)) {
+                params.mode = 'none';
+                return;
+            }
 
             // 获取块
             r = await queryBlock(params.id);
@@ -93,14 +132,22 @@ async function init(params) {
             if (!(r
                 && r.code === 0
                 && r.data.length === 1
-            )) return; // 没有查询到块
+            )) {
+                // 没有查询到块
+                params.mode = 'none';
+                return;
+            }
             b = r.data[0];
 
             // 获取笔记本
             r = await getNotebookConf(b.box);
             if (!(r
                 && r.code === 0
-            )) return; // 没有查询到笔记本
+            )) {
+                // 没有查询到笔记本
+                params.mode = 'none';
+                return;
+            }
             n = r.data;
             switch (b.type) {
                 case 'html':
@@ -119,10 +166,19 @@ async function init(params) {
                         params.value = t[1];
                         params.language = 'sql';
                     }
+                    else {
+                        params.mode = 'block';
+                        params.value = b.markdown;
+                        params.language = 'markdown';
+                        params.tabSize = 2;
+                    }
                     break;
                 case 'd': // 文档块
                     r = await exportMdContent(b.id);
-                    if (!(r && r.code === 0)) return;
+                    if (!(r && r.code === 0)) {
+                        params.mode = 'none';
+                        return;
+                    }
                     else {
                         params.mode = 'doc';
                         params.value = r.data.content;
@@ -136,6 +192,12 @@ async function init(params) {
                         params.mode = 'code';
                         params.value = b.content;
                         params.language = t[1];
+                    }
+                    else {
+                        params.mode = 'block';
+                        params.value = b.markdown;
+                        params.language = 'markdown';
+                        params.tabSize = 2;
                     }
                     break;
                 default:
@@ -155,7 +217,7 @@ async function init(params) {
                 `${n.name}${b.hpath}`,
                 `siyuan://blocks/${b.id}`,
                 `siyuan://blocks/${b.root_id}`,
-            );
+            ); // 设置面包屑
             break;
         case 'none':
         default:
@@ -190,9 +252,9 @@ window.onload = () => {
             id: window.editor.url.searchParams.get('id')
                 || null, // 块 ID
             url: decodeURI(window.editor.url.searchParams.get('url') || '')
-                || null, // 资源完整 URL
+                || null, // 文件资源定位
             path: decodeURI(window.editor.url.searchParams.get('path') || '')
-                || null, // 资源路径
+                || null, // 文件读写路径
             /**
              * 模式
              * 'none': 白板
@@ -217,8 +279,10 @@ window.onload = () => {
                 || 'default',
             tabSize: parseInt(window.editor.url.searchParams.get('tabSize'))
                 || 4,
+            workspace: window.editor.url.searchParams.get('workspace')
+                || '',
             // REF [JS Unicode编码和解码（6种方法）](http://c.biancheng.net/view/5602.html)
-            body: JSON.parse(decodeURI(window.editor.url.hash.substr(1)) || null),
+            body: JSON.parse(decodeURI(window.editor.url.hash.substring(1)) || null),
         };
         init(window.editor.params).then(() => {
             window.editor.container = document.getElementById('container');
@@ -284,7 +348,14 @@ window.onload = () => {
                     contextMenuGroupId: '9_file', // 所属菜单的分组
                     run: () => {
                         switch (window.editor.params.mode) {
-                            case 'file':
+                            case 'web':
+                                // TODO
+                                break;
+                            case 'localfile':
+                                putFile(
+                                    window.editor.params.path,
+                                    window.editor.editor.getValue(),
+                                ).then(() => config.command.SAVED());
                                 break;
                             case 'assets':
                                 putFile(
