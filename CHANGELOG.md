@@ -14,6 +14,7 @@
 - 使用 <kbd>Alt + 鼠标中键</kbd> 单击块或资源文件链接, 在新窗口使用 Monaco 编辑器打开 | Use the shortcut key <kbd>Alt + Mouse Middle Button</kbd> to open the block or asset file in a new window using Monaco Editor.
 - 增加 Monaco 编辑器读写本地文件功能 | Add the function to read and write local files using Monaco Editor.
 - 增加 Monaco 编辑器另存为本地文件功能 | Add the function to save as local files using Monaco Editor.
+- 修复 Monaco 编辑器字号设置失效问题 | Fix the issue that Monaco Editor font size setting is invalid.
 
 ## v0.8.2/2022-04-20
 
