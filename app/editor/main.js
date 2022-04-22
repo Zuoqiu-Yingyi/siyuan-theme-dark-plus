@@ -1,6 +1,8 @@
 import { config } from './js/config.js';
 import {
     Iterator,
+    pathParse,
+    saveAsFile,
 } from './js/utils.js';
 import {
     queryBlock,
@@ -14,35 +16,15 @@ import {
 } from './js/api.js';
 
 async function init(params) {
-    document.body.style.fontFamily = config.UI.fontFamily.join(',');
+    // 设置界面字体
+    params.fontFamily = document.body.style.fontFamily = params.fontFamily.concat(config.UI.fontFamily).join(',');
 
     let r; // 响应
     let b; // 块
     let n; // 笔记本
     let t; // 临时
     switch (params.mode) {
-        case 'web': // 网络文件
-            // TODO 网络文件
-            params.mode = 'none';
-            return;
         case 'assets': // 资源文件
-            switch (true) {
-                case params.path.startsWith('http://'):
-                case params.path.startsWith('https://'):
-                    r = await getAsset(params.path);
-                    if (r) {
-                        params.mode = 'web';
-                        params.value = await r.text();
-                    }
-                    else {
-                        params.mode = 'none';
-                        return;
-                    }
-                    return;
-                default:
-                    break;
-            }
-
             switch (true) {
                 case params.path.startsWith('assets/'):
                     r = await queryAsset(params.path);
@@ -95,7 +77,41 @@ async function init(params) {
                 case params.path.startsWith('/export/'):
                     params.path = `/temp${params.path}`;
                     break;
+                case params.path.startsWith('http://'):
+                case params.path.startsWith('https://'):
+                    // 如果是网络资源，则直接获取资源文件
+                    r = await fetch(params.path);
+                    if (r) {
+                        let url = new URL(params.path);
+                        params.url = url.href;
+                        params.mode = 'web';
+                        params.value = await r.text();
+
+                        let { dir, filename, ext } = pathParse(url.pathname); // 获得文件名和扩展名
+                        params.dir = dir;
+                        params.filename = filename;
+                        params.ext = ext;
+
+                        if (params.language === 'default' && ext) params.language = ext; // 如果没有设置语言, 则根据文件扩展名设置语言
+                        params.breadcrumb.set(
+                            `Ⓕ${config.MAP.LABELS.mode[params.mode][params.lang] || config.MAP.LABELS.mode[params.mode].default}`,
+                            `🄿${url.host}${url.pathname}`.replaceAll('/', ' > '),
+                            filename,
+                            params.url,
+                            params.url,
+                            params.url,
+                        ); // 设置面包屑
+                        return;
+                    }
+                    else {
+                        params.mode = 'none';
+                        return;
+                    }
+                default:
+                    params.mode = 'none';
+                    return;
             }
+
         case 'localfile': // 本地文件
             params.path.replaceAll('\\', '/').replaceAll('//', '/'); // 相对于思源工作空间的路径
             // 完整文件路径
@@ -103,8 +119,10 @@ async function init(params) {
             r = await getFile(params.path); // 获取文件内容
             if (r) {
                 params.value = await r.text(); // 文件内容
-                let filename = params.url.split('/').pop(); // 文件名
-                let ext = filename.lastIndexOf('.') > 0 ? filename.split('.').pop() : null; // 文件扩展名
+                let { dir, filename, ext } = pathParse(params.url); // 获得文件名和扩展名
+                params.dir = dir;
+                params.filename = filename;
+                params.ext = ext;
                 if (params.language === 'default' && ext) params.language = ext; // 如果没有设置语言, 则根据文件扩展名设置语言
                 params.breadcrumb.set(
                     `Ⓕ${config.MAP.LABELS.mode[params.mode][params.lang] || config.MAP.LABELS.mode[params.mode].default}`,
@@ -112,7 +130,7 @@ async function init(params) {
                     filename,
                     params.url,
                     `file://${params.url}`,
-                    `file://${params.url}`,
+                    `file://${params.dir}`,
                 ); // 设置面包屑
             }
             else {
@@ -184,6 +202,7 @@ async function init(params) {
                         params.value = r.data.content;
                         params.language = 'markdown';
                         params.tabSize = 2;
+                        params.filename = `${b.content}.md`;
                     }
                     break;
                 case 'c': // 代码块
@@ -229,18 +248,24 @@ window.onload = () => {
     try {
         window.editor = {};
         window.editor.url = new URL(window.location.href);
+        // console.log(window.editor.url);
         window.editor.picker = document.getElementById('picker');
+        window.editor.changed = false; // 是否有改动
         window.editor.params = {
             breadcrumb: {
                 type: document.getElementById('type'),
+                typeText: null,
                 crumb: document.getElementById('crumb'),
                 set: (typeText, hpathText, typeTitle, hpathTitle, blockHref, docHref) => {
-                    window.editor.params.breadcrumb.type.href = blockHref;
-                    window.editor.params.breadcrumb.type.innerText = typeText;
-                    window.editor.params.breadcrumb.type.setAttribute('title', typeTitle);
-                    window.editor.params.breadcrumb.crumb.href = docHref;
-                    window.editor.params.breadcrumb.crumb.innerText = hpathText;
-                    window.editor.params.breadcrumb.crumb.setAttribute('title', hpathTitle);
+                    if (typeText) window.editor.params.breadcrumb.type.innerText = typeText;
+                    if (typeText) window.editor.params.breadcrumb.typeText = typeText;
+                    if (hpathText) window.editor.params.breadcrumb.crumb.innerText = hpathText;
+
+                    if (typeTitle) window.editor.params.breadcrumb.type.setAttribute('title', typeTitle);
+                    if (hpathTitle) window.editor.params.breadcrumb.crumb.setAttribute('title', hpathTitle);
+
+                    if (blockHref) window.editor.params.breadcrumb.type.href = blockHref;
+                    if (docHref) window.editor.params.breadcrumb.crumb.href = docHref;
                 },
             },
             picker: {
@@ -259,8 +284,9 @@ window.onload = () => {
              * 模式
              * 'none': 白板
              * 'assets': 资源
+             * 'assets': 资源
              *     -> 'assets': 资源
-             *     -> 'file': 文件
+             *     -> 'web': web 资源
              * 'block': 块
              *     -> 'block': 普通块
              *     -> 'query': 嵌入块
@@ -281,6 +307,9 @@ window.onload = () => {
                 || 4,
             workspace: window.editor.url.searchParams.get('workspace')
                 || '',
+            fontFamily: decodeURI(window.editor.url.searchParams.get('fontFamily') || '')
+                ? [decodeURI(window.editor.url.searchParams.get('fontFamily') || '')]
+                : [], // 字体
             // REF [JS Unicode编码和解码（6种方法）](http://c.biancheng.net/view/5602.html)
             body: JSON.parse(decodeURI(window.editor.url.hash.substring(1)) || null),
         };
@@ -288,6 +317,7 @@ window.onload = () => {
             window.editor.container = document.getElementById('container');
             window.editor.picker = document.getElementById('picker');
 
+            // REF [Monaco Editor 入门指南 - 知乎](https://zhuanlan.zhihu.com/p/88828576)
             require.config({
                 paths: {
                     vs: '/appearance/themes/Dark+/app/editor/vs'
@@ -328,12 +358,76 @@ window.onload = () => {
                     ),
                 );
 
+                async function save() {
+                    // 保存文件
+                    switch (window.editor.params.mode) {
+                        case 'web':
+                            await saveAsFile(window.editor.editor.getValue(), window.editor.params.filename || undefined);
+                            break;
+                        case 'localfile':
+                            await putFile(
+                                window.editor.params.path,
+                                window.editor.editor.getValue(),
+                            ).then(() => config.command.SAVED());
+                            break;
+                        case 'assets':
+                            await putFile(
+                                window.editor.params.path,
+                                window.editor.editor.getValue(),
+                            );
+                            break;
+                        case 'query':
+                            await updateBlock(
+                                window.editor.params.id,
+                                `\{\{${window.editor.editor.getValue().trim()}\}\}\n${window.editor.params.block.ial}`,
+                            );
+                            break;
+                        case 'code':
+                            await updateBlock(
+                                window.editor.params.id,
+                                `\`\`\`${window.editor.params.language}\n${window.editor.editor.getValue()}\n\`\`\`\n${window.editor.params.block.ial}`,
+                            );
+                            break;
+                        case 'doc':
+                            await updateBlock(
+                                window.editor.params.id,
+                                window.editor.editor.getValue(),
+                            );
+                            break;
+                        case 'html':
+                        case 'block':
+                            await updateBlock(
+                                window.editor.params.id,
+                                `${window.editor.editor.getValue().trim()}\n${window.editor.params.block.ial}`,
+                            );
+                            break;
+                        case 'none':
+                        default:
+                            break;
+                    }
+                    window.editor.changed = false; // 更改标记
+                    window.editor.params.breadcrumb.type.innerText = window.editor.params.breadcrumb.typeText;
+                }
+
                 /* 设置语言标签 */
                 window.editor.picker.onchange = () => {
                     // console.log(window.editor.picker.value);
                     // window.editor.params.lang = window.editor.picker.value;
                     monaco.editor.setModelLanguage(window.editor.editor.getModel(), window.editor.picker.value);
                 };
+
+                /**
+                 * 文件是否发生更改
+                 * REF [onDidChangeModelContent](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onDidChangeModelContent)
+                 */
+                window.editor.editor.onDidChangeModelContent(() => {
+                    if (window.editor.changed) return; // 之前已经发生更改
+                    else {
+                        // 之前没有发生更改
+                        window.editor.changed = true;
+                        window.editor.params.breadcrumb.type.innerText = `*${window.editor.params.breadcrumb.typeText}`;
+                    }
+                });
 
                 /* 👇👇 右键菜单项 👇👇 */
                 // REF [IActionDescriptor | Monaco Editor API](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IActionDescriptor.html)
@@ -347,51 +441,19 @@ window.onload = () => {
                     // keybindingContext: 'Ctrl+S', // 绑定快捷键上下文
                     contextMenuGroupId: '9_file', // 所属菜单的分组
                     run: () => {
-                        switch (window.editor.params.mode) {
-                            case 'web':
-                                // TODO
-                                break;
-                            case 'localfile':
-                                putFile(
-                                    window.editor.params.path,
-                                    window.editor.editor.getValue(),
-                                ).then(() => config.command.SAVED());
-                                break;
-                            case 'assets':
-                                putFile(
-                                    window.editor.params.path,
-                                    window.editor.editor.getValue(),
-                                );
-                                break;
-                            case 'query':
-                                updateBlock(
-                                    window.editor.params.id,
-                                    `\{\{${window.editor.editor.getValue().trim()}\}\}\n${window.editor.params.block.ial}`,
-                                );
-                                break;
-                            case 'code':
-                                updateBlock(
-                                    window.editor.params.id,
-                                    `\`\`\`${window.editor.params.language}\n${window.editor.editor.getValue()}\n\`\`\`\n${window.editor.params.block.ial}`,
-                                );
-                                break;
-                            case 'doc':
-                                updateBlock(
-                                    window.editor.params.id,
-                                    window.editor.editor.getValue(),
-                                );
-                                break;
-                            case 'html':
-                            case 'block':
-                                updateBlock(
-                                    window.editor.params.id,
-                                    `${window.editor.editor.getValue().trim()}\n${window.editor.params.block.ial}`,
-                                );
-                                break;
-                            case 'none':
-                            default:
-                                break;
-                        }
+                        setTimeout(save, 0);
+                    }, // 点击后执行的操作
+                });
+
+                window.editor.editor.addAction({ // 文件另存为
+                    id: 'D68588DD-8D0C-4435-8DC2-145B0F464FF8', // 菜单项 id
+                    label: config.MAP.LABELS.saveAs[window.editor.params.lang]
+                        || config.MAP.LABELS.saveAs.default, // 菜单项名称
+                    keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.KeyS], // 绑定快捷键
+                    // keybindingContext: 'Ctrl+Shift+S', // 绑定快捷键上下文
+                    contextMenuGroupId: '9_file', // 所属菜单的分组
+                    run: () => {
+                        saveAsFile(window.editor.editor.getValue(), window.editor.params.filename || undefined);
                     }, // 点击后执行的操作
                 });
 

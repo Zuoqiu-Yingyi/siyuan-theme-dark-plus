@@ -51,11 +51,17 @@ export const config = {
     },
     MAP: { // 字段映射
         LABELS: { // 标签
-            save: { zh_CN: '保存', default: 'Save', },
-            wrap: { zh_CN: '切换自动换行', default: 'Toggle Word Wrap', },
+            save: { zh_CN: '保存', default: 'Save' },
+            saveAs: { zh_CN: '另存为', default: 'Save AS' },
+            wrap: { zh_CN: '切换自动换行', default: 'Toggle Word Wrap' },
+            unSaved: {
+                zh_CN: "是否不保存更改？\n如果不保存，你的更改将丢失。",
+                default: "Do you not save your changes?\nIf you don't save, your changes will be lost"
+            },
             mode: {
                 localfile: { zh_CN: '本地文件', default: 'Local File' },
                 assets: { zh_CN: '资源文件', default: 'Asset File' },
+                web: { zh_CN: '网络文件', default: 'Web File' },
             },
 
             type: {

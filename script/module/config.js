@@ -410,6 +410,13 @@ export var config = {
                     fullscreen: false, // 是否全屏显示
                     alwaysOnTop: true, // 是否置顶显示
                     autoHideMenuBar: true, // 是否隐藏菜单栏(使用 Alt 显示)
+                    webPreferences: {
+                        webSecurity: false, // 是否启用 Web 安全
+                        nodeIntegration: true, // 是否启用 Node.js 内置模块
+                        // defaultFontFamily: { // 默认字体
+                        //     standard: window.siyuan.config.editor.fontFamily,
+                        // },
+                    },
                 },
                 panel: {
                     enable: true, // 打开一个新窗口

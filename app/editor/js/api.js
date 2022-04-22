@@ -14,6 +14,7 @@ export {
 };
 
 import { config } from './config.js';
+// import { pathParse } from './utils.js';
 
 async function request(url, data, token = config.token) {
     return fetch(url, {
