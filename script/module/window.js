@@ -180,6 +180,7 @@ setTimeout(async () => {
                                         },
                                         async href => {
                                             if (href.startsWith('file:')) {
+                                                // 是本地文件
                                                 let url = new URL(href.replaceAll('\\', '/'));
                                                 let path = config.theme.regs.winpath.test(url.pathname)
                                                     ? url.pathname.substring(1)
@@ -199,8 +200,8 @@ setTimeout(async () => {
                                                 //     || config.theme.window.open.link.editor.labels.open.other,
                                                 // );
                                                 if (stats) {
-                                                    // 通过临时文件传参
-                                                    console.log(path);
+                                                    // 本地文件存在
+                                                    // console.log(path);
                                                     let filename = path.split('/').pop(); // 文件名
                                                     let ext = filename.lastIndexOf('.') > 0 ? filename.split('.').pop() : null; // 文件扩展名
 
@@ -209,9 +210,13 @@ setTimeout(async () => {
                                                         : window.Lute.NewNodeID();
                                                     // 临时文件绝对路径
                                                     let temp_file_path_absolute = `${config.theme.window.open.link.editor.temp.path.absolute}${filename}`;
+                                                    // console.log(temp_file_path_absolute);
+                                                    // 临时文件相对路径(相对于思源工作空间根目录)
                                                     let temp_file_path_relative = `${config.theme.window.open.link.editor.temp.path.relative}${filename}`;
-                                                    console.log(temp_file_path_absolute);
+                                                    // console.log(temp_file_path_relative);
+                                                    // 复制本地文件至临时目录
                                                     await copyFile(path, temp_file_path_absolute).then(() => {
+                                                        // 复制成功
                                                         window.theme.win = window.theme.openNewWindow(
                                                             'browser',
                                                             undefined,
@@ -222,6 +227,7 @@ setTimeout(async () => {
                                                                 lang: window.theme.languageMode,
                                                                 theme: window.siyuan.config.appearance.mode,
                                                                 tabSize: window.siyuan.config.editor.codeTabSpaces,
+                                                                fontFamily: encodeURI(window.siyuan.config.editor.fontFamily),
                                                                 workspace: window.siyuan.config.system.workspaceDir,
                                                             },
                                                             config.theme.window.open.windowParams,
@@ -231,7 +237,7 @@ setTimeout(async () => {
                                                                 // 根据子窗口的控制台输出内容保存临时文件
                                                                 // console.log(win, event, level, message, line, sourceId);
                                                                 if (level === 2 && message === 'SAVED') {
-                                                                    // 临时文件已保存, 需要复制临时文件
+                                                                    // 临时文件已保存, 需要复制临时文件至原位置
                                                                     await copyFile(temp_file_path_absolute, path);
                                                                 }
                                                             },
@@ -247,7 +253,7 @@ setTimeout(async () => {
                                                 return;
                                             }
                                             else {
-                                                // 思源资源文件链接
+                                                // 思源资源文件链接或网络文件链接
                                                 window.theme.openNewWindow(
                                                     'browser',
                                                     undefined,
@@ -257,6 +263,7 @@ setTimeout(async () => {
                                                         lang: window.theme.languageMode,
                                                         theme: window.siyuan.config.appearance.mode,
                                                         tabSize: window.siyuan.config.editor.codeTabSpaces,
+                                                        fontFamily: encodeURI(window.siyuan.config.editor.fontFamily),
                                                         workspace: window.siyuan.config.system.workspaceDir,
                                                     },
                                                     config.theme.window.open.windowParams,
