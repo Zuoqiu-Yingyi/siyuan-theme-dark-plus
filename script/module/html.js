@@ -37,6 +37,7 @@ window.theme.This = function (customID) {
  * @windowParams (object): 窗体参数
  * @pathname (string): URL 路径名
  * @hash (string): URL hash
+ * @consoleMessageCallback (function): 子窗口控制台输出回调
  * @closeCallback (function): 关闭窗口时的回调函数
  * @return (BrowserWindow): 窗口对象
  */
@@ -48,10 +49,11 @@ window.theme.openNewWindow = function (
         width: 720,
         height: 480,
         frame: true, // 是否显示边缘框
-        fullscreen: false // 是否全屏显示
+        fullscreen: false, // 是否全屏显示
     },
     pathname = null,
     hash = null,
+    consoleMessageCallback = null,
     closeCallback = null,
 ) {
     try {
@@ -64,6 +66,11 @@ window.theme.openNewWindow = function (
                 case 'desktop':
                 case 'mobile':
                     url.pathname = `/stage/build/${mode.toLowerCase()}/`;
+                    break;
+                case 'localfile':
+                    url.pathname = `/${url.pathname}/conf/${pathname}index.html`.replaceAll('//', '/');
+                    // url.protocol = 'file:';
+                    pathname = null;
                     break;
                 default:
                     break;
@@ -80,22 +87,31 @@ window.theme.openNewWindow = function (
             const { BrowserWindow } = require('@electron/remote');
             // 新建窗口(Electron 环境)
             newWin = new BrowserWindow(windowParams)
-            
+
             console.log(url.href);
+            // if (url.protocol === 'file:') newWin.loadFile(url.href.substr(8));
+            // else newWin.loadURL(url.href);
             newWin.loadURL(url.href);
-            newWin.on('close', () => {
+            // REF [Event: 'console-message'​](https://www.electronjs.org/docs/latest/api/web-contents#event-console-message)
+            newWin.webContents.on('console-message', (event, level, message, line, sourceId) => {
+                consoleMessageCallback && setTimeout(async () => consoleMessageCallback(newWin, event, level, message, line, sourceId));
+            });
+            newWin.on('closed', () => {
+                closeCallback && setTimeout(async () => closeCallback(newWin), 0);
                 newWin = null;
-                closeCallback && closeCallback();
             })
             return newWin;
         }
-        catch (e) {
+        catch (err) {
+            console.warn(err);
             // 新建标签页(Web 环境)
-            window.open(url.href, "_blank");
+            // window.open(url.href, "_blank");
+            window.open(url.href, "popup");
             return null;
         }
     }
-    catch (e) {
+    catch (err) {
+        console.error(err);
         return null;
     }
 

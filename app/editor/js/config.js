@@ -12,6 +12,11 @@ export const config = {
         id: /^\d{14}\-[0-9a-z]{7}$/, // 块 ID 正则表达式
         query: /^\s*\{\{(.*)\}\}\s*$/, // 嵌入块正则表达式
         code: /^\s*\`{3,}\s*(\w*)\s*\n/, // 代码块正则表达式
+        file: /^file:\/*(.*)$/, // 文件路径正则表达式
+    },
+    command: {
+        // 命令
+        SAVED: () => console.warn('SAVED'),
     },
     IStandaloneEditorConstructionOptions: {
         // autoClosingBrackets: 'languageDefined', // 是否自动添加后括号(包括中括号)
@@ -48,6 +53,11 @@ export const config = {
         LABELS: { // 标签
             save: { zh_CN: '保存', default: 'Save', },
             wrap: { zh_CN: '切换自动换行', default: 'Toggle Word Wrap', },
+            mode: {
+                localfile: { zh_CN: '本地文件', default: 'Local File' },
+                assets: { zh_CN: '资源文件', default: 'Asset File' },
+            },
+
             type: {
                 d: { zh_CN: '文档块', default: 'Document' },
                 h: { zh_CN: '标题块', default: 'Heading' },
@@ -67,7 +77,6 @@ export const config = {
                 iframe: { zh_CN: 'iframe', default: 'Iframe' },
                 query_embed: { zh_CN: '嵌入块', default: 'Query' },
 
-                assets: { zh_CN: '资源文件', default: 'Asset' },
             },
         },
         LANGS: {

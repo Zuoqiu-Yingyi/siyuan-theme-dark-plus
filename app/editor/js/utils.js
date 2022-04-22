@@ -1,6 +1,7 @@
 export {
     Iterator,
 };
+import { getLocalFile } from './api.js';
 
 function* Iterator(items, loop = false) {
     // REF [ES6中的迭代器(Iterator)和生成器(Generator) - 小火柴的蓝色理想 - 博客园](https://www.cnblogs.com/xiaohuochai/p/7253466.html)

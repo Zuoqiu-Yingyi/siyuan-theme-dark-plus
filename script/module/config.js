@@ -19,6 +19,7 @@ export var config = {
             time: /^(\d+)(:[0-5]?[0-9]){0,2}(\.\d*)?$/, // 时间戳正则表达式
             id: /^\d{14}\-[0-9a-z]{7}$/, // 块 ID 正则表达式
             fontsize: /(?<=\.b3-typography|protyle-wysiwyg|protyle-title\s*\{\s*font-size\s*:\s*)(\d+)(?=px(?:\s+\!important)?(?:\s*;|\}))/,
+            winpath: /^\/\w\:\/.*$/, // Windows 路径正则表达式
         },
         goto: {
             enable: true, // 是否启用使用 URL 参数跳转指定块功能
@@ -478,6 +479,18 @@ export var config = {
                     },
                     editor: {
                         enable: true, // 使用编辑器打开
+                        labels: {
+                            openFile: { zh_CN: '打开文件', other: 'Open File', },
+                            open: { zh_CN: '打开', other: 'Open', },
+                        },
+                        temp: {
+                            // 临时文件
+                            path: {
+                                // 临时文件路径
+                                relative: '/temp/theme/', // 临时文件相对路径
+                                absolute: `${window.siyuan.config.system.workspaceDir}temp/theme/`.replaceAll('\\', '/').replaceAll('//', '/'), // 临时文件绝对路径
+                            },
+                        },
                     },
                 },
             },
