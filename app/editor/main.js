@@ -101,6 +101,9 @@ async function init(params) {
                             params.url,
                             params.url,
                         ); // 设置面包屑
+
+                        params.breadcrumb.type.download = filename; // 设置下载按钮
+                        params.breadcrumb.crumb.target = '_self'; // 在本窗口打开
                         return;
                     }
                     else {
