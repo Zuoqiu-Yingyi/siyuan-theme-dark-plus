@@ -1,5 +1,9 @@
 # 更改日志 | CHANGE LOG
 
+## v0.9.0/2022-04-23
+
+- [v0.8.2 <=> v0.9.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.8.2...v0.9.0)
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 列表表格视图与脑图视图内列表项中嵌入块保持纵向排列 | The embedded blocks whitch in list items in a table view or a mind-map view are arranged in portrait orientation.
 - 使用快捷键 <kbd>Ctrl/⌘ + 鼠标滚轮</kbd> 调整编辑区字体大小 | Use the shortcut keys <kbd>Ctrl/⌘ + Mouse Wheel</kbd> to adjust the edit area font size.
 - #10 修复批注功能块属性无法写入问题 | Fix the issue that the annotation block properties can't be written.
