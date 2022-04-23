@@ -496,8 +496,8 @@ export var config = {
                         index: '/appearance/themes/Dark+/app/editor/', // 编辑器路径
                         temp: {
                             // 临时文件路径
-                            relative: '/temp/theme/', // 临时文件相对路径
-                            absolute: `${window.siyuan.config.system.workspaceDir}temp/theme/`.replaceAll('\\', '/').replaceAll('//', '/'), // 临时文件绝对路径
+                            relative: '/temp/editor/', // 临时文件相对路径
+                            absolute: `${window.siyuan.config.system.workspaceDir}temp/editor/`.replaceAll('\\', '/').replaceAll('//', '/'), // 临时文件绝对路径
                         },
                     }
                 },
