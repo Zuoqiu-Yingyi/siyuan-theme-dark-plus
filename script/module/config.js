@@ -484,21 +484,22 @@ export var config = {
                     infocus: {
                         enable: true, // 聚焦
                     },
-                    editor: {
-                        enable: true, // 使用编辑器打开
-                        labels: {
-                            openFile: { zh_CN: '打开文件', other: 'Open File', },
-                            open: { zh_CN: '打开', other: 'Open', },
-                        },
-                        temp: {
-                            // 临时文件
-                            path: {
-                                // 临时文件路径
-                                relative: '/temp/theme/', // 临时文件相对路径
-                                absolute: `${window.siyuan.config.system.workspaceDir}temp/theme/`.replaceAll('\\', '/').replaceAll('//', '/'), // 临时文件绝对路径
-                            },
-                        },
+                },
+                editor: {
+                    enable: true, // 启用新窗口打开当编辑器
+                    labels: {
+                        openFile: { zh_CN: '打开文件', other: 'Open File', },
+                        open: { zh_CN: '打开', other: 'Open', },
                     },
+                    path: {
+                        // 路径
+                        index: '/appearance/themes/Dark+/app/editor/', // 编辑器路径
+                        temp: {
+                            // 临时文件路径
+                            relative: '/temp/theme/', // 临时文件相对路径
+                            absolute: `${window.siyuan.config.system.workspaceDir}temp/theme/`.replaceAll('\\', '/').replaceAll('//', '/'), // 临时文件绝对路径
+                        },
+                    }
                 },
             },
         },
@@ -662,7 +663,7 @@ export var config = {
                                 enable: true,
                                 type: null,
                                 mode: "button",
-                                icon: "#iconExport",
+                                icon: "#iconFocus",
                                 label: {
                                     zh_CN: "在新窗口打开并聚焦",
                                     other: "Open in a New Window and Focus",
@@ -676,6 +677,64 @@ export var config = {
                                             type: 'window-open',
                                             params: {
                                                 focus: true,
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeAudio: {
+                                        enable: true,
+                                    },
+                                    NodeBlockQueryEmbed: {
+                                        enable: true,
+                                    },
+                                    NodeCodeBlock: {
+                                        enable: true,
+                                    },
+                                    NodeHTMLBlock: {
+                                        enable: true,
+                                    },
+                                    NodeHeading: {
+                                        enable: true,
+                                    },
+                                    NodeIFrame: {
+                                        enable: true,
+                                    },
+                                    NodeMathBlock: {
+                                        enable: true,
+                                    },
+                                    NodeParagraph: {
+                                        enable: true,
+                                    },
+                                    NodeTable: {
+                                        enable: true,
+                                    },
+                                    NodeVideo: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "button",
+                                icon: "#iconCode",
+                                label: {
+                                    zh_CN: "在编辑器中打开",
+                                    other: "Open in the Editor",
+                                },
+                                accelerator: "",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'window-open-editor',
+                                            params: {
+                                                mode: 'block',
+                                                lang: (() => window.theme.languageMode)(),
+                                                // theme: window.siyuan.config.appearance.mode,
+                                                fontFamily: (() => encodeURI(window.siyuan.config.editor.fontFamily))(),
+                                                tabSize: (() => window.siyuan.config.editor.codeTabSpaces)(),
                                             },
                                         },
                                     ],
@@ -770,6 +829,60 @@ export var config = {
                                     },
                                 },
                                 mode: "separator",
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
+                                    NodeBlockQueryEmbed: {
+                                        enable: true,
+                                    },
+                                    NodeBlockquote: {
+                                        enable: true,
+                                    },
+                                    NodeList: {
+                                        enable: true,
+                                    },
+                                    NodeListItem: {
+                                        enable: true,
+                                    },
+                                    NodeSuperBlock: {
+                                        enable: true,
+                                    },
+                                    NodeHeading: {
+                                        enable: true,
+                                    },
+                                    NodeParagraph: {
+                                        enable: true,
+                                    },
+                                    NodeTable: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "button",
+                                icon: "#iconScrollWrapped",
+                                label: {
+                                    zh_CN: "显示标记文本",
+                                    other: "Display Marked Text",
+                                },
+                                accelerator: "mark: display",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-switch',
+                                            params: {
+                                                'custom-mark': [
+                                                    'display',
+                                                    null,
+                                                ],
+                                            },
+                                        },
+                                    ],
+                                },
                             },
                             {
                                 enable: true,
@@ -1567,14 +1680,14 @@ export var config = {
                             Alt: false,
                             button: 1, // 鼠标中键
                         },
-                        editor: {
-                            // 新窗口打开链接并聚焦(Shift + 鼠标中键)
-                            CtrlCmd: false,
-                            WinCtrl: false,
-                            Shift: false,
-                            Alt: true,
-                            button: 1, // 鼠标中键
-                        },
+                    },
+                    editor: {
+                        // 新窗口打开编辑器(Shift + 鼠标中键)
+                        CtrlCmd: false,
+                        WinCtrl: false,
+                        Shift: false,
+                        Alt: true,
+                        button: 1, // 鼠标中键
                     },
                 },
             },
