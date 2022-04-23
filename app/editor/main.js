@@ -441,6 +441,7 @@ window.onload = () => {
                 };
 
                 /* 👇👇 右键菜单项 👇👇 */
+                // REF [IActionDescriptor | Monaco Editor API](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IActionDescriptor.html)
 
                 let wrap_iter = Iterator(['on', 'off'], true);
                 window.editor.editor.addAction({ // 切换折行状态
@@ -448,30 +449,13 @@ window.onload = () => {
                     label: config.MAP.LABELS.wrap[window.editor.params.lang]
                         || config.MAP.LABELS.wrap.default, // 菜单项名称
                     keybindings: [monaco.KeyMod.Alt | monaco.KeyCode.KeyZ], // 绑定快捷键
-                    // keybindingContext: 'Alt+Z', // 绑定快捷键上下文
                     contextMenuGroupId: '2_view', // 所属菜单的分组
+                    contextMenuOrder: 1, // 菜单分组内排序
                     run: () => {
                         window.editor.editor.updateOptions({ wordWrap: wrap_iter.next().value });
                     }, // 点击后执行的操作
                 });
 
-                window.editor.editor.addAction({ // 复制当前窗口超链接
-                    id: 'CFA39E4D-535A-497A-955B-E5F66A8F27EA', // 菜单项 id
-                    label: config.MAP.LABELS.copyhref[window.editor.params.lang]
-                        || config.MAP.LABELS.copyhref.default, // 菜单项名称
-                    keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyMod.Alt | monaco.KeyCode.KeyC], // 绑定快捷键
-                    // keybindingContext: 'Ctrl+Alt+C', // 绑定快捷键上下文
-                    contextMenuGroupId: '3_window', // 所属菜单的分组
-                    run: () => {
-                        window.navigator.clipboard.writeText([
-                            window.location.pathname,
-                            window.location.search,
-                            window.location.hash,
-                        ].join(''));
-                    }, // 点击后执行的操作
-                });
-
-                // REF [IActionDescriptor | Monaco Editor API](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IActionDescriptor.html)
                 window.editor.editor.addAction({ // 保存
                     id: '18730D32-5451-4102-B299-BE281BA929B9', // 菜单项 id
                     label: config.MAP.LABELS.save[window.editor.params.lang]
@@ -479,8 +463,8 @@ window.onload = () => {
                     // REF [KeyMod | Monaco Editor API](https://microsoft.github.io/monaco-editor/api/classes/monaco.KeyMod.html)
                     // REF [KeyCode | Monaco Editor API](https://microsoft.github.io/monaco-editor/api/enums/monaco.KeyCode.html)
                     keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS], // 绑定快捷键
-                    // keybindingContext: 'Ctrl+S', // 绑定快捷键上下文
-                    contextMenuGroupId: '9_file', // 所属菜单的分组
+                    contextMenuGroupId: '3_file', // 所属菜单的分组
+                    contextMenuOrder: 1, // 菜单分组内排序
                     run: () => {
                         setTimeout(save, 0);
                     }, // 点击后执行的操作
@@ -491,10 +475,38 @@ window.onload = () => {
                     label: config.MAP.LABELS.saveAs[window.editor.params.lang]
                         || config.MAP.LABELS.saveAs.default, // 菜单项名称
                     keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.KeyS], // 绑定快捷键
-                    // keybindingContext: 'Ctrl+Shift+S', // 绑定快捷键上下文
-                    contextMenuGroupId: '9_file', // 所属菜单的分组
+                    contextMenuGroupId: '3_file', // 所属菜单的分组
+                    contextMenuOrder: 2, // 菜单分组内排序
                     run: () => {
                         saveAsFile(window.editor.editor.getValue(), window.editor.params.filename || undefined);
+                    }, // 点击后执行的操作
+                });
+
+                window.editor.editor.addAction({ // 复制当前窗口超链接
+                    id: 'CFA39E4D-535A-497A-955B-E5F66A8F27EA', // 菜单项 id
+                    label: config.MAP.LABELS.copyhref[window.editor.params.lang]
+                        || config.MAP.LABELS.copyhref.default, // 菜单项名称
+                    keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.KeyC], // 绑定快捷键
+                    contextMenuGroupId: '9_window', // 所属菜单的分组
+                    contextMenuOrder: 1, // 菜单分组内排序
+                    run: () => {
+                        window.navigator.clipboard.writeText([
+                            window.location.pathname,
+                            window.location.search,
+                            window.location.hash,
+                        ].join(''));
+                    }, // 点击后执行的操作
+                });
+
+                window.editor.editor.addAction({ // 复制当前窗口超链接(完整)
+                    id: '927304E5-B97B-4193-8A2C-37ADFB96944F', // 菜单项 id
+                    label: config.MAP.LABELS.copyfullhref[window.editor.params.lang]
+                        || config.MAP.LABELS.copyfullhref.default, // 菜单项名称
+                    keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyMod.Alt | monaco.KeyCode.KeyC], // 绑定快捷键
+                    contextMenuGroupId: '9_window', // 所属菜单的分组
+                    contextMenuOrder: 2, // 菜单分组内排序
+                    run: () => {
+                        window.navigator.clipboard.writeText(window.location.href);
                     }, // 点击后执行的操作
                 });
 
