@@ -156,8 +156,8 @@ setTimeout(async () => {
                     // 新窗口打开编辑器
 
                     // 首先删除并新建临时目录
-                    await rm(config.theme.window.open.editor.temp.path.absolute);
-                    let r = await createTempDir(config.theme.window.open.editor.temp.path.relative);
+                    await rm(config.theme.window.open.editor.path.temp.absolute);
+                    let r = await createTempDir(config.theme.window.open.editor.path.temp.relative);
                     if (r && r.code === 0) {
                         // 临时目录创建成功
                         window.addEventListener('mouseup', (e) => {
@@ -213,10 +213,10 @@ setTimeout(async () => {
                                                     ? `${window.Lute.NewNodeID()}.${ext}`
                                                     : window.Lute.NewNodeID();
                                                 // 临时文件绝对路径
-                                                let temp_file_path_absolute = `${config.theme.window.open.editor.temp.path.absolute}${filename}`;
+                                                let temp_file_path_absolute = `${config.theme.window.open.editor.path.temp.absolute}${filename}`;
                                                 // console.log(temp_file_path_absolute);
                                                 // 临时文件相对路径(相对于思源工作空间根目录)
-                                                let temp_file_path_relative = `${config.theme.window.open.editor.temp.path.relative}${filename}`;
+                                                let temp_file_path_relative = `${config.theme.window.open.editor.path.temp.relative}${filename}`;
                                                 // console.log(temp_file_path_relative);
                                                 // 复制本地文件至临时目录
                                                 await copyFile(path, temp_file_path_absolute).then(() => {

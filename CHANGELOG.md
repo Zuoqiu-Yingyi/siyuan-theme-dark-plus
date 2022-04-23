@@ -17,6 +17,7 @@
 - 修复 Monaco 编辑器字号设置失效问题 | Fix the issue that Monaco Editor font size setting is invalid.
 - 增加 Monaco 编辑器下载网络文件功能 | Add the function to download the network file using Monaco Editor.
 - 添加右键菜单项: 在编辑器中打开 | Add the context menu item: Open in Editor.
+- 修复临时文件路径问题 | Fix the issue that the temporary file path is invalid.
 
 ## v0.8.2/2022-04-20
 
