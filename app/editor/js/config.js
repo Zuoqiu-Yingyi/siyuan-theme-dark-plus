@@ -66,6 +66,7 @@ export const config = {
         LABELS: { // 标签
             save: { zh_CN: '保存', default: 'Save' },
             saveAs: { zh_CN: '另存为', default: 'Save AS' },
+            copyhref: { zh_CN: '复制页面链接', default: 'Copy the Page Link' },
             wrap: { zh_CN: '切换自动换行', default: 'Toggle Word Wrap' },
             unSaved: {
                 zh_CN: "是否不保存更改？\n如果不保存，你的更改将丢失。",
