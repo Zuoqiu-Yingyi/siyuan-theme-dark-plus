@@ -169,7 +169,7 @@ setTimeout(async () => {
                                     async id => {
                                         window.theme.openNewWindow(
                                             'editor',
-                                            undefined,
+                                            config.theme.window.open.editor.path.index,
                                             {
                                                 id: id,
                                                 mode: 'block',
@@ -179,7 +179,6 @@ setTimeout(async () => {
                                                 tabSize: window.siyuan.config.editor.codeTabSpaces,
                                             },
                                             config.theme.window.open.windowParams,
-                                            config.theme.window.open.editor.path.index,
                                         );
                                     },
                                     async href => {
@@ -224,7 +223,7 @@ setTimeout(async () => {
                                                     // 复制成功
                                                     window.theme.win = window.theme.openNewWindow(
                                                         'editor',
-                                                        undefined,
+                                                        config.theme.window.open.editor.path.index,
                                                         {
                                                             mode: 'localfile',
                                                             url: encodeURI(path),
@@ -236,12 +235,12 @@ setTimeout(async () => {
                                                             workspace: window.siyuan.config.system.workspaceDir,
                                                         },
                                                         config.theme.window.open.windowParams,
-                                                        config.theme.window.open.editor.path.index,
+                                                        undefined,
                                                         undefined,
                                                         async (win, event, level, message, line, sourceId) => {
                                                             // 根据子窗口的控制台输出内容保存临时文件
                                                             // console.log(win, event, level, message, line, sourceId);
-                                                            if (level === 2 && message === 'SAVED') {
+                                                            if (level === 0 && message === 'SAVED') {
                                                                 // 临时文件已保存, 需要复制临时文件至原位置
                                                                 await copyFile(temp_file_path_absolute, path);
                                                             }
@@ -261,7 +260,7 @@ setTimeout(async () => {
                                             // 思源资源文件链接或网络文件链接
                                             window.theme.openNewWindow(
                                                 'editor',
-                                                undefined,
+                                                config.theme.window.open.editor.path.index,
                                                 {
                                                     mode: 'assets',
                                                     path: encodeURI(href),
@@ -272,7 +271,6 @@ setTimeout(async () => {
                                                     workspace: window.siyuan.config.system.workspaceDir,
                                                 },
                                                 config.theme.window.open.windowParams,
-                                                config.theme.window.open.editor.path.index,
                                             );
                                         }
                                     },

@@ -57,6 +57,7 @@ window.theme.openNewWindow = function (
     closeCallback = null,
 ) {
     try {
+        // 优化思源内部 URL
         switch (true) {
             case url.startsWith('/'):
                 url = `${window.location.origin}${url}`;
@@ -70,6 +71,7 @@ window.theme.openNewWindow = function (
                 break;
         }
         url = new URL(url);
+
         // 设置窗口模式
         if (mode) {
             switch (mode.toLowerCase()) {
