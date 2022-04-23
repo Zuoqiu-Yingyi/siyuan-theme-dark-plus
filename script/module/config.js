@@ -410,6 +410,9 @@ export var config = {
                     fullscreen: false, // 是否全屏显示
                     alwaysOnTop: true, // 是否置顶显示
                     autoHideMenuBar: true, // 是否隐藏菜单栏(使用 Alt 显示)
+                    // backgroundColor: window.siyuan.config.appearance.mode // 窗口默认背景色
+                    //     ? '#1e1e1e'
+                    //     : '#f5f5f5',
                     webPreferences: {
                         webSecurity: false, // 是否启用 Web 安全
                         nodeIntegration: true, // 是否启用 Node.js 内置模块

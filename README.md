@@ -146,6 +146,20 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 
 ### 功能介绍 | FUNCTIONAL DESCRIPTION
 
+* [使用外部编辑器编辑笔记内容 - 链滴](https://ld246.com/article/1650694653631)
+* [块自定义字体 - 链滴 - 链滴](https://ld246.com/article/1650339201591)
+* [列表的表格视图与脑图视图 - 链滴](https://ld246.com/article/1650258401435)
+* [多窗口功能 - 链滴 - 链滴](https://ld246.com/article/1649992440500)
+* [使用网络背景图片 / 本地背景图片 - 链滴](https://ld246.com/article/1649386929319)
+* [为笔记内 BiliBili/YouTube 视频创建时间戳 & 跳转到指定时间点 - 链滴](https://ld246.com/article/1648639553690)
+* [复制当前文档的大纲至剪贴板 - 链滴](https://ld246.com/article/1648635517429)
+* [为长代码块、长嵌入块与长表格添加块内滚动条 - 链滴](https://ld246.com/article/1647693571588)
+* [打字机模式 - 链滴](https://ld246.com/article/1647182919087)
+* [整篇文档的复制 / 剪切 (以 Markdown 格式) 与删除 - 链滴](https://ld246.com/article/1646806146533)
+* [为笔记内视频块 / 音频块快速创建时间戳 - 链滴](https://ld246.com/article/1645210285263)
+* [为笔记内视频块 / 音频块设置多个时间戳 - 链滴](https://ld246.com/article/1644814136903)
+* [为笔记内视频块 / 音频块设置时间戳 - 链滴](https://ld246.com/article/1644759207850)
+
 - 在其他主题中引用本主题模块  
   Reference this theme modules in other themes.
   - 在 `<工作空间>/conf/appearance/themes/Dark+/theme.css` 文件中直接粘贴所需模块到其他主题的 `theme.css` 文件或 `custom.css` 文件中  
