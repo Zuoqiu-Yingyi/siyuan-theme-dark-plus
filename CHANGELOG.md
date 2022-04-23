@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 增加 Monaco Editor 状态指示图标 | Add a status icon for the Monaco Editor.
+
 ## v0.9.0/2022-04-23
 
 - [v0.8.2 <=> v0.9.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.8.2...v0.9.0)

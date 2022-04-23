@@ -192,7 +192,8 @@ setTimeout(async () => {
                                             // 本地文件
                                             // 检查文件是否存在
                                             let stats = await stat(path);
-                                            console.log(stats);
+                                            // console.log(stats);
+
                                             // let path = await openFile(
                                             //     config.theme.window.open.editor.labels.openFile[window.theme.languageMode]
                                             //     || config.theme.window.open.editor.labels.openFile.other,

@@ -40,4 +40,5 @@ async function saveAsFile(filedata, filename = 'block.md', type = null) {
         filename,
         type ? { type: type } : undefined
     ));
+    return true;
 }

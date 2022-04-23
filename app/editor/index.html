@@ -47,7 +47,6 @@
     #breadcrumb {
         top: 0;
         height: 1.5em;
-        padding-left: 1em;
         display: inline-block;
         white-space: nowrap;
         z-index: 1;
@@ -66,7 +65,7 @@
         border-radius: 0.25em;
     }
 
-    #breadcrumb>a {
+    #breadcrumb>* {
         display: inline-block;
         font-size: 1em;
         line-height: 1.5em;
@@ -74,15 +73,21 @@
         color: var(--foreground-color);
     }
 
-    #breadcrumb>a:hover {
+    #breadcrumb>*:hover {
         color: var(--foreground-color-hover);
     }
-
+    #status{
+        width: 1em;
+        height: 1em;
+        text-align: center;
+        color: white;
+    }
     #type {
         text-decoration: underline;
     }
     #crumb {
         text-decoration: none;
+        /* padding-left: 1em; */
     }
 
     #container {
@@ -95,6 +100,7 @@
 <body>
     <div id="breadcrumb">
         <!-- REF [HTML <a> 标签的 target 属性](https://www.w3school.com.cn/tags/att_a_target.asp) -->
+        <span id="status">❌</span>
         <a id="type" target="_blank"></a>
         <a id="crumb" target="_blank" title="Monaco Editor">Monaco Editor</a>
     </div>
