@@ -57,6 +57,18 @@ window.theme.openNewWindow = function (
     closeCallback = null,
 ) {
     try {
+        switch (true) {
+            case url.startsWith('/'):
+                url = `${window.location.origin}${url}`;
+                break;
+            case url.startsWith('assets/'):
+            case url.startsWith('widgets/'):
+            case url.startsWith('emojie/'):
+            case url.startsWith('export/'):
+            case url.startsWith('appearance/'):
+                url = `${window.location.origin}/${url}`;
+                break;
+        }
         url = new URL(url);
         // 设置窗口模式
         if (mode) {

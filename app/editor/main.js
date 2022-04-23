@@ -441,6 +441,36 @@ window.onload = () => {
                 };
 
                 /* 👇👇 右键菜单项 👇👇 */
+
+                let wrap_iter = Iterator(['on', 'off'], true);
+                window.editor.editor.addAction({ // 切换折行状态
+                    id: 'F9E62A24-619E-49EA-A870-B31E6F9D284F', // 菜单项 id
+                    label: config.MAP.LABELS.wrap[window.editor.params.lang]
+                        || config.MAP.LABELS.wrap.default, // 菜单项名称
+                    keybindings: [monaco.KeyMod.Alt | monaco.KeyCode.KeyZ], // 绑定快捷键
+                    // keybindingContext: 'Alt+Z', // 绑定快捷键上下文
+                    contextMenuGroupId: '2_view', // 所属菜单的分组
+                    run: () => {
+                        window.editor.editor.updateOptions({ wordWrap: wrap_iter.next().value });
+                    }, // 点击后执行的操作
+                });
+
+                window.editor.editor.addAction({ // 复制当前窗口超链接
+                    id: 'CFA39E4D-535A-497A-955B-E5F66A8F27EA', // 菜单项 id
+                    label: config.MAP.LABELS.copyhref[window.editor.params.lang]
+                        || config.MAP.LABELS.copyhref.default, // 菜单项名称
+                    keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyMod.Alt | monaco.KeyCode.KeyC], // 绑定快捷键
+                    // keybindingContext: 'Ctrl+Alt+C', // 绑定快捷键上下文
+                    contextMenuGroupId: '3_window', // 所属菜单的分组
+                    run: () => {
+                        window.navigator.clipboard.writeText([
+                            window.location.pathname,
+                            window.location.search,
+                            window.location.hash,
+                        ].join(''));
+                    }, // 点击后执行的操作
+                });
+
                 // REF [IActionDescriptor | Monaco Editor API](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IActionDescriptor.html)
                 window.editor.editor.addAction({ // 保存
                     id: '18730D32-5451-4102-B299-BE281BA929B9', // 菜单项 id
@@ -468,21 +498,9 @@ window.onload = () => {
                     }, // 点击后执行的操作
                 });
 
-                let wrap_iter = Iterator(['on', 'off'], true);
-                window.editor.editor.addAction({ // 切换折行状态
-                    id: 'F9E62A24-619E-49EA-A870-B31E6F9D284F', // 菜单项 id
-                    label: config.MAP.LABELS.wrap[window.editor.params.lang]
-                        || config.MAP.LABELS.wrap.default, // 菜单项名称
-                    keybindings: [monaco.KeyMod.Alt | monaco.KeyCode.KeyZ], // 绑定快捷键
-                    // keybindingContext: 'Alt+Z', // 绑定快捷键上下文
-                    contextMenuGroupId: '2_view', // 所属菜单的分组
-                    run: () => {
-                        window.editor.editor.updateOptions({ wordWrap: wrap_iter.next().value });
-                    }, // 点击后执行的操作
-                });
+                window.editor.params.breadcrumb.status.innerText = config.mark.status.success; // 加载完成
             });
         });
-        window.editor.params.breadcrumb.status.innerText = config.mark.status.success; // 加载完成
     } catch (error) {
         console.error(error);
         window.editor.params.breadcrumb.status.innerText = config.mark.status.error;

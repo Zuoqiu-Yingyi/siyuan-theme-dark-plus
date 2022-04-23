@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 增加 Monaco Editor 状态指示图标 | Add a status icon for the Monaco Editor.
+- 增加 Monaco Editor 复制当前页面链接功能 | Add a function to copy the current page's link to the clipboard.
 
 ## v0.9.0/2022-04-23
 
