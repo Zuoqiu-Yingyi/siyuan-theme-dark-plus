@@ -448,6 +448,16 @@ const TASK_HANDLER = {
             config.theme.window.open.windowParams,
         );
     },
+    /* 在新窗口打开编辑器 */
+    'window-open-editor': async (e, id, params) => {
+        window.theme.openNewWindow(
+            'editor',
+            undefined,
+            Object.assign(params, { id: id }),
+            config.theme.window.open.windowParams,
+            config.theme.window.open.editor.path.index,
+        );
+    },
 };
 
 /**

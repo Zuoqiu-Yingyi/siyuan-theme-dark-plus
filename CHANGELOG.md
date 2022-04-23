@@ -6,15 +6,17 @@
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 列表表格视图与脑图视图内列表项中嵌入块保持纵向排列 | The embedded blocks whitch in list items in a table view or a mind-map view are arranged in portrait orientation.
 - 使用快捷键 <kbd>Ctrl/⌘ + 鼠标滚轮</kbd> 调整编辑区字体大小 | Use the shortcut keys <kbd>Ctrl/⌘ + Mouse Wheel</kbd> to adjust the edit area font size.
-- #10 修复批注功能块属性无法写入问题 | Fix the issue that the annotation block properties can't be written.
+- [#10](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/10) 修复批注功能块属性无法写入问题 | Fix the issue that the annotation block properties can't be written.
 - 调整鼠标悬浮列表项的背景颜色 | Adjust the background color of the list item when the mouse hovers.
-- #22 添加自定义块属性 `mark: 显示` 与一项块菜单项以显示标记文本 | Add the custom block property `mark: display` and a block menu item to show the mark text.
+- [#22](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/22) 添加自定义块属性 `mark: 显示` 与一项块菜单项以显示标记文本 | Add the custom block property `mark: display` and a block menu item to show the mark text.
 - 添加介绍视频 | Add a introduction video.
-- #24 修复块菜单面板超出可视窗口问题 | Fix the issue that the block menu panel is out of the visible window.
+- [#24](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/24) 修复块菜单面板超出可视窗口问题 | Fix the issue that the block menu panel is out of the visible window.
 - 使用 <kbd>Alt + 鼠标中键</kbd> 单击块或资源文件链接, 在新窗口使用 Monaco 编辑器打开 | Use the shortcut key <kbd>Alt + Mouse Middle Button</kbd> to open the block or asset file in a new window using Monaco Editor.
 - 增加 Monaco 编辑器读写本地文件功能 | Add the function to read and write local files using Monaco Editor.
 - 增加 Monaco 编辑器另存为本地文件功能 | Add the function to save as local files using Monaco Editor.
 - 修复 Monaco 编辑器字号设置失效问题 | Fix the issue that Monaco Editor font size setting is invalid.
+- 增加 Monaco 编辑器下载网络文件功能 | Add the function to download the network file using Monaco Editor.
+- 添加右键菜单项: 在编辑器中打开 | Add the context menu item: Open in Editor.
 
 ## v0.8.2/2022-04-20
 
