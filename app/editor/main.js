@@ -94,8 +94,8 @@ async function init(params) {
 
                         if (params.language === 'default' && ext) params.language = ext; // 如果没有设置语言, 则根据文件扩展名设置语言
                         params.breadcrumb.set(
-                            `Ⓕ${config.MAP.LABELS.mode[params.mode][params.lang] || config.MAP.LABELS.mode[params.mode].default}`,
-                            `🄿${url.host}${url.pathname}`.replaceAll('/', ' > '),
+                            `${config.mark.file}${config.MAP.LABELS.mode[params.mode][params.lang] || config.MAP.LABELS.mode[params.mode].default}`,
+                            `${config.mark.filepath}${url.host}${url.pathname}`.replaceAll('/', config.mark.pathseparate),
                             filename,
                             params.url,
                             params.url,
@@ -233,8 +233,8 @@ async function init(params) {
             // console.log(params);
             params.block = b;
             params.breadcrumb.set(
-                `Ⓑ${config.MAP.LABELS.type[b.type][params.lang] || config.MAP.LABELS.type[b.type].default}`,
-                `🄽${n.name}${b.hpath.replaceAll('/', ' > ')}`,
+                `${config.mark.block}${config.MAP.LABELS.type[b.type][params.lang] || config.MAP.LABELS.type[b.type].default}`,
+                `${config.mark.blockpath}${n.name}${b.hpath.replaceAll('/', config.mark.pathseparate)}`,
                 `siyuan://blocks/${b.id}`,
                 `${n.name}${b.hpath}`,
                 `siyuan://blocks/${b.id}`,
@@ -256,8 +256,8 @@ window.onload = () => {
         window.editor.changed = false; // 是否有改动
         window.editor.params = {
             breadcrumb: {
+                status: document.getElementById('status'),
                 type: document.getElementById('type'),
-                typeText: null,
                 crumb: document.getElementById('crumb'),
                 set: (typeText, hpathText, typeTitle, hpathTitle, blockHref, docHref) => {
                     if (typeText) window.editor.params.breadcrumb.type.innerText = typeText;
@@ -360,46 +360,46 @@ window.onload = () => {
                             : null, // URL hash 配置
                     ),
                 );
-
                 async function save() {
                     // 保存文件
+                    let response;
                     switch (window.editor.params.mode) {
                         case 'web':
-                            await saveAsFile(window.editor.editor.getValue(), window.editor.params.filename || undefined);
+                            response = await saveAsFile(window.editor.editor.getValue(), window.editor.params.filename || undefined);
                             break;
                         case 'localfile':
-                            await putFile(
+                            response = await putFile(
                                 window.editor.params.path,
                                 window.editor.editor.getValue(),
                             ).then(() => config.command.SAVED());
                             break;
                         case 'assets':
-                            await putFile(
+                            response = await putFile(
                                 window.editor.params.path,
                                 window.editor.editor.getValue(),
                             );
                             break;
                         case 'query':
-                            await updateBlock(
+                            response = await updateBlock(
                                 window.editor.params.id,
                                 `\{\{${window.editor.editor.getValue().trim()}\}\}\n${window.editor.params.block.ial}`,
                             );
                             break;
                         case 'code':
-                            await updateBlock(
+                            response = await updateBlock(
                                 window.editor.params.id,
                                 `\`\`\`${window.editor.params.language}\n${window.editor.editor.getValue()}\n\`\`\`\n${window.editor.params.block.ial}`,
                             );
                             break;
                         case 'doc':
-                            await updateBlock(
+                            response = await updateBlock(
                                 window.editor.params.id,
                                 window.editor.editor.getValue(),
                             );
                             break;
                         case 'html':
                         case 'block':
-                            await updateBlock(
+                            response = await updateBlock(
                                 window.editor.params.id,
                                 `${window.editor.editor.getValue().trim()}\n${window.editor.params.block.ial}`,
                             );
@@ -408,16 +408,17 @@ window.onload = () => {
                         default:
                             break;
                     }
-                    window.editor.changed = false; // 更改标记
-                    window.editor.params.breadcrumb.type.innerText = window.editor.params.breadcrumb.typeText;
+                    if (response && (!response.code || response.code === 0)) {
+                        // 保存成功
+                        window.editor.changed = false; // 更改标记
+                        window.editor.params.breadcrumb.status.innerText = config.mark.status.success;
+                    }
+                    else {
+                        // 保存失败
+                        window.editor.changed = false; // 更改标记
+                        window.editor.params.breadcrumb.status.innerText = config.mark.status.error;
+                    }
                 }
-
-                /* 设置语言标签 */
-                window.editor.picker.onchange = () => {
-                    // console.log(window.editor.picker.value);
-                    // window.editor.params.lang = window.editor.picker.value;
-                    monaco.editor.setModelLanguage(window.editor.editor.getModel(), window.editor.picker.value);
-                };
 
                 /**
                  * 文件是否发生更改
@@ -428,9 +429,16 @@ window.onload = () => {
                     else {
                         // 之前没有发生更改
                         window.editor.changed = true;
-                        window.editor.params.breadcrumb.type.innerText = `*${window.editor.params.breadcrumb.typeText}`;
+                        window.editor.params.breadcrumb.status.innerText = config.mark.status.edited;
                     }
                 });
+
+                /* 设置语言标签 */
+                window.editor.picker.onchange = () => {
+                    // console.log(window.editor.picker.value);
+                    // window.editor.params.lang = window.editor.picker.value;
+                    monaco.editor.setModelLanguage(window.editor.editor.getModel(), window.editor.picker.value);
+                };
 
                 /* 👇👇 右键菜单项 👇👇 */
                 // REF [IActionDescriptor | Monaco Editor API](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IActionDescriptor.html)
@@ -474,7 +482,9 @@ window.onload = () => {
                 });
             });
         });
+        window.editor.params.breadcrumb.status.innerText = config.mark.status.success; // 加载完成
     } catch (error) {
         console.error(error);
+        window.editor.params.breadcrumb.status.innerText = config.mark.status.error;
     }
 }
