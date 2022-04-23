@@ -197,6 +197,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 - 指向第三方资源(`URL Scheme`)的超链接显示图标  
   Hyperlinks(`URL Scheme`) to the third-party resource displays icons.
   - <img alt="bookxnote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/bookxnote.svg" style="height: 1em; width=1em;" />: `bookxnotepro:` [BookxNote Pro](https://www.bookxnotepro.com/)
+  - <img alt="calibre" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/calibre.png" style="height: 1em; width=1em;" />: `calibre:` [calibre - E-book management](https://calibre-ebook.com/)
   - <img alt="everything" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/everything.svg" style="height: 1em; width=1em;" />: `es:` [Everything](https://www.voidtools.com/)
   - <img alt="evernote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/evernote.svg" style="height: 1em; width=1em;" />: `evernote:` [Evernote](https://www.evernote.com/)
   - <img alt="folder" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/folder.svg" style="height: 1em; width=1em;" />: `file:` [RFC 8089 - The "file" URI Scheme](https://datatracker.ietf.org/doc/html/rfc8089)
