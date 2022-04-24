@@ -3,6 +3,7 @@ import {
     Iterator,
     pathParse,
     saveAsFile,
+    merge,
 } from './js/utils.js';
 import {
     queryBlock,
@@ -17,7 +18,7 @@ import {
 
 async function init(params) {
     // 设置界面字体
-    params.fontFamily = document.body.style.fontFamily = params.fontFamily.concat(config.UI.fontFamily).join(',');
+    params.fontFamily = document.body.style.fontFamily = params.fontFamily.concat(config.editor.UI.fontFamily).join(',');
 
     let r; // 响应
     let b; // 块
@@ -94,8 +95,8 @@ async function init(params) {
 
                         if (params.language === 'default' && ext) params.language = ext; // 如果没有设置语言, 则根据文件扩展名设置语言
                         params.breadcrumb.set(
-                            `${config.mark.file}${config.MAP.LABELS.mode[params.mode][params.lang] || config.MAP.LABELS.mode[params.mode].default}`,
-                            `${config.mark.filepath}${url.host}${url.pathname}`.replaceAll('/', config.mark.pathseparate),
+                            `${config.editor.mark.file}${config.editor.MAP.LABELS.mode[params.mode][params.lang] || config.editor.MAP.LABELS.mode[params.mode].default}`,
+                            `${config.editor.mark.filepath}${url.host}${url.pathname}`.replaceAll('/', config.editor.mark.pathseparate),
                             filename,
                             params.url,
                             params.url,
@@ -115,7 +116,7 @@ async function init(params) {
                     return;
             }
 
-        case 'localfile': // 本地文件
+        case 'local': // 本地文件
             params.path.replaceAll('\\', '/').replaceAll('//', '/'); // 相对于思源工作空间的路径
             // 完整文件路径
             if (!params.url) params.url = `${params.workspace}${params.path}`.replaceAll('\\', '/').replaceAll('//', '/');
@@ -128,12 +129,12 @@ async function init(params) {
                 params.ext = ext;
                 if (params.language === 'default' && ext) params.language = ext; // 如果没有设置语言, 则根据文件扩展名设置语言
                 params.breadcrumb.set(
-                    `Ⓕ${config.MAP.LABELS.mode[params.mode][params.lang] || config.MAP.LABELS.mode[params.mode].default}`,
+                    `Ⓕ${config.editor.MAP.LABELS.mode[params.mode][params.lang] || config.editor.MAP.LABELS.mode[params.mode].default}`,
                     `🄿${params.url}`.replaceAll('/', ' > '),
                     filename,
                     params.url,
-                    `file://${params.url}`,
-                    `file://${params.dir}`,
+                    config.editor.link.file(params.url),
+                    config.editor.link.directory(params.dir),
                 ); // 设置面包屑
             }
             else {
@@ -142,7 +143,7 @@ async function init(params) {
             };
             break;
         case 'block': // 块
-            if (!config.regs.id.test(window.editor.params.id)) {
+            if (!config.editor.regs.id.test(window.editor.params.id)) {
                 params.mode = 'none';
                 return;
             }
@@ -181,7 +182,7 @@ async function init(params) {
                     params.language = 'html';
                     break;
                 case 'query_embed': // 嵌入块
-                    t = config.regs.query.exec(b.markdown);
+                    t = config.editor.regs.query.exec(b.markdown);
                     if (t && t.length === 2) {
                         params.mode = 'query';
                         params.value = t[1];
@@ -209,7 +210,7 @@ async function init(params) {
                     }
                     break;
                 case 'c': // 代码块
-                    t = config.regs.code.exec(b.markdown);
+                    t = config.editor.regs.code.exec(b.markdown);
                     if (t && t.length === 2) {
                         params.mode = 'code';
                         params.value = b.content;
@@ -233,8 +234,8 @@ async function init(params) {
             // console.log(params);
             params.block = b;
             params.breadcrumb.set(
-                `${config.mark.block}${config.MAP.LABELS.type[b.type][params.lang] || config.MAP.LABELS.type[b.type].default}`,
-                `${config.mark.blockpath}${n.name}${b.hpath.replaceAll('/', config.mark.pathseparate)}`,
+                `${config.editor.mark.block}${config.editor.MAP.LABELS.type[b.type][params.lang] || config.editor.MAP.LABELS.type[b.type].default}`,
+                `${config.editor.mark.blockpath}${n.name}${b.hpath.replaceAll('/', config.editor.mark.pathseparate)}`,
                 `siyuan://blocks/${b.id}`,
                 `${n.name}${b.hpath}`,
                 `siyuan://blocks/${b.id}`,
@@ -286,9 +287,9 @@ window.onload = () => {
             /**
              * 模式
              * 'none': 白板
+             * 'local': 本地资源
              * 'assets': 资源
-             * 'assets': 资源
-             *     -> 'assets': 资源
+             *     -> 'assets': 思源资源
              *     -> 'web': web 资源
              * 'block': 块
              *     -> 'block': 普通块
@@ -330,35 +331,39 @@ window.onload = () => {
             require.config({
                 'vs/nls': {
                     availableLanguages: {
-                        '*': config.MAP.LANGS[window.editor.params.lang]
-                            || config.MAP.LANGS.default
+                        '*': config.editor.MAP.LANGS[window.editor.params.lang]
+                            || config.editor.MAP.LANGS.default
                             || '',
                     },
                 },
             });
+
             require(['vs/editor/editor.main'], () => {
-                let language = config.MAP.LANGUAGES[window.editor.params.language.toLowerCase()]
+                const language = config.editor.MAP.LANGUAGES[window.editor.params.language.toLowerCase()]
                     || window.editor.params.language
                     || 'plaintext';
                 window.editor.picker.value = language;
+                // 编辑器配置
+                const options = merge(
+                    {},
+                    config.editor.IStandaloneEditorConstructionOptions, // 默认配置
+                    {
+                        language: language, // 语言模式
+                        theme: config.editor.MAP.THEMES[window.editor.params.theme]
+                            || config.editor.MAP.THEMES.default
+                            || 'vs', // 主题
+                        tabSize: window.editor.params.tabSize || 4, // 缩进
+                        value: window.editor.params.value, // 初始值
+                    }, // URL params 配置
+                    window.editor.params.body
+                        ? window.editor.params.body.IStandaloneEditorConstructionOptions
+                        : {}, // URL hash 配置
+                );
+                // console.log(options);
+
                 window.editor.editor = monaco.editor.create(
                     container,
-                    Object.assign(
-                        Object.assign(
-                            config.IStandaloneEditorConstructionOptions, // 默认配置
-                            {
-                                language: language, // 语言模式
-                                theme: config.MAP.THEMES[window.editor.params.theme]
-                                    || config.MAP.THEMES.default
-                                    || 'vs', // 主题
-                                tabSize: window.editor.params.tabSize || 4, // 缩进
-                                value: window.editor.params.value, // 初始值
-                            }, // URL params 配置
-                        ),
-                        window.editor.params.body
-                            ? window.editor.params.body.IStandaloneEditorConstructionOptions
-                            : null, // URL hash 配置
-                    ),
+                    options,
                 );
                 async function save() {
                     // 保存文件
@@ -367,11 +372,11 @@ window.onload = () => {
                         case 'web':
                             response = await saveAsFile(window.editor.editor.getValue(), window.editor.params.filename || undefined);
                             break;
-                        case 'localfile':
+                        case 'local':
                             response = await putFile(
                                 window.editor.params.path,
                                 window.editor.editor.getValue(),
-                            ).then(() => config.command.SAVED());
+                            ).then(() => config.editor.command.SAVED());
                             break;
                         case 'assets':
                             response = await putFile(
@@ -411,12 +416,12 @@ window.onload = () => {
                     if (response && (!response.code || response.code === 0)) {
                         // 保存成功
                         window.editor.changed = false; // 更改标记
-                        window.editor.params.breadcrumb.status.innerText = config.mark.status.success;
+                        window.editor.params.breadcrumb.status.innerText = config.editor.mark.status.success;
                     }
                     else {
                         // 保存失败
                         window.editor.changed = false; // 更改标记
-                        window.editor.params.breadcrumb.status.innerText = config.mark.status.error;
+                        window.editor.params.breadcrumb.status.innerText = config.editor.mark.status.error;
                     }
                 }
 
@@ -429,7 +434,7 @@ window.onload = () => {
                     else {
                         // 之前没有发生更改
                         window.editor.changed = true;
-                        window.editor.params.breadcrumb.status.innerText = config.mark.status.edited;
+                        window.editor.params.breadcrumb.status.innerText = config.editor.mark.status.edited;
                     }
                 });
 
@@ -446,8 +451,8 @@ window.onload = () => {
                 let wrap_iter = Iterator(['on', 'off'], true);
                 window.editor.editor.addAction({ // 切换折行状态
                     id: 'F9E62A24-619E-49EA-A870-B31E6F9D284F', // 菜单项 id
-                    label: config.MAP.LABELS.wrap[window.editor.params.lang]
-                        || config.MAP.LABELS.wrap.default, // 菜单项名称
+                    label: config.editor.MAP.LABELS.wrap[window.editor.params.lang]
+                        || config.editor.MAP.LABELS.wrap.default, // 菜单项名称
                     keybindings: [monaco.KeyMod.Alt | monaco.KeyCode.KeyZ], // 绑定快捷键
                     contextMenuGroupId: '2_view', // 所属菜单的分组
                     contextMenuOrder: 1, // 菜单分组内排序
@@ -458,8 +463,8 @@ window.onload = () => {
 
                 window.editor.editor.addAction({ // 保存
                     id: '18730D32-5451-4102-B299-BE281BA929B9', // 菜单项 id
-                    label: config.MAP.LABELS.save[window.editor.params.lang]
-                        || config.MAP.LABELS.save.default, // 菜单项名称
+                    label: config.editor.MAP.LABELS.save[window.editor.params.lang]
+                        || config.editor.MAP.LABELS.save.default, // 菜单项名称
                     // REF [KeyMod | Monaco Editor API](https://microsoft.github.io/monaco-editor/api/classes/monaco.KeyMod.html)
                     // REF [KeyCode | Monaco Editor API](https://microsoft.github.io/monaco-editor/api/enums/monaco.KeyCode.html)
                     keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS], // 绑定快捷键
@@ -472,8 +477,8 @@ window.onload = () => {
 
                 window.editor.editor.addAction({ // 文件另存为
                     id: 'D68588DD-8D0C-4435-8DC2-145B0F464FF8', // 菜单项 id
-                    label: config.MAP.LABELS.saveAs[window.editor.params.lang]
-                        || config.MAP.LABELS.saveAs.default, // 菜单项名称
+                    label: config.editor.MAP.LABELS.saveAs[window.editor.params.lang]
+                        || config.editor.MAP.LABELS.saveAs.default, // 菜单项名称
                     keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.KeyS], // 绑定快捷键
                     contextMenuGroupId: '3_file', // 所属菜单的分组
                     contextMenuOrder: 2, // 菜单分组内排序
@@ -482,10 +487,36 @@ window.onload = () => {
                     }, // 点击后执行的操作
                 });
 
+                if (window.editor.params.mode === 'assets' || window.editor.params.mode === 'local') {
+                    window.editor.editor.addAction({ // 在 vscode 中打开文件
+                        id: '7EA4AB2E-ED05-4AB2-AB27-575978CA820E', // 菜单项 id
+                        label: config.editor.MAP.LABELS.openFileInVscode[window.editor.params.lang]
+                            || config.editor.MAP.LABELS.openFileInVscode.default, // 菜单项名称
+                        keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyO], // 绑定快捷键
+                        contextMenuGroupId: '3_file', // 所属菜单的分组
+                        contextMenuOrder: 3, // 菜单分组内排序
+                        run: () => {
+                            const position = window.editor.editor.getPosition();
+                            window.open(`vscode://file/${window.editor.params.url}:${position.lineNumber}:${position.column}`);
+                        }, // 点击后执行的操作
+                    });
+                    window.editor.editor.addAction({ // 在 vscode 中打开文件所在目录
+                        id: '4AF3B0F5-C37A-43BA-8F7F-0A1983AB4A3C', // 菜单项 id
+                        label: config.editor.MAP.LABELS.openDirInVscode[window.editor.params.lang]
+                            || config.editor.MAP.LABELS.openDirInVscode.default, // 菜单项名称
+                        keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift  | monaco.KeyCode.KeyO], // 绑定快捷键
+                        contextMenuGroupId: '3_file', // 所属菜单的分组
+                        contextMenuOrder: 4, // 菜单分组内排序
+                        run: () => {
+                            window.open(`vscode://file/${window.editor.params.dir}`);
+                        }, // 点击后执行的操作
+                    });
+                }
+
                 window.editor.editor.addAction({ // 复制当前窗口超链接
                     id: 'CFA39E4D-535A-497A-955B-E5F66A8F27EA', // 菜单项 id
-                    label: config.MAP.LABELS.copyhref[window.editor.params.lang]
-                        || config.MAP.LABELS.copyhref.default, // 菜单项名称
+                    label: config.editor.MAP.LABELS.copyhref[window.editor.params.lang]
+                        || config.editor.MAP.LABELS.copyhref.default, // 菜单项名称
                     keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.KeyC], // 绑定快捷键
                     contextMenuGroupId: '9_window', // 所属菜单的分组
                     contextMenuOrder: 1, // 菜单分组内排序
@@ -500,8 +531,8 @@ window.onload = () => {
 
                 window.editor.editor.addAction({ // 复制当前窗口超链接(完整)
                     id: '927304E5-B97B-4193-8A2C-37ADFB96944F', // 菜单项 id
-                    label: config.MAP.LABELS.copyfullhref[window.editor.params.lang]
-                        || config.MAP.LABELS.copyfullhref.default, // 菜单项名称
+                    label: config.editor.MAP.LABELS.copyfullhref[window.editor.params.lang]
+                        || config.editor.MAP.LABELS.copyfullhref.default, // 菜单项名称
                     keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyMod.Alt | monaco.KeyCode.KeyC], // 绑定快捷键
                     contextMenuGroupId: '9_window', // 所属菜单的分组
                     contextMenuOrder: 2, // 菜单分组内排序
@@ -510,11 +541,11 @@ window.onload = () => {
                     }, // 点击后执行的操作
                 });
 
-                window.editor.params.breadcrumb.status.innerText = config.mark.status.success; // 加载完成
+                window.editor.params.breadcrumb.status.innerText = config.editor.mark.status.success; // 加载完成
             });
         });
     } catch (error) {
         console.error(error);
-        window.editor.params.breadcrumb.status.innerText = config.mark.status.error;
+        window.editor.params.breadcrumb.status.innerText = config.editor.mark.status.error;
     }
 }

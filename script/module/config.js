@@ -1731,15 +1731,20 @@ export async function saveCustomFile(custom, path = config.custom.path) {
 }
 
 try {
-    let temp = await import('/widgets/custom.js');
-    if (temp.config != null) {
-        config = merge(config, temp.config);
+    // 合并配置文件 custom.js
+    const customjs = await import('/widgets/custom.js');
+    if (customjs.config != null) {
+        merge(config, customjs.config);
     }
+
+    // 初始化用户状态
     custom.theme.toolbar[config.theme.menu.block.toolbar.id] = { default: false };
     custom.theme.toolbar[config.theme.style.guides.toolbar.id] = { default: false };
     custom.theme.toolbar[config.theme.invert.toolbar.id] = { default: false };
     custom.theme.toolbar[config.theme.typewriter.switch.toolbar.id] = { default: false };
-    temp = await getFile(config.custom.path);
+
+    // 合并配置文件 custom.json
+    let temp = await getFile(config.custom.path);
     temp = await temp.json();
     custom = merge(custom, temp);
 } catch (err) {

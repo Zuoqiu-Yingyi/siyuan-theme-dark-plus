@@ -1,10 +1,11 @@
 # 更改日志 | CHANGE LOG
 
 - 增加 Monaco Editor 状态指示图标 | Add a status icon for the Monaco Editor.
-- 增加 Monaco Editor 复制当前页面链接功能 | Add a function to copy the current page's link to the clipboard.
-- 增加 Monaco Editor 复制当前页面完整链接功能 | Add a function to copy the current page's full link to the clipboard.
+- 增加 Monaco Editor 复制当前页面链接功能 | Add a function to copy the current page's link to the clipboard in the Monaco Editor.
+- 增加 Monaco Editor 复制当前页面完整链接功能 | Add a function to copy the current page's full link to the clipboard in the Monaco Editor.
 - 在自述文件中添加项目依赖 | Add project dependencies in the README file.
 - 新增 `calibre` URL Scheme 超链接图标 | Added `evernote` URL Scheme link icon.
+- 增加 Monaco Editor 在 VS Code 中打开文件/目录功能 | Add a function to open file and directory in VS Code in the Monaco Editor.
 
 ## v0.9.0/2022-04-23
 
