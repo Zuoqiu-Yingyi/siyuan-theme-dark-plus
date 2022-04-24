@@ -34,6 +34,7 @@ export {
     以id获取反向链接 as getBacklink,
     以sql获取嵌入块内容 as searchEmbedBlock,
     获取标签列表 as getTag,
+    导出模板 as docSaveAsTemplate,
     渲染模板 as render,
 
     以id获取局部图谱 as getLocalGraph,
@@ -355,6 +356,15 @@ async function 通过markdown创建文档(notebook, path, markdown) {
         markdown: markdown,
     }
     let url = '/api/filetree/createDocWithMd'
+    return 解析响应体(向思源请求数据(url, data))
+}
+
+async function 导出模板(id, overwrite = false) {
+    let url = '/api/template/docSaveAsTemplate'
+    let data = {
+        id: id,
+        overwrite: overwrite,
+    }
     return 解析响应体(向思源请求数据(url, data))
 }
 

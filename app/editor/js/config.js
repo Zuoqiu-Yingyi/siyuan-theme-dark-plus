@@ -42,6 +42,10 @@ export var config = {
                 console.debug('SAVED');
                 return true;
             },
+            LOADED: () => {
+                console.debug('LOADED');
+                return true;
+            },
         },
         IStandaloneEditorConstructionOptions: {
             // autoClosingBrackets: 'languageDefined', // 是否自动添加后括号(包括中括号)
