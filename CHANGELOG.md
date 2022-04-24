@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.9.1/2022-04-24
+
+- [v0.9.0 <=> v0.9.1](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.0...v0.9.1)
 - 增加 Monaco Editor 状态指示图标 | Add a status icon for the Monaco Editor.
 - 增加 Monaco Editor 复制当前页面链接功能 | Add a function to copy the current page's link to the clipboard in the Monaco Editor.
 - 增加 Monaco Editor 复制当前页面完整链接功能 | Add a function to copy the current page's full link to the clipboard in the Monaco Editor.
