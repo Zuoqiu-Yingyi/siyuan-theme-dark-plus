@@ -7,7 +7,7 @@ import { goto } from './../utils/misc.js';
 
 function jump(...args) {
     try {
-        console.log('goto');
+        // console.log('goto');
         goto(...args);
     } catch (e) {
         if (e.message === args[0]) {

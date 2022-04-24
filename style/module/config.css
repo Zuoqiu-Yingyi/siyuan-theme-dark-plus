@@ -113,6 +113,18 @@
     --custom-color-qidian-2-6: #D4D4D4;
     --custom-color-qidian-2-7: #0F1011;
 
+    /* 透明组件颜色 | Transparent component color */
+    --custom-transparent-lighter: #3338;
+    --custom-transparent-light: #222A;
+    --custom-transparent: #222C;
+    --custom-transparent-deep: #222D;
+    --custom-transparent-deeper: #222E;
+
+    /* 不透明的组件颜色 | Opaque component color */
+    --custom-components-light: #444;
+    --custom-components: #222;
+    --custom-components-deep: #111;
+
     /* 标题层级标记与标题之间宽度 */
     --custom-h-mark-blank: 4px;
 
@@ -230,18 +242,6 @@
     --custom-list-guides-line-right-u: calc(22px + 5em / 16);
     --custom-list-guides-line-right-o: calc(14px + 1em);
 
-    /* 透明组件颜色 | Transparent component color */
-    --custom-transparent-lighter: #3338;
-    --custom-transparent-light: #222A;
-    --custom-transparent: #222C;
-    --custom-transparent-deep: #222D;
-    --custom-transparent-deeper: #222E;
-
-    /* 不透明的组件颜色 | Opaque component color */
-    --custom-components-light: #444;
-    --custom-components: #222;
-    --custom-components-deep: #111;
-
     /* 已完成任务列表项颜色 | The color of completed task list item */
     --custom-list-task-done-color: var(--b3-theme-on-surface);
 
@@ -250,6 +250,9 @@
 
     /* 顶部工具栏背景颜色 | The background color of the top toolbar */
     --custom-tool-bar-background-color: var(--custom-transparent);
+
+    /* 收集箱内容预览背景颜色 | The background color of inbox contents preview */
+    --custom-inbox-background-color: var(--custom-transparent);
 
     /* 编辑区背景颜色 | The background color of the edit area */
     --custom-editor-background-color: var(--custom-transparent);
@@ -285,7 +288,7 @@
     /* 搜索对话框尺寸 | The size of the search dialog box. */
     --custom-dialog-search-width: 96vw;
     --custom-dialog-search-height: 96vh;
-    
+
     /* 对话框自述页面背景颜色 | Dialog readme page background color */
     --custom-dialog-readme-background-color: var(--custom-transparent-deeper);
 

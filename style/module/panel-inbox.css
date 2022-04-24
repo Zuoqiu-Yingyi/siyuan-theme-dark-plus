@@ -1,0 +1,8 @@
+/* 收集箱 */
+
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+.sy__inbox>.inbox__details {
+    background-color: var(--custom-inbox-background-color);
+}
