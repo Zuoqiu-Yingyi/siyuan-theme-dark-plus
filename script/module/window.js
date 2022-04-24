@@ -225,7 +225,7 @@ setTimeout(async () => {
                                                         'editor',
                                                         config.theme.window.open.editor.path.index,
                                                         {
-                                                            mode: 'localfile',
+                                                            mode: 'local',
                                                             url: encodeURI(path),
                                                             path: encodeURI(temp_file_path_relative),
                                                             lang: window.theme.languageMode,
