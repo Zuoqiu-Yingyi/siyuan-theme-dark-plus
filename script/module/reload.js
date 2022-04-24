@@ -12,6 +12,7 @@ import {
 import { getBlockAttrs } from './../utils/api.js';
 import { timestampParse } from './../utils/misc.js';
 import { toolbarItemInit } from './../utils/ui.js';
+import { getTargetBlock } from './../utils/dom.js';
 
 function bilibiliTimestamp(url, seconds = null) {
     // BiliBili 视频时间戳
@@ -34,8 +35,8 @@ function youtubeTimestamp(url, seconds = null) {
 }
 
 async function reloadIframe(target) {
-    // console.log(target.dataset);
-    if (target.dataset.nodeId) {
+    const block = getTargetBlock(target);
+    if (block) {
         switch (target.dataset.type) {
             case 'NodeIFrame':
                 if (config.theme.timestamp.jump.enable) {

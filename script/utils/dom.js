@@ -7,6 +7,7 @@ export {
     getFocusedDocBackground, // 获得焦点所在文档的背景
     getFocusedDocID, // 获得焦点所在文档的 ID
     getFocusedID, // 获得焦点所在的块 ID, 否则获得焦点所在文档的 ID
+    getTargetBlock, // 获得目标的块
     getTargetBlockID, // 获得目标的块 ID
     getTargetHref, // 获得目标超链接
     getBlockMark, // 获得块标记
@@ -86,6 +87,20 @@ function getFocusedDocID() {
  */
 function getFocusedID() {
     return getFocusedBlockID() || getFocusedDocID() || null;
+}
+
+
+/**
+ * 获得目标的块
+ * @target {HTMLElement} 目标
+ * @returns {HTMLElement} 光标所在块
+ * @returns {null} 光标不在块内
+ */
+function getTargetBlock(target) {
+    let element = target;
+    while (element != null && element.dataset.nodeId == null) element = element.parentNode;
+    if (element != null) return element;
+    else return null;
 }
 
 /**

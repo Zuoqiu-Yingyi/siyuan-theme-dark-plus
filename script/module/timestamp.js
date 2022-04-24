@@ -6,6 +6,7 @@ import {
     isButton,
 } from './../utils/hotkey.js';
 import { getBlockAttrs } from './../utils/api.js';
+import { getTargetBlock } from './../utils/dom.js';
 import {
     timestampParse,
     timestampFormat,
@@ -14,8 +15,8 @@ import {
 } from './../utils/misc.js';
 
 async function jump(target) {
-    // console.log(target.dataset);
-    if (target.dataset.nodeId) {
+    const block = getTargetBlock(target);
+    if (block) {
         switch (target.dataset.type) {
             case 'NodeAudio':
             case 'NodeVideo':
@@ -39,14 +40,14 @@ async function jump(target) {
 }
 
 async function create(target) {
-    // console.log(target.dataset);
-    if (target.dataset.nodeId) {
-        let id = target.dataset.nodeId; // 块 ID
-        switch (target.dataset.type) {
+    const block = getTargetBlock(target);
+    if (block) {
+        let id = block.dataset.nodeId; // 块 ID
+        switch (block.dataset.type) {
             case 'NodeAudio':
             case 'NodeVideo':
                 setTimeout(async () => {
-                    let seconds = target.firstElementChild.firstElementChild.currentTime;
+                    let seconds = block.firstElementChild.firstElementChild.currentTime;
                     let timestamp = timestampFormat(seconds);
                     // console.log(seconds);
 
@@ -57,7 +58,7 @@ async function create(target) {
                 break;
             case 'NodeIFrame':
                 // 视频网站时间戳
-                let timestamp = target.getAttribute(config.theme.timestamp.attribute);
+                let timestamp = block.getAttribute(config.theme.timestamp.attribute);
                 if (config.theme.regs.time.test(timestamp)) {
                     // 通过块属性生成一个时间戳
                     timestamp = timestampFormat(timestampParse(timestamp));

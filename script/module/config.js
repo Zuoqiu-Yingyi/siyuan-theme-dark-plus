@@ -1744,11 +1744,11 @@ try {
     custom.theme.toolbar[config.theme.typewriter.switch.toolbar.id] = { default: false };
 
     // 合并配置文件 custom.json
-    let temp = await getFile(config.custom.path);
-    temp = await temp.json();
-    custom = merge(custom, temp);
+    let customjson = await getFile(config.custom.path);
+    customjson = await customjson.json();
+    custom = merge(custom, customjson);
 } catch (err) {
-    console.log(err);
+    console.warn(err);
 } finally {
     console.log(config);
     console.log(custom);
