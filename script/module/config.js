@@ -494,6 +494,9 @@ export var config = {
                 },
                 editor: {
                     enable: true, // 启用新窗口打开当编辑器
+                    doc: {
+                        type: 'std', // 文档编辑类型, 'std': 标准 Markdown, 'kramdown': Kramdown
+                    },
                     labels: {
                         openFile: { zh_CN: '打开文件', other: 'Open File', },
                         open: { zh_CN: '打开', other: 'Open', },

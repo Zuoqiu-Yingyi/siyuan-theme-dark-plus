@@ -196,17 +196,35 @@ async function init(params) {
                     }
                     break;
                 case 'd': // 文档块
-                    r = await exportMdContent(b.id);
-                    if (!(r && r.code === 0)) {
-                        params.mode = 'none';
-                        return;
+                    if (params.path) {
+                        // karmdown 编辑模式
+                        r = await getFile(params.path);
+                        if (r) {
+                            params.mode = 'doc';
+                            params.value = await r.text();
+                            params.language = 'markdown';
+                            params.tabSize = 2;
+                            config.editor.command.LOADED();
+                        } else {
+                            // 没有查询到 kramdown 模板
+                            params.mode = 'none';
+                            return;
+                        }
                     }
                     else {
-                        params.mode = 'doc';
-                        params.value = r.data.content;
-                        params.language = 'markdown';
-                        params.tabSize = 2;
-                        params.filename = `${b.content}.md`;
+                        // 标准 markdown 编辑模式
+                        r = await exportMdContent(b.id);
+                        if (!(r && r.code === 0)) {
+                            params.mode = 'none';
+                            return;
+                        }
+                        else {
+                            params.mode = 'doc';
+                            params.value = r.data.content;
+                            params.language = 'markdown';
+                            params.tabSize = 2;
+                            params.filename = `${b.content}.md`;
+                        }
                     }
                     break;
                 case 'c': // 代码块
@@ -420,6 +438,7 @@ window.onload = () => {
                     }
                     else {
                         // 保存失败
+                        console.error(response);
                         window.editor.changed = false; // 更改标记
                         window.editor.params.breadcrumb.status.innerText = config.editor.mark.status.error;
                     }
@@ -504,7 +523,7 @@ window.onload = () => {
                         id: '4AF3B0F5-C37A-43BA-8F7F-0A1983AB4A3C', // 菜单项 id
                         label: config.editor.MAP.LABELS.openDirInVscode[window.editor.params.lang]
                             || config.editor.MAP.LABELS.openDirInVscode.default, // 菜单项名称
-                        keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift  | monaco.KeyCode.KeyO], // 绑定快捷键
+                        keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.KeyO], // 绑定快捷键
                         contextMenuGroupId: '3_file', // 所属菜单的分组
                         contextMenuOrder: 4, // 菜单分组内排序
                         run: () => {

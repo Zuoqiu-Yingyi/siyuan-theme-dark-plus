@@ -12,6 +12,7 @@
 - 视频时间戳功能支持单击视频内部触发 | Support click to trigger the video timestamp function in the video player.
 - 调整收集箱面板背景颜色 | Adjust the background color of the collection panel.
 - 为大纲导出功能添加列表块内联属性表 | Add IAL for the outline export function.
+- 添加 `karmdown` 模式编辑文档功能 | Add a function to edit documents in `karmdown` mode.
 
 ## v0.9.0/2022-04-23
 
