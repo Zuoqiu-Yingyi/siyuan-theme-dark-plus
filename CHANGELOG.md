@@ -11,6 +11,7 @@
 - 增加 Monaco Editor 在 VS Code 中打开文件/目录功能 | Add a function to open file and directory in VS Code in the Monaco Editor.
 - 视频时间戳功能支持单击视频内部触发 | Support click to trigger the video timestamp function in the video player.
 - 调整收集箱面板背景颜色 | Adjust the background color of the collection panel.
+- 为大纲导出功能添加列表块内联属性表 | Add IAL for the outline export function.
 
 ## v0.9.0/2022-04-23
 

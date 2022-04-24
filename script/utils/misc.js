@@ -14,6 +14,7 @@ export {
     intPrefix, // 整数填充前导零
     shuffle, // 打乱数组
     Iterator, // 创建循环迭代器
+    getObjectLength, // 获取对象属性数量
 };
 
 import { config } from './../module/config.js';
@@ -237,4 +238,12 @@ function* Iterator(items, loop = false) {
             yield items[i];
         }
     }
+}
+
+/**
+ * 获取对象属性数量
+ * REF [js 获取对象属性个数 - 走看看](http://t.zoukankan.com/ooo0-p-6534333.html)
+ */
+function getObjectLength(obj) {
+    return Object.keys(obj).length;
 }

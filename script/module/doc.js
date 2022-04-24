@@ -4,6 +4,8 @@ import { config } from './config.js';
 import { isKey } from './../utils/hotkey.js';
 import { toolbarItemInit } from './../utils/ui.js';
 import { getFocusedDocID } from './../utils/dom.js';
+import { ialCreate } from './../utils/string.js';
+import { getObjectLength } from './../utils/misc.js';
 import {
     exportMdContent,
     updateBlock,
@@ -106,6 +108,7 @@ function outlineCopy(mode) {
             default:
                 return;
         }
+        if (getObjectLength(config.theme.doc.outline.ial) > 0) markdown.push(ialCreate(config.theme.doc.outline.ial));
         navigator.clipboard.writeText(markdown.join('\n'));
     }
 }

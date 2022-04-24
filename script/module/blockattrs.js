@@ -5,8 +5,10 @@ import { setBlockAttrs } from './../utils/api.js';
 import { isButton } from './../utils/hotkey.js';
 import {
     url2id,
-    HTMLDecode,
 } from './../utils/misc.js';
+import {
+    HTMLDecode,
+} from './../utils/string.js';
 
 async function setter(target) {
     if (

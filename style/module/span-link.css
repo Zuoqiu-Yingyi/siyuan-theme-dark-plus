@@ -40,9 +40,4 @@
     border-color: var(--custom-span-siyuan-link-color);
 }
 
-/* 聚焦特化 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="siyuan:"][data-href *="focus=1"]:not(:empty)::before,
-.b3-typography a[href ^="siyuan:"][href *="focus=1"]::before {
-    outline: 1px solid var(--custom-span-siyuan-link-color);
-    -moz-outline-radius: var(--custom-border-radius);
-}
+
