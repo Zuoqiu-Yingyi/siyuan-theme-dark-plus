@@ -517,7 +517,7 @@ window.onload = () => {
                     id: 'CFA39E4D-535A-497A-955B-E5F66A8F27EA', // 菜单项 id
                     label: config.editor.MAP.LABELS.copyhref[window.editor.params.lang]
                         || config.editor.MAP.LABELS.copyhref.default, // 菜单项名称
-                    keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyCode.KeyC], // 绑定快捷键
+                    keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyMod.Alt | monaco.KeyCode.KeyC], // 绑定快捷键
                     contextMenuGroupId: '9_window', // 所属菜单的分组
                     contextMenuOrder: 1, // 菜单分组内排序
                     run: () => {
@@ -533,7 +533,7 @@ window.onload = () => {
                     id: '927304E5-B97B-4193-8A2C-37ADFB96944F', // 菜单项 id
                     label: config.editor.MAP.LABELS.copyfullhref[window.editor.params.lang]
                         || config.editor.MAP.LABELS.copyfullhref.default, // 菜单项名称
-                    keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyMod.Alt | monaco.KeyCode.KeyC], // 绑定快捷键
+                    keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyMod.Alt | monaco.KeyCode.KeyC], // 绑定快捷键
                     contextMenuGroupId: '9_window', // 所属菜单的分组
                     contextMenuOrder: 2, // 菜单分组内排序
                     run: () => {
