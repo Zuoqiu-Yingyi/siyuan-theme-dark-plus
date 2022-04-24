@@ -129,8 +129,8 @@ async function init(params) {
                 params.ext = ext;
                 if (params.language === 'default' && ext) params.language = ext; // 如果没有设置语言, 则根据文件扩展名设置语言
                 params.breadcrumb.set(
-                    `Ⓕ${config.editor.MAP.LABELS.mode[params.mode][params.lang] || config.editor.MAP.LABELS.mode[params.mode].default}`,
-                    `🄿${params.url}`.replaceAll('/', ' > '),
+                    `${config.editor.mark.file}${config.editor.MAP.LABELS.mode[params.mode][params.lang] || config.editor.MAP.LABELS.mode[params.mode].default}`,
+                    `${config.editor.mark.filepath}${params.url}`.replaceAll('/', ' > '),
                     filename,
                     params.url,
                     config.editor.link.file(params.url),
@@ -143,7 +143,7 @@ async function init(params) {
             };
             break;
         case 'block': // 块
-            if (!config.editor.regs.id.test(window.editor.params.id)) {
+            if (!config.editor.regs.id.test(params.id)) {
                 params.mode = 'none';
                 return;
             }

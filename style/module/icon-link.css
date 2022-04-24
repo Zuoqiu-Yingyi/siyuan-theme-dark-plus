@@ -107,12 +107,12 @@
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="siyuan:"]:not(:empty)::before,
 .b3-typography a[href ^="siyuan:"]::before {
-    background-image: url(/appearance/themes/Dark+/icon/siyuan.svg);
+    background-image: url(/appearance/themes/Dark+/icon/siyuan.svg) !important;
 }
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="sm:"]:not(:empty)::before,
 .b3-typography a[href ^="sm:"]::before {
-    background-image: url(/appearance/themes/Dark+/icon/supermemo.svg);
+    background-image: url(/appearance/themes/Dark+/icon/supermemo.svg) !important;
 }
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="ticktick:"]:not(:empty)::before,
@@ -134,7 +134,7 @@
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="zotero:"]:not(:empty)::before,
 .b3-typography a[href ^="zotero:"]::before {
-    background-image: url(/appearance/themes/Dark+/icon/zotero.ico);
+    background-image: url(/appearance/themes/Dark+/icon/zotero.ico) !important;
 }
 
 

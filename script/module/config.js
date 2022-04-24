@@ -126,6 +126,10 @@ export var config = {
             enable: true, // 是否启用文档扩展功能
             outline: {
                 enable: true, // 是否启用当前文档大纲复制功能
+                ial: { // 列表块属性, 用于设置渲染样式, 为空则为默认样式
+                    // 'custom-type': 'map', // 脑图视图
+                    // 'custom-type': 'table', // 表格视图
+                },
                 u: {
                     enable: true, // 无序列表
                     toolbar: { // 菜单栏
