@@ -5,6 +5,18 @@
 import { config } from './config.js';
 import { goto } from './../utils/misc.js';
 
+function jump(...args) {
+    try {
+        console.log('goto');
+        goto(...args);
+    } catch (e) {
+        if (e.message === args[0]) {
+            setTimeout(() => jump(...args), 250);
+        }
+        else throw e;
+    }
+}
+
 function jumpToID() {
     let url = new URL(window.location.href);
     let id = url.searchParams.get('id');
@@ -13,21 +25,14 @@ function jumpToID() {
 
     if (config.theme.regs.id.test(id)) {
         // console.log(id);
-        try {
-            goto(id, focus, editable);
-        } catch (e) {
-            if (e.message === id) {
-                setTimeout(jumpToID, 500);
-            }
-            else throw e;
-        }
+        setTimeout(() => jump(id, focus, editable), 0);
     }
 }
 
 setTimeout(() => {
     try {
         if (config.theme.goto.enable) {
-            window.onload = setTimeout(jumpToID, 0);
+            setTimeout(jumpToID, 0);
         }
     } catch (err) {
         console.error(err);
