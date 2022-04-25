@@ -25,6 +25,7 @@ export {
     以id获取文档内容 as getDoc,
     以id获取文档聚焦内容 as getFocusedDoc,
     以id获取文档块markdown as exportMdContent,
+    以id获取文档大纲 as getDocOutline,
 
     以id获取思源块属性 as getBlockAttrs,
     设置思源块属性 as setBlockAttrs,
@@ -242,6 +243,14 @@ async function 以id获取文档块markdown(文档id) {
     let url = '/api/export/exportMdContent'
     return 解析响应体(向思源请求数据(url, data))
     //文档hepath与Markdown 内容
+}
+
+async function 以id获取文档大纲(文档id) {
+    let data = {
+        id: 文档id,
+    }
+    let url = '/api/outline/getDocOutline'
+    return 解析响应体(向思源请求数据(url, data))
 }
 
 async function 列出指定路径下文档(路径) {

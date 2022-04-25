@@ -4,11 +4,15 @@ import { config } from './config.js';
 import { isKey } from './../utils/hotkey.js';
 import { toolbarItemInit } from './../utils/ui.js';
 import { getFocusedDocID } from './../utils/dom.js';
-import { ialCreate } from './../utils/string.js';
+import {
+    ialCreate,
+    HTMLDecode,
+} from './../utils/string.js';
 import { getObjectLength } from './../utils/misc.js';
 import {
     exportMdContent,
     updateBlock,
+    getDocOutline,
 } from './../utils/api.js';
 
 async function docCopy() {
@@ -66,48 +70,109 @@ const MAP = {
     },
 }
 
-function outlineCopy(mode) {
-    const outline = document.querySelector('.sy__outline .b3-list.b3-list--background');
+async function outlineCopy(mode) {
     const content = MAP.outline.style.content[config.theme.doc.outline.style.content];
-    if (outline
-        && outline.firstElementChild
-        && !outline.firstElementChild.classList.contains('b3-list--empty')
-    ) {
-        let mark = MAP.outline.style.list[mode];
-        let markdown = [];
-        function outlineParser(node, deep = 0, index = 0) {
-            // 大纲解析器
-            switch (node.nodeName) {
-                case 'LI':
+    let mark = MAP.outline.style.list[mode];
+    let markdown = [];
+
+    function outlineDomParser(node, deep = 0, index = 0) {
+        // 大纲解析器, 通过解析页面 DOM 获得大纲
+        switch (node.localName) {
+            case 'li':
+                let indent = deep * 4;
+                if (indent >= 0) {
                     let id = node.dataset.nodeId; // 块 ID
-                    let text = node.querySelector('.b3-list-item__text').innerText; // 块内容
-                    let level = parseInt(/^h(\d+)$/.exec(node.dataset.subtype)[1]); // 标题级别
-                    let headline = config.theme.doc.outline.headline; // 标题级别标志配置选项
-                    markdown.push(`${' '.repeat(deep * 4)}${mark(++index)}${headline.handler(level, headline.enable)}${content(text, id)}`);
-                    return index;
-                case 'UL':
-                    markdown.push('');
-                    let child_index = 0;
-                    for (let child of node.childNodes) {
-                        child_index = outlineParser(child, deep + 1, child_index);
-                    }
-                    return index;
-                default:
-                    return 0;
-            }
+                    let text = node.querySelector('span.b3-list-item__text').innerText
+                        || config.theme.doc.outline.empty; // 块内容
+                    let level = node.dataset.subtype
+                        ? parseInt(/^h(\d+)$/.exec(node.dataset.subtype)[1])
+                        : 0; // 标题级别
+                    let heading = config.theme.doc.outline.heading; // 标题级别标志配置选项
+                    markdown.push(`${' '.repeat(indent)}${mark(++index)}${heading.handler(level, heading.enable)}${content(text, id)}`);
+                }
+                return index;
+            case 'ul':
+                markdown.push('');
+                let child_index = 0;
+                for (let child of node.childNodes) {
+                    child_index = outlineDomParser(child, deep + 1, child_index);
+                }
+                return index;
+            default:
+                return 0;
+        }
+    }
+
+    function outlineParser(node, offset = 0, index = 0) {
+        // 大纲解析器, 通过解析 API 响应数据获得大纲
+
+        let indent = (node.depth + offset) * 4; // 缩进
+        if (indent >= 0) {
+            // 节点信息
+            let id = node.id; // 块 ID
+            let text = HTMLDecode(
+                node.content
+                || node.name
+                || config.theme.doc.outline.empty
+            ); // 块内容
+            let level = node.subType
+                ? parseInt(/^h(\d+)$/.exec(node.subType)[1])
+                : 0; // 标题级别
+            let heading = config.theme.doc.outline.heading; // 标题级别标志配置选项
+            markdown.push(`${' '.repeat(indent)}${mark(++index)}${heading.handler(level, heading.enable)}${content(text, id)}`);
         }
 
+        if (node.count > 0) {
+            // 遍历子节点
+            markdown.push('');
+            let child_index = 0;
+            for (const chile of (node.children || node.blocks)) {
+                // console.log(child_index);
+                child_index = outlineParser(chile, offset, child_index);
+            }
+        }
+        return index;
+    }
+
+    let outline = await getDocOutline();
+    if (outline) {
+        // 使用 API 解析器方案
+
+        console.log(outline);
         switch (config.theme.doc.outline.top) {
             case 'd':
-                outlineParser(outline.firstElementChild);
-                outlineParser(outline.lastElementChild);
+                outlineParser(outline[0]);
                 break;
             case 'h':
-                outlineParser(outline.lastElementChild, -1);
+                outlineParser(outline[0], -1);
                 break;
             default:
                 return;
         }
+    }
+    else {
+        // 使用 DOM 解析器方案
+        outline = document.querySelector('.sy__outline .b3-list.b3-list--background');
+        if (outline
+            && outline.firstElementChild
+            && !outline.firstElementChild.classList.contains('b3-list--empty')
+        ) {
+            console.log(outline);
+            switch (config.theme.doc.outline.top) {
+                case 'd':
+                    outlineDomParser(outline.firstElementChild);
+                    outlineDomParser(outline.lastElementChild);
+                    break;
+                case 'h':
+                    outlineDomParser(outline.lastElementChild, -1);
+                    break;
+                default:
+                    return;
+            }
+        }
+    }
+
+    if (markdown.length > 0) {
         if (getObjectLength(config.theme.doc.outline.ial) > 0) markdown.push(ialCreate(config.theme.doc.outline.ial));
         navigator.clipboard.writeText(markdown.join('\n'));
     }

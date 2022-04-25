@@ -48,8 +48,8 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 <iframe src="//player.bilibili.com/player.html?aid=980804170&bvid=BV1u44y1G7Y2&cid=581072653&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
-感谢 [君の富士山爆发](https://space.bilibili.com/250665585#/) 朋友制作的视频  
-Thanks to [君の富士山爆发](https://space.bilibili.com/250665585#/) for making the video.
+感谢 [UserZYF](https://github.com/UserZYF) 朋友制作的视频  
+Thanks to [UserZYF](https://github.com/UserZYF) for making the video.
 
 同时推荐一下视频作者制作的精美主题  
 Recommend the video author's beautiful theme.
