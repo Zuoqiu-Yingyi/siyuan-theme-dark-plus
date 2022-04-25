@@ -185,11 +185,12 @@ export var config = {
                     // 大纲样式
                     content: 'link', // 内容样式('text': 文本, 'link': 链接, 'ref': 块引用)
                 },
-                headline: {
+                heading: {
                     enable: false, // 是否在列表中添加标题级别标志
                     handler: (level, enable) => (enable ? `${'#'.repeat(level)} ` : ''),
                 },
                 top: 'h', // 大纲最顶层块类型('d': 文档块, 'h': 标题块)
+                empty: '-', // 大纲空块显示内容
             },
             copy: {
                 enable: true, // 是否启用当前文档全文复制功能

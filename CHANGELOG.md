@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
+- 为复制当前文档大纲增加 API 解析方案 | Added API parsing scheme for copying the current document outline.
+
 ## v0.9.1/2022-04-24
 
 - [v0.9.0 <=> v0.9.1](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.0...v0.9.1)
