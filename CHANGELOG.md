@@ -2,6 +2,7 @@
 
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 为复制当前文档大纲增加 API 解析方案 | Added API parsing scheme for copying the current document outline.
+- 优化打字机模式监听器添加方案 | Optimized the typewriter mode listener addition scheme.
 
 ## v0.9.1/2022-04-24
 
