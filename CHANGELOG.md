@@ -4,6 +4,8 @@
 - 为复制当前文档大纲增加 API 解析方案 | Added API parsing scheme for copying the current document outline.
 - 优化打字机模式监听器添加方案 | Optimized the typewriter mode listener addition scheme.
 - Monaco Editor 编辑 Markdown 时禁用复制为富文本功能 | Disables the copy to rich text function when editing Markdown in Monaco Editor.
+- 使用 <kbd>鼠标中键</kbd> 在新窗口打开收集箱中的链接 | Use <kbd>mouse middle button</kbd> to open links in the collection box in a new window.
+- 使用 <kbd>Alt + 鼠标中键</kbd> 在 Monaco Editor 中打开收集箱内容 | Use <kbd>Alt + mouse middle button</kbd> to open the content of the collection box in Monaco Editor.
 
 ## v0.9.1/2022-04-24
 

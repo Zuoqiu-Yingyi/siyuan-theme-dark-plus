@@ -14,8 +14,14 @@ export var config = {
             // 标记
             block: 'Ⓑ', // 块标记
             blockpath: '🄽', // 块路径标记
-            file: 'Ⓕ', // 文件标记
+            file: '🗋', // 文件标记
+            // file: '🖹', // 文件标记
+            // file: '🖺', // 文件标记
             filepath: '🄿', // 文件路径标记
+            url: '🌐', // 超链接标记
+            urlpath: '🔗', // 超链接路径标记
+            inbox: '📥', // 超链接标记
+            inboxpath: '🔗', // 超链接路径标记
             pathseparate: ' > ', // 路径分隔符
             status: { // 状态
                 edited: '📝', // 已编辑且未保存标记
@@ -95,6 +101,7 @@ export var config = {
                     local: { zh_CN: '本地文件', default: 'Local File' },
                     assets: { zh_CN: '资源文件', default: 'Asset File' },
                     web: { zh_CN: '网络文件', default: 'Web File' },
+                    inbox: { zh_CN: '收集箱', default: 'Inbox' },
                 },
 
                 type: {
