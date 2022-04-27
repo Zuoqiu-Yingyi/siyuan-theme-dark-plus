@@ -6,6 +6,7 @@
 - Monaco Editor 编辑 Markdown 时禁用复制为富文本功能 | Disables the copy to rich text function when editing Markdown in Monaco Editor.
 - 使用 <kbd>鼠标中键</kbd> 在新窗口打开收集箱中的链接 | Use <kbd>mouse middle button</kbd> to open links in the collection box in a new window.
 - 使用 <kbd>Alt + 鼠标中键</kbd> 在 Monaco Editor 中打开收集箱内容 | Use <kbd>Alt + mouse middle button</kbd> to open the content of the collection box in Monaco Editor.
+- 修复 `显示标记文本` 块菜单项重复问题 | Fixed the block menu item duplicate issue of `Display Marked Text`.
 
 ## v0.9.1/2022-04-24
 

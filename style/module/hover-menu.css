@@ -161,6 +161,7 @@
     column-gap: 1em;
     column-rule: var(--custom-list-guides-line-width) solid var(--b3-border-color);
     /* column-fill: auto; */
+    /* height: 32em !important; */
     max-height: none !important;
 }
 
