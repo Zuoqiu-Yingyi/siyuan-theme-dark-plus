@@ -13,7 +13,6 @@ import {
     updateBlock,
     getFile,
     putFile,
-    getAsset,
 } from './js/api.js';
 
 async function init(params) {
@@ -193,6 +192,7 @@ async function init(params) {
                         params.value = b.markdown;
                         params.language = 'markdown';
                         params.tabSize = 2;
+                        params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
                     }
                     break;
                 case 'd': // 文档块
@@ -205,6 +205,7 @@ async function init(params) {
                             params.language = 'markdown';
                             params.tabSize = 2;
                             config.editor.command.LOADED();
+                            params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
                         } else {
                             // 没有查询到 kramdown 模板
                             params.mode = 'none';
@@ -224,6 +225,7 @@ async function init(params) {
                             params.language = 'markdown';
                             params.tabSize = 2;
                             params.filename = `${b.content}.md`;
+                            params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
                         }
                     }
                     break;
@@ -239,6 +241,7 @@ async function init(params) {
                         params.value = b.markdown;
                         params.language = 'markdown';
                         params.tabSize = 2;
+                        params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
                     }
                     break;
                 default:
@@ -246,6 +249,7 @@ async function init(params) {
                     params.value = b.markdown;
                     params.language = 'markdown';
                     params.tabSize = 2;
+                    params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
                     break;
             }
             // params.value = `${b.markdown}\n${b.ial}`;
@@ -332,6 +336,7 @@ window.onload = () => {
             fontFamily: decodeURI(window.editor.url.searchParams.get('fontFamily') || '')
                 ? [decodeURI(window.editor.url.searchParams.get('fontFamily') || '')]
                 : [], // 字体
+            IStandaloneEditorConstructionOptions: {}, // 其他编辑器配置
             // REF [JS Unicode编码和解码（6种方法）](http://c.biancheng.net/view/5602.html)
             body: JSON.parse(decodeURI(window.editor.url.hash.substring(1)) || null),
         };
@@ -373,8 +378,9 @@ window.onload = () => {
                         tabSize: window.editor.params.tabSize || 4, // 缩进
                         value: window.editor.params.value, // 初始值
                     }, // URL params 配置
+                    window.editor.params.IStandaloneEditorConstructionOptions || {},
                     window.editor.params.body
-                        ? window.editor.params.body.IStandaloneEditorConstructionOptions
+                        ? window.editor.params.body.IStandaloneEditorConstructionOptions || {}
                         : {}, // URL hash 配置
                 );
                 // console.log(options);
