@@ -24,6 +24,48 @@ async function init(params) {
     let n; // 笔记本
     let t; // 临时
     switch (params.mode) {
+        case 'inbox': // 收集箱
+            r = await getFile(params.path); // 获取文件内容
+            if (r) {
+                params.value = await r.text();
+                params.language = 'markdown';
+                params.tabSize = 2;
+                params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
+                let typeText, hpathText, typeTitle, hpathTitle, blockHref, docHref;
+                try {
+                    const url = new URL(params.url);
+
+                    typeText = `${config.editor.mark.inbox}${config.editor.MAP.LABELS.mode[params.mode][params.lang] || config.editor.MAP.LABELS.mode[params.mode].default}`;
+                    hpathText = `${config.editor.mark.inboxpath}${url.host}${url.pathname}`.replaceAll('/', config.editor.mark.pathseparate);
+                    typeTitle = params.title || params.describe;
+                    hpathTitle = params.url;
+                    blockHref = '#';
+                    docHref = params.url;
+
+                    // params.breadcrumb.type.download = typeTitle; // 设置下载按钮
+                    params.breadcrumb.crumb.target = '_self'; // 在本窗口打开
+                }
+                catch (e) {
+                    typeText = `${config.editor.mark.inbox}${config.editor.MAP.LABELS.mode[params.mode][params.lang] || config.editor.MAP.LABELS.mode[params.mode].default}`;
+                    hpathText = `${config.editor.mark.inboxpath}${params.describe}`;
+                    typeTitle = params.title;
+                    hpathTitle = params.describe;
+                    blockHref = '#';
+                    docHref = '#';
+                }
+                finally {
+                    params.filename = `${typeTitle.replaceAll(/[\\\/\:\*\?\"\<\>\|]/g, '')}.md`;
+                    params.breadcrumb.set(
+                        typeText,
+                        hpathText,
+                        typeTitle,
+                        hpathTitle,
+                        blockHref,
+                        docHref,
+                    ); // 设置面包屑
+                }
+            }
+            break;
         case 'assets': // 资源文件
             switch (true) {
                 case params.path.startsWith('assets/'):
@@ -94,8 +136,8 @@ async function init(params) {
 
                         if (params.language === 'default' && ext) params.language = ext; // 如果没有设置语言, 则根据文件扩展名设置语言
                         params.breadcrumb.set(
-                            `${config.editor.mark.file}${config.editor.MAP.LABELS.mode[params.mode][params.lang] || config.editor.MAP.LABELS.mode[params.mode].default}`,
-                            `${config.editor.mark.filepath}${url.host}${url.pathname}`.replaceAll('/', config.editor.mark.pathseparate),
+                            `${config.editor.mark.url}${config.editor.MAP.LABELS.mode[params.mode][params.lang] || config.editor.MAP.LABELS.mode[params.mode].default}`,
+                            `${config.editor.mark.urlpath}${url.host}${url.pathname}`.replaceAll('/', config.editor.mark.pathseparate),
                             filename,
                             params.url,
                             params.url,
@@ -204,7 +246,6 @@ async function init(params) {
                             params.value = await r.text();
                             params.language = 'markdown';
                             params.tabSize = 2;
-                            config.editor.command.LOADED();
                             params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
                         } else {
                             // 没有查询到 kramdown 模板
@@ -283,9 +324,12 @@ window.onload = () => {
                 type: document.getElementById('type'),
                 crumb: document.getElementById('crumb'),
                 set: (typeText, hpathText, typeTitle, hpathTitle, blockHref, docHref) => {
-                    if (typeText) window.editor.params.breadcrumb.type.innerText = typeText;
-                    if (typeText) window.editor.params.breadcrumb.typeText = typeText;
-                    if (hpathText) window.editor.params.breadcrumb.crumb.innerText = hpathText;
+                    if (typeText) {
+                        typeText = typeText.replaceAll(/(\n|\r)+/g, ' ')
+                        window.editor.params.breadcrumb.type.innerText = typeText;
+                        window.editor.params.breadcrumb.typeText = typeText;
+                    }
+                    if (hpathText) window.editor.params.breadcrumb.crumb.innerText = hpathText.replaceAll(/(\n|\r)+/g, ' ');
 
                     if (typeTitle) window.editor.params.breadcrumb.type.setAttribute('title', typeTitle);
                     if (hpathTitle) window.editor.params.breadcrumb.crumb.setAttribute('title', hpathTitle);
@@ -309,6 +353,7 @@ window.onload = () => {
             /**
              * 模式
              * 'none': 白板
+             * 'inbox': 收集箱
              * 'local': 本地资源
              * 'assets': 资源
              *     -> 'assets': 思源资源
@@ -321,21 +366,24 @@ window.onload = () => {
              *     -> 'doc': 文档块
              */
             mode: window.editor.url.searchParams.get('mode')
-                || 'none',
-            value: '',
+                || 'none', // 编辑器模式
+            value: '', // 内容
             theme: window.editor.url.searchParams.get('theme')
-                || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 1 : 0),
+                || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 1 : 0), // 主题模式
             lang: window.editor.url.searchParams.get('lang')
-                || 'default',
+                || 'default', // 语言
             language: window.editor.url.searchParams.get('language')
-                || 'default',
+                || 'default', // 语言模式
             tabSize: parseInt(window.editor.url.searchParams.get('tabSize'))
-                || 4,
+                || 4, // 缩进空格数量
             workspace: window.editor.url.searchParams.get('workspace')
-                || '',
+                || '', // 工作空间路径
             fontFamily: decodeURI(window.editor.url.searchParams.get('fontFamily') || '')
                 ? [decodeURI(window.editor.url.searchParams.get('fontFamily') || '')]
                 : [], // 字体
+
+            title: decodeURI(window.editor.url.searchParams.get('title') || ''),
+            describe: decodeURI(window.editor.url.searchParams.get('describe') || ''),
             IStandaloneEditorConstructionOptions: {}, // 其他编辑器配置
             // REF [JS Unicode编码和解码（6种方法）](http://c.biancheng.net/view/5602.html)
             body: JSON.parse(decodeURI(window.editor.url.hash.substring(1)) || null),
@@ -394,6 +442,7 @@ window.onload = () => {
                     let response;
                     switch (window.editor.params.mode) {
                         case 'web':
+                        case 'inbox':
                             response = await saveAsFile(window.editor.editor.getValue(), window.editor.params.filename || undefined);
                             break;
                         case 'local':

@@ -9,6 +9,7 @@ export {
     getFocusedID, // 获得焦点所在的块 ID, 否则获得焦点所在文档的 ID
     getTargetBlock, // 获得目标的块
     getTargetBlockID, // 获得目标的块 ID
+    getTargetInboxID, // 获得目标的收件箱 ID
     getTargetHref, // 获得目标超链接
     getBlockMark, // 获得块标记
     getBlockSelected, // 获得块选中
@@ -128,6 +129,23 @@ function getTargetBlockID(target) {
         if (config.theme.regs.url.test(element.dataset.href)) return url2id(element.dataset.href);
         if (config.theme.regs.url.test(element.href)) return url2id(element.href);
         return element.href || element.dataset.href || null;
+    }
+    else return null;
+}
+
+/**
+ * 获得目标的收集箱 ID
+ * @target {HTMLElement} 目标
+ * @returns {string} 收集箱 ID
+ * @returns {null} 没有找到收集箱 ID
+ */
+function getTargetInboxID(target) {
+    let element = target;
+    let rag = /^\d{13}$/
+    while (element != null && ! config.theme.regs.inboxid.test(element.dataset.id)) element = element.parentElement;
+
+    if (element != null) {
+        if (config.theme.regs.inboxid.test(element.dataset.id)) return element.dataset.id;
     }
     else return null;
 }

@@ -20,6 +20,7 @@ export var config = {
             id: /^\d{14}\-[0-9a-z]{7}$/, // 块 ID 正则表达式
             fontsize: /(?<=\.b3-typography|protyle-wysiwyg|protyle-title\s*\{\s*font-size\s*:\s*)(\d+)(?=px(?:\s+\!important)?(?:\s*;|\}))/,
             winpath: /^\/\w\:\/.*$/, // Windows 路径正则表达式
+            inboxid: /^\d{13}$/, // 收集箱 ID 正则表达式
         },
         goto: {
             enable: true, // 是否启用使用 URL 参数跳转指定块功能
