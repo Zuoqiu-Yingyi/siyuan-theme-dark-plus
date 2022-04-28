@@ -4,6 +4,7 @@ import {
     pathParse,
     saveAsFile,
     merge,
+    getRelativePath,
 } from './js/utils.js';
 import {
     queryBlock,
@@ -13,6 +14,7 @@ import {
     updateBlock,
     getFile,
     putFile,
+    resolveAssetPath,
 } from './js/api.js';
 
 async function init(params) {
@@ -69,32 +71,51 @@ async function init(params) {
         case 'assets': // 资源文件
             switch (true) {
                 case params.path.startsWith('assets/'):
-                    r = await queryAsset(params.path);
-                    if (!(r
-                        && r.code === 0
-                        && r.data.length > 0
-                    )) params.path = `/data/${params.path}`; // 没有查询到资源文件
-                    else {
-                        for (const asset of r.data) {
-                            b = asset;
-                            let paths = `${b.box}${b.docpath}`.split('/');
-                            for (let i = 0; i < paths.length; ++i) {
-                                t = `/data/${paths.slice(0, i).join('/')}/${b.path}`.replaceAll('//', '/');
-                                r = await getFile(t);
-                                if (r) break;
-                            }
-                            if (r) {
-                                params.block = b;
-                                params.path = t;
-                                params.value = await r.text();
-                                break;
-                            }
+                case params.path.startsWith('/assets/'):
+
+                    // 使用 API 查询资源文件的相对路径
+                    // 查询绝对路径 => 获得相对路径 => 获得资源文件 => 设置面包屑
+                    r = await resolveAssetPath(params.path);
+                    if (r && r.code === 0) {
+                        params.url = r.data.replaceAll(/(\\|\/)+/g, '/');
+                        params.path = `/${getRelativePath(params.url, params.workspace)}`;
+                        r = await getFile(params.path);
+                        if (r) {
+                            params.value = await r.text(); // 文件内容
+                            break;
+                        }
+                        else {
+                            params.mode = 'none';
+                            return;
                         }
                     }
-                    break;
-                case params.path.startsWith('/assets/'):
-                    params.path = `/data${params.path}`;
-                    break;
+                    else {
+                        params.mode = 'none';
+                        return;
+                    }
+                // 使用遍历目录的方法获取资源文件
+                // r = await queryAsset(params.path);
+                // if (!(r
+                //     && r.code === 0
+                //     && r.data.length > 0
+                // )) params.path = `/data/${params.path}`; // 没有查询到资源文件
+                // else {
+                //     for (const asset of r.data) {
+                //         b = asset;
+                //         let paths = `${b.box}${b.docpath}`.split('/');
+                //         for (let i = 0; i < paths.length; ++i) {
+                //             t = `/data/${paths.slice(0, i).join('/')}/${b.path}`.replaceAll('//', '/');
+                //             r = await getFile(t);
+                //             if (r) break;
+                //         }
+                //         if (r) {
+                //             params.block = b;
+                //             params.path = t;
+                //             params.value = await r.text();
+                //             break;
+                //         }
+                //     }
+                // }
                 case params.path.startsWith('widgets/'):
                     params.path = `/data/${params.path}`;
                     break;
@@ -158,9 +179,13 @@ async function init(params) {
             }
 
         case 'local': // 本地文件
-            params.path.replaceAll('\\', '/').replaceAll('//', '/'); // 相对于思源工作空间的路径
-            // 完整文件路径
-            if (!params.url) params.url = `${params.workspace}${params.path}`.replaceAll('\\', '/').replaceAll('//', '/');
+            if (!params.url) {
+                params.url = `${params.workspace}${params.path}`.replaceAll(/(\\|\/)+/g, '/');
+            }
+            // 文件路径
+            let hpathText = params.url.startsWith(params.workspace)
+                ? params.path.substring(1)
+                : params.url;
             r = await getFile(params.path); // 获取文件内容
             if (r) {
                 params.value = await r.text(); // 文件内容
@@ -171,7 +196,7 @@ async function init(params) {
                 if (params.language === 'default' && ext) params.language = ext; // 如果没有设置语言, 则根据文件扩展名设置语言
                 params.breadcrumb.set(
                     `${config.editor.mark.file}${config.editor.MAP.LABELS.mode[params.mode][params.lang] || config.editor.MAP.LABELS.mode[params.mode].default}`,
-                    `${config.editor.mark.filepath}${params.url}`.replaceAll('/', ' > '),
+                    `${config.editor.mark.filepath}${hpathText}`.replaceAll('/', config.editor.mark.pathseparate),
                     filename,
                     params.url,
                     config.editor.link.file(params.url),
@@ -376,7 +401,7 @@ window.onload = () => {
                 || 'default', // 语言模式
             tabSize: parseInt(window.editor.url.searchParams.get('tabSize'))
                 || 4, // 缩进空格数量
-            workspace: window.editor.url.searchParams.get('workspace')
+            workspace: window.editor.url.searchParams.get('workspace').replaceAll(/(\\|\/)+/g, '/')
                 || '', // 工作空间路径
             fontFamily: decodeURI(window.editor.url.searchParams.get('fontFamily') || '')
                 ? [decodeURI(window.editor.url.searchParams.get('fontFamily') || '')]

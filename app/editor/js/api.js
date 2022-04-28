@@ -7,14 +7,16 @@ export {
     queryAsset,
     updateBlock,
     exportMdContent,
-    getFile,
     getAsset,
     getLocalFile,
+    getFile,
     putFile,
+    resolveAssetPath,
+    upload,
 };
 
 import { config } from './config.js';
-// import { pathParse } from './utils.js';
+import { getRelativePath } from './utils.js';
 
 async function request(url, data, token = config.token) {
     return fetch(url, {
@@ -127,16 +129,22 @@ async function putFile(path, filedata, isDir = false, modTime = Date.now(), toke
     else return null;
 }
 
-async function putAssets(filename, filedata, path = '/assets/', token = config.token) {
-    let blob = new Blob([filedata]);
-    let file = new File([blob], path.split('/').pop());
+async function resolveAssetPath(path) {
+    return request('/api/asset/resolveAssetPath', {
+        path: path,
+    });
+}
+
+async function upload(filename, filedata, path = '/assets/', mine = null, token = config.token) {
+    filename = filenameParse(filename).name;
+
+    let blob = new Blob([filedata], { type: mime });
+    let file = new File([blob], filename, { lastModified: Date.now() });
     let formdata = new FormData();
-    formdata.append("path", path);
-    formdata.append("file", file);
-    formdata.append("isDir", isDir);
-    formdata.append("modTime", modTime);
+    formdata.append("assetsDirPath", path);
+    formdata.append("file[]", file);
     const response = await fetch(
-        "/api/file/putFile",
+        "/api/asset/upload",
         {
             body: formdata,
             method: "POST",
