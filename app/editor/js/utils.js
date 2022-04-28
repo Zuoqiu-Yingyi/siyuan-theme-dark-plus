@@ -3,6 +3,7 @@ export {
     pathParse,
     saveAsFile,
     merge, // 递归合并对象
+    getRelativePath,
 };
 
 // REF [js - 对象递归合并merge - zc-lee - 博客园](https://www.cnblogs.com/zc-lee/p/15873611.html)
@@ -71,4 +72,19 @@ async function saveAsFile(filedata, filename = 'block.md', type = null) {
         type ? { type: type } : undefined
     ));
     return true;
+}
+
+/**
+ * 绝对路径转相对路径
+ */
+function getRelativePath(filePath, basePath) {
+    filePath = filePath.replaceAll(/(\\|\/)+/g, '/');
+    basePath = basePath.replaceAll(/(\\|\/)+/g, '/');
+    if (filePath.startsWith(basePath)) {
+        return filePath.substring(basePath.length);
+    }
+    else if (filePath.find(basePath) !== -1) {
+        return filePath.substring(filePath.find(basePath) + basePath.length);
+    }
+    else return null;
 }
