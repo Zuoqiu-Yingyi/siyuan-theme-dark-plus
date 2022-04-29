@@ -144,8 +144,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | 段落块<br/>paragraph blocks                       | `type`                   | `图标题`<br/>`表标题`<br/>`figure-title`<br/>`table-title`<br/>(使用空格分隔多个属性值 \| Separate multiple attribute values with spaces)                                                                                                                                                | 图标题/表标题自动计数<br/>Figure titles/table titles are counted automatically.               |
 | 段落块<br/>paragraph blocks                       | `writing-mode`           | `horizontal-tb`<br/>`vertical-rl`<br/>`vertical-lr`<br/>`sideways-rl`<br/>`sideways-lr`                                                                                                                                                                                                  | 如下表所示<br/>This is shown in the following table.                                          |
 
-<!-- <img alt="writing-mode" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/example-writing-mode.svg" style="height: 32em; width: 100%;" /> -->
-<img alt="writing-mode" src="./image/README/example-writing-mode.svg" style="height: auto; width: 100%;" />
+![example-writing-mode](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/1651253157395.png)
 
 ### 功能介绍 | FUNCTIONAL DESCRIPTION
 
