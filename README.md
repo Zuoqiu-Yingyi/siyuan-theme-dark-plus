@@ -144,87 +144,8 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | 段落块<br/>paragraph blocks                       | `type`                   | `图标题`<br/>`表标题`<br/>`figure-title`<br/>`table-title`<br/>(使用空格分隔多个属性值 \| Separate multiple attribute values with spaces)                                                                                                                                                | 图标题/表标题自动计数<br/>Figure titles/table titles are counted automatically.               |
 | 段落块<br/>paragraph blocks                       | `writing-mode`           | `horizontal-tb`<br/>`vertical-rl`<br/>`vertical-lr`<br/>`sideways-rl`<br/>`sideways-lr`                                                                                                                                                                                                  | 如下表所示<br/>This is shown in the following table.                                          |
 
-<table>
-  <style>
-  .example.Text1 span,
-  .example.Text1 {
-    writing-mode: horizontal-tb;
-    -webkit-writing-mode: horizontal-tb;
-    -ms-writing-mode: horizontal-tb;
-  }
-
-  .example.Text2 span,
-  .example.Text2 {
-    writing-mode: vertical-lr;
-    -webkit-writing-mode: vertical-lr;
-    -ms-writing-mode: vertical-lr;
-  }
-
-  .example.Text3 span,
-  .example.Text3 {
-    writing-mode: vertical-rl;
-    -webkit-writing-mode: vertical-rl;
-    -ms-writing-mode: vertical-rl;
-  }
-
-  .example.Text4 span,
-  .example.Text4 {
-    writing-mode: sideways-lr;
-    -webkit-writing-mode: sideways-lr;
-    -ms-writing-mode: sideways-lr;
-  }
-
-  .example.Text5 span,
-  .example.Text5 {
-    writing-mode: sideways-rl;
-    -webkit-writing-mode: sideways-rl;
-    -ms-writing-mode: sideways-rl;
-  }
-  </style>
-  <tr>
-    <th>值 | Value</th>
-    <th>Vertical script | 垂直文本</th>
-    <th>Horizontal (LTR) script | 水平文本(左对齐)</th>
-    <th>Horizontal (RTL) script | 水平文本(右对齐)</th>
-    <th>Mixed script | 混合文本</th>
-  </tr>
-  <tr>
-    <td>horizontal-tb</td>
-    <td class="example Text1"><span>我家没有电脑。</span></td>
-    <td class="example Text1"><span>Example text</span></td>
-    <td class="example Text1"><span>מלל ארוך לדוגמא</span></td>
-    <td class="example Text1"><span>1994年に至っては</span></td>
-  </tr>
-  <tr>
-    <td>vertical-lr</td>
-    <td class="example Text2"><span>我家没有电脑。</span></td>
-    <td class="example Text2"><span>Example text</span></td>
-    <td class="example Text2"><span>מלל ארוך לדוגמא</span></td>
-    <td class="example Text2"><span>1994年に至っては</span></td>
-  </tr>
-  <tr>
-    <td>vertical-rl</td>
-    <td class="example Text3"><span>我家没有电脑。</span></td>
-    <td class="example Text3"><span>Example text</span></td>
-    <td class="example Text3"><span>מלל ארוך לדוגמא</span></td>
-    <td class="example Text3"><span>1994年に至っては</span></td>
-  </tr>
-  <tr>
-    <td>sideways-lr<br>(Filefox)</td>
-    <td class="example Text4"><span>我家没有电脑。</span></td>
-    <td class="example Text4"><span>Example text</span></td>
-    <td class="example Text4"><span>מלל ארוך לדוגמא</span></td>
-    <td class="example Text4"><span>1994年に至っては</span></td>
-  </tr>
-  <tr>
-    <td>sideways-rl<br>(Filefox)</td>
-    <td class="example Text5"><span>我家没有电脑。</span></td>
-    <td class="example Text5"><span>Example text</span></td>
-    <td class="example Text5"><span>מלל ארוך לדוגמא</span></td>
-    <td class="example Text5"><span>1994年に至っては</span></td>
-  </tr>
-</table>
-
+<!-- <img alt="writing-mode" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/example-writing-mode.svg" style="height: 32em; width: 100%;" /> -->
+<img alt="writing-mode" src="./image/README/example-writing-mode.svg" style="height: auto; width: 100%;" />
 
 ### 功能介绍 | FUNCTIONAL DESCRIPTION
 
@@ -255,49 +176,49 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 
 - 指向到思源 Web 静态文件服务目录的超链接显示图标  
   Hyperlinks to the Siyuan Web Static File Service directory displays icons.
-  - <img alt="assets" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/assets.svg" style="height: 1em; width=1em;" /> `assets/`: 资源文件目录 | Asset file directory
+  - <img alt="assets" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/assets.svg" style="height: 1em; width: 1em;" /> `assets/`: 资源文件目录 | Asset file directory
     - `data/**/assets/`
-  - <img alt="emojis" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/emojis.svg" style="height: 1em; width=1em;" /> `emojis/`: 表情文件目录 | Emoji file directory
+  - <img alt="emojis" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/emojis.svg" style="height: 1em; width: 1em;" /> `emojis/`: 表情文件目录 | Emoji file directory
     - `data/emojis/`
-  - <img alt="widgets" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/widgets.svg" style="height: 1em; width=1em;" /> `widgets/`: 挂件文件目录 | Widget file directory
+  - <img alt="widgets" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/widgets.svg" style="height: 1em; width: 1em;" /> `widgets/`: 挂件文件目录 | Widget file directory
     - `data/widgets/`
-  - <img alt="appearance" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/appearance.svg" style="height: 1em; width=1em;" /> `appearance/`: 外观文件目录 | Appearance file directory
+  - <img alt="appearance" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/appearance.svg" style="height: 1em; width: 1em;" /> `appearance/`: 外观文件目录 | Appearance file directory
     - `conf/appearance/`
-  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/export.svg" style="height: 1em; width=1em;" /> `export/`: 导出文件目录 | Export file directory
+  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/export.svg" style="height: 1em; width: 1em;" /> `export/`: 导出文件目录 | Export file directory
     - `temp/export/`
 - 指向资源文件目录下常见文件的超链接显示图标  
   Hyperlinks to common files under the resource file directory display icons.
-  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/pdf.svg" style="height: 1em; width=1em;" />: PDF
-  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/word.svg" style="height: 1em; width=1em;" />: Word
-  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/powerpoint.svg" style="height: 1em; width=1em;" />: PowerPoint
-  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/excel.svg" style="height: 1em; width=1em;" />: Excel
-  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/image.svg" style="height: 1em; width=1em;" />: Image
-  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/audio.svg" style="height: 1em; width=1em;" />: Audio
-  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/video.svg" style="height: 1em; width=1em;" />: Video
-  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/zip.svg" style="height: 1em; width=1em;" />: ZIP
-  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/asset.svg" style="height: 1em; width=1em;" />: Other
+  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/pdf.svg" style="height: 1em; width: 1em;" />: PDF
+  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/word.svg" style="height: 1em; width: 1em;" />: Word
+  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/powerpoint.svg" style="height: 1em; width: 1em;" />: PowerPoint
+  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/excel.svg" style="height: 1em; width: 1em;" />: Excel
+  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/image.svg" style="height: 1em; width: 1em;" />: Image
+  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/audio.svg" style="height: 1em; width: 1em;" />: Audio
+  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/video.svg" style="height: 1em; width: 1em;" />: Video
+  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/zip.svg" style="height: 1em; width: 1em;" />: ZIP
+  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/asset.svg" style="height: 1em; width: 1em;" />: Other
 - 指向第三方资源(`URL Scheme`)的超链接显示图标  
   Hyperlinks(`URL Scheme`) to the third-party resource displays icons.
-  - <img alt="bookxnote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/bookxnote.svg" style="height: 1em; width=1em;" />: `bookxnotepro:` [BookxNote Pro](https://www.bookxnotepro.com/)
-  - <img alt="calibre" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/calibre.png" style="height: 1em; width=1em;" />: `calibre:` [calibre - E-book management](https://calibre-ebook.com/)
-  - <img alt="everything" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/everything.svg" style="height: 1em; width=1em;" />: `es:` [Everything](https://www.voidtools.com/)
-  - <img alt="evernote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/evernote.svg" style="height: 1em; width=1em;" />: `evernote:` [Evernote](https://www.evernote.com/)
-  - <img alt="folder" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/folder.svg" style="height: 1em; width=1em;" />: `file:` [RFC 8089 - The "file" URI Scheme](https://datatracker.ietf.org/doc/html/rfc8089)
-  - <img alt="http" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/http.svg" style="height: 1em; width=1em;" />: `http:` [RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1](https://datatracker.ietf.org/doc/html/rfc2616/)
-  - <img alt="https" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/https.svg" style="height: 1em; width=1em;" />: `https:` [RFC 2818 - HTTP Over TLS](https://datatracker.ietf.org/doc/html/rfc2818)
-  - <img alt="joplin" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/joplin.svg" style="height: 1em; width=1em;" />: `joplin:` [Joplin](https://joplinapp.org/)
-  - <img alt="liquidtext" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/liquidtext.svg" style="height: 1em; width=1em;" />: `lt:` [liquidtext](https://www.liquidtext.net/)
-  - <img alt="mailto" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/mailto.svg" style="height: 1em; width=1em;" />: `mailto:` [RFC 6068 - The 'mailto' URI Scheme](https://datatracker.ietf.org/doc/html/rfc6068)
-  - <img alt="marginnote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/marginnote.svg" style="height: 1em; width=1em;" />: `marginnote3app:` [Marginnote](https://www.marginnote.com/)
-  - <img alt="obsidian" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/obsidian.ico" style="height: 1em; width=1em;" />: `obsidian:` [Obsidian](https://obsidian.md/)
-  - <img alt="onenote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/onenote.svg" style="height: 1em; width=1em;" />: `onenote:` [OneNote](https://www.onenote.com/)
-  - <img alt="quicker" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/quicker.svg" style="height: 1em; width=1em;" />: `quicker:` [Quicker](https://getquicker.net/)
-  - <img alt="pwsh" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/pwsh.svg" style="height: 1em; width=1em;" />: `runpwsh:` `runcmd:` [url-run-command](https://github.com/Zuoqiu-Yingyi/url-run-command)
-  - <img alt="siyuan" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/siyuan.svg" style="height: 1em; width=1em;" />: `siyuan:` [思源笔记](https://b3log.org/siyuan/)
-  - <img alt="supermemo" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/supermemo.svg" style="height: 1em; width=1em;" />: `sm:` [Super Memory](https://www.super-memory.com/)
-  - <img alt="ticktick" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/ticktick.svg" style="height: 1em; width=1em;" />: `ticktick:` [TickTick](https://ticktick.com/)
-  - <img alt="vscode" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/vscode.svg" style="height: 1em; width=1em;" />: `vscode:` [Visual Studio Code](https://code.visualstudio.com/)
-  - <img alt="zotero" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/zotero.svg" style="height: 1em; width=1em;" />: `zotero:` [Zotero](https://www.zotero.org/)
+  - <img alt="bookxnote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/bookxnote.svg" style="height: 1em; width: 1em;" />: `bookxnotepro:` [BookxNote Pro](https://www.bookxnotepro.com/)
+  - <img alt="calibre" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/calibre.png" style="height: 1em; width: 1em;" />: `calibre:` [calibre - E-book management](https://calibre-ebook.com/)
+  - <img alt="everything" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/everything.svg" style="height: 1em; width: 1em;" />: `es:` [Everything](https://www.voidtools.com/)
+  - <img alt="evernote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/evernote.svg" style="height: 1em; width: 1em;" />: `evernote:` [Evernote](https://www.evernote.com/)
+  - <img alt="folder" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/folder.svg" style="height: 1em; width: 1em;" />: `file:` [RFC 8089 - The "file" URI Scheme](https://datatracker.ietf.org/doc/html/rfc8089)
+  - <img alt="http" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/http.svg" style="height: 1em; width: 1em;" />: `http:` [RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1](https://datatracker.ietf.org/doc/html/rfc2616/)
+  - <img alt="https" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/https.svg" style="height: 1em; width: 1em;" />: `https:` [RFC 2818 - HTTP Over TLS](https://datatracker.ietf.org/doc/html/rfc2818)
+  - <img alt="joplin" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/joplin.svg" style="height: 1em; width: 1em;" />: `joplin:` [Joplin](https://joplinapp.org/)
+  - <img alt="liquidtext" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/liquidtext.svg" style="height: 1em; width: 1em;" />: `lt:` [liquidtext](https://www.liquidtext.net/)
+  - <img alt="mailto" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/mailto.svg" style="height: 1em; width: 1em;" />: `mailto:` [RFC 6068 - The 'mailto' URI Scheme](https://datatracker.ietf.org/doc/html/rfc6068)
+  - <img alt="marginnote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/marginnote.svg" style="height: 1em; width: 1em;" />: `marginnote3app:` [Marginnote](https://www.marginnote.com/)
+  - <img alt="obsidian" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/obsidian.ico" style="height: 1em; width: 1em;" />: `obsidian:` [Obsidian](https://obsidian.md/)
+  - <img alt="onenote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/onenote.svg" style="height: 1em; width: 1em;" />: `onenote:` [OneNote](https://www.onenote.com/)
+  - <img alt="quicker" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/quicker.svg" style="height: 1em; width: 1em;" />: `quicker:` [Quicker](https://getquicker.net/)
+  - <img alt="pwsh" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/pwsh.svg" style="height: 1em; width: 1em;" />: `runpwsh:` `runcmd:` [url-run-command](https://github.com/Zuoqiu-Yingyi/url-run-command)
+  - <img alt="siyuan" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/siyuan.svg" style="height: 1em; width: 1em;" />: `siyuan:` [思源笔记](https://b3log.org/siyuan/)
+  - <img alt="supermemo" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/supermemo.svg" style="height: 1em; width: 1em;" />: `sm:` [Super Memory](https://www.super-memory.com/)
+  - <img alt="ticktick" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/ticktick.svg" style="height: 1em; width: 1em;" />: `ticktick:` [TickTick](https://ticktick.com/)
+  - <img alt="vscode" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/vscode.svg" style="height: 1em; width: 1em;" />: `vscode:` [Visual Studio Code](https://code.visualstudio.com/)
+  - <img alt="zotero" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/zotero.svg" style="height: 1em; width: 1em;" />: `zotero:` [Zotero](https://www.zotero.org/)
 - 使用 URL 参数 `id=<内容块 ID>` 从浏览器外跳转到 Web 端的指定块(必须已经打开至少一个页签)  
   Jump from outside the browser to a specified block on the web side using the URL parameter `id=<content block ID>` (at least one tab must already be open)
   - 示例: `http(s)://host:port/stage/build/desktop/?id=20220128124308-bancmue`  
