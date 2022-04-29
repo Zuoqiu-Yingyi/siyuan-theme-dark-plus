@@ -4,18 +4,21 @@
 @import url(/widgets/custom.css);
 
 .b3-typography .code-block,
-.protyle-wysiwyg .code-block {
+.protyle-wysiwyg [data-node-id].code-block {
     background-color: var(--custom-block-code-background-color);
 }
 
+/* 行号 */
 .b3-typography .protyle-linenumber__rows,
-.protyle-wysiwyg .protyle-linenumber__rows {
+.protyle-wysiwyg [data-node-id].code-block>.protyle-linenumber__rows {
     background-color: var(--custom-block-code-linenumber-background-color);
+    padding-bottom: 0;
 }
 
 .b3-typography .hljs,
-.protyle-wysiwyg .hljs {
+.protyle-wysiwyg [data-node-id].code-block>.hljs {
     background-color: transparent;
+    padding-bottom: 0;
 }
 
 .protyle-linenumber {

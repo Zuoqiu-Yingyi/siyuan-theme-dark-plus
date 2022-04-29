@@ -9,6 +9,7 @@
 - 修复 `显示标记文本` 块菜单项重复问题 | Fixed the block menu item duplicate issue of `Display Marked Text`.
 - 使用 API 查询思源内部资源文件路径 | Use API to query the path of siyuan asset file.
 - 为工具栏按钮添加配置选项 `display: boolean` 控制是否显示 | Add configuration options `display: boolean` to control whether to display the toolbar button.
+- 移除代码块下边距(适配思源 `v2.0.3`) | Remove the bottom margin of code block (adapted to SiYuan `v2.0.3`).
 
 ## v0.9.1/2022-04-24
 
