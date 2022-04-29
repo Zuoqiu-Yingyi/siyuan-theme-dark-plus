@@ -8,6 +8,7 @@
 - 使用 <kbd>Alt + 鼠标中键</kbd> 在 Monaco Editor 中打开收集箱内容 | Use <kbd>Alt + mouse middle button</kbd> to open the content of the collection box in Monaco Editor.
 - 修复 `显示标记文本` 块菜单项重复问题 | Fixed the block menu item duplicate issue of `Display Marked Text`.
 - 使用 API 查询思源内部资源文件路径 | Use API to query the path of siyuan asset file.
+- 为工具栏按钮添加配置选项 `display: boolean` 控制是否显示 | Add configuration options `display: boolean` to control whether to display the toolbar button.
 
 ## v0.9.1/2022-04-24
 
