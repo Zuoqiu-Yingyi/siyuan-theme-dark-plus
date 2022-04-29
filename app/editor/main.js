@@ -337,7 +337,7 @@ async function init(params) {
 }
 
 window.onload = () => {
-    try {
+    // try {
         window.editor = {};
         window.editor.url = new URL(window.location.href);
         // console.log(window.editor.url);
@@ -401,8 +401,8 @@ window.onload = () => {
                 || 'default', // 语言模式
             tabSize: parseInt(window.editor.url.searchParams.get('tabSize'))
                 || 4, // 缩进空格数量
-            workspace: window.editor.url.searchParams.get('workspace').replaceAll(/(\\|\/)+/g, '/')
-                || '', // 工作空间路径
+            workspace: (window.editor.url.searchParams.get('workspace')
+                || '').replaceAll(/(\\|\/)+/g, '/'), // 工作空间路径
             fontFamily: decodeURI(window.editor.url.searchParams.get('fontFamily') || '')
                 ? [decodeURI(window.editor.url.searchParams.get('fontFamily') || '')]
                 : [], // 字体
@@ -643,8 +643,9 @@ window.onload = () => {
                 window.editor.params.breadcrumb.status.innerText = config.editor.mark.status.success; // 加载完成
             });
         });
-    } catch (error) {
-        console.error(error);
-        window.editor.params.breadcrumb.status.innerText = config.editor.mark.status.error;
-    }
+    // }
+    // catch (error) {
+    //     console.error(error);
+    //     document.getElementById('status').innerText = config.editor.mark.status.error;
+    // }
 }

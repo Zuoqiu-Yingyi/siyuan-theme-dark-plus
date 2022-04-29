@@ -34,6 +34,7 @@ export var config = {
                 enable: true, // 是否启用辅助样式
                 toolbar: { // 菜单栏
                     enable: true,
+                    display: true,
                     id: 'toolbar-theme-style-guides',
                     hotkey: () => config.theme.hotkeys.style.guides,
                     label: {
@@ -62,6 +63,7 @@ export var config = {
                 enable: false, // 是否启用自定义样式渲染
                 toolbar: { // 菜单栏
                     enable: true,
+                    display: true,
                     id: 'toolbar-theme-style-render',
                     hotkey: () => config.theme.hotkeys.style.render,
                     label: {
@@ -106,6 +108,7 @@ export var config = {
                 enable: true, // 是否启用窗口重新加载
                 toolbar: { // 菜单栏
                     enable: true,
+                    display: true,
                     id: 'toolbar-theme-reload-window',
                     hotkey: () => config.theme.hotkeys.reload.window,
                     label: {
@@ -135,6 +138,7 @@ export var config = {
                     enable: true, // 无序列表
                     toolbar: { // 菜单栏
                         enable: true,
+                        display: true,
                         id: 'toolbar-theme-doc-outline-u',
                         hotkey: () => config.theme.hotkeys.doc.outline.u,
                         label: {
@@ -152,6 +156,7 @@ export var config = {
                     enable: true, // 有序列表
                     toolbar: { // 菜单栏
                         enable: true,
+                        display: true,
                         id: 'toolbar-theme-doc-outline-o',
                         hotkey: () => config.theme.hotkeys.doc.outline.o,
                         label: {
@@ -169,6 +174,7 @@ export var config = {
                     enable: true, // 任务列表
                     toolbar: { // 菜单栏
                         enable: true,
+                        display: true,
                         id: 'toolbar-theme-doc-outline-t',
                         hotkey: () => config.theme.hotkeys.doc.outline.t,
                         label: {
@@ -197,6 +203,7 @@ export var config = {
                 enable: true, // 是否启用当前文档全文复制功能
                 toolbar: { // 菜单栏
                     enable: true,
+                    display: true,
                     id: 'toolbar-theme-doc-copy',
                     hotkey: () => config.theme.hotkeys.doc.copy,
                     label: {
@@ -214,6 +221,7 @@ export var config = {
                 enable: true, // 是否启用当前文档全文删除功能
                 toolbar: { // 菜单栏
                     enable: false,
+                    display: true,
                     id: 'toolbar-theme-doc-delete',
                     hotkey: () => config.theme.hotkeys.doc.delete,
                     label: {
@@ -231,6 +239,7 @@ export var config = {
                 enable: true, // 是否启用当前文档全文剪切功能
                 toolbar: { // 菜单栏
                     enable: false,
+                    display: true,
                     id: 'toolbar-theme-doc-cut',
                     hotkey: () => config.theme.hotkeys.doc.cut,
                     label: {
@@ -252,6 +261,7 @@ export var config = {
                 enable: true, // 是否启用打字机模式开关
                 toolbar: { // 菜单栏
                     enable: true,
+                    display: true,
                     id: 'toolbar-theme-typewriter-switch',
                     hotkey: () => config.theme.hotkeys.typewriter.switch,
                     label: {
@@ -279,6 +289,7 @@ export var config = {
             enable: true,
             toolbar: { // 菜单栏
                 enable: true,
+                display: true,
                 id: 'toolbar-theme-invert',
                 hotkey: () => config.theme.hotkeys.invert,
                 label: {
@@ -336,6 +347,7 @@ export var config = {
                     enable: true, // 网络背景图片
                     toolbar: { // 菜单栏
                         enable: true,
+                        display: true,
                         id: 'toolbar-theme-background-image-web',
                         hotkey: () => config.theme.hotkeys.background.image.web,
                         label: {
@@ -365,6 +377,7 @@ export var config = {
                     enable: true, // 自定义背景图片
                     toolbar: { // 菜单栏
                         enable: true,
+                        display: true,
                         id: 'toolbar-theme-background-image-custom',
                         hotkey: () => config.theme.hotkeys.background.image.custom,
                         label: {
@@ -432,6 +445,7 @@ export var config = {
                     url: null, // 新窗口的 URL, 值 null 则为 '/stage/build/desktop/'
                     toolbar: { // 菜单栏
                         enable: true,
+                        display: true,
                         id: 'toolbar-theme-window-open-panel',
                         label: {
                             zh_CN: '打开一个新窗口',
@@ -453,6 +467,7 @@ export var config = {
                         enable: true,
                         toolbar: { // 菜单栏
                             enable: true,
+                            display: true,
                             id: 'toolbar-theme-window-open-block-outfocus',
                             hotkey: () => config.theme.hotkeys.window.open.block.outfocus,
                             label: {
@@ -471,6 +486,7 @@ export var config = {
                         enable: true,
                         toolbar: { // 菜单栏
                             enable: true,
+                            display: true,
                             id: 'toolbar-theme-window-open-block-infocus',
                             hotkey: () => config.theme.hotkeys.window.open.block.infocus,
                             label: {
@@ -530,6 +546,7 @@ export var config = {
                 enable: true, // 块菜单功能开关
                 toolbar: { // 菜单栏
                     enable: true,
+                    display: true,
                     id: 'toolbar-theme-menu-block',
                     hotkey: () => config.theme.hotkeys.menu.block,
                     label: {
