@@ -144,38 +144,43 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | 段落块<br/>paragraph blocks                       | `type`                   | `图标题`<br/>`表标题`<br/>`figure-title`<br/>`table-title`<br/>(使用空格分隔多个属性值 \| Separate multiple attribute values with spaces)                                                                                                                                                | 图标题/表标题自动计数<br/>Figure titles/table titles are counted automatically.               |
 | 段落块<br/>paragraph blocks                       | `writing-mode`           | `horizontal-tb`<br/>`vertical-rl`<br/>`vertical-lr`<br/>`sideways-rl`<br/>`sideways-lr`                                                                                                                                                                                                  | 如下表所示<br/>This is shown in the following table.                                          |
 
-<style>
-.example.Text1 span, .example.Text1 {
-  writing-mode: horizontal-tb;
-  -webkit-writing-mode: horizontal-tb;
-  -ms-writing-mode: horizontal-tb;
-}
-
-.example.Text2 span, .example.Text2 {
-  writing-mode: vertical-lr;
-  -webkit-writing-mode: vertical-lr;
-  -ms-writing-mode: vertical-lr;
-}
-
-.example.Text3 span, .example.Text3 {
-  writing-mode: vertical-rl;
-  -webkit-writing-mode: vertical-rl;
-  -ms-writing-mode: vertical-rl;
-}
-
-.example.Text4 span, .example.Text4 {
-  writing-mode: sideways-lr;
-  -webkit-writing-mode: sideways-lr;
-  -ms-writing-mode: sideways-lr;
-}
-
-.example.Text5 span, .example.Text5 {
-  writing-mode: sideways-rl;
-  -webkit-writing-mode: sideways-rl;
-  -ms-writing-mode: sideways-rl;
-}
-</style>
 <table>
+  <style>
+  .example.Text1 span,
+  .example.Text1 {
+    writing-mode: horizontal-tb;
+    -webkit-writing-mode: horizontal-tb;
+    -ms-writing-mode: horizontal-tb;
+  }
+
+  .example.Text2 span,
+  .example.Text2 {
+    writing-mode: vertical-lr;
+    -webkit-writing-mode: vertical-lr;
+    -ms-writing-mode: vertical-lr;
+  }
+
+  .example.Text3 span,
+  .example.Text3 {
+    writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: vertical-rl;
+  }
+
+  .example.Text4 span,
+  .example.Text4 {
+    writing-mode: sideways-lr;
+    -webkit-writing-mode: sideways-lr;
+    -ms-writing-mode: sideways-lr;
+  }
+
+  .example.Text5 span,
+  .example.Text5 {
+    writing-mode: sideways-rl;
+    -webkit-writing-mode: sideways-rl;
+    -ms-writing-mode: sideways-rl;
+  }
+  </style>
   <tr>
     <th>值 | Value</th>
     <th>Vertical script | 垂直文本</th>
