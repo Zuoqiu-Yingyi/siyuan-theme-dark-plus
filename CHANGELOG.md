@@ -15,6 +15,7 @@
 - 移除代码块下边距(适配思源 `v2.0.3`) | Remove the bottom margin of code block (adapted to SiYuan `v2.0.3`).
 - 在块菜单中支持更多书写模式 | Support more writing modes in block menu.
 - 更新书写模式示例 | Update the writing mode example.
+- 修复使用 URL 参数 `id` 跳转时文档名不改变问题 | Fixed the issue of document title not changing when using URL parameter `id` to jump.
 
 ## v0.9.1/2022-04-24
 

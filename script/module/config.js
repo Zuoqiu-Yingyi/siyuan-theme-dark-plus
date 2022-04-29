@@ -24,6 +24,7 @@ export var config = {
         },
         goto: {
             enable: true, // 是否启用使用 URL 参数跳转指定块功能
+            delay: 250, // 延迟时间，单位毫秒
         },
         style: {
             enable: true, // 是否启用自定义样式渲染
