@@ -11,7 +11,7 @@ function jump(...args) {
         goto(...args);
     } catch (e) {
         if (e.message === args[0]) {
-            setTimeout(() => jump(...args), 250);
+            setTimeout(() => jump(...args), config.theme.goto.delay);
         }
         else throw e;
     }

@@ -83,8 +83,26 @@ function HTMLDecode(text) {
     return temp.textContent;
 }
 
+/**
+ * 跳转到指定块并聚焦
+ * 问题: 文档名不改变
+ */
+function focus(id) {
+    let breadcrumbs = document.querySelector('.protyle-breadcrumb>.protyle-breadcrumb__bar');
+    if (breadcrumbs) {
+        let crumb = document.createElement("span");
+        crumb.setAttribute("data-node-id", id);
+        breadcrumbs.appendChild(crumb);
+        crumb.click();
+        crumb.remove();
+    }
+    else setTimeout(() => focus(id), config.theme.goto.delay);
+}
 
-function gotoOutfocus(id) { // 跳转到指定块
+/**
+ * 跳转到指定块并可选聚焦
+ */
+function jump(id, isFocus = false) {
     let editor = document.querySelector('div.protyle-wysiwyg div[data-node-id] div[contenteditable][spellcheck]');
     if (editor) {
         let link = document.createElement("span");
@@ -93,18 +111,7 @@ function gotoOutfocus(id) { // 跳转到指定块
         editor.appendChild(link);
         link.click();
         link.remove();
-    }
-    else throw new Error(id);
-}
-
-function gotoInfocus(id) { // 跳转到指定块并聚焦
-    let breadcrumbs = document.querySelector('.protyle-breadcrumb>.protyle-breadcrumb__bar');
-    if (breadcrumbs) {
-        let crumb = document.createElement("span");
-        crumb.setAttribute("data-node-id", id);
-        breadcrumbs.appendChild(crumb);
-        crumb.click();
-        crumb.remove();
+        if (isFocus) setTimeout(() => focus(id), 0);
     }
     else throw new Error(id);
 }
@@ -134,8 +141,8 @@ function changeEditMode(mode = 0) { // 切换编辑模式
 
 function goto(id, focus = 0, editable = 0) {
     // 是否聚焦
-    if (parseInt(focus) === 1 || focus === 'true') gotoInfocus(id);
-    else gotoOutfocus(id);
+    if (parseInt(focus) === 1 || focus === 'true') jump(id, true);
+    else jump(id);
 
     // 是否可编辑
     if (parseInt(editable) === 1 || editable === 'true') setTimeout(() => changeEditMode(1), 0);
