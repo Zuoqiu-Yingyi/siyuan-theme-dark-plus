@@ -919,6 +919,63 @@ export var config = {
                                     NodeDocument: {
                                         enable: true,
                                     },
+                                    NodeBlockQueryEmbed: {
+                                        enable: true,
+                                    },
+                                    NodeBlockquote: {
+                                        enable: true,
+                                    },
+                                    NodeList: {
+                                        enable: true,
+                                    },
+                                    NodeListItem: {
+                                        enable: true,
+                                    },
+                                    NodeSuperBlock: {
+                                        enable: true,
+                                    },
+                                    NodeHeading: {
+                                        enable: true,
+                                    },
+                                    NodeParagraph: {
+                                        enable: true,
+                                    },
+                                    NodeTable: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "button",
+                                icon: "#iconInsertColumn",
+                                label: {
+                                    zh_CN: "切换书写模式",
+                                    other: "Toggle Writing Modes",
+                                },
+                                accelerator: "writing-mode",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-switch',
+                                            params: {
+                                                'custom-writing-mode': [
+                                                    'vertical-rl',
+                                                    'vertical-lr',
+                                                    'sideways-rl',
+                                                    'sideways-lr',
+                                                    null,
+                                                ],
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
                                     NodeList: {
                                         enable: true,
                                     },
