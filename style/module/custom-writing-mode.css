@@ -1,33 +1,33 @@
 /* 自定义文字排版模式 writing-mode
-REF [CSS writing-mode 属性 | 菜鸟教程](https: //www.runoob.com/cssref/css-pr-writing-mode.html)
- * horizontal-tb：(默认)水平方向自上而下的书写方式。即 left-right-top-bottom
- * vertical-rl：垂直方向自右而左的书写方式 | top-bottom-right-left
- * vertical-lr：垂直方向自左而右的书写方式 | top-bottom-left-right
- * sideways-rl：内容垂直方向从上到下排列
- * sideways-lr：内容垂直方向从下到上排列
+ * REF [writing-mode - CSS（层叠样式表） | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/writing-mode)
+ * horizontal-tb：(默认)对于左对齐(ltr)文本，内容从左到右水平流动。对于右对齐(rtr)文本，内容从右到左水平流动。下一水平行位于上一行下方。
+ * vertical-rl：对于左对齐(ltr)文本，内容从上到下垂直流动，下一垂直行位于上一行左侧。对于右对齐(rtr)文本，内容从下到上垂直流动，下一垂直行位于上一行右侧。
+ * vertical-lr：对于左对齐(ltr)文本，内容从上到下垂直流动，下一垂直行位于上一行右侧。对于右对齐(rtr)文本，内容从下到上垂直流动，下一垂直行位于上一行左侧。
+ * sideways-rl：对于左对齐(ltr)文本，内容从下到上垂直流动。对于右对齐(rtr)文本，内容从上到下垂直流动。所有字形（即使是垂直文本中的字形）都朝向右侧。 (默认样式顺时针旋转 90°)
+ * sideways-lr：对于左对齐(ltr)文本，内容从上到下垂直流动。对于右对齐(rtr)文本，内容从下到上垂直流动。所有字形（即使是垂直文本中的字形）都朝向左侧。 (默认样式逆时针旋转 90°)
  */
 
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 
-.protyle-wysiwyg [data-node-id][custom-writing-mode="horizontal-tb"] {
+.protyle-content [custom-writing-mode="horizontal-tb"] {
     writing-mode: horizontal-tb;
 }
 
-.protyle-wysiwyg [data-node-id][custom-writing-mode="vertical-rl"] {
+.protyle-content [custom-writing-mode="vertical-rl"] {
     writing-mode: vertical-rl;
 }
 
-.protyle-wysiwyg [data-node-id][custom-writing-mode="vertical-lr"] {
+.protyle-content [custom-writing-mode="vertical-lr"] {
     writing-mode: vertical-lr;
 }
 
-/* 无效 */
-.protyle-wysiwyg [data-node-id][custom-writing-mode="sideways-rl"] {
+/* 仅 Firefox 支持 */
+.protyle-content [custom-writing-mode="sideways-rl"] {
     writing-mode: sideways-rl;
 }
 
-/* 无效 */
-.protyle-wysiwyg [data-node-id][custom-writing-mode="sideways-lr"] {
+/* 仅 Firefox 支持 */
+.protyle-content [custom-writing-mode="sideways-lr"] {
     writing-mode: sideways-lr;
 }

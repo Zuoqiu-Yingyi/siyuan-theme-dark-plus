@@ -117,32 +117,109 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 
 ### 自定义块属性 | CUSTOM BLOCKS ATTRIBUTES
 
-| 操作对象 \| Operational objectives                | 属性名 \| Attribute Name | 属性值 \| Attribute Value                                                                                                                                                                                                                                                                | 功能 \| Function                                                                                                                                                                   |
-| :------------------------------------------------ | :----------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 所有块<br/>all types of blocks                    | `font-family`            | `等线`<br/>`方正舒体`<br/>`方正姚体`<br/>`仿宋`<br/>`黑体`<br/>`华文彩云`<br/>`华文仿宋`<br/>`华文琥珀`<br/>`华文楷体`<br/>`华文隶书`<br/>`华文宋体`<br/>`华文细黑`<br/>`华文新魏`<br/>`华文行楷`<br/>`华文中宋`<br/>`楷体`<br/>`隶书`<br/>`宋体`<br/>`微软雅黑`<br/>`新宋体`<br/>`幼圆` | 设置块所用字体族<br/>Sets the font family used by the block.                                                                                                                       |
-| 所有块<br/>all types of blocks                    | `render`                 | `danmaku`<br/>`弹幕`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                            | 将块设置为滚动弹幕样式<br/>Set the block to the scrolling danmaku block style.                                                                                                     |
-| 所有块<br/>all types of blocks                    | `render`                 | `scroll`<br/>`滚屏`<br/>`滚动`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                  | 为过长块设置纵向滚动条<br/>Set the vertical scroll bar for the overly long block.                                                                                                  |
-| 所有块<br/>all types of blocks                    | `render`                 | `invert`<br/>`反色`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                             | 将图片渲染为反色<br/>Render all images as inverted colors.                                                                                                                         |
-| 所有块<br/>all types of blocks                    | `mark`                   | `display`<br/>`显示`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                            | 显示标记文本<br/>Display marked text.                                                                                                                                              |
-| 文档块<br/>document blocks                        | `background`             | `01` ~ `12`                                                                                                                                                                                                                                                                              | 设置文档的自定义背景图片<br/>Sets a custom background image for the document.                                                                                                      |
-| 文档块<br/>document blocks                        | `auto-num-h`             | `0`<br/>`false`<br/>`禁用`<br/>`关闭`<br/>                                                                                                                                                                                                                                               | 禁用该文档子标题的自动编号<br/>Disables automatic numbering of subheading in the document.                                                                                         |
-| 文档块<br/>document blocks                        | `auto-num-f`             | `图`<br/>`图片`<br/>`Fig.`<br/>`figure`<br/>`Figure`<br/>`FIGURE`                                                                                                                                                                                                                        | 启用该文档中图片的自动编号<br/>Enable automatic numbering of pictures in the document.                                                                                             |
-| 文档块<br/>document blocks                        | `auto-num-t`             | `表`<br/>`表格`<br/>`Tab.`<br/>`table`<br/>`Table`<br/>`TABLE`                                                                                                                                                                                                                           | 启用该文档中表格的自动编号<br/>Enable automatic numbering of tables in the document.                                                                                               |
-| 文档块<br/>document blocks                        | `render`                 | `id`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                                            | 渲染每个块的块 ID<br/>Renders the ID of each block.                                                                                                                                |
-| 文档块<br/>document blocks                        | `render`                 | `href`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                                          | 渲染超链接的 URL<br/>Renders the URL of each hyperlink.                                                                                                                            |
-| 文档块<br/>document blocks                        | `render`                 | `index`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                                         | 渲染当前块在文档中的序号<br/>Renders the ordinal number of the current block in the document.                                                                                      |
-| 文档块<br/>document blocks                        | `render`                 | `content`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                                       | 渲染输入框中的内容<br/>Renders the contents of the input box.                                                                                                                      |
-| 文档块<br/>document blocks                        | `render`                 | `outline`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                                       | 渲染鼠标悬浮的块的轮廓<br/>Renders the outline of a hovering block.                                                                                                                |
-| 非文档块<br/>non-document blocks                  | `style`                  | css 样式<br/>CSS styles                                                                                                                                                                                                                                                                  | 设置块的自定义样式<br/>Set a custom style for the block.                                                                                                                           |
-| 非文档块<br/>non-document blocks                  | `title`                  | 任何值<br/>Any value                                                                                                                                                                                                                                                                     | 设置块标题<br/>Sets the title of the block.                                                                                                                                        |
-| 视频块/音频块<br/>video blocks/audio blocks       | `time`                   | `ss`<br/>`ss.ms`<br/>`mm:ss`<br/>`mm:ss.ms`<br/>`hh:mm:ss`<br/>`hh:mm:ss.ms`                                                                                                                                                                                                             | 时间戳<br/>Timestamp.                                                                                                                                                              |
-| 列表块 & 文档块<br/>list blocks & document blocks | `type`                   | `table`<br/>`表格`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                              | 列表渲染为表格<br/>Renders the list as a table.                                                                                                                                    |
-| 列表块 & 文档块<br/>list blocks & document blocks | `type`                   | `脑图`<br/>`map`<br/>`导图`<br/>`mind-map`<br/>`思维导图`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                       | 列表渲染为思维导图<br/>Renders the list as a mind map.                                                                                                                             |
-| 列表块<br/>list blocks                            | `list-guides`            | 任何值<br/>Any value                                                                                                                                                                                                                                                                     | 启用动态列表辅助线<br/>Enable dynamic list guides.                                                                                                                                 |
-| 表格块<br/>table blocks                           | `table-width`            | `auto`<br/>`自动`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                               | 启动表格内容自动换行<br/>Enable table content wraps.                                                                                                                               |
-| 表格块<br/>table blocks                           | `table-width`            | `equal`<br/>`等宽`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                              | 启动单元格等宽<br/>Enable equal cell.                                                                                                                                              |
-| 段落块<br/>paragraph blocks                       | `type`                   | `图标题`<br/>`表标题`<br/>`figure-title`<br/>`table-title`<br/>(使用空格分隔多个属性值 \| Separate multiple attribute values with spaces)                                                                                                                                                | 图标题/表标题自动计数<br/>Figure titles/table titles are counted automatically.                                                                                                    |
-| 段落块<br/>paragraph blocks                       | `writing-mode`           | `horizontal-tb`<br/>`vertical-rl`<br/>`vertical-lr`                                                                                                                                                                                                                                      | (默认)从左到右自上而下的书写方式 \| (default)left-right-top-bottom<br/>从上到下自右而左的书写方式 \| top-bottom-right-left<br/>从上到下自左而右的书写方式 \| top-bottom-left-right |
+| 操作对象 \| Operational objectives                | 属性名 \| Attribute Name | 属性值 \| Attribute Value                                                                                                                                                                                                                                                                | 功能 \| Function                                                                              |
+| :------------------------------------------------ | :----------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------- |
+| 所有块<br/>all types of blocks                    | `font-family`            | `等线`<br/>`方正舒体`<br/>`方正姚体`<br/>`仿宋`<br/>`黑体`<br/>`华文彩云`<br/>`华文仿宋`<br/>`华文琥珀`<br/>`华文楷体`<br/>`华文隶书`<br/>`华文宋体`<br/>`华文细黑`<br/>`华文新魏`<br/>`华文行楷`<br/>`华文中宋`<br/>`楷体`<br/>`隶书`<br/>`宋体`<br/>`微软雅黑`<br/>`新宋体`<br/>`幼圆` | 设置块所用字体族<br/>Sets the font family used by the block.                                  |
+| 所有块<br/>all types of blocks                    | `render`                 | `danmaku`<br/>`弹幕`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                            | 将块设置为滚动弹幕样式<br/>Set the block to the scrolling danmaku block style.                |
+| 所有块<br/>all types of blocks                    | `render`                 | `scroll`<br/>`滚屏`<br/>`滚动`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                  | 为过长块设置纵向滚动条<br/>Set the vertical scroll bar for the overly long block.             |
+| 所有块<br/>all types of blocks                    | `render`                 | `invert`<br/>`反色`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                             | 将图片渲染为反色<br/>Render all images as inverted colors.                                    |
+| 所有块<br/>all types of blocks                    | `mark`                   | `display`<br/>`显示`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                            | 显示标记文本<br/>Display marked text.                                                         |
+| 文档块<br/>document blocks                        | `background`             | `01` ~ `12`                                                                                                                                                                                                                                                                              | 设置文档的自定义背景图片<br/>Sets a custom background image for the document.                 |
+| 文档块<br/>document blocks                        | `auto-num-h`             | `0`<br/>`false`<br/>`禁用`<br/>`关闭`<br/>                                                                                                                                                                                                                                               | 禁用该文档子标题的自动编号<br/>Disables automatic numbering of subheading in the document.    |
+| 文档块<br/>document blocks                        | `auto-num-f`             | `图`<br/>`图片`<br/>`Fig.`<br/>`figure`<br/>`Figure`<br/>`FIGURE`                                                                                                                                                                                                                        | 启用该文档中图片的自动编号<br/>Enable automatic numbering of pictures in the document.        |
+| 文档块<br/>document blocks                        | `auto-num-t`             | `表`<br/>`表格`<br/>`Tab.`<br/>`table`<br/>`Table`<br/>`TABLE`                                                                                                                                                                                                                           | 启用该文档中表格的自动编号<br/>Enable automatic numbering of tables in the document.          |
+| 文档块<br/>document blocks                        | `render`                 | `id`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                                            | 渲染每个块的块 ID<br/>Renders the ID of each block.                                           |
+| 文档块<br/>document blocks                        | `render`                 | `href`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                                          | 渲染超链接的 URL<br/>Renders the URL of each hyperlink.                                       |
+| 文档块<br/>document blocks                        | `render`                 | `index`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                                         | 渲染当前块在文档中的序号<br/>Renders the ordinal number of the current block in the document. |
+| 文档块<br/>document blocks                        | `render`                 | `content`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                                       | 渲染输入框中的内容<br/>Renders the contents of the input box.                                 |
+| 文档块<br/>document blocks                        | `render`                 | `outline`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                                       | 渲染鼠标悬浮的块的轮廓<br/>Renders the outline of a hovering block.                           |
+| 非文档块<br/>non-document blocks                  | `style`                  | css 样式<br/>CSS styles                                                                                                                                                                                                                                                                  | 设置块的自定义样式<br/>Set a custom style for the block.                                      |
+| 非文档块<br/>non-document blocks                  | `title`                  | 任何值<br/>Any value                                                                                                                                                                                                                                                                     | 设置块标题<br/>Sets the title of the block.                                                   |
+| 视频块/音频块<br/>video blocks/audio blocks       | `time`                   | `ss`<br/>`ss.ms`<br/>`mm:ss`<br/>`mm:ss.ms`<br/>`hh:mm:ss`<br/>`hh:mm:ss.ms`                                                                                                                                                                                                             | 时间戳<br/>Timestamp.                                                                         |
+| 列表块 & 文档块<br/>list blocks & document blocks | `type`                   | `table`<br/>`表格`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                              | 列表渲染为表格<br/>Renders the list as a table.                                               |
+| 列表块 & 文档块<br/>list blocks & document blocks | `type`                   | `脑图`<br/>`map`<br/>`导图`<br/>`mind-map`<br/>`思维导图`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                       | 列表渲染为思维导图<br/>Renders the list as a mind map.                                        |
+| 列表块<br/>list blocks                            | `list-guides`            | 任何值<br/>Any value                                                                                                                                                                                                                                                                     | 启用动态列表辅助线<br/>Enable dynamic list guides.                                            |
+| 表格块<br/>table blocks                           | `table-width`            | `auto`<br/>`自动`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                               | 启动表格内容自动换行<br/>Enable table content wraps.                                          |
+| 表格块<br/>table blocks                           | `table-width`            | `equal`<br/>`等宽`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                              | 启动单元格等宽<br/>Enable equal cell.                                                         |
+| 段落块<br/>paragraph blocks                       | `type`                   | `图标题`<br/>`表标题`<br/>`figure-title`<br/>`table-title`<br/>(使用空格分隔多个属性值 \| Separate multiple attribute values with spaces)                                                                                                                                                | 图标题/表标题自动计数<br/>Figure titles/table titles are counted automatically.               |
+| 段落块<br/>paragraph blocks                       | `writing-mode`           | `horizontal-tb`<br/>`vertical-rl`<br/>`vertical-lr`<br/>`sideways-rl`<br/>`sideways-lr`                                                                                                                                                                                                  | 如下表所示<br/>This is shown in the following table.                                          |
+
+<style>
+.example.Text1 span, .example.Text1 {
+  writing-mode: horizontal-tb;
+  -webkit-writing-mode: horizontal-tb;
+  -ms-writing-mode: horizontal-tb;
+}
+
+.example.Text2 span, .example.Text2 {
+  writing-mode: vertical-lr;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: vertical-lr;
+}
+
+.example.Text3 span, .example.Text3 {
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: vertical-rl;
+}
+
+.example.Text4 span, .example.Text4 {
+  writing-mode: sideways-lr;
+  -webkit-writing-mode: sideways-lr;
+  -ms-writing-mode: sideways-lr;
+}
+
+.example.Text5 span, .example.Text5 {
+  writing-mode: sideways-rl;
+  -webkit-writing-mode: sideways-rl;
+  -ms-writing-mode: sideways-rl;
+}
+</style>
+<table>
+  <tr>
+    <th>值 | Value</th>
+    <th>Vertical script | 垂直文本</th>
+    <th>Horizontal (LTR) script | 水平文本(左对齐)</th>
+    <th>Horizontal (RTL) script | 水平文本(右对齐)</th>
+    <th>Mixed script | 混合文本</th>
+  </tr>
+  <tr>
+    <td>horizontal-tb</td>
+    <td class="example Text1"><span>我家没有电脑。</span></td>
+    <td class="example Text1"><span>Example text</span></td>
+    <td class="example Text1"><span>מלל ארוך לדוגמא</span></td>
+    <td class="example Text1"><span>1994年に至っては</span></td>
+  </tr>
+  <tr>
+    <td>vertical-lr</td>
+    <td class="example Text2"><span>我家没有电脑。</span></td>
+    <td class="example Text2"><span>Example text</span></td>
+    <td class="example Text2"><span>מלל ארוך לדוגמא</span></td>
+    <td class="example Text2"><span>1994年に至っては</span></td>
+  </tr>
+  <tr>
+    <td>vertical-rl</td>
+    <td class="example Text3"><span>我家没有电脑。</span></td>
+    <td class="example Text3"><span>Example text</span></td>
+    <td class="example Text3"><span>מלל ארוך לדוגמא</span></td>
+    <td class="example Text3"><span>1994年に至っては</span></td>
+  </tr>
+  <tr>
+    <td>sideways-lr<br>(Filefox)</td>
+    <td class="example Text4"><span>我家没有电脑。</span></td>
+    <td class="example Text4"><span>Example text</span></td>
+    <td class="example Text4"><span>מלל ארוך לדוגמא</span></td>
+    <td class="example Text4"><span>1994年に至っては</span></td>
+  </tr>
+  <tr>
+    <td>sideways-rl<br>(Filefox)</td>
+    <td class="example Text5"><span>我家没有电脑。</span></td>
+    <td class="example Text5"><span>Example text</span></td>
+    <td class="example Text5"><span>מלל ארוך לדוגמא</span></td>
+    <td class="example Text5"><span>1994年に至っては</span></td>
+  </tr>
+</table>
+
 
 ### 功能介绍 | FUNCTIONAL DESCRIPTION
 
@@ -420,13 +497,26 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   - `writing-mode`: 属性名 | key
     - 适用于所有块 | Applies to all blocks
     - 文本排版模式 | text layout mode
+    - 详情请参考: [writing-mode - CSS（层叠样式表） | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/writing-mode)  
+      For details, please refer to [writing-mode - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode).
     - 属性值 | attribute value
       - `horizontal-tb`
-        - (默认)从左到右自上而下的书写方式 | (default)left-right-top-bottom
+        - (默认)对于左对齐(ltr)文本，内容从左到右水平流动。对于右对齐(rtr)文本，内容从右到左水平流动。下一水平行位于上一行下方。  
+          For ltr scripts, content flows horizontally from left to right. For rtl scripts, content flows horizontally from right to left. The next horizontal line is positioned below the previous line.
       - `vertical-rl`
-        - 从上到下自右而左的书写方式 | top-bottom-right-left
+        - 对于左对齐(ltr)文本，内容从上到下垂直流动，下一垂直行位于上一行左侧。对于右对齐(rtr)文本，内容从下到上垂直流动，下一垂直行位于上一行右侧。  
+          For ltr scripts, content flows vertically from top to bottom, and the next vertical line is positioned to the left of the previous line. For rtl scripts, content flows vertically from bottom to top, and the next vertical line is positioned to the right of the previous line.
       - `vertical-lr`
-        - 从上到下自左而右的书写方式 | top-bottom-left-right
+        - 对于左对齐(ltr)文本，内容从上到下垂直流动，下一垂直行位于上一行右侧。对于右对齐(rtr)文本，内容从下到上垂直流动，下一垂直行位于上一行左侧。  
+          For ltr scripts, content flows vertically from top to bottom, and the next vertical line is positioned to the right of the previous line. For rtl scripts, content flows vertically from bottom to top, and the next vertical line is positioned to the left of the previous line.
+      - `sideways-rl`
+        - 仅在 Filefox 中支持 | Only supported in Filefox.
+        - 对于左对齐(ltr)文本，内容从下到上垂直流动。对于右对齐(rtr)文本，内容从上到下垂直流动。所有字形（即使是垂直文本中的字形）都朝向右侧。 (默认样式顺时针旋转 90°)  
+          For ltr scripts, content flows vertically from bottom to top. For rtl scripts, content flows vertically from top to bottom. All the glyphs, even those in vertical scripts, are set sideways toward the right.
+      - `sideways-lr`
+        - 仅在 Filefox 中支持 | Only supported in Filefox.
+        - 对于左对齐(ltr)文本，内容从上到下垂直流动。对于右对齐(rtr)文本，内容从下到上垂直流动。所有字形（即使是垂直文本中的字形）都朝向左侧。 (默认样式逆时针旋转 90°)  
+          For ltr scripts, content flows vertically from top to bottom. For rtl scripts, content flows vertically from bottom to top. All the glyphs, even those in vertical scripts, are set sideways toward the left.
   - 其他自定义样式  
     Other custom attributes.
     - 这些样式不会自动加载  
