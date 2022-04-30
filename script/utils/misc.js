@@ -18,6 +18,7 @@ export {
 };
 
 import { config } from './../module/config.js';
+import { getBlockByID } from './api.js';
 
 // REF [js - 对象递归合并merge - zc-lee - 博客园](https://www.cnblogs.com/zc-lee/p/15873611.html)
 function isObject(obj) {
@@ -87,23 +88,24 @@ function HTMLDecode(text) {
  * 跳转到指定块并聚焦
  * 问题: 文档名不改变
  */
-function focalize(id) {
-    let breadcrumbs = document.querySelector('.protyle-breadcrumb>.protyle-breadcrumb__bar');
+function focalize(id, callback = null) {
+    const breadcrumbs = document.querySelector('.protyle-breadcrumb>.protyle-breadcrumb__bar');
     if (breadcrumbs) {
         let crumb = document.createElement("span");
         crumb.setAttribute("data-node-id", id);
         breadcrumbs.appendChild(crumb);
         crumb.click();
         crumb.remove();
+        if (typeof callback === 'function') callback();
     }
     else setTimeout(() => focalize(id), config.theme.goto.delay);
 }
 
 /**
- * 跳转到指定块并可选聚焦(聚焦后再跳转将保持聚焦状态无法退出)
+ * 跳转到指定块并可选聚焦
  */
-function jump(id, focus = false) {
-    let editor = document.querySelector('div.protyle-wysiwyg div[data-node-id] div[contenteditable][spellcheck]');
+function jump(id, callback = null) {
+    const editor = document.querySelector('div.protyle-wysiwyg div[data-node-id] div[contenteditable][spellcheck]');
     if (editor) {
         let ref = document.createElement("span");
         ref.setAttribute("data-type", "block-ref");
@@ -111,9 +113,9 @@ function jump(id, focus = false) {
         editor.appendChild(ref);
         ref.click();
         ref.remove();
-        if (focus) setTimeout(() => focalize(id), 0);
+        if (typeof callback === 'function') callback();
     }
-    else throw new Error(id);
+    else setTimeout(() => jump(id), config.theme.goto.delay);
 }
 
 /**
@@ -139,11 +141,18 @@ function changeEditMode(mode = 0) { // 切换编辑模式
     }
 }
 
-function goto(id, focus = 0, editable = 0) {
-    console.log(id, focus, editable);
+async function goto(id, focus = 0, editable = 0) {
     // 是否聚焦
-    if (parseInt(focus) === 1 || focus === 'true') focalize(id);
-    else jump(id);
+    if (parseInt(focus) === 1 || focus === 'true') jump(id, () => focalize(id));
+    else {
+        // 不聚焦, 需要先切换到文档块以退出聚焦, 之后再进行文档内跳转
+        const block = await getBlockByID(id);
+        if (block) {
+            if (block.root_id === block.id) jump(id); // 文档块直接跳转
+            else focalize(block.root_id, () => jump(id)); // 非文档块, 退出聚焦并跳转
+        }
+        else throw new Error(id);
+    }
 
     // 是否可编辑
     if (parseInt(editable) === 1 || editable === 'true') setTimeout(() => changeEditMode(1), 0);

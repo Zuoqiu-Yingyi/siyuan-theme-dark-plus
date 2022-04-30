@@ -8,6 +8,7 @@
 - 移除编辑器窗口的菜单栏 | Remove the menu bar of editor window.
 - 修复新窗口聚焦模式无法退出问题 | Fix the issue that new window cannot exit focus mode.
 - 修复代码块折叠样式异常问题 | Fix the issue that code block fold style is abnormal.
+- 优化新窗口跳转与聚焦解决方案 | Optimize the solution of new window jump and focus.
 
 ## v0.9.2/2022-04-30
 
