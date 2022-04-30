@@ -86,6 +86,8 @@ window.theme.openNewWindow = function (
                     // url.protocol = 'file:';
                     pathname = null;
                     break;
+                case 'editor':
+                    break;
                 default:
                     break;
             }
@@ -110,6 +112,18 @@ window.theme.openNewWindow = function (
             newWin.webContents.on('console-message', (event, level, message, line, sourceId) => {
                 consoleMessageCallback && setTimeout(async () => consoleMessageCallback(newWin, event, level, message, line, sourceId));
             });
+            if (mode) {
+                switch (mode.toLowerCase()) {
+                    case 'editor':
+                        newWin.removeMenu(); // 移除编辑器的菜单栏
+                        break;
+                    case 'app':
+                    case 'desktop':
+                    case 'mobile':
+                    default:
+                        break;
+                }
+            }
             newWin.on('closed', () => {
                 closeCallback && setTimeout(async () => closeCallback(newWin), 0);
                 newWin = null;
