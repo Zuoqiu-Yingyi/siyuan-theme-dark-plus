@@ -81,11 +81,6 @@ window.theme.openNewWindow = function (
                 case 'mobile':
                     url.pathname = `/stage/build/${mode.toLowerCase()}/`;
                     break;
-                case 'localfile':
-                    url.pathname = `/${url.pathname}/conf/${pathname}index.html`.replaceAll('//', '/');
-                    // url.protocol = 'file:';
-                    pathname = null;
-                    break;
                 case 'editor':
                     break;
                 default:
