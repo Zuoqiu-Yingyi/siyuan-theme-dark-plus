@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.9.3/2022-05-01
+
+- [v0.9.2 <=> v0.9.3](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.2...v0.9.3)
 - 移除列表块脑图视图标题块的左侧边线 | Remove left border of heading block which in list block with mind map view.
 - 调整代码块样式 | Adjust code block style.
 - 移除编辑器窗口的菜单栏 | Remove the menu bar of editor window.
