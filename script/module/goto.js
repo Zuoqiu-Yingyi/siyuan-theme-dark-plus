@@ -5,10 +5,10 @@
 import { config } from './config.js';
 import { goto } from './../utils/misc.js';
 
-function jump(...args) {
+async function jump(...args) {
     try {
         // console.log('goto');
-        goto(...args);
+        await goto(...args);
     } catch (e) {
         if (e.message === args[0]) {
             setTimeout(() => jump(...args), config.theme.goto.delay);
