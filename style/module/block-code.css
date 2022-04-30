@@ -12,17 +12,32 @@
 .b3-typography .protyle-linenumber__rows,
 .protyle-wysiwyg [data-node-id].code-block>.protyle-linenumber__rows {
     background-color: var(--custom-block-code-linenumber-background-color);
+    padding-top: 0;
     padding-bottom: 0;
 }
 
 .b3-typography .hljs,
 .protyle-wysiwyg [data-node-id].code-block>.hljs {
     background-color: transparent;
+    padding-top: 0;
     padding-bottom: 0;
 }
 
+/* 块属性位置 */
+.protyle-wysiwyg [data-node-id].code-block>.protyle-attr {
+    top: -16px;
+}
+
+/* 行号标签 */
 .protyle-linenumber {
     background-color: transparent;
+}
+
+/* 语言标签 */
+.b3-typography .code-block .protyle-icons,
+.protyle-wysiwyg [data-node-id].code-block .protyle-icons {
+    top: 0;
+    right: 0;
 }
 
 /* 代码块编辑时不闪(v1.8.9 已修复)
