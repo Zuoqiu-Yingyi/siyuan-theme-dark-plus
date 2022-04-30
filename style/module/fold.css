@@ -43,6 +43,11 @@
     padding-left: var(--custom-h6-indentation);
 } */
 
+/* 修复代码块折叠样式 */
+.protyle-wysiwyg [data-node-id][fold="1"]:not(.li):not([data-type="NodeHeading"]).code-block {
+    height: 26px;
+}
+
 .protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeIFrame"],
 .protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeWidget"],
 .protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeVideo"],
