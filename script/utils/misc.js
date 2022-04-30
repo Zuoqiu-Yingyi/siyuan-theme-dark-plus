@@ -87,7 +87,7 @@ function HTMLDecode(text) {
  * 跳转到指定块并聚焦
  * 问题: 文档名不改变
  */
-function focus(id) {
+function focalize(id) {
     let breadcrumbs = document.querySelector('.protyle-breadcrumb>.protyle-breadcrumb__bar');
     if (breadcrumbs) {
         let crumb = document.createElement("span");
@@ -96,22 +96,22 @@ function focus(id) {
         crumb.click();
         crumb.remove();
     }
-    else setTimeout(() => focus(id), config.theme.goto.delay);
+    else setTimeout(() => focalize(id), config.theme.goto.delay);
 }
 
 /**
- * 跳转到指定块并可选聚焦
+ * 跳转到指定块并可选聚焦(聚焦后再跳转将保持聚焦状态无法退出)
  */
-function jump(id, isFocus = false) {
+function jump(id, focus = false) {
     let editor = document.querySelector('div.protyle-wysiwyg div[data-node-id] div[contenteditable][spellcheck]');
     if (editor) {
-        let link = document.createElement("span");
-        link.setAttribute("data-type", "block-ref");
-        link.setAttribute("data-id", id);
-        editor.appendChild(link);
-        link.click();
-        link.remove();
-        if (isFocus) setTimeout(() => focus(id), 0);
+        let ref = document.createElement("span");
+        ref.setAttribute("data-type", "block-ref");
+        ref.setAttribute("data-id", id);
+        editor.appendChild(ref);
+        ref.click();
+        ref.remove();
+        if (focus) setTimeout(() => focalize(id), 0);
     }
     else throw new Error(id);
 }
@@ -140,8 +140,9 @@ function changeEditMode(mode = 0) { // 切换编辑模式
 }
 
 function goto(id, focus = 0, editable = 0) {
+    console.log(id, focus, editable);
     // 是否聚焦
-    if (parseInt(focus) === 1 || focus === 'true') jump(id, true);
+    if (parseInt(focus) === 1 || focus === 'true') focalize(id);
     else jump(id);
 
     // 是否可编辑
