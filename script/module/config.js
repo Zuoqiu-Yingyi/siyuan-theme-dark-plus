@@ -434,8 +434,11 @@ export var config = {
                     //     ? '#1e1e1e'
                     //     : '#f5f5f5',
                     webPreferences: {
+                        // nodeIntegration: true, // 是否启用 Node.js 内置模块
+                        // nativeWindowOpen: true,
+                        // webviewTag: true,
                         webSecurity: false, // 是否启用 Web 安全
-                        nodeIntegration: true, // 是否启用 Node.js 内置模块
+                        // contextIsolation: false,
                         // defaultFontFamily: { // 默认字体
                         //     standard: window.siyuan.config.editor.fontFamily,
                         // },

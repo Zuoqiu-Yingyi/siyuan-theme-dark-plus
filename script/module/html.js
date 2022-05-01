@@ -97,7 +97,7 @@ window.theme.openNewWindow = function (
         try {
             const { BrowserWindow } = require('@electron/remote');
             // 新建窗口(Electron 环境)
-            newWin = new BrowserWindow(windowParams)
+            var newWin = new BrowserWindow(windowParams);
 
             console.log(url.href);
             // if (url.protocol === 'file:') newWin.loadFile(url.href.substr(8));
