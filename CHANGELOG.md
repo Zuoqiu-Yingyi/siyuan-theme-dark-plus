@@ -2,6 +2,7 @@
 
 - 禁用新窗口的 Node.js 组件 | Disable Node.js components in new windows.
 - 调整菜单分隔线颜色 | Adjust the color of the menu separator.
+- 修复 IAL 解析器无法解析 `\` 字符的问题 | Fix the issue that IAL parser cannot parse `\` character.
 
 ## v0.9.3/2022-05-01
 
