@@ -25,11 +25,12 @@
 /* 菜单分割线 */
 .b3-menu__separator {
     height: 2px;
+    background-color: var(--custom-popover-menu-separator-color);
 }
 
-/* 搜索菜单分隔线 */
-.b3-menu__separator {
-    background-color: var(--custom-popover-menu-separator-color);
+/* '/' 菜单分隔线 */
+.b3-menu.b3-list.b3-list--background.hint--menu .b3-menu__separator {
+    background-color: var(--b3-theme-on-surface);
 }
 
 /* 鼠标悬停菜单项 */

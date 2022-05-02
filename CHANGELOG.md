@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 禁用新窗口的 Node.js 组件 | Disable Node.js components in new windows.
+- 调整菜单分隔线颜色 | Adjust the color of the menu separator.
 
 ## v0.9.3/2022-05-01
 

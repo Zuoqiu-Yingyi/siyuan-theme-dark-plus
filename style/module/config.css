@@ -329,7 +329,7 @@
     /* 弹出菜单背景颜色 | The background color of the popover menu */
     --custom-popover-menu-background-color: var(--custom-transparent-deep);
     /* 弹出菜单分隔线颜色 | The color of the popover menu */
-    --custom-popover-menu-separator-color: var(--b3-theme-on-surface);
+    --custom-popover-menu-separator-color: var(--b3-border-color);
     /* 弹出菜单中块属性字段颜色 | The color of the search menu block attribute field */
     --custom-popover-menu-attribute-color: var(--b3-card-warning-color);
     /* 弹出菜单中路径字段颜色 | The color of the path field */
