@@ -7,6 +7,7 @@
 - 新增跳转上次浏览位置功能 | Add the ability to jump to the last browsing location.
 - 新增文档滑块跟随焦点功能 | Add the ability to follow the document slider with the focus.
 - 代码块工具栏适配 `v2.0.4` | Code block toolbar adapts `v2.0.4`.
+- 调整数据历史对话框样式 | Adjust data history dialog style.
 
 ## v0.9.3/2022-05-01
 
