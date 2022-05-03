@@ -28,7 +28,7 @@ function HTMLDecode(text) {
  * @params {string} ial: 字符串, 格式： {: key="value" key="value" ...}
  * @return {object}: 属性表对象
  */
-export function ialParser(ial) {
+function ialParse(ial) {
     // 解析 ial 字符串
     // ial 字符串格式： {: key="value" key="value" ...}
     // 返回对象：{key: value, key: value, ...}

@@ -11,7 +11,7 @@ import {
 /* 渲染自定义样式 */
 function renderCustomStyle(styles) {
     try {
-        const layout__center = document.querySelector('div.fn__flex-1.protyle:not(.fn__none)');
+        const layout__center = window.siyuan.layout.centerLayout.element;
 
         for (let i in styles) {
             let style = styles[i];
@@ -32,7 +32,7 @@ function renderCustomStyle(styles) {
 // 保存自定义样式
 function saveCustomStyle() {
     try {
-        const layout__center = document.querySelector('div.fn__flex-1.protyle:not(.fn__none)');
+        const layout__center = window.siyuan.layout.centerLayout.element;
         layout__center.querySelectorAll(`div[data-node-id][${config.theme.style.attribute}]`).forEach((item, i, obj) => {
             // item.style.cssText = item.getAttribute(config.theme.style.attribute);
             let id = item.dataset.nodeId;

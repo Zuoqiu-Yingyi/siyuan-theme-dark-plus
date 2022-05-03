@@ -544,6 +544,56 @@ export var config = {
                 max: 72, // 最大字号(px)
             },
         },
+        location: {
+            enable: true, // 浏览位置开关
+            slider: {
+                enable: true, // 滑块功能开关
+                follow: {
+                    enable: true, // 滑块跟随焦点开关
+                },
+                goto: {
+                    enable: true, // 滑块跳转浏览位置功能开关
+                },
+            },
+            record: {
+                enable: true, // 记录浏览位置开关
+                mode: 2, // 记录模式, 1: 记录至 custom.json, 2: 记录至文档块属性
+                attribute: 'custom-location', // 记录浏览位置的块属性名
+                toolbar: { // 菜单栏
+                    enable: true,
+                    display: true,
+                    id: 'toolbar-theme-location-record',
+                    hotkey: () => config.theme.hotkeys.location.record,
+                    label: {
+                        zh_CN: '记录浏览位置',
+                        zh_CNT: null,
+                        fr_FR: null,
+                        en_US: null,
+                        other: 'Record Browsing Location',
+                    },
+                    icon: '#iconBookmark',
+                    index: -5,
+                },
+            },
+            clear: {
+                enable: true, // 清除浏览位置按钮
+                toolbar: { // 菜单栏
+                    enable: true,
+                    display: true,
+                    id: 'toolbar-theme-location-clear',
+                    hotkey: () => config.theme.hotkeys.location.clear,
+                    label: {
+                        zh_CN: '清除当前文档浏览位置记录',
+                        zh_CNT: null,
+                        fr_FR: null,
+                        en_US: null,
+                        other: 'Clear the Current Document Browsing Location History',
+                    },
+                    icon: '#iconTrashcan',
+                    index: 13,
+                },
+            }
+        },
         menu: {
             enable: true, // 菜单功能开关
             block: {
@@ -1727,16 +1777,6 @@ export var config = {
                     },
                 },
             },
-            menu: {
-                block: {
-                    // 块菜单开关(Shift + Alt + M)
-                    CtrlCmd: false,
-                    WinCtrl: false,
-                    Shift: true,
-                    Alt: true,
-                    key: 'M',
-                },
-            },
             wheel: {
                 zoom: {
                     // 鼠标滚轮缩放(Ctrl + wheel)
@@ -1747,14 +1787,52 @@ export var config = {
                     type: 'mousewheel',
                 },
             },
+            location: {
+                slider: {
+                    goto: {
+                        // 跳转到上次浏览位置(鼠标右键单击块滚动条)
+                        CtrlCmd: false,
+                        WinCtrl: false,
+                        Shift: false,
+                        Alt: false,
+                        button: 2, // 鼠标右键
+                    },
+                },
+                record: {
+                    // 记录浏览位置(Shift + Alt + L)
+                    CtrlCmd: false,
+                    WinCtrl: false,
+                    Shift: true,
+                    Alt: true,
+                    key: 'L',
+                },
+                clear: {
+                    // 移除浏览位置(Ctrl + Shift + Alt + L)
+                    CtrlCmd: true,
+                    WinCtrl: false,
+                    Shift: true,
+                    Alt: true,
+                    key: 'L',
+                },
+            },
+            menu: {
+                block: {
+                    // 块菜单开关(Shift + Alt + M)
+                    CtrlCmd: false,
+                    WinCtrl: false,
+                    Shift: true,
+                    Alt: true,
+                    key: 'M',
+                },
+            },
         },
     },
 };
 
 export var custom = {
     theme: {
-        toolbar: {
-        },
+        toolbar: {},
+        location: {},
     },
 };
 
@@ -1775,6 +1853,7 @@ try {
     custom.theme.toolbar[config.theme.style.guides.toolbar.id] = { default: false };
     custom.theme.toolbar[config.theme.invert.toolbar.id] = { default: false };
     custom.theme.toolbar[config.theme.typewriter.switch.toolbar.id] = { default: false };
+    custom.theme.toolbar[config.theme.location.record.toolbar.id] = { default: false };
 
     // 合并配置文件 custom.json
     let customjson = await getFile(config.custom.path);
