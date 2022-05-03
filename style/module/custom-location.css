@@ -4,6 +4,7 @@
 @import url(/widgets/custom.css);
 
 .protyle-wysiwyg[custom-location]::before {
-    content: "👀\00A0"attr(custom-location);
+    content: "👀\00A0" attr(custom-location);
     font-size: 0.75em;
+    border: 1px solid var(--b3-theme-primary);
 }
