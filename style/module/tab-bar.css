@@ -30,7 +30,7 @@
 
 /* 多窗口被选中的页签项 & 集市被选中的页签项 */
 .layout__wnd--active .layout-tab-bar .item--focus,
-.b3-tab-container .layout-tab-bar .item--focus {
+.b3-dialog__container .layout-tab-bar .item--focus {
     box-shadow: none;
     border: 2px solid var(--custom-striking-color);
     border-radius: var(--custom-border-radius);

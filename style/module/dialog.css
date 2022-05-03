@@ -6,6 +6,9 @@
 /* 对话框透明元素 */
 div.b3-dialog__container #searchList,
 div.b3-dialog__container #searchPreview,
+div.b3-dialog__container #historyContainer .history__asset,
+div.b3-dialog__container #historyContainer .history__text,
+div.b3-dialog__container .layout-tab-bar,
 /* div.b3-dialog__container>div:nth-child(3), */
 /* div.b3-dialog__container>div:nth-child(3)>div.fn__flex-column, */
 div.b3-dialog__container div.search__header,
@@ -40,6 +43,17 @@ div.b3-dialog__container {
 div.b3-dialog__container>div:nth-child(3),
 div.b3-dialog__container div.b3-dialog__header {
     background-color: var(--custom-dialog-background-color);
+}
+
+/* 对话框页签 */
+div.b3-dialog__container .layout-tab-bar .item__text {
+    padding: 0 0.5em;
+}
+
+/* 历史对话框内容框 */
+div.b3-dialog__container #historyContainer .history__asset,
+div.b3-dialog__container #historyContainer .history__text {
+    border-left: 2px solid var(--b3-border-color);
 }
 
 /* 主题预览对话框 */
