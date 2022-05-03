@@ -157,7 +157,7 @@ async function outlineCopy(mode) {
             && outline.firstElementChild
             && !outline.firstElementChild.classList.contains('b3-list--empty')
         ) {
-            console.log(outline);
+            // console.log(outline);
             switch (config.theme.doc.outline.top) {
                 case 'd':
                     outlineDomParser(outline.firstElementChild);
