@@ -3,6 +3,7 @@
 ## v0.9.4/2022-05-04
 
 - [v0.9.3 <=> v0.9.4](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.3...v0.9.4)
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 禁用新窗口的 Node.js 组件 | Disable Node.js components in new windows.
 - 调整菜单分隔线颜色 | Adjust the color of the menu separator.
 - 修复 IAL 解析器无法解析 `\` 字符的问题 | Fix the issue that IAL parser cannot parse `\` character.

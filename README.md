@@ -93,7 +93,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | <kbd>鼠标中键</kbd><br/><kbd>Middle Mouse Button</kbd>                   | 整个窗口<br/>entire window                                      | 在新窗口打开块或超链接<br/>open the block or hyperlink in a new window                                          |
 | <kbd>鼠标右键</kbd><br/><kbd>Right Mouse Button</kbd>                    | 文档右侧的滑块<br/>slider on the right side of the document     | 跳转到文档上次浏览位置<br/>jump to where the document was last browsed                                          |
 | <kbd>Shift + 鼠标中键</kbd><br/><kbd>Shift + Middle Mouse Button</kbd>   | 整个窗口<br/>entire window                                      | 在新窗口打开块并聚焦<br/>open the block in a new window and focus                                               |
-| <kbd>Alt + 鼠标中键</kbd><br/><kbd>Alt + Middle Mouse Button</kbd>       | 整个窗口<br/>entire window                                      | 在新窗口打开 Monaco 编辑器并编辑单击的内容<br/>Open the Monaco Editor in a new window and edit the content      |
+| <kbd>Alt + 鼠标中键</kbd><br/><kbd>Alt + Middle Mouse Button</kbd>       | 整个窗口<br/>entire window                                      | 在新窗口打开 Monaco 编辑器并编辑单击的内容<br/>open the Monaco Editor in a new window and edit the content      |
 | <kbd>Ctrl/⌘ + 鼠标滚轮</kbd><br/><kbd>Ctrl/⌘ + Mouse Wheel</kbd>         | 整个窗口<br/>entire window                                      | 调整编辑区字体大小<br/>adjust the edit area font size                                                           |
 | <kbd>Ctrl/⌘ + 鼠标中键</kbd><br/><kbd>Ctrl/⌘ + Middle Mouse Button</kbd> | 超链接<br/>hyperlink                                            | 设置自定义块属性<br/>set the custom block attributes                                                            |
 | <kbd>Ctrl/⌘ + 鼠标中键</kbd><br/><kbd>Ctrl/⌘ + Middle Mouse Button</kbd> | 视频块/音频块/iframe块<br/>video block/audio block/iframe block | 将当前时间戳写入剪贴板<br/>write the current timestamp to the clipboard                                         |
@@ -127,6 +127,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | 所有块<br/>all types of blocks                    | `render`                 | `scroll`<br/>`滚屏`<br/>`滚动`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                  | 为过长块设置纵向滚动条<br/>Set the vertical scroll bar for the overly long block.             |
 | 所有块<br/>all types of blocks                    | `render`                 | `invert`<br/>`反色`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                             | 将图片渲染为反色<br/>Render all images as inverted colors.                                    |
 | 所有块<br/>all types of blocks                    | `mark`                   | `display`<br/>`显示`<br/>(可使用空格分隔多个属性值 \| You can separate multiple attribute values with spaces)                                                                                                                                                                            | 显示标记文本<br/>Display marked text.                                                         |
+| 文档块<br/>document blocks                        | `location`               | 块 ID<br/>block ID                                                                                                                                                                                                                                                                       | 当前文档浏览位置<br/>The current document browsing location.                                  |
 | 文档块<br/>document blocks                        | `background`             | `01` ~ `12`                                                                                                                                                                                                                                                                              | 设置文档的自定义背景图片<br/>Sets a custom background image for the document.                 |
 | 文档块<br/>document blocks                        | `auto-num-h`             | `0`<br/>`false`<br/>`禁用`<br/>`关闭`<br/>                                                                                                                                                                                                                                               | 禁用该文档子标题的自动编号<br/>Disables automatic numbering of subheading in the document.    |
 | 文档块<br/>document blocks                        | `auto-num-f`             | `图`<br/>`图片`<br/>`Fig.`<br/>`figure`<br/>`Figure`<br/>`FIGURE`                                                                                                                                                                                                                        | 启用该文档中图片的自动编号<br/>Enable automatic numbering of pictures in the document.        |
@@ -344,6 +345,12 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
     - `display` / `显示`: 属性值 | value
     - 适用于所有块 | Applies to all blocks
     - 显示标记文本 | Display marked text.
+  - `location`: 属性名 | key
+    - 块 ID/block ID: 属性值 | value
+    - 适用于文档块 | Applies to document blocks
+    - 记录当前文档浏览位置 | Records the current document browsing location.
+    - 使用 <kbd>鼠标右键</kbd> 单击文档右侧的滑块, 可以跳转到当前文档浏览位置  
+      You can click on a slider on the right side of the current document to jump to where the document was last browsed using the <kbd>Right Mouse Button</kbd>.
   - `background`: 属性名 | key
     - `01` ~ `12`: 属性值 | value
     - 适用于文档块 | Applies to document blocks
