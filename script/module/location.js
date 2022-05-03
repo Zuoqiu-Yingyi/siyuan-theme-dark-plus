@@ -145,7 +145,7 @@ function recordEnable() {
 function clear(mode = config.theme.location.record.mode) {
     if (config.theme.location.clear.enable) {
         const DOC_ID = getFocusedDocID();
-        console.log(DOC_ID);
+        // console.log(DOC_ID);
         if (config.theme.regs.id.test(DOC_ID)) {
             switch (mode) {
                 case 1: // 保存在 custom.json 中
