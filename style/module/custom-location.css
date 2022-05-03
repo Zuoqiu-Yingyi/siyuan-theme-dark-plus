@@ -1,0 +1,9 @@
+/* 当前文档浏览位置 */
+
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+.protyle-wysiwyg[custom-location]::before {
+    content: "👀\00A0"attr(custom-location);
+    font-size: 0.75em;
+}

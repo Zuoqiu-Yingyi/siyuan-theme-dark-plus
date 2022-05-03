@@ -147,6 +147,7 @@ window.theme.loadScript("/appearance/themes/Dark+/script/module/blockattrs.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/doc.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/goto.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/invert.js");
+window.theme.loadScript("/appearance/themes/Dark+/script/module/location.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/menu.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/reload.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/style.js");

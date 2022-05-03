@@ -91,6 +91,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | 快捷键 \| Shortcut Key                                                   | 操作对象 \| Operational objectives                              | 功能 \| Function                                                                                                |
 | :----------------------------------------------------------------------- | :-------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------- |
 | <kbd>鼠标中键</kbd><br/><kbd>Middle Mouse Button</kbd>                   | 整个窗口<br/>entire window                                      | 在新窗口打开块或超链接<br/>open the block or hyperlink in a new window                                          |
+| <kbd>鼠标右键</kbd><br/><kbd>Right Mouse Button</kbd>                    | 文档右侧的滑块<br/>slider on the right side of the document     | 跳转到文档上次浏览位置<br/>jump to where the document was last browsed                                          |
 | <kbd>Shift + 鼠标中键</kbd><br/><kbd>Shift + Middle Mouse Button</kbd>   | 整个窗口<br/>entire window                                      | 在新窗口打开块并聚焦<br/>open the block in a new window and focus                                               |
 | <kbd>Alt + 鼠标中键</kbd><br/><kbd>Alt + Middle Mouse Button</kbd>       | 整个窗口<br/>entire window                                      | 在新窗口打开 Monaco 编辑器并编辑单击的内容<br/>Open the Monaco Editor in a new window and edit the content      |
 | <kbd>Ctrl/⌘ + 鼠标滚轮</kbd><br/><kbd>Ctrl/⌘ + Mouse Wheel</kbd>         | 整个窗口<br/>entire window                                      | 调整编辑区字体大小<br/>adjust the edit area font size                                                           |
@@ -106,11 +107,13 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | <kbd>Shift + Alt + I</kbd>                                               | 整个窗口<br/>entire window                                      | 启动/关闭反色模式<br/>turn on/off invert color mode                                                             |
 | <kbd>Shift + Alt + G</kbd>                                               | 整个窗口<br/>entire window                                      | 启动/关闭列表辅助线(列表, 表格列表, 思维导图列表)<br/>turn on/off list guides (list, table list, mind map list) |
 | <kbd>Shift + Alt + M</kbd>                                               | 整个窗口<br/>entire window                                      | 启动/关闭块菜单增强功能<br/>turn on/off block menu enhancement                                                  |
+| <kbd>Shift + Alt + L</kbd>                                               | 整个窗口<br/>entire window                                      | 启动/关闭记录当前浏览位置功能<br/>turn on/off record the current browsing location                              |
 | <kbd>Shift + Alt + C</kbd>                                               | 当前文档<br/>current document                                   | 复制当前文档 markdown 全文至剪贴板<br/>copy the full markdown text of the current document to the clipboard     |
 | <kbd>Shift + Alt + X</kbd>                                               | 当前文档<br/>current document                                   | 剪切当前文档 markdown 全文至剪贴板<br/>cut the full markdown text of the current document to the clipboard      |
 | <kbd>Shift + Alt + D</kbd>                                               | 当前文档<br/>current document                                   | 删除当前文档全文<br/>delete the full content of the current documen                                             |
-| <kbd>Ctrl/⌘ + Shift + Alt + N</kbd>                                      | 整个窗口<br/>entire window                                      | 在新窗口打开光标所在块并聚焦<br/>open the block and focus where the cursor is located in a new window           |
 | <kbd>Ctrl/⌘ + Shift + Alt + R</kbd>                                      | 整个窗口<br/>entire window                                      | 使用自定义背景图片<br/>use the custom background images                                                         |
+| <kbd>Ctrl/⌘ + Shift + Alt + N</kbd>                                      | 整个窗口<br/>entire window                                      | 在新窗口打开光标所在块并聚焦<br/>open the block and focus where the cursor is located in a new window           |
+| <kbd>Ctrl/⌘ + Shift + Alt + L</kbd>                                      | 整个窗口<br/>entire window                                      | 清除当前文档浏览位置记录<br/>clear the current document browsing location history                               |
 | <kbd>Ctrl/⌘ + Shift + Alt + O</kbd>                                      | 当前文档<br/>current document                                   | 复制当前文档大纲为有序列表<br/>copy the current document outline as an ordered list                             |
 | <kbd>Ctrl/⌘ + Shift + Alt + U</kbd>                                      | 当前文档<br/>current document                                   | 复制当前文档大纲为无序列表<br/>copy the current document outline as an unordered list                           |
 | <kbd>Ctrl/⌘ + Shift + Alt + T</kbd>                                      | 当前文档<br/>current document                                   | 复制当前文档大纲为任务列表<br/>copy the current document outline as a task list                                 |
@@ -224,6 +227,8 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
     exanple: `http(s)://host:port/stage/build/desktop/?id=20220128124308-bancmue`
 - 使用 <kbd>鼠标中键</kbd> 单击块/超链接/块引用在新窗口打开  
   Click on a block/link/block-reference to open a new window using the <kbd>Middle Mouse Button</kbd>.
+- 使用 <kbd>鼠标右键</kbd> 单击文档右侧的滑块, 跳转到文档上次浏览位置  
+  Click on a slider on the right side of the document to jump to where the document was last browsed using the <kbd>Right Mouse Button</kbd>.
 - 使用 <kbd>Shift + 鼠标中键</kbd> 单击块/超链接/块引用在新窗口打开并聚焦  
   Click on a block/link/block-reference to open a window and focus using the <kbd>Shift + Middle Mouse Button</kbd>.
 - 使用 <kbd>Alt + 鼠标中键</kbd> 单击块/超链接/块引用在新窗口打开 [Monaco 编辑器](https://github.com/microsoft/monaco-editor)并编辑源代码  
@@ -264,6 +269,10 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   Use the shortcut key <kbd>Shift + Alt + G</kbd> to turn on/off list guides (list, table list, mind map list).
 - 使用快捷键 <kbd>Shift + Alt + M</kbd> 启动/关闭块菜单增强功能  
   Use the shortcut key <kbd>Shift + Alt + M</kbd> to turn on/off block menu enhancement.
+- 使用快捷键 <kbd>Shift + Alt + L</kbd> 启动/关闭记录当前浏览位置功能  
+  Use the shortcut key <kbd>Shift + Alt + M</kbd> to turn on/off record the current browsing location.
+  - 开启后可以使用 <kbd>鼠标右键</kbd> 单击文档右侧的滑块, 跳转到文档上次浏览位置  
+    You can click on a slider on the right side of the document to jump to where the document was last browsed using the <kbd>Right Mouse Button</kbd> when turned on.
 - 使用快捷键 <kbd>Shift + Alt + C</kbd> 复制当前文档 markdown 全文至剪贴板  
   Use the shortcut keys <kbd>Shift + Alt + C</kbd> to copy the full markdown text of the current document to the clipboard.
 - 使用快捷键 <kbd>Shift + Alt + X</kbd> 剪切当前文档 markdown 全文至剪贴板  
@@ -273,7 +282,9 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + R</kbd> 使用自定义背景图片  
   Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + R</kbd> to use the custom background images.
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + N</kbd> 在新窗口打开光标所在块并聚焦  
-  Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + R</kbd> to open the block where the cursor is located in a new window.
+  Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + N</kbd> to open the block where the cursor is located in a new window.
+- 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + L</kbd> 清除当前文档浏览位置记录  
+  Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + L</kbd> to clear the current document browsing location history.
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + O</kbd> 复制当前文档大纲为有序列表  
   Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + O</kbd> to copy the current document outline as an ordered list.
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + U</kbd> 复制当前文档大纲为无序列表  

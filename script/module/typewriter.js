@@ -1,3 +1,5 @@
+/* 打字机模式 */
+
 import { config } from './config.js';
 import { isKey } from './../utils/hotkey.js';
 import { getFocusedBlock } from './../utils/dom.js';
@@ -70,7 +72,7 @@ function activate() {
 function typewriterEnable() {
     // let tab_bar = document.querySelector('div.layout__center ul.layout-tab-bar');
     // console.log(tab_bar);
-    var layouts = document.querySelector('.layout__center');
+    var layouts = window.siyuan.layout.centerLayout.element;
     if (layouts != null) {
         enable = !enable;
         // 更改菜单栏按钮状态

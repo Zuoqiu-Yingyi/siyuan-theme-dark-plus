@@ -4,6 +4,8 @@ export {
     merge, // 递归合并对象
     styleHandle, // 样式标签处理
     HTMLDecode, // HTML 解码
+    focalize, // 聚焦到指定块
+    jump, // 跳转到指定块
     goto, // 跳转到指定块
     isNum, // 判断字符串是否为数字
     hoverPreview, // 悬浮预览指定块
@@ -96,7 +98,7 @@ function focalize(id, callback = null) {
         breadcrumbs.appendChild(crumb);
         crumb.click();
         crumb.remove();
-        if (typeof callback === 'function') callback();
+        if (typeof callback === 'function') setTimeout(callback, 0);
     }
     else setTimeout(() => focalize(id), config.theme.goto.delay);
 }
@@ -113,7 +115,7 @@ function jump(id, callback = null) {
         editor.appendChild(ref);
         ref.click();
         ref.remove();
-        if (typeof callback === 'function') callback();
+        if (typeof callback === 'function') setTimeout(callback, 0);
     }
     else setTimeout(() => jump(id), config.theme.goto.delay);
 }

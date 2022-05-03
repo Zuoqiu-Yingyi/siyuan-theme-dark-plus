@@ -6,6 +6,7 @@ export {
     blockMenuInit, // 右键菜单初始化
     CommonMenuObserver, // 右键菜单管理
 };
+
 import {
     config,
     custom,
