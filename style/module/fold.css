@@ -44,8 +44,13 @@
 } */
 
 /* 修复代码块折叠样式 */
-.protyle-wysiwyg [data-node-id][fold="1"]:not(.li):not([data-type="NodeHeading"]).code-block {
+/* .protyle-wysiwyg [data-node-id][fold="1"].code-block {
     height: 26px;
+} */
+.protyle-wysiwyg [data-node-id][fold="1"].code-block>.hljs,
+.protyle-wysiwyg [data-node-id][fold="1"].code-block>.protyle-linenumber__rows {
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 .protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeIFrame"],

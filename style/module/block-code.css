@@ -12,15 +12,22 @@
 .b3-typography .protyle-linenumber__rows,
 .protyle-wysiwyg [data-node-id].code-block>.protyle-linenumber__rows {
     background-color: var(--custom-block-code-linenumber-background-color);
-    padding-top: 0;
-    padding-bottom: 0;
+    /* padding-top: 0; */
+    /* padding-bottom: 0; */
 }
 
+/* 被选中块的行号 */
+.protyle-wysiwyg--hl .protyle-linenumber__rows,
+.protyle-wysiwyg--select .protyle-linenumber__rows {
+    background-color: var(--b3-theme-primary-lightest) !important;
+}
+
+/* 编辑区 */
 .b3-typography .hljs,
 .protyle-wysiwyg [data-node-id].code-block>.hljs {
     background-color: transparent;
-    padding-top: 0;
-    padding-bottom: 0;
+    /* padding-top: 0; */
+    /* padding-bottom: 0; */
 }
 
 /* 块属性位置 */
@@ -33,12 +40,37 @@
     background-color: transparent;
 }
 
+/* 功能标签栏 */
+.b3-typography .code-block .protyle-action,
+.protyle-wysiwyg [data-node-id].code-block .protyle-action {
+    left: auto;
+    right: 4px;
+    /* float: right; */
+    /* position: relative; */
+}
+
+/* 间隔 */
+.b3-typography .code-block .protyle-action>span.fn__flex-1,
+.protyle-wysiwyg [data-node-id].code-block .protyle-action>span.fn__flex-1 {
+    flex: 0;
+}
+
 /* 语言标签 */
+.b3-typography .code-block .protyle-action .protyle-action__language,
+.protyle-wysiwyg .code-block .protyle-action .protyle-action__language {
+    margin-left: 0.5em !important;
+    margin-right: 0.5em;
+    /* margin-top: -6px; */
+    font-size: 100%;
+}
+
 .b3-typography .code-block .protyle-icons,
 .protyle-wysiwyg [data-node-id].code-block .protyle-icons {
     top: 0;
     right: 0;
 }
+
+
 
 /* 代码块编辑时不闪(v1.8.9 已修复)
  * REF https: //github.com/Achuan-2/siyuan-themes-tsundoku-light/blob/1aaa19fa3e6eebca4cb59606317d4bf1a23b0109/theme.css#L982
