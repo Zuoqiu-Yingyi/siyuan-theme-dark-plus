@@ -315,7 +315,10 @@ function getBlockSelected() {
 function setBlockDOMAttrs(id, attrs) {
     let block = document.querySelector(`div.protyle-content div[data-node-id="${id}"]`);
     if (block) {
-        if (block.className === 'protyle-background') block = block.nextElementSibling.nextElementSibling;
+        if (block.className === 'protyle-background') {
+            while (block && block.dataset.docType !== 'NodeDocument') block = block.nextElementSibling;
+        };
+        // console.log(block);
         // console.log(attrs);
         for (let key of Object.keys(attrs)) {
             if (attrs[key]) block.setAttribute(key, attrs[key]);

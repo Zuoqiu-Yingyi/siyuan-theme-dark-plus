@@ -5,6 +5,7 @@
 - 部分功能移动端支持 | Some features are supported on mobile devices.
   - 记录当前文档浏览位置 | Record the current document position.
   - 打字机模式 | Typewriter mode.
+- 修复移动端记录当前文档浏览位置问题 | Fix the issue of recording the current document position on mobile devices.
 
 ## v0.9.4/2022-05-04
 
