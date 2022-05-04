@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 强制显示块滚动条 | Blocks scrollbars are always visible.
+
 ## v0.9.4/2022-05-04
 
 - [v0.9.3 <=> v0.9.4](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.3...v0.9.4)

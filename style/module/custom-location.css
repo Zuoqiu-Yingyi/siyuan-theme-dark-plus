@@ -3,8 +3,14 @@
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 
+/* 显示当前文档阅读进度 */
 .protyle-wysiwyg[custom-location]::before {
     content: "👀\00A0" attr(custom-location);
     font-size: 0.75em;
     border: 1px solid var(--b3-theme-primary);
+}
+
+/* 强制显示块滚动条 */
+.b3-tooltips__s {
+    display: block !important;
 }
