@@ -9,8 +9,8 @@
     font-size: 0.75em;
     border: 1px solid var(--b3-theme-primary);
     position: absolute;
-    top: 3em;
-    right: 1em;
+    top: 2rem;
+    right: 1.5rem;
 }
 
 /* 强制显示块滚动条 */

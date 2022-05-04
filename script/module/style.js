@@ -11,11 +11,12 @@ import {
 /* 渲染自定义样式 */
 function renderCustomStyle(styles) {
     try {
-        const layout__center = window.siyuan.layout.centerLayout.element;
-
+        const EDITOR = window.siyuan.layout
+            ? window.siyuan.layout.centerLayout.element
+            : window.siyuan.mobileEditor.protyle.element;
         for (let i in styles) {
             let style = styles[i];
-            layout__center.querySelectorAll(`div[data-node-id][custom-${style}]`).forEach((item, i, obj) => {
+            EDITOR.querySelectorAll(`div[data-node-id][custom-${style}]`).forEach((item, i, obj) => {
                 let attr = item.getAttribute(`custom-${style}`);
                 item.querySelectorAll(`div[contenteditable][spellcheck]`).forEach((item, i, obj) => {
                     item.style[style] = attr;
@@ -32,8 +33,10 @@ function renderCustomStyle(styles) {
 // 保存自定义样式
 function saveCustomStyle() {
     try {
-        const layout__center = window.siyuan.layout.centerLayout.element;
-        layout__center.querySelectorAll(`div[data-node-id][${config.theme.style.attribute}]`).forEach((item, i, obj) => {
+        const EDITOR = window.siyuan.layout
+            ? window.siyuan.layout.centerLayout.element
+            : window.siyuan.mobileEditor.protyle.element;
+        EDITOR.querySelectorAll(`div[data-node-id][${config.theme.style.attribute}]`).forEach((item, i, obj) => {
             // item.style.cssText = item.getAttribute(config.theme.style.attribute);
             let id = item.dataset.nodeId;
             let attr = item.getAttribute(config.theme.style.attribute);
