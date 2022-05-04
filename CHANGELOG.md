@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 强制显示块滚动条 | Blocks scrollbars are always visible.
+- 调整当前文档浏览位置标识位置 | Adjust the position of the current document indicator.
 
 ## v0.9.4/2022-05-04
 
