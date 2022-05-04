@@ -10,7 +10,8 @@
     border: 1px solid var(--b3-theme-primary);
     position: absolute;
     top: 2rem;
-    right: 1.5rem;
+    right: 2rem;
+    z-index: 1;
 }
 
 /* 强制显示块滚动条 */

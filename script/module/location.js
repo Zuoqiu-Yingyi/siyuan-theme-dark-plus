@@ -164,29 +164,46 @@ function clear(mode = config.theme.location.record.mode) {
     }
 }
 
+/* 获得编辑器 */
+function getEditor(callback) {
+    const EDITOR = window.siyuan.layout
+        ? window.siyuan.layout.centerLayout.element
+        : window.siyuan.mobileEditor.protyle.element;
+    if (EDITOR) {
+        if (typeof callback === 'function') setTimeout(() => callback(EDITOR), 0);
+        return EDITOR;
+    }
+}
+
 setTimeout(() => {
     try {
         if (config.theme.location.enable) {
             if (config.theme.location.slider.enable) {
-                const EDITOR = window.siyuan.layout
-                    ? window.siyuan.layout.centerLayout.element
-                    : window.siyuan.mobileEditor.protyle.element;
-                if (EDITOR) {
-                    if (config.theme.location.slider.follow.enable) {
-                        // 滑块跟踪鼠标点击的块
-                        EDITOR.addEventListener('click', e => setTimeout(async () => focusHandler(e.target), 0));
-                    }
-
-                    if (config.theme.location.slider.goto.enable) {
-                        // 跳转浏览进度
-                        EDITOR.addEventListener('mouseup', (e) => {
-                            // console.log(e);
-                            if (isButton(e, config.theme.hotkeys.location.slider.goto)) {
-                                setTimeout(() => goto(e.target), 0);
+                function fn() {
+                    // 编辑器可能还没有加载完成, 所以需要轮询
+                    try {
+                        getEditor((editor) => {
+                            if (config.theme.location.slider.follow.enable) {
+                                // 滑块跟踪鼠标点击的块
+                                editor.addEventListener('click', e => setTimeout(async () => focusHandler(e.target), 0));
                             }
-                        }, true);
+
+                            if (config.theme.location.slider.goto.enable) {
+                                // 跳转浏览进度
+                                editor.addEventListener('mouseup', (e) => {
+                                    // console.log(e);
+                                    if (isButton(e, config.theme.hotkeys.location.slider.goto)) {
+                                        setTimeout(() => goto(e.target), 0);
+                                    }
+                                }, true);
+                            }
+                        })
                     }
+                    catch (e) {
+                        setTimeout(fn, config.theme.goto.delay);
+                    };
                 }
+                setTimeout(fn, 0);
             }
             if (config.theme.location.record.enable) {
                 // 开关浏览位置记录功能
