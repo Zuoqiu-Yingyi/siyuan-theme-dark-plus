@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v0.9.5/2022-05-05
+
+- [v0.9.4 <=> v0.9.5](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.4...v0.9.5)
 - 强制显示块滚动条 | Blocks scrollbars are always visible.
 - 调整当前文档浏览位置标识位置 | Adjust the position of the current document indicator.
 - 部分功能移动端支持 | Some features are supported on mobile devices.
