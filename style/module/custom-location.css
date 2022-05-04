@@ -8,6 +8,9 @@
     content: "👀\00A0" attr(custom-location);
     font-size: 0.75em;
     border: 1px solid var(--b3-theme-primary);
+    position: absolute;
+    top: 3em;
+    right: 1em;
 }
 
 /* 强制显示块滚动条 */
