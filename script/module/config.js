@@ -1157,6 +1157,42 @@ export var config = {
                                     },
                                 },
                                 mode: "button",
+                                icon: "#iconTrashcan",
+                                label: {
+                                    zh_CN: "清除浏览位置记录",
+                                    other: "Clear Browsing Location History",
+                                },
+                                accelerator: "location: null",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-update', // 覆盖属性值
+                                            params: {
+                                                'custom-location': null,
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "separator",
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeDocument: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "button",
                                 icon: "#iconInfo",
                                 label: {
                                     zh_CN: "显示 ID",
