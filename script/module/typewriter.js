@@ -72,8 +72,10 @@ function activate() {
 function typewriterEnable() {
     // let tab_bar = document.querySelector('div.layout__center ul.layout-tab-bar');
     // console.log(tab_bar);
-    var layouts = window.siyuan.layout.centerLayout.element;
-    if (layouts != null) {
+    var editor = window.siyuan.layout
+        ? window.siyuan.layout.centerLayout.element
+        : window.siyuan.mobileEditor.protyle.element;
+    if (editor) {
         enable = !enable;
         // 更改菜单栏按钮状态
         toolbarItemChangeStatu(
@@ -85,15 +87,15 @@ function typewriterEnable() {
         );
         if (enable) {
             setTimeout(activate, 0);
-            // console.log(layouts.onclick);
-            if (layouts.onclick == null) {
-                layouts.onclick = (e, t) => {
+            // console.log(editor.onclick);
+            if (editor.onclick == null) {
+                editor.onclick = (e, t) => {
                     setTimeout(activate, 0);
                 }
             }
         }
         else {
-            layouts.onclick = null;
+            editor.onclick = null;
             var editors = document.getElementsByClassName("protyle-wysiwyg");
             for (let editor of editors) {
                 editor.onkeyup = null;

@@ -2,6 +2,9 @@
 
 - 强制显示块滚动条 | Blocks scrollbars are always visible.
 - 调整当前文档浏览位置标识位置 | Adjust the position of the current document indicator.
+- 部分功能移动端支持 | Some features are supported on mobile devices.
+  - 记录当前文档浏览位置 | Record the current document position.
+  - 打字机模式 | Typewriter mode.
 
 ## v0.9.4/2022-05-04
 

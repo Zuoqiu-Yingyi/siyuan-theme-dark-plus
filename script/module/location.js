@@ -168,16 +168,18 @@ setTimeout(() => {
     try {
         if (config.theme.location.enable) {
             if (config.theme.location.slider.enable) {
-                const centerLayout = window.siyuan.layout.centerLayout.element;
-                if (centerLayout != null) {
+                const EDITOR = window.siyuan.layout
+                    ? window.siyuan.layout.centerLayout.element
+                    : window.siyuan.mobileEditor.protyle.element;
+                if (EDITOR) {
                     if (config.theme.location.slider.follow.enable) {
                         // 滑块跟踪鼠标点击的块
-                        centerLayout.addEventListener('click', e => setTimeout(async () => focusHandler(e.target), 0));
+                        EDITOR.addEventListener('click', e => setTimeout(async () => focusHandler(e.target), 0));
                     }
 
                     if (config.theme.location.slider.goto.enable) {
                         // 跳转浏览进度
-                        centerLayout.addEventListener('mouseup', (e) => {
+                        EDITOR.addEventListener('mouseup', (e) => {
                             // console.log(e);
                             if (isButton(e, config.theme.hotkeys.location.slider.goto)) {
                                 setTimeout(() => goto(e.target), 0);
