@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 代码块功能按钮固定显示 | Fixed display code block function buttons.
+- 使用自定义块属性 `custom-width` 将 iframe 窗口宽度设置为文档宽度 | Use the custom block attribute `custom-width` to set the width of the iframe window to the document width.
 
 ## v0.9.5/2022-05-05
 

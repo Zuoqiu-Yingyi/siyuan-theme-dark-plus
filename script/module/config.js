@@ -883,6 +883,45 @@ export var config = {
                             {
                                 enable: true,
                                 type: {
+                                    NodeAudio: {
+                                        enable: true,
+                                    },
+                                    NodeIFrame: {
+                                        enable: true,
+                                    },
+                                    NodeVideo: {
+                                        enable: true,
+                                    },
+                                    NodeWidget: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "button",
+                                icon: "#iconMenu",
+                                label: {
+                                    zh_CN: "全宽显示",
+                                    other: "Full-width Display",
+                                },
+                                accelerator: "width: 100%",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-switch',
+                                            params: {
+                                                'custom-width': [
+                                                    '100%',
+                                                    null,
+                                                ],
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
                                     NodeDocument: {
                                         enable: true,
                                     },
