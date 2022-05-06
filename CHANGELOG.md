@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 代码块功能按钮固定显示 | Fixed display code block function buttons.
+
 ## v0.9.5/2022-05-05
 
 - [v0.9.4 <=> v0.9.5](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.4...v0.9.5)
