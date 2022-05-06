@@ -47,6 +47,11 @@
 /* .protyle-wysiwyg [data-node-id][fold="1"].code-block {
     height: 26px;
 } */
+/* 代码块功能按钮 */
+.protyle-wysiwyg [data-node-id][fold="1"].code-block>.protyle-action {
+    top: 2px;
+}
+/* 代码块编辑区 */
 .protyle-wysiwyg [data-node-id][fold="1"].code-block>.hljs,
 .protyle-wysiwyg [data-node-id][fold="1"].code-block>.protyle-linenumber__rows {
     padding-top: 2px;

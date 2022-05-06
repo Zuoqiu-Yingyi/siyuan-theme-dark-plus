@@ -320,9 +320,11 @@ function setBlockDOMAttrs(id, attrs) {
         };
         // console.log(block);
         // console.log(attrs);
-        for (let key of Object.keys(attrs)) {
-            if (attrs[key]) block.setAttribute(key, attrs[key]);
-            else block.removeAttribute(key);
+        if (block) {
+            for (let key of Object.keys(attrs)) {
+                if (attrs[key]) block.setAttribute(key, attrs[key]);
+                else block.removeAttribute(key);
+            }
         }
     }
     // console.log(block);
