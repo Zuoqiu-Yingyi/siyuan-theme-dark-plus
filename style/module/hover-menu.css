@@ -52,6 +52,13 @@
     overflow-x: visible !important;
 }
 
+/* 搜索结果 */
+#searchList.b3-list.b3-list--background,
+#globalSearchList.b3-list.b3-list--background {
+    background-color: transparent;
+    backdrop-filter: none;
+}
+
 /* 未引用资源 */
 #assetsList,
 /* 块移动菜单 */
@@ -65,7 +72,7 @@
 
 /* 块移动菜单 */
 #foldList.b3-list.b3-list--background,
-.b3-list.b3-list--background:not(ul):not(#searchList) {
+.b3-list.b3-list--background:not(ul, #searchList, #globalSearchList) {
     /* column-count: 4; */
     /* max-height: 395px !important; */
     width: var(--custom-popover-menu-width) !important;
