@@ -1904,9 +1904,16 @@ export var config = {
     },
 };
 
+// 用户配置
 export var custom = {
     theme: {
-        toolbar: {},
+        toolbar: {
+            [config.theme.menu.block.toolbar.id]: { default: false },
+            [config.theme.style.guides.toolbar.id]: { default: false },
+            [config.theme.invert.toolbar.id]: { default: false },
+            [config.theme.typewriter.switch.toolbar.id]: { default: false },
+            [config.theme.location.record.toolbar.id]: { default: false },
+        },
         location: {},
     },
 };
@@ -1929,17 +1936,10 @@ try {
 }
 
 try {
-    // 初始化用户状态
-    custom.theme.toolbar[config.theme.menu.block.toolbar.id] = { default: false };
-    custom.theme.toolbar[config.theme.style.guides.toolbar.id] = { default: false };
-    custom.theme.toolbar[config.theme.invert.toolbar.id] = { default: false };
-    custom.theme.toolbar[config.theme.typewriter.switch.toolbar.id] = { default: false };
-    custom.theme.toolbar[config.theme.location.record.toolbar.id] = { default: false };
-
     // 合并配置文件 custom.json
     let customjson = await getFile(config.custom.path);
     customjson = await customjson.json();
-    custom = merge(custom, customjson);
+    merge(custom, customjson);
 } catch (err) {
     console.warn(err);
 } finally {
