@@ -3,6 +3,7 @@
 - 代码块功能按钮固定显示 | Fixed display code block function buttons.
 - 使用自定义块属性 `custom-width` 将 iframe 窗口宽度设置为文档宽度 | Use the custom block attribute `custom-width` to set the width of the iframe window to the document width.
 - 调整搜索对话框/面板搜索结果显示样式 | Adjust the style of the search dialog/panel search results display.
+- 移除文档<kbd>更多</kbd>菜单中异常出现的块增强菜单项 | Remove abnormal menu items in the document <kbd>More</kbd> menu.
 
 ## v0.9.5/2022-05-05
 
