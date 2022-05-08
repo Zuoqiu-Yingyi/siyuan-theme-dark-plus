@@ -1922,7 +1922,13 @@ try {
     if (customjs.config != null) {
         merge(config, customjs.config);
     }
+} catch (err) {
+    console.warn(err);
+} finally {
+    console.log(config);
+}
 
+try {
     // 初始化用户状态
     custom.theme.toolbar[config.theme.menu.block.toolbar.id] = { default: false };
     custom.theme.toolbar[config.theme.style.guides.toolbar.id] = { default: false };
@@ -1937,6 +1943,5 @@ try {
 } catch (err) {
     console.warn(err);
 } finally {
-    console.log(config);
     console.log(custom);
 }
