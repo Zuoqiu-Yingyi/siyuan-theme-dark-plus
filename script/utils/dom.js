@@ -101,8 +101,8 @@ function getFocusedID() {
  */
 function getTargetBlock(target) {
     let element = target;
-    while (element != null && element.dataset.nodeId == null) element = element.parentNode;
-    if (element != null) return element;
+    while (element && element.dataset && !config.theme.regs.id.test(element.dataset.nodeId)) element = element.parentNode;
+    if (element && element.dataset && config.theme.regs.id.test(element.dataset.nodeId)) return element;
     else return null;
 }
 
