@@ -3,11 +3,13 @@
 ## v0.9.6/2022-05-09
 
 - [v0.9.5 <=> v0.9.6](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.5...v0.9.6)
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 代码块功能按钮固定显示 | Fixed display code block function buttons.
 - 使用自定义块属性 `custom-width` 将 iframe 窗口宽度设置为文档宽度 | Use the custom block attribute `custom-width` to set the width of the iframe window to the document width.
 - 调整搜索对话框/面板搜索结果显示样式 | Adjust the style of the search dialog/panel search results display.
 - 移除文档<kbd>更多</kbd>菜单中异常出现的块增强菜单项 | Remove abnormal menu items in the document <kbd>More</kbd> menu.
 - 修复加载 `custom.js` 文件错误时无法加载 `custom.json` 文件的问题 | Fix the loading issue of the `custom.json` file when the `custom.js` file is not loaded.
+- 优化默认用户配置初始化顺序 | Optimize the initialization order of the default user configuration.
 
 ## v0.9.5/2022-05-05
 
