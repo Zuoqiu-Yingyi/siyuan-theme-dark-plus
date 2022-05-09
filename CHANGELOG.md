@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 修复在新窗口打开无法跳转非文档块问题 | Fixed an issue where opening in a new window could not jump to non-document blocks.
+
 ## v0.9.6/2022-05-09
 
 - [v0.9.5 <=> v0.9.6](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.5...v0.9.6)
