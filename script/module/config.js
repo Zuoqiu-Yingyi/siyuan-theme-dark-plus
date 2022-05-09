@@ -1904,6 +1904,16 @@ export var config = {
     },
 };
 
+try {
+    // 合并配置文件 custom.js
+    const customjs = await import('/widgets/custom.js');
+    if (customjs && customjs.config) merge(config, customjs.config);
+} catch (err) {
+    console.warn(err);
+} finally {
+    console.log(config);
+}
+
 // 用户配置
 export var custom = {
     theme: {
@@ -1918,28 +1928,18 @@ export var custom = {
     },
 };
 
-export async function saveCustomFile(custom, path = config.custom.path) {
-    const r = await putFile(path, JSON.stringify(custom, undefined, 4));
-    // console.log(r);
-}
-
-try {
-    // 合并配置文件 custom.js
-    const customjs = await import('/widgets/custom.js');
-    if (customjs.config != null) {
-        merge(config, customjs.config);
-    }
-} catch (err) {
-    console.warn(err);
-} finally {
-    console.log(config);
+/* 保存用户配置至文件 */
+export async function saveCustomFile(data = custom, path = config.custom.path) {
+    const response = await putFile(path, JSON.stringify(data, undefined, 4));
+    // console.log(response);
+    return response;
 }
 
 try {
     // 合并配置文件 custom.json
     let customjson = await getFile(config.custom.path);
-    customjson = await customjson.json();
-    merge(custom, customjson);
+    if (customjson) customjson = await customjson.json();
+    if (customjson) merge(custom, customjson);
 } catch (err) {
     console.warn(err);
 } finally {
