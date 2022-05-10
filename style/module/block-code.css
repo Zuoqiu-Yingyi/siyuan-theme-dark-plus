@@ -10,6 +10,7 @@
 
 /* 行号 */
 .protyle-wysiwyg [data-node-id].code-block>.protyle-linenumber__rows {
+    border-right: var(--custom-block-code-linenumber-separator-width) solid var(--custom-block-code-linenumber-separator-color);
     background-color: var(--custom-block-code-linenumber-background-color);
     /* padding-top: 0; */
     /* padding-bottom: 0; */
