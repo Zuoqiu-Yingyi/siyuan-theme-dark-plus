@@ -24,8 +24,16 @@
     padding-right: 0;
 }
 
+/* 页签项文本 */
+.layout-tab-bar .item .item__text {
+    min-width: 0;
+}
+
 /* 页签项关闭图标 */
-.layout-tab-bar .item .item__close {}
+.layout-tab-bar .item .item__close:hover>svg {
+    color: var(--b3-theme-surface);
+    background-color: var(--b3-theme-on-surface);
+}
 
 /* 被选中的页签项 */
 .layout-tab-bar .item--focus {

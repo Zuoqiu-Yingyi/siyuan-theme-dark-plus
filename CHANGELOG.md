@@ -9,6 +9,7 @@
 - 带图标的页签完整显示 | The tab with an icon is fully displayed.
 - 调整钉住的页签图标样式 | Adjusted the style of the pinned tab icon.
 - 修复使用 URL 参数以非聚焦模式跳转块不稳定问题 | Fixed an unstable issue where jumping to a block using a URL parameter would not be stable.
+- 鼠标悬浮在页签关闭按钮时突出显示 | The close button is highlighted when the mouse hovers over it.
 
 ## v0.9.6/2022-05-09
 

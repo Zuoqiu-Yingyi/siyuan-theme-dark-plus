@@ -91,7 +91,7 @@ function HTMLDecode(text) {
  * 问题: 文档名不改变
  */
 function focalize(id, callback = null) {
-    console.log('focalize:', id);
+    // console.log('focalize:', id);
     const breadcrumbs = document.querySelector('.protyle-breadcrumb>.protyle-breadcrumb__bar');
     if (breadcrumbs) {
         let crumb = document.createElement("span");
@@ -109,7 +109,7 @@ function focalize(id, callback = null) {
  * 跳转到指定块并可选聚焦
  */
 function jump(id, callback = null) {
-    console.log('jump:', id);
+    // console.log('jump:', id);
     const editor = document.querySelector('div.protyle-wysiwyg div[data-node-id] div[contenteditable][spellcheck]');
     if (editor) {
         let ref = document.createElement("span");
