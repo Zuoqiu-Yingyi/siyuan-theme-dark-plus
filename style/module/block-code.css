@@ -9,7 +9,6 @@
 }
 
 /* 行号 */
-.b3-typography .protyle-linenumber__rows,
 .protyle-wysiwyg [data-node-id].code-block>.protyle-linenumber__rows {
     background-color: var(--custom-block-code-linenumber-background-color);
     /* padding-top: 0; */
@@ -26,9 +25,15 @@
 .b3-typography .hljs,
 .protyle-wysiwyg [data-node-id].code-block>.hljs {
     background-color: transparent;
-    /* padding-top: 0; */
-    /* padding-bottom: 0; */
 }
+
+/* 👇 导出预览样式 👇 */
+.b3-typography .protyle-linenumber__rows,
+.b3-typography .hljs {
+    padding: 0.5em;
+}
+
+/* 👆 导出预览样式 👆 */
 
 /* 块属性位置 */
 .protyle-wysiwyg [data-node-id].code-block>.protyle-attr {
@@ -47,6 +52,7 @@
     /* float: right; */
     /* position: relative; */
 }
+
 /* 功能按钮常显 */
 .protyle-wysiwyg [data-node-id].code-block .protyle-action>span {
     opacity: unset;
