@@ -4,6 +4,7 @@
 - 修复获得目标块方法运行时异常问题 | Fixed an issue where the getTargetBlock method would throw an exception.
 - 调整被选择的文本背景颜色 | Changed the background color of the selected text.
 - 带图标的页签完整显示 | The tab with an icon is fully displayed.
+- 调整钉住的页签图标样式 | Adjusted the style of the pinned tab icon.
 
 ## v0.9.6/2022-05-09
 
