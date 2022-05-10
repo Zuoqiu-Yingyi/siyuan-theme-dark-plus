@@ -16,7 +16,13 @@
     background-color: transparent;
     box-shadow: none;
     border: 2px solid var(--b3-list-hover);
+    padding-left: 4px;
+    min-width: none;
     border-radius: var(--custom-border-radius);
+}
+/* 页签项图标 */
+.layout-tab-bar .item .item__icon {
+    padding-right: 0;
 }
 
 /* 被选中的页签项 */
@@ -39,4 +45,5 @@
 /* 钉住的标签页全部显示 */
 .layout-tab-bar .item--pin .item__text {
     width: auto;
+    display: flex !important;
 }
