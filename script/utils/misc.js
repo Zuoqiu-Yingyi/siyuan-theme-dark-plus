@@ -100,7 +100,7 @@ function focalize(id, callback = null) {
         breadcrumbs.appendChild(crumb);
         crumb.click();
         crumb.remove();
-        if (typeof callback === 'function') setTimeout(callback, 0);
+        if (typeof callback === 'function') setTimeout(callback, config.theme.goto.delay);
     }
     else setTimeout(() => focalize(id, callback), config.theme.goto.delay);
 }
@@ -119,7 +119,7 @@ function jump(id, callback = null) {
         editor.appendChild(ref);
         ref.click();
         ref.remove();
-        if (typeof callback === 'function') setTimeout(callback, 0);
+        if (typeof callback === 'function') setTimeout(callback, config.theme.goto.delay);
     }
     else setTimeout(() => jump(id, callback), config.theme.goto.delay);
 }
