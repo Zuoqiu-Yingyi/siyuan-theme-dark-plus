@@ -79,3 +79,8 @@
 .protyle-wysiwyg .dragover__right {
     box-shadow: 4px 0 0 var(--custom-drag-right-shadow-color);
 }
+
+/* 文本选择 */
+::selection {
+    background-color: var(--custom-selection-background-color);
+}
