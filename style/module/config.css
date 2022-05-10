@@ -421,6 +421,9 @@
     --custom-drag-left-shadow-color: var(--custom-striking-color);
     --custom-drag-right-shadow-color: var(--custom-striking-color);
 
+    /* 鼠标划选文本颜色 | The color of the text selected */
+    --custom-selection-background-color: var(--custom-components-light);
+
     /* 空行聚焦提示 | Blank line focus prompt */
     --custom-empty-focus-p: "´･-･)ﾉ㊫";
     --custom-empty-focus-c: "´･-･)ﾉ↹";

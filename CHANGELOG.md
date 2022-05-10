@@ -2,6 +2,7 @@
 
 - 修复在新窗口打开无法跳转非文档块问题 | Fixed an issue where opening in a new window could not jump to non-document blocks.
 - 修复获得目标块方法运行时异常问题 | Fixed an issue where the getTargetBlock method would throw an exception.
+- 调整被选择的文本背景颜色 | Changed the background color of the selected text.
 
 ## v0.9.6/2022-05-09
 
