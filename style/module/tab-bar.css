@@ -23,6 +23,12 @@
 .layout-tab-bar .item .item__icon {
     padding-right: 0;
 }
+.layout-tab-bar .item .item__icon svg,
+.layout-tab-bar .item .item__icon img {
+    width: var(--custom-tab-bar-icon-size);
+    height: var(--custom-tab-bar-icon-size);
+}
+
 
 /* 页签项文本 */
 .layout-tab-bar .item .item__text {
@@ -30,7 +36,7 @@
 }
 
 /* 页签项关闭图标 */
-.layout-tab-bar .item .item__close:hover>svg {
+.layout-tab-bar .item .item__close:hover svg {
     color: var(--b3-theme-surface);
     background-color: var(--b3-theme-on-surface);
 }

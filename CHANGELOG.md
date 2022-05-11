@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 调整页签项图标的大小 | Adjusted the size of the tab icon.
+
 ## v0.9.7/2022-05-11
 
 - [v0.9.6 <=> v0.9.7](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.6...v0.9.7)
