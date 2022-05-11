@@ -269,6 +269,8 @@
 
     /* 编辑区页签栏背景颜色 | The background color of the  edit area tab bar */
     --custom-tab-bar-background-color: var(--custom-transparent);
+    /* 页签图标大小 | The size of the tab bar icon */
+    --custom-tab-bar-icon-size: 1.25em;
 
     /* 弹出窗口背景颜色 | The background color of the popover */
     --custom-popover-background-color: var(--custom-editor-background-color);

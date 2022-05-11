@@ -9,21 +9,18 @@
     transition: all 0.1s ease-in-out;
 }
 
-.b3-list--files .b3-list-item__icon:hover {
-    transform: scale(1.25);
-    transition: all 0.1s ease-in-out;
-}
-
+.b3-list--files .b3-list-item__icon:hover,
 /* dock栏和顶部图标放大动效 */
 .dock--vertical .dock__item:hover svg,
 .toolbar__item:hover svg,
-.block__icon:hover svg {
-    transform: scale(1.25);
-    transition: all 0.1s ease-in-out;
-}
-
+.block__icon:hover svg,
 /* 标题图标放大，提示可以块悬浮窗 */
-.file-tree .b3-list-item__graphic.popover__block:hover {
+.file-tree .b3-list-item__graphic.popover__block:hover,
+/* 页签项图标 */
+/* .layout-tab-bar .item .item__icon:hover svg, */
+/* .layout-tab-bar .item .item__icon:hover img, */
+/* 面包屑图标 */
+.protyle-breadcrumb .protyle-breadcrumb__item:hover svg {
     transform: scale(1.25);
     transition: all 0.1s ease-in-out;
 }
