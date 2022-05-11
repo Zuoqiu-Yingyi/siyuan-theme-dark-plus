@@ -20,7 +20,7 @@
 /* .layout-tab-bar .item .item__icon:hover svg, */
 /* .layout-tab-bar .item .item__icon:hover img, */
 /* 面包屑图标 */
-.protyle-breadcrumb .protyle-breadcrumb__item:hover svg {
+.protyle-breadcrumb .protyle-breadcrumb__item .popover__block:hover {
     transform: scale(1.25);
     transition: all 0.1s ease-in-out;
 }

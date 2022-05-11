@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 调整页签项图标的大小 | Adjusted the size of the tab icon.
+- 调整页签中按钮控件样式 | Adjusted the style of the button in the tab.
 
 ## v0.9.7/2022-05-11
 
