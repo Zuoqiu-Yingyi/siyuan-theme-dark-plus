@@ -46,7 +46,7 @@ export var config = {
                         other: 'List Guides',
                     },
                     icon: '#iconIndent',
-                    index: -3,
+                    index: -4,
                 },
                 elements: {
                     // 应用辅助线样式的元素
@@ -56,6 +56,35 @@ export var config = {
                         style: {
                             id: 'theme-style-guides-elements-list-style',
                             href: '/appearance/themes/Dark+/style/dynamic-module/guides-list.css', // 样式文件 URL
+                        },
+                    },
+                },
+            },
+            mark: {
+                enable: true, // 是否显示标记
+                toolbar: { // 菜单栏
+                    enable: true,
+                    display: true,
+                    id: 'toolbar-theme-style-mark',
+                    hotkey: () => config.theme.hotkeys.style.mark,
+                    label: {
+                        zh_CN: '显示标记文本',
+                        zh_CNT: null,
+                        fr_FR: null,
+                        en_US: null,
+                        other: 'Displays Mark Text',
+                    },
+                    icon: '#iconMark',
+                    index: -3,
+                },
+                elements: {
+                    // 应用辅助线样式的元素
+                    list: {
+                        // 列表辅助线
+                        enable: true,
+                        style: {
+                            id: 'theme-style-mark-elements-list-style',
+                            href: '/appearance/themes/Dark+/style/dynamic-module/mark-display.css', // 样式文件 URL
                         },
                     },
                 },
@@ -572,7 +601,7 @@ export var config = {
                         other: 'Record Browsing Location',
                     },
                     icon: '#iconBookmark',
-                    index: -5,
+                    index: -6,
                 },
             },
             clear: {
@@ -611,7 +640,7 @@ export var config = {
                         other: 'Block Menu Enhancements',
                     },
                     icon: '#iconMenu',
-                    index: -4,
+                    index: -5,
                 },
                 items: [ // 块菜单项
                     { // 常用字体设置
@@ -1660,12 +1689,20 @@ export var config = {
                     key: 'F1',
                 },
                 guides: {
-                    // 辅助样式(Shift + Alt + G)
+                    // 列表辅助线样式(Shift + Alt + G)
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,
                     Alt: true,
                     key: 'G',
+                },
+                mark: {
+                    // 标记文本显示(Shift + Alt + E)
+                    CtrlCmd: false,
+                    WinCtrl: false,
+                    Shift: true,
+                    Alt: true,
+                    key: 'E',
                 },
             },
             timestamp: {
