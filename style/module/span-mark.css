@@ -13,9 +13,6 @@
     transition: all 200ms linear 0ms;
 }
 
-
-.protyle-content [custom-mark~=display] mark,
-.protyle-content [custom-mark~=显示] mark,
 .protyle-content mark:hover {
     background-color: transparent;
     color: var(--custom-span-mark-color);

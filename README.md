@@ -108,7 +108,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | <kbd>Shift + Alt + G</kbd>                                               | 整个窗口<br/>entire window                                      | 启动/关闭列表辅助线(列表, 表格列表, 思维导图列表)<br/>turn on/off list guides (list, table list, mind map list) |
 | <kbd>Shift + Alt + M</kbd>                                               | 整个窗口<br/>entire window                                      | 启动/关闭块菜单增强功能<br/>turn on/off block menu enhancement                                                  |
 | <kbd>Shift + Alt + L</kbd>                                               | 整个窗口<br/>entire window                                      | 启动/关闭记录当前浏览位置功能<br/>turn on/off record the current browsing location                              |
-| <kbd>Shift + Alt + E</kbd>                                               | 整个窗口<br/>entire window                                      | 启动/关闭显示标记文本功能<br/>turn on/off the feature of displaying mark text                                   |
+| <kbd>Shift + Alt + E</kbd>                                               | 整个窗口<br/>entire window                                      | 启动/关闭显示标记文本功能<br/>turn on/off the feature of displaying the mark text                                   |
 | <kbd>Shift + Alt + C</kbd>                                               | 当前文档<br/>current document                                   | 复制当前文档 markdown 全文至剪贴板<br/>copy the full markdown text of the current document to the clipboard     |
 | <kbd>Shift + Alt + X</kbd>                                               | 当前文档<br/>current document                                   | 剪切当前文档 markdown 全文至剪贴板<br/>cut the full markdown text of the current document to the clipboard      |
 | <kbd>Shift + Alt + D</kbd>                                               | 当前文档<br/>current document                                   | 删除当前文档全文<br/>delete the full content of the current documen                                             |
@@ -278,7 +278,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   - 开启后可以使用 <kbd>鼠标右键</kbd> 单击文档右侧的滑块, 跳转到文档上次浏览位置  
     You can click on a slider on the right side of the document to jump to where the document was last browsed using the <kbd>Right Mouse Button</kbd> when turned on.
 - 使用快捷键 <kbd>Shift + Alt + E</kbd> 启动/关闭显示标记文本功能  
-  Use the shortcut key <kbd>Shift + Alt + E</kbd> to  the feature of displaying mark text.
+  Use the shortcut key <kbd>Shift + Alt + E</kbd> to  the feature of displaying the mark text.
 - 使用快捷键 <kbd>Shift + Alt + C</kbd> 复制当前文档 markdown 全文至剪贴板  
   Use the shortcut keys <kbd>Shift + Alt + C</kbd> to copy the full markdown text of the current document to the clipboard.
 - 使用快捷键 <kbd>Shift + Alt + X</kbd> 剪切当前文档 markdown 全文至剪贴板  
