@@ -2,6 +2,7 @@
 
 - 调整页签项图标的大小 | Adjusted the size of the tab icon.
 - 调整页签中按钮控件样式 | Adjusted the style of the button in the tab.
+- 使用快捷键 <kbd>Shift + Alt + E</kbd> 启用/关闭显示标记文本功能 | Use the shortcut <kbd>Shift + Alt + E</kbd> to enable/disable the feature of displaying mark text.
 
 ## v0.9.7/2022-05-11
 

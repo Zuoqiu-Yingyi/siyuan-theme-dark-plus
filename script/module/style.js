@@ -74,18 +74,18 @@ function render() {
     renderCustomStyle(config.theme.style.render.styles);
 }
 
-/* 启用/禁用辅助线样式 */
-function guidesEnable() {
+/* 更改指定样式配置状态 */
+function changeStyleState(styleConfig) {
     let enable = false;
-    Object.keys(config.theme.style.guides.elements).forEach((key) => {
-        let element = config.theme.style.guides.elements[key];
+    Object.keys(styleConfig.elements).forEach((key) => {
+        let element = styleConfig.elements[key];
         if (element.enable) {
             enable = styleHandle(element.style.id, undefined, element.style.href) || enable;
         }
     });
     // 更改菜单栏按钮状态
     toolbarItemChangeStatu(
-        config.theme.style.guides.toolbar.id,
+        styleConfig.toolbar.id,
         enable,
         'SVG',
         undefined,
@@ -126,15 +126,28 @@ setTimeout(() => {
                 }, true);
             }
             if (config.theme.style.guides.enable) {
-                let Fn_guidesEnable = toolbarItemInit(
+                let Fn_guides = toolbarItemInit(
                     config.theme.style.guides.toolbar,
-                    guidesEnable,
+                    () => changeStyleState(config.theme.style.guides),
                 );
-                // 使用快捷键启用反色模式
+                // 使用快捷键启用/禁用辅助线样式
                 window.addEventListener('keyup', (e) => {
                     // console.log(e);
                     if (isKey(e, config.theme.hotkeys.style.guides)) {
-                        Fn_guidesEnable();
+                        Fn_guides();
+                    }
+                }, true);
+            }
+            if (config.theme.style.mark.enable) {
+                let Fn_mark = toolbarItemInit(
+                    config.theme.style.mark.toolbar,
+                    () => changeStyleState(config.theme.style.mark),
+                );
+                // 使用快捷键启用/禁用辅助线样式
+                window.addEventListener('keyup', (e) => {
+                    // console.log(e);
+                    if (isKey(e, config.theme.hotkeys.style.mark)) {
+                        Fn_mark();
                     }
                 }, true);
             }
