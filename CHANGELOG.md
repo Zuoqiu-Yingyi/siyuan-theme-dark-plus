@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 为资源块(挂件块, iframe 块, 视频块与音频块)添加`在新窗口打开资源`菜单项 | Add the `Open the resource in a New Window` menu item for resource blocks (widget blocks, iframe blocks, video blocks and audio blocks).
+- 为子窗口添加窗口置顶/取消置顶菜单项 | Add the `Topmost` menu item for subwindows.
 
 ## v0.9.8/2022-05-13
 

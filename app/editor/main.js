@@ -337,7 +337,7 @@ async function init(params) {
 }
 
 window.onload = () => {
-    // try {
+    try {
         window.editor = {};
         window.editor.url = new URL(window.location.href);
         // console.log(window.editor.url);
@@ -640,12 +640,22 @@ window.onload = () => {
                     }, // 点击后执行的操作
                 });
 
+                window.editor.editor.addAction({ // 窗口置顶与取消置顶
+                    id: 'B3727110-AF46-4B5C-B910-0C6FC8091864', // 菜单项 id
+                    label: config.editor.MAP.LABELS.pin[window.editor.params.lang]
+                        || config.editor.MAP.LABELS.pin.default, // 菜单项名称
+                    keybindings: [monaco.KeyMod.Shift | monaco.KeyMod.Alt | monaco.KeyCode.KeyP], // 绑定快捷键
+                    contextMenuGroupId: '9_window', // 所属菜单的分组
+                    contextMenuOrder: 3, // 菜单分组内排序
+                    run: config.editor.command.PIN, // 点击后执行的操作
+                });
+
                 window.editor.params.breadcrumb.status.innerText = config.editor.mark.status.success; // 加载完成
             });
         });
-    // }
-    // catch (error) {
-    //     console.error(error);
-    //     document.getElementById('status').innerText = config.editor.mark.status.error;
-    // }
+    }
+    catch (error) {
+        console.error(error);
+        document.getElementById('status').innerText = config.editor.mark.status.error;
+    }
 }

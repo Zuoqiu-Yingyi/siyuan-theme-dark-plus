@@ -52,6 +52,10 @@ export var config = {
                 console.debug('LOADED');
                 return true;
             },
+            PIN: () => {
+                console.debug('WINDOW-SWITCH-PIN');
+                return true;
+            },
         },
         IStandaloneEditorConstructionOptions: {
             // autoClosingBrackets: 'languageDefined', // 是否自动添加后括号(包括中括号)
@@ -93,6 +97,7 @@ export var config = {
                 copyhref: { zh_CN: '复制页面链接', default: 'Copy Link' },
                 copyfullhref: { zh_CN: '复制页面完整链接', default: 'Copy Full Link' },
                 wrap: { zh_CN: '切换自动换行', default: 'Toggle Word Wrap' },
+                pin: { zh_CN: '窗口置顶/取消置顶', default: 'Window Pin/Unpin' },
                 unSaved: {
                     zh_CN: "是否不保存更改？\n如果不保存，你的更改将丢失。",
                     default: "Do you not save your changes?\nIf you don't save, your changes will be lost"

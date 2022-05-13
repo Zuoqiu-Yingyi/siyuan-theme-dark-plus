@@ -32,7 +32,8 @@ function open(id = getFocusedID(), urlParams = {}) {
             undefined,
             undefined,
             urlParams,
-            config.theme.window.open.windowParams,
+            config.theme.window.windowParams,
+            config.theme.window.menu.template,
         );
     }
 }
@@ -74,7 +75,8 @@ async function middleClick(e, fn1, fn2 = null, fn3 = null) {
                         'browser',
                         window.siyuan.layout[dock].data.inbox.data[inbox].shorthandURL,
                         undefined,
-                        config.theme.window.open.windowParams,
+                        config.theme.window.windowParams,
+                        config.theme.window.menu.template,
                     );
                     return;
                 }
@@ -96,7 +98,8 @@ async function middleClick(e, fn1, fn2 = null, fn3 = null) {
                 'browser',
                 target,
                 undefined,
-                config.theme.window.open.windowParams,
+                config.theme.window.windowParams,
+                config.theme.window.menu.template,
             );
         }
     }
@@ -214,7 +217,8 @@ setTimeout(async () => {
                                                     fontFamily: encodeURI(window.siyuan.config.editor.fontFamily),
                                                     tabSize: window.siyuan.config.editor.codeTabSpaces,
                                                 },
-                                                config.theme.window.open.windowParams,
+                                                config.theme.window.windowParams,
+                                                config.theme.window.menu.template,
                                             );
                                         }
                                         else {
@@ -238,7 +242,8 @@ setTimeout(async () => {
                                                                 fontFamily: encodeURI(window.siyuan.config.editor.fontFamily),
                                                                 tabSize: window.siyuan.config.editor.codeTabSpaces,
                                                             },
-                                                            config.theme.window.open.windowParams,
+                                                            config.theme.window.windowParams,
+                                                            config.theme.window.menu.template,
                                                             undefined,
                                                             undefined,
                                                             undefined,
@@ -305,7 +310,8 @@ setTimeout(async () => {
                                                             fontFamily: encodeURI(window.siyuan.config.editor.fontFamily),
                                                             workspace: window.siyuan.config.system.workspaceDir,
                                                         },
-                                                        config.theme.window.open.windowParams,
+                                                        config.theme.window.windowParams,
+                                                        config.theme.window.menu.template,
                                                         undefined,
                                                         undefined,
                                                         async (win, event, level, message, line, sourceId) => {
@@ -341,7 +347,8 @@ setTimeout(async () => {
                                                     fontFamily: encodeURI(window.siyuan.config.editor.fontFamily),
                                                     workspace: window.siyuan.config.system.workspaceDir,
                                                 },
-                                                config.theme.window.open.windowParams,
+                                                config.theme.window.windowParams,
+                                                config.theme.window.menu.template,
                                             );
                                         }
                                     },
@@ -374,7 +381,8 @@ setTimeout(async () => {
                                                         title: inbox.shorthandTitle,
                                                         describe: inbox.shorthandDesc,
                                                     },
-                                                    config.theme.window.open.windowParams,
+                                                    config.theme.window.windowParams,
+                                                    config.theme.window.menu.template,
                                                     undefined,
                                                     undefined,
                                                     undefined,

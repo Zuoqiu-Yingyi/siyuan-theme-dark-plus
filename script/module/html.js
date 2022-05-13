@@ -60,6 +60,7 @@ window.theme.urlFormat = function (url, ssl = true) {
  * @url (string): URL
  * @urlParams (object): URL 参数
  * @windowParams (object): 窗体参数
+ * @menuTemplate (object): 窗口菜单栏模板
  * @pathname (string): URL 路径名
  * @hash (string): URL hash
  * @consoleMessageCallback (function): 子窗口控制台输出回调
@@ -76,6 +77,7 @@ window.theme.openNewWindow = function (
         frame: true, // 是否显示边缘框
         fullscreen: false, // 是否全屏显示
     },
+    menuTemplate = null,
     pathname = null,
     hash = null,
     consoleMessageCallback = null,
@@ -108,16 +110,33 @@ window.theme.openNewWindow = function (
         }
         // 打开新窗口
         try {
-            const { BrowserWindow } = require('@electron/remote');
+            const {
+                BrowserWindow,
+                Menu,
+            } = require('@electron/remote');
             // 新建窗口(Electron 环境)
             var newWin = new BrowserWindow(windowParams);
+            const menu = Menu.buildFromTemplate(menuTemplate);
 
+            // console.log(menu);
             console.log(url.href);
+
             // if (url.protocol === 'file:') newWin.loadFile(url.href.substr(8));
             // else newWin.loadURL(url.href);
+            newWin.setMenu(menu);
             newWin.loadURL(url.href);
             // REF [Event: 'console-message'​](https://www.electronjs.org/docs/latest/api/web-contents#event-console-message)
             newWin.webContents.on('console-message', (event, level, message, line, sourceId) => {
+                if (level === 0) {
+                    switch (message) { // 通用的命令
+                        case 'WINDOW-SWITCH-PIN': // 切换窗口置顶状态
+                            // REF [win.setAlwaysOnTop(flag[, level][, relativeLevel])​](https://www.electronjs.org/zh/docs/latest/api/browser-window#winsetalwaysontopflag-level-relativelevel)
+                            newWin.setAlwaysOnTop(!newWin.isAlwaysOnTop());
+                            break;
+                        default:
+                            break;
+                    }
+                }
                 consoleMessageCallback && setTimeout(async () => consoleMessageCallback(newWin, event, level, message, line, sourceId));
             });
             if (mode) {
