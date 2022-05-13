@@ -54,7 +54,7 @@ function infocus(id = getFocusedID()) {
     });
 }
 
-async function middleClick(e, fn1, fn2 = null, fn3 = null) {
+async function middleClick(e, fn_id, fn_href = null, fn_inbox = null) {
     // 收集箱
     let inbox = getTargetInboxID(e.target);
     if (inbox) {
@@ -65,8 +65,8 @@ async function middleClick(e, fn1, fn2 = null, fn3 = null) {
                 && window.siyuan.layout[dock].data.inbox.data
                 && window.siyuan.layout[dock].data.inbox.data[inbox]
             ) {
-                if (fn3) {
-                    fn3(window.siyuan.layout[dock].data.inbox.data[inbox]);
+                if (fn_inbox) {
+                    fn_inbox(window.siyuan.layout[dock].data.inbox.data[inbox]);
                     return;
                 }
                 else if (window.siyuan.layout[dock].data.inbox.data[inbox].shorthandURL) {
@@ -89,11 +89,11 @@ async function middleClick(e, fn1, fn2 = null, fn3 = null) {
         // 目标非空, 是 ID 或者链接
         if (config.theme.regs.id.test(target)) {
             // 是 ID
-            await fn1(target);
+            await fn_id(target);
         }
         else {
             // 是链接
-            if (fn2) await fn2(target);
+            if (fn_href) await fn_href(target);
             else window.theme.openNewWindow(
                 'browser',
                 target,
@@ -198,30 +198,12 @@ setTimeout(async () => {
                         // 临时目录创建成功
                         window.addEventListener('mouseup', (e) => {
                             // console.log(e);
-                            if (isButton(e, config.theme.hotkeys.window.open.editor)) {
-                                // console.log(e);
+                            if (isButton(e, config.theme.hotkeys.window.open["editor-kramdown"])) {
                                 setTimeout(async () => middleClick(
                                     e,
                                     async id => {
-                                        // 判断是否为文档块
                                         const b = await getBlockByID(id);
-                                        if (config.theme.window.open.editor.doc.type !== 'kramdown' || b == null || b.type !== 'd') {
-                                            window.theme.openNewWindow(
-                                                'editor',
-                                                config.theme.window.open.editor.path.index,
-                                                {
-                                                    id: id,
-                                                    mode: 'block',
-                                                    lang: window.theme.languageMode,
-                                                    // theme: window.siyuan.config.appearance.mode,
-                                                    fontFamily: encodeURI(window.siyuan.config.editor.fontFamily),
-                                                    tabSize: window.siyuan.config.editor.codeTabSpaces,
-                                                },
-                                                config.theme.window.windowParams,
-                                                config.theme.window.menu.template,
-                                            );
-                                        }
-                                        else {
+                                        if (b && b.type === 'd') { // 如果是文档块
                                             // 先重命名文档为新ID, 然后导出模板, 然后恢复原命名
                                             let newID = window.Lute.NewNodeID();
                                             let template_path_relative = `/data/templates/${newID}.md`;
@@ -256,6 +238,28 @@ setTimeout(async () => {
                                                 )
                                             );
                                         }
+                                    },
+                                ), 0);
+                            }
+                            if (isButton(e, config.theme.hotkeys.window.open.editor)) {
+                                // console.log(e);
+                                setTimeout(async () => middleClick(
+                                    e,
+                                    async id => {
+                                        window.theme.openNewWindow(
+                                            'editor',
+                                            config.theme.window.open.editor.path.index,
+                                            {
+                                                id: id,
+                                                mode: 'block',
+                                                lang: window.theme.languageMode,
+                                                // theme: window.siyuan.config.appearance.mode,
+                                                fontFamily: encodeURI(window.siyuan.config.editor.fontFamily),
+                                                tabSize: window.siyuan.config.editor.codeTabSpaces,
+                                            },
+                                            config.theme.window.windowParams,
+                                            config.theme.window.menu.template,
+                                        );
                                     },
                                     async href => {
                                         if (href.startsWith('file:')) {

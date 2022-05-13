@@ -617,8 +617,8 @@ window.onload = () => {
                     label: config.editor.MAP.LABELS.copyhref[window.editor.params.lang]
                         || config.editor.MAP.LABELS.copyhref.default, // 菜单项名称
                     keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyMod.Alt | monaco.KeyCode.KeyC], // 绑定快捷键
-                    contextMenuGroupId: '9_window', // 所属菜单的分组
-                    contextMenuOrder: 1, // 菜单分组内排序
+                    // contextMenuGroupId: '9_window', // 所属菜单的分组
+                    // contextMenuOrder: 1, // 菜单分组内排序
                     run: () => {
                         window.navigator.clipboard.writeText([
                             window.location.pathname,
@@ -633,8 +633,8 @@ window.onload = () => {
                     label: config.editor.MAP.LABELS.copyfullhref[window.editor.params.lang]
                         || config.editor.MAP.LABELS.copyfullhref.default, // 菜单项名称
                     keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyMod.Shift | monaco.KeyMod.Alt | monaco.KeyCode.KeyC], // 绑定快捷键
-                    contextMenuGroupId: '9_window', // 所属菜单的分组
-                    contextMenuOrder: 2, // 菜单分组内排序
+                    // contextMenuGroupId: '9_window', // 所属菜单的分组
+                    // contextMenuOrder: 2, // 菜单分组内排序
                     run: () => {
                         window.navigator.clipboard.writeText(window.location.href);
                     }, // 点击后执行的操作
@@ -645,8 +645,8 @@ window.onload = () => {
                     label: config.editor.MAP.LABELS.pin[window.editor.params.lang]
                         || config.editor.MAP.LABELS.pin.default, // 菜单项名称
                     keybindings: [monaco.KeyMod.Shift | monaco.KeyMod.Alt | monaco.KeyCode.KeyP], // 绑定快捷键
-                    contextMenuGroupId: '9_window', // 所属菜单的分组
-                    contextMenuOrder: 3, // 菜单分组内排序
+                    // contextMenuGroupId: '9_window', // 所属菜单的分组
+                    // contextMenuOrder: 3, // 菜单分组内排序
                     run: config.editor.command.PIN, // 点击后执行的操作
                 });
 

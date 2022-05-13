@@ -616,9 +616,6 @@ export var config = {
                 },
                 editor: {
                     enable: true, // 启用新窗口打开当编辑器
-                    doc: {
-                        type: 'std', // 文档编辑类型, 'std': 标准 Markdown, 'kramdown': Kramdown
-                    },
                     labels: {
                         openFile: { zh_CN: '打开文件', other: 'Open File', },
                         open: { zh_CN: '打开', other: 'Open', },
@@ -1989,10 +1986,18 @@ export var config = {
                         },
                     },
                     editor: {
-                        // 新窗口打开编辑器(Shift + 鼠标中键)
+                        // 新窗口打开编辑器(Alt + 鼠标中键)
                         CtrlCmd: false,
                         WinCtrl: false,
                         Shift: false,
+                        Alt: true,
+                        button: 1, // 鼠标中键
+                    },
+                    "editor-kramdown": {
+                        // 以 markdown 模式在新窗口打开编辑器(Sihft + Alt + 鼠标中键)
+                        CtrlCmd: false,
+                        WinCtrl: false,
+                        Shift: true,
                         Alt: true,
                         button: 1, // 鼠标中键
                     },
