@@ -17,6 +17,7 @@
     box-shadow: none;
     border: 2px solid var(--b3-list-hover);
     border-radius: var(--custom-border-radius);
+    box-shadow: none !important;
 }
 
 /* 页签项图标 */
