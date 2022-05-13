@@ -16,6 +16,7 @@ import { printHotKey } from './hotkey.js';
 import { setBlockDOMAttrs } from './dom.js';
 import { Iterator } from './misc.js';
 import {
+    getBlockByID,
     getBlockAttrs,
     setBlockAttrs,
 } from './api.js';
@@ -445,6 +446,23 @@ const TASK_HANDLER = {
     },
     /* 在新窗口打开 */
     'window-open': async (e, id, params) => {
+        if (params.src) { // 如果需要打开资源
+            const BLOCK = await getBlockByID(id);
+            if (BLOCK) {
+                const DIV = document.createElement('div');
+                DIV.innerHTML = BLOCK.markdown;
+                window.theme.openNewWindow(
+                    'browser',
+                    DIV.firstElementChild.src,
+                    BLOCK.type === 'widget'
+                        ? { id: id }
+                        : undefined,
+                    config.theme.window.open.windowParams,
+                );
+                return null;
+            }
+            return null;
+        }
         window.theme.openNewWindow(
             undefined,
             undefined,
