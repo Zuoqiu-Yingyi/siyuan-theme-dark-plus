@@ -800,6 +800,41 @@ export var config = {
                                     NodeAudio: {
                                         enable: true,
                                     },
+                                    NodeIFrame: {
+                                        enable: true,
+                                    },
+                                    NodeVideo: {
+                                        enable: true,
+                                    },
+                                    NodeWidget: {
+                                        enable: true,
+                                    },
+                                },
+                                mode: "button",
+                                icon: "#iconLanguage",
+                                label: {
+                                    zh_CN: "在新窗口打开资源",
+                                    other: "Open the resource in a New Window",
+                                },
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'window-open',
+                                            params: {
+                                                src: true,
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeAudio: {
+                                        enable: true,
+                                    },
                                     NodeBlockQueryEmbed: {
                                         enable: true,
                                     },
@@ -825,6 +860,9 @@ export var config = {
                                         enable: true,
                                     },
                                     NodeVideo: {
+                                        enable: true,
+                                    },
+                                    NodeWidget: {
                                         enable: true,
                                     },
                                 },

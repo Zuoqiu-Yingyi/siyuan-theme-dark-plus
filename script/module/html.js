@@ -30,6 +30,31 @@ window.theme.This = function (customID) {
 }
 
 /**
+ * URL 格式化
+ * @params {string} url: 要格式化的 URL
+ * @reutrn {URL}: URL 对象
+ */
+window.theme.urlFormat = function (url, ssl = true) {
+    switch (true) { // 格式化 URL
+        case url.startsWith('assets/'):
+        case url.startsWith('widgets/'):
+        case url.startsWith('emojies/'):
+        case url.startsWith('appearance/'):
+        case url.startsWith('export/'):
+            return new URL(`${window.location.origin}/${url}`);
+        case url.startsWith('//'):
+            return new URL(`${ssl ? 'https' : 'http'}:${url}`);
+        case url.startsWith('/'):
+            return new URL(`${window.location.origin}${url}`);
+        case url.startsWith('http://'):
+        case url.startsWith('https://'):
+            return new URL(url);
+        default:
+            return new URL(`${ssl ? 'https' : 'http'}://${url}`);
+    }
+}
+
+/**
  * 新窗口打开
  * @mode (string): 打开窗口模式('app', 'desktop', 'mobile')
  * @url (string): URL
@@ -58,19 +83,7 @@ window.theme.openNewWindow = function (
 ) {
     try {
         // 优化思源内部 URL
-        switch (true) {
-            case url.startsWith('/'):
-                url = `${window.location.origin}${url}`;
-                break;
-            case url.startsWith('assets/'):
-            case url.startsWith('widgets/'):
-            case url.startsWith('emojie/'):
-            case url.startsWith('export/'):
-            case url.startsWith('appearance/'):
-                url = `${window.location.origin}/${url}`;
-                break;
-        }
-        url = new URL(url);
+        url = window.theme.urlFormat(url);
 
         // 设置窗口模式
         if (mode) {
@@ -90,7 +103,7 @@ window.theme.openNewWindow = function (
         if (pathname) url.pathname = pathname;
         if (hash) url.hash = hash;
         // 设置 URL 参数
-        for (let param of Object.keys(urlParams)) {
+        for (const param in urlParams) {
             url.searchParams.set(param, urlParams[param]);
         }
         // 打开新窗口
