@@ -457,7 +457,8 @@ const TASK_HANDLER = {
                     BLOCK.type === 'widget'
                         ? { id: id }
                         : undefined,
-                    config.theme.window.open.windowParams,
+                    config.theme.window.windowParams,
+                    config.theme.window.menu.template,
                 );
                 return null;
             }
@@ -467,7 +468,8 @@ const TASK_HANDLER = {
             undefined,
             undefined,
             Object.assign(params, { id: id }),
-            config.theme.window.open.windowParams,
+            config.theme.window.windowParams,
+            config.theme.window.menu.template,
         );
     },
     /* 在新窗口打开编辑器 */
@@ -476,7 +478,8 @@ const TASK_HANDLER = {
             'editor',
             undefined,
             Object.assign(params, { id: id }),
-            config.theme.window.open.windowParams,
+            config.theme.window.windowParams,
+            config.theme.window.menu.template,
             config.theme.window.open.editor.path.index,
         );
     },

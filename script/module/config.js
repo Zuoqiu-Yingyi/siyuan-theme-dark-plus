@@ -449,30 +449,101 @@ export var config = {
         },
         window: {
             enable: true, // 窗口功能开关
+            windowParams: {
+                // 窗口参数
+                width: 720, // 窗口宽度
+                height: 480, // 窗口高度
+                frame: true, // 是否显示边缘框
+                fullscreen: false, // 是否全屏显示
+                alwaysOnTop: true, // 是否置顶显示
+                autoHideMenuBar: true, // 是否隐藏菜单栏(使用 Alt 显示)
+                // backgroundColor: window.siyuan.config.appearance.mode // 窗口默认背景色
+                //     ? '#1e1e1e'
+                //     : '#f5f5f5',
+                webPreferences: {
+                    // nodeIntegration: true, // 是否启用 Node.js 内置模块
+                    // nativeWindowOpen: true,
+                    // webviewTag: true,
+                    webSecurity: false, // 是否启用 Web 安全
+                    // contextIsolation: false,
+                    // defaultFontFamily: { // 默认字体
+                    //     standard: window.siyuan.config.editor.fontFamily,
+                    // },
+                },
+            },
+            menu: {
+                // 新窗口菜单
+                template: [
+                    // 新窗口菜单模板
+                    // REF [菜单项 | Electron](https://www.electronjs.org/zh/docs/latest/api/menu-item)
+                    {
+                        label: 'SiYuan',
+                        submenu: [
+                            {
+                                label: 'About SiYuan',
+                                role: 'about',
+                            },
+                            { type: 'separator' },
+                            { role: 'services' },
+                            { type: 'separator' },
+                            {
+                                label: 'Hide SiYuan',
+                                role: 'hide',
+                            },
+                            { role: 'hideOthers' },
+                            { role: 'unhide' },
+                            { type: 'separator' },
+                            {
+                                label: 'Quit SiYuan',
+                                role: 'quit',
+                            },
+                        ],
+                    },
+                    {
+                        role: 'editMenu',
+                        submenu: [
+                            { role: 'cut' },
+                            { role: 'copy' },
+                            { role: 'paste' },
+                            { role: 'pasteAndMatchStyle', accelerator: 'CmdOrCtrl+Shift+C' },
+                            { role: 'selectAll' },
+                        ],
+                    },
+                    {
+                        role: 'viewMenu',
+                        submenu: [
+                            { role: 'resetZoom' },
+                            { role: 'zoomIn', accelerator: 'CmdOrCtrl+=' },
+                            { role: 'zoomOut' },
+                        ],
+                    },
+                    {
+                        role: 'windowMenu',
+                        submenu: [
+                            { role: 'minimize' },
+                            { role: 'zoom' },
+                            { role: 'togglefullscreen' },
+                            { type: 'separator' },
+                            { role: 'toggledevtools' },
+                            { type: 'separator' },
+                            { role: 'front' },
+                            { type: 'separator' },
+                            {
+                                label: 'Pinned',
+                                click: (menuItem, browserWindow, event) => {
+                                    if (browserWindow) browserWindow.setAlwaysOnTop(!browserWindow.isAlwaysOnTop());
+                                },
+                                type: 'checkbox',
+                                checked: true,
+                                // REF [快捷键 | Electron](https://www.electronjs.org/zh/docs/latest/api/accelerator)
+                                accelerator: 'Alt+Shift+P',
+                            },
+                        ],
+                    },
+                ],
+            },
             open: {
                 enable: true, // 打开窗口功能开关
-                windowParams: {
-                    // 窗口参数
-                    width: 720, // 窗口宽度
-                    height: 480, // 窗口高度
-                    frame: true, // 是否显示边缘框
-                    fullscreen: false, // 是否全屏显示
-                    alwaysOnTop: true, // 是否置顶显示
-                    autoHideMenuBar: true, // 是否隐藏菜单栏(使用 Alt 显示)
-                    // backgroundColor: window.siyuan.config.appearance.mode // 窗口默认背景色
-                    //     ? '#1e1e1e'
-                    //     : '#f5f5f5',
-                    webPreferences: {
-                        // nodeIntegration: true, // 是否启用 Node.js 内置模块
-                        // nativeWindowOpen: true,
-                        // webviewTag: true,
-                        webSecurity: false, // 是否启用 Web 安全
-                        // contextIsolation: false,
-                        // defaultFontFamily: { // 默认字体
-                        //     standard: window.siyuan.config.editor.fontFamily,
-                        // },
-                    },
-                },
                 panel: {
                     enable: true, // 打开一个新窗口
                     url: null, // 新窗口的 URL, 值 null 则为 '/stage/build/desktop/'
