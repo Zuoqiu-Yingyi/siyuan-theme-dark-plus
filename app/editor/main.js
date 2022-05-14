@@ -257,7 +257,7 @@ async function init(params) {
                         params.mode = 'block';
                         params.value = b.markdown;
                         params.language = 'markdown';
-                        params.tabSize = 2;
+                        // params.tabSize = 2;
                         params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
                     }
                     break;
@@ -266,11 +266,7 @@ async function init(params) {
                         // karmdown 编辑模式
                         r = await getFile(params.path);
                         if (r) {
-                            params.mode = 'doc';
                             params.value = await r.text();
-                            params.language = 'markdown';
-                            params.tabSize = 2;
-                            params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
                         } else {
                             // 没有查询到 kramdown 模板
                             params.mode = 'none';
@@ -285,14 +281,14 @@ async function init(params) {
                             return;
                         }
                         else {
-                            params.mode = 'doc';
                             params.value = r.data.content;
-                            params.language = 'markdown';
-                            params.tabSize = 2;
                             params.filename = `${b.content}.md`;
-                            params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
                         }
                     }
+                    params.mode = 'doc';
+                    params.language = 'markdown';
+                    params.tabSize = 2;
+                    params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
                     break;
                 case 'c': // 代码块
                     t = config.editor.regs.code.exec(b.markdown);
@@ -305,9 +301,15 @@ async function init(params) {
                         params.mode = 'block';
                         params.value = b.markdown;
                         params.language = 'markdown';
-                        params.tabSize = 2;
+                        // params.tabSize = 2;
                         params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
                     }
+                    break;
+                case 'm': // 公式块
+                    params.mode = 'block';
+                    params.value = b.markdown;
+                    params.language = 'markdown';
+                    params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
                     break;
                 default:
                     params.mode = 'block';
