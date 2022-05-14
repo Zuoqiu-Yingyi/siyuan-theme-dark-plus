@@ -4,6 +4,7 @@
 - 为子窗口添加窗口置顶/取消置顶菜单项 | Add the `Topmost` menu item for subwindows.
 - 使用 <kbd>Shift + Alt + 鼠标中键</kbd> 单击文档在新窗口打开 [Monaco 编辑器](https://github.com/microsoft/monaco-editor)并编辑文档的 kramdown 源码 | Click on a document to open [Monaco Editor](https://github.com/microsoft/monaco-editor) in a new window and edit the kramdown source code of document using the <kbd>Shift + Alt + Middle Mouse Button</kbd>.
 - 使用 API `getFullHPathByID` 获取文档的完整路径 | Use the API `getFullHPathByID` to get the full path of a document.
+- 统一移动界面输入框样式 | Unified the style of input fields on mobile interface.
 
 ## v0.9.8/2022-05-13
 
