@@ -3,10 +3,12 @@
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 
+#editor div.protyle-util,
 div.layout-tab-container div.protyle-util {
     background-color: var(--custom-popover-background-color);
 }
 
-div.layout-tab-container div.protyle-util>div>textarea {
+#editor div.protyle-util textarea.b3-text-field,
+div.layout-tab-container div.protyle-util textarea.b3-text-field {
     background-color: transparent;
 }
