@@ -3,6 +3,7 @@
 export {
     request,
     getNotebookConf,
+    getFullHPathByID,
     queryBlock,
     queryAsset,
     updateBlock,
@@ -39,6 +40,11 @@ async function getNotebookConf(notebook) {
     });
 }
 
+async function getFullHPathByID(id) {
+    return request('/api/filetree/getFullHPathByID', {
+        id: id,
+    });
+}
 
 async function queryBlock(id) {
     return request('/api/query/sql', {

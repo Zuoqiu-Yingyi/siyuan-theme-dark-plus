@@ -8,8 +8,7 @@ import {
 } from './js/utils.js';
 import {
     queryBlock,
-    queryAsset,
-    getNotebookConf,
+    getFullHPathByID,
     exportMdContent,
     updateBlock,
     getFile,
@@ -228,7 +227,7 @@ async function init(params) {
             b = r.data[0];
 
             // 获取笔记本
-            r = await getNotebookConf(b.box);
+            r = await getFullHPathByID(params.id);
             if (!(r
                 && r.code === 0
             )) {
@@ -323,9 +322,9 @@ async function init(params) {
             params.block = b;
             params.breadcrumb.set(
                 `${config.editor.mark.block}${config.editor.MAP.LABELS.type[b.type][params.lang] || config.editor.MAP.LABELS.type[b.type].default}`,
-                `${config.editor.mark.blockpath}${n.name}${b.hpath.replaceAll('/', config.editor.mark.pathseparate)}`,
+                `${config.editor.mark.blockpath}${n.replaceAll('/', config.editor.mark.pathseparate)}`,
                 `siyuan://blocks/${b.id}`,
-                `${n.name}${b.hpath}`,
+                `${n}`,
                 `siyuan://blocks/${b.id}`,
                 `siyuan://blocks/${b.root_id}`,
             ); // 设置面包屑
