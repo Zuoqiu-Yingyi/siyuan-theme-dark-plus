@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 统一移动界面大纲样式 | Unified the style of outline on mobile interface.
+
 ## v0.9.9/2022-05-16
 
 - [v0.9.8 <=> v0.9.9](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.8...v0.9.9)
