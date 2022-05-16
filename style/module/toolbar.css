@@ -6,8 +6,6 @@
 /* 顶部工具栏 */
 #toolbar {
     background-color: var(--custom-tool-bar-background-color);
-    overflow-x: auto;
-    overflow-y: hidden;
 }
 
 /* 顶部工具栏按钮 */
@@ -20,6 +18,11 @@
     padding-right: 0 !important;
 }
 
+/* 自定义工具栏 */
+#custom-toolbar {
+    transition: all 500ms;
+}
+
 /* 窗口控件 */
 #windowControls {
     margin: 0 !important;
@@ -27,6 +30,5 @@
 
 /* 窗口关闭控件 */
 #closeWindow {
-    overflow: hidden;
     padding-right: 6px;
 }

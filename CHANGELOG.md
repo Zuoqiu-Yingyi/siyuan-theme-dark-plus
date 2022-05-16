@@ -36,6 +36,7 @@
 - 鼠标悬浮在页签关闭按钮时突出显示 | The close button is highlighted when the mouse hovers over it.
 - 调整代码块导出预览样式 | Adjusted the style of the code block preview.
 - 添加代码块行号与编辑区之间的分隔线 | Added a separator line between the line numbers and the code block editor.
+- 为自定义工具栏添加 `更多` 按钮 | Added the `More` button to the custom toolbar.
 
 ## v0.9.6/2022-05-09
 

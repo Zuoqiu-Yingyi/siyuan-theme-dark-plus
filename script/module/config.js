@@ -22,6 +22,22 @@ export var config = {
             winpath: /^\/\w\:\/.*$/, // Windows 路径正则表达式
             inboxid: /^\d{13}$/, // 收集箱 ID 正则表达式
         },
+        toolbar: {
+            // 工具栏
+            id: 'custom-toolbar', // 工具栏 ID
+            more: {
+                id: 'custom-toolbar-more',
+                enable: true,
+                icon: '#iconMore',
+                label: {
+                    zh_CN: '更多',
+                    zh_CNT: null,
+                    fr_FR: null,
+                    en_US: null,
+                    other: 'More',
+                },
+            },
+        },
         goto: {
             enable: true, // 是否启用使用 URL 参数跳转指定块功能
             delay: 250, // 延迟时间，单位毫秒

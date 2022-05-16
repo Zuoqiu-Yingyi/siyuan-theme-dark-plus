@@ -41,18 +41,75 @@ function recreateNode(node, withChildren = false) {
     }
 }
 
+/**
+ * 创建工具栏菜单项
+ */
+function createToolbarItem(toolbarConfig, className) {
+    let item = document.createElement('BUTTON');
+    let language = window.theme.languageMode;
+    let label = toolbarConfig.label[language] || toolbarConfig.label.other;
+    label += toolbarConfig.hotkey ? ` [${printHotKey(toolbarConfig.hotkey())}]` : '';
+
+    item.id = toolbarConfig.id;
+    item.className = className || "toolbar__item b3-tooltips b3-tooltips__sw";
+    item.setAttribute('aria-label', label);
+    item.innerHTML = `<svg><use xlink:href="${toolbarConfig.icon}"></use></svg>`;
+    return item;
+}
+
 /* 工具栏添加 */
 function toolbarItemListPush(item) {
     toolbarItemList.push(item);
     let toolbar = document.getElementById('toolbar');
-    let referenceNode = document.getElementById('windowControls');
-    if (window.theme.clientMode !== 'mobile' && toolbar && referenceNode) {
+    let windowControls = document.getElementById('windowControls');
+    let custom_toolbar = document.getElementById(config.theme.toolbar.id);
+
+    if (window.theme.clientMode !== 'mobile' && toolbar && windowControls) {
+        if (!custom_toolbar) {
+            /* 自定义菜单项容器 */
+            custom_toolbar = document.createElement('div');
+            custom_toolbar.id = config.theme.toolbar.id;
+            custom_toolbar.className = 'fn__flex';
+
+            /* 更多按钮 */
+            let more = createToolbarItem(
+                config.theme.toolbar.more,
+                "toolbar__item b3-tooltips b3-tooltips__sw toolbar__item--active"
+            );
+            more.addEventListener('click', () => {
+                if (custom_toolbar.style.display === 'none') {
+                    // 显示自定义工具栏
+                    custom_toolbar.style.display = null;
+                    toolbarItemChangeStatu(
+                        config.theme.toolbar.more.id,
+                        config.theme.toolbar.more.enable,
+                        true,
+                        'BUTTON',
+                        more,
+                    );
+                }
+                else {
+                    // 隐藏自定义工具栏
+                    custom_toolbar.style.display = 'none';
+                    toolbarItemChangeStatu(
+                        config.theme.toolbar.more.id,
+                        config.theme.toolbar.more.enable,
+                        false,
+                        'BUTTON',
+                        more,
+                    );
+                }
+            });
+
+            toolbar.insertBefore(custom_toolbar, windowControls);
+            toolbar.insertBefore(more, windowControls);
+        }
+
         toolbarItemList = toolbarItemList.sort((a, b) => a.index - b.index);
         for (let item of toolbarItemList) {
             if (item.display) {
                 let node = document.getElementById(item.id);
-                if (node) toolbar.insertBefore(node, referenceNode);
-                else toolbar.insertBefore(item.node, referenceNode);
+                custom_toolbar.append(node || item.node);
             }
         }
     }
@@ -73,20 +130,7 @@ function toolbarItemListPush(item) {
  * @return (HTML Node): 菜单项节点
  */
 function toolbarItemInsert(toolbarConfig) {
-    let node = document.createElement('BUTTON');
-    let language = window.theme.languageMode;
-    let label = toolbarConfig.label[language] || toolbarConfig.label.other;
-    label += toolbarConfig.hotkey ? ` [${printHotKey(toolbarConfig.hotkey())}]` : '';
-
-    node.id = toolbarConfig.id;
-    node.className = "toolbar__item b3-tooltips b3-tooltips__sw";
-    node.setAttribute('aria-label', label);
-    node.innerHTML = `
-        <svg>
-            <use xlink:href="${toolbarConfig.icon}"></use>
-        </svg>
-    `;
-
+    let node = createToolbarItem(toolbarConfig);
     // let toolbar = document.getElementById('toolbar');
     // let referenceNode = document.getElementById('windowControls');
     // return toolbar.insertBefore(node.firstElementChild, referenceNode);
