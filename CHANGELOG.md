@@ -1,9 +1,13 @@
 # 更改日志 | CHANGE LOG
 
+## v0.9.10/2022-05-17
+
+- [v0.9.9 <=> v0.9.10](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.9...v0.9.10)
 - 统一移动界面大纲样式 | Unified the style of outline on mobile interface.
 - 调整工具栏按钮样式与按钮激活样式 | Adjusted the style of toolbar buttons and the activation style of toolbar buttons.
 - 调整工具栏按钮在窗口较窄时的样式 | Adjusted the style of toolbar buttons when the window is narrower.
 - 移除侧边停靠栏的边框 | Removed the border of the sidebar dock bar.
+- 调整历史记录面板背景颜色 | Adjusted the background color of the history panel.
 
 ## v0.9.9/2022-05-16
 
@@ -37,7 +41,6 @@
 - 调整代码块导出预览样式 | Adjusted the style of the code block preview.
 - 添加代码块行号与编辑区之间的分隔线 | Added a separator line between the line numbers and the code block editor.
 - 为自定义工具栏添加 `更多` 按钮 | Added the `More` button to the custom toolbar.
-- 调整历史记录面板背景颜色 | Adjusted the background color of the history panel.
 
 ## v0.9.6/2022-05-09
 
