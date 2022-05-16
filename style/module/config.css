@@ -427,7 +427,8 @@
     --custom-drag-right-shadow-color: var(--custom-striking-color);
 
     /* 鼠标划选文本颜色 | The color of the text selected */
-    --custom-selection-background-color: var(--custom-components-light);
+    --custom-selection-color: inherit;
+    --custom-selection-background-color: var(--b3-theme-primary-lighter);
 
     /* 空行聚焦提示 | Blank line focus prompt */
     --custom-empty-focus-p: "´･-･)ﾉ㊫";

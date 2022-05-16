@@ -8,6 +8,7 @@
 - 调整工具栏按钮在窗口较窄时的样式 | Adjusted the style of toolbar buttons when the window is narrower.
 - 移除侧边停靠栏的边框 | Removed the border of the sidebar dock bar.
 - 调整历史记录面板背景颜色 | Adjusted the background color of the history panel.
+- 调整划选文本背景颜色 | Adjusted the background color of the selected text.
 
 ## v0.9.9/2022-05-16
 

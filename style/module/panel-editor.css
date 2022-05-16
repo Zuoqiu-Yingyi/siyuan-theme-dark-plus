@@ -83,4 +83,5 @@
 /* 文本选择 */
 ::selection {
     background-color: var(--custom-selection-background-color);
+    color: var(--custom-selection-color);
 }
