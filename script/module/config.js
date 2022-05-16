@@ -518,11 +518,13 @@ export var config = {
                     {
                         role: 'editMenu',
                         submenu: [
+                            { role: 'selectAll' },
                             { role: 'cut' },
                             { role: 'copy' },
                             { role: 'paste' },
-                            { role: 'pasteAndMatchStyle', accelerator: 'CmdOrCtrl+Shift+C' },
-                            { role: 'selectAll' },
+                            { role: 'pasteAndMatchStyle', accelerator: 'CmdOrCtrl+Shift+V' },
+                            { type: 'separator' },
+                            { role: 'toggleSpellChecker' },
                         ],
                     },
                     {
@@ -543,6 +545,10 @@ export var config = {
                             { role: 'toggledevtools' },
                             { type: 'separator' },
                             { role: 'front' },
+                            { type: 'separator' },
+                            { role: 'reload', accelerator: 'F5' },
+                            { role: 'forcereload', accelerator: 'CmdOrCtrl+F5' },
+                            { role: 'close' },
                             { type: 'separator' },
                             {
                                 label: 'Pinned',

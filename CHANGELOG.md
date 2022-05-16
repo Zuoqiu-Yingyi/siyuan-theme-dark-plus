@@ -9,6 +9,7 @@
 - 移除侧边停靠栏的边框 | Removed the border of the sidebar dock bar.
 - 调整历史记录面板背景颜色 | Adjusted the background color of the history panel.
 - 调整划选文本背景颜色 | Adjusted the background color of the selected text.
+- 为新窗口添加部分菜单项 | Added some menu items to new windows.
 
 ## v0.9.9/2022-05-16
 
