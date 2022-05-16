@@ -8,6 +8,11 @@
     background-color: var(--custom-tool-bar-background-color);
 }
 
+/* 顶部工具栏按钮 */
+.toolbar__item {
+    margin: 0 3px;
+}
+
 /* 顶部工具栏标题 */
 #drag {
     padding-right: 0 !important;

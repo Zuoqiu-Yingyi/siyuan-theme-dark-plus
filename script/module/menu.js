@@ -106,6 +106,7 @@ function blockMenuEnable() {
     // 更改菜单栏按钮状态
     toolbarItemChangeStatu(
         config.theme.menu.block.toolbar.id,
+        true,
         block_menu_enable,
         'SVG',
         undefined,

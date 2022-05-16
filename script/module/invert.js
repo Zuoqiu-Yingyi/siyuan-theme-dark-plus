@@ -21,6 +21,7 @@ function invertEnable() {
     // 更改菜单栏按钮状态
     toolbarItemChangeStatu(
         config.theme.invert.toolbar.id,
+        true,
         styleHandle(id.join('-'), innerHTML.join('\n')),
         'SVG',
         undefined,

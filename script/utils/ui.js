@@ -117,6 +117,7 @@ const svgClassList = [
  * 改变工具栏项状态
  * @id (string): 工具栏项id
  * @enable (boolean): 是否启用
+ * @active (boolean): 是否激活
  * @type (string): 工具栏项类型
  * @node (element): 工具栏项节点
  * @svgClassIndex (int): svg 样式索引
@@ -126,6 +127,7 @@ const svgClassList = [
 function toolbarItemChangeStatu(
     id,
     enable = false,
+    active = null,
     mode = 'DIV',
     node = null,
     svgClassIndex = 0,
@@ -135,15 +137,15 @@ function toolbarItemChangeStatu(
     if (node) {
         switch (mode.toUpperCase()) {
             case 'SVG':
-                if (svgClassIndex > 0) {
-                    if (enable) {
+                if (active !== null && svgClassIndex > 0) {
+                    if (active) {
                         node.firstElementChild.classList.add(svgClassList[svgClassIndex]);
                     }
                     else {
                         node.firstElementChild.classList.remove(svgClassList[svgClassIndex]);
                     }
                     if (custom.theme.toolbar[id]) {
-                        custom.theme.toolbar[id].state = enable;
+                        custom.theme.toolbar[id].state = active;
                         setTimeout(async () => saveCustomFile(custom), 0);
                     }
                 }
@@ -151,13 +153,30 @@ function toolbarItemChangeStatu(
             case 'DIV':
             case 'BUTTON':
             default:
+                if (active !== null) {
+                    if (active) {
+                        node.classList.add('toolbar__item--active');
+                    }
+                    else {
+                        node.classList.remove('toolbar__item--active');
+                    }
+                    if (custom.theme.toolbar[id]) {
+                        custom.theme.toolbar[id].state = active;
+                        setTimeout(async () => saveCustomFile(custom), 0);
+                    }
+                }
+
                 if (enable) {
-                    node.classList.remove('toolbar__item--disabled');
-                    listener && listener();
+                    if (node.classList.contains('toolbar__item--disabled')) {
+                        node.classList.remove('toolbar__item--disabled');
+                    }
+                    if (typeof listener === 'function') listener(node);
                 }
                 else {
-                    node.classList.add('toolbar__item--disabled');
-                    recreateNode(node);
+                    if (!node.classList.contains('toolbar__item--disabled')) {
+                        node.classList.add('toolbar__item--disabled');
+                        recreateNode(node);
+                    }
                 }
                 break;
         }
@@ -176,12 +195,13 @@ function toolbarItemInit(toolbarConfig, handler, svgClassIndex = 0) {
 
     // 在工具栏添加按钮
     let node = toolbarItemInsert(toolbarConfig);
-    let listener = () => node.addEventListener('click', (_) => fn());
+    let listener = (e) => e.addEventListener('click', (_) => fn());
 
     // 是否禁用该按钮
     toolbarItemChangeStatu(
         toolbarConfig.id,
         toolbarConfig.enable,
+        undefined,
         'BUTTON',
         node,
         undefined,
@@ -189,9 +209,10 @@ function toolbarItemInit(toolbarConfig, handler, svgClassIndex = 0) {
     )
 
     // 是否设置颜色
-    if (svgClassIndex > 0) {
+    if (svgClassIndex > 0 && svgClassIndex < svgClassList.length) {
         toolbarItemChangeStatu(
             toolbarConfig.id,
+            true,
             true,
             'SVG',
             node,

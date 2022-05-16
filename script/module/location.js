@@ -132,6 +132,7 @@ function recordEnable() {
     // 更改菜单栏按钮状态
     toolbarItemChangeStatu(
         config.theme.location.record.toolbar.id,
+        true,
         record_enable,
         'SVG',
         undefined,
