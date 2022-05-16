@@ -65,9 +65,11 @@
 #foldList.b3-list.b3-list--background,
 /* 快捷键菜单 */
 #keymapList>.b3-list.b3-list--background,
+/* 历史菜单 */
+#historyContainer>.b3-list.b3-list--background,
 /* 设置菜单 */
 .b3-tab-bar.b3-list.b3-list--background {
-    background-color: transparent;
+    background-color: transparent !important;
 }
 
 /* 块移动菜单 */
