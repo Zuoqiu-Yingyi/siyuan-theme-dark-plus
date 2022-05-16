@@ -15,6 +15,6 @@
 }
 
 /* 强制显示块滚动条 */
-.b3-tooltips__s {
+.protyle-scroll.b3-tooltips.b3-tooltips__s {
     display: block !important;
 }

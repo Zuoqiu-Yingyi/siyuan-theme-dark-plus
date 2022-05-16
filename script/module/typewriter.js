@@ -80,6 +80,7 @@ function typewriterEnable() {
         // 更改菜单栏按钮状态
         toolbarItemChangeStatu(
             config.theme.typewriter.switch.toolbar.id,
+            true,
             enable,
             'SVG',
             undefined,

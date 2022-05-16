@@ -86,6 +86,7 @@ function changeStyleState(styleConfig) {
     // 更改菜单栏按钮状态
     toolbarItemChangeStatu(
         styleConfig.toolbar.id,
+        true,
         enable,
         'SVG',
         undefined,
