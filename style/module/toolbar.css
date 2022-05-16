@@ -4,8 +4,10 @@
 @import url(/widgets/custom.css);
 
 /* 顶部工具栏 */
-.toolbar {
+#toolbar {
     background-color: var(--custom-tool-bar-background-color);
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 /* 顶部工具栏按钮 */
@@ -16,4 +18,15 @@
 /* 顶部工具栏标题 */
 #drag {
     padding-right: 0 !important;
+}
+
+/* 窗口控件 */
+#windowControls {
+    margin: 0 !important;
+}
+
+/* 窗口关闭控件 */
+#closeWindow {
+    overflow: hidden;
+    padding-right: 6px;
 }
