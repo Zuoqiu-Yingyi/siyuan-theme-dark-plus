@@ -3,6 +3,7 @@
 - 统一移动界面大纲样式 | Unified the style of outline on mobile interface.
 - 调整工具栏按钮样式与按钮激活样式 | Adjusted the style of toolbar buttons and the activation style of toolbar buttons.
 - 调整工具栏按钮在窗口较窄时的样式 | Adjusted the style of toolbar buttons when the window is narrower.
+- 移除侧边停靠栏的边框 | Removed the border of the sidebar dock bar.
 
 ## v0.9.9/2022-05-16
 
