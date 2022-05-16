@@ -4,11 +4,12 @@
 @import url(/widgets/custom.css);
 
 /* 菜单栏 */
-#dockTop,
-#dockBottom,
-#dockLeft,
-#dockRight {
+#dockTop.dock,
+#dockBottom.dock,
+#dockLeft.dock,
+#dockRight.dock {
     background-color: var(--custom-dock-background-color);
+    border: 0;
 }
 
 /* 聚焦的侧边面板标题 */
