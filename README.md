@@ -504,8 +504,12 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
  *    <工作空间>/data/widgets/custom.js
  *    <workspace>/data/widgets/custom.js
  * 示例功能 | Example function:
- *    自定义默认背景图片
- *    Custom default background image
+ *    自定义背景图片序列
+ *        示例中浅色背景图片的目录为 <工作空间>/data/assets/images/background-light
+ *        示例中深色背景图片的目录为 <工作空间>/data/assets/images/background-dark
+ *    Custom background image list
+ *        The directory of the light background image in the example is <workspace>/data/assets/images/background-light
+ *        The directory of the dark background image in the example is <workspace>/data/assets/images/background-dark
  */
 
 export const config = {
@@ -516,10 +520,18 @@ export const config = {
                     random: false,
                     default: true,
                     light: [
-                        '/appearance/themes/Dark+/image/light/background (01).jpeg',
+                        '/assets/images/background-light/background-1.png',
+                        '/assets/images/background-light/background-2.png',
+                        '/assets/images/background-light/background-3.png',
+                        '/assets/images/background-light/background-4.png',
+                        '/assets/images/background-light/background-5.png',
                     ],
                     dark: [
-                        '/appearance/themes/Dark+/image/background (01).jpg',
+                        '/assets/images/background-dark/background-1.png',
+                        '/assets/images/background-dark/background-2.png',
+                        '/assets/images/background-dark/background-3.png',
+                        '/assets/images/background-dark/background-4.png',
+                        '/assets/images/background-dark/background-5.png',
                     ],
                 },
             },
@@ -566,16 +578,22 @@ For more configuration items, see [config.css](./style/module/config.css).
  *    <工作空间>/data/widgets/custom-light.css
  *    <workspace>/data/widgets/custom-light.css
  * 示例功能 | Example function:
- *    自定义默认明亮主题背景图片
+ *    自定义默认浅色主题背景图片
+ *        示例中浅色背景图片的路径为
+ *            <工作空间>/data/widgets/background-light.png
+ *            <工作空间>/data/widgets/background-light-dialog.png
  *    Custom default light theme background image
+ *        The path of the light background image in the example is
+ *            <workspace>/data/widgets/background-light.png
+ *            <workspace>/data/widgets/background-light-dialog.png
  */
 
 :root {
-    /* 背景图片 */
-    --custom-background-image: url("/appearance/themes/Dark+/image/light/background (05).jpeg");
+    /* 浅色主题默认背景图片 | default background image for light color theme */
+    --custom-background-image: url("/widgets/background-light.png");
 
-    /* 对话框背景图片 */
-    --custom-background-image-dialog: url("/appearance/themes/Dark+/image/light/background (01).jpeg");
+    /* 浅色主题默认对话框背景图片 | default dialog background image for light color theme */
+    --custom-background-image-dialog: url("/widgets/background-light-dialog.png");
 }
 
 ```
@@ -591,16 +609,22 @@ For more configuration items, see [config.css](./style/module/config.css) and [l
  *    <工作空间>/data/widgets/custom-dark.css
  *    <workspace>/data/widgets/custom-dark.css
  * 示例功能 | Example function:
- *    自定义默认暗色主题背景图片
+ *    自定义默认深色主题背景图片
+ *        示例中深色背景图片的路径为
+ *            <工作空间>/data/widgets/background-dark.png
+ *            <工作空间>/data/widgets/background-dark-dialog.png
  *    Custom default dark theme background image
+ *        The path of the dark background image in the example is
+ *            <workspace>/data/widgets/background-dark.png
+ *            <workspace>/data/widgets/background-dark-dialog.png
  */
 
 :root {
-    /* 背景图片 | Background image */
-    --custom-background-image: url("/appearance/themes/Dark+/image/background (05).jpg");
+    /* 深色主题默认背景图片 | default background image for dark color theme */
+    --custom-background-image: url("/widgets/background-dark.png");
 
-    /* 对话框背景图片 | Dialog background image */
-    --custom-background-image-dialog: url("/appearance/themes/Dark+/image/background (01).jpg");
+    /* 深色主题默认对话框背景图片 | default dialog background image for dark color theme */
+    --custom-background-image-dialog: url("/widgets/background-dark-dialog.png");
 }
 
 ```
