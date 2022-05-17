@@ -5,6 +5,7 @@
 - 修复打开新窗口工具栏按钮 | Fix the button of opening a new window in the toolbar.
 - 记住 `更多` 按钮上次的状态 | Remember the last state of the `More` button.
 - 更新 `README.md` 文件中自定义背景图片方案 | Update the custom background image scheme in the `README.md` file.
+- 修复块滚动条跟随焦点功能 | Fix the function of the block scrollbar following the focus.
 
 ## v1.0.0/2022-05-17
 

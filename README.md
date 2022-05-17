@@ -17,8 +17,8 @@
 [思源笔记](https://github.com/siyuan-note/siyuan)的一款深色主题 (同时支持浅色模式, 没想到吧~)  
 A dark theme (which also supports light mode, can you imagine that ~) of [SiYuan Note](https://github.com/siyuan-note/siyuan).
 
-现已上架[思源笔记社区集市](https://github.com/siyuan-note/bazaar), 如果您需要订阅[思源笔记](https://github.com/siyuan-note/siyuan)增值服务，欢迎使用我的推荐码: **h0sc9rc**  
-It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.com/siyuan-note/bazaar). If you need to subscribe to the value-added services of [siyuan note](https://github.com/siyuan-note/siyuan/blob/master/README_en_US.md), please use my referral code: **h0sc9rc**
+现已上架[思源笔记社区集市](https://github.com/siyuan-note/bazaar), 如果您喜欢本主题, 欢迎为本项目点亮一个⭐!  
+It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.com/siyuan-note/bazaar). If you like this theme, welcome to light up  ⭐ for this project!
 
 ## 预览 | PREVIEW
 
