@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+- 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
+- 添加搜索结果匹配的关键词样式配置选项 | Add a configuration option for the style of the keyword in the search results.
+
 ## v1.0.0/2022-05-17
 
 - [v0.9.9 <=> v1.0.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.9...v1.0.0)

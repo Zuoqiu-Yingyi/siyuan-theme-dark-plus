@@ -302,7 +302,7 @@
     /* 代码块行号背景颜色 | The background color of code block linenumber */
     --custom-block-code-linenumber-background-color: var(--custom-transparent);
     /* 代码块行号与编辑区的分隔线 | The separator line between the line number of the code block and the edit area */
-    --custom-block-code-linenumber-separator-width:2px;
+    --custom-block-code-linenumber-separator-width: 2px;
     --custom-block-code-linenumber-separator-color: var(--b3-border-color);
 
     /* 嵌入块背景颜色 | The background color of embed block */
@@ -350,6 +350,10 @@
     /* 弹出菜单输入框最小宽度 | The min width of the popover menu input */
     /* --custom-popover-menu-input-min-width: 50vw; */
     --custom-popover-menu-input-min-width: none;
+
+    /* 搜索结果匹配的关键词样式 | The style of matched keywords in the search results */
+    --custom-matched-keyword-color: inherit;
+    --custom-matched-keyword-background-color: transparent;
 
     /* 预览窗口 | preview window */
     /* 图片预览窗口背景颜色 | The background color of the image preview window */
