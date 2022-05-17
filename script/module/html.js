@@ -169,5 +169,4 @@ window.theme.openNewWindow = function (
         console.error(err);
         return null;
     }
-
 }
