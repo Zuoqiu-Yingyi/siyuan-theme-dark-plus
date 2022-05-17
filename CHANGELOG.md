@@ -1,8 +1,8 @@
 # 更改日志 | CHANGE LOG
 
-## v0.9.10/2022-05-17
+## v1.0.0/2022-05-17
 
-- [v0.9.9 <=> v0.9.10](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.9...v0.9.10)
+- [v0.9.9 <=> v1.0.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.9...v1.0.0)
 - 统一移动界面大纲样式 | Unified the style of outline on mobile interface.
 - 调整工具栏按钮样式与按钮激活样式 | Adjusted the style of toolbar buttons and the activation style of toolbar buttons.
 - 调整工具栏按钮在窗口较窄时的样式 | Adjusted the style of toolbar buttons when the window is narrower.
