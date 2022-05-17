@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.0.1/2022-05-18
+
+- [v1.0.0 <=> v1.0.1](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.0...v1.0.1)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 添加搜索结果匹配的关键词样式配置选项 | Add a configuration option for the style of the keyword in the search results.
 - 修复打开新窗口工具栏按钮 | Fix the button of opening a new window in the toolbar.
