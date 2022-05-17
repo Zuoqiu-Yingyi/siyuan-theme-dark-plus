@@ -6,6 +6,7 @@ import {
     isButton,
 } from './../utils/hotkey.js';
 import { toolbarItemInit } from './../utils/ui.js';
+import { merge } from './../utils/misc.js';
 import {
     putFile,
     getBlockByID,
@@ -117,14 +118,18 @@ setTimeout(async () => {
                     toolbarItemInit(
                         config.theme.window.open.panel.toolbar,
                         () => {
-                            let windowParams = Object.assign({}, config.theme.window.open.windowParams);
-                            windowParams.alwaysOnTop = false; // 关闭置顶
+                            let windowParams = merge(
+                                {},
+                                config.theme.window.windowParams,
+                                { alwaysOnTop: false }, // 关闭置顶
+                            );
                             if (config.theme.window.open.panel.url) {
                                 window.theme.openNewWindow(
                                     'browser',
                                     config.theme.window.open.panel.url,
                                     undefined,
                                     windowParams,
+                                    config.theme.window.menu.template,
                                 );
                             }
                             else {
@@ -133,6 +138,7 @@ setTimeout(async () => {
                                     undefined,
                                     undefined,
                                     windowParams,
+                                    config.theme.window.menu.template,
                                 );
                             }
                         },
