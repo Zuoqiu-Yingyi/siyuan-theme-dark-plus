@@ -2091,6 +2091,7 @@ try {
 export var custom = {
     theme: {
         toolbar: {
+            [config.theme.toolbar.more.id]: { default: false },
             [config.theme.menu.block.toolbar.id]: { default: false },
             [config.theme.style.guides.toolbar.id]: { default: false },
             [config.theme.invert.toolbar.id]: { default: false },

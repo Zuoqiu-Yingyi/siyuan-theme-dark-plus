@@ -57,6 +57,20 @@ function createToolbarItem(toolbarConfig, className) {
     return item;
 }
 
+/**
+ * 恢复工具栏菜单项用户默认配置
+ */
+function itemStateLoad(id, states, node) {
+    if (states[id]) {
+        // 存在自定义配置
+        const conf = states[id];
+        // console.log(conf, conf.state, conf.state == null);
+        const state = conf.state == null ? conf.default : conf.state;
+        // console.log(state);
+        if (state) setTimeout(() => node.click(), 0);
+    }
+}
+
 /* 工具栏添加 */
 function toolbarItemListPush(item) {
     toolbarItemList.push(item);
@@ -70,16 +84,15 @@ function toolbarItemListPush(item) {
             custom_toolbar = document.createElement('div');
             custom_toolbar.id = config.theme.toolbar.id;
             custom_toolbar.className = 'fn__flex';
+            custom_toolbar.style.display = 'none';
 
             /* 更多按钮 */
-            let more = createToolbarItem(
-                config.theme.toolbar.more,
-                "toolbar__item b3-tooltips b3-tooltips__sw toolbar__item--active"
-            );
+            let more = createToolbarItem(config.theme.toolbar.more);
             more.addEventListener('click', () => {
                 if (custom_toolbar.style.display === 'none') {
                     // 显示自定义工具栏
                     custom_toolbar.style.display = null;
+                    custom.theme.toolbar[config.theme.toolbar.more.id].state = true;
                     toolbarItemChangeStatu(
                         config.theme.toolbar.more.id,
                         config.theme.toolbar.more.enable,
@@ -91,6 +104,7 @@ function toolbarItemListPush(item) {
                 else {
                     // 隐藏自定义工具栏
                     custom_toolbar.style.display = 'none';
+                    custom.theme.toolbar[config.theme.toolbar.more.id].state = false;
                     toolbarItemChangeStatu(
                         config.theme.toolbar.more.id,
                         config.theme.toolbar.more.enable,
@@ -99,8 +113,10 @@ function toolbarItemListPush(item) {
                         more,
                     );
                 }
+                setTimeout(async () => saveCustomFile(custom), 0);
             });
 
+            itemStateLoad(config.theme.toolbar.more.id, custom.theme.toolbar, more);
             toolbar.insertBefore(custom_toolbar, windowControls);
             toolbar.insertBefore(more, windowControls);
         }
@@ -114,14 +130,7 @@ function toolbarItemListPush(item) {
         }
     }
 
-    if (custom.theme.toolbar[item.id]) {
-        // 存在自定义配置
-        const conf = custom.theme.toolbar[item.id];
-        // console.log(conf, conf.state, conf.state == null);
-        const state = conf.state == null ? conf.default : conf.state;
-        // console.log(state);
-        if (state) setTimeout(() => item.node.click(), 0);
-    }
+    itemStateLoad(item.id, custom.theme.toolbar, item.node);
 }
 
 /**
