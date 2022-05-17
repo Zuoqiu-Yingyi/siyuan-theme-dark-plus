@@ -107,9 +107,21 @@ setTimeout(() => {
             if (config.theme.reload.window.enable) {
                 let Fn_reload = toolbarItemInit(
                     config.theme.reload.window.toolbar,
-                    () => window.location.reload(),
+                    async () => {
+                        try {
+                            const { webFrame, webContents } = require('@electron/remote');
+                            // webFrame.clearCache();
+                            // webContents.getFocusedWebContents().reload();
+                            // webContents.getFocusedWebContents().reloadIgnoringCache();
+                            webContents.getFocusedWebContents().session.clearCache().then((...args) => window.location.reload());
+                        }
+                        catch (err) {
+                            console.warn(err);
+                            window.location.reload()
+                        }
+                    },
                 );
-                
+
                 // 使用快捷键重新加载整个窗口
                 window.addEventListener('keyup', (e) => {
                     // console.log(e);
