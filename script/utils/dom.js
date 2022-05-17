@@ -352,9 +352,11 @@ function setFontSize(size) {
  */
 function setBlockSlider(index, scroll, offset = 0) {
     const temp = /^Blocks\s+(\d+)\/(\d+)$/.exec(scroll.ariaLabel);
-    index += offset;
-    if (temp.length >= 3) // 更新鼠标悬浮标签信息
-        scroll.ariaLabel = `Blocks ${index}/${Math.max(parseInt(temp[2]), index)}`;
-    if (scroll.firstElementChild) // 更新滚动条位置
-        scroll.firstElementChild.value = index;
+    if (temp) {
+        index += offset;
+        if (temp.length >= 3) // 更新鼠标悬浮标签信息
+            scroll.ariaLabel = `Blocks ${index}/${Math.max(parseInt(temp[2]), index)}`;
+        if (scroll.firstElementChild) // 更新滚动条位置
+            scroll.firstElementChild.value = index;
+    }
 }
