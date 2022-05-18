@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 移除在新窗口打开的桌面版 Web 端的窗口菜单栏 | Removed the menu bar of desktop web side of opening in new window.
+- 调整当前阅读进度标识的位置 | Adjusted the position of the current reading progress indicator.
 
 ## v1.0.1/2022-05-18
 

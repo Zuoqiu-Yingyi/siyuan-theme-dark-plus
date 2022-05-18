@@ -68,30 +68,22 @@ async function focusHandler(target, mode = config.theme.location.record.mode) {
     }
 }
 
+
 /**
  * 跳转到浏览位置
  */
-async function goto(target, mode = config.theme.location.record.mode) {
-    // console.log(target);
-    let scroll;
-    if (target && target.localName === 'input' && target.className === 'b3-slider') {
-        scroll = target.parentElement;
-    }
-    else if (target && target.localName === 'div' && target.classList.contains('protyle-scroll')) {
-        scroll = target;
-    }
-    else return null;
-    const DOC_ID = scroll.parentElement.querySelector('.protyle-background').dataset.nodeId;
+async function goto(docID, scroll, mode = config.theme.location.record.mode) {
+    // console.log(docID, scroll);
     switch (mode) {
         case 1: // 保存在 custom.json 中
-            const INDEX = custom.theme.location[DOC_ID];
+            const INDEX = custom.theme.location[docID];
             if (INDEX) {
                 setBlockSlider(INDEX, scroll);
                 scroll.firstElementChild.click();
             }
             break;
         case 2: // 保存在文档块属性中
-            const ATTRS = await getBlockAttrs(DOC_ID);
+            const ATTRS = await getBlockAttrs(docID);
             if (ATTRS) {
                 const LOCATION = ATTRS[config.theme.location.record.attribute];
                 if (LOCATION) {
@@ -100,6 +92,36 @@ async function goto(target, mode = config.theme.location.record.mode) {
             }
             break;
     }
+}
+
+/**
+ * 回到上次浏览位置
+ */
+async function back(target) {
+    // console.log(target);
+    let scroll;
+    if (target.dataset.docType === 'NodeParagraph'
+        && config.theme.regs.id.test(target.getAttribute('custom-location'))
+    ) {
+        // 当前阅读进度标识
+        scroll = target
+            .parentElement
+            .nextElementSibling
+            .nextElementSibling
+            .nextElementSibling; // 块滚动条;
+    }
+    else if (target && target.localName === 'input' && target.className === 'b3-slider') {
+        scroll = target.parentElement;
+    }
+    else if (target && target.localName === 'div' && target.classList.contains('protyle-scroll')) {
+        scroll = target;
+    }
+    else return null;
+
+    setTimeout(async () => goto(
+        scroll.parentElement.querySelector('.protyle-background').dataset.nodeId,
+        scroll,
+    ), 0);
 }
 
 /**
@@ -194,7 +216,7 @@ setTimeout(() => {
                                 editor.addEventListener('mouseup', (e) => {
                                     // console.log(e);
                                     if (isButton(e, config.theme.hotkeys.location.slider.goto)) {
-                                        setTimeout(() => goto(e.target), 0);
+                                        setTimeout(() => back(e.target), 0);
                                     }
                                 }, true);
                             }
