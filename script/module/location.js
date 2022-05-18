@@ -100,7 +100,8 @@ async function goto(docID, scroll, mode = config.theme.location.record.mode) {
 async function back(target) {
     // console.log(target);
     let scroll;
-    if (target.dataset.docType === 'NodeParagraph'
+    // console.log(target.dataset.docType, target.getAttribute('custom-location'))
+    if (target.dataset.docType
         && config.theme.regs.id.test(target.getAttribute('custom-location'))
     ) {
         // 当前阅读进度标识
