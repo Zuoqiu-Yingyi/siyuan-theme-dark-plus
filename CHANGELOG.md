@@ -3,6 +3,7 @@
 - 移除在新窗口打开的桌面版 Web 端的窗口菜单栏 | Removed the menu bar of desktop web side of opening in new window.
 - 调整当前阅读进度标识的位置 | Adjusted the position of the current reading progress indicator.
 - 兼容文档块 DOM 属性 `data-doc-type` 不为 `NodeDocument` 的情况 | Compatible with the DOM attribute `data-doc-type` is not `NodeDocument` in the case.
+- 修复思源块聚焦超链接的样式(带有参数 `focus=1` 的 `siyuan` 协议的超链接) | Fixed the style of link of focusing the siyuan block (with parameter `focus=1` of the `siyuan` protocol link).
 
 ## v1.0.1/2022-05-18
 
