@@ -11,6 +11,7 @@
     padding: 0;
     color: var(--b3-protyle-inline-link-color);
 }
+
 /* 超链接前标志 */
 .protyle-wysiwyg [data-node-id] span[data-type='file-annotation-ref']:not(:empty)::before,
 .protyle-wysiwyg [data-node-id] span[data-type='a']:not(:empty)::before,
@@ -30,14 +31,19 @@
     padding: 0;
 }
 
-/* 思源跳转内部的超链接特化 */
+/* 思源内部的超链接特化 */
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="siyuan:"]:not(:empty),
 .b3-typography a[href ^="siyuan:"] {
     color: var(--custom-span-siyuan-link-color);
 }
+
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="siyuan:"]:not(:empty):hover,
 .b3-typography a[href ^="siyuan:"]:hover {
     border-color: var(--custom-span-siyuan-link-color);
 }
 
-
+/* 思源聚焦超链接特化 */
+.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="siyuan:"][data-href *="focus=1"]:not(:empty)::before,
+.b3-typography a[href ^="siyuan:"][href *="focus=1"]::before {
+    outline: 1px solid var(--custom-span-siyuan-link-color);
+}
