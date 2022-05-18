@@ -124,6 +124,7 @@ setTimeout(async () => {
                                 { alwaysOnTop: false }, // 关闭置顶
                             );
                             if (config.theme.window.open.panel.url) {
+                                // 打开指定的 URL
                                 window.theme.openNewWindow(
                                     'browser',
                                     config.theme.window.open.panel.url,
@@ -133,6 +134,7 @@ setTimeout(async () => {
                                 );
                             }
                             else {
+                                // 打开 Web 端桌面版
                                 window.theme.openNewWindow(
                                     'desktop',
                                     undefined,

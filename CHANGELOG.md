@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 移除在新窗口打开的桌面版 Web 端的窗口菜单栏 | Removed the menu bar of desktop web side of opening in new window.
+
 ## v1.0.1/2022-05-18
 
 - [v1.0.0 <=> v1.0.1](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.0...v1.0.1)
