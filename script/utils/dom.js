@@ -54,8 +54,8 @@ function getFocusedBlockID() {
  * @return {null} 没有聚焦的文档
  */
 function getFocusedDoc() {
-    return document.querySelector('div.layout__wnd--active div.protyle:not(.fn__none) > div.protyle-content > div.protyle-wysiwyg[data-doc-type="NodeDocument"]')
-        || document.querySelector('#editor > div.protyle-content >  div.protyle-wysiwyg[data-doc-type="NodeDocument"]')
+    return document.querySelector('div.layout__wnd--active div.protyle:not(.fn__none) > div.protyle-content > div.protyle-wysiwyg[data-doc-type]')
+        || document.querySelector('#editor > div.protyle-content >  div.protyle-wysiwyg[data-doc-type]')
         || null;
 }
 
@@ -281,7 +281,8 @@ function getBlockMark(target) {
         && node.parentElement.parentElement.lastElementChild.dataset.docType
     ) return {
         id: node.parentElement.parentElement.firstElementChild.dataset.nodeId,
-        type: node.parentElement.parentElement.lastElementChild.dataset.docType,
+        // type: node.parentElement.parentElement.lastElementChild.dataset.docType,
+        type: 'NodeDocument', // 跳转时文档块的该属性是目标块的块类型, 是个bug
         subtype: null,
     };
 
@@ -316,7 +317,7 @@ function setBlockDOMAttrs(id, attrs) {
     let block = document.querySelector(`div.protyle-content div[data-node-id="${id}"]`);
     if (block) {
         if (block.className === 'protyle-background') {
-            while (block && block.dataset.docType !== 'NodeDocument') block = block.nextElementSibling;
+            while (block && block.dataset.docType == null) block = block.nextElementSibling;
         };
         // console.log(block);
         // console.log(attrs);
