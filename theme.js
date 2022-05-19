@@ -208,6 +208,7 @@ window.theme.loadScript("/appearance/themes/Dark+/script/module/goto.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/invert.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/location.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/menu.js");
+window.theme.loadScript("/appearance/themes/Dark+/script/module/readonly.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/reload.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/style.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/timestamp.js");

@@ -107,7 +107,7 @@ setTimeout(() => {
     try {
         if (config.theme.typewriter.enable) {
             if (config.theme.typewriter.switch.enable) {
-                let Fn_typewriterEnable = toolbarItemInit(
+                const Fn_typewriterEnable = toolbarItemInit(
                     config.theme.typewriter.switch.toolbar,
                     typewriterEnable,
                 );

@@ -51,7 +51,7 @@ setTimeout(() => {
                         ? Iterator(shuffle(config.theme.background.image.web.dark.slice()), true)
                         : Iterator(config.theme.background.image.web.dark.slice(), true);
 
-                    let Fn_webBackground = toolbarItemInit(
+                    const Fn_webBackground = toolbarItemInit(
                         config.theme.background.image.web.toolbar,
                         () => switchBackground(WEB_LIGHT_ITER, WEB_DARK_ITER),
                     );
@@ -72,7 +72,7 @@ setTimeout(() => {
                         ? Iterator(shuffle(config.theme.background.image.custom.dark.slice()), true)
                         : Iterator(config.theme.background.image.custom.dark.slice(), true);
 
-                    let Fn_customBackground = toolbarItemInit(
+                    const Fn_customBackground = toolbarItemInit(
                         config.theme.background.image.custom.toolbar,
                         () => switchBackground(CUSTOM_LIGHT_ITER, CUSTOM_DARK_ITER),
                         2,

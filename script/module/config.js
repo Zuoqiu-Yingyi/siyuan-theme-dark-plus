@@ -62,7 +62,7 @@ export var config = {
                         other: 'List Guides',
                     },
                     icon: '#iconIndent',
-                    index: -4,
+                    index: -5,
                 },
                 elements: {
                     // 应用辅助线样式的元素
@@ -91,7 +91,7 @@ export var config = {
                         other: 'Displays Mark Text',
                     },
                     icon: '#iconMark',
-                    index: -3,
+                    index: -4,
                 },
                 elements: {
                     // 应用辅助线样式的元素
@@ -346,7 +346,7 @@ export var config = {
                     other: 'Display in Inverse Color',
                 },
                 icon: '#iconMoon',
-                index: -2,
+                index: -3,
             },
             elements: {
                 // 反色元素
@@ -691,7 +691,7 @@ export var config = {
                         other: 'Record Browsing Location',
                     },
                     icon: '#iconBookmark',
-                    index: -6,
+                    index: -7,
                 },
             },
             clear: {
@@ -713,6 +713,23 @@ export var config = {
                 },
             }
         },
+        readonly: {
+            enable: true, // 只读功能开关
+            toolbar: { // 菜单栏
+                enable: true,
+                display: true,
+                id: 'toolbar-theme-readonly',
+                label: {
+                    zh_CN: '只读模式',
+                    zh_CNT: null,
+                    fr_FR: null,
+                    en_US: null,
+                    other: 'Read-Only Mode',
+                },
+                icon: '#iconPreview',
+                index: -2,
+            },
+        },
         menu: {
             enable: true, // 菜单功能开关
             block: {
@@ -730,7 +747,7 @@ export var config = {
                         other: 'Block Menu Enhancements',
                     },
                     icon: '#iconMenu',
-                    index: -5,
+                    index: -6,
                 },
                 items: [ // 块菜单项
                     { // 常用字体设置

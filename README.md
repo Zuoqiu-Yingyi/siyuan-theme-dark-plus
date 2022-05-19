@@ -53,6 +53,7 @@ Thanks to [UserZYF](https://github.com/UserZYF) for making the video.
 
 同时推荐一下视频作者制作的精美主题  
 Recommend the video author's beautiful theme.
+
 - [UserZYF/Chrome-A4: 思源笔记的一个主题，chrome标签样式+A4纸张大小](https://github.com/UserZYF/Chrome-A4)
 - [UserZYF/zhang-light: 思源笔记的一款主题](https://github.com/UserZYF/zhang-light)
 - [UserZYF/zhang-dark: 一款思源笔记的夜间主题](https://github.com/UserZYF/zhang-dark)

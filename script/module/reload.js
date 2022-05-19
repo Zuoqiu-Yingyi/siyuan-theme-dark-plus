@@ -105,7 +105,7 @@ setTimeout(() => {
     try {
         if (config.theme.reload.enable) {
             if (config.theme.reload.window.enable) {
-                let Fn_reload = toolbarItemInit(
+                const Fn_reload = toolbarItemInit(
                     config.theme.reload.window.toolbar,
                     async () => {
                         try {

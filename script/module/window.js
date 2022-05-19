@@ -118,7 +118,7 @@ setTimeout(async () => {
                     toolbarItemInit(
                         config.theme.window.open.panel.toolbar,
                         () => {
-                            let windowParams = merge(
+                            const windowParams = merge(
                                 {},
                                 config.theme.window.windowParams,
                                 { alwaysOnTop: false }, // 关闭置顶
@@ -148,7 +148,7 @@ setTimeout(async () => {
                 }
                 if (config.theme.window.open.block.enable) {
                     if (config.theme.window.open.block.outfocus.enable) {
-                        let Fn_outfocus = toolbarItemInit(
+                        const Fn_outfocus = toolbarItemInit(
                             config.theme.window.open.block.outfocus.toolbar,
                             outfocus,
                             1,
@@ -162,7 +162,7 @@ setTimeout(async () => {
                         }, true);
                     }
                     if (config.theme.window.open.block.infocus.enable) {
-                        let Fn_infocus = toolbarItemInit(
+                        const Fn_infocus = toolbarItemInit(
                             config.theme.window.open.block.infocus.toolbar,
                             infocus,
                             2,
