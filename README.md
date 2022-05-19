@@ -58,6 +58,7 @@ Recommend the video author's beautiful theme.
 - [UserZYF/zhang-dark: 一款思源笔记的夜间主题](https://github.com/UserZYF/zhang-dark)
 - [UserZYF/blue-dog: 思源笔记的主题，蓝色](https://github.com/UserZYF/blue-dog)
 - [UserZYF/green-elephant: 一款“绿象”配色的思源笔记主题](https://github.com/UserZYF/green-elephant)
+- [UserZYF/min-verse: 思源笔记的一款主题](https://github.com/UserZYF/min-verse)
 
 ### 贡献者介绍 | CONTRIBUTOR INTRODUCTION
 
@@ -155,20 +156,22 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 
 ### 功能介绍 | FUNCTIONAL DESCRIPTION
 
-* [[思源笔记经验分享] 记住当前文档浏览位置 - 链滴](https://ld246.com/article/1651720111393)
-* [使用外部编辑器编辑笔记内容 - 链滴](https://ld246.com/article/1650694653631)
-* [块自定义字体 - 链滴 - 链滴](https://ld246.com/article/1650339201591)
-* [列表的表格视图与脑图视图 - 链滴](https://ld246.com/article/1650258401435)
-* [多窗口功能 - 链滴 - 链滴](https://ld246.com/article/1649992440500)
-* [使用网络背景图片 / 本地背景图片 - 链滴](https://ld246.com/article/1649386929319)
-* [为笔记内 BiliBili/YouTube 视频创建时间戳 & 跳转到指定时间点 - 链滴](https://ld246.com/article/1648639553690)
-* [复制当前文档的大纲至剪贴板 - 链滴](https://ld246.com/article/1648635517429)
-* [为长代码块、长嵌入块与长表格添加块内滚动条 - 链滴](https://ld246.com/article/1647693571588)
-* [打字机模式 - 链滴](https://ld246.com/article/1647182919087)
-* [整篇文档的复制 / 剪切 (以 Markdown 格式) 与删除 - 链滴](https://ld246.com/article/1646806146533)
-* [为笔记内视频块 / 音频块快速创建时间戳 - 链滴](https://ld246.com/article/1645210285263)
-* [为笔记内视频块 / 音频块设置多个时间戳 - 链滴](https://ld246.com/article/1644814136903)
-* [为笔记内视频块 / 音频块设置时间戳 - 链滴](https://ld246.com/article/1644759207850)
+- [记住当前文档浏览位置 - 链滴](https://ld246.com/article/1651720111393)
+- [使用外部编辑器编辑笔记内容 - 链滴](https://ld246.com/article/1650694653631)
+- [块自定义字体 - 链滴 - 链滴](https://ld246.com/article/1650339201591)
+- [列表的表格视图与脑图视图 - 链滴](https://ld246.com/article/1650258401435)
+- [多窗口功能 - 链滴 - 链滴](https://ld246.com/article/1649992440500)
+- [使用网络背景图片 / 本地背景图片 - 链滴](https://ld246.com/article/1649386929319)
+- [为笔记内 BiliBili/YouTube 视频创建时间戳 & 跳转到指定时间点 - 链滴](https://ld246.com/article/1648639553690)
+- [复制当前文档的大纲至剪贴板 - 链滴](https://ld246.com/article/1648635517429)
+- [为长代码块、长嵌入块与长表格添加块内滚动条 - 链滴](https://ld246.com/article/1647693571588)
+- [打字机模式 - 链滴](https://ld246.com/article/1647182919087)
+- [整篇文档的复制 / 剪切 (以 Markdown 格式) 与删除 - 链滴](https://ld246.com/article/1646806146533)
+- [为笔记内视频块 / 音频块快速创建时间戳 - 链滴](https://ld246.com/article/1645210285263)
+- [为笔记内视频块 / 音频块设置多个时间戳 - 链滴](https://ld246.com/article/1644814136903)
+- [为笔记内视频块 / 音频块设置时间戳 - 链滴](https://ld246.com/article/1644759207850)
+
+---
 
 - 在其他主题中引用本主题模块  
   Reference this theme modules in other themes.
@@ -655,18 +658,18 @@ Download the release package in [Releases](https://github.com/Zuoqiu-Yingyi/siyu
 
 ## 参考 & 感谢 | REFERENCE & THANKS
 
-| 作者 \| Author                                      | 项目 \| Project                                                                                                                                       | 许可证 \| License |
-| :-------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------- |
-| **[Achuan-2](https://github.com/Achuan-2)**         | [Achuan-2/siyuan-themes-tsundoku-dark: a editor theme for siyuan note](https://github.com/Achuan-2/siyuan-themes-tsundoku-dark)                       | *Unknown*         |
-| **[roeseth](https://github.com/roeseth)**           | [roeseth/Siyuan-Golden-Topaz-Refined: A ported Golen Topaz theme for Siyuan note with tweaks](https://github.com/roeseth/Siyuan-Golden-Topaz-Refined) | *Unknown*         |
-| **[Morganwan90](https://github.com/Morganwan90)**   | [Morganwan90/Lightblue-siyuan-theme](https://github.com/Morganwan90/Lightblue-siyuan-theme)                                                           | *Unknown*         |
-| **[Crowds21](https://github.com/Crowds21)**         | [Crowds21/Cliff-Light](https://github.com/Crowds21/Cliff-Light)                                                                                       | *Unknown*         |
-| **[Zhangwuji](https://ld246.com/member/Zhangwuji)** | [希望能够增加根据大纲生成思维导图的功能](https://ld246.com/article/1640259008838/comment/1640304551938#:~:text=fontxiugaidark.rar)                    | *Unknown*         |
-| **[Morganwan90](https://github.com/Morganwan90)**   | [Morganwan90/Darkblue-siyuan-theme](https://github.com/Morganwan90/Darkblue-siyuan-theme)                                                             | *Unknown*         |
-| **[leolee9086](https://github.com/leolee9086)**     | [leolee9086/cc-baselib](https://github.com/leolee9086/cc-baselib)                                                                                     | *Unknown*         |
-| **[UserZYF](https://github.com/UserZYF)**           | [UserZYF/zhang-light](https://github.com/UserZYF/zhang-light)                                                                                         | *Unknown*         |
-| **[langzhou](https://github.com/langzhou)**         | [langzhou/siyuan-note](https://github.com/langzhou/siyuan-note)                                                                                       | *Unknown*         |
-| **[royc01](https://github.com/royc01)**             | [royc01/notion-theme](https://github.com/royc01/notion-theme)                                                                                         | *Unknown*         |
+| 作者 \| Author                                      | 项目 \| Project                                                                                                                                       | 许可证 \| License                                                                              |
+| :-------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------- |
+| **[Achuan-2](https://github.com/Achuan-2)**         | [Achuan-2/siyuan-themes-tsundoku-dark: a editor theme for siyuan note](https://github.com/Achuan-2/siyuan-themes-tsundoku-dark)                       | *[GPL-3.0 license](https://github.com/Achuan-2/siyuan-themes-tsundoku-dark/blob/main/LICENSE)* |
+| **[roeseth](https://github.com/roeseth)**           | [roeseth/Siyuan-Golden-Topaz-Refined: A ported Golen Topaz theme for Siyuan note with tweaks](https://github.com/roeseth/Siyuan-Golden-Topaz-Refined) | *Unknown*                                                                                      |
+| **[Morganwan90](https://github.com/Morganwan90)**   | [Morganwan90/Lightblue-siyuan-theme](https://github.com/Morganwan90/Lightblue-siyuan-theme)                                                           | *Unknown*                                                                                      |
+| **[Crowds21](https://github.com/Crowds21)**         | [Crowds21/Cliff-Light](https://github.com/Crowds21/Cliff-Light)                                                                                       | *Unknown*                                                                                      |
+| **[Zhangwuji](https://ld246.com/member/Zhangwuji)** | [希望能够增加根据大纲生成思维导图的功能](https://ld246.com/article/1640259008838/comment/1640304551938#:~:text=fontxiugaidark.rar)                    | *Unknown*                                                                                      |
+| **[Morganwan90](https://github.com/Morganwan90)**   | [Morganwan90/Darkblue-siyuan-theme](https://github.com/Morganwan90/Darkblue-siyuan-theme)                                                             | *Unknown*                                                                                      |
+| **[leolee9086](https://github.com/leolee9086)**     | [leolee9086/cc-baselib](https://github.com/leolee9086/cc-baselib)                                                                                     | *Unknown*                                                                                      |
+| **[UserZYF](https://github.com/UserZYF)**           | [UserZYF/zhang-light](https://github.com/UserZYF/zhang-light)                                                                                         | *Unknown*                                                                                      |
+| **[langzhou](https://github.com/langzhou)**         | [langzhou/siyuan-note](https://github.com/langzhou/siyuan-note)                                                                                       | *Unknown*                                                                                      |
+| **[royc01](https://github.com/royc01)**             | [royc01/notion-theme](https://github.com/royc01/notion-theme)                                                                                         | *Unknown*                                                                                      |
 
 注: 排序不分先后  
 ps: Sort in no particular order.
