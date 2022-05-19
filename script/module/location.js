@@ -157,9 +157,7 @@ function recordEnable() {
         config.theme.location.record.toolbar.id,
         true,
         record_enable,
-        'SVG',
-        undefined,
-        1,
+        'BUTTON',
     );
 }
 

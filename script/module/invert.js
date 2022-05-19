@@ -23,9 +23,7 @@ function invertEnable() {
         config.theme.invert.toolbar.id,
         true,
         styleHandle(id.join('-'), innerHTML.join('\n')),
-        'SVG',
-        undefined,
-        1,
+        'BUTTON',
     );
 }
 

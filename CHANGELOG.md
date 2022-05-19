@@ -5,6 +5,7 @@
 - 兼容文档块 DOM 属性 `data-doc-type` 不为 `NodeDocument` 的情况 | Compatible with the DOM attribute `data-doc-type` is not `NodeDocument` in the case.
 - 修复思源块聚焦超链接的样式(带有参数 `focus=1` 的 `siyuan` 协议的超链接) | Fixed the style of link of focusing the siyuan block (with parameter `focus=1` of the `siyuan` protocol link).
 - 调整工具栏项的样式 | Adjusted the style of the toolbar item.
+- 调整附加工具栏项激活样式 | Adjusted the style of the active additional toolbar item.
 
 ## v1.0.1/2022-05-18
 
