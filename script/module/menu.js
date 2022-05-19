@@ -108,9 +108,7 @@ function blockMenuEnable() {
         config.theme.menu.block.toolbar.id,
         true,
         block_menu_enable,
-        'SVG',
-        undefined,
-        1,
+        'BUTTON',
     );
 }
 

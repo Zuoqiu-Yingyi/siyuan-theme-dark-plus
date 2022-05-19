@@ -88,9 +88,7 @@ function changeStyleState(styleConfig) {
         styleConfig.toolbar.id,
         true,
         enable,
-        'SVG',
-        undefined,
-        1,
+        'BUTTON',
     );
 }
 

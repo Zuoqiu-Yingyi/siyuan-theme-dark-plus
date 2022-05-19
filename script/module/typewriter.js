@@ -82,9 +82,7 @@ function typewriterEnable() {
             config.theme.typewriter.switch.toolbar.id,
             true,
             enable,
-            'SVG',
-            undefined,
-            1,
+            'BUTTON',
         );
         if (enable) {
             setTimeout(activate, 0);
