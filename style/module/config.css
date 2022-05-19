@@ -250,6 +250,12 @@
 
     /* 顶部工具栏背景颜色 | The background color of the top toolbar */
     --custom-tool-bar-background-color: var(--custom-transparent);
+    /* 顶部工具栏被激活控件阴影散布 | The box shadow spread of toolbar item which is activated */
+    --custom-toolbar-tiem-active-box-shadow-spread: 4px;
+    /* 顶部工具栏被激活控件颜色 | The color of toolbar item which is activated */
+    --custom-toolbar-tiem-active-color: var(--b3-theme-on-background);
+    /* 顶部工具栏被激活控件背景颜色 | The background color of toolbar item which is activated */
+    --custom-toolbar-tiem-active-background-color: var(--b3-theme-background-light);
 
     /* 收集箱内容预览背景颜色 | The background color of inbox contents preview */
     --custom-inbox-background-color: var(--custom-transparent);
@@ -361,6 +367,9 @@
 
     /* 阴影散布宽度 | Shadow spread */
     --custom-box-shadow-spread: 8px;
+
+    /* 阴影颜色 | Shadow color */
+    --custom-box-shadow-color: var(--b3-theme-on-background);
 
     /* 鲜明颜色 | Striking color */
     --custom-striking-color: var(--b3-font-color12);

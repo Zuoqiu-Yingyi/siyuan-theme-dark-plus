@@ -9,8 +9,9 @@
 }
 
 /* 顶部工具栏按钮 */
-.toolbar__item {
-    margin: 0 3px;
+div:not(#windowControls)>.toolbar__item {
+    margin: 0 6px;
+    /* border-radius: 1em; */
 }
 
 /* 顶部工具栏标题 */
@@ -25,10 +26,18 @@
 
 /* 窗口控件 */
 #windowControls {
-    margin: 0 !important;
+    /* margin: 0 !important; */
 }
 
 /* 窗口关闭控件 */
 #closeWindow {
-    padding-right: 6px;
+    /* padding-right: 6px; */
+}
+
+/* 被激活的控件 */
+.toolbar__item--active {
+    color: var(--custom-toolbar-tiem-active-color);
+    background-color: var(--custom-toolbar-tiem-active-background-color);
+    /* outline: 1px solid var(--custom-toolbar-tiem-active-color); */
+    box-shadow: 0 0 var(--custom-toolbar-tiem-active-box-shadow-spread) var(--custom-box-shadow-color);
 }
