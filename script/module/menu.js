@@ -188,7 +188,7 @@ setTimeout(() => {
             if (config.theme.menu.block.enable) {
                 setTimeout(loadFontsItem, 0);
                 block_menu_observer = new CommonMenuObserver(blockMenuCallback);
-                let Fn_blockMenuEnable = toolbarItemInit(
+                const Fn_blockMenuEnable = toolbarItemInit(
                     config.theme.menu.block.toolbar,
                     blockMenuEnable,
                 );

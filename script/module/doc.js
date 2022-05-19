@@ -186,15 +186,15 @@ setTimeout(() => {
             if (config.theme.doc.outline.enable) {
                 if (config.theme.doc.outline.o.enable) { }
                 // 复制当前文档大纲
-                let Fn_outlineCopy_u = toolbarItemInit(
+                const Fn_outlineCopy_u = toolbarItemInit(
                     config.theme.doc.outline.u.toolbar,
                     () => outlineCopy('u'),
                 );
-                let Fn_outlineCopy_o = toolbarItemInit(
+                const Fn_outlineCopy_o = toolbarItemInit(
                     config.theme.doc.outline.o.toolbar,
                     () => outlineCopy('o'),
                 );
-                let Fn_outlineCopy_t = toolbarItemInit(
+                const Fn_outlineCopy_t = toolbarItemInit(
                     config.theme.doc.outline.t.toolbar,
                     () => outlineCopy('t'),
                 );
@@ -221,7 +221,7 @@ setTimeout(() => {
 
             if (config.theme.doc.copy.enable) {
                 // 复制当前文档全文
-                let Fn_docCopy = toolbarItemInit(
+                const Fn_docCopy = toolbarItemInit(
                     config.theme.doc.copy.toolbar,
                     docCopy,
                 );
@@ -236,7 +236,7 @@ setTimeout(() => {
 
             if (config.theme.doc.delete.enable) {
                 // 删除当前文档全文
-                let Fn_docDelete = toolbarItemInit(
+                const Fn_docDelete = toolbarItemInit(
                     config.theme.doc.delete.toolbar,
                     docDelete,
                 );
@@ -251,7 +251,7 @@ setTimeout(() => {
 
             if (config.theme.doc.cut.enable) {
                 // 剪切当前文档全文
-                let Fn_docCut = toolbarItemInit(
+                const Fn_docCut = toolbarItemInit(
                     config.theme.doc.cut.toolbar,
                     docCut,
                 );

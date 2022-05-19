@@ -30,7 +30,7 @@ function invertEnable() {
 setTimeout(() => {
     try {
         if (config.theme.invert.enable) {
-            let Fn_invertEnable = toolbarItemInit(
+            const Fn_invertEnable = toolbarItemInit(
                 config.theme.invert.toolbar,
                 invertEnable,
             );

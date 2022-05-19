@@ -111,7 +111,7 @@ setTimeout(() => {
             //     setTimeout(render(), 0);
             // });
             if (config.theme.style.render.enable) {
-                let Fn_render = toolbarItemInit(
+                const Fn_render = toolbarItemInit(
                     config.theme.reload.window.toolbar,
                     render,
                 );
@@ -125,7 +125,7 @@ setTimeout(() => {
                 }, true);
             }
             if (config.theme.style.guides.enable) {
-                let Fn_guides = toolbarItemInit(
+                const Fn_guides = toolbarItemInit(
                     config.theme.style.guides.toolbar,
                     () => changeStyleState(config.theme.style.guides),
                 );
@@ -138,7 +138,7 @@ setTimeout(() => {
                 }, true);
             }
             if (config.theme.style.mark.enable) {
-                let Fn_mark = toolbarItemInit(
+                const Fn_mark = toolbarItemInit(
                     config.theme.style.mark.toolbar,
                     () => changeStyleState(config.theme.style.mark),
                 );
