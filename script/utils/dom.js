@@ -1,6 +1,7 @@
 /* 思源 DOM */
 
 export {
+    getDockFromPanel, // 从面板名称获得面板所在的 dock
     getFocusedBlock, // 获得焦点所在的块
     getFocusedBlockID, // 获得焦点所在块 ID
     getFocusedDoc, // 获得焦点所在文档
@@ -21,6 +22,30 @@ export {
 
 import { url2id } from './misc.js';
 import { config } from './../module/config.js';
+
+/**
+ * 从面板名称获得面板所在的 dock
+ * @params {string} panelName 面板名称
+ *     file
+ *     outline
+ *     inbox
+ *     bookmark
+ *     tag
+ *     graph
+ *     globalGraph
+ *     backlink
+ * @return {object} window.siyuan.layout.* 面板所在的 dock
+ * @return {null} 没有找到面板
+ */
+function getDockFromPanel(panelName) {
+    const layout = window.siyuan.layout;
+    for (const panel in layout) {
+        if (layout[panel].data && layout[panel].data[panelName]) {
+            return layout[panel];
+        }
+    }
+    return null;
+}
 
 /**
  * 获得焦点所在的块

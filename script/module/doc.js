@@ -3,7 +3,10 @@
 import { config } from './config.js';
 import { isKey } from './../utils/hotkey.js';
 import { toolbarItemInit } from './../utils/ui.js';
-import { getFocusedDocID } from './../utils/dom.js';
+import {
+    getDockFromPanel,
+    getFocusedDocID
+} from './../utils/dom.js';
 import {
     ialCreate,
     HTMLDecode,
@@ -137,8 +140,7 @@ async function outlineCopy(mode) {
     let outline = await getDocOutline();
     if (outline) {
         // 使用 API 解析器方案
-
-        console.log(outline);
+        // console.log(outline);
         switch (config.theme.doc.outline.top) {
             case 'd':
                 outlineParser(outline[0]);
@@ -152,7 +154,11 @@ async function outlineCopy(mode) {
     }
     else {
         // 使用 DOM 解析器方案
-        outline = document.querySelector('.sy__outline .b3-list.b3-list--background');
+        const dock = getDockFromPanel('outline');
+        outline = dock
+            ? dock.data.outline.element.firstElementChild
+            : document.querySelector('.sy__outline .b3-list.b3-list--background');
+        // console.log(outline);
         if (outline
             && outline.firstElementChild
             && !outline.firstElementChild.classList.contains('b3-list--empty')
