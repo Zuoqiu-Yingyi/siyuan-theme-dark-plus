@@ -11,6 +11,7 @@
 - 调整工具栏项的样式 | Adjusted the style of the toolbar item.
 - 调整附加工具栏项激活样式 | Adjusted the style of the active additional toolbar item.
 - 添加只读模式 | Added read-only mode.
+- 重构获取大纲面板的方法 | Refactored the method of getting the outline panel.
 
 ## v1.0.1/2022-05-18
 
