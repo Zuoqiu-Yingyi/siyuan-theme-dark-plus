@@ -1,5 +1,9 @@
 # 更改日志 | CHANGE LOG
 
+## v1.0.2/2022-05-19
+
+- [v1.0.1 <=> v1.0.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.1...v1.0.2)
+- 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 移除在新窗口打开的桌面版 Web 端的窗口菜单栏 | Removed the menu bar of desktop web side of opening in new window.
 - 调整当前阅读进度标识的位置 | Adjusted the position of the current reading progress indicator.
 - 兼容文档块 DOM 属性 `data-doc-type` 不为 `NodeDocument` 的情况 | Compatible with the DOM attribute `data-doc-type` is not `NodeDocument` in the case.
