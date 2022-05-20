@@ -2,6 +2,7 @@
 
 - 可选使用 <kbd>Ctrl + 单击</kbc> 模拟单击面包屑进行聚焦 | Optional use <kbd>Ctrl + Click</kbd> to simulate clicking on a breadcrumb to focus.
 - 重构对话框 CSS 选择器 | Refactored the CSS selector of the dialog.
+- 修复用于解析思源超链接的正则表达式 | Fixed regexp for parsing Synergaia links.
 
 ## v1.0.2/2022-05-19
 

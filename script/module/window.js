@@ -86,6 +86,7 @@ async function middleClick(e, fn_id, fn_href = null, fn_inbox = null) {
     }
 
     let target = getTargetBlockID(e.target);
+    // console.log(target);
     if (target) {
         // 目标非空, 是 ID 或者链接
         if (config.theme.regs.id.test(target)) {
