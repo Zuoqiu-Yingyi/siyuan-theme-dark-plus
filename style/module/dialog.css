@@ -51,8 +51,7 @@ div.b3-dialog__container .layout-tab-bar .item__text {
 }
 
 /* 历史对话框内容框 */
-div.b3-dialog__container #historyContainer .history__asset,
-div.b3-dialog__container #historyContainer .history__text {
+div.b3-dialog__container #historyContainer *:is(.history__asset, .history__text) {
     border-left: 2px solid var(--b3-border-color);
 }
 
@@ -98,14 +97,12 @@ body>div[data-key]>.b3-dialog>.b3-dialog__container>svg.b3-dialog__close {
     }
 
     /* 设置需要占满一行的项目 */
-    body>div[data-key]>.b3-dialog>.b3-dialog__container>div>.fn__flex>.fn__flex-column .search__header,
-    body>div[data-key]>.b3-dialog>.b3-dialog__container>div>.fn__flex>.fn__flex-column .b3-form__space--small {
+    body>div[data-key]>.b3-dialog>.b3-dialog__container>div>.fn__flex>.fn__flex-column *:is(.search__header, .b3-form__space--small) {
         width: 100%;
     }
 
     /* 搜索结果与搜索结果预览分栏 */
-    body>div[data-key]>.b3-dialog>.b3-dialog__container>div>.fn__flex>.fn__flex-column #searchList,
-    body>div[data-key]>.b3-dialog>.b3-dialog__container>div>.fn__flex>.fn__flex-column #searchPreview {
+    body>div[data-key]>.b3-dialog>.b3-dialog__container>div>.fn__flex>.fn__flex-column *:is(#searchList, #searchPreview) {
         float: left;
         width: 50% !important;
         height: calc(100% - 84px) !important;

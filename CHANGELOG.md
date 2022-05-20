@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 可选使用 <kbd>Ctrl + 单击</kbc> 模拟单击面包屑进行聚焦 | Optional use <kbd>Ctrl + Click</kbd> to simulate clicking on a breadcrumb to focus.
+- 重构对话框 CSS 选择器 | Refactored the CSS selector of the dialog.
 
 ## v1.0.2/2022-05-19
 
