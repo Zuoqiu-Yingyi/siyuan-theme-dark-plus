@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 可选使用 <kbd>Ctrl + 单击</kbc> 模拟单击面包屑进行聚焦 | Optional use <kbd>Ctrl + Click</kbd> to simulate clicking on a breadcrumb to focus.
+
 ## v1.0.2/2022-05-19
 
 - [v1.0.1 <=> v1.0.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.1...v1.0.2)

@@ -21,6 +21,7 @@ export {
 
 import { config } from './../module/config.js';
 import { getBlockByID } from './api.js';
+import { CTRL_CLICK_EVENT } from './event.js';
 
 // REF [js - 对象递归合并merge - zc-lee - 博客园](https://www.cnblogs.com/zc-lee/p/15873611.html)
 function isObject(obj) {
@@ -99,6 +100,7 @@ function focalize(id, callback = null) {
         crumb.setAttribute("data-node-id", id);
         breadcrumbs.appendChild(crumb);
         crumb.click();
+        // crumb.dispatchEvent(CTRL_CLICK_EVENT);
         crumb.remove();
         if (typeof callback === 'function') setTimeout(callback, config.theme.goto.delay);
     }
