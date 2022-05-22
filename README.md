@@ -90,6 +90,8 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 
 ### 快捷键 | SHORTCUT KEYS
 
+#### 主题快捷键 | THEME SHORTCUT KEYS
+
 | 快捷键 \| Shortcut Key                                                             | 操作对象 \| Operational objectives                                                                                | 功能 \| Function                                                                                                                              |
 | :--------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------- |
 | <kbd>鼠标中键</kbd><br/><kbd>Middle Mouse Button</kbd>                             | 整个窗口<br/>entire window                                                                                        | 在新窗口打开块或超链接<br/>open the block or hyperlink in a new window                                                                        |
@@ -121,6 +123,18 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | <kbd>Ctrl/⌘ + Shift + Alt + O</kbd>                                                | 当前文档<br/>current document                                                                                     | 复制当前文档大纲为有序列表<br/>copy the current document outline as an ordered list                                                           |
 | <kbd>Ctrl/⌘ + Shift + Alt + U</kbd>                                                | 当前文档<br/>current document                                                                                     | 复制当前文档大纲为无序列表<br/>copy the current document outline as an unordered list                                                         |
 | <kbd>Ctrl/⌘ + Shift + Alt + T</kbd>                                                | 当前文档<br/>current document                                                                                     | 复制当前文档大纲为任务列表<br/>copy the current document outline as a task list                                                               |
+
+#### 编辑器快捷键 | EDITOR SHORTCUT KEYS
+
+| 快捷键 \| Shortcut Key              | 功能 \| Function                                   |
+| :---------------------------------- | :------------------------------------------------- |
+| <kbd>Alt + Z</kbd>                  | 切换自动换行<br/>toggle word wrap                  |
+| <kbd>Ctrl/⌘ + Alt + P</kbd>         | 窗口置顶与取消置顶<br/>window pin/unpin            |
+| <kbd>Ctrl/⌘ + O</kbd>               | 在 vscode 中打开文件<br/>open file in VS Code      |
+| <kbd>Ctrl/⌘ + Shift + O</kbd>       | 在 vscode 中打开目录<br/>open directory in VS Code |
+| <kbd>Ctrl/⌘ + Alt + C</kbd>         | 复制当前窗口超链接<br/>copy link                   |
+| <kbd>Ctrl/⌘ + Shift + Alt + C</kbd> | 复制当前窗口完整超链接<br/>copy full link          |
+
 
 ### 自定义块属性 | CUSTOM BLOCKS ATTRIBUTES
 

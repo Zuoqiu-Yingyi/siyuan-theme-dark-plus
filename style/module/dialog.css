@@ -29,7 +29,7 @@ div.b3-dialog__scrim {
     background-color: var(--custom-editor-breadcrumb-bar-background-color);
 } */
 
-/* 对话框背景图片 */
+/* 对话框图片 */
 div.b3-dialog__container {
     background-image: var(--custom-background-image-dialog);
     background-size: cover !important;
