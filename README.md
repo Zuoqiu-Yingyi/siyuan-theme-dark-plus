@@ -135,7 +135,6 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | <kbd>Ctrl/⌘ + Alt + C</kbd>         | 复制当前窗口超链接<br/>copy link                   |
 | <kbd>Ctrl/⌘ + Shift + Alt + C</kbd> | 复制当前窗口完整超链接<br/>copy full link          |
 
-
 ### 自定义块属性 | CUSTOM BLOCKS ATTRIBUTES
 
 | 操作对象 \| Operational objectives                                                       | 属性名 \| Attribute Name | 属性值 \| Attribute Value                                                                                                                                                                                                                                                                | 功能 \| Function                                                                                |
@@ -649,15 +648,6 @@ For more configuration items, see [config.css](./style/module/config.css) and [l
 
 更多配置项请参考 [config.css](./style/module/config.css) 与 [dark.css](./style/color/dark.css)  
 For more configuration items, see [config.css](./style/module/config.css) and [dark.css](./style/color/dark.css).
-
-## 计划 | TODO
-
-- [ ] 介绍
-  - [x] 自定义配置
-    - [x] 教程
-    - [x] 示例
-  - [x] 在其他主题中引用样式
-  - [x] 将所有的半透明背景颜色在配置中集中设置
 
 ## 开始 | START
 
