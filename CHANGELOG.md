@@ -5,6 +5,7 @@
 - 修复用于解析思源超链接的正则表达式 | Fixed regexp for parsing Synergaia links.
 - 在 `README.md` 中添加 Monaco Editor 中部分自定义快捷键介绍 | Add some custom shortcuts introduction for Monaco Editor in `README.md`.
 - 为 `/` 菜单的子标题按钮添加颜色 | Add color for the subheading button of the `/` menu.
+- 完整显示被钉住页签的标题 | Show the pinned tab's title completely.
 
 ## v1.0.2/2022-05-19
 

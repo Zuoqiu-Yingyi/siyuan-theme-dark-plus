@@ -67,5 +67,6 @@
 /* 钉住的标签页文本全部显示 */
 .layout-tab-bar .item--pin .item__text {
     width: auto;
+    max-width: none;
     display: flex !important;
 }
