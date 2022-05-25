@@ -137,19 +137,30 @@ async function outlineCopy(mode) {
         return index;
     }
 
-    let outline = await getDocOutline();
+    function newOutlineParser(outline) {
+        // 适配 v2.0.13 的新的 API
+        for (const chile of outline) {
+            outlineParser(chile);
+        }
+    }
+
+    const id = getFocusedDocID();
+    let outline = id ? await getDocOutline(id) : null;
     if (outline) {
         // 使用 API 解析器方案
         // console.log(outline);
-        switch (config.theme.doc.outline.top) {
-            case 'd':
-                outlineParser(outline[0]);
-                break;
-            case 'h':
-                outlineParser(outline[0], -1);
-                break;
-            default:
-                return;
+        if (outline instanceof Array) newOutlineParser(outline);
+        else {
+            switch (config.theme.doc.outline.top) {
+                case 'd':
+                    outlineParser(outline[0]);
+                    break;
+                case 'h':
+                    outlineParser(outline[0], -1);
+                    break;
+                default:
+                    return;
+            }
         }
     }
     else {
@@ -164,17 +175,7 @@ async function outlineCopy(mode) {
             && !outline.firstElementChild.classList.contains('b3-list--empty')
         ) {
             // console.log(outline);
-            switch (config.theme.doc.outline.top) {
-                case 'd':
-                    outlineDomParser(outline.firstElementChild);
-                    outlineDomParser(outline.lastElementChild);
-                    break;
-                case 'h':
-                    outlineDomParser(outline.lastElementChild, -1);
-                    break;
-                default:
-                    return;
-            }
+            outlineDomParser(outline);
         }
     }
 

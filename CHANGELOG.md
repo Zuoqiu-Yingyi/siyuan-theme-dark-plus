@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 复制大纲功能适配 `v2.0.13` 的 API 与 DOM | Adapted the copy outline function to the API and DOM of `v2.0.13`.
+
 ## v1.0.3/2022-05-25
 
 - [v1.0.2 <=> v1.0.3](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.2...v1.0.3)
