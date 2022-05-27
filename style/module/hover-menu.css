@@ -18,7 +18,7 @@
 }
 
 /* 菜单项中输入框宽度 */
-#commonMenu input.b3-text-field {
+#commonMenu>*:not(.emojis) input.b3-text-field {
     min-width: var(--custom-popover-menu-input-min-width);
 }
 

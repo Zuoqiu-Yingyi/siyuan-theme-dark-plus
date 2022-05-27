@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 复制大纲功能适配 `v2.0.13` 的 API 与 DOM | Adapted the copy outline function to the API and DOM of `v2.0.13`.
+- 修复图标选择菜单搜索输入框宽度样式问题 | Fixed the width style of the icon selection menu search input.
 
 ## v1.0.3/2022-05-25
 
