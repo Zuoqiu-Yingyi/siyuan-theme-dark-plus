@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.0.4/2022-05-29
+
+- [v1.0.3 <=> v1.0.4](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.3...v1.0.4)
 - 复制大纲功能适配 `v2.0.13` 的 API 与 DOM | Adapted the copy outline function to the API and DOM of `v2.0.13`.
 - 修复图标选择菜单搜索输入框宽度样式问题 | Fixed the width style of the icon selection menu search input.
 - 修复编辑区的 `emojis` 选择菜单样式问题 | Fixed the style of the `emojis` selection menu in the edit area.
