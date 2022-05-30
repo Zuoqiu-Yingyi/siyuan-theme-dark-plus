@@ -102,9 +102,32 @@ function focalize(id, callback = null) {
         crumb.click();
         // crumb.dispatchEvent(CTRL_CLICK_EVENT);
         crumb.remove();
-        if (typeof callback === 'function') setTimeout(callback, config.theme.goto.delay);
+        if (typeof callback === 'function') setTimeout(callback, 0);
     }
     else setTimeout(() => focalize(id, callback), config.theme.goto.delay);
+}
+
+/**
+ * 取消聚焦
+ */
+function cancelFocalize(callback = null) {
+    // console.log('cancelFocalize');
+    const breadcrumbs = document.querySelector('.protyle-breadcrumb>.protyle-breadcrumb__bar');
+    if (breadcrumbs
+        && breadcrumbs.firstElementChild
+    ) {
+        // console.log(breadcrumbs);
+        if (breadcrumbs.firstElementChild.classList.contains('protyle-breadcrumb__item--active')) {
+            // 已取消聚焦
+            if (typeof callback === 'function') setTimeout(callback, 0);
+            return;
+        }
+        else {
+            // 未取消聚焦
+            breadcrumbs.firstElementChild.click();
+        }
+    }
+    setTimeout(() => cancelFocalize(callback), config.theme.goto.delay);
 }
 
 /**
@@ -121,7 +144,7 @@ function jump(id, callback = null) {
         editor.appendChild(ref);
         ref.click();
         ref.remove();
-        if (typeof callback === 'function') setTimeout(callback, config.theme.goto.delay);
+        if (typeof callback === 'function') setTimeout(callback, 0);
     }
     else setTimeout(() => jump(id, callback), config.theme.goto.delay);
 }
@@ -154,12 +177,13 @@ async function goto(id, focus = 0, editable = 0) {
     if (parseInt(focus) === 1 || focus === 'true') jump(id, () => focalize(id));
     else {
         // 不聚焦, 需要先切换到文档块以退出聚焦, 之后再进行文档内跳转
-        const block = await getBlockByID(id);
-        if (block) {
-            if (block.root_id === block.id) jump(id); // 文档块直接跳转
-            else focalize(block.root_id, () => jump(id)); // 非文档块, 退出聚焦并跳转
-        }
-        else throw new Error(id);
+        cancelFocalize(() => jump(id));
+        // const block = await getBlockByID(id);
+        // if (block) {
+        //     if (block.root_id === block.id) jump(id); // 文档块直接跳转
+        //     else focalize(block.root_id, () => jump(id)); // 非文档块, 退出聚焦并跳转
+        // }
+        // else throw new Error(id);
     }
 
     // 是否可编辑
