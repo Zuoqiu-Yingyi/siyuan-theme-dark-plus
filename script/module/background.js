@@ -1,7 +1,7 @@
 /* 背景图片 */
 
 import { config } from './config.js';
-import { isKey } from './../utils/hotkey.js';
+import { globalEventHandler } from './../utils/listener.js';
 import {
     toolbarItemInit,
 } from './../utils/ui.js';
@@ -57,12 +57,11 @@ setTimeout(() => {
                     );
 
                     // 随机背景图片
-                    window.addEventListener('keyup', (e) => {
-                        // console.log(e);
-                        if (isKey(e, config.theme.hotkeys.background.image.web)) {
-                            Fn_webBackground();
-                        }
-                    }, true);
+                    globalEventHandler.addEventHandler(
+                        'keyup',
+                        config.theme.hotkeys.background.image.web,
+                        _ => Fn_webBackground(),
+                    );
                 }
                 if (config.theme.background.image.custom.enable) {
                     const CUSTOM_LIGHT_ITER = config.theme.background.image.custom.random
@@ -81,12 +80,11 @@ setTimeout(() => {
                     if (config.theme.background.image.custom.default) Fn_customBackground();
 
                     // 使用快捷键切换自定义背景图片
-                    window.addEventListener('keyup', (e) => {
-                        // console.log(e);
-                        if (isKey(e, config.theme.hotkeys.background.image.custom)) {
-                            Fn_customBackground();
-                        }
-                    }, true);
+                    globalEventHandler.addEventHandler(
+                        'keyup',
+                        config.theme.hotkeys.background.image.custom,
+                        _ => Fn_customBackground(),
+                    );
                 }
             }
         }

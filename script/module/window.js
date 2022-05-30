@@ -6,6 +6,7 @@ import {
     isButton,
 } from './../utils/hotkey.js';
 import { toolbarItemInit } from './../utils/ui.js';
+import { globalEventHandler } from './../utils/listener.js';
 import { merge } from './../utils/misc.js';
 import {
     putFile,
@@ -155,12 +156,11 @@ setTimeout(async () => {
                             1,
                         );
 
-                        window.addEventListener('keyup', (e) => {
-                            // console.log(e);
-                            if (isKey(e, config.theme.hotkeys.window.open.block.outfocus)) {
-                                Fn_outfocus();
-                            }
-                        }, true);
+                        globalEventHandler.addEventHandler(
+                            'keyup',
+                            config.theme.hotkeys.window.open.block.outfocus,
+                            _ => Fn_outfocus(),
+                        );
                     }
                     if (config.theme.window.open.block.infocus.enable) {
                         const Fn_infocus = toolbarItemInit(
@@ -169,32 +169,27 @@ setTimeout(async () => {
                             2,
                         );
 
-                        window.addEventListener('keyup', (e) => {
-                            // console.log(e);
-                            if (isKey(e, config.theme.hotkeys.window.open.block.infocus)) {
-                                Fn_infocus();
-                            }
-                        }, true);
+                        globalEventHandler.addEventHandler(
+                            'keyup',
+                            config.theme.hotkeys.window.open.block.infocus,
+                            _ => Fn_infocus(),
+                        );
                     }
                 }
                 if (config.theme.window.open.link.enable) {
                     if (config.theme.window.open.link.outfocus.enable) {
-                        window.addEventListener('mouseup', (e) => {
-                            // console.log(e);
-                            if (isButton(e, config.theme.hotkeys.window.open.link.outfocus)) {
-                                // console.log(e);
-                                setTimeout(() => middleClick(e, outfocus), 0);
-                            }
-                        }, true);
+                        globalEventHandler.addEventHandler(
+                            'mouseup',
+                            config.theme.hotkeys.window.open.link.outfocus,
+                            e => setTimeout(() => middleClick(e, outfocus), 0),
+                        );
                     }
                     if (config.theme.window.open.link.infocus.enable) {
-                        window.addEventListener('mouseup', (e) => {
-                            // console.log(e);
-                            if (isButton(e, config.theme.hotkeys.window.open.link.infocus)) {
-                                // console.log(e);
-                                setTimeout(() => middleClick(e, infocus), 0);
-                            }
-                        }, true);
+                        globalEventHandler.addEventHandler(
+                            'mouseup',
+                            config.theme.hotkeys.window.open.link.infocus,
+                            e => setTimeout(() => middleClick(e, infocus), 0),
+                        );
                     }
                 }
                 if (config.theme.window.open.editor.enable) {
@@ -205,212 +200,212 @@ setTimeout(async () => {
                     let r = await createTempDir(config.theme.window.open.editor.path.temp.relative);
                     if (r && r.code === 0) {
                         // 临时目录创建成功
-                        window.addEventListener('mouseup', (e) => {
-                            // console.log(e);
-                            if (isButton(e, config.theme.hotkeys.window.open["editor-kramdown"])) {
-                                setTimeout(async () => middleClick(
-                                    e,
-                                    async id => {
-                                        const b = await getBlockByID(id);
-                                        if (b && b.type === 'd') { // 如果是文档块
-                                            // 先重命名文档为新ID, 然后导出模板, 然后恢复原命名
-                                            let newID = window.Lute.NewNodeID();
-                                            let template_path_relative = `/data/templates/${newID}.md`;
-                                            let template_path_absolute = `${window.siyuan.config.system.workspaceDir}${template_path_relative}`.replaceAll('\\', '/').replaceAll('//', '/');
-                                            let title = b.content;
-                                            renameDoc(b.box, b.path, newID).then(
-                                                _ => docSaveAsTemplate(b.id, true).then(
-                                                    _ => renameDoc(b.box, b.path, title).then(
-                                                        _ => window.theme.openNewWindow(
-                                                            'editor',
-                                                            config.theme.window.open.editor.path.index,
-                                                            {
-                                                                id: id,
-                                                                mode: 'block',
-                                                                lang: window.theme.languageMode,
-                                                                path: template_path_relative,
-                                                                // theme: window.siyuan.config.appearance.mode,
-                                                                fontFamily: encodeURI(window.siyuan.config.editor.fontFamily),
-                                                                tabSize: window.siyuan.config.editor.codeTabSpaces,
-                                                            },
-                                                            config.theme.window.windowParams,
-                                                            config.theme.window.menu.template,
-                                                            undefined,
-                                                            undefined,
-                                                            undefined,
-                                                            async (win) => {
-                                                                // 窗口关闭时删除临时文件
-                                                                setTimeout(async () => rm(template_path_absolute), 0);
-                                                            },
-                                                        )
-                                                    )
-                                                )
-                                            );
-                                        }
-                                    },
-                                ), 0);
-                            }
-                            if (isButton(e, config.theme.hotkeys.window.open.editor)) {
-                                // console.log(e);
-                                setTimeout(async () => middleClick(
-                                    e,
-                                    async id => {
-                                        window.theme.openNewWindow(
-                                            'editor',
-                                            config.theme.window.open.editor.path.index,
-                                            {
-                                                id: id,
-                                                mode: 'block',
-                                                lang: window.theme.languageMode,
-                                                // theme: window.siyuan.config.appearance.mode,
-                                                fontFamily: encodeURI(window.siyuan.config.editor.fontFamily),
-                                                tabSize: window.siyuan.config.editor.codeTabSpaces,
-                                            },
-                                            config.theme.window.windowParams,
-                                            config.theme.window.menu.template,
-                                        );
-                                    },
-                                    async href => {
-                                        if (href.startsWith('file:')) {
-                                            // 是本地文件
-                                            let url = new URL(href.replaceAll('\\', '/'));
-                                            let path = config.theme.regs.winpath.test(url.pathname)
-                                                ? url.pathname.substring(1)
-                                                : url.pathname;
-                                            // 本地文件
-                                            // 检查文件是否存在
-                                            let stats = await stat(path);
-                                            // console.log(stats);
-
-                                            // let path = await openFile(
-                                            //     config.theme.window.open.editor.labels.openFile[window.theme.languageMode]
-                                            //     || config.theme.window.open.editor.labels.openFile.other,
-                                            //     // href,
-                                            //     // href.substring(7),
-                                            //     path,
-                                            //     // config.MAP.LABELS.open[params.lang] || config.MAP.LABELS.open.default,
-                                            //     config.theme.window.open.editor.labels.open[window.theme.languageMode]
-                                            //     || config.theme.window.open.editor.labels.open.other,
-                                            // );
-                                            if (stats) {
-                                                // 本地文件存在
-                                                // console.log(path);
-                                                let filename = path.split('/').pop(); // 文件名
-                                                let ext = filename.lastIndexOf('.') > 0 ? filename.split('.').pop() : null; // 文件扩展名
-
-                                                filename = ext
-                                                    ? `${window.Lute.NewNodeID()}.${ext}`
-                                                    : window.Lute.NewNodeID();
-                                                // 临时文件绝对路径
-                                                let temp_file_path_absolute = `${config.theme.window.open.editor.path.temp.absolute}${filename}`;
-                                                // console.log(temp_file_path_absolute);
-                                                // 临时文件相对路径(相对于思源工作空间根目录)
-                                                let temp_file_path_relative = `${config.theme.window.open.editor.path.temp.relative}${filename}`;
-                                                // console.log(temp_file_path_relative);
-                                                // 复制本地文件至临时目录
-                                                await copyFile(path, temp_file_path_absolute).then(() => {
-                                                    // 复制成功
-                                                    window.theme.win = window.theme.openNewWindow(
+                        globalEventHandler.addEventHandler(
+                            'mouseup',
+                            config.theme.hotkeys.window.open["editor-kramdown"],
+                            e => setTimeout(async () => middleClick(
+                                e,
+                                async id => {
+                                    const b = await getBlockByID(id);
+                                    if (b && b.type === 'd') { // 如果是文档块
+                                        // 先重命名文档为新ID, 然后导出模板, 然后恢复原命名
+                                        let newID = window.Lute.NewNodeID();
+                                        let template_path_relative = `/data/templates/${newID}.md`;
+                                        let template_path_absolute = `${window.siyuan.config.system.workspaceDir}${template_path_relative}`.replaceAll('\\', '/').replaceAll('//', '/');
+                                        let title = b.content;
+                                        renameDoc(b.box, b.path, newID).then(
+                                            _ => docSaveAsTemplate(b.id, true).then(
+                                                _ => renameDoc(b.box, b.path, title).then(
+                                                    _ => window.theme.openNewWindow(
                                                         'editor',
                                                         config.theme.window.open.editor.path.index,
                                                         {
-                                                            mode: 'local',
-                                                            url: encodeURI(path),
-                                                            path: encodeURI(temp_file_path_relative),
+                                                            id: id,
+                                                            mode: 'block',
                                                             lang: window.theme.languageMode,
+                                                            path: template_path_relative,
                                                             // theme: window.siyuan.config.appearance.mode,
-                                                            tabSize: window.siyuan.config.editor.codeTabSpaces,
                                                             fontFamily: encodeURI(window.siyuan.config.editor.fontFamily),
-                                                            workspace: window.siyuan.config.system.workspaceDir,
+                                                            tabSize: window.siyuan.config.editor.codeTabSpaces,
                                                         },
                                                         config.theme.window.windowParams,
                                                         config.theme.window.menu.template,
                                                         undefined,
                                                         undefined,
-                                                        async (win, event, level, message, line, sourceId) => {
-                                                            // 根据子窗口的控制台输出内容保存临时文件
-                                                            // console.log(win, event, level, message, line, sourceId);
-                                                            if (level === 0 && message === 'SAVED') {
-                                                                // 临时文件已保存, 需要复制临时文件至原位置
-                                                                await copyFile(temp_file_path_absolute, path);
-                                                            }
-                                                        },
+                                                        undefined,
                                                         async (win) => {
                                                             // 窗口关闭时删除临时文件
-                                                            // console.log(win);
-                                                            setTimeout(async () => rm(temp_file_path_absolute), 0);
+                                                            setTimeout(async () => rm(template_path_absolute), 0);
                                                         },
-                                                    );
-                                                });
+                                                    )
+                                                )
+                                            )
+                                        );
+                                    }
+                                },
+                            ), 0),
+                        );
+                        globalEventHandler.addEventHandler(
+                            'mouseup',
+                            config.theme.hotkeys.window.open.editor,
+                            e => setTimeout(async () => middleClick(
+                                e,
+                                async id => {
+                                    window.theme.openNewWindow(
+                                        'editor',
+                                        config.theme.window.open.editor.path.index,
+                                        {
+                                            id: id,
+                                            mode: 'block',
+                                            lang: window.theme.languageMode,
+                                            // theme: window.siyuan.config.appearance.mode,
+                                            fontFamily: encodeURI(window.siyuan.config.editor.fontFamily),
+                                            tabSize: window.siyuan.config.editor.codeTabSpaces,
+                                        },
+                                        config.theme.window.windowParams,
+                                        config.theme.window.menu.template,
+                                    );
+                                },
+                                async href => {
+                                    if (href.startsWith('file:')) {
+                                        // 是本地文件
+                                        let url = new URL(href.replaceAll('\\', '/'));
+                                        let path = config.theme.regs.winpath.test(url.pathname)
+                                            ? url.pathname.substring(1)
+                                            : url.pathname;
+                                        // 本地文件
+                                        // 检查文件是否存在
+                                        let stats = await stat(path);
+                                        // console.log(stats);
 
-                                            }
-                                            return;
-                                        }
-                                        else {
-                                            // 思源资源文件链接或网络文件链接
-                                            window.theme.openNewWindow(
-                                                'editor',
-                                                config.theme.window.open.editor.path.index,
-                                                {
-                                                    mode: 'assets',
-                                                    path: encodeURI(href),
-                                                    lang: window.theme.languageMode,
-                                                    // theme: window.siyuan.config.appearance.mode,
-                                                    tabSize: window.siyuan.config.editor.codeTabSpaces,
-                                                    fontFamily: encodeURI(window.siyuan.config.editor.fontFamily),
-                                                    workspace: window.siyuan.config.system.workspaceDir,
-                                                },
-                                                config.theme.window.windowParams,
-                                                config.theme.window.menu.template,
-                                            );
-                                        }
-                                    },
-                                    async inbox => {
-                                        // 收集箱
-                                        // 内容写入临时文件 => 打开编辑器 => 读取临时文件 => 删除临时文件
-                                        const filename = `${inbox.oId}.md`; // 临时文件文件名
-                                        // 临时文件绝对路径
-                                        const temp_file_path_absolute = `${config.theme.window.open.editor.path.temp.absolute}${filename}`;
-                                        // 临时文件相对路径(相对于思源工作空间根目录)
-                                        const temp_file_path_relative = `${config.theme.window.open.editor.path.temp.relative}${filename}`;
-                                        // console.log(temp_file_path_relative, temp_file_path_absolute);
-                                        // 写入临时文件
-                                        putFile(temp_file_path_relative, inbox.shorthandContent).then(r => {
-                                            if (r && r.code === 0) {
-                                                // 写入文件成功
+                                        // let path = await openFile(
+                                        //     config.theme.window.open.editor.labels.openFile[window.theme.languageMode]
+                                        //     || config.theme.window.open.editor.labels.openFile.other,
+                                        //     // href,
+                                        //     // href.substring(7),
+                                        //     path,
+                                        //     // config.MAP.LABELS.open[params.lang] || config.MAP.LABELS.open.default,
+                                        //     config.theme.window.open.editor.labels.open[window.theme.languageMode]
+                                        //     || config.theme.window.open.editor.labels.open.other,
+                                        // );
+                                        if (stats) {
+                                            // 本地文件存在
+                                            // console.log(path);
+                                            let filename = path.split('/').pop(); // 文件名
+                                            let ext = filename.lastIndexOf('.') > 0 ? filename.split('.').pop() : null; // 文件扩展名
+
+                                            filename = ext
+                                                ? `${window.Lute.NewNodeID()}.${ext}`
+                                                : window.Lute.NewNodeID();
+                                            // 临时文件绝对路径
+                                            let temp_file_path_absolute = `${config.theme.window.open.editor.path.temp.absolute}${filename}`;
+                                            // console.log(temp_file_path_absolute);
+                                            // 临时文件相对路径(相对于思源工作空间根目录)
+                                            let temp_file_path_relative = `${config.theme.window.open.editor.path.temp.relative}${filename}`;
+                                            // console.log(temp_file_path_relative);
+                                            // 复制本地文件至临时目录
+                                            await copyFile(path, temp_file_path_absolute).then(() => {
+                                                // 复制成功
                                                 window.theme.win = window.theme.openNewWindow(
                                                     'editor',
                                                     config.theme.window.open.editor.path.index,
                                                     {
-                                                        mode: 'inbox',
-                                                        url: encodeURI(inbox.shorthandURL),
+                                                        mode: 'local',
+                                                        url: encodeURI(path),
                                                         path: encodeURI(temp_file_path_relative),
                                                         lang: window.theme.languageMode,
                                                         // theme: window.siyuan.config.appearance.mode,
                                                         tabSize: window.siyuan.config.editor.codeTabSpaces,
                                                         fontFamily: encodeURI(window.siyuan.config.editor.fontFamily),
                                                         workspace: window.siyuan.config.system.workspaceDir,
-
-                                                        title: inbox.shorthandTitle,
-                                                        describe: inbox.shorthandDesc,
                                                     },
                                                     config.theme.window.windowParams,
                                                     config.theme.window.menu.template,
                                                     undefined,
                                                     undefined,
-                                                    undefined,
+                                                    async (win, event, level, message, line, sourceId) => {
+                                                        // 根据子窗口的控制台输出内容保存临时文件
+                                                        // console.log(win, event, level, message, line, sourceId);
+                                                        if (level === 0 && message === 'SAVED') {
+                                                            // 临时文件已保存, 需要复制临时文件至原位置
+                                                            await copyFile(temp_file_path_absolute, path);
+                                                        }
+                                                    },
                                                     async (win) => {
                                                         // 窗口关闭时删除临时文件
                                                         // console.log(win);
                                                         setTimeout(async () => rm(temp_file_path_absolute), 0);
                                                     },
                                                 );
-                                            }
-                                        });
-                                    },
-                                ), 0);
-                            }
-                        }, true);
+                                            });
+
+                                        }
+                                        return;
+                                    }
+                                    else {
+                                        // 思源资源文件链接或网络文件链接
+                                        window.theme.openNewWindow(
+                                            'editor',
+                                            config.theme.window.open.editor.path.index,
+                                            {
+                                                mode: 'assets',
+                                                path: encodeURI(href),
+                                                lang: window.theme.languageMode,
+                                                // theme: window.siyuan.config.appearance.mode,
+                                                tabSize: window.siyuan.config.editor.codeTabSpaces,
+                                                fontFamily: encodeURI(window.siyuan.config.editor.fontFamily),
+                                                workspace: window.siyuan.config.system.workspaceDir,
+                                            },
+                                            config.theme.window.windowParams,
+                                            config.theme.window.menu.template,
+                                        );
+                                    }
+                                },
+                                async inbox => {
+                                    // 收集箱
+                                    // 内容写入临时文件 => 打开编辑器 => 读取临时文件 => 删除临时文件
+                                    const filename = `${inbox.oId}.md`; // 临时文件文件名
+                                    // 临时文件绝对路径
+                                    const temp_file_path_absolute = `${config.theme.window.open.editor.path.temp.absolute}${filename}`;
+                                    // 临时文件相对路径(相对于思源工作空间根目录)
+                                    const temp_file_path_relative = `${config.theme.window.open.editor.path.temp.relative}${filename}`;
+                                    // console.log(temp_file_path_relative, temp_file_path_absolute);
+                                    // 写入临时文件
+                                    putFile(temp_file_path_relative, inbox.shorthandContent).then(r => {
+                                        if (r && r.code === 0) {
+                                            // 写入文件成功
+                                            window.theme.win = window.theme.openNewWindow(
+                                                'editor',
+                                                config.theme.window.open.editor.path.index,
+                                                {
+                                                    mode: 'inbox',
+                                                    url: encodeURI(inbox.shorthandURL),
+                                                    path: encodeURI(temp_file_path_relative),
+                                                    lang: window.theme.languageMode,
+                                                    // theme: window.siyuan.config.appearance.mode,
+                                                    tabSize: window.siyuan.config.editor.codeTabSpaces,
+                                                    fontFamily: encodeURI(window.siyuan.config.editor.fontFamily),
+                                                    workspace: window.siyuan.config.system.workspaceDir,
+
+                                                    title: inbox.shorthandTitle,
+                                                    describe: inbox.shorthandDesc,
+                                                },
+                                                config.theme.window.windowParams,
+                                                config.theme.window.menu.template,
+                                                undefined,
+                                                undefined,
+                                                undefined,
+                                                async (win) => {
+                                                    // 窗口关闭时删除临时文件
+                                                    // console.log(win);
+                                                    setTimeout(async () => rm(temp_file_path_absolute), 0);
+                                                },
+                                            );
+                                        }
+                                    });
+                                },
+                            ), 0),
+                        );
                     }
                 }
             }

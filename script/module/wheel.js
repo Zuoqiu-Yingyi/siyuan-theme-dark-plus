@@ -3,6 +3,7 @@
 import { config } from './config.js';
 import { isEvent } from './../utils/hotkey.js';
 import { setFontSize } from './../utils/dom.js';
+import { globalEventHandler } from './../utils/listener.js';
 
 /* 字号更改 */
 function changeFontSize(delta) { 
@@ -18,12 +19,11 @@ setTimeout(() => {
         if (config.theme.wheel.enable) {
             if (config.theme.wheel.zoom.enable) {
                 // 重新加载 iframe
-                window.onmousewheel = (e) => {
-                    // console.log(e);
-                    if (isEvent(e, config.theme.hotkeys.wheel.zoom)) {
-                        setTimeout(() => changeFontSize(e.wheelDeltaY), 0);
-                    }
-                };
+                globalEventHandler.addEventHandler(
+                    'mousewheel',
+                    config.theme.hotkeys.wheel.zoom,
+                    e => setTimeout(() => changeFontSize(e.wheelDeltaY), 0),
+                );
             }
         }
     } catch (err) {

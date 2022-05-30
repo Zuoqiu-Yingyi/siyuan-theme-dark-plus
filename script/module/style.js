@@ -3,6 +3,7 @@
 import { config } from './config.js';
 import { isKey } from './../utils/hotkey.js';
 import { styleHandle } from './../utils/misc.js';
+import { globalEventHandler } from './../utils/listener.js';
 import {
     toolbarItemInit,
     toolbarItemChangeStatu,
@@ -117,12 +118,11 @@ setTimeout(() => {
                 );
 
                 // 使用快捷键渲染自定义样式
-                window.addEventListener('keyup', (e) => {
-                    // console.log(e);
-                    if (isKey(e, config.theme.hotkeys.style.render)) {
-                        Fn_render();
-                    }
-                }, true);
+                globalEventHandler.addEventHandler(
+                    'keyup',
+                    config.theme.hotkeys.style.render,
+                    _ => Fn_render(),
+                );
             }
             if (config.theme.style.guides.enable) {
                 const Fn_guides = toolbarItemInit(
@@ -130,12 +130,11 @@ setTimeout(() => {
                     () => changeStyleState(config.theme.style.guides),
                 );
                 // 使用快捷键启用/禁用辅助线样式
-                window.addEventListener('keyup', (e) => {
-                    // console.log(e);
-                    if (isKey(e, config.theme.hotkeys.style.guides)) {
-                        Fn_guides();
-                    }
-                }, true);
+                globalEventHandler.addEventHandler(
+                    'keyup',
+                    config.theme.hotkeys.style.guides,
+                    _ => Fn_guides(),
+                );
             }
             if (config.theme.style.mark.enable) {
                 const Fn_mark = toolbarItemInit(
@@ -143,12 +142,11 @@ setTimeout(() => {
                     () => changeStyleState(config.theme.style.mark),
                 );
                 // 使用快捷键启用/禁用辅助线样式
-                window.addEventListener('keyup', (e) => {
-                    // console.log(e);
-                    if (isKey(e, config.theme.hotkeys.style.mark)) {
-                        Fn_mark();
-                    }
-                }, true);
+                globalEventHandler.addEventHandler(
+                    'keyup',
+                    config.theme.hotkeys.style.mark,
+                    _ => Fn_mark(),
+                );
             }
         }
     } catch (err) {

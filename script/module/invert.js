@@ -3,6 +3,7 @@
 import { config } from './config.js';
 import { isKey } from './../utils/hotkey.js';
 import { styleHandle } from './../utils/misc.js';
+import { globalEventHandler } from './../utils/listener.js';
 import {
     toolbarItemInit,
     toolbarItemChangeStatu,
@@ -35,12 +36,11 @@ setTimeout(() => {
                 invertEnable,
             );
             // 使用快捷键启用反色模式
-            window.addEventListener('keyup', (e) => {
-                // console.log(e);
-                if (isKey(e, config.theme.hotkeys.invert)) {
-                    Fn_invertEnable();
-                }
-            }, true);
+            globalEventHandler.addEventHandler(
+                'keyup',
+                config.theme.hotkeys.invert,
+                _ => Fn_invertEnable(),
+            );
         }
     } catch (err) {
         console.error(err);

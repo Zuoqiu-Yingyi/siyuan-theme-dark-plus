@@ -7,6 +7,7 @@ import {
 } from './../utils/hotkey.js';
 import { getBlockAttrs } from './../utils/api.js';
 import { getTargetBlock } from './../utils/dom.js';
+import { globalEventHandler } from './../utils/listener.js';
 import {
     timestampParse,
     timestampFormat,
@@ -77,26 +78,20 @@ setTimeout(() => {
         if (config.theme.timestamp.enable) {
             if (config.theme.timestamp.jump.enable) {
                 // 跳转到所单击块的时间戳
-                window.addEventListener('click', (e) => {
-                    // console.log(e);
-                    if (isEvent(e, config.theme.hotkeys.timestamp.jump)) {
-                        setTimeout(async () => {
-                            await jump(e.target);
-                        }, 0);
-                    }
-                }, true);
+                globalEventHandler.addEventHandler(
+                    config.theme.hotkeys.timestamp.jump.type,
+                    config.theme.hotkeys.timestamp.jump,
+                    e => setTimeout(() => jump(e.target), 0),
+                );
             }
 
             if (config.theme.timestamp.create.enable) {
                 // 生成时间戳并写入剪贴板
-                window.addEventListener('mouseup', (e) => {
-                    // console.log(e);
-                    if (isButton(e, config.theme.hotkeys.timestamp.create)) {
-                        setTimeout(async () => {
-                            await create(e.target);
-                        }, 0);
-                    }
-                }, true);
+                globalEventHandler.addEventHandler(
+                    'mouseup',
+                    config.theme.hotkeys.timestamp.create,
+                    e => setTimeout(() => create(e.target), 0),
+                );
             }
         }
     } catch (err) {

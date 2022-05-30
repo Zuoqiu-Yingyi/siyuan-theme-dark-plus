@@ -2,7 +2,8 @@
 
 import { config } from './config.js';
 import { setBlockAttrs } from './../utils/api.js';
-import { isButton } from './../utils/hotkey.js';
+import { setBlockDOMAttrs } from './../utils/dom.js';
+import { globalEventHandler } from './../utils/listener.js';
 import {
     url2id,
 } from './../utils/misc.js';
@@ -19,10 +20,8 @@ async function setter(target) {
         let id = url2id(target.dataset.href);
         let attrs = eval(`(${HTMLDecode(target.dataset.title)})`);
         // console.log(attrs);
-        await setBlockAttrs(
-            id,
-            attrs,
-        );
+        setBlockDOMAttrs(id, attrs);
+        setBlockAttrs(id, attrs);
     }
 }
 
@@ -31,15 +30,11 @@ setTimeout(() => {
         if (config.theme.blockattrs.enable) {
             if (config.theme.blockattrs.set.enable) {
                 // 设置块属性
-                window.addEventListener('mousedown', (e) => {
-                    // console.log(e);
-                    if (isButton(e, config.theme.hotkeys.blockattrs.set)) {
-                        // console.log(e);
-                        setTimeout(() => {
-                            setter(e.target);
-                        }, 0);
-                    }
-                }, true);
+                globalEventHandler.addEventHandler(
+                    'mousedown',
+                    config.theme.hotkeys.blockattrs.set,
+                    e => setTimeout(() => setter(e.target), 0),
+                );
             }
         }
     } catch (err) {
