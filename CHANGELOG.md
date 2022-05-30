@@ -1,5 +1,9 @@
 # 更改日志 | CHANGE LOG
 
+## v1.0.5/2022-05-31
+
+- [v1.0.4 <=> v1.0.5](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.4...v1.0.5)
+- 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 添加块自定义属性 `custom-position: top` 与 `custom-position: bottom` | Added `custom-position: top` and `custom-position: bottom` custom attributes to block.
   - `custom-position: top`: 将块固定到父容器顶部 | Pin the block to the top of the parent container
   - `custom-position: bottom`: 将块固定到父容器底部 | Pin the block to the bottom of the parent container
