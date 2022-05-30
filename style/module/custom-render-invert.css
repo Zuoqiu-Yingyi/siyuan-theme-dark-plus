@@ -4,9 +4,7 @@
 @import url(/widgets/custom.css);
 
 /* 图片反色 */
-.protyle-wysiwyg[custom-render~=invert] img:not(.emoji),
-.protyle-wysiwyg[custom-render~=反色] img:not(.emoji),
-.protyle-wysiwyg [data-node-id][custom-render~=invert] img:not(.emoji),
-.protyle-wysiwyg [data-node-id][custom-render~=反色] img:not(.emoji) {
+.protyle-content [data-node-id][custom-render~=invert] img:not(.emoji),
+.protyle-content [data-node-id][custom-render~=反色] img:not(.emoji) {
     filter: var(--custom-image-filter-invert);
 }

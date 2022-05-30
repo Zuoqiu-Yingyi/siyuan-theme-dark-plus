@@ -271,6 +271,9 @@
     /* 编辑区导航栏(面包屑)背景颜色 | The background color of the edit area navigation bar (breadcrumbs) */
     --custom-editor-breadcrumb-bar-background-color: var(--custom-components);
 
+    /* 面包屑高度 | breadcrumb height */
+    --custom-breadcrumb-height: 2rem;
+
     /* 编辑区内边距 | Padding of editor pannel */
     --custom-editor-padding-left: 24px;
     --custom-editor-padding-right: 24px;
@@ -501,6 +504,10 @@
 
     /* 弹幕块移动周期 | Danmaku block movement cycle */
     --custom-render-danmaku-time: 16s;
+
+    /* 浮动块 | Floating blocks */
+    --custom-position-top: 0;
+    --custom-position-bottom: 0;
 
     /* 滚动条轨道背景颜色 | The background color of scroll track */
     --custom-scroll-track-background-color: var(--b3-border-color);

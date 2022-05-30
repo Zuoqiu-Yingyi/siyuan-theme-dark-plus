@@ -9,7 +9,7 @@
     font-size: 0.75em;
     border: 1px solid var(--b3-theme-primary);
     position: absolute;
-    top: 2.5rem;
+    top: var(--custom-breadcrumb-height);
     right: 2rem;
     z-index: 1;
 }

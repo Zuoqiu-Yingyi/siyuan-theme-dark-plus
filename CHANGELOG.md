@@ -1,5 +1,9 @@
 # 更改日志 | CHANGE LOG
 
+- 添加块自定义属性 `custom-position: top` 与 `custom-position: bottom` | Added `custom-position: top` and `custom-position: bottom` custom attributes to block.
+  - `custom-position: top`: 将块固定到父容器顶部 | Pin the block to the top of the parent container
+  - `custom-position: bottom`: 将块固定到父容器底部 | Pin the block to the bottom of the parent container
+
 ## v1.0.4/2022-05-29
 
 - [v1.0.3 <=> v1.0.4](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.3...v1.0.4)
