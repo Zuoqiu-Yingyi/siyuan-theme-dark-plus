@@ -3,6 +3,7 @@
 import { config } from './config.js';
 import { isKey } from './../utils/hotkey.js';
 import { getFocusedBlock } from './../utils/dom.js';
+import { globalEventHandler } from './../utils/listener.js';
 import {
     toolbarItemInit,
     toolbarItemChangeStatu,
@@ -113,12 +114,11 @@ setTimeout(() => {
                 );
 
                 // 使用快捷键开/关打字机模式
-                window.addEventListener('keyup', (e) => {
-                    // console.log(e);
-                    if (isKey(e, config.theme.hotkeys.typewriter.switch)) {
-                        Fn_typewriterEnable();
-                    }
-                }, true);
+                globalEventHandler.addEventHandler(
+                    'keyup',
+                    config.theme.hotkeys.typewriter.switch,
+                    _ => Fn_typewriterEnable(),
+                );
             }
         }
     } catch (err) {

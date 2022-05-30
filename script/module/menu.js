@@ -3,6 +3,7 @@
 import { config } from './config.js';
 import { isKey } from './../utils/hotkey.js';
 import { getSysFonts } from './../utils/api.js';
+import { globalEventHandler } from './../utils/listener.js';
 import {
     getBlockMark, // 获得块标记 ID
     getBlockSelected, // 获得块选中 ID
@@ -193,12 +194,11 @@ setTimeout(() => {
                     blockMenuEnable,
                 );
                 // 使用快捷键开启/关闭块菜单
-                window.addEventListener('keyup', (e) => {
-                    // console.log(e);
-                    if (isKey(e, config.theme.hotkeys.menu.block)) {
-                        Fn_blockMenuEnable();
-                    }
-                }, true);
+                globalEventHandler.addEventHandler(
+                    'keyup',
+                    config.theme.hotkeys.menu.block,
+                    _ => Fn_blockMenuEnable(),
+                );
 
                 // 获取块标记 ID
                 window.addEventListener('mouseup', (e) => {

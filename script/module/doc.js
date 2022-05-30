@@ -12,6 +12,7 @@ import {
     HTMLDecode,
 } from './../utils/string.js';
 import { getObjectLength } from './../utils/misc.js';
+import { globalEventHandler } from './../utils/listener.js';
 import {
     exportMdContent,
     updateBlock,
@@ -206,24 +207,21 @@ setTimeout(() => {
                     () => outlineCopy('t'),
                 );
 
-                window.addEventListener('keyup', (e) => {
-                    if (isKey(e, config.theme.hotkeys.doc.outline.u)) {
-                        // console.log(e);
-                        Fn_outlineCopy_u();
-                    }
-                }, true);
-                window.addEventListener('keyup', (e) => {
-                    if (isKey(e, config.theme.hotkeys.doc.outline.o)) {
-                        // console.log(e);
-                        Fn_outlineCopy_o();
-                    }
-                }, true);
-                window.addEventListener('keyup', (e) => {
-                    if (isKey(e, config.theme.hotkeys.doc.outline.t)) {
-                        // console.log(e);
-                        Fn_outlineCopy_t();
-                    }
-                }, true);
+                globalEventHandler.addEventHandler(
+                    'keyup',
+                    config.theme.hotkeys.doc.outline.u,
+                    _ => Fn_outlineCopy_u(),
+                );
+                globalEventHandler.addEventHandler(
+                    'keyup',
+                    config.theme.hotkeys.doc.outline.o,
+                    _ => Fn_outlineCopy_o(),
+                );
+                globalEventHandler.addEventHandler(
+                    'keyup',
+                    config.theme.hotkeys.doc.outline.t,
+                    _ => Fn_outlineCopy_t(),
+                );
             }
 
             if (config.theme.doc.copy.enable) {
@@ -232,13 +230,11 @@ setTimeout(() => {
                     config.theme.doc.copy.toolbar,
                     docCopy,
                 );
-
-                window.addEventListener('keyup', (e) => {
-                    // console.log(e);
-                    if (isKey(e, config.theme.hotkeys.doc.copy)) {
-                        Fn_docCopy();
-                    }
-                }, true);
+                globalEventHandler.addEventHandler(
+                    'keyup',
+                    config.theme.hotkeys.doc.copy,
+                    _ => Fn_docCopy(),
+                );
             }
 
             if (config.theme.doc.delete.enable) {
@@ -247,13 +243,11 @@ setTimeout(() => {
                     config.theme.doc.delete.toolbar,
                     docDelete,
                 );
-
-                window.addEventListener('keyup', (e) => {
-                    if (isKey(e, config.theme.hotkeys.doc.delete)) {
-                        // console.log(e);
-                        Fn_docDelete();
-                    }
-                }, true);
+                globalEventHandler.addEventHandler(
+                    'keyup',
+                    config.theme.hotkeys.doc.delete,
+                    _ => Fn_docDelete(),
+                );
             }
 
             if (config.theme.doc.cut.enable) {
@@ -262,13 +256,11 @@ setTimeout(() => {
                     config.theme.doc.cut.toolbar,
                     docCut,
                 );
-
-                window.addEventListener('keyup', (e) => {
-                    if (isKey(e, config.theme.hotkeys.doc.cut)) {
-                        // console.log(e);
-                        Fn_docCut();
-                    }
-                }, true);
+                globalEventHandler.addEventHandler(
+                    'keyup',
+                    config.theme.hotkeys.doc.cut,
+                    _ => Fn_docCut(),
+                );
             }
         }
     } catch (err) {

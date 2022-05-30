@@ -6,6 +6,7 @@ import {
     saveCustomFile,
 } from './config.js';
 import { jump } from './../utils/misc.js';
+import { globalEventHandler } from './../utils/listener.js';
 import {
     isKey,
     isButton,
@@ -233,12 +234,11 @@ setTimeout(() => {
                     config.theme.location.record.toolbar,
                     recordEnable,
                 );
-                window.addEventListener('keyup', (e) => {
-                    // console.log(e);
-                    if (isKey(e, config.theme.hotkeys.location.record)) {
-                        Fn_recordEnable();
-                    }
-                }, true);
+                globalEventHandler.addEventHandler(
+                    'keyup',
+                    config.theme.hotkeys.location.record,
+                    _ => Fn_recordEnable(),
+                );
             }
             if (config.theme.location.clear.enable) {
                 // 清除当前文档浏览位置
@@ -246,12 +246,11 @@ setTimeout(() => {
                     config.theme.location.clear.toolbar,
                     clear,
                 );
-                window.addEventListener('keyup', (e) => {
-                    // console.log(e);
-                    if (isKey(e, config.theme.hotkeys.location.clear)) {
-                        Fn_clear();
-                    }
-                }, true);
+                globalEventHandler.addEventHandler(
+                    'keyup',
+                    config.theme.hotkeys.location.clear,
+                    _ => Fn_clear(),
+                );
             }
         }
     } catch (err) {

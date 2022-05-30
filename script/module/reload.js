@@ -13,6 +13,7 @@ import { getBlockAttrs } from './../utils/api.js';
 import { timestampParse } from './../utils/misc.js';
 import { toolbarItemInit } from './../utils/ui.js';
 import { getTargetBlock } from './../utils/dom.js';
+import { globalEventHandler } from './../utils/listener.js';
 
 function bilibiliTimestamp(url, seconds = null) {
     // BiliBili 视频时间戳
@@ -123,6 +124,11 @@ setTimeout(() => {
                 );
 
                 // 使用快捷键重新加载整个窗口
+                globalEventHandler.addEventHandler(
+                    'keyup',
+                    config.theme.hotkeys.reload.window,
+                    _ => Fn_reload(),
+                );
                 window.addEventListener('keyup', (e) => {
                     // console.log(e);
                     if (isKey(e, config.theme.hotkeys.reload.window)) {
@@ -133,14 +139,11 @@ setTimeout(() => {
 
             if (config.theme.reload.iframe.enable) {
                 // 重新加载 iframe
-                window.addEventListener('click', (e) => {
-                    // console.log(e);
-                    if (isEvent(e, config.theme.hotkeys.reload.iframe)) {
-                        setTimeout(async () => {
-                            await reloadIframe(e.target);
-                        }, 0);
-                    }
-                }, true);
+                globalEventHandler.addEventHandler(
+                    config.theme.hotkeys.reload.iframe.type,
+                    config.theme.hotkeys.reload.iframe,
+                    e => setTimeout(async () => reloadIframe(e.target), 0),
+                );
             }
         }
     } catch (err) {
