@@ -105,6 +105,13 @@ body>div[data-key]>.b3-dialog>.b3-dialog__container>svg.b3-dialog__close {
     body>div[data-key]>.b3-dialog>.b3-dialog__container>div>.fn__flex>.fn__flex-column *:is(#searchList, #searchPreview) {
         float: left;
         width: 50% !important;
-        height: calc(100% - 84px) !important;
+    }
+
+    body>div[data-key]>.b3-dialog>.b3-dialog__container>div>.fn__flex>.fn__flex-column>.search__header:first-child+.search__header.fn__none~*:is(#searchList, #searchPreview) {
+        height: calc(100% - 92px) !important;
+    }
+
+    body>div[data-key]>.b3-dialog>.b3-dialog__container>div>.fn__flex>.fn__flex-column>.search__header:first-child+.search__header:not(.fn__none)~*:is(#searchList, #searchPreview) {
+        height: calc(100% - 142px) !important;
     }
 }
