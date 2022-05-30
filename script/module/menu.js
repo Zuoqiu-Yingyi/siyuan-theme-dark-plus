@@ -201,10 +201,13 @@ setTimeout(() => {
                 );
 
                 // 获取块标记 ID
-                window.addEventListener('mouseup', (e) => {
-                    // console.log(e);
-                    block_mark = getBlockMark(e.target);
-                }, true);
+                globalEventHandler.addEventHandler(
+                    'mouseup',
+                    null,
+                    e => {
+                        block_mark = getBlockMark(e.target);
+                    },
+                );
             }
         }
     } catch (err) {

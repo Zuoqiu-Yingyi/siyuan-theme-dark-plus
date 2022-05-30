@@ -10,6 +10,7 @@
 - [#63](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/63) 修复搜索与替换对话框输入框样式问题 | Fix the style of the search and replace dialog input box.
 - 重构全局监听器事件处理方案 | Refactored global event listener handling scheme.
 - 修复取消聚焦功能 | Fix the feature of canceling focus.
+- 优化全局监听器事件处理方案 | Optimized global event listener handling scheme.
 
 ## v1.0.4/2022-05-29
 
