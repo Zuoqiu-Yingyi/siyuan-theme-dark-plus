@@ -129,12 +129,6 @@ setTimeout(() => {
                     config.theme.hotkeys.reload.window,
                     _ => Fn_reload(),
                 );
-                window.addEventListener('keyup', (e) => {
-                    // console.log(e);
-                    if (isKey(e, config.theme.hotkeys.reload.window)) {
-                        Fn_reload();
-                    }
-                }, true);
             }
 
             if (config.theme.reload.iframe.enable) {

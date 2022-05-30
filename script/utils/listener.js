@@ -66,7 +66,7 @@ class EventHandler {
                 for (const handler of this.listeners[listener].handlers) {
                     // 如果事件符合监听器的条件，则执行回调函数
                     // console.log(listener, e);
-                    if (this.listeners[listener].is(e, handler.e)) {
+                    if (handler.e === null || this.listeners[listener].is(e, handler.e)) {
                         if (!this.propagate) e.stopPropagation();
                         handler.callback(e);
                         if (!this.multiple) break;
