@@ -754,7 +754,17 @@ export var config = {
                         enable: true, // 是否启用菜单项
                         prefixSeparator: true, // 是否添加前缀分隔线
                         suffixSeparator: false, // 是否添加后缀分隔线
-                        type: null, // 哪些类型的块启用, 值 null 则全部启用
+                        type: { // 哪些类型的块启用, 值 null 则全部启用
+                            NodeBlockQueryEmbed: { enable: true },
+                            NodeBlockquote: { enable: true },
+                            NodeDocument: { enable: true },
+                            NodeHeading: { enable: true },
+                            NodeList: { enable: true },
+                            NodeListItem: { enable: true },
+                            NodeParagraph: { enable: true },
+                            NodeSuperBlock: { enable: true },
+                            NodeTable: { enable: true },
+                        },
                         id: 'theme-menu-block-common-font', // 菜单项 ID
                         mode: "button",  // 菜单项类型
                         icon: "#iconFont",  // 菜单项图标
@@ -808,7 +818,17 @@ export var config = {
                         enable: true,
                         prefixSeparator: false,
                         suffixSeparator: false,
-                        type: null,
+                        type: {
+                            NodeBlockQueryEmbed: { enable: true },
+                            NodeBlockquote: { enable: true },
+                            NodeDocument: { enable: true },
+                            NodeHeading: { enable: true },
+                            NodeList: { enable: true },
+                            NodeListItem: { enable: true },
+                            NodeParagraph: { enable: true },
+                            NodeSuperBlock: { enable: true },
+                            NodeTable: { enable: true },
+                        },
                         id: 'theme-menu-block-other-font',
                         mode: "button",
                         icon: "#iconFont",
