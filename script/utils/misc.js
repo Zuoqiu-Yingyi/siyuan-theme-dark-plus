@@ -102,7 +102,7 @@ function focalize(id, callback = null) {
         crumb.click();
         // crumb.dispatchEvent(CTRL_CLICK_EVENT);
         crumb.remove();
-        if (typeof callback === 'function') setTimeout(callback, 0);
+        if (typeof callback === 'function') setTimeout(callback, config.theme.goto.delay);
     }
     else setTimeout(() => focalize(id, callback), config.theme.goto.delay);
 }
@@ -119,7 +119,7 @@ function cancelFocalize(callback = null) {
         // console.log(breadcrumbs);
         if (breadcrumbs.firstElementChild.classList.contains('protyle-breadcrumb__item--active')) {
             // 已取消聚焦
-            if (typeof callback === 'function') setTimeout(callback, 0);
+            if (typeof callback === 'function') setTimeout(callback, config.theme.goto.delay);
             return;
         }
         else {
@@ -144,7 +144,7 @@ function jump(id, callback = null) {
         editor.appendChild(ref);
         ref.click();
         ref.remove();
-        if (typeof callback === 'function') setTimeout(callback, 0);
+        if (typeof callback === 'function') setTimeout(callback, config.theme.goto.delay);
     }
     else setTimeout(() => jump(id, callback), config.theme.goto.delay);
 }
@@ -177,13 +177,16 @@ async function goto(id, focus = 0, editable = 0) {
     if (parseInt(focus) === 1 || focus === 'true') jump(id, () => focalize(id));
     else {
         // 不聚焦, 需要先切换到文档块以退出聚焦, 之后再进行文档内跳转
-        cancelFocalize(() => jump(id));
-        // const block = await getBlockByID(id);
-        // if (block) {
-        //     if (block.root_id === block.id) jump(id); // 文档块直接跳转
-        //     else focalize(block.root_id, () => jump(id)); // 非文档块, 退出聚焦并跳转
-        // }
-        // else throw new Error(id);
+        // jump(id);
+        // cancelFocalize(() => jump(id)); // 退出聚焦并跳转
+        // jump(id, () => cancelFocalize(() => jump(id))); // 跳转后退出聚焦并页内跳转
+
+        const block = await getBlockByID(id);
+        if (block) {
+            if (block.root_id === block.id) jump(id); // 文档块直接跳转
+            else jump(block.root_id, () => jump(id)); // 非文档块, 先跳转文档再跳转块
+        }
+        else throw new Error(id);
     }
 
     // 是否可编辑
