@@ -166,7 +166,7 @@
     border: 0.05em solid #ffffff4d;
 } */
 
-.layout-tab-container>.b3-menu.b3-list.b3-list--background.hint--menu {
+.layout-tab-container .b3-menu.b3-list.b3-list--background.hint--menu {
     column-count: 4;
     column-gap: 1em;
     column-rule: var(--custom-list-guides-line-width) solid var(--b3-border-color);
