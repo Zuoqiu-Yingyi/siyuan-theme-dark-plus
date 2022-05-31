@@ -13,12 +13,12 @@ import {
 
 class EventHandler {
     /**
-     * @params {boolean} multiple: 是否允许多次触发
+     * @params {boolean} multiple: 是否允许一个事件由多个处理者处理
      * @params {boolean} propagate: 是否继续传播
      * @params {boolean} capture: 是否在捕获阶段触发
      * @params {HTMLNode} Node: 监听的节点
      */
-    constructor(multiple = false, propagate = true, capture = true, node = window) {
+    constructor(multiple = true, propagate = true, capture = true, node = window) {
         this.multiple = multiple;
         this.propagate = propagate;
         this.capture = capture;
