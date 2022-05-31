@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- [#65](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/65) 修复 `/` 菜单多栏样式失效问题 | Fixed the issue of the `/` menu multi-column style being invalid.
+
 ## v1.0.5/2022-05-31
 
 - [v1.0.4 <=> v1.0.5](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.4...v1.0.5)
