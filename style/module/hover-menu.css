@@ -53,6 +53,7 @@
 }
 
 /* 搜索结果 */
+div.protyle-util .b3-list.b3-list--background,
 #searchList.b3-list.b3-list--background,
 #globalSearchList.b3-list.b3-list--background {
     background-color: transparent;
