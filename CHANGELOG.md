@@ -2,6 +2,7 @@
 
 - [#65](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/65) 修复 `/` 菜单多栏样式失效问题 | Fixed the issue of the `/` menu multi-column style being invalid.
 - 调整代码块语言样式选择菜单颜色 | Adjusted the color of the code block language selection menu.
+- 移除部分不能使用自定义字体的块字体菜单 | Removed some block font menus that cannot be used with custom fonts.
 
 ## v1.0.5/2022-05-31
 
