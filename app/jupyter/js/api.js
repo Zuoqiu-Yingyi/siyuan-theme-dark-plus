@@ -1,6 +1,8 @@
 export {
     getFile,
     putFile,
+    getBlockAttrs,
+    setBlockAttrs,
     jupyter,
 }
 
@@ -10,6 +12,7 @@ import {
 } from './config.js';
 import { getCookie } from './utils.js';
 
+/* 读取文件 */
 async function getFile(path, token = config.token) {
     const response = await fetch(
         '/api/file/getFile', {
@@ -26,6 +29,7 @@ async function getFile(path, token = config.token) {
     else return null;
 }
 
+/* 写入文件 */
 async function putFile(path, filedata, isDir = false, modTime = Date.now(), token = config.token) {
     let blob = new Blob([filedata]);
     let file = new File([blob], path.split('/').pop());
@@ -48,13 +52,42 @@ async function putFile(path, filedata, isDir = false, modTime = Date.now(), toke
     else return null;
 }
 
+/* siyuan 请求 */
+async function siyuanRequest(url, data, token) {
+    let response = await fetch(
+        url,
+        {
+            method: "POST",
+            headers: {
+                Authorization: `Token ${token}`,
+            },
+            body: JSON.stringify(data),
+        },
+    );
+    if (response.status === 200) response = await response.json();
+    else return null;
+    if (response.code === 0) return response.data;
+    else return null;
+}
+
+/* 获取块属性 */
+async function getBlockAttrs(id, token = config.token) {
+    return siyuanRequest('/api/attr/getBlockAttrs', {id: id}, token);
+}
+
+/* 设置块属性 */
+async function setBlockAttrs(id, attrs, token = config.token) {
+    return siyuanRequest('/api/attr/setBlockAttrs', {id: id, attrs: attrs}, token);
+}
+
 const URLs = {
     kernels: `/api/kernels`,
     sessions: `/api/sessions`,
     kernelspecs: `/api/kernelspecs`,
 };
 
-async function request(
+/* jupyter 请求 */
+async function jupyterRequest(
     url,
     method = 'GET',
     isParser = true,
@@ -92,19 +125,19 @@ const jupyter = {
     kernels: {
         /* 获得当前活动内核列表 */
         get: (url = `${custom.jupyter.server}${URLs.kernels}`) => {
-            return request(url);
+            return jupyterRequest(url);
         },
         interrupt: (kernel_id, url = `${custom.jupyter.server}${URLs.kernels}`) => {
-            return request(`${url}/${kernel_id}/interrupt`, 'POST', false);
+            return jupyterRequest(`${url}/${kernel_id}/interrupt`, 'POST', false);
         },
         restart: (kernel_id, url = `${custom.jupyter.server}${URLs.kernels}`) => {
-            return request(`${url}/${kernel_id}/restart`, 'POST');
+            return jupyterRequest(`${url}/${kernel_id}/restart`, 'POST');
         },
     },
     sessions: {
         /* 获得当前活动会话列表 */
         get: (url = `${custom.jupyter.server}${URLs.sessions}`) => {
-            return request(url);
+            return jupyterRequest(url);
         },
         /* 新建会话 */
         post: (
@@ -123,7 +156,7 @@ const jupyter = {
             },
             url = `${custom.jupyter.server}${URLs.sessions}`,
         ) => {
-            return request(url, 'POST', true, data);
+            return jupyterRequest(url, 'POST', true, data);
         },
         /* 更新会话信息 */
         patch: (
@@ -143,17 +176,17 @@ const jupyter = {
             },
             url = `${custom.jupyter.server}${URLs.sessions}`,
         ) => {
-            return request(`${url}/${session_id}`, 'PATCH', true, data);
+            return jupyterRequest(`${url}/${session_id}`, 'PATCH', true, data);
         },
         /* 删除会话 */
         delete: (session_id, url = `${custom.jupyter.server}${URLs.sessions}`) => {
-            return request(`${url}/${session_id}`, 'DELETE', false);
+            return jupyterRequest(`${url}/${session_id}`, 'DELETE', false);
         },
     },
     kernelspecs: {
         /* 获得当前活动内核列表 */
         get: (url = `${custom.jupyter.server}${URLs.kernelspecs}`) => {
-            return request(url);
+            return jupyterRequest(url);
         },
     },
 }

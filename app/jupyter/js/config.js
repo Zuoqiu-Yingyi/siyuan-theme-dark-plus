@@ -19,6 +19,17 @@ var config = {
         path: {
             customJson: '/conf/appearance/themes/Dark+/app/jupyter/custom.json',
         },
+        attrs: {
+            kernel: {
+                id: 'custom-jupyter-kernel-id', // 内核 ID
+                name: 'custom-jupyter-kernel-name', // 内核名称
+                language: 'custom-jupyter-kernel-language', // 内核语言
+            },
+            session: {
+                name: 'custom-jupyter-session-name', // 会话名称
+                path: 'custom-jupyter-session-path', // 会话路径
+            }
+        },
         id: {
             server: {
                 input: 'jupyterServerInput',
@@ -35,6 +46,9 @@ var config = {
                     select: 'jupyterSessionsCreateKernelSelect',
                     refresh: 'jupyterSessionsCreateRefreshButton',
 
+                    image: 'jupyterSessionsCreateImage',
+                    language: 'jupyterSessionsCreateLanguage',
+
                     name: 'jupyterSessionsCreateNameInput',
                     path: 'jupyterSessionsCreatePathInput',
                     create: 'jupyterSessionsCreateButton',
@@ -48,6 +62,8 @@ var config = {
                     update: 'jupyterSessionsManageUpdateButton',
 
                     state: 'jupyterSessionsManageState',
+                    image: 'jupyterSessionsManageImage',
+                    kernel: 'jupyterSessionsManageKernel',
                     start: 'jupyterSessionsManageStartButton',
                     interrupt: 'jupyterSessionsManageInterruptButton',
                     restart: 'jupyterSessionsManageRestartButton',
