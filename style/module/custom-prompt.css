@@ -1,0 +1,15 @@
+/* 文档提示 */
+
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+/* 显示当前文档阅读进度 */
+.protyle-wysiwyg[custom-prompt]::after {
+    content: attr(custom-prompt);
+    font-size: 0.75em;
+    border: 1px solid var(--b3-theme-secondary);
+    position: absolute;
+    top: calc(var(--custom-breadcrumb-height) + 2em);
+    right: 2rem;
+    z-index: 1;
+}

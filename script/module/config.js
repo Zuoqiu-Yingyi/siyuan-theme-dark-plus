@@ -808,7 +808,7 @@ export var config = {
                                             type: 'window-open',
                                             params: {
                                                 href: '/appearance/themes/Dark+/app/jupyter/settings-global.html',
-                                                // urlParams: { lang: window.theme.languageMode },
+                                                urlParams: { lang: window.theme.languageMode },
                                             },
                                         },
                                     ],
@@ -831,7 +831,7 @@ export var config = {
                                             type: 'window-open',
                                             params: {
                                                 href: '/appearance/themes/Dark+/app/jupyter/settings-document.html',
-                                                // urlParams: { lang: window.theme.languageMode },
+                                                urlParams: { lang: window.theme.languageMode },
                                             },
                                         },
                                     ],

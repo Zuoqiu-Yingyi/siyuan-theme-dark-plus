@@ -569,7 +569,7 @@ const TASK_HANDLER = {
             window.theme.openNewWindow(
                 'browser',
                 params.href,
-                undefined,
+                Object.assign({ id: id }, params.urlParams),
                 config.theme.window.windowParams,
                 config.theme.window.menu.template,
             );
@@ -579,7 +579,7 @@ const TASK_HANDLER = {
             window.theme.openNewWindow(
                 undefined,
                 undefined,
-                Object.assign(params, { id: id }),
+                Object.assign({ id: id }, params),
                 config.theme.window.windowParams,
                 config.theme.window.menu.template,
             );
@@ -590,7 +590,7 @@ const TASK_HANDLER = {
         window.theme.openNewWindow(
             'editor',
             undefined,
-            Object.assign(params.urlParams, { id: id }),
+            Object.assign({ id: id }, params),
             config.theme.window.windowParams,
             config.theme.window.menu.template,
             config.theme.window.open.editor.path.index,
