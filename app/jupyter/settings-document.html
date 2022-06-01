@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+</head>
+
+<style>
+</style>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th id="setting-item-name">设置项名称</th>
+                <th id="setting-item-content">设置项内容</th>
+                <th id="setting-item-memo">设置项备注</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span id="session-create">新建会话</span></td>
+                <td>
+                    <select id="jupyterSessionsCreateKernelSelect"></select>
+                    <button id="jupyterSessionsCreateRefreshButton">刷新</button>
+                    <br />
+                    <input id="jupyterSessionsCreateNameInput" type="text" placeholder="会话名称">
+                    <input id="jupyterSessionsCreatePathInput" type="text" placeholder="会话目录">
+                    <button id="jupyterSessionsCreateButton">新建</button>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><span id="session-manage">管理会话</span></td>
+                <td>
+                    <select id="jupyterSessionsManageSessionSelect"></select>
+                    <button id="jupyterSessionsManageRefreshButton">刷新</button>
+                    <br />
+                    <input id="jupyterSessionsManageNameInput" type="text" placeholder="会话名称">
+                    <input id="jupyterSessionsManagePathInput" type="text" placeholder="会话目录">
+                    <button id="jupyterSessionsManageUpdateButton">更新</button>
+                    <br />
+                    <span id="jupyterSessionsManageState"></span>
+                    <button id="jupyterSessionsManageStartButton">连接</button>
+                    <button id="jupyterSessionsManageInterruptButton">中断</button>
+                    <button id="jupyterSessionsManageRestartButton">重启</button>
+                    <button id="jupyterSessionsManageDeleteButton">删除</button>
+                </td>
+                <td></td>
+            </tr>
+    </table>
+</body>
+<script type="module">
+    import { config, url } from './js/config.js';
+    const lang = url.searchParams.get('lang');
+    const i18n = config.jupyter.i18n;
+
+    document.getElementById('setting-item-name').innerText = i18n['setting-item-name'][lang] || i18n['setting-item-name'].default;
+    document.getElementById('setting-item-content').innerText = i18n['setting-item-content'][lang] || i18n['setting-item-content'].default;
+    document.getElementById('setting-item-memo').innerText = i18n['setting-item-memo'][lang] || i18n['setting-item-memo'].default;
+
+    document.getElementById('session-create').innerText = i18n['session-create'][lang] || i18n['session-create'].default;
+    document.getElementById('session-manage').innerText = i18n['session-manage'][lang] || i18n['session-manage'].default;
+    
+    document.getElementById('jupyterSessionsCreateNameInput').placeholder = i18n['session-name'][lang] || i18n['session-name'].default;
+    document.getElementById('jupyterSessionsManageNameInput').placeholder = i18n['session-name'][lang] || i18n['session-name'].default;
+    document.getElementById('jupyterSessionsCreatePathInput').placeholder = i18n['session-path'][lang] || i18n['session-path'].default;
+    document.getElementById('jupyterSessionsManagePathInput').placeholder = i18n['session-path'][lang] || i18n['session-path'].default;
+    
+    
+    document.getElementById('jupyterSessionsCreateRefreshButton').innerText = i18n.refresh[lang] || i18n.refresh.default;
+    document.getElementById('jupyterSessionsManageRefreshButton').innerText = i18n.refresh[lang] || i18n.refresh.default;
+
+    document.getElementById('jupyterSessionsCreateButton').innerText = i18n.create[lang] || i18n.create.default;
+
+    document.getElementById('jupyterSessionsManageUpdateButton').innerText = i18n.update[lang] || i18n.update.default;
+    document.getElementById('jupyterSessionsManageStartButton').innerText = i18n.connect[lang] || i18n.connect.default;
+    document.getElementById('jupyterSessionsManageInterruptButton').innerText = i18n.interrupt[lang] || i18n.interrupt.default;
+    document.getElementById('jupyterSessionsManageRestartButton').innerText = i18n.restart[lang] || i18n.restart.default;
+    document.getElementById('jupyterSessionsManageDeleteButton').innerText = i18n.delete[lang] || i18n.delete.default;
+
+</script>
+<script type="module" src="./js/document.js"></script>
+
+</html>

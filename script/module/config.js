@@ -750,6 +750,95 @@ export var config = {
                     index: -6,
                 },
                 items: [ // 块菜单项
+                    { // jupyter 设置
+                        enable: true,
+                        prefixSeparator: true,
+                        suffixSeparator: false,
+                        type: { NodeDocument: { enable: true } },
+                        id: 'theme-menu-jupyter-settings',
+                        mode: "button",
+                        icon: "#iconCode",
+                        label: {
+                            other: "Jupyter",
+                        },
+                        accelerator: "",
+                        click: { enable: false },
+                        itemsLoad: true, // 是否加载子菜单
+                        itemsIcon: "#iconRight",
+                        items: [
+                            // { // 菜单项中的输入框
+                            //     enable: true,
+                            //     type: null,
+                            //     mode: "input",
+                            //     icon: "#iconSelect",
+                            //     id: "theme-menu-jupyter-settings-server",
+                            //     value: 'custom.theme.jupyter.server',
+                            //     placeholder: { // 占位符
+                            //         zh_CN: "服务器 URL",
+                            //         other: "Server URL",
+                            //     },
+                            //     click: {
+                            //         enable: true,
+                            //         callback: null,
+                            //         tasks: [
+                            //             {
+                            //                 type: 'save-input-value',
+                            //                 params: {
+                            //                     id: "theme-menu-jupyter-settings-server",
+                            //                     key: "custom.theme.jupyter.server",
+                            //                 },
+                            //             },
+                            //         ],
+                            //     },
+                            // },
+                            {
+                                enable: true,
+                                type: null,
+                                mode: "button",
+                                icon: "#iconSettings",
+                                label: {
+                                    zh_CN: "全局设置",
+                                    other: "Global Settings",
+                                },
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'window-open',
+                                            params: {
+                                                href: '/appearance/themes/Dark+/app/jupyter/settings-global.html',
+                                                // urlParams: { lang: window.theme.languageMode },
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: null,
+                                mode: "button",
+                                icon: "#iconFile",
+                                label: {
+                                    zh_CN: "文档设置",
+                                    other: "Document Settings",
+                                },
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'window-open',
+                                            params: {
+                                                href: '/appearance/themes/Dark+/app/jupyter/settings-document.html',
+                                                // urlParams: { lang: window.theme.languageMode },
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                        ],
+                    },
                     { // 常用字体设置
                         enable: true, // 是否启用菜单项
                         prefixSeparator: true, // 是否添加前缀分隔线

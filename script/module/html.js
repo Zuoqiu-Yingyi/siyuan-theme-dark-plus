@@ -65,6 +65,8 @@ window.theme.urlFormat = function (url, ssl = true) {
  * @hash (string): URL hash
  * @consoleMessageCallback (function): 子窗口控制台输出回调
  * @closeCallback (function): 关闭窗口时的回调函数
+ * @windowEventHandlers (array): 一组窗口的事件处理器
+ * @contentsEventHandlers (array): 一组内容的事件处理器
  * @return (BrowserWindow): 窗口对象
  */
 window.theme.openNewWindow = function (
@@ -82,6 +84,8 @@ window.theme.openNewWindow = function (
     hash = null,
     consoleMessageCallback = null,
     closeCallback = null,
+    windowEventHandlers = [],
+    contentsEventHandlers = [],
 ) {
     try {
         // 优化思源内部 URL
@@ -150,6 +154,12 @@ window.theme.openNewWindow = function (
                     default:
                         break;
                 }
+            }
+            for (const handler of windowEventHandlers) {
+                newWin.on(handler.event, (...args) => handler.callback(newWin, ...args));
+            }
+            for (const handler of contentsEventHandlers) {
+                newWin.webContents.on(handler.event, (...args) => handler.callback(newWin, ...args));
             }
             newWin.on('closed', () => {
                 closeCallback && setTimeout(async () => closeCallback(newWin), 0);

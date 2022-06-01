@@ -278,11 +278,38 @@ function toolbarItemInit(toolbarConfig, handler, svgClassIndex = 0) {
 /**
  * 创建右键菜单项图标
  */
-function createMenuItemIconNode(href = '#', style = null, className = 'b3-menu__icon') {
+function createMenuItemIconNode(href = '#', style = '', className = 'b3-menu__icon') {
     let node = document.createElement('div');
     // 创建 svg 标签再添加 use 无法渲染
     node.innerHTML = `<svg class="${className}" style="${style}"><use xlink:href="${href}"></use></svg>`;
     return node.firstElementChild;
+}
+
+/**
+ * 创建右键菜单项输入框
+ */
+function createMenuItemInputNode(id = null, placeholder = '', value = '', style = '', className = 'b3-text-field fn__size200') {
+    let span = document.createElement('span');
+    span.className = 'b3-menu__label';
+
+    let hr_head = document.createElement('div');
+    hr_head.className = 'fn__hr--small';
+
+    let hr_tail = document.createElement('div');
+    hr_tail.className = 'fn__hr--small';
+
+    let input = document.createElement('input');
+    input.id = id;
+    input.placeholder = placeholder;
+    input.value = value;
+    input.style = style;
+    input.className = className;
+
+    span.addEventListener('click', e => e.stopPropagation(), false);
+    span.appendChild(hr_head);
+    span.appendChild(input);
+    span.appendChild(hr_tail);
+    return span;
 }
 
 /**
@@ -538,24 +565,42 @@ const TASK_HANDLER = {
             }
             return null;
         }
-        window.theme.openNewWindow(
-            undefined,
-            undefined,
-            Object.assign(params, { id: id }),
-            config.theme.window.windowParams,
-            config.theme.window.menu.template,
-        );
+        else if (params.href) { // 如果需要打开链接
+            window.theme.openNewWindow(
+                'browser',
+                params.href,
+                undefined,
+                config.theme.window.windowParams,
+                config.theme.window.menu.template,
+            );
+            return null;
+        }
+        else { // 默认打开 Web 端
+            window.theme.openNewWindow(
+                undefined,
+                undefined,
+                Object.assign(params, { id: id }),
+                config.theme.window.windowParams,
+                config.theme.window.menu.template,
+            );
+        }
     },
     /* 在新窗口打开编辑器 */
     'window-open-editor': async (e, id, params) => {
         window.theme.openNewWindow(
             'editor',
             undefined,
-            Object.assign(params, { id: id }),
+            Object.assign(params.urlParams, { id: id }),
             config.theme.window.windowParams,
             config.theme.window.menu.template,
             config.theme.window.open.editor.path.index,
         );
+    },
+    /* 新窗口打开超链接 */
+    'save-input-value': async (e, id, params) => {
+        const value = document.getElementById(params.id).value;
+        eval(`${params.key} = value`);
+        saveCustomFile(custom);
     },
 };
 
@@ -563,13 +608,38 @@ const TASK_HANDLER = {
  * 创建右键菜单项
  */
 function createMenuItemNode(language, config, id, type, subtype, className = 'b3-menu__item') {
+    let node;
     switch (config.mode.toLowerCase()) {
         case 'separator':
             if (!isBlockTypeEnabled(config, type, subtype)) return null;
-            return createMenuItemSeparatorNode();
+            node = createMenuItemSeparatorNode();
+            return node;
+        case 'input':
+            if (!isBlockTypeEnabled(config, type, subtype)) return null;
+            node = document.createElement('button');
+            node.className = className;
+            node.appendChild(createMenuItemIconNode(config.icon));
+            node.appendChild(createMenuItemInputNode(
+                config.id,
+                config.placeholder[language] || config.placeholder.other,
+                eval(config.value),
+            ));
+            if (config.click.enable) {
+                if (config.click.callback) node.addEventListener('click', async (e) => await config.click.callback(e, id));
+                else {
+                    let handlers = [];
+                    config.click.tasks.forEach((task) => {
+                        if (TASK_HANDLER[task.type]) handlers.push(async (e) => TASK_HANDLER[task.type](e, id, task.params));
+                    });
+                    node.addEventListener('click', (e) => {
+                        handlers.forEach((handler) => handler(e));
+                    });
+                }
+            };
+            return node;
         case 'button':
             if (!isBlockTypeEnabled(config, type, subtype)) return null;
-            let node = document.createElement('button');
+            node = document.createElement('button');
             node.className = className;
             if (config.id) node.id = config.id;
             node.appendChild(createMenuItemIconNode(config.icon));
