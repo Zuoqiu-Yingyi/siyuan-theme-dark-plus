@@ -5,6 +5,7 @@ export {
     HTMLDecode, // HTML 反转义
     ialParse, // 内联属性表解析
     ialCreate, // 内联属性表创建
+    getCookie, // 获取指定 cookie 值
 }
 
 /* HTML 转义 */
@@ -54,4 +55,19 @@ function ialCreate(obj) {
         IAL.push(`${key}="${HTMLEncode(obj[key]).replaceAll('\n', '_esc_newline_')}"`);
     }
     return `{: ${IAL.join(' ')}}`;
+}
+
+
+/**
+ * 获取指定 cookie 值
+ * @params {string} name: cookie 名称
+ * @return {string}: cookie 值
+ */
+function getCookie(name) {
+    const cookie_list = document.cookie.split('; ');
+    for (let i = 0; i < cookie_list.length; i++) {
+        let cookie_item = cookie_list[i].split('=');
+        if (cookie_item[0] == name) return cookie_item[1];
+    }
+    return null;
 }

@@ -174,19 +174,20 @@ function changeEditMode(mode = 0) { // 切换编辑模式
 
 async function goto(id, focus = 0, editable = 0) {
     // 是否聚焦
-    if (parseInt(focus) === 1 || focus === 'true') jump(id, () => focalize(id));
+    if (parseInt(focus) === 1 || focus === 'true') focalize(id);
     else {
+        jump(id); // v2.0.15+ 可直接跳转
+
         // 不聚焦, 需要先切换到文档块以退出聚焦, 之后再进行文档内跳转
-        // jump(id);
         // cancelFocalize(() => jump(id)); // 退出聚焦并跳转
         // jump(id, () => cancelFocalize(() => jump(id))); // 跳转后退出聚焦并页内跳转
 
-        const block = await getBlockByID(id);
-        if (block) {
-            if (block.root_id === block.id) jump(id); // 文档块直接跳转
-            else jump(block.root_id, () => jump(id)); // 非文档块, 先跳转文档再跳转块
-        }
-        else throw new Error(id);
+        // const block = await getBlockByID(id);
+        // if (block) {
+        //     if (block.root_id === block.id) jump(id); // 文档块直接跳转
+        //     else jump(block.root_id, () => jump(id)); // 非文档块, 先跳转文档再跳转块
+        // }
+        // else throw new Error(id);
     }
 
     // 是否可编辑
