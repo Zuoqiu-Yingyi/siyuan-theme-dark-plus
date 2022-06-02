@@ -754,8 +754,11 @@ export var config = {
                         enable: true,
                         prefixSeparator: true,
                         suffixSeparator: false,
-                        type: { NodeDocument: { enable: true } },
-                        id: 'theme-menu-jupyter-settings',
+                        type: {
+                            NodeDocument: { enable: true },
+                            NodeCodeBlock: { enable: true, subtype: { null: true } },
+                        },
+                        id: 'theme-menu-jupyter',
                         mode: "button",
                         icon: "#iconCode",
                         label: {
@@ -793,7 +796,7 @@ export var config = {
                             // },
                             {
                                 enable: true,
-                                type: null,
+                                type: { NodeDocument: { enable: true } },
                                 mode: "button",
                                 icon: "#iconSettings",
                                 label: {
@@ -816,7 +819,7 @@ export var config = {
                             },
                             {
                                 enable: true,
-                                type: null,
+                                type: { NodeDocument: { enable: true } },
                                 mode: "button",
                                 icon: "#iconFile",
                                 label: {
@@ -833,6 +836,66 @@ export var config = {
                                                 href: '/appearance/themes/Dark+/app/jupyter/settings-document.html',
                                                 urlParams: { lang: window.theme.languageMode },
                                             },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: { NodeDocument: { enable: true } },
+                                mode: "button",
+                                icon: "#iconClose",
+                                label: {
+                                    zh_CN: "关闭会话",
+                                    other: "Close Session",
+                                },
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'jupyter-close-session',
+                                            params: {},
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: { NodeCodeBlock: { enable: true, subtype: { null: true } } },
+                                mode: "button",
+                                icon: "#iconPlay",
+                                label: {
+                                    zh_CN: "运行代码",
+                                    other: "Run Code",
+                                },
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'jupyter-run-code',
+                                            params: { escaped: false },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: { NodeCodeBlock: { enable: true, subtype: { null: true } } },
+                                mode: "button",
+                                icon: "#iconPlay",
+                                label: {
+                                    zh_CN: "运行代码 (转义输出结果)",
+                                    other: "Run Code (Escape Output)",
+                                },
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'jupyter-run-code',
+                                            params: { escaped: true },
                                         },
                                     ],
                                 },

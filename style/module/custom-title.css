@@ -5,6 +5,9 @@
 
 div[data-node-id][custom-title]::before {
     content: attr(custom-title);
+    position: absolute;
+    top: -1.25em;
     text-align: center;
     font-weight: bolder;
+    width: 100%;
 }

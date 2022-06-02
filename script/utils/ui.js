@@ -21,6 +21,11 @@ import {
     setBlockAttrs,
 } from './api.js';
 
+import {
+    runCode,
+    closeSession,
+} from '/appearance/themes/Dark+/app/jupyter/js/run.js';
+
 var toolbarItemList = [];
 
 /**
@@ -602,6 +607,10 @@ const TASK_HANDLER = {
         eval(`${params.key} = value`);
         saveCustomFile(custom);
     },
+    /* 运行代码 */
+    'jupyter-run-code': runCode,
+    /* 关闭会话 */
+    'jupyter-close-session': closeSession,
 };
 
 /**

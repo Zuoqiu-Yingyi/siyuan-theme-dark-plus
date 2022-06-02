@@ -17,7 +17,21 @@ const url = new URL(window.location.href);
 var config = {
     jupyter: {
         path: {
-            customJson: '/conf/appearance/themes/Dark+/app/jupyter/custom.json',
+            customJson: '/temp/jupyter/custom.json',
+        },
+        regs: {
+            mark: /((?=[\x21-\x7e]+)[^A-Za-z0-9])/g, // 匹配英文符号
+        },
+        output: {
+            init: [ // 输出块初始化内容
+                '{{{row',
+                '---',
+                '',
+                '}}}',
+            ].join('\n'),
+        },
+        style: {
+            error: 'color: var(--b3-card-error-color); background-color: var(--b3-card-error-background);',
         },
         attrs: {
             kernel: {
@@ -26,14 +40,36 @@ var config = {
                 language: 'custom-jupyter-kernel-language', // 内核语言
             },
             session: {
+                id: 'custom-jupyter-session-id', // 会话 ID
                 name: 'custom-jupyter-session-name', // 会话名称
                 path: 'custom-jupyter-session-path', // 会话路径
+            },
+            other: {
+                prompt: `custom-prompt`, // 提示文本
+            },
+            code: {
+                type: {
+                    key: 'custom-jupyter-type',
+                    value: 'code',
+                },
+                time: 'custom-jupyter-time',
+                output: 'custom-jupyter-output',
+                index: 'custom-jupyter-index',
+            },
+            output: {
+                type: {
+                    key: 'custom-jupyter-type',
+                    value: 'output',
+                },
+                code: 'custom-jupyter-code',
+                index: 'custom-jupyter-index',
             }
         },
         id: {
             server: {
                 input: 'jupyterServerInput',
                 button: 'jupyterServerButton',
+                test: 'jupyterServerTest',
             },
             cookies: {
                 input: 'jupyterCookiesInput',
@@ -70,6 +106,12 @@ var config = {
                     delete: 'jupyterSessionsManageDeleteButton',
                 },
             },
+            siyuan: {
+                style: {
+                    id: 'app-jupyter-style',
+                    href: '/appearance/themes/Dark+/app/jupyter/css/siyuan.css',
+                },
+            }
         },
         i18n: {
             'setting-item-name': { zh_CN: '设置项名称', default: 'Setting Name' },
@@ -83,10 +125,11 @@ var config = {
             'memo-cookie': { zh_CN: 'jupyter 认证', default: 'Jupyter Auth' },
 
             ok: { zh_CN: '确认', default: 'OK' },
+            test: { zh_CN: '测试', default: 'Test' },
             refresh: { zh_CN: '刷新', default: 'Refresh' },
             create: { zh_CN: '新建', default: 'Create' },
             update: { zh_CN: '更新', default: 'Update' },
-            connect: { zh_CN: '链接', default: 'Connect' },
+            connect: { zh_CN: '连接', default: 'Connect' },
             interrupt: { zh_CN: '中断', default: 'Interrupt' },
             restart: { zh_CN: '重启', default: 'Restart' },
             delete: { zh_CN: '删除', default: 'Delete' },
@@ -94,6 +137,13 @@ var config = {
             incomplete: { zh_CN: '信息不完整！', default: 'Incomplete information!' },
             session: { zh_CN: '会话', default: 'Session' },
             sessions: { zh_CN: '会话组', default: 'Sessions' },
+
+            busy: { zh_CN: '忙碌', default: 'Busy' },
+            idle: { zh_CN: '空闲', default: 'Idle' },
+            starting: { zh_CN: '启动中', default: 'Starting' },
+
+            start: { zh_CN: '开始时间', default: 'Start Time' },
+            runtime: { zh_CN: '运行时间', default: 'Run Time' },
         }
     },
 };
@@ -115,7 +165,7 @@ async function saveCustomFile(data = custom, path = config.jupyter.path.customJs
 
 try {
     // 合并配置文件 custom.js
-    const customjs = import('/widgets/custom.js');
+    const customjs = await import('/widgets/custom.js');
     if (customjs.config) merge(config, customjs.config);
 
     // 合并配置文件 custom.json
