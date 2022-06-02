@@ -62,13 +62,20 @@ function init() {
     else setTimeout(init, 250);
 }
 
+/* 获得内核可读名字 */
+function getKernelDisplayName(kernelName) {
+    return kernelspecs
+        && kernelspecs.kernelspecs[kernelName]
+        && kernelspecs.kernelspecs[kernelName].spec.display_name
+}
+
 /* 更新内核下拉选择器 */
 function updateKernelspecsSelector(kernelspecs, selector, defaultKernel) {
     selector.innerHTML = '';
     for (const kernelspec in kernelspecs) {
         const defaultSelected = kernelspecs[kernelspec].name === defaultKernel ? true : false;
         selector.appendChild(new Option(
-            kernelspecs[kernelspec].spec.display_name,
+            getKernelDisplayName(kernelspec),
             kernelspecs[kernelspec].name),
             undefined,
             defaultSelected,
@@ -92,6 +99,39 @@ function updateSessionsSelector(sessions, selector, defaultSession) {
     selector.dispatchEvent(new Event('change'));
 }
 
+/* 更新思源文档块属性 */
+function updateDocAttrs() {
+    if (session) {
+        // 非删除会话
+        const kernel_id = session.kernel.id;
+        const kernel_name = session.kernel.name;
+        const kernel_state = session.kernel.execution_state;
+        const kernel_language = kernelspecs.kernelspecs[kernel_name].spec.language;
+        const session_id = session.id;
+        const session_name = sessions_manage_name_input.value;
+        const session_path = sessions_manage_path_input.value;
+        attrs = {
+            [config.jupyter.attrs.kernel.id]: kernel_id,
+            [config.jupyter.attrs.kernel.name]: kernel_name,
+            [config.jupyter.attrs.kernel.language]: kernel_language,
+            [config.jupyter.attrs.session.id]: session_id,
+            [config.jupyter.attrs.session.name]: session_name,
+            [config.jupyter.attrs.session.path]: session_path,
+            [config.jupyter.attrs.other.prompt]: `${kernel_language} | ${getKernelDisplayName(kernel_name)} | ${i18n[kernel_state][lang] || i18n[kernel_state].default}`,
+        };
+        localStorage.setItem("local-codelang", kernel_language);
+    }
+    else {
+        // 删除会话
+        attrs = {
+            [config.jupyter.attrs.kernel.id]: '',
+            [config.jupyter.attrs.session.id]: '',
+            [config.jupyter.attrs.other.prompt]: '',
+        };
+    }
+    setBlockAttrs(id, attrs);
+}
+
 /* 渲染内核信息 */
 function renderKernelspecInfo(kernelspec) {
     sessions_create_kernel_image.src = `${custom.jupyter.server}${kernelspec.resources[`logo-32x32`]}`;
@@ -100,12 +140,22 @@ function renderKernelspecInfo(kernelspec) {
 
 /* 渲染会话信息 */
 function renderSessionInfo(session) {
-    sessions_manage_name_input.value = session.name;
-    sessions_manage_path_input.value = session.path;
-    sessions_manage_state_span.innerText = session.kernel.execution_state;
-    if (kernelspecs && kernelspecs.kernelspecs[session.kernel.name]) {
-        sessions_manage_kernel_image.src = `${custom.jupyter.server}${kernelspecs.kernelspecs[session.kernel.name].resources[`logo-32x32`]}`;
-        sessions_manage_kernel_name_span.innerText = session.kernel.name;
+    if (session) {
+        // 非删除会话
+        sessions_manage_name_input.value = session.name;
+        sessions_manage_path_input.value = session.path;
+        sessions_manage_state_span.innerText = session.kernel.execution_state;
+        if (kernelspecs && kernelspecs.kernelspecs[session.kernel.name]) {
+            sessions_manage_kernel_image.src = `${custom.jupyter.server}${kernelspecs.kernelspecs[session.kernel.name].resources[`logo-32x32`]}`;
+            sessions_manage_kernel_name_span.innerText = session.kernel.name;
+        }
+    }
+    else {
+        sessions_manage_name_input.value = null;
+        sessions_manage_path_input.value = null;
+        sessions_manage_state_span.innerText = null;
+        sessions_manage_kernel_image.src = null;
+        sessions_manage_kernel_name_span.innerText = null;
     }
 }
 
@@ -163,13 +213,11 @@ sessions_manage_refresh_button.addEventListener('click', async () => {
         `${i18n.sessions[lang] || i18n.sessions.default}:\n`,
         sessions,
     );
-    if (sessions.length > 0) {
-        updateSessionsSelector(
-            sessions,
-            sessions_manage_session_select,
-            session ? session : sessions[0],
-        );
-    }
+    updateSessionsSelector(
+        sessions,
+        sessions_manage_session_select,
+        session ? session : sessions.length ? sessions[0] : {},
+    );
 });
 
 /* 更新会话信息 */
@@ -197,31 +245,19 @@ sessions_manage_update_button.addEventListener('click', async () => {
 });
 
 /* 链接文档与会话 */
-sessions_manage_start_button.addEventListener('click', async () => {
-    const kernel_id = session.kernel.id;
-    const kernel_name = session.kernel.name;
-    const kernel_language = kernelspecs.kernelspecs[kernel_name].spec.language;
-    const session_name = sessions_manage_name_input.value;
-    const session_path = sessions_manage_path_input.value;
-    attrs = {
-        [config.jupyter.attrs.kernel.id]: kernel_id,
-        [config.jupyter.attrs.kernel.name]: kernel_name,
-        [config.jupyter.attrs.kernel.language]: kernel_language,
-        [config.jupyter.attrs.session.name]: session_name,
-        [config.jupyter.attrs.session.path]: session_path,
-    };
-    localStorage.setItem("local-codelang", kernel_language);
-    setBlockAttrs(id, attrs);
-});
+sessions_manage_start_button.addEventListener('click', updateDocAttrs);
 
 /* 中止当前会话内核运行 */
 sessions_manage_interrupt_button.addEventListener('click', async () => {
     const r = await jupyter.kernels.interrupt(session.kernel.id);
-    console.log(
-        `${i18n.interrupt[lang] || i18n.interrupt.default}:\n`,
-        r,
-    );
-    sessions_manage_refresh_button.click();
+    if (r && r.status === 204) {
+        console.log(
+            `${i18n.interrupt[lang] || i18n.interrupt.default}:\n`,
+            r,
+        );
+        sessions_manage_refresh_button.click();
+        setTimeout(updateDocAttrs, 1000);
+    }
 });
 
 /* 重启当前会话内核 */
@@ -233,18 +269,22 @@ sessions_manage_restart_button.addEventListener('click', async () => {
             kernel,
         );
         sessions_manage_refresh_button.click();
+        setTimeout(updateDocAttrs, 1000);
     }
 });
 
 /* 删除当前会话 */
 sessions_manage_delete_button.addEventListener('click', async () => {
     const r = await jupyter.sessions.delete(session.id);
-    console.log(
-        `${i18n.delete[lang] || i18n.delete.default}:\n`,
-        session,
-    );
-    session = null;
-    sessions_manage_refresh_button.click();
+    if (r && r.status === 204) {
+        console.log(
+            `${i18n.delete[lang] || i18n.delete.default}:\n`,
+            session,
+        );
+        session = null;
+        sessions_manage_refresh_button.click();
+        setTimeout(updateDocAttrs, 1000);
+    }
 });
 
 sessions_create_refresh_button.click(); // 刷新内核列表

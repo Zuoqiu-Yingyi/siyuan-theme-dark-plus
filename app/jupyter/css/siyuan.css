@@ -1,0 +1,47 @@
+.protyle-wysiwyg div[data-node-id][custom-jupyter-index]::before {
+    content: "["attr(custom-jupyter-index)"]:";
+    font-size: 85%;
+    position: absolute;
+    top: 0;
+    left: 0.25em;
+    z-index: 1;
+    font-weight: bolder;
+}
+
+/* 运行完成 */
+.protyle-wysiwyg div.code-block[data-node-id][custom-jupyter-index]::before {
+    color: var(--b3-card-success-color);
+}
+
+/* 正在运行 */
+.protyle-wysiwyg div.sb[data-node-id][custom-jupyter-index="*"]::before,
+.protyle-wysiwyg div.code-block[data-node-id][custom-jupyter-index="*"]::before {
+    color: var(--b3-card-warning-color);
+}
+
+/* 运行时间 */
+.protyle-wysiwyg div.code-block[data-node-id][custom-jupyter-time]::after {
+    content: attr(custom-jupyter-time);
+    font-size: 85%;
+    position: absolute;
+    bottom: 0;
+    left: 3.75em;
+    z-index: 1;
+    color: var(--b3-theme-on-surface);
+}
+.protyle-wysiwyg div.code-block[data-node-id][custom-jupyter-time][linenumber="true"]::after {
+    left: 3.75em;
+}
+.protyle-wysiwyg div.code-block[data-node-id][custom-jupyter-time][linenumber="false"]::after {
+    left: 0.25em;
+}
+
+/* 运行结果 */
+.protyle-wysiwyg div.sb[data-node-id][custom-jupyter-index]::before {
+    color: var(--b3-card-info-color);
+}
+
+/* 运行结果有误 */
+.protyle-wysiwyg div.sb[data-node-id][custom-jupyter-index="E"]::before {
+    color: var(--b3-card-error-color);
+}

@@ -6,6 +6,7 @@
 - 添加 Jupyter 会话管理功能 | Added Jupyter session management functionality.
 - 添加 Jupyter 会话信息读写功能 | Added Jupyter session information read/write functionality.
 - 调整代码块按钮位置 | Adjusted the position of the code block buttons.
+- 实现 Jupyter 会话纯文本输出内容解析 | Implemented Jupyter session plain text output content parsing.
 
 ## v1.0.5/2022-05-31
 

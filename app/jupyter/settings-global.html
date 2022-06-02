@@ -24,7 +24,10 @@
                     <input id="jupyterServerInput" type="text">
                     <button id="jupyterServerButton">确认</button>
                 </td>
-                <td><span id="memo-server">jupyter 服务</span></td>
+                <td>
+                    <span id="memo-server">jupyter 服务</span>
+                    <a id="jupyterServerTest">测试</a>
+                </td>
             </tr>
             <tr>
                 <td><span>Cookies</span></td>
@@ -49,6 +52,7 @@
     document.getElementById('memo-server').innerText = i18n['memo-server'][lang] || i18n['memo-server'].default;
     document.getElementById('memo-cookie').innerText = i18n['memo-cookie'][lang] || i18n['memo-cookie'].default;
 
+    document.getElementById('jupyterServerTest').innerText = i18n.test[lang] || i18n.test.default;
     document.getElementById('jupyterServerButton').innerText = i18n.ok[lang] || i18n.ok.default;
     document.getElementById('jupyterCookiesButton').innerText = i18n.ok[lang] || i18n.ok.default;
 </script>

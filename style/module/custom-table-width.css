@@ -6,7 +6,7 @@
 /* 启用自动宽度 */
 .protyle-wysiwyg div.table[data-node-id][custom-table-width~=auto],
 .protyle-wysiwyg div.table[data-node-id][custom-table-width~=自动] {
-    width: 100%;
+    width: calc(100% - 8px);
 }
 
 .protyle-wysiwyg div.table[data-node-id][custom-table-width~=auto] table,
