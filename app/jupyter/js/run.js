@@ -132,7 +132,7 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                 const stoped = new Date(message.header.date);
                 let code_attrs = {
                     [config.jupyter.attrs.code.index]: code_index,
-                    [config.jupyter.attrs.code.time]: `${i18n.start[lang] || i18n.start.default}: ${started.format('yyyy-MM-dd hh:mm:ss')}\t${i18n.runtime[lang] || i18n.runtime.default}: ${timestampFormat(stoped - started)}`,
+                    [config.jupyter.attrs.code.time]: `${i18n.start[lang] || i18n.start.default}: ${started.format('yyyy-MM-dd hh:mm:ss')} | ${i18n.runtime[lang] || i18n.runtime.default}: ${timestampFormat(stoped - started)}`,
                 };
                 let output_attrs = {
                     [config.jupyter.attrs.output.index]: output_index,

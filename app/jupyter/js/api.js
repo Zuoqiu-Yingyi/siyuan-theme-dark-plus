@@ -145,7 +145,6 @@ async function jupyterRequest(
     isParser = true,
     data = {},
     header = {
-        Cookie: custom.jupyter.cookies,
         'X-XSRFToken': getCookie('_xsrf', custom.jupyter.cookies),
     },
 ) {

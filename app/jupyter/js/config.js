@@ -3,6 +3,7 @@ export {
     config,
     custom,
     saveCustomFile,
+    getCustomJson,
 }
 
 import {
@@ -18,6 +19,8 @@ var config = {
     jupyter: {
         path: {
             customJson: '/temp/jupyter/custom.json',
+            global: '/appearance/themes/Dark+/app/jupyter/settings-global.html',
+            document: '/appearance/themes/Dark+/app/jupyter/settings-document.html',
         },
         regs: {
             mark: /((?=[\x21-\x7e]+)[^A-Za-z0-9])/g, // 匹配英文符号
@@ -121,8 +124,12 @@ var config = {
             'session-manage': { zh_CN: '管理会话', default: 'Manage Session' },
             'session-name': { zh_CN: '会话名称', default: 'Session Name' },
             'session-path': { zh_CN: '会话目录', default: 'Session Path' },
-            'memo-server': { zh_CN: 'jupyter 服务', default: 'Jupyter Server' },
-            'memo-cookie': { zh_CN: 'jupyter 认证', default: 'Jupyter Auth' },
+            'memo-server': { zh_CN: 'Jupyter 服务', default: 'Jupyter Server' },
+            'memo-cookie': { zh_CN: 'Jupyter 认证', default: 'Jupyter Auth' },
+            'jupyter-server-auth-faild': {
+                zh_CN: 'Jupyter 服务认证失败，需要重新填写认证信息！',
+                default: 'Jupyter authentication failed, please re-fill in the authentication information!',
+            },
 
             ok: { zh_CN: '确认', default: 'OK' },
             test: { zh_CN: '测试', default: 'Test' },
@@ -142,8 +149,8 @@ var config = {
             idle: { zh_CN: '空闲', default: 'Idle' },
             starting: { zh_CN: '启动中', default: 'Starting' },
 
-            start: { zh_CN: '开始时间', default: 'Start Time' },
-            runtime: { zh_CN: '运行时间', default: 'Run Time' },
+            start: { zh_CN: '上次运行时间', default: 'Last Run Time' },
+            runtime: { zh_CN: '运行用时', default: 'Running Time' },
         }
     },
 };
@@ -163,14 +170,19 @@ async function saveCustomFile(data = custom, path = config.jupyter.path.customJs
     return response;
 }
 
+/* 重新加载用户配置文件 */
+async function getCustomJson(path = config.jupyter.path.customJson) {
+    let customjson = await getFile(config.jupyter.path.customJson);
+    if (customjson) customjson = await customjson.json();
+    return customjson;
+}
+
 try {
     // 合并配置文件 custom.js
     const customjs = await import('/widgets/custom.js');
     if (customjs.config) merge(config, customjs.config);
 
-    // 合并配置文件 custom.json
-    let customjson = await getFile(config.jupyter.path.customJson);
-    if (customjson) customjson = await customjson.json();
+    const customjson = await getCustomJson();
     if (customjson) merge(custom, customjson);
 } catch (err) {
     console.warn(err);
