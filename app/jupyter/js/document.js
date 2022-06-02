@@ -2,7 +2,6 @@ import {
     url,
     config,
     custom,
-    saveCustomFile,
 } from './config.js';
 import {
     jupyter,
@@ -60,6 +59,14 @@ function init() {
         }
     }
     else setTimeout(init, 250);
+}
+
+/* 重定向至全局设置页面 */
+function redirect() {
+    alert(i18n['jupyter-server-auth-faild'][lang] || i18n['jupyter-server-auth-faild'].default);
+    let url = new URL(location.href);
+    url.pathname = config.jupyter.path.global;
+    location.href = url.href;
 }
 
 /* 获得内核可读名字 */
@@ -163,11 +170,14 @@ function renderSessionInfo(session) {
 sessions_create_refresh_button.addEventListener('click', async () => {
     kernelspecs = await jupyter.kernelspecs.get();
 
-    updateKernelspecsSelector(
-        kernelspecs.kernelspecs,
-        sessions_create_kernel_select,
-        kernelspecs.default,
-    );
+    if (kernelspecs) {
+        updateKernelspecsSelector(
+            kernelspecs.kernelspecs,
+            sessions_create_kernel_select,
+            kernelspecs.default,
+        );
+    }
+    else redirect();
 });
 
 /* 新建会话 */
@@ -184,11 +194,14 @@ sessions_create_create_button.addEventListener('click', async () => {
                 name: kernel_name,
             },
         });
-        console.log(
-            `${i18n.session[lang] || i18n.session.default}:\n`,
-            session,
-        );
-        sessions_manage_refresh_button.click();
+        if (session) {
+            console.log(
+                `${i18n.session[lang] || i18n.session.default}:\n`,
+                session,
+            );
+            sessions_manage_refresh_button.click();
+        }
+        else redirect();
     }
     else {
         alert(i18n.incomplete[lang] || i18n.incomplete.default);
@@ -258,6 +271,7 @@ sessions_manage_interrupt_button.addEventListener('click', async () => {
         sessions_manage_refresh_button.click();
         setTimeout(updateDocAttrs, 1000);
     }
+    else redirect();
 });
 
 /* 重启当前会话内核 */
@@ -271,6 +285,7 @@ sessions_manage_restart_button.addEventListener('click', async () => {
         sessions_manage_refresh_button.click();
         setTimeout(updateDocAttrs, 1000);
     }
+    else redirect();
 });
 
 /* 删除当前会话 */
@@ -285,6 +300,7 @@ sessions_manage_delete_button.addEventListener('click', async () => {
         sessions_manage_refresh_button.click();
         setTimeout(updateDocAttrs, 1000);
     }
+    else redirect();
 });
 
 sessions_create_refresh_button.click(); // 刷新内核列表
