@@ -120,12 +120,27 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
         case "stream": // 代码输出文本信息
             {
                 const text = message.content.text;
+                const type = message.content.name;
                 setTimeout(async () => {
+                    let style, ial;
+                    switch (type) {
+                        case "stdout":
+                            break;
+                        case "stderr":
+                            style = config.jupyter.style.error;
+                            break;
+                        default:
+                            style = config.jupyter.style.warning;
+                            break;
+                    }
+                    ial = style
+                        ? `\n{: style="${style}" }`
+                        : '';
                     appendBlock(
                         message_info.output,
                         message_info.escaped
-                            ? escapeText(text)
-                            : text,
+                            ? escapeText(text) + ial
+                            : text + ial,
                     )
                 }, 0);
             }
@@ -204,6 +219,17 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                     case 'error': // 错误
                         output_index = 'E';
                         output_style = config.jupyter.style.error;
+
+                        const ename = message.content.ename;
+                        const evalue = message.content.evalue;
+                        if (ename && evalue) {
+                            markdown.push([
+                                '```plaintext',
+                                `${ename}: ${evalue}`,
+                                '```',
+                                `{: style="${output_style}" }`,
+                            ].join('\n'));
+                        }
                         break;
                     default:
                         break;

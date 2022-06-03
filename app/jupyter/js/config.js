@@ -34,6 +34,9 @@ var config = {
             ].join('\n'),
         },
         style: {
+            success: 'color: var(--b3-card-success-color); background-color: var(--b3-card-success-background);',
+            info: 'color: var(--b3-card-info-color); background-color: var(--b3-card-info-background);',
+            warning: 'color: var(--b3-card-warning-color); background-color: var(--b3-card-warning-background);',
             error: 'color: var(--b3-card-error-color); background-color: var(--b3-card-error-background);',
         },
         attrs: {
