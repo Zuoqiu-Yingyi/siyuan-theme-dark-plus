@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.1.0/2022-06-03
+
+- [v1.0.5 <=> v1.1.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.5...v1.1.0)
 - [#65](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/65) 修复 `/` 菜单多栏样式失效问题 | Fixed the issue of the `/` menu multi-column style being invalid.
 - 调整代码块语言样式选择菜单颜色 | Adjusted the color of the code block language selection menu.
 - 移除部分不能使用自定义字体的块字体菜单 | Removed some block font menus that cannot be used with custom fonts.
@@ -16,6 +19,7 @@
 - 添加 `No Kernel` 标识 | Added the `No Kernel` tag.
 - 调整 Jupyter 序号计数方案 | Adjusted the Jupyter numbering scheme.
 - 调整菜单项文案 | Adjusted the menu item text.
+- 调整 Jupyter `display_data` 类型消息解析策略 | Adjusted the Jupyter `display_data` type message parsing strategy.
 
 ## v1.0.5/2022-05-31
 

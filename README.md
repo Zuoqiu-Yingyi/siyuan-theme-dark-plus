@@ -178,6 +178,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 
 ### 功能介绍 | FUNCTIONAL DESCRIPTION
 
+- [Jupyter 模式 - 链滴](https://ld246.com/article/1654279855533)
 - [记住当前文档浏览位置 - 链滴](https://ld246.com/article/1651720111393)
 - [使用外部编辑器编辑笔记内容 - 链滴](https://ld246.com/article/1650694653631)
 - [块自定义字体 - 链滴 - 链滴](https://ld246.com/article/1650339201591)
