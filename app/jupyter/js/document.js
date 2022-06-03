@@ -110,8 +110,18 @@ function updateSessionsSelector(sessions, selector, defaultSession) {
 }
 
 /* 更新思源文档块属性 */
-function updateDocAttrs() {
-    if (session) {
+function updateDocAttrs(del = false) {
+    console.log(del);
+    let attrs;
+    if (del) {
+        // 删除会话
+        attrs = {
+            [config.jupyter.attrs.kernel.id]: '',
+            [config.jupyter.attrs.session.id]: '',
+            [config.jupyter.attrs.other.prompt]: '',
+        };
+    }
+    else if (session) {
         // 非删除会话
         const kernel_id = session.kernel.id;
         const kernel_name = session.kernel.name;
@@ -135,14 +145,7 @@ function updateDocAttrs() {
         };
         localStorage.setItem("local-codelang", kernel_language);
     }
-    else {
-        // 删除会话
-        attrs = {
-            [config.jupyter.attrs.kernel.id]: '',
-            [config.jupyter.attrs.session.id]: '',
-            [config.jupyter.attrs.other.prompt]: '',
-        };
-    }
+    else return;
     setBlockAttrs(id, attrs);
 }
 
@@ -258,6 +261,7 @@ sessions_manage_update_button.addEventListener('click', async () => {
             session,
         );
         sessions_manage_refresh_button.click();
+        setTimeout(updateDocAttrs, 1000);
     }
     else {
         alert(i18n.incomplete[lang] || i18n.incomplete.default);
@@ -265,7 +269,7 @@ sessions_manage_update_button.addEventListener('click', async () => {
 });
 
 /* 链接文档与会话 */
-sessions_manage_start_button.addEventListener('click', updateDocAttrs);
+sessions_manage_start_button.addEventListener('click', _ => updateDocAttrs());
 
 /* 中止当前会话内核运行 */
 sessions_manage_interrupt_button.addEventListener('click', async () => {
@@ -305,7 +309,7 @@ sessions_manage_delete_button.addEventListener('click', async () => {
         );
         session = null;
         sessions_manage_refresh_button.click();
-        setTimeout(updateDocAttrs, 1000);
+        setTimeout(() => updateDocAttrs(true), 1000);
     }
     else redirect();
 });
