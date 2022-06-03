@@ -8,6 +8,9 @@ import {
     getBlockAttrs,
     setBlockAttrs,
 } from './api.js';
+import {
+    promptFormat,
+} from './utils.js';
 
 const sessions_create_kernel_select = document.getElementById(config.jupyter.id.session.create.select);
 const sessions_create_refresh_button = document.getElementById(config.jupyter.id.session.create.refresh);
@@ -124,7 +127,11 @@ function updateDocAttrs() {
             [config.jupyter.attrs.session.id]: session_id,
             [config.jupyter.attrs.session.name]: session_name,
             [config.jupyter.attrs.session.path]: session_path,
-            [config.jupyter.attrs.other.prompt]: `${kernel_language} | ${getKernelDisplayName(kernel_name)} | ${i18n[kernel_state][lang] || i18n[kernel_state].default}`,
+            [config.jupyter.attrs.other.prompt]: promptFormat(
+                kernel_language,
+                getKernelDisplayName(kernel_name),
+                i18n[kernel_state][lang] || i18n[kernel_state].default
+            ),
         };
         localStorage.setItem("local-codelang", kernel_language);
     }
