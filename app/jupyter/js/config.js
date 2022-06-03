@@ -113,7 +113,7 @@ var config = {
                     start: 'jupyterSessionsManageStartButton',
                     interrupt: 'jupyterSessionsManageInterruptButton',
                     restart: 'jupyterSessionsManageRestartButton',
-                    delete: 'jupyterSessionsManageDeleteButton',
+                    close: 'jupyterSessionsManageCloseButton',
                 },
             },
             siyuan: {
@@ -146,7 +146,7 @@ var config = {
             connect: { zh_CN: '连接', default: 'Connect' },
             interrupt: { zh_CN: '中断', default: 'Interrupt' },
             restart: { zh_CN: '重启', default: 'Restart' },
-            delete: { zh_CN: '删除', default: 'Delete' },
+            close: { zh_CN: '关闭', default: 'Close' },
 
             incomplete: { zh_CN: '信息不完整！', default: 'Incomplete information!' },
             session: { zh_CN: '会话', default: 'Session' },

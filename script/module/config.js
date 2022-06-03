@@ -846,15 +846,15 @@ export var config = {
                                 mode: "button",
                                 icon: "#iconClose",
                                 label: {
-                                    zh_CN: "关闭会话",
-                                    other: "Close Session",
+                                    zh_CN: "关闭连接",
+                                    other: "Close Connection",
                                 },
                                 click: {
                                     enable: true,
                                     callback: null,
                                     tasks: [
                                         {
-                                            type: 'jupyter-close-session',
+                                            type: 'jupyter-close-connection',
                                             params: {},
                                         },
                                     ],

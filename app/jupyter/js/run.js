@@ -1,6 +1,6 @@
 export {
     runCode, // 运行代码
-    closeSession, // 结束会话
+    closeConnection, // 关闭连接
 }
 
 import {
@@ -421,7 +421,7 @@ async function runCode(e, code_id, params) {
     }
 }
 
-/* 结束指定会话 */
-async function closeSession(e, doc_id, params) {
+/* 关闭当前活动连接 */
+async function closeConnection(e, doc_id, params) {
     if (websockets[doc_id]) websockets[doc_id].ws.close();
 }
