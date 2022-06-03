@@ -319,7 +319,12 @@ async function runCode(e, code_id, params) {
         }
         else {
             // 没有查询到输出块, 在代码块后插入一个超级块
-            const response = await insertBlock(code_id, config.jupyter.output.init);
+            let ials = [];
+            const attrs = config.jupyter.output.attrs
+            for (const attr in attrs) {
+                if (attrs[attr]) ials.push(`${attr}="${attrs[attr]}"`);
+            }
+            const response = await insertBlock(code_id, `${config.jupyter.output.init}\n{: ${ials.join(' ')}}`);
 
             /* 获得超级块的块 ID */
             if (response) output_id = response[0].doOperations[0].id;

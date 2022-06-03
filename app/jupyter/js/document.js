@@ -118,7 +118,7 @@ function updateDocAttrs(del = false) {
         attrs = {
             [config.jupyter.attrs.kernel.id]: '',
             [config.jupyter.attrs.session.id]: '',
-            [config.jupyter.attrs.other.prompt]: '',
+            [config.jupyter.attrs.other.prompt]: 'No Kernel',
         };
     }
     else if (session) {

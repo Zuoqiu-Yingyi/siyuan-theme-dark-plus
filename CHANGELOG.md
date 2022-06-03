@@ -13,6 +13,7 @@
 - 调整 Jupyter 错误输出样式 | Adjusted the style of Jupyter error output.
 - 修复 Jupyter 序号错误 | Fixed the Jupyter numbering error.
 - 修复删除 Jupyter 活动内核时更改文档信息的问题 | Fixed the issue of changing the document information when deleting the Jupyter active kernel.
+- 添加 `No Kernel` 标识 | Added the `No Kernel` tag.
 
 ## v1.0.5/2022-05-31
 
