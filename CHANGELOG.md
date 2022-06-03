@@ -14,6 +14,7 @@
 - 修复 Jupyter 序号错误 | Fixed the Jupyter numbering error.
 - 修复删除 Jupyter 活动内核时更改文档信息的问题 | Fixed the issue of changing the document information when deleting the Jupyter active kernel.
 - 添加 `No Kernel` 标识 | Added the `No Kernel` tag.
+- 调整 Jupyter 序号计数方案 | Adjusted the Jupyter numbering scheme.
 
 ## v1.0.5/2022-05-31
 
