@@ -62,7 +62,7 @@ document.head.appendChild(style);
 
 /* 解析数据 */
 async function parseData(data, escaped) {
-    let text, image, ext, mime;
+    let text, image, application, ext, mime;
     for (const item in data) {
         switch (true) {
             case item.startsWith('text/'):
@@ -73,8 +73,23 @@ async function parseData(data, escaped) {
                 ext = item.split('/')[1];
                 mime = item;
                 break;
+            case item.startsWith('application/'):
+                switch (true) {
+                    case item.endsWith('/json'):
+                        ext = 'json';
+                        mime = item;
+                        application = [
+                            '```json',
+                            JSON.stringify(data[item], undefined, 4),
+                            '```',
+                        ].join('\n');
+                        break;
+                    default:
+                        break;
+                }
+                break;
             default:
-                return;
+                break;
         }
     }
     let markdown;
