@@ -11,6 +11,7 @@
 - 实现 Jupyter 会话图片输出内容解析 | Implemented Jupyter session image output content parsing.
 - 实现 Jupyter 魔术命令输出内容解析 | Implemented Jupyter magic commands output content parsing.
 - 调整 Jupyter 错误输出样式 | Adjusted the style of Jupyter error output.
+- 修复 Jupyter 序号错误 | Fixed the Jupyter numbering error.
 
 ## v1.0.5/2022-05-31
 
