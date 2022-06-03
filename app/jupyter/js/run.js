@@ -46,6 +46,7 @@ var message_map = {
     //     code: code_id, // 代码块 ID
     //     output: output_id, // 输出块 ID
     //     escaped: boolean, // 是否转义输出结果
+    //     index: int, // 消息序号
     // },
 }
 
@@ -199,7 +200,7 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                     const text = await parseData(data, message_info.escaped);
                     if (text) markdown.push(text);
                 }
-                let code_index = String(websocket.index);
+                let code_index = message_info.index;
                 let output_index, output_style;
                 switch (status) {
                     case 'ok': // 成功
@@ -338,8 +339,9 @@ async function runCode(e, code_id, params) {
 
         /* 设置块序号 */
         websocket.index += 1; // 更新消息序号
-        code_attrs[config.jupyter.attrs.code.index] = String(websocket.index);
-        output_attrs[config.jupyter.attrs.output.index] = String(websocket.index);
+        const index = String(websocket.index);
+        code_attrs[config.jupyter.attrs.code.index] = index;
+        output_attrs[config.jupyter.attrs.output.index] = index;
 
         /* 关联代码块与输出块 */
         code_attrs[config.jupyter.attrs.code.output] = output_id;
@@ -356,6 +358,7 @@ async function runCode(e, code_id, params) {
             code: code_id,
             output: output_id,
             escaped: params.escaped,
+            index: index,
         };
         const message = JSON.stringify(createSendMessage( // 创建消息
             code_block.content,
