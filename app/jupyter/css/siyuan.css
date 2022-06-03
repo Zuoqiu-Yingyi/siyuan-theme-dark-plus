@@ -13,12 +13,6 @@
     color: var(--b3-card-success-color);
 }
 
-/* 正在运行 */
-.protyle-wysiwyg div.sb[data-node-id][custom-jupyter-index="*"]::before,
-.protyle-wysiwyg div.code-block[data-node-id][custom-jupyter-index="*"]::before {
-    color: var(--b3-card-warning-color);
-}
-
 /* 运行时间 */
 .protyle-wysiwyg div.code-block[data-node-id][custom-jupyter-time]::after {
     content: attr(custom-jupyter-time);
@@ -44,4 +38,10 @@
 /* 运行结果有误 */
 .protyle-wysiwyg div.sb[data-node-id][custom-jupyter-index="E"]::before {
     color: var(--b3-card-error-color);
+}
+
+/* 正在运行 */
+.protyle-wysiwyg div.sb[data-node-id][custom-jupyter-index="*"]::before,
+.protyle-wysiwyg div.code-block[data-node-id][custom-jupyter-index="*"]::before {
+    color: var(--b3-card-warning-color);
 }
