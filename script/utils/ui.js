@@ -23,7 +23,7 @@ import {
 
 import {
     runCode,
-    closeSession,
+    closeConnection,
 } from '/appearance/themes/Dark+/app/jupyter/js/run.js';
 
 var toolbarItemList = [];
@@ -610,7 +610,7 @@ const TASK_HANDLER = {
     /* 运行代码 */
     'jupyter-run-code': runCode,
     /* 关闭会话 */
-    'jupyter-close-session': closeSession,
+    'jupyter-close-connection': closeConnection,
 };
 
 /**

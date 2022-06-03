@@ -35,7 +35,7 @@ const sessions_manage_kernel_name_span = document.getElementById(config.jupyter.
 const sessions_manage_start_button = document.getElementById(config.jupyter.id.session.manage.start);
 const sessions_manage_interrupt_button = document.getElementById(config.jupyter.id.session.manage.interrupt);
 const sessions_manage_restart_button = document.getElementById(config.jupyter.id.session.manage.restart);
-const sessions_manage_delete_button = document.getElementById(config.jupyter.id.session.manage.delete);
+const sessions_manage_close_button = document.getElementById(config.jupyter.id.session.manage.close);
 
 const id = url.searchParams.get('id'); // 文档 ID
 const lang = url.searchParams.get('lang'); // 用户语言
@@ -268,7 +268,7 @@ sessions_manage_update_button.addEventListener('click', async () => {
     }
 });
 
-/* 链接文档与会话 */
+/* 关联文档与会话 */
 sessions_manage_start_button.addEventListener('click', _ => updateDocAttrs());
 
 /* 中止当前会话内核运行 */
@@ -299,12 +299,12 @@ sessions_manage_restart_button.addEventListener('click', async () => {
     else redirect();
 });
 
-/* 删除当前会话 */
-sessions_manage_delete_button.addEventListener('click', async () => {
+/* 关闭当前会话内核 */
+sessions_manage_close_button.addEventListener('click', async () => {
     const r = await jupyter.sessions.delete(session.id);
     if (r && r.status === 204) {
         console.log(
-            `${i18n.delete[lang] || i18n.delete.default}:\n`,
+            `${i18n.close[lang] || i18n.close.default}:\n`,
             session,
         );
         session = null;

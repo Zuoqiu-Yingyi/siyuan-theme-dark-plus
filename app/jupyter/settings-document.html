@@ -49,7 +49,7 @@
                     <button id="jupyterSessionsManageStartButton">连接</button>
                     <button id="jupyterSessionsManageInterruptButton">中断</button>
                     <button id="jupyterSessionsManageRestartButton">重启</button>
-                    <button id="jupyterSessionsManageDeleteButton">删除</button>
+                    <button id="jupyterSessionsManageCloseButton">关闭</button>
                 </td>
                 <td></td>
             </tr>
@@ -82,7 +82,7 @@
     document.getElementById('jupyterSessionsManageStartButton').innerText = i18n.connect[lang] || i18n.connect.default;
     document.getElementById('jupyterSessionsManageInterruptButton').innerText = i18n.interrupt[lang] || i18n.interrupt.default;
     document.getElementById('jupyterSessionsManageRestartButton').innerText = i18n.restart[lang] || i18n.restart.default;
-    document.getElementById('jupyterSessionsManageDeleteButton').innerText = i18n.delete[lang] || i18n.delete.default;
+    document.getElementById('jupyterSessionsManageCloseButton').innerText = i18n.close[lang] || i18n.close.default;
 
 </script>
 <script type="module" src="./js/document.js"></script>
