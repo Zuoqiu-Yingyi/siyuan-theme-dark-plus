@@ -5,7 +5,7 @@
 
 /* 显示当前文档阅读进度 */
 .protyle-wysiwyg[custom-location]::before {
-    content: "👀\00A0" attr(custom-location);
+    content: "\00A0👀\00A0"attr(custom-location)"\00A0";
     font-size: 0.75em;
     border: 1px solid var(--b3-theme-primary);
     position: absolute;

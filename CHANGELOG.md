@@ -8,6 +8,8 @@
 - 调整代码块按钮位置 | Adjusted the position of the code block buttons.
 - 实现 Jupyter 会话纯文本输出内容解析 | Implemented Jupyter session plain text output content parsing.
 - 添加 Jupyter 服务认证失败提示 | Added Jupyter server authentication failure prompt.
+- 实现 Jupyter 会话图片输出内容解析 | Implemented Jupyter session image output content parsing.
+- 实现 Jupyter 魔术命令输出内容解析 | Implemented Jupyter magic commands output content parsing.
 
 ## v1.0.5/2022-05-31
 

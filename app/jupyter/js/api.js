@@ -1,6 +1,7 @@
 export {
     getFile,
     putFile,
+    upload,
     getBlockAttrs,
     setBlockAttrs,
     queryBlock,
@@ -44,6 +45,33 @@ async function putFile(path, filedata, isDir = false, modTime = Date.now(), toke
     formdata.append("modTime", modTime);
     const response = await fetch(
         "/api/file/putFile",
+        {
+            body: formdata,
+            method: "POST",
+            headers: {
+                Authorization: `Token ${token}`,
+            },
+        });
+    if (response.status === 200)
+        return await response.json();
+    else return null;
+}
+
+/* 上传资源文件 */
+async function upload(
+    blob = null,
+    filedata = { data: null, mime: null },
+    filename = 'file',
+    path = '/assets/',
+    token = config.token,
+) {
+    blob = blob || new Blob([filedata.data], { type: filedata.mime });
+    let file = new File([blob], filename, { lastModified: Date.now() });
+    let formdata = new FormData();
+    formdata.append("assetsDirPath", path);
+    formdata.append("file[]", file);
+    const response = await fetch(
+        "/api/asset/upload",
         {
             body: formdata,
             method: "POST",

@@ -5,7 +5,7 @@
 
 /* 显示当前文档阅读进度 */
 .protyle-wysiwyg[custom-prompt]::after {
-    content: attr(custom-prompt);
+    content: "\00A0"attr(custom-prompt)"\00A0";
     font-size: 0.75em;
     border: 1px solid var(--b3-theme-secondary);
     position: absolute;

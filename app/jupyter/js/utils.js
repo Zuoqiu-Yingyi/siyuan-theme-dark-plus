@@ -4,7 +4,12 @@ export {
     setCookie, // 设置 cookie
     setBlockDOMAttrs, // 设置 DOM 中的块属性
     timestampFormat, // 时间格式化
+    base64ToBlob, // Base64 转 Blob
+    escapeText, // 转义纯文本
+    promptFormat, // 格式化 prompt
 };
+
+import { config } from './config.js';
 
 // REF [js - 对象递归合并merge - zc-lee - 博客园](https://www.cnblogs.com/zc-lee/p/15873611.html)
 function isObject(obj) {
@@ -114,4 +119,25 @@ function timestampFormat(milliseconds) {
     let ms = milliseconds % 1000 | 0;
     let timestamp = `${intPrefix(h, 2)}:${intPrefix(m, 2)}:${intPrefix(s, 2)}.${intPrefix(ms, 3)}`;
     return timestamp;
+}
+
+/* base64 数据转换为 Blob */
+function base64ToBlob(base64Data, mime) {
+    let bstr = atob(base64Data), n = bstr.length, buffer = new Uint8Array(n);
+    while (n--) {
+        buffer[n] = bstr.charCodeAt(n);
+    }
+    return new Blob([buffer], { type: mime });
+
+    // return new Blob([atob(base64Data)], { type: mime });
+}
+
+/* 转义纯文本 */
+function escapeText(text) {
+    return text.replaceAll(config.jupyter.regs.mark, '\\$1');
+}
+
+/* prompt 格式化 */
+function promptFormat(language, name, state) {
+    return `${language} | ${name} | ${state}`
 }
