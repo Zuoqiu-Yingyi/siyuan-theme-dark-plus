@@ -22,18 +22,22 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 ## 预览 | PREVIEW
 
-![浅色](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/preview-light.png)
+![浅色-jsdelivr](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/preview-light.png)
+![浅色-location](/appearance/themes/Dark+/image/README/preview-light.png)
 
-![深色](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/preview-dark.png)
+![深色-jsdelivr](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/preview-dark.png)
+![深色-location](/appearance/themes/Dark+/image/README/preview-dark.png)
 
-![行级元素对齐](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/1647098220929.png)
+![行级元素对齐-jsdelivr](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/1647098220929.png)
+![行级元素对齐-location](/appearance/themes/Dark+/image/README/1647098220929.png)
 
 - 使用等宽字体时所有行内元素对齐  
   All inline elements are aligned when using a equal font.
 - 行内元素样式适配所有字号  
   Inline element styles are adapted to all font sizes.
 
-![列表缩进对齐](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/1647098536196.png)
+![列表缩进对齐-jsdelivr](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/1647098536196.png)
+![列表缩进对齐-location](/appearance/themes/Dark+/image/README/1647098536196.png)
 
 - 使用等宽字体时列表以 4 个半宽字符(2 个全宽字符)的宽度缩进  
   When using a equal font, list indentation is 4 half-width characters (2 full-width characters).
@@ -41,6 +45,9 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
   List indentation styles are adapted to all font sizes.
 
 常用中西文 2:1 等宽字体: `仿宋`, `黑体`, `楷体`, `隶书`, `宋体`, `新宋体`, `幼圆`
+
+![Jupyter-jsdelivr](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/1654240321941.png)
+![Jupyter-location](/appearance/themes/Dark+/image/README/1654240321941.png)
 
 ## 介绍 | INTRODUCTION
 
@@ -186,7 +193,89 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 - [为笔记内视频块 / 音频块设置多个时间戳 - 链滴](https://ld246.com/article/1644814136903)
 - [为笔记内视频块 / 音频块设置时间戳 - 链滴](https://ld246.com/article/1644759207850)
 
+#### Jupyter 功能 | JUPYTER FEATURES
+
+- 添加 Jupyter 服务对思源的信任
+  1. 打开文件 `jupyter_lab_config.py` 或 `jupyter_notebook_config.py`
+  2. 找到 `c.ServerApp.allow_origin` 或 `c.NotebookApp.allow_origin` 字段
+  3. 将该字段设置为思源 `location.origin` 或 `*`
+     - <kbd>Ctrl + Shift + I</kbd> 打开思源的开发者工具, 在控制台中输入 `location.origin`.
+  4. 保存文件并启动 jupyter 服务
+- 登录 Jupyter 服务
+  1. <kbd>文档块菜单</kbd> > <kbd>Jupyter</kbd> > <kbd>全局设置</kbd>
+  2. 打开全局设置窗口
+  3. 输入服务器 URL 并点击 <kbd>确定</kbd>
+  4. 点击 <kbd>测试</kbd> 链接跳转到登录页面并登录
+  5. <kbd>Ctrl + Shift + I</kbd> 打开开发者工具, 获得 `Cookies`
+     - 方案1: 在控制台输入 `document.cookie` 并从输出结果复制 `_xsrf` 字段
+     - 方案2: 选择一个网络链接并从 HTTP 请求头的 `Cookies` 字段复制 `_xsrf` 字段
+     - `_xsrf` 字段完整内容为 `_xsrf=d|xxxxxxxx|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|dddddddddd`
+  6. 重新打开全局设置窗口
+  7. 输入 Cookies 并点击 <kbd>确定</kbd>
+  8. 关闭全局设置窗口
+  9. 单击 <kbd>重新加载窗口</kbd> 按钮或 <kbd>Ctrl + F5</kbd> 刷新页面
+- 建立会话
+  1. <kbd>文档块菜单</kbd> > <kbd>Jupyter</kbd> > <kbd>文档设置</kbd>
+  2. 打开文档设置窗口
+  3. 选择内核, 输入 `会话名称` 与 `会话目录`, 单击 <kbd>新建</kbd>
+  4. 单击 <kbd>重启</kbd> 按钮, 若没有弹窗则表示成功与服务器建立连接
+  5. 单击 <kbd>连接</kbd> 按钮
+  6. <kbd>F5</kbd> 刷新文档, 若文档右上角显示内核状态则表示会话建立并连接成功
+- 运行代码
+  - <kbd>代码块菜单</kbd> > <kbd>Jupyter</kbd> > <kbd>运行代码</kbd>
+    - 输出结果会以 Markdown 格式渲染
+  - <kbd>代码块菜单</kbd> > <kbd>Jupyter</kbd> > <kbd>运行代码 (转义输出结果)</kbd>
+    - 输出结果所有符号使用 `\` 转义
+- 关闭会话
+  - <kbd>文档块菜单</kbd> > <kbd>Jupyter</kbd> > <kbd>关闭会话</kbd>
+    - 不会关闭内核
+    - 重置运行序号
+- 关闭内核
+  1. <kbd>文档块菜单</kbd> > <kbd>Jupyter</kbd> > <kbd>文档设置</kbd>
+  2. 单击 <kbd>删除</kbd> 按钮
+  3. <kbd>F5</kbd> 刷新文档, 若文档右上角内核状态显示 `No Kernel` 则表示关闭成功
+
 ---
+- Add the Jupyter service's trust for Siyuan.
+  1. Open file `jupyter_lab_config.py` or `jupyter_notebook_config.py`.
+  2. Find `c.ServerApp.allow_origin` or `c.NotebookApp.allow_origin` field.
+  3. Set the field to Siyuan `location.origin` or `*`.
+     - <kbd>Ctrl + Shift + I</kbd> open Siyuan's developer tools, then enter `location.origin` in the console.
+  4. Save the file and start jupyter service.
+- Log in to the jupyter service.
+  1. <kbd>Doc Block Menu</kbd> > <kbd>Jupyter</kbd> > <kbd>Global Settings</kbd>
+  2. Open the Global Settings Window.
+  3. Enter the `Service Address` and click <kbd>OK</kbd> Button.
+  4. Click <kbd>Test</kbd> link to jump to the login page and sign in.
+  5. <kbd>Ctrl + Shift + I</kbd> open jupyter's developer tools, get `Cookies`.
+     - Scheme 1: input `document.cookie` to console and copy `_xsrf` field from output.
+     - Scheme 2: select a HTTP request and copy `_xsrf` field from the HTTP header field `Cookies`
+     - The style of `_xsrf` field full content is `_xsrf=d|xxxxxxxx|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|dddddddddd`
+  6. Reopen the Global Settings Window.
+  7. Input `Cookies` and click <kbd>OK</kbd> button.
+  8. Close the Global Settings Window.
+  9.  Click <kbd>Reload the Window</kbd> button or <kbd>Ctrl + F5</kbd> to reload window.
+- Establish a session.
+  1. <kbd>Doc Block Menu</kbd> > <kbd>Jupyter</kbd> > <kbd>Document Settings</kbd>
+  2. Open the Document Settings Window.
+  3. Select a kernel and input `Session Name'` 与 `Session Path`, then click <kbd>Create</kbd> buytton.
+  4. Click <kbd>Restart</kbd> button, if there is no pop-up window, the connection to the server is successful.
+  6. <kbd>F5</kbd> Refresh document, If the kernel status is displayed in the upper-right corner of the document, the session is established and connected successfully.
+- Run code.
+  - <kbd>Code Block Menu</kbd> > <kbd>Jupyter</kbd> > <kbd>Run Code</kbd>
+    - The output is rendered in Markdown format.
+  - <kbd>Code Block Menu</kbd> > <kbd>Jupyter</kbd> > <kbd>Run Code (Escape Output)</kbd>
+    - The output are used `\` for all symbols to escape.
+- Close Session.
+  - <kbd>Doc Block Menu</kbd> > <kbd>Jupyter</kbd> > <kbd>Close Session</kbd>
+    - The operate well not shut down kernel
+    - The index number of blocks is rsets.
+- Shut down kernel.
+  1. <kbd>Doc Block Menu</kbd> > <kbd>Jupyter</kbd> > <kbd>Document Settings</kbd>
+  2. Click <kbd>Delete</kbd> button
+  3. <kbd>F5</kbd> Refresh document, If the kernel status `No Kernel` is displayed in the upper-right corner of the document, the kernel is closed successfully.
+
+#### 其他功能 | OTHER FEATURES
 
 - 在其他主题中引用本主题模块  
   Reference this theme modules in other themes.
@@ -213,15 +302,15 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
     - `temp/export/`
 - 指向资源文件目录下常见文件的超链接显示图标  
   Hyperlinks to common files under the resource file directory display icons.
-  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/pdf.svg" style="height: 1em; width: 1em;" />: PDF
-  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/word.svg" style="height: 1em; width: 1em;" />: Word
-  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/powerpoint.svg" style="height: 1em; width: 1em;" />: PowerPoint
-  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/excel.svg" style="height: 1em; width: 1em;" />: Excel
-  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/image.svg" style="height: 1em; width: 1em;" />: Image
-  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/audio.svg" style="height: 1em; width: 1em;" />: Audio
-  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/video.svg" style="height: 1em; width: 1em;" />: Video
-  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/zip.svg" style="height: 1em; width: 1em;" />: ZIP
-  - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/asset.svg" style="height: 1em; width: 1em;" />: Other
+  - <img alt="pdf" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/pdf.svg" style="height: 1em; width: 1em;" />: PDF
+  - <img alt="word" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/word.svg" style="height: 1em; width: 1em;" />: Word
+  - <img alt="powerpoint" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/powerpoint.svg" style="height: 1em; width: 1em;" />: PowerPoint
+  - <img alt="excel" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/excel.svg" style="height: 1em; width: 1em;" />: Excel
+  - <img alt="image" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/image.svg" style="height: 1em; width: 1em;" />: Image
+  - <img alt="audio" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/audio.svg" style="height: 1em; width: 1em;" />: Audio
+  - <img alt="video" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/video.svg" style="height: 1em; width: 1em;" />: Video
+  - <img alt="zip" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/zip.svg" style="height: 1em; width: 1em;" />: ZIP
+  - <img alt="asset" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/asset.svg" style="height: 1em; width: 1em;" />: Other
 - 指向第三方资源(`URL Scheme`)的超链接显示图标  
   Hyperlinks(`URL Scheme`) to the third-party resource displays icons.
   - <img alt="bookxnote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/bookxnote.svg" style="height: 1em; width: 1em;" />: `bookxnotepro:` [BookxNote Pro](https://www.bookxnotepro.com/)
