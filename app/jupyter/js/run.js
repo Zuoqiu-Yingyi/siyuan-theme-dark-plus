@@ -35,20 +35,17 @@ var websockets = {
     //     session: session_id, // 会话 ID
     //     version: version, // 版本
     //     index: 0, // 索引
+    //     messages: { // 消息集合
+    //         msg_id: { // 消息 ID
+    //             doc: doc_id, // 文档块 ID
+    //             code: code_id, // 代码块 ID
+    //             output: output_id, // 输出块 ID
+    //             escaped: boolean, // 是否转义输出结果
+    //             index: int, // 消息序号
+    //         },
+    //     }
     // },
 };
-
-/* 消息的映射 */
-var message_map = {
-    // msg_id: { // 消息 ID
-    //     websocket: websocket_ref, // WebSocket 对象
-    //     doc: doc_id, // 文档块 ID
-    //     code: code_id, // 代码块 ID
-    //     output: output_id, // 输出块 ID
-    //     escaped: boolean, // 是否转义输出结果
-    //     index: int, // 消息序号
-    // },
-}
 
 /* 加载样式 */
 const style = document.getElementById(config.jupyter.id.siyuan.style.id) || document.createElement('link');
@@ -113,7 +110,7 @@ async function parseData(data, escaped) {
 
 /* 回复消息处理 */
 async function messageHandle(msg_id, msg_type, message, websocket) {
-    const message_info = message_map[msg_id];
+    const message_info = websocket.messages[msg_id];
     if (!message_info) return;
     switch (msg_type) {
         case "status": // 状态信息
@@ -367,8 +364,7 @@ async function runCode(e, code_id, params) {
         output_attrs[config.jupyter.attrs.output.type.key] = config.jupyter.attrs.output.type.value;
 
         const msg_id = crypto.randomUUID(); // 消息 ID
-        message_map[msg_id] = { // 将消息 ID 与输出块 ID 关联
-            websocket: websocket,
+        websocket.messages[msg_id] = { // 将消息 ID 与输入输出块关联
             doc: doc_id,
             code: code_id,
             output: output_id,
@@ -411,6 +407,7 @@ async function runCode(e, code_id, params) {
             session: session_id,
             version: null,
             index: 0,
+            messages: {},
         };
         websocket.ws.onmessage = async e => {
             // REF [MessageEvent - Web API 接口参考 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/MessageEvent)
