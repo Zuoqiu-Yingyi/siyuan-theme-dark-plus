@@ -22,13 +22,13 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 ## 预览 | PREVIEW
 
-![浅色-jsdelivr](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/preview-light.png)
+![浅色-relative](./image/README/preview-light.png)
 ![浅色-location](/appearance/themes/Dark+/image/README/preview-light.png)
 
-![深色-jsdelivr](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/preview-dark.png)
+![深色-relative](./image/README/preview-dark.png)
 ![深色-location](/appearance/themes/Dark+/image/README/preview-dark.png)
 
-![行级元素对齐-jsdelivr](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/1647098220929.png)
+![行级元素对齐-relative](./image/README/1647098220929.png)
 ![行级元素对齐-location](/appearance/themes/Dark+/image/README/1647098220929.png)
 
 - 使用等宽字体时所有行内元素对齐  
@@ -36,7 +36,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 - 行内元素样式适配所有字号  
   Inline element styles are adapted to all font sizes.
 
-![列表缩进对齐-jsdelivr](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/1647098536196.png)
+![列表缩进对齐-relative](./image/README/1647098536196.png)
 ![列表缩进对齐-location](/appearance/themes/Dark+/image/README/1647098536196.png)
 
 - 使用等宽字体时列表以 4 个半宽字符(2 个全宽字符)的宽度缩进  
@@ -46,7 +46,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 常用中西文 2:1 等宽字体: `仿宋`, `黑体`, `楷体`, `隶书`, `宋体`, `新宋体`, `幼圆`
 
-![Jupyter-jsdelivr](https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/image/README/1654240321941.png)
+![Jupyter-relative](./image/README/1654240321941.png)
 ![Jupyter-location](/appearance/themes/Dark+/image/README/1654240321941.png)
 
 ## 介绍 | INTRODUCTION
