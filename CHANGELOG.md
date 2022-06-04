@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 修复取消聚焦方法 `cancelFocalize` 无法终止问题 | Fixed the issue of function `cancelFocalize` can not terminate.
+
 ## v1.1.0/2022-06-03
 
 - [v1.0.5 <=> v1.1.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.5...v1.1.0)

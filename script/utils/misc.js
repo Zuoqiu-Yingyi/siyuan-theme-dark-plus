@@ -127,7 +127,7 @@ function cancelFocalize(callback = null) {
             breadcrumbs.firstElementChild.click();
         }
     }
-    setTimeout(() => cancelFocalize(callback), config.theme.goto.delay);
+    else setTimeout(() => cancelFocalize(callback), config.theme.goto.delay);
 }
 
 /**
