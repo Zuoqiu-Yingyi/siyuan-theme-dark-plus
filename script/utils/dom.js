@@ -18,6 +18,9 @@ export {
     setBlockDOMAttrs, // 设置块属性
     setFontSize, // 设置字体大小
     setBlockSlider, // 设置块滑块位置
+    getEditors, // 获得所有编辑器
+    disabledProtyle, // 禁用编辑器
+    enableProtyle, // 解除编辑器禁用
 };
 
 import { url2id } from './misc.js';
@@ -372,6 +375,36 @@ function setFontSize(size) {
 }
 
 /**
+ * 从布局中获得编辑器列表(多叉树遍历)
+ * @params {layout} centerLayout 编辑器布局
+ */
+function getEditorsFromLayout(centerLayout) {
+    const editors = [];
+    const layouts = [];
+    layouts.push(centerLayout);
+    while (layouts.length > 0) {
+        const layout = layouts.pop();
+        if (layout.children.length > 0) {
+            for (let child of layout.children) {
+                if (child.model) editors.push(child.model.editor);
+                else layouts.push(child);
+            }
+        }
+    }
+    return editors;
+}
+
+/**
+ * 获得所有的编辑器
+ * @return {array} 编辑器列表
+ */
+function getEditors() {
+    return window.siyuan.layout
+        ? getEditorsFromLayout(window.siyuan.layout.centerLayout)
+        : [window.siyuan.mobileEditor];
+}
+
+/**
  * 设置块滚动条的位置
  * @params {int} index: 块在文档中的位置索引
  * @params {HTMLElement} scroll: 滚动条容器
@@ -386,3 +419,96 @@ function setBlockSlider(index, scroll, offset = 0) {
             scroll.firstElementChild.value = index;
     }
 }
+
+/**
+ * REF: [siyuan/hideElements.ts at 4c46937744c6746c9e9c2fa5219386867d966dcc · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/blob/4c46937744c6746c9e9c2fa5219386867d966dcc/app/src/protyle/ui/hideElements.ts)
+ */
+// "gutter", "toolbar", "select", "hint", "util", "dialog"
+function hideElements(panels, protyle) {
+    if (!protyle) {
+        if (panels.includes("dialog")) {
+            for (let i = 0; i < window.siyuan.dialogs.length; i++) {
+                if (window.siyuan.dialogs[i].destroy()) {
+                    i--;
+                }
+            }
+        }
+        return;
+    }
+    if (panels.includes("hint")) {
+        clearTimeout(protyle.hint.timeId);
+        protyle.hint.element.classList.add("fn__none");
+    }
+    if (protyle.gutter && panels.includes("gutter")) {
+        protyle.gutter.element.classList.add("fn__none");
+        protyle.gutter.element.innerHTML = "";
+        // https://ld246.com/article/1651935412480
+        protyle.wysiwyg.element.querySelectorAll(".protyle-wysiwyg--hl").forEach((item) => {
+            item.classList.remove("protyle-wysiwyg--hl");
+        });
+    }
+    if (protyle.toolbar && panels.includes("toolbar")) {
+        protyle.toolbar.element.classList.add("fn__none");
+    }
+    if (protyle.toolbar && panels.includes("util")) {
+        const pinElement = protyle.toolbar.subElement.querySelector('[data-type="pin"]');
+        if (!pinElement || (pinElement && !pinElement.classList.contains("ft__primary"))) {
+            protyle.toolbar.subElement.classList.add("fn__none");
+        }
+    }
+    if (panels.includes("select")) {
+        protyle.wysiwyg.element.querySelectorAll(".protyle-wysiwyg--select").forEach(item => {
+            item.classList.remove("protyle-wysiwyg--select");
+        });
+    }
+};
+
+/**
+ * REF: [siyuan/hasClosest.ts at master · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/blob/master/app/src/protyle/util/hasClosest.ts)
+ */
+function hasClosestByClassName(element, className, top = false) {
+    if (!element) {
+        return false;
+    }
+    if (element.nodeType === 3) {
+        element = element.parentElement;
+    }
+    let e = element;
+    let isClosest = false;
+    while (e && !isClosest && (top ? e.tagName !== "BODY" : !e.classList.contains("protyle-wysiwyg"))) {
+        if (e.classList.contains(className)) {
+            isClosest = true;
+        } else {
+            e = e.parentElement;
+        }
+    }
+    return isClosest && e;
+};
+
+/**
+ * REF: [siyuan/onGet.ts at master · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/blob/master/app/src/protyle/util/onGet.ts#L182)
+ */
+/** 禁用编辑器 */
+function disabledProtyle(protyle) {
+    hideElements(["gutter", "toolbar", "select", "hint", "util"], protyle);
+    protyle.disabled = true;
+    protyle.wysiwyg.element.setAttribute("contenteditable", "false");
+    protyle.wysiwyg.element.querySelectorAll('[contenteditable="true"][spellcheck="false"]').forEach(item => {
+        item.setAttribute("contenteditable", "false");
+    });
+};
+
+/** 解除编辑器禁用 */
+function enableProtyle(protyle) {
+    protyle.disabled = false;
+    if (navigator && navigator.maxTouchPoints > 1 && ["MacIntel", "iPhone"].includes(navigator.platform)) {
+        // iPhone，iPad 端输入 contenteditable 为 true 时会在块中间插入 span
+    } else {
+        protyle.wysiwyg.element.setAttribute("contenteditable", "true");
+    }
+    protyle.wysiwyg.element.querySelectorAll('[contenteditable="false"][spellcheck="false"]').forEach(item => {
+        if (!hasClosestByClassName(item, "protyle-wysiwyg__embed")) {
+            item.setAttribute("contenteditable", "true");
+        }
+    });
+};
