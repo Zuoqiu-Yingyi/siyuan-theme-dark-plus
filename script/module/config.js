@@ -460,6 +460,10 @@ export var config = {
                         '/appearance/themes/Dark+/image/light/background (04).jpeg',
                         '/appearance/themes/Dark+/image/light/background (05).jpeg',
                         '/appearance/themes/Dark+/image/light/background (06).jpeg',
+                        '/appearance/themes/Dark+/image/light/background (07).jpeg',
+                        '/appearance/themes/Dark+/image/light/background (08).jpeg',
+                        '/appearance/themes/Dark+/image/light/background (09).jpeg',
+                        '/appearance/themes/Dark+/image/light/background (10).jpeg',
                     ],
                     dark: [ // 自定义暗色背景图片 URL 列表
                         '/appearance/themes/Dark+/image/background (01).jpg',
