@@ -10,6 +10,7 @@
 - 调整亮色主题中悬浮预览窗口背景透明度 | Adjusted the transparency of the floating preview window in light theme.
 - 更换明亮主题默认背景图片 | Changed the default background image of light theme.
 - 调整反链浮窗匹配项样式 | Adjusted the style of the matching item of the floating window.
+- 只读模式对已打开的文档生效 | Only read mode will take effect on the opened document.
 
 ## v1.1.0/2022-06-03
 

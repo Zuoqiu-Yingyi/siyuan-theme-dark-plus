@@ -5,9 +5,17 @@ import {
     toolbarItemInit,
     toolbarItemChangeStatu,
 } from './../utils/ui.js';
+import {
+    getEditors,
+    disabledProtyle,
+    enableProtyle,
+} from './../utils/dom.js';
 
 function readonlyEnable() {
+    const editors = getEditors();
     window.siyuan.config.readonly = !window.siyuan.config.readonly;
+    const fn = window.siyuan.config.readonly ? disabledProtyle : enableProtyle;
+    for (const editor of editors) fn(editor.protyle);
     // 更改菜单栏按钮状态
     toolbarItemChangeStatu(
         config.theme.readonly.toolbar.id,
