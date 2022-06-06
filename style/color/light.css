@@ -30,6 +30,9 @@
     /* 鲜明颜色 | Striking color */
     --custom-striking-color: var(--b3-graph-listitem-point);
 
+    /* 悬浮预览窗口背景颜色 */
+    --custom-popover-background-color: var(--custom-transparent-deeper);
+
     /* 思源块引用颜色 | The color of SiYuan block reference */
     --custom-span-block-ref-color: var(--custom-striking-color);
 
