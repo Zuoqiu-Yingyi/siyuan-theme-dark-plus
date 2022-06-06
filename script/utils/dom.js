@@ -395,12 +395,26 @@ function getEditorsFromLayout(centerLayout) {
 }
 
 /**
+ * 从悬浮面板中获得编辑器列表
+ * @params {layout} blockPanels 悬浮面板
+ */
+function getEditorsFromblockPanels(blockPanels) {
+    const editors = [];
+    for (const blockPanel of blockPanels) {
+        for (const editor of blockPanel.editors) {
+            editors.push(editor);
+        }
+    }
+    return editors;
+}
+
+/**
  * 获得所有的编辑器
  * @return {array} 编辑器列表
  */
 function getEditors() {
     return window.siyuan.layout
-        ? getEditorsFromLayout(window.siyuan.layout.centerLayout)
+        ? getEditorsFromLayout(window.siyuan.layout.centerLayout).concat(getEditorsFromblockPanels(window.siyuan.blockPanels))
         : [window.siyuan.mobileEditor];
 }
 
