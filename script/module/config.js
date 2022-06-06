@@ -28,13 +28,28 @@ export var config = {
             more: {
                 id: 'custom-toolbar-more',
                 enable: true,
-                icon: '#iconMore',
-                label: {
-                    zh_CN: '更多',
-                    zh_CNT: null,
-                    fr_FR: null,
-                    en_US: null,
-                    other: 'More',
+                status: {
+                    default: "fold",
+                    fold: {
+                        icon: '#iconFullscreen',
+                        label: {
+                            zh_CN: '展开扩展工具栏',
+                            zh_CNT: null,
+                            fr_FR: null,
+                            en_US: null,
+                            other: 'Expand the Expansion Toolbar',
+                        },
+                    },
+                    unfold: {
+                        icon: '#iconContract',
+                        label: {
+                            zh_CN: '收起扩展工具栏',
+                            zh_CNT: null,
+                            fr_FR: null,
+                            en_US: null,
+                            other: 'Collapse the Expansion Toolbar',
+                        },
+                    },
                 },
             },
         },
@@ -750,6 +765,114 @@ export var config = {
                     index: -6,
                 },
                 items: [ // 块菜单项
+                    { // 常用字体设置
+                        enable: true, // 是否启用菜单项
+                        prefixSeparator: true, // 是否添加前缀分隔线
+                        suffixSeparator: false, // 是否添加后缀分隔线
+                        type: { // 哪些类型的块启用, 值 null 则全部启用
+                            NodeBlockQueryEmbed: { enable: true },
+                            NodeBlockquote: { enable: true },
+                            NodeDocument: { enable: true },
+                            NodeHeading: { enable: true },
+                            NodeList: { enable: true },
+                            NodeListItem: { enable: true },
+                            NodeParagraph: { enable: true },
+                            NodeSuperBlock: { enable: true },
+                            NodeTable: { enable: true },
+                        },
+                        id: 'theme-menu-block-common-font', // 菜单项 ID
+                        mode: "button",  // 菜单项类型
+                        icon: "#iconFont",  // 菜单项图标
+                        label: {  // 菜单项标签
+                            zh_CN: "常用字体",
+                            other: "Common Fonts",
+                        },
+                        accelerator: "",  // 菜单项快捷键
+                        click: {  // 菜单项点击事件
+                            enable: false, // 是否启用点击事件
+                        },
+                        itemsLoad: true, // 是否加载子菜单
+                        itemsIcon: "#iconRight",
+                        items: [
+                            {
+                                enable: true,
+                                type: null,
+                                mode: "button",
+                                icon: "#iconFont",
+                                label: {
+                                    zh_CN: "默认字体",
+                                    other: "Default Font",
+                                    style: `font-family: "${window.siyuan.config.editor.fontFamily}"`,
+                                },
+                                accelerator: window.siyuan.config.editor.fontFamily,
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-replace',
+                                            params: {
+                                                'style': {
+                                                    regexp: /\s*font-family:.*?;/g,
+                                                    substr: '',
+                                                },
+                                            },
+                                        },
+                                        {
+                                            type: 'attr-update',
+                                            params: {
+                                                'custom-font-family': null,
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                        ],
+                    },
+                    { // 其他字体设置
+                        enable: true,
+                        prefixSeparator: false,
+                        suffixSeparator: false,
+                        type: {
+                            NodeBlockQueryEmbed: { enable: true },
+                            NodeBlockquote: { enable: true },
+                            NodeDocument: { enable: true },
+                            NodeHeading: { enable: true },
+                            NodeList: { enable: true },
+                            NodeListItem: { enable: true },
+                            NodeParagraph: { enable: true },
+                            NodeSuperBlock: { enable: true },
+                            NodeTable: { enable: true },
+                        },
+                        id: 'theme-menu-block-other-font',
+                        mode: "button",
+                        icon: "#iconFont",
+                        label: {
+                            zh_CN: "其他字体",
+                            other: "Other Fonts",
+                        },
+                        accelerator: "",
+                        click: {
+                            enable: true,
+                            callback: null,
+                            tasks: [
+                                {
+                                    type: 'menu-unfold', // 展开菜单
+                                    params: {
+                                        id: 'theme-menu-block-other-font',
+                                        item: () => config.theme.menu.block.items[1],
+                                    }
+                                },
+                            ],
+                        },
+                        itemsLoad: false,
+                        itemsIcon: {
+                            fold: "#iconFullscreen",
+                            unfold: "#iconContract",
+                        },
+                        items: [
+                        ],
+                    },
                     { // jupyter 设置
                         enable: true,
                         prefixSeparator: true,
@@ -900,114 +1023,6 @@ export var config = {
                                     ],
                                 },
                             },
-                        ],
-                    },
-                    { // 常用字体设置
-                        enable: true, // 是否启用菜单项
-                        prefixSeparator: true, // 是否添加前缀分隔线
-                        suffixSeparator: false, // 是否添加后缀分隔线
-                        type: { // 哪些类型的块启用, 值 null 则全部启用
-                            NodeBlockQueryEmbed: { enable: true },
-                            NodeBlockquote: { enable: true },
-                            NodeDocument: { enable: true },
-                            NodeHeading: { enable: true },
-                            NodeList: { enable: true },
-                            NodeListItem: { enable: true },
-                            NodeParagraph: { enable: true },
-                            NodeSuperBlock: { enable: true },
-                            NodeTable: { enable: true },
-                        },
-                        id: 'theme-menu-block-common-font', // 菜单项 ID
-                        mode: "button",  // 菜单项类型
-                        icon: "#iconFont",  // 菜单项图标
-                        label: {  // 菜单项标签
-                            zh_CN: "常用字体",
-                            other: "Common Fonts",
-                        },
-                        accelerator: "",  // 菜单项快捷键
-                        click: {  // 菜单项点击事件
-                            enable: false, // 是否启用点击事件
-                        },
-                        itemsLoad: true, // 是否加载子菜单
-                        itemsIcon: "#iconRight",
-                        items: [
-                            {
-                                enable: true,
-                                type: null,
-                                mode: "button",
-                                icon: "#iconFont",
-                                label: {
-                                    zh_CN: "默认字体",
-                                    other: "Default Font",
-                                    style: `font-family: "${window.siyuan.config.editor.fontFamily}"`,
-                                },
-                                accelerator: window.siyuan.config.editor.fontFamily,
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-replace',
-                                            params: {
-                                                'style': {
-                                                    regexp: /\s*font-family:.*?;/g,
-                                                    substr: '',
-                                                },
-                                            },
-                                        },
-                                        {
-                                            type: 'attr-update',
-                                            params: {
-                                                'custom-font-family': null,
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                        ],
-                    },
-                    { // 其他字体设置
-                        enable: true,
-                        prefixSeparator: false,
-                        suffixSeparator: false,
-                        type: {
-                            NodeBlockQueryEmbed: { enable: true },
-                            NodeBlockquote: { enable: true },
-                            NodeDocument: { enable: true },
-                            NodeHeading: { enable: true },
-                            NodeList: { enable: true },
-                            NodeListItem: { enable: true },
-                            NodeParagraph: { enable: true },
-                            NodeSuperBlock: { enable: true },
-                            NodeTable: { enable: true },
-                        },
-                        id: 'theme-menu-block-other-font',
-                        mode: "button",
-                        icon: "#iconFont",
-                        label: {
-                            zh_CN: "其他字体",
-                            other: "Other Fonts",
-                        },
-                        accelerator: "",
-                        click: {
-                            enable: true,
-                            callback: null,
-                            tasks: [
-                                {
-                                    type: 'menu-unfold', // 展开菜单
-                                    params: {
-                                        id: 'theme-menu-block-other-font',
-                                        item: () => config.theme.menu.block.items[1],
-                                    }
-                                },
-                            ],
-                        },
-                        itemsLoad: false,
-                        itemsIcon: {
-                            fold: "#iconFullscreen",
-                            unfold: "#iconContract",
-                        },
-                        items: [
                         ],
                     },
                     { // 其他功能

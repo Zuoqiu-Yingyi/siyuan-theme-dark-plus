@@ -52,13 +52,26 @@ function recreateNode(node, withChildren = false) {
 function createToolbarItem(toolbarConfig, className) {
     let item = document.createElement('BUTTON');
     let language = window.theme.languageMode;
-    let label = toolbarConfig.label[language] || toolbarConfig.label.other;
-    label += toolbarConfig.hotkey ? ` [${printHotKey(toolbarConfig.hotkey())}]` : '';
+    let icon, label;
+    if (toolbarConfig.status
+        && toolbarConfig.status.default
+        && toolbarConfig.status[toolbarConfig.status.default]
+    ) { // 按钮是否有多个状态且有默认状态
+        const status = toolbarConfig.status[toolbarConfig.status.default];
+        icon = status.icon;
+        label = status.label;
+        label += status.hotkey ? ` [${printHotKey(status.hotkey())}]` : '';
+    }
+    else { // 按钮没有多个状态
+        icon = toolbarConfig.icon;
+        label = toolbarConfig.label[language] || toolbarConfig.label.other;
+        label += toolbarConfig.hotkey ? ` [${printHotKey(toolbarConfig.hotkey())}]` : '';
+    }
 
     item.id = toolbarConfig.id;
     item.className = className || "toolbar__item b3-tooltips b3-tooltips__sw";
     item.setAttribute('aria-label', label);
-    item.innerHTML = `<svg><use xlink:href="${toolbarConfig.icon}"></use></svg>`;
+    item.innerHTML = `<svg><use xlink:href="${icon}"></use></svg>`;
     return item;
 }
 
@@ -94,36 +107,27 @@ function toolbarItemListPush(item) {
             /* 更多按钮 */
             let more = createToolbarItem(config.theme.toolbar.more);
             more.addEventListener('click', () => {
+                let status, language = window.theme.languageMode;
                 if (custom_toolbar.style.display === 'none') {
                     // 显示自定义工具栏
+                    status = config.theme.toolbar.more.status.unfold
                     custom_toolbar.style.display = null;
                     custom.theme.toolbar[config.theme.toolbar.more.id].state = true;
-                    toolbarItemChangeStatu(
-                        config.theme.toolbar.more.id,
-                        config.theme.toolbar.more.enable,
-                        true,
-                        'BUTTON',
-                        more,
-                    );
                 }
                 else {
                     // 隐藏自定义工具栏
+                    status = config.theme.toolbar.more.status.fold
                     custom_toolbar.style.display = 'none';
                     custom.theme.toolbar[config.theme.toolbar.more.id].state = false;
-                    toolbarItemChangeStatu(
-                        config.theme.toolbar.more.id,
-                        config.theme.toolbar.more.enable,
-                        false,
-                        'BUTTON',
-                        more,
-                    );
                 }
+                more.setAttribute('aria-label', status.label[language] || status.label.other);
+                more.firstChild.firstChild.setAttribute('xlink:href', status.icon);
                 setTimeout(async () => saveCustomFile(custom), 0);
             });
 
             itemStateLoad(config.theme.toolbar.more.id, custom.theme.toolbar, more);
-            toolbar.insertBefore(custom_toolbar, windowControls);
             toolbar.insertBefore(more, windowControls);
+            toolbar.insertBefore(custom_toolbar, windowControls);
         }
 
         toolbarItemList = toolbarItemList.sort((a, b) => a.index - b.index);
