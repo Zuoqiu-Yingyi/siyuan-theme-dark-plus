@@ -1,5 +1,9 @@
 # 更改日志 | CHANGE LOG
 
+## v1.1.1/2022-06-06
+
+- [v1.1.0 <=> v1.1.1](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.0...v1.1.1)
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 修复取消聚焦方法 `cancelFocalize` 无法终止问题 | Fixed the issue of function `cancelFocalize` can not terminate.
 - 改进 Jupyter 消息缓存机制 | Improved the Jupyter message cache mechanism.
 - 调整扩展工具栏的样式 | Adjusted the style of extension toolbar.
