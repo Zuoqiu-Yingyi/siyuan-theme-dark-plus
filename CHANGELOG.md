@@ -4,6 +4,7 @@
 - 改进 Jupyter 消息缓存机制 | Improved the Jupyter message cache mechanism.
 - 调整扩展工具栏的样式 | Adjusted the style of extension toolbar.
 - 调整亮色主题中悬浮预览窗口背景透明度 | Adjusted the transparency of the floating preview window in light theme.
+- 更换明亮主题默认背景图片 | Changed the default background image of light theme.
 
 ## v1.1.0/2022-06-03
 
