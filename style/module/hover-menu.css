@@ -158,6 +158,16 @@ div.protyle-util .b3-list.b3-list--background,
     outline-style: var(--custom-popover-menu-outline-style);
 }
 
+.protyle-wysiwyg [data-node-id] span.def--mark {
+    margin: 0 0.25em;
+    border: 0;
+    padding: 0 0.125em;
+    color: var(--custom-matched-keyword-color);
+    background-color: var(--custom-matched-keyword-background-color);
+    border-width: var(--custom-popover-menu-outline-width);
+    border-style: var(--custom-popover-menu-outline-style);
+}
+
 /* 菜单分栏 */
 /* .b3-list.fn__flex-1.b3-list--background:not(#globalSearchList) {
     column-count: 4;
