@@ -204,6 +204,7 @@ window.theme.loadScript("/appearance/themes/Dark+/script/module/html.js", "text/
 window.theme.loadScript("/appearance/themes/Dark+/script/module/background.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/blockattrs.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/doc.js");
+window.theme.loadScript("/appearance/themes/Dark+/script/module/dock.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/goto.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/invert.js");
 window.theme.loadScript("/appearance/themes/Dark+/script/module/location.js");
