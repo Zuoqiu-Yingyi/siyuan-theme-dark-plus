@@ -77,7 +77,7 @@ export var config = {
                         other: 'List Guides',
                     },
                     icon: '#iconIndent',
-                    index: -5,
+                    index: -6,
                 },
                 elements: {
                     // 应用辅助线样式的元素
@@ -106,7 +106,7 @@ export var config = {
                         other: 'Displays Mark Text',
                     },
                     icon: '#iconMark',
-                    index: -4,
+                    index: -5,
                 },
                 elements: {
                     // 应用辅助线样式的元素
@@ -333,7 +333,7 @@ export var config = {
                         other: 'Typewriter Mode',
                     },
                     icon: '#iconKeymap',
-                    index: -1,
+                    index: -3,
                 },
                 NodeCodeBlock: {
                     enable: false, // 是否在代码块中启用打字机模式
@@ -361,7 +361,7 @@ export var config = {
                     other: 'Display in Inverse Color',
                 },
                 icon: '#iconMoon',
-                index: -3,
+                index: -4,
             },
             elements: {
                 // 反色元素
@@ -710,7 +710,7 @@ export var config = {
                         other: 'Record Browsing Location',
                     },
                     icon: '#iconBookmark',
-                    index: -7,
+                    index: -8,
                 },
             },
             clear: {
@@ -746,7 +746,28 @@ export var config = {
                     other: 'Read-Only Mode',
                 },
                 icon: '#iconPreview',
-                index: -2,
+                index: -1,
+            },
+        },
+        dock: {
+            enable: true, // dock 功能开关
+            fold: {
+                enable: true, // dock 收缩/展开功能面板功能开关
+                toolbar: { // 菜单栏
+                    enable: true,
+                    display: true,
+                    id: 'toolbar-theme-dock-fold',
+                    hotkey: () => config.theme.hotkeys.dock.fold,
+                    label: {
+                        zh_CN: '专注模式',
+                        zh_CNT: null,
+                        fr_FR: null,
+                        en_US: null,
+                        other: 'Focus Mode',
+                    },
+                    icon: '#iconHideDock',
+                    index: -2,
+                },
             },
         },
         menu: {
@@ -766,7 +787,7 @@ export var config = {
                         other: 'Block Menu Enhancements',
                     },
                     icon: '#iconMenu',
-                    index: -6,
+                    index: -7,
                 },
                 items: [ // 块菜单项
                     { // 常用字体设置
@@ -2359,6 +2380,16 @@ export var config = {
                     key: 'L',
                 },
             },
+            dock: {
+                fold: {
+                    // 一键折叠/展开功能面板(Shift + Alt + F)
+                    CtrlCmd: false,
+                    WinCtrl: false,
+                    Shift: true,
+                    Alt: true,
+                    key: 'F',
+                },
+            },
             menu: {
                 block: {
                     // 块菜单开关(Shift + Alt + M)
@@ -2395,6 +2426,7 @@ export var custom = {
             [config.theme.location.record.toolbar.id]: { default: false },
         },
         location: {},
+        dock: {},
     },
 };
 
