@@ -189,6 +189,44 @@ export var config = {
         },
         doc: {
             enable: true, // 是否启用文档扩展功能
+            heading: { // 标题操作
+                enable: true, // 是否启用标题操作
+                fold: {
+                    enable: true, // 是否启用一键全部折叠
+                    toolbar: { // 菜单栏
+                        enable: true,
+                        display: true,
+                        id: 'toolbar-theme-doc-heading-fold',
+                        // hotkey: () => config.theme.hotkeys.doc.heading.fold,
+                        label: {
+                            zh_CN: '折叠当前文档所有子标题',
+                            zh_CNT: null,
+                            fr_FR: null,
+                            en_US: null,
+                            other: 'Collapses Sll Subheadings of the Current Document',
+                        },
+                        icon: '#iconContract',
+                        index: 10,
+                    },
+                unfold: {
+                    enable: true, // 是否启用一键全部展开
+                    toolbar: { // 菜单栏
+                        enable: true,
+                        display: true,
+                        id: 'toolbar-theme-doc-heading-unfold',
+                        // hotkey: () => config.theme.hotkeys.doc.heading.unfold,
+                        label: {
+                            zh_CN: '展开当前文档所有子标题',
+                            zh_CNT: null,
+                            fr_FR: null,
+                            en_US: null,
+                            other: 'Expand Sll Subheadings of the Current Document',
+                        },
+                        icon: '#iconFullscreen',
+                        index: 11,
+                    },
+                },
+            },
             outline: {
                 enable: true, // 是否启用当前文档大纲复制功能
                 ial: { // 列表块属性, 用于设置渲染样式, 为空则为默认样式
@@ -275,7 +313,7 @@ export var config = {
                         other: 'Copy the Current Document Content (Markdown)',
                     },
                     icon: '#iconCopy',
-                    index: 10,
+                    index: 12,
                 },
             },
             delete: {
@@ -293,7 +331,7 @@ export var config = {
                         other: 'Delete the Current Document Content',
                     },
                     icon: '#iconTrashcan',
-                    index: 12,
+                    index: 14,
                 },
             },
             cut: {
@@ -311,7 +349,7 @@ export var config = {
                         other: 'Cut the Current Document Content (Markdown)',
                     },
                     icon: '#iconCut',
-                    index: 11,
+                    index: 13,
                 },
             },
         },
@@ -728,7 +766,7 @@ export var config = {
                         other: 'Clear the Current Document Browsing Location History',
                     },
                     icon: '#iconTrashcan',
-                    index: 13,
+                    index: 15,
                 },
             }
         },
