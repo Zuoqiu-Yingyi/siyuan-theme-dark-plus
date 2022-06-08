@@ -5,7 +5,8 @@ import { isKey } from './../utils/hotkey.js';
 import { toolbarItemInit } from './../utils/ui.js';
 import {
     getDockFromPanel,
-    getFocusedDocID
+    getFocusedDocID,
+    setBlockDOMAttrs,
 } from './../utils/dom.js';
 import {
     ialCreate,
@@ -14,9 +15,11 @@ import {
 import { getObjectLength } from './../utils/misc.js';
 import { globalEventHandler } from './../utils/listener.js';
 import {
+    sql,
     exportMdContent,
     updateBlock,
     getDocOutline,
+    setBlockAttrs,
 } from './../utils/api.js';
 
 async function docCopy() {
@@ -186,42 +189,108 @@ async function outlineCopy(mode) {
     }
 }
 
+/**
+ * 设置子标题折叠状态
+ * @params {boolean} state 折叠状态
+ * @params {string} id 标题 ID
+ */
+async function setHeadingFoldState(state, id) {
+    const children = await sql(`SELECT id FROM blocks WHERE parent_id = '${id}';`);
+    if (children && children.length > 0) {
+        const heading_attrs = { 'fold': state ? '1' : '' };
+        const children_attrs = { 'heading-fold': state ? '1' : '' };
+        await setBlockAttrs(id, heading_attrs);
+        for (const child of children) await setBlockAttrs(child.id, children_attrs);
+    }
+}
+
+/**
+ * 设置文档标题折叠状态
+ * @params {boolean} state 折叠状态
+ * @params {string} id 文档 ID
+ */
+async function setDocFoldState(state = false, id = getFocusedDocID()) {
+    const headings = await sql(`SELECT id FROM blocks WHERE root_id = '${id}' AND type = 'h';`);
+    if (headings && headings.length > 0) {
+        for (const heading of headings) {
+            // console.log(heading);
+            setHeadingFoldState(state, heading.id);
+        }
+    }
+}
 
 setTimeout(() => {
     try {
         if (config.theme.doc.enable) {
+            if (config.theme.doc.heading.enable) {
+                if (config.theme.doc.heading.fold.enable) {
+                    // 标题折叠
+                    const Fn_headingFold = toolbarItemInit(
+                        config.theme.doc.heading.fold.toolbar,
+                        () => setDocFoldState(true),
+                    );
+                    // globalEventHandler.addEventHandler(
+                    //     'keyup',
+                    //     config.theme.hotkeys.heading.fold,
+                    //     _ => Fn_headingFold(),
+                    // );
+                }
+                if (config.theme.doc.heading.unfold.enable) {
+                    // 标题展开
+                    const Fn_headingUnfold = toolbarItemInit(
+                        config.theme.doc.heading.unfold.toolbar,
+                        () => setDocFoldState(false),
+                    );
+                    // globalEventHandler.addEventHandler(
+                    //     'keyup',
+                    //     config.theme.hotkeys.heading.unfold,
+                    //     _ => Fn_headingUnfold(),
+                    // );
+                }
+            }
 
             if (config.theme.doc.outline.enable) {
-                if (config.theme.doc.outline.o.enable) { }
-                // 复制当前文档大纲
-                const Fn_outlineCopy_u = toolbarItemInit(
-                    config.theme.doc.outline.u.toolbar,
-                    () => outlineCopy('u'),
-                );
-                const Fn_outlineCopy_o = toolbarItemInit(
-                    config.theme.doc.outline.o.toolbar,
-                    () => outlineCopy('o'),
-                );
-                const Fn_outlineCopy_t = toolbarItemInit(
-                    config.theme.doc.outline.t.toolbar,
-                    () => outlineCopy('t'),
-                );
+                // 大纲功能
+                if (config.theme.doc.outline.o.enable) {
+                    // 复制当前文档大纲为无序列表
+                    const Fn_outlineCopy_u = toolbarItemInit(
+                        config.theme.doc.outline.u.toolbar,
+                        () => outlineCopy('u'),
+                    );
 
-                globalEventHandler.addEventHandler(
-                    'keyup',
-                    config.theme.hotkeys.doc.outline.u,
-                    _ => Fn_outlineCopy_u(),
-                );
-                globalEventHandler.addEventHandler(
-                    'keyup',
-                    config.theme.hotkeys.doc.outline.o,
-                    _ => Fn_outlineCopy_o(),
-                );
-                globalEventHandler.addEventHandler(
-                    'keyup',
-                    config.theme.hotkeys.doc.outline.t,
-                    _ => Fn_outlineCopy_t(),
-                );
+                    globalEventHandler.addEventHandler(
+                        'keyup',
+                        config.theme.hotkeys.doc.outline.u,
+                        _ => Fn_outlineCopy_u(),
+                    );
+                }
+                if (config.theme.doc.outline.u.enable) {
+                    // 复制当前文档大纲为有序列表
+                    const Fn_outlineCopy_o = toolbarItemInit(
+                        config.theme.doc.outline.o.toolbar,
+                        () => outlineCopy('o'),
+                    );
+
+                    globalEventHandler.addEventHandler(
+                        'keyup',
+                        config.theme.hotkeys.doc.outline.o,
+                        _ => Fn_outlineCopy_o(),
+                    );
+                }
+                if (config.theme.doc.outline.t.enable) {
+                    // 复制当前文档大纲为任务列表
+                    const Fn_outlineCopy_t = toolbarItemInit(
+                        config.theme.doc.outline.t.toolbar,
+                        () => outlineCopy('t'),
+                    );
+
+                    globalEventHandler.addEventHandler(
+                        'keyup',
+                        config.theme.hotkeys.doc.outline.t,
+                        _ => Fn_outlineCopy_t(),
+                    );
+                }
+
             }
 
             if (config.theme.doc.copy.enable) {
@@ -263,7 +332,9 @@ setTimeout(() => {
                 );
             }
         }
-    } catch (err) {
+
+    }
+    catch (err) {
         console.error(err);
     }
 }, 0);
