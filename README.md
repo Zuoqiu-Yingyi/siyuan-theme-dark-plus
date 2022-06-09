@@ -125,6 +125,8 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | <kbd>Shift + Alt + C</kbd>                                                         | 当前文档<br/>current document                                                                                     | 复制当前文档 markdown 全文至剪贴板<br/>copy the full markdown text of the current document to the clipboard                                   |
 | <kbd>Shift + Alt + X</kbd>                                                         | 当前文档<br/>current document                                                                                     | 剪切当前文档 markdown 全文至剪贴板<br/>cut the full markdown text of the current document to the clipboard                                    |
 | <kbd>Shift + Alt + D</kbd>                                                         | 当前文档<br/>current document                                                                                     | 删除当前文档全文<br/>delete the full content of the current documen                                                                           |
+| <kbd>Shift + Alt + ↑</kbd>                                                         | 当前文档<br/>current document                                                                                     | 折叠当前文档所有子标题<br/>collapse all sub-headings of the current document                                                                  |
+| <kbd>Shift + Alt + ↓</kbd>                                                         | 当前文档<br/>current document                                                                                     | 展开当前文档所有子标题<br/>expand all sub-headings of the current document                                                                    |
 | <kbd>Ctrl/⌘ + Shift + Alt + R</kbd>                                                | 整个窗口<br/>entire window                                                                                        | 使用自定义背景图片<br/>use the custom background images                                                                                       |
 | <kbd>Ctrl/⌘ + Shift + Alt + N</kbd>                                                | 整个窗口<br/>entire window                                                                                        | 在新窗口打开光标所在块并聚焦<br/>open the block and focus where the cursor is located in a new window                                         |
 | <kbd>Ctrl/⌘ + Shift + Alt + L</kbd>                                                | 整个窗口<br/>entire window                                                                                        | 清除当前文档浏览位置记录<br/>clear the current document browsing location history                                                             |
@@ -407,6 +409,10 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   Use the shortcut keys <kbd>Shift + Alt + X</kbd> to cut the full markdown text of the current document to the clipboard.
 - 使用快捷键 <kbd>Shift + Alt + D</kbd> 删除当前文档全部内容  
   Use the shortcut keys <kbd>Shift + Alt + D</kbd> to delete the full content of the current documen.
+- 使用快捷键 <kbd>Shift + Alt + ↑</kbd> 折叠当前文档所有子标题  
+  Use the shortcut keys <kbd>Shift + Alt + ↑</kbd> to collapse all sub-headings of the current document.
+- 使用快捷键 <kbd>Shift + Alt + ↓</kbd> 展开当前文档所有子标题  
+  Use the shortcut keys <kbd>Shift + Alt + ↓</kbd> to expand all sub-headings of the current document.
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + R</kbd> 使用自定义背景图片  
   Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + R</kbd> to use the custom background images.
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + N</kbd> 在新窗口打开光标所在块并聚焦  

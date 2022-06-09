@@ -40,6 +40,13 @@ const MOUSE_BUTTON_MAP = {
     2: 'right-click',
 };
 
+const KEY_MAP = {
+    ArrowUp: '↑',
+    ArrowDown: '↓',
+    ArrowLeft: '←',
+    ArrowRight: '→',
+};
+
 function printHotKey(key) {
     let ctrl = 'Ctrl';
     let shift = 'Shift';
@@ -66,6 +73,6 @@ function printHotKey(key) {
     if (key.Alt) {
         hotkey.push(alt);
     }
-    hotkey.push(key.key || key.type || MOUSE_BUTTON_MAP[key.button]);
+    hotkey.push(KEY_MAP[key.key] || key.key || key.type || MOUSE_BUTTON_MAP[key.button]);
     return hotkey.join(' + ');
 }

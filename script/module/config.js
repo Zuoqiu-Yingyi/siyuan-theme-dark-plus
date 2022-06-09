@@ -197,7 +197,7 @@ export var config = {
                         enable: true,
                         display: true,
                         id: 'toolbar-theme-doc-heading-fold',
-                        // hotkey: () => config.theme.hotkeys.doc.heading.fold,
+                        hotkey: () => config.theme.hotkeys.doc.heading.fold,
                         label: {
                             zh_CN: '折叠当前文档所有子标题',
                             zh_CNT: null,
@@ -208,13 +208,30 @@ export var config = {
                         icon: '#iconContract',
                         index: 10,
                     },
+                    message: {
+                        success: {
+                            zh_CN: '折叠完成, 请刷新当前文档',
+                            zh_CNT: null,
+                            fr_FR: null,
+                            en_US: null,
+                            other: 'Collapse completed, please refresh the current document.',
+                        },
+                        error: {
+                            zh_CN: '折叠失败，请在编辑区中选择文档',
+                            zh_CNT: null,
+                            fr_FR: null,
+                            en_US: null,
+                            other: 'Collapse failed, please select the document in the editing area.',
+                        },
+                    },
+                },
                 unfold: {
                     enable: true, // 是否启用一键全部展开
                     toolbar: { // 菜单栏
                         enable: true,
                         display: true,
                         id: 'toolbar-theme-doc-heading-unfold',
-                        // hotkey: () => config.theme.hotkeys.doc.heading.unfold,
+                        hotkey: () => config.theme.hotkeys.doc.heading.unfold,
                         label: {
                             zh_CN: '展开当前文档所有子标题',
                             zh_CNT: null,
@@ -224,6 +241,22 @@ export var config = {
                         },
                         icon: '#iconFullscreen',
                         index: 11,
+                    },
+                    message: {
+                        success: {
+                            zh_CN: '展开完成, 请刷新当前文档',
+                            zh_CNT: null,
+                            fr_FR: null,
+                            en_US: null,
+                            other: 'Expand completed, please refresh the current document.',
+                        },
+                        error: {
+                            zh_CN: '展开失败，请在编辑区中选择文档',
+                            zh_CNT: null,
+                            fr_FR: null,
+                            en_US: null,
+                            other: 'Expand failed, please select the document in the editing area.',
+                        },
                     },
                 },
             },
@@ -2258,6 +2291,24 @@ export var config = {
                     Shift: true,
                     Alt: true,
                     key: 'X',
+                },
+                heading: {
+                    fold: {
+                        // 一键折叠当前文档所有标题(Shift + Alt + ↑)
+                        CtrlCmd: false,
+                        WinCtrl: false,
+                        Shift: true,
+                        Alt: true,
+                        key: 'ArrowUp',
+                    },
+                    unfold: {
+                        // 一键折展开当前文档所有标题(Shift + Alt + ↓)
+                        CtrlCmd: false,
+                        WinCtrl: false,
+                        Shift: true,
+                        Alt: true,
+                        key: 'ArrowDown',
+                    },
                 },
                 outline: {
                     u: {
