@@ -88,8 +88,8 @@ window.theme.updateStyle = function (id, href) {
     }
 }
 
-window.theme.ID_COLOR_STYLE = 'colorStyle';
-window.theme.ID_CUSTOM_STYLE = 'customStyle';
+window.theme.ID_COLOR_STYLE = 'theme-color-style';
+window.theme.ID_CUSTOM_STYLE = 'custom-color-style';
 
 /**
  * 获取主题模式

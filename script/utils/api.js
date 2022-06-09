@@ -6,6 +6,7 @@ import { config } from './../module/config.js';
 
 export {
     向思源请求数据 as request,
+    交互业务 as transactions,
     以sql向思源请求块数据 as sql,
     获取思源块链接锚文本 as getAnchor,
 
@@ -55,6 +56,9 @@ export {
     获取系统字体列表 as getSysFonts,
     获取文件 as getFile,
     写入文件 as putFile,
+
+    推送消息 as pushMsg,
+    推送报错消息 as pushErrMsg,
 };
 
 async function 向思源请求数据(url, data) {
@@ -73,6 +77,17 @@ async function 解析响应体(response) {
     let r = await response
     // console.log(r)
     return r.code === 0 ? r.data : null
+}
+
+async function 交互业务(protyle, transactions = []) {
+    const url = '/api/transactions'
+    const ws_url = new URL(protyle.ws.ws.url);
+    const data = {
+        app: ws_url.searchParams.get('app'),
+        session: ws_url.searchParams.get('id'),
+        transactions: transactions,
+    };
+    return 解析响应体(向思源请求数据(url, data))
 }
 
 async function 以sql向思源请求块数据(sql) {
@@ -479,4 +494,24 @@ async function 写入文件(path, filedata, isDir = false, modTime = Date.now())
     if (response.status === 200)
         return await response.json();
     else return null;
+}
+
+const language = window.theme.languageMode;
+
+async function 推送消息(message = null, text = null, timeout = 7000) {
+    const url = '/api/notification/pushMsg'
+    const data = {
+        msg: message ? message[language] || message.other : text,
+        timeout: timeout,
+    }
+    return 解析响应体(向思源请求数据(url, data))
+}
+
+async function 推送报错消息(message = null, text = null, timeout = 7000) {
+    const url = '/api/notification/pushErrMsg'
+    const data = {
+        msg: message ? message[language] || message.other : text,
+        timeout: timeout,
+    }
+    return 解析响应体(向思源请求数据(url, data))
 }

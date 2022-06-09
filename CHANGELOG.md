@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - [#34](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/34) 使用快捷键 <kbd>Shift + Alt + F</kbd> 启动/关闭专注模式 (折叠/展开功能面板) | Use the shortcut <kbd>Shift + Alt + F</kbd> to turn on/off the focus mode (collapse/expand the feature panels).
+- 使用快捷键 <kbd>Shift + Alt + ↑/↓</kbd> 折叠/展开当前文档所有子标题 | Use the shortcut <kbd>Shift + Alt + ↑/↓</kbd> to collapse/expand all sub-headings of the current document.
 
 ## v1.1.1/2022-06-06
 

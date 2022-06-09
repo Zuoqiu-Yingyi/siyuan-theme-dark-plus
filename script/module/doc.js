@@ -4,6 +4,7 @@ import { config } from './config.js';
 import { isKey } from './../utils/hotkey.js';
 import { toolbarItemInit } from './../utils/ui.js';
 import {
+    getEditor,
     getDockFromPanel,
     getFocusedDocID,
     setBlockDOMAttrs,
@@ -19,7 +20,9 @@ import {
     exportMdContent,
     updateBlock,
     getDocOutline,
-    setBlockAttrs,
+    transactions,
+    pushMsg,
+    pushErrMsg,
 } from './../utils/api.js';
 
 async function docCopy() {
@@ -191,31 +194,71 @@ async function outlineCopy(mode) {
 
 /**
  * 设置子标题折叠状态
- * @params {boolean} state 折叠状态
- * @params {string} id 标题 ID
+ * @params {boolean} foldState 折叠状态
+ * @params {string} id 子标题 ID
+ * @params {object} protyle 文档对象
  */
-async function setHeadingFoldState(state, id) {
-    const children = await sql(`SELECT id FROM blocks WHERE parent_id = '${id}';`);
-    if (children && children.length > 0) {
-        const heading_attrs = { 'fold': state ? '1' : '' };
-        const children_attrs = { 'heading-fold': state ? '1' : '' };
-        await setBlockAttrs(id, heading_attrs);
-        for (const child of children) await setBlockAttrs(child.id, children_attrs);
-    }
+async function setHeadingFoldState(foldState, id, protyle) {
+    // 使用块属性设置折叠状态, 部分会设置失败
+    // const children = await sql(`SELECT id FROM blocks WHERE parent_id = '${id}';`);
+    // if (children && children.length > 0) {
+    //     const heading_attrs = { 'fold': foldState ? '1' : '' };
+    //     const children_attrs = { 'heading-fold': foldState ? '1' : '' };
+    //     for (const child of children) setBlockAttrs(child.id, children_attrs);
+    //     setBlockAttrs(id, heading_attrs);
+    // }
+
+    // 使用业务交互设置折叠状态
+    const transaction = [
+        {
+            doOperations: [
+                {
+                    action: foldState ? "foldHeading" : "unfoldHeading",
+                    id: id,
+                },
+            ],
+            undoOperations: [
+                {
+                    action: foldState ? "unfoldHeading" : "foldHeading",
+                    id: id,
+                },
+            ],
+        },
+    ];
+    const r = await transactions(protyle, transaction);
+    // console.log(r);
+    return r;
 }
 
 /**
  * 设置文档标题折叠状态
- * @params {boolean} state 折叠状态
+ * @params {boolean} foldState 折叠状态
  * @params {string} id 文档 ID
  */
-async function setDocFoldState(state = false, id = getFocusedDocID()) {
-    const headings = await sql(`SELECT id FROM blocks WHERE root_id = '${id}' AND type = 'h';`);
-    if (headings && headings.length > 0) {
-        for (const heading of headings) {
-            // console.log(heading);
-            setHeadingFoldState(state, heading.id);
+async function setDocFoldState(foldState = false, id = getFocusedDocID()) {
+    const editor = getEditor(id);
+    const language = window.theme.languageMode;
+    if (editor) {
+        const sequence = foldState ? [6, 5, 4, 3, 2, 1] : [1, 2, 3, 4, 5, 6];
+        for (const index of sequence) {
+            const headings = await sql(`SELECT id FROM blocks WHERE root_id = '${id}' AND type = 'h' AND subtype = 'h${index}';`);
+            if (headings && headings.length > 0) {
+                for (const heading of headings) {
+                    // console.log(heading);
+                    await setHeadingFoldState(foldState, heading.id, editor.protyle);
+                }
+            }
         }
+        pushMsg(foldState
+            ? config.theme.doc.heading.fold.message.success
+            : config.theme.doc.heading.unfold.message.success
+        )
+    }
+    else {
+        pushErrMsg(foldState
+            ? config.theme.doc.heading.fold.message.error
+            : config.theme.doc.heading.unfold.message.error
+        )
     }
 }
 
@@ -229,11 +272,11 @@ setTimeout(() => {
                         config.theme.doc.heading.fold.toolbar,
                         () => setDocFoldState(true),
                     );
-                    // globalEventHandler.addEventHandler(
-                    //     'keyup',
-                    //     config.theme.hotkeys.heading.fold,
-                    //     _ => Fn_headingFold(),
-                    // );
+                    globalEventHandler.addEventHandler(
+                        'keyup',
+                        config.theme.hotkeys.doc.heading.fold,
+                        _ => Fn_headingFold(),
+                    );
                 }
                 if (config.theme.doc.heading.unfold.enable) {
                     // 标题展开
@@ -241,11 +284,11 @@ setTimeout(() => {
                         config.theme.doc.heading.unfold.toolbar,
                         () => setDocFoldState(false),
                     );
-                    // globalEventHandler.addEventHandler(
-                    //     'keyup',
-                    //     config.theme.hotkeys.heading.unfold,
-                    //     _ => Fn_headingUnfold(),
-                    // );
+                    globalEventHandler.addEventHandler(
+                        'keyup',
+                        config.theme.hotkeys.doc.heading.unfold,
+                        _ => Fn_headingUnfold(),
+                    );
                 }
             }
 

@@ -19,6 +19,7 @@ export {
     setFontSize, // 设置字体大小
     setBlockSlider, // 设置块滑块位置
     getEditors, // 获得所有编辑器
+    getEditor, // 获得指定编辑器
     disabledProtyle, // 禁用编辑器
     enableProtyle, // 解除编辑器禁用
 };
@@ -416,6 +417,20 @@ function getEditors() {
     return window.siyuan.layout
         ? getEditorsFromLayout(window.siyuan.layout.centerLayout).concat(getEditorsFromblockPanels(window.siyuan.blockPanels))
         : [window.siyuan.mobileEditor];
+}
+
+/**
+ * 获得指定的编辑器
+ * @params {string} id 文档 ID
+ * @return {object} 编辑器
+ * @return {null} 没有找到编辑器
+ */
+function getEditor(id) {
+    const editors = getEditors();
+    for (const editor of editors) {
+        if (editor.protyle.options.blockId === id) return editor;
+    }
+    return null;
 }
 
 /**
