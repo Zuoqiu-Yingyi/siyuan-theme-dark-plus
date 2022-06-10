@@ -7,7 +7,7 @@
 /* .fn__flex-column.fn__flex.fn__flex-1 .layout-tab-bar { */
 .layout-tab-bar {
     background-color: var(--custom-tab-bar-background-color);
-    flex-wrap: wrap;
+    flex-wrap: var(--custom-tab-bar-flex-wrap);
 }
 
 /* 页签项 */
