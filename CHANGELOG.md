@@ -3,6 +3,7 @@
 - [#34](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/34) 使用快捷键 <kbd>Shift + Alt + F</kbd> 启动/关闭专注模式 (折叠/展开功能面板) | Use the shortcut <kbd>Shift + Alt + F</kbd> to turn on/off the focus mode (collapse/expand the feature panels).
 - 使用快捷键 <kbd>Shift + Alt + ↑/↓</kbd> 折叠/展开当前文档所有子标题 | Use the shortcut <kbd>Shift + Alt + ↑/↓</kbd> to collapse/expand all sub-headings of the current document.
 - [#68](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/68) 添加 CSS 属性 `--custom-tab-bar-flex-wrap` 用于控制标签栏多行/单行排列 | Add CSS property `--custom-tab-bar-flex-wrap` to control the tab bar flex wrap.
+- 为页签栏的右键菜单添加归档功能 | Add archive function to the right click menu of the tab bar.
 
 ## v1.1.1/2022-06-06
 

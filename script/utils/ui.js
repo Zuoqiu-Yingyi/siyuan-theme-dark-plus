@@ -3,7 +3,7 @@
 export {
     toolbarItemInit, // 工具栏项初始化
     toolbarItemChangeStatu, // 工具栏项状态改变
-    blockMenuInit, // 右键菜单初始化
+    menuInit, // 右键菜单初始化
     CommonMenuObserver, // 右键菜单管理
 };
 
@@ -13,12 +13,17 @@ import {
     saveCustomFile,
 } from '../module/config.js';
 import { printHotKey } from './hotkey.js';
-import { setBlockDOMAttrs } from './dom.js';
+import {
+    getEditors,
+    setBlockDOMAttrs,
+} from './dom.js';
 import { Iterator } from './misc.js';
 import {
     getBlockByID,
     getBlockAttrs,
     setBlockAttrs,
+    pushMsg,
+    pushErrMsg
 } from './api.js';
 
 import {
@@ -615,6 +620,23 @@ const TASK_HANDLER = {
     'jupyter-run-code': runCode,
     /* 关闭会话 */
     'jupyter-close-connection': closeConnection,
+    /* 归档页签 */
+    'tab-archive': async (e, id, params) => {
+        const editors = getEditors().filter(editor => {
+            if (editor.protyle.model.headElement.classList.contains('item--pin')) return false;
+            if (!params.unupdate && editor.protyle.model.headElement.classList.contains('item--unupdate')) return false;
+            return true;
+        });
+        if (editors.length > 0) {
+            const IDs = editors.map(editor => editor.protyle.options.blockId); // 待归档的文档的 ID
+            const time = new Date().format('yyyy-MM-dd hh:mm:ss'); // 归档时间戳(书签名)
+            const attrs = {bookmark: time}; // 待设置的书签属性
+            IDs.forEach(id => setBlockAttrs(id, attrs));
+            editors.forEach(editor => editor.protyle.model.headElement.lastElementChild.click());
+            pushMsg(params.message.success);
+        }
+        else pushErrMsg(params.message.error);
+    },
 };
 
 /**
@@ -719,7 +741,7 @@ function createMenuItemNode(language, config, id, type, subtype, className = 'b3
  * @returns {Array} 菜单项节点列表
  * @returns {null} 无菜单项
  */
-function blockMenuInit(configs, id, type, subtype) {
+function menuInit(configs, id, type, subtype) {
     let items = [];
     let language = window.theme.languageMode;
     configs.forEach((config) => {

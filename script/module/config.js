@@ -2188,6 +2188,95 @@ export var config = {
                     },
                 ],
             },
+            tabbar: {
+                enable: true, // 标签页菜单功能开关
+                items: [ // 标签页菜单项
+                    { // 归档所有打开的标签页
+                        enable: true,
+                        prefixSeparator: true,
+                        suffixSeparator: false,
+                        id: 'theme-menu-tabbar-archive',
+                        mode: "button",
+                        icon: "#iconBookmark",
+                        label: {
+                            zh_CN: "归档页签",
+                            other: "Archive Tabs",
+                        },
+                        accelerator: "",
+                        click: { enable: false },
+                        itemsLoad: true, // 是否加载子菜单
+                        itemsIcon: "#iconRight",
+                        items: [
+                            {
+                                enable: true,
+                                type: null,
+                                mode: "button",
+                                icon: "#iconTopLeft",
+                                label: {
+                                    zh_CN: "包含未修改的页签",
+                                    other: "Include Unupdate Tabs",
+                                },
+                                accelerator: "",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'tab-archive', // 归档标签页
+                                            params: {
+                                                unupdate: true,
+                                                message: {
+                                                    success: {
+                                                        zh_CN: "归档完成，请刷新书签面板查看",
+                                                        other: "Archive completed, please refresh the bookmarks panel to view",
+                                                    },
+                                                    error: {
+                                                        zh_CN: "归档失败，没有符合条件的页签",
+                                                        other: "Archive failed, no tabs meet the conditions",
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: null,
+                                mode: "button",
+                                icon: "#iconTopRight",
+                                label: {
+                                    zh_CN: "不包含未修改的页签",
+                                    other: "Not Include Unupdate Tabs",
+                                },
+                                accelerator: "",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'tab-archive', // 归档标签页
+                                            params: {
+                                                unupdate: false,
+                                                message: {
+                                                    success: {
+                                                        zh_CN: "归档完成，请刷新书签面板查看",
+                                                        other: "Archive completed, please refresh the bookmarks panel to view",
+                                                    },
+                                                    error: {
+                                                        zh_CN: "归档失败，没有符合条件的页签",
+                                                        other: "Archive failed, no tabs meet the conditions",
+                                                    },
+                                                },
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                        ],
+                    },
+                ],
+            },
         },
         comment: {
             // 批注功能开关

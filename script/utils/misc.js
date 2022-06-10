@@ -300,3 +300,27 @@ function* Iterator(items, loop = false) {
 function getObjectLength(obj) {
     return Object.keys(obj).length;
 }
+
+/**
+ * 时间格式化
+ * REF [JavaScript Date（日期）对象 | 菜鸟教程](https://www.runoob.com/js/js-obj-date.html)
+ */
+Date.prototype.format = function (fmt) {
+    var o = {
+        "M+": this.getMonth() + 1, //月份
+        "d+": this.getDate(), //日
+        "h+": this.getHours(), //小时
+        "m+": this.getMinutes(), //分
+        "s+": this.getSeconds(), //秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+        "S+": this.getMilliseconds() //毫秒
+    };
+    const result = /(y+)/.exec(fmt);
+    if (result) fmt = fmt.replace(result[1], (this.getFullYear() + "").substring(4 - result[1].length));
+    for (var k in o) {
+        const reg = new RegExp(`(${k})`);
+        result = reg.exec(fmt);
+        if (result) fmt = fmt.replace(result[1], (result[1].length === 1) ? (o[k]) : ((new Array(result[1].length + 1).join('0') + o[k]).substring(("" + o[k]).length)));
+    }
+    return fmt;
+};
