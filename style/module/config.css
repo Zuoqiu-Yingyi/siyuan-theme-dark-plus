@@ -282,6 +282,11 @@
     --custom-tab-bar-background-color: var(--custom-transparent);
     /* 页签图标大小 | The size of the tab bar icon */
     --custom-tab-bar-icon-size: 1.25em;
+    /** 页签项排列方式 | The wrap style of tab bar
+     *  wrap: 多行显示
+     *  nowrap: 单行显示
+     */
+    --custom-tab-bar-flex-wrap: wrap;
 
     /* 弹出窗口背景颜色 | The background color of the popover */
     --custom-popover-background-color: var(--custom-editor-background-color);
