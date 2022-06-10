@@ -1,5 +1,9 @@
 # 更改日志 | CHANGE LOG
 
+## v1.1.2/2022-06-11
+
+- [v1.1.2 <=> v1.1.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.2...v1.1.2)
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - [#34](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/34) 使用快捷键 <kbd>Shift + Alt + F</kbd> 启动/关闭专注模式 (折叠/展开功能面板) | Use the shortcut <kbd>Shift + Alt + F</kbd> to turn on/off the focus mode (collapse/expand the feature panels).
 - 使用快捷键 <kbd>Shift + Alt + ↑/↓</kbd> 折叠/展开当前文档所有子标题 | Use the shortcut <kbd>Shift + Alt + ↑/↓</kbd> to collapse/expand all sub-headings of the current document.
 - [#68](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/68) 添加 CSS 属性 `--custom-tab-bar-flex-wrap` 用于控制标签栏多行/单行排列 | Add CSS property `--custom-tab-bar-flex-wrap` to control the tab bar flex wrap.
