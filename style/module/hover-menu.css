@@ -184,6 +184,11 @@ div.protyle-util .b3-list.b3-list--background,
     max-height: none !important;
 }
 
+/* REF https://github.com/siyuan-note/siyuan/issues/4575#issuecomment-1152490468 */
+.layout-tab-container .b3-menu.b3-list.b3-list--background.hint--menu>.emojis {
+    column-span: all;
+}
+
 /* .b3-menu.b3-list.b3-list--background.hint--menu>.b3-list-item:nth-of-type(1),
 .b3-menu.b3-list.b3-list--background.hint--menu>.b3-list-item:nth-last-of-type(5),
 .b3-menu.b3-list.b3-list--background.hint--menu>.b3-list-item:nth-last-of-type(4),
