@@ -11,7 +11,7 @@ import {
 import {
     toolbarItemInit,
     toolbarItemChangeStatu,
-    blockMenuInit,
+    menuInit,
     CommonMenuObserver,
 } from './../utils/ui.js';
 
@@ -59,10 +59,10 @@ function blockMenuCallback(mutationList, observer) {
     // 没有添加菜单项
     // console.log(mutationList);
     for (let i = mutationList.length - 1; i >= 0; --i) {
-        let mutation = mutationList[i];
+        const mutation = mutationList[i];
         // console.log(mutation);
 
-        // 菜单已经加载完成
+        // 块菜单已经加载完成
         if (mutation.addedNodes.length === 1
             && mutation.addedNodes[0].classList.contains('b3-menu__item--readonly')
             && mutation.addedNodes[0].lastElementChild.childElementCount === 1
@@ -71,21 +71,38 @@ function blockMenuCallback(mutationList, observer) {
         ) {
             // 块菜单添加
             // console.log(mutation);
-            let block = block_mark || getBlockSelected() || null;
+            const block = block_mark || getBlockSelected() || null;
             if (block) {
-                let items = blockMenuInit(
+                const items = menuInit(
                     config.theme.menu.block.items,
                     block.id,
                     block.type,
                     block.subtype,
                 );
                 if (items) {
-                    let menu = block_menu_observer.menuNode;
+                    const menu = block_menu_observer.menuNode;
                     items.forEach(item => menu.insertBefore(item, mutation.previousSibling));
-                    let delta = menu.getBoundingClientRect().bottom - menu.parentElement.getBoundingClientRect().bottom;
+                    const delta = menu.getBoundingClientRect().bottom - menu.parentElement.getBoundingClientRect().bottom;
                     if (delta > 0) menu.style.top = `${parseFloat(menu.style.top) - delta}px`;
                 };
             }
+            break;
+        }
+        // 页签项菜单已加载完成
+        else if (mutation.addedNodes.length === 1
+            && mutation.addedNodes[0].firstChild
+            && mutation.addedNodes[0].firstChild.firstChild
+            && mutation.addedNodes[0].firstChild.firstChild.getAttribute('xlink:href') === '#iconPin'
+            && mutation.previousSibling
+            && mutation.previousSibling.firstChild
+            && mutation.previousSibling.firstChild.firstChild
+            && mutation.previousSibling.firstChild.firstChild.getAttribute('xlink:href') === '#iconCopy'
+        ) {
+            const items = menuInit(config.theme.menu.tabbar.items);
+            if (items) {
+                const menu = block_menu_observer.menuNode;
+                items.forEach(item => menu.appendChild(item));
+            };
             break;
         }
     }
