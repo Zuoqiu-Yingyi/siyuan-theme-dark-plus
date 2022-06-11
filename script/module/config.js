@@ -266,6 +266,22 @@ export var config = {
                     // 'custom-type': 'map', // 脑图视图
                     // 'custom-type': 'table', // 表格视图
                 },
+                message: {
+                    success: {
+                        zh_CN: '复制当前文档大纲完成',
+                        zh_CNT: null,
+                        fr_FR: null,
+                        en_US: null,
+                        other: 'Copying the current document outline is complete.',
+                    },
+                    error: {
+                        zh_CN: '复制当前文档大纲失败，请在编辑区中选择包含子标题的文档',
+                        zh_CNT: null,
+                        fr_FR: null,
+                        en_US: null,
+                        other: 'Copying the current document outline failed, please select the document that contains the subheading in the editing area.',
+                    },
+                },
                 u: {
                     enable: true, // 无序列表
                     toolbar: { // 菜单栏
