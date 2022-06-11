@@ -189,7 +189,9 @@ async function outlineCopy(mode) {
     if (markdown.length > 0) {
         if (getObjectLength(config.theme.doc.outline.ial) > 0) markdown.push(ialCreate(config.theme.doc.outline.ial));
         navigator.clipboard.writeText(markdown.join('\n'));
+        pushMsg(config.theme.doc.outline.message.success);
     }
+    else pushErrMsg(config.theme.doc.outline.message.error);
 }
 
 /**
@@ -237,7 +239,6 @@ async function setHeadingFoldState(foldState, id, protyle) {
  */
 async function setDocFoldState(foldState = false, id = getFocusedDocID()) {
     const editor = getEditor(id);
-    const language = window.theme.languageMode;
     if (editor) {
         const sequence = foldState ? [6, 5, 4, 3, 2, 1] : [1, 2, 3, 4, 5, 6];
         for (const index of sequence) {

@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 添加复制文档大纲功能的消息提示 | Add a message hint for the function of copying the document outline.
+
 ## v1.1.2/2022-06-11
 
 - [v1.1.2 <=> v1.1.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.2...v1.1.2)
