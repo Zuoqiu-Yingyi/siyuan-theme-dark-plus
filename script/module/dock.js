@@ -10,6 +10,7 @@ import {
     toolbarItemChangeStatu,
 } from './../utils/ui.js';
 import { globalEventHandler } from './../utils/listener.js';
+import { setDockState } from './../utils/dom.js';
 
 var fold = false;
 
@@ -50,11 +51,7 @@ function toggleDockFoldStatus() {
         saveCustomFile(custom);
     }
     else { // 展开所有打开的面板
-        for (const item of items) {
-            const type = item.dataset.type;
-            const active = item.classList.contains('dock__item--active');
-            if (active ^ custom.theme.dock[type].fold) item.click();
-        }
+        setDockState(items, custom.theme.dock);
         if (config.theme.dock.fold.dock
             && barDock
             && barDock.firstElementChild
@@ -76,6 +73,8 @@ setTimeout(() => {
     try {
         if (config.theme.dock.enable) {
             if (config.theme.dock.fold.enable) {
+                setTimeout(() => setDockState(document.querySelectorAll('span.dock__item'), custom.theme.dock), 0);
+                // setDockState(document.querySelectorAll('span.dock__item'), custom.theme.dock)
                 const Fn_toggleDockFoldStatus = toolbarItemInit(
                     config.theme.dock.fold.toolbar,
                     toggleDockFoldStatus,

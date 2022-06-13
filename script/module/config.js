@@ -2613,12 +2613,15 @@ try {
 export var custom = {
     theme: {
         toolbar: {
-            [config.theme.toolbar.more.id]: { default: true },
-            [config.theme.menu.block.toolbar.id]: { default: false },
-            [config.theme.style.guides.toolbar.id]: { default: false },
-            [config.theme.invert.toolbar.id]: { default: false },
-            [config.theme.typewriter.switch.toolbar.id]: { default: false },
-            [config.theme.location.record.toolbar.id]: { default: false },
+            [config.theme.toolbar.more.id]: { default: true }, // 工具栏是否展开
+            [config.theme.location.record.toolbar.id]: { default: false }, // 当前浏览位置
+            [config.theme.menu.block.toolbar.id]: { default: false }, // 块功能增强
+            [config.theme.style.guides.toolbar.id]: { default: false }, // 列表辅助线
+            [config.theme.style.mark.toolbar.id]: { default: false }, // 显示标记文本
+            [config.theme.invert.toolbar.id]: { default: false }, // 反色显示
+            [config.theme.typewriter.switch.toolbar.id]: { default: false }, // 打字机模式
+            [config.theme.dock.fold.toolbar.id]: { default: false }, // 专注模式
+            [config.theme.readonly.toolbar.id]: { default: false }, // 只读模式
         },
         location: {},
         dock: {},

@@ -22,6 +22,7 @@ export {
     getEditor, // 获得指定编辑器
     disabledProtyle, // 禁用编辑器
     enableProtyle, // 解除编辑器禁用
+    setDockState, // 设置侧边栏状态
 };
 
 import { url2id } from './misc.js';
@@ -541,3 +542,16 @@ function enableProtyle(protyle) {
         }
     });
 };
+
+/**
+ * 设置侧边栏状态
+ * @params {elements} items: 侧边栏展开/收缩按钮列表
+ * @params {object} state: 侧边栏项想要设置的展开/收缩状态
+ */
+function setDockState(items, state) {
+    for (const item of items) {
+        const type = item.dataset.type;
+        const active = item.classList.contains('dock__item--active');
+        if (state[type] && (active ^ state[type].fold)) item.click();
+    }
+}
