@@ -8,6 +8,11 @@
     display: var(--custom-file-display);
 }
 
+/* 鼠标悬浮折叠/展开小三角样式 */
+.sy__file .b3-list-item__toggle:hover {
+    outline: 1px solid var(--b3-theme-on-surface-light);
+}
+
 /* 文档名起始 */
 /* ^* */
 .sy__file li[data-type="navigation-file"][data-name ^="*"]>.b3-list-item__text {
