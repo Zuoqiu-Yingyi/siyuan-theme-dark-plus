@@ -840,6 +840,7 @@ export var config = {
             enable: true, // dock 功能开关
             fold: {
                 enable: true, // dock 收缩/展开功能面板功能开关
+                dock: false, // 模式开启时是否同时收起侧边停靠栏
                 toolbar: { // 菜单栏
                     enable: true,
                     display: true,

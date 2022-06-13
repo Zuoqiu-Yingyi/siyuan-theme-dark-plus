@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 添加复制文档大纲功能的消息提示 | Add a message hint for the function of copying the document outline.
+- [#34](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/34) 专注模式可选同时隐藏侧边停靠栏(默认不隐藏) | Focus mode optional to hide side docks at the same time (not hidden by default).
 
 ## v1.1.2/2022-06-11
 
