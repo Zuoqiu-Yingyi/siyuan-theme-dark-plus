@@ -4,6 +4,7 @@
 - [#34](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/34) 专注模式可选同时隐藏侧边停靠栏(默认不隐藏) | Focus mode optional to hide side docks at the same time (not hidden by default).
 - 添加文档树面板折叠/展开小三角鼠标悬浮样式 | Add the mouse hover style of folding/expanding small triangle of the filetree panel.
 - 保存用户 `记住当前浏览位置`, `显示标记文本`, `专注模式`, `只读模式` 开关状态 | Save the user `remember current browsing position`, `display marked text`, `focus mode`, `read-only mode` switch status.
+- [#72](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/72) 调整全屏模式关系图样式 | Adjust the full-screen mode graph style.
 
 ## v1.1.2/2022-06-11
 
