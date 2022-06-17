@@ -6,3 +6,14 @@
 .graph {
     background: transparent;
 }
+
+/* 全屏关系图 */
+/* 关系图标题栏 */
+.sy__graph.fullscreen>.block__icons {
+    background-color: var(--custom-panel-graph-fullscreen-toolbar-background-color);
+}
+
+/* 关系图内容 */
+.sy__graph.fullscreen>.graph__svg {
+    background-color: var(--custom-panel-graph-fullscreen-background-color);
+}
