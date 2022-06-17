@@ -1,5 +1,10 @@
 # 更改日志 | CHANGE LOG
 
+## v1.1.3/2022-06-18
+
+- [v1.1.2 <=> v1.1.3](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.2...v1.1.3)
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
+- 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 添加复制文档大纲功能的消息提示 | Add a message hint for the function of copying the document outline.
 - [#34](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/34) 专注模式可选同时隐藏侧边停靠栏(默认不隐藏) | Focus mode optional to hide side docks at the same time (not hidden by default).
 - 添加文档树面板折叠/展开小三角鼠标悬浮样式 | Add the mouse hover style of folding/expanding small triangle of the filetree panel.
@@ -8,7 +13,7 @@
 
 ## v1.1.2/2022-06-11
 
-- [v1.1.2 <=> v1.1.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.2...v1.1.2)
+- [v1.1.1 <=> v1.1.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.1...v1.1.2)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - [#34](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/34) 使用快捷键 <kbd>Shift + Alt + F</kbd> 启动/关闭专注模式 (折叠/展开功能面板) | Use the shortcut <kbd>Shift + Alt + F</kbd> to turn on/off the focus mode (collapse/expand the feature panels).
 - 使用快捷键 <kbd>Shift + Alt + ↑/↓</kbd> 折叠/展开当前文档所有子标题 | Use the shortcut <kbd>Shift + Alt + ↑/↓</kbd> to collapse/expand all sub-headings of the current document.
