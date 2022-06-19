@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- [#72](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/72) 修复全局关系图全屏模式样式 | Fixed the global graph full-screen mode style.
+
 ## v1.1.3/2022-06-18
 
 - [v1.1.2 <=> v1.1.3](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.2...v1.1.3)
