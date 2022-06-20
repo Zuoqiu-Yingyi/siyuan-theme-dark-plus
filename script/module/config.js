@@ -2228,7 +2228,7 @@ export var config = {
                                 enable: true,
                                 type: null,
                                 mode: "button",
-                                icon: "#iconTopLeft",
+                                icon: "#iconPreview",
                                 label: {
                                     zh_CN: "包含未修改的页签",
                                     other: "Include Unupdate Tabs",
@@ -2261,7 +2261,7 @@ export var config = {
                                 enable: true,
                                 type: null,
                                 mode: "button",
-                                icon: "#iconTopRight",
+                                icon: "#iconEdit",
                                 label: {
                                     zh_CN: "不包含未修改的页签",
                                     other: "Not Include Unupdate Tabs",

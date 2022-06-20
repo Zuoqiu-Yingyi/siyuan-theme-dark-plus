@@ -3,117 +3,71 @@
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 
-/* 聚焦提示 */
+/* 👇聚焦提示👇 */
+/* 空段落 */
 .protyle-wysiwyg [data-node-id]:not(.code-block)>[contenteditable][spellcheck]:focus:empty::after {
-    /* 空段落 */
     content: var(--custom-empty-focus-p);
     color: var(--b3-theme-on-surface);
 }
 
+/* 空代码块 */
 .protyle-wysiwyg .code-block>[contenteditable][spellcheck]:focus:empty::after {
-    /* 空代码块 */
     content: var(--custom-empty-focus-c);
     color: var(--b3-theme-on-surface);
 }
 
+/* 空任务列表 */
 .protyle-wysiwyg [data-subtype="t"]>.li>.p:nth-of-type(2)>[contenteditable][spellcheck]:focus:empty::after {
-    /* 空任务列表 */
     content: var(--custom-empty-focus-t);
     color: var(--b3-theme-on-surface);
 }
 
+/* 空无序列表 */
 .protyle-wysiwyg [data-subtype="u"]>.li>.p:nth-of-type(2)>[contenteditable][spellcheck]:focus:empty::after {
-    /* 空无序列表 */
     content: var(--custom-empty-focus-u);
     color: var(--b3-theme-on-surface);
 }
 
+/* 空有序列表 */
 .protyle-wysiwyg [data-subtype="o"]>.li>.p:nth-of-type(2)>[contenteditable][spellcheck]:focus:empty::after {
-    /* 空有序列表 */
     content: var(--custom-empty-focus-o);
     color: var(--b3-theme-on-surface);
 }
+/* 👆聚焦提示👆 */
 
-/* 空白提示 */
+/* 👇空白提示👇 */
+/* 空段落 */
 .protyle-wysiwyg [data-node-id]:not(.code-block)>[contenteditable][spellcheck]:empty::after {
-    /* 空段落 */
     content: var(--custom-empty-p);
     color: var(--b3-theme-on-surface);
 }
 
+/* 空代码块 */
 .protyle-wysiwyg .code-block>[contenteditable][spellcheck]:empty::after {
-    /* 空代码块 */
     content: var(--custom-empty-c);
     color: var(--b3-theme-on-surface);
 }
 
+/* 空任务列表 */
 .protyle-wysiwyg [data-subtype="t"]>.li>.p:nth-of-type(2)>[contenteditable][spellcheck]:empty::after {
-    /* 空任务列表 */
     content: var(--custom-empty-t);
     color: var(--b3-theme-on-surface);
 }
 
+/* 空无序列表 */
 .protyle-wysiwyg [data-subtype="u"]>.li>.p:nth-of-type(2)>[contenteditable][spellcheck]:empty::after {
-    /* 空无序列表 */
     content: var(--custom-empty-u);
     color: var(--b3-theme-on-surface);
 }
 
+/* 空有序列表 */
 .protyle-wysiwyg [data-subtype="o"]>.li>.p:nth-of-type(2)>[contenteditable][spellcheck]:empty::after {
-    /* 空有序列表 */
     content: var(--custom-empty-o);
     color: var(--b3-theme-on-surface);
 }
+/* 👆空白提示👆 */
 
 /*不打开文档时的界面*/
 .layout__empty.b3-list {
     background: transparent;
-}
-
-.layout__empty.b3-list>h1 {
-    display: none;
-}
-
-.layout__empty.b3-list>.b3-list-item {
-    display: none;
-}
-
-
-.layout__empty.b3-list>.fn__hr {
-    position: relative;
-    width: 35vmin;
-    height: 35vmin;
-    background: linear-gradient(120deg, #0000 0%, #1111 100%);
-    opacity: .8;
-    margin: 25vh auto;
-    border-radius: 35%;
-    animation: rotateMain 8s linear infinite;
-}
-
-.layout__empty.b3-list>.fn__hr::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(180deg, #0000 0%, #1111 100%);
-    opacity: .8;
-    box-shadow: 5px 5px 90px #FFF4;
-    border-radius: 35%;
-    animation: rotateMain 8s linear 2s infinite;
-}
-
-.layout__empty.b3-list>.fn__hr::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(60deg, #0000 0%, #1111 100%);
-    opacity: .8;
-    box-shadow: 5px 5px 60px #FFF8;
-    border-radius: 35%;
-    animation: rotateMain 8s linear 4s infinite;
-    z-index: -1;
 }
