@@ -12,6 +12,11 @@
 .sy__file .b3-list-item__toggle:hover {
     outline: 1px solid var(--b3-theme-on-surface-light);
 }
+/* 折叠/展开小三角样式 */
+.sy__file .b3-list-item__toggle {
+    padding-left: 3px;
+    padding-right: 3px;
+}
 
 /* 文档名起始 */
 /* ^* */
