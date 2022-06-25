@@ -13,6 +13,7 @@ import {
     saveCustomFile,
 } from '../module/config.js';
 import { printHotKey } from './hotkey.js';
+import { editKramdownDoc } from './markdown.js';
 import {
     getEditors,
     setBlockDOMAttrs,
@@ -609,6 +610,10 @@ const TASK_HANDLER = {
             config.theme.window.menu.template,
             config.theme.window.open.editor.path.index,
         );
+    },
+    /* 在新窗口打开编辑器并编辑 kramdown 文档源代码 */
+    'window-open-editor-kramdown-doc': async (e, id, params) => {
+        editKramdownDoc(id);
     },
     /* 新窗口打开超链接 */
     'save-input-value': async (e, id, params) => {

@@ -3,6 +3,7 @@
 - [#72](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/72) 修复全局关系图全屏模式样式 | Fixed the global graph full-screen mode style.
 - 调整未打开文档时编辑区的样式 | Adjusted the style of the edit area when the document is not opened.
 - 调整文档树折叠/展开按钮样式 | Adjusted the style of the document tree fold/unfold button.
+- 将编辑文档 kramdown 源代码功能添加至文档的块菜单 | Added the kramdown source code function to the block menu of the document.
 
 ## v1.1.3/2022-06-18
 
