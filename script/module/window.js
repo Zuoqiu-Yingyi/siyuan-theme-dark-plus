@@ -1,19 +1,12 @@
 /* 打开新窗口 */
 
 import { config } from './config.js';
-import {
-    isKey,
-    isButton,
-} from './../utils/hotkey.js';
 import { toolbarItemInit } from './../utils/ui.js';
 import { globalEventHandler } from './../utils/listener.js';
 import { merge } from './../utils/misc.js';
 import { editKramdownDoc } from '../utils/markdown.js';
 import {
     putFile,
-    getBlockByID,
-    renameDoc,
-    docSaveAsTemplate,
 } from './../utils/api.js';
 import {
     stat,

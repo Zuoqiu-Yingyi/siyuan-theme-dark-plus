@@ -35,7 +35,7 @@ function isButton(event, key) {
 }
 
 const MOUSE_BUTTON_MAP = {
-    0: 'Left-click',
+    0: 'left-click',
     1: 'middle-click',
     2: 'right-click',
 };
