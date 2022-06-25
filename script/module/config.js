@@ -1239,6 +1239,29 @@ export var config = {
                             {
                                 enable: true,
                                 type: {
+                                    NodeDocument: { enable: true },
+                                },
+                                mode: "button",
+                                icon: "#iconCode",
+                                label: {
+                                    zh_CN: "编辑文档源代码",
+                                    other: "Edit the Document Source Code",
+                                },
+                                accelerator: "",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'window-open-editor-kramdown-doc',
+                                            params: {},
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
                                     NodeAudio: {
                                         enable: true,
                                     },
