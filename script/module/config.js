@@ -756,7 +756,16 @@ export var config = {
                             relative: '/temp/editor/', // 临时文件相对路径
                             absolute: `${window.siyuan.config.system.workspaceDir}temp/editor/`.replaceAll('\\', '/').replaceAll('//', '/'), // 临时文件绝对路径
                         },
-                    }
+                    },
+                    kramdown: {
+                        // 编辑文档 kramdown 源代码
+                        message: {
+                            error: {
+                                zh_CN: "编辑文档 kramdown 源代码功能仅能在桌面端使用",
+                                other: "The feature to edit the kramdown source code of a document is only available on the desktop client",
+                            },
+                        },
+                    },
                 },
             },
         },

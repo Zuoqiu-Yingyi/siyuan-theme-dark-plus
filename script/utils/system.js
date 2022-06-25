@@ -2,6 +2,7 @@ export {
     openFile,
     writeFile,
     copyFile,
+    rename,
     stat,
     rm,
 };
@@ -88,6 +89,26 @@ async function copyFile(
         const fs = require('fs/promises');
         await fs.copyFile(src, dest);
         return src;
+    }
+    catch (err) {
+        console.warn(err);
+        return null;
+    }
+}
+
+/**
+ * 重命名/移动文件
+ * REF [fsPromises.rename(oldPath, newPath)](https://nodejs.org/api/fs.html#fspromisesrenameoldpath-newpath)
+ */
+async function rename(
+    oldPath,
+    newPath,
+) {
+    // Electron 环境
+    try {
+        const fs = require('fs/promises');
+        await fs.rename(oldPath, newPath);
+        return newPath;
     }
     catch (err) {
         console.warn(err);

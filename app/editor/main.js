@@ -652,6 +652,7 @@ window.onload = () => {
                 });
 
                 window.editor.params.breadcrumb.status.innerText = config.editor.mark.status.success; // 加载完成
+                config.editor.command.LOADED(); // 加载完成
             });
         });
     }
