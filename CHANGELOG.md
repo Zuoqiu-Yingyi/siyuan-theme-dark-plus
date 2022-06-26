@@ -6,6 +6,7 @@
 - 将编辑文档 kramdown 源代码功能添加至文档的块菜单 | Added the kramdown source code function to the block menu of the document.
 - 禁用非桌面端的 kramdown 源代码编辑功能 | Disable the kramdown source code editing function except the desktop client.
 - 设置底部状态栏背景颜色 | Set the background color of the bottom status bar.
+- 为 `theme.js` 文件中模块加载 URL 设置版本参数 | Add the version parameter to the module load URL in `theme.js`.
 
 ## v1.1.3/2022-06-18
 
