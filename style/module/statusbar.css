@@ -1,0 +1,9 @@
+/* 底部状态栏 */
+
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+/* 底部状态栏 */
+#status {
+    background-color: var(--custom-status-bar-background-color);
+}

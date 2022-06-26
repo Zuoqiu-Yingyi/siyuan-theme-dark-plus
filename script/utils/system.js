@@ -78,7 +78,7 @@ async function writeFile(
 
 /**
  * 复制文件
- * REF [fsPromises.copyFile(src, dest[, mode])](https://nodejs.org/api/fs.html#fspromisescopyfilesrc-dest-mode)
+ * REF [fsPromises.copyFile(src, dest\[, mode\])](https://nodejs.org/api/fs.html#fspromisescopyfilesrc-dest-mode)
  */
 async function copyFile(
     src,
@@ -118,7 +118,7 @@ async function rename(
 
 /**
  * 检查文件状态
- * REF [fsPromises.stat(path[, options])](https://nodejs.org/api/fs.html#fspromisesstatpath-options)
+ * REF [fsPromises.stat(path\[, options\])](https://nodejs.org/api/fs.html#fspromisesstatpath-options)
  */
 async function stat(path) {
     // Electron 环境
@@ -136,7 +136,7 @@ async function stat(path) {
 
 /**
  * 删除文件
- * REF 
+ * REF [fsPromises.rm(path\[, options\])](https://nodejs.org/api/fs.html#fspromisesrmpath-options)
  */
 async function rm(
     path,
