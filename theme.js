@@ -8,29 +8,40 @@ window.theme = {};
 window.theme.addURLParam = function (
     url,
     param = {
-        t: Date.now().toString(),
+        // t: Date.now().toString(),
         v: window.siyuan.config.appearance.themeVer,
     },
 ) {
+    let new_url;
     switch (true) {
         case url.startsWith('//'):
-            url = new URL(`https:${url}`);
+            new_url = new URL(`https:${url}`);
             break;
         case url.startsWith('http://'):
         case url.startsWith('https://'):
-            url = new URL(url);
+            new_url = new URL(url);
             break;
         case url.startsWith('/'):
-            url = new URL(url, window.location.origin);
+            new_url = new URL(url, window.location.origin);
             break;
         default:
-            url = new URL(url, window.location.origin + window.location.pathname);
+            new_url = new URL(url, window.location.origin + window.location.pathname);
             break;
     }
     for (let [key, value] of Object.entries(param)) {
-        url.searchParams.set(key, value);
+        new_url.searchParams.set(key, value);
     }
-    return url.href.substring(url.origin.length);
+    switch (true) {
+        case url.startsWith('//'):
+            return new_url.href.substring(new_url.protocol.length);
+        case url.startsWith('http://'):
+        case url.startsWith('https://'):
+            return new_url.href;
+        case url.startsWith('/'):
+            return new_url.href.substring(new_url.origin.length);
+        default:
+            return new_url.href.substring((window.location.origin + window.location.pathname).length);
+    }
 }
 
 /**
@@ -50,12 +61,12 @@ window.theme.loadMeta = function (attributes) {
  * @params {string} url 脚本地址
  * @params {string} type 脚本类型
  */
-window.theme.loadScript = function (src, type = 'module', async = false, defer = false) {
-    let script = document.createElement('script');
-    if (type) script.setAttribute('type', type);
-    if (async) script.setAttribute('async', true);
-    if (defer) script.setAttribute('defer', true);
-    script.setAttribute('src', src);
+window.theme.loadScript = function (src, type = 'module', async = false, defer = false) {    
+    const script = document.createElement('script');
+    if (type) script.type = type;
+    if (async) script.async = true;
+    if (defer) script.defer = true;
+    script.src = src;
     document.head.appendChild(script);
 }
 
@@ -66,10 +77,10 @@ window.theme.loadScript = function (src, type = 'module', async = false, defer =
  */
 window.theme.loadStyle = function (href, id = null) {
     let style = document.createElement('link');
-    if (id) style.setAttribute('id', id);
-    style.setAttribute('type', 'text/css');
-    style.setAttribute('rel', 'stylesheet');
-    style.setAttribute('href', href);
+    if (id) style.id = id;
+    style.type = 'text/css';
+    style.rel = 'stylesheet';
+    style.href = href;
     document.head.appendChild(style);
 }
 
@@ -198,30 +209,30 @@ window.theme.changeThemeMode(
 );
 
 /* 加载 HTML 块中使用的小工具 */
-window.theme.loadScript("/appearance/themes/Dark+/script/module/html.js", "text/javascript");
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/html.js"), "text/javascript");
 
 /* 加载主题功能 */
-window.theme.loadScript("/appearance/themes/Dark+/script/module/background.js");
-window.theme.loadScript("/appearance/themes/Dark+/script/module/blockattrs.js");
-window.theme.loadScript("/appearance/themes/Dark+/script/module/doc.js");
-window.theme.loadScript("/appearance/themes/Dark+/script/module/dock.js");
-window.theme.loadScript("/appearance/themes/Dark+/script/module/goto.js");
-window.theme.loadScript("/appearance/themes/Dark+/script/module/invert.js");
-window.theme.loadScript("/appearance/themes/Dark+/script/module/location.js");
-window.theme.loadScript("/appearance/themes/Dark+/script/module/menu.js");
-window.theme.loadScript("/appearance/themes/Dark+/script/module/readonly.js");
-window.theme.loadScript("/appearance/themes/Dark+/script/module/reload.js");
-window.theme.loadScript("/appearance/themes/Dark+/script/module/style.js");
-window.theme.loadScript("/appearance/themes/Dark+/script/module/timestamp.js");
-window.theme.loadScript("/appearance/themes/Dark+/script/module/typewriter.js");
-window.theme.loadScript("/appearance/themes/Dark+/script/module/wheel.js");
-window.theme.loadScript("/appearance/themes/Dark+/script/module/window.js");
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/background.js"));
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/blockattrs.js"));
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/doc.js"));
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/dock.js"));
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/goto.js"));
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/invert.js"));
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/location.js"));
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/menu.js"));
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/readonly.js"));
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/reload.js"));
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/style.js"));
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/timestamp.js"));
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/typewriter.js"));
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/wheel.js"));
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/window.js"));
 
 /* 加载独立应用 */
-window.theme.loadScript("/appearance/themes/Dark+/app/comment/index.js");
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/app/comment/index.js"));
 
 /* 加载自定义配置文件 */
-window.theme.loadScript("/widgets/custom.js");
+window.theme.loadScript(window.theme.addURLParam("/widgets/custom.js"));
 
 /* 加载测试模块 */
-// window.theme.loadScript("/appearance/themes/Dark+/script/test/listener.js");
+// window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/test/listener.js"));
