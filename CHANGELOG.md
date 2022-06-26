@@ -1,5 +1,10 @@
 # 更改日志 | CHANGE LOG
 
+## v1.1.4/2022-06-27
+
+- [v1.1.3 <=> v1.1.4](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.3...v1.1.4)
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
+- 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - [#72](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/72) 修复全局关系图全屏模式样式 | Fixed the global graph full-screen mode style.
 - 调整未打开文档时编辑区的样式 | Adjusted the style of the edit area when the document is not opened.
 - 调整文档树折叠/展开按钮样式 | Adjusted the style of the document tree fold/unfold button.
