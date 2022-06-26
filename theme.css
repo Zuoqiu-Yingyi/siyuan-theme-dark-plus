@@ -91,6 +91,9 @@
 @import url(/appearance/themes/Dark+/style/module/span-tag.css);
 @import url(/appearance/themes/Dark+/style/module/span-virtual-ref.css);
 
+/* 底部状态栏 */
+@import url(/appearance/themes/Dark+/style/module/statusbar.css);
+
 /* 页签栏 */
 @import url(/appearance/themes/Dark+/style/module/tab-bar.css);
 

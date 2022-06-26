@@ -264,6 +264,9 @@
     /* 顶部工具栏被激活控件背景颜色 | The background color of toolbar item which is activated */
     --custom-toolbar-tiem-active-background-color: var(--b3-theme-background-light);
 
+    /* 底部状态栏背景颜色 | The background color of the bottom status bar */
+    --custom-status-bar-background-color: var(--custom-transparent);
+
     /* 收集箱内容预览背景颜色 | The background color of inbox contents preview */
     --custom-inbox-background-color: var(--custom-transparent);
 
