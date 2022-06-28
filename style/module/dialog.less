@@ -1,0 +1,183 @@
+/* 对话框 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+
+
+.b3-dialog__container {
+    /* 对话框图片 */
+    background-image: var(--custom-background-image-dialog);
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    background-color: transparent !important;
+
+    >.b3-dialog__close {
+        &:hover {
+            /* 关闭按钮 */
+            background-color: var(--b3-theme-on-surface);
+        }
+    }
+
+    // 对话框半透明颜色
+    >.b3-dialog__header {
+        background-color: var(--custom-dialog-background-color);
+    }
+
+    >div:nth-child(3) {
+        background-color: var(--custom-dialog-background-color);
+
+        // 搜索内容输入框
+        .search__header {
+
+            &,
+            >input {
+                background-color: transparent;
+            }
+        }
+
+        .layout-tab-bar {
+            background-color: transparent;
+
+            .item__text {
+                /* 对话框页签 */
+                padding: 0 0.5em;
+            }
+        }
+    }
+
+    .fn__flex {
+
+        >.b3-list {
+            >.b3-list-item:not(.b3-list-item--focus) {
+                background-color: transparent;
+            }
+        }
+
+        >.b3-tab-container {
+
+            &,
+            .config-account__center--text {
+                background-color: transparent;
+            }
+        }
+    }
+
+    label.customItem {
+        >span.ft__on-surface.fn__flex-center {
+            /* 自定义属性名称全宽显示 */
+            min-width: 100px;
+            width: auto !important;
+        }
+    }
+}
+
+/* 搜索结果列表 */
+#searchList,
+/* 搜索结果预览 */
+#searchPreview {
+    background-color: transparent;
+}
+
+/* 历史容器 */
+#historyContainer {
+
+    .history__asset,
+    .history__text {
+        /* 历史对话框内容框 */
+        border-left: 2px solid var(--b3-border-color);
+        background-color: transparent;
+    }
+}
+
+/* 主题预览对话框 */
+#configBazaarReadme {
+    background-color: var(--custom-dialog-readme-background-color);
+}
+
+.b3-dialog__scrim {
+    /* 对话框遮罩 */
+    background-color: var(--custom-dialog-scrim-background-color);
+}
+
+/* 搜索控件 */
+/* div.b3-dialog__container div.fn__flex-column>div.b3-form__space--small {
+    background-color: var(--custom-editor-breadcrumb-bar-background-color);
+} */
+
+
+
+/** 搜索对话框
+ *  REF: [siyuan-themes-tsundoku-dark/ctrlP.css at main · Achuan-2/siyuan-themes-tsundoku-dark](https: //github.com/Achuan-2/siyuan-themes-tsundoku-dark/blob/main/style/ctrlP.css)
+ *  REF: [自定义样式：搜索窗口改造（窗口放大+左右布局） - 链滴](https: //ld246.com/article/1648269766832)
+ */
+/* 搜索对话框尺寸 */
+body {
+    >div[data-key] {
+        >.b3-dialog {
+            >.b3-dialog__container {
+
+                &,
+                .fn__flex-column {
+                    width: var(--custom-dialog-search-width) !important;
+                    height: var(--custom-dialog-search-height) !important;
+                }
+
+                >.b3-dialog__close {
+                    /* 调整搜索框关闭按钮位置, 避免被遮挡 */
+                    right: calc((100vw - var(--custom-dialog-search-width)) / -2);
+                }
+            }
+        }
+    }
+}
+
+
+/* 窗口较宽时并排显示搜索结果 */
+@media screen and (min-width: 960px) {
+    body {
+        >div[data-key] {
+            >.b3-dialog {
+                >.b3-dialog__container {
+                    .fn__flex-column {
+                        /* 弹性盒子模式: 水平显示, 必要时折行 */
+                        flex-direction: row !important;
+                        flex-wrap: wrap;
+
+                        *:is(.search__header, .b3-form__space--small) {
+                            /* 设置需要占满一行的项目 */
+                            width: 100%;
+                        }
+
+                        #searchList,
+                        #searchPreview {
+                            /* 搜索结果与搜索结果预览分栏 */
+                            float: left;
+                            width: 50% !important;
+                        }
+
+                        .search__header:first-child {
+                            +.search__header:is(.fn__none) {
+
+                                ~#searchList,
+                                ~#searchPreview {
+                                    height: calc(100% - 92px) !important;
+                                }
+                            }
+
+                            +.search__header:not(.fn__none) {
+
+                                ~#searchList,
+                                ~#searchPreview {
+                                    height: calc(100% - 142px) !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
