@@ -1,0 +1,112 @@
+/* 代码块 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+/* 👇编辑区与导出预览共用样式👇 */
+.b3-typography,
+.protyle-wysiwyg {
+
+    .code-block {
+        /* 块背景颜色 */
+        background-color: var(--custom-block-code-background-color);
+
+        >.hljs {
+            /* 编辑区 */
+            background-color: transparent;
+        }
+    }
+}
+
+/* 👆编辑区与导出预览共用样式👆 */
+
+/* 👇导出预览样式👇 */
+.b3-typography {
+
+    .protyle-linenumber__rows,
+    .hljs {
+        padding: 0.5em;
+    }
+}
+
+/* 👆导出预览样式👆 */
+
+/* 👇编辑区样式👇 */
+.protyle-wysiwyg {
+    [data-node-id].code-block {
+        >.protyle-action {
+            /* 功能按钮栏 */
+            // float: right;
+            // position: relative;
+
+            left: auto;
+            right: 0;
+            top: 0;
+
+            >span {
+                /* 功能按钮 */
+                opacity: unset; // 按钮常显
+
+                >.protyle-icons {
+                    /* 按钮图标 */
+                    top: 0;
+                    right: 0;
+                }
+
+                &.protyle-action__language {
+                    /* 语言标签 */
+                    margin-left: 0.5em !important;
+                    margin-right: 0.5em;
+                    margin-top: -6px;
+
+                    font-size: 16px;
+                    padding-top: 4px;
+                }
+
+                &.fn__flex-1 {
+                    /* 间隔 */
+                    flex: 0;
+                }
+            }
+        }
+
+        >.protyle-linenumber {
+            /* 行号标签 */
+            background-color: transparent;
+        }
+
+        >.protyle-linenumber__rows {
+            /* 行号 */
+            // padding-top: 0;
+            // padding-bottom: 0;
+            border-right: var(--custom-block-code-linenumber-separator-width) solid var(--custom-block-code-linenumber-separator-color);
+            background-color: var(--custom-block-code-linenumber-background-color);
+        }
+
+        >.protyle-attr {
+            /* 块属性 */
+            top: -16px;
+        }
+
+        &.protyle-wysiwyg--select {
+            
+            >.protyle-linenumber__rows {
+                /* 被选中块的行号样式 */
+                background-color: var(--b3-theme-primary-lightest) !important;
+            }
+        }
+    }
+}
+
+/* 👆编辑区样式👆 */
+
+
+/* 代码块编辑时不闪(v1.8.9 已修复)
+ * REF https: //github.com/Achuan-2/siyuan-themes-tsundoku-light/blob/1aaa19fa3e6eebca4cb59606317d4bf1a23b0109/theme.css#L982
+ */
+/* .code-block .protyle-icons,
+.code-block .protyle-icons .protyle-action__copy,
+.code-block:hover .protyle-icons,
+.code-block:hover .protyle-icons .protyle-action__copy {
+    opacity: 1 !important;
+} */

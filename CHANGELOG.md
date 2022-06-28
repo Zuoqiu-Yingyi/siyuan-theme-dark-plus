@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 使用 `Less` 重构 `block-code.css` | Refactored `block-code.css` with `Less`.
+
 ## v1.1.4/2022-06-27
 
 - [v1.1.3 <=> v1.1.4](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.3...v1.1.4)
