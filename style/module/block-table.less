@@ -1,0 +1,42 @@
+/* 表格块 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+.b3-typography,
+.protyle-wysiwyg {
+    table {
+        /* 表格 */
+        background-color: var(--custom-block-table-background-color);
+
+        thead {
+            /* 表头 */
+            background-color: var(--custom-block-table-thead-background-color);
+
+            tr {
+                /* 表头行 */
+                background-color: transparent;
+            }
+        }
+
+        tbody {
+            tr {
+                &:nth-child(2n+1) {
+                    /* 奇数行 */
+                    background-color: var(--custom-block-table-odd-background-color);
+                }
+
+                &:nth-child(2n) {
+                    /* 偶数行 */
+                    background-color: var(--custom-block-table-odd-background-color);
+                }
+
+                &:hover {
+                    /* 鼠标悬浮行 */
+                    background-color: var(--custom-block-table-hover-background-color);
+                }
+            }
+        }
+    }
+
+}

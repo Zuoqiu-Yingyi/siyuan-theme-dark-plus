@@ -7,6 +7,7 @@
 - 使用 `Less` 重构 `block-list.css` | Refactored `block-list.css` with `Less`.
 - 使用 `Less` 重构 `block-quote.css` | Refactored `block-quote.css` with `Less`.
 - 使用 `Less` 重构 `block-super.css` | Refactored `block-super.css` with `Less`.
+- 使用 `Less` 重构 `block-table.css` | Refactored `block-table.css` with `Less`.
 
 ## v1.1.4/2022-06-27
 
