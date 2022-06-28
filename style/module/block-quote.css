@@ -1,10 +1,8 @@
 /* 引述块 */
-
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-
-.b3-typography blockquote,
-.protyle-wysiwyg .bq {
-    background-color: var(--custom-block-quote-background-color);
-    border-left: 3px solid var(--custom-line-color);
+.protyle-preview blockquote,
+.protyle-wysiwyg [data-node-id].bq {
+  background-color: var(--custom-block-quote-background-color);
+  border-left: 3px solid var(--custom-line-color);
 }
