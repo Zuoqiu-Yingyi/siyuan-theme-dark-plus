@@ -1,0 +1,63 @@
+/* 各级标题 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+.heading-content() {
+    @1: counter(h1-counter) "\00A0";
+    @2: counter(h1-counter) "."counter(h2-counter) "\00A0";
+    @3: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "\00A0";
+    @4: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "."counter(h4-counter) "\00A0";
+    @5: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "."counter(h4-counter) "."counter(h5-counter) "\00A0";
+    @6: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "."counter(h4-counter) "."counter(h5-counter) "."counter(h6-counter) "\00A0";
+}
+
+.heading(@level) {
+
+    .protyle-wysiwyg>[data-node-id].h@{level},
+    .protyle-preview>h@{level} {
+        counter-increment: e(%("h%d-counter", @level));
+        counter-reset: e(%("h%d-counter", @level + 1)) 0;
+
+        // font-size: 1.6em !important;
+        color: var(e(%("--custom-h%d-color", @level)));
+        border-left: 3px solid var(e(%("--custom-h%d-color", @level)));
+        padding-left: 9px;
+
+        &::before {
+            display: block !important;
+            float: left;
+            font-size: var(--custom-h-num-font-size);
+            content: .heading-content[@@level];
+
+            // 显示标题级别
+            // content: var(e(%("--custom-h%d-mark", @level)));
+            // margin-right: var(--custom-h-mark-blank);
+        }
+    }
+
+    .protyle-wysiwyg>[data-node-id].h@{level}>[contenteditable][spellcheck]:empty {
+        padding-left: var(e(%("--custom-h%d-indentation", @level)));
+
+        // 显示标题级别
+        // padding-left: 1rem;
+    }
+}
+
+/* 👇标题自动编号👇 */
+/* body {
+    counter-reset: h1-counter 0;
+} */
+
+.protyle-wysiwyg,
+.protyle-preview {
+    counter-reset: h1-counter 0 h2-counter 0 h3-counter 0 h4-counter 0 h5-counter 0 h6-counter 0;
+}
+
+.heading(1);
+.heading(2);
+.heading(3);
+.heading(4);
+.heading(5);
+.heading(6);
+/* 👆标题自动编号👆 */
