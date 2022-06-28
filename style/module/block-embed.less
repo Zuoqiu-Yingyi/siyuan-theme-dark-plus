@@ -1,0 +1,22 @@
+/* 嵌入块 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+.protyle-wysiwyg {
+    [data-node-id].render-node {
+        /* 嵌入块 */
+        border: none;
+        outline: 2px solid var(--custom-line-color);
+        background-color: var(--custom-block-embed-background-color) !important;
+
+        >.protyle-wysiwyg__embed {
+            &:not(:first-child) {
+                /* 嵌入块间分隔线 */
+                position: relative;
+                // border-top: 1px dashed var(--custom-line-color);
+                border-top: 4px double var(--custom-line-color);
+            }
+        }
+    }
+}

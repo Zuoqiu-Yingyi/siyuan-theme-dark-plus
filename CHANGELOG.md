@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 使用 `Less` 重构 `block-code.css` | Refactored `block-code.css` with `Less`.
+- 使用 `Less` 重构 `block-embed.css` | Refactored `block-embed.css` with `Less`.
 
 ## v1.1.4/2022-06-27
 

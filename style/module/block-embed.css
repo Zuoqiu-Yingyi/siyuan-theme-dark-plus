@@ -1,17 +1,14 @@
 /* 嵌入块 */
-
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-
-.protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"] {
-    background-color: var(--custom-block-embed-background-color) !important;
-    outline: 2px solid var(--custom-line-color);
-    border: none;
+.protyle-wysiwyg [data-node-id].render-node {
+  /* 嵌入块 */
+  border: none;
+  outline: 2px solid var(--custom-line-color);
+  background-color: var(--custom-block-embed-background-color) !important;
 }
-
-/* 嵌入块间分隔线 */
-.protyle-wysiwyg__embed {
-    /* border-top: 1px dashed var(--custom-line-color); */
-    border-top: 4px double var(--custom-line-color);
-    position: relative;
+.protyle-wysiwyg [data-node-id].render-node > .protyle-wysiwyg__embed:not(:first-child) {
+  /* 嵌入块间分隔线 */
+  position: relative;
+  border-top: 4px double var(--custom-line-color);
 }
