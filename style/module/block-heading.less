@@ -19,11 +19,6 @@
         counter-increment: e(%("h%d-counter", @level));
         counter-reset: e(%("h%d-counter", @level + 1)) 0;
 
-        // font-size: 1.6em !important;
-        color: var(e(%("--custom-h%d-color", @level)));
-        border-left: 3px solid var(e(%("--custom-h%d-color", @level)));
-        padding-left: 9px;
-
         &::before {
             display: block !important;
             float: left;
@@ -34,6 +29,13 @@
             // content: var(e(%("--custom-h%d-mark", @level)));
             // margin-right: var(--custom-h-mark-blank);
         }
+    }
+    .protyle-wysiwyg [data-node-id].h@{level},
+    .protyle-preview h@{level} {
+        // font-size: e(%("1.%dem", 7 - @level)) !important;
+        color: var(e(%("--custom-h%d-color", @level)));
+        border-left: 3px solid var(e(%("--custom-h%d-color", @level)));
+        padding-left: 9px;
     }
 
     .protyle-wysiwyg>[data-node-id].h@{level}>[contenteditable][spellcheck]:empty {

@@ -13,9 +13,6 @@
 .protyle-preview > h1 {
   counter-increment: h1-counter;
   counter-reset: h2-counter 0;
-  color: var(--custom-h1-color);
-  border-left: 3px solid var(--custom-h1-color);
-  padding-left: 9px;
 }
 .protyle-wysiwyg > [data-node-id].h1::before,
 .protyle-preview > h1::before {
@@ -24,6 +21,12 @@
   font-size: var(--custom-h-num-font-size);
   content: counter(h1-counter) "\00A0";
 }
+.protyle-wysiwyg [data-node-id].h1,
+.protyle-preview h1 {
+  color: var(--custom-h1-color);
+  border-left: 3px solid var(--custom-h1-color);
+  padding-left: 9px;
+}
 .protyle-wysiwyg > [data-node-id].h1 > [contenteditable][spellcheck]:empty {
   padding-left: var(--custom-h1-indentation);
 }
@@ -31,9 +34,6 @@
 .protyle-preview > h2 {
   counter-increment: h2-counter;
   counter-reset: h3-counter 0;
-  color: var(--custom-h2-color);
-  border-left: 3px solid var(--custom-h2-color);
-  padding-left: 9px;
 }
 .protyle-wysiwyg > [data-node-id].h2::before,
 .protyle-preview > h2::before {
@@ -42,6 +42,12 @@
   font-size: var(--custom-h-num-font-size);
   content: counter(h1-counter) "." counter(h2-counter) "\00A0";
 }
+.protyle-wysiwyg [data-node-id].h2,
+.protyle-preview h2 {
+  color: var(--custom-h2-color);
+  border-left: 3px solid var(--custom-h2-color);
+  padding-left: 9px;
+}
 .protyle-wysiwyg > [data-node-id].h2 > [contenteditable][spellcheck]:empty {
   padding-left: var(--custom-h2-indentation);
 }
@@ -49,9 +55,6 @@
 .protyle-preview > h3 {
   counter-increment: h3-counter;
   counter-reset: h4-counter 0;
-  color: var(--custom-h3-color);
-  border-left: 3px solid var(--custom-h3-color);
-  padding-left: 9px;
 }
 .protyle-wysiwyg > [data-node-id].h3::before,
 .protyle-preview > h3::before {
@@ -60,6 +63,12 @@
   font-size: var(--custom-h-num-font-size);
   content: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) "\00A0";
 }
+.protyle-wysiwyg [data-node-id].h3,
+.protyle-preview h3 {
+  color: var(--custom-h3-color);
+  border-left: 3px solid var(--custom-h3-color);
+  padding-left: 9px;
+}
 .protyle-wysiwyg > [data-node-id].h3 > [contenteditable][spellcheck]:empty {
   padding-left: var(--custom-h3-indentation);
 }
@@ -67,9 +76,6 @@
 .protyle-preview > h4 {
   counter-increment: h4-counter;
   counter-reset: h5-counter 0;
-  color: var(--custom-h4-color);
-  border-left: 3px solid var(--custom-h4-color);
-  padding-left: 9px;
 }
 .protyle-wysiwyg > [data-node-id].h4::before,
 .protyle-preview > h4::before {
@@ -78,6 +84,12 @@
   font-size: var(--custom-h-num-font-size);
   content: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) "\00A0";
 }
+.protyle-wysiwyg [data-node-id].h4,
+.protyle-preview h4 {
+  color: var(--custom-h4-color);
+  border-left: 3px solid var(--custom-h4-color);
+  padding-left: 9px;
+}
 .protyle-wysiwyg > [data-node-id].h4 > [contenteditable][spellcheck]:empty {
   padding-left: var(--custom-h4-indentation);
 }
@@ -85,9 +97,6 @@
 .protyle-preview > h5 {
   counter-increment: h5-counter;
   counter-reset: h6-counter 0;
-  color: var(--custom-h5-color);
-  border-left: 3px solid var(--custom-h5-color);
-  padding-left: 9px;
 }
 .protyle-wysiwyg > [data-node-id].h5::before,
 .protyle-preview > h5::before {
@@ -96,6 +105,12 @@
   font-size: var(--custom-h-num-font-size);
   content: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) "." counter(h5-counter) "\00A0";
 }
+.protyle-wysiwyg [data-node-id].h5,
+.protyle-preview h5 {
+  color: var(--custom-h5-color);
+  border-left: 3px solid var(--custom-h5-color);
+  padding-left: 9px;
+}
 .protyle-wysiwyg > [data-node-id].h5 > [contenteditable][spellcheck]:empty {
   padding-left: var(--custom-h5-indentation);
 }
@@ -103,9 +118,6 @@
 .protyle-preview > h6 {
   counter-increment: h6-counter;
   counter-reset: h7-counter 0;
-  color: var(--custom-h6-color);
-  border-left: 3px solid var(--custom-h6-color);
-  padding-left: 9px;
 }
 .protyle-wysiwyg > [data-node-id].h6::before,
 .protyle-preview > h6::before {
@@ -113,6 +125,12 @@
   float: left;
   font-size: var(--custom-h-num-font-size);
   content: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) "." counter(h5-counter) "." counter(h6-counter) "\00A0";
+}
+.protyle-wysiwyg [data-node-id].h6,
+.protyle-preview h6 {
+  color: var(--custom-h6-color);
+  border-left: 3px solid var(--custom-h6-color);
+  padding-left: 9px;
 }
 .protyle-wysiwyg > [data-node-id].h6 > [contenteditable][spellcheck]:empty {
   padding-left: var(--custom-h6-indentation);

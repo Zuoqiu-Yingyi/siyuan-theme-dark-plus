@@ -1,59 +1,45 @@
 /* 列表 */
-
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-
-/* 缩进辅助线样式 */
-.protyle-wysiwyg [data-node-id].li>[data-node-id]::before {
-    /* border-left: var(--custom-list-guides-line-width) solid var(--b3-border-color); */
-    border-left: var(--custom-list-guides-line-width) solid var(--custom-list-guides-line-color);
-    background-color: transparent;
-    left: calc(16px - 2em);
-    top: 0;
+.protyle-wysiwyg [data-node-id].li > [data-node-id]::before {
+  /* 缩进辅助线样式 */
+  border-left: var(--custom-list-guides-line-width) solid var(--custom-list-guides-line-color);
+  background-color: transparent;
+  left: calc(16px - 2em);
+  top: 0;
 }
-
-.protyle-wysiwyg [data-node-id].li>[data-node-id].list::before {
-    left: calc(16px - 1em);
+.protyle-wysiwyg [data-node-id].li > [data-node-id].list {
+  /* 列表缩进(列表块) */
+  margin-left: 1em !important;
+  padding-left: 1em;
 }
-
-/* 修正列表内标题辅助线错位 */
-.protyle-wysiwyg [data-node-id].li>[data-node-id][data-type="NodeHeading"]::before {
-    left: -21px;
+.protyle-wysiwyg [data-node-id].li > [data-node-id]:not(.list, [data-type="NodeHeading"]) {
+  /* 列表缩进 */
+  margin-left: 2em !important;
 }
-
-/* 修正列表内引用块辅助线错位 */
-.protyle-wysiwyg [data-node-id].li>[data-node-id][data-type="NodeBlockquote"]::before {
-    left: calc(13px - 2em);
+.protyle-wysiwyg [data-node-id].li > [data-node-id].list::before {
+  /* 修正下级列表块辅助线错位 */
+  left: calc(16px - 1em);
 }
-
-/* 修正列表内嵌入块辅助线错位 */
-.protyle-wysiwyg [data-node-id].li>[data-node-id][data-type="NodeBlockQueryEmbed"]::before {
-    left: calc(15px - 2em);
+.protyle-wysiwyg [data-node-id].li > [data-node-id].bq::before {
+  /* 修正列表内引用块辅助线错位 */
+  left: calc(13px - 2em);
 }
-
-/* 修正列表接头处辅助线错误 */
-.protyle-wysiwyg [data-node-id].li>div:nth-child(2):before {
-    top: calc(12px + 1em) !important;
-    height: calc(100% - 8px - 1em) !important;
+.protyle-wysiwyg [data-node-id].li > [data-node-id][data-type="NodeHeading"]::before {
+  /* 修正列表内标题辅助线错位 */
+  left: -21px;
 }
-
-/* 列表缩进 */
-.protyle-wysiwyg [data-node-id].li>.list {
-    margin-left: 1em !important;
-    padding-left: 1em;
+.protyle-wysiwyg [data-node-id].li > [data-node-id].render-node::before {
+  /* 修正列表内嵌入块辅助线错位 */
+  left: calc(15px - 2em);
 }
-
-.protyle-wysiwyg [data-node-id].li>[data-node-id]:not(.list, [data-type="NodeHeading"]) {
-    margin-left: 2em !important;
+.protyle-wysiwyg [data-node-id].li > [data-node-id]:first-child::before {
+  /* 修正列表接头处辅助线错误 */
+  top: calc(12px + 1em) !important;
+  height: calc(100% - 8px - 1em) !important;
 }
-
-/* 已完成任务列表项删除线 */
-.protyle-wysiwyg div[data-node-id].li.protyle-task--done>div[data-node-id].p {
-    text-decoration: line-through var(--custom-list-task-done-color);
-    color: var(--custom-list-task-done-color);
+.protyle-wysiwyg [data-node-id].li.protyle-task--done > [data-node-id].p {
+  /* 已完成任务列表项删除线 */
+  text-decoration: line-through var(--custom-list-task-done-color);
+  color: var(--custom-list-task-done-color);
 }
-
-/* .li.protyle-task--done .p strong {
-    color: var(--b3-theme-primary) !important;
-    background-color: transparent !important;
-} */
