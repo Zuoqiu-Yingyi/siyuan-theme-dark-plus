@@ -15,7 +15,7 @@
 .heading(@level) {
 
     .protyle-wysiwyg>[data-node-id].h@{level},
-    .protyle-preview>h@{level} {
+    .b3-typography>h@{level} {
         counter-increment: e(%("h%d-counter", @level));
         counter-reset: e(%("h%d-counter", @level + 1)) 0;
 
@@ -31,7 +31,7 @@
         }
     }
     .protyle-wysiwyg [data-node-id].h@{level},
-    .protyle-preview h@{level} {
+    .b3-typography h@{level} {
         // font-size: e(%("1.%dem", 7 - @level)) !important;
         color: var(e(%("--custom-h%d-color", @level)));
         border-left: 3px solid var(e(%("--custom-h%d-color", @level)));
@@ -52,7 +52,7 @@
 } */
 
 .protyle-wysiwyg,
-.protyle-preview {
+.b3-typography {
     counter-reset: h1-counter 0 h2-counter 0 h3-counter 0 h4-counter 0 h5-counter 0 h6-counter 0;
 }
 

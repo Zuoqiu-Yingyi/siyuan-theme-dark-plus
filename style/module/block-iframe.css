@@ -5,7 +5,7 @@
 /* .iframe-content audio {} */
 /* .iframe-content iframe {} */
 /* .iframe-content video {} */
-.protyle-preview iframe,
+.b3-typography iframe,
 .protyle-wysiwyg iframe {
   background-color: var(--custom-block-iframe-background-color);
 }

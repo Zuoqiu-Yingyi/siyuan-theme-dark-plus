@@ -1,38 +1,33 @@
 /* 表格块 */
-
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-
-/* 背景颜色 */
 .b3-typography table,
 .protyle-wysiwyg table {
-    background-color: var(--custom-block-table-background-color);
-}
-
-/* 表头背景颜色 */
-.b3-typography table thead>tr,
-.protyle-wysiwyg table thead>tr {
-    background-color: transparent;
+  /* 表格 */
+  background-color: var(--custom-block-table-background-color);
 }
 .b3-typography table thead,
 .protyle-wysiwyg table thead {
-    background-color: var(--custom-block-table-thead-background-color);
+  /* 表头 */
+  background-color: var(--custom-block-table-thead-background-color);
 }
-
-/* 奇数行背景颜色 */
+.b3-typography table thead tr,
+.protyle-wysiwyg table thead tr {
+  /* 表头行 */
+  background-color: transparent;
+}
 .b3-typography table tbody tr:nth-child(2n+1),
 .protyle-wysiwyg table tbody tr:nth-child(2n+1) {
-    background-color: var(--custom-block-table-odd-background-color);
+  /* 奇数行 */
+  background-color: var(--custom-block-table-odd-background-color);
 }
-
-/* 偶数行背景颜色 */
 .b3-typography table tbody tr:nth-child(2n),
 .protyle-wysiwyg table tbody tr:nth-child(2n) {
-    background-color: var(--custom-block-table-even-background-color);
+  /* 偶数行 */
+  background-color: var(--custom-block-table-odd-background-color);
 }
-
-/* 高亮鼠标悬浮行 */
 .b3-typography table tbody tr:hover,
 .protyle-wysiwyg table tbody tr:hover {
-    background-color: var(--custom-block-table-hover-background-color);
+  /* 鼠标悬浮行 */
+  background-color: var(--custom-block-table-hover-background-color);
 }

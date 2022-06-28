@@ -14,14 +14,14 @@
         box-shadow: var(--b3-theme-background) 0 0 var(--custom-box-shadow-spread);
         // margin-bottom: 16px;
 
-        [data-node-id].sb {
-            border-radius: var(--custom-border-radius);
-            margin: var(--custom-block-padding);
-        }
-        
         &:hover {
             /* 超级块鼠标悬停时显示边框 */
             outline: 1px solid var(--b3-theme-on-surface);
+        }
+
+        [data-node-id].sb {
+            border-radius: var(--custom-border-radius);
+            margin: var(--custom-block-padding);
         }
     }
 }
