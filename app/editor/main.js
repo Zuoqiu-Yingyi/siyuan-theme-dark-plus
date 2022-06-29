@@ -11,6 +11,7 @@ import {
     getFullHPathByID,
     exportMdContent,
     updateBlock,
+    getBlockKramdown,
     getFile,
     putFile,
     resolveAssetPath,
@@ -262,29 +263,42 @@ async function init(params) {
                     }
                     break;
                 case 'd': // 文档块
-                    if (params.path) {
-                        // karmdown 编辑模式
-                        r = await getFile(params.path);
-                        if (r) {
-                            params.value = await r.text();
-                        } else {
-                            // 没有查询到 kramdown 模板
-                            params.mode = 'none';
-                            return;
-                        }
+                    switch (params.type) {
+                        case 'kramdown':
+                            if (params.path) {
+                                // 使用模板文件
+                                r = await getFile(params.path);
+                                if (r) {
+                                    params.value = await r.text();
+                                    break;
+                                } else {
+                                    // 没有查询到 kramdown 模板
+                                    params.mode = 'none';
+                                    return;
+                                }
+                            }
+                            else {
+                                // 使用 API /api/block/getBlockKramdown
+                                r = await getBlockKramdown(b.id);
+                                if (r && r.code === 0) {
+                                    params.value = r.data.kramdown;
+                                    break;
+                                }
+                            }
+                        case 'markdown':
+                        default:
+                            // 标准 markdown 编辑模式
+                            r = await exportMdContent(b.id);
+                            if (!(r && r.code === 0)) {
+                                params.mode = 'none';
+                                return;
+                            }
+                            else {
+                                params.value = r.data.content;
+                            }
+                            break;
                     }
-                    else {
-                        // 标准 markdown 编辑模式
-                        r = await exportMdContent(b.id);
-                        if (!(r && r.code === 0)) {
-                            params.mode = 'none';
-                            return;
-                        }
-                        else {
-                            params.value = r.data.content;
-                            params.filename = `${b.content}.md`;
-                        }
-                    }
+                    params.filename = `${b.content}.md`;
                     params.mode = 'doc';
                     params.language = 'markdown';
                     params.tabSize = 2;
@@ -311,9 +325,29 @@ async function init(params) {
                     params.language = 'markdown';
                     params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
                     break;
+                case `h`:
+                case `t`:
+                case `p`:
+                case `tb`:
+                    // 其他叶子块
+                    params.mode = 'leaf';
                 default:
-                    params.mode = 'block';
-                    params.value = b.markdown;
+                    // 其他容器块
+                    switch (params.type) {
+                        case 'kramdown':
+                            r = await getBlockKramdown(b.id);
+                            if (r && r.code === 0) {
+                                params.value = r.data.kramdown;
+                                break;
+                            }
+                        case 'markdown':
+                        default:
+                            params.value = b.markdown;
+                            break;
+                    }
+                    params.mode = params.mode === 'leaf'
+                        ? 'leaf'
+                        : 'container';
                     params.language = 'markdown';
                     params.tabSize = 2;
                     params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
@@ -393,6 +427,8 @@ window.onload = () => {
              */
             mode: window.editor.url.searchParams.get('mode')
                 || 'none', // 编辑器模式
+            type: window.editor.url.searchParams.get('type')
+                || 'markdown', // 编辑类型
             value: '', // 内容
             theme: window.editor.url.searchParams.get('theme')
                 || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 1 : 0), // 主题模式
@@ -502,7 +538,8 @@ window.onload = () => {
                             );
                             break;
                         case 'html':
-                        case 'block':
+                        case 'leaf':
+                        case 'container':
                             response = await updateBlock(
                                 window.editor.params.id,
                                 `${window.editor.editor.getValue().trim()}\n${window.editor.params.block.ial}`,
@@ -560,20 +597,25 @@ window.onload = () => {
                         window.editor.editor.updateOptions({ wordWrap: wrap_iter.next().value });
                     }, // 点击后执行的操作
                 });
-
-                window.editor.editor.addAction({ // 保存
-                    id: '18730D32-5451-4102-B299-BE281BA929B9', // 菜单项 id
-                    label: config.editor.MAP.LABELS.save[window.editor.params.lang]
-                        || config.editor.MAP.LABELS.save.default, // 菜单项名称
-                    // REF [KeyMod | Monaco Editor API](https://microsoft.github.io/monaco-editor/api/classes/monaco.KeyMod.html)
-                    // REF [KeyCode | Monaco Editor API](https://microsoft.github.io/monaco-editor/api/enums/monaco.KeyCode.html)
-                    keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS], // 绑定快捷键
-                    contextMenuGroupId: '3_file', // 所属菜单的分组
-                    contextMenuOrder: 1, // 菜单分组内排序
-                    run: () => {
-                        setTimeout(save, 0);
-                    }, // 点击后执行的操作
-                });
+                if (!(window.editor.params.type === 'markdown'
+                    && (
+                        window.editor.params.mode === 'doc'
+                        || window.editor.params.mode === 'container'
+                    ))) { // 容器块以 markdown 模式无法保存
+                    window.editor.editor.addAction({ // 保存
+                        id: '18730D32-5451-4102-B299-BE281BA929B9', // 菜单项 id
+                        label: config.editor.MAP.LABELS.save[window.editor.params.lang]
+                            || config.editor.MAP.LABELS.save.default, // 菜单项名称
+                        // REF [KeyMod | Monaco Editor API](https://microsoft.github.io/monaco-editor/api/classes/monaco.KeyMod.html)
+                        // REF [KeyCode | Monaco Editor API](https://microsoft.github.io/monaco-editor/api/enums/monaco.KeyCode.html)
+                        keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS], // 绑定快捷键
+                        contextMenuGroupId: '3_file', // 所属菜单的分组
+                        contextMenuOrder: 1, // 菜单分组内排序
+                        run: () => {
+                            setTimeout(save, 0);
+                        }, // 点击后执行的操作
+                    });
+                }
 
                 window.editor.editor.addAction({ // 文件另存为
                     id: 'D68588DD-8D0C-4435-8DC2-145B0F464FF8', // 菜单项 id

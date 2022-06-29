@@ -7,6 +7,7 @@ export {
     queryBlock,
     queryAsset,
     updateBlock,
+    getBlockKramdown,
     exportMdContent,
     getAsset,
     getLocalFile,
@@ -63,6 +64,12 @@ async function updateBlock(id, data, dataType = 'markdown') {
         id: id,
         data: data,
         dataType: dataType,
+    });
+}
+
+async function getBlockKramdown(id) {
+    return request('/api/block/getBlockKramdown', {
+        id: id,
     });
 }
 

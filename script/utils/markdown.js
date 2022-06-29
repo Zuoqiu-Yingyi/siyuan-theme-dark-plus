@@ -1,5 +1,6 @@
 export {
-    editKramdownDoc, // 编辑 kramdown 源代码
+    editDocKramdown, // 编辑文档 kramdown 源代码
+    editBlockKramdown, // 编辑块 kramdown 源代码
 }
 
 import { config } from '../module/config.js';
@@ -14,8 +15,8 @@ import {
     rename,
 } from './system.js';
 
-/* 编辑 kramdown 源代码 */
-async function editKramdownDoc(id) {
+/* 编辑文档 kramdown 源代码 */
+async function editDocKramdown(id) {
     if (window.theme.clientMode !== 'app') { // 只在桌面模式下才可以编辑
         await pushErrMsg(config.theme.window.open.editor.kramdown.message.error);
         return null;
@@ -44,6 +45,7 @@ async function editKramdownDoc(id) {
                             {
                                 id: id,
                                 mode: 'block',
+                                type: 'kramdown',
                                 lang: window.theme.languageMode,
                                 path: temp_file_path_relative,
                                 // theme: window.siyuan.config.appearance.mode,
@@ -65,4 +67,23 @@ async function editKramdownDoc(id) {
             )
         );
     }
+}
+
+/* 编辑块 kramdown 源代码 */
+async function editBlockKramdown(id) {
+    window.theme.openNewWindow(
+        'editor',
+        undefined,
+        {
+            id: id,
+            mode: 'block',
+            type: 'kramdown',
+            lang: window.theme.languageMode,
+            fontFamily: encodeURI(window.siyuan.config.editor.fontFamily),
+            tabSize: window.siyuan.config.editor.codeTabSpaces,
+        },
+        config.theme.window.windowParams,
+        config.theme.window.menu.template,
+        config.theme.window.open.editor.path.index,
+    )
 }

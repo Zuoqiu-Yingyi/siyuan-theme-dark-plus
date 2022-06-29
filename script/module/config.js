@@ -1247,71 +1247,14 @@ export var config = {
                             },
                             {
                                 enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                },
+                                type: null,
                                 mode: "button",
                                 icon: "#iconCode",
                                 label: {
-                                    zh_CN: "编辑文档源代码",
-                                    other: "Edit the Document Source Code",
+                                    zh_CN: "编辑 Kramdown 源代码",
+                                    other: "Edit the Kramdown Source Code",
                                 },
-                                accelerator: "",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'window-open-editor-kramdown-doc',
-                                            params: {},
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeAudio: {
-                                        enable: true,
-                                    },
-                                    NodeBlockQueryEmbed: {
-                                        enable: true,
-                                    },
-                                    NodeCodeBlock: {
-                                        enable: true,
-                                    },
-                                    NodeHTMLBlock: {
-                                        enable: true,
-                                    },
-                                    NodeHeading: {
-                                        enable: true,
-                                    },
-                                    NodeIFrame: {
-                                        enable: true,
-                                    },
-                                    NodeMathBlock: {
-                                        enable: true,
-                                    },
-                                    NodeParagraph: {
-                                        enable: true,
-                                    },
-                                    NodeTable: {
-                                        enable: true,
-                                    },
-                                    NodeVideo: {
-                                        enable: true,
-                                    },
-                                    NodeWidget: {
-                                        enable: true,
-                                    },
-                                },
-                                mode: "button",
-                                icon: "#iconCode",
-                                label: {
-                                    zh_CN: "在编辑器中打开",
-                                    other: "Open in the Editor",
-                                },
-                                accelerator: "",
+                                accelerator: () => config.theme.hotkeys.window.open.editor,
                                 click: {
                                     enable: true,
                                     callback: null,
@@ -1320,8 +1263,34 @@ export var config = {
                                             type: 'window-open-editor',
                                             params: {
                                                 mode: 'block',
+                                                type: 'kramdown',
                                                 lang: (() => window.theme.languageMode)(),
-                                                // theme: window.siyuan.config.appearance.mode,
+                                                fontFamily: (() => encodeURI(window.siyuan.config.editor.fontFamily))(),
+                                                tabSize: (() => window.siyuan.config.editor.codeTabSpaces)(),
+                                            },                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: null,
+                                mode: "button",
+                                icon: "#iconCode",
+                                label: {
+                                    zh_CN: "查看 Markdown 源代码",
+                                    other: "Review the Markdown Source Code",
+                                },
+                                accelerator: () => config.theme.hotkeys.window.open.markdown,
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'window-open-editor',
+                                            params: {
+                                                mode: 'block',
+                                                type: 'markdown',
+                                                lang: (() => window.theme.languageMode)(),
                                                 fontFamily: (() => encodeURI(window.siyuan.config.editor.fontFamily))(),
                                                 tabSize: (() => window.siyuan.config.editor.codeTabSpaces)(),
                                             },
@@ -2559,7 +2528,7 @@ export var config = {
                         Alt: true,
                         button: 1, // 鼠标中键
                     },
-                    "editor-kramdown": {
+                    markdown: {
                         // 以 markdown 模式在新窗口打开编辑器(Sihft + Alt + 鼠标中键)
                         CtrlCmd: false,
                         WinCtrl: false,
