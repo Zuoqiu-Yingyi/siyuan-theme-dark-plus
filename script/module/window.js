@@ -4,7 +4,11 @@ import { config } from './config.js';
 import { toolbarItemInit } from './../utils/ui.js';
 import { globalEventHandler } from './../utils/listener.js';
 import { merge } from './../utils/misc.js';
-import { editKramdownDoc } from '../utils/markdown.js';
+import { compareVersion } from './../utils/string.js';
+import {
+    editDocKramdown,
+    editBlockKramdown,
+} from '../utils/markdown.js';
 import {
     putFile,
 } from './../utils/api.js';
@@ -196,24 +200,27 @@ setTimeout(async () => {
                         // 临时目录创建成功
                         globalEventHandler.addEventHandler(
                             'mouseup',
-                            config.theme.hotkeys.window.open["editor-kramdown"],
+                            config.theme.hotkeys.window.open.editor,
                             e => setTimeout(async () => middleClick(
                                 e,
-                                async id => editKramdownDoc(id),
+                                async id => compareVersion(window.theme.kernelVersion, '2.0.24') > 0
+                                    ? editBlockKramdown(id)
+                                    : editDocKramdown(id),
                             ), 0),
                         );
                         globalEventHandler.addEventHandler(
                             'mouseup',
-                            config.theme.hotkeys.window.open.editor,
+                            config.theme.hotkeys.window.open.markdown,
                             e => setTimeout(async () => middleClick(
                                 e,
                                 async id => {
                                     window.theme.openNewWindow(
                                         'editor',
-                                        config.theme.window.open.editor.path.index,
+                                        undefined,
                                         {
                                             id: id,
                                             mode: 'block',
+                                            type: 'markdown',
                                             lang: window.theme.languageMode,
                                             // theme: window.siyuan.config.appearance.mode,
                                             fontFamily: encodeURI(window.siyuan.config.editor.fontFamily),
@@ -221,6 +228,7 @@ setTimeout(async () => {
                                         },
                                         config.theme.window.windowParams,
                                         config.theme.window.menu.template,
+                                        config.theme.window.open.editor.path.index,
                                     );
                                 },
                                 async href => {

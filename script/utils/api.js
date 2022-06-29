@@ -52,6 +52,7 @@ export {
     删除块 as deleteBlock,
     更新块 as updateBlock,
     以id获取思源块信息 as getBlockByID,
+    获取块kramdown源码 as getBlockKramdown,
 
     获取系统字体列表 as getSysFonts,
     获取文件 as getFile,
@@ -241,6 +242,14 @@ async function 以id获取思源块信息(内容块id) {
     let sql = `select * from blocks where id ='${内容块id}'`
     let data = await 以sql向思源请求块数据(sql)
     return data[0]
+}
+
+async function 获取块kramdown源码(内容块id) {
+    const data = {
+        id: 内容块id,
+    }
+    const url = '/api/block/getBlockKramdown'
+    return 解析响应体(向思源请求数据(url, data))
 }
 
 async function 设置思源块属性(内容块id, 属性对象) {

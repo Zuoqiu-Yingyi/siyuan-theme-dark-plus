@@ -13,12 +13,16 @@ import {
     saveCustomFile,
 } from '../module/config.js';
 import { printHotKey } from './hotkey.js';
-import { editKramdownDoc } from './markdown.js';
+import {
+    editDocKramdown,
+    editBlockKramdown,
+} from './markdown.js';
 import {
     getEditors,
     setBlockDOMAttrs,
 } from './dom.js';
 import { Iterator } from './misc.js';
+import { compareVersion } from './string.js';
 import {
     getBlockByID,
     getBlockAttrs,
@@ -612,8 +616,11 @@ const TASK_HANDLER = {
         );
     },
     /* 在新窗口打开编辑器并编辑 kramdown 文档源代码 */
-    'window-open-editor-kramdown-doc': async (e, id, params) => {
-        editKramdownDoc(id);
+    'window-open-editor-kramdown': async (e, id, params) => {
+        if (compareVersion(window.theme.kernelVersion, '2.0.24') > 0)
+            editBlockKramdown(id);
+        else
+            editDocKramdown(id);
     },
     /* 新窗口打开超链接 */
     'save-input-value': async (e, id, params) => {
@@ -635,7 +642,7 @@ const TASK_HANDLER = {
         if (editors.length > 0) {
             const IDs = editors.map(editor => editor.protyle.options.blockId); // 待归档的文档的 ID
             const time = new Date().format('yyyy-MM-dd hh:mm:ss'); // 归档时间戳(书签名)
-            const attrs = {bookmark: time}; // 待设置的书签属性
+            const attrs = { bookmark: time }; // 待设置的书签属性
             IDs.forEach(id => setBlockAttrs(id, attrs));
             editors.forEach(editor => editor.protyle.model.headElement.lastElementChild.click());
             pushMsg(params.message.success);

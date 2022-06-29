@@ -6,6 +6,7 @@ export {
     ialParse, // 内联属性表解析
     ialCreate, // 内联属性表创建
     getCookie, // 获取指定 cookie 值
+    compareVersion, // 比较版本号
 }
 
 /* HTML 转义 */
@@ -70,4 +71,21 @@ function getCookie(name) {
         if (cookie_item[0] == name) return cookie_item[1];
     }
     return null;
+}
+
+/**
+ * 比较版本号
+ * @params {string} v1: 版本号1
+ * @params {string} v2: 版本号2
+ * @return {number}: 1: v1 > v2; -1: v1 < v2; 0: v1 = v2
+ */
+function compareVersion(v1, v2) {
+    let v1_arr = v1.split('.');
+    let v2_arr = v2.split('.');
+    for (let i = 0; i < v1_arr.length; i++) {
+        if (v2_arr[i] == undefined) return 1;
+        if (v1_arr[i] > v2_arr[i]) return 1;
+        if (v1_arr[i] < v2_arr[i]) return -1;
+    }
+    return 0;
 }
