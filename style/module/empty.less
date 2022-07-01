@@ -1,0 +1,90 @@
+/* 空白提示 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+/* 👇聚焦提示👇 */
+.protyle-wysiwyg {
+
+    // 聚焦提示👇
+    [data-node-id]:not(.code-block)>[contenteditable][spellcheck] {
+        &:empty::after {
+            /* 空段落 */
+            content: var(--custom-empty-p);
+            color: var(--b3-theme-on-surface);
+        }
+
+        &:focus:empty::after {
+            /* 空段落聚焦 */
+            content: var(--custom-empty-focus-p);
+            color: var(--b3-theme-on-surface);
+        }
+
+    }
+
+    [data-node-id].code-block>[contenteditable][spellcheck].hljs {
+        &:empty::after {
+            /* 空代码块 */
+            content: var(--custom-empty-c);
+            color: var(--b3-theme-on-surface);
+        }
+
+        &:focus:empty::after {
+            /* 空代码块聚焦 */
+            content: var(--custom-empty-focus-c);
+            color: var(--b3-theme-on-surface);
+        }
+
+    }
+
+    [data-node-id][data-subtype="t"].li>.p:nth-of-type(2)>[contenteditable][spellcheck] {
+        &:empty::after {
+            /* 空任务列表 */
+            content: var(--custom-empty-t);
+            color: var(--b3-theme-on-surface);
+        }
+
+        &:focus:empty::after {
+            /* 空任务列表聚焦 */
+            content: var(--custom-empty-focus-t);
+            color: var(--b3-theme-on-surface);
+        }
+
+    }
+
+    [data-node-id][data-subtype="u"].li>.p:nth-of-type(2)>[contenteditable][spellcheck] {
+        &:empty::after {
+            /* 空无序列表 */
+            content: var(--custom-empty-u);
+            color: var(--b3-theme-on-surface);
+        }
+
+        &:focus:empty::after {
+            /* 空无序列表聚焦 */
+            content: var(--custom-empty-focus-u);
+            color: var(--b3-theme-on-surface);
+        }
+
+    }
+
+    [data-node-id][data-subtype="o"].li>.p:nth-of-type(2)>[contenteditable][spellcheck] {
+        &:empty::after {
+            /* 空有序列表 */
+            content: var(--custom-empty-o);
+            color: var(--b3-theme-on-surface);
+        }
+
+        &:focus:empty::after {
+            /* 空有序列表聚焦 */
+            content: var(--custom-empty-focus-o);
+            color: var(--b3-theme-on-surface);
+        }
+
+    }
+
+}
+
+/*不打开文档时的界面*/
+.layout__empty.b3-list {
+    background: transparent;
+}
