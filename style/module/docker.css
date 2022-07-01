@@ -4,10 +4,10 @@
 @import url(/widgets/custom.css);
 
 /* 菜单栏 */
-#dockTop.dock,
-#dockBottom.dock,
-#dockLeft.dock,
-#dockRight.dock {
+#dockTop,
+#dockBottom,
+#dockLeft,
+#dockRight {
     background-color: var(--custom-dock-background-color);
     border: 0;
 }
