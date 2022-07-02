@@ -1,5 +1,9 @@
 # 更改日志 | CHANGE LOG
 
+## v1.2.0/2022-07-03
+
+- [v1.1.4 <=> v1.2.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.4...v1.2.0)
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 使用 `Less` 重构 `block-code.css` | Refactored `block-code.css` with `Less`.
 - 使用 `Less` 重构 `block-embed.css` | Refactored `block-embed.css` with `Less`.
 - 使用 `Less` 重构 `block-heading.css` | Refactored `block-heading.css` with `Less`.
