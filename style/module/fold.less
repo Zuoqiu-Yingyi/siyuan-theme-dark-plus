@@ -5,6 +5,30 @@
 @import (css) url(/appearance/themes/Dark+/style/module/config.css);
 @import (css) url(/widgets/custom.css);
 
+.display(@type, @element) {
+    [data-node-id][fold="1"]@{type} {
+        text-align: center;
+
+        @{element} {
+            display: none;
+        }
+    }
+}
+
+.content(@type, @content) {
+
+    [data-node-id][fold="1"]@{type}::before,
+    .li [data-node-id][fold="1"]@{type} div:first-child:before {
+        content: @content;
+        line-height: 100%;
+    }
+}
+
+.fold(@type, @element, @content) {
+    .display(@type, @element);
+    .content(@type, @content);
+}
+
 .protyle-wysiwyg {
 
     // 子标题折叠样式
@@ -47,29 +71,34 @@
         }
     }
 
-    [data-node-id][fold="1"][data-type="NodeIFrame"],
-    [data-node-id][fold="1"][data-type="NodeWidget"],
-    [data-node-id][fold="1"][data-type="NodeVideo"],
-    [data-node-id][fold="1"][data-type="NodeAudio"],
-    [data-node-id][fold="1"][data-subtype="mindmap"],
-    [data-node-id][fold="1"][data-subtype="mermaid"],
-    [data-node-id][fold="1"][data-subtype="echarts"],
-    [data-node-id][fold="1"][data-subtype="flowchart"],
-    [data-node-id][fold="1"][data-subtype="plantuml"],
-    [data-node-id][fold="1"][data-subtype="graphviz"],
-    [data-node-id][fold="1"][data-subtype="abc"] {
-        text-align: left;
+    .display(~'[data-type="NodeTable"]', tbody);
+    .fold(~'[data-type="NodeBlockQueryEmbed"]', div, "[Query Embed]");
+    .fold(~'[data-type="NodeMathBlock"]', div, "[Math]");
+    .fold(~'[data-type="NodeIFrame"]', div, "[IFrame]");
+    .fold(~'[data-type="NodeWidget"]', div, "[Widget]");
+    .fold(~'[data-type="NodeAudio"]', div, "[Audio]");
+    .fold(~'[data-type="NodeVideo"]', div, "[Video]");
+    .fold(~'[data-subtype="plantuml"]', div, "[PlantUML]");
+    .fold(~'[data-subtype="flowchart"]', div, "[Flow Chart]");
+    .fold(~'[data-subtype="echarts"]', div, "[Echarts]");
+    .fold(~'[data-subtype="mindmap"]', div, "[Mind Map]");
+    .fold(~'[data-subtype="mermaid"]', div, "[Mermaid]");
+    .fold(~'[data-subtype="graphviz"]', div, "[Graphviz]");
+    .fold(~'[data-subtype="abc"]', div, "[Staff]");
 
-        div {
-            display: none;
-        }
-    }
+    .content(~'[data-subtype="mermaid"][data-content^="flowchart LR"]', "[Mermaid - Flowchart]");
+    .content(~'[data-subtype="mermaid"][data-content^="graph LR"]', "[Mermaid - Flowchart]");
+    .content(~'[data-subtype="mermaid"][data-content^="graph TB"]', "[Mermaid - Flowchart]");
 
-    [data-node-id][fold="1"][data-type="NodeBlockQueryEmbed"] div,
-    [data-node-id][fold="1"][data-type="NodeTable"] table tbody,
-    [data-node-id][fold="1"][data-type="NodeMathBlock"] div {
-        display: none;
-    }
+    .content(~'[data-subtype="mermaid"][data-content^="sequenceDiagram"]', "[Mermaid - Sequence Diagram]");
+    .content(~'[data-subtype="mermaid"][data-content^="classDiagram"]', "[Mermaid - Class Diagram]");
+    .content(~'[data-subtype="mermaid"][data-content^="stateDiagram"]', "[Mermaid - State Diagram]");
+    .content(~'[data-subtype="mermaid"][data-content^="erDiagram"]', "[Mermaid - Entity Relationship Diagram]");
+    .content(~'[data-subtype="mermaid"][data-content^="journey"]', "[Mermaid - User Journey]");
+    .content(~'[data-subtype="mermaid"][data-content^="gantt"]', "[Mermaid - Gantt]");
+    .content(~'[data-subtype="mermaid"][data-content^="pie"]', "[Mermaid - Pie Chart]");
+    .content(~'[data-subtype="mermaid"][data-content^="requirementDiagram"]', "[Mermaid - Requirement Diagram]");
+    .content(~'[data-subtype="mermaid"][data-content^="gitGraph"]', "[Mermaid - Git Graph]");
 }
 
 
@@ -97,149 +126,3 @@
 /* .protyle-wysiwyg [data-node-id][fold="1"].code-block {
     height: 26px;
 } */
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeIFrame"],
-.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeWidget"],
-.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeVideo"],
-.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeAudio"],
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mindmap"],
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mermaid"],
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="echarts"],
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="flowchart"],
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="plantuml"],
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="graphviz"],
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="abc"] {
-    text-align: left;
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeBlockQueryEmbed"] div,
-.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeTable"] table tbody,
-.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeMathBlock"] div,
-.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeIFrame"] div,
-.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeWidget"] div,
-.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeVideo"] div,
-.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeAudio"] div,
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mindmap"] div,
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mermaid"] div,
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="echarts"] div,
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="flowchart"] div,
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="plantuml"] div,
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="graphviz"] div,
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="abc"] div {
-    display: none;
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeMathBlock"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-type="NodeMathBlock"] div:first-child:before {
-    content: "[Math]";
-}
-
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-type="NodeIFrame"] div:first-child:before,
-.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeIFrame"]::before {
-    content: "[IFrame]";
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeWidget"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-type="NodeWidget"] div:first-child:before {
-    content: "[Widget]";
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeAudio"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-type="NodeAudio"] div:first-child:before {
-    content: "[Audio]";
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeVideo"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-type="NodeVideo"] div:first-child:before {
-    content: "[Video]";
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="plantuml"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="plantuml"] div:first-child:before {
-    content: "[PlantUML]";
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="flowchart"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="flowchart"] div:first-child:before {
-    content: "[Flow Chart]";
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="echarts"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="echarts"] div:first-child:before {
-    content: "[Echarts]";
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="graphviz"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="graphviz"] div:first-child:before {
-    content: "[Graphviz]";
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="abc"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="abc"] div:first-child:before {
-    content: "[Staff]";
-}
-
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mindmap"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mindmap"] div:first-child:before {
-    content: "[Mind Map]";
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mermaid"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mermaid"] div:first-child:before {
-    content: "[Mermaid]";
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="flowchart LR"]::before,
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="graph LR"]::before,
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="graph TB"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="flowchart LR"] div:first-child:before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="graph LR"] div:first-child:before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="graph TB"] div:first-child:before {
-    content: "[Flowchart]";
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="sequenceDiagram"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="sequenceDiagram"] div:first-child:before {
-    content: "[Sequence Diagram]";
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="classDiagram"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="classDiagram"] div:first-child:before {
-    content: "[Class Diagram]";
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="stateDiagram"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="stateDiagram"] div:first-child:before {
-    content: "[State Diagram]";
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="erDiagram"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="erDiagram"] div:first-child:before {
-    content: "[Entity Relationship Diagram]";
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="journey"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="journey"] div:first-child:before {
-    content: "[User Journey]";
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="gantt"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="gantt"] div:first-child:before {
-    content: "[Gantt]";
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="pie"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="pie"] div:first-child:before {
-    content: "[Pie Chart]";
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="requirementDiagram"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="requirementDiagram"] div:first-child:before {
-    content: "[Requirement Diagram]";
-}
-
-.protyle-wysiwyg [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="gitGraph"]::before,
-.protyle-wysiwyg .li [data-node-id][fold="1"][data-subtype="mermaid"][data-content^="gitGraph"] div:first-child:before {
-    content: "[Git Graph]";
-}
