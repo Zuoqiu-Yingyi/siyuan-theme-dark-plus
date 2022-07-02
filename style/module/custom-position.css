@@ -11,7 +11,7 @@
 }
 
 .protyle-wysiwyg [data-node-id][custom-position~=top] {
-    top: var(--custom-breadcrumb-height);
+    top: var(--custom-position-top);
 }
 
 .protyle-wysiwyg [data-node-id][custom-position~=bottom] {
@@ -20,5 +20,5 @@
 
 /* 文档下顶层块需要留出面包屑的高度 */
 .protyle-wysiwyg>[data-node-id][custom-position~=top] {
-    top: calc(var(--custom-breadcrumb-height) + var(--custom-position-root-block-top));
+    top: var(--custom-breadcrumb-height);
 }
