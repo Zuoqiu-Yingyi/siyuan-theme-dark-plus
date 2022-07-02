@@ -238,7 +238,7 @@ window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/scrip
 window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/app/comment/index.js"));
 
 /* 加载自定义配置文件 */
-window.theme.loadScript(window.theme.addURLParam("/widgets/custom.js"));
+// window.theme.loadScript(window.theme.addURLParam("/widgets/custom.js"));
 
 /* 加载测试模块 */
 // window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/test/listener.js"));

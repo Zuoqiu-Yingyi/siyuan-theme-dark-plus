@@ -141,7 +141,7 @@ setTimeout(() => {
                     config.theme.style.mark.toolbar,
                     () => changeStyleState(config.theme.style.mark),
                 );
-                // 使用快捷键启用/禁用辅助线样式
+                // 使用快捷键显示/遮盖标记文本
                 globalEventHandler.addEventHandler(
                     'keyup',
                     config.theme.hotkeys.style.mark,

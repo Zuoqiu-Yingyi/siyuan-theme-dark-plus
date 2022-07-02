@@ -11,6 +11,7 @@
 - 新增编辑容器块 kramdown 源码功能 | Added kramdown source code editing feature for container block.
 - 使用 `Less` 重构 `empty.css` | Refactored `empty.css` with `Less`.
 - 使用 `Less` 重构 `fold.css` | Refactored `fold.css` with `Less`.
+- 修复 `custom.js` 重复加载问题 | Fixed `custom.js` duplicate loading issue.
 
 ## v1.1.4/2022-06-27
 
