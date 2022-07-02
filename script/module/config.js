@@ -109,12 +109,12 @@ export var config = {
                     index: -5,
                 },
                 elements: {
-                    // 应用辅助线样式的元素
-                    list: {
-                        // 列表辅助线
+                    // 应用标记样式的元素
+                    mark: {
+                        // 标记
                         enable: true,
                         style: {
-                            id: 'theme-style-mark-elements-list-style',
+                            id: 'theme-style-mark-elements-display-style',
                             href: '/appearance/themes/Dark+/style/dynamic-module/mark-display.css', // 样式文件 URL
                         },
                     },
