@@ -52,24 +52,18 @@
   background-color: transparent;
 }
 /* 历史容器 */
+#historyContainer {
+  /* 主题预览对话框 */
+}
 #historyContainer .history__asset,
 #historyContainer .history__text {
   /* 历史对话框内容框 */
   background-color: transparent;
 }
-#historyContainer .b3-list--background .b3-list-item:hover:not(.b3-list-item--focus) {
-  background-color: var(--b3-list-hover);
-}
-#historyContainer .b3-list--background .b3-list-item:hover:not(.b3-list-item--focus).b3-list-item--hide-action:not(:hover) .b3-list-item__action {
-  /* 占空间并隐藏元素 */
-  display: flex;
-  visibility: hidden;
-}
-/* 主题预览对话框 */
-#configBazaarReadme {
+#historyContainer #configBazaarReadme {
   background-color: var(--custom-dialog-readme-background-color);
 }
-.b3-dialog__scrim {
+#historyContainer .b3-dialog__scrim {
   /* 对话框遮罩 */
   background-color: var(--custom-dialog-scrim-background-color);
 }

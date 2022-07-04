@@ -1,13 +1,13 @@
 /* 嵌入块 */
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-.protyle-wysiwyg [data-node-id].render-node {
+.protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"].render-node {
   /* 嵌入块 */
   border: none;
   outline: 2px solid var(--custom-line-color);
   background-color: var(--custom-block-embed-background-color) !important;
 }
-.protyle-wysiwyg [data-node-id].render-node > .protyle-wysiwyg__embed:not(:first-child) {
+.protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"].render-node > .protyle-wysiwyg__embed:not(:first-child) {
   /* 嵌入块间分隔线 */
   position: relative;
   border-top: 4px double var(--custom-line-color);
