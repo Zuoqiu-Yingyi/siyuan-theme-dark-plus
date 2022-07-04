@@ -1,0 +1,22 @@
+/* 侧边菜单栏 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+.dock {
+
+    // 停靠栏
+    &#dockTop,
+    &#dockBottom,
+    &#dockLeft,
+    &#dockRight {
+        // 菜单栏
+        background-color: var(--custom-dock-background-color);
+        border: 0;
+    }
+}
+
+/* 聚焦的侧边面板标题 */
+.block__icons--active {
+    background-color: var(--b3-list-hover);
+}
