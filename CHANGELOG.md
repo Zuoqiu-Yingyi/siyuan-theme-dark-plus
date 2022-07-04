@@ -2,6 +2,7 @@
 
 - 为面包屑项添加边框 | Added a border to the breadcrumb items
 - 使用 `Less` 重构 `docker.css` | Refactored `docker.css` with `Less`.
+- 使用 `Less` 重构 `hover-menu.css` | Refactored `hover-menu.css` with `Less`.
 
 ## v1.2.0/2022-07-03
 

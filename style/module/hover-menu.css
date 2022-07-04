@@ -93,82 +93,87 @@
   height: 0;
   background-color: transparent;
 }
-/* 块移动菜单 */
-/* #foldList.b3-list.b3-list--background,
-.b3-list.b3-list--background:not(ul, #searchList, #globalSearchList) {
-    width: var(--custom-popover-menu-width) !important;
-} */
-/* 补偿第一项 */
-/* 移动端搜索菜单 */
-#searchPanel > .b3-list-item:first-child,
-#foldList.b3-list.b3-list--background > .b3-list-item:first-child,
-.b3-tab-bar.b3-list.b3-list--background > .b3-list-item:first-child,
-.b3-list.b3-list--background:not(ul) > .b3-list-item:first-child {
-  margin-top: 0 !important;
+#historyContainer .b3-list.b3-list--background > .b3-list-item:hover:not(.b3-list-item--focus) {
+  background-color: var(--b3-list-hover);
 }
-/* 补偿最后一项 */
-/* 移动端搜索菜单 */
-#searchPanel > .b3-list-item:last-child,
-#foldList.b3-list.b3-list--background > .b3-list-item:last-child,
-.b3-tab-bar.b3-list.b3-list--background > .b3-list-item:last-child,
-.b3-list.b3-list--background:not(ul) > .b3-list-item:last-child {
-  margin-bottom: 0 !important;
+#historyContainer .b3-list.b3-list--background > .b3-list-item.b3-list-item--hide-action:not(:hover) .b3-list-item__action {
+  /* 占空间并隐藏元素 */
+  display: flex;
+  visibility: hidden;
 }
-/* 设置面板 */
-/* 移动端搜索菜单 */
 #searchPanel > .b3-list-item,
-#foldList.b3-list.b3-list--background > .b3-list-item,
-.b3-tab-bar.b3-list.b3-list--background > .b3-list-item,
-.b3-list.b3-list--background:not(ul) > .b3-list-item {
+.b3-list.b3-list--background:not(ul) > .b3-list-item,
+.b3-list.b3-list--background.b3-tab-bar > .b3-list-item,
+#historyContainer .b3-list.b3-list--background > .b3-list-item {
   /* padding-top: var(--custom-popover-menu-padding-width); */
   /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
   margin: var(--custom-popover-menu-padding-width) 0;
   /* padding: 0.5em; */
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
 }
-/* 悬浮搜索结果项 */
-.b3-list.b3-list--background:not(ul) > button.b3-list-item {
-  /* padding-top: var(--custom-popover-menu-padding-width); */
-  /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
-  margin: var(--custom-popover-menu-padding-width) auto !important;
-  /* padding: 0.5em; */
-  outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
+#searchPanel > .b3-list-item:first-child,
+.b3-list.b3-list--background:not(ul) > .b3-list-item:first-child,
+.b3-list.b3-list--background.b3-tab-bar > .b3-list-item:first-child,
+#historyContainer .b3-list.b3-list--background > .b3-list-item:first-child {
+  /* 补偿第一项 */
+  margin-top: 0 !important;
 }
-/* 移动端搜索菜单文档可读路径 */
-#searchPanel > .b3-list-item > .b3-list-item__meta,
-.b3-list.b3-list--background:not(ul) > .b3-list-item > .b3-list-item__meta:not(.fn__flex) {
+#searchPanel > .b3-list-item:last-child,
+.b3-list.b3-list--background:not(ul) > .b3-list-item:last-child,
+.b3-list.b3-list--background.b3-tab-bar > .b3-list-item:last-child,
+#historyContainer .b3-list.b3-list--background > .b3-list-item:last-child {
+  /* 补偿最后一项 */
+  margin-bottom: 0 !important;
+}
+#searchPanel > .b3-list-itembutton,
+.b3-list.b3-list--background:not(ul) > .b3-list-itembutton,
+.b3-list.b3-list--background.b3-tab-bar > .b3-list-itembutton,
+#historyContainer .b3-list.b3-list--background > .b3-list-itembutton {
+  margin: var(--custom-popover-menu-padding-width) auto !important;
+}
+#searchPanel > .b3-list-item .b3-list-item__meta:not(.fn__flex),
+.b3-list.b3-list--background:not(ul) > .b3-list-item .b3-list-item__meta:not(.fn__flex),
+.b3-list.b3-list--background.b3-tab-bar > .b3-list-item .b3-list-item__meta:not(.fn__flex),
+#historyContainer .b3-list.b3-list--background > .b3-list-item .b3-list-item__meta:not(.fn__flex) {
+  /* 文档可读路径 */
   color: var(--custom-popover-menu-path-color);
   margin: 0;
   border: 0;
   padding: 0;
 }
-/* 悬浮搜索结果块属性 */
-.b3-list.b3-list--background:not(ul) > .b3-list-item > .b3-list-item__meta.fn__flex {
+#searchPanel > .b3-list-item .b3-list-item__meta.fn__flex,
+.b3-list.b3-list--background:not(ul) > .b3-list-item .b3-list-item__meta.fn__flex,
+.b3-list.b3-list--background.b3-tab-bar > .b3-list-item .b3-list-item__meta.fn__flex,
+#historyContainer .b3-list.b3-list--background > .b3-list-item .b3-list-item__meta.fn__flex {
+  /* 块属性 */
   padding: 0.5em;
   color: var(--custom-popover-menu-attribute-color);
 }
-/* 搜索结果匹配关键词样式 */
-/* 移动端搜索菜单搜索结果匹配关键词样式 */
-#searchPanel .b3-list-item mark,
-.protyle-wysiwyg [data-node-id] span[data-type="search-mark"],
-.b3-list.b3-list--background .b3-list-item mark {
+.b3-list-item mark,
+.protyle-wysiwyg [data-node-id] span.def--mark,
+.protyle-wysiwyg [data-node-id] span[data-type="search-mark"] {
   margin: 0 0.25em;
   border: 0;
   padding: 0 0.125em;
   color: var(--custom-matched-keyword-color);
   background-color: var(--custom-matched-keyword-background-color);
   outline-width: var(--custom-popover-menu-outline-width);
+}
+.b3-list-item mark:not(.def--mark),
+.protyle-wysiwyg [data-node-id] span.def--mark:not(.def--mark),
+.protyle-wysiwyg [data-node-id] span[data-type="search-mark"]:not(.def--mark) {
   outline-style: var(--custom-popover-menu-outline-style);
 }
-.protyle-wysiwyg [data-node-id] span.def--mark {
-  margin: 0 0.25em;
-  border: 0;
-  padding: 0 0.125em;
-  color: var(--custom-matched-keyword-color);
-  background-color: var(--custom-matched-keyword-background-color);
-  border-width: var(--custom-popover-menu-outline-width);
+.b3-list-item mark:is(.def--mark),
+.protyle-wysiwyg [data-node-id] span.def--mark:is(.def--mark),
+.protyle-wysiwyg [data-node-id] span[data-type="search-mark"]:is(.def--mark) {
   border-style: var(--custom-popover-menu-outline-style);
 }
+/* 块移动菜单 */
+/* #foldList.b3-list.b3-list--background,
+.b3-list.b3-list--background:not(ul, #searchList, #globalSearchList) {
+    width: var(--custom-popover-menu-width) !important;
+} */
 /* 菜单分栏 */
 /* .b3-list.fn__flex-1.b3-list--background:not(#globalSearchList) {
     column-count: 4;
