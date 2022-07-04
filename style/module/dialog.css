@@ -55,8 +55,15 @@
 #historyContainer .history__asset,
 #historyContainer .history__text {
   /* 历史对话框内容框 */
-  border-left: 2px solid var(--b3-border-color);
   background-color: transparent;
+}
+#historyContainer .b3-list--background .b3-list-item:hover:not(.b3-list-item--focus) {
+  background-color: var(--b3-list-hover);
+}
+#historyContainer .b3-list--background .b3-list-item:hover:not(.b3-list-item--focus).b3-list-item--hide-action:not(:hover) .b3-list-item__action {
+  /* 占空间并隐藏元素 */
+  display: flex;
+  visibility: hidden;
 }
 /* 主题预览对话框 */
 #configBazaarReadme {
