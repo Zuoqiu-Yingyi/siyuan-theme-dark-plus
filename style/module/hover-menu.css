@@ -1,171 +1,174 @@
 /* 弹出菜单 */
-
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-
-/* 菜单底色 */
 #model,
-#commonMenu,
-.b3-menu__item>.b3-menu__submenu {
-    background-color: var(--custom-popover-function-menu-background-color);
-    backdrop-filter: var(--custom-backdrop-popover-filter);
+#commonMenu {
+  background-color: var(--custom-popover-function-menu-background-color);
+  backdrop-filter: var(--custom-backdrop-popover-filter);
 }
-
-/* 菜单项 */
-.b3-menu__item,
-.b3-menu__item>.b3-menu__submenu .b3-menu__item {
-    background-color: transparent;
+#commonMenu .b3-menu__item {
+  /* 菜单项 */
+  background-color: transparent;
 }
-
-/* 菜单项中输入框宽度 */
-#commonMenu>*:not(.emojis) input.b3-text-field {
-    min-width: var(--custom-popover-menu-input-min-width);
+#commonMenu .b3-menu__item.b3-menu__item--current {
+  /* 鼠标悬停菜单项 */
+  background-color: var(--b3-theme-background-light) !important;
 }
-
-/* 菜单分割线 */
-.b3-menu__separator {
-    height: 2px;
-    background-color: var(--custom-popover-menu-separator-color);
+#commonMenu .b3-menu__item > .b3-menu__submenu {
+  /* 子菜单 */
+  background-color: var(--custom-popover-function-menu-background-color);
+  backdrop-filter: var(--custom-backdrop-popover-filter);
 }
-
-/* '/' 菜单分隔线 */
-.b3-menu.b3-list.b3-list--background.hint--menu .b3-menu__separator {
-    background-color: var(--b3-theme-on-surface);
+#commonMenu .b3-menu__separator {
+  /* 菜单分割线 */
+  height: 2px;
+  background-color: var(--custom-popover-menu-separator-color);
 }
-
-/* 鼠标悬停菜单项 */
-.b3-menu__item--current {
-    background-color: var(--b3-theme-background-light) !important;
+#commonMenu > *:not(.emojis) input.b3-text-field {
+  /* 输入框 */
+  min-width: var(--custom-popover-menu-input-min-width);
 }
-
-/* 悬浮搜索菜单/功能菜单/设置菜单 */
-.b3-tab-bar.b3-list.b3-list--background,
+.b3-list.b3-list--background {
+  /* REF: [第一个子元素在未超过父元素高度的情况下设置margin-top导致出现竖向滚动条的问题_Andrasen的博客-CSDN博客](https://blog.csdn.net/Andrasen/article/details/105676175) */
+  padding: var(--custom-popover-menu-padding-width);
+  background-color: transparent !important;
+  backdrop-filter: none;
+  width: var(--custom-popover-menu-width) !important;
+  outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
+  overflow-x: visible !important;
+}
+.b3-list.b3-list--background.b3-menu.hint--menu,
+.protyle > .b3-list.b3-list--background,
+.b3-list.b3-list--background#menu {
+  background-color: var(--custom-popover-function-menu-background-color) !important;
+  backdrop-filter: var(--custom-backdrop-popover-filter);
+}
+.b3-list.b3-list--background.b3-menu.hint--menu {
+  /* '/' 菜单 */
+  column-count: 4;
+  column-gap: 1em;
+  column-rule: var(--custom-list-guides-line-width) solid var(--b3-border-color);
+  max-height: none !important;
+}
+.b3-list.b3-list--background.b3-menu.hint--menu > .emojis {
+  /* 表情菜单 */
+  /* REF https: //github.com/siyuan-note/siyuan/issues/4575#issuecomment-1152490468 */
+  column-span: all;
+}
+.b3-list.b3-list--background.b3-menu.hint--menu > div.b3-menu__separator {
+  /* 分割线 */
+  background-color: var(--b3-theme-on-surface);
+}
+.b3-list.b3-list--background.b3-menu.hint--menu > div.b3-menu__separator:first-of-type {
+  /* 第1条分割线 */
+  height: 35px;
+  background-color: transparent;
+}
+.b3-list.b3-list--background.b3-menu.hint--menu > div.b3-menu__separator:first-of-type + button *:is(.b3-list-item__graphic, .b3-list-item__text) {
+  /* 一级子标题 */
+  color: var(--custom-h1-color);
+}
+.b3-list.b3-list--background.b3-menu.hint--menu > div.b3-menu__separator:first-of-type + button + button *:is(.b3-list-item__graphic, .b3-list-item__text) {
+  /* 二级子标题 */
+  color: var(--custom-h2-color);
+}
+.b3-list.b3-list--background.b3-menu.hint--menu > div.b3-menu__separator:first-of-type + button + button + button *:is(.b3-list-item__graphic, .b3-list-item__text) {
+  /* 三级子标题 */
+  color: var(--custom-h3-color);
+}
+.b3-list.b3-list--background.b3-menu.hint--menu > div.b3-menu__separator:first-of-type + button + button + button + button *:is(.b3-list-item__graphic, .b3-list-item__text) {
+  /* 四级子标题 */
+  color: var(--custom-h4-color);
+}
+.b3-list.b3-list--background.b3-menu.hint--menu > div.b3-menu__separator:first-of-type + button + button + button + button + button *:is(.b3-list-item__graphic, .b3-list-item__text) {
+  /* 五级子标题 */
+  color: var(--custom-h5-color);
+}
+.b3-list.b3-list--background.b3-menu.hint--menu > div.b3-menu__separator:first-of-type + button + button + button + button + button + button *:is(.b3-list-item__graphic, .b3-list-item__text) {
+  /* 六级子标题 */
+  color: var(--custom-h6-color);
+}
+.b3-list.b3-list--background.b3-menu.hint--menu > div.b3-menu__separator:nth-of-type(4) {
+  /* 第4条分割线 */
+  height: 0;
+  background-color: transparent;
+}
 /* 块移动菜单 */
-#foldList.b3-list.b3-list--background,
-.b3-list.b3-list--background:not(ul) {
-    /* REF: [第一个子元素在未超过父元素高度的情况下设置margin-top导致出现竖向滚动条的问题_Andrasen的博客-CSDN博客](https://blog.csdn.net/Andrasen/article/details/105676175) */
-    padding: var(--custom-popover-menu-padding-width);
-    background-color: var(--custom-popover-menu-background-color);
-    backdrop-filter: var(--custom-backdrop-popover-filter);
-    width: var(--custom-popover-menu-width) !important;
-    outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
-    overflow-x: visible !important;
-}
-
-/* 搜索结果 */
-div.protyle-util .b3-list.b3-list--background,
-#searchList.b3-list.b3-list--background,
-#globalSearchList.b3-list.b3-list--background {
-    background-color: transparent;
-    backdrop-filter: none;
-}
-
-/* 未引用资源 */
-#assetsList,
-/* 块移动菜单 */
-#foldList.b3-list.b3-list--background,
-/* 快捷键菜单 */
-#keymapList>.b3-list.b3-list--background,
-/* 历史菜单 */
-#historyContainer>.b3-list.b3-list--background,
-/* 设置菜单 */
-.b3-tab-bar.b3-list.b3-list--background {
-    background-color: transparent !important;
-}
-
-/* 块移动菜单 */
-#foldList.b3-list.b3-list--background,
+/* #foldList.b3-list.b3-list--background,
 .b3-list.b3-list--background:not(ul, #searchList, #globalSearchList) {
     width: var(--custom-popover-menu-width) !important;
-}
-
+} */
 /* 补偿第一项 */
 /* 移动端搜索菜单 */
-#searchPanel>.b3-list-item:first-child,
-/* 块移动菜单 */
-#foldList.b3-list.b3-list--background>.b3-list-item:first-child,
-
-.b3-tab-bar.b3-list.b3-list--background>.b3-list-item:first-child,
-.b3-list.b3-list--background:not(ul)>.b3-list-item:first-child {
-    margin-top: 0 !important;
+#searchPanel > .b3-list-item:first-child,
+#foldList.b3-list.b3-list--background > .b3-list-item:first-child,
+.b3-tab-bar.b3-list.b3-list--background > .b3-list-item:first-child,
+.b3-list.b3-list--background:not(ul) > .b3-list-item:first-child {
+  margin-top: 0 !important;
 }
-
 /* 补偿最后一项 */
 /* 移动端搜索菜单 */
-#searchPanel>.b3-list-item:last-child,
-/* 块移动菜单 */
-#foldList.b3-list.b3-list--background>.b3-list-item:last-child,
-
-.b3-tab-bar.b3-list.b3-list--background>.b3-list-item:last-child,
-.b3-list.b3-list--background:not(ul)>.b3-list-item:last-child {
-    margin-bottom: 0 !important;
+#searchPanel > .b3-list-item:last-child,
+#foldList.b3-list.b3-list--background > .b3-list-item:last-child,
+.b3-tab-bar.b3-list.b3-list--background > .b3-list-item:last-child,
+.b3-list.b3-list--background:not(ul) > .b3-list-item:last-child {
+  margin-bottom: 0 !important;
 }
-
 /* 设置面板 */
 /* 移动端搜索菜单 */
-#searchPanel>.b3-list-item,
-/* 块移动菜单 */
-#foldList.b3-list.b3-list--background>.b3-list-item,
-
-.b3-tab-bar.b3-list.b3-list--background>.b3-list-item,
-/* 对话框搜索结果项 */
-.b3-list.b3-list--background:not(ul)>.b3-list-item {
-    /* padding-top: var(--custom-popover-menu-padding-width); */
-    /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
-    margin: var(--custom-popover-menu-padding-width) 0;
-    /* padding: 0.5em; */
-    outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
+#searchPanel > .b3-list-item,
+#foldList.b3-list.b3-list--background > .b3-list-item,
+.b3-tab-bar.b3-list.b3-list--background > .b3-list-item,
+.b3-list.b3-list--background:not(ul) > .b3-list-item {
+  /* padding-top: var(--custom-popover-menu-padding-width); */
+  /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
+  margin: var(--custom-popover-menu-padding-width) 0;
+  /* padding: 0.5em; */
+  outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
 }
-
 /* 悬浮搜索结果项 */
-.b3-list.b3-list--background:not(ul)>button.b3-list-item {
-    /* padding-top: var(--custom-popover-menu-padding-width); */
-    /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
-    margin: var(--custom-popover-menu-padding-width) auto !important;
-    /* padding: 0.5em; */
-    outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
+.b3-list.b3-list--background:not(ul) > button.b3-list-item {
+  /* padding-top: var(--custom-popover-menu-padding-width); */
+  /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
+  margin: var(--custom-popover-menu-padding-width) auto !important;
+  /* padding: 0.5em; */
+  outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
 }
-
 /* 移动端搜索菜单文档可读路径 */
-#searchPanel>.b3-list-item>.b3-list-item__meta,
-/* 悬浮搜索结果文档可读路径 */
-.b3-list.b3-list--background:not(ul)>.b3-list-item>.b3-list-item__meta:not(.fn__flex) {
-    color: var(--custom-popover-menu-path-color);
-    margin: 0;
-    border: 0;
-    padding: 0;
+#searchPanel > .b3-list-item > .b3-list-item__meta,
+.b3-list.b3-list--background:not(ul) > .b3-list-item > .b3-list-item__meta:not(.fn__flex) {
+  color: var(--custom-popover-menu-path-color);
+  margin: 0;
+  border: 0;
+  padding: 0;
 }
-
 /* 悬浮搜索结果块属性 */
-.b3-list.b3-list--background:not(ul)>.b3-list-item>.b3-list-item__meta.fn__flex {
-    padding: 0.5em;
-    color: var(--custom-popover-menu-attribute-color);
+.b3-list.b3-list--background:not(ul) > .b3-list-item > .b3-list-item__meta.fn__flex {
+  padding: 0.5em;
+  color: var(--custom-popover-menu-attribute-color);
 }
-
 /* 搜索结果匹配关键词样式 */
 /* 移动端搜索菜单搜索结果匹配关键词样式 */
 #searchPanel .b3-list-item mark,
 .protyle-wysiwyg [data-node-id] span[data-type="search-mark"],
 .b3-list.b3-list--background .b3-list-item mark {
-    margin: 0 0.25em;
-    border: 0;
-    padding: 0 0.125em;
-    color: var(--custom-matched-keyword-color);
-    background-color: var(--custom-matched-keyword-background-color);
-    outline-width: var(--custom-popover-menu-outline-width);
-    outline-style: var(--custom-popover-menu-outline-style);
+  margin: 0 0.25em;
+  border: 0;
+  padding: 0 0.125em;
+  color: var(--custom-matched-keyword-color);
+  background-color: var(--custom-matched-keyword-background-color);
+  outline-width: var(--custom-popover-menu-outline-width);
+  outline-style: var(--custom-popover-menu-outline-style);
 }
-
 .protyle-wysiwyg [data-node-id] span.def--mark {
-    margin: 0 0.25em;
-    border: 0;
-    padding: 0 0.125em;
-    color: var(--custom-matched-keyword-color);
-    background-color: var(--custom-matched-keyword-background-color);
-    border-width: var(--custom-popover-menu-outline-width);
-    border-style: var(--custom-popover-menu-outline-style);
+  margin: 0 0.25em;
+  border: 0;
+  padding: 0 0.125em;
+  color: var(--custom-matched-keyword-color);
+  background-color: var(--custom-matched-keyword-background-color);
+  border-width: var(--custom-popover-menu-outline-width);
+  border-style: var(--custom-popover-menu-outline-style);
 }
-
 /* 菜单分栏 */
 /* .b3-list.fn__flex-1.b3-list--background:not(#globalSearchList) {
     column-count: 4;
@@ -174,21 +177,6 @@ div.protyle-util .b3-list.b3-list--background,
     font-size: 90%;
     border: 0.05em solid #ffffff4d;
 } */
-
-.layout-tab-container .b3-menu.b3-list.b3-list--background.hint--menu {
-    column-count: 4;
-    column-gap: 1em;
-    column-rule: var(--custom-list-guides-line-width) solid var(--b3-border-color);
-    /* column-fill: auto; */
-    /* height: 32em !important; */
-    max-height: none !important;
-}
-
-/* REF https://github.com/siyuan-note/siyuan/issues/4575#issuecomment-1152490468 */
-.layout-tab-container .b3-menu.b3-list.b3-list--background.hint--menu>.emojis {
-    column-span: all;
-}
-
 /* .b3-menu.b3-list.b3-list--background.hint--menu>.b3-list-item:nth-of-type(1),
 .b3-menu.b3-list.b3-list--background.hint--menu>.b3-list-item:nth-last-of-type(5),
 .b3-menu.b3-list.b3-list--background.hint--menu>.b3-list-item:nth-last-of-type(4),
@@ -197,42 +185,6 @@ div.protyle-util .b3-list.b3-list--background,
 .b3-menu.b3-list.b3-list--background.hint--menu>.b3-list-item:nth-last-of-type(1) {
     column-span: all;
 } */
-
-.b3-menu.b3-list.b3-list--background.hint--menu>div.b3-menu__separator:first-of-type {
-    height: 35px;
-    background-color: transparent;
-}
-
-.b3-menu.b3-list.b3-list--background.hint--menu>div.b3-menu__separator:nth-of-type(4) {
-    height: 0;
-    background-color: transparent;
-}
-
-.b3-menu.b3-list.b3-list--background.hint--menu>.b3-list-item:last-child>div.b3-list-item__first {
+/* .b3-menu.b3-list.b3-list--background.hint--menu>.b3-list-item:last-child>div.b3-list-item__first {
     margin: auto;
-}
-
-/* 子标题样式 */
-.b3-menu.b3-list.b3-list--background.hint--menu>.b3-menu__separator:first-of-type+button *:is(.b3-list-item__graphic, .b3-list-item__text) {
-    color: var(--custom-h1-color);
-}
-
-.b3-menu.b3-list.b3-list--background.hint--menu>.b3-menu__separator:first-of-type+button+button *:is(.b3-list-item__graphic, .b3-list-item__text) {
-    color: var(--custom-h2-color);
-}
-
-.b3-menu.b3-list.b3-list--background.hint--menu>.b3-menu__separator:first-of-type+button+button+button *:is(.b3-list-item__graphic, .b3-list-item__text) {
-    color: var(--custom-h3-color);
-}
-
-.b3-menu.b3-list.b3-list--background.hint--menu>.b3-menu__separator:first-of-type+button+button+button+button *:is(.b3-list-item__graphic, .b3-list-item__text) {
-    color: var(--custom-h4-color);
-}
-
-.b3-menu.b3-list.b3-list--background.hint--menu>.b3-menu__separator:first-of-type+button+button+button+button+button *:is(.b3-list-item__graphic, .b3-list-item__text) {
-    color: var(--custom-h5-color);
-}
-
-.b3-menu.b3-list.b3-list--background.hint--menu>.b3-menu__separator:first-of-type+button+button+button+button+button+button *:is(.b3-list-item__graphic, .b3-list-item__text) {
-    color: var(--custom-h6-color);
-}
+} */

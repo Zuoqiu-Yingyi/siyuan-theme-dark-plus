@@ -43,6 +43,9 @@
   min-width: 100px;
   width: auto !important;
 }
+.b3-dialog__container #historyContainer > * {
+  background-color: transparent !important;
+}
 /* 搜索结果列表 */
 #searchList,
 #searchPreview {

@@ -52,6 +52,7 @@
 /* 导航栏文字 */
 .protyle-breadcrumb__item {
     line-height: normal;
+    border: 1px solid var(--b3-theme-on-surface-light);
 }
 
 /*编辑区文件名*/

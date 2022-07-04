@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 为面包屑项添加边框 | Added a border to the breadcrumb items
+
 ## v1.2.0/2022-07-03
 
 - [v1.1.4 <=> v1.2.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.4...v1.2.0)
