@@ -29,9 +29,13 @@
   /* 修正列表内标题辅助线错位 */
   left: -21px;
 }
-.protyle-wysiwyg [data-node-id].li > [data-node-id].render-node::before {
+.protyle-wysiwyg [data-node-id].li > [data-node-id].render-node::before[data-type="NodeBlockQueryEmbed"] {
   /* 修正列表内嵌入块辅助线错位 */
   left: calc(15px - 2em);
+}
+.protyle-wysiwyg [data-node-id].li > [data-node-id].render-node::before[data-type="NodeMathBlock"] {
+  /* 修正公式块块辅助线错位 */
+  left: calc(16px - 2em);
 }
 .protyle-wysiwyg [data-node-id].li > [data-node-id]:first-child::before {
   /* 修正列表接头处辅助线错误 */
