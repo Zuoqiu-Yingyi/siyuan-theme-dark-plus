@@ -4,6 +4,7 @@
 - 使用 `Less` 重构 `docker.css` | Refactored `docker.css` with `Less`.
 - 使用 `Less` 重构 `hover-menu.css` | Refactored `hover-menu.css` with `Less`.
 - [#79](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/79) 修复嵌入块与数学公式块样式混淆问题 | Fixed a style conflict between the `blockquote` and `math` styles.
+- 使用 `Less` 重构 `hover-preview.css` | Refactored `hover-preview.css` with `Less`.
 
 ## v1.2.0/2022-07-03
 
