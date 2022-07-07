@@ -6,6 +6,7 @@
 - [#79](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/79) 修复嵌入块与数学公式块样式混淆问题 | Fixed a style conflict between the `blockquote` and `math` styles.
 - 使用 `Less` 重构 `hover-preview.css` | Refactored `hover-preview.css` with `Less`.
 - 使用 `Less` 重构 `hover-textarea.css` | Refactored `hover-textarea.css` with `Less`.
+- 使用 `Less` 重构 `icon-zoom.css` | Refactored `icon-zoom.css` with `Less`.
 
 ## v1.2.0/2022-07-03
 
