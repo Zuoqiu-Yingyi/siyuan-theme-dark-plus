@@ -1,87 +1,72 @@
 /* 编辑区面板 */
-
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-
-/* 全屏模式编辑区 */
 .fn__flex-1.protyle.fullscreen .protyle-content {
-    background-color: var(--custom-editor-background-color);
-    backdrop-filter: var(--custom-backdrop-filter);
+  /* 全屏模式编辑区 */
+  background-color: var(--custom-editor-background-color);
+  backdrop-filter: var(--custom-backdrop-filter);
 }
-
-/* 编辑区 */
+#editor,
 .layout-tab-container {
-    background-color: var(--custom-editor-background-color);
+  /* 编辑区 */
+  background-color: var(--custom-editor-background-color);
 }
-
-.layout-tab-container .protyle-preview {
-    background-color: transparent;
-    backdrop-filter: var(--custom-backdrop-filter);
+#editor .protyle,
+.layout-tab-container .protyle {
+  /*编辑区*/
+  background: transparent;
 }
-
-.fn__flex-1.fn__flex [data-type='wnd'] {
-    min-height: 0%;
-    margin: var(--custom-panel-distance);
-    border-radius: var(--custom-border-radius);
+#editor .protyle-breadcrumb,
+.layout-tab-container .protyle-breadcrumb {
+  /* 导航栏(面包屑) */
+  background-color: var(--custom-editor-breadcrumb-bar-background-color);
+  /* box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5); */
 }
-
-/* 编辑区内部边距 */
-/* 文档标志 */
-.protyle-background__iconw {
-    left: var(--custom-editor-padding-left) !important;
+#editor .protyle-breadcrumb .protyle-breadcrumb__item,
+.layout-tab-container .protyle-breadcrumb .protyle-breadcrumb__item {
+  /* 导航栏文字 */
+  line-height: normal;
+  border: 1px solid var(--b3-theme-on-surface-light);
 }
-/* 标题 */
-.protyle-content>.protyle-title {
-    margin-left: var(--custom-editor-padding-left) !important;
-    margin-right: var(--custom-editor-padding-right) !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+#editor .protyle-content > .protyle-background > .protyle-background__iconw,
+.layout-tab-container .protyle-content > .protyle-background > .protyle-background__iconw {
+  /* 文档标志 */
+  left: var(--custom-editor-padding-left) !important;
 }
-/* 内容 */
-.protyle-content>.protyle-wysiwyg {
-    padding-left: var(--custom-editor-padding-left) !important;
-    padding-right: var(--custom-editor-padding-right) !important;
+#editor .protyle-content > .protyle-title,
+.layout-tab-container .protyle-content > .protyle-title {
+  /* 标题 */
+  margin-left: var(--custom-editor-padding-left) !important;
+  margin-right: var(--custom-editor-padding-right) !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
-
-/* 导航栏(面包屑) */
-.protyle-breadcrumb {
-    background-color: var(--custom-editor-breadcrumb-bar-background-color);
-    /* box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5); */
+#editor .protyle-content > .protyle-title .protyle-title__input,
+.layout-tab-container .protyle-content > .protyle-title .protyle-title__input {
+  /*编辑区文件名*/
+  background: transparent;
 }
-
-/* 导航栏文字 */
-.protyle-breadcrumb__item {
-    line-height: normal;
-    border: 1px solid var(--b3-theme-on-surface-light);
+#editor .protyle-content > .protyle-wysiwyg .dragover__top,
+.layout-tab-container .protyle-content > .protyle-wysiwyg .dragover__top {
+  box-shadow: 0 -4px 0 var(--custom-drag-top-shadow-color);
 }
-
-/*编辑区文件名*/
-.protyle-title__input {
-    background: transparent;
+#editor .protyle-content > .protyle-wysiwyg .dragover__bottom,
+.layout-tab-container .protyle-content > .protyle-wysiwyg .dragover__bottom {
+  box-shadow: 0 4px 0 var(--custom-drag-bottom-shadow-color);
 }
-
-/*编辑区*/
-.fn__flex-1.protyle {
-    background: transparent;
+#editor .protyle-content > .protyle-wysiwyg .dragover__left,
+.layout-tab-container .protyle-content > .protyle-wysiwyg .dragover__left {
+  box-shadow: -4px 0 0 var(--custom-drag-left-shadow-color);
 }
-
-/* 拖拽 */
-
-.protyle-wysiwyg .dragover__top {
-    box-shadow: 0 -4px 0 var(--custom-drag-top-shadow-color);
+#editor .protyle-content > .protyle-wysiwyg .dragover__right,
+.layout-tab-container .protyle-content > .protyle-wysiwyg .dragover__right {
+  box-shadow: 4px 0 0 var(--custom-drag-right-shadow-color);
 }
-.protyle-wysiwyg .dragover__bottom {
-    box-shadow: 0 4px 0 var(--custom-drag-bottom-shadow-color);
-}
-.protyle-wysiwyg .dragover__left {
-    box-shadow: -4px 0 0 var(--custom-drag-left-shadow-color);
-}
-.protyle-wysiwyg .dragover__right {
-    box-shadow: 4px 0 0 var(--custom-drag-right-shadow-color);
-}
-
-/* 文本选择 */
-::selection {
-    background-color: var(--custom-selection-background-color);
-    color: var(--custom-selection-color);
+#editor .protyle-content > .protyle-preview,
+.layout-tab-container .protyle-content > .protyle-preview {
+  /* 内容 */
+  background-color: transparent;
+  backdrop-filter: var(--custom-backdrop-filter);
+  padding-left: var(--custom-editor-padding-left) !important;
+  padding-right: var(--custom-editor-padding-right) !important;
 }
