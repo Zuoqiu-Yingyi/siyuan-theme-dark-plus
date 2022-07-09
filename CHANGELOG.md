@@ -14,6 +14,7 @@
 - 使用 `Less` 重构 `panel-separator.css` | Refactored `panel-separator.css` with `Less`.
 - 使用 `Less` 重构 `panel-file.css` | Refactored `panel-file.css` with `Less`.
 - 使用 `Less` 重构 `panel-outline.css` | Refactored `panel-outline.css` with `Less`.
+- 使用 `Less` 重构 `panel-graph.css` | Refactored `panel-graph.css` with `Less`.
 
 ## v1.2.0/2022-07-03
 
