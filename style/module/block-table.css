@@ -26,8 +26,8 @@
   /* 偶数行 */
   background-color: var(--custom-block-table-odd-background-color);
 }
-.b3-typography table tbody tr:hover,
-.protyle-wysiwyg table tbody tr:hover {
+.b3-typography table tr:hover,
+.protyle-wysiwyg table tr:hover {
   /* 鼠标悬浮行 */
-  background-color: var(--custom-block-table-hover-background-color);
+  outline: 1px solid var(--b3-theme-on-surface);
 }

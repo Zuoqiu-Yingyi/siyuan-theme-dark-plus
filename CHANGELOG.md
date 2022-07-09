@@ -10,6 +10,7 @@
 - 使用 `Less` 重构 `math.css` | Refactored `math.css` with `Less`.
 - 使用 `Less` 重构 `span-strikethrough.css` | Refactored `span-strikethrough.css` with `Less`.
 - 使用 `Less` 重构 `panel-editor.css` | Refactored `panel-editor.css` with `Less`.
+- 使用 `Less` 重构 `global.css` | Refactored `global.css` with `Less`.
 
 ## v1.2.0/2022-07-03
 
