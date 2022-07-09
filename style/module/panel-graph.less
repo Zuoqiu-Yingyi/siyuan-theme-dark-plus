@@ -1,0 +1,25 @@
+/*关系图面板*/
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+.graph {
+    background: transparent;
+}
+
+/* 全屏关系图 */
+.fullscreen {
+
+    .sy__graph,
+    .sy__globalGraph {
+        >.block__icons {
+            /* 关系图标题栏 */
+            background-color: var(--custom-panel-graph-fullscreen-toolbar-background-color);
+        }
+
+        >.graph__svg {
+            /* 关系图内容 */
+            background-color: var(--custom-panel-graph-fullscreen-background-color);
+        }
+    }
+}
