@@ -1,0 +1,46 @@
+/* 大纲面板 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+/* 过长子标题名显示样式 */
+.sy__outline .b3-list-item__text {
+    display: var(--custom-outline-display);
+}
+
+.heading(@selector, @color) {
+
+    #sidebar [data-type="sidebar-outline"],
+    .sy__outline {
+        ul.b3-list.b3-list--background {
+            @{selector} {
+
+                &,
+                & .b3-list-item__text {
+                    color: var(@color);
+                }
+            }
+        }
+    }
+}
+
+/* 文档标题 */
+#sidebar [data-type="sidebar-outline"],
+.sy__outline {
+    ul.b3-list.b3-list--background [data-type="NodeDocument"] {
+
+        &,
+        & .b3-list-item__text {
+            color: var(--b3-theme-on-background);
+        }
+    }
+}
+
+/* 各级子标题 */
+.heading(~'[data-type="NodeDocument"]', --b3-theme-on-background);
+.heading(~'[data-subtype="h1"]', --custom-h1-color);
+.heading(~'[data-subtype="h2"]', --custom-h2-color);
+.heading(~'[data-subtype="h3"]', --custom-h3-color);
+.heading(~'[data-subtype="h4"]', --custom-h4-color);
+.heading(~'[data-subtype="h5"]', --custom-h5-color);
+.heading(~'[data-subtype="h6"]', --custom-h6-color);
