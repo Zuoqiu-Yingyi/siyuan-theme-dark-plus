@@ -2,3 +2,10 @@
 
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
+
+[data-type='wnd'][data-id] {
+    /* 各区分栏 */
+    min-height: 0%;
+    margin: var(--custom-panel-distance);
+    border-radius: var(--custom-border-radius);
+}

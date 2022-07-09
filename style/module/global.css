@@ -23,3 +23,9 @@ body.fn__flex-column {
     background-attachment: fixed !important;
     background-color: var(--custom-background-color);
 }
+
+/* 文本选择 */
+::selection {
+    background-color: var(--custom-selection-background-color);
+    color: var(--custom-selection-color);
+}
