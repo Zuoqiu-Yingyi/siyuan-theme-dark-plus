@@ -1,0 +1,58 @@
+/* 文档面板 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+.render(@reg, @color) {
+    li[data-type="navigation-file"]@{reg} {
+        >.b3-list-item__text {
+            color: @color;
+        }
+    }
+}
+
+.sy__file {
+    .b3-list-item__text {
+        /* 过长文档名显示样式 */
+        display: var(--custom-file-display);
+    }
+
+    // 文档名起始
+    // data-name ^="<设置的字符的URL编码>"
+
+    // ^*
+    .render(~'[data-name ^="*"]', ~'var(--custom-doctree-begin-asterisk-color)');
+
+    // ^#
+    .render(~'[data-name ^="#"]', ~'var(--custom-doctree-begin-sharp-color)');
+
+    // ^?
+    .render(~'[data-name ^="?"]', ~'var(--custom-doctree-begin-question-color)');
+
+    // ^!
+    .render(~'[data-name ^="!"]', ~'var(--custom-doctree-begin-exclamation-color)');
+
+    // ^@
+    .render(~'[data-name ^="@"]', ~'var(--custom-doctree-begin-at-color)');
+
+    // ^.
+    .render(~'[data-name ^="."]', ~'var(--custom-doctree-begin-period-color)');
+
+    // 文档名包含
+    // data-name ^="<设置的字符的URL编码>"
+
+    // 文档名末尾
+    // data-name ^="<设置的字符的URL编码>"
+
+    // * $
+    .render(~'[data-name $="*.sy"]', ~'var(--custom-doctree-end-asterisk-color)');
+
+    // # $
+    .render(~'[data-name $="#.sy"]', ~'var(--custom-doctree-end-sharp-color)');
+
+    // ? $
+    .render(~'[data-name $="?.sy"]', ~'var(--custom-doctree-end-question-color)');
+
+    // ! $
+    .render(~'[data-name $="!.sy"]', ~'var(--custom-doctree-end-exclamation-color)');
+}
