@@ -1,27 +1,25 @@
 /* 功能区分隔线 */
-
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-
 .layout__resize:not(.layout__resize--lr) {
-    cursor: row-resize;
-    margin: var(--custom-separator-distance-compensation) 0;
-    height: var(--custom-panel-distance);
-    width: auto;
+  /* 横向分割线 */
+  cursor: row-resize;
+  margin: var(--custom-separator-distance-compensation) 0;
+  height: var(--custom-panel-distance);
+  width: auto;
 }
-
-.layout__resize--lr {
-    cursor: col-resize;
-    width: var(--custom-panel-distance);
-    margin: 0 var(--custom-separator-distance-compensation);
-    height: auto;
+.layout__resize.layout__resize--lr {
+  /* 纵向分割线 */
+  cursor: col-resize;
+  width: var(--custom-panel-distance);
+  margin: 0 var(--custom-separator-distance-compensation);
+  height: auto;
 }
-
-/* 移除原有分隔线 */
+.layout__resize.layout__resize--lr:hover::after {
+  /* 调整纵向分隔线位置 */
+  left: calc(var(--custom-panel-distance) / 2);
+}
 .layout__resize::after {
-    background-color: transparent;
-}
-/* 调整纵向分隔线位置 */
-.layout__resize--lr:hover::after {
-    left: calc(var(--custom-panel-distance) / 2);
+  /* 移除原有分隔线 */
+  background-color: transparent;
 }
