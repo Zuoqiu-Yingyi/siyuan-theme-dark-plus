@@ -7,6 +7,8 @@
 - 使用 `Less` 重构 `hover-preview.css` | Refactored `hover-preview.css` with `Less`.
 - 使用 `Less` 重构 `hover-textarea.css` | Refactored `hover-textarea.css` with `Less`.
 - 使用 `Less` 重构 `icon-zoom.css` | Refactored `icon-zoom.css` with `Less`.
+- 使用 `Less` 重构 `math.css` | Refactored `math.css` with `Less`.
+- 使用 `Less` 重构 `span-strikethrough.css` | Refactored `span-strikethrough.css` with `Less`.
 
 ## v1.2.0/2022-07-03
 
