@@ -35,6 +35,7 @@ div:not(#windowControls)>.toolbar__item {
 }
 
 /* 被激活的控件 */
+.block__icon--active,
 .toolbar__item--active {
     color: var(--custom-toolbar-tiem-active-color);
     background-color: var(--custom-toolbar-tiem-active-background-color);

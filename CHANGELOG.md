@@ -15,6 +15,7 @@
 - 使用 `Less` 重构 `panel-file.css` | Refactored `panel-file.css` with `Less`.
 - 使用 `Less` 重构 `panel-outline.css` | Refactored `panel-outline.css` with `Less`.
 - 使用 `Less` 重构 `panel-graph.css` | Refactored `panel-graph.css` with `Less`.
+- 修复浮窗预览窗口样式问题 | Fixed an issue with the floating preview window style.
 
 ## v1.2.0/2022-07-03
 

@@ -14,7 +14,16 @@
         backdrop-filter: var(--custom-backdrop-popover-filter);
     }
 
-    .block__icons.block__icons--border {
+    // 顶部窗口
+    &.block__popover--top {
+        >.block__icons--border {
+            background-color: var(--b3-list-hover);
+        }
+    }
+
+    // 窗口标题栏
+    .block__icons--border {
         background-color: var(--custom-popover-title-bar-background-color);
     }
+
 }

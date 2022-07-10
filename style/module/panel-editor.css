@@ -11,62 +11,59 @@
   /* 编辑区 */
   background-color: var(--custom-editor-background-color);
 }
-#editor .protyle,
-.layout-tab-container .protyle {
+.protyle {
   /*编辑区*/
   background: transparent;
 }
-#editor .protyle-breadcrumb,
-.layout-tab-container .protyle-breadcrumb {
+.protyle-breadcrumb {
   /* 导航栏(面包屑) */
   background-color: var(--custom-editor-breadcrumb-bar-background-color);
   /* box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5); */
 }
-#editor .protyle-breadcrumb .protyle-breadcrumb__item,
-.layout-tab-container .protyle-breadcrumb .protyle-breadcrumb__item {
+.protyle-breadcrumb .protyle-breadcrumb__item {
   /* 导航栏文字 */
   line-height: normal;
   border: 1px solid var(--b3-theme-on-surface-light);
 }
-#editor .protyle-content > .protyle-background > .protyle-background__iconw,
-.layout-tab-container .protyle-content > .protyle-background > .protyle-background__iconw {
+.protyle-content > .protyle-background > .protyle-background__iconw {
   /* 文档标志 */
   left: var(--custom-editor-padding-left) !important;
 }
-#editor .protyle-content > .protyle-title,
-.layout-tab-container .protyle-content > .protyle-title {
+.protyle-content > .protyle-title {
   /* 标题 */
   margin-left: var(--custom-editor-padding-left) !important;
   margin-right: var(--custom-editor-padding-right) !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
-#editor .protyle-content > .protyle-title .protyle-title__input,
-.layout-tab-container .protyle-content > .protyle-title .protyle-title__input {
+.protyle-content > .protyle-title .protyle-title__input {
   /*编辑区文件名*/
   background: transparent;
 }
-#editor .protyle-content > .protyle-wysiwyg .dragover__top,
-.layout-tab-container .protyle-content > .protyle-wysiwyg .dragover__top {
+.protyle-content > .protyle-wysiwyg {
+  margin-left: var(--custom-editor-padding-left) !important;
+  margin-right: var(--custom-editor-padding-right) !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.protyle-content > .protyle-wysiwyg .dragover__top {
   box-shadow: 0 -4px 0 var(--custom-drag-top-shadow-color);
 }
-#editor .protyle-content > .protyle-wysiwyg .dragover__bottom,
-.layout-tab-container .protyle-content > .protyle-wysiwyg .dragover__bottom {
+.protyle-content > .protyle-wysiwyg .dragover__bottom {
   box-shadow: 0 4px 0 var(--custom-drag-bottom-shadow-color);
 }
-#editor .protyle-content > .protyle-wysiwyg .dragover__left,
-.layout-tab-container .protyle-content > .protyle-wysiwyg .dragover__left {
+.protyle-content > .protyle-wysiwyg .dragover__left {
   box-shadow: -4px 0 0 var(--custom-drag-left-shadow-color);
 }
-#editor .protyle-content > .protyle-wysiwyg .dragover__right,
-.layout-tab-container .protyle-content > .protyle-wysiwyg .dragover__right {
+.protyle-content > .protyle-wysiwyg .dragover__right {
   box-shadow: 4px 0 0 var(--custom-drag-right-shadow-color);
 }
-#editor .protyle-content > .protyle-preview,
-.layout-tab-container .protyle-content > .protyle-preview {
+.protyle-preview {
   /* 内容 */
   background-color: transparent;
-  backdrop-filter: var(--custom-backdrop-filter);
+  backdrop-filter: none;
+}
+.protyle-preview > .b3-typography {
   padding-left: var(--custom-editor-padding-left) !important;
   padding-right: var(--custom-editor-padding-right) !important;
 }
