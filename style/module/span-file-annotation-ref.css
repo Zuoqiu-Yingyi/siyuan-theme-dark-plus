@@ -1,24 +1,21 @@
 /* 文件注释引用(PDF注释) */
-
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-
-/* PDF 引用导出样式 */
-.b3-typography [href *="assets/"][href *=".pdf?p="]::before,
-.b3-typography [href *="/assets/"][href *=".pdf?p="]::before {
-    background-image: url(/appearance/themes/Dark+/icon/pdf-page.svg);
+.b3-typography a[href*=".pdf?p="][href*="assets/"]::before,
+.b3-typography a[href*=".pdf?p="][href*="/assets/"]::before {
+  /* PDF 引用导出样式 */
+  background-image: url(/appearance/themes/Dark+/icon/pdf-page.svg);
 }
-
-/* PDF 引用链接样式 */
 .protyle-wysiwyg [data-node-id] span[data-type="file-annotation-ref"] {
-    color: var(--custom-span-file-ref-color);
+  /* PDF 引用链接样式 */
+  color: var(--custom-span-file-ref-color);
 }
 .protyle-wysiwyg [data-node-id] span[data-type="file-annotation-ref"]::before {
-    content: "" !important;
-    background-image: url(/appearance/themes/Dark+/icon/pdf-ref.svg) !important;
+  /* PDF 引用链接图标 */
+  content: "" !important;
+  background-image: url(/appearance/themes/Dark+/icon/pdf-ref.svg) !important;
 }
-
-/* PDF 引用链接鼠标悬浮样式 */
 .protyle-wysiwyg [data-node-id] span[data-type="file-annotation-ref"]:hover {
-    border-bottom: 1px solid var(--custom-span-file-ref-color);
+  /* PDF 引用链接鼠标悬浮 */
+  border-bottom: 1px solid var(--custom-span-file-ref-color);
 }
