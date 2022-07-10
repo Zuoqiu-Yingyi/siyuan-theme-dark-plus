@@ -22,6 +22,7 @@
 - 使用 `Less` 重构 `span-ref.css` | Refactored `span-ref.css` with `Less`.
 - 使用 `Less` 重构 `tab-bar.css` | Refactored `tab-bar.css` with `Less`.
 - 使用 `Less` 重构 `span-tag.css` | Refactored `span-tag.css` with `Less`.
+- 将文件 `statusbar.css` 与 `toolbar.css` 重命名为 `status-bar.css` 与 `tool-bar.css` | Renamed `statusbar.css` and `toolbar.css` to `status-bar.css` and `tool-bar.css`.
 
 ## v1.2.0/2022-07-03
 
