@@ -21,6 +21,7 @@
 - 使用 `Less` 重构 `span-link.css` | Refactored `span-link.css` with `Less`.
 - 使用 `Less` 重构 `span-ref.css` | Refactored `span-ref.css` with `Less`.
 - 使用 `Less` 重构 `tab-bar.css` | Refactored `tab-bar.css` with `Less`.
+- 使用 `Less` 重构 `span-tag.css` | Refactored `span-tag.css` with `Less`.
 
 ## v1.2.0/2022-07-03
 
