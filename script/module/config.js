@@ -1249,10 +1249,10 @@ export var config = {
                                 enable: true,
                                 type: null,
                                 mode: "button",
-                                icon: "#iconCode",
+                                icon: "#iconPreview",
                                 label: {
-                                    zh_CN: "编辑 Kramdown 源代码",
-                                    other: "Edit the Kramdown Source Code",
+                                    zh_CN: "查看 Markdown 源代码",
+                                    other: "Review the Markdown Source Code",
                                 },
                                 accelerator: () => config.theme.hotkeys.window.open.editor,
                                 click: {
@@ -1263,11 +1263,12 @@ export var config = {
                                             type: 'window-open-editor',
                                             params: {
                                                 mode: 'block',
-                                                type: 'kramdown',
+                                                type: 'markdown',
                                                 lang: (() => window.theme.languageMode)(),
                                                 fontFamily: (() => encodeURI(window.siyuan.config.editor.fontFamily))(),
                                                 tabSize: (() => window.siyuan.config.editor.codeTabSpaces)(),
-                                            },                                        },
+                                            },
+                                        },
                                     ],
                                 },
                             },
@@ -1275,10 +1276,10 @@ export var config = {
                                 enable: true,
                                 type: null,
                                 mode: "button",
-                                icon: "#iconCode",
+                                icon: "#iconEdit",
                                 label: {
-                                    zh_CN: "查看 Markdown 源代码",
-                                    other: "Review the Markdown Source Code",
+                                    zh_CN: "编辑 Kramdown 源代码",
+                                    other: "Edit the Kramdown Source Code",
                                 },
                                 accelerator: () => config.theme.hotkeys.window.open.markdown,
                                 click: {
@@ -1289,7 +1290,7 @@ export var config = {
                                             type: 'window-open-editor',
                                             params: {
                                                 mode: 'block',
-                                                type: 'markdown',
+                                                type: 'kramdown',
                                                 lang: (() => window.theme.languageMode)(),
                                                 fontFamily: (() => encodeURI(window.siyuan.config.editor.fontFamily))(),
                                                 tabSize: (() => window.siyuan.config.editor.codeTabSpaces)(),

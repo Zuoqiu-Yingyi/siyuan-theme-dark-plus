@@ -1,5 +1,9 @@
 # 更改日志 | CHANGE LOG
 
+## v1.2.1/2022-07-11
+
+- [v1.2.0 <=> v1.2.1](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.0...v1.2.1)
+- 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 为面包屑项添加边框 | Added a border to the breadcrumb items
 - 使用 `Less` 重构 `docker.css` | Refactored `docker.css` with `Less`.
 - 使用 `Less` 重构 `hover-menu.css` | Refactored `hover-menu.css` with `Less`.
