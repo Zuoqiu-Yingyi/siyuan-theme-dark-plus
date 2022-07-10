@@ -1248,6 +1248,11 @@ export var config = {
                             {
                                 enable: true,
                                 type: null,
+                                mode: "separator",
+                            },
+                            {
+                                enable: true,
+                                type: null,
                                 mode: "button",
                                 icon: "#iconPreview",
                                 label: {
