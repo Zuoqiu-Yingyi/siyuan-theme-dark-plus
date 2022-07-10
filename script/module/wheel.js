@@ -1,7 +1,6 @@
 /* 鼠标滚轮功能 */
 
 import { config } from './config.js';
-import { isEvent } from './../utils/hotkey.js';
 import { setFontSize } from './../utils/dom.js';
 import { globalEventHandler } from './../utils/listener.js';
 
@@ -12,7 +11,7 @@ function changeFontSize(delta) {
     let new_size = Math.max(Math.min(old_size + size, config.theme.wheel.zoom.max), config.theme.wheel.zoom.min);
     new_size = setFontSize(new_size);
     if (new_size) window.siyuan.config.editor.fontSize = new_size;
-} 
+}
 
 setTimeout(() => {
     try {
