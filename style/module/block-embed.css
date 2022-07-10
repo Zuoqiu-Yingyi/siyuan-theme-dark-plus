@@ -7,7 +7,7 @@
   outline: 2px solid var(--custom-line-color);
   background-color: var(--custom-block-embed-background-color) !important;
 }
-.protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"].render-node > .protyle-wysiwyg__embed:not(:first-child) {
+.protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"].render-node > .protyle-wysiwyg__embed:not(:nth-of-type(2)) {
   /* 嵌入块间分隔线 */
   position: relative;
   border-top: 4px double var(--custom-line-color);

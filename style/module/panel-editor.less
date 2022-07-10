@@ -3,6 +3,13 @@
 @import (css) url(/appearance/themes/Dark+/style/module/config.css);
 @import (css) url(/widgets/custom.css);
 
+.page-margins() {
+    margin-left: var(--custom-editor-padding-left) !important;
+    margin-right: var(--custom-editor-padding-right) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
 .fn__flex-1.protyle.fullscreen {
     .protyle-content {
         /* 全屏模式编辑区 */
@@ -15,73 +22,75 @@
 .layout-tab-container {
     /* 编辑区 */
     background-color: var(--custom-editor-background-color);
+}
 
-    .protyle {
-        /*编辑区*/
-        background: transparent;
+.protyle {
+    /*编辑区*/
+    background: transparent;
+}
+
+// 面包屑
+.protyle-breadcrumb {
+    /* 导航栏(面包屑) */
+    background-color: var(--custom-editor-breadcrumb-bar-background-color);
+    /* box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5); */
+
+    .protyle-breadcrumb__item {
+        /* 导航栏文字 */
+        line-height: normal;
+        border: 1px solid var(--b3-theme-on-surface-light);
+    }
+}
+
+// 编辑区内容
+.protyle-content {
+    >.protyle-background {
+        >.protyle-background__iconw {
+            /* 文档标志 */
+            left: var(--custom-editor-padding-left) !important;
+        }
     }
 
-    // 面包屑
-    .protyle-breadcrumb {
-        /* 导航栏(面包屑) */
-        background-color: var(--custom-editor-breadcrumb-bar-background-color);
-        /* box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5); */
+    >.protyle-title {
+        /* 标题 */
+        .page-margins();
 
-        .protyle-breadcrumb__item {
-            /* 导航栏文字 */
-            line-height: normal;
-            border: 1px solid var(--b3-theme-on-surface-light);
+        .protyle-title__input {
+            /*编辑区文件名*/
+            background: transparent;
         }
     }
 
-    // 编辑区内容
-    .protyle-content {
-        >.protyle-background {
-            >.protyle-background__iconw {
-                /* 文档标志 */
-                left: var(--custom-editor-padding-left) !important;
-            }
+    >.protyle-wysiwyg {
+        .page-margins();
+
+        // 拖拽
+        .dragover__top {
+            box-shadow: 0 -4px 0 var(--custom-drag-top-shadow-color);
         }
 
-        >.protyle-title {
-            /* 标题 */
-            margin-left: var(--custom-editor-padding-left) !important;
-            margin-right: var(--custom-editor-padding-right) !important;
-            padding-left: 0 !important;
-            padding-right: 0 !important;
-
-            .protyle-title__input {
-                /*编辑区文件名*/
-                background: transparent;
-            }
+        .dragover__bottom {
+            box-shadow: 0 4px 0 var(--custom-drag-bottom-shadow-color);
         }
 
-        >.protyle-wysiwyg {
-
-            // 拖拽
-            .dragover__top {
-                box-shadow: 0 -4px 0 var(--custom-drag-top-shadow-color);
-            }
-
-            .dragover__bottom {
-                box-shadow: 0 4px 0 var(--custom-drag-bottom-shadow-color);
-            }
-
-            .dragover__left {
-                box-shadow: -4px 0 0 var(--custom-drag-left-shadow-color);
-            }
-
-            .dragover__right {
-                box-shadow: 4px 0 0 var(--custom-drag-right-shadow-color);
-            }
+        .dragover__left {
+            box-shadow: -4px 0 0 var(--custom-drag-left-shadow-color);
         }
 
-        >.protyle-preview {
-            /* 内容 */
-            background-color: transparent;
-            backdrop-filter: var(--custom-backdrop-filter);
-            padding-left: var(--custom-editor-padding-left) !important;
-            padding-right: var(--custom-editor-padding-right) !important;
+        .dragover__right {
+            box-shadow: 4px 0 0 var(--custom-drag-right-shadow-color);
         }
+    }
+
+}
+
+.protyle-preview {
+    /* 内容 */
+    background-color: transparent;
+    backdrop-filter: none;
+
+    >.b3-typography {
+        padding-left: var(--custom-editor-padding-left) !important;
+        padding-right: var(--custom-editor-padding-right) !important;
     }
 }
