@@ -34,3 +34,11 @@ body.fn__flex-column {
   /* 鼠标悬浮折叠/展开小三角样式 */
   outline: 1px solid var(--b3-theme-on-surface-light);
 }
+/* 被激活的控件 */
+.block__icon--active,
+.toolbar__item--active {
+  color: var(--custom-toolbar-tiem-active-color);
+  background-color: var(--custom-toolbar-tiem-active-background-color);
+  /* outline: 1px solid var(--custom-toolbar-tiem-active-color); */
+  box-shadow: 0 0 var(--custom-toolbar-tiem-active-box-shadow-spread) var(--custom-box-shadow-color);
+}

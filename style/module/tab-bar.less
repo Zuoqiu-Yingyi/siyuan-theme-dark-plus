@@ -1,0 +1,83 @@
+/* 页签 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+/* 页签 */
+/* .fn__flex-column.fn__flex.fn__flex-1 .layout-tab-bar { */
+.layout-tab-bar {
+    background-color: var(--custom-tab-bar-background-color);
+    flex-wrap: var(--custom-tab-bar-flex-wrap);
+
+    .item {
+        /* 页签项 */
+        flex: none;
+        background-color: transparent;
+        box-shadow: none;
+        border: 2px solid var(--b3-list-hover);
+        border-radius: var(--custom-border-radius);
+        box-shadow: none !important;
+
+        .item__icon {
+            /* 页签项图标 */
+            padding-right: 0;
+
+            svg,
+            img {
+                width: var(--custom-tab-bar-icon-size);
+                height: var(--custom-tab-bar-icon-size);
+            }
+        }
+
+        .item__text {
+            /* 页签项文本 */
+            min-width: 0;
+        }
+
+        .item__close {
+            svg {
+                &:hover {
+                    /* 页签项关闭图标 */
+                    color: var(--b3-theme-surface);
+                    background-color: var(--b3-theme-on-surface);
+                }
+            }
+        }
+
+        &.item--focus {
+            /* 被选中的页签项 */
+            background-color: var(--b3-list-hover);
+            box-shadow: none;
+            border: 2px solid var(--b3-list-hover);
+            border-bottom: 2px solid var(--custom-striking-color);
+            border-radius: var(--custom-border-radius);
+
+            .layout__wnd--active &,
+            .b3-dialog__container & {
+                /* 多窗口被选中的页签项 & 集市被选中的页签项 */
+                box-shadow: none;
+                border: 2px solid var(--custom-striking-color);
+                border-radius: var(--custom-border-radius);
+            }
+
+        }
+
+        &:not(.item--pin) {
+            .item__text {
+                &:not(span:last-child) {
+                    /* 非钉住标签的非末尾项页签项文本 */
+                    padding-right: 0;
+                }
+            }
+        }
+
+        &.item--pin {
+            .item__text {
+                /* 钉住的标签页文本全部显示 */
+                width: auto;
+                max-width: none;
+                display: flex !important;
+            }
+        }
+    }
+}
