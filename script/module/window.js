@@ -85,7 +85,7 @@ async function middleClick(e, fn_id, fn_href = null, fn_inbox = null) {
     }
 
     let target = getTargetBlockID(e.target);
-    // console.log(target);
+    console.log(target);
     if (target) {
         // 目标非空, 是 ID 或者链接
         if (config.theme.regs.id.test(target)) {
@@ -200,7 +200,7 @@ setTimeout(async () => {
                         // 临时目录创建成功
                         globalEventHandler.addEventHandler(
                             'mouseup',
-                            config.theme.hotkeys.window.open.editor,
+                            config.theme.hotkeys.window.open.markdown,
                             e => setTimeout(async () => middleClick(
                                 e,
                                 async id => compareVersion(window.theme.kernelVersion, '2.0.24') > 0
@@ -210,7 +210,7 @@ setTimeout(async () => {
                         );
                         globalEventHandler.addEventHandler(
                             'mouseup',
-                            config.theme.hotkeys.window.open.markdown,
+                            config.theme.hotkeys.window.open.editor,
                             e => setTimeout(async () => middleClick(
                                 e,
                                 async id => {
