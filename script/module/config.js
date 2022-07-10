@@ -2529,7 +2529,7 @@ export var config = {
                         button: 1, // 鼠标中键
                     },
                     markdown: {
-                        // 以 markdown 模式在新窗口打开编辑器(Sihft + Alt + 鼠标中键)
+                        // 以 markdown 模式在新窗口打开编辑器(Shift + Alt + 鼠标中键)
                         CtrlCmd: false,
                         WinCtrl: false,
                         Shift: true,
