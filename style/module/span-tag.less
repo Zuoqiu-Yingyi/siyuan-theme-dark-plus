@@ -1,0 +1,74 @@
+/* 标签 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+// 文档标签
+div.protyle-background__tags>div.item,
+// 正文标签
+.protyle-wysiwyg [data-node-id] span[data-type="tag"] {
+    font-size: 1em;
+    border-bottom: transparent;
+    border-radius: 1em;
+    padding: 1px 0.5em 1px 0.5em;
+    transition: all 200ms linear 0ms;
+
+    &::before {
+        /* 标签标志 */
+        content: '';
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        margin: 0.125em 0.125em -0.125em -0.125em;
+        background: var(--custom-span-tag-icon);
+        background-size: cover;
+    }
+
+    &:hover {
+        /* 悬浮样式 */
+        // color: var(--b3-theme-on-background);
+        padding-bottom: 2px;
+        background-color: transparent;
+
+        // 动态波浪线
+        // animation: waveMove 1s infinite linear;
+        // background: url(/appearance/themes/Dark+/icon/wavy-line.svg) repeat-x 0 100%;
+        // background-size: 16px auto;
+
+        // 悬浮放大
+        // transform: scale(1.125);
+        // background-color: var(--b3-protyle-inline-tag-background);
+    }
+}
+
+div.protyle-background__tags>div.item {
+    background-color: var(--custom-span-doc-tag-background-color);
+}
+
+.protyle-wysiwyg [data-node-id] span[data-type="tag"] {
+    color: var(--custom-span-tag-color);
+    background-color: var(--custom-span-tag-background-color);
+}
+
+/* 标签 */
+/* .protyle-wysiwyg [data-node-id] span[data-type='tag']:not(:empty) {
+    display: inline-flex;
+    border-bottom: 0px solid var(--b3-protyle-inline-tag-color);
+    font-size: 87.5%;
+    text-decoration: none !important;
+    color: var(--b3-protyle-inline-tag-color);
+    background-color: var(--b3-protyle-inline-tag-background);
+    border-radius: 0.3em;
+    padding: 0em 0.375em 0.08em !important;
+    margin: 0em 0.25em;
+    transform: translateY(-1.5px);
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    z-index: 20;
+} */
+
+/* 标签#号 */
+/* .protyle-wysiwyg [data-node-id] span[data-type='tag']:not(:empty)::before {
+    content: "#";
+} */
