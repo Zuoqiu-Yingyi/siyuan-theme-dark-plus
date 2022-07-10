@@ -1,0 +1,31 @@
+/* 图片样式 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+.b3-typography,
+.protyle-wysiwyg {
+    span.img {
+        /* 图片与前后文字之间间隙 */
+        // padding: 0 0.125em;
+        max-width: none !important;
+
+        img:not(.emoji) {
+            /* 图片样式 */
+            box-shadow: 0 0 var(--custom-box-shadow-spread) var(--custom-box-shadow-color);
+            border-radius: var(--custom-border-radius);
+            padding: var(--custom-border-radius);
+            box-sizing: border-box;
+        }
+
+        .protyle-action__drag {
+            /* 图片尺寸调整控件 */
+            right: calc(4px + var(--custom-border-radius)) !important;
+        }
+    }
+}
+
+/* .protyle-wysiwyg span.img>span:nth-child(1),
+.protyle-wysiwyg span.img>span:nth-child(3) {
+    max-width: 0;
+} */
