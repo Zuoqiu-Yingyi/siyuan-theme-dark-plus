@@ -92,13 +92,13 @@
 @import url(/appearance/themes/Dark+/style/module/span-virtual-ref.css);
 
 /* 底部状态栏 */
-@import url(/appearance/themes/Dark+/style/module/statusbar.css);
+@import url(/appearance/themes/Dark+/style/module/status-bar.css);
 
 /* 页签栏 */
 @import url(/appearance/themes/Dark+/style/module/tab-bar.css);
 
 /* 顶部工具栏 */
-@import url(/appearance/themes/Dark+/style/module/toolbar.css);
+@import url(/appearance/themes/Dark+/style/module/tool-bar.css);
 
 /* 预览窗口 */
 @import url(/appearance/themes/Dark+/style/module/viewer-image.css);
