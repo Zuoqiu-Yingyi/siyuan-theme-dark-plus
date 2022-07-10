@@ -1,72 +1,61 @@
 /* 页签 */
-
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-
 /* 页签 */
 /* .fn__flex-column.fn__flex.fn__flex-1 .layout-tab-bar { */
 .layout-tab-bar {
-    background-color: var(--custom-tab-bar-background-color);
-    flex-wrap: var(--custom-tab-bar-flex-wrap);
+  background-color: var(--custom-tab-bar-background-color);
+  flex-wrap: var(--custom-tab-bar-flex-wrap);
 }
-
-/* 页签项 */
 .layout-tab-bar .item {
-    flex: none;
-    background-color: transparent;
-    box-shadow: none;
-    border: 2px solid var(--b3-list-hover);
-    border-radius: var(--custom-border-radius);
-    box-shadow: none !important;
+  /* 页签项 */
+  flex: none;
+  background-color: transparent;
+  box-shadow: none;
+  border: 2px solid var(--b3-list-hover);
+  border-radius: var(--custom-border-radius);
+  box-shadow: none !important;
 }
-
-/* 页签项图标 */
 .layout-tab-bar .item .item__icon {
-    padding-right: 0;
+  /* 页签项图标 */
+  padding-right: 0;
 }
-
 .layout-tab-bar .item .item__icon svg,
 .layout-tab-bar .item .item__icon img {
-    width: var(--custom-tab-bar-icon-size);
-    height: var(--custom-tab-bar-icon-size);
+  width: var(--custom-tab-bar-icon-size);
+  height: var(--custom-tab-bar-icon-size);
 }
-
-/* 页签项文本 */
 .layout-tab-bar .item .item__text {
-    min-width: 0;
+  /* 页签项文本 */
+  min-width: 0;
 }
-
-/* 非钉住标签的非末尾项页签项文本 */
-.layout-tab-bar .item:not(.item--pin) .item__text:not(span:last-child) {
-    padding-right: 0;
-}
-
-/* 页签项关闭图标 */
 .layout-tab-bar .item .item__close svg:hover {
-    color: var(--b3-theme-surface);
-    background-color: var(--b3-theme-on-surface);
+  /* 页签项关闭图标 */
+  color: var(--b3-theme-surface);
+  background-color: var(--b3-theme-on-surface);
 }
-
-/* 被选中的页签项 */
-.layout-tab-bar .item--focus {
-    background-color: var(--b3-list-hover);
-    box-shadow: none;
-    border: 2px solid var(--b3-list-hover);
-    border-bottom: 2px solid var(--custom-striking-color);
-    border-radius: var(--custom-border-radius);
+.layout-tab-bar .item.item--focus {
+  /* 被选中的页签项 */
+  background-color: var(--b3-list-hover);
+  box-shadow: none;
+  border: 2px solid var(--b3-list-hover);
+  border-bottom: 2px solid var(--custom-striking-color);
+  border-radius: var(--custom-border-radius);
 }
-
-/* 多窗口被选中的页签项 & 集市被选中的页签项 */
-.layout__wnd--active .layout-tab-bar .item--focus,
-.b3-dialog__container .layout-tab-bar .item--focus {
-    box-shadow: none;
-    border: 2px solid var(--custom-striking-color);
-    border-radius: var(--custom-border-radius);
+.layout__wnd--active .layout-tab-bar .item.item--focus,
+.b3-dialog__container .layout-tab-bar .item.item--focus {
+  /* 多窗口被选中的页签项 & 集市被选中的页签项 */
+  box-shadow: none;
+  border: 2px solid var(--custom-striking-color);
+  border-radius: var(--custom-border-radius);
 }
-
-/* 钉住的标签页文本全部显示 */
-.layout-tab-bar .item--pin .item__text {
-    width: auto;
-    max-width: none;
-    display: flex !important;
+.layout-tab-bar .item:not(.item--pin) .item__text:not(span:last-child) {
+  /* 非钉住标签的非末尾项页签项文本 */
+  padding-right: 0;
+}
+.layout-tab-bar .item.item--pin .item__text {
+  /* 钉住的标签页文本全部显示 */
+  width: auto;
+  max-width: none;
+  display: flex !important;
 }
