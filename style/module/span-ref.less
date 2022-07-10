@@ -1,0 +1,52 @@
+/* 块引用 */
+
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
+
+.protyle-wysiwyg {
+    [data-node-id] {
+        span[data-type="block-ref"] {
+            color: var(--custom-span-block-ref-color);
+
+            // REF https://github.com/Morganwan90/Lightblue-siyuan-theme/blob/d03e93da4130bfbc941cdd940683e97daf4d7bf1/theme.css#L786
+            &::before {
+                /*前半部分的符号*/
+                content: var(--custom-quote-l);
+
+                /*修改前半部分颜色*/
+                color: var(--custom-ref-mark-color);
+
+                // font-size: 1em;
+                // margin-left: 0.5em;
+                font-weight: bold;
+                display: inline-block;
+                width: 0.5em;
+                // text-align: right;
+                text-align: center;
+            }
+
+            &::after {
+                /*后半部分的符号*/
+                content: var(--custom-quote-r);
+
+                /*后改前半部分颜色*/
+                color: var(--custom-ref-mark-color);
+
+                /* font-size: 1em; */
+                /* margin-right: 0.5em; */
+                font-weight: bold;
+                display: inline-block;
+                width: 0.5em;
+                /* text-align: left; */
+                text-align: center;
+            }
+
+            &:hover {
+                padding-bottom: 2px;
+                animation: waveMove 1s infinite linear;
+                background: var(--custom-span-ref-animation-icon) repeat-x 0 100%;
+                background-size: 16px auto;
+            }
+        }
+    }
+}
