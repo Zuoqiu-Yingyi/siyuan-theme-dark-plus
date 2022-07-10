@@ -18,6 +18,7 @@
 - 修复浮窗预览窗口样式问题 | Fixed an issue with the floating preview window style.
 - 使用 `Less` 重构 `span-file-annotation-ref.css` | Refactored `span-file-annotation-ref.css` with `Less`.
 - 使用 `Less` 重构 `span-img.css` | Refactored `span-img.css` with `Less`.
+- 使用 `Less` 重构 `span-link.css` | Refactored `span-link.css` with `Less`.
 
 ## v1.2.0/2022-07-03
 

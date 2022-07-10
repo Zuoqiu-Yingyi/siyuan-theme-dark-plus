@@ -1,0 +1,77 @@
+/* 超链接 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+.link() {
+    /* 默认样式 */
+    margin: 0;
+    padding: 0;
+    color: var(--b3-protyle-inline-link-color);
+
+    .link-icon();
+}
+
+.link-icon() {
+    &::before {
+        /* 超链接前标志 */
+        content: "";
+        display: inline-block;
+        position: relative;
+
+        background-image: url(/appearance/themes/Dark+/icon/unknown.svg);
+        background-size: 0.875em auto;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        width: 0.875em;
+        height: 1em;
+        margin: 0.125em 0.125em -0.125em 0;
+        padding: 0;
+    }
+}
+
+.link-siyuan() {
+    /* 思源内部的超链接特化 */
+    color: var(--custom-span-siyuan-link-color);
+
+    &:hover {
+        border-color: var(--custom-span-siyuan-link-color);
+    }
+
+    &[data-href *="focus=1"],
+    &[href *="focus=1"] {
+        &::before {
+            /* 思源聚焦超链接特化 */
+            outline: 1px solid var(--custom-span-siyuan-link-color);
+        }
+    }
+}
+
+.protyle-wysiwyg {
+    [data-node-id] {
+        span:not(:empty) {
+            &[data-type='a'] {
+                .link();
+
+                &[data-href ^="siyuan:"] {
+                    .link-siyuan();
+                }
+            }
+
+            &[data-type='file-annotation-ref'] {
+                .link-icon();
+            }
+        }
+    }
+}
+
+.b3-typography {
+    a {
+        .link();
+
+        &[href ^="siyuan:"] {
+            .link-siyuan();
+        }
+    }
+}
