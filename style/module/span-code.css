@@ -4,7 +4,6 @@
 @import url(/widgets/custom.css);
 
 .protyle-wysiwyg [data-node-id] code,
-.protyle-wysiwyg code:not(.hljs),
 .b3-typography code:not(.hljs) {
     font-size: 1em;
     font-family: var(--b3-font-family-code);

@@ -1,0 +1,37 @@
+/* 文件注释引用(PDF注释) */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+.b3-typography {
+    a[href *=".pdf?p="] {
+
+        &[href *="assets/"],
+        &[href *="/assets/"] {
+            &::before {
+                /* PDF 引用导出样式 */
+                background-image: url(/appearance/themes/Dark+/icon/pdf-page.svg);
+            }
+        }
+    }
+}
+
+.protyle-wysiwyg {
+    [data-node-id] {
+        span[data-type="file-annotation-ref"] {
+            /* PDF 引用链接样式 */
+            color: var(--custom-span-file-ref-color);
+
+            &::before {
+                /* PDF 引用链接图标 */
+                content: "" !important;
+                background-image: url(/appearance/themes/Dark+/icon/pdf-ref.svg) !important;
+            }
+
+            &:hover {
+                /* PDF 引用链接鼠标悬浮 */
+                border-bottom: 1px solid var(--custom-span-file-ref-color);
+            }
+        }
+    }
+}
