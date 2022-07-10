@@ -2,9 +2,14 @@
 
 /* 运行系统命令 */
 window.theme.runcmd = function (commands) {
-    if (window.confirm(commands) && require) {
-        commands = `start powershell -c ${commands.replaceAll('\n', '; ')}pause`;
-        require('child_process').exec(commands, null);
+    try {
+        if (window.confirm(commands) && require) {
+            commands = `start powershell -c ${commands.replaceAll('\n', '; ')}pause`;
+            require('child_process').exec(commands, null);
+        }
+    }
+    catch (err) {
+        console.warn(err);
     }
 }
 

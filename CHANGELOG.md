@@ -24,6 +24,7 @@
 - 使用 `Less` 重构 `span-tag.css` | Refactored `span-tag.css` with `Less`.
 - 将文件 `statusbar.css` 与 `toolbar.css` 重命名为 `status-bar.css` 与 `tool-bar.css` | Renamed `statusbar.css` and `toolbar.css` to `status-bar.css` and `tool-bar.css`.
 - 修复快捷键 <kbd>Shift + Alt + 鼠标中键</kbd> 与快捷键 <kbd>Alt + 鼠标中键</kbd> 混淆问题 | Fixed an issue with the <kbd>Shift + Alt + Middle Mouse Button</kbd> and <kbd>Alt + Middle Mouse Button</kbd> key combinations.
+- 捕获 `window.theme.runcmd` 函数在非 electron 环境时抛出的异常 | Catches the exception thrown by the function `window.theme.runcmd` in non-electron environments.
 
 ## v1.2.0/2022-07-03
 
