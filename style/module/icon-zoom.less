@@ -3,17 +3,26 @@
 @import (css) url(/appearance/themes/Dark+/style/module/config.css);
 @import (css) url(/widgets/custom.css);
 
-// 文档树文档图标
-.b3-list-item__icon:hover svg,
-// 停靠栏图标
-.dock__item:hover svg,
-// 工具栏按钮
-.toolbar__item:hover svg,
-.block__icon:hover svg,
-// 页签项图标
-// .layout-tab-bar .item .item__icon:hover :is(svg, img),
-// 悬浮预览图标
-.popover__block:hover {
+.popover() {
     transform: scale(1.25);
     transition: all 0.1s ease-in-out;
+}
+
+// 悬浮预览图标
+svg.popover__block:hover {
+    .popover();
+}
+
+// 页签项图标
+// .layout-tab-bar .item .item__icon:hover :is(svg, img),
+// 文档树文档图标
+.b3-list-item__icon:hover,
+// 停靠栏图标
+.dock__item:hover,
+// 工具栏按钮
+.toolbar__item:hover,
+.block__icon:hover {
+    svg {
+        .popover();
+    }
 }

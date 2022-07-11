@@ -1,11 +1,14 @@
 /* 引入参数配置 */
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
+svg.popover__block:hover {
+  transform: scale(1.25);
+  transition: all 0.1s ease-in-out;
+}
 .b3-list-item__icon:hover svg,
 .dock__item:hover svg,
 .toolbar__item:hover svg,
-.block__icon:hover svg,
-.popover__block:hover {
+.block__icon:hover svg {
   transform: scale(1.25);
   transition: all 0.1s ease-in-out;
 }
