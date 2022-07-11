@@ -10,6 +10,7 @@ import {
 } from './api.js';
 import {
     promptFormat,
+    URL2DataURL,
 } from './utils.js';
 
 const sessions_create_kernel_select = document.getElementById(config.jupyter.id.session.create.select);
@@ -151,7 +152,9 @@ function updateDocAttrs(del = false) {
 
 /* 渲染内核信息 */
 function renderKernelspecInfo(kernelspec) {
-    sessions_create_kernel_image.src = `${custom.jupyter.server}${kernelspec.resources[`logo-32x32`]}`;
+    const src = `${custom.jupyter.server}${kernelspec.resources[`logo-32x32`]}`;
+    // sessions_create_kernel_image.src = src;
+    setTimeout(async () => URL2DataURL(src, sessions_create_kernel_image), 0);
     sessions_create_language_span.innerText = kernelspec.spec.language;
 }
 
@@ -163,7 +166,9 @@ function renderSessionInfo(session) {
         sessions_manage_path_input.value = session.path;
         sessions_manage_state_span.innerText = session.kernel.execution_state;
         if (kernelspecs && kernelspecs.kernelspecs[session.kernel.name]) {
-            sessions_manage_kernel_image.src = `${custom.jupyter.server}${kernelspecs.kernelspecs[session.kernel.name].resources[`logo-32x32`]}`;
+            const src = `${custom.jupyter.server}${kernelspecs.kernelspecs[session.kernel.name].resources[`logo-32x32`]}`;
+            // sessions_manage_kernel_image.src = src;
+            setTimeout(async () => URL2DataURL(src, sessions_manage_kernel_image), 0);
             sessions_manage_kernel_name_span.innerText = session.kernel.name;
         }
     }

@@ -7,9 +7,11 @@ export {
     base64ToBlob, // Base64 转 Blob
     escapeText, // 转义纯文本
     promptFormat, // 格式化 prompt
+    URL2DataURL, // URL 转 DataURL
 };
 
 import { config } from './config.js';
+import { jupyter } from './api.js';
 
 // REF [js - 对象递归合并merge - zc-lee - 博客园](https://www.cnblogs.com/zc-lee/p/15873611.html)
 function isObject(obj) {
@@ -140,4 +142,30 @@ function escapeText(text) {
 /* prompt 格式化 */
 function promptFormat(language, name, state) {
     return `${language} | ${name} | ${state}`
+}
+
+/* 资源 URL 转 Data URL */
+async function URL2DataURL(src, dom) {
+    const source = await jupyter.request(
+        src,
+        undefined,
+        false,
+    );
+
+    // console.log(source);
+    // console.log(source.body);
+    // console.log(source.headers.get('Content-Type'));
+    // const blob = new Blob([source.body], { type: source.headers.get('Content-Type') });
+
+    const blob = await source.blob();
+    // console.log(blob);
+
+    // REF [原创 js操作canvas、DataURL、File、Blob转换处理_weixin_42580704的博客-CSDN博客_canvas转file js](https://blog.csdn.net/weixin_42580704/article/details/109488693)
+    const reader = new FileReader();
+
+    // REF [FileReader.readAsDataURL() - Web API 接口参考 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader/readAsDataURL)
+    reader.addEventListener("load", () => {
+        dom.src = reader.result;
+    }, false);
+    reader.readAsDataURL(blob);
 }

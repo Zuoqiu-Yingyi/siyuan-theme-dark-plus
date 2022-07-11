@@ -397,8 +397,15 @@ async function runCode(e, code_id, params) {
         const kernel_name = doc_attrs[config.jupyter.attrs.kernel.name];
         const kernel_language = doc_attrs[config.jupyter.attrs.kernel.language];
         const session_id = doc_attrs[config.jupyter.attrs.session.id];
+
+        const ws = new URL(url);
+        ws.protocol = url.protocol === 'https:' ? 'wss:' : 'ws:';
+        ws.pathname = `/api/kernels/${kernel_id}/channels`;
+        ws.searchParams.set('session_id', session_id);
+        if (custom.jupyter.token) ws.searchParams.set('token', custom.jupyter.token);
+
         websocket = {
-            ws: new WebSocket(`${url.protocol === 'https:' ? 'wss:' : 'ws:'}//${url.host}/api/kernels/${kernel_id}/channels?session_id=${session_id}`),
+            ws: new WebSocket(ws.href),
             kernel: {
                 id: kernel_id,
                 name: kernel_name,
