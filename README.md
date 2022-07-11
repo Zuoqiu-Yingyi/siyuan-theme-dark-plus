@@ -210,15 +210,15 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   2. 打开全局设置窗口
   3. 输入服务器 URL 并点击 <kbd>确定</kbd>
      - `http(s)://hostname(:port)`
-  4. 点击 <kbd>测试</kbd> 链接跳转到登录页面并登录
-  5. <kbd>Ctrl + Shift + I</kbd> 打开开发者工具, 获得 `Cookies`
+  4. (可选) 点击 <kbd>测试</kbd> 链接跳转到登录页面并登录
+  5. (可选) <kbd>Ctrl + Shift + I</kbd> 打开开发者工具, 获得 `Cookies`
      - 方案1: 在控制台输入 `document.cookie` 并从输出结果复制 `_xsrf` 字段
      - 方案2: 选择一个网络链接并从 HTTP 请求头的 `Cookies` 字段复制 `_xsrf` 字段
      - `_xsrf` 字段完整格式为 `_xsrf=d|xxxxxxxx|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|dddddddddd`
        - `d`: 一个十进制数字
        - `x`: 一个十六进制数字
   6. 关闭 Jupyter 窗口并重新打开全局设置窗口
-  7. 输入 Cookies 并点击 <kbd>确定</kbd>
+  7. 输入 `Cookies` 或 `Token` 并点击 <kbd>确定</kbd>
   8. 关闭全局设置窗口
   9. 单击 <kbd>重新加载窗口</kbd> 按钮或 <kbd>Ctrl + F5</kbd> 刷新页面
 - 建立会话
@@ -254,15 +254,15 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   2. Open the Global Settings Window.
   3. Enter the `Service Address` and click <kbd>OK</kbd> Button.
      - `http(s)://hostname(:port)`
-  4. Click <kbd>Test</kbd> link to jump to the login page and sign in.
-  5. <kbd>Ctrl + Shift + I</kbd> open jupyter's developer tools, get `Cookies`.
+  4. (Optional) Click <kbd>Test</kbd> link to jump to the login page and sign in.
+  5. (Optional) <kbd>Ctrl + Shift + I</kbd> open jupyter's developer tools, get `Cookies`.
      - Scheme 1: input `document.cookie` to console and copy `_xsrf` field from output.
      - Scheme 2: select a HTTP request and copy `_xsrf` field from the HTTP header field `Cookies`
      - The style of `_xsrf` field full format is `_xsrf=d|xxxxxxxx|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|dddddddddd`
        - `d`: A decimal number.
        - `x`: A hexadecimal number.
   6. Close the Jupyter window and reopen the Global Settings Window.
-  7. Input `Cookies` and click <kbd>OK</kbd> button.
+  7. Input `Cookies` or `Token` and click <kbd>OK</kbd> button.
   8. Close the Global Settings Window.
   9.  Click <kbd>Reload the Window</kbd> button or <kbd>Ctrl + F5</kbd> to reload window.
 - Establish a session.
