@@ -2,6 +2,7 @@
 
 - 修复块反链列表匹配关键词样式失效问题 | Fixed match keyword style invalid issue of block-backlink-list.
 - [#81](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/81) 修复 PDF 标注悬浮预览动画问题 | Fixed PDF annotation floating preview animation issue.
+- `Jupyter` 支持使用 `token` 认证 | `Jupyter` supports `token` authentication.
 
 ## v1.2.1/2022-07-11
 

@@ -37,6 +37,14 @@
                 </td>
                 <td><span id="memo-cookie">认证 Cookies</span></td>
             </tr>
+            <tr>
+                <td><span>Token</span></td>
+                <td>
+                    <input id="jupyterTokenInput" type="text">
+                    <button id="jupyterTokenButton">确认</button>
+                </td>
+                <td><span id="memo-token">认证 Token</span></td>
+            </tr>
     </table>
 </body>
 <script type="module">
@@ -51,10 +59,12 @@
 
     document.getElementById('memo-server').innerText = i18n['memo-server'][lang] || i18n['memo-server'].default;
     document.getElementById('memo-cookie').innerText = i18n['memo-cookie'][lang] || i18n['memo-cookie'].default;
+    document.getElementById('memo-token').innerText = i18n['memo-token'][lang] || i18n['memo-token'].default;
 
     document.getElementById('jupyterServerTest').innerText = i18n.test[lang] || i18n.test.default;
     document.getElementById('jupyterServerButton').innerText = i18n.ok[lang] || i18n.ok.default;
     document.getElementById('jupyterCookiesButton').innerText = i18n.ok[lang] || i18n.ok.default;
+    document.getElementById('jupyterTokenButton').innerText = i18n.ok[lang] || i18n.ok.default;
 </script>
 <script type="module" src="./js/global.js"></script>
 

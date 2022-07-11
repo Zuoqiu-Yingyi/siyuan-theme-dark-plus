@@ -85,6 +85,10 @@ var config = {
                 input: 'jupyterCookiesInput',
                 button: 'jupyterCookiesButton',
             },
+            token: {
+                input: 'jupyterTokenInput',
+                button: 'jupyterTokenButton',
+            },
             kernelspec: {
             },
             session: {
@@ -132,7 +136,8 @@ var config = {
             'session-name': { zh_CN: '会话名称', default: 'Session Name' },
             'session-path': { zh_CN: '会话目录', default: 'Session Path' },
             'memo-server': { zh_CN: 'Jupyter 服务', default: 'Jupyter Server' },
-            'memo-cookie': { zh_CN: 'Jupyter 认证', default: 'Jupyter Auth' },
+            'memo-cookie': { zh_CN: 'Jupyter 认证 Cookies', default: 'Jupyter Auth Cookies' },
+            'memo-token': { zh_CN: 'Jupyter 认证令牌', default: 'Jupyter Auth Token' },
             'jupyter-server-auth-faild': {
                 zh_CN: 'Jupyter 服务认证失败，需要重新填写认证信息！',
                 default: 'Jupyter authentication failed, please re-fill in the authentication information!',
@@ -167,6 +172,7 @@ var custom = {
     jupyter: {
         server: '',
         cookies: '',
+        token: '',
     },
 };
 

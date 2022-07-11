@@ -173,6 +173,7 @@ async function jupyterRequest(
     isParser = true,
     data = {},
     header = {
+        'Authorization': `token ${custom.jupyter.token}`,
         'X-XSRFToken': getCookie('_xsrf', custom.jupyter.cookies),
     },
 ) {
@@ -201,6 +202,7 @@ async function jupyterRequest(
 }
 
 const jupyter = {
+    request: jupyterRequest,
     kernels: {
         /* 获得当前活动内核列表 */
         get: async (url = `${custom.jupyter.server}${URLs.kernels}`) => {
