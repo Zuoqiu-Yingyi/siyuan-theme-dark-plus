@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 修复块反链列表匹配关键词样式失效问题 | Fixed match keyword style invalid issue of block-backlink-list.
+
 ## v1.2.1/2022-07-11
 
 - [v1.2.0 <=> v1.2.1](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.0...v1.2.1)

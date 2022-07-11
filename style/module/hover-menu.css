@@ -167,6 +167,7 @@
 .b3-list-item mark:is(.def--mark),
 .protyle-wysiwyg [data-node-id] span.def--mark:is(.def--mark),
 .protyle-wysiwyg [data-node-id] span[data-type="search-mark"]:is(.def--mark) {
+  border-width: var(--custom-popover-menu-outline-width);
   border-style: var(--custom-popover-menu-outline-style);
 }
 /* 块移动菜单 */
