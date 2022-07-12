@@ -36,6 +36,11 @@ var config = {
                 'custom-render': 'scroll', // 是否默认添加块纵向滚动条(`scroll`: 添加, ``: 不添加)
                 'fold': '', // 是否默认折叠块(`1`: 折叠, ``: 不折叠)
             },
+            image: {
+                title: {
+                    max: 128, // 图片标题最大长度
+                },
+            },
         },
         style: {
             success: 'color: var(--b3-card-success-color); background-color: var(--b3-card-success-background);',

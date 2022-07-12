@@ -174,6 +174,7 @@ async function jupyterRequest(
     data = {},
     header = {
         'Authorization': `token ${custom.jupyter.token}`,
+        'Cookie': custom.jupyter.cookies,
         'X-XSRFToken': getCookie('_xsrf', custom.jupyter.cookies),
     },
 ) {
@@ -184,6 +185,9 @@ async function jupyterRequest(
             init = {
                 method: method,
                 headers: header,
+                // REF [关于fetch方法设置cookie](https://blog.csdn.net/qq_37822951/article/details/83216205)
+                credentials: 'include',
+                // mode: 'cors',
             };
             break;
         default:
@@ -191,6 +195,8 @@ async function jupyterRequest(
                 body: JSON.stringify(data),
                 method: method,
                 headers: header,
+                credentials: 'include',
+                // mode: 'cors',
             };
             break;
     }

@@ -22,6 +22,7 @@ import {
     base64ToBlob,
     escapeText,
     promptFormat,
+    HTMLEncode,
 } from './utils.js';
 
 var websockets = {
@@ -66,8 +67,16 @@ async function parseData(data, escaped) {
                 text = data[item];
                 break;
             case item.startsWith('image/'):
-                image = data[item].split('\n')[0];
-                ext = item.split('/')[1];
+                switch (true) {
+                    case item.endsWith('/svg+xml'):
+                        image = Buffer.from(data[item]).toString('base64');
+                        ext = 'svg';
+                        break;
+                    default:
+                        image = data[item].split('\n')[0];
+                        ext = item.split('/')[1];
+                        break;
+                }
                 mime = item;
                 break;
             case item.startsWith('application/'):
@@ -98,7 +107,7 @@ async function parseData(data, escaped) {
             filename,
         );
         const filepath = response.data.succMap[filename];
-        markdown = `![${filename}](${filepath} "${text}")`;
+        markdown = `![${filename}](${filepath} "${text.length < config.jupyter.output.image.title.max ? HTMLEncode(text) : ""}")`;
     }
     else if (text) {
         markdown = escaped
@@ -205,12 +214,14 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                 const status = message.metadata.status;
                 const payloads = message.content.payload;
 
-                /* 解析运行结果文本 */
                 let markdown = [];
-                for (const payload of payloads) {
-                    const data = payload.data;
-                    const text = await parseData(data, message_info.escaped);
-                    if (text) markdown.push(text);
+                if (payloads) {
+                    /* 解析运行结果文本 */
+                    for (const payload of payloads) {
+                        const data = payload.data;
+                        const text = await parseData(data, message_info.escaped);
+                        if (text) markdown.push(text);
+                    }
                 }
                 let code_index = message_info.index;
                 let output_index, output_style;
