@@ -6,6 +6,7 @@
 - 为部分按钮添加悬浮放大样式 | Add floating zoom style for some buttons.
 - 调整强制刷新实现方案 | Adjust the refresh implementation scheme.
 - 修复列表辅助线重叠问题 | Fixed list guides overlap issue.
+- 修复 `Jupyter` 应用解析 svg 图片错误问题 | Fixed `Jupyter` app parse svg image error issue.
 
 ## v1.2.1/2022-07-11
 

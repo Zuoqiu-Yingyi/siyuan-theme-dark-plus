@@ -583,8 +583,8 @@ export var config = {
                 //     ? '#1e1e1e'
                 //     : '#f5f5f5',
                 webPreferences: {
-                    // nodeIntegration: true, // 是否启用 Node.js 内置模块
-                    // nativeWindowOpen: true,
+                    nodeIntegration: true, // 是否启用 Node.js 内置模块
+                    nativeWindowOpen: true,
                     // webviewTag: true,
                     webSecurity: false, // 是否启用 Web 安全
                     // contextIsolation: false,

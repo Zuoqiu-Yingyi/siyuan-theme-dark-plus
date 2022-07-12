@@ -8,6 +8,8 @@ export {
     escapeText, // 转义纯文本
     promptFormat, // 格式化 prompt
     URL2DataURL, // URL 转 DataURL
+    HTMLEncode, // HTML 编码
+    HTMLDecode, // HTML 解码
 };
 
 import { config } from './config.js';
@@ -125,10 +127,13 @@ function timestampFormat(milliseconds) {
 
 /* base64 数据转换为 Blob */
 function base64ToBlob(base64Data, mime) {
-    let bstr = atob(base64Data), n = bstr.length, buffer = new Uint8Array(n);
-    while (n--) {
-        buffer[n] = bstr.charCodeAt(n);
-    }
+    // let bstr = atob(base64Data);
+    // let n = bstr.length;
+    // let buffer = new Uint8Array(n);
+    // while (n--) {
+    //     buffer[n] = bstr.charCodeAt(n);
+    // }
+    let buffer = Buffer.from(base64Data, 'base64');
     return new Blob([buffer], { type: mime });
 
     // return new Blob([atob(base64Data)], { type: mime });
@@ -168,4 +173,20 @@ async function URL2DataURL(src, dom) {
         dom.src = reader.result;
     }, false);
     reader.readAsDataURL(blob);
+}
+
+/* HTML 转义 */
+function HTMLEncode(text) {
+    // REF: [javascript处理HTML的Encode(转码)和Decode(解码)总结 - 孤傲苍狼 - 博客园](https://www.cnblogs.com/xdp-gacl/p/3722642.html)
+    let temp = document.createElement("div");
+    temp.textContent = text;
+    return temp.innerHTML;;
+}
+
+/* HTML 反转义 */
+function HTMLDecode(text) {
+    // REF: [javascript处理HTML的Encode(转码)和Decode(解码)总结 - 孤傲苍狼 - 博客园](https://www.cnblogs.com/xdp-gacl/p/3722642.html)
+    let temp = document.createElement("div");
+    temp.innerHTML = text;
+    return temp.textContent;;
 }

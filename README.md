@@ -204,14 +204,15 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   2. 找到 `c.ServerApp.allow_origin` 或 `c.NotebookApp.allow_origin` 字段
   3. 将该字段设置为思源 `'location.origin'` 或 `'*'`
      - <kbd>Ctrl + Shift + I</kbd> 打开思源的开发者工具, 在控制台中输入 `location.origin` 后回车即可获得
-  4. 保存文件并启动 jupyter 服务
+  4. (可选, Token 认证方案) 找到 `c.ServerApp.token` 字段并将该字段设置为一个足够安全的值
+  5. 保存文件并启动 jupyter 服务
 - 登录 Jupyter 服务
   1. <kbd>文档块菜单</kbd> > <kbd>Jupyter</kbd> > <kbd>全局设置</kbd>
   2. 打开全局设置窗口
   3. 输入服务器 URL 并点击 <kbd>确定</kbd>
      - `http(s)://hostname(:port)`
-  4. (可选) 点击 <kbd>测试</kbd> 链接跳转到登录页面并登录
-  5. (可选) <kbd>Ctrl + Shift + I</kbd> 打开开发者工具, 获得 `Cookies`
+  4. (可选, Cookie 认证方案) 点击 <kbd>测试</kbd> 链接跳转到登录页面并登录
+  5. (可选, Cookie 认证方案) <kbd>Ctrl + Shift + I</kbd> 打开开发者工具, 获得 `Cookies`
      - 方案1: 在控制台输入 `document.cookie` 并从输出结果复制 `_xsrf` 字段
      - 方案2: 选择一个网络链接并从 HTTP 请求头的 `Cookies` 字段复制 `_xsrf` 字段
      - `_xsrf` 字段完整格式为 `_xsrf=d|xxxxxxxx|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|dddddddddd`
@@ -252,14 +253,15 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   2. Find `c.ServerApp.allow_origin` or `c.NotebookApp.allow_origin` field.
   3. Set the field to Siyuan `location.origin` or `*`.
      - <kbd>Ctrl + Shift + I</kbd> open Siyuan's developer tools, then enter `location.origin` in the console.
-  4. Save the file and start jupyter service.
+  4. (Optional, Token certification scheme) Find `c.ServerApp.token` field and set it to a sufficiently secure value.
+  5. Save the file and start jupyter service.
 - Log in to the jupyter service.
   1. <kbd>Doc Block Menu</kbd> > <kbd>Jupyter</kbd> > <kbd>Global Settings</kbd>
   2. Open the Global Settings Window.
   3. Enter the `Service Address` and click <kbd>OK</kbd> Button.
      - `http(s)://hostname(:port)`
-  4. (Optional) Click <kbd>Test</kbd> link to jump to the login page and sign in.
-  5. (Optional) <kbd>Ctrl + Shift + I</kbd> open jupyter's developer tools, get `Cookies`.
+  4. (Optional, Cookie certification scheme) Click <kbd>Test</kbd> link to jump to the login page and sign in.
+  5. (Optional, Cookie certification scheme) <kbd>Ctrl + Shift + I</kbd> open jupyter's developer tools, get `Cookies`.
      - Scheme 1: input `document.cookie` to console and copy `_xsrf` field from output.
      - Scheme 2: select a HTTP request and copy `_xsrf` field from the HTTP header field `Cookies`
      - The style of `_xsrf` field full format is `_xsrf=d|xxxxxxxx|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|dddddddddd`
@@ -267,7 +269,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
        - `x`: A hexadecimal number.
   6. Close the Jupyter window and reopen the Global Settings Window.
   7. Input `Cookies` or `Token` and click <kbd>OK</kbd> button.
-     - `Cookies` authentication scheme only applies if the Jupyter service is the same as the SiYuan service URL host
+     - `Cookies` authentication scheme only applies if the Jupyter service is the same as the SiYuan service URL host.
        - Examples:
          - SiYuan service URL: `http://127.0.0.1:6806`
          - Jupyter service URL: `http://127.0.0.1:8888`
