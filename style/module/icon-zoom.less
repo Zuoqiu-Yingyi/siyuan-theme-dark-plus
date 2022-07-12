@@ -9,8 +9,11 @@
 }
 
 // 悬浮预览图标
-svg.popover__block:hover {
-    .popover();
+svg,
+span {
+    &.popover__block:hover {
+        .popover();
+    }
 }
 
 // 页签项图标
@@ -21,8 +24,12 @@ svg.popover__block:hover {
 .dock__item:hover,
 // 工具栏按钮
 .toolbar__item:hover,
+// 按钮
+.b3-list-item__action:hover,
 .block__icon:hover {
-    svg {
+
+    svg,
+    img {
         .popover();
     }
 }
