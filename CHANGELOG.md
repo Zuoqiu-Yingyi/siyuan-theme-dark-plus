@@ -4,6 +4,7 @@
 - [#81](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/81) 修复 PDF 标注悬浮预览动画问题 | Fixed PDF annotation floating preview animation issue.
 - `Jupyter` 支持使用 `token` 认证 | `Jupyter` supports `token` authentication.
 - 为部分按钮添加悬浮放大样式 | Add floating zoom style for some buttons.
+- 调整强制刷新实现方案 | Adjust the refresh implementation scheme.
 
 ## v1.2.1/2022-07-11
 
