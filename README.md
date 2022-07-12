@@ -221,8 +221,8 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   7. 输入 `Cookies` 或 `Token` 并点击 <kbd>确定</kbd>
      - `Cookies` 认证方案仅适用于 Jupyter 服务与思源服务 URL host 相同的情况
        - 示例:
-         - 思源 URL: `http://127.0.0.1:6806`
-         - Jupyter URL: `http://127.0.0.1:8888`
+         - 思源服务 URL: `http://127.0.0.1:6806`
+         - Jupyter 服务 URL: `http://127.0.0.1:8888`
   8. 关闭全局设置窗口
   9.  单击 <kbd>重新加载窗口</kbd> 按钮或 <kbd>Ctrl + F5</kbd> 刷新页面
 - 建立会话
@@ -267,6 +267,10 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
        - `x`: A hexadecimal number.
   6. Close the Jupyter window and reopen the Global Settings Window.
   7. Input `Cookies` or `Token` and click <kbd>OK</kbd> button.
+     - `Cookies` authentication scheme only applies if the Jupyter service is the same as the SiYuan service URL host
+       - Examples:
+         - SiYuan service URL: `http://127.0.0.1:6806`
+         - Jupyter service URL: `http://127.0.0.1:8888`
   8. Close the Global Settings Window.
   9.  Click <kbd>Reload the Window</kbd> button or <kbd>Ctrl + F5</kbd> to reload window.
 - Establish a session.
