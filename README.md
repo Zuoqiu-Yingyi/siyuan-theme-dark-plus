@@ -219,8 +219,12 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
        - `x`: 一个十六进制数字
   6. 关闭 Jupyter 窗口并重新打开全局设置窗口
   7. 输入 `Cookies` 或 `Token` 并点击 <kbd>确定</kbd>
+     - `Cookies` 认证方案仅适用于 Jupyter 服务与思源服务 URL host 相同的情况
+       - 示例:
+         - 思源 URL: `http://127.0.0.1:6806`
+         - Jupyter URL: `http://127.0.0.1:8888`
   8. 关闭全局设置窗口
-  9. 单击 <kbd>重新加载窗口</kbd> 按钮或 <kbd>Ctrl + F5</kbd> 刷新页面
+  9.  单击 <kbd>重新加载窗口</kbd> 按钮或 <kbd>Ctrl + F5</kbd> 刷新页面
 - 建立会话
   1. <kbd>文档块菜单</kbd> > <kbd>Jupyter</kbd> > <kbd>文档设置</kbd>
   2. 打开文档设置窗口
