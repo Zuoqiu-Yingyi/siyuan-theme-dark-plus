@@ -133,8 +133,8 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                         i18n[execution_state][lang] || i18n[execution_state].default,
                     )
                 };
-                await setBlockDOMAttrs(message_info.doc, doc_attrs);
                 await setBlockAttrs(message_info.doc, doc_attrs);
+                await setBlockDOMAttrs(message_info.doc, doc_attrs);
             }
             break;
         case "stream": // 代码输出文本信息
@@ -201,10 +201,10 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                     [config.jupyter.attrs.code.time]: `${i18n.start[lang] || i18n.start.default}: ${date.format('yyyy-MM-dd hh:mm:ss')}`,
                 };
                 let output_attrs = { [config.jupyter.attrs.output.index]: '*' };
-                await setBlockDOMAttrs(message_info.code, code_attrs);
-                await setBlockDOMAttrs(message_info.output, output_attrs);
                 await setBlockAttrs(message_info.code, code_attrs);
                 await setBlockAttrs(message_info.output, output_attrs);
+                await setBlockDOMAttrs(message_info.code, code_attrs);
+                await setBlockDOMAttrs(message_info.output, output_attrs);
             }
             break;
         case "input_request": // 需要输入信息
@@ -260,10 +260,10 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                     [config.jupyter.attrs.output.index]: output_index,
                     // style: output_style,
                 };
-                await setBlockDOMAttrs(message_info.code, code_attrs);
-                await setBlockDOMAttrs(message_info.output, output_attrs);
                 await setBlockAttrs(message_info.code, code_attrs);
                 await setBlockAttrs(message_info.output, output_attrs);
+                await setBlockDOMAttrs(message_info.code, code_attrs);
+                await setBlockDOMAttrs(message_info.output, output_attrs);
                 markdown.push('---');
                 await appendBlock(message_info.output, markdown.join('\n'));
             }

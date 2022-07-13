@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 使用 `Less` 重构 `custom-writing-modes.css` | Refactored `custom-writing-modes.css` with `Less`.
+
 ## v1.2.2/2022-07-13
 
 - [v1.2.1 <=> v1.2.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.1...v1.2.2)
