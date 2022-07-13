@@ -6,20 +6,23 @@
  * sideways-rl：对于左对齐(ltr)文本，内容从下到上垂直流动。对于右对齐(rtr)文本，内容从上到下垂直流动。所有字形（即使是垂直文本中的字形）都朝向右侧。 (默认样式顺时针旋转 90°)
  * sideways-lr：对于左对齐(ltr)文本，内容从上到下垂直流动。对于右对齐(rtr)文本，内容从下到上垂直流动。所有字形（即使是垂直文本中的字形）都朝向左侧。 (默认样式逆时针旋转 90°)
  */
-@import url(/appearance/themes/Dark+/style/module/config.css);
-@import url(/widgets/custom.css);
-.protyle-content [custom-writing-mode="horizontal-tb"] {
-  writing-mode: horizontal-tb;
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+.writing-mode(@mode) {
+    [custom-writing-mode="@{mode}"] {
+        writing-mode: @mode;
+    }
+
 }
-.protyle-content [custom-writing-mode="vertical-rl"] {
-  writing-mode: vertical-rl;
-}
-.protyle-content [custom-writing-mode="vertical-lr"] {
-  writing-mode: vertical-lr;
-}
-.protyle-content [custom-writing-mode="sideways-rl"] {
-  writing-mode: sideways-rl;
-}
-.protyle-content [custom-writing-mode="sideways-lr"] {
-  writing-mode: sideways-lr;
+
+.protyle-content {
+    .writing-mode(horizontal-tb);
+    .writing-mode(vertical-rl);
+    .writing-mode(vertical-lr);
+
+    // 仅 Firefox 支持
+    .writing-mode(sideways-rl);
+    .writing-mode(sideways-lr);
 }
