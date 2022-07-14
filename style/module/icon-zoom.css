@@ -2,7 +2,8 @@
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 svg.popover__block:hover,
-span.popover__block:hover {
+.counter.popover__block:hover,
+.protyle-attr--refcount.popover__block:hover {
   transform: scale(1.25);
   transition: all 0.1s ease-in-out;
 }
