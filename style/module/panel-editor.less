@@ -4,10 +4,14 @@
 @import (css) url(/widgets/custom.css);
 
 .page-margins() {
-    margin-left: var(--custom-editor-padding-left) !important;
-    margin-right: var(--custom-editor-padding-right) !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+
+    // 关闭自适应宽度后会使用 width 属性限制内容宽度
+    &:not([style *="width"]) {
+        margin-left: var(--custom-editor-padding-left) !important;
+        margin-right: var(--custom-editor-padding-right) !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
 }
 
 .fn__flex-1.protyle.fullscreen {
@@ -46,8 +50,12 @@
 .protyle-content {
     >.protyle-background {
         >.protyle-background__iconw {
-            /* 文档标志 */
-            left: var(--custom-editor-padding-left) !important;
+
+            // 开启自适应宽度后边距在 96px 与 16px之间切换
+            &:is([style="left:96px"], [style="left:16px"]) {
+                /* 文档标志 */
+                left: var(--custom-editor-padding-left) !important;
+            }
         }
     }
 
