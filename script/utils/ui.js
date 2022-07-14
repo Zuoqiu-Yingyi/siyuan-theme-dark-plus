@@ -135,9 +135,17 @@ function toolbarItemListPush(item) {
                 setTimeout(async () => saveCustomFile(custom), 0);
             });
 
+            /* 分割线 */
+            let divider_before = document.createElement('div');
+            let divider_after = document.createElement('div');
+            divider_before.className = 'protyle-toolbar__divider';
+            divider_after.className = 'protyle-toolbar__divider';
+
             itemStateLoad(config.theme.toolbar.more.id, custom.theme.toolbar, more);
+            toolbar.insertBefore(divider_before, windowControls);
             toolbar.insertBefore(more, windowControls);
             toolbar.insertBefore(custom_toolbar, windowControls);
+            toolbar.insertBefore(divider_after, windowControls);
         }
 
         toolbarItemList = toolbarItemList.sort((a, b) => a.index - b.index);
