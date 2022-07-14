@@ -3,6 +3,7 @@
 - 使用 `Less` 重构 `custom-writing-modes.css` | Refactored `custom-writing-modes.css` with `Less`.
 - [#84](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/84) 适配窗口自适应功能(v2.0.26) | Adapted the window-adaptive function (v2.0.26).
 - 块引用计数元素鼠标悬浮放大 | Blockquote counting element mouse hover zooms in.
+- 调整上下停靠栏按钮样式 | Adjusted the style of top dock and bottom dock.
 
 ## v1.2.2/2022-07-13
 
