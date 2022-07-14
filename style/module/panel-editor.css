@@ -25,12 +25,14 @@
   line-height: normal;
   border: 1px solid var(--b3-theme-on-surface-light);
 }
-.protyle-content > .protyle-background > .protyle-background__iconw {
+.protyle-content > .protyle-background > .protyle-background__iconw:is([style="left:96px"], [style="left:16px"]) {
   /* 文档标志 */
   left: var(--custom-editor-padding-left) !important;
 }
 .protyle-content > .protyle-title {
   /* 标题 */
+}
+.protyle-content > .protyle-title:not([style *="width"]) {
   margin-left: var(--custom-editor-padding-left) !important;
   margin-right: var(--custom-editor-padding-right) !important;
   padding-left: 0 !important;
@@ -40,7 +42,7 @@
   /*编辑区文件名*/
   background: transparent;
 }
-.protyle-content > .protyle-wysiwyg {
+.protyle-content > .protyle-wysiwyg:not([style *="width"]) {
   margin-left: var(--custom-editor-padding-left) !important;
   margin-right: var(--custom-editor-padding-right) !important;
   padding-left: 0 !important;
