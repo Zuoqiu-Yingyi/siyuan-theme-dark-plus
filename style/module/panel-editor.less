@@ -39,11 +39,25 @@
     background-color: var(--custom-editor-breadcrumb-bar-background-color);
     /* box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5); */
 
-    .protyle-breadcrumb__item {
-        /* 导航栏文字 */
-        line-height: normal;
-        border: 1px solid var(--b3-theme-on-surface-light);
+    >.protyle-breadcrumb__bar {
+
+        >.protyle-breadcrumb__item {
+            /* 导航栏文字 */
+            line-height: normal;
+            border: 1px solid var(--b3-theme-on-surface-light);
+
+            // 文档
+            &:first-child {
+
+                &,
+                .protyle-breadcrumb__text--ellipsis {
+                    /* 文档路径完整显示 */
+                    max-width: none;
+                }
+            }
+        }
     }
+
 }
 
 // 编辑区内容
