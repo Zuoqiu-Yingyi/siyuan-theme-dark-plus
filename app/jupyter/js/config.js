@@ -1,15 +1,8 @@
 export {
     url,
     config,
-    custom,
-    saveCustomFile,
-    getCustomJson,
 }
 
-import {
-    getFile,
-    putFile,
-} from './api.js';
 import { merge } from './utils.js';
 
 // url
@@ -18,7 +11,6 @@ const url = new URL(window.location.href);
 var config = {
     jupyter: {
         path: {
-            customJson: '/temp/jupyter/custom.json',
             global: '/appearance/themes/Dark+/app/jupyter/settings-global.html',
             document: '/appearance/themes/Dark+/app/jupyter/settings-document.html',
         },
@@ -172,39 +164,12 @@ var config = {
     },
 };
 
-// 自定义配置
-var custom = {
-    jupyter: {
-        server: '',
-        cookies: '',
-        token: '',
-    },
-};
-
-/* 保存用户配置至文件 */
-async function saveCustomFile(data = custom, path = config.jupyter.path.customJson) {
-    const response = await putFile(path, JSON.stringify(data, undefined, 4));
-    // console.log(response);
-    return response;
-}
-
-/* 重新加载用户配置文件 */
-async function getCustomJson(path = config.jupyter.path.customJson) {
-    let customjson = await getFile(config.jupyter.path.customJson);
-    if (customjson) customjson = await customjson.json();
-    return customjson;
-}
-
 try {
     // 合并配置文件 custom.js
     const customjs = await import('/widgets/custom.js');
     if (customjs.config) merge(config, customjs.config);
-
-    const customjson = await getCustomJson();
-    if (customjson) merge(custom, customjson);
 } catch (err) {
     console.warn(err);
 } finally {
     console.log(config);
-    console.log(custom);
 }

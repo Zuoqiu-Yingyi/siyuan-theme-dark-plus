@@ -11,10 +11,8 @@ export {
     jupyter,
 }
 
-import {
-    config,
-    custom,
-} from './config.js';
+import { config } from './config.js';
+import { custom } from '../../public/custom.js';
 import { getCookie } from './utils.js';
 
 /* 读取文件 */

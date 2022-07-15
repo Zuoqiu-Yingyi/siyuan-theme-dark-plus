@@ -34,9 +34,6 @@ export var config = {
                         icon: '#iconFullscreen',
                         label: {
                             zh_CN: '展开扩展工具栏',
-                            zh_CNT: null,
-                            fr_FR: null,
-                            en_US: null,
                             other: 'Expand the Expansion Toolbar',
                         },
                     },
@@ -44,9 +41,6 @@ export var config = {
                         icon: '#iconContract',
                         label: {
                             zh_CN: '收起扩展工具栏',
-                            zh_CNT: null,
-                            fr_FR: null,
-                            en_US: null,
                             other: 'Collapse the Expansion Toolbar',
                         },
                     },
@@ -71,9 +65,6 @@ export var config = {
                     hotkey: () => config.theme.hotkeys.style.guides,
                     label: {
                         zh_CN: '列表辅助线',
-                        zh_CNT: null,
-                        fr_FR: null,
-                        en_US: null,
                         other: 'List Guides',
                     },
                     icon: '#iconIndent',
@@ -100,9 +91,6 @@ export var config = {
                     hotkey: () => config.theme.hotkeys.style.mark,
                     label: {
                         zh_CN: '显示标记文本',
-                        zh_CNT: null,
-                        fr_FR: null,
-                        en_US: null,
                         other: 'Displays Mark Text',
                     },
                     icon: '#iconMark',
@@ -129,9 +117,6 @@ export var config = {
                     hotkey: () => config.theme.hotkeys.style.render,
                     label: {
                         zh_CN: '渲染自定义样式',
-                        zh_CNT: null,
-                        fr_FR: null,
-                        en_US: null,
                         other: 'Render Custom Styles',
                     },
                     icon: '#iconTheme',
@@ -174,9 +159,6 @@ export var config = {
                     hotkey: () => config.theme.hotkeys.reload.window,
                     label: {
                         zh_CN: '重新加载窗口',
-                        zh_CNT: null,
-                        fr_FR: null,
-                        en_US: null,
                         other: 'Reload the Window',
                     },
                     icon: '#iconRefresh',
@@ -200,9 +182,6 @@ export var config = {
                         hotkey: () => config.theme.hotkeys.doc.heading.fold,
                         label: {
                             zh_CN: '折叠当前文档所有子标题',
-                            zh_CNT: null,
-                            fr_FR: null,
-                            en_US: null,
                             other: 'Collapses Sll Subheadings of the Current Document',
                         },
                         icon: '#iconContract',
@@ -211,16 +190,10 @@ export var config = {
                     message: {
                         success: {
                             zh_CN: '折叠完成, 请刷新当前文档',
-                            zh_CNT: null,
-                            fr_FR: null,
-                            en_US: null,
                             other: 'Collapse completed, please refresh the current document.',
                         },
                         error: {
                             zh_CN: '折叠失败，请在编辑区中选择文档',
-                            zh_CNT: null,
-                            fr_FR: null,
-                            en_US: null,
                             other: 'Collapse failed, please select the document in the editing area.',
                         },
                     },
@@ -234,9 +207,6 @@ export var config = {
                         hotkey: () => config.theme.hotkeys.doc.heading.unfold,
                         label: {
                             zh_CN: '展开当前文档所有子标题',
-                            zh_CNT: null,
-                            fr_FR: null,
-                            en_US: null,
                             other: 'Expand Sll Subheadings of the Current Document',
                         },
                         icon: '#iconFullscreen',
@@ -245,16 +215,10 @@ export var config = {
                     message: {
                         success: {
                             zh_CN: '展开完成, 请刷新当前文档',
-                            zh_CNT: null,
-                            fr_FR: null,
-                            en_US: null,
                             other: 'Expand completed, please refresh the current document.',
                         },
                         error: {
                             zh_CN: '展开失败，请在编辑区中选择文档',
-                            zh_CNT: null,
-                            fr_FR: null,
-                            en_US: null,
                             other: 'Expand failed, please select the document in the editing area.',
                         },
                     },
@@ -269,16 +233,10 @@ export var config = {
                 message: {
                     success: {
                         zh_CN: '复制当前文档大纲完成',
-                        zh_CNT: null,
-                        fr_FR: null,
-                        en_US: null,
                         other: 'Copying the current document outline is complete.',
                     },
                     error: {
                         zh_CN: '复制当前文档大纲失败，请在编辑区中选择包含子标题的文档',
-                        zh_CNT: null,
-                        fr_FR: null,
-                        en_US: null,
                         other: 'Copying the current document outline failed, please select the document that contains the subheading in the editing area.',
                     },
                 },
@@ -291,9 +249,6 @@ export var config = {
                         hotkey: () => config.theme.hotkeys.doc.outline.u,
                         label: {
                             zh_CN: '复制当前文档大纲为无序列表',
-                            zh_CNT: null,
-                            fr_FR: null,
-                            en_US: null,
                             other: 'Copy the Current Document Outline as an Unordered List',
                         },
                         icon: '#iconList',
@@ -309,9 +264,6 @@ export var config = {
                         hotkey: () => config.theme.hotkeys.doc.outline.o,
                         label: {
                             zh_CN: '复制当前文档大纲为有序列表',
-                            zh_CNT: null,
-                            fr_FR: null,
-                            en_US: null,
                             other: 'Copy the Current Document Outline as an Ordered List',
                         },
                         icon: '#iconOrderedList',
@@ -327,9 +279,6 @@ export var config = {
                         hotkey: () => config.theme.hotkeys.doc.outline.t,
                         label: {
                             zh_CN: '复制当前文档大纲为任务列表',
-                            zh_CNT: null,
-                            fr_FR: null,
-                            en_US: null,
                             other: 'Copy the Current Document Outline as a Task List',
                         },
                         icon: '#iconCheck',
@@ -356,9 +305,6 @@ export var config = {
                     hotkey: () => config.theme.hotkeys.doc.copy,
                     label: {
                         zh_CN: '复制当前文档内容 (Markdown)',
-                        zh_CNT: null,
-                        fr_FR: null,
-                        en_US: null,
                         other: 'Copy the Current Document Content (Markdown)',
                     },
                     icon: '#iconCopy',
@@ -374,9 +320,6 @@ export var config = {
                     hotkey: () => config.theme.hotkeys.doc.delete,
                     label: {
                         zh_CN: '删除当前文档内容',
-                        zh_CNT: null,
-                        fr_FR: null,
-                        en_US: null,
                         other: 'Delete the Current Document Content',
                     },
                     icon: '#iconTrashcan',
@@ -392,9 +335,6 @@ export var config = {
                     hotkey: () => config.theme.hotkeys.doc.cut,
                     label: {
                         zh_CN: '剪切当前文档内容 (Markdown)',
-                        zh_CNT: null,
-                        fr_FR: null,
-                        en_US: null,
                         other: 'Cut the Current Document Content (Markdown)',
                     },
                     icon: '#iconCut',
@@ -414,9 +354,6 @@ export var config = {
                     hotkey: () => config.theme.hotkeys.typewriter.switch,
                     label: {
                         zh_CN: '打字机模式',
-                        zh_CNT: null,
-                        fr_FR: null,
-                        en_US: null,
                         other: 'Typewriter Mode',
                     },
                     icon: '#iconKeymap',
@@ -442,9 +379,6 @@ export var config = {
                 hotkey: () => config.theme.hotkeys.invert,
                 label: {
                     zh_CN: '反色显示',
-                    zh_CNT: null,
-                    fr_FR: null,
-                    en_US: null,
                     other: 'Display in Inverse Color',
                 },
                 icon: '#iconMoon',
@@ -500,9 +434,6 @@ export var config = {
                         hotkey: () => config.theme.hotkeys.background.image.web,
                         label: {
                             zh_CN: '更换背景图片 (网络)',
-                            zh_CNT: null,
-                            fr_FR: null,
-                            en_US: null,
                             other: 'Change Background Image (Web)',
                         },
                         icon: '#iconImage',
@@ -530,9 +461,6 @@ export var config = {
                         hotkey: () => config.theme.hotkeys.background.image.custom,
                         label: {
                             zh_CN: '更换背景图片 (自定义)',
-                            zh_CNT: null,
-                            fr_FR: null,
-                            en_US: null,
                             other: 'Change Background Image (Custom)',
                         },
                         icon: '#iconImage',
@@ -681,9 +609,6 @@ export var config = {
                         id: 'toolbar-theme-window-open-panel',
                         label: {
                             zh_CN: '打开一个新窗口',
-                            zh_CNT: null,
-                            fr_FR: null,
-                            en_US: null,
                             other: 'Open a New Window',
                         },
                         icon: '#iconExport',
@@ -704,9 +629,6 @@ export var config = {
                             hotkey: () => config.theme.hotkeys.window.open.block.outfocus,
                             label: {
                                 zh_CN: '在新窗口打开当前块',
-                                zh_CNT: null,
-                                fr_FR: null,
-                                en_US: null,
                                 other: 'Open the Current Block in a New Window',
                             },
                             icon: '#iconExport',
@@ -723,9 +645,6 @@ export var config = {
                             hotkey: () => config.theme.hotkeys.window.open.block.infocus,
                             label: {
                                 zh_CN: '在新窗口打开当前块并聚焦',
-                                zh_CNT: null,
-                                fr_FR: null,
-                                en_US: null,
                                 other: 'Open the Current Block in a New Window and Focus',
                             },
                             icon: '#iconExport',
@@ -753,8 +672,8 @@ export var config = {
                         index: '/appearance/themes/Dark+/app/editor/', // 编辑器路径
                         temp: {
                             // 临时文件路径
-                            relative: '/temp/editor/', // 临时文件相对路径
-                            absolute: `${window.siyuan.config.system.workspaceDir}temp/editor/`.replaceAll('\\', '/').replaceAll('//', '/'), // 临时文件绝对路径
+                            relative: '/temp/theme/editor/', // 临时文件相对路径
+                            absolute: `${window.siyuan.config.system.workspaceDir}temp/theme/editor/`.replaceAll('\\', '/').replaceAll('//', '/'), // 临时文件绝对路径
                         },
                     },
                     kramdown: {
@@ -800,9 +719,6 @@ export var config = {
                     hotkey: () => config.theme.hotkeys.location.record,
                     label: {
                         zh_CN: '记录浏览位置',
-                        zh_CNT: null,
-                        fr_FR: null,
-                        en_US: null,
                         other: 'Record Browsing Location',
                     },
                     icon: '#iconBookmark',
@@ -818,9 +734,6 @@ export var config = {
                     hotkey: () => config.theme.hotkeys.location.clear,
                     label: {
                         zh_CN: '清除当前文档浏览位置记录',
-                        zh_CNT: null,
-                        fr_FR: null,
-                        en_US: null,
                         other: 'Clear the Current Document Browsing Location History',
                     },
                     icon: '#iconTrashcan',
@@ -836,9 +749,6 @@ export var config = {
                 id: 'toolbar-theme-readonly',
                 label: {
                     zh_CN: '只读模式',
-                    zh_CNT: null,
-                    fr_FR: null,
-                    en_US: null,
                     other: 'Read-Only Mode',
                 },
                 icon: '#iconPreview',
@@ -857,9 +767,6 @@ export var config = {
                     hotkey: () => config.theme.hotkeys.dock.fold,
                     label: {
                         zh_CN: '专注模式',
-                        zh_CNT: null,
-                        fr_FR: null,
-                        en_US: null,
                         other: 'Focus Mode',
                     },
                     icon: '#iconHideDock',
@@ -878,9 +785,6 @@ export var config = {
                     hotkey: () => config.theme.hotkeys.menu.block,
                     label: {
                         zh_CN: '块菜单增强',
-                        zh_CNT: null,
-                        fr_FR: null,
-                        en_US: null,
                         other: 'Block Menu Enhancements',
                     },
                     icon: '#iconMenu',
