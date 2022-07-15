@@ -3,8 +3,6 @@
 @import (css) url(/appearance/themes/Dark+/style/module/config.css);
 @import (css) url(/widgets/custom.css);
 
-
-
 .b3-dialog__container {
     /* 对话框图片 */
     background-image: var(--custom-background-image-dialog);
@@ -62,6 +60,12 @@
             .config-account__center--text {
                 background-color: transparent;
             }
+
+            .config-bazaar__readme {
+                /* 主题预览对话框 */
+                background-color: var(--custom-dialog-readme-background-color);
+            }
+
         }
     }
 
@@ -70,13 +74,6 @@
             /* 自定义属性名称全宽显示 */
             min-width: 100px;
             width: auto !important;
-        }
-    }
-
-    // 历史对话框
-    #historyContainer {
-        >* {
-            background-color: transparent !important;
         }
     }
 }
@@ -90,17 +87,15 @@
 
 /* 历史容器 */
 #historyContainer {
+    >* {
+        background-color: transparent !important;
+    }
 
     .history__asset,
     .history__text {
         /* 历史对话框内容框 */
         // border-left: 2px solid var(--b3-border-color);
         background-color: transparent;
-    }
-
-    /* 主题预览对话框 */
-    #configBazaarReadme {
-        background-color: var(--custom-dialog-readme-background-color);
     }
 
     .b3-dialog__scrim {

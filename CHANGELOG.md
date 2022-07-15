@@ -5,6 +5,7 @@
 - 块引用计数元素鼠标悬浮放大 | Blockquote counting element mouse hover zooms in.
 - 调整上下停靠栏按钮样式 | Adjusted the style of top dock and bottom dock.
 - 为自定义工具栏项添加分割线 | Added dividers for custom tool bar items.
+- 修复集市内容预览背景样式问题 | Fixed the background style of preview in the bazaar.
 
 ## v1.2.2/2022-07-13
 

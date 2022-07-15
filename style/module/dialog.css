@@ -38,13 +38,14 @@
 .b3-dialog__container .fn__flex > .b3-tab-container .config-account__center--text {
   background-color: transparent;
 }
+.b3-dialog__container .fn__flex > .b3-tab-container .config-bazaar__readme {
+  /* 主题预览对话框 */
+  background-color: var(--custom-dialog-readme-background-color);
+}
 .b3-dialog__container label.customItem > span.ft__on-surface.fn__flex-center {
   /* 自定义属性名称全宽显示 */
   min-width: 100px;
   width: auto !important;
-}
-.b3-dialog__container #historyContainer > * {
-  background-color: transparent !important;
 }
 /* 搜索结果列表 */
 #searchList,
@@ -52,16 +53,13 @@
   background-color: transparent;
 }
 /* 历史容器 */
-#historyContainer {
-  /* 主题预览对话框 */
+#historyContainer > * {
+  background-color: transparent !important;
 }
 #historyContainer .history__asset,
 #historyContainer .history__text {
   /* 历史对话框内容框 */
   background-color: transparent;
-}
-#historyContainer #configBazaarReadme {
-  background-color: var(--custom-dialog-readme-background-color);
 }
 #historyContainer .b3-dialog__scrim {
   /* 对话框遮罩 */
