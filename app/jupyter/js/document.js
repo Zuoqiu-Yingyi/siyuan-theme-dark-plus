@@ -1,8 +1,8 @@
 import {
     url,
     config,
-    custom,
 } from './config.js';
+import { custom } from '../../public/custom.js';
 import {
     jupyter,
     getBlockAttrs,

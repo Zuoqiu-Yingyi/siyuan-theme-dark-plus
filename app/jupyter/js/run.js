@@ -12,10 +12,8 @@ import {
     appendBlock,
     updateBlock,
 } from './api.js';
-import {
-    config,
-    custom,
-} from './config.js';
+import { config } from './config.js';
+import { custom } from './../../public/custom.js';
 import {
     setBlockDOMAttrs,
     timestampFormat,

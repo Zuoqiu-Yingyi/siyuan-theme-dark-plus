@@ -7,6 +7,7 @@
 - 为自定义工具栏项添加分割线 | Added dividers for custom tool bar items.
 - 修复集市内容预览背景样式问题 | Fixed the background style of preview in the bazaar.
 - 面包屑完整显示文档路径 | Breadcrumbs display the full path of the document.
+- 重构不能公开的应用自定义配置信息加载方法 | Refactored the loading method of the app custom configuration information which cannot be exposed.
 
 ## v1.2.2/2022-07-13
 

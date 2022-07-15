@@ -1,6 +1,6 @@
 export {
     merge, // 递归合并对象
-    getCookie, // 获取 cookie\
+    getCookie, // 获取 cookie
     setCookie, // 设置 cookie
     setBlockDOMAttrs, // 设置 DOM 中的块属性
     timestampFormat, // 时间格式化

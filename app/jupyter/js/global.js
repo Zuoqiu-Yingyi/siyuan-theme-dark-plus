@@ -1,8 +1,8 @@
+import { config } from './config.js';
 import {
-    config,
     custom,
     saveCustomFile,
-} from './config.js';
+} from '../../public/custom.js';
 
 const server_input = document.getElementById(config.jupyter.id.server.input);
 const cookie_input = document.getElementById(config.jupyter.id.cookies.input);
