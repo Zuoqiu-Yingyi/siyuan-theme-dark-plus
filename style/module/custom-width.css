@@ -1,11 +1,9 @@
 /* 宽度设置 */
-
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-
-.protyle-wysiwyg [data-node-id][custom-width="100%"].iframe>.iframe-content,
-.protyle-wysiwyg [data-node-id][custom-width="100%"].iframe>.iframe-content>iframe,
-.protyle-wysiwyg [data-node-id][custom-width="100%"].iframe>.iframe-content>video,
-.protyle-wysiwyg [data-node-id][custom-width="100%"].iframe>.iframe-content>audio {
-    width: 100% !important;
+.protyle-wysiwyg [data-node-id][custom-width="100%"].iframe > .iframe-content,
+.protyle-wysiwyg [data-node-id][custom-width="100%"].iframe > .iframe-content > iframe,
+.protyle-wysiwyg [data-node-id][custom-width="100%"].iframe > .iframe-content > video,
+.protyle-wysiwyg [data-node-id][custom-width="100%"].iframe > .iframe-content > audio {
+  width: 100% !important;
 }

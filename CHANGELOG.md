@@ -8,6 +8,7 @@
 - 修复集市内容预览背景样式问题 | Fixed the background style of preview in the bazaar.
 - 面包屑完整显示文档路径 | Breadcrumbs display the full path of the document.
 - 重构不能公开的应用自定义配置信息加载方法 | Refactored the loading method of the app custom configuration information which cannot be exposed.
+- 使用 `Less` 重构 `custom-width.css` | Refactored `custom-width.css` with `Less`.
 
 ## v1.2.2/2022-07-13
 

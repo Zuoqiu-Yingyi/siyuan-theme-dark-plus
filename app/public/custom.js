@@ -39,6 +39,7 @@ async function loadCustomFile(path = config.customJsonFilePath) {
 try {
     const customjson = await loadCustomFile();
     if (customjson) merge(custom, customjson);
+    await saveCustomFile(custom);
 } catch (err) {
     console.warn(err);
 } finally {

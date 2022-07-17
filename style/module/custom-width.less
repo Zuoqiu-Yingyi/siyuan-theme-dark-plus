@@ -1,0 +1,18 @@
+/* 宽度设置 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+.protyle-wysiwyg {
+    [data-node-id][custom-width="100%"].iframe {
+        >.iframe-content {
+
+            &,
+            >iframe,
+            >video,
+            >audio {
+                width: 100% !important;
+            }
+        }
+    }
+}
