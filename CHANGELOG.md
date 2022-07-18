@@ -1,7 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 使用快捷键 <kbd>Shift + Alt + B</kbd> 启动/关闭页签纵向排列功能 | Use the shortcut <kbd>Shift + Alt + B</kbd> to turn on/off the feature of tabs are arranged vertically.
-
+- 动态加载样式支持在其他主题调用 | Dynamic loading of style support in other themes called.
 
 ## v1.2.3/2022-07-18
 
