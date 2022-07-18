@@ -1,4 +1,6 @@
 /* 显示标记文本内容 */
+@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/widgets/custom.css);
 
 .protyle-content mark,
 .protyle-content mark:hover {
