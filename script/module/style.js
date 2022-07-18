@@ -148,6 +148,18 @@ setTimeout(() => {
                     _ => Fn_mark(),
                 );
             }
+            if (config.theme.style.tabbar.enable) {
+                const Fn_tabbar = toolbarItemInit(
+                    config.theme.style.tabbar.toolbar,
+                    () => changeStyleState(config.theme.style.tabbar),
+                );
+                // 使用快捷键显示/遮盖标记文本
+                globalEventHandler.addEventHandler(
+                    'keyup',
+                    config.theme.hotkeys.style.tabbar,
+                    _ => Fn_tabbar(),
+                );
+            }
         }
     } catch (err) {
         console.error(err);
