@@ -56,6 +56,30 @@ export var config = {
             save: {
                 enable: false, // 是否启用保存自定义样式
             },
+            tabbar: {
+                enable: true, // 是否启用纵向选项卡
+                toolbar: { // 菜单栏
+                    enable: true,
+                    display: true,
+                    id: 'toolbar-theme-style-tabbar',
+                    hotkey: () => config.theme.hotkeys.style.tabbar,
+                    label: {
+                        zh_CN: '纵向排列选项卡',
+                        other: 'Arrange Tabs Vertically',
+                    },
+                    icon: '#iconSort',
+                    index: -7,
+                },
+                elements: {
+                    tabbar: {
+                        enable: true,
+                        style: {
+                            id: 'theme-style-tab-bar-vertical-style',
+                            href: '/appearance/themes/Dark+/style/dynamic-module/tab-bar-vertical.css', // 样式文件 URL
+                        },
+                    },
+                },
+            },
             guides: {
                 enable: true, // 是否启用辅助样式
                 toolbar: { // 菜单栏
@@ -722,7 +746,7 @@ export var config = {
                         other: 'Record Browsing Location',
                     },
                     icon: '#iconBookmark',
-                    index: -8,
+                    index: -9,
                 },
             },
             clear: {
@@ -788,7 +812,7 @@ export var config = {
                         other: 'Block Menu Enhancements',
                     },
                     icon: '#iconMenu',
-                    index: -7,
+                    index: -8,
                 },
                 items: [ // 块菜单项
                     { // 常用字体设置
@@ -2221,6 +2245,14 @@ export var config = {
                     Alt: false,
                     key: 'F1',
                 },
+                tabbar: {
+                    // 列表辅助线样式(Shift + Alt + B)
+                    CtrlCmd: false,
+                    WinCtrl: false,
+                    Shift: true,
+                    Alt: true,
+                    key: 'B',
+                },
                 guides: {
                     // 列表辅助线样式(Shift + Alt + G)
                     CtrlCmd: false,
@@ -2527,6 +2559,7 @@ export var custom = {
             [config.theme.toolbar.more.id]: { default: true }, // 工具栏是否展开
             [config.theme.location.record.toolbar.id]: { default: false }, // 当前浏览位置
             [config.theme.menu.block.toolbar.id]: { default: false }, // 块功能增强
+            [config.theme.style.tabbar.toolbar.id]: { default: false }, // 纵向排列选项卡
             [config.theme.style.guides.toolbar.id]: { default: false }, // 列表辅助线
             [config.theme.style.mark.toolbar.id]: { default: false }, // 显示标记文本
             [config.theme.invert.toolbar.id]: { default: false }, // 反色显示

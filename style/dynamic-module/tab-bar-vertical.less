@@ -1,0 +1,17 @@
+.layout__center {
+    [data-type='wnd'][data-id] {
+        display: flex;
+        flex-direction: row;
+
+        >.layout-tab-bar {
+            display: inline;
+            max-width: var(--custom-tab-bar-vertical-max-width);
+            // border-right: 1px solid var(--b3-border-color);
+            outline: 2px solid var(--b3-theme-on-surface-light);
+
+            .item__text {
+                text-align: unset;
+            }
+        }
+    }
+}

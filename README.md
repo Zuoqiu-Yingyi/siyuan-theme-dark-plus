@@ -113,15 +113,16 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | <kbd>Ctrl/⌘ + 鼠标左键</kbd><br/><kbd>Ctrl/⌘ + Left Mouse Button</kbd>             | 挂件块/iframe块<br/>widget block/iframe block                                                                     | 重新加载块内容<br/>reload the block contents                                                                                |
 | <kbd>Ctrl/⌘ + F1</kbd>                                                             | 当前文档<br/>current document                                                                                     | 渲染当前文档所有块的自定义样式<br/>render the custom style for all blocks in the current document                           |
 | <kbd>Ctrl/⌘ + F5</kbd>                                                             | 整个窗口<br/>entire window                                                                                        | 重新加载整个窗口<br/>reload the entire window                                                                               |
+| <kbd>Shift + Alt + B</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭页签纵向排列功能<br/>turn on/off the feature of tabs are arranged vertically                                       |
+| <kbd>Shift + Alt + E</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭显示标记文本功能<br/>turn on/off the feature of displaying the mark text                                           |
+| <kbd>Shift + Alt + F</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭专注模式 (折叠/展开功能面板)<br/>turn on/off the focus mode (collapse/expand the feature panels)                   |
+| <kbd>Shift + Alt + G</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭列表辅助线(列表, 表格列表, 思维导图列表)<br/>turn on/off list guides (list, table list, mind map list)             |
+| <kbd>Shift + Alt + I</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭反色模式<br/>turn on/off invert color mode                                                                         |
+| <kbd>Shift + Alt + L</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭记录当前浏览位置功能<br/>turn on/off record the current browsing location                                          |
+| <kbd>Shift + Alt + M</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭块菜单增强功能<br/>turn on/off block menu enhancement                                                              |
 | <kbd>Shift + Alt + N</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 在新窗口打开光标所在块<br/>open the block where the cursor is located in a new window                                       |
 | <kbd>Shift + Alt + R</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 使用网络背景图片<br/>use the web background images                                                                          |
 | <kbd>Shift + Alt + T</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭打字机模式<br/>turn on/off typewriter mode                                                                         |
-| <kbd>Shift + Alt + I</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭反色模式<br/>turn on/off invert color mode                                                                         |
-| <kbd>Shift + Alt + G</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭列表辅助线(列表, 表格列表, 思维导图列表)<br/>turn on/off list guides (list, table list, mind map list)             |
-| <kbd>Shift + Alt + M</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭块菜单增强功能<br/>turn on/off block menu enhancement                                                              |
-| <kbd>Shift + Alt + L</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭记录当前浏览位置功能<br/>turn on/off record the current browsing location                                          |
-| <kbd>Shift + Alt + E</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭显示标记文本功能<br/>turn on/off the feature of displaying the mark text                                           |
-| <kbd>Shift + Alt + F</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭专注模式 (折叠/展开功能面板)<br/>turn on/off the focus mode (collapse/expand the feature panels)                   |
 | <kbd>Shift + Alt + C</kbd>                                                         | 当前文档<br/>current document                                                                                     | 复制当前文档 markdown 全文至剪贴板<br/>copy the full markdown text of the current document to the clipboard                 |
 | <kbd>Shift + Alt + X</kbd>                                                         | 当前文档<br/>current document                                                                                     | 剪切当前文档 markdown 全文至剪贴板<br/>cut the full markdown text of the current document to the clipboard                  |
 | <kbd>Shift + Alt + D</kbd>                                                         | 当前文档<br/>current document                                                                                     | 删除当前文档全文<br/>delete the full content of the current documen                                                         |
@@ -391,6 +392,22 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   Use the shortcut keys <kbd>Ctrl/⌘ + Left Mouse Button</kbd> click the iframe block or the widget block to reload the block contents.
 - 使用快捷键 <kbd>Ctrl/⌘ + F5</kbd> 重新加载整个窗口  
   Use the shortcut key <kbd>Ctrl/⌘ + F5</kbd> to reload the entire window.
+- 使用快捷键 <kbd>Shift + Alt + B</kbd> 启动/关闭页签纵向排列功能  
+  Use the shortcut key <kbd>Shift + Alt + B</kbd> to turn on/off the feature of tabs are arranged vertically.
+- 使用快捷键 <kbd>Shift + Alt + E</kbd> 启动/关闭显示标记文本功能  
+  Use the shortcut key <kbd>Shift + Alt + E</kbd> to turn on/off the feature of displaying the mark text.
+- 使用快捷键 <kbd>Shift + Alt + F</kbd> 启动/关闭专注模式 (折叠/展开功能面板)  
+  Use the shortcut key <kbd>Shift + Alt + F</kbd> to turn on/off the focus mode (collapse/expand the feature panels).
+- 使用快捷键 <kbd>Shift + Alt + I</kbd> 启动/关闭反色模式  
+  Use the shortcut key <kbd>Shift + Alt + I</kbd> to turn on/off invert color mode.
+- 使用快捷键 <kbd>Shift + Alt + G</kbd> 启动/关闭列表辅助线(列表, 表格列表, 思维导图列表)  
+  Use the shortcut key <kbd>Shift + Alt + G</kbd> to turn on/off list guides (list, table list, mind map list).
+- 使用快捷键 <kbd>Shift + Alt + L</kbd> 启动/关闭记录当前浏览位置功能  
+  Use the shortcut key <kbd>Shift + Alt + L</kbd> to turn on/off record the current browsing location.
+  - 开启后可以使用 <kbd>鼠标右键</kbd> 单击文档右侧的滑块, 跳转到文档上次浏览位置  
+    You can click on a slider on the right side of the document to jump to where the document was last browsed using the <kbd>Right Mouse Button</kbd> when turned on.
+- 使用快捷键 <kbd>Shift + Alt + M</kbd> 启动/关闭块菜单增强功能  
+  Use the shortcut key <kbd>Shift + Alt + M</kbd> to turn on/off block menu enhancement.
 - 使用快捷键 <kbd>Shift + Alt + N</kbd> 在新窗口打开光标所在块  
   Use the shortcut key <kbd>Shift + Alt + N</kbd> to open the block where the cursor is located in a new window.
 - 使用快捷键 <kbd>Shift + Alt + R</kbd> 使用网络背景图片  
@@ -399,20 +416,6 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
     Image source: [Beautiful Free Images & Pictures | Unsplash](https://unsplash.com/)
 - 使用快捷键 <kbd>Shift + Alt + T</kbd> 启动/关闭打字机模式  
   Use the shortcut key <kbd>Shift + Alt + T</kbd> to turn on/off typewriter mode.
-- 使用快捷键 <kbd>Shift + Alt + I</kbd> 启动/关闭反色模式  
-  Use the shortcut key <kbd>Shift + Alt + I</kbd> to turn on/off invert color mode.
-- 使用快捷键 <kbd>Shift + Alt + G</kbd> 启动/关闭列表辅助线(列表, 表格列表, 思维导图列表)  
-  Use the shortcut key <kbd>Shift + Alt + G</kbd> to turn on/off list guides (list, table list, mind map list).
-- 使用快捷键 <kbd>Shift + Alt + M</kbd> 启动/关闭块菜单增强功能  
-  Use the shortcut key <kbd>Shift + Alt + M</kbd> to turn on/off block menu enhancement.
-- 使用快捷键 <kbd>Shift + Alt + L</kbd> 启动/关闭记录当前浏览位置功能  
-  Use the shortcut key <kbd>Shift + Alt + L</kbd> to turn on/off record the current browsing location.
-  - 开启后可以使用 <kbd>鼠标右键</kbd> 单击文档右侧的滑块, 跳转到文档上次浏览位置  
-    You can click on a slider on the right side of the document to jump to where the document was last browsed using the <kbd>Right Mouse Button</kbd> when turned on.
-- 使用快捷键 <kbd>Shift + Alt + E</kbd> 启动/关闭显示标记文本功能  
-  Use the shortcut key <kbd>Shift + Alt + E</kbd> to turn on/off the feature of displaying the mark text.
-- 使用快捷键 <kbd>Shift + Alt + F</kbd> 启动/关闭专注模式 (折叠/展开功能面板)  
-  Use the shortcut key <kbd>Shift + Alt + F</kbd> to turn on/off the focus mode (collapse/expand the feature panels).
 - 使用快捷键 <kbd>Shift + Alt + C</kbd> 复制当前文档 markdown 全文至剪贴板  
   Use the shortcut keys <kbd>Shift + Alt + C</kbd> to copy the full markdown text of the current document to the clipboard.
 - 使用快捷键 <kbd>Shift + Alt + X</kbd> 剪切当前文档 markdown 全文至剪贴板  

@@ -295,6 +295,8 @@
      *  nowrap: 单行显示
      */
     --custom-tab-bar-flex-wrap: wrap;
+    /* 页签纵向排列时最大宽度 | The maximum width of the tabs witch have vertical aligned */
+    --custom-tab-bar-vertical-max-width: 20%;
 
     /* 弹出窗口背景颜色 | The background color of the popover */
     --custom-popover-background-color: var(--custom-editor-background-color);

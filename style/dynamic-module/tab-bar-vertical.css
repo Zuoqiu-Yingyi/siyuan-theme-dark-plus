@@ -1,0 +1,12 @@
+.layout__center [data-type='wnd'][data-id] {
+  display: flex;
+  flex-direction: row;
+}
+.layout__center [data-type='wnd'][data-id] > .layout-tab-bar {
+  display: inline;
+  max-width: var(--custom-tab-bar-vertical-max-width);
+  outline: 2px solid var(--b3-theme-on-surface-light);
+}
+.layout__center [data-type='wnd'][data-id] > .layout-tab-bar .item__text {
+  text-align: unset;
+}
