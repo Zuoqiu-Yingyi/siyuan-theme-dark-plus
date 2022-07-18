@@ -1,6 +1,4 @@
 /* 列表辅助样式 */
-@import url(/appearance/themes/Dark+/style/module/config.css);
-@import url(/widgets/custom.css);
 
 :root {
     --custom-list-guides-line-color: var(--b3-theme-primary-lighter);
