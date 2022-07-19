@@ -3,6 +3,7 @@
 - 使用快捷键 <kbd>Shift + Alt + B</kbd> 启动/关闭页签纵向排列功能 | Use the shortcut <kbd>Shift + Alt + B</kbd> to turn on/off the feature of tabs are arranged vertically.
 - 动态加载样式支持在其他主题调用 | Dynamic loading of style support in other themes called.
 - 移除动态加载样式文件对配置文件的引用 | Removes references to configuration files from dynamically loaded style filesRemoves references to configuration files from dynamically loaded style files.
+- 使用 `Less` 重构 `custom-type-title.css` | Refactored `custom-type-title.css` with `Less`.
 
 ## v1.2.3/2022-07-18
 
