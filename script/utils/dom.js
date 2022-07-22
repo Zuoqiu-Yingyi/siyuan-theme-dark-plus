@@ -372,7 +372,8 @@ function setFontSize(fontSize) {
     let style = document.getElementById('editorFontSize');
     if (style) {
         const height = Math.floor(fontSize * 1.625);
-        style.innerHTML = `.b3-typography, .protyle-wysiwyg, .protyle-title {font-size:${fontSize}px !important}
+        style.innerHTML = `
+.b3-typography, .protyle-wysiwyg, .protyle-title {font-size:${fontSize}px !important}
 .b3-typography code:not(.hljs), .protyle-wysiwyg code:not(.hljs) { font-variant-ligatures: ${window.siyuan.config.editor.codeLigatures ? "normal" : "none"} }
 .li > .protyle-action {height:${height + 8}px;line-height: ${height + 8}px}
 .protyle-wysiwyg [data-node-id].li > .protyle-action ~ .h1, .protyle-wysiwyg [data-node-id].li > .protyle-action ~ .h2, .protyle-wysiwyg [data-node-id].li > .protyle-action ~ .h3, .protyle-wysiwyg [data-node-id].li > .protyle-action ~ .h4, .protyle-wysiwyg [data-node-id].li > .protyle-action ~ .h5, .protyle-wysiwyg [data-node-id].li > .protyle-action ~ .h6 {line-height:${height + 8}px;}
@@ -388,7 +389,8 @@ function setFontSize(fontSize) {
 .protyle-wysiwyg .h4 img.emoji, .b3-typography h4 img.emoji {width:${Math.floor(fontSize * 1.25 * 1.25)}px}
 .protyle-wysiwyg .h5 img.emoji, .b3-typography h5 img.emoji {width:${Math.floor(fontSize * 1.13 * 1.25)}px}
 .protyle-wysiwyg .h6 img.emoji, .b3-typography h6 img.emoji {width:${Math.floor(fontSize * 1.25)}px}
-.b3-typography, .protyle-wysiwyg, .protyle-title, .protyle-title__input{font-family: "${window.siyuan.config.editor.fontFamily}", "quote", "Helvetica Neue", "Luxi Sans", "DejaVu Sans", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols" !important;}`;
+.b3-typography, .protyle-wysiwyg, .protyle-title, .protyle-title__input{font-family: "${window.siyuan.config.editor.fontFamily}", "quote", "Helvetica Neue", "Luxi Sans", "DejaVu Sans", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols" !important;}
+`;
         return parseInt(config.theme.regs.fontsize.exec(style.innerHTML));
     }
     return null;
