@@ -5,6 +5,16 @@
 
 .protyle-wysiwyg {
     [data-node-id].li {
+        >.protyle-action {
+            /* 列表标志 */
+            z-index: 0;
+
+            &::after {
+                /* 标志阴影 */
+                z-index: -1;
+            }
+        }
+
         >[data-node-id] {
             &::before {
                 /* 缩进辅助线样式 */
