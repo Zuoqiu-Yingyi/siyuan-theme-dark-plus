@@ -5,7 +5,7 @@
 
 /* 通过在主题文件头部用 @import:url(css片段路径使用)* /
 /* 文档中带有 board 属性且值为 "容器" 的超级块会被渲染级为看板 */
-.sb[custom-board="容器"] .sb {
+.sb[custom-board="容器"] {
     border-style: solid;
     border-width: 2px;
     margin-left: 5px !important;
@@ -14,7 +14,7 @@
     background-color: var(--b3-card-infor-background);
 }
 
-.sb[custom-board="容器"] .sb>div[data-type="NodeHeading"] {
+.sb[custom-board="容器"]>div[data-type="NodeHeading"] {
     border-bottom-style: solid !important;
     border-bottom-width: 2px;
     margin-left: 0;
@@ -22,7 +22,7 @@
     background-color: var(--b3-card-c-background);
 }
 
-.sb[custom-board="容器"] .sb .list {
+.sb[custom-board="容器"] .list {
     border-style: solid !important;
     border-width: 1px;
     border-radius: 3px;
@@ -33,7 +33,7 @@
     background-color: var(--b3-theme-surface);
 }
 
-.sb[custom-board="容器"] .sb .list .li {
+.sb[custom-board="容器"] .list .li {
     border-bottom-style: solid !important;
     border-bottom-width: 1px;
 
@@ -41,11 +41,11 @@
 }
 
 /*去除了看板卡片的线条*/
-.sb[custom-board="容器"] .sb .list .li::before {
+.sb[custom-board="容器"] .list .li::before {
     display: none
 }
 
-.sb[custom-board="容器"] .sb .list .li::after {
+.sb[custom-board="容器"] .list .li::after {
     content: "deadline:" attr(custom-deadline) "|" "memo:" attr(memo);
     font-size: 10px;
     display: inline;
