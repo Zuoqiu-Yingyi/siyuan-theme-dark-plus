@@ -17,8 +17,6 @@
     border: 0;
     padding: 0;
     margin: 0 !important;
-    height: 100%;
-    outline: 1px solid var(--b3-theme-on-surface);
 }
 
 /* 顶层列表块 */
@@ -37,6 +35,7 @@
     width: auto;
     display: flex;
     /* overflow-x: auto; */
+    outline: 1px solid var(--b3-theme-on-surface);
 }
 
 /* 最顶层的列表项滚动 */
