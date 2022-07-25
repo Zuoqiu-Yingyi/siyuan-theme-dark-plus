@@ -6,6 +6,7 @@
 - 使用 `Less` 重构 `custom-type-title.css` | Refactored `custom-type-title.css` with `Less`.
 - [#90](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/90) 修复有序列表折叠时序号被遮挡问题 | Fixed an issue where the sequence numbers of folding ordered list were covered.
 - 修复搜索对话框中预览面板代码语言选择菜单样式异常问题 | Fixed an issue where the style of the menu of the language selection in the preview panel of the search dialog is abnormal.
+- 为浏览器中链接提供从新窗口打开功能 | Provides a function to open links in a new window in the browser.
 
 ## v1.2.3/2022-07-18
 
