@@ -39,6 +39,7 @@
 }
 .b3-list.b3-list--background.b3-menu.hint--menu,
 .protyle > .b3-list.b3-list--background,
+.b3-list.b3-list--background#searchHistoryList,
 .b3-list.b3-list--background#menu {
   background-color: var(--custom-popover-function-menu-background-color) !important;
   backdrop-filter: var(--custom-backdrop-popover-filter);
