@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- [#92](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/92) 修复搜索历史菜单背景颜色透明问题 | Fixed an issue where the background color of the search history menu was transparent.
+
 ## v1.2.4/2022-07-26
 
 - [v1.2.3 <=> v1.2.4](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.3...v1.2.4)

@@ -178,11 +178,15 @@ window.theme.openNewWindow = function (
             // window.open(url.href, "_blank");
             // REF [Window.open() - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Window/open)
             // REF [Window open() 方法 | 菜鸟教程](https://www.runoob.com/jsref/met-win-open.html)
-            newWin = window.open(url.href, url.href, `
-                popup = true,
-                width = ${windowParams.width},
-                height = ${windowParams.height},
-            `);
+            newWin = window.open(
+                url.href,
+                url.href,
+                `
+                    popup = true,
+                    width = ${windowParams.width},
+                    height = ${windowParams.height},
+                `,
+            );
             return newWin;
         }
     }
