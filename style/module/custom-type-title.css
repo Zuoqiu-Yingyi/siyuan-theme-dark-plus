@@ -11,10 +11,10 @@
 .protyle-wysiwyg {
   counter-reset: table-counter 0 figure-counter 0;
 }
-.protyle-wysiwyg [data-node-id][custom-type~=table-title] {
+.protyle-wysiwyg [data-node-id][custom-type~="table-title"] {
   counter-increment: table-counter;
 }
-.protyle-wysiwyg [data-node-id][custom-type~=table-title] > div.protyle-attr[contenteditable]::after {
+.protyle-wysiwyg [data-node-id][custom-type~="table-title"] > div.protyle-attr[contenteditable]::after {
   color: var(--b3-theme-on-surface);
   content: "Table\0020" counter(table-counter);
 }
@@ -25,17 +25,17 @@
   color: var(--b3-theme-on-surface);
   content: "表\0020" counter(table-counter);
 }
-.protyle-wysiwyg [data-node-id][custom-type~=figure-title] {
-  counter-increment: figure-counter;
+.protyle-wysiwyg [data-node-id][custom-type~="figure-title"] {
+  counter-increment: table-counter;
 }
-.protyle-wysiwyg [data-node-id][custom-type~=figure-title] > div.protyle-attr[contenteditable]::after {
+.protyle-wysiwyg [data-node-id][custom-type~="figure-title"] > div.protyle-attr[contenteditable]::after {
   color: var(--b3-theme-on-surface);
-  content: "Figure\0020" counter(figure-counter);
+  content: "Figure\0020" counter(table-counter);
 }
 .protyle-wysiwyg [data-node-id][custom-type~="图标题"] {
-  counter-increment: figure-counter;
+  counter-increment: table-counter;
 }
 .protyle-wysiwyg [data-node-id][custom-type~="图标题"] > div.protyle-attr[contenteditable]::after {
   color: var(--b3-theme-on-surface);
-  content: "图\0020" counter(figure-counter);
+  content: "图\0020" counter(table-counter);
 }
