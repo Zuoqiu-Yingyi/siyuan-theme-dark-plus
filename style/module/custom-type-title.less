@@ -11,46 +11,25 @@
  * type: 图标题
  */
 
+.title(@value, @content) {
+    &[custom-type~="@{value}"] {
+        counter-increment: table-counter;
+
+        >div.protyle-attr[contenteditable]::after {
+            color: var(--b3-theme-on-surface);
+            content: "@{content}\0020" counter(table-counter);
+        }
+    }
+}
+
 .protyle-wysiwyg {
     counter-reset: table-counter 0 figure-counter 0;
 
     [data-node-id] {
 
-        &[custom-type~=table-title] {
-            counter-increment: table-counter;
-
-            >div.protyle-attr[contenteditable]::after {
-                color: var(--b3-theme-on-surface);
-                content: "Table\0020" counter(table-counter);
-            }
-        }
-
-        &[custom-type~="表标题"] {
-            counter-increment: table-counter;
-
-            >div.protyle-attr[contenteditable]::after {
-                color: var(--b3-theme-on-surface);
-                content: "表\0020" counter(table-counter);
-            }
-        }
-
-        &[custom-type~=figure-title] {
-            counter-increment: figure-counter;
-
-            >div.protyle-attr[contenteditable]::after {
-                color: var(--b3-theme-on-surface);
-                content: "Figure\0020" counter(figure-counter);
-            }
-
-        }
-
-        &[custom-type~="图标题"] {
-            counter-increment: figure-counter;
-
-            >div.protyle-attr[contenteditable]::after {
-                color: var(--b3-theme-on-surface);
-                content: "图\0020" counter(figure-counter);
-            }
-        }
+        .title(table-title, "Table");
+        .title("表标题", "表");
+        .title(figure-title, "Figure");
+        .title("图标题", "图");
     }
 }
