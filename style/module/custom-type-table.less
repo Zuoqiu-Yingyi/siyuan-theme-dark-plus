@@ -1,0 +1,78 @@
+/**
+ * 以表格的形式显示列表块
+ * 需要对一个列表容器设置自定义属性 type: table
+ * 详情请参考: [土法列表表格-这回原理我也说不清了 · 语雀](https: //www.yuque.com/siyuannote/docs/yev84m)
+ * REF [UserZYF](https://github.com/UserZYF) 修复上述实现方案
+ */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+/* --------------------------------------用自定义属性，列表转化为表格------------------------------------------- */
+.protyle-content {
+
+    [custom-type~=table],
+    [custom-type~="表格"] {
+
+        [data-node-id].list,
+        [data-node-id].li {
+            border: 0;
+            padding: 0;
+            margin: 0 !important;
+        }
+
+        [data-node-id].list {
+            /* 嵌套列表块 */
+            width: 100%;
+        }
+
+        [data-node-id].li {
+            /* 列表项 */
+            width: auto;
+            display: flex;
+            // overflow-x: auto;
+            outline: 1px solid var(--b3-theme-on-surface);
+
+            >[data-node-id] {
+                &:not(.li, .list) {
+                    /* 列表项内容 */
+                    margin-right: 0.5em;
+                    align-items: center;
+                    display: flex;
+                    min-width: 128px;
+                    text-align: justify;
+                    flex-shrink: 0;
+                }
+
+                &[data-type="NodeBlockQueryEmbed"],
+                &[data-node-id].sb,
+                &[data-node-id].bq {
+                    /* 列表项内的容器块与嵌入恢复上下排列 */
+                    display: block;
+                }
+
+            }
+
+            >.protyle-action {
+                /* 列表项标志居中 */
+                position: absolute;
+                top: calc(50% - 0.125em);
+                transform: translate(0, -50%);
+            }
+
+            >div:before {
+                /* 去除辅助线 */
+                display: none;
+            }
+        }
+
+        // >[data-node-id].list>[data-node-id].li,
+        >[data-node-id].li {
+            /* 最顶层的列表项滚动 */
+            overflow-x: auto;
+        }
+    }
+}
+
+
+/* --------------------------------------用自定义属性，列表转化为表格 END------------------------------------------- */
