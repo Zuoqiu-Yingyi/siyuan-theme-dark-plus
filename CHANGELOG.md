@@ -3,6 +3,7 @@
 - [#92](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/92) 修复搜索历史菜单背景颜色透明问题 | Fixed an issue where the background color of the search history menu was transparent.
 - 使用 `Less` 重构 `custom-type-title.css` | Refactored `custom-type-title.css` with `Less`.
 - 使用 `Less` 重构 `custom-type-table.css` | Refactored `custom-type-table.css` with `Less`.
+- 使用 `Less` 重构 `custom-type-map.css` | Refactored `custom-type-map.css` with `Less`.
 
 ## v1.2.4/2022-07-26
 
