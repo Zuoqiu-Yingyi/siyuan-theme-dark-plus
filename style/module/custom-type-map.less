@@ -1,0 +1,199 @@
+/**
+ * 列表转导图
+ * REF [royc01/notion-theme](https://github.com/royc01/notion-theme/blob/c5e535a8f40a97c1d42384a7715ced88261dd59f/theme.css#L1444-L1577)
+ */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+// 辅助线
+.guides() {
+    content: "";
+    position: absolute;
+    height: calc(50% - var(--custom-list-guides-line-width) / 2);
+    border-left: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
+    width: 2em;
+}
+
+.protyle-content {
+
+    [custom-type~="思维导图"],
+    [custom-type~="导图"],
+    [custom-type~="脑图"],
+    [custom-type~=mind-map],
+    [custom-type~=map] {
+        [data-node-id] {
+            &.li {
+                /* 列表项文字设置居中 */
+                display: flex;
+
+                &:first-child::after,
+                /* 取消多余线条 */
+                &:nth-last-child(2)::before {
+                    border: none;
+                }
+
+                &:first-child:nth-last-child(2) {
+                    /* 单子项居中 */
+
+                    top: 50%;
+                    transform: translate(0, -50%);
+
+                    &::after {
+                        /* 单个子项直线 */
+                        border-radius: 0;
+                        height: calc(50% - var(--custom-list-guides-line-width) / 8);
+                    }
+                }
+
+                &:first-child::before {
+                    /* 上框线 */
+                    border-top-left-radius: var(--custom-border-radius);
+                }
+
+                &:nth-last-child(2)::after {
+                    /* 下框线 */
+                    border-bottom: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
+                    border-bottom-left-radius: var(--custom-border-radius);
+                }
+
+                &::before {
+                    /* 上导航线 */
+                    .guides();
+                    top: 50%;
+                    border-top: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
+                }
+
+                &::after {
+                    /* 下导航线 */
+                    .guides();
+                    // bottom: 50%;
+                    border-bottom: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
+                }
+
+                &[data-subtype="u"] {
+                    >div.protyle-action {
+                        /* 无序列表标志 */
+                        top: calc(50%);
+                        left: calc(2em - 16px);
+                    }
+                }
+
+                >div:nth-child(2) {
+                    /* 修复单子项导航线错位问题 */
+                    margin-top: 4px !important;
+                }
+
+                >div.protyle-action {
+                    /* 表格项标志 */
+                    top: calc(50% - 12px);
+                    position: absolute;
+                    transform: translate(0, -50%);
+                    // left: 0.5em;
+                    z-index: 2;
+                }
+
+                >[data-node-id] {
+
+                    &::before {
+                        /* 去除竖线 */
+                        display: none;
+                    }
+
+                    &[data-type="NodeHeading"] {
+                        /* 移除脑图内部标题块的左侧边线 */
+                        border-left: 0 solid transparent;
+                        padding-left: 0;
+                    }
+
+                    &:not(.li, .list) {
+                        /* 叶子节点 */
+                        align-items: center;
+                        display: flex;
+
+                        >div[contenteditable][spellcheck] {
+                            /* 文字框 */
+                            white-space: pre; // 保留换行
+                            outline: 1px solid var(--b3-theme-on-surface);
+                            border-radius: var(--custom-border-radius);
+                            padding: 0 0.5em;
+                        }
+                    }
+
+                    &[data-type="NodeBlockQueryEmbed"],
+                    &.sb,
+                    &.bq {
+                        /* 列表项内的容器块与嵌入块恢复上下排列 */
+                        display: block;
+                    }
+                }
+
+            }
+
+            &.list {
+                /* 整个导图列表取消缩进 */
+                margin: 0;
+                padding: 0 0 0 1em;
+                transition: all 500ms;
+
+                &::after {
+                    /* 后继承线 */
+                    content: "";
+                    position: absolute;
+                    left: -1em;
+                    top: 50%;
+                    border-top: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
+                    width: 2em;
+                    height: 0;
+                }
+            }
+        }
+
+        &.list {
+            /* 导图块样式 */
+            overflow-x: auto;
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+
+        &.list>[data-node-id].li:first-child:nth-last-child(2),
+        &>[data-node-id].list>[data-node-id].li:first-child:nth-last-child(2),
+        [data-node-id]:not(.li)>[data-node-id].list>[data-node-id].li:first-child:nth-last-child(2) {
+            /* 修复顶层列表项错位问题 */
+            top: 0;
+            transform: none;
+        }
+    }
+}
+
+/* 取消根目录线 */
+/* 列表块属性 */
+/* .protyle-content *[custom-type~="思维导图"]>[data-node-id].li::after,
+.protyle-content *[custom-type~="导图"]>[data-node-id].li::after,
+.protyle-content *[custom-type~="脑图"]>[data-node-id].li::after,
+.protyle-content *[custom-type~=mind-map]>[data-node-id].li::after,
+.protyle-content *[custom-type~=map]>[data-node-id].li::after,
+
+.protyle-content *[custom-type~="思维导图"]>[data-node-id].li::before,
+.protyle-content *[custom-type~="导图"]>[data-node-id].li::before,
+.protyle-content *[custom-type~="脑图"]>[data-node-id].li::before,
+.protyle-content *[custom-type~=mind-map]>[data-node-id].li::before,
+.protyle-content *[custom-type~=map]>[data-node-id].li::before {
+    display: none;
+}
+*/
+
+/* 文档属性 */
+/* .protyle-content *[custom-type~="思维导图"]>[data-node-id].list>[data-node-id].li::after,
+.protyle-content *[custom-type~="导图"]>[data-node-id].list>[data-node-id].li::after,
+.protyle-content *[custom-type~="脑图"]>[data-node-id].list>[data-node-id].li::after,
+.protyle-content *[custom-type~=mind-map]>[data-node-id].list>[data-node-id].li::after,
+.protyle-content *[custom-type~=map]>[data-node-id].list>[data-node-id].li::after,
+
+.protyle-content *[custom-type~="思维导图"]>[data-node-id].list>[data-node-id].li::before,
+.protyle-content *[custom-type~="导图"]>[data-node-id].list>[data-node-id].li::before,
+.protyle-content *[custom-type~="脑图"]>[data-node-id].list>[data-node-id].li::before,
+.protyle-content *[custom-type~=mind-map]>[data-node-id].list>[data-node-id].li::before,
+.protyle-content *[custom-type~=map]>[data-node-id].list>[data-node-id].li::before {
+    display: none;
+} */
