@@ -4,6 +4,7 @@
 - 使用 `Less` 重构 `custom-type-title.css` | Refactored `custom-type-title.css` with `Less`.
 - 使用 `Less` 重构 `custom-type-table.css` | Refactored `custom-type-table.css` with `Less`.
 - 使用 `Less` 重构 `custom-type-map.css` | Refactored `custom-type-map.css` with `Less`.
+- 使用 `Less` 重构 `custom-table-width.css` | Refactored `custom-table-width.css` with `Less`.
 
 ## v1.2.4/2022-07-26
 

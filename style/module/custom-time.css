@@ -3,7 +3,7 @@
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 
-.protyle-wysiwyg div[data-node-id][custom-time]::after {
+.protyle-wysiwyg [data-node-id][custom-time]::after {
     content: attr(custom-time);
     font-size: 12px;
     /* text-align: right; */

@@ -1,0 +1,38 @@
+/* 表格自动调整宽度 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+.protyle-wysiwyg {
+
+    .table[data-node-id] {
+
+        &[custom-table-width~=auto],
+        &[custom-table-width~="自动"] {
+            &[data-node-id].table {
+                /* 自动宽度 */
+                width: calc(100% - 8px);
+
+                table {
+                    /* 自动宽度 */
+                    width: auto;
+                }
+            }
+        }
+
+        &[custom-table-width~=equal],
+        &[custom-table-width~="等宽"] {
+            table {
+                /* 等宽 */
+                table-layout: fixed;
+
+                td {
+                    /* 等宽 */
+                    width: var(--custom-table-cell-equal-width);
+                }
+            }
+        }
+
+    }
+
+}
