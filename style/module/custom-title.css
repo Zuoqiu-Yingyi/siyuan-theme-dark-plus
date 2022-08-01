@@ -3,7 +3,7 @@
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 
-div[data-node-id][custom-title]::before {
+.protyle-content [data-node-id][custom-title]::before {
     content: attr(custom-title);
     position: absolute;
     top: -1.25em;

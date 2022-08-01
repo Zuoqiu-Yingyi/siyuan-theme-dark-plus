@@ -1,25 +1,23 @@
 /* 表格自动调整宽度 */
-
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-
-/* 启用自动宽度 */
-.protyle-wysiwyg div.table[data-node-id][custom-table-width~=auto],
-.protyle-wysiwyg div.table[data-node-id][custom-table-width~=自动] {
-    width: calc(100% - 8px);
+.protyle-wysiwyg .table[data-node-id][custom-table-width~=auto][data-node-id].table,
+.protyle-wysiwyg .table[data-node-id][custom-table-width~="自动"][data-node-id].table {
+  /* 自动宽度 */
+  width: calc(100% - 8px);
 }
-
-.protyle-wysiwyg div.table[data-node-id][custom-table-width~=auto] table,
-.protyle-wysiwyg div.table[data-node-id][custom-table-width~=自动] table {
-    width: auto;
+.protyle-wysiwyg .table[data-node-id][custom-table-width~=auto][data-node-id].table table,
+.protyle-wysiwyg .table[data-node-id][custom-table-width~="自动"][data-node-id].table table {
+  /* 自动宽度 */
+  width: auto;
 }
-
-/* 启用等宽 */
-.protyle-wysiwyg div.table[data-node-id][custom-table-width~=equal] table,
-.protyle-wysiwyg div.table[data-node-id][custom-table-width~=等宽] table {
-    table-layout: fixed;
+.protyle-wysiwyg .table[data-node-id][custom-table-width~=equal] table,
+.protyle-wysiwyg .table[data-node-id][custom-table-width~="等宽"] table {
+  /* 等宽 */
+  table-layout: fixed;
 }
-.protyle-wysiwyg div.table[data-node-id][custom-table-width~=equal] table td,
-.protyle-wysiwyg div.table[data-node-id][custom-table-width~=等宽] table td {
-    width: var(--custom-table-cell-equal-width);
+.protyle-wysiwyg .table[data-node-id][custom-table-width~=equal] table td,
+.protyle-wysiwyg .table[data-node-id][custom-table-width~="等宽"] table td {
+  /* 等宽 */
+  width: var(--custom-table-cell-equal-width);
 }
