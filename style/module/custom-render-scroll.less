@@ -1,0 +1,42 @@
+/* 块过长时设置块内纵向滚动条 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+.protyle-content {
+    [data-node-id] {
+
+        [custom-render~=scroll],
+        [custom-render~="滚屏"],
+        [custom-render~="滚动"] {
+
+            &.table table::-webkit-scrollbar-track,
+            &:not(.table)::-webkit-scrollbar-track {
+                /* 滚动条轨道样式 */
+                background-color: var(--custom-scroll-track-background-color);
+                border-radius: var(--custom-border-radius);
+            }
+
+            &.table table {
+                /* 为表格块添加纵向滚动条 */
+                position: relative;
+                overflow-y: auto;
+                max-height: var(--custom-scroll-max-height);
+
+                >thead {
+                    /* 冻结表头 */
+                    position: sticky;
+                    top: 1px;
+                    outline: 1px solid var(--b3-theme-primary);
+                    z-index: 1;
+                }
+            }
+
+            &:not(.table) {
+                /* 为非表格块添加纵向滚动条 */
+                overflow-y: auto;
+                max-height: var(--custom-scroll-max-height);
+            }
+        }
+    }
+}

@@ -6,6 +6,7 @@
 - 使用 `Less` 重构 `custom-type-map.css` | Refactored `custom-type-map.css` with `Less`.
 - 使用 `Less` 重构 `custom-table-width.css` | Refactored `custom-table-width.css` with `Less`.
 - [#93](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/93) 修复 Monaco 编辑器编辑公式块无法保存问题 | Fixed an issue where the formula block cannot be saved in Monaco editor.
+- 使用 `Less` 重构 `custom-render-scroll.css` | Refactored `custom-render-scroll.css` with `Less`.
 
 ## v1.2.4/2022-07-26
 
