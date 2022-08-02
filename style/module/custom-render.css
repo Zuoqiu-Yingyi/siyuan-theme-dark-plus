@@ -18,57 +18,57 @@
 /* 👇👇👇 块级元素 👇👇👇 */
 
 /* 鼠标悬浮显示轮廓 */
-.protyle-wysiwyg[custom-render~=outline] div[data-node-id] {
+.protyle-wysiwyg[custom-render~=outline] [data-node-id] {
     padding: 3px !important;
 }
 
-.protyle-wysiwyg[custom-render~=outline] div[data-node-id]:hover {
+.protyle-wysiwyg[custom-render~=outline] [data-node-id]:hover {
     outline: 1px dotted var(--b3-theme-on-surface);
 }
 
-.protyle-wysiwyg[custom-render~=content] *[data-content]::after{
+.protyle-wysiwyg[custom-render~=content] [data-content]::after{
     content: attr(data-content);
     font-size: 0.75em;
     text-align: right;
 }
 
-.protyle-wysiwyg[custom-render~=marker] *[data-marker]::after {
+.protyle-wysiwyg[custom-render~=marker] [data-marker]::after {
     content: attr(data-marker);
     font-size: 0.75em;
     text-align: right;
 }
 
-.protyle-wysiwyg[custom-render~=id] *[data-node-id]::after {
+.protyle-wysiwyg[custom-render~=id] [data-node-id]::after {
     content: attr(data-node-id);
     font-size: 0.75em;
     text-align: right;
 }
 
-.protyle-wysiwyg[custom-render~=index] *[data-node-index]::after {
+.protyle-wysiwyg[custom-render~=index] [data-node-index]::after {
     content: attr(data-node-index);
     font-size: 0.75em;
     text-align: right;
 }
 
-.protyle-wysiwyg[custom-render~=render] *[data-render]::after {
+.protyle-wysiwyg[custom-render~=render] [data-render]::after {
     content: attr(data-render);
     font-size: 0.75em;
     text-align: right;
 }
 
-.protyle-wysiwyg[custom-render~=layout] *[data-sb-layout]::after {
+.protyle-wysiwyg[custom-render~=layout] [data-sb-layout]::after {
     content: attr(data-sb-layout);
     font-size: 0.75em;
     text-align: right;
 }
 
-.protyle-wysiwyg[custom-render~=subtype] *[data-subtype]::after {
+.protyle-wysiwyg[custom-render~=subtype] [data-subtype]::after {
     content: attr(data-subtype);
     font-size: 0.75em;
     text-align: right;
 }
 
-.protyle-wysiwyg[custom-render~=type] *[data-type]::after {
+.protyle-wysiwyg[custom-render~=type] [data-type]::after {
     content: attr(data-type);
     font-size: 0.75em;
     text-align: right;
