@@ -255,7 +255,7 @@ async function init(params) {
                         params.language = 'sql';
                     }
                     else {
-                        params.mode = 'block';
+                        params.mode = 'leaf';
                         params.value = b.markdown;
                         params.language = 'markdown';
                         // params.tabSize = 2;
@@ -312,7 +312,7 @@ async function init(params) {
                         params.language = t[1];
                     }
                     else {
-                        params.mode = 'block';
+                        params.mode = 'leaf';
                         params.value = b.markdown;
                         params.language = 'markdown';
                         // params.tabSize = 2;
@@ -320,7 +320,7 @@ async function init(params) {
                     }
                     break;
                 case 'm': // 公式块
-                    params.mode = 'block';
+                    params.mode = 'leaf';
                     params.value = b.markdown;
                     params.language = 'markdown';
                     params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
@@ -419,7 +419,8 @@ window.onload = () => {
              *     -> 'assets': 思源资源
              *     -> 'web': web 资源
              * 'block': 块
-             *     -> 'block': 普通块
+             *     -> 'left': 叶子块
+             *     -> 'container': 容器块
              *     -> 'query': 嵌入块
              *     -> 'code': 代码块
              *     -> 'html': html块
