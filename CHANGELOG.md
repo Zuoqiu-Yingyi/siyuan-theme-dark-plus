@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 为 Jupyter 全局配置的 Server 字段输入框添加有效性检查 | Add a check to the Server field of the Jupyter global config to make sure the input is a valid URL.
+
 ## v1.2.5/2022-08-03
 
 - [v1.2.4 <=> v1.2.5](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.4...v1.2.5)
