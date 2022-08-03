@@ -17,15 +17,25 @@ document.getElementById(config.jupyter.id.token.input).value = custom.jupyter.to
 
 document.getElementById(config.jupyter.id.server.button).addEventListener('click', async () => {
     const server = server_input.value;
-    custom.jupyter.server = server;
-    server_test.href = server;
-    saveCustomFile(custom);
+    try {
+        const server_url = new URL(server);
+        custom.jupyter.server = server_url.origin;
+        server_test.href = server_url.origin;
+        server_input.value = server_url.origin;
+        saveCustomFile(custom);
+    }
+    catch (err) {
+        console.warn(err);
+        server_input.value = "";
+    }
 });
+
 document.getElementById(config.jupyter.id.cookies.button).addEventListener('click', async () => {
     const cookies = cookie_input.value;
     custom.jupyter.cookies = cookies;
     saveCustomFile(custom);
 });
+
 document.getElementById(config.jupyter.id.token.button).addEventListener('click', async () => {
     const token = token_input.value;
     custom.jupyter.token = token;
