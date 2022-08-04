@@ -33,28 +33,23 @@
   /* 文档路径完整显示 */
   max-width: none;
 }
-.protyle-content > .protyle-background > .protyle-background__iconw:is([style="left:96px"], [style="left:16px"]) {
+.protyle-content[data-fullwidth="true"] > .protyle-background > .protyle-background__iconw {
   /* 文档标志 */
   left: var(--custom-editor-padding-left) !important;
+}
+.protyle-content[data-fullwidth="true"] > .protyle-title,
+.protyle-content[data-fullwidth="true"] > .protyle-wysiwyg {
+  margin-left: var(--custom-editor-padding-left) !important;
+  margin-right: var(--custom-editor-padding-right) !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 .protyle-content > .protyle-title {
   /* 标题 */
 }
-.protyle-content > .protyle-title:not([style *="width"]) {
-  margin-left: var(--custom-editor-padding-left) !important;
-  margin-right: var(--custom-editor-padding-right) !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
 .protyle-content > .protyle-title .protyle-title__input {
   /*编辑区文件名*/
   background: transparent;
-}
-.protyle-content > .protyle-wysiwyg:not([style *="width"]) {
-  margin-left: var(--custom-editor-padding-left) !important;
-  margin-right: var(--custom-editor-padding-right) !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
 }
 .protyle-content > .protyle-wysiwyg .dragover__top {
   box-shadow: 0 -4px 0 var(--custom-drag-top-shadow-color);
