@@ -3,6 +3,7 @@
 - 为 Jupyter 全局配置的 Server 字段输入框添加有效性检查 | Add a check to the Server field of the Jupyter global config to make sure the input is a valid URL.
 - 使用 `data-fullwidth="true"` 属性判断是否启用自适应宽度 | Use the `data-fullwidth="true"` attribute to determine whether to enable adaptive width.
   - REF: [siyuan-note/siyuan: #5468](https://github.com/siyuan-note/siyuan/issues/5468)
+- 修复列表项脑图视图在发布工具中样式问题 | Fix the style issue of the list item in the publish tool.
 
 ## v1.2.5/2022-08-03
 
