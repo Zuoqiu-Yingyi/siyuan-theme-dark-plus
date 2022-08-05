@@ -630,12 +630,14 @@ const TASK_HANDLER = {
         else
             editDocKramdown(id);
     },
-    /* 新窗口打开超链接 */
+    /* 保存输入框内容 */
     'save-input-value': async (e, id, params) => {
         const value = document.getElementById(params.id).value;
         eval(`${params.key} = value`);
         saveCustomFile(custom);
     },
+    /* 处理输入框内容 */
+    'handle-input-value': async (e, id, params) => params.handler(e, id, params),
     /* 运行代码 */
     'jupyter-run-code': runCode,
     /* 关闭会话 */
