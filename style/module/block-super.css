@@ -6,7 +6,7 @@
   border-radius: var(--custom-border-radius);
   padding: var(--custom-block-padding);
   background-color: var(--custom-block-super-background-color);
-  box-shadow: var(--b3-theme-background) 0 0 var(--custom-box-shadow-spread);
+  box-shadow: var(--b3-theme-on-surface-light) 0 0 var(--custom-box-shadow-spread);
 }
 .protyle-wysiwyg [data-node-id].sb:hover {
   /* 超级块鼠标悬停时显示边框 */

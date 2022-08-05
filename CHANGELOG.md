@@ -7,6 +7,7 @@
 - 调整分割线超链接标志样式 | Adjust the style of the separator link icon.
 - 在块菜单中添加发布子菜单项 | Add a publish submenu item in the block menu.
   - [Zuoqiu-Yingyi/siyuan-publish: 思源笔记在线发布工具 | Siyuan Notes online publishing tool.](https://github.com/Zuoqiu-Yingyi/siyuan-publish)
+- 调整超级块轮廓阴影颜色 | Adjust the shadow color of the super block.
 
 ## v1.2.5/2022-08-03
 
