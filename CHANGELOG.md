@@ -4,6 +4,9 @@
 - 使用 `data-fullwidth="true"` 属性判断是否启用自适应宽度 | Use the `data-fullwidth="true"` attribute to determine whether to enable adaptive width.
   - REF: [siyuan-note/siyuan: #5468](https://github.com/siyuan-note/siyuan/issues/5468)
 - 修复列表项脑图视图在发布工具中样式问题 | Fix the style issue of the list item in the publish tool.
+- 调整分割线超链接标志样式 | Adjust the style of the separator link icon.
+- 在块菜单中添加发布子菜单项 | Add a publish submenu item in the block menu.
+  - [Zuoqiu-Yingyi/siyuan-publish: 思源笔记在线发布工具 | Siyuan Notes online publishing tool.](https://github.com/Zuoqiu-Yingyi/siyuan-publish)
 
 ## v1.2.5/2022-08-03
 

@@ -942,31 +942,6 @@ export var config = {
                         itemsLoad: true, // 是否加载子菜单
                         itemsIcon: "#iconRight",
                         items: [
-                            // { // 菜单项中的输入框
-                            //     enable: true,
-                            //     type: null,
-                            //     mode: "input",
-                            //     icon: "#iconSelect",
-                            //     id: "theme-menu-jupyter-settings-server",
-                            //     value: 'custom.theme.jupyter.server',
-                            //     placeholder: { // 占位符
-                            //         zh_CN: "服务器 URL",
-                            //         other: "Server URL",
-                            //     },
-                            //     click: {
-                            //         enable: true,
-                            //         callback: null,
-                            //         tasks: [
-                            //             {
-                            //                 type: 'save-input-value',
-                            //                 params: {
-                            //                     id: "theme-menu-jupyter-settings-server",
-                            //                     key: "custom.theme.jupyter.server",
-                            //                 },
-                            //             },
-                            //         ],
-                            //     },
-                            // },
                             {
                                 enable: true,
                                 type: { NodeDocument: { enable: true } },
@@ -1073,6 +1048,143 @@ export var config = {
                                     ],
                                 },
                             },
+                        ],
+                    },
+                    { // 发布设置
+                        enable: false,
+                        prefixSeparator: true,
+                        suffixSeparator: false,
+                        type: {
+                            NodeDocument: { enable: true },
+                        },
+                        id: 'theme-menu-publish',
+                        mode: "button",
+                        icon: "#iconLanguage",
+                        label: {
+                            zh_CN: "发布",
+                            other: "Publish",
+                        },
+                        accelerator: "",
+                        click: { enable: false },
+                        itemsLoad: true, // 是否加载子菜单
+                        itemsIcon: "#iconRight",
+                        items: [
+                            {
+                                enable: true,
+                                type: { NodeDocument: { enable: true } },
+                                mode: "button",
+                                icon: "#iconTrashcan",
+                                label: {
+                                    zh_CN: "删除访问权限",
+                                    other: "Remove Access",
+                                },
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-update', // 覆盖属性值
+                                            params: {
+                                                'custom-publish-access': null,
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: { NodeDocument: { enable: true } },
+                                mode: "button",
+                                icon: "#iconLanguage",
+                                label: {
+                                    zh_CN: "访问权限: 公开",
+                                    other: "Access: Public",
+                                },
+                                accelerator: "publish-access: public",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-update', // 覆盖属性值
+                                            params: {
+                                                'custom-publish-access': 'public',
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: { NodeDocument: { enable: true } },
+                                mode: "button",
+                                icon: "#iconLock",
+                                label: {
+                                    zh_CN: "访问权限: 受保护",
+                                    other: "Access: Protected",
+                                },
+                                accelerator: "publish-access: protected",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-update', // 覆盖属性值
+                                            params: {
+                                                'custom-publish-access': 'protected',
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: { NodeDocument: { enable: true } },
+                                mode: "button",
+                                icon: "#iconAccount",
+                                label: {
+                                    zh_CN: "访问权限: 私有",
+                                    other: "Access: Private",
+                                },
+                                accelerator: "publish-access: private",
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'attr-update', // 覆盖属性值
+                                            params: {
+                                                'custom-publish-access': 'private',
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            // { // 菜单项中的输入框
+                            //     enable: true,
+                            //     type: null,
+                            //     mode: "input",
+                            //     icon: "#iconSelect",
+                            //     id: "theme-menu-token",
+                            //     value: 'custom.theme.jupyter.server', // eval(value)
+                            //     placeholder: { // 占位符
+                            //         zh_CN: "访问令牌",
+                            //         other: "Token",
+                            //     },
+                            //     click: {
+                            //         enable: true,
+                            //         callback: null,
+                            //         tasks: [
+                            //             {
+                            //                 type: 'save-input-value',
+                            //                 params: {
+                            //                     id: "theme-menu-token",
+                            //                     key: "custom.theme.jupyter.server", // eval(key = value)
+                            //                 },
+                            //             },
+                            //         ],
+                            //     },
+                            // },
                         ],
                     },
                     { // 其他功能
@@ -2545,7 +2657,10 @@ export var config = {
 try {
     // 合并配置文件 custom.js
     const customjs = await import('/widgets/custom.js');
-    if (customjs && customjs.config) merge(config, customjs.config);
+    if (customjs) {
+        if (customjs.config) merge(config, customjs.config);
+        if (customjs.scripts) customjs.scripts.forEach(_ => eval(_));
+    }
 } catch (err) {
     console.warn(err);
 } finally {
