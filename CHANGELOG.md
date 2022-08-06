@@ -9,6 +9,7 @@
   - [Zuoqiu-Yingyi/siyuan-publish: 思源笔记在线发布工具 | Siyuan Notes online publishing tool.](https://github.com/Zuoqiu-Yingyi/siyuan-publish)
 - 调整超级块轮廓阴影颜色 | Adjust the shadow color of the super block.
 - [#94](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/94) 使用兼容方案将文本写入剪贴板 | Use the compatibility scheme to write text to the clipboard.
+- 调整面包屑样式选择器 | Adjust the style selector of the breadcrumb.
 
 ## v1.2.5/2022-08-03
 
