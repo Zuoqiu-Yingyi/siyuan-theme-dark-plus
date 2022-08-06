@@ -4,6 +4,7 @@ export {
     saveAsFile,
     merge, // 递归合并对象
     getRelativePath,
+    copyToClipboard,
 };
 
 // REF [js - 对象递归合并merge - zc-lee - 博客园](https://www.cnblogs.com/zc-lee/p/15873611.html)
@@ -87,4 +88,33 @@ function getRelativePath(filePath, basePath) {
         return filePath.substring(filePath.find(basePath) + basePath.length);
     }
     else return null;
+}
+
+/**
+ * 写入剪贴板(兼容模式)
+ * REF [google chrome - navigator.clipboard is undefined - Stack Overflow](https://stackoverflow.com/questions/51805395/navigator-clipboard-is-undefined)
+ */
+function copyToClipboard(text) {
+    // navigator clipboard api needs a secure context (https | localhost | loopback)
+    if (navigator.clipboard && window.isSecureContext) {
+        // navigator clipboard api method'
+        return navigator.clipboard.writeText(text);
+    } else {
+        // text area method
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        // make the textarea out of viewport
+        // textarea.style.position = "fixed";
+        // textarea.style.left = "-999999px";
+        // textarea.style.top = "-999999px";
+        textarea.style.display = "none";
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        return new Promise((resolve, reject) => {
+            // here the magic happens
+            document.execCommand('copy') ? resolve() : reject();
+            textarea.remove();
+        });
+    }
 }

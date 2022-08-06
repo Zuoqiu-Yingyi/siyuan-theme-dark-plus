@@ -17,11 +17,10 @@ export {
     shuffle, // 打乱数组
     Iterator, // 创建循环迭代器
     getObjectLength, // 获取对象属性数量
+    copyToClipboard, // 复制到剪贴板
 };
 
 import { config } from './../module/config.js';
-import { getBlockByID } from './api.js';
-import { CTRL_CLICK_EVENT } from './event.js';
 
 // REF [js - 对象递归合并merge - zc-lee - 博客园](https://www.cnblogs.com/zc-lee/p/15873611.html)
 function isObject(obj) {
@@ -299,6 +298,35 @@ function* Iterator(items, loop = false) {
  */
 function getObjectLength(obj) {
     return Object.keys(obj).length;
+}
+
+/**
+ * 写入剪贴板(兼容模式)
+ * REF [google chrome - navigator.clipboard is undefined - Stack Overflow](https://stackoverflow.com/questions/51805395/navigator-clipboard-is-undefined)
+ */
+function copyToClipboard(text) {
+    // navigator clipboard api needs a secure context (https | localhost | loopback)
+    if (navigator.clipboard && window.isSecureContext) {
+        // navigator clipboard api method'
+        return navigator.clipboard.writeText(text);
+    } else {
+        // text area method
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        // make the textarea out of viewport
+        // textarea.style.position = "fixed";
+        // textarea.style.left = "-999999px";
+        // textarea.style.top = "-999999px";
+        textarea.style.display = "none";
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        return new Promise((resolve, reject) => {
+            // here the magic happens
+            document.execCommand('copy') ? resolve() : reject();
+            textarea.remove();
+        });
+    }
 }
 
 /**

@@ -5,6 +5,7 @@ import {
     saveAsFile,
     merge,
     getRelativePath,
+    copyToClipboard,
 } from './js/utils.js';
 import {
     queryBlock,
@@ -664,7 +665,7 @@ window.onload = () => {
                     // contextMenuGroupId: '9_window', // 所属菜单的分组
                     // contextMenuOrder: 1, // 菜单分组内排序
                     run: () => {
-                        window.navigator.clipboard.writeText([
+                        copyToClipboard([
                             window.location.pathname,
                             window.location.search,
                             window.location.hash,
@@ -680,7 +681,7 @@ window.onload = () => {
                     // contextMenuGroupId: '9_window', // 所属菜单的分组
                     // contextMenuOrder: 2, // 菜单分组内排序
                     run: () => {
-                        window.navigator.clipboard.writeText(window.location.href);
+                        copyToClipboard(window.location.href);
                     }, // 点击后执行的操作
                 });
 
