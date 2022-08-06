@@ -7,13 +7,15 @@ import {
     getEditor,
     getDockFromPanel,
     getFocusedDocID,
-    setBlockDOMAttrs,
 } from './../utils/dom.js';
 import {
     ialCreate,
     HTMLDecode,
 } from './../utils/string.js';
-import { getObjectLength } from './../utils/misc.js';
+import {
+    getObjectLength,
+    copyToClipboard,
+} from './../utils/misc.js';
 import { globalEventHandler } from './../utils/listener.js';
 import {
     sql,
@@ -31,9 +33,12 @@ async function docCopy() {
         let data = await exportMdContent(id);
         if (data) {
             let content = data.content;
-            navigator.clipboard.writeText(content);
+            copyToClipboard(content)
+                .then(() => pushMsg(config.theme.doc.copy.message.success))
+                .catch(() => pushErrMsg(config.theme.doc.copy.message.error));
         }
     }
+    else pushErrMsg(config.theme.messages.selectDocument.error);
 }
 
 async function docDelete() {
@@ -45,6 +50,7 @@ async function docDelete() {
             '',
         );
     }
+    else pushErrMsg(config.theme.messages.selectDocument.error);
 }
 
 async function docCut() {
@@ -53,14 +59,23 @@ async function docCut() {
         let data = await exportMdContent(id);
         if (data) {
             let content = data.content;
-            navigator.clipboard.writeText(content);
-            await updateBlock(
-                id,
-                'markdown',
-                '',
-            );
+            copyToClipboard(content)
+                .then(async () => {
+                    const response = await updateBlock(
+                        id,
+                        'markdown',
+                        '',
+                    );
+                    if (response) pushMsg(config.theme.doc.cut.message.success)
+                    else {
+                        pushMsg(config.theme.doc.copy.message.success);
+                        pushErrMsg(config.theme.doc.cut.message.error);
+                    };
+                })
+                .catch(() => pushErrMsg(config.theme.doc.cut.message.error));
         }
     }
+    else pushErrMsg(config.theme.messages.selectDocument.error);
 }
 
 const MAP = {
@@ -188,8 +203,9 @@ async function outlineCopy(mode) {
 
     if (markdown.length > 0) {
         if (getObjectLength(config.theme.doc.outline.ial) > 0) markdown.push(ialCreate(config.theme.doc.outline.ial));
-        navigator.clipboard.writeText(markdown.join('\n'));
-        pushMsg(config.theme.doc.outline.message.success);
+        copyToClipboard(markdown.join('\n'))
+            .then(() => pushMsg(config.theme.doc.outline.message.success))
+            .catch(() => pushErrMsg(config.theme.doc.outline.message.error));
     }
     else pushErrMsg(config.theme.doc.outline.message.error);
 }

@@ -2,17 +2,17 @@
 
 import { config } from './config.js';
 import {
-    isEvent,
-    isButton,
-} from './../utils/hotkey.js';
-import { getBlockAttrs } from './../utils/api.js';
+    getBlockAttrs,
+    pushMsg,
+    pushErrMsg,
+} from './../utils/api.js';
 import { getTargetBlock } from './../utils/dom.js';
 import { globalEventHandler } from './../utils/listener.js';
 import {
     timestampParse,
     timestampFormat,
+    copyToClipboard,
     id2url,
-    intPrefix,
 } from './../utils/misc.js';
 
 async function jump(target) {
@@ -54,18 +54,24 @@ async function create(target) {
 
                     let hyperlink = `[${timestamp}](${id2url(id)} "{&quot;${config.theme.timestamp.attribute}&quot;: &quot;${timestamp}&quot;}")`;
                     // console.log(hyperlink);
-                    navigator.clipboard.writeText(hyperlink);
+                    copyToClipboard(hyperlink)
+                        .then(() => pushMsg(config.theme.timestamp.create.message.success))
+                        .catch(() => pushErrMsg(config.theme.timestamp.create.message.error));
                 }, 0);
                 break;
             case 'NodeIFrame':
                 // 视频网站时间戳
-                let timestamp = block.getAttribute(config.theme.timestamp.attribute);
-                if (config.theme.regs.time.test(timestamp)) {
-                    // 通过块属性生成一个时间戳
-                    timestamp = timestampFormat(timestampParse(timestamp));
-                    let hyperlink = `[${timestamp}](${id2url(id)} "{&quot;${config.theme.timestamp.attribute}&quot;: &quot;${timestamp}&quot;}")`;
-                    navigator.clipboard.writeText(hyperlink);
-                }
+                setTimeout(async () => {
+                    let timestamp = block.getAttribute(config.theme.timestamp.attribute);
+                    if (config.theme.regs.time.test(timestamp)) {
+                        // 通过块属性生成一个时间戳
+                        timestamp = timestampFormat(timestampParse(timestamp));
+                        let hyperlink = `[${timestamp}](${id2url(id)} "{&quot;${config.theme.timestamp.attribute}&quot;: &quot;${timestamp}&quot;}")`;
+                        copyToClipboard(hyperlink)
+                            .then(() => pushMsg(config.theme.timestamp.create.message.success))
+                            .catch(() => pushErrMsg(config.theme.timestamp.create.message.error));
+                    }
+                }, 0);
                 break;
             default:
                 break;

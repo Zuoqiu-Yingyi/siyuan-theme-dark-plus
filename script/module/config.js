@@ -22,6 +22,26 @@ export var config = {
             winpath: /^\/\w\:\/.*$/, // Windows 路径正则表达式
             inboxid: /^\d{13}$/, // 收集箱 ID 正则表达式
         },
+        messages: {
+            // 消息提示
+            copy: {
+                // 复制
+                success: {
+                    zh_CN: '复制成功',
+                    other: 'Copy succeeded.',
+                },
+                error: {
+                    zh_CN: '复制失败',
+                    other: 'Copy failed.',
+                },
+            },
+            selectDocument: {
+                error: {
+                    zh_CN: '请在编辑区中选择文档',
+                    other: 'Please select the document in the edit area.',
+                },
+            }
+        },
         toolbar: {
             // 工具栏
             id: 'custom-toolbar', // 工具栏 ID
@@ -161,6 +181,16 @@ export var config = {
             },
             create: {
                 enable: true, // 是否启用生成时间戳
+                message: {
+                    success: {
+                        zh_CN: '时间戳复制成功',
+                        other: 'Timestamp copy succeeded.',
+                    },
+                    error: {
+                        zh_CN: '时间戳复制失败',
+                        other: 'Timestamp copy failed.',
+                    },
+                },
             },
             attribute: 'custom-time', // 自定义块属性名称
         },
@@ -218,7 +248,7 @@ export var config = {
                         },
                         error: {
                             zh_CN: '折叠失败，请在编辑区中选择文档',
-                            other: 'Collapse failed, please select the document in the editing area.',
+                            other: 'Collapse failed, please select the document in the edit area.',
                         },
                     },
                 },
@@ -243,7 +273,7 @@ export var config = {
                         },
                         error: {
                             zh_CN: '展开失败，请在编辑区中选择文档',
-                            other: 'Expand failed, please select the document in the editing area.',
+                            other: 'Expand failed, please select the document in the edit area.',
                         },
                     },
                 },
@@ -261,7 +291,7 @@ export var config = {
                     },
                     error: {
                         zh_CN: '复制当前文档大纲失败，请在编辑区中选择包含子标题的文档',
-                        other: 'Copying the current document outline failed, please select the document that contains the subheading in the editing area.',
+                        other: 'Copying the current document outline failed, please select the document that contains the subheading in the edit area.',
                     },
                 },
                 u: {
@@ -334,6 +364,16 @@ export var config = {
                     icon: '#iconCopy',
                     index: 12,
                 },
+                message: {
+                    success: {
+                        zh_CN: '复制当前文档内容 (Markdown) 成功',
+                        other: 'Copy the current document content (Markdown) succeeded.',
+                    },
+                    error: {
+                        zh_CN: '复制当前文档内容 (Markdown) 失败',
+                        other: 'Copy the current document content (Markdown) failed.',
+                    },
+                },
             },
             delete: {
                 enable: true, // 是否启用当前文档全文删除功能
@@ -363,6 +403,16 @@ export var config = {
                     },
                     icon: '#iconCut',
                     index: 13,
+                },
+                message: {
+                    success: {
+                        zh_CN: '剪切当前文档内容 (Markdown) 成功',
+                        other: 'Cut the current document content (Markdown) succeeded.',
+                    },
+                    error: {
+                        zh_CN: '剪切当前文档内容 (Markdown) 失败',
+                        other: 'Cut the current document content (Markdown) failed.',
+                    },
                 },
             },
         },
