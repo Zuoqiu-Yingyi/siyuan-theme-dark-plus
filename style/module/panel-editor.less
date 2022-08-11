@@ -72,38 +72,38 @@
 .protyle-content {
 
     // 开启自适应宽度
-    // &[data-fullwidth="true"] {
-    //     >.protyle-background {
-    //         >.protyle-background__iconw {
-    //             /* 文档标志 */
-    //             left: var(--custom-editor-padding-left) !important;
-    //         }
-    //     }
-
-    //     >.protyle-title,
-    //     >.protyle-wysiwyg {
-    //         margin-left: var(--custom-editor-padding-left) !important;
-    //         margin-right: var(--custom-editor-padding-right) !important;
-    //         padding-left: 0 !important;
-    //         padding-right: 0 !important;
-    //     }
-    // }
-
-    // deprecated: 使用 [data-fullwidth="true"] 判断是否开启自适应宽度
-    >.protyle-background {
-        >.protyle-background__iconw {
-
-            // 开启自适应宽度后边距在 96px 与 16px之间切换
-            &:is([style="left:96px"], [style="left:16px"]) {
+    &[data-fullwidth="true"] {
+        >.protyle-background {
+            >.protyle-background__iconw {
                 /* 文档标志 */
                 left: var(--custom-editor-padding-left) !important;
             }
         }
+
+        >.protyle-title,
+        >.protyle-wysiwyg {
+            margin-left: var(--custom-editor-padding-left) !important;
+            margin-right: var(--custom-editor-padding-right) !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
     }
+
+    // deprecated: 使用 [data-fullwidth="true"] 判断是否开启自适应宽度
+    // >.protyle-background {
+    //     >.protyle-background__iconw {
+    //         // 开启自适应宽度后边距在 96px 与 16px之间切换
+    //         &:is([style="left:96px"], [style="left:16px"]) {
+    //             /* 文档标志 */
+    //             left: var(--custom-editor-padding-left) !important;
+    //         }
+    //     }
+    // }
 
     >.protyle-title {
         /* 标题 */
-        .page-margins();
+        // deprecated: 使用 [data-fullwidth="true"] 判断是否开启自适应宽度
+        // .page-margins();
 
         .protyle-title__input {
             /*编辑区文件名*/
@@ -112,7 +112,8 @@
     }
 
     >.protyle-wysiwyg {
-        .page-margins();
+        // deprecated: 使用 [data-fullwidth="true"] 判断是否开启自适应宽度
+        // .page-margins();
 
         // 拖拽
         .dragover__top {
