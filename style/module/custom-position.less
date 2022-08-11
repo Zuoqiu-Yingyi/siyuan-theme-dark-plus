@@ -1,0 +1,30 @@
+/* 浮动块 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+.protyle-wysiwyg {
+    [data-node-id] {
+
+        &[custom-position~=top],
+        &[custom-position~=bottom] {
+            position: absolute;
+            left: var(--custom-editor-padding-left);
+            right: var(--custom-editor-padding-right);
+            z-index: 1;
+        }
+
+        &[custom-position~=top] {
+            top: var(--custom-position-top);
+        }
+
+        &[custom-position~=bottom] {
+            bottom: var(--custom-position-bottom);
+        }
+    }
+
+    >[data-node-id][custom-position~=top] {
+        /* 文档下顶层块需要留出面包屑的高度 */
+        top: var(--custom-breadcrumb-height);
+    }
+}
