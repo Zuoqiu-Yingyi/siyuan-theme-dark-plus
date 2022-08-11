@@ -12,6 +12,7 @@
 - 调整面包屑样式选择器 | Adjust the style selector of the breadcrumb.
 - 使用 `Less` 重构 `custom-render-danmaku.css` | Refactored `custom-render-danmaku.css` with `Less`.
 - 为 `theme.js` 中加载的 `script` 标签设置 `defer` 属性 | Set the `defer` attribute of the `script` tag loaded in `theme.js` to `true`.
+- 使用 `Less` 重构 `custom-position.css` | Refactored `custom-position.css` with `Less`.
 
 ## v1.2.5/2022-08-03
 
