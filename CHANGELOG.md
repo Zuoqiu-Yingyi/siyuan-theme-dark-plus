@@ -11,6 +11,7 @@
 - [#94](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/94) 使用兼容方案将文本写入剪贴板 | Use the compatibility scheme to write text to the clipboard.
 - 调整面包屑样式选择器 | Adjust the style selector of the breadcrumb.
 - 使用 `Less` 重构 `custom-render-danmaku.css` | Refactored `custom-render-danmaku.css` with `Less`.
+- 为 `theme.js` 中加载的 `script` 标签设置 `defer` 属性 | Set the `defer` attribute of the `script` tag loaded in `theme.js` to `true`.
 
 ## v1.2.5/2022-08-03
 

@@ -61,7 +61,7 @@ window.theme.loadMeta = function (attributes) {
  * @params {string} url 脚本地址
  * @params {string} type 脚本类型
  */
-window.theme.loadScript = function (src, type = 'module', async = false, defer = false) {    
+window.theme.loadScript = function (src, type = 'module', async = false, defer = false) {
     const script = document.createElement('script');
     if (type) script.type = type;
     if (async) script.async = true;
@@ -215,27 +215,27 @@ window.theme.changeThemeMode(
 );
 
 /* 加载 HTML 块中使用的小工具 */
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/html.js"), "text/javascript");
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/html.js"), "text/javascript", undefined, true);
 
 /* 加载主题功能 */
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/background.js"));
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/blockattrs.js"));
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/doc.js"));
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/dock.js"));
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/goto.js"));
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/invert.js"));
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/location.js"));
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/menu.js"));
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/readonly.js"));
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/reload.js"));
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/style.js"));
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/timestamp.js"));
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/typewriter.js"));
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/wheel.js"));
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/window.js"));
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/background.js"), undefined, true);
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/blockattrs.js"), undefined, true);
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/doc.js"), undefined, true);
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/dock.js"), undefined, true);
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/goto.js"), undefined, true);
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/invert.js"), undefined, true);
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/location.js"), undefined, true);
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/menu.js"), undefined, true);
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/readonly.js"), undefined, true);
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/reload.js"), undefined, true);
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/style.js"), undefined, true);
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/timestamp.js"), undefined, true);
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/typewriter.js"), undefined, true);
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/wheel.js"), undefined, true);
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/window.js"), undefined, true);
 
 /* 加载独立应用 */
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/app/comment/index.js"));
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/app/comment/index.js"), undefined, true);
 
 /* 加载自定义配置文件 */
 // window.theme.loadScript(window.theme.addURLParam("/widgets/custom.js"));
