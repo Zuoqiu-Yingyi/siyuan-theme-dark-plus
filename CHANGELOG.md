@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 使用 `Less` 重构 `custom-list-guides.css` | Refactored `custom-list-guides.css` with `Less`.
+
 ## v1.2.6/2022-08-12
 
 - [v1.2.5 <=> v1.2.6](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.5...v1.2.6)
