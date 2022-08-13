@@ -1,0 +1,34 @@
+/* 自定义块字体 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+.font(@font) {
+
+    .protyle-wysiwyg[custom-font-family="@{font}"],
+    .protyle-wysiwyg [data-node-id][custom-font-family="@{font}"] {
+        font-family: "@{font}";
+    }
+}
+
+.font("等线");
+.font("方正舒体");
+.font("方正姚体");
+.font("仿宋");
+.font("黑体");
+.font("华文彩云");
+.font("华文仿宋");
+.font("华文琥珀");
+.font("华文楷体");
+.font("华文隶书");
+.font("华文宋体");
+.font("华文细黑");
+.font("华文新魏");
+.font("华文行楷");
+.font("华文中宋");
+.font("楷体");
+.font("隶书");
+.font("宋体");
+.font("微软雅黑");
+.font("新宋体");
+.font("幼圆");
