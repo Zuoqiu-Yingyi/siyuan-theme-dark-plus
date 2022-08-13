@@ -1,109 +1,87 @@
 /* 自定义块字体 */
-
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-
-.protyle-wysiwyg[custom-font-family="等线"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="等线"] {
-    font-family: "等线";
+.protyle-wysiwyg[custom-font-family="等线"],
+.protyle-wysiwyg [data-node-id][custom-font-family="等线"] {
+  font-family: "等线";
 }
-
-.protyle-wysiwyg[custom-font-family="方正舒体"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="方正舒体"] {
-    font-family: "方正舒体";
+.protyle-wysiwyg[custom-font-family="方正舒体"],
+.protyle-wysiwyg [data-node-id][custom-font-family="方正舒体"] {
+  font-family: "方正舒体";
 }
-
-.protyle-wysiwyg[custom-font-family="方正姚体"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="方正姚体"] {
-    font-family: "方正姚体";
+.protyle-wysiwyg[custom-font-family="方正姚体"],
+.protyle-wysiwyg [data-node-id][custom-font-family="方正姚体"] {
+  font-family: "方正姚体";
 }
-
-.protyle-wysiwyg[custom-font-family="仿宋"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="仿宋"] {
-    font-family: "仿宋";
+.protyle-wysiwyg[custom-font-family="仿宋"],
+.protyle-wysiwyg [data-node-id][custom-font-family="仿宋"] {
+  font-family: "仿宋";
 }
-
-.protyle-wysiwyg[custom-font-family="黑体"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="黑体"] {
-    font-family: "黑体";
+.protyle-wysiwyg[custom-font-family="黑体"],
+.protyle-wysiwyg [data-node-id][custom-font-family="黑体"] {
+  font-family: "黑体";
 }
-
-.protyle-wysiwyg[custom-font-family="华文彩云"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="华文彩云"] {
-    font-family: "华文彩云";
+.protyle-wysiwyg[custom-font-family="华文彩云"],
+.protyle-wysiwyg [data-node-id][custom-font-family="华文彩云"] {
+  font-family: "华文彩云";
 }
-
-.protyle-wysiwyg[custom-font-family="华文仿宋"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="华文仿宋"] {
-    font-family: "华文仿宋";
+.protyle-wysiwyg[custom-font-family="华文仿宋"],
+.protyle-wysiwyg [data-node-id][custom-font-family="华文仿宋"] {
+  font-family: "华文仿宋";
 }
-
-.protyle-wysiwyg[custom-font-family="华文琥珀"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="华文琥珀"] {
-    font-family: "华文琥珀";
+.protyle-wysiwyg[custom-font-family="华文琥珀"],
+.protyle-wysiwyg [data-node-id][custom-font-family="华文琥珀"] {
+  font-family: "华文琥珀";
 }
-
-.protyle-wysiwyg[custom-font-family="华文楷体"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="华文楷体"] {
-    font-family: "华文楷体";
+.protyle-wysiwyg[custom-font-family="华文楷体"],
+.protyle-wysiwyg [data-node-id][custom-font-family="华文楷体"] {
+  font-family: "华文楷体";
 }
-
-.protyle-wysiwyg[custom-font-family="华文隶书"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="华文隶书"] {
-    font-family: "华文隶书";
+.protyle-wysiwyg[custom-font-family="华文隶书"],
+.protyle-wysiwyg [data-node-id][custom-font-family="华文隶书"] {
+  font-family: "华文隶书";
 }
-
-.protyle-wysiwyg[custom-font-family="华文宋体"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="华文宋体"] {
-    font-family: "华文宋体";
+.protyle-wysiwyg[custom-font-family="华文宋体"],
+.protyle-wysiwyg [data-node-id][custom-font-family="华文宋体"] {
+  font-family: "华文宋体";
 }
-
-.protyle-wysiwyg[custom-font-family="华文细黑"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="华文细黑"] {
-    font-family: "华文细黑";
+.protyle-wysiwyg[custom-font-family="华文细黑"],
+.protyle-wysiwyg [data-node-id][custom-font-family="华文细黑"] {
+  font-family: "华文细黑";
 }
-
-.protyle-wysiwyg[custom-font-family="华文新魏"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="华文新魏"] {
-    font-family: "华文新魏";
+.protyle-wysiwyg[custom-font-family="华文新魏"],
+.protyle-wysiwyg [data-node-id][custom-font-family="华文新魏"] {
+  font-family: "华文新魏";
 }
-
-.protyle-wysiwyg[custom-font-family="华文行楷"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="华文行楷"] {
-    font-family: "华文行楷";
+.protyle-wysiwyg[custom-font-family="华文行楷"],
+.protyle-wysiwyg [data-node-id][custom-font-family="华文行楷"] {
+  font-family: "华文行楷";
 }
-
-.protyle-wysiwyg[custom-font-family="华文中宋"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="华文中宋"] {
-    font-family: "华文中宋";
+.protyle-wysiwyg[custom-font-family="华文中宋"],
+.protyle-wysiwyg [data-node-id][custom-font-family="华文中宋"] {
+  font-family: "华文中宋";
 }
-
-.protyle-wysiwyg[custom-font-family="楷体"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="楷体"] {
-    font-family: "楷体";
+.protyle-wysiwyg[custom-font-family="楷体"],
+.protyle-wysiwyg [data-node-id][custom-font-family="楷体"] {
+  font-family: "楷体";
 }
-
-.protyle-wysiwyg[custom-font-family="隶书"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="隶书"] {
-    font-family: "隶书";
+.protyle-wysiwyg[custom-font-family="隶书"],
+.protyle-wysiwyg [data-node-id][custom-font-family="隶书"] {
+  font-family: "隶书";
 }
-
-.protyle-wysiwyg[custom-font-family="宋体"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="宋体"] {
-    font-family: "宋体";
+.protyle-wysiwyg[custom-font-family="宋体"],
+.protyle-wysiwyg [data-node-id][custom-font-family="宋体"] {
+  font-family: "宋体";
 }
-
-.protyle-wysiwyg[custom-font-family="微软雅黑"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="微软雅黑"] {
-    font-family: "微软雅黑";
+.protyle-wysiwyg[custom-font-family="微软雅黑"],
+.protyle-wysiwyg [data-node-id][custom-font-family="微软雅黑"] {
+  font-family: "微软雅黑";
 }
-
-.protyle-wysiwyg[custom-font-family="新宋体"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="新宋体"] {
-    font-family: "新宋体";
+.protyle-wysiwyg[custom-font-family="新宋体"],
+.protyle-wysiwyg [data-node-id][custom-font-family="新宋体"] {
+  font-family: "新宋体";
 }
-
-.protyle-wysiwyg[custom-font-family="幼圆"] div[data-node-id],
-.protyle-wysiwyg div[data-node-id][custom-font-family="幼圆"] {
-    font-family: "幼圆";
+.protyle-wysiwyg[custom-font-family="幼圆"],
+.protyle-wysiwyg [data-node-id][custom-font-family="幼圆"] {
+  font-family: "幼圆";
 }

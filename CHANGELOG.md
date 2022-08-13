@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 使用 `Less` 重构 `custom-list-guides.css` | Refactored `custom-list-guides.css` with `Less`.
+- 使用 `Less` 重构 `custom-font-family.css` | Refactored `custom-font-family.css` with `Less`.
 
 ## v1.2.6/2022-08-12
 
