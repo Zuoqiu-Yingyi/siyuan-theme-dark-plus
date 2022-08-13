@@ -1,65 +1,57 @@
 /* 动态列表子弹流辅助线 */
-
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-
-/* 子弹流弧线 */
-.protyle-wysiwyg *[custom-list-guides][data-node-id].list [data-node-id].list>[data-node-id].li:hover>.protyle-action::before {
-    content: "";
-    left: calc(16px - 2em);
-    bottom: calc(2px + 7em / 8);
-    position: absolute;
-    border-left: var(--custom-list-guides-line-width) solid var(--custom-striking-color);
-    border-bottom: var(--custom-list-guides-line-width) solid var(--custom-striking-color);
-    border-bottom-left-radius: var(--custom-list-guides-line-radius);
+.protyle-wysiwyg .list[data-node-id][custom-list-guides] .list[data-node-id] > .li[data-node-id]:hover > .protyle-action::before {
+  /* 子弹流弧线 */
+  content: "";
+  left: calc(16px - 2em);
+  bottom: calc(2px + 7em / 8);
+  position: absolute;
+  border-left: var(--custom-list-guides-line-width) solid var(--custom-striking-color);
+  border-bottom: var(--custom-list-guides-line-width) solid var(--custom-striking-color);
+  border-bottom-left-radius: var(--custom-list-guides-line-radius);
 }
-
-/* 与本层节点的接缝 */
-.protyle-wysiwyg *[custom-list-guides][data-node-id].list [data-node-id].list>[data-subtype="t"][data-node-id].li:hover>.protyle-action::before {
-    right: var(--custom-list-guides-line-right-t);
+.protyle-wysiwyg .list[data-node-id][custom-list-guides] .list[data-node-id] > .li[data-node-id][data-subtype="t"]:hover > .protyle-action::before {
+  /* 与本层节点的接缝 */
+  right: var(--custom-list-guides-line-right-t);
 }
-
-.protyle-wysiwyg *[custom-list-guides][data-node-id].list [data-node-id].list>[data-subtype="u"][data-node-id].li:hover>.protyle-action::before {
-    right: var(--custom-list-guides-line-right-u);
+.protyle-wysiwyg .list[data-node-id][custom-list-guides] .list[data-node-id] > .li[data-node-id][data-subtype="u"]:hover > .protyle-action::before {
+  /* 与本层节点的接缝 */
+  right: var(--custom-list-guides-line-right-u);
 }
-
-.protyle-wysiwyg *[custom-list-guides][data-node-id].list [data-node-id].list>[data-subtype="o"][data-node-id].li:hover>.protyle-action::before {
-    right: var(--custom-list-guides-line-right-o);
+.protyle-wysiwyg .list[data-node-id][custom-list-guides] .list[data-node-id] > .li[data-node-id][data-subtype="o"]:hover > .protyle-action::before {
+  /* 与本层节点的接缝 */
+  right: var(--custom-list-guides-line-right-o);
 }
-
-.protyle-wysiwyg *[custom-list-guides][data-node-id].list [data-node-id].li:hover>.protyle-action,
-.protyle-wysiwyg *[custom-list-guides][data-node-id].list [data-node-id].list>[data-node-id].li:hover>.protyle-action {
-    color: var(--custom-list-item-color);
+.protyle-wysiwyg .list[data-node-id][custom-list-guides] .list[data-node-id] > [data-node-id]::before {
+  /* 子弹流直线 */
+  content: "";
+  left: calc(16px - 2em);
+  bottom: 0;
+  position: absolute;
+  border-left: var(--custom-list-guides-line-width) solid transparent;
 }
-
-/* 子弹流直线 */
-.protyle-wysiwyg *[custom-list-guides][data-node-id].list [data-node-id].list>[data-node-id]::before {
-    content: "";
-    left: calc(16px - 2em);
-    bottom: 0;
-    position: absolute;
-    border-left: var(--custom-list-guides-line-width) solid transparent;
+.protyle-wysiwyg .list[data-node-id][custom-list-guides] .list[data-node-id] > .li[data-node-id]:hover > .protyle-action::before,
+.protyle-wysiwyg .list[data-node-id][custom-list-guides] .list[data-node-id] > [data-node-id]::before {
+  /* 与上层节点的接缝 */
+  top: var(--custom-list-guides-line-top);
 }
-
-/* 修复列表项内具有多个块级元素时高亮辅助线不显示 */
-.protyle-wysiwyg *[custom-list-guides][data-node-id].list [data-node-id].li:hover>div[data-node-id]:not(:hover)::before {
-    border-left: var(--custom-list-guides-line-width) solid var(--custom-striking-color);
+.protyle-wysiwyg .list[data-node-id][custom-list-guides] .li[data-node-id]:hover > .protyle-action {
+  color: var(--custom-list-item-color);
 }
-
-.protyle-wysiwyg *[custom-list-guides][data-node-id].list [data-node-id].li:hover>div[data-node-id]:hover~div[data-node-id]::before {
-    border-left: var(--custom-list-guides-line-width) solid var(--custom-list-guides-line-color);
+.protyle-wysiwyg .list[data-node-id][custom-list-guides] .li[data-node-id]:hover > [data-node-id]:not(:hover)::before {
+  /* 修复列表项内具有多个块级元素时高亮辅助线不显示 */
+  border-left: var(--custom-list-guides-line-width) solid var(--custom-striking-color);
 }
-
-.protyle-wysiwyg *[custom-list-guides][data-node-id].list [data-node-id].li [data-node-id].list:hover>[data-node-id]:not(:hover)::before {
-    border-color: var(--custom-striking-color);
+.protyle-wysiwyg .list[data-node-id][custom-list-guides] .li[data-node-id]:hover > [data-node-id]:hover ~ [data-node-id]::before {
+  /* 修复列表项内具有多个块级元素时高亮辅助线不显示 */
+  border-left: var(--custom-list-guides-line-width) solid var(--custom-list-guides-line-color);
 }
-
-.protyle-wysiwyg *[custom-list-guides][data-node-id].list [data-node-id].li [data-node-id].list:hover>[data-node-id]:hover~[data-node-id]::before {
-    border-color: transparent;
+.protyle-wysiwyg .list[data-node-id][custom-list-guides] .li[data-node-id] .list[data-node-id]:hover > [data-node-id]:not(:hover)::before {
+  /* 修复列表项内具有多个块级元素时高亮辅助线不显示 */
+  border-color: var(--custom-striking-color);
 }
-
-/* 与上层节点的接缝 */
-.protyle-wysiwyg *[custom-list-guides][data-node-id].list [data-node-id].list>[data-node-id].li:hover>.protyle-action::before,
-.protyle-wysiwyg *[custom-list-guides][data-node-id].list [data-node-id].list>[data-node-id]::before {
-    top: var(--custom-list-guides-line-top);
+.protyle-wysiwyg .list[data-node-id][custom-list-guides] .li[data-node-id] .list[data-node-id]:hover > [data-node-id]:hover ~ [data-node-id]::before {
+  /* 修复列表项内具有多个块级元素时高亮辅助线不显示 */
+  border-color: transparent;
 }
