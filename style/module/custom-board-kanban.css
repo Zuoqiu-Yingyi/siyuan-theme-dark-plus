@@ -1,53 +1,42 @@
 /* 自定义看板 */
-
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-
-/* 通过在主题文件头部用 @import:url(css片段路径使用)* /
-/* 文档中带有 board 属性且值为 "容器" 的超级块会被渲染级为看板 */
-.sb[custom-board="容器"] {
-    border-style: solid;
-    border-width: 2px;
-    margin-left: 5px !important;
-    margin-right: 5px !important;
-    border-radius: 10px;
-    background-color: var(--b3-card-infor-background);
+.protyle-wysiwyg .sb[data-node-id][custom-board="容器"] {
+  /* 文档中带有 board 属性且值为 "容器" 的超级块会被渲染级为看板 */
+  border-style: solid;
+  border-width: 2px;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+  border-radius: 10px;
+  background-color: var(--b3-card-infor-background);
 }
-
-.sb[custom-board="容器"]>div[data-type="NodeHeading"] {
-    border-bottom-style: solid !important;
-    border-bottom-width: 2px;
-    margin-left: 0;
-    margin-right: 0;
-    background-color: var(--b3-card-c-background);
+.protyle-wysiwyg .sb[data-node-id][custom-board="容器"] > [data-node-id][data-type="NodeHeading"] {
+  border-bottom-style: solid !important;
+  border-bottom-width: 2px;
+  margin-left: 0;
+  margin-right: 0;
+  background-color: var(--b3-card-c-background);
 }
-
-.sb[custom-board="容器"] .list {
-    border-style: solid !important;
-    border-width: 1px;
-    border-radius: 3px;
-
-    margin: 5px;
-    margin-top: 10px;
-
-    background-color: var(--b3-theme-surface);
+.protyle-wysiwyg .sb[data-node-id][custom-board="容器"] .list {
+  border-style: solid !important;
+  border-width: 1px;
+  border-radius: 3px;
+  margin: 5px;
+  margin-top: 10px;
+  background-color: var(--b3-theme-surface);
 }
-
-.sb[custom-board="容器"] .list .li {
-    border-bottom-style: solid !important;
-    border-bottom-width: 1px;
-
-    margin: 5px;
+.protyle-wysiwyg .sb[data-node-id][custom-board="容器"] .list .li {
+  border-bottom-style: solid !important;
+  border-bottom-width: 1px;
+  margin: 5px;
 }
-
-/*去除了看板卡片的线条*/
-.sb[custom-board="容器"] .list .li::before {
-    display: none
+.protyle-wysiwyg .sb[data-node-id][custom-board="容器"] .list .li::before {
+  /*去除了看板卡片的线条*/
+  display: none;
 }
-
-.sb[custom-board="容器"] .list .li::after {
-    content: "deadline:" attr(custom-deadline) "|" "memo:" attr(memo);
-    font-size: 10px;
-    display: inline;
-    color: var(--b3-theme-on-surface);
+.protyle-wysiwyg .sb[data-node-id][custom-board="容器"] .list .li::after {
+  content: "deadline:" attr(custom-deadline) "|" "memo:" attr(memo);
+  font-size: 10px;
+  display: inline;
+  color: var(--b3-theme-on-surface);
 }
