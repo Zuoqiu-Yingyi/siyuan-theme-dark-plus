@@ -1,0 +1,80 @@
+/* 自定义文档背景图片 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+.background(@index) {
+    &[custom-background="@{index}"] {
+        background-image: var(e(%("--custom-background-%s", @index)));
+    }
+}
+
+.protyle-wysiwyg {
+    &[custom-background] {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .background("01");
+    .background("02");
+    .background("03");
+    .background("04");
+    .background("05");
+    .background("06");
+    .background("07");
+    .background("08");
+    .background("09");
+    .background("10");
+    .background("11");
+    .background("12");
+}
+
+.protyle-wysiwyg[custom-background="01"] {
+    background-image: var(--custom-background-01);
+}
+
+.protyle-wysiwyg[custom-background="02"] {
+    background-image: var(--custom-background-02);
+}
+
+.protyle-wysiwyg[custom-background="03"] {
+    background-image: var(--custom-background-03);
+}
+
+.protyle-wysiwyg[custom-background="04"] {
+    background-image: var(--custom-background-04);
+}
+
+.protyle-wysiwyg[custom-background="05"] {
+    background-image: var(--custom-background-05);
+}
+
+.protyle-wysiwyg[custom-background="06"] {
+    background-image: var(--custom-background-06);
+}
+
+.protyle-wysiwyg[custom-background="07"] {
+    background-image: var(--custom-background-07);
+}
+
+.protyle-wysiwyg[custom-background="08"] {
+    background-image: var(--custom-background-08);
+}
+
+.protyle-wysiwyg[custom-background="09"] {
+    background-image: var(--custom-background-09);
+}
+
+.protyle-wysiwyg[custom-background="10"] {
+    background-image: var(--custom-background-10);
+}
+
+.protyle-wysiwyg[custom-background="11"] {
+    background-image: var(--custom-background-11);
+}
+
+.protyle-wysiwyg[custom-background="12"] {
+    background-image: var(--custom-background-12);
+}
