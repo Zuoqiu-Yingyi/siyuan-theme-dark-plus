@@ -1,42 +1,28 @@
 /* 表格标题自动编号 */
-
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-
-.protyle-wysiwyg[custom-auto-num-t="表"],
-.protyle-wysiwyg[custom-auto-num-t="表格"],
-.protyle-wysiwyg[custom-auto-num-t="Tab."],
-.protyle-wysiwyg[custom-auto-num-t="table"],
-.protyle-wysiwyg[custom-auto-num-t="Table"],
-.protyle-wysiwyg[custom-auto-num-t="TABLE"] {
-    counter-reset: t-counter;
+.protyle-wysiwyg[custom-auto-num-t] {
+  counter-reset: t-counter;
 }
-
-.protyle-wysiwyg[custom-auto-num-t] div[data-node-id][data-type="NodeTable"] table::before {
-    color: var(--b3-theme-on-surface);
-    counter-increment: t-counter;
+.protyle-wysiwyg[custom-auto-num-t] [data-node-id][data-type="NodeTable"] table::before {
+  color: var(--b3-theme-on-surface);
+  counter-increment: t-counter;
 }
-
-.protyle-wysiwyg[custom-auto-num-t="表"] div[data-node-id][data-type="NodeTable"] table::before {
-    content: "表\0020" counter(t-counter) "\0020";
+.protyle-wysiwyg[custom-auto-num-t="表"] .table[data-node-id] table::before {
+  content: "表\0020" counter(t-counter) "\0020";
 }
-
-.protyle-wysiwyg[custom-auto-num-t="表格"] div[data-node-id][data-type="NodeTable"] table::before {
-    content: "表格\0020" counter(t-counter) "\0020";
+.protyle-wysiwyg[custom-auto-num-t="表格"] .table[data-node-id] table::before {
+  content: "表格\0020" counter(t-counter) "\0020";
 }
-
-.protyle-wysiwyg[custom-auto-num-t="Tab."] div[data-node-id][data-type="NodeTable"] table::before {
-    content: "Tab.\0020" counter(t-counter) "\0020";
+.protyle-wysiwyg[custom-auto-num-t="Tab."] .table[data-node-id] table::before {
+  content: "Tab.\0020" counter(t-counter) "\0020";
 }
-
-.protyle-wysiwyg[custom-auto-num-t="table"] div[data-node-id][data-type="NodeTable"] table::before {
-    content: "table\0020" counter(t-counter) "\0020";
+.protyle-wysiwyg[custom-auto-num-t="table"] .table[data-node-id] table::before {
+  content: "table\0020" counter(t-counter) "\0020";
 }
-
-.protyle-wysiwyg[custom-auto-num-t="Table"] div[data-node-id][data-type="NodeTable"] table::before {
-    content: "Table\0020" counter(t-counter) "\0020";
+.protyle-wysiwyg[custom-auto-num-t="Table"] .table[data-node-id] table::before {
+  content: "Table\0020" counter(t-counter) "\0020";
 }
-
-.protyle-wysiwyg[custom-auto-num-t="TABLE"] div[data-node-id][data-type="NodeTable"] table::before {
-    content: "TABLE\0020" counter(t-counter) "\0020";
+.protyle-wysiwyg[custom-auto-num-t="TABLE"] .table[data-node-id] table::before {
+  content: "TABLE\0020" counter(t-counter) "\0020";
 }

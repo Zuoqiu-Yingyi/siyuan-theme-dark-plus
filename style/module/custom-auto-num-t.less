@@ -1,0 +1,28 @@
+/* 表格标题自动编号 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+.table(@value) {
+    &[custom-auto-num-t="@{value}"] .table[data-node-id] table::before {
+        content: "@{value}\0020" counter(t-counter) "\0020";
+    }
+}
+
+.protyle-wysiwyg {
+    &[custom-auto-num-t] {
+        counter-reset: t-counter;
+
+        [data-node-id][data-type="NodeTable"] table::before {
+            color: var(--b3-theme-on-surface);
+            counter-increment: t-counter;
+        }
+    }
+
+    .table("表");
+    .table("表格");
+    .table("Tab.");
+    .table("table");
+    .table("Table");
+    .table("TABLE");
+}
