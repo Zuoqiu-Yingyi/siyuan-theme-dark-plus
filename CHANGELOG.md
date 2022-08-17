@@ -4,6 +4,7 @@
 - 使用 `Less` 重构 `custom-font-family.css` | Refactored `custom-font-family.css` with `Less`.
 - 使用 `Less` 重构 `custom-board-kanban.css` | Refactored `custom-board-kanban.css` with `Less`.
 - 使用 `Less` 重构 `custom-background.css` | Refactored `custom-background.css` with `Less`.
+- 使用 `Less` 重构 `custom-auto-num-t.css` | Refactored `custom-auto-num-t.css` with `Less`.
 
 ## v1.2.6/2022-08-12
 
