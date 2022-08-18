@@ -1,0 +1,22 @@
+/* 标题自动编号 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+.protyle-wysiwyg {
+
+    &[custom-auto-num-h="0"],
+    &[custom-auto-num-h="false"],
+    &[custom-auto-num-h="禁用"],
+    &[custom-auto-num-h="关闭"] {
+        >[data-node-id][data-type="NodeHeading"]::before {
+            /* 使用自定义文档块属性取消自动编号 */
+            content: "";
+        }
+
+        [data-node-id][data-type="NodeHeading"]>[contenteditable][spellcheck]:empty {
+            /* 使用自定义文档块属性时移除光标位置缩进 */
+            padding-left: 0;
+        }
+    }
+}
