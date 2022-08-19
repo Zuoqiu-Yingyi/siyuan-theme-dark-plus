@@ -786,7 +786,7 @@ class CommonMenuObserver {
         // REF [MutationObserver.MutationObserver() - Web API 接口参考 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/MutationObserver/MutationObserver)
         fn_callback,
         observerConfig = { // 节点监听配置
-            // REF [MutationObserverInit | MDN](https://developer.mozilla.org/zh-CN/docs/conflicting/Web/API/MutationObserver/observe_2f2addbfa1019c23a6255648d6526387)
+            // REF [MutationObserverInit | MDN](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/observe#parameters)
             childList: true,
             subtree: false,
         },

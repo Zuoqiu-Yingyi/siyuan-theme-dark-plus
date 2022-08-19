@@ -18,6 +18,7 @@ class SiyuanUtil {
     this.appendStyleSheet()
     this.comment = new Comment()
     this.domWatcher()
+    this.popoverDomWatcher()
     this.handleEvents()
   }
 
@@ -65,7 +66,7 @@ class SiyuanUtil {
   domWatcher() {
     var targetNode = document.querySelector('.layout__center.fn__flex.fn__flex-1');
     if (!targetNode) {
-      setTimeout(() => { this.domWatcher() }, 300);
+      setTimeout(() => { this.domWatcher() }, 500);
     } else {
       const config = { attributes: false, childList: true, subtree: true };
       const callback = (mutationsList, observer) => {
@@ -87,7 +88,7 @@ class SiyuanUtil {
   /* 处理观察对象节点变动事件 */
   childListChangedHook(mutation) {
     // 监听 node added 事件
-    if (mutation.addedNodes) {
+    if (mutation.addedNodes.length > 0) {
       let node = mutation.addedNodes.item(0)
       // 新增 protyle 节点，即判断为打开了新文档
       if (node && node.className == 'fn__flex-1 protyle') {
@@ -98,6 +99,35 @@ class SiyuanUtil {
             // this.comment.resolveCommentNodes() //todo
           }
         }, 1000)
+      }
+    }
+  }
+
+
+  /* 检测子窗口 dom 变动，用于动态插入元素 */
+  popoverDomWatcher() {
+    const config = { childList: true };
+    const callback = (mutationsList, observer) => {
+      for (let mutation of mutationsList) {
+        // console.log(mutation)
+        this.popoverChildListChangedHook(mutation)
+      }
+    };
+    const observer = new MutationObserver(callback);
+    observer.observe(document.body, config);
+    // observer.disconnect();
+  }
+
+
+  /* 处理观察对象节点变动事件 */
+  popoverChildListChangedHook(mutation) {
+    // 监听 node added 事件
+    if (mutation.addedNodes.length > 0) {
+      let node = mutation.addedNodes.item(0)
+      // 新增 protyle 节点，即判断为打开了新文档
+      if (node && node.classList.contains('block__popover')) {
+        // 因为 dom 树可能没有完全加载，需要延迟处理
+        this.comment.appendToolbarBtn(node.querySelector('.protyle'))
       }
     }
   }
