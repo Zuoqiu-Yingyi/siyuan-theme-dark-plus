@@ -7,8 +7,9 @@
 - 使用 `Less` 重构 `custom-auto-num-t.css` | Refactored `custom-auto-num-t.css` with `Less`.
 - 使用 `Less` 重构 `custom-auto-num-h.css` | Refactored `custom-auto-num-h.css` with `Less`.
 - [#96](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/96) 悬浮预览子窗口支持行内注释功能 | Added support for inline comments in the floating preview window.
+- 使用 `Less` 重构 `custom-auto-num-f.css` | Refactored `custom-auto-num-f.css` with `Less`.
 
-## v1.2.6/2022-08-12 
+## v1.2.6/2022-08-12
 
 - [v1.2.5 <=> v1.2.6](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.5...v1.2.6)
 - 为 Jupyter 全局配置的 Server 字段输入框添加有效性检查 | Add a check to the Server field of the Jupyter global config to make sure the input is a valid URL.

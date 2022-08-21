@@ -1,42 +1,28 @@
 /* 图片标题自动编号 */
-
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-
-.protyle-wysiwyg[custom-auto-num-f="图"],
-.protyle-wysiwyg[custom-auto-num-f="图片"],
-.protyle-wysiwyg[custom-auto-num-f="Fig."],
-.protyle-wysiwyg[custom-auto-num-f="figure"],
-.protyle-wysiwyg[custom-auto-num-f="Figure"],
-.protyle-wysiwyg[custom-auto-num-f="FIGURE"] {
-    counter-reset: f-counter;
+.protyle-wysiwyg[custom-auto-num-f] {
+  counter-reset: t-counter;
 }
-
-.protyle-wysiwyg[custom-auto-num-f] div[data-node-id] span.protyle-action__title::before {
-    color: var(--b3-theme-on-surface);
-    counter-increment: f-counter;
+.protyle-wysiwyg[custom-auto-num-f] [data-node-id] span.protyle-action__title::before {
+  color: var(--b3-theme-on-surface);
+  counter-increment: f-counter;
 }
-
-.protyle-wysiwyg[custom-auto-num-f="图"] div[data-node-id] span.protyle-action__title::before {
-    content: "图\0020" counter(f-counter) "\0020";
+.protyle-wysiwyg[custom-auto-num-f="图"] [data-node-id] span.protyle-action__title::before {
+  content: "图\0020" counter(f-counter) "\0020";
 }
-
-.protyle-wysiwyg[custom-auto-num-f="图片"] div[data-node-id] span.protyle-action__title::before {
-    content: "图片\0020" counter(f-counter) "\0020";
+.protyle-wysiwyg[custom-auto-num-f="图片"] [data-node-id] span.protyle-action__title::before {
+  content: "图片\0020" counter(f-counter) "\0020";
 }
-
-.protyle-wysiwyg[custom-auto-num-f="Fig."] div[data-node-id] span.protyle-action__title::before {
-    content: "Fig.\0020" counter(f-counter) "\0020";
+.protyle-wysiwyg[custom-auto-num-f="Fig."] [data-node-id] span.protyle-action__title::before {
+  content: "Fig.\0020" counter(f-counter) "\0020";
 }
-
-.protyle-wysiwyg[custom-auto-num-f="figure"] div[data-node-id] span.protyle-action__title::before {
-    content: "figure\0020" counter(f-counter) "\0020";
+.protyle-wysiwyg[custom-auto-num-f="figure"] [data-node-id] span.protyle-action__title::before {
+  content: "figure\0020" counter(f-counter) "\0020";
 }
-
-.protyle-wysiwyg[custom-auto-num-f="Figure"] div[data-node-id] span.protyle-action__title::before {
-    content: "Figure\0020" counter(f-counter) "\0020";
+.protyle-wysiwyg[custom-auto-num-f="Figure"] [data-node-id] span.protyle-action__title::before {
+  content: "Figure\0020" counter(f-counter) "\0020";
 }
-
-.protyle-wysiwyg[custom-auto-num-f="FIGURE"] div[data-node-id] span.protyle-action__title::before {
-    content: "FIGURE\0020" counter(f-counter) "\0020";
+.protyle-wysiwyg[custom-auto-num-f="FIGURE"] [data-node-id] span.protyle-action__title::before {
+  content: "FIGURE\0020" counter(f-counter) "\0020";
 }
