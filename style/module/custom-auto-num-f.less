@@ -1,0 +1,28 @@
+/* 图片标题自动编号 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+.figure(@value) {
+    &[custom-auto-num-f="@{value}"] [data-node-id] span.protyle-action__title::before {
+        content: "@{value}\0020" counter(f-counter) "\0020";
+    }
+}
+
+.protyle-wysiwyg {
+    &[custom-auto-num-f] {
+        counter-reset: t-counter;
+
+        [data-node-id] span.protyle-action__title::before {
+            color: var(--b3-theme-on-surface);
+            counter-increment: f-counter;
+        }
+    }
+
+    .figure("图");
+    .figure("图片");
+    .figure("Fig.");
+    .figure("figure");
+    .figure("Figure");
+    .figure("FIGURE");
+}
