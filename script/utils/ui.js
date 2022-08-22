@@ -145,7 +145,8 @@ function toolbarItemListPush(item) {
             toolbar.insertBefore(divider_before, windowControls);
             toolbar.insertBefore(more, windowControls);
             toolbar.insertBefore(custom_toolbar, windowControls);
-            toolbar.insertBefore(divider_after, windowControls);
+            if (windowControls.childElementCount > 0) // 存在窗口控制按钮, 插入分割线
+                toolbar.insertBefore(divider_after, windowControls);
         }
 
         toolbarItemList = toolbarItemList.sort((a, b) => a.index - b.index);
