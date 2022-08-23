@@ -9,6 +9,7 @@
 - [#96](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/96) 悬浮预览子窗口支持行内注释功能 | Added support for inline comments in the floating preview window.
 - 使用 `Less` 重构 `custom-auto-num-f.css` | Refactored `custom-auto-num-f.css` with `Less`.
 - 移除非桌面端拓展工具栏与窗口工具栏之间的分割线 | Removed the separator line between the non-desktop extension toolbar and the window toolbar.
+- 使用 `Less` 重构 `guides-list.css` | Refactored `guides-list.css` with `Less`.
 
 ## v1.2.6/2022-08-12
 
