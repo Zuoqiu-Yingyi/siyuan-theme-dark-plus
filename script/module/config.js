@@ -6,6 +6,8 @@ import {
     putFile,
 } from './../utils/api.js';
 
+const THEME_PATHNAME = "/appearance/themes/Dark+";
+
 export var config = {
     token: '', // API token, 无需填写
     custom: {
@@ -95,7 +97,7 @@ export var config = {
                         enable: true,
                         style: {
                             id: 'theme-style-tab-bar-vertical-style',
-                            href: '/appearance/themes/Dark+/style/dynamic-module/tab-bar-vertical.css', // 样式文件 URL
+                            href: `${THEME_PATHNAME}/style/dynamic-module/tab-bar-vertical.css`, // 样式文件 URL
                         },
                     },
                 },
@@ -121,7 +123,7 @@ export var config = {
                         enable: true,
                         style: {
                             id: 'theme-style-guides-elements-list-style',
-                            href: '/appearance/themes/Dark+/style/dynamic-module/guides-list.css', // 样式文件 URL
+                            href: `${THEME_PATHNAME}/style/dynamic-module/guides-list.css`, // 样式文件 URL
                         },
                     },
                 },
@@ -147,7 +149,7 @@ export var config = {
                         enable: true,
                         style: {
                             id: 'theme-style-mark-elements-display-style',
-                            href: '/appearance/themes/Dark+/style/dynamic-module/mark-display.css', // 样式文件 URL
+                            href: `${THEME_PATHNAME}/style/dynamic-module/mark-display.css`, // 样式文件 URL
                         },
                     },
                 },
@@ -176,6 +178,11 @@ export var config = {
         timestamp: {
             // 视频/音频时间戳
             enable: true, // 是否启用时间戳
+            youtube: { // YouTube 时间戳相关配置
+                // iframe_api: "https://www.youtube.com/iframe_api", // API 工具
+                iframe_api: `${THEME_PATHNAME}/static/youtube/iframe_api.js`, // API 工具
+                polling: 500, // 轮询时间(单位: ms)
+            },
             jump: {
                 enable: true, // 是否启用跳转
             },
@@ -543,30 +550,30 @@ export var config = {
                     random: true, // 是否随机选择自定义背景图片
                     default: false, // 是否默认使用自定义背景图片
                     light: [ // 自定义亮色背景图片 URL 列表
-                        '/appearance/themes/Dark+/image/light/background (01).jpeg',
-                        '/appearance/themes/Dark+/image/light/background (02).jpeg',
-                        '/appearance/themes/Dark+/image/light/background (03).jpeg',
-                        '/appearance/themes/Dark+/image/light/background (04).jpeg',
-                        '/appearance/themes/Dark+/image/light/background (05).jpeg',
-                        '/appearance/themes/Dark+/image/light/background (06).jpeg',
-                        '/appearance/themes/Dark+/image/light/background (07).jpeg',
-                        '/appearance/themes/Dark+/image/light/background (08).jpeg',
-                        '/appearance/themes/Dark+/image/light/background (09).jpeg',
-                        '/appearance/themes/Dark+/image/light/background (10).jpeg',
+                        `${THEME_PATHNAME}/image/light/background (01).jpeg`,
+                        `${THEME_PATHNAME}/image/light/background (02).jpeg`,
+                        `${THEME_PATHNAME}/image/light/background (03).jpeg`,
+                        `${THEME_PATHNAME}/image/light/background (04).jpeg`,
+                        `${THEME_PATHNAME}/image/light/background (05).jpeg`,
+                        `${THEME_PATHNAME}/image/light/background (06).jpeg`,
+                        `${THEME_PATHNAME}/image/light/background (07).jpeg`,
+                        `${THEME_PATHNAME}/image/light/background (08).jpeg`,
+                        `${THEME_PATHNAME}/image/light/background (09).jpeg`,
+                        `${THEME_PATHNAME}/image/light/background (10).jpeg`,
                     ],
                     dark: [ // 自定义暗色背景图片 URL 列表
-                        '/appearance/themes/Dark+/image/background (01).jpg',
-                        '/appearance/themes/Dark+/image/background (02).jpg',
-                        '/appearance/themes/Dark+/image/background (03).jpg',
-                        '/appearance/themes/Dark+/image/background (04).jpg',
-                        '/appearance/themes/Dark+/image/background (05).jpg',
-                        '/appearance/themes/Dark+/image/background (06).jpg',
-                        '/appearance/themes/Dark+/image/background (07).jpg',
-                        '/appearance/themes/Dark+/image/background (08).jpg',
-                        '/appearance/themes/Dark+/image/background (09).jpg',
-                        '/appearance/themes/Dark+/image/background (10).jpg',
-                        '/appearance/themes/Dark+/image/background (11).jpg',
-                        '/appearance/themes/Dark+/image/background (12).jpg',
+                        `${THEME_PATHNAME}/image/background (01).jpg`,
+                        `${THEME_PATHNAME}/image/background (02).jpg`,
+                        `${THEME_PATHNAME}/image/background (03).jpg`,
+                        `${THEME_PATHNAME}/image/background (04).jpg`,
+                        `${THEME_PATHNAME}/image/background (05).jpg`,
+                        `${THEME_PATHNAME}/image/background (06).jpg`,
+                        `${THEME_PATHNAME}/image/background (07).jpg`,
+                        `${THEME_PATHNAME}/image/background (08).jpg`,
+                        `${THEME_PATHNAME}/image/background (09).jpg`,
+                        `${THEME_PATHNAME}/image/background (10).jpg`,
+                        `${THEME_PATHNAME}/image/background (11).jpg`,
+                        `${THEME_PATHNAME}/image/background (12).jpg`,
                     ],
                 },
             },
@@ -743,7 +750,7 @@ export var config = {
                     },
                     path: {
                         // 路径
-                        index: '/appearance/themes/Dark+/app/editor/', // 编辑器路径
+                        index: `${THEME_PATHNAME}/app/editor/`, // 编辑器路径
                         temp: {
                             // 临时文件路径
                             relative: '/temp/theme/editor/', // 临时文件相对路径
@@ -1008,7 +1015,7 @@ export var config = {
                                         {
                                             type: 'window-open',
                                             params: {
-                                                href: '/appearance/themes/Dark+/app/jupyter/settings-global.html',
+                                                href: `${THEME_PATHNAME}/app/jupyter/settings-global.html`,
                                                 urlParams: { lang: window.theme.languageMode },
                                             },
                                         },
@@ -1031,7 +1038,7 @@ export var config = {
                                         {
                                             type: 'window-open',
                                             params: {
-                                                href: '/appearance/themes/Dark+/app/jupyter/settings-document.html',
+                                                href: `${THEME_PATHNAME}/app/jupyter/settings-document.html`,
                                                 urlParams: { lang: window.theme.languageMode },
                                             },
                                         },
