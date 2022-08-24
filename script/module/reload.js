@@ -5,10 +5,6 @@
  */
 
 import { config } from './config.js';
-import {
-    isKey,
-    isEvent,
-} from './../utils/hotkey.js';
 import { getBlockAttrs } from './../utils/api.js';
 import { timestampParse } from './../utils/misc.js';
 import { toolbarItemInit } from './../utils/ui.js';
