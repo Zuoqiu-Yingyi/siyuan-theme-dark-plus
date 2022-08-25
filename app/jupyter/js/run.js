@@ -12,7 +12,10 @@ import {
     appendBlock,
     updateBlock,
 } from './api.js';
-import { config } from './config.js';
+import {
+    config,
+    i18n,
+} from './config.js';
 import { custom } from './../../public/custom.js';
 import {
     setBlockDOMAttrs,
@@ -48,7 +51,6 @@ var websockets = {
 
 /* 加载样式 */
 const style = document.getElementById(config.jupyter.id.siyuan.style.id) || document.createElement('link');
-const i18n = config.jupyter.i18n;
 const lang = window.theme.languageMode;
 style.id = config.jupyter.id.siyuan.style.id;
 style.type = 'text/css';
@@ -128,7 +130,7 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                     [config.jupyter.attrs.other.prompt]: promptFormat(
                         websocket.kernel.language,
                         websocket.kernel.name,
-                        i18n[execution_state][lang] || i18n[execution_state].default,
+                        i18n('execution_state', lang),
                     )
                 };
                 await setBlockAttrs(message_info.doc, doc_attrs);
@@ -196,7 +198,7 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                 const date = new Date(message.header.date);
                 let code_attrs = {
                     [config.jupyter.attrs.code.index]: '*',
-                    [config.jupyter.attrs.code.time]: `${i18n.start[lang] || i18n.start.default}: ${date.format('yyyy-MM-dd hh:mm:ss')}`,
+                    [config.jupyter.attrs.code.time]: `${i18n('start', lang)}: ${date.format('yyyy-MM-dd hh:mm:ss')}`,
                 };
                 let output_attrs = { [config.jupyter.attrs.output.index]: '*' };
                 await setBlockAttrs(message_info.code, code_attrs);
@@ -252,7 +254,7 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                 const stoped = new Date(message.header.date);
                 let code_attrs = {
                     [config.jupyter.attrs.code.index]: code_index,
-                    [config.jupyter.attrs.code.time]: `${i18n.start[lang] || i18n.start.default}: ${started.format('yyyy-MM-dd hh:mm:ss')} | ${i18n.runtime[lang] || i18n.runtime.default}: ${timestampFormat(stoped - started)}`,
+                    [config.jupyter.attrs.code.time]: `${i18n('start', lang)}: ${started.format('yyyy-MM-dd hh:mm:ss')} | ${i18n('runtime', lang)}: ${timestampFormat(stoped - started)}`,
                 };
                 let output_attrs = {
                     [config.jupyter.attrs.output.index]: output_index,

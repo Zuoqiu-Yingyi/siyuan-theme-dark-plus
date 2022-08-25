@@ -56,33 +56,36 @@
     </table>
 </body>
 <script type="module">
-    import { config, url } from './js/config.js';
+    import {
+        url,
+        config,
+        i18n,
+    } from './js/config.js';
     const lang = url.searchParams.get('lang');
-    const i18n = config.jupyter.i18n;
 
-    document.getElementById('setting-item-name').innerText = i18n['setting-item-name'][lang] || i18n['setting-item-name'].default;
-    document.getElementById('setting-item-content').innerText = i18n['setting-item-content'][lang] || i18n['setting-item-content'].default;
-    document.getElementById('setting-item-memo').innerText = i18n['setting-item-memo'][lang] || i18n['setting-item-memo'].default;
+    document.getElementById('setting-item-name').innerText = i18n('setting-item-name', lang);
+    document.getElementById('setting-item-content').innerText = i18n('setting-item-content', lang);
+    document.getElementById('setting-item-memo').innerText = i18n('setting-item-memo', lang);
 
-    document.getElementById('session-create').innerText = i18n['session-create'][lang] || i18n['session-create'].default;
-    document.getElementById('session-manage').innerText = i18n['session-manage'][lang] || i18n['session-manage'].default;
-    
-    document.getElementById('jupyterSessionsCreateNameInput').placeholder = i18n['session-name'][lang] || i18n['session-name'].default;
-    document.getElementById('jupyterSessionsManageNameInput').placeholder = i18n['session-name'][lang] || i18n['session-name'].default;
-    document.getElementById('jupyterSessionsCreatePathInput').placeholder = i18n['session-path'][lang] || i18n['session-path'].default;
-    document.getElementById('jupyterSessionsManagePathInput').placeholder = i18n['session-path'][lang] || i18n['session-path'].default;
-    
-    
-    document.getElementById('jupyterSessionsCreateRefreshButton').innerText = i18n.refresh[lang] || i18n.refresh.default;
-    document.getElementById('jupyterSessionsManageRefreshButton').innerText = i18n.refresh[lang] || i18n.refresh.default;
+    document.getElementById('session-create').innerText = i18n('session-create', lang);
+    document.getElementById('session-manage').innerText = i18n('session-manage', lang);
 
-    document.getElementById('jupyterSessionsCreateButton').innerText = i18n.create[lang] || i18n.create.default;
+    document.getElementById('jupyterSessionsCreateNameInput').placeholder = i18n('session-name', lang);
+    document.getElementById('jupyterSessionsManageNameInput').placeholder = i18n('session-name', lang);
+    document.getElementById('jupyterSessionsCreatePathInput').placeholder = i18n('session-path', lang);
+    document.getElementById('jupyterSessionsManagePathInput').placeholder = i18n('session-path', lang);
 
-    document.getElementById('jupyterSessionsManageUpdateButton').innerText = i18n.update[lang] || i18n.update.default;
-    document.getElementById('jupyterSessionsManageStartButton').innerText = i18n.connect[lang] || i18n.connect.default;
-    document.getElementById('jupyterSessionsManageInterruptButton').innerText = i18n.interrupt[lang] || i18n.interrupt.default;
-    document.getElementById('jupyterSessionsManageRestartButton').innerText = i18n.restart[lang] || i18n.restart.default;
-    document.getElementById('jupyterSessionsManageCloseButton').innerText = i18n.close[lang] || i18n.close.default;
+
+    document.getElementById('jupyterSessionsCreateRefreshButton').innerText = i18n('refresh', lang);
+    document.getElementById('jupyterSessionsManageRefreshButton').innerText = i18n('refresh', lang);
+
+    document.getElementById('jupyterSessionsCreateButton').innerText = i18n('create', lang);
+
+    document.getElementById('jupyterSessionsManageUpdateButton').innerText = i18n('update', lang);
+    document.getElementById('jupyterSessionsManageStartButton').innerText = i18n('connect', lang);
+    document.getElementById('jupyterSessionsManageInterruptButton').innerText = i18n('interrupt', lang);
+    document.getElementById('jupyterSessionsManageRestartButton').innerText = i18n('restart', lang);
+    document.getElementById('jupyterSessionsManageCloseButton').innerText = i18n('close', lang);
 
 </script>
 <script type="module" src="./js/document.js"></script>

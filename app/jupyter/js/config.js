@@ -1,6 +1,7 @@
 export {
     url,
     config,
+    i18n,
 }
 
 import { merge } from './utils.js';
@@ -163,6 +164,8 @@ var config = {
         }
     },
 };
+
+const i18n = (key, lang) => config.jupyter.i18n[key][lang] || config.jupyter.i18n[key].default;
 
 try {
     // 合并配置文件 custom.js
