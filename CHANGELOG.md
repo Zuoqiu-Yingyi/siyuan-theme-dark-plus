@@ -11,6 +11,7 @@
 - 移除非桌面端拓展工具栏与窗口工具栏之间的分割线 | Removed the separator line between the non-desktop extension toolbar and the window toolbar.
 - 使用 `Less` 重构 `guides-list.css` | Refactored `guides-list.css` with `Less`.
 - 使用 [IFrame Player API](https://developers.google.com/youtube/iframe_api_reference) 重构 YouTube 时间戳创建功能 | Refactored YouTube timestamp creation with [IFrame Player API](https://developers.google.com/youtube/iframe_api_reference).
+- 重构 jupyter 客户端的 i18n 功能 | Refactored i18n functionality of client.
 
 ## v1.2.6/2022-08-12
 

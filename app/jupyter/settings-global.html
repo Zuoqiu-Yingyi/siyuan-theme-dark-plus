@@ -48,23 +48,25 @@
     </table>
 </body>
 <script type="module">
-    import { config } from './js/config.js';
+    import {
+        config,
+        i18n,
+    } from './js/config.js';
     var url = new URL(window.location.href);
     const lang = url.searchParams.get('lang');
-    const i18n = config.jupyter.i18n;
 
-    document.getElementById('setting-item-name').innerText = i18n['setting-item-name'][lang] || i18n['setting-item-name'].default;
-    document.getElementById('setting-item-content').innerText = i18n['setting-item-content'][lang] || i18n['setting-item-content'].default;
-    document.getElementById('setting-item-memo').innerText = i18n['setting-item-memo'][lang] || i18n['setting-item-memo'].default;
+    document.getElementById('setting-item-name').innerText = i18n('setting-item-name', lang);
+    document.getElementById('setting-item-content').innerText = i18n('setting-item-content', lang);
+    document.getElementById('setting-item-memo').innerText = i18n('setting-item-memo', lang);
 
-    document.getElementById('memo-server').innerText = i18n['memo-server'][lang] || i18n['memo-server'].default;
-    document.getElementById('memo-cookie').innerText = i18n['memo-cookie'][lang] || i18n['memo-cookie'].default;
-    document.getElementById('memo-token').innerText = i18n['memo-token'][lang] || i18n['memo-token'].default;
+    document.getElementById('memo-server').innerText = i18n('memo-server', lang);
+    document.getElementById('memo-cookie').innerText = i18n('memo-cookie', lang);
+    document.getElementById('memo-token').innerText = i18n('memo-token', lang);
 
-    document.getElementById('jupyterServerTest').innerText = i18n.test[lang] || i18n.test.default;
-    document.getElementById('jupyterServerButton').innerText = i18n.ok[lang] || i18n.ok.default;
-    document.getElementById('jupyterCookiesButton').innerText = i18n.ok[lang] || i18n.ok.default;
-    document.getElementById('jupyterTokenButton').innerText = i18n.ok[lang] || i18n.ok.default;
+    document.getElementById('jupyterServerTest').innerText = i18n('test', lang);
+    document.getElementById('jupyterServerButton').innerText = i18n('ok', lang);
+    document.getElementById('jupyterCookiesButton').innerText = i18n('ok', lang);
+    document.getElementById('jupyterTokenButton').innerText = i18n('ok', lang);
 </script>
 <script type="module" src="./js/global.js"></script>
 
