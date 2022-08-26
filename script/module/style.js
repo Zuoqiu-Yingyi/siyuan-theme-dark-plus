@@ -112,12 +112,11 @@ setTimeout(() => {
             //     setTimeout(render(), 0);
             // });
             if (config.theme.style.render.enable) {
+                // 使用快捷键渲染自定义样式
                 const Fn_render = toolbarItemInit(
                     config.theme.reload.window.toolbar,
                     render,
                 );
-
-                // 使用快捷键渲染自定义样式
                 globalEventHandler.addEventHandler(
                     'keyup',
                     config.theme.hotkeys.style.render,
@@ -125,11 +124,11 @@ setTimeout(() => {
                 );
             }
             if (config.theme.style.guides.enable) {
+                // 使用快捷键启用/禁用辅助线样式
                 const Fn_guides = toolbarItemInit(
                     config.theme.style.guides.toolbar,
                     () => changeStyleState(config.theme.style.guides),
                 );
-                // 使用快捷键启用/禁用辅助线样式
                 globalEventHandler.addEventHandler(
                     'keyup',
                     config.theme.hotkeys.style.guides,
@@ -137,11 +136,11 @@ setTimeout(() => {
                 );
             }
             if (config.theme.style.mark.enable) {
+                // 使用快捷键显示/遮盖标记文本
                 const Fn_mark = toolbarItemInit(
                     config.theme.style.mark.toolbar,
                     () => changeStyleState(config.theme.style.mark),
                 );
-                // 使用快捷键显示/遮盖标记文本
                 globalEventHandler.addEventHandler(
                     'keyup',
                     config.theme.hotkeys.style.mark,
@@ -149,15 +148,22 @@ setTimeout(() => {
                 );
             }
             if (config.theme.style.tabbar.enable) {
+                // 是否启用纵向选项卡
                 const Fn_tabbar = toolbarItemInit(
                     config.theme.style.tabbar.toolbar,
                     () => changeStyleState(config.theme.style.tabbar),
                 );
-                // 使用快捷键显示/遮盖标记文本
                 globalEventHandler.addEventHandler(
                     'keyup',
                     config.theme.hotkeys.style.tabbar,
                     _ => Fn_tabbar(),
+                );
+            }
+            if (config.theme.style.itemtext.enable) {
+                // 是否完整显示文本内容
+                const Fn_itemtext = toolbarItemInit(
+                    config.theme.style.itemtext.toolbar,
+                    () => changeStyleState(config.theme.style.itemtext),
                 );
             }
         }

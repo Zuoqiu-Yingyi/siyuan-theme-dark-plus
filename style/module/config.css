@@ -483,15 +483,19 @@
     /* --custom-backlink-display: table-cell; */
     /* --custom-bookmark-display: table-cell; */
     /* --custom-file-display: table-cell; */
+    /* --custom-inbox-display: table-cell; */
     /* --custom-outline-display: table-cell; */
     /* --custom-tag-display: table-cell; */
+    /* --custom-search-display: table-cell; */
 
     /* 过长时仅显示部分名称(默认样式) | Only partial names are displayed when too long (default style) */
     --custom-backlink-display: -webkit-box;
     --custom-bookmark-display: -webkit-box;
     --custom-file-display: -webkit-box;
+    --custom-inbox-display: -webkit-box;
     --custom-outline-display: -webkit-box;
     --custom-tag-display: -webkit-box;
+    --custom-search-display: -webkit-box;
 
     /* 文档树匹配标题颜色(文档标题尾匹配) | Document tree match header color (document end-of-title match) */
     /* * */

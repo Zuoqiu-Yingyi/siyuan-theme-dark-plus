@@ -78,6 +78,29 @@ export var config = {
             save: {
                 enable: false, // 是否启用保存自定义样式
             },
+            itemtext: {
+                enable: true, // 是否完整显示文本内容
+                toolbar: {
+                    enable: true,
+                    display: true,
+                    id: 'toolbar-theme-style-itemtext',
+                    label: {
+                        zh_CN: '完整显示文本内容',
+                        other: 'Full Display Text Content',
+                    },
+                    icon: '#iconParagraph',
+                    index: -8,
+                },
+                elements: {
+                    itemtext: {
+                        enable: true,
+                        style: {
+                            id: 'theme-style-list-item-text-style',
+                            href: `${THEME_PATHNAME}/style/dynamic-module/list-item-text.css`, // 样式文件 URL
+                        },
+                    },
+                },
+            },
             tabbar: {
                 enable: true, // 是否启用纵向选项卡
                 toolbar: { // 菜单栏
@@ -803,7 +826,7 @@ export var config = {
                         other: 'Record Browsing Location',
                     },
                     icon: '#iconBookmark',
-                    index: -9,
+                    index: -10,
                 },
             },
             clear: {
@@ -869,7 +892,7 @@ export var config = {
                         other: 'Block Menu Enhancements',
                     },
                     icon: '#iconMenu',
-                    index: -8,
+                    index: -9,
                 },
                 items: [ // 块菜单项
                     { // 常用字体设置
@@ -2731,6 +2754,7 @@ export var custom = {
             [config.theme.toolbar.more.id]: { default: true }, // 工具栏是否展开
             [config.theme.location.record.toolbar.id]: { default: false }, // 当前浏览位置
             [config.theme.menu.block.toolbar.id]: { default: false }, // 块功能增强
+            [config.theme.style.itemtext.toolbar.id]: { default: false }, // 完整显示文本内容
             [config.theme.style.tabbar.toolbar.id]: { default: false }, // 纵向排列选项卡
             [config.theme.style.guides.toolbar.id]: { default: false }, // 列表辅助线
             [config.theme.style.mark.toolbar.id]: { default: false }, // 显示标记文本

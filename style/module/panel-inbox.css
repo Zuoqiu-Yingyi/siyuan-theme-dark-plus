@@ -3,6 +3,11 @@
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 
+.sy__inbox .b3-list-item__text {
+    /* 过长收集箱标题显示样式 */
+    display: var(--custom-inbox-display);
+}
+
 .sy__inbox>.inbox__details {
     background-color: var(--custom-inbox-background-color);
 }

@@ -47,6 +47,9 @@
   min-width: 100px;
   width: auto !important;
 }
+.b3-dialog__container .b3-list-item__text {
+  display: var(--custom-search-display);
+}
 /* 搜索结果列表 */
 #searchList,
 #searchPreview {
