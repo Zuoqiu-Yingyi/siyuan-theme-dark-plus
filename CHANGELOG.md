@@ -12,6 +12,7 @@
 - 使用 `Less` 重构 `guides-list.css` | Refactored `guides-list.css` with `Less`.
 - 使用 [IFrame Player API](https://developers.google.com/youtube/iframe_api_reference) 重构 YouTube 时间戳创建功能 | Refactored YouTube timestamp creation with [IFrame Player API](https://developers.google.com/youtube/iframe_api_reference).
 - 重构 jupyter 客户端的 i18n 功能 | Refactored i18n functionality of client.
+- 新增 `完整显示文本内容` 功能 | Added the `Full Display Text Content` feature.
 
 ## v1.2.6/2022-08-12
 
