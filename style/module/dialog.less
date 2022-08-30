@@ -78,8 +78,22 @@
     }
 
     // 搜索结果内容显示方式
-    .b3-list-item__text {
-        display: var(--custom-search-display);
+    #searchList {
+        .b3-list-item[data-type="search-item"] {
+            padding-bottom: calc(1.25em + 1px);
+
+            .b3-list-item__text {
+                display: var(--custom-search-display);
+            }
+
+            .b3-list-item__meta {
+                position: absolute;
+                right: 8px;
+                bottom: 0.25em;
+                max-width: calc(100% - 12px);
+                line-height: 1.25em;
+            }
+        }
     }
 }
 

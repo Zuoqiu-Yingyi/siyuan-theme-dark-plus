@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 搜索对话框搜索结果文档路径分行显示 | The search dialog box displays the document path in separate lines.
+
 ## v1.2.7/2022-08-29
 
 - [v1.2.6 <=> v1.2.7](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.5...v1.2.7)
