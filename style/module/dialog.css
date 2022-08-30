@@ -47,8 +47,18 @@
   min-width: 100px;
   width: auto !important;
 }
-.b3-dialog__container .b3-list-item__text {
+.b3-dialog__container #searchList .b3-list-item[data-type="search-item"] {
+  padding-bottom: calc(1.25em + 1px);
+}
+.b3-dialog__container #searchList .b3-list-item[data-type="search-item"] .b3-list-item__text {
   display: var(--custom-search-display);
+}
+.b3-dialog__container #searchList .b3-list-item[data-type="search-item"] .b3-list-item__meta {
+  position: absolute;
+  right: 8px;
+  bottom: 0.25em;
+  max-width: calc(100% - 12px);
+  line-height: 1.25em;
 }
 /* 搜索结果列表 */
 #searchList,
