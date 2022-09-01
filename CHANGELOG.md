@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 搜索对话框搜索结果文档路径分行显示 | The search dialog box displays the document path in separate lines.
+- [#98](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/98) 修复替换对话框中历史替换文本列表背景颜色问题 | Fixed an issue with the background color of the list of historical replacement text in the Replace dialog box.
 
 ## v1.2.7/2022-08-29
 
