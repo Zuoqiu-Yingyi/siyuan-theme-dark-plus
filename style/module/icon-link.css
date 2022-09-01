@@ -20,12 +20,6 @@
     background-image: url(/appearance/themes/Dark+/icon/note.svg) !important;
 }
 
-/* 视频时间戳 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-title *="custom-time"]:not(:empty)::before,
-.b3-typography a[title *="custom-time"]::before {
-    background-image: url(/appearance/themes/Dark+/icon/timestamp.svg) !important;
-}
-
 /* -------------------------------- URL Scheme -------------------------------- */
 
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="bookxnotepro:"]:not(:empty)::before,
@@ -137,6 +131,12 @@
     background-image: url(/appearance/themes/Dark+/icon/zotero.ico) !important;
 }
 
+/* -------------------------------- 其他特化超链接 -------------------------------- */
+/* 视频时间戳 */
+.protyle-wysiwyg [data-node-id] span[data-type='a'][data-title *="custom-time"]:not(:empty)::before,
+.b3-typography a[title *="custom-time"]::before {
+    background-image: url(/appearance/themes/Dark+/icon/timestamp.svg) !important;
+}
 
 /* -------------------------------- 静态文件目录 -------------------------------- */
 /* 资源 */
