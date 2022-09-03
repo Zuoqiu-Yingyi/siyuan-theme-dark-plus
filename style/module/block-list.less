@@ -55,13 +55,13 @@
                 left: -21px;
             }
 
-            &.render-node::before {
-                &[data-type="NodeBlockQueryEmbed"] {
+            &.render-node {
+                &[data-type="NodeBlockQueryEmbed"]::before {
                     /* 修正列表内嵌入块辅助线错位 */
-                    left: calc(15px - 2em);
+                    left: calc(16px - 2em);
                 }
 
-                &[data-type="NodeMathBlock"] {
+                &[data-type="NodeMathBlock"]::before {
                     /* 修正公式块块辅助线错位 */
                     left: calc(16px - 2em);
                 }
