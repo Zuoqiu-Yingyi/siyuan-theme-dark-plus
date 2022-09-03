@@ -40,11 +40,11 @@
   /* 修正列表内标题辅助线错位 */
   left: -21px;
 }
-.protyle-wysiwyg [data-node-id].li > [data-node-id].render-node::before[data-type="NodeBlockQueryEmbed"] {
+.protyle-wysiwyg [data-node-id].li > [data-node-id].render-node[data-type="NodeBlockQueryEmbed"]::before {
   /* 修正列表内嵌入块辅助线错位 */
-  left: calc(15px - 2em);
+  left: calc(16px - 2em);
 }
-.protyle-wysiwyg [data-node-id].li > [data-node-id].render-node::before[data-type="NodeMathBlock"] {
+.protyle-wysiwyg [data-node-id].li > [data-node-id].render-node[data-type="NodeMathBlock"]::before {
   /* 修正公式块块辅助线错位 */
   left: calc(16px - 2em);
 }
