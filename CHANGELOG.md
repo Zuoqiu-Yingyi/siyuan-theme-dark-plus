@@ -22,6 +22,7 @@
 - 重构 jupyter 客户端的 i18n 功能 | Refactored i18n functionality of client.
 - 新增 `完整显示文本内容` 功能 | Added the `Full Display Text Content` feature.
 - [#97](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/97) 修复图片自动编号功能 | Fixed the issue of the auto-numbering function of pictures.
+- 移除无文本内容面包屑项与图标的间距 | Removes the spacing between the textless content breadcrumb item and the icon.
 
 ## v1.2.6/2022-08-12
 
