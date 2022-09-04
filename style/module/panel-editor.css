@@ -33,6 +33,10 @@
   /* 文档路径完整显示 */
   max-width: none;
 }
+.protyle-breadcrumb .protyle-breadcrumb__bar .protyle-breadcrumb__item .protyle-breadcrumb__text:empty {
+  /* 无内容的面包屑项 */
+  margin-left: 0;
+}
 .protyle-content[data-fullwidth="true"] > .protyle-background > .protyle-background__iconw {
   /* 文档标志 */
   left: var(--custom-editor-padding-left) !important;
