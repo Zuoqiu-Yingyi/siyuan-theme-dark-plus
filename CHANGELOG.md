@@ -4,6 +4,8 @@
 - [#98](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/98) 修复替换对话框中历史替换文本列表背景颜色问题 | Fixed an issue with the background color of the list of historical replacement text in the Replace dialog box.
 - 更新 Monaco Editor 至 `v0.34.0` | Updated Monaco Editor to `v0.34.0`.
 - 修复列表内嵌入块的辅助线错位问题 | Fixed the issue of misalignment of the list guide of the embedded block in the list.
+- 移除无文本内容面包屑项与图标的间距 | Removes the spacing between the textless content breadcrumb item and the icon.
+- 只读模式兼容 `v2.1.12+` | Read-only mode compatible with `v2.1.12+`.
 
 ## v1.2.7/2022-08-29
 
@@ -22,7 +24,6 @@
 - 重构 jupyter 客户端的 i18n 功能 | Refactored i18n functionality of client.
 - 新增 `完整显示文本内容` 功能 | Added the `Full Display Text Content` feature.
 - [#97](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/97) 修复图片自动编号功能 | Fixed the issue of the auto-numbering function of pictures.
-- 移除无文本内容面包屑项与图标的间距 | Removes the spacing between the textless content breadcrumb item and the icon.
 
 ## v1.2.6/2022-08-12
 

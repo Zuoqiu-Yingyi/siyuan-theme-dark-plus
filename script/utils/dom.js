@@ -409,7 +409,7 @@ function getEditorsFromLayout(centerLayout) {
         if (layout.children.length > 0) {
             for (let child of layout.children) {
                 if (child.model) editors.push(child.model.editor);
-                else layouts.push(child);
+                else if (child.children) layouts.push(child);
             }
         }
     }
