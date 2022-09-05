@@ -76,7 +76,7 @@
 }
 #historyContainer .b3-dialog__scrim {
   /* 对话框遮罩 */
-  background-color: var(--custom-dialog-scrim-background-color);
+  background-color: var(--custom-scrim-background-color);
 }
 /* 搜索控件 */
 /* div.b3-dialog__container div.fn__flex-column>div.b3-form__space--small {
