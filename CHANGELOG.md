@@ -6,6 +6,7 @@
 - 修复列表内嵌入块的辅助线错位问题 | Fixed the issue of misalignment of the list guide of the embedded block in the list.
 - 移除无文本内容面包屑项与图标的间距 | Removes the spacing between the textless content breadcrumb item and the icon.
 - 只读模式兼容 `v2.1.12+` | Read-only mode compatible with `v2.1.12+`.
+- 更改文档加载时的背景颜色 | Changed the background color when the document loads.
 
 ## v1.2.7/2022-08-29
 

@@ -37,6 +37,9 @@
   /* 无内容的面包屑项 */
   margin-left: 0;
 }
+.wysiwygLoading {
+  background-color: var(--custom-scrim-background-color) !important;
+}
 .protyle-content[data-fullwidth="true"] > .protyle-background > .protyle-background__iconw {
   /* 文档标志 */
   left: var(--custom-editor-padding-left) !important;
