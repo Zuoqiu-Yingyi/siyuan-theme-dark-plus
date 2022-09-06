@@ -5,14 +5,30 @@
         display: flex;
         flex-direction: row;
 
-        >.layout-tab-bar {
-            display: inline;
-            max-width: var(--custom-tab-bar-vertical-max-width);
-            // border-right: 1px solid var(--b3-border-color);
-            outline: 2px solid var(--b3-theme-on-surface-light);
+        >.fn__flex:not(.layout-tab-container) {
+            flex-direction: column-reverse;
+        }
 
-            .item__text {
-                text-align: unset;
+        >*:first-child {
+            max-width: var(--custom-tab-bar-vertical-max-width);
+            outline: 2px solid var(--b3-theme-on-surface-light);
+        }
+
+        .layout-tab-bar {
+            display: block;
+            // max-width: var(--custom-tab-bar-vertical-max-width);
+            // border-right: 1px solid var(--b3-border-color);
+
+            // outline 实现的控件与页签之间的分割线
+            // outline: 2px solid var(--b3-theme-on-surface-light);
+            // &:first-of-type {
+            //     margin-top: 2px;
+            // }
+
+            .item {
+                .item__text {
+                    text-align: unset;
+                }
             }
         }
     }

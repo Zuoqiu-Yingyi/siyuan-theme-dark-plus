@@ -59,3 +59,7 @@
   max-width: none;
   display: flex !important;
 }
+.layout-tab-bar .item:last-child:not(.item--readonly) {
+  /* 移除控件与文档页签之间的距离 */
+  margin: 0;
+}

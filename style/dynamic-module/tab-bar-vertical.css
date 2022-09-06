@@ -3,11 +3,16 @@
   display: flex;
   flex-direction: row;
 }
-.layout__center [data-type='wnd'][data-id] > .layout-tab-bar {
-  display: inline;
+.layout__center [data-type='wnd'][data-id] > .fn__flex:not(.layout-tab-container) {
+  flex-direction: column-reverse;
+}
+.layout__center [data-type='wnd'][data-id] > *:first-child {
   max-width: var(--custom-tab-bar-vertical-max-width);
   outline: 2px solid var(--b3-theme-on-surface-light);
 }
-.layout__center [data-type='wnd'][data-id] > .layout-tab-bar .item__text {
+.layout__center [data-type='wnd'][data-id] .layout-tab-bar {
+  display: block;
+}
+.layout__center [data-type='wnd'][data-id] .layout-tab-bar .item .item__text {
   text-align: unset;
 }
