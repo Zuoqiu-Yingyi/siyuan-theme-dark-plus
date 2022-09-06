@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.2.8/2022-09-07
+
+- [v1.2.7 <=> v1.2.8](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.7...v1.2.8)
 - 搜索对话框搜索结果文档路径分行显示 | The search dialog box displays the document path in separate lines.
 - [#98](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/98) 修复替换对话框中历史替换文本列表背景颜色问题 | Fixed an issue with the background color of the list of historical replacement text in the Replace dialog box.
 - 更新 Monaco Editor 至 `v0.34.0` | Updated Monaco Editor to `v0.34.0`.
