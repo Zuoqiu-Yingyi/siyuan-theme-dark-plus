@@ -9,6 +9,9 @@ export {
     updateBlock,
     getBlockKramdown,
     exportMdContent,
+    getDocHistoryContent,
+    getBlockDomByID,
+    getDoc,
     getAsset,
     getLocalFile,
     getFile,
@@ -43,7 +46,7 @@ async function getNotebookConf(notebook) {
 
 async function getFullHPathByID(id) {
     return request('/api/filetree/getFullHPathByID', {
-        id: id,
+        id,
     });
 }
 
@@ -61,21 +64,44 @@ async function queryAsset(path) {
 
 async function updateBlock(id, data, dataType = 'markdown') {
     return request('/api/block/updateBlock', {
-        id: id,
-        data: data,
-        dataType: dataType,
+        id,
+        data,
+        dataType,
     });
 }
 
 async function getBlockKramdown(id) {
     return request('/api/block/getBlockKramdown', {
-        id: id,
+        id,
     });
 }
 
 async function exportMdContent(id) {
     return request('/api/export/exportMdContent', {
-        id: id,
+        id,
+    });
+}
+
+async function getDocHistoryContent(historyPath, k = "") {
+    return request('/api/history/getDocHistoryContent', {
+        historyPath,
+        k,
+    });
+}
+
+async function getBlockDomByID(id, headingMode = 0, excludeIDs = []) {
+    return request('/api/search/searchEmbedBlock', {
+        stmt: `SELECT * FROM blocks WHERE id = '${id}' LIMIT 1;`,
+        headingMode,
+        excludeIDs,
+    });
+}
+
+async function getDoc(id, mode = 0, size = 2147483647) {
+    return request('/api/filetree/getDoc', {
+        id,
+        mode,
+        size,
     });
 }
 
@@ -87,7 +113,7 @@ async function getFile(path, token = config.token) {
             Authorization: `Token ${token}`,
         },
         body: JSON.stringify({
-            path: path,
+            path,
         }),
     });
     if (response.status === 200)

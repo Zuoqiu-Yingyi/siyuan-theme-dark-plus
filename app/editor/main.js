@@ -13,6 +13,9 @@ import {
     exportMdContent,
     updateBlock,
     getBlockKramdown,
+    getDocHistoryContent,
+    getBlockDomByID,
+    getDoc,
     getFile,
     putFile,
     resolveAssetPath,
@@ -27,6 +30,70 @@ async function init(params) {
     let n; // 笔记本
     let t; // 临时
     switch (params.mode) {
+        case 'history': // 历史文档
+            // 获取文档路径
+            r = await getFullHPathByID(params.id);
+            if (!(r
+                && r.code === 0
+            )) {
+                // 没有查询到笔记本
+                params.mode = 'none';
+                return;
+            }
+            n = r.data;
+
+            r = await getDocHistoryContent(params.url); // 获取历史文档内容
+            if (r && r.code === 0) {
+                params.breadcrumb.set(
+                    `${config.editor.mark.history}${config.editor.MAP.LABELS.mode[params.mode][params.lang] || config.editor.MAP.LABELS.mode[params.mode].default}`,
+                    `${config.editor.mark.historypath}${n.replaceAll('/', config.editor.mark.pathseparate)}`,
+                    params.url,
+                    n,
+                    config.editor.link.file(params.url),
+                    config.editor.link.siyuan(params.id),
+                ); // 设置面包屑
+            }
+            else {
+                params.mode = 'none';
+                return;
+            }
+
+            params.language = 'markdown';
+            params.tabSize = 2;
+            params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
+
+            switch (params.type) {
+                case 'markdown': // 查看 markdown
+                    params.value = r.data.isLargeDoc
+                        ? r.data.content
+                        : window.editor.lute.BlockDOM2StdMd(r.data.content);
+                    break;
+                case 'kramdown': // 对比历史与当前 kramdown
+                    params.value = {
+                        original: null,
+                        modified: null,
+                    }
+                    params.value.original = r.data.isLargeDoc
+                        ? r.data.content
+                        : window.editor.lute.BlockDOM2Md(r.data.content);
+
+                    r = await getBlockKramdown(params.id);
+                    // r = await getBlockDomByID(params.id);
+                    // r = await getDoc(params.id);
+                    if (r && r.code === 0) {
+                        params.value.modified = r.data.kramdown;
+                        // params.value.modified = window.editor.lute.BlockDOM2Md(r.data.blocks[0].content);
+                        // params.value.modified = window.editor.lute.BlockDOM2Md(r.data.content);
+                    }
+                    else {
+                        params.mode = 'none';
+                        return;
+                    }
+                    params.diff = true;
+                    break;
+            }
+
+            break;
         case 'inbox': // 收集箱
             r = await getFile(params.path); // 获取文件内容
             if (r) {
@@ -361,10 +428,10 @@ async function init(params) {
             params.breadcrumb.set(
                 `${config.editor.mark.block}${config.editor.MAP.LABELS.type[b.type][params.lang] || config.editor.MAP.LABELS.type[b.type].default}`,
                 `${config.editor.mark.blockpath}${n.replaceAll('/', config.editor.mark.pathseparate)}`,
-                `siyuan://blocks/${b.id}`,
-                `${n}`,
-                `siyuan://blocks/${b.id}`,
-                `siyuan://blocks/${b.root_id}`,
+                config.editor.link.siyuan(b.id),
+                n,
+                config.editor.link.siyuan(b.id),
+                config.editor.link.siyuan(b.root_id),
             ); // 设置面包屑
             break;
         case 'none':
@@ -377,10 +444,12 @@ window.onload = () => {
     try {
         window.editor = {};
         window.editor.url = new URL(window.location.href);
+        window.editor.lute = window.Lute.New();
         // console.log(window.editor.url);
         window.editor.picker = document.getElementById('picker');
         window.editor.changed = false; // 是否有改动
         window.editor.params = {
+            diff: false, // 是否为差异编辑器
             breadcrumb: {
                 status: document.getElementById('status'),
                 type: document.getElementById('type'),
@@ -447,9 +516,10 @@ window.onload = () => {
                 ? [decodeURI(window.editor.url.searchParams.get('fontFamily') || '')]
                 : [], // 字体
 
-            title: decodeURI(window.editor.url.searchParams.get('title') || ''),
-            describe: decodeURI(window.editor.url.searchParams.get('describe') || ''),
+            title: decodeURI(window.editor.url.searchParams.get('title') || ''), // 标题(inbox 内容)
+            describe: decodeURI(window.editor.url.searchParams.get('describe') || ''), // 描述(inbox 内容)
             IStandaloneEditorConstructionOptions: {}, // 其他编辑器配置
+            IStandaloneDiffEditorConstructionOptions: {}, // 其他差异编辑器配置
             // REF [JS Unicode编码和解码（6种方法）](http://c.biancheng.net/view/5602.html)
             body: JSON.parse(decodeURI(window.editor.url.hash.substring(1)) || null),
         };
@@ -479,29 +549,63 @@ window.onload = () => {
                     || window.editor.params.language
                     || 'plaintext';
                 window.editor.picker.value = language;
+
                 // 编辑器配置
-                const options = merge(
-                    {},
+                const options = {};
+                merge(
+                    options,
                     config.editor.IStandaloneEditorConstructionOptions, // 默认配置
                     {
-                        language: language, // 语言模式
                         theme: config.editor.MAP.THEMES[window.editor.params.theme]
                             || config.editor.MAP.THEMES.default
                             || 'vs', // 主题
                         tabSize: window.editor.params.tabSize || 4, // 缩进
-                        value: window.editor.params.value, // 初始值
                     }, // URL params 配置
                     window.editor.params.IStandaloneEditorConstructionOptions || {},
                     window.editor.params.body
                         ? window.editor.params.body.IStandaloneEditorConstructionOptions || {}
                         : {}, // URL hash 配置
                 );
+                if (window.editor.params.diff) {
+                    merge(
+                        options,
+                        config.editor.IStandaloneDiffEditorConstructionOptions, // 默认配置
+                        window.editor.params.IStandaloneDiffEditorConstructionOptions || {},
+                        window.editor.params.body
+                            ? window.editor.params.body.IStandaloneDiffEditorConstructionOptions || {}
+                            : {}, // URL hash 配置
+                    );
+                    window.editor.diffEditor = monaco.editor.createDiffEditor(
+                        container,
+                        options,
+                    );
+                    window.editor.diffEditor.setModel({
+                        original: monaco.editor.createModel(
+                            window.editor.params.value.original,
+                            language,
+                        ),
+                        modified: monaco.editor.createModel(
+                            window.editor.params.value.modified,
+                            language,
+                        ),
+                    });
+                    window.editor.editor = window.editor.diffEditor.getModifiedEditor();
+                }
+                else {
+                    merge(
+                        options,
+                        {
+                            language: language, // 语言模式
+                            value: window.editor.params.value, // 初始值
+                        },
+                    );
+                    window.editor.editor = monaco.editor.create(
+                        container,
+                        options,
+                    );
+                }
                 // console.log(options);
 
-                window.editor.editor = monaco.editor.create(
-                    container,
-                    options,
-                );
                 async function save() {
                     // 保存文件
                     let response;
@@ -535,6 +639,7 @@ window.onload = () => {
                             );
                             break;
                         case 'doc':
+                        case 'history':
                             response = await updateBlock(
                                 window.editor.params.id,
                                 window.editor.editor.getValue(),
@@ -582,7 +687,13 @@ window.onload = () => {
                 window.editor.picker.onchange = () => {
                     // console.log(window.editor.picker.value);
                     // window.editor.params.lang = window.editor.picker.value;
-                    monaco.editor.setModelLanguage(window.editor.editor.getModel(), window.editor.picker.value);
+                    if (window.editor.params.diff) {
+                        monaco.editor.setModelLanguage(window.editor.diffEditor.getOriginalEditor().getModel(), window.editor.picker.value);
+                        monaco.editor.setModelLanguage(window.editor.diffEditor.getModifiedEditor().getModel(), window.editor.picker.value);
+                    }
+                    else {
+                        monaco.editor.setModelLanguage(window.editor.editor.getModel(), window.editor.picker.value);
+                    }
                 };
 
                 /* 👇👇 右键菜单项 👇👇 */
@@ -597,13 +708,21 @@ window.onload = () => {
                     contextMenuGroupId: '2_view', // 所属菜单的分组
                     contextMenuOrder: 1, // 菜单分组内排序
                     run: () => {
-                        window.editor.editor.updateOptions({ wordWrap: wrap_iter.next().value });
+                        const word_wrap_status = wrap_iter.next().value;
+                        if (window.editor.params.diff) {
+                            window.editor.diffEditor.getOriginalEditor().updateOptions({ wordWrap: word_wrap_status });
+                            window.editor.diffEditor.getModifiedEditor().updateOptions({ wordWrap: word_wrap_status });
+                        }
+                        else {
+                            window.editor.editor.updateOptions({ wordWrap: word_wrap_status });
+                        }
                     }, // 点击后执行的操作
                 });
                 if (!(window.editor.params.type === 'markdown'
                     && (
                         window.editor.params.mode === 'doc'
                         || window.editor.params.mode === 'container'
+                        || window.editor.params.mode === 'history'
                     ))) { // 容器块以 markdown 模式无法保存
                     window.editor.editor.addAction({ // 保存
                         id: '18730D32-5451-4102-B299-BE281BA929B9', // 菜单项 id

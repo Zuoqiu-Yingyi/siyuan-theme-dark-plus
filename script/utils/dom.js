@@ -12,6 +12,7 @@ export {
     getTargetBlockID, // 获得目标的块 ID
     getTargetBlockIndex, // 获得目标的块在文档中的索引
     getTargetInboxID, // 获得目标的收件箱 ID
+    getTargetHistory, // 获得目标的历史文档路径与 ID
     getTargetHref, // 获得目标超链接
     getBlockMark, // 获得块标记
     getBlockSelected, // 获得块选中
@@ -260,6 +261,33 @@ function getTargetInboxID(target) {
         if (config.theme.regs.inboxid.test(element.dataset.id)) return element.dataset.id;
     }
     else return null;
+}
+
+/**
+ * 获得目标的历史文档路径与 ID
+ * @params {HTMLElement} target: 目标
+ * @return {object}
+ *      path: 历史文档文件路径
+ *      id: 历史文档对应的 ID
+ * @return {null} 没有找到历史文档
+ */
+function getTargetHistory(target) {
+    let element = target;
+    while (element != null && element.localName !== 'li') element = element.parentElement;
+
+    if (element != null) {
+        const result = config.theme.regs.historypath.exec(element.dataset.path);
+        if (result
+            && element.dataset.type === 'doc'
+            && element.classList.contains('b3-list-item')
+        ) {
+            return {
+                path: element.dataset.path,
+                id: result[1],
+            };
+        }
+    }
+    return null;
 }
 
 /**

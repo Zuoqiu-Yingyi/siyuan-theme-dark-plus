@@ -20,8 +20,10 @@ export var config = {
             filepath: '🄿', // 文件路径标记
             url: '🌐', // 超链接标记
             urlpath: '🔗', // 超链接路径标记
-            inbox: '📥', // 超链接标记
-            inboxpath: '🔗', // 超链接路径标记
+            inbox: '📥', // 收集箱标记
+            inboxpath: '🔗', // 收集箱路径标记
+            history: '⭯', // 历史文档标记
+            historypath: '🗋', // 历史文档路径标记
             pathseparate: ' > ', // 路径分隔符
             status: { // 状态
                 edited: '📝', // 已编辑且未保存标记
@@ -35,6 +37,7 @@ export var config = {
             // file: filepath => `vscode://file/${filepath}`, // 使用 vscode 打开文件
             directory: dirpath => `file://${dirpath}`, // 目录链接
             // directory: dirpath => `vscode://file/${dirpath}`, // 使用 vscode 打开目录
+            siyuan: id => `siyuan://blocks/${id}`, // 思源链接
         },
         regs: {
             id: /^\d{14}\-[0-9a-z]{7}$/, // 块 ID 正则表达式
@@ -88,6 +91,11 @@ export var config = {
             // value: '', // 初始文本
             wordWrap: 'off', // 是否自动换行 "on" | "off" | "wordWrapColumn" | "bounded"
         },
+        IStandaloneDiffEditorConstructionOptions: {
+            // diffCodeLens: true,
+            // diffWordWrap: "inherit",
+            // isInEmbeddedEditor: true,
+        },
         MAP: { // 字段映射
             LABELS: { // 标签
                 save: { zh_CN: '保存', default: 'Save' },
@@ -107,6 +115,7 @@ export var config = {
                     assets: { zh_CN: '资源文件', default: 'Asset File' },
                     web: { zh_CN: '网络文件', default: 'Web File' },
                     inbox: { zh_CN: '收集箱', default: 'Inbox' },
+                    history: { zh_CN: '文档历史', default: 'History' },
                 },
 
                 type: {
