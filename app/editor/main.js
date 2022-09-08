@@ -79,7 +79,7 @@ async function init(params) {
                     r = await resolveAssetPath(params.path);
                     if (r && r.code === 0) {
                         params.url = r.data.replaceAll(/(\\|\/)+/g, '/');
-                        params.path = `/${getRelativePath(params.url, params.workspace)}`;
+                        params.path = `${getRelativePath(params.url, params.workspace)}`;
                         r = await getFile(params.path);
                         if (r) {
                             params.value = await r.text(); // 文件内容
@@ -151,22 +151,22 @@ async function init(params) {
                         params.mode = 'web';
                         params.value = await r.text();
 
-                        let { dir, filename, ext } = pathParse(url.pathname); // 获得文件名和扩展名
+                        let { dir, filename } = pathParse(params.url); // 获得路径与文件名
                         params.dir = dir;
-                        params.filename = filename;
-                        params.ext = ext;
+                        params.filename = filename.full;
+                        params.ext = filename.ext;
 
-                        if (params.language === 'default' && ext) params.language = ext; // 如果没有设置语言, 则根据文件扩展名设置语言
+                        if (params.language === 'default' && filename.ext) params.language = filename.ext; // 如果没有设置语言, 则根据文件扩展名设置语言
                         params.breadcrumb.set(
                             `${config.editor.mark.url}${config.editor.MAP.LABELS.mode[params.mode][params.lang] || config.editor.MAP.LABELS.mode[params.mode].default}`,
                             `${config.editor.mark.urlpath}${url.host}${url.pathname}`.replaceAll('/', config.editor.mark.pathseparate),
-                            filename,
+                            filename.full,
                             params.url,
                             params.url,
                             params.url,
                         ); // 设置面包屑
 
-                        params.breadcrumb.type.download = filename; // 设置下载按钮
+                        params.breadcrumb.type.download = filename.full; // 设置下载按钮
                         params.breadcrumb.crumb.target = '_self'; // 在本窗口打开
                         return;
                     }
@@ -190,15 +190,16 @@ async function init(params) {
             r = await getFile(params.path); // 获取文件内容
             if (r) {
                 params.value = await r.text(); // 文件内容
-                let { dir, filename, ext } = pathParse(params.url); // 获得文件名和扩展名
+                let { dir, filename } = pathParse(params.url); // 获得路径与文件名
                 params.dir = dir;
-                params.filename = filename;
-                params.ext = ext;
-                if (params.language === 'default' && ext) params.language = ext; // 如果没有设置语言, 则根据文件扩展名设置语言
+                params.filename = filename.full;
+                params.ext = filename.ext;
+
+                if (params.language === 'default' && filename.ext) params.language = filename.ext; // 如果没有设置语言, 则根据文件扩展名设置语言
                 params.breadcrumb.set(
                     `${config.editor.mark.file}${config.editor.MAP.LABELS.mode[params.mode][params.lang] || config.editor.MAP.LABELS.mode[params.mode].default}`,
                     `${config.editor.mark.filepath}${hpathText}`.replaceAll('/', config.editor.mark.pathseparate),
-                    filename,
+                    filename.full,
                     params.url,
                     config.editor.link.file(params.url),
                     config.editor.link.directory(params.dir),
@@ -631,7 +632,42 @@ window.onload = () => {
                     }, // 点击后执行的操作
                 });
 
-                if (window.editor.params.mode === 'assets' || window.editor.params.mode === 'local') {
+                /* 本地文件 */
+                const file = {
+                    is: false, // 是否为本地文件
+                    path: null, // 文件绝对路径
+                    dir: null, // 文件所在目录
+                    name: {
+                        full: null, // 完整文件名
+                        main: null, // 主文件名
+                        ext: null, // 文件扩展名
+                    },
+                };
+                switch (window.editor.params.mode) {
+                    case 'assets':
+                    case 'local':
+                        file.is = true;
+                        {
+                            let { path, dir, filename } = pathParse(window.editor.params.url);
+                            file.path = path;
+                            file.dir = dir;
+                            file.name = filename;
+                        }
+                        break;
+                    case 'inbox':
+                        file.is = true;
+                        {
+                            let { path, dir, filename } = pathParse(`${window.editor.params.workspace}${window.editor.params.path}`);
+                            file.path = path;
+                            file.dir = dir;
+                            file.name = filename;
+                        }
+                        break;
+                    default:
+                        file.is = false;
+                        break;
+                }
+                if (file.is) {
                     window.editor.editor.addAction({ // 在 vscode 中打开文件
                         id: '7EA4AB2E-ED05-4AB2-AB27-575978CA820E', // 菜单项 id
                         label: config.editor.MAP.LABELS.openFileInVscode[window.editor.params.lang]
@@ -641,7 +677,7 @@ window.onload = () => {
                         contextMenuOrder: 3, // 菜单分组内排序
                         run: () => {
                             const position = window.editor.editor.getPosition();
-                            window.open(`vscode://file/${window.editor.params.url}:${position.lineNumber}:${position.column}`);
+                            window.open(`vscode://file/${file.path}:${position.lineNumber}:${position.column}`);
                         }, // 点击后执行的操作
                     });
                     window.editor.editor.addAction({ // 在 vscode 中打开文件所在目录
@@ -652,7 +688,7 @@ window.onload = () => {
                         contextMenuGroupId: '3_file', // 所属菜单的分组
                         contextMenuOrder: 4, // 菜单分组内排序
                         run: () => {
-                            window.open(`vscode://file/${window.editor.params.dir}`);
+                            window.open(`vscode://file/${file.dir}`);
                         }, // 点击后执行的操作
                     });
                 }

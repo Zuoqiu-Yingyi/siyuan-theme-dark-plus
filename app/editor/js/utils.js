@@ -54,12 +54,23 @@ function* Iterator(items, loop = false) {
 
 /* 解析路径 */
 function pathParse(filePath) {
-    filePath = filePath.replaceAll(/(\\|\/)+/g, '/');
-    let path = filePath.split('/');
-    let filename = path.pop() || ''; // 文件名
-    let dir = path.join('/'); // 文件所在目录
-    let ext = filename.lastIndexOf('.') > 0 ? filename.split('.').pop() : ''; // 文件扩展名
-    return { dir, filename, ext };
+    let path = filePath.replaceAll(/(\\|\/)+/g, '/');
+    let paths = path.split('/');
+    let filename = {
+        full: paths.pop() || '', // 文件名全名
+        main: null, // 主文件名
+        ext: null, // 文件扩展名
+    }
+    let dir = paths.join('/'); // 文件所在目录
+    if (filename.full.lastIndexOf('.') > 0) { // 文件有扩展名
+        filename.main = filename.full.substring(0, filename.full.lastIndexOf('.'));
+        filename.ext = filename.full.split('.').pop();
+    }
+    else {
+        filename.main = filename.full;
+        filename.ext = "";
+    }
+    return { path, dir, filename };
 }
 
 /**

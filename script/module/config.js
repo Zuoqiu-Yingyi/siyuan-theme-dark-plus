@@ -777,7 +777,7 @@ export var config = {
                         temp: {
                             // 临时文件路径
                             relative: '/temp/theme/editor/', // 临时文件相对路径
-                            absolute: `${window.siyuan.config.system.workspaceDir}temp/theme/editor/`.replaceAll('\\', '/').replaceAll('//', '/'), // 临时文件绝对路径
+                            absolute: `${window.siyuan.config.system.workspaceDir}/temp/theme/editor/`.replaceAll('\\', '/').replaceAll('//', '/'), // 临时文件绝对路径
                         },
                     },
                     kramdown: {

@@ -214,6 +214,7 @@ setTimeout(async () => {
                             e => setTimeout(async () => middleClick(
                                 e,
                                 async id => {
+                                    /* 编辑思源块 */
                                     window.theme.openNewWindow(
                                         'editor',
                                         undefined,
@@ -271,6 +272,7 @@ setTimeout(async () => {
                                             // 复制本地文件至临时目录
                                             await copyFile(path, temp_file_path_absolute).then(() => {
                                                 // 复制成功
+                                                /* 编辑本地文件 */
                                                 window.theme.win = window.theme.openNewWindow(
                                                     'editor',
                                                     config.theme.window.open.editor.path.index,
@@ -309,6 +311,7 @@ setTimeout(async () => {
                                     }
                                     else {
                                         // 思源资源文件链接或网络文件链接
+                                        /* 编辑资源文件 */
                                         window.theme.openNewWindow(
                                             'editor',
                                             config.theme.window.open.editor.path.index,
@@ -339,6 +342,7 @@ setTimeout(async () => {
                                     putFile(temp_file_path_relative, inbox.shorthandContent).then(r => {
                                         if (r && r.code === 0) {
                                             // 写入文件成功
+                                            /* 编辑收集箱临时文件 */
                                             window.theme.win = window.theme.openNewWindow(
                                                 'editor',
                                                 config.theme.window.open.editor.path.index,
