@@ -23,6 +23,7 @@ export var config = {
             fontsize: /(?<=\.b3-typography|protyle-wysiwyg|protyle-title\s*\{\s*font-size\s*:\s*)(\d+)(?=px(?:\s+\!important)?(?:\s*;|\}))/,
             winpath: /^\/\w\:\/.*$/, // Windows 路径正则表达式
             inboxid: /^\d{13}$/, // 收集箱 ID 正则表达式
+            historypath: /^(?:.*[\/\\]history[\/\\].+[\/\\])(?:\d{14}\-[0-9a-z]{7}[\/\\])+(\d{14}\-[0-9a-z]{7})\.sy$/, // 历史文档路径
         },
         messages: {
             // 消息提示
