@@ -149,18 +149,24 @@ window.theme.clientMode = (() => {
  * 获取语言模式
  * @return {string} 'zh_CN', 'zh_CNT', 'fr_FR', 'en_US'
  */
-window.theme.languageMode = (() => window.siyuan.config.lang)();
+window.theme.languageMode = window.siyuan.config.lang;
 
 /**
  * 获取思源版本号
  * @return {string} 思源版本号
  */
-window.theme.kernelVersion = (() => window.siyuan.config.system.kernelVersion)();
+window.theme.kernelVersion = window.siyuan.config.system.kernelVersion;
 
 /**
  * 获取操作系统
  */
-window.theme.OS = (() => window.siyuan.config.system.os)();
+window.theme.OS = window.siyuan.config.system.os;
+
+/**
+ * 获取一个 Lute 对象
+ * @return {Lute} Lute 对象
+ */
+window.theme.lute = Lute.New();
 
 /**
  * 更换主题模式

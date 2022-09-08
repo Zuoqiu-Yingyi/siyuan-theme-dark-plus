@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 修复 Monaco Editor 打开本地文件路径问题 | Fixed the issue of Monaco editor open local file.
+
 ## v1.2.8/2022-09-07
 
 - [v1.2.7 <=> v1.2.8](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.7...v1.2.8)
