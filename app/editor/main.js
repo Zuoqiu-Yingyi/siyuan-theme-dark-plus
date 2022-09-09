@@ -33,49 +33,46 @@ async function init(params) {
         case 'history': // 历史文档
             // 获取文档路径
             r = await getFullHPathByID(params.id);
-            if (!(r
-                && r.code === 0
-            )) {
-                // 没有查询到笔记本
+            if (r && r.code === 0) {
+                n = r;
+            }
+            else {
+                // 没有查询到完整文档路径
                 params.mode = 'none';
                 return;
             }
-            n = r.data;
 
             r = await getDocHistoryContent(params.url); // 获取历史文档内容
             if (r && r.code === 0) {
-                params.breadcrumb.set(
-                    `${config.editor.mark.history}${config.editor.MAP.LABELS.mode[params.mode][params.lang] || config.editor.MAP.LABELS.mode[params.mode].default}`,
-                    `${config.editor.mark.historypath}${n.replaceAll('/', config.editor.mark.pathseparate)}`,
-                    params.url,
-                    n,
-                    config.editor.link.file(params.url),
-                    config.editor.link.siyuan(params.id),
-                ); // 设置面包屑
+                b = r;
             }
             else {
                 params.mode = 'none';
                 return;
             }
 
-            params.language = 'markdown';
-            params.tabSize = 2;
-            params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
-
+            params.value = {
+                original: null,
+                modified: null,
+            }
             switch (params.type) {
                 case 'markdown': // 查看 markdown
-                    params.value = r.data.isLargeDoc
-                        ? r.data.content
-                        : window.editor.lute.BlockDOM2StdMd(r.data.content);
+                    params.value.original = b.data.isLargeDoc
+                        ? b.data.content
+                        : window.editor.lute.BlockDOM2StdMd(b.data.content);
+                    r = await getDoc(params.id);
+                    if (r && r.code === 0) {
+                        params.value.modified = window.editor.lute.BlockDOM2StdMd(r.data.content);
+                    }
+                    else {
+                        params.mode = 'none';
+                        return;
+                    }
                     break;
                 case 'kramdown': // 对比历史与当前 kramdown
-                    params.value = {
-                        original: null,
-                        modified: null,
-                    }
-                    params.value.original = r.data.isLargeDoc
-                        ? r.data.content
-                        : window.editor.lute.BlockDOM2Md(r.data.content);
+                    params.value.original = b.data.isLargeDoc
+                        ? b.data.content
+                        : window.editor.lute.BlockDOM2Md(b.data.content);
 
                     r = await getBlockKramdown(params.id);
                     // r = await getBlockDomByID(params.id);
@@ -89,10 +86,23 @@ async function init(params) {
                         params.mode = 'none';
                         return;
                     }
-                    params.diff = true;
                     break;
             }
 
+            params.diff = true;
+
+            params.language = 'markdown';
+            params.tabSize = 2;
+            params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
+
+            params.breadcrumb.set(
+                `${config.editor.mark.history}${config.editor.MAP.LABELS.mode[params.mode][params.lang] || config.editor.MAP.LABELS.mode[params.mode].default}`,
+                `${config.editor.mark.historypath}${n.data.replaceAll('/', config.editor.mark.pathseparate)}`,
+                params.url,
+                n.data,
+                config.editor.link.file(params.url),
+                config.editor.link.siyuan(params.id),
+            ); // 设置面包屑
             break;
         case 'inbox': // 收集箱
             r = await getFile(params.path); // 获取文件内容

@@ -2,6 +2,7 @@
 
 - 修复 Monaco Editor 打开本地文件路径问题 | Fixed the issue of Monaco editor open local file.
 - 新增 Monaco Editor 历史查看与差异编辑功能 | Added Monaco Editor history viewing and difference editing function.
+- 新增 Monaco Editor 标准 Markdown 历史查看与差异编辑功能 | Added Monaco Editor standard Markdown history viewing and difference editing function.
 
 ## v1.2.8/2022-09-07
 
