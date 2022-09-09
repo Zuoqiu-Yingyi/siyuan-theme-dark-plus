@@ -364,10 +364,10 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   Click on a slider on the right side of the document or current reading progress indicator to jump to where the document was last browsed using the <kbd>Right Mouse Button</kbd>.
 - 使用 <kbd>Shift + 鼠标中键</kbd> 单击块/超链接/块引用在新窗口打开并聚焦  
   Click on a block/link/block-reference to open a window and focus using the <kbd>Shift + Middle Mouse Button</kbd>.
-- 使用 <kbd>Alt + 鼠标中键</kbd> 单击块/超链接/块引用在新窗口打开 [Monaco 编辑器](https://github.com/microsoft/monaco-editor)并编辑源代码  
-  Click on a block/link/block-reference to open [Monaco Editor](https://github.com/microsoft/monaco-editor) in a new window and edit source code using the <kbd>Alt + Middle Mouse Button</kbd>.
-- 使用 <kbd>Shift + Alt + 鼠标中键</kbd> 单击块在新窗口打开 [Monaco 编辑器](https://github.com/microsoft/monaco-editor)并查看指定块的 markdown 源码  
-  Click on a block to open [Monaco Editor](https://github.com/microsoft/monaco-editor) in a new window and preview the markdown source code of document using the <kbd>Shift + Alt + Middle Mouse Button</kbd>.
+- 使用 <kbd>Alt + 鼠标中键</kbd> 单击块/超链接/块引用/收集箱项/历史项在新窗口打开 [Monaco 编辑器](https://github.com/microsoft/monaco-editor)并编辑 Markdown 源代码  
+  Click on a block/link/block-reference/inbox/history to open [Monaco Editor](https://github.com/microsoft/monaco-editor) in a new window and edit source code using the <kbd>Alt + Middle Mouse Button</kbd>.
+- 使用 <kbd>Shift + Alt + 鼠标中键</kbd> 单击块/超链接/块引用/历史项在新窗口打开 [Monaco 编辑器](https://github.com/microsoft/monaco-editor)并查看指定块的 Kramdown (Markdown with IAL) 源码  
+  Click on a block/link/block-reference/history to open [Monaco Editor](https://github.com/microsoft/monaco-editor) in a new window and preview the Kramdown (Markdown with IAL) source code of document using the <kbd>Shift + Alt + Middle Mouse Button</kbd>.
     - 每次打开编辑器时都会更改文档的更新时间  
       Each time you open the editor, you change the update time of the document.
 - 使用快捷键 <kbd>Ctrl/⌘ + 鼠标滚轮</kbd> 可以调整编辑区字体大小  
