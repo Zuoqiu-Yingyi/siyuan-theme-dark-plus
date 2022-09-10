@@ -48,6 +48,7 @@ const KEY_MAP = {
 };
 
 function printHotKey(key) {
+    if (key.enable === false) return "";
     let ctrl = 'Ctrl';
     let shift = 'Shift';
     let alt = 'Alt';

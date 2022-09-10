@@ -70,12 +70,12 @@ function createToolbarItem(toolbarConfig, className) {
         const status = toolbarConfig.status[toolbarConfig.status.default];
         icon = status.icon;
         label = status.label;
-        label += status.hotkey ? ` [${printHotKey(status.hotkey())}]` : '';
+        label += (status.hotkey && status.hotkey().enable !== false)? ` [${printHotKey(status.hotkey())}]` : '';
     }
     else { // 按钮没有多个状态
         icon = toolbarConfig.icon;
         label = toolbarConfig.label[language] || toolbarConfig.label.other;
-        label += toolbarConfig.hotkey ? ` [${printHotKey(toolbarConfig.hotkey())}]` : '';
+        label += (toolbarConfig.hotkey && toolbarConfig.hotkey().enable !== false) ? ` [${printHotKey(toolbarConfig.hotkey())}]` : '';
     }
 
     item.id = toolbarConfig.id;

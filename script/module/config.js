@@ -2432,6 +2432,7 @@ export var config = {
             style: {
                 render: {
                     // 渲染(Ctrl + F1)
+                    enable: true,
                     CtrlCmd: true,
                     WinCtrl: false,
                     Shift: false,
@@ -2439,7 +2440,8 @@ export var config = {
                     key: 'F1',
                 },
                 tabbar: {
-                    // 列表辅助线样式(Shift + Alt + B)
+                    // 纵向排列选项卡(Shift + Alt + B)
+                    enable: true,
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,
@@ -2448,6 +2450,7 @@ export var config = {
                 },
                 guides: {
                     // 列表辅助线样式(Shift + Alt + G)
+                    enable: true,
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,
@@ -2456,6 +2459,7 @@ export var config = {
                 },
                 mark: {
                     // 标记文本显示(Shift + Alt + E)
+                    enable: true,
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,
@@ -2466,6 +2470,7 @@ export var config = {
             timestamp: {
                 jump: {
                     // 跳转到指定时间点(Ctrl + 单击)
+                    enable: true,
                     CtrlCmd: true,
                     WinCtrl: false,
                     Shift: false,
@@ -2474,6 +2479,7 @@ export var config = {
                 },
                 create: {
                     // 新建时间戳(Ctrl + 鼠标中键)
+                    enable: true,
                     CtrlCmd: true,
                     WinCtrl: false,
                     Shift: false,
@@ -2484,6 +2490,7 @@ export var config = {
             blockattrs: {
                 set: {
                     // 设置块属性(Ctrl + 鼠标中键)
+                    enable: true,
                     CtrlCmd: true,
                     WinCtrl: false,
                     Shift: false,
@@ -2494,6 +2501,7 @@ export var config = {
             reload: {
                 window: {
                     // 刷新当前窗口(Ctrl + F5)
+                    enable: true,
                     CtrlCmd: true,
                     WinCtrl: false,
                     Shift: false,
@@ -2502,6 +2510,7 @@ export var config = {
                 },
                 iframe: {
                     // 刷新 iframe 块(Ctrl + 单击)
+                    enable: true,
                     CtrlCmd: true,
                     WinCtrl: false,
                     Shift: false,
@@ -2512,6 +2521,7 @@ export var config = {
             doc: {
                 copy: {
                     // 复制当前文档全文(Shift + Alt + C)
+                    enable: true,
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,
@@ -2520,6 +2530,7 @@ export var config = {
                 },
                 delete: {
                     // 删除当前文档全文(Shift + Alt + D)
+                    enable: true,
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,
@@ -2528,6 +2539,7 @@ export var config = {
                 },
                 cut: {
                     // 剪切当前文档全文(Shift + Alt + X)
+                    enable: true,
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,
@@ -2537,6 +2549,7 @@ export var config = {
                 heading: {
                     fold: {
                         // 一键折叠当前文档所有标题(Shift + Alt + ↑)
+                        enable: true,
                         CtrlCmd: false,
                         WinCtrl: false,
                         Shift: true,
@@ -2545,6 +2558,7 @@ export var config = {
                     },
                     unfold: {
                         // 一键折展开当前文档所有标题(Shift + Alt + ↓)
+                        enable: true,
                         CtrlCmd: false,
                         WinCtrl: false,
                         Shift: true,
@@ -2555,6 +2569,7 @@ export var config = {
                 outline: {
                     u: {
                         // 复制当前文档大纲(无序列表)至剪贴板(Ctrl + Shift + Alt + U)
+                        enable: true,
                         CtrlCmd: true,
                         WinCtrl: false,
                         Shift: true,
@@ -2563,6 +2578,7 @@ export var config = {
                     },
                     o: {
                         // 复制当前文档大纲(有序列表)至剪贴板(Ctrl + Shift + Alt + O)
+                        enable: true,
                         CtrlCmd: true,
                         WinCtrl: false,
                         Shift: true,
@@ -2571,6 +2587,7 @@ export var config = {
                     },
                     t: {
                         // 复制当前文档大纲(任务列表)至剪贴板(Ctrl + Shift + Alt + T)
+                        enable: true,
                         CtrlCmd: true,
                         WinCtrl: false,
                         Shift: true,
@@ -2582,6 +2599,7 @@ export var config = {
             typewriter: {
                 switch: {
                     // 打字机模式开关(Shift + Alt + T)
+                    enable: true,
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,
@@ -2591,6 +2609,7 @@ export var config = {
             },
             invert: {
                 // 反色开关(Shift + Alt + I)
+                enable: true,
                 CtrlCmd: false,
                 WinCtrl: false,
                 Shift: true,
@@ -2601,6 +2620,7 @@ export var config = {
                 image: {
                     web: {
                         // 更换网络背景图片(Shift + Alt + R)
+                        enable: true,
                         CtrlCmd: false,
                         WinCtrl: false,
                         Shift: true,
@@ -2609,6 +2629,7 @@ export var config = {
                     },
                     custom: {
                         // 更换自定义背景图片(Ctrl + Shift + Alt + I)
+                        enable: true,
                         CtrlCmd: true,
                         WinCtrl: false,
                         Shift: true,
@@ -2622,6 +2643,7 @@ export var config = {
                     block: {
                         outfocus: {
                             // 新窗口打开当前块, 否则打开当前文档(Shift + Alt + N)
+                            enable: true,
                             CtrlCmd: false,
                             WinCtrl: false,
                             Shift: true,
@@ -2630,6 +2652,7 @@ export var config = {
                         },
                         infocus: {
                             // 新窗口打开当前块并聚焦, 否则打开当前文档(Ctrl + Shift + Alt + N)
+                            enable: true,
                             CtrlCmd: true,
                             WinCtrl: false,
                             Shift: true,
@@ -2640,6 +2663,7 @@ export var config = {
                     link: {
                         outfocus: {
                             // 新窗口打开链接(鼠标中键)
+                            enable: true,
                             CtrlCmd: false,
                             WinCtrl: false,
                             Shift: false,
@@ -2648,6 +2672,7 @@ export var config = {
                         },
                         infocus: {
                             // 新窗口打开链接并聚焦(Shift + 鼠标中键)
+                            enable: true,
                             CtrlCmd: false,
                             WinCtrl: false,
                             Shift: true,
@@ -2657,6 +2682,7 @@ export var config = {
                     },
                     editor: {
                         // 新窗口打开编辑器(Alt + 鼠标中键)
+                        enable: true,
                         CtrlCmd: false,
                         WinCtrl: false,
                         Shift: false,
@@ -2665,6 +2691,7 @@ export var config = {
                     },
                     markdown: {
                         // 以 markdown 模式在新窗口打开编辑器(Shift + Alt + 鼠标中键)
+                        enable: true,
                         CtrlCmd: false,
                         WinCtrl: false,
                         Shift: true,
@@ -2676,6 +2703,7 @@ export var config = {
             wheel: {
                 zoom: {
                     // 鼠标滚轮缩放(Ctrl + wheel)
+                    enable: true,
                     CtrlCmd: true,
                     WinCtrl: false,
                     Shift: false,
@@ -2687,6 +2715,7 @@ export var config = {
                 slider: {
                     goto: {
                         // 跳转到上次浏览位置(鼠标右键单击块滚动条)
+                        enable: true,
                         CtrlCmd: false,
                         WinCtrl: false,
                         Shift: false,
@@ -2696,6 +2725,7 @@ export var config = {
                 },
                 record: {
                     // 记录浏览位置(Shift + Alt + L)
+                    enable: true,
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,
@@ -2704,6 +2734,7 @@ export var config = {
                 },
                 clear: {
                     // 移除浏览位置(Ctrl + Shift + Alt + L)
+                    enable: true,
                     CtrlCmd: true,
                     WinCtrl: false,
                     Shift: true,
@@ -2714,6 +2745,7 @@ export var config = {
             dock: {
                 fold: {
                     // 一键折叠/展开功能面板(Shift + Alt + F)
+                    enable: true,
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,
@@ -2724,6 +2756,7 @@ export var config = {
             menu: {
                 block: {
                     // 块菜单开关(Shift + Alt + M)
+                    enable: true,
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,
