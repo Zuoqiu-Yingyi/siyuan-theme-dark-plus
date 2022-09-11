@@ -2,6 +2,7 @@
 
 export {
     request,
+    getConf,
     getNotebookConf,
     getFullHPathByID,
     queryBlock,
@@ -21,7 +22,6 @@ export {
 };
 
 import { config } from './config.js';
-import { getRelativePath } from './utils.js';
 
 async function request(url, data, token = config.token) {
     return fetch(url, {
@@ -37,6 +37,9 @@ async function request(url, data, token = config.token) {
     });
 }
 
+async function getConf() {
+    return request('/api/system/getConf', {});
+}
 
 async function getNotebookConf(notebook) {
     return request('/api/notebook/getNotebookConf', {

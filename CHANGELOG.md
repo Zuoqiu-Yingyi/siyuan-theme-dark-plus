@@ -5,6 +5,7 @@
 - 新增 Monaco Editor 标准 Markdown 历史查看与差异编辑功能 | Added Monaco Editor standard Markdown history viewing and difference editing function.
 - 快捷键配置项添加 `enable` 字段用于控制是否激活 | The hotkey item adds `enable` field to control whether it is enabled.
 - Manaco Editor 编辑 `Markdown` 时支持 `Katex` 公式自动补全 | Manaco Editor supports `Katex` formula autocomplete when editing `Markdown`.
+- Monaco Editor Katex 自动补全支持自定义 katex 宏 | Autocomplete of Manaco Editor Katex supports custom katex macros.
 
 ## v1.2.8/2022-09-07
 
