@@ -78,7 +78,7 @@ class EventHandler {
 
     addEventHandler(type, e, callback) {
         const listener = this.listeners[type];
-        if (listener && (e !== null && e.enable !== false)) {
+        if (listener && (e === null || e.enable !== false)) {
             listener.handlers.push({
                 e: e,
                 callback: callback,

@@ -1,7 +1,6 @@
 /* 菜单增强 */
 
 import { config } from './config.js';
-import { isKey } from './../utils/hotkey.js';
 import { getSysFonts } from './../utils/api.js';
 import { globalEventHandler } from './../utils/listener.js';
 import {
@@ -66,8 +65,7 @@ function blockMenuCallback(mutationList, observer) {
         if (mutation.addedNodes.length === 1
             && mutation.addedNodes[0].classList.contains('b3-menu__item--readonly')
             && mutation.addedNodes[0].lastElementChild.childElementCount === 1
-            && mutation.previousSibling
-            && mutation.previousSibling.classList.contains('b3-menu__separator')
+            && mutation.previousSibling.classList?.contains('b3-menu__separator')
         ) {
             // 块菜单添加
             // console.log(mutation);
@@ -90,13 +88,8 @@ function blockMenuCallback(mutationList, observer) {
         }
         // 页签项菜单已加载完成
         else if (mutation.addedNodes.length === 1
-            && mutation.addedNodes[0].firstChild
-            && mutation.addedNodes[0].firstChild.firstChild
-            && mutation.addedNodes[0].firstChild.firstChild.getAttribute('xlink:href') === '#iconPin'
-            && mutation.previousSibling
-            && mutation.previousSibling.firstChild
-            && mutation.previousSibling.firstChild.firstChild
-            && mutation.previousSibling.firstChild.firstChild.getAttribute('xlink:href') === '#iconCopy'
+            && mutation.addedNodes[0].firstChild.firstChild?.getAttribute('xlink:href') === '#iconPin'
+            && mutation.previousSibling.firstChild.firstChild?.getAttribute('xlink:href') === '#iconCopy'
         ) {
             const items = menuInit(config.theme.menu.tabbar.items);
             if (items) {
