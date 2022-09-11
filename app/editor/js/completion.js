@@ -1,5 +1,6 @@
 // REF https://github.com/yzhang-gh/vscode-markdown/blob/master/src/completion.ts
 
+import { getConf } from './api.js';
 export {
     MdCompletionItemProvider,
 };
@@ -471,41 +472,51 @@ class MdCompletionItemProvider {
         envSnippet.insertText = `begin{\${1|${this.envs.join(',')}|}}\n\t$2\n\\end{$1}`;
 
         // Import macros from configurations
-        // const configMacros = configManager.get("katex.macros", folder);
-        // var macroItems = [];
-        // for (const [cmd, expansion] of Object.entries(configMacros)) {
-        //     let item = new CompletionItem(cmd, CompletionItemKind.Function);
+        var macroItems = [];
+        getConf().then(response => {
+            if (response && response.code === 0) {
+                const configMacros = JSON.parse(response.data.conf.editor?.katexMacros) ?? {};
+                for (const [cmd, expansion] of Object.entries(configMacros)) {
+                    let item = new CompletionItem(cmd, CompletionItemKind.Function);
 
-        //     // Find the number of arguments in the expansion
-        //     let numArgs = 0;
-        //     for (let i = 1; i < 10; i++) {
-        //         if (!expansion.includes(`#${i}`)) {
-        //             numArgs = i - 1;
-        //             break;
-        //         }
-        //     }
+                    // Find the number of arguments in the expansion
+                    let numArgs = 0;
+                    for (let i = 1; i < 10; i++) {
+                        if (!expansion.includes(`#${i}`)) {
+                            numArgs = i - 1;
+                            break;
+                        }
+                    }
 
-        //     // item.insertText = new SnippetString(cmd.slice(1) + [...Array(numArgs).keys()].map(i => `\{$${i + 1}\}`).join(""));
-        //     item.insertText = cmd.slice(1) + [...Array(numArgs).keys()].map(i => `\{$${i + 1}\}`).join("");
-        //     macroItems.push(item);
-        // }
-        // this.mathCompletions = [...c1, ...c2, ...c3, envSnippet, ...macroItems];
-
-        this.mathCompletions = [...c1, ...c2, ...c3, envSnippet];
-
-        // Sort
-        for (const item of this.mathCompletions) {
-            const label = typeof item.label === "string" ? item.label : item.label.label;
-            item.sortText = label.replace(/[a-zA-Z]/g, (c) => {
-                if (/[a-z]/.test(c)) {
-                    return `0${c}`;
-                } else {
-                    return `1${c.toLowerCase()}`;
+                    // item.insertText = new SnippetString(cmd.slice(1) + [...Array(numArgs).keys()].map(i => `\{$${i + 1}\}`).join(""));
+                    item.insertText = cmd.slice(1) + [...Array(numArgs).keys()].map(i => `\{$${i + 1}\}`).join("");
+                    console.log(item.insertText);
+                    macroItems.push(item);
                 }
-            });
-        }
+            }
+        }).finally(() => {
+            this.mathCompletions = [
+                ...c1,
+                ...c2,
+                ...c3,
+                envSnippet,
+                ...macroItems,
+            ];
 
-        this.mathCompletionsJSON = JSON.stringify(this.mathCompletions);
+            // Sort
+            for (const item of this.mathCompletions) {
+                const label = typeof item.label === "string" ? item.label : item.label.label;
+                item.sortText = label.replace(/[a-zA-Z]/g, (c) => {
+                    if (/[a-z]/.test(c)) {
+                        return `0${c}`;
+                    } else {
+                        return `1${c.toLowerCase()}`;
+                    }
+                });
+            }
+
+            this.mathCompletionsJSON = JSON.stringify(this.mathCompletions);
+        });
     }
 
     // REF https://microsoft.github.io/monaco-editor/api/interfaces/monaco.languages.CompletionItemProvider.html#provideCompletionItems
