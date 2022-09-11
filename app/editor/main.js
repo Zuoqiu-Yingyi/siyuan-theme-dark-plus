@@ -450,6 +450,18 @@ async function init(params) {
     }
 }
 
+function registerCompletionItemProvider(language) {
+    window.editor.IDisposable?.dispose();
+    switch (language) {
+        case 'markdown':
+            window.editor.IDisposable = monaco.languages.registerCompletionItemProvider(
+                language,
+                new window.editor.completion.MdCompletionItemProvider(),
+            );
+            break;
+    }
+}
+
 window.onload = () => {
     try {
         window.editor = {};
@@ -554,7 +566,9 @@ window.onload = () => {
                 },
             });
 
-            require(['vs/editor/editor.main'], () => {
+            require(['vs/editor/editor.main'], async () => {
+                window.editor.completion = await import('./js/completion.js');
+
                 const language = config.editor.MAP.LANGUAGES[window.editor.params.language.toLowerCase()]
                     || window.editor.params.language
                     || 'plaintext';
@@ -680,6 +694,9 @@ window.onload = () => {
                     }
                 }
 
+                /* 设置 markdown 文件的自动补全 */
+                registerCompletionItemProvider(language);
+
                 /**
                  * 文件是否发生更改
                  * REF [onDidChangeModelContent](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneCodeEditor.html#onDidChangeModelContent)
@@ -704,6 +721,7 @@ window.onload = () => {
                     else {
                         monaco.editor.setModelLanguage(window.editor.editor.getModel(), window.editor.picker.value);
                     }
+                    registerCompletionItemProvider(window.editor.picker.value);
                 };
 
                 /* 👇👇 右键菜单项 👇👇 */
