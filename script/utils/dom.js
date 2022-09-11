@@ -335,8 +335,8 @@ function getBlockMark(target) {
 
     // 文档块块标
     if (node.localName === 'span'
-        && node.parentElement.parentElement.firstElementChild.dataset.nodeId
-        && node.parentElement.parentElement.lastElementChild.dataset.docType
+        && node.classList.contains('protyle-title__icon')
+        && node.parentElement.parentElement.firstElementChild.classList.contains('protyle-background')
     ) return {
         id: node.parentElement.parentElement.firstElementChild.dataset.nodeId,
         // type: node.parentElement.parentElement.lastElementChild.dataset.docType,
@@ -368,6 +368,7 @@ function getBlockSelected() {
 
 /**
  * 设置 DOM 中的块属性
+ * @deprecated 2.1.15+ https://github.com/siyuan-note/siyuan/issues/5847 https://github.com/siyuan-note/siyuan/issues/5866
  * @param {string} id 块 ID
  * @param {object} attrs 块属性 dict
  */

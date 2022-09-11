@@ -15,7 +15,9 @@ import {
     rename,
 } from './system.js';
 
-/* 编辑文档 kramdown 源代码 */
+/** 编辑文档 kramdown 源代码
+ * @deprecated v2.0.24+ https://github.com/siyuan-note/siyuan/issues/5289
+ */
 async function editDocKramdown(id) {
     if (window.theme.clientMode !== 'app') { // 只在桌面模式下才可以编辑
         await pushErrMsg(config.theme.window.open.editor.kramdown.message.error);

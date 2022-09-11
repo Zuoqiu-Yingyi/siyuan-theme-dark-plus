@@ -437,7 +437,7 @@ const TASK_HANDLER = {
                 new_attrs[attr] = old_attrs[attr].replace(params[attr].regexp, params[attr].substr);
             }
         }
-        setBlockDOMAttrs(id, new_attrs);
+        if (compareVersion(window.theme.kernelVersion, '2.1.15') < 0) setBlockDOMAttrs(id, new_attrs);
         setBlockAttrs(id, new_attrs);
     },
     /**
@@ -463,7 +463,7 @@ const TASK_HANDLER = {
                 new_attrs[attr] = params[attr].value;
             }
         }
-        setBlockDOMAttrs(id, new_attrs);
+        if (compareVersion(window.theme.kernelVersion, '2.1.15') < 0) setBlockDOMAttrs(id, new_attrs);
         setBlockAttrs(id, new_attrs);
     },
     /* 在后方插入属性 */
@@ -481,7 +481,7 @@ const TASK_HANDLER = {
                 new_attrs[attr] = params[attr];
             }
         }
-        setBlockDOMAttrs(id, new_attrs);
+        if (compareVersion(window.theme.kernelVersion, '2.1.15') < 0) setBlockDOMAttrs(id, new_attrs);
         setBlockAttrs(id, new_attrs);
     },
     /* 插入属性值中空格分隔的一项(插入单词) */
@@ -501,7 +501,7 @@ const TASK_HANDLER = {
                 new_attrs[attr] = params[attr];
             }
         }
-        setBlockDOMAttrs(id, new_attrs);
+        if (compareVersion(window.theme.kernelVersion, '2.1.15') < 0) setBlockDOMAttrs(id, new_attrs);
         setBlockAttrs(id, new_attrs);
     },
     /* 删除属性值中空格分隔的一项 */
@@ -525,7 +525,7 @@ const TASK_HANDLER = {
                 new_attrs[key] = '';
             }
         }
-        setBlockDOMAttrs(id, new_attrs);
+        if (compareVersion(window.theme.kernelVersion, '2.1.15') < 0) setBlockDOMAttrs(id, new_attrs);
         setBlockAttrs(id, new_attrs);
     },
     /* 覆盖整个属性值 */
@@ -533,7 +533,7 @@ const TASK_HANDLER = {
         // console.log('attr-update');
         for (const [key, value] of Object.entries(params))
             if (!value) params[key] = '';
-        setBlockDOMAttrs(id, params);
+        if (compareVersion(window.theme.kernelVersion, '2.1.15') < 0) setBlockDOMAttrs(id, params);
         setBlockAttrs(id, params);
     },
     /* 切换属性值中空格分隔的一项 */
@@ -561,7 +561,7 @@ const TASK_HANDLER = {
                 new_attrs[key] = iter.next().value;
             }
         }
-        setBlockDOMAttrs(id, new_attrs);
+        if (compareVersion(window.theme.kernelVersion, '2.1.15') < 0) setBlockDOMAttrs(id, new_attrs);
         setBlockAttrs(id, new_attrs);
     },
     /* 子菜单展开 */
