@@ -8,6 +8,7 @@
 - Monaco Editor Katex 自动补全支持自定义 katex 宏 | Autocomplete of Manaco Editor Katex supports custom katex macros.
 - 修复文档扩展块菜单加载问题 | Fixed the issue of the document extent menu loading.
 - [#103](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/103) 修复列表脑图视图辅助线错位问题 | Fixed the issue of misalignment of guides in the brain map view of the list.
+- [#103](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/103) 列表脑图视图兼容大字号 | The brain map view of list is compatibled with large font sizes.
 
 ## v1.2.8/2022-09-07
 
