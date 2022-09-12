@@ -59,7 +59,7 @@
   /* 上导航线 */
   content: "";
   position: absolute;
-  height: 50%;
+  height: calc(50% - var(--custom-list-guides-line-width) / 2);
   border-left: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
   width: 2em;
   top: calc(50% - var(--custom-list-guides-line-width) / 2);
@@ -73,7 +73,7 @@
   /* 下导航线 */
   content: "";
   position: absolute;
-  height: 50%;
+  height: calc(50% - var(--custom-list-guides-line-width) / 2);
   border-left: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
   width: 2em;
   bottom: calc(50% - var(--custom-list-guides-line-width) / 2);
