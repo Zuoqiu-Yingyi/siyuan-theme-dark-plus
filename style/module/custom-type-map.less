@@ -6,11 +6,15 @@
 @import (css) url(/appearance/themes/Dark+/style/module/config.css);
 @import (css) url(/widgets/custom.css);
 
+// 高度
+@height: calc(50% - var(--custom-list-guides-line-width) / 2);
+
 // 辅助线
 .guides() {
     content: "";
     position: absolute;
-    height: calc(50% - var(--custom-list-guides-line-width) / 2);
+    // height: calc(50% - var(--custom-list-guides-line-width) / 2);
+    height: 50%;
     border-left: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
     width: 2em;
 }
@@ -26,24 +30,12 @@
             &.li {
                 /* 列表项文字设置居中 */
                 display: flex;
+                align-items: center;
 
                 &:first-of-type::after,
                 &:nth-last-of-type(2)::before {
                     /* 取消多余线条 */
                     border: none;
-                }
-
-                &:first-of-type:nth-last-of-type(2) {
-                    /* 单子项居中 */
-
-                    top: 50%;
-                    transform: translate(0, -50%);
-
-                    &::after {
-                        /* 单个子项直线 */
-                        border-radius: 0;
-                        height: calc(50% - var(--custom-list-guides-line-width) / 8);
-                    }
                 }
 
                 &:first-of-type::before {
@@ -53,25 +45,43 @@
 
                 &:nth-last-of-type(2)::after {
                     /* 下框线 */
+                    // height: calc(50% - var(--custom-list-guides-line-width) / 2);
                     border-bottom: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
                     border-bottom-left-radius: var(--custom-border-radius);
+                }
+
+                &:first-of-type:nth-last-of-type(2) {
+                    // 单子项居中
+                    // top: 50%;
+                    // transform: translate(0, -50%);
+
+                    &::after {
+                        /* 单个子项直线 */
+                        border-radius: 0;
+                        // height: calc(50% - var(--custom-list-guides-line-width) / 2);
+                    }
                 }
 
                 &::before {
                     /* 上导航线 */
                     .guides();
-                    top: 50%;
+                    top: @height;
                     border-top: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
                 }
 
                 &::after {
                     /* 下导航线 */
                     .guides();
-                    // bottom: 50%;
+                    bottom: @height;
                     border-bottom: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
                 }
 
                 &[data-subtype="u"] {
+                    &::after {
+                        /* 修复无序列表前导线错位问题 */
+                        bottom: calc(50% - var(--custom-list-guides-line-width) / 4);
+                    }
+
                     >div.protyle-action {
                         /* 无序列表标志 */
                         top: calc(50%);
@@ -99,6 +109,12 @@
                         /* 去除竖线 */
                         display: none;
                     }
+
+                    // &.list {
+                    //     display: flex;
+                    //     flex-flow: column wrap;
+                    //     align-content: center;
+                    // }
 
                     &[data-type="NodeHeading"] {
                         /* 移除脑图内部标题块的左侧边线 */
@@ -141,7 +157,7 @@
                     content: "";
                     position: absolute;
                     left: -1em;
-                    top: 50%;
+                    top: @height;
                     border-top: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
                     width: 2em;
                     height: 0;
