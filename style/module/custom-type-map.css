@@ -85,7 +85,7 @@
 .protyle-content [custom-type~=mind-map] [data-node-id].li[data-subtype="u"]::after,
 .protyle-content [custom-type~=map] [data-node-id].li[data-subtype="u"]::after {
   /* 修复无序列表前导线错位问题 */
-  bottom: calc(50% - var(--custom-list-guides-line-width) / 4);
+  bottom: calc(50% - var(--custom-list-guides-line-width) / 3);
 }
 .protyle-content [custom-type~="思维导图"] [data-node-id].li[data-subtype="u"] > div.protyle-action,
 .protyle-content [custom-type~="导图"] [data-node-id].li[data-subtype="u"] > div.protyle-action,
