@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 调整表格边距 | Adjust table margins.
+- 调整列表项内水平分割线高度 | Adjusts the height of the horizontal rule within the list item.
 
 ## v1.3.0/2022-09-14
 
