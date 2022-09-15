@@ -530,6 +530,7 @@ export var config = {
             enable: true,
             image: {
                 enable: true, // 是否启用背景图片更改功能
+                propertyName: '--custom-background-image', // CSS 全局变量名称
                 web: {
                     enable: true, // 网络背景图片
                     toolbar: { // 菜单栏

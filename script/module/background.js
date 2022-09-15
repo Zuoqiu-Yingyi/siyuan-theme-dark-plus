@@ -21,7 +21,8 @@ function changeBackground(background, mode = 'image') {
         case 'image':
         default:
             element.style.backgroundImage = ``;
-            element.style.backgroundImage = `url("${background}")`;
+            // element.style.backgroundImage = `url("${background}")`;
+            document.body.parentElement.style.setProperty(config.theme.background.image.propertyName, `url("${background}")`);
             break;
     }
 }

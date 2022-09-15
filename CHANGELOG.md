@@ -1,7 +1,8 @@
 # 更改日志 | CHANGE LOG
 
 - 调整表格边距 | Adjust table margins.
-- 调整列表项内水平分割线高度 | Adjusts the height of the horizontal rule within the list item.
+- 调整列表项内水平分割线高度 | Adjust the height of the horizontal rule within the list item.
+- 更换背景图片时同时更换全屏模式背景图片 | Change the full-screen background image when changing the background image.
 
 ## v1.3.0/2022-09-14
 
