@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 调整表格边距 | Adjust table margins.
+
 ## v1.3.0/2022-09-14
 
 - [v1.2.8 <=> v1.3.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.8...v1.3.0)

@@ -373,7 +373,7 @@ function getBlockSelected() {
  * @param {object} attrs 块属性 dict
  */
 function setBlockDOMAttrs(id, attrs) {
-    let block = document.querySelector(`div.protyle-content div[data-node-id="${id}"]`);
+    let block = document.querySelector(`.protyle-content [data-node-id="${id}"]`);
     if (block) {
         if (block.className === 'protyle-background') {
             while (block && block.dataset.docType == null) block = block.nextElementSibling;
