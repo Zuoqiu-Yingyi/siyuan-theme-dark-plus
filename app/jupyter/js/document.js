@@ -141,7 +141,7 @@ function updateDocAttrs(del = false) {
             [config.jupyter.attrs.other.prompt]: promptFormat(
                 kernel_language,
                 getKernelDisplayName(kernel_name),
-                i18n('kernel_state', lang)
+                i18n(kernel_state, lang)
             ),
         };
         localStorage.setItem("local-codelang", kernel_language);

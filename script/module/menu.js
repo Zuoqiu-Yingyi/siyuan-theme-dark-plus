@@ -88,8 +88,8 @@ function blockMenuCallback(mutationList, observer) {
         }
         // 页签项菜单已加载完成
         else if (mutation.addedNodes.length === 1
-            && mutation.addedNodes[0].firstChild.firstChild?.getAttribute('xlink:href') === '#iconPin'
-            && mutation.previousSibling.firstChild.firstChild?.getAttribute('xlink:href') === '#iconCopy'
+            && mutation.addedNodes[0]?.firstChild?.firstChild?.getAttribute('xlink:href') === '#iconPin'
+            && mutation.previousSibling?.firstChild?.firstChild?.getAttribute('xlink:href') === '#iconCopy'
         ) {
             const items = menuInit(config.theme.menu.tabbar.items);
             if (items) {
