@@ -130,7 +130,7 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                     [config.jupyter.attrs.other.prompt]: promptFormat(
                         websocket.kernel.language,
                         websocket.kernel.name,
-                        i18n('execution_state', lang),
+                        i18n(execution_state, lang),
                     )
                 };
                 await setBlockAttrs(message_info.doc, doc_attrs);
