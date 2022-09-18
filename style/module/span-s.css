@@ -2,6 +2,8 @@
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
 .b3-typography s,
-.protyle-wysiwyg s {
+.protyle-wysiwyg s,
+.b3-typography span[data-type="s"],
+.protyle-wysiwyg span[data-type="s"] {
   color: var(--cusotm-span-strikethrough-color);
 }

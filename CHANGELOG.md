@@ -9,6 +9,7 @@
 - 修复打开 PDF 或可在标签页预览的文件时只读模式切换失效问题 | Fixed an issue where the read-only mode switch does not work when opening PDFs or files that can be previewed in tabs.
 - `kbd` 样式兼容 `v2.2.0` | `kbd` style is compatible with `v2.2.0`.
 - `mark` 样式兼容 `v2.2.0` | `mark` style is compatible with `v2.2.0`.
+- `s` 样式兼容 `v2.2.0` | `s` style is compatible with `v2.2.0`.
 
 ## v1.3.0/2022-09-14
 
