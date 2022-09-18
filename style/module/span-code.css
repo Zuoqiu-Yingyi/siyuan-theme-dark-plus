@@ -1,12 +1,12 @@
 /* 行内代码 */
-
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-
-.protyle-wysiwyg [data-node-id] code,
-.b3-typography code:not(.hljs) {
-    font-size: 1em;
-    font-family: var(--b3-font-family-code);
-    margin: 0 0.25em;
-    padding: 0.125em 0.25em;
+.protyle-wysiwyg code:not(.hljs),
+.b3-typography code:not(.hljs),
+.protyle-wysiwyg span[data-type="code"]:not(.hljs),
+.b3-typography span[data-type="code"]:not(.hljs) {
+  font-size: 1em;
+  font-family: var(--b3-font-family-code);
+  margin: 0 0.25em;
+  padding: 0.125em 0.25em;
 }
