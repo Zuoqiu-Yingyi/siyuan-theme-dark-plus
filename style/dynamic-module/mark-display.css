@@ -1,8 +1,9 @@
 /* 显示标记文本内容 */
-
-.protyle-content mark,
-.protyle-content mark:hover {
-    background-color: var(--cusotm-span-mark-background-color);
-    color: var(--b3-protyle-inline-mark-color);
-    text-shadow: none;
+.protyle-wysiwyg mark,
+.protyle-wysiwyg span[data-type="mark"],
+.protyle-wysiwyg mark:hover,
+.protyle-wysiwyg span[data-type="mark"]:hover {
+  background-color: var(--cusotm-span-mark-background-color);
+  color: var(--b3-protyle-inline-mark-color);
+  text-shadow: none;
 }
