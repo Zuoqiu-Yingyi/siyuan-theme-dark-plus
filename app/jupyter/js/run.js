@@ -133,14 +133,14 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                         i18n(execution_state, lang),
                     )
                 };
-                await setBlockAttrs(message_info.doc, doc_attrs);
                 await setBlockDOMAttrs(message_info.doc, doc_attrs);
+                await setBlockAttrs(message_info.doc, doc_attrs);
             }
             break;
         case "stream": // 代码输出文本信息
             {
-                const text = message.content.text;
                 const type = message.content.name;
+                const text = message.content.text.replace(/\u001b\[\d+m/g, '');
                 let style, ial;
                 switch (type) {
                     case "stdout":
@@ -201,10 +201,9 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                     [config.jupyter.attrs.code.time]: `${i18n('start', lang)}: ${date.format('yyyy-MM-dd hh:mm:ss')}`,
                 };
                 let output_attrs = { [config.jupyter.attrs.output.index]: '*' };
+
                 await setBlockAttrs(message_info.code, code_attrs);
                 await setBlockAttrs(message_info.output, output_attrs);
-                await setBlockDOMAttrs(message_info.code, code_attrs);
-                await setBlockDOMAttrs(message_info.output, output_attrs);
             }
             break;
         case "input_request": // 需要输入信息
@@ -250,8 +249,9 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                 }
 
                 /* 更新块序号状态与执行时间 */
-                const started = new Date(message.metadata.started);
+                const started = new Date(message?.metadata?.started ?? message.parent_header.date);
                 const stoped = new Date(message.header.date);
+
                 let code_attrs = {
                     [config.jupyter.attrs.code.index]: code_index,
                     [config.jupyter.attrs.code.time]: `${i18n('start', lang)}: ${started.format('yyyy-MM-dd hh:mm:ss')} | ${i18n('runtime', lang)}: ${timestampFormat(stoped - started)}`,
@@ -260,10 +260,10 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                     [config.jupyter.attrs.output.index]: output_index,
                     // style: output_style,
                 };
+
                 await setBlockAttrs(message_info.code, code_attrs);
                 await setBlockAttrs(message_info.output, output_attrs);
-                await setBlockDOMAttrs(message_info.code, code_attrs);
-                await setBlockDOMAttrs(message_info.output, output_attrs);
+
                 markdown.push('---');
                 await appendBlock(message_info.output, markdown.join('\n'));
             }
@@ -390,8 +390,6 @@ async function runCode(e, code_id, params) {
         ));
         websocket.ws.send(message); // 发送消息
 
-        await setBlockDOMAttrs(code_id, code_attrs); // 更新代码块的属性
-        await setBlockDOMAttrs(output_id, output_attrs); // 更新输出块的属性
         await setBlockAttrs(code_id, code_attrs); // 更新代码块的属性
         await setBlockAttrs(output_id, output_attrs); // 更新输出块的属性
     }
