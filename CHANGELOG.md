@@ -11,6 +11,7 @@
 - `mark` 样式兼容 `v2.2.0` | `mark` style is compatible with `v2.2.0`.
 - `s` 样式兼容 `v2.2.0` | `s` style is compatible with `v2.2.0`.
 - `tag` 样式兼容 `v2.2.0` | `tag` style is compatible with `v2.2.0`.
+- `code` 样式兼容 `v2.2.0` | `code` style is compatible with `v2.2.0`.
 
 ## v1.3.0/2022-09-14
 
