@@ -437,7 +437,7 @@ function getEditorsFromLayout(centerLayout) {
         const layout = layouts.pop();
         if (layout.children.length > 0) {
             for (let child of layout.children) {
-                if (child.model) editors.push(child.model.editor);
+                if (child.model?.editor) editors.push(child.model.editor);
                 else if (child.children) layouts.push(child);
             }
         }
