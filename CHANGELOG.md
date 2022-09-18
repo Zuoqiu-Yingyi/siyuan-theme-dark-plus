@@ -7,7 +7,8 @@
 - 修复 jupyter 客户端运行时间解析错误问题 | Fixed the issue of jupyter client runtime parser.
 - 修复 jupyter 客户端文档页面设置加载后内核与内核名称及图标不匹配问题 | Fix the issue of jupyter client document setting page after loading with the kernel does not match kernel name and icon.
 - 修复打开 PDF 或可在标签页预览的文件时只读模式切换失效问题 | Fixed an issue where the read-only mode switch does not work when opening PDFs or files that can be previewed in tabs.
-- `kbd` 样式兼容 `v2.2.0` | ``kbd`` style is compatible with `v2.2.0`.
+- `kbd` 样式兼容 `v2.2.0` | `kbd` style is compatible with `v2.2.0`.
+- `mark` 样式兼容 `v2.2.0` | `mark` style is compatible with `v2.2.0`.
 
 ## v1.3.0/2022-09-14
 
