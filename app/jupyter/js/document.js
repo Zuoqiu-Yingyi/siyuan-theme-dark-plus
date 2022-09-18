@@ -48,8 +48,10 @@ var kernelspecs, sessions, session, kernel;
 /* 初始化 */
 function init() {
     if (kernelspecs && sessions) {
-        if (attrs[config.jupyter.attrs.kernel.name])
+        if (attrs[config.jupyter.attrs.kernel.name]) { 
             sessions_create_kernel_select.value = attrs[config.jupyter.attrs.kernel.name];
+            renderKernelspecInfo(kernelspecs.kernelspecs[sessions_create_kernel_select.value]);
+        }
         if (attrs[config.jupyter.attrs.session.name])
             sessions_create_name_input.value = attrs[config.jupyter.attrs.session.name];
         if (attrs[config.jupyter.attrs.session.path])
