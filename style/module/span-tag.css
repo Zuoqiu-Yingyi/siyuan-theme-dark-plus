@@ -1,16 +1,16 @@
 /* 标签 */
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-div.protyle-background__tags > div.item,
-.protyle-wysiwyg [data-node-id] span[data-type="tag"] {
+.protyle-background__tags > .item,
+.protyle-wysiwyg span[data-type~=tag] {
   font-size: 1em;
   border-bottom: transparent;
   border-radius: 1em;
   padding: 1px 0.5em 1px 0.5em;
   transition: all 200ms linear 0ms;
 }
-div.protyle-background__tags > div.item::before,
-.protyle-wysiwyg [data-node-id] span[data-type="tag"]::before {
+.protyle-background__tags > .item::before,
+.protyle-wysiwyg span[data-type~=tag]::before {
   /* 标签标志 */
   content: '';
   display: inline-block;
@@ -20,11 +20,11 @@ div.protyle-background__tags > div.item::before,
   background: var(--custom-span-tag-icon);
   background-size: cover;
 }
-div.protyle-background__tags > div.item:hover,
-.protyle-wysiwyg [data-node-id] span[data-type="tag"]:hover {
+.protyle-background__tags > .item:hover,
+.protyle-wysiwyg span[data-type~=tag]:hover {
   /* 悬浮样式 */
   padding-bottom: 2px;
-  background-color: transparent;
+  background-color: transparent !important;
 }
 div.protyle-background__tags > div.item {
   background-color: var(--custom-span-doc-tag-background-color);

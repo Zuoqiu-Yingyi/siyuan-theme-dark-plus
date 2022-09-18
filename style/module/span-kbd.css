@@ -3,8 +3,8 @@
 @import url(/widgets/custom.css);
 .b3-typography kbd,
 .protyle-wysiwyg kbd,
-.b3-typography span[data-type="kbd"],
-.protyle-wysiwyg span[data-type="kbd"] {
+.b3-typography span[data-type~=kbd],
+.protyle-wysiwyg span[data-type~=kbd] {
   font-size: 1em;
   font-family: var(--b3-font-family-code);
   margin: 0 0.25em;

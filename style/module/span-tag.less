@@ -4,9 +4,9 @@
 @import (css) url(/widgets/custom.css);
 
 // 文档标签
-div.protyle-background__tags>div.item,
+.protyle-background__tags>.item,
 // 正文标签
-.protyle-wysiwyg [data-node-id] span[data-type="tag"] {
+.protyle-wysiwyg span[data-type~=tag] {
     font-size: 1em;
     border-bottom: transparent;
     border-radius: 1em;
@@ -28,7 +28,7 @@ div.protyle-background__tags>div.item,
         /* 悬浮样式 */
         // color: var(--b3-theme-on-background);
         padding-bottom: 2px;
-        background-color: transparent;
+        background-color: transparent !important;
 
         // 动态波浪线
         // animation: waveMove 1s infinite linear;

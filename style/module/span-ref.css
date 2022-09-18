@@ -1,10 +1,10 @@
 /* 块引用 */
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-.protyle-wysiwyg [data-node-id] span[data-type="block-ref"] {
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref] {
   color: var(--custom-span-block-ref-color);
 }
-.protyle-wysiwyg [data-node-id] span[data-type="block-ref"]::before {
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref]::before {
   /*前半部分的符号*/
   content: var(--custom-quote-l);
   /*修改前半部分颜色*/
@@ -14,7 +14,7 @@
   width: 0.5em;
   text-align: center;
 }
-.protyle-wysiwyg [data-node-id] span[data-type="block-ref"]::after {
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref]::after {
   /*后半部分的符号*/
   content: var(--custom-quote-r);
   /*后改前半部分颜色*/
@@ -27,7 +27,7 @@
   /* text-align: left; */
   text-align: center;
 }
-.protyle-wysiwyg [data-node-id] span[data-type="block-ref"]:hover {
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref]:hover {
   padding-bottom: 2px;
   animation: waveMove 1s infinite linear;
   background: var(--custom-span-ref-animation-icon) repeat-x 0 100%;

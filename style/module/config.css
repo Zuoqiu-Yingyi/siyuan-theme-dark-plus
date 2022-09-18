@@ -438,7 +438,8 @@
     --custom-span-tag-color: var(--b3-theme-on-primary);
 
     /* 思源标签背景颜色 | The background color of tag */
-    --custom-span-tag-background-color: var(--b3-font-background9);
+    /* --custom-span-tag-background-color: var(--b3-font-background9); */
+    --custom-span-tag-background-color: rgba(189, 201, 255, 0.5);
     --custom-span-doc-tag-background-color: var(--b3-theme-primary-lighter);
 
     /* 思源虚拟引用背景颜色 | The background color of virtual block ref */
