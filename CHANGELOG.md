@@ -5,6 +5,7 @@
 - 更换背景图片时同时更换全屏模式背景图片 | Change the full-screen background image when changing the background image.
 - 修复 jupyter 客户端 i18n 调用问题 | Fixed the issue of jupyter client i18n function call.
 - 修复 jupyter 客户端运行时间解析错误问题 | Fixed the issue of jupyter client runtime parser.
+- 修复 jupyter 客户端文档页面设置加载后内核与内核名称及图标不匹配问题 | Fix the issue of jupyter client document setting page after loading with the kernel does not match kernel name and icon.
 ## v1.3.0/2022-09-14
 
 - [v1.2.8 <=> v1.3.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.8...v1.3.0)
