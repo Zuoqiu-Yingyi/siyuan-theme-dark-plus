@@ -12,6 +12,7 @@
 - `s` 样式兼容 `v2.2.0` | `s` style is compatible with `v2.2.0`.
 - `tag` 样式兼容 `v2.2.0` | `tag` style is compatible with `v2.2.0`.
 - `code` 样式兼容 `v2.2.0` | `code` style is compatible with `v2.2.0`.
+- 自定义工具栏兼容没有 `windowControls` 元素 | Custom toolbars are compatible without the `windowControls` element.
 
 ## v1.3.0/2022-09-14
 
