@@ -70,7 +70,7 @@ function createToolbarItem(toolbarConfig, className) {
         const status = toolbarConfig.status[toolbarConfig.status.default];
         icon = status.icon;
         label = status.label;
-        label += (status.hotkey && status.hotkey().enable !== false)? ` [${printHotKey(status.hotkey())}]` : '';
+        label += (status.hotkey && status.hotkey().enable !== false) ? ` [${printHotKey(status.hotkey())}]` : '';
     }
     else { // 按钮没有多个状态
         icon = toolbarConfig.icon;
@@ -437,7 +437,8 @@ const TASK_HANDLER = {
                 new_attrs[attr] = old_attrs[attr].replace(params[attr].regexp, params[attr].substr);
             }
         }
-        if (compareVersion(window.theme.kernelVersion, '2.1.15') < 0) setBlockDOMAttrs(id, new_attrs);
+        if (compareVersion(window.theme.kernelVersion, '2.2.0') < 0)
+            setBlockDOMAttrs(id, new_attrs);
         setBlockAttrs(id, new_attrs);
     },
     /**
@@ -463,7 +464,8 @@ const TASK_HANDLER = {
                 new_attrs[attr] = params[attr].value;
             }
         }
-        if (compareVersion(window.theme.kernelVersion, '2.1.15') < 0) setBlockDOMAttrs(id, new_attrs);
+        if (compareVersion(window.theme.kernelVersion, '2.2.0') < 0)
+            setBlockDOMAttrs(id, new_attrs);
         setBlockAttrs(id, new_attrs);
     },
     /* 在后方插入属性 */
@@ -481,7 +483,8 @@ const TASK_HANDLER = {
                 new_attrs[attr] = params[attr];
             }
         }
-        if (compareVersion(window.theme.kernelVersion, '2.1.15') < 0) setBlockDOMAttrs(id, new_attrs);
+        if (compareVersion(window.theme.kernelVersion, '2.2.0') < 0)
+            setBlockDOMAttrs(id, new_attrs);
         setBlockAttrs(id, new_attrs);
     },
     /* 插入属性值中空格分隔的一项(插入单词) */
@@ -501,7 +504,8 @@ const TASK_HANDLER = {
                 new_attrs[attr] = params[attr];
             }
         }
-        if (compareVersion(window.theme.kernelVersion, '2.1.15') < 0) setBlockDOMAttrs(id, new_attrs);
+        if (compareVersion(window.theme.kernelVersion, '2.2.0') < 0)
+            setBlockDOMAttrs(id, new_attrs);
         setBlockAttrs(id, new_attrs);
     },
     /* 删除属性值中空格分隔的一项 */
@@ -525,7 +529,8 @@ const TASK_HANDLER = {
                 new_attrs[key] = '';
             }
         }
-        if (compareVersion(window.theme.kernelVersion, '2.1.15') < 0) setBlockDOMAttrs(id, new_attrs);
+        if (compareVersion(window.theme.kernelVersion, '2.2.0') < 0)
+            setBlockDOMAttrs(id, new_attrs);
         setBlockAttrs(id, new_attrs);
     },
     /* 覆盖整个属性值 */
@@ -533,7 +538,8 @@ const TASK_HANDLER = {
         // console.log('attr-update');
         for (const [key, value] of Object.entries(params))
             if (!value) params[key] = '';
-        if (compareVersion(window.theme.kernelVersion, '2.1.15') < 0) setBlockDOMAttrs(id, params);
+        if (compareVersion(window.theme.kernelVersion, '2.2.0') < 0)
+            setBlockDOMAttrs(id, params);
         setBlockAttrs(id, params);
     },
     /* 切换属性值中空格分隔的一项 */
@@ -561,7 +567,8 @@ const TASK_HANDLER = {
                 new_attrs[key] = iter.next().value;
             }
         }
-        if (compareVersion(window.theme.kernelVersion, '2.1.15') < 0) setBlockDOMAttrs(id, new_attrs);
+        if (compareVersion(window.theme.kernelVersion, '2.2.0') < 0)
+            setBlockDOMAttrs(id, new_attrs);
         setBlockAttrs(id, new_attrs);
     },
     /* 子菜单展开 */
