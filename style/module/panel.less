@@ -14,12 +14,12 @@
         height: 100%;
         // background-color: white;
         background-color: var(--custom-list-guides-line-color);
-        z-index: 0;
+        z-index: 1;
     }
 }
 
 // 添加 10 级辅助线
-.tree(@base) {
+.tree(@base-root, @base-default) {
 
     // absolute 定位需要上级元素使用 absolute 或 relative 定位方法
     ul {
@@ -30,34 +30,34 @@
 
     ul.b3-list {
         >ul {
-            .guides(@base, 0);
+            .guides(@base-root, 0);
 
             >ul {
-                .guides(12px, 1);
+                .guides(@base-default, 1);
 
                 >ul {
-                    .guides(12px, 2);
+                    .guides(@base-default, 2);
 
                     >ul {
-                        .guides(12px, 3);
+                        .guides(@base-default, 3);
 
                         >ul {
-                            .guides(12px, 4);
+                            .guides(@base-default, 4);
 
                             >ul {
-                                .guides(12px, 5);
+                                .guides(@base-default, 5);
 
                                 >ul {
-                                    .guides(12px, 6);
+                                    .guides(@base-default, 6);
 
                                     >ul {
-                                        .guides(12px, 7);
+                                        .guides(@base-default, 7);
 
                                         >ul {
-                                            .guides(12px, 8);
+                                            .guides(@base-default, 8);
 
                                             >ul {
-                                                .guides(12px, 9);
+                                                .guides(@base-default, 9);
                                             }
                                         }
                                     }
@@ -76,19 +76,23 @@
     }
 }
 
+// 移动端侧边分栏
+#sidebar {
+    .tree(16px, 13px);
+}
+
+// 桌面端侧边分栏
 [data-type='wnd'][data-id] {
-    /* 各区分栏 */
     min-height: 0%;
     margin: var(--custom-panel-distance);
     border-radius: var(--custom-border-radius);
 
     /* 分栏内部 */
     .file-tree {
-        // 辅助线
-        .tree(12px);
+        .tree(12px, 12px);
 
         &.sy__file {
-            .tree(15px);
+            .tree(15px, 12px);
         }
     }
 
