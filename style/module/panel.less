@@ -1,0 +1,92 @@
+/* 面板全局设置 */
+
+@import (css) url(/appearance/themes/Dark+/style/module/config.css);
+@import (css) url(/widgets/custom.css);
+
+.guides(@offset) {
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: @offset;
+        width: var(--custom-list-guides-line-width);
+        height: 100%;
+        // background-color: white;
+        background-color: var(--custom-list-guides-line-color);
+        z-index: 0;
+    }
+}
+
+.tree(@base) {
+
+    // 辅助线
+    ul {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    ul.b3-list {
+        >ul {
+            .guides(@base + 15px * 0);
+
+            >ul {
+                .guides(12px + 16px * 1);
+
+                >ul {
+                    .guides(12px + 16px * 2);
+
+                    >ul {
+                        .guides(12px + 16px * 3);
+
+                        >ul {
+                            .guides(12px + 16px * 4);
+
+                            >ul {
+                                .guides(12px + 16px * 5);
+
+                                >ul {
+                                    .guides(12px + 16px * 6);
+
+                                    >ul {
+                                        .guides(12px + 16px * 7);
+
+                                        >ul {
+                                            .guides(12px + 16px * 8);
+
+                                            >ul {
+                                                .guides(12px + 16px * 9);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // 鼠标悬浮更改辅助线颜色
+        ul:hover::before {
+            background-color: var(--b3-theme-primary-lighter);
+        }
+    }
+}
+
+[data-type='wnd'][data-id] {
+    /* 各区分栏 */
+    min-height: 0%;
+    margin: var(--custom-panel-distance);
+    border-radius: var(--custom-border-radius);
+
+    /* 分栏内部 */
+    .file-tree {
+        .tree(12px);
+
+        &.sy__file {
+            .tree(15px);
+        }
+    }
+
+}

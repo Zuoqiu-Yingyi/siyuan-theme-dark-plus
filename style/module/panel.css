@@ -1,11 +1,226 @@
 /* 面板全局设置 */
-
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
-
 [data-type='wnd'][data-id] {
-    /* 各区分栏 */
-    min-height: 0%;
-    margin: var(--custom-panel-distance);
-    border-radius: var(--custom-border-radius);
+  /* 各区分栏 */
+  min-height: 0%;
+  margin: var(--custom-panel-distance);
+  border-radius: var(--custom-border-radius);
+  /* 分栏内部 */
+}
+[data-type='wnd'][data-id] .file-tree ul {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 0;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 0;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 44px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 0;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 60px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 0;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 76px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 0;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 92px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 0;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 108px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 0;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 124px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 0;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 140px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 0;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 156px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 0;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list ul:hover::before {
+  background-color: var(--b3-theme-primary-lighter);
+}
+[data-type='wnd'][data-id] .file-tree.sy__file ul {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+[data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 0;
+}
+[data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 0;
+}
+[data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 44px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 0;
+}
+[data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 60px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 0;
+}
+[data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 76px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 0;
+}
+[data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 92px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 0;
+}
+[data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 108px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 0;
+}
+[data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 124px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 0;
+}
+[data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 140px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 0;
+}
+[data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 156px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 0;
+}
+[data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list ul:hover::before {
+  background-color: var(--b3-theme-primary-lighter);
 }
