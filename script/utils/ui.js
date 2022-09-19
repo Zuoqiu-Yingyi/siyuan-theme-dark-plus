@@ -106,7 +106,7 @@ function toolbarItemListPush(item) {
     let windowControls = document.getElementById('windowControls');
     let custom_toolbar = document.getElementById(config.theme.toolbar.id);
 
-    if (window.theme.clientMode !== 'mobile' && toolbar && windowControls) {
+    if (window.theme.clientMode !== 'mobile' && toolbar) {
         if (!custom_toolbar) {
             /* 自定义菜单项容器 */
             custom_toolbar = document.createElement('div');
@@ -142,11 +142,19 @@ function toolbarItemListPush(item) {
             divider_after.className = 'protyle-toolbar__divider';
 
             itemStateLoad(config.theme.toolbar.more.id, custom.theme.toolbar, more);
-            toolbar.insertBefore(divider_before, windowControls);
-            toolbar.insertBefore(more, windowControls);
-            toolbar.insertBefore(custom_toolbar, windowControls);
-            if (windowControls.childElementCount > 0) // 存在窗口控制按钮, 插入分割线
-                toolbar.insertBefore(divider_after, windowControls);
+
+            if (windowControls) {
+                toolbar.insertBefore(divider_before, windowControls);
+                toolbar.insertBefore(more, windowControls);
+                toolbar.insertBefore(custom_toolbar, windowControls);
+                if (windowControls.childElementCount > 0) // 存在窗口控制按钮, 插入分割线
+                    toolbar.insertBefore(divider_after, windowControls);
+            }
+            else {
+                toolbar.appendChild(divider_before);
+                toolbar.appendChild(more);
+                toolbar.appendChild(custom_toolbar);
+            }
         }
 
         toolbarItemList = toolbarItemList.sort((a, b) => a.index - b.index);
