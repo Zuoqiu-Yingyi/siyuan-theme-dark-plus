@@ -28,6 +28,7 @@ body.fn__flex-column {
 .b3-list-item__toggle {
   padding-left: 3px;
   padding-right: 3px;
+  border-radius: 2px;
 }
 .b3-list-item__toggle:hover {
   outline: 1px solid var(--b3-theme-on-surface-light);
