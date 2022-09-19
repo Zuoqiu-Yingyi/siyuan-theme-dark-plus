@@ -35,3 +35,4 @@
 .sy__file li[data-type="navigation-file"][data-name$="!.sy"] > .b3-list-item__text {
   color: var(--custom-doctree-end-exclamation-color);
 }
+/* ---------------------------------------文档树辅助线------------------------------------------ */
