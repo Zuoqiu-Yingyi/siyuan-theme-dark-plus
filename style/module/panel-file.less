@@ -3,7 +3,7 @@
 @import (css) url(/appearance/themes/Dark+/style/module/config.css);
 @import (css) url(/widgets/custom.css);
 
-.render(@reg, @color) {
+.title(@reg, @color) {
     li[data-type="navigation-file"]@{reg} {
         >.b3-list-item__text {
             color: @color;
@@ -21,22 +21,22 @@
     // data-name ^="<设置的字符的URL编码>"
 
     // ^*
-    .render(~'[data-name ^="*"]', ~'var(--custom-doctree-begin-asterisk-color)');
+    .title(~'[data-name ^="*"]', ~'var(--custom-doctree-begin-asterisk-color)');
 
     // ^#
-    .render(~'[data-name ^="#"]', ~'var(--custom-doctree-begin-sharp-color)');
+    .title(~'[data-name ^="#"]', ~'var(--custom-doctree-begin-sharp-color)');
 
     // ^?
-    .render(~'[data-name ^="?"]', ~'var(--custom-doctree-begin-question-color)');
+    .title(~'[data-name ^="?"]', ~'var(--custom-doctree-begin-question-color)');
 
     // ^!
-    .render(~'[data-name ^="!"]', ~'var(--custom-doctree-begin-exclamation-color)');
+    .title(~'[data-name ^="!"]', ~'var(--custom-doctree-begin-exclamation-color)');
 
     // ^@
-    .render(~'[data-name ^="@"]', ~'var(--custom-doctree-begin-at-color)');
+    .title(~'[data-name ^="@"]', ~'var(--custom-doctree-begin-at-color)');
 
     // ^.
-    .render(~'[data-name ^="."]', ~'var(--custom-doctree-begin-period-color)');
+    .title(~'[data-name ^="."]', ~'var(--custom-doctree-begin-period-color)');
 
     // 文档名包含
     // data-name ^="<设置的字符的URL编码>"
@@ -45,14 +45,71 @@
     // data-name ^="<设置的字符的URL编码>"
 
     // * $
-    .render(~'[data-name $="*.sy"]', ~'var(--custom-doctree-end-asterisk-color)');
+    .title(~'[data-name $="*.sy"]', ~'var(--custom-doctree-end-asterisk-color)');
 
     // # $
-    .render(~'[data-name $="#.sy"]', ~'var(--custom-doctree-end-sharp-color)');
+    .title(~'[data-name $="#.sy"]', ~'var(--custom-doctree-end-sharp-color)');
 
     // ? $
-    .render(~'[data-name $="?.sy"]', ~'var(--custom-doctree-end-question-color)');
+    .title(~'[data-name $="?.sy"]', ~'var(--custom-doctree-end-question-color)');
 
     // ! $
-    .render(~'[data-name $="!.sy"]', ~'var(--custom-doctree-end-exclamation-color)');
+    .title(~'[data-name $="!.sy"]', ~'var(--custom-doctree-end-exclamation-color)');
 }
+
+/* ---------------------------------------文档树辅助线------------------------------------------ */
+// .b3-list:not(.b3-list--border) .b3-list-item+ul {
+//     box-shadow: 13px 0 rgba(255, 255, 255, 1) inset, 14px 0 rgba(231, 231, 231, 1) inset
+// }
+
+// .b3-list:not(.b3-list--border) .b3-list-item+ul>.b3-list-item {
+//     margin-left: 7px
+// }
+
+// .b3-list:not(.b3-list--border) .b3-list-item+ul>.b3-list-item+ul {
+//     box-shadow: 13px 0 rgba(255, 255, 255, 1) inset, 14px 0 rgba(231, 231, 231, 1) inset, 35px 0 rgba(255, 255, 255, 1) inset, 36px 0 rgba(231, 231, 231, 1) inset
+// }
+
+// .b3-list:not(.b3-list--border) .b3-list-item+ul>.b3-list-item+ul>.b3-list-item {
+//     margin-left: 14px
+// }
+
+// .b3-list:not(.b3-list--border) .b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul {
+//     box-shadow: 13px 0 rgba(255, 255, 255, 1) inset, 14px 0 rgba(231, 231, 231, 1) inset, 35px 0 rgba(255, 255, 255, 1) inset, 36px 0 rgba(231, 231, 231, 1) inset, 57px 0 rgba(255, 255, 255, 1) inset, 58px 0 rgba(231, 231, 231, 1) inset
+// }
+
+// .b3-list:not(.b3-list--border) .b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item {
+//     margin-left: 21px
+// }
+
+// .b3-list:not(.b3-list--border) .b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul {
+//     box-shadow: 13px 0 rgba(255, 255, 255, 1) inset, 14px 0 rgba(231, 231, 231, 1) inset, 35px 0 rgba(255, 255, 255, 1) inset, 36px 0 rgba(231, 231, 231, 1) inset, 57px 0 rgba(255, 255, 255, 1) inset, 58px 0 rgba(231, 231, 231, 1) inset, 79px 0 rgba(255, 255, 255, 1) inset, 80px 0 rgba(231, 231, 231, 1) inset
+// }
+
+// .b3-list:not(.b3-list--border) .b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item {
+//     margin-left: 28px
+// }
+
+// .b3-list:not(.b3-list--border) .b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul {
+//     box-shadow: 13px 0 rgba(255, 255, 255, 1) inset, 14px 0 rgba(231, 231, 231, 1) inset, 35px 0 rgba(255, 255, 255, 1) inset, 36px 0 rgba(231, 231, 231, 1) inset, 57px 0 rgba(255, 255, 255, 1) inset, 58px 0 rgba(231, 231, 231, 1) inset, 79px 0 rgba(255, 255, 255, 1) inset, 80px 0 rgba(231, 231, 231, 1) inset, 101px 0 rgba(255, 255, 255, 1) inset, 102px 0 rgba(231, 231, 231, 1) inset
+// }
+
+// .b3-list:not(.b3-list--border) .b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item {
+//     margin-left: 35px
+// }
+
+// .b3-list:not(.b3-list--border) .b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul {
+//     box-shadow: 13px 0 rgba(255, 255, 255, 1) inset, 14px 0 rgba(231, 231, 231, 1) inset, 35px 0 rgba(255, 255, 255, 1) inset, 36px 0 rgba(231, 231, 231, 1) inset, 57px 0 rgba(255, 255, 255, 1) inset, 58px 0 rgba(231, 231, 231, 1) inset, 79px 0 rgba(255, 255, 255, 1) inset, 80px 0 rgba(231, 231, 231, 1) inset, 101px 0 rgba(255, 255, 255, 1) inset, 102px 0 rgba(231, 231, 231, 1) inset, 123px 0 rgba(255, 255, 255, 1) inset, 124px 0 rgba(231, 231, 231, 1) inset
+// }
+
+// .b3-list:not(.b3-list--border) .b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item {
+//     margin-left: 42px
+// }
+
+// .b3-list:not(.b3-list--border) .b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul {
+//     box-shadow: 13px 0 rgba(255, 255, 255, 1) inset, 14px 0 rgba(231, 231, 231, 1) inset, 35px 0 rgba(255, 255, 255, 1) inset, 36px 0 rgba(231, 231, 231, 1) inset, 57px 0 rgba(255, 255, 255, 1) inset, 58px 0 rgba(231, 231, 231, 1) inset, 79px 0 rgba(255, 255, 255, 1) inset, 80px 0 rgba(231, 231, 231, 1) inset, 101px 0 rgba(255, 255, 255, 1) inset, 102px 0 rgba(231, 231, 231, 1) inset, 123px 0 rgba(255, 255, 255, 1) inset, 124px 0 rgba(231, 231, 231, 1) inset, 145px 0 rgba(255, 255, 255, 1) inset, 146px 0 rgba(231, 231, 231, 1) inset
+// }
+
+// .b3-list:not(.b3-list--border) .b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item+ul>.b3-list-item {
+//     margin-left: 49px
+// }
