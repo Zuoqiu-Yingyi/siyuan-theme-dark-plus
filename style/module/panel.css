@@ -1,8 +1,115 @@
 /* 面板全局设置 */
 @import url(/appearance/themes/Dark+/style/module/config.css);
 @import url(/widgets/custom.css);
+#sidebar ul {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+#sidebar ul.b3-list > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 16px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+#sidebar ul.b3-list > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 29px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+#sidebar ul.b3-list > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 45px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+#sidebar ul.b3-list > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 61px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+#sidebar ul.b3-list > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 77px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+#sidebar ul.b3-list > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 93px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+#sidebar ul.b3-list > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 109px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+#sidebar ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 125px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+#sidebar ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 141px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+#sidebar ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 157px;
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+#sidebar ul.b3-list ul:hover::before {
+  background-color: var(--b3-theme-primary-lighter);
+}
 [data-type='wnd'][data-id] {
-  /* 各区分栏 */
   min-height: 0%;
   margin: var(--custom-panel-distance);
   border-radius: var(--custom-border-radius);
@@ -21,7 +128,7 @@
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
-  z-index: 0;
+  z-index: 1;
 }
 [data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul::before {
   content: "";
@@ -31,7 +138,7 @@
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
-  z-index: 0;
+  z-index: 1;
 }
 [data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul::before {
   content: "";
@@ -41,7 +148,7 @@
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
-  z-index: 0;
+  z-index: 1;
 }
 [data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul::before {
   content: "";
@@ -51,7 +158,7 @@
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
-  z-index: 0;
+  z-index: 1;
 }
 [data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul::before {
   content: "";
@@ -61,7 +168,7 @@
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
-  z-index: 0;
+  z-index: 1;
 }
 [data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul::before {
   content: "";
@@ -71,7 +178,7 @@
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
-  z-index: 0;
+  z-index: 1;
 }
 [data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul > ul::before {
   content: "";
@@ -81,7 +188,7 @@
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
-  z-index: 0;
+  z-index: 1;
 }
 [data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul::before {
   content: "";
@@ -91,7 +198,7 @@
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
-  z-index: 0;
+  z-index: 1;
 }
 [data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
   content: "";
@@ -101,7 +208,7 @@
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
-  z-index: 0;
+  z-index: 1;
 }
 [data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
   content: "";
@@ -111,7 +218,7 @@
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
-  z-index: 0;
+  z-index: 1;
 }
 [data-type='wnd'][data-id] .file-tree ul.b3-list ul:hover::before {
   background-color: var(--b3-theme-primary-lighter);
@@ -129,7 +236,7 @@
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
-  z-index: 0;
+  z-index: 1;
 }
 [data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list > ul > ul::before {
   content: "";
@@ -139,7 +246,7 @@
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
-  z-index: 0;
+  z-index: 1;
 }
 [data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list > ul > ul > ul::before {
   content: "";
@@ -149,7 +256,7 @@
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
-  z-index: 0;
+  z-index: 1;
 }
 [data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list > ul > ul > ul > ul::before {
   content: "";
@@ -159,7 +266,7 @@
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
-  z-index: 0;
+  z-index: 1;
 }
 [data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list > ul > ul > ul > ul > ul::before {
   content: "";
@@ -169,7 +276,7 @@
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
-  z-index: 0;
+  z-index: 1;
 }
 [data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list > ul > ul > ul > ul > ul > ul::before {
   content: "";
@@ -179,7 +286,7 @@
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
-  z-index: 0;
+  z-index: 1;
 }
 [data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list > ul > ul > ul > ul > ul > ul > ul::before {
   content: "";
@@ -189,7 +296,7 @@
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
-  z-index: 0;
+  z-index: 1;
 }
 [data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul::before {
   content: "";
@@ -199,7 +306,7 @@
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
-  z-index: 0;
+  z-index: 1;
 }
 [data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
   content: "";
@@ -209,7 +316,7 @@
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
-  z-index: 0;
+  z-index: 1;
 }
 [data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
   content: "";
@@ -219,7 +326,7 @@
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
-  z-index: 0;
+  z-index: 1;
 }
 [data-type='wnd'][data-id] .file-tree.sy__file ul.b3-list ul:hover::before {
   background-color: var(--b3-theme-primary-lighter);
