@@ -33,6 +33,7 @@ body.fn__flex-column {
 }
 .b3-list-item__toggle:hover {
   outline: 1px solid var(--b3-theme-on-surface-light);
+  background-color: var(--b3-theme-background-light);
 }
 /* 被激活的控件 */
 .block__icon--active,

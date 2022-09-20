@@ -16,8 +16,14 @@
             @{selector} {
 
                 &,
-                & .b3-list-item__text {
+                .b3-list-item__text,
+                .b3-list-item__toggle {
                     color: var(@color);
+                }
+
+                &+ul::before {
+                    background-color: var(@color) !important;
+                    opacity: 0.375;
                 }
             }
         }

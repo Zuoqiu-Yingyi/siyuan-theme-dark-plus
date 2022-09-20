@@ -16,6 +16,7 @@
 - 添加侧边栏树形列表辅助线 | Add a sidebar tree list guide.
 - 树形侧边栏列表辅助线兼容移动端 | The tree sidebar list guide is compatible with mobile client.
 - 调整标签样式 | Adjacte the style of tag.
+- 为文档大纲树形列表辅助线设置颜色 | Set the color for the document outline tree list guides.
 
 ## v1.3.0/2022-09-14
 
