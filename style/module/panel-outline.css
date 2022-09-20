@@ -16,42 +16,91 @@
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-type="NodeDocument"],
 .sy__outline ul.b3-list.b3-list--background [data-type="NodeDocument"],
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-type="NodeDocument"] .b3-list-item__text,
-.sy__outline ul.b3-list.b3-list--background [data-type="NodeDocument"] .b3-list-item__text {
+.sy__outline ul.b3-list.b3-list--background [data-type="NodeDocument"] .b3-list-item__text,
+#sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-type="NodeDocument"] .b3-list-item__toggle,
+.sy__outline ul.b3-list.b3-list--background [data-type="NodeDocument"] .b3-list-item__toggle {
   color: var(--b3-theme-on-background);
+}
+#sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-type="NodeDocument"] + ul::before,
+.sy__outline ul.b3-list.b3-list--background [data-type="NodeDocument"] + ul::before {
+  background-color: var(--b3-theme-on-background) !important;
+  opacity: 0.375;
 }
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h1"],
 .sy__outline ul.b3-list.b3-list--background [data-subtype="h1"],
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h1"] .b3-list-item__text,
-.sy__outline ul.b3-list.b3-list--background [data-subtype="h1"] .b3-list-item__text {
+.sy__outline ul.b3-list.b3-list--background [data-subtype="h1"] .b3-list-item__text,
+#sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h1"] .b3-list-item__toggle,
+.sy__outline ul.b3-list.b3-list--background [data-subtype="h1"] .b3-list-item__toggle {
   color: var(--custom-h1-color);
+}
+#sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h1"] + ul::before,
+.sy__outline ul.b3-list.b3-list--background [data-subtype="h1"] + ul::before {
+  background-color: var(--custom-h1-color) !important;
+  opacity: 0.375;
 }
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h2"],
 .sy__outline ul.b3-list.b3-list--background [data-subtype="h2"],
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h2"] .b3-list-item__text,
-.sy__outline ul.b3-list.b3-list--background [data-subtype="h2"] .b3-list-item__text {
+.sy__outline ul.b3-list.b3-list--background [data-subtype="h2"] .b3-list-item__text,
+#sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h2"] .b3-list-item__toggle,
+.sy__outline ul.b3-list.b3-list--background [data-subtype="h2"] .b3-list-item__toggle {
   color: var(--custom-h2-color);
+}
+#sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h2"] + ul::before,
+.sy__outline ul.b3-list.b3-list--background [data-subtype="h2"] + ul::before {
+  background-color: var(--custom-h2-color) !important;
+  opacity: 0.375;
 }
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h3"],
 .sy__outline ul.b3-list.b3-list--background [data-subtype="h3"],
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h3"] .b3-list-item__text,
-.sy__outline ul.b3-list.b3-list--background [data-subtype="h3"] .b3-list-item__text {
+.sy__outline ul.b3-list.b3-list--background [data-subtype="h3"] .b3-list-item__text,
+#sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h3"] .b3-list-item__toggle,
+.sy__outline ul.b3-list.b3-list--background [data-subtype="h3"] .b3-list-item__toggle {
   color: var(--custom-h3-color);
+}
+#sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h3"] + ul::before,
+.sy__outline ul.b3-list.b3-list--background [data-subtype="h3"] + ul::before {
+  background-color: var(--custom-h3-color) !important;
+  opacity: 0.375;
 }
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h4"],
 .sy__outline ul.b3-list.b3-list--background [data-subtype="h4"],
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h4"] .b3-list-item__text,
-.sy__outline ul.b3-list.b3-list--background [data-subtype="h4"] .b3-list-item__text {
+.sy__outline ul.b3-list.b3-list--background [data-subtype="h4"] .b3-list-item__text,
+#sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h4"] .b3-list-item__toggle,
+.sy__outline ul.b3-list.b3-list--background [data-subtype="h4"] .b3-list-item__toggle {
   color: var(--custom-h4-color);
+}
+#sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h4"] + ul::before,
+.sy__outline ul.b3-list.b3-list--background [data-subtype="h4"] + ul::before {
+  background-color: var(--custom-h4-color) !important;
+  opacity: 0.375;
 }
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h5"],
 .sy__outline ul.b3-list.b3-list--background [data-subtype="h5"],
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h5"] .b3-list-item__text,
-.sy__outline ul.b3-list.b3-list--background [data-subtype="h5"] .b3-list-item__text {
+.sy__outline ul.b3-list.b3-list--background [data-subtype="h5"] .b3-list-item__text,
+#sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h5"] .b3-list-item__toggle,
+.sy__outline ul.b3-list.b3-list--background [data-subtype="h5"] .b3-list-item__toggle {
   color: var(--custom-h5-color);
+}
+#sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h5"] + ul::before,
+.sy__outline ul.b3-list.b3-list--background [data-subtype="h5"] + ul::before {
+  background-color: var(--custom-h5-color) !important;
+  opacity: 0.375;
 }
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h6"],
 .sy__outline ul.b3-list.b3-list--background [data-subtype="h6"],
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h6"] .b3-list-item__text,
-.sy__outline ul.b3-list.b3-list--background [data-subtype="h6"] .b3-list-item__text {
+.sy__outline ul.b3-list.b3-list--background [data-subtype="h6"] .b3-list-item__text,
+#sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h6"] .b3-list-item__toggle,
+.sy__outline ul.b3-list.b3-list--background [data-subtype="h6"] .b3-list-item__toggle {
   color: var(--custom-h6-color);
+}
+#sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h6"] + ul::before,
+.sy__outline ul.b3-list.b3-list--background [data-subtype="h6"] + ul::before {
+  background-color: var(--custom-h6-color) !important;
+  opacity: 0.375;
 }
