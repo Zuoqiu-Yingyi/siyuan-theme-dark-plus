@@ -23,6 +23,7 @@
 }
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-type="NodeDocument"] + ul::before,
 .sy__outline ul.b3-list.b3-list--background [data-type="NodeDocument"] + ul::before {
+  /* 辅助线颜色 */
   background-color: var(--b3-theme-on-background) !important;
   opacity: 0.375;
 }
@@ -36,6 +37,7 @@
 }
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h1"] + ul::before,
 .sy__outline ul.b3-list.b3-list--background [data-subtype="h1"] + ul::before {
+  /* 辅助线颜色 */
   background-color: var(--custom-h1-color) !important;
   opacity: 0.375;
 }
@@ -49,6 +51,7 @@
 }
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h2"] + ul::before,
 .sy__outline ul.b3-list.b3-list--background [data-subtype="h2"] + ul::before {
+  /* 辅助线颜色 */
   background-color: var(--custom-h2-color) !important;
   opacity: 0.375;
 }
@@ -62,6 +65,7 @@
 }
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h3"] + ul::before,
 .sy__outline ul.b3-list.b3-list--background [data-subtype="h3"] + ul::before {
+  /* 辅助线颜色 */
   background-color: var(--custom-h3-color) !important;
   opacity: 0.375;
 }
@@ -75,6 +79,7 @@
 }
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h4"] + ul::before,
 .sy__outline ul.b3-list.b3-list--background [data-subtype="h4"] + ul::before {
+  /* 辅助线颜色 */
   background-color: var(--custom-h4-color) !important;
   opacity: 0.375;
 }
@@ -88,6 +93,7 @@
 }
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h5"] + ul::before,
 .sy__outline ul.b3-list.b3-list--background [data-subtype="h5"] + ul::before {
+  /* 辅助线颜色 */
   background-color: var(--custom-h5-color) !important;
   opacity: 0.375;
 }
@@ -101,6 +107,7 @@
 }
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-subtype="h6"] + ul::before,
 .sy__outline ul.b3-list.b3-list--background [data-subtype="h6"] + ul::before {
+  /* 辅助线颜色 */
   background-color: var(--custom-h6-color) !important;
   opacity: 0.375;
 }
