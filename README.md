@@ -46,6 +46,10 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 常用中西文 2:1 等宽字体: `仿宋`, `黑体`, `楷体`, `隶书`, `宋体`, `新宋体`, `幼圆`
 
+示意图中使用的中西文 2:1 等宽字体:
+- 界面 & 代码块: `更纱黑体等宽` [GitHub - be5invis/Sarasa-Gothic](https://github.com/be5invis/Sarasa-Gothic)
+- 编辑器正文: `霞鹜文楷等宽` [GitHub - lxgw/LxgwWenKai](https://github.com/lxgw/LxgwWenKai)
+
 ![Jupyter-relative](./image/README/1654240321941.png)
 ![Jupyter-location](/appearance/themes/Dark+/image/README/1654240321941.png)
 
