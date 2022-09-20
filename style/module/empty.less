@@ -3,83 +3,47 @@
 @import (css) url(/appearance/themes/Dark+/style/module/config.css);
 @import (css) url(/widgets/custom.css);
 
+.empty(@content, @content-focus, @color) {
+
+    // 内容为空的块
+    &:empty::after {
+        content: var(@content);
+        color: var(@color);
+    }
+
+    // 焦点在内容为空的块
+    &:focus:empty::after {
+        content: var(@content-focus);
+    }
+}
+
 /* 👇聚焦提示👇 */
 .protyle-wysiwyg {
 
     // 聚焦提示👇
     [data-node-id]:not(.code-block)>[contenteditable][spellcheck] {
-        &:empty::after {
-            /* 空段落 */
-            content: var(--custom-empty-p);
-            color: var(--b3-theme-on-surface);
-        }
-
-        &:focus:empty::after {
-            /* 空段落聚焦 */
-            content: var(--custom-empty-focus-p);
-            color: var(--b3-theme-on-surface);
-        }
-
+        // 空段落
+        .empty(--custom-empty-p, --custom-empty-focus-p, --b3-theme-on-surface);
     }
 
     [data-node-id].code-block>[contenteditable][spellcheck].hljs {
-        &:empty::after {
-            /* 空代码块 */
-            content: var(--custom-empty-c);
-            color: var(--b3-theme-on-surface);
-        }
-
-        &:focus:empty::after {
-            /* 空代码块聚焦 */
-            content: var(--custom-empty-focus-c);
-            color: var(--b3-theme-on-surface);
-        }
-
+        // 空代码块
+        .empty(--custom-empty-c, --custom-empty-focus-c, --b3-theme-on-surface);
     }
 
     [data-node-id][data-subtype="t"].li>.p:nth-of-type(2)>[contenteditable][spellcheck] {
-        &:empty::after {
-            /* 空任务列表 */
-            content: var(--custom-empty-t);
-            color: var(--b3-theme-on-surface);
-        }
-
-        &:focus:empty::after {
-            /* 空任务列表聚焦 */
-            content: var(--custom-empty-focus-t);
-            color: var(--b3-theme-on-surface);
-        }
-
+        // 空任务列表
+        .empty(--custom-empty-t, --custom-empty-focus-t, --b3-theme-on-surface);
     }
 
     [data-node-id][data-subtype="u"].li>.p:nth-of-type(2)>[contenteditable][spellcheck] {
-        &:empty::after {
-            /* 空无序列表 */
-            content: var(--custom-empty-u);
-            color: var(--b3-theme-on-surface);
-        }
-
-        &:focus:empty::after {
-            /* 空无序列表聚焦 */
-            content: var(--custom-empty-focus-u);
-            color: var(--b3-theme-on-surface);
-        }
-
+        // 空无序列表
+        .empty(--custom-empty-u, --custom-empty-focus-u, --b3-theme-on-surface);
     }
 
     [data-node-id][data-subtype="o"].li>.p:nth-of-type(2)>[contenteditable][spellcheck] {
-        &:empty::after {
-            /* 空有序列表 */
-            content: var(--custom-empty-o);
-            color: var(--b3-theme-on-surface);
-        }
-
-        &:focus:empty::after {
-            /* 空有序列表聚焦 */
-            content: var(--custom-empty-focus-o);
-            color: var(--b3-theme-on-surface);
-        }
-
+        // 空有序列表
+        .empty(--custom-empty-o, --custom-empty-focus-o, --b3-theme-on-surface);
     }
 
 }
