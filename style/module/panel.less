@@ -87,11 +87,14 @@
     margin: var(--custom-panel-distance);
     border-radius: var(--custom-border-radius);
 
-    /* 分栏内部 */
-    .file-tree {
+    /* 侧边分栏面板 */
+    .file-tree:not(.sy__file) {
         .tree(12px, 12px);
 
-        &.sy__file {
+    }
+
+    .file-tree.sy__file {
+        .block__icons+div:hover {
             .tree(15px, 12px);
         }
     }
