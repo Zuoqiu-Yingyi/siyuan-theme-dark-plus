@@ -17,6 +17,7 @@
 - 树形侧边栏列表辅助线兼容移动端 | The tree sidebar list guide is compatible with mobile client.
 - 调整标签样式 | Adjacte the style of tag.
 - 为文档大纲树形列表辅助线设置颜色 | Set the color for the document outline tree list guides.
+- 修复应用文档树辅助线后无法在文档树面板定位文档的问题 | Fixed the issue that documents could not be located in document tree panel after applying document tree guides.
 
 ## v1.3.0/2022-09-14
 
