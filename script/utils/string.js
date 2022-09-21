@@ -75,17 +75,44 @@ function getCookie(name) {
 
 /**
  * 比较版本号
- * @params {string} v1: 版本号1
- * @params {string} v2: 版本号2
+ * @params {string} version1: 版本号1
+ * @params {string} version2: 版本号2
  * @return {number}: 1: v1 > v2; -1: v1 < v2; 0: v1 = v2
  */
-function compareVersion(v1, v2) {
-    let v1_arr = v1.split('.');
-    let v2_arr = v2.split('.');
+function compareVersion(version1, version2) {
+    let v1_arr = version1.split('.');
+    let v2_arr = version2.split('.');
     for (let i = 0; i < v1_arr.length; i++) {
-        if (v2_arr[i] == undefined) return 1;
-        if (v1_arr[i] > v2_arr[i]) return 1;
-        if (v1_arr[i] < v2_arr[i]) return -1;
+        let v1, v2;
+        if (!isNaN(v1_arr[i]) && !isNaN(v2_arr[i])) { // 两者都为数字
+            v1 = parseInt(v1_arr[i]);
+            v2 = parseInt(v2_arr[i]);
+        }
+        else if (!isNaN(v1_arr[i]) || !isNaN(v2_arr[i])) { // 其中一者为数字
+            v1 = v1_arr[i];
+            v2 = v2_arr[i];
+            if (v1 == undefined || v2 == undefined) // 其中一者没有更细分的版本号
+                return 0;
+            else if (!isNaN(v1) && isNaN(v2)) // v1 是发行版 | v2 是内测(x-alphaX)/公测版(x-devX)
+                return 1;
+            else if (isNaN(v1) && !isNaN(v2)) // v2 是发行版 | v1 是内测(x-alphaX)/公测版(x-devX)
+                return -1;
+            else // 意外的情况
+                return 0;
+        }
+        else { // 都不为数字, 比较字符串, 内测版(alpha)比公测版(dev)版本号小
+            v1 = v1_arr[i];
+            v2 = v2_arr[i];
+        }
+        switch (true) {
+            case v1 > v2:
+                return 1;
+            case v1 < v2:
+                return -1;
+            case v1 === v2:
+            default:
+                break;
+        }
     }
     return 0;
 }
