@@ -10,7 +10,7 @@ const config = {
       // 块属性类型值
       heading: "heading", // 标题
       quote: "quote", // 原文引用
-      comment: "comment", // 批注
+      comment: "comment", // 评论
       container: "container", // 容器
     },
   },

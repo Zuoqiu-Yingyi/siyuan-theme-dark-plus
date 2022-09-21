@@ -19,6 +19,7 @@
 - 为文档大纲树形列表辅助线设置颜色 | Set the color for the document outline tree list guides.
 - 修复应用文档树辅助线后无法在文档树面板定位文档的问题 | Fixed the issue that documents could not be located in document tree panel after applying document tree guides.
 - 移除标签边框 | Remove the border of tags.
+- 评论功能兼容 `v2.2.0` | Comments feature is compatible with `v2.2.0`.
 
 ## v1.3.0/2022-09-14
 
