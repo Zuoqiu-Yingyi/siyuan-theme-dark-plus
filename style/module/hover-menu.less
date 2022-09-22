@@ -36,6 +36,14 @@
         background-color: var(--custom-popover-menu-separator-color);
     }
 
+    .b3-menu__action {
+        &:hover {
+            /* 菜单按钮控件 */
+            color: var(--b3-theme-surface);
+            background-color: var(--b3-theme-on-surface);
+        }
+    }
+
     >*:not(.emojis) {
         // 非表情菜单
 
@@ -58,6 +66,7 @@
     width: var(--custom-popover-menu-width) !important;
     outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
     overflow-x: visible !important;
+
     // '/' 菜单
     &.b3-menu.hint--menu,
     // 引用搜索菜单

@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 添加页签项下拉列表控件样式 | Add the style of tab drop down list control.
+
 ## v1.3.1/2022-09-22
 
 - [v1.3.0 <=> v1.3.1](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.0...v1.3.1)

@@ -24,6 +24,11 @@
   height: 2px;
   background-color: var(--custom-popover-menu-separator-color);
 }
+#commonMenu .b3-menu__action:hover {
+  /* 菜单按钮控件 */
+  color: var(--b3-theme-surface);
+  background-color: var(--b3-theme-on-surface);
+}
 #commonMenu > *:not(.emojis) input.b3-text-field {
   /* 输入框 */
   min-width: var(--custom-popover-menu-input-min-width);
