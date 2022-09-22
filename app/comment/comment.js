@@ -19,7 +19,9 @@ import {
 const VERSION_LE_2_1_14 = compareVersion(
   window.siyuan.config.system.kernelVersion,
   '2.1.14',
-) <= 0; // 当前版本号 <= v2.1.14
+) <= 0 // 当前版本号 <= v2.1.14
+
+const lute = window.Lute.New()
 
 class Comment {
 
@@ -79,7 +81,7 @@ class Comment {
             comments = res.data
           html += `<div class="quote">${quote}<span class="delete-quote" data-quote-id="${quoteId}">移除引文</span></div>`
 
-          if (res.data.length > 0) {
+          if (comments.length > 0) {
             for (let key in comments) {
               html += `
               <div class="list-item">
@@ -90,7 +92,7 @@ class Comment {
                     <div class="delete-comment" data-quote-id="${quoteId}" data-comment-id="${comments[key]['block_id']}"><a href="siyuan://blocks/${comments[key]['block_id']}">跳转到评论</a></div>
                   </div>
                 </div>
-                <div class="comment">${comments[key]['content']}</div>
+                <div class="comment b3-typography">${lute.Md2HTML(comments[key].markdown)}</div>
               </div>
             `
             }
@@ -201,7 +203,7 @@ class Comment {
     // 评论内容块
     // let commentHtml = `<div data-node-id="${createBlockId()}" custom-quote-id="${quoteId}" data-type="NodeParagraph" class="p" updated="${createBlockId(false)}" data-eof="true"><div contenteditable="true" spellcheck="false">${this.input.innerHTML}</div><div class="protyle-attr"></div></div>`
     let commentMd = `
-${this.input.innerHTML}
+${this.input.innerText}
 {: custom-quote-id="${quoteId}" custom-quote-type="${config.attrs.type.comment}" custom-quote-time="${dateFormat("YYYY-mm-dd HH:MM:SS", new Date())}"}
 `
 
