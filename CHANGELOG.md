@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 添加页签项下拉列表控件样式 | Add the style of tab drop down list control.
+- [#105](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/105) 评论支持输入 markdown 及渲染 | Comments support markdown and rendering.
 
 ## v1.3.1/2022-09-22
 
