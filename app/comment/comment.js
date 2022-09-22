@@ -10,6 +10,7 @@ import {
 } from './utils.js'
 import {
   querySQL,
+  searchEmbedBlock,
   insertBlock,
   appendBlock,
   deleteBlock,
@@ -75,26 +76,40 @@ class Comment {
         let quoteId = node.getAttribute('style');
         if (quoteId && quoteId.indexOf('quote') > -1) {
           quoteId = quoteId.replace("quote-", "")  //移除 style 属性中用于表示的“quote”,获得原始 id
-          let sql = `select * from blocks as b left join attributes as a on b.id = a.block_id where a.name = 'custom-quote-id' and a.value = '${quoteId}' and b.type = 'p' order by b.created`,
-            res = await querySQL(sql),
+          let sql = `select b.* from blocks as b left join attributes as a on b.id = a.block_id where a.name = 'custom-quote-id' and a.value = '${quoteId}' and b.type = 'p' order by b.created`,
+            // res = await querySQL(sql),
+            res = await searchEmbedBlock(sql),
             quote = node.innerText,
-            comments = res.data
+            // comments = res.data
+            comments = res.data.blocks
           html += `<div class="quote">${quote}<span class="delete-quote" data-quote-id="${quoteId}">移除引文</span></div>`
 
           if (comments.length > 0) {
             for (let key in comments) {
+              // html += `
+              //   <div class="list-item">
+              //     <div class="header">
+              //       <div class="date">${formatSYDate(comments[key]['created'])}</div>
+              //       <div class="actions">
+              //         <div class="delete-comment" data-quote-id="${quoteId}" data-comment-id="${comments[key]['block_id']}">移除评论</div>
+              //         <div class="delete-comment" data-quote-id="${quoteId}" data-comment-id="${comments[key]['block_id']}"><a href="siyuan://blocks/${comments[key]['block_id']}">跳转到评论</a></div>
+              //       </div>
+              //     </div>
+              //     <div class="comment .protyle-wysiwyg">${lute.Md2HTML(comments[key].markdown)}</div>
+              //   </div>
+              // `
               html += `
-              <div class="list-item">
-                <div class="header">
-                  <div class="date">${formatSYDate(comments[key]['created'])}</div>
-                  <div class="actions">
-                    <div class="delete-comment" data-quote-id="${quoteId}" data-comment-id="${comments[key]['block_id']}">移除评论</div>
-                    <div class="delete-comment" data-quote-id="${quoteId}" data-comment-id="${comments[key]['block_id']}"><a href="siyuan://blocks/${comments[key]['block_id']}">跳转到评论</a></div>
+                <div class="list-item">
+                  <div class="header">
+                    <div class="date">${formatSYDate(comments[key].id)}</div>
+                    <div class="actions">
+                      <div class="delete-comment" data-quote-id="${quoteId}" data-comment-id="${comments[key].id}">移除评论</div>
+                      <div class="delete-comment" data-quote-id="${quoteId}" data-comment-id="${comments[key].id}"><a href="siyuan://blocks/${comments[key].id}">跳转到评论</a></div>
+                    </div>
                   </div>
+                  <div class="comment protyle-wysiwyg">${comments[key].content}</div>
                 </div>
-                <div class="comment b3-typography">${lute.Md2HTML(comments[key].markdown)}</div>
-              </div>
-            `
+              `
             }
           } else {
             html += `<div class="list-item"><div class="header"><div class="date">暂无评论</div></div></div>`
