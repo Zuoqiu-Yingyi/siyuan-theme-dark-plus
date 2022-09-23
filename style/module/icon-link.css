@@ -22,6 +22,11 @@
 
 /* -------------------------------- URL Scheme -------------------------------- */
 
+.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="brain:"]:not(:empty)::before,
+.b3-typography a[href ^="brain:"]::before {
+    background-image: url(/appearance/themes/Dark+/icon/thebrain.ico) !important;
+}
+
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="bookxnotepro:"]:not(:empty)::before,
 .b3-typography a[href ^="bookxnotepro:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/bookxnote.svg) !important;
