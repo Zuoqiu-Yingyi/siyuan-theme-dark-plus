@@ -2,6 +2,7 @@
 
 - 添加页签项下拉列表控件样式 | Add the style of tab drop down list control.
 - [#105](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/105) 评论支持输入 markdown 及渲染 | Comments support markdown and rendering.
+- 新增 TheBrain URL Scheme 超链接 `brain://` 图标 | Added the URL Scheme link `brain://` icon of TheBrain.
 
 ## v1.3.1/2022-09-22
 
@@ -419,7 +420,7 @@
 - 增加 Monaco Editor 复制当前页面链接功能 | Add a function to copy the current page's link to the clipboard in the Monaco Editor.
 - 增加 Monaco Editor 复制当前页面完整链接功能 | Add a function to copy the current page's full link to the clipboard in the Monaco Editor.
 - 在自述文件中添加项目依赖 | Add project dependencies in the README file.
-- 新增 `calibre` URL Scheme 超链接图标 | Added `evernote` URL Scheme link icon.
+- 新增 `calibre` URL Scheme 超链接图标 | Added `calibre` URL Scheme link icon.
 - 增加 Monaco Editor 在 VS Code 中打开文件/目录功能 | Add a function to open file and directory in VS Code in the Monaco Editor.
 - 视频时间戳功能支持单击视频内部触发 | Support click to trigger the video timestamp function in the video player.
 - 调整收集箱面板背景颜色 | Adjust the background color of the collection panel.
