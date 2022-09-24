@@ -3,6 +3,7 @@
 - 添加页签项下拉列表控件样式 | Add the style of tab drop down list control.
 - [#105](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/105) 评论支持输入 markdown 及渲染 | Comments support markdown and rendering.
 - 新增 TheBrain URL Scheme 超链接 `brain://` 图标 | Added the URL Scheme link `brain://` icon of TheBrain.
+- 修复叠加样式的标记元素无法显示的问题 | Fixed the issue of marked elements that apply multiple styles can't displayed.
 
 ## v1.3.1/2022-09-22
 
