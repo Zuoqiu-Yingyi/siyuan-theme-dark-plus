@@ -311,7 +311,7 @@ setTimeout(() => {
 
             if (config.theme.doc.outline.enable) {
                 // 大纲功能
-                if (config.theme.doc.outline.o.enable) {
+                if (config.theme.doc.outline.u.enable) {
                     // 复制当前文档大纲为无序列表
                     const Fn_outlineCopy_u = toolbarItemInit(
                         config.theme.doc.outline.u.toolbar,
@@ -324,7 +324,7 @@ setTimeout(() => {
                         _ => Fn_outlineCopy_u(),
                     );
                 }
-                if (config.theme.doc.outline.u.enable) {
+                if (config.theme.doc.outline.o.enable) {
                     // 复制当前文档大纲为有序列表
                     const Fn_outlineCopy_o = toolbarItemInit(
                         config.theme.doc.outline.o.toolbar,
