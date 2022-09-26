@@ -135,9 +135,9 @@ async function loadFonts(menuItems, fonts, mode) {
                 label: {
                     zh_CN: font,
                     other: font,
-                    style: `font-family: '${font}'`,
+                    style: `font-family: "${font}"`,
                 },
-                accelerator: `font-family: '${font}'`,
+                accelerator: `font-family: "${font}"`,
                 click: {
                     enable: true,
                     callback: null,
@@ -173,7 +173,7 @@ async function loadFonts(menuItems, fonts, mode) {
                             params: {
                                 'style': {
                                     regexp: /\s*font-family:.*?;/g,
-                                    value: `font-family: '${font}';`,
+                                    value: `font-family: "${font}";`,
                                 },
                             },
                         },
