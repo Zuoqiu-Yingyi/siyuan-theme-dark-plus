@@ -7,6 +7,7 @@
 - 移除文档树的列表辅助线 | Removes list guides from the document tree.
 - [#106](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/106) 修复复制当前文档大纲为有序/无需列表功能开关混淆问题 | Fixed the confusing issue with the two switch of coping the current document outline as ordered/unordered list feature.
 - 调整删除线元素颜色 | Adjusted the color of strikethrough line elements.
+- 优化视频时间戳 | Optimized video timestamps.
 
 ## v1.3.1/2022-09-22
 

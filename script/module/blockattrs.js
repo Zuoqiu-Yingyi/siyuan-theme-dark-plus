@@ -9,6 +9,7 @@ import {
 } from './../utils/misc.js';
 import {
     HTMLDecode,
+    compareVersion,
 } from './../utils/string.js';
 
 async function setter(target) {
@@ -20,7 +21,8 @@ async function setter(target) {
         let id = url2id(target.dataset.href);
         let attrs = eval(`(${HTMLDecode(target.dataset.title)})`);
         // console.log(attrs);
-        setBlockDOMAttrs(id, attrs);
+        if (compareVersion(window.theme.kernelVersion, '2.2.0') < 0)
+            setBlockDOMAttrs(id, attrs);
         setBlockAttrs(id, attrs);
     }
 }

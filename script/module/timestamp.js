@@ -48,7 +48,7 @@ async function jump(target) {
  * @params {string} id: 块 ID
  */
 async function copyTimestamp(timestamp, id) {
-    const hyperlink = `[${timestamp}](${id2url(id)} "{&quot;${config.theme.timestamp.attribute}&quot;: &quot;${timestamp}&quot;}")`;
+    const hyperlink = `[${timestamp}](${id2url(id)} "{'${config.theme.timestamp.attribute}': '${timestamp}'}")`;
     // console.log(hyperlink);
     copyToClipboard(hyperlink)
         .then(() => pushMsg(config.theme.timestamp.create.message.success))
