@@ -490,7 +490,7 @@ class MdCompletionItemProvider {
 
                     // item.insertText = new SnippetString(cmd.slice(1) + [...Array(numArgs).keys()].map(i => `\{$${i + 1}\}`).join(""));
                     item.insertText = cmd.slice(1) + [...Array(numArgs).keys()].map(i => `\{$${i + 1}\}`).join("");
-                    console.log(item.insertText);
+                    // console.log(item.insertText);
                     macroItems.push(item);
                 }
             }
@@ -524,7 +524,7 @@ class MdCompletionItemProvider {
     async provideCompletionItems(model, position, context, token) {
         // const lineTextBefore = model.lineAt(position.line).text.substring(0, position.character);
         const lineTextBefore = model.getLineContent(position.lineNumber).substring(0, position.column - 1);
-        console.log(lineTextBefore);
+        // console.log(lineTextBefore);
 
         let matches = lineTextBefore.match(/\\+$/);
         if (
@@ -537,9 +537,9 @@ class MdCompletionItemProvider {
                └────────────────┘ */
             switch (mathEnvCheck(model, position)) {
                 case 'inline':
-                    console.log('inline');
+                    // console.log('inline');
                 case 'display':
-                    console.log('display');
+                    // console.log('display');
                     // return this.mathCompletions;
                     return {
                         // suggestions: this.mathCompletions,

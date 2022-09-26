@@ -6,6 +6,7 @@
 - 修复叠加样式的标记元素无法显示的问题 | Fixed the issue of marked elements that apply multiple styles can't displayed.
 - 移除文档树的列表辅助线 | Removes list guides from the document tree.
 - [#106](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/106) 修复复制当前文档大纲为有序/无需列表功能开关混淆问题 | Fixed the confusing issue with the two switch of coping the current document outline as ordered/unordered list feature.
+- 调整删除线元素颜色 | Adjusted the color of strikethrough line elements.
 
 ## v1.3.1/2022-09-22
 
