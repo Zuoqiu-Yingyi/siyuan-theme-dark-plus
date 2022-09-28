@@ -127,12 +127,24 @@
                         align-items: center;
                         display: flex;
 
-                        >div[contenteditable][spellcheck] {
-                            /* 文字框 */
-                            white-space: pre; // 保留换行
+                        // 文字框
+                        >[contenteditable][spellcheck],
+                        // 公式块
+                        .katex-display {
                             outline: 1px solid var(--b3-theme-on-surface);
                             border-radius: var(--custom-border-radius);
+                        }
+
+                        // 文字框
+                        >[contenteditable][spellcheck] {
+                            white-space: pre; // 保留换行
                             padding: 0 0.5em;
+                        }
+
+                        // 公式块
+                        .katex-display {
+                            margin: 0;
+                            padding: 0.5em;
                         }
                     }
 
