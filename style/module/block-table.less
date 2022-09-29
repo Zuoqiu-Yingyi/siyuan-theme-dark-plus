@@ -40,6 +40,17 @@
                 // background-color: var(--custom-block-table-hover-background-color);
                 outline: 1px solid var(--b3-theme-on-surface);
             }
+
+            th,
+            td {
+                &:hover {
+                    /* 鼠标悬浮单元格 */
+                    // outline: 2px solid var(--b3-theme-secondary);
+                    // border: 1px solid var(--b3-theme-secondary);
+                    box-shadow: 0 0 0 1px var(--b3-theme-secondary) inset;
+                    // box-sizing: border-box;
+                }
+            }
         }
     }
 }
