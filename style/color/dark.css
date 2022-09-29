@@ -51,10 +51,10 @@
     --custom-h6-color: var(--custom-color-8-3);
 
     /* 代码块行号背景颜色 | The background color of code block linenumber */
-    /* --custom-block-code-linenumber-background-color: var(--custom-transparent); */
+    --custom-block-code-linenumber-background-color: var(--custom-transparent);
 
     /* 思源标签颜色 | The color of tag */
-    /* --custom-span-tag-color: var(--b3-theme-on-primary); */
+    --custom-span-tag-color: var(--b3-theme-on-primary);
 
     /* 思源标签背景颜色 | The background color of tag */
     --custom-span-tag-background-color: rgba(189, 201, 255, 0.5);
@@ -63,5 +63,5 @@
     --custom-list-table-hover-background-color: #FFF1;
 
     /* 👇👇👇 覆盖默认主题颜色 👇👇👇 */
-    /* --b3-list-hover: var(--b3-theme-background-light); */
+    --b3-list-hover: #3f4041;
 }
