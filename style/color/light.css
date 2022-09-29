@@ -43,7 +43,7 @@
     --custom-span-siyuan-link-color: var(--b3-protyle-inline-blockref-color);
 
     /* 子标题及其对应大纲颜色 | Subheadings and their corresponding outline colors */
-    /* --custom-h1-color: var(--custom-color-3-0); */
+    --custom-h1-color: var(--b3-theme-on-background);
     --custom-h2-color: var(--custom-color-4-4);
     --custom-h3-color: var(--custom-color-7-4);
     --custom-h4-color: var(--custom-color-9-0);

@@ -64,6 +64,6 @@
         --custom-list-table-hover-background-color: #FFF1;
 
         /* 👇👇👇 覆盖默认主题颜色 👇👇👇 */
-        /* --b3-list-hover: var(--b3-theme-background-light); */
+        --b3-list-hover: #3f4041;
     }
 }
