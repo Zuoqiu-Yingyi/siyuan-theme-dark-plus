@@ -1,5 +1,7 @@
 /* 自定义块字体 */
-@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/appearance/themes/Dark+/style/config/config.css);
+@import url(/appearance/themes/Dark+/style/config/light.css);
+@import url(/appearance/themes/Dark+/style/config/dark.css);
 @import url(/widgets/custom.css);
 .protyle-wysiwyg[custom-font-family="等线"],
 .protyle-wysiwyg [data-node-id][custom-font-family="等线"] {

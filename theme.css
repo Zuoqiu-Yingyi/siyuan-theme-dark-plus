@@ -104,7 +104,13 @@
 @import url(/appearance/themes/Dark+/style/module/viewer-image.css);
 
 /* 配置文件 */
-@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/appearance/themes/Dark+/style/config/config.css);
+
+/* 明亮主题配色文件 */
+@import url(/appearance/themes/Dark+/style/config/light.css);
+
+/* 暗黑主题配色文件 */
+@import url(/appearance/themes/Dark+/style/config/dark.css);
 
 /* 自定义配置文件 */
 @import url(/widgets/custom.css);

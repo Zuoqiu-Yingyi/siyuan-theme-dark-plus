@@ -1,5 +1,7 @@
 /* 动态列表子弹流辅助线 */
-@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/appearance/themes/Dark+/style/config/config.css);
+@import url(/appearance/themes/Dark+/style/config/light.css);
+@import url(/appearance/themes/Dark+/style/config/dark.css);
 @import url(/widgets/custom.css);
 .protyle-wysiwyg .list[data-node-id][custom-list-guides] .list[data-node-id] > .li[data-node-id]:hover > .protyle-action::before {
   /* 子弹流弧线 */

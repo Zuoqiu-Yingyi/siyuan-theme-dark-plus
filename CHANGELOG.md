@@ -10,6 +10,7 @@
 - 优化视频时间戳 | Optimized video timestamps.
 - 调整列表脑图视图中公式块样式 | Adjust the formula block style in the brain map view of list.
 - 为表格添加鼠标悬浮的单元格边框 | Add a mouse-hovered cell border to the table.
+- 使用明亮主题时支持以明亮颜色导出 | Export in light colors is supported when using the Bright theme.
 
 ## v1.3.1/2022-09-22
 

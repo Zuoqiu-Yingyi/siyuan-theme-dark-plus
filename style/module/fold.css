@@ -1,7 +1,9 @@
 /* 折叠样式
  * REF https: //github.com/UserZYF/zhang-light/blob/d309151036bafe324bcf9eb754829ebc93a88d03/theme.css#L1661
  */
-@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/appearance/themes/Dark+/style/config/config.css);
+@import url(/appearance/themes/Dark+/style/config/light.css);
+@import url(/appearance/themes/Dark+/style/config/dark.css);
 @import url(/widgets/custom.css);
 .protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeHeading"]::before {
   /* 移除子标题折叠原有样式 */

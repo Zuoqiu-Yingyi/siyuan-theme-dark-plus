@@ -1,5 +1,7 @@
 /* 标题自动编号 */
-@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/appearance/themes/Dark+/style/config/config.css);
+@import url(/appearance/themes/Dark+/style/config/light.css);
+@import url(/appearance/themes/Dark+/style/config/dark.css);
 @import url(/widgets/custom.css);
 .protyle-wysiwyg[custom-auto-num-h="0"] > [data-node-id][data-type="NodeHeading"]::before,
 .protyle-wysiwyg[custom-auto-num-h="false"] > [data-node-id][data-type="NodeHeading"]::before,

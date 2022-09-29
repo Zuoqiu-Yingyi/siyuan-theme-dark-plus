@@ -1,0 +1,69 @@
+/* 自动应用的浅色主题配置 */
+
+/* @import url(/appearance/themes/daylight/theme.css); */
+
+@media (prefers-color-scheme: light) {
+    :root {
+        /* 背景图片 */
+        --custom-background-image: url("/appearance/themes/Dark+/image/light/background (10).jpeg");
+
+        /* 对话框背景图片 */
+        --custom-background-image-dialog: url("/appearance/themes/Dark+/image/light/background (01).jpeg");
+
+        /* 标签图标 | The icon of tag */
+        --custom-span-tag-icon: url(/appearance/themes/Dark+/icon/tag-light.svg);
+
+        /* 块引用波浪线动画图标 | The icon of wavy line animation */
+        --custom-span-ref-animation-icon: url(/appearance/themes/Dark+/icon/wavy-line-light.svg);
+
+        /* 透明组件颜色 | Transparent component color */
+        --custom-transparent-lighter: #1111;
+        --custom-transparent-light: #2222;
+        --custom-transparent: #EEEC;
+        --custom-transparent-deep: #EEED;
+        --custom-transparent-deeper: #EEEE;
+
+        /* 不透明的组件颜色 | Opaque component color */
+        --custom-components-light: #CCC;
+        --custom-components: #DDD;
+        --custom-components-deep: #EEE;
+
+        /* 鲜明颜色 | Striking color */
+        --custom-striking-color: var(--b3-graph-listitem-point);
+
+        /* 编辑区背景颜色 | The background color of the edit area */
+        --custom-editor-background-color: var(--custom-transparent);
+
+        /* 弹出窗口背景颜色 | The background color of the popover */
+        --custom-popover-background-color: var(--custom-transparent-deeper);
+
+        /* 思源块引用颜色 | The color of SiYuan block reference */
+        --custom-span-block-ref-color: var(--custom-striking-color);
+
+        /* 思源内部超链接颜色 | The color of SiYuan internal hyperlink */
+        --custom-span-siyuan-link-color: var(--b3-protyle-inline-blockref-color);
+
+        /* 子标题及其对应大纲颜色 | Subheadings and their corresponding outline colors */
+        /* --custom-h1-color: var(--custom-color-3-0); */
+        --custom-h2-color: var(--custom-color-4-4);
+        --custom-h3-color: var(--custom-color-7-4);
+        --custom-h4-color: var(--custom-color-9-0);
+        --custom-h5-color: var(--custom-color-6-0);
+        --custom-h6-color: var(--custom-color-8-0);
+
+        /* 代码块行号背景颜色 | The background color of code block linenumber */
+        --custom-block-code-linenumber-background-color: var(--custom-transparent-light);
+
+        /* 思源标签颜色 | The color of tag */
+        --custom-span-tag-color: var(--b3-theme-on-surface);
+
+        /* 思源标签背景颜色 | The background color of tag */
+        --custom-span-tag-background-color: var(--b3-font-background10);
+
+        /* 列表转换成的表格鼠标悬浮背景颜色 | The background color of the mouse hover row of the table converted by a list */
+        --custom-list-table-hover-background-color: #0001;
+
+        /* 👇👇👇 覆盖默认主题颜色 👇👇👇 */
+        --b3-list-hover: var(--b3-theme-background-light);
+    }
+}
