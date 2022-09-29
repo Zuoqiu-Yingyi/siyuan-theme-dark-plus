@@ -4,7 +4,9 @@
  * 详情请参考: [土法列表表格-这回原理我也说不清了 · 语雀](https: //www.yuque.com/siyuannote/docs/yev84m)
  * REF [UserZYF](https://github.com/UserZYF) 修复上述实现方案
  */
-@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/appearance/themes/Dark+/style/config/config.css);
+@import url(/appearance/themes/Dark+/style/config/light.css);
+@import url(/appearance/themes/Dark+/style/config/dark.css);
 @import url(/widgets/custom.css);
 /* --------------------------------------用自定义属性，列表转化为表格------------------------------------------- */
 .protyle-content [custom-type~=table] [data-node-id].list,

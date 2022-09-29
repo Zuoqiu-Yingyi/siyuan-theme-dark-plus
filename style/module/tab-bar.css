@@ -1,7 +1,8 @@
 /* 页签 */
-@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/appearance/themes/Dark+/style/config/config.css);
+@import url(/appearance/themes/Dark+/style/config/light.css);
+@import url(/appearance/themes/Dark+/style/config/dark.css);
 @import url(/widgets/custom.css);
-/* 页签 */
 /* .fn__flex-column.fn__flex.fn__flex-1 .layout-tab-bar { */
 .layout-tab-bar {
   background-color: var(--custom-tab-bar-background-color);

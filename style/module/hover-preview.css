@@ -1,5 +1,7 @@
 /* 块引用卡片 */
-@import url(/appearance/themes/Dark+/style/module/config.css);
+@import url(/appearance/themes/Dark+/style/config/config.css);
+@import url(/appearance/themes/Dark+/style/config/light.css);
+@import url(/appearance/themes/Dark+/style/config/dark.css);
 @import url(/widgets/custom.css);
 .block__popover {
   background-color: transparent;
