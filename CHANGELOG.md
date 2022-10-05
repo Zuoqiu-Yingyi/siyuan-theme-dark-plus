@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 面包屑样式应用于反链面板 | The breadcrumb style is applied to the reverse chain panel.
+
 ## v1.3.2/2022-09-30
 
 - [v1.3.1 <=> v1.3.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.1...v1.3.2)
