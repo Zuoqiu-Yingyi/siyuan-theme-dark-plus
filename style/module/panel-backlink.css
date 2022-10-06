@@ -1,11 +1,13 @@
 /* 反链面板 */
-
 @import url(/appearance/themes/Dark+/style/config/config.css);
 @import url(/appearance/themes/Dark+/style/config/light.css);
 @import url(/appearance/themes/Dark+/style/config/dark.css);
 @import url(/widgets/custom.css);
-
 /* 过长反链条目显示样式 */
 .sy__backlink .b3-list-item__text {
-    display: var(--custom-backlink-display);
+  display: var(--custom-backlink-display);
+}
+.sy__backlink .protyle-content[data-fullwidth="true"] > .protyle-wysiwyg {
+  /* 可编辑反链面板有边框 */
+  margin-right: 0 !important;
 }

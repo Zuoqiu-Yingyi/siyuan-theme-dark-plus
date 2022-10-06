@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 面包屑样式应用于反链面板 | The breadcrumb style is applied to the reverse chain panel.
+- 移除可编辑反链面板编辑区右侧外边框 | Removes the margin to the right of the editable backchain panel editing area.
 
 ## v1.3.2/2022-09-30
 

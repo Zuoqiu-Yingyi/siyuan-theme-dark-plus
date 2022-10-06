@@ -79,17 +79,33 @@
                 }
 
                 &[data-subtype="u"] {
-                    &::after {
-                        /* 修复无序列表前导线错位问题 */
-                        bottom: calc(50% - var(--custom-list-guides-line-width) / 3);
-                    }
-
                     >div.protyle-action {
                         /* 无序列表标志 */
                         top: calc(50%);
                         left: calc(2em - 16px);
                     }
                 }
+
+                // &[data-subtype="u"] {
+                //     &::after {
+                //         /* 修复无序列表前导线错位问题 */
+                //         bottom: calc(50% + 0px - var(--custom-list-guides-line-width) / 3);
+                //     }
+                // }
+
+                // &[data-subtype="o"] {
+                //     &::after {
+                //         /* 修复有序列表前导线错位问题 */
+                //         bottom: calc(50% + 0px - var(--custom-list-guides-line-width) / 3);
+                //     }
+                // }
+
+                // &[data-subtype="t"] {
+                //     &::after {
+                //         /* 修复无任务列表前导线错位问题 */
+                //         bottom: calc(50% + 0px - var(--custom-list-guides-line-width) / 3);
+                //     }
+                // }
 
                 >div:nth-child(2) {
                     /* 修复单子项导航线错位问题 */
