@@ -20,15 +20,17 @@ import {
 import {
     getEditors,
     setBlockDOMAttrs,
+    countElementIndex,
 } from './dom.js';
 import { Iterator } from './misc.js';
 import { compareVersion } from './string.js';
 import {
+    getBlockBreadcrumb,
     getBlockByID,
     getBlockAttrs,
     setBlockAttrs,
     pushMsg,
-    pushErrMsg
+    pushErrMsg,
 } from './api.js';
 
 import {
@@ -284,7 +286,7 @@ function toolbarItemInit(toolbarConfig, handler, svgClassIndex = 0) {
 
     // 在工具栏添加按钮
     let node = toolbarItemInsert(toolbarConfig);
-    let listener = (e) => e.addEventListener('click', (_) => fn());
+    let listener = e => e.addEventListener('click', (_) => fn());
 
     // 是否禁用该按钮
     toolbarItemChangeStatu(
@@ -675,6 +677,42 @@ const TASK_HANDLER = {
         }
         else pushErrMsg(params.message.error);
     },
+    /* 显示嵌入块查询结果的路径 */\
+    // REF [思源笔记渲染 SQL 文档路径代码 - 链滴](https://ld246.com/article/1665129901544)
+    'show-hpath': async (e, id, params) => {
+        // TODO
+        /* 定位到嵌入块的 DOM */
+        document.querySelectorAll(`.render-node[data-node-id="${id}"]`).forEach(block => {
+            /* 遍历嵌入块的查询结果的 DOM */
+            let counter = 0;
+            const results = block.parentElement.querySelectorAll(`.render-node[data-node-id="${block.dataset.nodeId}"]>.protyle-wysiwyg__embed`);
+            console.log(block, results);
+            const length = results.length.toString().length;
+            results.forEach(result => {
+                const index = ++counter;
+                setTimeout(async () => {
+                    /* 使用 API /api/filetree/getFullHPathByID 查询完整路径 */
+                    const breadcurmb = await getBlockBreadcrumb(result.dataset.id);
+                    if (breadcurmb) {
+                        /* 将路径插入每个查询结果中 */
+                        let nodes = []; // 文档路径 HTML 节点列表
+                        const paths = breadcurmb[0].name.split('/'); // 文档路径节点列表
+                        for (let i = 0; i < paths.length; ++i)
+                            nodes.push(`<span data-type="kbd">${paths[i]}</span>`);
+                        let crumb = document.createElement('div');
+                        crumb.classList.add('p');
+                        crumb.style.color = 'var(--b3-card-info-color)';
+                        crumb.style.backgroundColor = 'var(--b3-card-info-background)';
+                        crumb.setAttribute('data-node-id', null);
+                        crumb.setAttribute('data-type', 'NodeParagraph');
+                        // [关于格式化：如何在javascript中将整数格式化为特定长度？ | 码农家园](https://www.codenong.com/1127905/)
+                        crumb.innerHTML = `<div contenteditable="false" spellcheck="false"><span data-type="code">#${index.toString().padStart(length, '0')}</span>: ${nodes.join('&gt;')}</div>`;
+                        result.parentElement.insertBefore(crumb, result);
+                    }
+                }, 0);
+            });
+        });
+    },
 };
 
 /**
@@ -698,14 +736,14 @@ function createMenuItemNode(language, config, id, type, subtype, className = 'b3
                 eval(config.value),
             ));
             if (config.click.enable) {
-                if (config.click.callback) node.addEventListener('click', async (e) => await config.click.callback(e, id));
+                if (config.click.callback) node.addEventListener('click', async e => await config.click.callback(e, id));
                 else {
                     let handlers = [];
                     config.click.tasks.forEach((task) => {
-                        if (TASK_HANDLER[task.type]) handlers.push(async (e) => TASK_HANDLER[task.type](e, id, task.params));
+                        if (TASK_HANDLER[task.type]) handlers.push(async e => TASK_HANDLER[task.type](e, id, task.params));
                     });
-                    node.addEventListener('click', (e) => {
-                        handlers.forEach((handler) => handler(e));
+                    node.addEventListener('click', e => {
+                        handlers.forEach((handler) => handlere);
                     });
                 }
             };
@@ -753,13 +791,13 @@ function createMenuItemNode(language, config, id, type, subtype, className = 'b3
                 }
             }
             if (config.click.enable) {
-                if (config.click.callback) node.addEventListener('click', async (e) => await config.click.callback(e, id));
+                if (config.click.callback) node.addEventListener('click', async e => await config.click.callback(e, id));
                 else {
                     let handlers = [];
                     config.click.tasks.forEach((task) => {
-                        if (TASK_HANDLER[task.type]) handlers.push(async (e) => TASK_HANDLER[task.type](e, id, task.params));
+                        if (TASK_HANDLER[task.type]) handlers.push(async e => TASK_HANDLER[task.type](e, id, task.params));
                     });
-                    node.addEventListener('click', (e) => {
+                    node.addEventListener('click', e => {
                         handlers.forEach((handler) => handler(e));
                     });
                 }

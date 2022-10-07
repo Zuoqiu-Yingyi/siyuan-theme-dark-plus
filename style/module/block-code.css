@@ -22,6 +22,9 @@
 }
 /* 👆导出预览样式👆 */
 /* 👇编辑区样式👇 */
+.protyle-wysiwyg [data-node-id].code-block {
+  margin: 0.5em 0;
+}
 .protyle-wysiwyg [data-node-id].code-block > .protyle-action {
   /* 功能按钮栏 */
   left: auto;

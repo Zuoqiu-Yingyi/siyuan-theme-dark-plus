@@ -24,6 +24,7 @@ export {
     disabledProtyle, // 禁用编辑器
     enableProtyle, // 解除编辑器禁用
     setDockState, // 设置侧边栏状态
+    countElementIndex, // 计算当前节点是上级节点的第几个节点
 };
 
 import { url2id } from './misc.js';
@@ -602,5 +603,34 @@ function setDockState(items, state) {
         const type = item.dataset.type;
         const active = item.classList.contains('dock__item--active');
         if (state[type] && (active ^ state[type].fold)) item.click();
+    }
+}
+
+/**
+ * 计算当前节点是上级节点的第几个节点
+ * @params {HTMLElement} element: 当前节点
+ * @params {Array} classList: 类字段列表
+ * @return {int}: 节点索引数
+ */
+function countElementIndex(element, classList = []) {
+    const parent_children = element.parentElement.children;
+    if (classList.length === 0) { // 不关注同类节点
+        return [].indexOf.call(element, parent_children);
+    }
+    else {
+        let index = 0;
+        for (let i = 0; i < parent_children.length; ++i) {
+            let target = parent_children[i];
+            let isSimilar = true; // 该节点是否为同类节点
+            if (element === target) return index;
+            for (const classname of classList) {
+                if (!!target.classList.contains(classname)) { // 非同类
+                    isSimilar = false;
+                    break;
+                }
+            }
+            if (isSimilar) ++index;
+        }
+        return index;
     }
 }
