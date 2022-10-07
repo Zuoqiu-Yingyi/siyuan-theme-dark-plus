@@ -677,7 +677,7 @@ const TASK_HANDLER = {
         }
         else pushErrMsg(params.message.error);
     },
-    /* 显示嵌入块查询结果的路径 */\
+    /* 显示嵌入块查询结果的路径 */
     // REF [思源笔记渲染 SQL 文档路径代码 - 链滴](https://ld246.com/article/1665129901544)
     'show-hpath': async (e, id, params) => {
         // TODO
@@ -701,8 +701,8 @@ const TASK_HANDLER = {
                             nodes.push(`<span data-type="kbd">${paths[i]}</span>`);
                         let crumb = document.createElement('div');
                         crumb.classList.add('p');
-                        crumb.style.color = 'var(--b3-card-info-color)';
-                        crumb.style.backgroundColor = 'var(--b3-card-info-background)';
+                        crumb.style.outline = '2px solid var(--b3-theme-on-surface-light)'
+                        crumb.style.borderRadius = '2px';
                         crumb.setAttribute('data-node-id', null);
                         crumb.setAttribute('data-type', 'NodeParagraph');
                         // [关于格式化：如何在javascript中将整数格式化为特定长度？ | 码农家园](https://www.codenong.com/1127905/)
