@@ -18,13 +18,37 @@ import {
 } from './config.js';
 import { custom } from './../../public/custom.js';
 import {
-    setBlockDOMAttrs,
     timestampFormat,
     base64ToBlob,
     escapeText,
     promptFormat,
     HTMLEncode,
 } from './utils.js';
+
+/** 消息序列 */
+class Queue {
+    constructor() {
+        this.items = [];
+    }
+    clear() {
+        this.items = [];
+    }
+    enqueue(item) {
+        this.items.push(item)
+    }
+    dequeue() {
+        return this.items.shift();
+    }
+    front() {
+        return this.items[0];
+    }
+    empty() {
+        return this.items.length === 0;
+    }
+    size() {
+        return this.items.length;
+    }
+}
 
 var websockets = {
     // doc_id: { // 文档 ID
@@ -45,7 +69,9 @@ var websockets = {
     //             escaped: boolean, // 是否转义输出结果
     //             index: int, // 消息序号
     //         },
-    //     }
+    //     },
+    //     flag: false, // 是否有待处理消息
+    //     queue: new Queue(), // 接收的消息队列
     // },
 };
 
@@ -133,7 +159,6 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                         i18n(execution_state, lang),
                     )
                 };
-                await setBlockDOMAttrs(message_info.doc, doc_attrs);
                 await setBlockAttrs(message_info.doc, doc_attrs);
             }
             break;
@@ -424,14 +449,28 @@ async function runCode(e, code_id, params) {
             version: null,
             index: 0,
             messages: {},
+            flag: false,
+            queue: new Queue(),
         };
-        websocket.ws.onmessage = async e => {
+        /** 消息队列处理
+         *  REF [JavaScript 通过队列实现异步流控制 - 从过去穿越到现在 - 博客园](https://www.cnblogs.com/liaozhenting/p/8681527.html)
+         */
+        async function msgHandler() {
+            websocket.flag = true;
+            while (!websocket.queue.empty()) {
+                const message = JSON.parse(websocket.queue.dequeue());
+                websocket.version = message.header.version;
+                const msg_id = message.parent_header.msg_id;
+                const msg_type = message.msg_type;
+                await messageHandle(msg_id, msg_type, message, websocket);
+            }
+            websocket.flag = false;
+        }
+        websocket.ws.onmessage = e => {
             // REF [MessageEvent - Web API 接口参考 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/MessageEvent)
-            const message = JSON.parse(e.data);
-            websocket.version = message.header.version;
-            const msg_id = message.parent_header.msg_id;
-            const msg_type = message.msg_type;
-            await messageHandle(msg_id, msg_type, message, websocket);
+            // REF [JavaScript 通过队列实现异步流控制 - 从过去穿越到现在 - 博客园](https://www.cnblogs.com/liaozhenting/p/8681527.html)
+            websocket.queue.enqueue(e.data);
+            if (!websocket.flag) msgHandler();
         };
         websocket.ws.onopen = async e => {
             console.log(e);
