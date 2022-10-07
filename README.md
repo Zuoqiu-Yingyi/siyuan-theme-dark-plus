@@ -803,6 +803,7 @@ Download the release package in [Releases](https://github.com/Zuoqiu-Yingyi/siyu
 | **[UserZYF](https://github.com/UserZYF)**           | [UserZYF/zhang-light](https://github.com/UserZYF/zhang-light)                                                                                         | *Unknown*                                                                                      |
 | **[langzhou](https://github.com/langzhou)**         | [langzhou/siyuan-note](https://github.com/langzhou/siyuan-note)                                                                                       | *Unknown*                                                                                      |
 | **[royc01](https://github.com/royc01)**             | [royc01/notion-theme](https://github.com/royc01/notion-theme)                                                                                         | *Unknown*                                                                                      |
+| **[shawroger](https://ld246.com/member/shawroger)** | [思源笔记渲染 SQL 文档路径代码 - 链滴](https://ld246.com/article/1665129901544)                                                                       | *Unknown*                                                                                      |
 
 注: 排序不分先后  
 ps: Sort in no particular order.

@@ -32,6 +32,7 @@ export {
     设置思源块属性 as setBlockAttrs,
 
     根据思源路径获取人类可读路径 as getHPathByPath,
+    根据块ID查询文档人类可读完整路径 as getHPathByID,
     列出指定路径下文档 as listDocsByPath,
     以id获取反向链接 as getBacklink,
     以sql获取嵌入块内容 as searchEmbedBlock,
@@ -53,6 +54,7 @@ export {
     更新块 as updateBlock,
     以id获取思源块信息 as getBlockByID,
     获取块kramdown源码 as getBlockKramdown,
+    获取块面包屑 as getBlockBreadcrumb,
 
     获取系统字体列表 as getSysFonts,
     获取文件 as getFile,
@@ -228,6 +230,14 @@ async function 根据思源路径获取人类可读路径(笔记本ID, 路径) {
     //返回路径
 }
 
+async function 根据块ID查询文档人类可读完整路径(ID) {
+    let data = {
+        id: ID,
+    }
+    let url = '/api/filetree/getHPathByID'
+    return 解析响应体(向思源请求数据(url, data))
+}
+
 //暂缺上传文件
 
 async function 以id获取思源块属性(内容块id) {
@@ -249,6 +259,14 @@ async function 获取块kramdown源码(内容块id) {
         id: 内容块id,
     }
     const url = '/api/block/getBlockKramdown'
+    return 解析响应体(向思源请求数据(url, data))
+}
+
+async function 获取块面包屑(ID) {
+    const data = {
+        id: ID,
+    }
+    const url = '/api/block/getBlockBreadcrumb'
     return 解析响应体(向思源请求数据(url, data))
 }
 
