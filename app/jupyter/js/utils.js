@@ -64,6 +64,7 @@ function setCookie(name, value, cookies = document.cookie) {
 
 /**
  * 设置 DOM 中的块属性
+ * @deprecated 2.1.15+ https://github.com/siyuan-note/siyuan/issues/5847 https://github.com/siyuan-note/siyuan/issues/5866
  * @param {string} id 块 ID
  * @param {object} attrs 块属性 dict
  */

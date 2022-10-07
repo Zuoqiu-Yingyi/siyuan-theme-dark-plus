@@ -2,6 +2,7 @@
 
 - 面包屑样式应用于反链面板 | The breadcrumb style is applied to the reverse chain panel.
 - 移除可编辑反链面板编辑区右侧外边框 | Removes the margin to the right of the editable backchain panel editing area.
+- jupyter 客户端使用消息队列处理接收到的消息 | The jupyter client uses Message Queuing to process the received messages.
 
 ## v1.3.2/2022-09-30
 
