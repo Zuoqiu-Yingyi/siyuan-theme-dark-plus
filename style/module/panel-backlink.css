@@ -9,9 +9,14 @@
 }
 .sy__backlink .protyle-content[data-fullwidth="true"] > .protyle-wysiwyg {
   /* 可编辑反链面板有边框 */
-  margin-right: 0 !important;
+  margin-right: 2px !important;
 }
 .sy__backlink .protyle-content[data-fullwidth="true"] > .protyle-wysiwyg > .protyle-breadcrumb__bar,
 .sy__backlink .protyle-content[data-fullwidth="true"] > .protyle-wysiwyg > .protyle-breadcrumb__item {
-  box-shadow: 0 0 var(--custom-box-shadow-spread) 0 var(--b3-theme-on-surface-light);
+  outline: 2px solid var(--b3-theme-on-surface-light);
+  margin: 0.5em 0;
+}
+.sy__backlink .protyle-content[data-fullwidth="true"] > .protyle-wysiwyg .protyle-breadcrumb__bar {
+  padding-left: 3px;
+  border-radius: 2px;
 }

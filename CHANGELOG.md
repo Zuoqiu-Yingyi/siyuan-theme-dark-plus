@@ -4,6 +4,7 @@
 - 移除可编辑反链面板编辑区右侧外边框 | Removes the margin to the right of the editable backchain panel editing area.
 - jupyter 客户端使用消息队列处理接收到的消息 | The jupyter client uses Message Queuing to process the received messages.
 - 为嵌入块菜单添加 `显示查询结果路径` 功能 | Added the `Display Query Results' Path` feature for the embedded block menu.
+- 调整反链面板面包屑样式 | Adjust the breadcrumb style of backlink panel.
 
 ## v1.3.2/2022-09-30
 
