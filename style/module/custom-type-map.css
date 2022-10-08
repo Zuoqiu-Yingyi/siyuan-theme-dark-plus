@@ -63,7 +63,7 @@
   position: absolute;
   height: calc(50% - var(--custom-list-guides-line-width) / 2);
   border-left: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
-  width: 2em;
+  width: calc(2em - var(--custom-list-guides-line-width));
   top: calc(50% - var(--custom-list-guides-line-width) / 2);
   border-top: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
 }
@@ -77,7 +77,7 @@
   position: absolute;
   height: calc(50% - var(--custom-list-guides-line-width) / 2);
   border-left: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
-  width: 2em;
+  width: calc(2em - var(--custom-list-guides-line-width));
   bottom: calc(50% - var(--custom-list-guides-line-width) / 2);
   border-bottom: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
 }
@@ -88,7 +88,7 @@
 .protyle-content [custom-type~=map] [data-node-id].li[data-subtype="u"] > div.protyle-action {
   /* 无序列表标志 */
   top: calc(50%);
-  left: calc(2em - 16px);
+  left: calc(2em - 20px);
 }
 .protyle-content [custom-type~="思维导图"] [data-node-id].li > div:nth-child(2),
 .protyle-content [custom-type~="导图"] [data-node-id].li > div:nth-child(2),
@@ -134,19 +134,17 @@
   /* 叶子节点 */
   align-items: center;
   display: flex;
-}
-.protyle-content [custom-type~="思维导图"] [data-node-id].li > [data-node-id]:not(.li, .list) > [contenteditable][spellcheck],
-.protyle-content [custom-type~="导图"] [data-node-id].li > [data-node-id]:not(.li, .list) > [contenteditable][spellcheck],
-.protyle-content [custom-type~="脑图"] [data-node-id].li > [data-node-id]:not(.li, .list) > [contenteditable][spellcheck],
-.protyle-content [custom-type~=mind-map] [data-node-id].li > [data-node-id]:not(.li, .list) > [contenteditable][spellcheck],
-.protyle-content [custom-type~=map] [data-node-id].li > [data-node-id]:not(.li, .list) > [contenteditable][spellcheck],
-.protyle-content [custom-type~="思维导图"] [data-node-id].li > [data-node-id]:not(.li, .list) .katex-display,
-.protyle-content [custom-type~="导图"] [data-node-id].li > [data-node-id]:not(.li, .list) .katex-display,
-.protyle-content [custom-type~="脑图"] [data-node-id].li > [data-node-id]:not(.li, .list) .katex-display,
-.protyle-content [custom-type~=mind-map] [data-node-id].li > [data-node-id]:not(.li, .list) .katex-display,
-.protyle-content [custom-type~=map] [data-node-id].li > [data-node-id]:not(.li, .list) .katex-display {
+  /* 叶子节点的轮廓 */
   outline: 1px solid var(--b3-theme-on-surface);
   border-radius: var(--custom-border-radius);
+}
+.protyle-content [custom-type~="思维导图"] [data-node-id].li > [data-node-id]:not(.li, .list):is(.p),
+.protyle-content [custom-type~="导图"] [data-node-id].li > [data-node-id]:not(.li, .list):is(.p),
+.protyle-content [custom-type~="脑图"] [data-node-id].li > [data-node-id]:not(.li, .list):is(.p),
+.protyle-content [custom-type~=mind-map] [data-node-id].li > [data-node-id]:not(.li, .list):is(.p),
+.protyle-content [custom-type~=map] [data-node-id].li > [data-node-id]:not(.li, .list):is(.p) {
+  /* 段落块内边距为 0 */
+  padding: 0;
 }
 .protyle-content [custom-type~="思维导图"] [data-node-id].li > [data-node-id]:not(.li, .list) > [contenteditable][spellcheck],
 .protyle-content [custom-type~="导图"] [data-node-id].li > [data-node-id]:not(.li, .list) > [contenteditable][spellcheck],
@@ -202,7 +200,7 @@
   position: absolute;
   left: -1em;
   top: calc(50% - var(--custom-list-guides-line-width) / 2);
-  border-top: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
+  border-bottom: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
   width: 2em;
   height: 0;
 }
