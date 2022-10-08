@@ -138,6 +138,11 @@
     background-image: url(/appearance/themes/Dark+/icon/zotero.ico) !important;
 }
 
+.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="zotero://open-pdf/"]:not(:empty)::before,
+.b3-typography a[href ^="zotero://open-pdf/"]::before {
+    background-image: url(/appearance/themes/Dark+/icon/zotero-light.ico) !important;
+}
+
 /* -------------------------------- 其他特化超链接 -------------------------------- */
 /* 视频时间戳 */
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-title *="custom-time"]:not(:empty)::before,
