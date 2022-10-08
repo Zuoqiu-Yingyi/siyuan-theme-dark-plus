@@ -134,33 +134,42 @@
   /* 叶子节点 */
   align-items: center;
   display: flex;
+  /* 块内边距 */
+  padding: 4px;
   /* 叶子节点的轮廓 */
   outline: 1px solid var(--b3-theme-on-surface);
   border-radius: var(--custom-border-radius);
 }
-.protyle-content [custom-type~="思维导图"] [data-node-id].li > [data-node-id]:not(.li, .list):is(.p),
-.protyle-content [custom-type~="导图"] [data-node-id].li > [data-node-id]:not(.li, .list):is(.p),
-.protyle-content [custom-type~="脑图"] [data-node-id].li > [data-node-id]:not(.li, .list):is(.p),
-.protyle-content [custom-type~=mind-map] [data-node-id].li > [data-node-id]:not(.li, .list):is(.p),
-.protyle-content [custom-type~=map] [data-node-id].li > [data-node-id]:not(.li, .list):is(.p) {
-  /* 段落块内边距为 0 */
+.protyle-content [custom-type~="思维导图"] [data-node-id].li > [data-node-id]:not(.li, .list):is(.p, .h1, .h2, .h3, .h4, .h5, .h6),
+.protyle-content [custom-type~="导图"] [data-node-id].li > [data-node-id]:not(.li, .list):is(.p, .h1, .h2, .h3, .h4, .h5, .h6),
+.protyle-content [custom-type~="脑图"] [data-node-id].li > [data-node-id]:not(.li, .list):is(.p, .h1, .h2, .h3, .h4, .h5, .h6),
+.protyle-content [custom-type~=mind-map] [data-node-id].li > [data-node-id]:not(.li, .list):is(.p, .h1, .h2, .h3, .h4, .h5, .h6),
+.protyle-content [custom-type~=map] [data-node-id].li > [data-node-id]:not(.li, .list):is(.p, .h1, .h2, .h3, .h4, .h5, .h6) {
+  /* 段落块/标题块内边距为 0 */
   padding: 0;
 }
-.protyle-content [custom-type~="思维导图"] [data-node-id].li > [data-node-id]:not(.li, .list) > [contenteditable][spellcheck],
-.protyle-content [custom-type~="导图"] [data-node-id].li > [data-node-id]:not(.li, .list) > [contenteditable][spellcheck],
-.protyle-content [custom-type~="脑图"] [data-node-id].li > [data-node-id]:not(.li, .list) > [contenteditable][spellcheck],
-.protyle-content [custom-type~=mind-map] [data-node-id].li > [data-node-id]:not(.li, .list) > [contenteditable][spellcheck],
-.protyle-content [custom-type~=map] [data-node-id].li > [data-node-id]:not(.li, .list) > [contenteditable][spellcheck] {
+.protyle-content [custom-type~="思维导图"] [data-node-id].li > [data-node-id]:not(.li, .list):is(.p, .h1, .h2, .h3, .h4, .h5, .h6) > [contenteditable][spellcheck],
+.protyle-content [custom-type~="导图"] [data-node-id].li > [data-node-id]:not(.li, .list):is(.p, .h1, .h2, .h3, .h4, .h5, .h6) > [contenteditable][spellcheck],
+.protyle-content [custom-type~="脑图"] [data-node-id].li > [data-node-id]:not(.li, .list):is(.p, .h1, .h2, .h3, .h4, .h5, .h6) > [contenteditable][spellcheck],
+.protyle-content [custom-type~=mind-map] [data-node-id].li > [data-node-id]:not(.li, .list):is(.p, .h1, .h2, .h3, .h4, .h5, .h6) > [contenteditable][spellcheck],
+.protyle-content [custom-type~=map] [data-node-id].li > [data-node-id]:not(.li, .list):is(.p, .h1, .h2, .h3, .h4, .h5, .h6) > [contenteditable][spellcheck] {
   white-space: pre;
   padding: 0 0.5em;
 }
-.protyle-content [custom-type~="思维导图"] [data-node-id].li > [data-node-id]:not(.li, .list) .katex-display,
-.protyle-content [custom-type~="导图"] [data-node-id].li > [data-node-id]:not(.li, .list) .katex-display,
-.protyle-content [custom-type~="脑图"] [data-node-id].li > [data-node-id]:not(.li, .list) .katex-display,
-.protyle-content [custom-type~=mind-map] [data-node-id].li > [data-node-id]:not(.li, .list) .katex-display,
-.protyle-content [custom-type~=map] [data-node-id].li > [data-node-id]:not(.li, .list) .katex-display {
+.protyle-content [custom-type~="思维导图"] [data-node-id].li > [data-node-id]:not(.li, .list):is(.render-node[data-type="NodeMathBlock"]),
+.protyle-content [custom-type~="导图"] [data-node-id].li > [data-node-id]:not(.li, .list):is(.render-node[data-type="NodeMathBlock"]),
+.protyle-content [custom-type~="脑图"] [data-node-id].li > [data-node-id]:not(.li, .list):is(.render-node[data-type="NodeMathBlock"]),
+.protyle-content [custom-type~=mind-map] [data-node-id].li > [data-node-id]:not(.li, .list):is(.render-node[data-type="NodeMathBlock"]),
+.protyle-content [custom-type~=map] [data-node-id].li > [data-node-id]:not(.li, .list):is(.render-node[data-type="NodeMathBlock"]) {
+  min-height: 0 !important;
+}
+.protyle-content [custom-type~="思维导图"] [data-node-id].li > [data-node-id]:not(.li, .list):is(.render-node[data-type="NodeMathBlock"]) .katex-display,
+.protyle-content [custom-type~="导图"] [data-node-id].li > [data-node-id]:not(.li, .list):is(.render-node[data-type="NodeMathBlock"]) .katex-display,
+.protyle-content [custom-type~="脑图"] [data-node-id].li > [data-node-id]:not(.li, .list):is(.render-node[data-type="NodeMathBlock"]) .katex-display,
+.protyle-content [custom-type~=mind-map] [data-node-id].li > [data-node-id]:not(.li, .list):is(.render-node[data-type="NodeMathBlock"]) .katex-display,
+.protyle-content [custom-type~=map] [data-node-id].li > [data-node-id]:not(.li, .list):is(.render-node[data-type="NodeMathBlock"]) .katex-display {
   margin: 0;
-  padding: 0.5em;
+  padding: 0.25em;
 }
 .protyle-content [custom-type~="思维导图"] [data-node-id].li > [data-node-id][data-type="NodeBlockQueryEmbed"],
 .protyle-content [custom-type~="导图"] [data-node-id].li > [data-node-id][data-type="NodeBlockQueryEmbed"],

@@ -6,6 +6,7 @@
 - 为嵌入块菜单添加 `显示查询结果路径` 功能 | Added the `Display Query Results' Path` feature for the embedded block menu.
 - 调整反链面板面包屑样式 | Adjust the breadcrumb style of backlink panel.
 - [#103](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/103) 修复列表脑图视图辅助线错位问题 | Fixed the issue of misalignment of guides in the brain map view of the list.
+- 调整列表脑图视图块内间距 | Adjust the padding within the block in the brain map view of the list.
 
 ## v1.3.2/2022-09-30
 
