@@ -524,7 +524,7 @@ window.onload = () => {
             type: window.editor.url.searchParams.get('type')
                 || 'markdown', // 编辑类型
             value: '', // 内容
-            theme: window.editor.url.searchParams.get('theme')
+            theme: parseInt(window.editor.url.searchParams.get('theme'))
                 || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 1 : 0), // 主题模式
             lang: window.editor.url.searchParams.get('lang')
                 || 'default', // 语言
