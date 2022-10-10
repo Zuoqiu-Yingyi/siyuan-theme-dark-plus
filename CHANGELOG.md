@@ -9,6 +9,7 @@
 - 调整列表脑图视图块内间距 | Adjust the padding within the block in the brain map view of the list.
 - 为 Zotero 的 PDF 跳转链接添加图标 | Add an icon to Zotero's PDF link.
 - 调整图片导出预览模式中的样式 | Adjust the style of images in export preview mode.
+- 调整嵌入块样式 | Adjust the style of embedded block.
 
 ## v1.3.2/2022-09-30
 

@@ -683,34 +683,61 @@ const TASK_HANDLER = {
         // TODO
         /* 定位到嵌入块的 DOM */
         document.querySelectorAll(`.render-node[data-node-id="${id}"]`).forEach(block => {
-            /* 遍历嵌入块的查询结果的 DOM */
-            let counter = 0;
-            const results = block.parentElement.querySelectorAll(`.render-node[data-node-id="${block.dataset.nodeId}"]>.protyle-wysiwyg__embed`);
-            console.log(block, results);
-            const length = results.length.toString().length;
-            results.forEach(result => {
-                const index = ++counter;
-                setTimeout(async () => {
-                    /* 使用 API /api/filetree/getFullHPathByID 查询完整路径 */
-                    const breadcurmb = await getBlockBreadcrumb(result.dataset.id);
-                    if (breadcurmb) {
-                        /* 将路径插入每个查询结果中 */
-                        let nodes = []; // 文档路径 HTML 节点列表
-                        const paths = breadcurmb[0].name.split('/'); // 文档路径节点列表
-                        for (let i = 0; i < paths.length; ++i)
-                            nodes.push(`<span data-type="kbd">${paths[i]}</span>`);
-                        let crumb = document.createElement('div');
-                        crumb.classList.add('p');
-                        crumb.style.outline = '2px solid var(--b3-theme-on-surface-light)'
-                        crumb.style.borderRadius = '2px';
-                        crumb.setAttribute('data-node-id', null);
-                        crumb.setAttribute('data-type', 'NodeParagraph');
-                        // [关于格式化：如何在javascript中将整数格式化为特定长度？ | 码农家园](https://www.codenong.com/1127905/)
-                        crumb.innerHTML = `<div contenteditable="false" spellcheck="false"><span data-type="code">#${index.toString().padStart(length, '0')}</span>: ${nodes.join('&gt;')}</div>`;
-                        result.parentElement.insertBefore(crumb, result);
+            const callback = () => {
+                // console.log('callback');
+                /* 遍历嵌入块的查询结果的 DOM */
+                let counter = 0;
+                const results = block.parentElement.querySelectorAll(`.render-node[data-node-id="${block.dataset.nodeId}"]>.protyle-wysiwyg__embed`);
+                // console.log(block, results);
+                const length = results.length.toString().length;
+                results.forEach(result => {
+                    const index = ++counter;
+                    // console.log(index);
+                    setTimeout(async () => {
+                        /* 使用 API /api/filetree/getFullHPathByID 查询完整路径 */
+                        const breadcurmb = await getBlockBreadcrumb(result.dataset.id);
+                        if (breadcurmb) {
+                            /* 将路径插入每个查询结果中 */
+                            let nodes = []; // 文档路径 HTML 节点列表
+                            const paths = breadcurmb[0].name.split('/'); // 文档路径节点列表
+                            for (let i = 0; i < paths.length; ++i)
+                                nodes.push(`<span data-type="kbd">${paths[i]}</span>`);
+                            let crumb = document.createElement('div');
+                            crumb.classList.add('p');
+                            crumb.style.outline = '2px solid var(--b3-theme-on-surface-light)'
+                            crumb.style.borderRadius = '2px';
+                            crumb.setAttribute('data-node-id', null);
+                            crumb.setAttribute('data-type', 'NodeParagraph');
+                            // [关于格式化：如何在javascript中将整数格式化为特定长度？ | 码农家园](https://www.codenong.com/1127905/)
+                            crumb.innerHTML = `<div contenteditable="false" spellcheck="false"><span data-type="code">#${index.toString().padStart(length, '0')}</span>: ${nodes.join('&gt;')}</div>`;
+                            result.parentElement.insertBefore(crumb, result);
+                        }
+                    }, 0);
+                });
+            };
+            callback();
+            const observer = new MutationObserver((mutationList, observer) => {
+                for (let i = mutationList.length - 1; i >= 0; --i) {
+                    const mutation = mutationList[i];
+                    // console.log(mutation);
+                    if (mutation.type === 'childList'
+                        && mutation.addedNodes.length >= 2
+                        && mutation.nextSibling?.classList.contains('protyle-attr')
+                    ) {
+                        // setTimeout(callback(), 0);
+                        callback();
+                        break;
                     }
-                }, 0);
+                }
             });
+            observer.observe(block, {
+                // attributeFilter: ['data-render'], // 声明哪些属性名会被监听的数组
+                // attributeOldValue: true, // 记录上一次被监听的节点的属性变化
+                childList: true,
+                attributes: false,
+                characterData: false,
+            });
+            observer.takeRecords();
         });
     },
 };

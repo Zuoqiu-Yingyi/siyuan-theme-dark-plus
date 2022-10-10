@@ -13,6 +13,13 @@
         background-color: var(--custom-block-embed-background-color);
 
         >.protyle-wysiwyg__embed {
+            border-top: none;
+
+            &:hover {
+                /* 查询结果鼠标悬停时显示边框 */
+                outline: 1px solid var(--b3-theme-on-surface);
+            }
+
             &:not(:nth-last-child(3)) {
                 /* 嵌入块间分隔线 */
                 position: relative;
