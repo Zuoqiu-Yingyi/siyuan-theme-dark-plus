@@ -8,7 +8,6 @@
 .b3-typography,
 .protyle-wysiwyg {
     span.img {
-        /* 图片与前后文字之间间隙 */
         // padding: 0 0.125em;
         max-width: none !important;
 
@@ -18,12 +17,24 @@
             border-radius: var(--custom-border-radius);
             padding: var(--custom-border-radius);
             box-sizing: border-box;
+
+            // 默认宽度
+            // &:not([style *="width"]) {
+            //     width: 256px;
+            // }
         }
 
         .protyle-action__drag {
             /* 图片尺寸调整控件 */
             right: calc(4px + var(--custom-border-radius)) !important;
         }
+    }
+}
+
+.b3-typography {
+    span.img {
+        /* 设置导出预览时样式与编辑时一致 */
+        padding: 0 0.5em;
     }
 }
 

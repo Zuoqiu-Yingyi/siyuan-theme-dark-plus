@@ -5,7 +5,6 @@
 @import url(/widgets/custom.css);
 .b3-typography span.img,
 .protyle-wysiwyg span.img {
-  /* 图片与前后文字之间间隙 */
   max-width: none !important;
 }
 .b3-typography span.img img:not(.emoji),
@@ -20,6 +19,10 @@
 .protyle-wysiwyg span.img .protyle-action__drag {
   /* 图片尺寸调整控件 */
   right: calc(4px + var(--custom-border-radius)) !important;
+}
+.b3-typography span.img {
+  /* 设置导出预览时样式与编辑时一致 */
+  padding: 0 0.5em;
 }
 /* .protyle-wysiwyg span.img>span:nth-child(1),
 .protyle-wysiwyg span.img>span:nth-child(3) {
