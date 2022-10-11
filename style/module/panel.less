@@ -80,7 +80,13 @@
 
 // 移动端侧边分栏
 #sidebar {
-    .tree(16px, 13px);
+    .b3-list--mobile {
+        >[data-type ^="sidebar"] {
+            &:not([data-type="sidebar-file"]) {
+                .tree(13px, 13px);
+            }
+        }
+    }
 }
 
 // 桌面端侧边分栏
@@ -90,8 +96,16 @@
     border-radius: var(--custom-border-radius);
 
     /* 侧边分栏面板 */
-    .file-tree:not(.sy__file) {
-        .tree(12px, 12px);
+    .file-tree {
+        &:not(.sy__file, .sy__outline) {
+            .tree(12px, 12px);
+        }
+        
+        &.sy__outline {
+            &:hover {
+                .tree(12px, 12px);
+            }
+        }
     }
 
     /* 文档树面板(影响定位当前文档) */
