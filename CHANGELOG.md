@@ -11,6 +11,7 @@
 - 调整图片导出预览模式中的样式 | Adjust the style of images in export preview mode.
 - 调整嵌入块样式 | Adjust the style of embedded block.
 - 添加自定义 CSS 变量 `--custom-tab-bar-item-min-width` 以调整非钉住的页签项最小宽度 | Add the custom CSS variable `--custom-tab-bar-item-min-width` to adjust the minimum width of non-pinned tabs.
+- 调整大纲面板的列表辅助线 | Adjuct the list guides of the outline panel.
 
 ## v1.3.2/2022-09-30
 
@@ -19,7 +20,7 @@
 - [#105](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/105) 评论支持输入 markdown 及渲染 | Comments support markdown and rendering.
 - 新增 TheBrain URL Scheme 超链接 `brain://` 图标 | Added the URL Scheme link `brain://` icon of TheBrain.
 - 修复叠加样式的标记元素无法显示的问题 | Fixed the issue of marked elements that apply multiple styles can't displayed.
-- 移除文档树的列表辅助线 | Removes list guides from the document tree.
+- 移除文档树的列表辅助线 | Removes the list guides of the document tree.
 - [#106](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/106) 修复复制当前文档大纲为有序/无需列表功能开关混淆问题 | Fixed the confusing issue with the two switch of coping the current document outline as ordered/unordered list feature.
 - 调整删除线元素颜色 | Adjusted the color of strikethrough line elements.
 - 优化视频时间戳 | Optimized video timestamps.
