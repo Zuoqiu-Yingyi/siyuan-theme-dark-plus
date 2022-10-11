@@ -64,6 +64,9 @@
         }
 
         &:not(.item--pin) {
+            /* 非钉住的页签项 */
+            min-width: var(--custom-tab-bar-item-min-width);
+
             .item__text {
                 &:not(span:last-child) {
                     /* 非钉住标签的非末尾项页签项文本 */

@@ -10,6 +10,7 @@
 - 为 Zotero 的 PDF 跳转链接添加图标 | Add an icon to Zotero's PDF link.
 - 调整图片导出预览模式中的样式 | Adjust the style of images in export preview mode.
 - 调整嵌入块样式 | Adjust the style of embedded block.
+- 添加自定义 CSS 变量 `--custom-tab-bar-item-min-width` 以调整非钉住的页签项最小宽度 | Add the custom CSS variable `--custom-tab-bar-item-min-width` to adjust the minimum width of non-pinned tabs.
 
 ## v1.3.2/2022-09-30
 
