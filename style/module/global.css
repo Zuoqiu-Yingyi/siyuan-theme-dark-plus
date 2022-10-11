@@ -45,3 +45,8 @@ body.fn__flex-column {
   /* outline: 1px solid var(--custom-toolbar-tiem-active-color); */
   box-shadow: 0 0 var(--custom-toolbar-tiem-active-box-shadow-spread) var(--custom-box-shadow-color);
 }
+/* 悬浮提示 */
+.tooltip {
+  word-wrap: normal;
+  max-width: none !important;
+}

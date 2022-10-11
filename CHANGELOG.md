@@ -13,6 +13,7 @@
 - 添加自定义 CSS 变量 `--custom-tab-bar-item-min-width` 以调整非钉住的页签项最小宽度 | Add the custom CSS variable `--custom-tab-bar-item-min-width` to adjust the minimum width of non-pinned tabs.
 - 调整大纲面板的列表辅助线 | Adjuct the list guides of the outline panel.
 - 调整悬浮窗口中悬浮输入文本框的样式 | Restyle the hover input text box in the popover window.
+- 调整悬浮提示框的样式 | Adjust the style of the tooltip.
 
 ## v1.3.2/2022-09-30
 

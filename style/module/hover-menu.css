@@ -3,35 +3,34 @@
 @import url(/appearance/themes/Dark+/style/config/light.css);
 @import url(/appearance/themes/Dark+/style/config/dark.css);
 @import url(/widgets/custom.css);
-#model,
-#commonMenu {
+.b3-menu {
   background-color: var(--custom-popover-function-menu-background-color);
   backdrop-filter: var(--custom-backdrop-popover-filter);
 }
-#commonMenu .b3-menu__item {
+.b3-menu .b3-menu__item {
   /* 菜单项 */
   background-color: transparent;
 }
-#commonMenu .b3-menu__item.b3-menu__item--current {
+.b3-menu .b3-menu__item.b3-menu__item--current {
   /* 鼠标悬停菜单项 */
   background-color: var(--b3-theme-background-light) !important;
 }
-#commonMenu .b3-menu__item > .b3-menu__submenu {
+.b3-menu .b3-menu__item > .b3-menu__submenu {
   /* 子菜单 */
   background-color: var(--custom-popover-function-menu-background-color);
   backdrop-filter: var(--custom-backdrop-popover-filter);
 }
-#commonMenu .b3-menu__separator {
+.b3-menu .b3-menu__separator {
   /* 菜单分割线 */
   height: 2px;
   background-color: var(--custom-popover-menu-separator-color);
 }
-#commonMenu .b3-menu__action:hover {
+.b3-menu .b3-menu__action:hover {
   /* 菜单按钮控件 */
   color: var(--b3-theme-surface);
   background-color: var(--b3-theme-on-surface);
 }
-#commonMenu > *:not(.emojis) input.b3-text-field {
+.b3-menu > *:not(.emojis) input.b3-text-field {
   /* 输入框 */
   min-width: var(--custom-popover-menu-input-min-width);
 }
