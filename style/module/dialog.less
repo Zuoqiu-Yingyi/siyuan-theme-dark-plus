@@ -164,12 +164,13 @@ body {
         >div[data-key] {
             >.b3-dialog {
                 >.b3-dialog__container {
-                    .fn__flex-column {
+                    >div>.fn__flex>.fn__flex-column {
                         /* 弹性盒子模式: 水平显示, 必要时折行 */
                         flex-direction: row !important;
                         flex-wrap: wrap;
 
-                        *:is(.search__header, .b3-form__space--small) {
+                        .search__header,
+                        .b3-form__space--small {
                             /* 设置需要占满一行的项目 */
                             width: 100%;
                         }

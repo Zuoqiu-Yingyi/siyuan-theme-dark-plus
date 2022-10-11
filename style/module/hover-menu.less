@@ -5,16 +5,15 @@
 @import (css) url(/appearance/themes/Dark+/style/config/dark.css);
 @import (css) url(/widgets/custom.css);
 
-// 移动端菜单
-#model,
-// 全局右键菜单
-#commonMenu {
-    background-color: var(--custom-popover-function-menu-background-color);
-    backdrop-filter: var(--custom-backdrop-popover-filter);
-}
+// // 移动端菜单
+// #model,
+// // 全局右键菜单
+// #commonMenu,
 
 // 菜单
-#commonMenu {
+.b3-menu {
+    background-color: var(--custom-popover-function-menu-background-color);
+    backdrop-filter: var(--custom-backdrop-popover-filter);
 
     .b3-menu__item {
         /* 菜单项 */
@@ -159,6 +158,7 @@
 
     }
 
+    // '/' 菜单>模板/挂件等二次选择菜单
     .protyle-util &,
     // 快捷键设置菜单
     #keymapList>&,
