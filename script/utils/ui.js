@@ -706,7 +706,7 @@ const TASK_HANDLER = {
                             crumb.classList.add('p');
                             crumb.style.outline = '2px solid var(--b3-theme-on-surface-light)'
                             crumb.style.borderRadius = '2px';
-                            crumb.setAttribute('data-node-id', null);
+                            crumb.setAttribute('data-node-id', '');
                             crumb.setAttribute('data-type', 'NodeParagraph');
                             // [关于格式化：如何在javascript中将整数格式化为特定长度？ | 码农家园](https://www.codenong.com/1127905/)
                             crumb.innerHTML = `<div contenteditable="false" spellcheck="false"><span data-type="code">#${index.toString().padStart(length, '0')}</span>: ${nodes.join('&gt;')}</div>`;
