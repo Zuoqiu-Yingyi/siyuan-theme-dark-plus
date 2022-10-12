@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 实现浮窗预览某个块的方法 `popover` | Implement a method `popover` to preview a block using popover window.
+
 ## v1.3.3/2022-10-12
 
 - [v1.3.2 <=> v1.3.3](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.2...v1.3.3)
