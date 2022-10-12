@@ -6,6 +6,7 @@ export {
     HTMLDecode, // HTML 解码
     focalize, // 聚焦到指定块
     jump, // 跳转到指定块
+    popover, // 悬浮编辑指定块
     goto, // 跳转到指定块
     isNum, // 判断字符串是否为数字
     hoverPreview, // 悬浮预览指定块
@@ -96,7 +97,8 @@ function focalize(id, callback = null) {
     if (breadcrumbs) {
         let crumb = document.createElement("span");
         crumb.className = 'protyle-breadcrumb__item';
-        crumb.setAttribute("data-node-id", id);
+        // crumb.setAttribute("data-node-id", id);
+        crumb.dataset.nodeId = id;
         breadcrumbs.appendChild(crumb);
         crumb.click();
         // crumb.dispatchEvent(CTRL_CLICK_EVENT);
@@ -134,18 +136,39 @@ function cancelFocalize(callback = null) {
  */
 function jump(id, callback = null) {
     // console.log('jump:', id);
-    const editor = document.querySelector('div.protyle-wysiwyg div[data-node-id] div[contenteditable][spellcheck]');
+    const editor = document.querySelector('.protyle-wysiwyg [data-node-id] [contenteditable][spellcheck]');
     if (editor) {
         let ref = document.createElement("span");
-        ref.setAttribute("data-type", "block-ref");
-        ref.setAttribute("data-subtype", "s");
-        ref.setAttribute("data-id", id);
+        // ref.setAttribute("data-type", "block-ref");
+        // ref.setAttribute("data-subtype", "s");
+        // ref.setAttribute("data-id", id);
+        ref.dataset.type = "block-ref";
+        ref.dataset.subtype = "s";
+        ref.dataset.id = id;
         editor.appendChild(ref);
         ref.click();
         ref.remove();
         if (typeof callback === 'function') setTimeout(callback, config.theme.goto.delay);
     }
     else setTimeout(() => jump(id, callback), config.theme.goto.delay);
+}
+
+/**
+ * 弹出悬浮编辑窗口
+ */
+function popover(id, callback = null) {
+    // console.log('popover:', id);
+    const editor = document.querySelector('.protyle-wysiwyg [data-node-id] [contenteditable][spellcheck]');
+    if (editor) {
+        let span = document.createElement("span");
+        span.classList.add('protyle-wysiwyg__embed');
+        span.dataset.id = id;
+        editor.appendChild(span);
+        span.click();
+        span.remove();
+        if (typeof callback === 'function') setTimeout(callback, config.theme.goto.delay);
+    }
+    else setTimeout(() => popover(id, callback), config.theme.goto.delay);
 }
 
 /**
@@ -204,8 +227,10 @@ function isNum(str) {
 function hoverPreview(id, screenX, screenY) {
     // 创建虚拟块引用节点
     let virtual_ref = document.createElement("span");
-    virtual_ref.setAttribute("data-type", "block-ref");
-    virtual_ref.setAttribute("data-id", id);
+    // virtual_ref.setAttribute("data-type", "block-ref");
+    // virtual_ref.setAttribute("data-id", id);
+    virtual_ref.dataset.type = "block-ref";
+    virtual_ref.dataset.id = id;
     virtual_ref.style = `position: fixed; left: ${screenX}px;top: ${screenY}px; `;
 
     // 编辑器面板

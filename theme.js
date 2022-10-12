@@ -247,4 +247,4 @@ window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/app/c
 // window.theme.loadScript(window.theme.addURLParam("/widgets/custom.js"));
 
 /* 加载测试模块 */
-// window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/test/listener.js"));
+// window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/test/listener.js"), undefined, true);
