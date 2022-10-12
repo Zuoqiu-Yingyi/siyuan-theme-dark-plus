@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 实现浮窗预览某个块的方法 `popover` | Implement a method `popover` to preview a block using popover window.
+- 新增自定义 CSS 变量 `--custom-template-preview-width` 与 `--custom-template-preview-min-width` 设置模板预览窗口的宽度 | Add the custom CSS variable `--custom-template-preview-width` and `--custom-template-preview-min-width` to customize the width of the template preview window.
 
 ## v1.3.3/2022-10-12
 

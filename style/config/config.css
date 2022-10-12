@@ -379,6 +379,15 @@
     /* --custom-popover-menu-input-min-width: 50vw; */
     --custom-popover-menu-input-min-width: none;
 
+    /* 模板预览 | Template preview */
+    /* 模板预览窗口宽度 | The width of the template preview window */
+    /* --custom-template-preview-width: 520px; */
+    /* --custom-template-preview-width: auto; */
+    --custom-template-preview-width: 50vw;
+    /* 模板预览窗口最小宽度 | The min width of the template preview window */
+    --custom-template-preview-min-width: none;
+    /* --custom-template-preview-min-width: 25vw; */
+
     /* 搜索结果匹配的关键词样式 | The style of matched keywords in the search results */
     --custom-matched-keyword-color: inherit;
     --custom-matched-keyword-background-color: transparent;

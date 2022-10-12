@@ -15,6 +15,11 @@
 .protyle {
     .protyle-util {
         background-color: var(--custom-popover-background-color);
+        >.fn__flex>.fn__flex-column+div {
+            /* 模板预览窗口宽度 */
+            width: var(--custom-template-preview-width) !important;
+            min-width: var(--custom-template-preview-min-width);
+        }
 
         textarea.b3-text-field {
             background-color: transparent;
