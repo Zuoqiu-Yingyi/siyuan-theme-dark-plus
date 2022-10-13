@@ -10,7 +10,11 @@
 @import url(/appearance/themes/Dark+/style/module/block-quote.css);
 @import url(/appearance/themes/Dark+/style/module/block-super.css);
 @import url(/appearance/themes/Dark+/style/module/block-table.css);
+
 @import url(/appearance/themes/Dark+/style/module/block.css);
+
+/* 面包屑 */
+@import url(/appearance/themes/Dark+/style/module/breadcrumb.css);
 
 /* 自定义属性 */
 @import url(/appearance/themes/Dark+/style/module/custom-auto-num-f.css);
