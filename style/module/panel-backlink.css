@@ -7,16 +7,3 @@
 .sy__backlink .b3-list-item__text {
   display: var(--custom-backlink-display);
 }
-.sy__backlink .protyle-content[data-fullwidth="true"] > .protyle-wysiwyg {
-  /* 可编辑反链面板有边框 */
-  margin-right: 2px !important;
-}
-.sy__backlink .protyle-content[data-fullwidth="true"] > .protyle-wysiwyg > .protyle-breadcrumb__bar,
-.sy__backlink .protyle-content[data-fullwidth="true"] > .protyle-wysiwyg > .protyle-breadcrumb__item {
-  outline: 2px solid var(--b3-theme-on-surface-light);
-  margin: 0.5em 0;
-}
-.sy__backlink .protyle-content[data-fullwidth="true"] > .protyle-wysiwyg .protyle-breadcrumb__bar {
-  padding-left: 3px;
-  border-radius: 2px;
-}

@@ -19,5 +19,4 @@
 .protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"].render-node > .protyle-wysiwyg__embed:not(:nth-last-child(3)) {
   /* 嵌入块间分隔线 */
   position: relative;
-  border-bottom: 4px double var(--custom-line-color);
 }

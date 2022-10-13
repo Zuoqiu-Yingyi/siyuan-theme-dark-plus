@@ -7,6 +7,7 @@
   - REF: [Issue #2648 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/2648)
 - 移除嵌入块`显示查询结果路径`功能 | Remove the `Display Query Results` Path' feature for embedded blocks.
   - REF: [Issue #2985 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/2985)
+- 调整面包屑样式 | Adjust the style of breadcrumb.
 
 ## v1.3.3/2022-10-12
 

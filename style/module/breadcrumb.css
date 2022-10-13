@@ -1,0 +1,34 @@
+/* 面包屑 */
+@import url(/appearance/themes/Dark+/style/config/config.css);
+@import url(/appearance/themes/Dark+/style/config/light.css);
+@import url(/appearance/themes/Dark+/style/config/dark.css);
+@import url(/widgets/custom.css);
+.protyle-breadcrumb {
+  /* 导航栏(面包屑) */
+  background-color: var(--custom-editor-breadcrumb-bar-background-color);
+  /* box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5); */
+}
+.protyle-wysiwyg .protyle-breadcrumb__bar,
+.protyle-wysiwyg__embed .protyle-breadcrumb__bar {
+  margin: 0;
+  border-radius: 2px;
+  padding: 0 3px;
+  outline: 2px solid var(--b3-theme-on-surface-light);
+}
+.protyle-breadcrumb__bar .protyle-breadcrumb__item {
+  /* 导航栏文字 */
+  line-height: normal;
+  border: 1px solid var(--b3-theme-on-surface-light);
+}
+.protyle-breadcrumb__bar .protyle-breadcrumb__item:first-child {
+  border-color: var(--b3-theme-on-surface);
+}
+.protyle-breadcrumb__bar .protyle-breadcrumb__item:first-child,
+.protyle-breadcrumb__bar .protyle-breadcrumb__item:first-child .protyle-breadcrumb__text--ellipsis {
+  /* 文档路径完整显示 */
+  max-width: none;
+}
+.protyle-breadcrumb__bar .protyle-breadcrumb__item .protyle-breadcrumb__text:empty {
+  /* 无内容的面包屑项 */
+  margin-left: 0;
+}

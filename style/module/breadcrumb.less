@@ -1,0 +1,58 @@
+/* 面包屑 */
+
+@import (css) url(/appearance/themes/Dark+/style/config/config.css);
+@import (css) url(/appearance/themes/Dark+/style/config/light.css);
+@import (css) url(/appearance/themes/Dark+/style/config/dark.css);
+@import (css) url(/widgets/custom.css);
+
+// 面包屑栏
+.protyle-breadcrumb {
+    /* 导航栏(面包屑) */
+    background-color: var(--custom-editor-breadcrumb-bar-background-color);
+    /* box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5); */
+}
+
+// 面包屑
+.protyle-breadcrumb__bar {
+
+    // 反链面板面包屑
+    .protyle-wysiwyg &,
+    // 嵌入块面包屑
+    .protyle-wysiwyg__embed & {
+        margin: 0;
+        border-radius: 2px;
+        padding: 0 3px;
+
+        outline: 2px solid var(--b3-theme-on-surface-light);
+    }
+
+    .protyle-breadcrumb__item {
+        /* 导航栏文字 */
+        line-height: normal;
+        border: 1px solid var(--b3-theme-on-surface-light);
+
+        // 当前聚焦内容
+        // &.protyle-breadcrumb__item--active {
+        //     border: 1px solid var(--custom-striking-color);
+        // }
+
+        // 文档
+        &:first-child {
+
+            border-color: var(--b3-theme-on-surface);
+
+            &,
+            .protyle-breadcrumb__text--ellipsis {
+                /* 文档路径完整显示 */
+                max-width: none;
+            }
+        }
+
+        .protyle-breadcrumb__text {
+            &:empty {
+                /* 无内容的面包屑项 */
+                margin-left: 0;
+            }
+        }
+    }
+}
