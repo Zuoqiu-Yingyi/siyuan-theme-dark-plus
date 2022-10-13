@@ -2012,14 +2012,14 @@ export var config = {
                                 },
                             },
                             {
-                                enable: true,
+                                enable: false,
                                 type: {
                                     NodeBlockQueryEmbed: { enable: true },
                                 },
                                 mode: "separator",
                             },
                             {
-                                enable: true,
+                                enable: false,
                                 type: {
                                     NodeBlockQueryEmbed: { enable: true },
                                 },
