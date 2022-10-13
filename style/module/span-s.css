@@ -7,6 +7,6 @@
 .protyle-wysiwyg s,
 .b3-typography span[data-type~=s],
 .protyle-wysiwyg span[data-type~=s] {
-  color: inherit !important;
+  color: inherit;
   opacity: 75%;
 }
