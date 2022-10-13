@@ -4,8 +4,9 @@
 - 新增自定义 CSS 变量 `--custom-template-preview-width` 与 `--custom-template-preview-min-width` 设置模板预览窗口的宽度 | Add the custom CSS variable `--custom-template-preview-width` and `--custom-template-preview-min-width` to customize the width of the template preview window.
 - 兼容删除线样式与背景/前景色样式 | Compatible with strikethrough styles and background/foreground colors.
 - 移除只读模式 | Remove read-only mode.
-  - [Issue #2648 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/2648)
-
+  - REF: [Issue #2648 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/2648)
+- 移除嵌入块`显示查询结果路径`功能 | Remove the `Display Query Results` Path' feature for embedded blocks.
+  - REF: [Issue #2985 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/2985)
 
 ## v1.3.3/2022-10-12
 
