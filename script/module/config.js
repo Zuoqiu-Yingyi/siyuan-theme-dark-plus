@@ -847,8 +847,8 @@ export var config = {
                 },
             }
         },
-        readonly: {
-            enable: true, // 只读功能开关
+        readonly: { // @deprecated: https://github.com/siyuan-note/siyuan/issues/2648
+            enable: false, // 只读功能开关 
             toolbar: { // 菜单栏
                 enable: true,
                 display: true,

@@ -1,4 +1,5 @@
 /* 只读模式 */
+// @deprecated: https://github.com/siyuan-note/siyuan/issues/2648
 
 import { config } from './config.js';
 import {
@@ -27,13 +28,11 @@ function readonlyEnable() {
 
 setTimeout(() => {
     try {
-        if (config.theme.menu.enable) {
-            if (config.theme.menu.block.enable) {
-                const Fn_readonlyEnable = toolbarItemInit(
-                    config.theme.readonly.toolbar,
-                    readonlyEnable,
-                );
-            }
+        if (config.theme.readonly.enable) {
+            const Fn_readonlyEnable = toolbarItemInit(
+                config.theme.readonly.toolbar,
+                readonlyEnable,
+            );
         }
     } catch (err) {
         console.error(err);
