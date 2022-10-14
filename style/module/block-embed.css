@@ -1,8 +1,4 @@
 /* 嵌入块 */
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 .protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"].render-node {
   /* 嵌入块 */
   border: none;

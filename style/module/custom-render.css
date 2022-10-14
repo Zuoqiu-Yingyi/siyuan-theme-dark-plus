@@ -1,9 +1,5 @@
 /* 文档自定义属性 custom-render 渲染样式 */
 
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 
 /*
  * content: data-content (输入框中的内容)
@@ -15,7 +11,6 @@
  * subtype: data-subtype (块子类型)
  * type: data-type (块类型)
  */
-
 
 /* 👇👇👇 块级元素 👇👇👇 */
 

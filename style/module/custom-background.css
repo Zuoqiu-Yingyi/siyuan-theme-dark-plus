@@ -1,8 +1,4 @@
 /* 自定义文档背景图片 */
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 .protyle-wysiwyg[custom-background] {
   background-repeat: no-repeat;
   background-position: center;

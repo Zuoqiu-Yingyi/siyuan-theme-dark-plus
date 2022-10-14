@@ -1,9 +1,5 @@
 /* 移动端优化 */
 
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 
 /* 移动端编辑区 */
 #editor {

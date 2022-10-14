@@ -1,8 +1,4 @@
 /*关系图面板*/
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 .graph {
   background: transparent;
 }

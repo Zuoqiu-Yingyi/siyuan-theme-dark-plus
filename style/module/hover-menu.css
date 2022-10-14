@@ -1,8 +1,4 @@
 /* 弹出菜单 */
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 .b3-menu {
   background-color: var(--custom-popover-function-menu-background-color);
   backdrop-filter: var(--custom-backdrop-popover-filter);

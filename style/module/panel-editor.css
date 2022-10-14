@@ -1,8 +1,4 @@
 /* 编辑区面板 */
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 .fn__flex-1.protyle.fullscreen .protyle-content {
   /* 全屏模式编辑区 */
   background-color: var(--custom-editor-background-color);

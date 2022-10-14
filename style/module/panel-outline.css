@@ -1,8 +1,4 @@
 /* 大纲面板 */
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 /* 过长子标题名显示样式 */
 .sy__outline .b3-list-item__text {
   display: var(--custom-outline-display);

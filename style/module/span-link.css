@@ -1,8 +1,4 @@
 /* 超链接 */
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 .protyle-wysiwyg [data-node-id] span:not(:empty)[data-type~=a] {
   /* 默认样式 */
   margin: 0;

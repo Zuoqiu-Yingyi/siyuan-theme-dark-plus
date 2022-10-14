@@ -1,8 +1,4 @@
 /* 超级块 */
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 .protyle-wysiwyg [data-node-id].sb {
   /* 调整超级块中元素间距 */
   border-radius: var(--custom-border-radius);

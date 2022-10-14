@@ -1,8 +1,4 @@
 /* 列表 */
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 .protyle-wysiwyg [data-node-id].li > .protyle-action {
   /* 列表标志 */
   z-index: 0;

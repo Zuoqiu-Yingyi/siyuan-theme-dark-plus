@@ -1,8 +1,4 @@
 /* 全局页面 */
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 /* 背景图片 */
 body.fn__flex-column {
   background-image: var(--custom-background-image);

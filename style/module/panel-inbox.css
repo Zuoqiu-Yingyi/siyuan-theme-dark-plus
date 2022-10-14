@@ -1,9 +1,5 @@
 /* 收集箱 */
 
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 
 .sy__inbox .b3-list-item__text {
     /* 过长收集箱标题显示样式 */

@@ -1,8 +1,4 @@
 /* 引入参数配置 */
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 svg.popover__block:hover,
 .counter.popover__block:hover,
 .protyle-attr--refcount.popover__block:hover {

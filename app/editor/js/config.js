@@ -256,8 +256,8 @@ export var config = {
 
 try {
     const custom = import('/widgets/custom.js');
-    if (custom.config != null) {
-        merge(config, custom.config);
+    if (custom?.config?.editor) {
+        merge(config.editor, custom.config.editor);
     }
 } catch (err) {
     console.warn(err);

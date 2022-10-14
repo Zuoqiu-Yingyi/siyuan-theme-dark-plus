@@ -1,8 +1,4 @@
 /* 标记(挖空) */
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 .b3-typography mark,
 .protyle-wysiwyg mark,
 .b3-typography span[data-type~=mark],

@@ -1,8 +1,4 @@
 /* 宽度设置 */
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 .protyle-wysiwyg [data-node-id][custom-width="100%"].iframe > .iframe-content,
 .protyle-wysiwyg [data-node-id][custom-width="100%"].iframe > .iframe-content > iframe,
 .protyle-wysiwyg [data-node-id][custom-width="100%"].iframe > .iframe-content > video,

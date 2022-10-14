@@ -1,8 +1,4 @@
 /* 标签 */
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 .protyle-background__tags > .item,
 .protyle-wysiwyg span[data-type~=tag] {
   font-size: 1em;
