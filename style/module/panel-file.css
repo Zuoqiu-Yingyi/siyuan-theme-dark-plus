@@ -1,8 +1,4 @@
 /* 文档面板 */
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 .sy__file .b3-list-item__text {
   /* 过长文档名显示样式 */
   display: var(--custom-file-display);

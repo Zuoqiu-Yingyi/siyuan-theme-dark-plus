@@ -1,8 +1,4 @@
 /* 自定义看板 */
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 .protyle-wysiwyg .sb[data-node-id][custom-board="容器"] {
   /* 文档中带有 board 属性且值为 "容器" 的超级块会被渲染级为看板 */
   border-style: solid;

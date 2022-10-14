@@ -1,8 +1,4 @@
 /* 各级标题 */
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 /* 👇标题自动编号👇 */
 /* body {
     counter-reset: h1-counter 0;

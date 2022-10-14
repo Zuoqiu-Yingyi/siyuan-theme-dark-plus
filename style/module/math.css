@@ -1,8 +1,4 @@
 /* 数学公式 */
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 /* 行内公式 */
 /* .protyle-wysiwyg [data-node-id] span[data-type='inline-math'] {
     font-size: var(--custom-math-inline);

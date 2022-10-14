@@ -2,10 +2,6 @@
  * REF https: //github.com/UserZYF/zhang-light/blob/d309151036bafe324bcf9eb754829ebc93a88d03/theme.css#L1661
  */
 
-@import (css) url(/appearance/themes/Dark+/style/config/config.css);
-@import (css) url(/appearance/themes/Dark+/style/config/light.css);
-@import (css) url(/appearance/themes/Dark+/style/config/dark.css);
-@import (css) url(/widgets/custom.css);
 
 .display(@type, @element) {
     [data-node-id][fold="1"]@{type} {
@@ -55,7 +51,6 @@
             content: var(--custom-h-fold-mark);
         }
 
-
     }
 
     // 代码块折叠样式
@@ -102,7 +97,6 @@
     .content(~'[data-subtype="mermaid"][data-content^="requirementDiagram"]', "[Mermaid - Requirement Diagram]");
     .content(~'[data-subtype="mermaid"][data-content^="gitGraph"]', "[Mermaid - Git Graph]");
 }
-
 
 /* 子标题折叠标记缩进 */
 /* .protyle-wysiwyg>.h1[data-node-id][fold="1"]::after {

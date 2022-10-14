@@ -1,8 +1,4 @@
 /* 块引用 */
-@import url(/appearance/themes/Dark+/style/config/config.css);
-@import url(/appearance/themes/Dark+/style/config/light.css);
-@import url(/appearance/themes/Dark+/style/config/dark.css);
-@import url(/widgets/custom.css);
 .protyle-wysiwyg [data-node-id] span[data-type~=block-ref] {
   color: var(--custom-span-block-ref-color);
 }
