@@ -108,6 +108,7 @@
 #searchPanel > .b3-list-item,
 .b3-list.b3-list--background:not(ul) > .b3-list-item,
 .b3-list.b3-list--background.b3-tab-bar > .b3-list-item,
+.sy__backlink .b3-list.b3-list--background > .b3-list-item,
 #historyContainer .b3-list.b3-list--background > .b3-list-item {
   /* padding-top: var(--custom-popover-menu-padding-width); */
   /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
@@ -118,6 +119,7 @@
 #searchPanel > .b3-list-item:first-child,
 .b3-list.b3-list--background:not(ul) > .b3-list-item:first-child,
 .b3-list.b3-list--background.b3-tab-bar > .b3-list-item:first-child,
+.sy__backlink .b3-list.b3-list--background > .b3-list-item:first-child,
 #historyContainer .b3-list.b3-list--background > .b3-list-item:first-child {
   /* 补偿第一项 */
   margin-top: 0 !important;
@@ -125,6 +127,7 @@
 #searchPanel > .b3-list-item:last-child,
 .b3-list.b3-list--background:not(ul) > .b3-list-item:last-child,
 .b3-list.b3-list--background.b3-tab-bar > .b3-list-item:last-child,
+.sy__backlink .b3-list.b3-list--background > .b3-list-item:last-child,
 #historyContainer .b3-list.b3-list--background > .b3-list-item:last-child {
   /* 补偿最后一项 */
   margin-bottom: 0 !important;
@@ -132,12 +135,14 @@
 #searchPanel > .b3-list-itembutton,
 .b3-list.b3-list--background:not(ul) > .b3-list-itembutton,
 .b3-list.b3-list--background.b3-tab-bar > .b3-list-itembutton,
+.sy__backlink .b3-list.b3-list--background > .b3-list-itembutton,
 #historyContainer .b3-list.b3-list--background > .b3-list-itembutton {
   margin: var(--custom-popover-menu-padding-width) auto !important;
 }
 #searchPanel > .b3-list-item .b3-list-item__meta:not(.fn__flex),
 .b3-list.b3-list--background:not(ul) > .b3-list-item .b3-list-item__meta:not(.fn__flex),
 .b3-list.b3-list--background.b3-tab-bar > .b3-list-item .b3-list-item__meta:not(.fn__flex),
+.sy__backlink .b3-list.b3-list--background > .b3-list-item .b3-list-item__meta:not(.fn__flex),
 #historyContainer .b3-list.b3-list--background > .b3-list-item .b3-list-item__meta:not(.fn__flex) {
   /* 文档可读路径 */
   color: var(--custom-popover-menu-path-color);
@@ -148,6 +153,7 @@
 #searchPanel > .b3-list-item .b3-list-item__meta.fn__flex,
 .b3-list.b3-list--background:not(ul) > .b3-list-item .b3-list-item__meta.fn__flex,
 .b3-list.b3-list--background.b3-tab-bar > .b3-list-item .b3-list-item__meta.fn__flex,
+.sy__backlink .b3-list.b3-list--background > .b3-list-item .b3-list-item__meta.fn__flex,
 #historyContainer .b3-list.b3-list--background > .b3-list-item .b3-list-item__meta.fn__flex {
   /* 块属性 */
   padding: 0.5em;
