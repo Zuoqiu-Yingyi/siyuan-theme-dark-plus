@@ -9,6 +9,7 @@
   - REF: [Issue #2985 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/2985)
 - 调整面包屑样式 | Adjust the style of breadcrumb.
 - 移除 CSS 模块中对配置文件的引用 | Removes the reference to the configuration files in the CSS module.
+- 调整反色显示模式色相转换 | Adjusts the inverted display mode Hue transformation.
 
 ## v1.3.3/2022-10-12
 

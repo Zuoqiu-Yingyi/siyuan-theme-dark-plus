@@ -9,8 +9,8 @@
   /* 编辑区 */
   background-color: var(--custom-editor-background-color);
 }
+#sidebarContainer,
 .protyle {
-  /*编辑区*/
   background: transparent;
 }
 .wysiwygLoading {
