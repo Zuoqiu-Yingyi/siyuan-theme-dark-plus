@@ -496,7 +496,7 @@ export var config = {
                     enable: true,
                     style: {
                         id: 'theme-invert-elements-img-style',
-                        innerHTML: 'img:not(.emoji, .thumbnailImage), div.thumbnailSelectionRing {filter: grayscale(0%) invert(100%) contrast(100%) brightness(100%) hue-rotate(180deg);}div.protyle-background__icon>img,span.b3-list-item__icon>img {filter: none;}', // 样式标签内容
+                        innerHTML: 'img:not(.emoji, .thumbnailImage), div.thumbnailSelectionRing {filter: invert(100%) hue-rotate(180deg);}div.protyle-background__icon>img,span.b3-list-item__icon>img {filter: none;}', // 样式标签内容
                     },
                 },
                 viewer: {
@@ -504,7 +504,7 @@ export var config = {
                     enable: true,
                     style: {
                         id: 'theme-invert-elements-viewer-style',
-                        innerHTML: '#viewer {filter: invert(100%);}',
+                        innerHTML: '#viewer {filter: invert(100%) hue-rotate(180deg);}',
                     },
                 },
                 iframe: {
@@ -512,7 +512,7 @@ export var config = {
                     enable: true,
                     style: {
                         id: 'theme-invert-elements-iframe-style',
-                        innerHTML: 'iframe {filter: invert(100%);}',
+                        innerHTML: 'iframe {filter: invert(100%) hue-rotate(180deg);}',
                     },
                 },
                 video: {
@@ -520,7 +520,7 @@ export var config = {
                     enable: true,
                     style: {
                         id: 'theme-invert-elements-video-style',
-                        innerHTML: 'video {filter: invert(100%);}',
+                        innerHTML: 'video {filter: invert(100%) hue-rotate(180deg);}',
                     },
                 },
             },
