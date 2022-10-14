@@ -553,9 +553,16 @@ class MdCompletionItemProvider {
                     };
             }
         }
-        else {
+        else if (/[^\$]\$$/.test(lineTextBefore)) {
+            let math_inline = new CompletionItem('\$ math-inline \$', CompletionItemKind.Function);
+            let math_block = new CompletionItem('\$\$ math-block \$\$', CompletionItemKind.Function);
+            math_inline.insertText = `$1\$`;
+            math_block.insertText = `\$\n$1\n\$\$`;
             return {
-                suggestions: [],
+                suggestions: [
+                    math_inline,
+                    math_block,
+                ],
             };
         }
     }

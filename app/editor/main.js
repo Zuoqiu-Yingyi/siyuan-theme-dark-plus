@@ -520,30 +520,37 @@ window.onload = () => {
              *     -> 'doc': 文档块
              */
             mode: window.editor.url.searchParams.get('mode')
-                || 'none', // 编辑器模式
+                ?? 'none', // 编辑器模式
             type: window.editor.url.searchParams.get('type')
-                || 'markdown', // 编辑类型
+                ?? 'markdown', // 编辑类型
             value: '', // 内容
-            theme: parseInt(window.editor.url.searchParams.get('theme'))
-                || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 1 : 0), // 主题模式
+            theme: parseInt(
+                window.editor.url.searchParams.get('theme')
+                ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 1 : 0)), // 主题模式
             lang: window.editor.url.searchParams.get('lang')
-                || 'default', // 语言
+                ?? 'default', // 语言
             language: window.editor.url.searchParams.get('language')
-                || 'default', // 语言模式
+                ?? 'default', // 语言模式
             tabSize: parseInt(window.editor.url.searchParams.get('tabSize'))
-                || 4, // 缩进空格数量
+                ?? 4, // 缩进空格数量
             workspace: (window.editor.url.searchParams.get('workspace')
-                || '').replaceAll(/(\\|\/)+/g, '/'), // 工作空间路径
-            fontFamily: decodeURI(window.editor.url.searchParams.get('fontFamily') || '')
-                ? [decodeURI(window.editor.url.searchParams.get('fontFamily') || '')]
+                ?? '').replaceAll(/(\\|\/)+/g, '/'), // 工作空间路径
+            fontFamily: decodeURI(window.editor.url.searchParams.get('fontFamily') ?? '')
+                ? [decodeURI(window.editor.url.searchParams.get('fontFamily') ?? '')]
                 : [], // 字体
 
-            title: decodeURI(window.editor.url.searchParams.get('title') || ''), // 标题(inbox 内容)
-            describe: decodeURI(window.editor.url.searchParams.get('describe') || ''), // 描述(inbox 内容)
+            title: decodeURI(window.editor.url.searchParams.get('title') ?? ''), // 标题(inbox 内容)
+            describe: decodeURI(window.editor.url.searchParams.get('describe') ?? ''), // 描述(inbox 内容)
             IStandaloneEditorConstructionOptions: {}, // 其他编辑器配置
             IStandaloneDiffEditorConstructionOptions: {}, // 其他差异编辑器配置
             // REF [JS Unicode编码和解码（6种方法）](http://c.biancheng.net/view/5602.html)
-            body: JSON.parse(decodeURI(window.editor.url.hash.substring(1)) || null),
+            body: JSON.parse(
+                decodeURI(
+                    window.editor.url.hash.length > 0
+                        ? window.editor.url.hash.substring(1)
+                        : ''
+                ) || null
+            ),
         };
         init(window.editor.params).then(() => {
             window.editor.container = document.getElementById('container');
