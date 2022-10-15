@@ -7,6 +7,7 @@
   background-position: center !important;
   background-attachment: fixed !important;
   background-color: transparent !important;
+  border-radius: var(--custom-border-radius);
 }
 .b3-dialog__container > .b3-dialog__close:hover {
   /* 关闭按钮 */
@@ -17,6 +18,7 @@
 }
 .b3-dialog__container > div:nth-child(3) {
   background-color: var(--custom-dialog-background-color);
+  border-radius: inherit;
 }
 .b3-dialog__container > div:nth-child(3) .search__header,
 .b3-dialog__container > div:nth-child(3) .search__header > input {

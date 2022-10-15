@@ -1,0 +1,90 @@
+/* 边栏 */
+/* 聚焦的侧边面板标题 */
+.block__icons--active {
+  background-color: var(--b3-list-hover);
+}
+/* ↑👆👈👉👇↓ */
+#toolbar .b3-tooltips,
+#dockTop .b3-tooltips,
+#dockLeft .b3-tooltips,
+#dockRight .b3-tooltips,
+#dockBottom .b3-tooltips,
+#status .b3-tooltips {
+  /* 边栏按钮 */
+  margin: var(--custom-dock-item-margin-width) !important;
+  padding: var(--custom-dock-item-padding-width) !important;
+  border-radius: var(--custom-border-radius) !important;
+}
+#toolbar .b3-tooltips > svg,
+#dockTop .b3-tooltips > svg,
+#dockLeft .b3-tooltips > svg,
+#dockRight .b3-tooltips > svg,
+#dockBottom .b3-tooltips > svg,
+#status .b3-tooltips > svg {
+  /* 边栏按钮图标 */
+  width: var(--custom-dock-item-icon-size) !important;
+  height: var(--custom-dock-item-icon-size) !important;
+}
+/* 👆👈👉👇 */
+#dockTop,
+#dockLeft,
+#dockRight,
+#dockBottom {
+  background-color: var(--custom-dock-background-color);
+}
+/* ↑👆👇↓ */
+#toolbar,
+#dockTop,
+#dockBottom,
+#status {
+  height: var(--custom-dock-width);
+}
+/* 👆👇 */
+/* 👈👉 */
+#dockLeft,
+#dockRight {
+  width: var(--custom-dock-width);
+}
+/* ↑顶部工具栏↑ */
+#toolbar {
+  background-color: var(--custom-tool-bar-background-color);
+}
+/* 顶部工具栏按钮 */
+div:not(#windowControls) > .toolbar__item {
+  margin: 0 6px;
+  /* border-radius: 1em; */
+}
+/* 顶部工具栏标题 */
+#drag {
+  padding: 0 !important;
+}
+/* 自定义工具栏 */
+#custom-toolbar {
+  transition: all 500ms;
+}
+/* 窗口控件 */
+#windowControls {
+  /* margin: 0 !important; */
+}
+#windowControls .b3-tooltips {
+  margin: 0 !important;
+  padding: calc(var(--custom-dock-item-margin-width) + var(--custom-dock-item-padding-width)) !important;
+  border-radius: 0 !important;
+}
+/* 窗口关闭控件 */
+#closeWindow {
+  /* padding-right: 6px; */
+}
+/* 被激活的控件 */
+.block__icon--active,
+.toolbar__item--active {
+  color: var(--custom-toolbar-tiem-active-color);
+  background-color: var(--custom-toolbar-tiem-active-background-color);
+  /* outline: 1px solid var(--custom-toolbar-tiem-active-color); */
+  box-shadow: 0 0 var(--custom-toolbar-tiem-active-box-shadow-spread) var(--custom-box-shadow-color);
+}
+/* ↑顶部工具栏↑ */
+/* ↓底部状态栏↓ */
+#status .status__counter {
+  line-height: var(--custom-dock-width);
+}

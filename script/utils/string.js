@@ -93,14 +93,14 @@ function compareVersion(version1, version2) {
             v2 = v2_arr[i];
             if (v1 == undefined || v2 == undefined) // 其中一者没有更细分的版本号
                 return 0;
-            else if (!isNaN(v1) && isNaN(v2)) // v1 是发行版 | v2 是内测(x-alphaX)/公测版(x-devX)
+            else if (!isNaN(v1) && isNaN(v2)) // v1 是发行版 | v2 是内测(x-alphaX)/公测(x-betaX)/开发版(x-devX)
                 return 1;
-            else if (isNaN(v1) && !isNaN(v2)) // v2 是发行版 | v1 是内测(x-alphaX)/公测版(x-devX)
+            else if (isNaN(v1) && !isNaN(v2)) // v2 是发行版 | v1 是内测(x-alphaX)/公测(x-betaX)/开发版(x-devX)
                 return -1;
             else // 意外的情况
                 return 0;
         }
-        else { // 都不为数字, 比较字符串, 内测版(alpha)比公测版(dev)版本号小
+        else { // 都不为数字, 比较字符串, 内测版(alpha) < 公测版(beta) < 开发版(dev)版本号小
             v1 = v1_arr[i];
             v2 = v2_arr[i];
         }

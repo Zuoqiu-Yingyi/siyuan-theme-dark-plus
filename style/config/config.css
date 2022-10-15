@@ -216,6 +216,9 @@
     /* 功能面板间隔距离 | Function panel spacing distance */
     --custom-panel-distance: 8px;
 
+    /* 功能面板标题栏高度 | Feature panel title bar height */
+    --custom-panel-title-height: var(--custom-dock-width);
+
     /* 全屏关系图工具栏背景颜色 | Full-screen graph toolbar background color */
     --custom-panel-graph-fullscreen-toolbar-background-color: var(--custom-editor-background-color);
     /* 全屏关系图内容背景颜色 | The background color of the full-screen diagram content */
@@ -252,8 +255,17 @@
     /* 已完成任务列表项颜色 | The color of completed task list item */
     --custom-list-task-done-color: var(--b3-theme-on-surface);
 
-    /* 菜单栏(功能坞)背景颜色 | Menu bar (dock) background color */
+    /* 边栏 | bar */
+    /* 边栏背景颜色 | Side bar (dock) background color */
     --custom-dock-background-color: var(--custom-transparent);
+    /* 边栏按钮外边距 | Side bar (dock) button margin */
+    --custom-dock-item-margin-width: 4px;
+    /* 边栏按钮内边距 | Side bar (dock) button padding */
+    --custom-dock-item-padding-width: 6px;
+    /* 边栏图标宽高 | Side bar (dock) icon size */
+    --custom-dock-item-icon-size: 16px;
+    /* 边栏宽度 | Side bar (dock) width */
+    --custom-dock-width: calc(var(--custom-dock-item-icon-size) + var(--custom-dock-item-margin-width) * 2 + var(--custom-dock-item-padding-width) * 2);
 
     /* 顶部工具栏背景颜色 | The background color of the top toolbar */
     --custom-tool-bar-background-color: var(--custom-transparent);
@@ -288,6 +300,8 @@
 
     /* 编辑区页签栏背景颜色 | The background color of the  edit area tab bar */
     --custom-tab-bar-background-color: var(--custom-transparent);
+    /* 编辑区页签栏最小高度 | The min height of the  edit area tab bar */
+    --custom-tab-bar-min-height: calc(var(--custom-dock-width));
     /* 非钉住页签项最小宽度 */
     --custom-tab-bar-item-min-width: none;
     /* 页签图标大小 | The size of the tab bar icon */
@@ -367,8 +381,10 @@
     --custom-popover-menu-attribute-color: var(--b3-card-warning-color);
     /* 弹出菜单中路径字段颜色 | The color of the path field */
     --custom-popover-menu-path-color: var(--b3-card-info-color);
+    /* 弹出菜单外边距宽度 | The margin width of the popover menu */
+    --custom-popover-menu-margin-width: 0.25em;
     /* 弹出菜单内边距宽度 | The padding width of the popover menu */
-    --custom-popover-menu-padding-width: 0.25em;
+    --custom-popover-menu-padding-width: 4px;
     /* 弹出菜单轮廓宽度 | The outline width of the popover menu */
     --custom-popover-menu-outline-width: 1px;
     /* 弹出菜单轮廓样式 | The outline style of the popover menu */

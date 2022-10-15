@@ -2,6 +2,7 @@
 .b3-menu {
   background-color: var(--custom-popover-function-menu-background-color);
   backdrop-filter: var(--custom-backdrop-popover-filter);
+  padding: var(--custom-popover-menu-padding-width);
 }
 .b3-menu .b3-menu__item {
   /* 菜单项 */
@@ -15,6 +16,7 @@
   /* 子菜单 */
   background-color: var(--custom-popover-function-menu-background-color);
   backdrop-filter: var(--custom-backdrop-popover-filter);
+  padding: var(--custom-popover-menu-padding-width);
 }
 .b3-menu .b3-menu__separator {
   /* 菜单分割线 */
@@ -32,12 +34,17 @@
 }
 .b3-list.b3-list--background {
   /* REF: [第一个子元素在未超过父元素高度的情况下设置margin-top导致出现竖向滚动条的问题_Andrasen的博客-CSDN博客](https://blog.csdn.net/Andrasen/article/details/105676175) */
-  padding: var(--custom-popover-menu-padding-width);
+  padding: var(--custom-popover-menu-padding-width) !important;
   background-color: transparent !important;
   backdrop-filter: none;
   width: var(--custom-popover-menu-width) !important;
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
   overflow-x: visible !important;
+}
+.b3-list.b3-list--background .b3-list-item {
+  /* 菜单项 */
+  margin: 0 !important;
+  border-radius: 0;
 }
 .b3-list.b3-list--background.b3-menu.hint--menu,
 .protyle > .b3-list.b3-list--background,
@@ -46,6 +53,7 @@
 .b3-list.b3-list--background#menu {
   background-color: var(--custom-popover-function-menu-background-color) !important;
   backdrop-filter: var(--custom-backdrop-popover-filter);
+  box-sizing: border-box;
 }
 .b3-list.b3-list--background.b3-menu.hint--menu {
   /* '/' 菜单 */
@@ -97,6 +105,10 @@
   height: 0;
   background-color: transparent;
 }
+#historyContainer .b3-list.b3-list--background {
+  outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
+  padding-bottom: 0 !important;
+}
 #historyContainer .b3-list.b3-list--background > .b3-list-item:hover:not(.b3-list-item--focus) {
   background-color: var(--b3-list-hover);
 }
@@ -110,10 +122,9 @@
 .b3-list.b3-list--background.b3-tab-bar > .b3-list-item,
 .sy__backlink .b3-list.b3-list--background > .b3-list-item,
 #historyContainer .b3-list.b3-list--background > .b3-list-item {
-  /* padding-top: var(--custom-popover-menu-padding-width); */
+  /* padding-top: var(--custom-popover-menu-margin-width); */
   /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
-  margin: var(--custom-popover-menu-padding-width) 0;
-  /* padding: 0.5em; */
+  margin: var(--custom-popover-menu-margin-width) 0 !important;
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
 }
 #searchPanel > .b3-list-item:first-child,
@@ -124,11 +135,11 @@
   /* 补偿第一项 */
   margin-top: 0 !important;
 }
-#searchPanel > .b3-list-item:last-child,
-.b3-list.b3-list--background:not(ul) > .b3-list-item:last-child,
-.b3-list.b3-list--background.b3-tab-bar > .b3-list-item:last-child,
-.sy__backlink .b3-list.b3-list--background > .b3-list-item:last-child,
-#historyContainer .b3-list.b3-list--background > .b3-list-item:last-child {
+#searchPanel > .b3-list-item:last-child:not(.fn_none),
+.b3-list.b3-list--background:not(ul) > .b3-list-item:last-child:not(.fn_none),
+.b3-list.b3-list--background.b3-tab-bar > .b3-list-item:last-child:not(.fn_none),
+.sy__backlink .b3-list.b3-list--background > .b3-list-item:last-child:not(.fn_none),
+#historyContainer .b3-list.b3-list--background > .b3-list-item:last-child:not(.fn_none) {
   /* 补偿最后一项 */
   margin-bottom: 0 !important;
 }
@@ -137,7 +148,7 @@
 .b3-list.b3-list--background.b3-tab-bar > .b3-list-itembutton,
 .sy__backlink .b3-list.b3-list--background > .b3-list-itembutton,
 #historyContainer .b3-list.b3-list--background > .b3-list-itembutton {
-  margin: var(--custom-popover-menu-padding-width) auto !important;
+  margin: var(--custom-popover-menu-margin-width) auto !important;
 }
 #searchPanel > .b3-list-item .b3-list-item__meta:not(.fn__flex),
 .b3-list.b3-list--background:not(ul) > .b3-list-item .b3-list-item__meta:not(.fn__flex),

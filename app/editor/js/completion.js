@@ -82,6 +82,11 @@ function mathEnvCheck(doc, pos) {
 // REF [CompletionItemProvider | Monaco Editor API](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.languages.CompletionItemProvider.html)
 class MdCompletionItemProvider {
 
+    triggerCharacters = [
+        '\\',
+        '$',
+    ];
+
     //
     // Suffixes explained:
     // \cmd         -> 0
@@ -413,9 +418,6 @@ class MdCompletionItemProvider {
     ]
 
     mathCompletions = [];
-    triggerCharacters = [
-        '\\',
-    ];
     mathCompletionsJSON;
     suggestions = () => JSON.parse(this.mathCompletionsJSON);
 
@@ -537,7 +539,7 @@ class MdCompletionItemProvider {
                └────────────────┘ */
             switch (mathEnvCheck(model, position)) {
                 case 'inline':
-                    // console.log('inline');
+                // console.log('inline');
                 case 'display':
                     // console.log('display');
                     // return this.mathCompletions;
@@ -553,7 +555,7 @@ class MdCompletionItemProvider {
                     };
             }
         }
-        else if (/[^\$]\$$/.test(lineTextBefore)) {
+        else if (/(^|[^\$]+)\$$/.test(lineTextBefore)) {
             let math_inline = new CompletionItem('\$ math-inline \$', CompletionItemKind.Function);
             let math_block = new CompletionItem('\$\$ math-block \$\$', CompletionItemKind.Function);
             math_inline.insertText = `$1\$`;

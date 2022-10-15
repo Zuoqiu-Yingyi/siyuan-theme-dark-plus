@@ -1,5 +1,8 @@
 /* 引入各配置模块 */
 
+/* 边栏 */
+@import url(/appearance/themes/Dark+/style/module/bar.css);
+
 /* 块级元素 */
 @import url(/appearance/themes/Dark+/style/module/block-code.css);
 @import url(/appearance/themes/Dark+/style/module/block-embed.css);
@@ -43,9 +46,6 @@
 
 /* 对话框元素 */
 @import url(/appearance/themes/Dark+/style/module/dialog.css);
-
-/* 边栏 */
-@import url(/appearance/themes/Dark+/style/module/dock.css);
 
 /* 折叠 */
 @import url(/appearance/themes/Dark+/style/module/fold.css);
@@ -100,9 +100,6 @@
 
 /* 页签栏 */
 @import url(/appearance/themes/Dark+/style/module/tab-bar.css);
-
-/* 顶部工具栏 */
-@import url(/appearance/themes/Dark+/style/module/tool-bar.css);
 
 /* 预览窗口 */
 @import url(/appearance/themes/Dark+/style/module/viewer-image.css);
