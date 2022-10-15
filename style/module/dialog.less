@@ -10,6 +10,8 @@
     background-attachment: fixed !important;
     background-color: transparent !important;
 
+    border-radius: var(--custom-border-radius);
+
     >.b3-dialog__close {
         &:hover {
             /* 关闭按钮 */
@@ -24,6 +26,7 @@
 
     >div:nth-child(3) {
         background-color: var(--custom-dialog-background-color);
+        border-radius: inherit;
 
         // 搜索内容输入框
         .search__header {

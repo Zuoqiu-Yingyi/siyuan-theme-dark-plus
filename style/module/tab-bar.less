@@ -10,14 +10,15 @@
         /* 页签项 */
         flex: none;
         background-color: transparent;
-        box-shadow: none;
-        border: 2px solid var(--b3-list-hover);
+        border: 2px solid var(--b3-list-hover) !important;
         border-radius: var(--custom-border-radius);
         box-shadow: none !important;
+        min-height: var(--custom-tab-bar-min-height);
+        box-sizing: border-box;
 
         .item__icon {
             /* 页签项图标 */
-            padding-right: 0;
+            padding-left: 8px;
 
             svg,
             img {
@@ -32,6 +33,8 @@
         }
 
         .item__close {
+            padding: 4px !important;
+
             svg {
                 &:hover {
                     /* 页签项关闭图标 */
@@ -45,15 +48,19 @@
             /* 被选中的页签项 */
             background-color: var(--b3-list-hover);
             box-shadow: none;
-            border: 2px solid var(--b3-list-hover);
-            border-bottom: 2px solid var(--custom-striking-color);
+            border-color: var(--b3-list-hover) !important;
+            border-bottom-color: var(--custom-striking-color) !important;
             border-radius: var(--custom-border-radius);
+
+            +.item {
+                border-left-color: var(--b3-list-hover) !important;
+            }
 
             .layout__wnd--active &,
             .b3-dialog__container & {
                 /* 多窗口被选中的页签项 & 集市被选中的页签项 */
                 box-shadow: none;
-                border: 2px solid var(--custom-striking-color);
+                border-color: var(--custom-striking-color) !important;
                 border-radius: var(--custom-border-radius);
             }
 

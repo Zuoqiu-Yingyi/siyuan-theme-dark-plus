@@ -8,14 +8,15 @@
   /* 页签项 */
   flex: none;
   background-color: transparent;
-  box-shadow: none;
-  border: 2px solid var(--b3-list-hover);
+  border: 2px solid var(--b3-list-hover) !important;
   border-radius: var(--custom-border-radius);
   box-shadow: none !important;
+  min-height: var(--custom-tab-bar-min-height);
+  box-sizing: border-box;
 }
 .layout-tab-bar .item .item__icon {
   /* 页签项图标 */
-  padding-right: 0;
+  padding-left: 8px;
 }
 .layout-tab-bar .item .item__icon svg,
 .layout-tab-bar .item .item__icon img {
@@ -26,6 +27,9 @@
   /* 页签项文本 */
   min-width: 0;
 }
+.layout-tab-bar .item .item__close {
+  padding: 4px !important;
+}
 .layout-tab-bar .item .item__close svg:hover {
   /* 页签项关闭图标 */
   color: var(--b3-theme-surface);
@@ -35,15 +39,18 @@
   /* 被选中的页签项 */
   background-color: var(--b3-list-hover);
   box-shadow: none;
-  border: 2px solid var(--b3-list-hover);
-  border-bottom: 2px solid var(--custom-striking-color);
+  border-color: var(--b3-list-hover) !important;
+  border-bottom-color: var(--custom-striking-color) !important;
   border-radius: var(--custom-border-radius);
+}
+.layout-tab-bar .item.item--focus + .item {
+  border-left-color: var(--b3-list-hover) !important;
 }
 .layout__wnd--active .layout-tab-bar .item.item--focus,
 .b3-dialog__container .layout-tab-bar .item.item--focus {
   /* 多窗口被选中的页签项 & 集市被选中的页签项 */
   box-shadow: none;
-  border: 2px solid var(--custom-striking-color);
+  border-color: var(--custom-striking-color) !important;
   border-radius: var(--custom-border-radius);
 }
 .layout-tab-bar .item:not(.item--pin) {

@@ -114,6 +114,10 @@
   /* 侧边分栏面板 */
   /* 文档树面板(影响定位当前文档) */
 }
+[data-type='wnd'][data-id] .file-tree .block__icons {
+  /* 面板标题 */
+  height: var(--custom-panel-title-height);
+}
 [data-type='wnd'][data-id] .file-tree:not(.sy__file, .sy__outline) ul {
   position: relative;
   top: 0;

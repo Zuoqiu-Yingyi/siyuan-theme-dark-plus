@@ -11,6 +11,7 @@
 - 移除 CSS 模块中对配置文件的引用 | Removes the reference to the configuration files in the CSS module.
 - 调整反色显示模式色相转换 | Adjusts the inverted display mode Hue transformation.
 - 反向链接面板项应用搜索列表样式 | Backlinks panel items apply the list style of search results.
+- 适配 `v2.4.1` | Adaptive `v2.4.1`.
 
 ## v1.3.3/2022-10-12
 

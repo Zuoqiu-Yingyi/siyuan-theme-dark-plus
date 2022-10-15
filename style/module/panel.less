@@ -1,6 +1,5 @@
 /* 面板全局设置 */
 
-
 // 添加 1 级辅助线
 .guides(@base, @depth) {
     &::before {
@@ -93,6 +92,10 @@
 
     /* 侧边分栏面板 */
     .file-tree {
+        .block__icons {
+            /* 面板标题 */
+            height: var(--custom-panel-title-height);
+        }
         &:not(.sy__file, .sy__outline) {
             .tree(12px, 12px);
         }
