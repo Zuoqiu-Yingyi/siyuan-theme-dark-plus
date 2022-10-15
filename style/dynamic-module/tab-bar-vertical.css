@@ -13,6 +13,9 @@
 .layout__center [data-type='wnd'][data-id] .layout-tab-bar {
   display: block;
 }
+.layout__center [data-type='wnd'][data-id] .layout-tab-bar .item .item__icon {
+  padding-left: 0;
+}
 .layout__center [data-type='wnd'][data-id] .layout-tab-bar .item .item__text {
   text-align: unset;
 }

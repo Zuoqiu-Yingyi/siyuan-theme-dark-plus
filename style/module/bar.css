@@ -40,6 +40,10 @@
   height: var(--custom-dock-width);
 }
 /* 👆👇 */
+#dockTop,
+#dockBottom {
+  padding: 0;
+}
 /* 👈👉 */
 #dockLeft,
 #dockRight {
@@ -85,6 +89,14 @@ div:not(#windowControls) > .toolbar__item {
 }
 /* ↑顶部工具栏↑ */
 /* ↓底部状态栏↓ */
+#status {
+  height: calc(var(--custom-dock-width) - var(--custom-dock-item-margin-width) * 2);
+}
+#status .status__msg,
 #status .status__counter {
-  line-height: var(--custom-dock-width);
+  line-height: calc(var(--custom-dock-width) - var(--custom-dock-item-margin-width) * 2);
+}
+#status .b3-tooltips {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
