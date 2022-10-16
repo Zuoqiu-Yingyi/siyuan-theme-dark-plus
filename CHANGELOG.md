@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 修复历史对话框与集市对话框的页签样式问题 | Fixed the issue of the tab style of the History dialog box and the Market dialog box.
+- 修复纵向排列选项卡后页签错位问题 | Fixed the issue of misalignment of tabs in portrait orientation.
 
 ## v1.3.4/2022-10-17
 

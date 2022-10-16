@@ -492,7 +492,7 @@ export var config = {
                     zh_CN: '反色显示',
                     other: 'Display in Inverse Color',
                 },
-                icon: '#iconMoon',
+                icon: '#iconDark',
                 index: -4,
             },
             elements: {

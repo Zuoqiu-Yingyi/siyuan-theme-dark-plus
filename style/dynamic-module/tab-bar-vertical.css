@@ -13,8 +13,11 @@
 .layout__center [data-type='wnd'][data-id] .layout-tab-bar {
   display: block;
 }
+.layout__center [data-type='wnd'][data-id] .layout-tab-bar .item .fn__flex-1:first-child {
+  display: none;
+}
 .layout__center [data-type='wnd'][data-id] .layout-tab-bar .item .item__icon {
-  padding-left: 0;
+  padding-left: 8px;
 }
 .layout__center [data-type='wnd'][data-id] .layout-tab-bar .item .item__text {
   text-align: unset;
