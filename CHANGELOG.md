@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.3.4/2022-10-17
+
+- [v1.3.3 <=> v1.3.4](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.3...v1.3.4)
 - 实现浮窗预览某个块的方法 `popover` | Implement a method `popover` to preview a block using popover window.
 - 新增自定义 CSS 变量 `--custom-template-preview-width` 与 `--custom-template-preview-min-width` 设置模板预览窗口的宽度 | Add the custom CSS variable `--custom-template-preview-width` and `--custom-template-preview-min-width` to customize the width of the template preview window.
 - 兼容删除线样式与背景/前景色样式 | Compatible with strikethrough styles and background/foreground colors.
