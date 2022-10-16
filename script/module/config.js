@@ -45,6 +45,12 @@ export var config = {
                 },
             }
         },
+        tooldock: { // 悬浮栏
+            id: 'custom-tooldock', // 悬浮栏 ID
+            class: [ // 样式类名
+                'float-tooldock',
+            ],
+        },
         toolbar: {
             // 工具栏
             id: 'custom-toolbar', // 工具栏 ID
@@ -56,15 +62,15 @@ export var config = {
                     fold: {
                         icon: '#iconFullscreen',
                         label: {
-                            zh_CN: '展开扩展工具栏',
-                            other: 'Expand the Expansion Toolbar',
+                            zh_CN: '按住拖动\n双击展开扩展工具栏',
+                            other: 'Hold Down to Drag\nDouble-click to Expand the Expansion Toolbar',
                         },
                     },
                     unfold: {
                         icon: '#iconContract',
                         label: {
-                            zh_CN: '收起扩展工具栏',
-                            other: 'Collapse the Expansion Toolbar',
+                            zh_CN: '按住拖动\n双击收起扩展工具栏',
+                            other: 'Hold Down to Drag\nDouble-click to Collapse the Expansion Toolbar',
                         },
                     },
                 },
@@ -2671,7 +2677,9 @@ try {
 export var custom = {
     theme: {
         toolbar: {
-            [config.theme.toolbar.more.id]: { default: true }, // 工具栏是否展开
+            [config.theme.toolbar.more.id]: {
+                default: true,
+            }, // 工具栏是否展开
             [config.theme.location.record.toolbar.id]: { default: false }, // 当前浏览位置
             [config.theme.menu.block.toolbar.id]: { default: false }, // 块功能增强
             [config.theme.style.itemtext.toolbar.id]: { default: false }, // 完整显示文本内容
