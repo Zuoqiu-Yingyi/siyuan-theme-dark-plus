@@ -35,6 +35,13 @@
         .item__close {
             padding: 4px !important;
 
+            // 标签栏右侧新建按钮
+            &[data-type="new"],
+            // 标签栏右侧切换按钮
+            &[data-type="more"] {
+                margin: 0 4px;
+            }
+
             svg {
                 &:hover {
                     /* 页签项关闭图标 */
