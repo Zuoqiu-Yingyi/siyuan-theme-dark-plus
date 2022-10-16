@@ -92,14 +92,11 @@
 
     /* 侧边分栏面板 */
     .file-tree {
-        .block__icons {
-            /* 面板标题 */
-            height: var(--custom-panel-title-height);
-        }
+
         &:not(.sy__file, .sy__outline) {
             .tree(12px, 12px);
         }
-        
+
         &.sy__outline {
             &:hover {
                 .tree(12px, 12px);
@@ -114,4 +111,13 @@
     //     }
     // }
 
+}
+
+/* 面板与悬浮面板标题栏 */
+.block__icons {
+    .block__popover>& {
+        /* 悬浮面板 */
+        border-radius: var(--custom-border-radius);
+    }
+    height: var(--custom-panel-title-height);
 }
