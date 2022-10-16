@@ -4,12 +4,30 @@
 // 面包屑栏
 .protyle-breadcrumb {
     /* 导航栏(面包屑) */
+    padding: 0;
     background-color: var(--custom-editor-breadcrumb-bar-background-color);
     /* box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5); */
+
+    .block__icon {
+        /* 更多按钮 */
+        margin-left: 4px;
+        margin-right: 6px;
+        padding: 4px;
+
+        >svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
 }
 
 // 面包屑
 .protyle-breadcrumb__bar {
+
+    // 编辑器面包屑
+    .protyle-breadcrumb & {
+        margin: 0 8px;
+    }
 
     // 反链面板面包屑
     .protyle-wysiwyg &,

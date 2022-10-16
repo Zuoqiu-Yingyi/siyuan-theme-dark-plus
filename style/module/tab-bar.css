@@ -30,6 +30,10 @@
 .layout-tab-bar .item .item__close {
   padding: 4px !important;
 }
+.layout-tab-bar .item .item__close[data-type="new"],
+.layout-tab-bar .item .item__close[data-type="more"] {
+  margin: 0 4px;
+}
 .layout-tab-bar .item .item__close svg:hover {
   /* 页签项关闭图标 */
   color: var(--b3-theme-surface);
