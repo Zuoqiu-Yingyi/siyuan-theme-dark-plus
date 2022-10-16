@@ -69,7 +69,8 @@
     .b3-list-item {
         /* 菜单项 */
         margin: 0 !important;
-        border-radius: 0;
+        // border-radius: 0;
+        border-radius: var(--custom-border-radius);
     }
 
     // '/' 菜单
@@ -87,7 +88,7 @@
         box-sizing: border-box;
     }
 
-    &.b3-menu.hint--menu {
+    &.hint--menu {
         /* '/' 菜单 */
         column-count: 4;
         column-gap: 1em;
@@ -95,6 +96,10 @@
         // column-fill: auto;
         // height: 32em !important;
         max-height: none !important;
+
+        >.b3-list-item {
+            width: 100% !important;
+        }
 
         >.emojis {
             /* 表情菜单 */
@@ -108,7 +113,7 @@
 
             &:first-of-type {
                 /* 第1条分割线 */
-                height: 35px;
+                height: 34px;
                 background-color: transparent;
 
                 +button {
@@ -156,8 +161,9 @@
 
             &:nth-of-type(4) {
                 /* 第4条分割线 */
-                height: 0;
-                background-color: transparent;
+                display: none;
+                // height: 0;
+                // background-color: transparent;
             }
         }
 

@@ -114,10 +114,6 @@
   /* 侧边分栏面板 */
   /* 文档树面板(影响定位当前文档) */
 }
-[data-type='wnd'][data-id] .file-tree .block__icons {
-  /* 面板标题 */
-  height: var(--custom-panel-title-height);
-}
 [data-type='wnd'][data-id] .file-tree:not(.sy__file, .sy__outline) ul {
   position: relative;
   top: 0;
@@ -333,4 +329,12 @@
 }
 [data-type='wnd'][data-id] .file-tree.sy__outline:hover ul.b3-list ul:hover::before {
   background-color: var(--b3-theme-primary-lighter);
+}
+/* 面板与悬浮面板标题栏 */
+.block__icons {
+  height: var(--custom-panel-title-height);
+}
+.block__popover > .block__icons {
+  /* 悬浮面板 */
+  border-radius: var(--custom-border-radius);
 }
