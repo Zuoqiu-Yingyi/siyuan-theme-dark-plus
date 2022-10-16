@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 修复历史对话框与集市对话框的页签样式问题 | Fixed the issue of the tab style of the History dialog box and the Market dialog box.
+
 ## v1.3.4/2022-10-17
 
 - [v1.3.3 <=> v1.3.4](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.3...v1.3.4)
