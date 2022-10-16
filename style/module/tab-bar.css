@@ -57,7 +57,7 @@
   /* 非钉住的页签项 */
   min-width: var(--custom-tab-bar-item-min-width);
 }
-.layout-tab-bar .item:not(.item--pin) .item__text:not(span:last-child) {
+.layout-tab-bar .item:not(.item--pin) .item__text:not(span:nth-last-of-type(2)) {
   /* 非钉住标签的非末尾项页签项文本 */
   padding-right: 0;
 }
