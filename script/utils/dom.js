@@ -25,6 +25,8 @@ export {
     enableProtyle, // 解除编辑器禁用
     setDockState, // 设置侧边栏状态
     countElementIndex, // 计算当前节点是上级节点的第几个节点
+    getTooltipDirection, // 计算当前节点应使用的提示方向
+    setTooltipDirection, // 设置提示信息朝向方向
 };
 
 import { url2id } from './misc.js';
@@ -633,4 +635,72 @@ function countElementIndex(element, classList = []) {
         }
         return index;
     }
+}
+
+/**
+ * 计算当前节点应使用的提示信息的朝向
+ * @params {int} left: 横坐标
+ * @params {int} top: 纵坐标
+ * @return {string}: 提示标签方向类
+ */
+function getTooltipDirection(left, top) {
+    const threshold_w = 1 * document.body.offsetWidth / 3;
+    const threshold_e = 2 * document.body.offsetWidth / 3;
+    const threshold_n = 1 * document.body.offsetHeight / 3;
+    const threshold_s = 2 * document.body.offsetHeight / 3;
+    let tooltips_class;
+    switch (true) {
+        case top < threshold_n && left < threshold_w:
+            tooltips_class = 'b3-tooltips__se';
+            break;
+        case top < threshold_n && left >= threshold_w && left <= threshold_e:
+            tooltips_class = 'b3-tooltips__s';
+            break;
+        case top < threshold_n && left > threshold_e:
+            tooltips_class = 'b3-tooltips__sw';
+            break;
+        case top >= threshold_n && top <= threshold_s && left < threshold_w:
+            tooltips_class = 'b3-tooltips__e';
+            break;
+        case top >= threshold_n && top <= threshold_s && left >= threshold_w && left <= threshold_e:
+            tooltips_class = 'b3-tooltips__s';
+            break;
+        case top >= threshold_n && top <= threshold_s && left > threshold_e:
+            tooltips_class = 'b3-tooltips__w';
+            break;
+        case top > threshold_s && left < threshold_w:
+            tooltips_class = 'b3-tooltips__ne';
+            break;
+        case top > threshold_s && left >= threshold_w && left <= threshold_e:
+            tooltips_class = 'b3-tooltips__n';
+            break;
+        case top > threshold_s && left > threshold_e:
+            tooltips_class = 'b3-tooltips__nw';
+            break;
+        default:
+            break;
+    }
+    return tooltips_class;
+}
+
+/**
+ * 设置提示信息朝向方向
+ * @params {string} classname: 标签类名
+ * @params {array} items: DOM 元素数组
+ */
+function setTooltipDirection(classname, ...items) {
+    const tooltips_class_list = [
+        'b3-tooltips__nw',
+        'b3-tooltips__n',
+        'b3-tooltips__ne',
+        'b3-tooltips__e',
+        'b3-tooltips__se',
+        'b3-tooltips__s',
+        'b3-tooltips__sw',
+        'b3-tooltips__w',
+    ];
+    items.forEach(item => {
+        item.classList.remove(...tooltips_class_list);
+        item.classList.add(classname);
+    });
 }

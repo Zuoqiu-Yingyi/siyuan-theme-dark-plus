@@ -83,26 +83,65 @@ function compareVersion(version1, version2) {
     let v1_arr = version1.split('.');
     let v2_arr = version2.split('.');
     for (let i = 0; i < v1_arr.length; i++) {
+        let v1_str = v1_arr[i];
+        let v2_str = v2_arr[i];
+        let v1_int = parseInt(v1_str);
+        let v2_int = parseInt(v2_str);
         let v1, v2;
-        if (!isNaN(v1_arr[i]) && !isNaN(v2_arr[i])) { // 两者都为数字
-            v1 = parseInt(v1_arr[i]);
-            v2 = parseInt(v2_arr[i]);
+        if (!isNaN(v1_str) && !isNaN(v2_str)) { // 两者都为数字
+            v1 = v1_int;
+            v2 = v2_int;
         }
         else if (!isNaN(v1_arr[i]) || !isNaN(v2_arr[i])) { // 其中一者为数字
-            v1 = v1_arr[i];
-            v2 = v2_arr[i];
-            if (v1 == undefined || v2 == undefined) // 其中一者没有更细分的版本号
-                return 0;
-            else if (!isNaN(v1) && isNaN(v2)) // v1 是发行版 | v2 是内测(x-alphaX)/公测(x-betaX)/开发版(x-devX)
+            if (v1_int !== v2_int) { // 版本号不一致
+                v1 = v1_int;
+                v2 = v2_int;
+            }
+            else if (!isNaN(v1_str) && isNaN(v2_str)) // v1 是正式版 | v2 是内测(x-alphaX)/公测(x-betaX)/开发版(x-devX)
                 return 1;
-            else if (isNaN(v1) && !isNaN(v2)) // v2 是发行版 | v1 是内测(x-alphaX)/公测(x-betaX)/开发版(x-devX)
+            else if (isNaN(v1_str) && !isNaN(v2_str)) // v2 是正式版 | v1 是内测(x-alphaX)/公测(x-betaX)/开发版(x-devX)
                 return -1;
             else // 意外的情况
                 return 0;
         }
-        else { // 都不为数字, 比较字符串, 内测版(alpha) < 公测版(beta) < 开发版(dev)版本号小
-            v1 = v1_arr[i];
-            v2 = v2_arr[i];
+        else { // 都不为数字, 比较字符串, 开发版(dev) < 内测版(alpha) < 公测版(beta)版本号小
+            if (v1_int !== v2_int) { // 版本号不一致
+                v1 = v1_int;
+                v2 = v2_int;
+            } else { // 版本号一致, 通过后缀判断
+                switch (true) {
+                    case v1_str.includes('-dev'):
+                        v1 = 1;
+                        break;
+                    case v1_str.includes('-alpha'):
+                        v1 = 2;
+                        break;
+                    case v1_str.includes('-beta'):
+                        v1 = 3;
+                        break;
+                    default:
+                        v1 = 0
+                        break;
+                }
+                switch (true) {
+                    case v2_str.includes('-dev'):
+                        v2 = 1;
+                        break;
+                    case v2_str.includes('-alpha'):
+                        v2 = 2;
+                        break;
+                    case v2_str.includes('-beta'):
+                        v2 = 3;
+                        break;
+                    default:
+                        v2 = 0
+                        break;
+                }
+                if (v1 === v2) { // 后缀也相同, 比较字符串大小
+                    v1 = v1_str;
+                    v2 = v2_str;
+                }
+            }
         }
         switch (true) {
             case v1 > v2:
@@ -111,7 +150,7 @@ function compareVersion(version1, version2) {
                 return -1;
             case v1 === v2:
             default:
-                break;
+                continue;
         }
     }
     return 0;

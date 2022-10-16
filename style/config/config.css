@@ -179,6 +179,9 @@
     --custom-quote-l: "⸢";
     --custom-quote-r: "⸥";
 
+    /* 最大高度层级 */
+    --custom-z-index-max: 2147483647;
+
     /* 背景图片 | Background image */
     --custom-background-image: url("/appearance/themes/Dark+/image/background (05).jpg");
     /* 背景颜色 | Background color */

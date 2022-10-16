@@ -104,6 +104,9 @@
 /* 预览窗口 */
 @import url(/appearance/themes/Dark+/style/module/viewer-image.css);
 
+/* 自定义元素样式 */
+@import url(/appearance/themes/Dark+/style/module/element.css);
+
 /* 配置文件 */
 @import url(/appearance/themes/Dark+/style/config/config.css);
 
