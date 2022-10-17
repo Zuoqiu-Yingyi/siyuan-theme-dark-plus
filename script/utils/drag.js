@@ -23,7 +23,7 @@ class Drag {
             },
         };
         /* 获得鼠标位置 */
-        document.addEventListener("mousemove",
+        window.addEventListener("mousemove",
             e => {
                 this.status.mouse.position.x = e.pageX;
                 this.status.mouse.position.y = e.pageY;
@@ -130,7 +130,7 @@ class Drag {
 
             this.dragMousedown(e, stage, eventHandler);
         });
-        draggable.addEventListener("mouseup", e => {
+        draggable.addEventListener("mouseup", e => { // 松开按键结束拖拽
             /* 取消其他默认事件处理 */
             e.preventDefault();
             e.stopPropagation();
@@ -139,6 +139,11 @@ class Drag {
             this.dragMouseup(e, stage, eventHandler);
             if (typeof final === 'function') final(this);
         });
+        stage.addEventListener('mouseleave', e => { // 鼠标移出拖拽区域结束拖拽
+            this.status.flags.dragging = false;
+            this.dragMouseup(e, stage, eventHandler);
+            if (typeof final === 'function') final(this);
+        }, false);
     }
 }
 export const drag = new Drag();

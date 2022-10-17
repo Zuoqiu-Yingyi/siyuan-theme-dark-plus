@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 调整页签按钮样式 | Adjusted the style of tab bar button.
+- 鼠标移出窗口时结束拖拽 | End dragging when the mouse moves out of the window.
 
 ## v1.3.5/2022-10-17
 
