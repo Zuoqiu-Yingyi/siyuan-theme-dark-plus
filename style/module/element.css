@@ -1,4 +1,8 @@
 /* 自定义元素 */
+/* 拖拽按钮 */
+#custom-toolbar-more {
+  cursor: move;
+}
 /* 自定义悬浮菜单栏 */
 .float-tooldock {
   position: absolute;
