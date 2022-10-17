@@ -112,7 +112,6 @@ function toolbarItemListPush(item) {
     let toolbar = document.getElementById('toolbar');
     let windowControls = document.getElementById('windowControls');
     let custom_toolbar = document.getElementById(config.theme.toolbar.id);
-    let item_count = 0;
 
     if (window.theme.clientMode !== 'mobile' && toolbar) {
         if (!custom_toolbar) {
@@ -168,12 +167,12 @@ function toolbarItemListPush(item) {
                          * 且在事件捕获时处理
                          * 因此当前处理完成后即可调用
                          */
-                        drag.dragRegister(
+                        drag.register(
                             more,
                             custom_tooldock,
-                            document.body,
-                            drag.handler.dragMove,
-                            (..._) => { // 使用预处理方法调整宽度
+                            document.documentElement,
+                            drag.handler.move,
+                            (e, that, ..._) => { // 使用预处理方法调整宽度
                                 let multiple = 1;
                                 if (custom_toolbar.style.display !== 'none') { // 已展开
                                     if (custom_tooldock.offsetLeft <= 0) {
@@ -183,12 +182,13 @@ function toolbarItemListPush(item) {
                                     else {
                                         /* 遇到右边界时压缩宽度 */
                                         const item_count = custom_tooldock.querySelectorAll('.toolbar__item').length;
+                                        const x = e.clientX - that.status.drag.position.x;
                                         multiple = Math.min(
                                             item_count,
                                             Math.max(
                                                 1,
                                                 Math.floor(
-                                                    (document.body.offsetWidth - custom_tooldock.offsetLeft - 1)
+                                                    (document.body.offsetWidth - x - 1)
                                                     / (more.offsetWidth + more.offsetLeft * 2)
                                                 ),
                                             ),
@@ -209,7 +209,7 @@ function toolbarItemListPush(item) {
                                     getTooltipDirection(left, top),
                                     ...custom_tooldock.querySelectorAll('.toolbar__item'),
                                 );
-                            }
+                            },
                         );
                     },
                     {
