@@ -34,7 +34,7 @@
 .layout-tab-bar .item .item__close[data-type="more"] {
   margin: 0 4px;
 }
-.layout-tab-bar .item .item__close svg:hover {
+.layout-tab-bar .item .item__close:hover svg {
   /* 页签项关闭图标 */
   color: var(--b3-theme-surface);
   background-color: var(--b3-theme-on-surface);
@@ -74,4 +74,8 @@
 .layout-tab-bar .item:last-child:not(.item--readonly) {
   /* 移除控件与文档页签之间的距离 */
   margin: 0;
+}
+.layout-tab-bar .item.item--readonly {
+  /* 移除控件组内边距 */
+  padding: 0;
 }

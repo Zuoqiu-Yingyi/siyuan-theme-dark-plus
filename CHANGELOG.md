@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 调整页签按钮样式 | Adjusted the style of tab bar button.
+
 ## v1.3.5/2022-10-17
 
 - [v1.3.4 <=> v1.3.5](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.4...v1.3.5)
