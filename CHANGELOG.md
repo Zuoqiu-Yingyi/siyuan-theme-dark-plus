@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.3.5/2022-10-17
+
+- [v1.3.4 <=> v1.3.5](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.4...v1.3.5)
 - 修复历史对话框与集市对话框的页签样式问题 | Fixed the issue of the tab style of the History dialog box and the Market dialog box.
 - 修复纵向排列选项卡后页签错位问题 | Fixed the issue of misalignment of tabs in portrait orientation.
 - 调整页签按钮样式 | Adjusted the style of tab bar button.
