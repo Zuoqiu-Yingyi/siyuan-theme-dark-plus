@@ -23,14 +23,16 @@ class Drag {
             },
         };
         /* 获得鼠标位置 */
-        document.addEventListener("mousemove", e => {
-            /* 取消其他默认事件处理 */
-            e.preventDefault();
-            e.stopPropagation();
-
-            this.status.mouse.position.x = e.pageX;
-            this.status.mouse.position.y = e.pageY;
-        });
+        document.addEventListener("mousemove",
+            e => {
+                this.status.mouse.position.x = e.pageX;
+                this.status.mouse.position.y = e.pageY;
+            },
+            {
+                capture: true,
+                passive: true,
+            },
+        );
 
         this.handler = {
             /**
