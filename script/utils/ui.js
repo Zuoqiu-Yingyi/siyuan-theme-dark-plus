@@ -126,6 +126,14 @@ function toolbarItemListPush(item) {
             divider_before.className = 'protyle-toolbar__divider';
             divider_after.className = 'protyle-toolbar__divider';
 
+            /* 将自定义工具栏添加到自定义悬浮菜单栏中 */
+            const custom_tooldock = document.createElement('div');
+            custom_tooldock.id = config.theme.tooldock.id;
+
+            /* 重置工具栏按钮 */
+            const reset = createToolbarItem(config.theme.tooldock.reset);
+            reset.style.display = 'none'; // 默认隐藏
+
             /* 更多按钮 */
             const more = createToolbarItem(config.theme.toolbar.more);
             more.addEventListener('dblclick', e => {
@@ -135,16 +143,46 @@ function toolbarItemListPush(item) {
 
                 // if (drag.status.flags.dragging) return; // 拖拽时忽略点击事件(无效)
                 let status, language = window.theme.languageMode;
+                const rect = more.getBoundingClientRect();
                 if (custom_toolbar.style.display === 'none') {
+                    /* 重新更改定位 */
+                    custom_tooldock.style.left = `${100 * (rect.x - more.offsetLeft) / document.documentElement.offsetWidth}vw`;
+                    custom_tooldock.style.top = `${100 * (rect.y - more.offsetTop) / document.documentElement.offsetHeight}vh`;;
+                    custom_tooldock.style.right = null;
+                    custom_tooldock.style.bottom = null;
+
                     // 显示自定义工具栏
                     status = config.theme.toolbar.more.status.unfold
                     custom_toolbar.style.display = null;
                     custom.theme.toolbar[config.theme.toolbar.more.id].fold = false;
                 }
                 else {
+                    /* 重新更改定位 */
+                    const x_center = (rect.x + rect.width / 2) / document.documentElement.offsetWidth;
+                    const y_center = (rect.y + rect.height / 2) / document.documentElement.offsetHeight;
+                    if (x_center < 0.5) {
+                        custom_tooldock.style.right = null;
+                        custom_tooldock.style.left = `${100 * (rect.x - more.offsetLeft) / document.documentElement.offsetWidth}vw`;
+                    }
+                    else {
+                        custom_tooldock.style.left = null;
+                        custom_tooldock.style.right = `${100 - (100 * (rect.x + rect.width + more.offsetLeft) / document.documentElement.offsetWidth)}vw`;
+                    }
+                    if (y_center < 0.5) {
+                        custom_tooldock.style.bottom = null;
+                        custom_tooldock.style.top = `${100 * (rect.y - more.offsetTop) / document.documentElement.offsetHeight}vh`;
+                    }
+                    else {
+                        custom_tooldock.style.top = null;
+                        custom_tooldock.style.bottom = `${100 - (100 * (rect.y + rect.height + more.offsetTop) / document.documentElement.offsetHeight)}vh`;;
+                    }
+
+                    custom_tooldock.style.width = `calc(var(--custom-dock-width) * 1)`;
+                    custom_tooldock.style.height = null;
+
                     // 隐藏自定义工具栏
-                    status = config.theme.toolbar.more.status.fold
                     custom_toolbar.style.display = 'none';
+                    status = config.theme.toolbar.more.status.fold
                     custom.theme.toolbar[config.theme.toolbar.more.id].fold = true;
                 }
                 // more.setAttribute('aria-label', status.label[language] || status.label.other);
@@ -153,14 +191,6 @@ function toolbarItemListPush(item) {
                 more.firstChild.firstChild.setAttribute('xlink:href', status.icon);
                 setTimeout(async () => saveCustomFile(custom), 0);
             }, true);
-
-            /* 将自定义工具栏添加到自定义悬浮菜单栏中 */
-            const custom_tooldock = document.createElement('div');
-            custom_tooldock.id = config.theme.tooldock.id;
-
-            /* 重置工具栏按钮 */
-            const reset = createToolbarItem(config.theme.tooldock.reset);
-            reset.style.display = 'none'; // 默认隐藏
 
             /* 悬浮事件处理 */
             function float(..._) {
