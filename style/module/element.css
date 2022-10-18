@@ -2,6 +2,7 @@
 /* 拖拽按钮 */
 #custom-toolbar-more {
   cursor: move;
+  -webkit-app-region: no-drag;
 }
 /* 自定义悬浮菜单栏 */
 .float-tooldock {
