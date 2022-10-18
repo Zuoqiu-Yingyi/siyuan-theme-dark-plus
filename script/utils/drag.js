@@ -135,8 +135,9 @@ class Drag {
 
         this.status.flags.dragging = true; // 正在拖拽
         /* 记录鼠标与窗口的相对位置 */
-        this.status.drag.position.x = e.clientX - target.offsetLeft; // 鼠标相对于子窗口左上角的横向偏移量(鼠标横坐标 - this.status 的 左侧偏移量)
-        this.status.drag.position.y = e.clientY - target.offsetTop; // 鼠标相对于子窗口左上角的纵向偏移量(鼠标纵坐标 - this.status 的 上侧偏移量)
+        const rect = target.getBoundingClientRect();
+        this.status.drag.position.x = e.clientX - rect.left; // 鼠标相对于子窗口左上角的横向偏移量(鼠标横坐标 - this.status 的 左侧偏移量)
+        this.status.drag.position.y = e.clientY - rect.top; // 鼠标相对于子窗口左上角的纵向偏移量(鼠标纵坐标 - this.status 的 上侧偏移量)
         this.status.drag.size.width = target.offsetWidth; // 窗口宽度
         this.status.drag.size.height = target.offsetHeight; // 窗口高度
 
