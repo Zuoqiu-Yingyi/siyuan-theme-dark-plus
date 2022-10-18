@@ -1,4 +1,12 @@
 /* 对话框 */
+#keymapList .b3-list--border > ul ul::before {
+  left: -53px;
+  border-left: var(--custom-list-guides-line-width) solid var(--custom-list-guides-line-color);
+}
+#keymapList .b3-list--border > ul li::before {
+  left: -19px;
+  border-left: var(--custom-list-guides-line-width) solid var(--custom-list-guides-line-color);
+}
 .b3-dialog__container {
   /* 对话框图片 */
   background-image: var(--custom-background-image-dialog);
