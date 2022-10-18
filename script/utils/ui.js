@@ -100,7 +100,7 @@ function itemStateLoad(id, states, node) {
         // 存在自定义配置
         const conf = states[id];
         // console.log(conf, conf.state, conf.state == null);
-        const state = conf.state == null ? conf.default : conf.state;
+        const state = conf.state ?? conf.default ?? false;
         // console.log(state);
         if (state) setTimeout(() => node.click(), 0);
     }
@@ -109,146 +109,215 @@ function itemStateLoad(id, states, node) {
 /* 工具栏添加 */
 function toolbarItemListPush(item) {
     toolbarItemList.push(item);
-    let toolbar = document.getElementById('toolbar');
-    let windowControls = document.getElementById('windowControls');
-    let custom_toolbar = document.getElementById(config.theme.toolbar.id);
+    const toolbar = document.getElementById('toolbar');
+    const windowControls = document.getElementById('windowControls');
+    var custom_toolbar = document.getElementById(config.theme.toolbar.id);
 
     if (window.theme.clientMode !== 'mobile' && toolbar) {
         if (!custom_toolbar) {
             /* 自定义工具栏按钮的容器 */
             custom_toolbar = document.createElement('div');
             custom_toolbar.id = config.theme.toolbar.id;
-            custom_toolbar.className = 'fn__flex';
             custom_toolbar.style.display = 'none';
 
+            /* 分割线 */
+            const divider_before = document.createElement('div');
+            const divider_after = document.createElement('div');
+            divider_before.className = 'protyle-toolbar__divider';
+            divider_after.className = 'protyle-toolbar__divider';
+
             /* 更多按钮 */
-            let more = createToolbarItem(config.theme.toolbar.more);
-            more.addEventListener('dblclick', () => {
+            const more = createToolbarItem(config.theme.toolbar.more);
+            more.addEventListener('dblclick', e => {
+                /* 取消其他默认事件处理 */
+                e.preventDefault();
+                e.stopPropagation();
+
                 // if (drag.status.flags.dragging) return; // 拖拽时忽略点击事件(无效)
                 let status, language = window.theme.languageMode;
                 if (custom_toolbar.style.display === 'none') {
                     // 显示自定义工具栏
                     status = config.theme.toolbar.more.status.unfold
                     custom_toolbar.style.display = null;
-                    // custom.theme.toolbar[config.theme.toolbar.more.id].state = true;
+                    custom.theme.toolbar[config.theme.toolbar.more.id].fold = false;
                 }
                 else {
                     // 隐藏自定义工具栏
                     status = config.theme.toolbar.more.status.fold
                     custom_toolbar.style.display = 'none';
-                    // custom.theme.toolbar[config.theme.toolbar.more.id].state = false;
+                    custom.theme.toolbar[config.theme.toolbar.more.id].fold = true;
                 }
                 // more.setAttribute('aria-label', status.label[language] || status.label.other);
                 more.ariaLabel = status.label[language] || status.label.other;
                 // more.title = status.label[language] || status.label.other;
                 more.firstChild.firstChild.setAttribute('xlink:href', status.icon);
-                // setTimeout(async () => saveCustomFile(custom), 0);
-            });
+                setTimeout(async () => saveCustomFile(custom), 0);
+            }, true);
 
-            if (compareVersion(window.theme.kernelVersion, '2.4.0') > 0) {
-                /* 将自定义工具栏添加到自定义悬浮菜单栏中 */
-                let custom_tooldock = document.createElement('div');
-                custom_tooldock.id = config.theme.tooldock.id;
+            /* 将自定义工具栏添加到自定义悬浮菜单栏中 */
+            const custom_tooldock = document.createElement('div');
+            custom_tooldock.id = config.theme.tooldock.id;
 
-                /* 悬浮 */
+            /* 重置工具栏按钮 */
+            const reset = createToolbarItem(config.theme.tooldock.reset);
+            reset.style.display = 'none'; // 默认隐藏
+
+            /* 悬浮事件处理 */
+            function float(..._) {
+                custom_tooldock.style.top = `${custom_tooldock.offsetTop}px`;
+                custom_tooldock.style.left = `${custom_tooldock.offsetLeft}px`;
+                custom_tooldock.classList.add(...config.theme.tooldock.classes);
+                reset.style.display = null; // 显示重置工具栏按钮
+                custom.theme.toolbar[config.theme.toolbar.more.id].state = true;
+                setTimeout(async () => saveCustomFile(custom), 0);
+            };
+
+            /* 悬浮工具栏 */
+            custom_tooldock.addEventListener(
+                'mousedown',
+                float,
+                {
+                    capture: true,
+                    once: true,
+                },
+            );
+
+            /* 重置工具栏 */
+            reset.addEventListener('click', () => {
+                /* 若工具栏是展开的, 则折叠工具栏 */
+                if (custom_toolbar.style.display !== 'none') {
+                    more.dispatchEvent(new Event('dblclick'));
+                }
+                reset.style.display = 'none'; // 隐藏重置按钮
+
+                /* 删除样式 */
+                custom_tooldock.style.left = null;
+                custom_tooldock.style.right = null;
+                custom_tooldock.style.top = null;
+                custom_tooldock.style.bottom = null;
+                custom_tooldock.style.width = null;
+                custom_tooldock.style.height = null;
+
+                /* 移除工具栏悬浮类 */
+                custom_tooldock.classList.remove(...config.theme.tooldock.classes);
+
+                /* 点击后再次悬浮功能 */
                 custom_tooldock.addEventListener(
                     'mousedown',
-                    e => {
-                        custom_tooldock.style.top = `${custom_tooldock.offsetTop}px`;
-                        custom_tooldock.style.left = `${custom_tooldock.offsetLeft}px`;
-                        custom_toolbar.classList.remove('fn__flex');
-                        custom_tooldock.classList.add(...config.theme.tooldock.class);
-
-                        /* 恢复至原来的相对位置 */
-
-                        /**注册鼠标拖动事件
-                         * 由于该事件注册在当前节点的子节点处
-                         * 且同为 mousedown 事件
-                         * 且在事件捕获时处理
-                         * 因此当前处理完成后即可调用
-                         */
-                        drag.register(
-                            more,
-                            custom_tooldock,
-                            document.documentElement,
-                            drag.handler.move,
-                            (e, that, ..._) => { // 使用预处理方法调整宽度
-                                let multiple = 1;
-                                if (custom_toolbar.style.display !== 'none') { // 已展开
-                                    if (custom_tooldock.offsetLeft <= 0) {
-                                        /* 遇到左边界时压缩宽度 */
-                                        multiple = 1;
-                                    }
-                                    else {
-                                        /* 遇到右边界时压缩宽度 */
-                                        const item_count = custom_tooldock.querySelectorAll('.toolbar__item').length;
-                                        const x = e.clientX - that.status.drag.position.x;
-                                        multiple = Math.min(
-                                            item_count,
-                                            Math.max(
-                                                1,
-                                                Math.floor(
-                                                    (document.body.offsetWidth - x - 1)
-                                                    / (more.offsetWidth + more.offsetLeft * 2)
-                                                ),
-                                            ),
-                                        );
-                                    }
-                                }
-                                else { // 已折叠
-                                    multiple = 1;
-                                }
-                                custom_tooldock.style.width = `calc(var(--custom-dock-width) * ${multiple})`;
-                            },
-                            undefined,
-                            (..._) => { // 使用拖动完成回调方法调整提示标签
-                                const top = custom_tooldock.offsetTop + custom_tooldock.offsetHeight / 2;
-                                const left = custom_tooldock.offsetLeft + custom_tooldock.offsetWidth / 2;
-                                // let tooltips_class = getTooltipDirection(left, top);
-                                setTooltipDirection(
-                                    getTooltipDirection(left, top),
-                                    ...custom_tooldock.querySelectorAll('.toolbar__item'),
-                                );
-                            },
-                        );
-                    },
+                    float,
                     {
                         capture: true,
                         once: true,
                     },
                 );
 
-                /* 添加自定义工具按钮 */
-                custom_tooldock.appendChild(more);
-                custom_tooldock.appendChild(custom_toolbar);
+                /* 保存状态 */
+                custom.theme.toolbar[config.theme.toolbar.more.id].state = false;
+                setTimeout(async () => saveCustomFile(custom), 0);
+            });
 
-                /* 添加到界面 */
+            /**注册鼠标拖动事件
+             * 由于该事件注册在当前节点的子节点处
+             * 且同为 mousedown 事件
+             * 且在事件捕获时处理
+             * 因此当前处理完成后即可调用
+             */
+            drag.register(
+                more,
+                custom_tooldock,
+                document.documentElement,
+                drag.handler.move,
+                (e, that, ..._) => { // 使用预处理方法调整宽度
+                    let multiple = 1;
+                    if (custom_toolbar.style.display !== 'none') { // 已展开
+                        if (custom_tooldock.offsetLeft <= 0) {
+                            /* 遇到左边界时压缩宽度 */
+                            multiple = 1;
+                        }
+                        else {
+                            /* 遇到右边界时压缩宽度 */
+                            const item_count = custom_tooldock.querySelectorAll('.toolbar__item').length;
+                            const x = e.clientX - that.status.drag.position.x;
+                            multiple = Math.min(
+                                item_count,
+                                Math.max(
+                                    1,
+                                    Math.floor(
+                                        (document.body.offsetWidth - x - 1)
+                                        / (more.offsetWidth + more.offsetLeft * 2)
+                                    ),
+                                ),
+                            );
+                        }
+                    }
+                    else { // 已折叠
+                        multiple = 1;
+                    }
+                    custom_tooldock.style.width = `calc(var(--custom-dock-width) * ${multiple})`;
+                },
+                undefined,
+                (..._) => { // 拖动完成回调方法
+                    /* 调整提示标签 */
+                    setTooltipDirection(
+                        getTooltipDirection,
+                        ...custom_tooldock.querySelectorAll('.toolbar__item'),
+                    );
+
+                    /* 保存当前位置 */
+                    localStorage.setItem(config.theme.tooldock.key, JSON.stringify({
+                        position: {
+                            left: custom_tooldock.style.left,
+                            right: custom_tooldock.style.right,
+                            top: custom_tooldock.style.top,
+                            bottom: custom_tooldock.style.bottom,
+                            width: custom_tooldock.style.width,
+                            height: custom_tooldock.style.height,
+                        },
+                    }));
+
+                },
+            );
+
+            /* 添加自定义工具按钮至浮动工具栏 */
+            custom_tooldock.appendChild(more);
+            custom_tooldock.appendChild(custom_toolbar);
+
+            /* 添加到界面 */
+            if (windowControls) {
+                toolbar.insertBefore(divider_before, windowControls);
+                toolbar.insertBefore(reset, windowControls);
                 toolbar.insertBefore(custom_tooldock, windowControls);
+                if (windowControls.childElementCount > 0) // 存在窗口控制按钮, 插入分割线
+                    toolbar.insertBefore(divider_after, windowControls);
             }
             else {
-                /* 分割线 */
-                let divider_before = document.createElement('div');
-                let divider_after = document.createElement('div');
-                divider_before.className = 'protyle-toolbar__divider';
-                divider_after.className = 'protyle-toolbar__divider';
+                toolbar.appendChild(divider_before);
+                toolbar.appendChild(reset);
+                toolbar.appendChild(custom_tooldock);
+            }
 
-                itemStateLoad(config.theme.toolbar.more.id, custom.theme.toolbar, more);
-
-                if (windowControls) {
-                    toolbar.insertBefore(divider_before, windowControls);
-                    toolbar.insertBefore(more, windowControls);
-                    toolbar.insertBefore(custom_toolbar, windowControls);
-                    if (windowControls.childElementCount > 0) // 存在窗口控制按钮, 插入分割线
-                        toolbar.insertBefore(divider_after, windowControls);
-                }
-                else {
-                    toolbar.appendChild(divider_before);
-                    toolbar.appendChild(more);
-                    toolbar.appendChild(custom_toolbar);
+            /* 恢复状态 */
+            const conf = custom.theme.toolbar[config.theme.toolbar.more.id];
+            const state = conf?.state
+                ?? conf?.default
+                ?? false;
+            if (state) {
+                const position = JSON.parse(localStorage.getItem(config.theme.tooldock.key))?.position;
+                if (position) {
+                    float(); // 悬浮
+                    if (!conf.fold) more.dispatchEvent(new Event('dblclick')); // 展开
+                    /* 设置位置 */
+                    custom_tooldock.style.left = position.left;
+                    custom_tooldock.style.right = position.right;
+                    custom_tooldock.style.top = position.top;
+                    custom_tooldock.style.bottom = position.bottom;
+                    custom_tooldock.style.width = position.width;
+                    custom_tooldock.style.height = position.height;
                 }
             }
         }
 
+        /* 工具栏按钮排序 */
         toolbarItemList = toolbarItemList.sort((a, b) => a.index - b.index);
         for (let item of toolbarItemList) {
             if (item.display) {
@@ -258,6 +327,7 @@ function toolbarItemListPush(item) {
         }
     }
 
+    /* 恢复保存的状态 */
     itemStateLoad(item.id, custom.theme.toolbar, item.node);
 }
 

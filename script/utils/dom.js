@@ -639,15 +639,18 @@ function countElementIndex(element, classList = []) {
 
 /**
  * 计算当前节点应使用的提示信息的朝向
- * @params {int} left: 横坐标
- * @params {int} top: 纵坐标
+ * @params {HTMLElement} element: 当前节点
  * @return {string}: 提示标签方向类
  */
-function getTooltipDirection(left, top) {
-    const threshold_w = 1 * document.body.offsetWidth / 3;
-    const threshold_e = 2 * document.body.offsetWidth / 3;
-    const threshold_n = 1 * document.body.offsetHeight / 3;
-    const threshold_s = 2 * document.body.offsetHeight / 3;
+function getTooltipDirection(element) {
+    const rect = element.getBoundingClientRect();
+    const left = rect.left + rect.width / 2;
+    const top = rect.top + rect.height / 2;
+
+    const threshold_w = 1 * document.documentElement.offsetWidth / 3;
+    const threshold_e = 2 * document.documentElement.offsetWidth / 3;
+    const threshold_n = 1 * document.documentElement.offsetHeight / 3;
+    const threshold_s = 2 * document.documentElement.offsetHeight / 3;
     let tooltips_class;
     switch (true) {
         case top < threshold_n && left < threshold_w:
@@ -685,7 +688,7 @@ function getTooltipDirection(left, top) {
 
 /**
  * 设置提示信息朝向方向
- * @params {string} classname: 标签类名
+ * @params {function} classname: 获得元素的标签类名
  * @params {array} items: DOM 元素数组
  */
 function setTooltipDirection(classname, ...items) {
@@ -701,6 +704,6 @@ function setTooltipDirection(classname, ...items) {
     ];
     items.forEach(item => {
         item.classList.remove(...tooltips_class_list);
-        item.classList.add(classname);
+        item.classList.add(classname(item));
     });
 }
