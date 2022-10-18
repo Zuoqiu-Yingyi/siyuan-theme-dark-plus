@@ -19,12 +19,14 @@ class Drag {
 
         this.handler = {
             /**
-             * 拖拽移动事件处理
+             * 拖拽事件处理方法
              * @params {Event} e: 鼠标事件
              * @params {HTMLElement} draggable: 可拖拽的区域
              * @params {HTMLElement} target: 操作的目标元素
-             * @params {HTMLElement} stage: 在哪个元素内拖拽
-             */
+             * @params {HTMLElement} stage: 在哪个元素范围内拖拽
+            */
+            
+            /* 拖拽移动 */
             move: (e, draggable, target, stage) => {
                 // console.log(e);
                 /* 子窗口左上角将要移动到的位置坐标 */
@@ -45,15 +47,18 @@ class Drag {
                 target.style.left = `${100 * x / document.documentElement.offsetWidth}vw`;
                 target.style.top = `${100 * y / document.documentElement.offsetHeight}vh`;
             },
+            /* 拖拽调整元素大小 */
             resize: (e, draggable, target, stage) => {
                 const size = this.calcSize(e, draggable, target, stage);
                 target.style.width = `${100 * size.width / document.documentElement.offsetWidth}vw`;
                 target.style.height = `${100 * size.height / document.documentElement.offsetHeight}vh`;
             },
+            /* 拖拽调整元素宽度 */
             rewidth: (e, draggable, target, stage) => {
                 const size = this.calcSize(e, draggable, target, stage);
                 target.style.width = `${100 * size.width / document.documentElement.offsetWidth}vw`;
             },
+            /* 拖拽调整元素高度 */
             reheight: (e, draggable, target, stage) => {
                 const size = this.calcSize(e, draggable, target, stage);
                 target.style.height = `${100 * size.height / document.documentElement.offsetHeight}vh`;
