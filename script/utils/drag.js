@@ -25,7 +25,7 @@ class Drag {
              * @params {HTMLElement} target: 操作的目标元素
              * @params {HTMLElement} stage: 在哪个元素范围内拖拽
             */
-            
+
             /* 拖拽移动 */
             move: (e, draggable, target, stage) => {
                 // console.log(e);
@@ -34,8 +34,8 @@ class Drag {
                 let y = e.clientY - this.status.drag.position.y;
 
                 /* 子窗口左上角可以可以移动到区域边缘 */
-                let window_width = stage.clientWidth - target.offsetWidth;
-                let window_height = stage.clientHeight - target.offsetHeight;
+                const window_width = stage.clientWidth - target.offsetWidth;
+                const window_height = stage.clientHeight - target.offsetHeight;
 
                 x = (x < 0) ? 0 : x;                          // 当子窗口移动到主窗口最左边时
                 x = (x > window_width) ? window_width : x;    // 当子窗口移动到主窗口最右边时
@@ -44,8 +44,27 @@ class Drag {
 
                 // target.style.left = `${x}px`;
                 // target.style.top = `${y}px`;
-                target.style.left = `${100 * x / document.documentElement.offsetWidth}vw`;
-                target.style.top = `${100 * y / document.documentElement.offsetHeight}vh`;
+
+                /* target 归一化后的中心位置的坐标 */
+                const x_center = (x + target.offsetWidth / 2) / document.documentElement.offsetWidth;
+                const y_center = (y + target.offsetHeight / 2) / document.documentElement.offsetHeight;
+
+                if (x_center < 0.5) {
+                    target.style.right = null;
+                    target.style.left = `${100 * x / document.documentElement.offsetWidth}vw`;
+                }
+                else {
+                    target.style.left = null;
+                    target.style.right = `${100 - (100 * (x + target.offsetWidth) / document.documentElement.offsetWidth)}vw`;
+                }
+                if (y_center < 0.5) {
+                    target.style.bottom = null;
+                    target.style.top = `${100 * y / document.documentElement.offsetHeight}vh`;
+                }
+                else {
+                    target.style.top = null;
+                    target.style.bottom = `${100 - (100 * (y + target.offsetHeight) / document.documentElement.offsetHeight)}vh`;;
+                }
             },
             /* 拖拽调整元素大小 */
             resize: (e, draggable, target, stage) => {
@@ -189,7 +208,7 @@ class Drag {
             stage,
             eventHandler,
             final,
-        ), true);
+        ), false);
     }
 }
 export const drag = new Drag();

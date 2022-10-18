@@ -5,6 +5,7 @@
 - 优化鼠标移出窗口时结束拖拽 | Optimized to end dragging when the mouse moves out of the window.
 - [#122](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/122) 修复悬浮工具栏无法在标题栏拖拽问题 | Fixed the issue that the floating toolbar could not be dragged in the title bar.
 - 修复快捷键设置界面列表辅助线样式 | Fixed the list guide style of shortcut key setting interface.
+- 保存悬浮工具栏的位置与状态 | Save the position and state of the floating toolbar.
 
 ## v1.3.5/2022-10-17
 

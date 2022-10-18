@@ -47,9 +47,19 @@ export var config = {
         },
         tooldock: { // 悬浮栏
             id: 'custom-tooldock', // 悬浮栏 ID
-            class: [ // 样式类名
+            key: 'THEME-custom-tooldock', // 保存在 localStorage 的键名
+            classes: [ // 样式类名
                 'float-tooldock',
             ],
+            reset: { // 重置工具栏
+                enable: true,
+                id: 'custom-tooldock-reset',
+                label: {
+                    zh_CN: '重置悬浮工具栏',
+                    other: 'Reset the Floating Toolbar',
+                },
+                icon: '#iconRefresh',
+            },
         },
         toolbar: {
             // 工具栏
@@ -2679,7 +2689,7 @@ export var custom = {
         toolbar: {
             [config.theme.toolbar.more.id]: {
                 default: true,
-            }, // 工具栏是否展开
+            }, // 工具栏状态
             [config.theme.location.record.toolbar.id]: { default: false }, // 当前浏览位置
             [config.theme.menu.block.toolbar.id]: { default: false }, // 块功能增强
             [config.theme.style.itemtext.toolbar.id]: { default: false }, // 完整显示文本内容
