@@ -7,6 +7,7 @@
 - 修复快捷键设置界面列表辅助线样式 | Fixed the list guide style of shortcut key setting interface.
 - 保存悬浮工具栏的位置与状态 | Save the position and state of the floating toolbar.
 - 修复悬浮工具栏折叠展开时的位置问题 | Fixed the position issue when the floating toolbar was collapsed and expanded.
+- 适配 `v2.4.2` | Adaptive `v2.4.2`.
 
 ## v1.3.5/2022-10-17
 

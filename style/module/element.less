@@ -1,9 +1,10 @@
 /* 自定义元素 */
 
+@tool-height: calc(var(--custom-dock-width) - var(--custom-dock-item-margin-width) * 2);
+
 /* 拖拽按钮 */
 #custom-toolbar-more {
     cursor: move; // 鼠标悬浮时变换为移动样式
-    -webkit-app-region: no-drag; // 避免拖拽到顶部时无法拖拽
 }
 
 /* 自定义悬浮菜单栏 */
@@ -15,9 +16,13 @@
     width: var(--custom-dock-width);
     z-index: var(--custom-z-index-max);
 
+    line-height: @tool-height;
+
     // overflow: visible;
     // outline: 1px solid white;
     // pointer-events: none;
+
+    -webkit-app-region: no-drag; // 顶部时无法交互
 
     >* {
         display: inline;

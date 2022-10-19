@@ -13,6 +13,9 @@
 #dockRight,
 #dockBottom,
 #status {
+    padding: 0;
+    box-sizing: content-box;
+
     .b3-tooltips {
         /* 边栏按钮 */
         margin: var(--custom-dock-item-margin-width) !important;
@@ -39,9 +42,7 @@
 #toolbar,
 #dockTop,
 #dockBottom,
-#status {
-    height: var(--custom-dock-width);
-}
+#status {}
 
 /* ↑↓ */
 #toolbar,
@@ -58,6 +59,7 @@
 /* 👆👇 */
 #dockTop,
 #dockBottom {
+    height: var(--custom-dock-width);
     padding: 0;
 }
 
@@ -114,6 +116,14 @@ div:not(#windowControls)>.toolbar__item {
 /* ↓底部状态栏↓ */
 
 #status {
+
+    #barDock,
+    #barHelp {
+        .b3-menu {
+            /* 左下右下菜单 */
+            bottom: @tool-height !important;
+        }
+    }
 
     .status__msg,
     .status__counter {

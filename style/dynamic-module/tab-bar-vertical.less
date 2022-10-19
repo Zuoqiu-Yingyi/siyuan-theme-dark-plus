@@ -8,14 +8,16 @@
         >.fn__flex:not(.layout-tab-container) {
             flex-direction: column-reverse;
         }
-
-        >*:first-child {
+        
+        >:first-child {
+            justify-content: left;
             max-width: var(--custom-tab-bar-vertical-max-width);
             outline: 2px solid var(--b3-theme-on-surface-light);
         }
 
         .layout-tab-bar {
             display: block;
+            flex: 1;
             // max-width: var(--custom-tab-bar-vertical-max-width);
             // border-right: 1px solid var(--b3-border-color);
 
@@ -37,6 +39,10 @@
                 .item__text {
                     text-align: unset;
                 }
+            }
+
+            &.layout-tab-bar--readonly {
+                flex: initial;
             }
         }
     }

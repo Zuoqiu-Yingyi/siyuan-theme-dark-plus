@@ -30,8 +30,8 @@ class Drag {
             move: (e, draggable, target, stage) => {
                 // console.log(e);
                 /* 子窗口左上角将要移动到的位置坐标 */
-                let x = e.clientX - this.status.drag.position.x;
-                let y = e.clientY - this.status.drag.position.y;
+                let x = e.clientX - this.status.drag.position.x - stage.clientLeft;
+                let y = e.clientY - this.status.drag.position.y - stage.clientTop;
 
                 /* 子窗口左上角可以可以移动到区域边缘 */
                 const window_width = stage.clientWidth - target.offsetWidth;
@@ -134,10 +134,11 @@ class Drag {
         e.stopPropagation();
 
         this.status.flags.dragging = true; // 正在拖拽
-        /* 记录鼠标与窗口的相对位置 */
+        /* 记录鼠标与拖拽控件的相对位置 */
         const rect = target.getBoundingClientRect();
-        this.status.drag.position.x = e.clientX - rect.left; // 鼠标相对于子窗口左上角的横向偏移量(鼠标横坐标 - this.status 的 左侧偏移量)
-        this.status.drag.position.y = e.clientY - rect.top; // 鼠标相对于子窗口左上角的纵向偏移量(鼠标纵坐标 - this.status 的 上侧偏移量)
+        // console.log(e, rect);
+        this.status.drag.position.x = e.clientX - Math.round(rect.x); // 鼠标相对于子窗口左上角的横向偏移量(鼠标横坐标 - target 的 左侧偏移量)
+        this.status.drag.position.y = e.clientY - Math.round(rect.y); // 鼠标相对于子窗口左上角的纵向偏移量(鼠标纵坐标 - target 的 上侧偏移量)
         this.status.drag.size.width = target.offsetWidth; // 窗口宽度
         this.status.drag.size.height = target.offsetHeight; // 窗口高度
 
