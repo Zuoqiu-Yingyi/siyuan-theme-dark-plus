@@ -6,12 +6,14 @@
 .layout__center [data-type='wnd'][data-id] > .fn__flex:not(.layout-tab-container) {
   flex-direction: column-reverse;
 }
-.layout__center [data-type='wnd'][data-id] > *:first-child {
+.layout__center [data-type='wnd'][data-id] > :first-child {
+  justify-content: left;
   max-width: var(--custom-tab-bar-vertical-max-width);
   outline: 2px solid var(--b3-theme-on-surface-light);
 }
 .layout__center [data-type='wnd'][data-id] .layout-tab-bar {
   display: block;
+  flex: 1;
 }
 .layout__center [data-type='wnd'][data-id] .layout-tab-bar .item .fn__flex-1:first-child {
   display: none;
@@ -21,4 +23,7 @@
 }
 .layout__center [data-type='wnd'][data-id] .layout-tab-bar .item .item__text {
   text-align: unset;
+}
+.layout__center [data-type='wnd'][data-id] .layout-tab-bar.layout-tab-bar--readonly {
+  flex: initial;
 }

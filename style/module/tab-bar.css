@@ -1,7 +1,12 @@
 /* 页签 */
+.layout__center > div > [data-type="wnd"][data-id] > :first-child {
+  /* 页签项 */
+  justify-content: space-between;
+  background-color: var(--custom-tab-bar-background-color);
+}
 /* .fn__flex-column.fn__flex.fn__flex-1 .layout-tab-bar { */
 .layout-tab-bar {
-  background-color: var(--custom-tab-bar-background-color);
+  background-color: transparent;
   flex-wrap: var(--custom-tab-bar-flex-wrap);
 }
 .layout-tab-bar .item {
@@ -12,6 +17,7 @@
   border-radius: var(--custom-border-radius);
   box-shadow: none !important;
   min-height: var(--custom-tab-bar-min-height);
+  max-width: none;
   box-sizing: border-box;
 }
 .layout-tab-bar .item .item__icon {
@@ -26,6 +32,8 @@
 .layout-tab-bar .item .item__text {
   /* 页签项文本 */
   min-width: 0;
+  mask-image: none;
+  -webkit-mask-image: none;
 }
 .layout-tab-bar .item .item__close {
   padding: 4px !important;
@@ -47,6 +55,10 @@
   border-bottom-color: var(--custom-striking-color) !important;
   border-radius: var(--custom-border-radius);
 }
+.layout-tab-bar .item.item--focus::after {
+  /* 取消当前文档页签的下划线 */
+  display: none;
+}
 .layout-tab-bar .item.item--focus + .item {
   border-left-color: var(--b3-list-hover) !important;
 }
@@ -61,8 +73,7 @@
   /* 非钉住的页签项 */
   min-width: var(--custom-tab-bar-item-min-width);
 }
-.layout-tab-bar .item:not(.item--pin) .item__text:not(span:nth-last-of-type(2)) {
-  /* 非钉住标签的非末尾项页签项文本 */
+.layout-tab-bar .item:not(.item--pin) .item__text {
   padding-right: 0;
 }
 .layout-tab-bar .item.item--pin .item__text {
@@ -76,6 +87,10 @@
   margin: 0;
 }
 .layout-tab-bar .item.item--readonly {
-  /* 移除控件组内边距 */
+  /* 移除控件内边距 */
   padding: 0;
+}
+.layout-tab-bar.layout-tab-bar--readonly {
+  /* 控件组 */
+  flex: 0;
 }
