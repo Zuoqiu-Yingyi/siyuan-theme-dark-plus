@@ -334,7 +334,3 @@
 .block__icons {
   height: var(--custom-panel-title-height);
 }
-.block__popover > .block__icons {
-  /* 悬浮面板 */
-  border-radius: var(--custom-border-radius);
-}
