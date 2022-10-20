@@ -9,6 +9,7 @@
 - 修复悬浮工具栏折叠展开时的位置问题 | Fixed the position issue when the floating toolbar was collapsed and expanded.
 - 适配 `v2.4.2` | Adaptive `v2.4.2`.
 - 调整面包屑样式 | Adjusted the style of breadcrumb.
+- 调整代码块样式 | Adjusted the style of code block.
 
 ## v1.3.5/2022-10-17
 
