@@ -36,20 +36,22 @@
         >.protyle-action {
             /* 功能按钮栏 */
             // float: right;
-            // position: relative;
+            // display: block;
+            position: relative;
+            width: 100%;
+            justify-content: end;
 
-            left: auto;
-            right: 0;
+            left: 0;
             top: 0;
 
             >span {
                 /* 功能按钮 */
                 opacity: unset; // 按钮常显
 
-                >.protyle-icons {
+                &.protyle-icon {
                     /* 按钮图标 */
-                    top: 0;
-                    right: 0;
+                    // top: 0;
+                    // right: 0;
                 }
 
                 &.protyle-action__language {
@@ -69,14 +71,15 @@
             }
         }
 
-        >.protyle-linenumber {
-            /* 行号标签 */
+        >.hljs {
+            /* 代码块主体 */
             background-color: transparent;
+            padding-top: 0;
         }
 
         >.protyle-linenumber__rows {
             /* 行号 */
-            // padding-top: 0;
+            padding-top: 24px;
             // padding-bottom: 0;
             border-right: var(--custom-block-code-linenumber-separator-width) solid var(--custom-block-code-linenumber-separator-color);
             background-color: var(--custom-block-code-linenumber-background-color);
@@ -87,11 +90,15 @@
             top: -16px;
         }
 
+        // 高亮的样式
+        &.protyle-wysiwyg--hl,
+        // 被选中的样式
         &.protyle-wysiwyg--select {
 
+            >.hljs,
             >.protyle-linenumber__rows {
-                /* 被选中块的行号样式 */
-                background-color: var(--b3-theme-primary-lightest) !important;
+                /* 被选中块的样式 */
+                background-color: transparent !important;
             }
         }
     }
