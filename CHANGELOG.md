@@ -11,6 +11,7 @@
 - 调整面包屑样式 | Adjusted the style of breadcrumb.
 - 调整代码块样式 | Adjusted the style of code block.
 - 调整页签图标样式 | Adjusted the style of tab icon.
+- 调整嵌入块样式 | Adjusted the style of embed block.
 
 ## v1.3.5/2022-10-17
 

@@ -8,7 +8,12 @@
         padding: 0;
         border: none;
         // outline: 2px solid var(--custom-line-color);
-        background-color: var(--custom-block-embed-background-color);
+        background-color: transparent;
+
+        +[data-node-id][data-type="NodeBlockQueryEmbed"].render-node {
+            /* 两个连续的嵌入块 */
+            margin-top: 0.5em;
+        }
 
         // 显示面包屑
         &[breadcrumb="true"] {
@@ -23,16 +28,18 @@
         }
 
         >.protyle-wysiwyg__embed {
-            border-top: none;
-            outline: 2px solid var(--custom-line-color);
+            // border-top: none;
+            // box-sizing: content-box;
+            border: 2px solid var(--custom-line-color) !important;
+            background-color: var(--custom-block-embed-background-color);
 
             &:hover {
                 /* 查询结果鼠标悬停时显示边框 */
-                outline: 1px solid var(--b3-theme-on-surface);
+                border-color: var(--b3-theme-on-surface) !important;
             }
 
             &+.protyle-wysiwyg__embed {
-                margin-top: 0.5em;
+                margin-top: 0.25em;
             }
 
             &:not(:nth-last-child(3)) {

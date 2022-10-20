@@ -4,22 +4,26 @@
   margin: 0;
   padding: 0;
   border: none;
-  background-color: var(--custom-block-embed-background-color);
+  background-color: transparent;
+}
+.protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"].render-node + [data-node-id][data-type="NodeBlockQueryEmbed"].render-node {
+  /* 两个连续的嵌入块 */
+  margin-top: 0.5em;
 }
 .protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"].render-node > .protyle-icons {
   /* 悬浮显示的控件 */
   z-index: 2;
 }
 .protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"].render-node > .protyle-wysiwyg__embed {
-  border-top: none;
-  outline: 2px solid var(--custom-line-color);
+  border: 2px solid var(--custom-line-color) !important;
+  background-color: var(--custom-block-embed-background-color);
 }
 .protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"].render-node > .protyle-wysiwyg__embed:hover {
   /* 查询结果鼠标悬停时显示边框 */
-  outline: 1px solid var(--b3-theme-on-surface);
+  border-color: var(--b3-theme-on-surface) !important;
 }
 .protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"].render-node > .protyle-wysiwyg__embed + .protyle-wysiwyg__embed {
-  margin-top: 0.5em;
+  margin-top: 0.25em;
 }
 .protyle-wysiwyg [data-node-id][data-type="NodeBlockQueryEmbed"].render-node > .protyle-wysiwyg__embed:not(:nth-last-child(3)) {
   /* 嵌入块间分隔线 */

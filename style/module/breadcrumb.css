@@ -18,13 +18,18 @@
 .protyle-breadcrumb .protyle-breadcrumb__bar {
   margin: 0 4px;
 }
-.protyle-wysiwyg .protyle-breadcrumb__bar,
+.protyle-wysiwyg .protyle-breadcrumb__bar {
+  margin: 0;
+  padding: 0 3px;
+}
+.sy__backlink .protyle-breadcrumb__bar {
+  border-radius: 2px;
+  outline: 2px solid var(--b3-theme-on-surface-light);
+}
 .protyle-wysiwyg__embed .protyle-breadcrumb__bar {
   position: sticky;
   top: 0;
-  margin: 0;
-  border-radius: 2px;
-  padding: 0 3px;
+  left: 0;
   z-index: 1;
   background-color: var(--custom-editor-breadcrumb-bar-background-color);
 }

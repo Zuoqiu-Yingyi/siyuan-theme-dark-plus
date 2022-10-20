@@ -29,19 +29,26 @@
         margin: 0 4px;
     }
 
+    // 反链/嵌入块面包屑
+    .protyle-wysiwyg & {
+        margin: 0;
+        padding: 0 3px;
+    }
+
     // 反链面板面包屑
-    .protyle-wysiwyg &,
+    .sy__backlink & {
+        border-radius: 2px;
+        outline: 2px solid var(--b3-theme-on-surface-light);
+    }
+
     // 嵌入块面包屑
     .protyle-wysiwyg__embed & {
         position: sticky;
         top: 0;
-        margin: 0;
-        border-radius: 2px;
-        padding: 0 3px;
+        left: 0;
         z-index: 1;
 
         background-color: var(--custom-editor-breadcrumb-bar-background-color);
-        // outline: 2px solid var(--b3-theme-on-surface-light);
     }
 
     .protyle-breadcrumb__item {
