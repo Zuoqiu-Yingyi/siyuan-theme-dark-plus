@@ -3,3 +3,7 @@
 .sy__backlink .b3-list-item__text {
   display: var(--custom-backlink-display);
 }
+.sy__backlink .protyle-content[data-fullwidth="true"] > .protyle-wysiwyg {
+  /* 反链面板编辑区 */
+  margin-right: 2px !important;
+}

@@ -4,21 +4,40 @@
 .protyle-wysiwyg {
     [data-node-id][data-type="NodeBlockQueryEmbed"].render-node {
         /* 嵌入块 */
+        margin: 0;
+        padding: 0;
         border: none;
-        outline: 2px solid var(--custom-line-color);
+        // outline: 2px solid var(--custom-line-color);
         background-color: var(--custom-block-embed-background-color);
+
+        // 显示面包屑
+        &[breadcrumb="true"] {
+            // padding-top: 0;
+            // padding-bottom: 0;
+            // box-sizing: border-box;
+        }
+
+        >.protyle-icons {
+            /* 悬浮显示的控件 */
+            z-index: 2;
+        }
 
         >.protyle-wysiwyg__embed {
             border-top: none;
+            outline: 2px solid var(--custom-line-color);
 
             &:hover {
                 /* 查询结果鼠标悬停时显示边框 */
                 outline: 1px solid var(--b3-theme-on-surface);
             }
 
+            &+.protyle-wysiwyg__embed {
+                margin-top: 0.5em;
+            }
+
             &:not(:nth-last-child(3)) {
                 /* 嵌入块间分隔线 */
-                position: relative;
+                // position: relative;
                 // border-top: 1px dashed var(--custom-line-color);
                 // border-bottom: 4px double var(--custom-line-color);
             }

@@ -16,14 +16,17 @@
   height: 16px;
 }
 .protyle-breadcrumb .protyle-breadcrumb__bar {
-  margin: 0 6px;
+  margin: 0 4px;
 }
 .protyle-wysiwyg .protyle-breadcrumb__bar,
 .protyle-wysiwyg__embed .protyle-breadcrumb__bar {
+  position: sticky;
+  top: 0;
   margin: 0;
   border-radius: 2px;
   padding: 0 3px;
-  outline: 2px solid var(--b3-theme-on-surface-light);
+  z-index: 1;
+  background-color: var(--custom-editor-breadcrumb-bar-background-color);
 }
 .protyle-breadcrumb__bar .protyle-breadcrumb__item {
   /* 导航栏文字 */
