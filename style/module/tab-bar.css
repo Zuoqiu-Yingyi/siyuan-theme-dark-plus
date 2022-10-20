@@ -22,6 +22,7 @@
 }
 .layout-tab-bar .item .item__icon {
   /* 页签项图标 */
+  padding: 0;
   padding-left: 8px;
 }
 .layout-tab-bar .item .item__icon svg,
@@ -81,6 +82,9 @@
   width: auto;
   max-width: none;
   display: flex !important;
+}
+.layout-tab-bar .item.item--pin .item__icon {
+  padding-right: 0;
 }
 .layout-tab-bar .item:last-child:not(.item--readonly) {
   /* 移除控件与文档页签之间的距离 */

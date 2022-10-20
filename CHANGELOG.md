@@ -10,6 +10,7 @@
 - 适配 `v2.4.2` | Adaptive `v2.4.2`.
 - 调整面包屑样式 | Adjusted the style of breadcrumb.
 - 调整代码块样式 | Adjusted the style of code block.
+- 调整页签图标样式 | Adjusted the style of tab icon.
 
 ## v1.3.5/2022-10-17
 
