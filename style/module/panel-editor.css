@@ -27,6 +27,11 @@
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+.sy__backlink .protyle-content[data-fullwidth="true"] > .protyle-title,
+.sy__backlink .protyle-content[data-fullwidth="true"] > .protyle-wysiwyg {
+  /* 反链面板编辑区 */
+  margin-right: 2px !important;
+}
 .protyle-content > .protyle-title {
   /* 标题 */
 }

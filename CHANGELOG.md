@@ -8,6 +8,7 @@
 - 保存悬浮工具栏的位置与状态 | Save the position and state of the floating toolbar.
 - 修复悬浮工具栏折叠展开时的位置问题 | Fixed the position issue when the floating toolbar was collapsed and expanded.
 - 适配 `v2.4.2` | Adaptive `v2.4.2`.
+- 调整面包屑样式 | Adjusted the style of breadcrumb.
 
 ## v1.3.5/2022-10-17
 
