@@ -26,18 +26,22 @@
 
     // 编辑器面包屑
     .protyle-breadcrumb & {
-        margin: 0 6px;
+        margin: 0 4px;
     }
 
     // 反链面板面包屑
     .protyle-wysiwyg &,
     // 嵌入块面包屑
     .protyle-wysiwyg__embed & {
+        position: sticky;
+        top: 0;
         margin: 0;
         border-radius: 2px;
         padding: 0 3px;
+        z-index: 1;
 
-        outline: 2px solid var(--b3-theme-on-surface-light);
+        background-color: var(--custom-editor-breadcrumb-bar-background-color);
+        // outline: 2px solid var(--b3-theme-on-surface-light);
     }
 
     .protyle-breadcrumb__item {
