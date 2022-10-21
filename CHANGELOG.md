@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 调整大纲栏列表辅助线样式 | Adjusted the style of outline panel guides.
+- 关系图背景设置为半透明 | The diagram background is set to semi-transparent.
 
 ## v1.3.6/2022-10-21
 
