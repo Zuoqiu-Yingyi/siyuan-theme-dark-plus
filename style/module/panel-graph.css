@@ -2,7 +2,6 @@
 .graph {
   background: transparent;
 }
-/* 全屏关系图 */
 .fullscreen .sy__graph > .block__icons,
 .fullscreen .sy__globalGraph > .block__icons {
   /* 关系图标题栏 */
@@ -12,4 +11,10 @@
 .fullscreen .sy__globalGraph > .graph__svg {
   /* 关系图内容 */
   background-color: var(--custom-panel-graph-fullscreen-background-color);
+}
+.sy__graph .graph__svg,
+.sy__globalGraph .graph__svg,
+.sy__graph .graph__svg .graph__loading,
+.sy__globalGraph .graph__svg .graph__loading {
+  background-color: transparent;
 }
