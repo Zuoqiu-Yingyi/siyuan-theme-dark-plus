@@ -144,10 +144,15 @@ function toolbarItemListPush(item) {
                 // if (drag.status.flags.dragging) return; // 拖拽时忽略点击事件(无效)
                 let status, language = window.theme.languageMode;
                 const rect = more.getBoundingClientRect();
+                const x = Math.round(rect.x);
+                const y = Math.round(rect.y);
+                const width = Math.round(rect.width);
+                const height = Math.round(rect.height);
+
                 if (custom_toolbar.style.display === 'none') {
                     /* 重新更改定位 */
-                    custom_tooldock.style.left = `${100 * (rect.x - more.offsetLeft) / document.documentElement.offsetWidth}vw`;
-                    custom_tooldock.style.top = `${100 * (rect.y - more.offsetTop) / document.documentElement.offsetHeight}vh`;;
+                    custom_tooldock.style.left = `${100 * (x - more.offsetLeft) / document.documentElement.offsetWidth}vw`;
+                    custom_tooldock.style.top = `${100 * (y - more.offsetTop) / document.documentElement.offsetHeight}vh`;;
                     custom_tooldock.style.right = null;
                     custom_tooldock.style.bottom = null;
 
@@ -158,23 +163,23 @@ function toolbarItemListPush(item) {
                 }
                 else {
                     /* 重新更改定位 */
-                    const x_center = (rect.x + rect.width / 2) / document.documentElement.offsetWidth;
-                    const y_center = (rect.y + rect.height / 2) / document.documentElement.offsetHeight;
+                    const x_center = (x + width / 2) / document.documentElement.offsetWidth;
+                    const y_center = (y + height / 2) / document.documentElement.offsetHeight;
                     if (x_center < 0.5) {
                         custom_tooldock.style.right = null;
-                        custom_tooldock.style.left = `${100 * (rect.x - more.offsetLeft) / document.documentElement.offsetWidth}vw`;
+                        custom_tooldock.style.left = `${100 * (x - more.offsetLeft) / document.documentElement.offsetWidth}vw`;
                     }
                     else {
                         custom_tooldock.style.left = null;
-                        custom_tooldock.style.right = `${100 - (100 * (rect.x + rect.width + more.offsetLeft) / document.documentElement.offsetWidth)}vw`;
+                        custom_tooldock.style.right = `${100 - (100 * (x + width + more.offsetLeft) / document.documentElement.offsetWidth)}vw`;
                     }
                     if (y_center < 0.5) {
                         custom_tooldock.style.bottom = null;
-                        custom_tooldock.style.top = `${100 * (rect.y - more.offsetTop) / document.documentElement.offsetHeight}vh`;
+                        custom_tooldock.style.top = `${100 * (y - more.offsetTop) / document.documentElement.offsetHeight}vh`;
                     }
                     else {
                         custom_tooldock.style.top = null;
-                        custom_tooldock.style.bottom = `${100 - (100 * (rect.y + rect.height + more.offsetTop) / document.documentElement.offsetHeight)}vh`;;
+                        custom_tooldock.style.bottom = `${100 - (100 * (y + height + more.offsetTop) / document.documentElement.offsetHeight)}vh`;;
                     }
 
                     custom_tooldock.style.width = `calc(var(--custom-dock-width) * 1)`;

@@ -2,6 +2,7 @@
 
 - 调整大纲栏列表辅助线样式 | Adjusted the style of outline panel guides.
 - 关系图背景设置为半透明 | The diagram background is set to semi-transparent.
+- 修复悬浮工具栏折叠展开时的位置问题 | Fixed the position issue when the floating toolbar was collapsed and expanded.
 
 ## v1.3.6/2022-10-21
 
