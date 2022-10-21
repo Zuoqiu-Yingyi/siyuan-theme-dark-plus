@@ -1,12 +1,12 @@
 /* 面板全局设置 */
 
 // 添加 1 级辅助线
-.guides(@base, @depth) {
+.guides(@base, @interval, @depth) {
     &::before {
         content: "";
         position: absolute;
         top: 0;
-        left: @base + 16px * @depth;
+        left: @base + @interval * @depth;
         width: var(--custom-list-guides-line-width);
         height: 100%;
         // background-color: white;
@@ -16,7 +16,7 @@
 }
 
 // 添加 10 级辅助线
-.tree(@base-root, @base-default) {
+.tree(@base-root, @base-default, @interval) {
 
     // absolute 定位需要上级元素使用 absolute 或 relative 定位方法
     ul {
@@ -27,34 +27,34 @@
 
     ul.b3-list {
         >ul {
-            .guides(@base-root, 0);
+            .guides(@base-root, @interval, 0);
 
             >ul {
-                .guides(@base-default, 1);
+                .guides(@base-default, @interval, 1);
 
                 >ul {
-                    .guides(@base-default, 2);
+                    .guides(@base-default, @interval, 2);
 
                     >ul {
-                        .guides(@base-default, 3);
+                        .guides(@base-default, @interval, 3);
 
                         >ul {
-                            .guides(@base-default, 4);
+                            .guides(@base-default, @interval, 4);
 
                             >ul {
-                                .guides(@base-default, 5);
+                                .guides(@base-default, @interval, 5);
 
                                 >ul {
-                                    .guides(@base-default, 6);
+                                    .guides(@base-default, @interval, 6);
 
                                     >ul {
-                                        .guides(@base-default, 7);
+                                        .guides(@base-default, @interval, 7);
 
                                         >ul {
-                                            .guides(@base-default, 8);
+                                            .guides(@base-default, @interval, 8);
 
                                             >ul {
-                                                .guides(@base-default, 9);
+                                                .guides(@base-default, @interval, 9);
                                             }
                                         }
                                     }
@@ -78,7 +78,7 @@
     .b3-list--mobile {
         >[data-type ^="sidebar"] {
             &:not([data-type="sidebar-file"]) {
-                .tree(13px, 13px);
+                .tree(13px, 13px, 16px);
             }
         }
     }
@@ -94,12 +94,12 @@
     .file-tree {
 
         &:not(.sy__file, .sy__outline) {
-            .tree(12px, 12px);
+            .tree(12px, 12px, 16px);
         }
 
         &.sy__outline {
             &:hover {
-                .tree(12px, 12px);
+                .tree(12px, 12px, 18px);
             }
         }
     }

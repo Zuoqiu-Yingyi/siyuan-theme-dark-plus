@@ -1,6 +1,8 @@
 # 更改日志 | CHANGE LOG
 
-## v1.3.6/2022-10-1
+- 调整大纲栏列表辅助线样式 | Adjusted the style of outline panel guides.
+
+## v1.3.6/2022-10-21
 
 - [v1.3.5 <=> v1.3.6](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.5...v1.3.6)
 - 调整页签按钮样式 | Adjusted the style of tab bar button.
