@@ -7,8 +7,9 @@
 .float-tooldock {
   position: absolute;
   width: var(--custom-dock-width);
+  height: auto;
   z-index: var(--custom-z-index-max);
-  line-height: calc(var(--custom-dock-width) - var(--custom-dock-item-margin-width) * 2);
+  line-height: normal;
   -webkit-app-region: no-drag;
 }
 .float-tooldock > * {

@@ -129,6 +129,7 @@ class Drag {
         mousemoveHandler,
         final,
     ) {
+        // console.log(e);
         /* 取消其他默认事件处理 */
         e.preventDefault();
         e.stopPropagation();
@@ -137,8 +138,10 @@ class Drag {
         /* 记录鼠标与拖拽控件的相对位置 */
         const rect = target.getBoundingClientRect();
         // console.log(e, rect);
-        this.status.drag.position.x = e.clientX - Math.round(rect.x); // 鼠标相对于子窗口左上角的横向偏移量(鼠标横坐标 - target 的 左侧偏移量)
-        this.status.drag.position.y = e.clientY - Math.round(rect.y); // 鼠标相对于子窗口左上角的纵向偏移量(鼠标纵坐标 - target 的 上侧偏移量)
+        const x = Math.round(rect.x);
+        const y = Math.round(rect.y);
+        this.status.drag.position.x = e.clientX - x; // 鼠标相对于子窗口左上角的横向偏移量(鼠标横坐标 - target 的 左侧偏移量)
+        this.status.drag.position.y = e.clientY - y; // 鼠标相对于子窗口左上角的纵向偏移量(鼠标纵坐标 - target 的 上侧偏移量)
         this.status.drag.size.width = target.offsetWidth; // 窗口宽度
         this.status.drag.size.height = target.offsetHeight; // 窗口高度
 
