@@ -4,6 +4,7 @@
 - 关系图背景设置为半透明 | The diagram background is set to semi-transparent.
 - 修复悬浮工具栏折叠展开时的位置问题 | Fixed the position issue when the floating toolbar was collapsed and expanded.
 - [#129](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/129) 调整纵向排序标签页关闭按钮位置 | Adjust the position of the close button for vertical sorting tabs.
+- 调整块滚动条位置 | Adjusted the position of blocks scroll bar.
 
 ## v1.3.6/2022-10-21
 

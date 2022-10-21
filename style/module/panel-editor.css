@@ -46,7 +46,7 @@
 .protyle-content > .protyle-wysiwyg .dragover__right {
   box-shadow: 4px 0 0 var(--custom-drag-right-shadow-color);
 }
-.protyle-content > .protyle-scroll {
+.protyle-scroll {
   /* 控件 */
   right: -84px;
 }
