@@ -73,7 +73,7 @@ setTimeout(() => {
     try {
         if (config.theme.dock.enable) {
             if (config.theme.dock.fold.enable) {
-                setTimeout(() => setDockState(document.querySelectorAll('span.dock__item'), custom.theme.dock), 0);
+                // setTimeout(() => setDockState(document.querySelectorAll('span.dock__item'), custom.theme.dock), 0);
                 // setDockState(document.querySelectorAll('span.dock__item'), custom.theme.dock)
                 const Fn_toggleDockFoldStatus = toolbarItemInit(
                     config.theme.dock.fold.toolbar,

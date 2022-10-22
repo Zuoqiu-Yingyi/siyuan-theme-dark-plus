@@ -5,6 +5,7 @@
 - 修复悬浮工具栏折叠展开时的位置问题 | Fixed the position issue when the floating toolbar was collapsed and expanded.
 - [#129](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/129) 调整纵向排序标签页关闭按钮位置 | Adjust the position of the close button for vertical sorting tabs.
 - 调整块滚动条位置 | Adjusted the position of blocks scroll bar.
+- [#130](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/130) 启动时不重置面板展开状态 | The panel expansion state is not reset at startup.
 
 ## v1.3.6/2022-10-21
 
