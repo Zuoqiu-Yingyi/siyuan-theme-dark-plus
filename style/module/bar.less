@@ -72,6 +72,11 @@
 /* ↑顶部工具栏↑ */
 #toolbar {
     background-color: var(--custom-tool-bar-background-color);
+
+    // macOS 系统窗口控件位置
+    body:not(.body--win32) & {
+        padding-left: 69px;
+    }
 }
 
 /* 顶部工具栏按钮 */

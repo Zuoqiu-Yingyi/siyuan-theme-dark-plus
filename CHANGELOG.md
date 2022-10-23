@@ -6,6 +6,7 @@
 - [#129](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/129) 调整纵向排序标签页关闭按钮位置 | Adjust the position of the close button for vertical sorting tabs.
 - 调整块滚动条位置 | Adjusted the position of blocks scroll bar.
 - [#130](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/130) 启动时不重置面板展开状态 | The panel expansion state is not reset at startup.
+- [#133](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/133) 修复 macOS 系统窗口控件与工具栏按钮重叠问题 | Fixed the issue of macOS system window controls overlapping toolbar buttons.
 
 ## v1.3.6/2022-10-21
 

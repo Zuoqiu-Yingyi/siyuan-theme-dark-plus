@@ -68,6 +68,9 @@
 #toolbar {
   background-color: var(--custom-tool-bar-background-color);
 }
+body:not(.body--win32) #toolbar {
+  padding-left: 69px;
+}
 /* 顶部工具栏按钮 */
 div:not(#windowControls) > .toolbar__item {
   margin: 0 6px;
