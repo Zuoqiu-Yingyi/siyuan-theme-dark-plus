@@ -2,6 +2,32 @@
  * 列表转导图
  * REF [royc01/notion-theme](https://github.com/royc01/notion-theme/blob/c5e535a8f40a97c1d42384a7715ced88261dd59f/theme.css#L1444-L1577)
  */
+.protyle-content [custom-type~="思维导图"][data-node-id].list > .protyle-attr,
+.protyle-content [custom-type~="导图"][data-node-id].list > .protyle-attr,
+.protyle-content [custom-type~="脑图"][data-node-id].list > .protyle-attr,
+.protyle-content [custom-type~=mind-map][data-node-id].list > .protyle-attr,
+.protyle-content [custom-type~=map][data-node-id].list > .protyle-attr,
+.protyle-content [custom-type~="思维导图"][data-node-id].list > [data-node-id].li > .protyle-attr,
+.protyle-content [custom-type~="导图"][data-node-id].list > [data-node-id].li > .protyle-attr,
+.protyle-content [custom-type~="脑图"][data-node-id].list > [data-node-id].li > .protyle-attr,
+.protyle-content [custom-type~=mind-map][data-node-id].list > [data-node-id].li > .protyle-attr,
+.protyle-content [custom-type~=map][data-node-id].list > [data-node-id].li > .protyle-attr {
+  /* 列表块属性标签 */
+  top: 0;
+}
+.protyle-content [custom-type~="思维导图"][data-node-id].list > .protyle-attr > .protyle-attr--refcount,
+.protyle-content [custom-type~="导图"][data-node-id].list > .protyle-attr > .protyle-attr--refcount,
+.protyle-content [custom-type~="脑图"][data-node-id].list > .protyle-attr > .protyle-attr--refcount,
+.protyle-content [custom-type~=mind-map][data-node-id].list > .protyle-attr > .protyle-attr--refcount,
+.protyle-content [custom-type~=map][data-node-id].list > .protyle-attr > .protyle-attr--refcount,
+.protyle-content [custom-type~="思维导图"][data-node-id].list > [data-node-id].li > .protyle-attr > .protyle-attr--refcount,
+.protyle-content [custom-type~="导图"][data-node-id].list > [data-node-id].li > .protyle-attr > .protyle-attr--refcount,
+.protyle-content [custom-type~="脑图"][data-node-id].list > [data-node-id].li > .protyle-attr > .protyle-attr--refcount,
+.protyle-content [custom-type~=mind-map][data-node-id].list > [data-node-id].li > .protyle-attr > .protyle-attr--refcount,
+.protyle-content [custom-type~=map][data-node-id].list > [data-node-id].li > .protyle-attr > .protyle-attr--refcount {
+  /* 引用数按钮 */
+  right: 2px;
+}
 .protyle-content [custom-type~="思维导图"] [data-node-id].li,
 .protyle-content [custom-type~="导图"] [data-node-id].li,
 .protyle-content [custom-type~="脑图"] [data-node-id].li,

@@ -5,6 +5,11 @@
  * REF [UserZYF](https://github.com/UserZYF) 修复上述实现方案
  */
 /* --------------------------------------用自定义属性，列表转化为表格------------------------------------------- */
+.protyle-content [custom-type~=table][data-node-id].list > [data-node-id].li > .protyle-attr > .protyle-attr--refcount,
+.protyle-content [custom-type~="表格"][data-node-id].list > [data-node-id].li > .protyle-attr > .protyle-attr--refcount {
+  /* 引用数按钮 */
+  right: 2px;
+}
 .protyle-content [custom-type~=table] [data-node-id].list,
 .protyle-content [custom-type~="表格"] [data-node-id].list,
 .protyle-content [custom-type~=table] [data-node-id].li,
@@ -16,14 +21,18 @@
 .protyle-content [custom-type~=table] [data-node-id].list,
 .protyle-content [custom-type~="表格"] [data-node-id].list {
   /* 嵌套列表块 */
-  width: 100%;
 }
 .protyle-content [custom-type~=table] [data-node-id].li,
 .protyle-content [custom-type~="表格"] [data-node-id].li {
   /* 列表项 */
-  width: auto;
   display: flex;
   outline: 1px solid var(--b3-theme-on-surface);
+}
+.protyle-content [custom-type~=table] [data-node-id].li > [data-node-id].list,
+.protyle-content [custom-type~="表格"] [data-node-id].li > [data-node-id].list {
+  /* 次级列表前间隔 */
+  margin-left: 0 !important;
+  padding-left: 0;
 }
 .protyle-content [custom-type~=table] [data-node-id].li > [data-node-id]:not(.li, .list),
 .protyle-content [custom-type~="表格"] [data-node-id].li > [data-node-id]:not(.li, .list) {
