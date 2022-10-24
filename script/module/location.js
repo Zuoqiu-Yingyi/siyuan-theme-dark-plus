@@ -6,6 +6,7 @@ import {
     saveCustomFile,
 } from './config.js';
 import { jump } from './../utils/misc.js';
+import { compareVersion } from './../utils/string.js';
 import { globalEventHandler } from './../utils/listener.js';
 import {
     isKey,
@@ -139,7 +140,8 @@ function record(docID, value, mode = config.theme.location.record.mode) {
 
             case 2: // 保存在文档块属性中
                 const ATTRS = { [config.theme.location.record.attribute]: value };
-                setBlockDOMAttrs(docID, ATTRS);
+                if (compareVersion(window.theme.kernelVersion, '2.2.0') < 0)
+                    setBlockDOMAttrs(docID, ATTRS);
                 setBlockAttrs(docID, ATTRS);
                 break;
             default:
@@ -177,7 +179,8 @@ function clear(mode = config.theme.location.record.mode) {
                     break;
                 case 2: // 保存在文档块属性中
                     const ATTRS = { [config.theme.location.record.attribute]: '' };
-                    setBlockDOMAttrs(DOC_ID, ATTRS);
+                    if (compareVersion(window.theme.kernelVersion, '2.2.0') < 0)
+                        setBlockDOMAttrs(DOC_ID, ATTRS);
                     setBlockAttrs(DOC_ID, ATTRS);
                     break;
                 default:
@@ -206,9 +209,12 @@ setTimeout(() => {
                     // 编辑器可能还没有加载完成, 所以需要轮询
                     try {
                         getEditor((editor) => {
-                            if (config.theme.location.slider.follow.enable) {
-                                // 滑块跟踪鼠标点击的块
-                                editor.addEventListener('click', e => setTimeout(async () => focusHandler(e.target), 0));
+                            // REF [块滚动条跟随滚动 · Issue #4612 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/4612)
+                            if (compareVersion(window.theme.kernelVersion, '2.4.6') < 0) {
+                                if (config.theme.location.slider.follow.enable) {
+                                    // 滑块跟踪鼠标点击的块
+                                    editor.addEventListener('click', e => setTimeout(async () => focusHandler(e.target), 0));
+                                }
                             }
 
                             if (config.theme.location.slider.goto.enable) {

@@ -8,6 +8,8 @@
 - [#130](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/130) 启动时不重置面板展开状态 | The panel expansion state is not reset at startup.
 - [#133](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/133) 修复 macOS 系统窗口控件与工具栏按钮重叠问题 | Fixed the issue of macOS system window controls overlapping toolbar buttons.
 - [#134](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/134) 调整列表脑图视图与表格视图引用数样式 | Adjusted the style issue of list brain map view and table view reference number.
+- 移除`块滚动条跟随滚动`功能 | Remove the feature of `Block scroll bar follow scroll`.
+  - REF: [Issue #4612 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/4612)
 
 ## v1.3.6/2022-10-21
 
