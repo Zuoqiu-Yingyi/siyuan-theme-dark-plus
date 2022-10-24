@@ -2,19 +2,31 @@
 
 // 快捷键设置列表
 #keymapList {
-    .b3-list--border>ul {
-        ul {
-            &::before {
-                left: -53px;
-                border-left: var(--custom-list-guides-line-width) solid var(--custom-list-guides-line-color);
+    .b3-list--border {
+
+        // 最顶层的项
+        >.b3-list-item.toggle {
+            margin: 0 !important;
+
+            ~div {
+                // 次级项
+                .b3-list-item {
+                    &::before {
+                        left: -23px;
+                        border-left: var(--custom-list-guides-line-width) solid var(--custom-list-guides-line-color);
+                    }
+
+                    // 次级项的子项
+                    +div {
+                        &::before {
+                            left: -57px;
+                            border-left: var(--custom-list-guides-line-width) solid var(--custom-list-guides-line-color);
+                        }
+                    }
+                }
             }
         }
-        li {
-            &::before {
-                left: -19px;
-                border-left: var(--custom-list-guides-line-width) solid var(--custom-list-guides-line-color);
-            }
-        }
+
     }
 }
 
