@@ -24,6 +24,22 @@
     [custom-type~="脑图"],
     [custom-type~=mind-map],
     [custom-type~=map] {
+        &[data-node-id].list {
+
+            &,
+            &>[data-node-id].li {
+                >.protyle-attr {
+                    /* 列表块属性标签 */
+                    top: 0;
+
+                    >.protyle-attr--refcount {
+                        /* 引用数按钮 */
+                        right: 2px;
+                    }
+                }
+            }
+        }
+
         [data-node-id] {
             &.li {
                 /* 列表项文字设置居中 */
