@@ -8,7 +8,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 13px;
+  left: 12px;
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
