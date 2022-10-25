@@ -11,6 +11,7 @@
 - 移除`块滚动条跟随滚动`功能 | Remove the feature of `Block scroll bar follow scroll`.
   - REF: [Issue #4612 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/4612)
 - 修复快捷键设置界面列表辅助线样式 | Fixed the list guide style of shortcut key setting interface.
+- 修复全屏关系图工具栏样式异常问题 | Fixed the issue of abnormal toolbar style in full screen diagram.
 
 ## v1.3.6/2022-10-21
 

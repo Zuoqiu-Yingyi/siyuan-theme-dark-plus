@@ -213,7 +213,7 @@ class Drag {
             stage,
             eventHandler,
             final,
-        ), false);
+        ), true);
     }
 }
 export const drag = new Drag();

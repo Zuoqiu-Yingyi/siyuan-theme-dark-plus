@@ -2,13 +2,13 @@
 .graph {
   background: transparent;
 }
-.fullscreen .sy__graph > .block__icons,
-.fullscreen .sy__globalGraph > .block__icons {
+.sy__graph.fullscreen > .block__icons,
+.sy__globalGraph.fullscreen > .block__icons {
   /* 关系图标题栏 */
   background-color: var(--custom-panel-graph-fullscreen-toolbar-background-color);
 }
-.fullscreen .sy__graph > .graph__svg,
-.fullscreen .sy__globalGraph > .graph__svg {
+.sy__graph.fullscreen > .graph__svg,
+.sy__globalGraph.fullscreen > .graph__svg {
   /* 关系图内容 */
   background-color: var(--custom-panel-graph-fullscreen-background-color);
 }
