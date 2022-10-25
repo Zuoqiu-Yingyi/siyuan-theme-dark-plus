@@ -210,7 +210,7 @@ setTimeout(() => {
                     try {
                         getEditor((editor) => {
                             // REF [块滚动条跟随滚动 · Issue #4612 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/4612)
-                            if (compareVersion(window.theme.kernelVersion, '2.4.6') < 0) {
+                            if (compareVersion(window.theme.kernelVersion, '2.4.5') <= 0) {
                                 if (config.theme.location.slider.follow.enable) {
                                     // 滑块跟踪鼠标点击的块
                                     editor.addEventListener('click', e => setTimeout(async () => focusHandler(e.target), 0));
