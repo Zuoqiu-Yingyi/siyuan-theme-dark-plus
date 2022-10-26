@@ -60,8 +60,10 @@
   top: calc(50% - 0.125em);
   transform: translate(0, -50%);
 }
-.protyle-content [custom-type~=table] [data-node-id].li > div:before,
-.protyle-content [custom-type~="表格"] [data-node-id].li > div:before {
+.protyle-content [custom-type~=table] [data-node-id].li::before,
+.protyle-content [custom-type~="表格"] [data-node-id].li::before,
+.protyle-content [custom-type~=table] [data-node-id].li > div::before,
+.protyle-content [custom-type~="表格"] [data-node-id].li > div::before {
   /* 去除辅助线 */
   display: none;
 }
