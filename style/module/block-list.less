@@ -12,6 +12,12 @@
                 z-index: -1;
             }
         }
+        &::before {
+            /* 缩进辅助线样式 */
+            border-left-width: var(--custom-list-guides-line-width);
+            border-left-color: var(--custom-list-guides-line-color);
+            left: 16px;
+        }
 
         >[data-node-id] {
             &::before {

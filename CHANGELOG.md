@@ -17,6 +17,7 @@
 - 修复全屏关系图工具栏样式异常问题 | Fixed the issue of abnormal toolbar style in full screen diagram.
 - 评论功能兼容 `v2.4.2` | Comment function compatible with `v2.4.2`.
 - 调整移动端侧边面板样式 | Adjusted the style of mobile side panel.
+- 修复列表辅助线样式 | Fixed list guide style.
 
 ## v1.3.6/2022-10-21
 
