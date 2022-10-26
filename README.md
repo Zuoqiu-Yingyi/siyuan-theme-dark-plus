@@ -83,12 +83,14 @@ Recommend the video author's beautiful theme.
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr>
-    <td align="center"><a href="https://github.com/tswwe"><img src="https://avatars.githubusercontent.com/u/36465489?v=4?s=100" width="100px;" alt=""/><br /><sub><b>thxnder</b></sub></a><br /><a href="https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/commits?author=tswwe" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/langzhou"><img src="https://avatars.githubusercontent.com/u/6987229?v=4?s=100" width="100px;" alt=""/><br /><sub><b>langzhou</b></sub></a><br /><a href="https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/commits?author=langzhou" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/royc01"><img src="https://avatars.githubusercontent.com/u/38906705?v=4?s=100" width="100px;" alt=""/><br /><sub><b>royc01</b></sub></a><br /><a href="#ideas-royc01" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/commits?author=royc01" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/UserZYF"><img src="https://avatars.githubusercontent.com/u/38289979?v=4?s=100" width="100px;" alt=""/><br /><sub><b>UserZYF</b></sub></a><br /><a href="#video-UserZYF" title="Videos">📹</a></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://github.com/tswwe"><img src="https://avatars.githubusercontent.com/u/36465489?v=4?s=100" width="100px;" alt="thxnder"/><br /><sub><b>thxnder</b></sub></a><br /><a href="https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/commits?author=tswwe" title="Code">💻</a> <a href="https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues?q=author%3Atswwe" title="Bug reports">🐛</a></td>
+      <td align="center"><a href="https://github.com/langzhou"><img src="https://avatars.githubusercontent.com/u/6987229?v=4?s=100" width="100px;" alt="langzhou"/><br /><sub><b>langzhou</b></sub></a><br /><a href="https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/commits?author=langzhou" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/royc01"><img src="https://avatars.githubusercontent.com/u/38906705?v=4?s=100" width="100px;" alt="royc01"/><br /><sub><b>royc01</b></sub></a><br /><a href="#ideas-royc01" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/commits?author=royc01" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/UserZYF"><img src="https://avatars.githubusercontent.com/u/38289979?v=4?s=100" width="100px;" alt="UserZYF"/><br /><sub><b>UserZYF</b></sub></a><br /><a href="#video-UserZYF" title="Videos">📹</a></td>
+    </tr>
+  </tbody>
 </table>
 
 <!-- markdownlint-restore -->
