@@ -1,10 +1,12 @@
 /* 块标题 */
 
 
-.protyle-content [data-node-id][custom-title]::before {
+.protyle-content [data-node-id][custom-title]:not(.li [data-node-id][custom-title])::before,
+.protyle-content .li [data-node-id][custom-title]::after {
     content: attr(custom-title);
     position: absolute;
     top: -1.25em;
+    left: 0;
     text-align: center;
     font-weight: bolder;
     width: 100%;
