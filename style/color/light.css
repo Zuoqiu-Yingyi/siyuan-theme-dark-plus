@@ -4,10 +4,10 @@
 
 :root {
     /* 背景图片 */
-    --custom-background-image: url("/appearance/themes/Dark+/image/light/background (10).jpeg");
+    --custom-background-image: url(/appearance/themes/Dark+/image/light/background-main.jpg);
 
     /* 对话框背景图片 */
-    --custom-background-image-dialog: url("/appearance/themes/Dark+/image/light/background (01).jpeg");
+    --custom-background-image-dialog: url(/appearance/themes/Dark+/image/light/background-dialog.jpg);
 
     /* 标签图标 | The icon of tag */
     --custom-span-tag-icon: url(/appearance/themes/Dark+/icon/tag-light.svg);
