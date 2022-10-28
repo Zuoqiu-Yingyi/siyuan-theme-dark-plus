@@ -4,6 +4,9 @@
 # 发行包文件目录
 /release
 
+# 临时文件
+/temp
+
 # 自定义样式
 /custom.css
 
