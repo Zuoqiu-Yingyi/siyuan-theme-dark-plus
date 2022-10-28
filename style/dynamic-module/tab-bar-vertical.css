@@ -21,10 +21,6 @@
 .layout__center [data-type='wnd'][data-id] .layout-tab-bar .item .item__icon {
   padding-left: 8px;
 }
-.layout__center [data-type='wnd'][data-id] .layout-tab-bar .item .item__text {
-  text-align: unset;
-  flex-grow: 1;
-}
 .layout__center [data-type='wnd'][data-id] .layout-tab-bar.layout-tab-bar--readonly {
   flex: initial;
 }

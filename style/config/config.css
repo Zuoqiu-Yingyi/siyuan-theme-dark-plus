@@ -305,7 +305,7 @@
     --custom-tab-bar-background-color: var(--custom-transparent);
     /* 编辑区页签栏最小高度 | The min height of the  edit area tab bar */
     --custom-tab-bar-min-height: calc(var(--custom-dock-width));
-    /* 非钉住页签项最小宽度 */
+    /* 非钉住页签项最小宽度 | The minimum width of a non-pinned tab item */
     --custom-tab-bar-item-min-width: none;
     /* 页签图标大小 | The size of the tab bar icon */
     --custom-tab-bar-icon-size: 1.25em;
