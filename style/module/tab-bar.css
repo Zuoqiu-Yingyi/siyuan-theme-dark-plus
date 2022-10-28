@@ -35,6 +35,8 @@
   min-width: 0;
   mask-image: none;
   -webkit-mask-image: none;
+  text-align: unset;
+  flex-grow: 1;
 }
 .layout-tab-bar .item .item__close {
   padding: 4px !important;

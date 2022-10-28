@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- [#145](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/145) 修复设置 `--custom-tab-bar-item-min-width` 后关闭按钮位置问题 | Fixed the issue of closing button position after setting `--custom-tab-bar-item-min-width`.
+
 ## v1.3.7/2022-10-27
 
 - [v1.3.6 <=> v1.3.7](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.6...v1.3.7)
