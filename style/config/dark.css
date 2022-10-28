@@ -5,10 +5,10 @@
 @media (prefers-color-scheme: dark) {
     :root {
         /* 背景图片 */
-        --custom-background-image: url("/appearance/themes/Dark+/image/background (05).jpg");
+        --custom-background-image: url(/appearance/themes/Dark+/image/dark/background-main.jpg);
 
         /* 对话框背景图片 */
-        --custom-background-image-dialog: url("/appearance/themes/Dark+/image/background (01).jpg");
+        --custom-background-image-dialog: url(/appearance/themes/Dark+/image/dark/background-dialog.jpg);
 
         /* 标签图标 | The icon of tag */
         --custom-span-tag-icon: url(/appearance/themes/Dark+/icon/tag.svg);
