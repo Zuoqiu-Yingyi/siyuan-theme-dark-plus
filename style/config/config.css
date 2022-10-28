@@ -183,12 +183,12 @@
     --custom-z-index-max: 2147483647;
 
     /* 背景图片 | Background image */
-    --custom-background-image: url("/appearance/themes/Dark+/image/background (05).jpg");
+    --custom-background-image: url(/appearance/themes/Dark+/image/background-main.jpg);
     /* 背景颜色 | Background color */
     --custom-background-color: transparent;
 
     /* 对话框背景图片 | Dialog background image */
-    --custom-background-image-dialog: url("/appearance/themes/Dark+/image/background (01).jpg");
+    --custom-background-image-dialog: url(/appearance/themes/Dark+/image/background-dialog.jpg);
 
     /* 标签图标 | The icon of tag */
     --custom-span-tag-icon: url(/appearance/themes/Dark+/icon/tag.svg);
