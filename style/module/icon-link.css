@@ -171,6 +171,14 @@
     background-image: url(/appearance/themes/Dark+/icon/widgets.svg);
 }
 
+/* 片段 */
+.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="snippets/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/snippets/"]:not(:empty)::before,
+.b3-typography a[href *="snippets/"]::before,
+.b3-typography a[href *="/snippets/"]::before {
+    background-image: url(/appearance/themes/Dark+/icon/snippets.svg);
+}
+
 /* 外观 */
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="appearance/"]:not(:empty)::before,
 .protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/appearance/"]:not(:empty)::before,
@@ -185,6 +193,14 @@
 .b3-typography a[href *="export/"]::before,
 .b3-typography a[href *="/export/"]::before {
     background-image: url(/appearance/themes/Dark+/icon/export.svg);
+}
+
+/* 历史 */
+.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="history/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/history/"]:not(:empty)::before,
+.b3-typography a[href *="history/"]::before,
+.b3-typography a[href *="/history/"]::before {
+    background-image: url(/appearance/themes/Dark+/icon/history.svg);
 }
 
 /* -------------------------------- assets -------------------------------- */
