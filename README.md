@@ -322,10 +322,14 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
     - `data/emojis/`
   - <img alt="widgets" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/widgets.svg" style="height: 1em; width: 1em;" /> `widgets/`: 挂件文件目录 | Widget file directory
     - `data/widgets/`
+  - <img alt="snippets" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/snippets.svg" style="height: 1em; width: 1em;" /> `snippets/`: 片段文件目录 | Snippet file directory
+    - `data/snippets/`
   - <img alt="appearance" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/appearance.svg" style="height: 1em; width: 1em;" /> `appearance/`: 外观文件目录 | Appearance file directory
     - `conf/appearance/`
   - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/export.svg" style="height: 1em; width: 1em;" /> `export/`: 导出文件目录 | Export file directory
     - `temp/export/`
+  - <img alt="history" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/history.svg" style="height: 1em; width: 1em;" /> `history/`: 历史文件目录 | History file directory
+    - `temp/history/`
 - 指向资源文件目录下常见文件的超链接显示图标  
   Hyperlinks to common files under the resource file directory display icons.
   - <img alt="pdf" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/pdf.svg" style="height: 1em; width: 1em;" />: PDF
@@ -339,6 +343,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   - <img alt="asset" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/asset.svg" style="height: 1em; width: 1em;" />: Other
 - 指向第三方资源(`URL Scheme`)的超链接显示图标  
   Hyperlinks(`URL Scheme`) to the third-party resource displays icons.
+  - <img alt="brain" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/thebrain.svg" style="height: 1em; width: 1em;" />: `brain:` [TheBrain](https://www.thebrain.com/)
   - <img alt="bookxnote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/bookxnote.svg" style="height: 1em; width: 1em;" />: `bookxnotepro:` [BookxNote Pro](https://www.bookxnotepro.com/)
   - <img alt="calibre" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/calibre.png" style="height: 1em; width: 1em;" />: `calibre:` [calibre - E-book management](https://calibre-ebook.com/)
   - <img alt="everything" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/everything.svg" style="height: 1em; width: 1em;" />: `es:` [Everything](https://www.voidtools.com/)
@@ -359,6 +364,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   - <img alt="ticktick" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/ticktick.svg" style="height: 1em; width: 1em;" />: `ticktick:` [TickTick](https://ticktick.com/)
   - <img alt="vscode" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/vscode.svg" style="height: 1em; width: 1em;" />: `vscode:` [Visual Studio Code](https://code.visualstudio.com/)
   - <img alt="zotero" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/zotero.svg" style="height: 1em; width: 1em;" />: `zotero:` [Zotero](https://www.zotero.org/)
+    - <img alt="zotero-PDF" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/zotero-light.ico" style="height: 1em; width: 1em;" />: `zotero://open-pdf/`
 - 使用 URL 参数 `id=<内容块 ID>` 从浏览器外跳转到 Web 端的指定块(必须已经打开至少一个页签)  
   Jump from outside the browser to a specified block on the web side using the URL parameter `id=<content block ID>` (at least one tab must already be open)
   - 示例: `http(s)://host:port/stage/build/desktop/?id=20220128124308-bancmue`  

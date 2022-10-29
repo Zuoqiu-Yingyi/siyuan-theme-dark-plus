@@ -4,6 +4,9 @@
 - 修复块菜单项有时未显示问题 | Fixed the issue that block menu items sometimes were not displayed.
 - 移除未使用的背景图片 | Removed unused background images.
 - 修复 Web 端页面窗口控件样式问题 | Fixed the issue of window control style on the Web.
+- 添加静态目录图标 | Added static directory icons.
+  - `/snippets/`
+  - `/history/`
 
 ## v1.3.7/2022-10-27
 
