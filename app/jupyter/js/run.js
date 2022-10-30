@@ -82,7 +82,8 @@ style.id = config.jupyter.id.siyuan.style.id;
 style.type = 'text/css';
 style.rel = 'stylesheet';
 style.href = config.jupyter.id.siyuan.style.href;
-document.head.appendChild(style);
+// document.head.appendChild(style);
+document.getElementById('themeStyle').insertAdjacentElement("afterend", style);
 
 /* 解析数据 */
 async function parseData(data, escaped) {

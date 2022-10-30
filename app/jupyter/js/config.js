@@ -121,7 +121,7 @@ var config = {
             siyuan: {
                 style: {
                     id: 'app-jupyter-style',
-                    href: '/appearance/themes/Dark+/app/jupyter/css/siyuan.css',
+                    href: '/appearance/themes/Dark+/app/jupyter/css/jupyter.css',
                 },
             }
         },
