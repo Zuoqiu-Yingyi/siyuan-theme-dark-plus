@@ -44,6 +44,8 @@ window.theme.urlFormat = function (url, ssl = true) {
         case url.startsWith('assets/'):
         case url.startsWith('widgets/'):
         case url.startsWith('emojies/'):
+        case url.startsWith('history/'):
+        case url.startsWith('snippets/'):
         case url.startsWith('appearance/'):
         case url.startsWith('export/'):
             return new URL(`${window.location.origin}/${url}`);
@@ -51,6 +53,7 @@ window.theme.urlFormat = function (url, ssl = true) {
             return new URL(`${ssl ? 'https' : 'http'}:${url}`);
         case url.startsWith('/'):
             return new URL(`${window.location.origin}${url}`);
+        case url.startsWith('file://'):
         case url.startsWith('http://'):
         case url.startsWith('https://'):
             return new URL(url);
