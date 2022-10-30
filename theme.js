@@ -1,4 +1,18 @@
-window.theme = {};
+window.theme = {
+    element: {
+        editorFontSize: document.getElementById('editorFontSize'),
+        pdfjsScript: document.getElementById('pdfjsScript'),
+        protyleWcHtmlScript: document.getElementById('protyleWcHtmlScript'),
+        baseURL: document.getElementById('baseURL'),
+        emojiScript: document.getElementById('emojiScript'),
+        themeDefaultStyle: document.getElementById('themeDefaultStyle'),
+        themeStyle: document.getElementById('themeStyle'),
+        protyleHljsStyle: document.getElementById('protyleHljsStyle'),
+        themeScript: document.getElementById('themeScript') ?? document.currentScript,
+        iconDefaultScript: document.getElementById('iconDefaultScript'),
+        iconScript: document.getElementById('iconScript'),
+    },
+};
 
 /**
  * 静态资源请求 URL 添加参数
@@ -47,41 +61,85 @@ window.theme.addURLParam = function (
 /**
  * 加载 meta 标签
  * @params {object} attributes 属性键值对
+ * @params {string} position 节点插入位置
+ * @params {HTMLElementNode} element 节点插入锚点
  */
-window.theme.loadMeta = function (attributes) {
+window.theme.loadMeta = function (attributes, position = "afterbegin", element = document.head) {
     let meta = document.createElement('meta');
     for (let [key, value] of Object.entries(attributes)) {
         meta.setAttribute(key, value);
     }
-    document.head.insertBefore(meta, document.head.firstChild);
+    // document.head.insertBefore(meta, document.head.firstChild);
+    // [Element.insertAdjacentElement() - Web API 接口参考 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/insertAdjacentElement)
+    element.insertAdjacentElement(position, meta);
 }
 
 /**
  * 加载脚本文件
  * @params {string} url 脚本地址
  * @params {string} type 脚本类型
+ * @params {boolean} async 是否异步加载 & 非阻塞运行
+ * @params {boolean} defer 是否异步加载 & 阻塞运行
+ * @params {string} position 节点插入位置
+ * @params {HTMLElementNode} element 节点插入锚点
  */
-window.theme.loadScript = function (src, type = 'module', async = false, defer = false) {
+window.theme.loadScript = function (
+    src,
+    type = 'module',
+    async = false,
+    defer = false,
+    position = "beforebegin",
+    element = window.theme.element.themeScript,
+) {
     const script = document.createElement('script');
     if (type) script.type = type;
     if (async) script.async = true;
     if (defer) script.defer = true;
     script.src = src;
-    document.head.appendChild(script);
+    // document.head.appendChild(script);
+    element.insertAdjacentElement(position, script);
 }
 
 /**
  * 加载样式文件
+ * @params {string} innerHTML 样式内容
+ * @params {string} id 样式 ID
+ * @params {string} position 节点插入位置
+ * @params {HTMLElementNode} element 节点插入锚点
+ */
+window.theme.loadStyle = function (
+    innerHTML,
+    id = null,
+    position = "afterend",
+    element = window.theme.element.themeStyle,
+) {
+    let style = document.createElement('style');
+    if (id) style.id = id;
+    style.innerHTML = innerHTML;
+    // document.head.appendChild(style);
+    element.insertAdjacentElement(position, style);
+}
+
+/**
+ * 加载样式文件引用
  * @params {string} href 样式地址
  * @params {string} id 样式 ID
+ * @params {string} position 节点插入位置
+ * @params {HTMLElementNode} element 节点插入锚点
  */
-window.theme.loadStyle = function (href, id = null) {
-    let style = document.createElement('link');
-    if (id) style.id = id;
-    style.type = 'text/css';
-    style.rel = 'stylesheet';
-    style.href = href;
-    document.head.appendChild(style);
+window.theme.loadLink = function (
+    href,
+    id = null,
+    position = "afterend",
+    element = window.theme.element.themeStyle,
+) {
+    let link = document.createElement('link');
+    if (id) link.id = id;
+    link.type = 'text/css';
+    link.rel = 'stylesheet';
+    link.href = href;
+    // document.head.appendChild(link);
+    element.insertAdjacentElement(position, link);
 }
 
 /**
@@ -95,7 +153,7 @@ window.theme.updateStyle = function (id, href) {
         style.setAttribute('href', href);
     }
     else {
-        window.theme.loadStyle(href, id);
+        window.theme.loadLink(href, id);
     }
 }
 
@@ -194,8 +252,8 @@ window.theme.changeThemeMode = function (
             href_custom = customDarkStyle;
             break;
     }
-    window.theme.updateStyle(window.theme.ID_COLOR_STYLE, href_color);
     window.theme.updateStyle(window.theme.ID_CUSTOM_STYLE, href_custom);
+    window.theme.updateStyle(window.theme.ID_COLOR_STYLE, href_color);
 }
 
 /* 禁用缓存(无效) */

@@ -1,7 +1,6 @@
 /* 渲染自定义样式 */
 
 import { config } from './config.js';
-import { isKey } from './../utils/hotkey.js';
 import { styleHandle } from './../utils/misc.js';
 import { globalEventHandler } from './../utils/listener.js';
 import {
@@ -27,7 +26,6 @@ function renderCustomStyle(styles) {
     }
     catch (err) {
         console.error(err);
-        window.alert(`渲染自定义样式错误!\nRendering custom styles error\n${err}`);
     }
 }
 

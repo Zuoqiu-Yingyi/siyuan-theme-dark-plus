@@ -61,19 +61,13 @@ function styleHandle(id, innerHTML = null, href = null) {
         return false;
     } else {
         if (innerHTML) {
-            style = document.createElement('style');
-            style.id = id;
-            style.innerHTML = innerHTML;
-            document.head.appendChild(style);
+            // document.head.appendChild(style);
+            window.theme.loadStyle(innerHTML, id, 'beforeend', document.head);
             return true;
         }
         if (href) {
-            style = document.createElement('link');
-            style.id = id;
-            style.rel = 'stylesheet';
-            style.type = 'text/css';
-            style.href = href;
-            document.head.appendChild(style);
+            // document.head.appendChild(style);
+            window.theme.loadLink(href, id, 'beforeend', document.head);
             return true;
         }
         return false;
