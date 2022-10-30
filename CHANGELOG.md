@@ -7,6 +7,7 @@
 - 添加静态目录图标 | Added static directory icons.
   - `/snippets/`
   - `/history/`
+- 在新窗口打开资源支持 `file` 协议资源 | Open resource in new window supports `file` protocol resource.
 
 ## v1.3.7/2022-10-27
 
