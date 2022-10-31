@@ -5,8 +5,6 @@
  * REF [UserZYF](https://github.com/UserZYF) 修复上述实现方案
  */
 
-
-/* --------------------------------------用自定义属性，列表转化为表格------------------------------------------- */
 .protyle-content {
 
     [custom-type~=table],
@@ -42,6 +40,12 @@
             // overflow-x: auto;
             outline: 1px solid var(--b3-theme-on-surface);
 
+            &::before,
+            &::after {
+                /* 去除辅助线 */
+                display: none;
+            }
+
             >[data-node-id].list {
                 /* 次级列表前间隔 */
                 margin-left: 0 !important;
@@ -74,11 +78,6 @@
                 top: calc(50% - 0.125em);
                 transform: translate(0, -50%);
             }
-            &::before,
-            >div::before {
-                /* 去除辅助线 */
-                display: none;
-            }
         }
 
         // >[data-node-id].list>[data-node-id].li,
@@ -88,5 +87,3 @@
         }
     }
 }
-
-/* --------------------------------------用自定义属性，列表转化为表格 END------------------------------------------- */

@@ -1,18 +1,159 @@
 /* 列表辅助样式 */
 
-:root {
-    --custom-list-guides-line-color: var(--b3-theme-primary-lighter);
+// :root {
+//     --custom-list-guides-line-color: var(--b3-theme-primary-lighter);
+// }
+
+/* 👇👇👇 列表辅助线 👇👇👇 */
+.seam(@subtype) {
+    &[data-subtype="@{subtype}"]>.protyle-action::before {
+        /* 与本层节点的接缝 */
+        right: var(e(%("--custom-list-guides-line-right-%s", @subtype)));
+    }
 }
+
+.seam-unset(@subtype) {
+    &[data-subtype="@{subtype}"]>.protyle-action::before {
+        /* 与本层节点的接缝 */
+        right: unset;
+    }
+}
+
+.protyle-content {
+    .li[data-node-id]:has(.theme-focus)>.protyle-action {
+        /* 上级节点标志颜色 */
+        color: var(--custom-list-item-color);
+    }
+
+    .list[data-node-id] .list[data-node-id]:has(.theme-focus) {
+
+        >.li[data-node-id] {
+            &::after {
+                /* 子弹流直线 */
+                // transition: all 250ms;
+
+                content: "";
+                top: calc(-5px);
+                bottom: 0;
+                left: calc(16px - 2em);
+
+                position: absolute;
+
+                border-left: var(--custom-list-guides-line-width) solid var(--custom-striking-color);
+            }
+
+            &:has(.theme-focus) {
+                >.protyle-action {
+                    &::before {
+                        /* 子弹流弧线 */
+                        // transition: all 250ms;
+
+                        content: "";
+                        top: var(--custom-list-guides-line-top);
+                        bottom: calc(2px + 7em / 8);
+                        left: calc(16px - 2em);
+
+                        position: absolute;
+
+                        border-left: var(--custom-list-guides-line-width) solid var(--custom-striking-color);
+                        border-bottom: var(--custom-list-guides-line-width) solid var(--custom-striking-color);
+                        border-bottom-left-radius: var(--custom-list-guides-line-radius);
+                    }
+                }
+
+                .seam(t);
+                .seam(u);
+                .seam(o);
+
+                &,
+                &~.li[data-node-id] {
+                    &::after {
+                        // transition: all 250ms;
+                        border-left-color: transparent;
+                    }
+                }
+            }
+
+            // 下级节点
+            // &:has(>.theme-focus[data-node-id]) {
+            //     &,
+            //     .li[data-node-id] {
+            //         &::before {
+            //             // transition: all 250ms;
+            //             border-left-color: var(--b3-theme-primary);
+            //         }
+            //     }
+            // }
+        }
+    }
+
+    // 取消其他视图的辅助线
+    [custom-type] .list[data-node-id],
+    .list[data-node-id][custom-type] {
+        .list[data-node-id]:has(.theme-focus) {
+            >.li[data-node-id] {
+                &::after {
+                    // content: unset;
+                    top: unset;
+                    // bottom: unset;
+                    left: unset;
+
+                    // position: unset;
+
+                    // border-left: unset;
+                }
+
+                &:has(.theme-focus) {
+
+                    >.protyle-action {
+                        &::before {
+                            content: normal;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+/* 👆👆👆 列表辅助线 👆👆👆 */
 
 /* 👇👇👇 表格列表辅助线 👇👇👇 */
 .protyle-content {
 
     [custom-type~=table],
     [custom-type~="表格"] {
-        [data-node-id].li:hover {
-            /* 鼠标悬浮列表项 */
-            background-color: var(--custom-list-table-hover-background-color);
+
+        // 基于焦点的辅助线
+        [data-node-id] {
+
+            &.li {
+
+                // 上级节点
+                &:has(.theme-focus) {
+                    transition: all 500ms;
+                    outline-color: var(--custom-striking-color);
+                }
+
+                // 下级节点
+                &:has(>.theme-focus[data-node-id]) {
+                    transition: all 500ms;
+
+                    .list[data-node-id] {
+                        .li[data-node-id] {
+                            outline-color: var(--b3-theme-primary);
+                        }
+                    }
+                }
+            }
         }
+
+        // 基于鼠标悬浮的辅助线
+        // [data-node-id].li:hover {
+        //     /* 鼠标悬浮列表项 */
+        //     background-color: var(--custom-list-table-hover-background-color);
+        // }
     }
 }
 
@@ -39,42 +180,78 @@
     [custom-type~="思维导图"],
     [custom-type~=map],
     [custom-type~=mind-map] {
+
+        // 基于焦点的辅助线
         [data-node-id] {
+
             &.li {
-                &:hover {
-                    /* 鼠标悬浮列表项 */
-                    background-color: var(--custom-list-table-hover-background-color);
+
+                // 上级节点
+                &:has(.theme-focus)>[data-node-id]:not(.li, .list),
+                &:has(.theme-focus)>[data-node-id]:not(.li, .list):has(+.list[data-node-id]) {
+                    transition: all 500ms;
+                    outline-color: var(--custom-striking-color);
+                }
+
+                // 下级节点
+                &:has(>.theme-focus[data-node-id]) {
                     transition: all 500ms;
 
-                    >[data-node-id]:not(.li, .list)>[contenteditable][spellcheck] {
-                        /* 鼠标悬浮上级节点轮廓高亮 */
-                        outline-color: var(--custom-striking-color);
+                    .list[data-node-id] {
+
+                        [data-node-id]:not(.li, .list) {
+                            outline-color: var(--b3-theme-primary);
+                        }
+
+                        &:after,
+                        .li[data-node-id]::before,
+                        .li[data-node-id]::after,
+                        .list[data-node-id]::after {
+                            /* 继承线高亮 */
+                            border-color: var(--b3-theme-primary) !important;
+                        }
                     }
-                }
-
-                >[data-node-id]:not(.li, .list):hover>[contenteditable][spellcheck] {
-                    /* 鼠标悬浮当前节点高亮 */
-                    background-color: var(--b3-theme-background);
-                    outline-color: var(--b3-theme-primary);
-                }
-            }
-
-            &:hover+[data-node-id].list [data-node-id].li>[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck] {
-                /* 鼠标悬浮下级节点轮廓高亮 */
-                outline-color: var(--b3-theme-primary);
-            }
-
-            &:hover~[data-node-id].list {
-
-                &:after,
-                [data-node-id].li::after,
-                [data-node-id].li::before,
-                [data-node-id].list::after {
-                    /* 继承线高亮 */
-                    border-color: var(--b3-theme-primary);
                 }
             }
         }
+
+        // 基于鼠标悬浮的辅助线
+        // [data-node-id] {
+        //     &.li {
+        //         &:hover {
+        //             /* 鼠标悬浮列表项 */
+        //             background-color: var(--custom-list-table-hover-background-color);
+        //             transition: all 500ms;
+
+        //             >[data-node-id]:not(.li, .list)>[contenteditable][spellcheck] {
+        //                 /* 鼠标悬浮上级节点轮廓高亮 */
+        //                 outline-color: var(--custom-striking-color);
+        //             }
+        //         }
+
+        //         >[data-node-id]:not(.li, .list):hover>[contenteditable][spellcheck] {
+        //             /* 鼠标悬浮当前节点高亮 */
+        //             background-color: var(--b3-theme-background);
+        //             outline-color: var(--b3-theme-primary);
+        //         }
+        //     }
+
+        //     &:hover+[data-node-id].list [data-node-id].li>[data-node-id]:not(.li, .list)>div[contenteditable][spellcheck] {
+        //         /* 鼠标悬浮下级节点轮廓高亮 */
+        //         outline-color: var(--b3-theme-primary);
+        //     }
+
+        //     &:hover~[data-node-id].list {
+
+        //         &:after,
+        //         [data-node-id].li::after,
+        //         [data-node-id].li::before,
+        //         [data-node-id].list::after {
+        //             /* 继承线高亮 */
+        //             border-color: var(--b3-theme-primary);
+        //         }
+        //     }
+        // }
     }
 }
 

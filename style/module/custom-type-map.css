@@ -48,7 +48,7 @@
 .protyle-content [custom-type~=mind-map] [data-node-id].li:nth-last-of-type(2)::before,
 .protyle-content [custom-type~=map] [data-node-id].li:nth-last-of-type(2)::before {
   /* 取消多余线条 */
-  border: none;
+  border: none !important;
 }
 .protyle-content [custom-type~="思维导图"] [data-node-id].li:first-of-type::before,
 .protyle-content [custom-type~="导图"] [data-node-id].li:first-of-type::before,
@@ -64,8 +64,8 @@
 .protyle-content [custom-type~=mind-map] [data-node-id].li:nth-last-of-type(2)::after,
 .protyle-content [custom-type~=map] [data-node-id].li:nth-last-of-type(2)::after {
   /* 下框线 */
-  border-bottom: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
-  border-bottom-left-radius: var(--custom-border-radius);
+  border-bottom: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface) !important;
+  border-bottom-left-radius: var(--custom-border-radius) !important;
 }
 .protyle-content [custom-type~="思维导图"] [data-node-id].li:first-of-type:nth-last-of-type(2)::after,
 .protyle-content [custom-type~="导图"] [data-node-id].li:first-of-type:nth-last-of-type(2)::after,
@@ -73,7 +73,7 @@
 .protyle-content [custom-type~=mind-map] [data-node-id].li:first-of-type:nth-last-of-type(2)::after,
 .protyle-content [custom-type~=map] [data-node-id].li:first-of-type:nth-last-of-type(2)::after {
   /* 单个子项直线 */
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 .protyle-content [custom-type~="思维导图"] [data-node-id].li::before,
 .protyle-content [custom-type~="导图"] [data-node-id].li::before,
@@ -82,10 +82,10 @@
 .protyle-content [custom-type~=map] [data-node-id].li::before {
   /* 上导航线 */
   content: "";
-  position: absolute;
   height: calc(50% - var(--custom-list-guides-line-width) / 2);
-  border-left: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
   width: calc(2em - var(--custom-list-guides-line-width));
+  position: absolute !important;
+  border-left: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface) !important;
   top: calc(50% - var(--custom-list-guides-line-width) / 2);
   left: 0;
   border-top: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
@@ -97,12 +97,12 @@
 .protyle-content [custom-type~=map] [data-node-id].li::after {
   /* 下导航线 */
   content: "";
-  position: absolute;
   height: calc(50% - var(--custom-list-guides-line-width) / 2);
-  border-left: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
   width: calc(2em - var(--custom-list-guides-line-width));
-  bottom: calc(50% - var(--custom-list-guides-line-width) / 2);
-  border-bottom: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
+  position: absolute !important;
+  border-left: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface) !important;
+  bottom: calc(50% - var(--custom-list-guides-line-width) / 2) !important;
+  border-bottom: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface) !important;
 }
 .protyle-content [custom-type~="思维导图"] [data-node-id].li[data-subtype="u"] > div.protyle-action,
 .protyle-content [custom-type~="导图"] [data-node-id].li[data-subtype="u"] > div.protyle-action,

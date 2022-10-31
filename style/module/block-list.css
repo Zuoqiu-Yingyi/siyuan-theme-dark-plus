@@ -1,4 +1,8 @@
 /* 列表 */
+.protyle-wysiwyg [data-node-id].li,
+.protyle-wysiwyg [data-node-id].list {
+  margin: 0;
+}
 .protyle-wysiwyg [data-node-id].li > .protyle-action {
   /* 列表标志 */
   z-index: 0;

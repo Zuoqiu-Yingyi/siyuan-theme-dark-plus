@@ -16,7 +16,8 @@ import {
 } from './system.js';
 
 /** 编辑文档 kramdown 源代码
- * @deprecated v2.0.24+ https://github.com/siyuan-note/siyuan/issues/5289
+ * @deprecated 该方法已被废弃(v2.0.24+), 使用 `editBlockKramdown` 代替
+ * > - https://github.com/siyuan-note/siyuan/issues/5289
  */
 async function editDocKramdown(id) {
     if (window.theme.clientMode !== 'app') { // 只在桌面模式下才可以编辑

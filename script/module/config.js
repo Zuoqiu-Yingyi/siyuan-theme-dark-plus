@@ -812,6 +812,10 @@ export var config = {
                     enable: true, // 滑块跳转浏览位置功能开关
                 },
             },
+            focus: {
+                enable: true, // 当前光标所在块开关
+                className: 'theme-focus', // 光标所在块 CSS 类名
+            },
             record: {
                 enable: true, // 记录浏览位置开关
                 mode: 2, // 记录模式, 1: 记录至 custom.json, 2: 记录至文档块属性
