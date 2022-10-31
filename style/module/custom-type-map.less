@@ -10,11 +10,13 @@
 // 辅助线
 .guides() {
     content: "";
-    position: absolute;
     // height: calc(50% - var(--custom-list-guides-line-width) / 2);
     height: @height;
-    border-left: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
     width: calc(2em - var(--custom-list-guides-line-width));
+    
+    // 覆盖默认视图的列表辅助线样式
+    position: absolute !important;
+    border-left: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface) !important;
 }
 
 .protyle-content {
@@ -49,7 +51,7 @@
                 &:first-of-type::after,
                 &:nth-last-of-type(2)::before {
                     /* 取消多余线条 */
-                    border: none;
+                    border: none !important;
                 }
 
                 &:first-of-type::before {
@@ -60,8 +62,8 @@
                 &:nth-last-of-type(2)::after {
                     /* 下框线 */
                     // height: calc(50% - var(--custom-list-guides-line-width) / 2);
-                    border-bottom: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
-                    border-bottom-left-radius: var(--custom-border-radius);
+                    border-bottom: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface) !important;
+                    border-bottom-left-radius: var(--custom-border-radius) !important;
                 }
 
                 &:first-of-type:nth-last-of-type(2) {
@@ -71,7 +73,7 @@
 
                     &::after {
                         /* 单个子项直线 */
-                        border-radius: 0;
+                        border-radius: 0 !important;
                         // height: calc(50% - var(--custom-list-guides-line-width) / 2);
                     }
                 }
@@ -87,8 +89,11 @@
                 &::after {
                     /* 下导航线 */
                     .guides();
-                    bottom: @height;
-                    border-bottom: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
+                    // 覆盖默认视图的列表辅助线样式
+                    // top: 0 !important;
+                    bottom: @height !important;
+                    // left: 0 !important;
+                    border-bottom: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface) !important;
                 }
 
                 &[data-subtype="u"] {

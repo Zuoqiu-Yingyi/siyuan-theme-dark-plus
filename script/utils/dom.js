@@ -8,6 +8,7 @@ export {
     getFocusedDocBackground, // 获得焦点所在文档的背景
     getFocusedDocID, // 获得焦点所在文档的 ID
     getFocusedID, // 获得焦点所在的块 ID, 否则获得焦点所在文档的 ID
+    getTargetEditor, // 获得指定块位于的编辑区
     getTargetBlock, // 获得目标的块
     getTargetBlockID, // 获得目标的块 ID
     getTargetBlockIndex, // 获得目标的块在文档中的索引
@@ -62,9 +63,7 @@ function getDockFromPanel(panelName) {
  * @return {null} 光标不在块内
  */
 function getFocusedBlock() {
-    let block = window.getSelection()
-        && window.getSelection().focusNode
-        && window.getSelection().focusNode.parentElement; // 当前光标
+    let block = window.getSelection()?.focusNode?.parentElement; // 当前光标
     while (block != null && block.dataset.nodeId == null) block = block.parentElement;
     return block;
 }
@@ -126,6 +125,16 @@ function getFocusedID() {
     return getFocusedBlockID() || getFocusedDocID() || null;
 }
 
+/**
+ * 获得指定块位于的编辑区
+ * @params {HTMLElement} 
+ * @return {HTMLElement} 光标所在块位于的编辑区
+ * @return {null} 光标不在块内
+ */
+function getTargetEditor(block) {
+    while (block != null && !block.classList.contains('protyle-content')) block = block.parentElement;
+    return block;
+}
 
 /**
  * 获得目标的块
@@ -371,7 +380,9 @@ function getBlockSelected() {
 
 /**
  * 设置 DOM 中的块属性
- * @deprecated 2.1.15+ https://github.com/siyuan-note/siyuan/issues/5847 https://github.com/siyuan-note/siyuan/issues/5866
+ * @deprecated 该方法已被废弃(2.1.15+), 使用 API `/api/attr/setBlockAttrs` 代替
+ * > - https://github.com/siyuan-note/siyuan/issues/5847
+ * > - https://github.com/siyuan-note/siyuan/issues/5866
  * @param {string} id 块 ID
  * @param {object} attrs 块属性 dict
  */
@@ -610,6 +621,7 @@ function setDockState(items, state) {
 
 /**
  * 计算当前节点是上级节点的第几个节点
+ * @deprecated 该方法已被废弃, 使用 API `/api/block/getBlockIndex` 代替
  * @params {HTMLElement} element: 当前节点
  * @params {Array} classList: 类字段列表
  * @return {int}: 节点索引数

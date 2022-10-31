@@ -4,7 +4,6 @@
  * 详情请参考: [土法列表表格-这回原理我也说不清了 · 语雀](https: //www.yuque.com/siyuannote/docs/yev84m)
  * REF [UserZYF](https://github.com/UserZYF) 修复上述实现方案
  */
-/* --------------------------------------用自定义属性，列表转化为表格------------------------------------------- */
 .protyle-content [custom-type~=table][data-node-id].list > [data-node-id].li > .protyle-attr > .protyle-attr--refcount,
 .protyle-content [custom-type~="表格"][data-node-id].list > [data-node-id].li > .protyle-attr > .protyle-attr--refcount {
   /* 引用数按钮 */
@@ -27,6 +26,13 @@
   /* 列表项 */
   display: flex;
   outline: 1px solid var(--b3-theme-on-surface);
+}
+.protyle-content [custom-type~=table] [data-node-id].li::before,
+.protyle-content [custom-type~="表格"] [data-node-id].li::before,
+.protyle-content [custom-type~=table] [data-node-id].li::after,
+.protyle-content [custom-type~="表格"] [data-node-id].li::after {
+  /* 去除辅助线 */
+  display: none;
 }
 .protyle-content [custom-type~=table] [data-node-id].li > [data-node-id].list,
 .protyle-content [custom-type~="表格"] [data-node-id].li > [data-node-id].list {
@@ -60,16 +66,8 @@
   top: calc(50% - 0.125em);
   transform: translate(0, -50%);
 }
-.protyle-content [custom-type~=table] [data-node-id].li::before,
-.protyle-content [custom-type~="表格"] [data-node-id].li::before,
-.protyle-content [custom-type~=table] [data-node-id].li > div::before,
-.protyle-content [custom-type~="表格"] [data-node-id].li > div::before {
-  /* 去除辅助线 */
-  display: none;
-}
 .protyle-content [custom-type~=table] > [data-node-id].li,
 .protyle-content [custom-type~="表格"] > [data-node-id].li {
   /* 最顶层的列表项滚动 */
   overflow-x: auto;
 }
-/* --------------------------------------用自定义属性，列表转化为表格 END------------------------------------------- */

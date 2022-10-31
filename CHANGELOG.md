@@ -11,6 +11,7 @@
 - 修复页签栏样式问题 | Fixed the issue of tab bar style.
 - 调整主题 `style` 与 `script` 标签顺序 | Adjusted the order of theme `style` and `script` tags.
 - 修复块引搜索菜单样式 | Fixed the style of block reference search menu.
+- 重构列表辅助线 | Refactored list guide lines.
 
 ## v1.3.7/2022-10-27
 

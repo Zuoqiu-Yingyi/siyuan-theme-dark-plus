@@ -1,7 +1,12 @@
 /* 列表 */
 
-
 .protyle-wysiwyg {
+
+    [data-node-id].li,
+    [data-node-id].list {
+        margin: 0;
+    }
+
     [data-node-id].li {
         >.protyle-action {
             /* 列表标志 */
@@ -12,6 +17,7 @@
                 z-index: -1;
             }
         }
+
         &::before {
             /* 缩进辅助线样式 */
             border-left-width: var(--custom-list-guides-line-width);

@@ -15,6 +15,7 @@ import {
 import {
     getFocusedBlock,
     getFocusedDocID,
+    getTargetEditor,
     getTargetBlockIndex,
     setBlockDOMAttrs,
     setBlockSlider,
@@ -34,8 +35,8 @@ var record_enable = false;
  * 更新 index 值
  */
 async function updateBlockSlider() {
-    let block = getFocusedBlock(); // 当前光标所在块
-    let top = await getTargetBlockIndex(block); // 获得焦点所在顶层块
+    const block = getFocusedBlock(); // 当前光标所在块
+    const top = await getTargetBlockIndex(block); // 获得焦点所在顶层块
     // console.log(block, top);
     if (block && top) {
         setBlockSlider(top.index, top.scroll, top.offset); // 设置滑块位置
@@ -46,10 +47,11 @@ async function updateBlockSlider() {
     }
     return null;
 }
+
 /**
- * 目标处理函数
+ * 更新块滚动条
  */
-async function focusHandler(target, mode = config.theme.location.record.mode) {
+async function updateSliderHandler(target, mode = config.theme.location.record.mode) {
     if (target
         && (target.classList.contains('protyle-scroll')
             || target.classList.contains('b3-slider')
@@ -70,6 +72,19 @@ async function focusHandler(target, mode = config.theme.location.record.mode) {
     }
 }
 
+/**
+ * 处理焦点事件
+ */
+async function focusHandler(e) {
+    // console.log(e);
+    /* 取消当前编辑区 */
+    const block = getFocusedBlock(); // 当前光标所在块
+    const editor = getTargetEditor(block); // 当前光标所在块位于的编辑区
+    if (block && editor) {
+        editor.querySelectorAll(`.${config.theme.location.focus.className}`).forEach(element => element.classList.remove(config.theme.location.focus.className));
+        block.classList.add(config.theme.location.focus.className);
+    }
+}
 
 /**
  * 跳转到浏览位置
@@ -213,8 +228,13 @@ setTimeout(() => {
                             if (compareVersion(window.theme.kernelVersion, '2.4.5') <= 0) {
                                 if (config.theme.location.slider.follow.enable) {
                                     // 滑块跟踪鼠标点击的块
-                                    editor.addEventListener('click', e => setTimeout(async () => focusHandler(e.target), 0));
+                                    editor.addEventListener('click', e => setTimeout(async () => updateSliderHandler(e.target), 0));
                                 }
+                            }
+
+                            if (config.theme.location.focus.enable) {
+                                // 跟踪当前所在块
+                                editor.addEventListener('mouseup', focusHandler, true);
                             }
 
                             if (config.theme.location.slider.goto.enable) {
