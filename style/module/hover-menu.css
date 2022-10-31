@@ -55,6 +55,12 @@
   backdrop-filter: var(--custom-backdrop-popover-filter);
   box-sizing: border-box;
 }
+.b3-list.b3-list--background.protyle-hint {
+  /* 块引用搜索菜单 */
+}
+.b3-list.b3-list--background.protyle-hint > .b3-list-item {
+  width: 100% !important;
+}
 .b3-list.b3-list--background.hint--menu {
   /* '/' 菜单 */
   column-count: 4;

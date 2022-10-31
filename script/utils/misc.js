@@ -136,6 +136,7 @@ function jump(id, callback = null) {
         // ref.setAttribute("data-type", "block-ref");
         // ref.setAttribute("data-subtype", "s");
         // ref.setAttribute("data-id", id);
+        ref.style.display = 'none';
         ref.dataset.type = "block-ref";
         ref.dataset.subtype = "s";
         ref.dataset.id = id;
@@ -155,6 +156,7 @@ function popover(id, callback = null) {
     const editor = document.querySelector('.protyle-wysiwyg [data-node-id] [contenteditable][spellcheck]');
     if (editor) {
         let span = document.createElement("span");
+        span.style.display = 'none';
         span.classList.add('protyle-wysiwyg__embed');
         span.dataset.id = id;
         editor.appendChild(span);
