@@ -2,6 +2,16 @@
  * 列表转导图
  * REF [royc01/notion-theme](https://github.com/royc01/notion-theme/blob/c5e535a8f40a97c1d42384a7715ced88261dd59f/theme.css#L1444-L1577)
  */
+.protyle-content [custom-type~="思维导图"][data-node-id].list,
+.protyle-content [custom-type~="导图"][data-node-id].list,
+.protyle-content [custom-type~="脑图"][data-node-id].list,
+.protyle-content [custom-type~=mind-map][data-node-id].list,
+.protyle-content [custom-type~=map][data-node-id].list {
+  /* 导图块样式 */
+  overflow-x: auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
 .protyle-content [custom-type~="思维导图"][data-node-id].list > .protyle-attr,
 .protyle-content [custom-type~="导图"][data-node-id].list > .protyle-attr,
 .protyle-content [custom-type~="脑图"][data-node-id].list > .protyle-attr,
@@ -234,16 +244,6 @@
   border-bottom: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface);
   width: 2em;
   height: 0;
-}
-.protyle-content [custom-type~="思维导图"].list,
-.protyle-content [custom-type~="导图"].list,
-.protyle-content [custom-type~="脑图"].list,
-.protyle-content [custom-type~=mind-map].list,
-.protyle-content [custom-type~=map].list {
-  /* 导图块样式 */
-  overflow-x: auto;
-  padding-top: 1em;
-  padding-bottom: 1em;
 }
 .protyle-content [custom-type~="思维导图"].list > [data-node-id].li:first-of-type:nth-last-of-type(2),
 .protyle-content [custom-type~="导图"].list > [data-node-id].li:first-of-type:nth-last-of-type(2),

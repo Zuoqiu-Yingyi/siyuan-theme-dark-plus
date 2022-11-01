@@ -13,7 +13,7 @@
     // height: calc(50% - var(--custom-list-guides-line-width) / 2);
     height: @height;
     width: calc(2em - var(--custom-list-guides-line-width));
-    
+
     // 覆盖默认视图的列表辅助线样式
     position: absolute !important;
     border-left: var(--custom-list-guides-line-width) solid var(--b3-theme-on-surface) !important;
@@ -27,6 +27,10 @@
     [custom-type~=mind-map],
     [custom-type~=map] {
         &[data-node-id].list {
+            /* 导图块样式 */
+            overflow-x: auto;
+            padding-top: 1em;
+            padding-bottom: 1em;
 
             &,
             &>[data-node-id].li {
@@ -198,13 +202,6 @@
                     height: 0;
                 }
             }
-        }
-
-        &.list {
-            /* 导图块样式 */
-            overflow-x: auto;
-            padding-top: 1em;
-            padding-bottom: 1em;
         }
 
         &.list>[data-node-id].li:first-of-type:nth-last-of-type(2),
