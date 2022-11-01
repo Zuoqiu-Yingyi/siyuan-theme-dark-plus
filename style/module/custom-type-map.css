@@ -220,7 +220,6 @@
   /* 整个导图列表取消缩进 */
   margin: 0;
   padding: 0 0 0 1em;
-  transition: all 500ms;
 }
 .protyle-content [custom-type~="思维导图"] [data-node-id].list::after,
 .protyle-content [custom-type~="导图"] [data-node-id].list::after,
