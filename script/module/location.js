@@ -232,10 +232,6 @@ setTimeout(() => {
                                 }
                             }
 
-                            if (config.theme.location.focus.enable) {
-                                // 跟踪当前所在块
-                                editor.addEventListener('mouseup', focusHandler, true);
-                            }
 
                             if (config.theme.location.slider.goto.enable) {
                                 // 跳转浏览进度
@@ -253,6 +249,11 @@ setTimeout(() => {
                     };
                 }
                 setTimeout(fn, 0);
+            }
+            if (config.theme.location.focus.enable) {
+                // 跟踪当前所在块
+                window.addEventListener('mouseup', focusHandler, true);
+                window.addEventListener('keyup', focusHandler, true);
             }
             if (config.theme.location.record.enable) {
                 // 开关浏览位置记录功能
