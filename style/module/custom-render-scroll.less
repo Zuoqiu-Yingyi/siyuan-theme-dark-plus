@@ -14,32 +14,34 @@
                 position: sticky;
             }
 
-            &.table table::-webkit-scrollbar-track,
-            &:not(.table)::-webkit-scrollbar-track {
-                /* 滚动条轨道样式 */
-                background-color: var(--custom-scroll-track-background-color);
-                border-radius: var(--custom-border-radius);
-            }
-
-            &.table table {
-                /* 为表格块添加纵向滚动条 */
-                position: relative;
+            // 表格块
+            &.table table,
+            // 非表格块
+            &:not(.table) {
+                /* 纵向滚动条 */
                 overflow-y: auto;
                 max-height: var(--custom-scroll-max-height);
 
-                >thead {
-                    /* 冻结表头 */
-                    position: sticky;
-                    top: 1px;
-                    outline: 1px solid var(--b3-theme-primary);
-                    z-index: 1;
+                &::-webkit-scrollbar-track {
+                    /* 滚动条轨道样式 */
+                    background-color: var(--custom-scroll-track-background-color);
+                    border-radius: var(--custom-border-radius);
                 }
             }
 
-            &:not(.table) {
-                /* 为非表格块添加纵向滚动条 */
-                overflow-y: auto;
-                max-height: var(--custom-scroll-max-height);
+            &.table {
+                position: relative;
+
+                table {
+
+                    >thead {
+                        /* 冻结表头 */
+                        position: sticky;
+                        top: 1px;
+                        outline: 1px solid var(--b3-theme-primary);
+                        z-index: 1;
+                    }
+                }
             }
         }
     }

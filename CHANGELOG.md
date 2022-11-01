@@ -15,6 +15,7 @@
 - 移除块属性定义的列表辅助线 | Removed list guide lines defined by block attributes.
 - 移除列表脑图视图动画 | Removed list mind map view animation.
 - 优化获取当前焦点方法 | Optimized the method of getting the current focus.
+- 调整滚屏显示样式 | Adjusted the style of scrolling display.
 
 ## v1.3.7/2022-10-27
 
