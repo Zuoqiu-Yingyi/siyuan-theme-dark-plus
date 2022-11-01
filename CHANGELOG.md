@@ -13,6 +13,7 @@
 - 修复块引搜索菜单样式 | Fixed the style of block reference search menu.
 - 重构列表辅助线 | Refactored list guide lines.
 - 移除块属性定义的列表辅助线 | Removed list guide lines defined by block attributes.
+- 移除列表脑图视图动画 | Removed list mind map view animation.
 
 ## v1.3.7/2022-10-27
 
