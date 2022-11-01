@@ -79,10 +79,19 @@ async function focusHandler(e) {
     // console.log(e);
     /* 取消当前编辑区 */
     const block = getFocusedBlock(); // 当前光标所在块
+    /* 当前块已经设置焦点 */
+    if (block?.classList.contains(config.theme.location.focus.className)
+        && block.id === config.theme.location.focus.id
+    ) return;
+
+    /* 当前块未设置焦点 */
     const editor = getTargetEditor(block); // 当前光标所在块位于的编辑区
-    if (block && editor) {
+    if (editor) {
         editor.querySelectorAll(`.${config.theme.location.focus.className}`).forEach(element => element.classList.remove(config.theme.location.focus.className));
+        document.querySelectorAll(`#${config.theme.location.focus.id}`).forEach(element => element.removeAttribute('id'));
+
         block.classList.add(config.theme.location.focus.className);
+        block.id = config.theme.location.focus.id;
     }
 }
 
