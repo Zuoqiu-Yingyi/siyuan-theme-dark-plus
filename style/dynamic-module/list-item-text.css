@@ -8,3 +8,7 @@
   --custom-tag-display: table-cell;
   --custom-search-display: table-cell;
 }
+.protyle-breadcrumb__item,
+.protyle-breadcrumb__text--ellipsis {
+  max-width: none;
+}

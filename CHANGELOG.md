@@ -16,6 +16,7 @@
 - 移除列表脑图视图动画 | Removed list mind map view animation.
 - 优化获取当前焦点方法 | Optimized the method of getting the current focus.
 - 调整滚屏显示样式 | Adjusted the style of scrolling display.
+- 优化完整显示文本功能 | Optimized the full display text function.
 
 ## v1.3.7/2022-10-27
 
