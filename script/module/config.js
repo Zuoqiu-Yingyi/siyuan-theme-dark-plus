@@ -814,6 +814,7 @@ export var config = {
             },
             focus: {
                 enable: true, // 当前光标所在块开关
+                id: 'theme-focus-block', // 当前光标所在块的 HTML 元素 id
                 className: 'theme-focus', // 光标所在块 CSS 类名
             },
             record: {
