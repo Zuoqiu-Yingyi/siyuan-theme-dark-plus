@@ -25,11 +25,6 @@
   background-color: var(--custom-scroll-track-background-color);
   border-radius: var(--custom-border-radius);
 }
-.protyle-content [data-node-id][custom-render~=scroll].table,
-.protyle-content [data-node-id][custom-render~="滚屏"].table,
-.protyle-content [data-node-id][custom-render~="滚动"].table {
-  position: relative;
-}
 .protyle-content [data-node-id][custom-render~=scroll].table table > thead,
 .protyle-content [data-node-id][custom-render~="滚屏"].table table > thead,
 .protyle-content [data-node-id][custom-render~="滚动"].table table > thead {

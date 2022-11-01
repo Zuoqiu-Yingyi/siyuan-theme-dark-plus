@@ -1,6 +1,5 @@
 /* 块过长时设置块内纵向滚动条 */
 
-
 .protyle-content {
     [data-node-id] {
 
@@ -29,20 +28,17 @@
                 }
             }
 
-            &.table {
-                position: relative;
+            &.table table {
 
-                table {
-
-                    >thead {
-                        /* 冻结表头 */
-                        position: sticky;
-                        top: 1px;
-                        outline: 1px solid var(--b3-theme-primary);
-                        z-index: 1;
-                    }
+                >thead {
+                    /* 冻结表头 */
+                    position: sticky;
+                    top: 1px;
+                    outline: 1px solid var(--b3-theme-primary);
+                    z-index: 1;
                 }
             }
+
         }
     }
 }
