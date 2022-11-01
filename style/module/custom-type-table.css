@@ -20,6 +20,7 @@
 .protyle-content [custom-type~=table] [data-node-id].list,
 .protyle-content [custom-type~="表格"] [data-node-id].list {
   /* 嵌套列表块 */
+  flex: 1;
 }
 .protyle-content [custom-type~=table] [data-node-id].li,
 .protyle-content [custom-type~="表格"] [data-node-id].li {

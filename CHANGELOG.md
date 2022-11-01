@@ -17,6 +17,7 @@
 - 优化获取当前焦点方法 | Optimized the method of getting the current focus.
 - 调整滚屏显示样式 | Adjusted the style of scrolling display.
 - 优化完整显示文本功能 | Optimized the full display text function.
+- [#149](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/149)调整列表表格视图单元格样式 | Adjusted the style of list table view cells.
 
 ## v1.3.7/2022-10-27
 
