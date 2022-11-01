@@ -18,7 +18,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 29px;
+  left: 30px;
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -28,7 +28,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 45px;
+  left: 48px;
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -38,7 +38,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 61px;
+  left: 66px;
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -48,7 +48,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 77px;
+  left: 84px;
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -58,7 +58,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 93px;
+  left: 102px;
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -68,7 +68,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 109px;
+  left: 120px;
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -78,7 +78,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 125px;
+  left: 138px;
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -88,7 +88,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 141px;
+  left: 156px;
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -98,7 +98,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 157px;
+  left: 174px;
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
