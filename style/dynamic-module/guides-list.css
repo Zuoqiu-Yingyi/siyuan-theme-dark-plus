@@ -53,15 +53,12 @@
 /* 👇👇👇 表格列表辅助线 👇👇👇 */
 .protyle-content [custom-type~=table] [data-node-id].li:has(.theme-focus),
 .protyle-content [custom-type~="表格"] [data-node-id].li:has(.theme-focus) {
-  transition: all 500ms;
+  transition: all 250ms;
   outline-color: var(--custom-striking-color);
-}
-.protyle-content [custom-type~=table] [data-node-id].li:has(>.theme-focus[data-node-id]),
-.protyle-content [custom-type~="表格"] [data-node-id].li:has(>.theme-focus[data-node-id]) {
-  transition: all 500ms;
 }
 .protyle-content [custom-type~=table] [data-node-id].li:has(>.theme-focus[data-node-id]) .list[data-node-id] .li[data-node-id],
 .protyle-content [custom-type~="表格"] [data-node-id].li:has(>.theme-focus[data-node-id]) .list[data-node-id] .li[data-node-id] {
+  transition: all 250ms;
   outline-color: var(--b3-theme-primary);
 }
 /* 鼠标悬浮上级节点轮廓高亮 */
@@ -86,21 +83,15 @@
 .protyle-content [custom-type~="思维导图"] [data-node-id].li:has(.theme-focus) > [data-node-id]:not(.li, .list):has(+.list[data-node-id]),
 .protyle-content [custom-type~=map] [data-node-id].li:has(.theme-focus) > [data-node-id]:not(.li, .list):has(+.list[data-node-id]),
 .protyle-content [custom-type~=mind-map] [data-node-id].li:has(.theme-focus) > [data-node-id]:not(.li, .list):has(+.list[data-node-id]) {
-  transition: all 500ms;
+  transition: all 250ms;
   outline-color: var(--custom-striking-color);
-}
-.protyle-content [custom-type~="脑图"] [data-node-id].li:has(>.theme-focus[data-node-id]),
-.protyle-content [custom-type~="导图"] [data-node-id].li:has(>.theme-focus[data-node-id]),
-.protyle-content [custom-type~="思维导图"] [data-node-id].li:has(>.theme-focus[data-node-id]),
-.protyle-content [custom-type~=map] [data-node-id].li:has(>.theme-focus[data-node-id]),
-.protyle-content [custom-type~=mind-map] [data-node-id].li:has(>.theme-focus[data-node-id]) {
-  transition: all 500ms;
 }
 .protyle-content [custom-type~="脑图"] [data-node-id].li:has(>.theme-focus[data-node-id]) .list[data-node-id] [data-node-id]:not(.li, .list),
 .protyle-content [custom-type~="导图"] [data-node-id].li:has(>.theme-focus[data-node-id]) .list[data-node-id] [data-node-id]:not(.li, .list),
 .protyle-content [custom-type~="思维导图"] [data-node-id].li:has(>.theme-focus[data-node-id]) .list[data-node-id] [data-node-id]:not(.li, .list),
 .protyle-content [custom-type~=map] [data-node-id].li:has(>.theme-focus[data-node-id]) .list[data-node-id] [data-node-id]:not(.li, .list),
 .protyle-content [custom-type~=mind-map] [data-node-id].li:has(>.theme-focus[data-node-id]) .list[data-node-id] [data-node-id]:not(.li, .list) {
+  transition: all 250ms;
   outline-color: var(--b3-theme-primary);
 }
 .protyle-content [custom-type~="脑图"] [data-node-id].li:has(>.theme-focus[data-node-id]) .list[data-node-id]:after,
@@ -123,6 +114,7 @@
 .protyle-content [custom-type~="思维导图"] [data-node-id].li:has(>.theme-focus[data-node-id]) .list[data-node-id] .list[data-node-id]::after,
 .protyle-content [custom-type~=map] [data-node-id].li:has(>.theme-focus[data-node-id]) .list[data-node-id] .list[data-node-id]::after,
 .protyle-content [custom-type~=mind-map] [data-node-id].li:has(>.theme-focus[data-node-id]) .list[data-node-id] .list[data-node-id]::after {
+  transition: all 250ms;
   /* 继承线高亮 */
   border-color: var(--b3-theme-primary) !important;
 }

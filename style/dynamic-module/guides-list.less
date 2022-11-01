@@ -8,20 +8,15 @@
 .seam(@subtype) {
     &[data-subtype="@{subtype}"]>.protyle-action::before {
         /* 与本层节点的接缝 */
+        // transition: all 250ms;
         right: var(e(%("--custom-list-guides-line-right-%s", @subtype)));
-    }
-}
-
-.seam-unset(@subtype) {
-    &[data-subtype="@{subtype}"]>.protyle-action::before {
-        /* 与本层节点的接缝 */
-        right: unset;
     }
 }
 
 .protyle-content {
     .li[data-node-id]:has(.theme-focus)>.protyle-action {
         /* 上级节点标志颜色 */
+        // transition: all 250ms;
         color: var(--custom-list-item-color);
     }
 
@@ -132,16 +127,17 @@
 
                 // 上级节点
                 &:has(.theme-focus) {
-                    transition: all 500ms;
+                    transition: all 250ms;
                     outline-color: var(--custom-striking-color);
                 }
 
                 // 下级节点
                 &:has(>.theme-focus[data-node-id]) {
-                    transition: all 500ms;
 
                     .list[data-node-id] {
+
                         .li[data-node-id] {
+                            transition: all 250ms;
                             outline-color: var(--b3-theme-primary);
                         }
                     }
@@ -189,17 +185,17 @@
                 // 上级节点
                 &:has(.theme-focus)>[data-node-id]:not(.li, .list),
                 &:has(.theme-focus)>[data-node-id]:not(.li, .list):has(+.list[data-node-id]) {
-                    transition: all 500ms;
+                    transition: all 250ms;
                     outline-color: var(--custom-striking-color);
                 }
 
                 // 下级节点
                 &:has(>.theme-focus[data-node-id]) {
-                    transition: all 500ms;
 
                     .list[data-node-id] {
 
                         [data-node-id]:not(.li, .list) {
+                            transition: all 250ms;
                             outline-color: var(--b3-theme-primary);
                         }
 
@@ -207,6 +203,7 @@
                         .li[data-node-id]::before,
                         .li[data-node-id]::after,
                         .list[data-node-id]::after {
+                            transition: all 250ms;
                             /* 继承线高亮 */
                             border-color: var(--b3-theme-primary) !important;
                         }

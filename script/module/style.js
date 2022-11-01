@@ -89,6 +89,7 @@ function changeStyleState(styleConfig) {
         enable,
         'BUTTON',
     );
+    return enable;
 }
 
 setTimeout(() => {
