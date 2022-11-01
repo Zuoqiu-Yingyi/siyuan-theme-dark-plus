@@ -1690,8 +1690,6 @@ export var config = {
                                 enable: true,
                                 type: {
                                     NodeDocument: { enable: true },
-                                    NodeList: { enable: true },
-                                    NodeTable: { enable: true },
                                 },
                                 mode: "separator",
                             },
@@ -1971,41 +1969,6 @@ export var config = {
                                             params: {
                                                 'custom-render': [
                                                     'outline',
-                                                    null,
-                                                ],
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeList: {
-                                        enable: true, // 是否在该块类型启用菜单项
-                                        subtype: { // 是否在该子类型启用菜单项
-                                            u: true,
-                                            o: true,
-                                            t: true,
-                                        },
-                                    },
-                                },
-                                mode: "button",
-                                icon: "#iconIndent",
-                                label: {
-                                    zh_CN: "列表辅助线",
-                                    other: "List Guides",
-                                },
-                                accelerator: "list-guides: 1",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-switch',
-                                            params: {
-                                                'custom-list-guides': [
-                                                    '1',
                                                     null,
                                                 ],
                                             },
