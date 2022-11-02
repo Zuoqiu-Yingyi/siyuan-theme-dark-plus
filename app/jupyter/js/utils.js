@@ -233,8 +233,9 @@ function isEmptyObject(obj) {
  */
 function parseControlCharacters(src, text) {
     const chars = [...src];
+    const content = text.replaceAll('\r\n', '\n');
     let ptr = chars.length;
-    for (let c of text) {
+    for (let c of content) {
         switch (c) {
             case '\b': // backspace
                 if (ptr > 0) ptr--;
