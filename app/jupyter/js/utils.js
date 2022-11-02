@@ -10,12 +10,19 @@ export {
     URL2DataURL, // URL 转 DataURL
     HTMLEncode, // HTML 编码
     HTMLDecode, // HTML 解码
+    createIAL, // 创建内联属性表字符串
+    isEmptyObject, // 判断对象是否为空
+    parseControlCharacters, // 解析控制字符
+    markdown2kramdown, // Markdown 转 Kramdown
 };
 
 import { config } from './config.js';
 import { jupyter } from './api.js';
 
 // REF [js - 对象递归合并merge - zc-lee - 博客园](https://www.cnblogs.com/zc-lee/p/15873611.html)
+function isString(obj) {
+    return Object.prototype.toString.call(obj) === '[object String]'
+}
 function isObject(obj) {
     return Object.prototype.toString.call(obj) === '[object Object]'
 }
@@ -191,4 +198,73 @@ function HTMLDecode(text) {
     let temp = document.createElement("div");
     temp.innerHTML = text;
     return temp.textContent;;
+}
+
+/**
+ * 创建内联属性表字符串
+ * @params {object} obj: 属性表对象
+ * @return {string}: ial 字符串, 格式： {: key="value" key="value" ...}
+ */
+function createIAL(obj) {
+    let IAL = [];
+    for (const key in obj) {
+        IAL.push(`${key}="${HTMLEncode(obj[key]).replaceAll('\n', '_esc_newline_')}"`);
+    }
+    return `{: ${IAL.join(' ')}}`;
+}
+
+/**
+ * 判断对象是否为空
+ * @params {object} obj: 对象
+ * @return {boolean}: 是否为空
+ */
+function isEmptyObject(obj) {
+    for (const key in obj) {
+        return false;
+    }
+    return true;
+}
+
+/**
+ * 解析控制字符
+ * @params {string} src: 原字符串
+ * @params {string} text: 包含控制字符的字符串
+ * @return {string}: 解析后的字符串
+ */
+function parseControlCharacters(src, text) {
+    const chars = [...src];
+    let ptr = chars.length;
+    for (let c of text) {
+        switch (c) {
+            case '\b': // backspace
+                if (ptr > 0) ptr--;
+                break;
+            case '\r': // carriage return
+                ptr = 0;
+                break;
+            default:
+                chars[ptr++] = c;
+        }
+    }
+    return chars.slice(0, ptr).join('');
+}
+
+/**
+ * Markdown 转 Kramdown
+ * @params {string} markdown: markdown 字符串
+ * @params {string/object} ial: ial 字符串/ial 对象
+ * @return {string}: kramdown 字符串
+ */
+function markdown2kramdown(markdown, ial) {
+    switch (true) {
+        case isObject(ial):
+            if (isEmptyObject(ial))
+                return markdown.replace(/\n+$/, '');
+            else
+                return `${markdown.replace(/\n+$/, '')}\n${createIAL(ial)}`;
+        case isString(ial):
+            return `${markdown.replace(/\n+$/, '')}\n${ial}`;
+        default:
+            return markdown.replace(/\n+$/, '');
+    }
 }

@@ -23,7 +23,8 @@ import {
     base64ToBlob,
     escapeText,
     promptFormat,
-    HTMLEncode,
+    parseControlCharacters,
+    markdown2kramdown,
 } from './utils.js';
 
 /** 消息序列 */
@@ -164,6 +165,7 @@ async function parseData(data, escaped) {
 async function messageHandle(msg_id, msg_type, message, websocket) {
     const message_info = websocket.messages[msg_id];
     let markdown; // 需要输出的消息
+    let ial = {}; // 需要输出的 IAL
     if (!message_info) return;
     switch (msg_type) {
         case "status": // 状态信息
@@ -184,30 +186,19 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
             {
                 const type = message.content.name;
                 const text = message.content.text.replace(/\u001b\[\d+m/g, '');
-                let style;
                 switch (type) {
                     case "stdout":
                         break;
                     case "stderr":
-                        style = config.jupyter.style.error;
+                        ial.style = config.jupyter.style.error;
                         break;
                     default:
-                        style = config.jupyter.style.warning;
+                        ial.style = config.jupyter.style.warning;
                         break;
                 }
-                /* 忽略都是空白的异常消息 */
-                if (style && /^\s+$/.test(text)) {
-                    if (/^\r\s*$/.test(text)) markdown = '\r';
-                    break;
-                }
-
                 markdown = message_info.escaped
                     ? escapeText(text)
                     : text;
-
-                /* 添加样式 IAL */
-                if (style)
-                    markdown = `${markdown.replace(/\n+$/, '')}\n{: style="${style}" }`
             }
             break;
         case "execute_result": // 代码运行结果
@@ -228,8 +219,9 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                     markdowns.push(t.replace(/\u001b\[(\d+;)*\d+m/g, ''));
                 }
                 markdowns.push('```');
-                markdowns.push(`{: style="${config.jupyter.style.error}"}`);
+                // markdowns.push(`{: style="${config.jupyter.style.error}"}`);
                 markdown = markdowns.join('\n');
+                ial.style = config.jupyter.style.error;
             }
             break;
         case "execute_input": // 代码输入信息
@@ -318,24 +310,41 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
     /* 如果存在需要输出的消息 */
     if (markdown) {
         let response; // 响应
-        /* 覆盖原块 */
-        if (markdown.indexOf('\r') >= 0 && message_info.current) {
+        /* 编辑原块 */
+        if (message_info.current
+            && (
+                markdown.indexOf('\r') >= 0
+                || markdown.indexOf('\b') >= 0
+            )
+        ) {
             /* 删除原块 */
-            if (markdown === '\r') {
+            if (/^\r\s*$/.test(markdown)) {
                 await deleteBlock(message_info.current);
                 message_info.current = null;
                 return;
             }
-            response = await updateBlock(
-                message_info.current,
-                markdown.substring(markdown.lastIndexOf('\r') + 1),
-            );
+            /* 更新原块 */
+            else {
+                /* 获得原块内容 */
+                response = await queryBlock(message_info.current);
+                const markdown_origin = response?.[0]?.markdown;
+    
+                /* 更新原块内容 */
+                if (markdown_origin) {
+                    markdown = parseControlCharacters(markdown_origin, markdown);
+                }
+                response = await updateBlock(
+                    message_info.current,
+                    markdown2kramdown(markdown, ial),
+                );
+            }
+
         }
         /* 生成新块 */
         else {
             response = await appendBlock(
                 message_info.output,
-                markdown.replace(/\n+$/, ''),
+                markdown2kramdown(markdown, ial),
             );
         }
         /* 更新当前块 */
