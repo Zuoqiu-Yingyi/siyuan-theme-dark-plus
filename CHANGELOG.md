@@ -21,6 +21,7 @@
 - 调整移动端侧边面板辅助线样式 | Adjusted the style of side panel guide lines on mobile.
 - jupyter 支持 `text/html` 与 `\r` 输出 | Jupyter supports `text/html` and `\r` output.
 - 修复 jupyter 输出的图片标题显示错误问题 | Fixed the issue of displaying the title of the image output by jupyter incorrectly.
+- 优化 jupyter 输出对控制字符(`\r` & `\b`)的解析 | Optimized the parsing of jupyter output for control characters (`\r` & `\b`).
 
 ## v1.3.7/2022-10-27
 
