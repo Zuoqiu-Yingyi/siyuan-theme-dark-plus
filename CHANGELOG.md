@@ -19,6 +19,7 @@
 - 优化完整显示文本功能 | Optimized the full display text function.
 - [#149](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/149)调整列表表格视图单元格样式 | Adjusted the style of list table view cells.
 - 调整移动端侧边面板辅助线样式 | Adjusted the style of side panel guide lines on mobile.
+- jupyter 支持 `text/html` 与 `\r` 输出 | Jupyter supports `text/html` and `\r` output.
 
 ## v1.3.7/2022-10-27
 

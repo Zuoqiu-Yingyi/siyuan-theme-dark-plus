@@ -11,6 +11,7 @@ import {
     insertBlock,
     appendBlock,
     updateBlock,
+    deleteBlock,
 } from './api.js';
 import {
     config,
@@ -59,6 +60,7 @@ var websockets = {
     //         language: kernel_language, // 内核语言
     //     },
     //     session: session_id, // 会话 ID
+    //     username: username, // 工作空间用户名
     //     version: version, // 版本
     //     index: 0, // 索引
     //     messages: { // 消息集合
@@ -66,6 +68,7 @@ var websockets = {
     //             doc: doc_id, // 文档块 ID
     //             code: code_id, // 代码块 ID
     //             output: output_id, // 输出块 ID
+    //             current: current_id, // 当前输出内容块 ID
     //             escaped: boolean, // 是否转义输出结果
     //             index: int, // 消息序号
     //         },
@@ -87,11 +90,18 @@ document.getElementById('themeStyle').insertAdjacentElement("afterend", style);
 
 /* 解析数据 */
 async function parseData(data, escaped) {
-    let text, image, application, ext, mime;
+    let text, html, image, application, ext, mime;
     for (const item in data) {
         switch (true) {
             case item.startsWith('text/'):
-                text = data[item];
+                switch (true) {
+                    case item.startsWith('text/html'):
+                        html = data[item];
+                        break;
+                    default:
+                        text = data[item];
+                        break;
+                }
                 break;
             case item.startsWith('image/'):
                 switch (true) {
@@ -136,6 +146,12 @@ async function parseData(data, escaped) {
         const filepath = response.data.succMap[filename];
         markdown = `![${filename}](${filepath} "${text.length < config.jupyter.output.image.title.max ? HTMLEncode(text) : ""}")`;
     }
+    else if (text && html) {
+        markdown = `<div>${html}</div>\n\n${escaped ? escapeText(text) : text}`;
+    }
+    else if (html) {
+        markdown = html;
+    }
     else if (text) {
         markdown = escaped
             ? escapeText(text)
@@ -147,6 +163,7 @@ async function parseData(data, escaped) {
 /* 回复消息处理 */
 async function messageHandle(msg_id, msg_type, message, websocket) {
     const message_info = websocket.messages[msg_id];
+    let markdown; // 需要输出的消息
     if (!message_info) return;
     switch (msg_type) {
         case "status": // 状态信息
@@ -167,7 +184,7 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
             {
                 const type = message.content.name;
                 const text = message.content.text.replace(/\u001b\[\d+m/g, '');
-                let style, ial;
+                let style;
                 switch (type) {
                     case "stdout":
                         break;
@@ -178,29 +195,26 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                         style = config.jupyter.style.warning;
                         break;
                 }
-                ial = style
-                    ? `\n{: style="${style}" }`
-                    : '';
-                await appendBlock(
-                    message_info.output,
-                    message_info.escaped
-                        ? escapeText(text) + ial
-                        : text + ial,
-                )
+                /* 忽略都是空白的异常消息 */
+                if (style  && /^\s+$/.test(text)) {
+                    if (/^\r\s*$/.test(text)) markdown = '\r';
+                    break;
+                }
+
+                markdown = message_info.escaped
+                    ? escapeText(text)
+                    : text;
+
+                /* 添加样式 IAL */
+                if (style)
+                    markdown = `${markdown.replace(/\n+$/, '')}\n{: style="${style}" }`
             }
             break;
         case "execute_result": // 代码运行结果
         case "display_data": // 代码输出展示信息
             {
                 const data = message.content.data;
-
-                const markdown = await parseData(data, message_info.escaped);
-                if (markdown) {
-                    await appendBlock(
-                        message_info.output,
-                        markdown,
-                    )
-                }
+                markdown = await parseData(data, message_info.escaped);
             }
             break;
         case "error": // 代码输出错误信息
@@ -208,14 +222,14 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                 const ename = message.content.ename;
                 const evalue = message.content.evalue;
                 const traceback = message.content.traceback;
-                let markdown = [];
-                markdown.push('```plaintext');
+                let markdowns = [];
+                markdowns.push('```plaintext');
                 for (const t of traceback) {
-                    markdown.push(t.replace(/\u001b\[(\d+;)*\d+m/g, ''));
+                    markdowns.push(t.replace(/\u001b\[(\d+;)*\d+m/g, ''));
                 }
-                markdown.push('```');
-                markdown.push(`{: style="${config.jupyter.style.error}"}`);
-                await appendBlock(message_info.output, markdown.join('\n'));
+                markdowns.push('```');
+                markdowns.push(`{: style="${config.jupyter.style.error}"}`);
+                markdown = markdowns.join('\n');
             }
             break;
         case "execute_input": // 代码输入信息
@@ -239,13 +253,13 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                 const status = message.metadata.status;
                 const payloads = message.content.payload;
 
-                let markdown = [];
+                let markdowns = [];
                 if (payloads) {
                     /* 解析运行结果文本 */
                     for (const payload of payloads) {
                         const data = payload.data;
                         const text = await parseData(data, message_info.escaped);
-                        if (text) markdown.push(text);
+                        if (text) markdowns.push(text);
                     }
                 }
                 let code_index = message_info.index;
@@ -262,7 +276,7 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                         const ename = message.content.ename;
                         const evalue = message.content.evalue;
                         if (ename && evalue) {
-                            markdown.push([
+                            markdowns.push([
                                 '```plaintext',
                                 `${ename}: ${evalue}`,
                                 '```',
@@ -290,8 +304,8 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                 await setBlockAttrs(message_info.code, code_attrs);
                 await setBlockAttrs(message_info.output, output_attrs);
 
-                markdown.push('---');
-                await appendBlock(message_info.output, markdown.join('\n'));
+                markdowns.push('---');
+                markdown = markdowns.join('\n');
             }
             break;
         case "kernel_info_reply": // 内核信息
@@ -300,12 +314,40 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
         default:
             break;
     }
+
+    /* 如果存在需要输出的消息 */
+    if (markdown) {
+        let response; // 响应
+        /* 覆盖原块 */
+        if (markdown.indexOf('\r') >= 0 && message_info.current) {
+            /* 删除原块 */
+            if (markdown === '\r') {
+                await deleteBlock(message_info.current);
+                message_info.current = null;
+                return;
+            }
+            response = await updateBlock(
+                message_info.current,
+                markdown.substring(markdown.lastIndexOf('\r') + 1),
+            );
+        }
+        /* 生成新块 */
+        else {
+            response = await appendBlock(
+                message_info.output,
+                markdown.replace(/\n+$/, ''),
+            );
+        }
+        /* 更新当前块 */
+        message_info.current = response?.[0]?.doOperations?.[0]?.id;
+    }
 }
 
 /* 创建发送消息 */
 function createSendMessage(
     code,
     session_id,
+    username = null,
     version = null,
     msg_id = crypto.randomUUID(),
     date = (new Date()).toISOString(),
@@ -326,7 +368,7 @@ function createSendMessage(
             msg_id: msg_id,
             msg_type: "execute_request",
             session: session_id,
-            username: "",
+            username: username || "",
             version: version || "5.3",
         },
         metadata: {},
@@ -411,6 +453,7 @@ async function runCode(e, code_id, params) {
         const message = JSON.stringify(createSendMessage( // 创建消息
             code_block.content,
             doc_attrs[config.jupyter.attrs.session.id],
+            websocket.username,
             websocket.version,
             msg_id,
         ));
@@ -460,6 +503,7 @@ async function runCode(e, code_id, params) {
             websocket.flag = true;
             while (!websocket.queue.empty()) {
                 const message = JSON.parse(websocket.queue.dequeue());
+                websocket.username = message.header.username;
                 websocket.version = message.header.version;
                 const msg_id = message.parent_header.msg_id;
                 const msg_type = message.msg_type;
