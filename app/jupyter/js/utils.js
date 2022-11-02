@@ -142,7 +142,8 @@ function base64ToBlob(base64Data, mime) {
 
 /* 转义纯文本 */
 function escapeText(text) {
-    return text.replaceAll(config.jupyter.regs.mark, '\\$1');
+    if (text) return text.replaceAll(config.jupyter.regs.mark, '\\$1');
+    else return text;
 }
 
 /* prompt 格式化 */

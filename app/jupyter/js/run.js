@@ -144,18 +144,18 @@ async function parseData(data, escaped) {
             filename,
         );
         const filepath = response.data.succMap[filename];
-        markdown = `![${filename}](${filepath} "${text.length < config.jupyter.output.image.title.max ? HTMLEncode(text) : ""}")`;
+        markdown = `![${filename}](${filepath} "${text.length < config.jupyter.output.image.title.max ? text : ""}")`;
     }
     else if (text && html) {
-        markdown = `<div>${html}</div>\n\n${escaped ? escapeText(text) : text}`;
+        text = escaped ? escapeText(text) : text;
+        markdown = `${text}\n\n<div>${html}</div>`;
     }
     else if (html) {
         markdown = html;
     }
     else if (text) {
-        markdown = escaped
-            ? escapeText(text)
-            : text;
+        text = escaped ? escapeText(text) : text;
+        markdown = text;
     }
     return markdown;
 }
@@ -196,7 +196,7 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                         break;
                 }
                 /* 忽略都是空白的异常消息 */
-                if (style  && /^\s+$/.test(text)) {
+                if (style && /^\s+$/.test(text)) {
                     if (/^\r\s*$/.test(text)) markdown = '\r';
                     break;
                 }
