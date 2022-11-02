@@ -8,6 +8,7 @@ export {
     insertBlock,
     appendBlock,
     updateBlock,
+    deleteBlock,
     jupyter,
 }
 
@@ -124,9 +125,9 @@ async function insertBlock(previousID, data, dataType = 'markdown', token = conf
     return siyuanRequest(
         '/api/block/insertBlock',
         {
-            previousID: previousID,
-            dataType: dataType,
-            data: data,
+            previousID,
+            dataType,
+            data,
         },
         token,
     );
@@ -137,9 +138,9 @@ async function appendBlock(parentID, data, dataType = 'markdown', token = config
     return siyuanRequest(
         '/api/block/appendBlock',
         {
-            parentID: parentID,
-            dataType: dataType,
-            data: data,
+            parentID,
+            dataType,
+            data,
         },
         token,
     );
@@ -150,9 +151,20 @@ async function updateBlock(id, data, dataType = 'markdown', token = config.token
     return siyuanRequest(
         '/api/block/updateBlock',
         {
-            id: id,
-            dataType: dataType,
-            data: data,
+            id,
+            dataType,
+            data,
+        },
+        token,
+    );
+}
+
+/* 删除块 */
+async function deleteBlock(id, token = config.token) {
+    return siyuanRequest(
+        '/api/block/deleteBlock',
+        {
+            id,
         },
         token,
     );
