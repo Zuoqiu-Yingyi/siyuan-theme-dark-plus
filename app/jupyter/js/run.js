@@ -69,7 +69,10 @@ var websockets = {
     //             doc: doc_id, // 文档块 ID
     //             code: code_id, // 代码块 ID
     //             output: output_id, // 输出块 ID
-    //             current: current_id, // 当前输出内容块 ID
+    //             current: {
+    //                 id: id, // 当前块 ID
+    //                 markdown: markdown, // 当前内容
+    //             },
     //             escaped: boolean, // 是否转义输出结果
     //             index: int, // 消息序号
     //         },
@@ -196,9 +199,7 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                         ial.style = config.jupyter.style.warning;
                         break;
                 }
-                markdown = message_info.escaped
-                    ? escapeText(text)
-                    : text;
+                markdown = text;
             }
             break;
         case "execute_result": // 代码运行结果
@@ -311,7 +312,8 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
     if (markdown) {
         let response; // 响应
         /* 编辑原块 */
-        if (message_info.current
+        if (message_info.current?.id
+            && msg_type === 'stream'
             && (
                 markdown.indexOf('\r') >= 0
                 || markdown.indexOf('\b') >= 0
@@ -319,23 +321,22 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
         ) {
             /* 删除原块 */
             if (/^\r\s*$/.test(markdown)) {
-                await deleteBlock(message_info.current);
+                await deleteBlock(message_info.current.id);
                 message_info.current = null;
                 return;
             }
             /* 更新原块 */
             else {
-                /* 获得原块内容 */
-                response = await queryBlock(message_info.current);
-                const markdown_origin = response?.[0]?.markdown;
-    
                 /* 更新原块内容 */
-                if (markdown_origin) {
-                    markdown = parseControlCharacters(markdown_origin, markdown);
-                }
+                markdown = parseControlCharacters(message_info.current.markdown, markdown);
                 response = await updateBlock(
-                    message_info.current,
-                    markdown2kramdown(markdown, ial),
+                    message_info.current.id,
+                    markdown2kramdown(
+                        message_info.escaped
+                            ? escapeText(markdown)
+                            : markdown,
+                        ial,
+                    ),
                 );
             }
 
@@ -348,7 +349,10 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
             );
         }
         /* 更新当前块 */
-        message_info.current = response?.[0]?.doOperations?.[0]?.id;
+        message_info.current = {
+            id: response?.[0]?.doOperations?.[0]?.id,
+            markdown: markdown,
+        };
     }
 }
 

@@ -22,6 +22,7 @@
 - jupyter 支持 `text/html` 与 `\r` 输出 | Jupyter supports `text/html` and `\r` output.
 - 修复 jupyter 输出的图片标题显示错误问题 | Fixed the issue of displaying the title of the image output by jupyter incorrectly.
 - 优化 jupyter 输出对控制字符(`\r` & `\b`)的解析 | Optimized the parsing of jupyter output for control characters (`\r` & `\b`).
+- 修复 jupyter 解析 `\r\n` 错误问题 | Fixed the issue of jupyter parsing `\r\n` incorrectly.
 
 ## v1.3.7/2022-10-27
 
