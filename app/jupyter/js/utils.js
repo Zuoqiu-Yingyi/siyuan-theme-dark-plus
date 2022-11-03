@@ -1,4 +1,5 @@
 export {
+    Queue, // 队列
     merge, // 递归合并对象
     getCookie, // 获取 cookie
     setCookie, // 设置 cookie
@@ -11,13 +12,47 @@ export {
     HTMLEncode, // HTML 编码
     HTMLDecode, // HTML 解码
     createIAL, // 创建内联属性表字符串
+    createStyle, // 创建样式字符串
     isEmptyObject, // 判断对象是否为空
     parseControlCharacters, // 解析控制字符
+    cmdRichText2Kramdown, // 将命令行富文本转换为 Kramdown
     markdown2kramdown, // Markdown 转 Kramdown
 };
 
 import { config } from './config.js';
 import { jupyter } from './api.js';
+
+/* 消息序列 */
+class Queue {
+    constructor() {
+        this.items = [];
+    }
+    clear() {
+        this.items = [];
+    }
+    enqueue(item, priority) {
+        this.items.push({
+            priority,
+            item,
+        });
+        this.items.sort((a, b) => a.priority - b.priority);
+    }
+    dequeue() {
+        return this.items.shift();
+    }
+    peek() {
+        return this.items[0];
+    }
+    rear() {
+        return this.items[this.items.length - 1];
+    }
+    empty() {
+        return this.items.length === 0;
+    }
+    size() {
+        return this.items.length;
+    }
+}
 
 // REF [js - 对象递归合并merge - zc-lee - 博客园](https://www.cnblogs.com/zc-lee/p/15873611.html)
 function isString(obj) {
@@ -214,6 +249,19 @@ function createIAL(obj) {
 }
 
 /**
+ * 创建 style 属性表字符串
+ * @params {object} obj: 属性表对象
+ * @return {string}: style 字符串, 格式： style="key: value; key: value; ..."
+ */
+function createStyle(obj) {
+    let style = [];
+    for (const key in obj) {
+        style.push(`${key}: ${obj[key]};`);
+    }
+    return `${style.join(' ')}`;
+}
+
+/**
  * 判断对象是否为空
  * @params {object} obj: 对象
  * @return {boolean}: 是否为空
@@ -231,11 +279,13 @@ function isEmptyObject(obj) {
  * @params {string} text: 包含控制字符的字符串
  * @return {string}: 解析后的字符串
  */
-function parseControlCharacters(src, text) {
+function parseControlCharacters(text, src = "") {
     const chars = [...src];
     const content = text.replaceAll('\r\n', '\n');
+    const content_length = content.length;
     let ptr = chars.length;
-    for (let c of content) {
+    for (let i = 0; i < content_length; ++i) {
+        const c = content[i];
         switch (c) {
             case '\b': // backspace
                 if (ptr > 0) ptr--;
@@ -251,21 +301,164 @@ function parseControlCharacters(src, text) {
 }
 
 /**
+ * 命令行富文本转换为 kramdown 文本
+ * REF [反斜杆e，Linux下五彩斑斓的命令行输出_一只杨阳羊的博客-CSDN博客_linux \e](https://blog.csdn.net/qq_43617936/article/details/112898061)
+ * @params {string} text: 富文本
+ * @params {boolean} escaped: 是否被转义
+ * @return {string}: kramdown 文本
+ */
+function cmdRichText2Kramdown(text, escaped = false) {
+    const reg = escaped
+        ? config.jupyter.regs.richtext_escaped
+        : config.jupyter.regs.richtext;
+    return text.replaceAll(
+        reg,
+        (match, p1, p2, offset, string) => {
+            // REF [将一个函数指定为一个参数](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll#%E5%B0%86%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E6%8C%87%E5%AE%9A%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%8F%82%E6%95%B0)
+            let mark = {
+                strong: false, // 加粗
+                em: false, // 倾斜
+                u: false, // 下划线
+                s: false, // 删除线
+            }; // 标志
+            let style = {}; // ial 样式列表
+            let ial = ""; // 行级元素的 IAL 字符串
+            const params = p1.split(';'); // 所有参数
+            for (const param of params) {
+                switch (parseInt(param)) {
+                    case 0: // 清除样式
+                        mark = {};
+                        style = {};
+                        break;
+                    case 1: // 加粗
+                        mark.strong = true;
+                        break;
+                    case 2: // 字体变暗
+                        style.opacity = '0.75';
+                        break;
+                    case 3: // 斜体
+                        mark.em = true;
+                        break;
+                    case 4: // 下划线
+                        mark.u = true;
+                        break;
+                    case 5: // 呼吸闪烁
+                        style.animation = 'breath 4s ease-in-out infinite';
+                        break;
+                    case 6: // 快速闪烁
+                        style.animation = 'blink 1s steps(2) infinite';
+                        break;
+                    case 7: // 反色
+                        style.filter = 'invert(1)';
+                        break;
+                    case 8: // 透明
+                        style.opacity = '0';
+                        break;
+                    case 9: // 删除线
+                        mark.s = true
+                        break;
+                    default:
+                        {
+                            let k;
+                            /* 前景/背景 */
+                            if (param[0] === '3') {
+                                k = 'color';
+                            }
+                            else if (param[0] === '4') {
+                                k = 'background-color';
+                            }
+                            /* 颜色 */
+                            /**
+                             * windows:
+                             * cmd: `color /?`
+                             * 0 = 黑色       8 = 灰色
+                             * 1 = 蓝色       9 = 淡蓝色
+                             * 2 = 绿色       A = 淡绿色
+                             * 3 = 浅绿色     B = 淡浅绿色
+                             * 4 = 红色       C = 淡红色
+                             * 5 = 紫色       D = 淡紫色
+                             * 6 = 黄色       E = 淡黄色
+                             * 7 = 白色       F = 亮白色
+                             */
+                            switch (parseInt(param.slice(1))) {
+                                case 0: // 黑色
+                                    style[k] = 'var(--custom-jupyter-color-black)';
+                                    break;
+                                case 1: // 红色
+                                    style[k] = 'var(--custom-jupyter-color-red)';
+                                    break;
+                                case 2: // 绿色
+                                    style[k] = 'var(--custom-jupyter-color-green)';
+                                    break;
+                                case 3: // 黄色
+                                    style[k] = 'var(--custom-jupyter-color-yellow)';
+                                    break;
+                                case 4: // 蓝色
+                                    style[k] = 'var(--custom-jupyter-color-blue)';
+                                    break;
+                                case 5: // 紫色
+                                    style[k] = 'var(--custom-jupyter-color-magenta)';
+                                    break;
+                                case 6: // 青色
+                                    style[k] = 'var(--custom-jupyter-color-cyan)';
+                                    break;
+                                case 7: // 白色
+                                    style[k] = 'var(--custom-jupyter-color-white)';
+                                    break;
+                                case 9: // 默认
+                                    // REF [node.js - What is this \u001b[9... syntax of choosing what color text appears on console, and how can I add more colors? - Stack Overflow](https://stackoverflow.com/questions/23975735/what-is-this-u001b9-syntax-of-choosing-what-color-text-appears-on-console)
+                                default:
+                                    delete style[k];
+                                    break;
+                            }
+                        }
+                        break;
+                }
+            }
+            /* 添加行级 IAL */
+            if (isEmptyObject(style)) {
+                ial = createIAL({ style: createStyle(style) });
+            }
+            const pre_mark =
+                `${mark.strong ? '**' : ''
+                }${mark.em ? '*' : ''
+                }${mark.u ? '<u>' : ''
+                }${mark.s ? '~~' : ''
+                }`; // 前缀标志
+            const suf_mark =
+                `${mark.s ? '~~' : ''
+                }${mark.u ? '</u>' : ''
+                }${mark.em ? '*' : ''
+                }${mark.strong ? '**' : ''
+                }`; // 后缀标志
+
+            return p2
+                .replaceAll('\r\n', '\n') // 替换换行符
+                .replaceAll('\n{2,}', '\n\n') // 替换多余的换行符
+                .split('\n\n') // 按段落分割
+                .map(str => `${pre_mark}${str}${suf_mark}${ial}`) // 添加标志和行级 IAL
+                .join('\n\n');
+        }
+    )
+}
+
+/**
  * Markdown 转 Kramdown
  * @params {string} markdown: markdown 字符串
- * @params {string/object} ial: ial 字符串/ial 对象
+ * @params {string | object} ial: IAL 字符串 | IAL 键值对
  * @return {string}: kramdown 字符串
  */
 function markdown2kramdown(markdown, ial) {
+    markdown = markdown.replace(/\n+$/, '');
     switch (true) {
         case isObject(ial):
             if (isEmptyObject(ial))
-                return markdown.replace(/\n+$/, '');
+                return markdown;
             else
-                return `${markdown.replace(/\n+$/, '')}\n${createIAL(ial)}`;
+                return `${markdown}\n${createIAL(ial)}`;
         case isString(ial):
-            return `${markdown.replace(/\n+$/, '')}\n${ial}`;
+            return `${markdown}\n${ial}`;
         default:
-            return markdown.replace(/\n+$/, '');
+            return markdown;
     }
 }

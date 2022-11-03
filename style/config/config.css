@@ -652,7 +652,9 @@
     --b3-border-color: var(--custom-components-light);
 }
 
-/*动画效果*/
+/* 👇动画效果👇 */
+
+/* 旋转 */
 @keyframes rotateMain {
     50% {
         transform: rotateZ(180deg);
@@ -680,11 +682,9 @@
 @keyframes danmaku {
     0% {
         transform: translateX(100%);
-        -webkit-transform: translateX(100%);
     }
 
     100% {
         transform: translateX(-100%);
-        -webkit-transform: translateX(-100%);
     }
 }
