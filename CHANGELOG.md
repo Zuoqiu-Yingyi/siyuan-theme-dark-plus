@@ -24,6 +24,7 @@
 - 优化 jupyter 输出对控制字符(`\r` & `\b`)的解析 | Optimized the parsing of jupyter output for control characters (`\r` & `\b`).
 - 修复 jupyter 解析 `\r\n` 错误问题 | Fixed the issue of jupyter parsing `\r\n` incorrectly.
 - 添加下划线样式 | Added underline style.
+- 调整超链接悬浮样式 | Adjusted the style of hyperlink hover.
 
 ## v1.3.7/2022-10-27
 

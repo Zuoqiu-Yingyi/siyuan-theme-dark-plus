@@ -3,7 +3,7 @@
   /* 默认样式 */
   margin: 0;
   padding: 0;
-  color: var(--b3-protyle-inline-link-color);
+  border-bottom-color: inherit;
 }
 .protyle-wysiwyg [data-node-id] span:not(:empty)[data-type~=a]::before {
   /* 超链接前标志 */
@@ -22,9 +22,6 @@
 .protyle-wysiwyg [data-node-id] span:not(:empty)[data-type~=a][data-href^="siyuan:"] {
   /* 思源内部的超链接特化 */
   color: var(--custom-span-siyuan-link-color);
-}
-.protyle-wysiwyg [data-node-id] span:not(:empty)[data-type~=a][data-href^="siyuan:"]:hover {
-  border-color: var(--custom-span-siyuan-link-color);
 }
 .protyle-wysiwyg [data-node-id] span:not(:empty)[data-type~=a][data-href^="siyuan:"][data-href*="focus=1"]::before,
 .protyle-wysiwyg [data-node-id] span:not(:empty)[data-type~=a][data-href^="siyuan:"][href*="focus=1"]::before {
@@ -49,7 +46,7 @@
   /* 默认样式 */
   margin: 0;
   padding: 0;
-  color: var(--b3-protyle-inline-link-color);
+  border-bottom-color: inherit;
 }
 .b3-typography a::before {
   /* 超链接前标志 */
@@ -68,9 +65,6 @@
 .b3-typography a[href^="siyuan:"] {
   /* 思源内部的超链接特化 */
   color: var(--custom-span-siyuan-link-color);
-}
-.b3-typography a[href^="siyuan:"]:hover {
-  border-color: var(--custom-span-siyuan-link-color);
 }
 .b3-typography a[href^="siyuan:"][data-href*="focus=1"]::before,
 .b3-typography a[href^="siyuan:"][href*="focus=1"]::before {

@@ -5,7 +5,7 @@
     /* 默认样式 */
     margin: 0;
     padding: 0;
-    color: var(--b3-protyle-inline-link-color);
+    border-bottom-color: inherit;
 
     .link-icon();
 }
@@ -32,10 +32,6 @@
 .link-siyuan() {
     /* 思源内部的超链接特化 */
     color: var(--custom-span-siyuan-link-color);
-
-    &:hover {
-        border-color: var(--custom-span-siyuan-link-color);
-    }
 
     &[data-href *="focus=1"],
     &[href *="focus=1"] {
