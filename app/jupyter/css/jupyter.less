@@ -1,0 +1,123 @@
+/* 控制台颜色 */
+@media (prefers-color-scheme: light) {
+    :root {
+        --custom-jupyter-color-black: #3e424d;
+        --custom-jupyter-color-red: #e75c58;
+        --custom-jupyter-color-green: #00a250;
+        --custom-jupyter-color-yellow: #ddb62b;
+        --custom-jupyter-color-blue: #208ffb;
+        --custom-jupyter-color-magenta: #d160c4;
+        --custom-jupyter-color-cyan: #60c6c8;
+        --custom-jupyter-color-white: #c5c1b4;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --custom-jupyter-color-black: #282c36;
+        --custom-jupyter-color-red: #b22b31;
+        --custom-jupyter-color-green: #007427;
+        --custom-jupyter-color-yellow: #b27d12;
+        --custom-jupyter-color-blue: #0065ca;
+        --custom-jupyter-color-magenta: #a03196;
+        --custom-jupyter-color-cyan: #258f8f;
+        --custom-jupyter-color-white: #a1a6b2;
+    }
+}
+
+/* 动画 */
+/* 呼吸 */
+/* REF [css3之呼吸灯效果 - hanfe1 - 博客园](https: //www.cnblogs.com/hanfe1/p/12611400.html) */
+@keyframes breath {
+
+    /* 动画开始时的不透明度 */
+    from {
+        opacity: 1;
+    }
+
+    /* 动画 50% 时的不透明度 */
+    50% {
+        opacity: 0.25;
+    }
+
+    /* 动画结束时的不透明度 */
+    to {
+        opacity: 1;
+    }
+}
+
+/* 闪烁 */
+@keyframes blink {
+
+    /* 动画开始时的不透明度 */
+    from {
+        opacity: 1;
+    }
+
+    /* 动画结束时的不透明度 */
+    to {
+        opacity: 0;
+    }
+}
+
+/* 代码块与输出块样式 */
+.protyle-wysiwyg {
+    [data-node-id][custom-jupyter-index] {
+        &::before {
+            content: "[" attr(custom-jupyter-index)"]:";
+            font-size: 85%;
+            position: absolute;
+            top: 0;
+            left: 0.25em;
+            z-index: 1;
+            font-weight: bolder;
+        }
+
+        // 代码块
+        &.code-block {
+
+            &::before {
+                /* 运行完成 */
+                color: var(--b3-card-success-color);
+            }
+
+            &::after {
+                /* 运行时间 */
+                content: attr(custom-jupyter-time);
+                font-size: 85%;
+                position: absolute;
+                bottom: 0;
+                left: 3.75em;
+                z-index: 1;
+                color: var(--b3-theme-on-surface);
+            }
+
+            &[linenumber="true"]::after {
+                /* 运行时间-显示行号 */
+                left: 3.75em;
+            }
+            
+            &[linenumber="false"]::after {
+                /* 运行时间-不显示行号 */
+                left: 0.25em;
+            }
+        }
+
+        // 输出块
+        &.sb {
+            &::before {
+                /* 运行结果 */
+                color: var(--b3-card-info-color);
+            }
+
+            &[custom-jupyter-index="E"]::before {
+                /* 运行结果有误 */
+                color: var(--b3-card-error-color);
+            }
+        }
+
+        &[custom-jupyter-index="*"]::before {
+            /* 正在运行 */
+            color: var(--b3-card-warning-color);
+        }
+    }
+}

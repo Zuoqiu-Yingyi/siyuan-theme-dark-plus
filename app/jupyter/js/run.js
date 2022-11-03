@@ -19,38 +19,15 @@ import {
 } from './config.js';
 import { custom } from './../../public/custom.js';
 import {
+    Queue,
     timestampFormat,
     base64ToBlob,
     escapeText,
     promptFormat,
     parseControlCharacters,
+    cmdRichText2Kramdown,
     markdown2kramdown,
 } from './utils.js';
-
-/** 消息序列 */
-class Queue {
-    constructor() {
-        this.items = [];
-    }
-    clear() {
-        this.items = [];
-    }
-    enqueue(item) {
-        this.items.push(item)
-    }
-    dequeue() {
-        return this.items.shift();
-    }
-    front() {
-        return this.items[0];
-    }
-    empty() {
-        return this.items.length === 0;
-    }
-    size() {
-        return this.items.length;
-    }
-}
 
 var websockets = {
     // doc_id: { // 文档 ID
@@ -79,6 +56,7 @@ var websockets = {
     //     },
     //     flag: false, // 是否有待处理消息
     //     queue: new Queue(), // 接收的消息队列
+    //     index: 0, // 当前处理的消息序列号
     // },
 };
 
@@ -94,7 +72,7 @@ document.getElementById('themeStyle').insertAdjacentElement("afterend", style);
 
 /* 解析数据 */
 async function parseData(data, escaped) {
-    let text, html, image, application, ext, mime;
+    let text, html, image, ext, mime;
     for (const item in data) {
         switch (true) {
             case item.startsWith('text/'):
@@ -151,14 +129,14 @@ async function parseData(data, escaped) {
         markdown = `![${filename}](${filepath} "${text.length < config.jupyter.output.image.title.max ? text : ""}")`;
     }
     else if (text && html) {
-        text = escaped ? escapeText(text) : text;
+        text = cmdRichText2Kramdown(escaped ? escapeText(text) : text, escaped);
         markdown = `${text}\n\n<div>${html}</div>`;
     }
     else if (html) {
         markdown = html;
     }
     else if (text) {
-        text = escaped ? escapeText(text) : text;
+        text = cmdRichText2Kramdown(escaped ? escapeText(text) : text, escaped);
         markdown = text;
     }
     return markdown;
@@ -211,17 +189,29 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
             break;
         case "error": // 代码输出错误信息
             {
-                const ename = message.content.ename;
-                const evalue = message.content.evalue;
+                // const ename = message.content.ename;
+                // const evalue = message.content.evalue;
                 const traceback = message.content.traceback;
                 let markdowns = [];
-                markdowns.push('```plaintext');
-                for (const t of traceback) {
-                    markdowns.push(t.replace(/\u001b\[(\d+;)*\d+m/g, ''));
-                }
-                markdowns.push('```');
+
+                /* 使用代码块显示堆栈信息 */
+                // markdowns.push('```plaintext');
+                // for (const t of traceback) {
+                //     markdowns.push(t.replace(config.jupyter.regs.richtext, ''));
+                // }
+                // markdowns.push('```');
                 // markdowns.push(`{: style="${config.jupyter.style.error}"}`);
+                // markdown = markdowns.join('\n');
+
+                /* 使用超级块显示堆栈信息 */
+                markdowns.push('{{{row');
+                markdowns.push(...traceback.map(t => cmdRichText2Kramdown(
+                    message_info.escaped ? escapeText(t) : t,
+                    message_info.escaped,
+                )));
+                markdowns.push('}}}');
                 markdown = markdowns.join('\n');
+
                 ial.style = config.jupyter.style.error;
             }
             break;
@@ -260,7 +250,6 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                 switch (status) {
                     case 'ok': // 成功
                         output_index = code_index;
-                        output_style = '';
                         break;
                     case 'error': // 错误
                         output_index = 'E';
@@ -311,44 +300,71 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
     /* 如果存在需要输出的消息 */
     if (markdown) {
         let response; // 响应
-        /* 编辑原块 */
-        if (message_info.current?.id
-            && msg_type === 'stream'
-            && (
-                markdown.indexOf('\r') >= 0
-                || markdown.indexOf('\b') >= 0
-            )
-        ) {
-            /* 删除原块 */
-            if (/^\r\s*$/.test(markdown)) {
-                await deleteBlock(message_info.current.id);
-                message_info.current = null;
-                return;
+        /* 输出流 */
+        if (msg_type === 'stream') {
+            /* 编辑原块 */
+            if (message_info.current?.id
+                && (
+                    markdown.indexOf('\r') >= 0
+                    || markdown.indexOf('\b') >= 0
+                )
+            ) {
+                /* 删除原块 */
+                if (/^\r\s*$/.test(markdown)) {
+                    await deleteBlock(message_info.current.id);
+                    message_info.current = null;
+                    return;
+                }
+
+                /* 更新原块 */
+                else {
+                    /* 更新原块内容 */
+                    markdown = parseControlCharacters(
+                        markdown,
+                        message_info.current.markdown,
+                    );
+                    /* 转义 */
+                    markdown = message_info.escaped
+                        ? escapeText(markdown)
+                        : markdown;
+                    /* 解析富文本 */
+                    markdown = cmdRichText2Kramdown(markdown, message_info.escaped);
+                    /* 更新块 */
+                    response = await updateBlock(
+                        message_info.current.id,
+                        markdown2kramdown(
+                            message_info.escaped
+                                ? escapeText(markdown)
+                                : markdown,
+                            ial,
+                        ),
+                    );
+                }
             }
-            /* 更新原块 */
+            /* 生成新块 */
             else {
-                /* 更新原块内容 */
-                markdown = parseControlCharacters(message_info.current.markdown, markdown);
-                response = await updateBlock(
-                    message_info.current.id,
-                    markdown2kramdown(
-                        message_info.escaped
-                            ? escapeText(markdown)
-                            : markdown,
-                        ial,
-                    ),
+                /* 转义 */
+                markdown = message_info.escaped
+                    ? escapeText(markdown)
+                    : markdown;
+                /* 解析富文本 */
+                markdown = cmdRichText2Kramdown(markdown, message_info.escaped);
+                /* 插入块 */
+                response = await appendBlock(
+                    message_info.output,
+                    markdown2kramdown(markdown, ial),
                 );
             }
-
         }
-        /* 生成新块 */
+        /* 非输出流 */
         else {
             response = await appendBlock(
                 message_info.output,
                 markdown2kramdown(markdown, ial),
             );
         }
-        /* 更新当前块 */
+
+        /* 更新当前块信息 */
         message_info.current = {
             id: response?.[0]?.doOperations?.[0]?.id,
             markdown: markdown,
@@ -508,6 +524,7 @@ async function runCode(e, code_id, params) {
             messages: {},
             flag: false,
             queue: new Queue(),
+            index: -1,
         };
         /** 消息队列处理
          *  REF [JavaScript 通过队列实现异步流控制 - 从过去穿越到现在 - 博客园](https://www.cnblogs.com/liaozhenting/p/8681527.html)
@@ -515,7 +532,7 @@ async function runCode(e, code_id, params) {
         async function msgHandler() {
             websocket.flag = true;
             while (!websocket.queue.empty()) {
-                const message = JSON.parse(websocket.queue.dequeue());
+                const message = websocket.queue.dequeue().item;
                 websocket.username = message.header.username;
                 websocket.version = message.header.version;
                 const msg_id = message.parent_header.msg_id;
@@ -527,7 +544,9 @@ async function runCode(e, code_id, params) {
         websocket.ws.onmessage = e => {
             // REF [MessageEvent - Web API 接口参考 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/MessageEvent)
             // REF [JavaScript 通过队列实现异步流控制 - 从过去穿越到现在 - 博客园](https://www.cnblogs.com/liaozhenting/p/8681527.html)
-            websocket.queue.enqueue(e.data);
+            const data = JSON.parse(e.data);
+            const index = parseInt(data.msg_id.substring(data.msg_id.lastIndexOf('_') + 0));
+            websocket.queue.enqueue(data, index);
             if (!websocket.flag) msgHandler();
         };
         websocket.ws.onopen = async e => {
