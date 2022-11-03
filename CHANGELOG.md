@@ -26,6 +26,7 @@
 - 添加下划线样式 | Added underline style.
 - 调整超链接悬浮样式 | Adjusted the style of hyperlink hover.
 - jupyter 支持解析 `\e` 输出 | Jupyter supports parsing `\e` output.
+- 优化对 jupyter 富文本输出的解析 | Optimized the parsing of jupyter rich text output.
 
 ## v1.3.7/2022-10-27
 

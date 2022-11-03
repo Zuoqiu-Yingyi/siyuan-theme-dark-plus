@@ -323,7 +323,9 @@ function cmdRichText2Kramdown(text, escaped = false) {
             }; // 标志
             let style = {}; // ial 样式列表
             let ial = ""; // 行级元素的 IAL 字符串
-            const params = p1.split(';'); // 所有参数
+            const params = escaped
+                ? p1.split('\\;') // 所有参数
+                : p1.split(';'); // 所有参数
             for (const param of params) {
                 switch (parseInt(param)) {
                     case 0: // 清除样式
@@ -380,7 +382,7 @@ function cmdRichText2Kramdown(text, escaped = false) {
                              * 6 = 黄色       E = 淡黄色
                              * 7 = 白色       F = 亮白色
                              */
-                            switch (parseInt(param.slice(1))) {
+                            switch (parseInt(param.substring(1))) {
                                 case 0: // 黑色
                                     style[k] = 'var(--custom-jupyter-color-black)';
                                     break;
@@ -406,7 +408,7 @@ function cmdRichText2Kramdown(text, escaped = false) {
                                     style[k] = 'var(--custom-jupyter-color-white)';
                                     break;
                                 case 9: // 默认
-                                    // REF [node.js - What is this \u001b[9... syntax of choosing what color text appears on console, and how can I add more colors? - Stack Overflow](https://stackoverflow.com/questions/23975735/what-is-this-u001b9-syntax-of-choosing-what-color-text-appears-on-console)
+                                // REF [node.js - What is this \u001b[9... syntax of choosing what color text appears on console, and how can I add more colors? - Stack Overflow](https://stackoverflow.com/questions/23975735/what-is-this-u001b9-syntax-of-choosing-what-color-text-appears-on-console)
                                 default:
                                     delete style[k];
                                     break;
@@ -416,11 +418,11 @@ function cmdRichText2Kramdown(text, escaped = false) {
                 }
             }
             /* 添加行级 IAL */
-            if (isEmptyObject(style)) {
+            if (!isEmptyObject(style)) {
                 ial = createIAL({ style: createStyle(style) });
             }
             const pre_mark =
-                `${mark.strong ? '**' : ''
+                `${mark.strong || !isEmptyObject(style) ? '**' : ''
                 }${mark.em ? '*' : ''
                 }${mark.u ? '<u>' : ''
                 }${mark.s ? '~~' : ''
@@ -429,14 +431,25 @@ function cmdRichText2Kramdown(text, escaped = false) {
                 `${mark.s ? '~~' : ''
                 }${mark.u ? '</u>' : ''
                 }${mark.em ? '*' : ''
-                }${mark.strong ? '**' : ''
+                }${mark.strong || !isEmptyObject(style) ? '**' : ''
                 }`; // 后缀标志
-
             return p2
                 .replaceAll('\r\n', '\n') // 替换换行符
                 .replaceAll('\n{2,}', '\n\n') // 替换多余的换行符
-                .split('\n\n') // 按段落分割
-                .map(str => `${pre_mark}${str}${suf_mark}${ial}`) // 添加标志和行级 IAL
+                .split('\n\n') // 按块分割
+                .map(block => block
+                    .split('\n') // 按照换行分隔
+                    .map(line => {
+                        if (line.length > 0) {
+                            /* markdown 标志内测不能存在空白字符 */
+                            const pre_blank = line.substring(0, line.length - line.trimLeft().length);
+                            const sub_blank = line.substring(line.trimRight().length);
+                            return `${pre_blank}${pre_mark}${line.trim()}${suf_mark}${ial}${sub_blank}`
+                        }
+                        else return '';
+                    })
+                    .join('\n')
+                ) // 添加标志和行级 IAL
                 .join('\n\n');
         }
     )

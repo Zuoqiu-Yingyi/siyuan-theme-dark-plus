@@ -56,7 +56,6 @@ var websockets = {
     //     },
     //     flag: false, // 是否有待处理消息
     //     queue: new Queue(), // 接收的消息队列
-    //     index: 0, // 当前处理的消息序列号
     // },
 };
 
@@ -166,7 +165,7 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
         case "stream": // 代码输出文本信息
             {
                 const type = message.content.name;
-                const text = message.content.text.replace(/\u001b\[\d+m/g, '');
+                const text = message.content.text;
                 switch (type) {
                     case "stdout":
                         break;
@@ -205,13 +204,18 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
 
                 /* 使用超级块显示堆栈信息 */
                 markdowns.push('{{{row');
-                markdowns.push(...traceback.map(t => cmdRichText2Kramdown(
+                // markdowns.push(...traceback.map(t => cmdRichText2Kramdown(
+                //     message_info.escaped ? escapeText(t) : t,
+                //     message_info.escaped,
+                // )));
+                const t = traceback.join('\n');
+                markdowns.push(cmdRichText2Kramdown(
                     message_info.escaped ? escapeText(t) : t,
                     message_info.escaped,
-                )));
+                    
+                ));
                 markdowns.push('}}}');
                 markdown = markdowns.join('\n');
-
                 ial.style = config.jupyter.style.error;
             }
             break;
@@ -524,7 +528,6 @@ async function runCode(e, code_id, params) {
             messages: {},
             flag: false,
             queue: new Queue(),
-            index: -1,
         };
         /** 消息队列处理
          *  REF [JavaScript 通过队列实现异步流控制 - 从过去穿越到现在 - 博客园](https://www.cnblogs.com/liaozhenting/p/8681527.html)
