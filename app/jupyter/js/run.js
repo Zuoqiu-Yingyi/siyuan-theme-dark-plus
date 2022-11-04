@@ -126,7 +126,7 @@ async function parseData(data, params) {
             undefined,
             filename,
         );
-        const filepath = response.data.succMap[filename];
+        const filepath = response?.data?.succMap[filename];
         markdown = `![${filename}](${filepath} "${text.length < config.jupyter.output.image.title.max ? text : ""}")`;
     }
     else if (text && html) {
@@ -195,22 +195,9 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                 const traceback = message.content.traceback;
                 let markdowns = [];
 
-                /* 使用代码块显示堆栈信息 */
-                // markdowns.push('```plaintext');
-                // for (const t of traceback) {
-                //     markdowns.push(t.replace(config.jupyter.regs.richtext, ''));
-                // }
-                // markdowns.push('```');
-                // markdowns.push(`{: style="${config.jupyter.style.error}"}`);
-                // markdown = markdowns.join('\n');
-
                 /* 使用超级块显示堆栈信息 */
                 markdowns.push('{{{row');
-                // markdowns.push(...traceback.map(t => cmdRichText2Kramdown(
-                //     message_info.escaped ? escapeText(t) : t,
-                //     message_info.escaped,
-                // )));
-                markdowns.push(parseData(traceback.join('\n'), message_info.params));
+                markdowns.push(parseText(traceback.join('\n'), message_info.params));
                 markdowns.push('}}}');
                 markdown = markdowns.join('\n');
                 ial.style = config.jupyter.style.error;
@@ -256,16 +243,13 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                         output_index = 'E';
                         output_style = config.jupyter.style.error;
 
-                        const ename = message.content.ename;
-                        const evalue = message.content.evalue;
-                        if (ename && evalue) {
-                            markdowns.push([
-                                '```plaintext',
-                                `${ename}: ${evalue}`,
-                                '```',
-                                `{: style="${output_style}" }`,
-                            ].join('\n'));
-                        }
+                        /* 使用代码块显示堆栈信息 */
+                        const traceback = message.content.traceback;
+                        markdowns.push('```plaintext');
+                        markdowns.push(new Output(traceback.join('\n')).removeCmdControlChars().toString());
+                        markdowns.push('```');
+                        markdowns.push(`{: style="${config.jupyter.style.error}"}`);
+                        markdowns.join('\n');
                         break;
                     default:
                         break;
@@ -301,36 +285,40 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
     /* 如果存在需要输出的消息 */
     if (markdown) {
         let response; // 响应
-        /* 输出流 */
-        if (msg_type === 'stream') {
-            /* 编辑原块 */
-            if (message_info.current?.id
-                && (
-                    markdown.indexOf('\r') >= 0
-                    || markdown.indexOf('\b') >= 0
-                )
-            ) {
-                /* 删除原块 */
-                if (/^\r\s*$/.test(markdown)) {
-                    await deleteBlock(message_info.current.id);
-                    message_info.current = null;
-                    return;
+        if (msg_type === 'stream') { // 输出流
+            if (markdown.indexOf('\r') >= 0 || markdown.indexOf('\b') >= 0) { // 编辑原块
+                if (message_info.current?.id) { // 有上一个块
+                    /* 删除原块 */
+                    if (/^\r\s*$/.test(markdown)) {
+                        await deleteBlock(message_info.current.id);
+                        message_info.current = null;
+                        return;
+                    }
+                    /* 更新原块 */
+                    else {
+                        /* 更新原块内容 */
+                        markdown = new Output(markdown)
+                            .parseControlChars(message_info.current.markdown) // 解析控制字符
+                            .toString();
+                        /* 更新块 */
+                        response = await updateBlock(
+                            message_info.current.id,
+                            markdown2kramdown(parseText(markdown, message_info.params), ial),
+                        );
+                    }
                 }
-                /* 更新原块 */
-                else {
-                    /* 更新原块内容 */
+                else { // 没有上一个块
                     markdown = new Output(markdown)
-                        .parseControlChars(message_info.current.markdown) // 解析控制字符
+                        .parseControlChars() // 解析控制字符
                         .toString();
-                    /* 更新块 */
-                    response = await updateBlock(
-                        message_info.current.id,
+                    /* 插入块 */
+                    response = await appendBlock(
+                        message_info.output,
                         markdown2kramdown(parseText(markdown, message_info.params), ial),
                     );
                 }
             }
-            /* 生成新块 */
-            else {
+            else { // 生成新块
                 /* 插入块 */
                 response = await appendBlock(
                     message_info.output,
@@ -338,8 +326,7 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                 );
             }
         }
-        /* 非输出流 */
-        else {
+        else { // 非输出流
             response = await appendBlock(
                 message_info.output,
                 markdown2kramdown(markdown, ial),

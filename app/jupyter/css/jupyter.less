@@ -1,232 +1,328 @@
-/* 控制台颜色 */
+:root {
+    /* 控制台 ANSI 转义序列 4 bit 颜色 */
+    --custom-jupyter-ansi-color-0: #3E424D;
+    --custom-jupyter-ansi-color-1: #E75C58;
+    --custom-jupyter-ansi-color-2: #00A250;
+    --custom-jupyter-ansi-color-3: #DDB62B;
+    --custom-jupyter-ansi-color-4: #208FFB;
+    --custom-jupyter-ansi-color-5: #D160C4;
+    --custom-jupyter-ansi-color-6: #60C6C8;
+    --custom-jupyter-ansi-color-7: #C5C1B4;
+
+    --custom-jupyter-ansi-color-8: #282C36;
+    --custom-jupyter-ansi-color-9: #B22B31;
+    --custom-jupyter-ansi-color-A: #007427;
+    --custom-jupyter-ansi-color-B: #B27D12;
+    --custom-jupyter-ansi-color-C: #0065CA;
+    --custom-jupyter-ansi-color-D: #A03196;
+    --custom-jupyter-ansi-color-E: #258F8F;
+    --custom-jupyter-ansi-color-F: #A1A6B2;
+
+    /* 8 bit 颜色 */
+    --custom-jupyter-256-color-000: #000000;
+    --custom-jupyter-256-color-001: #800000;
+    --custom-jupyter-256-color-002: #008000;
+    --custom-jupyter-256-color-003: #808000;
+    --custom-jupyter-256-color-004: #000080;
+    --custom-jupyter-256-color-005: #800080;
+    --custom-jupyter-256-color-006: #008080;
+    --custom-jupyter-256-color-007: #C0C0C0;
+    --custom-jupyter-256-color-008: #808080;
+    --custom-jupyter-256-color-009: #FF0000;
+    --custom-jupyter-256-color-010: #00FF00;
+    --custom-jupyter-256-color-011: #FFFF00;
+    --custom-jupyter-256-color-012: #0000FF;
+    --custom-jupyter-256-color-013: #FF00FF;
+    --custom-jupyter-256-color-014: #00FFFF;
+    --custom-jupyter-256-color-015: #FFFFFF;
+    --custom-jupyter-256-color-016: #000000;
+    --custom-jupyter-256-color-017: #00005F;
+    --custom-jupyter-256-color-018: #000087;
+    --custom-jupyter-256-color-019: #0000AF;
+    --custom-jupyter-256-color-020: #0000D7;
+    --custom-jupyter-256-color-021: #0000FF;
+    --custom-jupyter-256-color-022: #005F00;
+    --custom-jupyter-256-color-023: #005F5F;
+    --custom-jupyter-256-color-024: #005F87;
+    --custom-jupyter-256-color-025: #005FAF;
+    --custom-jupyter-256-color-026: #005FD7;
+    --custom-jupyter-256-color-027: #005FFF;
+    --custom-jupyter-256-color-028: #008700;
+    --custom-jupyter-256-color-029: #00875F;
+    --custom-jupyter-256-color-030: #008787;
+    --custom-jupyter-256-color-031: #0087AF;
+    --custom-jupyter-256-color-032: #0087D7;
+    --custom-jupyter-256-color-033: #0087FF;
+    --custom-jupyter-256-color-034: #00AF00;
+    --custom-jupyter-256-color-035: #00AF5F;
+    --custom-jupyter-256-color-036: #00AF87;
+    --custom-jupyter-256-color-037: #00AFAF;
+    --custom-jupyter-256-color-038: #00AFD7;
+    --custom-jupyter-256-color-039: #00AFFF;
+    --custom-jupyter-256-color-040: #00D700;
+    --custom-jupyter-256-color-041: #00D75F;
+    --custom-jupyter-256-color-042: #00D787;
+    --custom-jupyter-256-color-043: #00D7AF;
+    --custom-jupyter-256-color-044: #00D7D7;
+    --custom-jupyter-256-color-045: #00D7FF;
+    --custom-jupyter-256-color-046: #00FF00;
+    --custom-jupyter-256-color-047: #00FF5F;
+    --custom-jupyter-256-color-048: #00FF87;
+    --custom-jupyter-256-color-049: #00FFAF;
+    --custom-jupyter-256-color-050: #00FFD7;
+    --custom-jupyter-256-color-051: #00FFFF;
+    --custom-jupyter-256-color-052: #5F0000;
+    --custom-jupyter-256-color-053: #5F005F;
+    --custom-jupyter-256-color-054: #5F0087;
+    --custom-jupyter-256-color-055: #5F00AF;
+    --custom-jupyter-256-color-056: #5F00D7;
+    --custom-jupyter-256-color-057: #5F00FF;
+    --custom-jupyter-256-color-058: #5F5F00;
+    --custom-jupyter-256-color-059: #5F5F5F;
+    --custom-jupyter-256-color-060: #5F5F87;
+    --custom-jupyter-256-color-061: #5F5FAF;
+    --custom-jupyter-256-color-062: #5F5FD7;
+    --custom-jupyter-256-color-063: #5F5FFF;
+    --custom-jupyter-256-color-064: #5F8700;
+    --custom-jupyter-256-color-065: #5F875F;
+    --custom-jupyter-256-color-066: #5F8787;
+    --custom-jupyter-256-color-067: #5F87AF;
+    --custom-jupyter-256-color-068: #5F87D7;
+    --custom-jupyter-256-color-069: #5F87FF;
+    --custom-jupyter-256-color-070: #5FAF00;
+    --custom-jupyter-256-color-071: #5FAF5F;
+    --custom-jupyter-256-color-072: #5FAF87;
+    --custom-jupyter-256-color-073: #5FAFAF;
+    --custom-jupyter-256-color-074: #5FAFD7;
+    --custom-jupyter-256-color-075: #5FAFFF;
+    --custom-jupyter-256-color-076: #5FD700;
+    --custom-jupyter-256-color-077: #5FD75F;
+    --custom-jupyter-256-color-078: #5FD787;
+    --custom-jupyter-256-color-079: #5FD7AF;
+    --custom-jupyter-256-color-080: #5FD7D7;
+    --custom-jupyter-256-color-081: #5FD7FF;
+    --custom-jupyter-256-color-082: #5FFF00;
+    --custom-jupyter-256-color-083: #5FFF5F;
+    --custom-jupyter-256-color-084: #5FFF87;
+    --custom-jupyter-256-color-085: #5FFFAF;
+    --custom-jupyter-256-color-086: #5FFFD7;
+    --custom-jupyter-256-color-087: #5FFFFF;
+    --custom-jupyter-256-color-088: #870000;
+    --custom-jupyter-256-color-089: #87005F;
+    --custom-jupyter-256-color-090: #870087;
+    --custom-jupyter-256-color-091: #8700AF;
+    --custom-jupyter-256-color-092: #8700D7;
+    --custom-jupyter-256-color-093: #8700FF;
+    --custom-jupyter-256-color-094: #875F00;
+    --custom-jupyter-256-color-095: #875F5F;
+    --custom-jupyter-256-color-096: #875F87;
+    --custom-jupyter-256-color-097: #875FAF;
+    --custom-jupyter-256-color-098: #875FD7;
+    --custom-jupyter-256-color-099: #875FFF;
+    --custom-jupyter-256-color-100: #878700;
+    --custom-jupyter-256-color-101: #87875F;
+    --custom-jupyter-256-color-102: #878787;
+    --custom-jupyter-256-color-103: #8787AF;
+    --custom-jupyter-256-color-104: #8787D7;
+    --custom-jupyter-256-color-105: #8787FF;
+    --custom-jupyter-256-color-106: #87AF00;
+    --custom-jupyter-256-color-107: #87AF5F;
+    --custom-jupyter-256-color-108: #87AF87;
+    --custom-jupyter-256-color-109: #87AFAF;
+    --custom-jupyter-256-color-110: #87AFD7;
+    --custom-jupyter-256-color-111: #87AFFF;
+    --custom-jupyter-256-color-112: #87D700;
+    --custom-jupyter-256-color-113: #87D75F;
+    --custom-jupyter-256-color-114: #87D787;
+    --custom-jupyter-256-color-115: #87D7AF;
+    --custom-jupyter-256-color-116: #87D7D7;
+    --custom-jupyter-256-color-117: #87D7FF;
+    --custom-jupyter-256-color-118: #87FF00;
+    --custom-jupyter-256-color-119: #87FF5F;
+    --custom-jupyter-256-color-120: #87FF87;
+    --custom-jupyter-256-color-121: #87FFAF;
+    --custom-jupyter-256-color-122: #87FFD7;
+    --custom-jupyter-256-color-123: #87FFFF;
+    --custom-jupyter-256-color-124: #AF0000;
+    --custom-jupyter-256-color-125: #AF005F;
+    --custom-jupyter-256-color-126: #AF0087;
+    --custom-jupyter-256-color-127: #AF00AF;
+    --custom-jupyter-256-color-128: #AF00D7;
+    --custom-jupyter-256-color-129: #AF00FF;
+    --custom-jupyter-256-color-130: #AF5F00;
+    --custom-jupyter-256-color-131: #AF5F5F;
+    --custom-jupyter-256-color-132: #AF5F87;
+    --custom-jupyter-256-color-133: #AF5FAF;
+    --custom-jupyter-256-color-134: #AF5FD7;
+    --custom-jupyter-256-color-135: #AF5FFF;
+    --custom-jupyter-256-color-136: #AF8700;
+    --custom-jupyter-256-color-137: #AF875F;
+    --custom-jupyter-256-color-138: #AF8787;
+    --custom-jupyter-256-color-139: #AF87AF;
+    --custom-jupyter-256-color-140: #AF87D7;
+    --custom-jupyter-256-color-141: #AF87FF;
+    --custom-jupyter-256-color-142: #AFAF00;
+    --custom-jupyter-256-color-143: #AFAF5F;
+    --custom-jupyter-256-color-144: #AFAF87;
+    --custom-jupyter-256-color-145: #AFAFAF;
+    --custom-jupyter-256-color-146: #AFAFD7;
+    --custom-jupyter-256-color-147: #AFAFFF;
+    --custom-jupyter-256-color-148: #AFD700;
+    --custom-jupyter-256-color-149: #AFD75F;
+    --custom-jupyter-256-color-150: #AFD787;
+    --custom-jupyter-256-color-151: #AFD7AF;
+    --custom-jupyter-256-color-152: #AFD7D7;
+    --custom-jupyter-256-color-153: #AFD7FF;
+    --custom-jupyter-256-color-154: #AFFF00;
+    --custom-jupyter-256-color-155: #AFFF5F;
+    --custom-jupyter-256-color-156: #AFFF87;
+    --custom-jupyter-256-color-157: #AFFFAF;
+    --custom-jupyter-256-color-158: #AFFFD7;
+    --custom-jupyter-256-color-159: #AFFFFF;
+    --custom-jupyter-256-color-160: #D70000;
+    --custom-jupyter-256-color-161: #D7005F;
+    --custom-jupyter-256-color-162: #D70087;
+    --custom-jupyter-256-color-163: #D700AF;
+    --custom-jupyter-256-color-164: #D700D7;
+    --custom-jupyter-256-color-165: #D700FF;
+    --custom-jupyter-256-color-166: #D75F00;
+    --custom-jupyter-256-color-167: #D75F5F;
+    --custom-jupyter-256-color-168: #D75F87;
+    --custom-jupyter-256-color-169: #D75FAF;
+    --custom-jupyter-256-color-170: #D75FD7;
+    --custom-jupyter-256-color-171: #D75FFF;
+    --custom-jupyter-256-color-172: #D78700;
+    --custom-jupyter-256-color-173: #D7875F;
+    --custom-jupyter-256-color-174: #D78787;
+    --custom-jupyter-256-color-175: #D787AF;
+    --custom-jupyter-256-color-176: #D787D7;
+    --custom-jupyter-256-color-177: #D787FF;
+    --custom-jupyter-256-color-178: #D7AF00;
+    --custom-jupyter-256-color-179: #D7AF5F;
+    --custom-jupyter-256-color-180: #D7AF87;
+    --custom-jupyter-256-color-181: #D7AFAF;
+    --custom-jupyter-256-color-182: #D7AFD7;
+    --custom-jupyter-256-color-183: #D7AFFF;
+    --custom-jupyter-256-color-184: #D7D700;
+    --custom-jupyter-256-color-185: #D7D75F;
+    --custom-jupyter-256-color-186: #D7D787;
+    --custom-jupyter-256-color-187: #D7D7AF;
+    --custom-jupyter-256-color-188: #D7D7D7;
+    --custom-jupyter-256-color-189: #D7D7FF;
+    --custom-jupyter-256-color-190: #D7FF00;
+    --custom-jupyter-256-color-191: #D7FF5F;
+    --custom-jupyter-256-color-192: #D7FF87;
+    --custom-jupyter-256-color-193: #D7FFAF;
+    --custom-jupyter-256-color-194: #D7FFD7;
+    --custom-jupyter-256-color-195: #D7FFFF;
+    --custom-jupyter-256-color-196: #FF0000;
+    --custom-jupyter-256-color-197: #FF005F;
+    --custom-jupyter-256-color-198: #FF0087;
+    --custom-jupyter-256-color-199: #FF00AF;
+    --custom-jupyter-256-color-200: #FF00D7;
+    --custom-jupyter-256-color-201: #FF00FF;
+    --custom-jupyter-256-color-202: #FF5F00;
+    --custom-jupyter-256-color-203: #FF5F5F;
+    --custom-jupyter-256-color-204: #FF5F87;
+    --custom-jupyter-256-color-205: #FF5FAF;
+    --custom-jupyter-256-color-206: #FF5FD7;
+    --custom-jupyter-256-color-207: #FF5FFF;
+    --custom-jupyter-256-color-208: #FF8700;
+    --custom-jupyter-256-color-209: #FF875F;
+    --custom-jupyter-256-color-210: #FF8787;
+    --custom-jupyter-256-color-211: #FF87AF;
+    --custom-jupyter-256-color-212: #FF87D7;
+    --custom-jupyter-256-color-213: #FF87FF;
+    --custom-jupyter-256-color-214: #FFAF00;
+    --custom-jupyter-256-color-215: #FFAF5F;
+    --custom-jupyter-256-color-216: #FFAF87;
+    --custom-jupyter-256-color-217: #FFAFAF;
+    --custom-jupyter-256-color-218: #FFAFD7;
+    --custom-jupyter-256-color-219: #FFAFFF;
+    --custom-jupyter-256-color-220: #FFD700;
+    --custom-jupyter-256-color-221: #FFD75F;
+    --custom-jupyter-256-color-222: #FFD787;
+    --custom-jupyter-256-color-223: #FFD7AF;
+    --custom-jupyter-256-color-224: #FFD7D7;
+    --custom-jupyter-256-color-225: #FFD7FF;
+    --custom-jupyter-256-color-226: #FFFF00;
+    --custom-jupyter-256-color-227: #FFFF5F;
+    --custom-jupyter-256-color-228: #FFFF87;
+    --custom-jupyter-256-color-229: #FFFFAF;
+    --custom-jupyter-256-color-230: #FFFFD7;
+    --custom-jupyter-256-color-231: #FFFFFF;
+    --custom-jupyter-256-color-232: #080808;
+    --custom-jupyter-256-color-233: #121212;
+    --custom-jupyter-256-color-234: #1C1C1C;
+    --custom-jupyter-256-color-235: #262626;
+    --custom-jupyter-256-color-236: #303030;
+    --custom-jupyter-256-color-237: #3A3A3A;
+    --custom-jupyter-256-color-238: #444444;
+    --custom-jupyter-256-color-239: #4E4E4E;
+    --custom-jupyter-256-color-240: #585858;
+    --custom-jupyter-256-color-241: #626262;
+    --custom-jupyter-256-color-242: #6C6C6C;
+    --custom-jupyter-256-color-243: #767676;
+    --custom-jupyter-256-color-244: #808080;
+    --custom-jupyter-256-color-245: #8A8A8A;
+    --custom-jupyter-256-color-246: #949494;
+    --custom-jupyter-256-color-247: #9E9E9E;
+    --custom-jupyter-256-color-248: #A8A8A8;
+    --custom-jupyter-256-color-249: #B2B2B2;
+    --custom-jupyter-256-color-250: #BCBCBC;
+    --custom-jupyter-256-color-251: #C6C6C6;
+    --custom-jupyter-256-color-252: #D0D0D0;
+    --custom-jupyter-256-color-253: #DADADA;
+    --custom-jupyter-256-color-254: #E4E4E4;
+    --custom-jupyter-256-color-255: #EEEEEE;
+}
+
 @media (prefers-color-scheme: light) {
     :root {
-        --custom-jupyter-color-black: #3E424D;
-        --custom-jupyter-color-red: #E75C58;
-        --custom-jupyter-color-green: #00A250;
-        --custom-jupyter-color-yellow: #DDB62B;
-        --custom-jupyter-color-blue: #208FFB;
-        --custom-jupyter-color-magenta: #D160C4;
-        --custom-jupyter-color-cyan: #60C6C8;
-        --custom-jupyter-color-white: #C5C1B4;
+        --custom-jupyter-ansi-color-black: var(--custom-jupyter-ansi-color-0);
+        --custom-jupyter-ansi-color-red: var(--custom-jupyter-ansi-color-1);
+        --custom-jupyter-ansi-color-green: var(--custom-jupyter-ansi-color-2);
+        --custom-jupyter-ansi-color-yellow: var(--custom-jupyter-ansi-color-3);
+        --custom-jupyter-ansi-color-blue: var(--custom-jupyter-ansi-color-4);
+        --custom-jupyter-ansi-color-magenta: var(--custom-jupyter-ansi-color-5);
+        --custom-jupyter-ansi-color-cyan: var(--custom-jupyter-ansi-color-6);
+        --custom-jupyter-ansi-color-white: var(--custom-jupyter-ansi-color-7);
 
-        --custom-jupyter-color-black-intense: #282C36;
-        --custom-jupyter-color-red-intense: #B22B31;
-        --custom-jupyter-color-green-intense: #007427;
-        --custom-jupyter-color-yellow-intense: #B27D12;
-        --custom-jupyter-color-blue-intense: #0065CA;
-        --custom-jupyter-color-magenta-intense: #A03196;
-        --custom-jupyter-color-cyan-intense: #258F8F;
-        --custom-jupyter-color-white-intense: #A1A6B2;
+        --custom-jupyter-ansi-color-black-intense: var(--custom-jupyter-ansi-color-8);
+        --custom-jupyter-ansi-color-red-intense: var(--custom-jupyter-ansi-color-9);
+        --custom-jupyter-ansi-color-green-intense: var(--custom-jupyter-ansi-color-A);
+        --custom-jupyter-ansi-color-yellow-intense: var(--custom-jupyter-ansi-color-B);
+        --custom-jupyter-ansi-color-blue-intense: var(--custom-jupyter-ansi-color-C);
+        --custom-jupyter-ansi-color-magenta-intense: var(--custom-jupyter-ansi-color-D);
+        --custom-jupyter-ansi-color-cyan-intense: var(--custom-jupyter-ansi-color-E);
+        --custom-jupyter-ansi-color-white-intense: var(--custom-jupyter-ansi-color-F);
     }
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --custom-jupyter-color-black: #282c36;
-        --custom-jupyter-color-red: #b22b31;
-        --custom-jupyter-color-green: #007427;
-        --custom-jupyter-color-yellow: #b27d12;
-        --custom-jupyter-color-blue: #0065ca;
-        --custom-jupyter-color-magenta: #a03196;
-        --custom-jupyter-color-cyan: #258f8f;
-        --custom-jupyter-color-white: #a1a6b2;
+        --custom-jupyter-ansi-color-black: var(--custom-jupyter-ansi-color-8);
+        --custom-jupyter-ansi-color-red: var(--custom-jupyter-ansi-color-9);
+        --custom-jupyter-ansi-color-green: var(--custom-jupyter-ansi-color-A);
+        --custom-jupyter-ansi-color-yellow: var(--custom-jupyter-ansi-color-B);
+        --custom-jupyter-ansi-color-blue: var(--custom-jupyter-ansi-color-C);
+        --custom-jupyter-ansi-color-magenta: var(--custom-jupyter-ansi-color-D);
+        --custom-jupyter-ansi-color-cyan: var(--custom-jupyter-ansi-color-E);
+        --custom-jupyter-ansi-color-white: var(--custom-jupyter-ansi-color-F);
+
+        --custom-jupyter-ansi-color-black-intense: var(--custom-jupyter-ansi-color-0);
+        --custom-jupyter-ansi-color-red-intense: var(--custom-jupyter-ansi-color-1);
+        --custom-jupyter-ansi-color-green-intense: var(--custom-jupyter-ansi-color-2);
+        --custom-jupyter-ansi-color-yellow-intense: var(--custom-jupyter-ansi-color-3);
+        --custom-jupyter-ansi-color-blue-intense: var(--custom-jupyter-ansi-color-4);
+        --custom-jupyter-ansi-color-magenta-intense: var(--custom-jupyter-ansi-color-5);
+        --custom-jupyter-ansi-color-cyan-intense: var(--custom-jupyter-ansi-color-6);
+        --custom-jupyter-ansi-color-white-intense: var(--custom-jupyter-ansi-color-7);
     }
 }
 
-\definecolor {
-    ansi-black
-}
+/* 👇动画👇 */
 
-    {
-    HTML
-}
-
-    {
-    3E424D
-}
-
-\definecolor {
-    ansi-black-intense
-}
-
-    {
-    HTML
-}
-
-    {
-    282C36
-}
-
-\definecolor {
-    ansi-red
-}
-
-    {
-    HTML
-}
-
-    {
-    E75C58
-}
-
-\definecolor {
-    ansi-red-intense
-}
-
-    {
-    HTML
-}
-
-    {
-    B22B31
-}
-
-\definecolor {
-    ansi-green
-}
-
-    {
-    HTML
-}
-
-    {
-    00A250
-}
-
-\definecolor {
-    ansi-green-intense
-}
-
-    {
-    HTML
-}
-
-    {
-    007427
-}
-
-\definecolor {
-    ansi-yellow
-}
-
-    {
-    HTML
-}
-
-    {
-    DDB62B
-}
-
-\definecolor {
-    ansi-yellow-intense
-}
-
-    {
-    HTML
-}
-
-    {
-    B27D12
-}
-
-\definecolor {
-    ansi-blue
-}
-
-    {
-    HTML
-}
-
-    {
-    208FFB
-}
-
-\definecolor {
-    ansi-blue-intense
-}
-
-    {
-    HTML
-}
-
-    {
-    0065CA
-}
-
-\definecolor {
-    ansi-magenta
-}
-
-    {
-    HTML
-}
-
-    {
-    D160C4
-}
-
-\definecolor {
-    ansi-magenta-intense
-}
-
-    {
-    HTML
-}
-
-    {
-    A03196
-}
-
-\definecolor {
-    ansi-cyan
-}
-
-    {
-    HTML
-}
-
-    {
-    60C6C8
-}
-
-\definecolor {
-    ansi-cyan-intense
-}
-
-    {
-    HTML
-}
-
-    {
-    258F8F
-}
-
-\definecolor {
-    ansi-white
-}
-
-    {
-    HTML
-}
-
-    {
-    C5C1B4
-}
-
-\definecolor {
-    ansi-white-intense
-}
-
-    {
-    HTML
-}
-
-    {
-    A1A6B2
-}
-
-/* 动画 */
 /* 呼吸 */
 /* REF [css3之呼吸灯效果 - hanfe1 - 博客园](https: //www.cnblogs.com/hanfe1/p/12611400.html) */
 @keyframes breath {
@@ -261,7 +357,7 @@
     }
 }
 
-/* 代码块与输出块样式 */
+/* 👇代码块与输出块样式👇 */
 .protyle-wysiwyg {
     [data-node-id][custom-jupyter-index] {
         &::before {
