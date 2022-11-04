@@ -73,74 +73,104 @@ document.getElementById('themeStyle').insertAdjacentElement("afterend", style);
 
 /* 解析数据 */
 async function parseData(data, params) {
-    let text, html, image, ext, mime;
-    for (const item in data) {
-        switch (true) {
-            case item.startsWith('text/'):
-                switch (true) {
-                    case item.startsWith('text/html'):
-                        html = data[item];
+    let file;
+    const markdowns = new Queue();
+    for (const mime in data) {
+        // REF [Media Types](https://www.iana.org/assignments/media-types/media-types.xhtml)
+        const main = mime.split('/')[0];
+        const sub = mime.split('/')[1];
+        const ext = sub.split('+')[0];
+        const serialized = sub.split('+')[1];
+
+        switch (main) {
+            case 'text':
+                switch (sub) {
+                    case 'plain':
+                        markdowns.enqueue(parseText(data[mime], params), 0);
+                        break;
+                    case 'html':
+                        markdowns.enqueue(`<div>${data[mime]}</div>`, 1);
+                        break;
+                    case 'markdown':
+                        markdowns.enqueue(data[mime], 1);
                         break;
                     default:
-                        text = data[item];
+                        markdowns.enqueue(`\`\`\`${ext}\n${data[mime]}\n\`\`\``, 2);
                         break;
                 }
                 break;
-            case item.startsWith('image/'):
-                switch (true) {
-                    case item.endsWith('/svg+xml'):
-                        image = Buffer.from(data[item]).toString('base64');
-                        ext = 'svg';
+            case 'image':
+                switch (sub) {
+                    case 'svg+xml':
+                        file = Buffer.from(data[mime]).toString('base64');
                         break;
                     default:
-                        image = data[item].split('\n')[0];
-                        ext = item.split('/')[1];
+                        file = data[mime].split('\n')[0];
                         break;
                 }
-                mime = item;
+                {
+                    const title = data['text/plain'];
+                    const filename = `jupyter-output.${ext}`;
+                    const response = await upload(
+                        base64ToBlob(file, mime),
+                        undefined,
+                        filename,
+                    );
+                    const filepath = response?.data?.succMap[filename];
+                    if (filepath) markdowns.enqueue(`![${filename}](${filepath}${title ? ` "${title.replaceAll('"', '&quot;')}"` : ''})`, 3);
+                }
                 break;
-            case item.startsWith('application/'):
-                switch (true) {
-                    case item.endsWith('/json'):
-                        ext = 'json';
-                        mime = item;
-                        application = [
-                            '```json',
-                            JSON.stringify(data[item], undefined, 4),
-                            '```',
-                        ].join('\n');
+            case 'audio':
+                switch (sub) {
+                    default:
+                        file = data[mime].split('\n')[0];
+                        break;
+                }
+                {
+                    const filename = `jupyter-output.${ext}`;
+                    const response = await upload(
+                        base64ToBlob(file, mime),
+                        undefined,
+                        filename,
+                    );
+                    const filepath = response?.data?.succMap[filename];
+                    if (filepath) markdowns.enqueue(`<audio controls="controls" src="${filepath}" data-src="${filepath}"></audio>`, 3);
+                }
+                break;
+            case 'video':
+                switch (sub) {
+                    default:
+                        file = data[mime].split('\n')[0];
+                        break;
+                }
+                {
+                    const filename = `jupyter-output.${ext}`;
+                    const response = await upload(
+                        base64ToBlob(file, mime),
+                        undefined,
+                        filename,
+                    );
+                    const filepath = response?.data?.succMap[filename];
+                    if (filepath) markdowns.enqueue(`<video controls="controls" src="${filepath}" data-src="${filepath}"></video>`, 3);
+                }
+                break;
+            case 'application':
+                switch (sub) {
+                    case 'json':
+                        markdowns.enqueue(`\`\`\`json\n${JSON.stringify(data[mime], undefined, 4) }\n\`\`\``, 4);
                         break;
                     default:
+                        markdowns.enqueue(parseText(`<${mime}>`, params), 4);
                         break;
                 }
                 break;
             default:
+                markdowns.enqueue(parseText(`<${mime}>`, params), 4);
                 break;
         }
+
     }
-    let markdown;
-    if (text && image && ext) {
-        const filename = `jupyter-output.${ext}`;
-        const response = await upload(
-            base64ToBlob(image, mime),
-            undefined,
-            filename,
-        );
-        const filepath = response?.data?.succMap[filename];
-        markdown = `![${filename}](${filepath} "${text.length < config.jupyter.output.image.title.max ? text : ""}")`;
-    }
-    else if (text && html) {
-        text = parseText(text, params);
-        markdown = `${text}\n\n<div>${html}</div>`;
-    }
-    else if (html) {
-        markdown = html;
-    }
-    else if (text) {
-        text = parseText(text, params);
-        markdown = text;
-    }
-    return markdown;
+    return markdowns.items.map((item) => item.value).join('\n');
 }
 
 /* 回复消息处理 */
@@ -500,7 +530,7 @@ async function runCode(e, code_id, params) {
         async function msgHandler() {
             websocket.flag = true;
             while (!websocket.queue.empty()) {
-                const message = websocket.queue.dequeue().item;
+                const message = websocket.queue.dequeue().value;
                 websocket.username = message.header.username;
                 websocket.version = message.header.version;
                 const msg_id = message.parent_header.msg_id;

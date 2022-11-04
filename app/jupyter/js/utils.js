@@ -29,10 +29,10 @@ class Queue {
     clear() {
         this.items = [];
     }
-    enqueue(item, priority) {
+    enqueue(value, priority) {
         this.items.push({
+            value,
             priority,
-            item,
         });
         this.items.sort((a, b) => a.priority - b.priority);
     }
@@ -274,15 +274,6 @@ class Output {
     /* 构造函数 */
     constructor(text = "") {
         this.text = text.toString();
-    }
-
-    /* 文本 */
-    set text(text) {
-        this.text = text.toString();
-    }
-
-    get text() {
-        return this.text;
     }
 
     toString() {
