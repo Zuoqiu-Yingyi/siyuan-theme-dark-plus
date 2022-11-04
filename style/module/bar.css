@@ -67,30 +67,31 @@
 /* ↑顶部工具栏↑ */
 #toolbar {
   background-color: var(--custom-tool-bar-background-color);
+  /* 顶部工具栏按钮 */
+  /* 顶部工具栏标题 */
+  /* 窗口控件 */
 }
 body.body--blur:not(.body--win32) #toolbar {
   padding-left: 69px;
 }
-/* 顶部工具栏按钮 */
-div:not(#windowControls) > .toolbar__item {
+#toolbar div:not(#windowControls) > .toolbar__item {
   margin: 0 6px;
   /* border-radius: 1em; */
 }
-/* 顶部工具栏标题 */
-#drag {
+#toolbar #drag {
   padding: 0 !important;
 }
-/* 窗口控件 */
-#windowControls {
+#toolbar #windowControls {
+  z-index: 196;
   /* margin: 0 !important; */
+  /* 窗口关闭控件 */
 }
-#windowControls .b3-tooltips {
+#toolbar #windowControls .b3-tooltips {
   margin: 0 !important;
   padding: var(--custom-dock-item-padding-width) calc(var(--custom-dock-item-margin-width) + var(--custom-dock-item-padding-width)) !important;
   border-radius: 0 !important;
 }
-/* 窗口关闭控件 */
-#closeWindow {
+#toolbar #windowControls #closeWindow {
   /* padding-right: 6px; */
 }
 /* 被激活的控件 */

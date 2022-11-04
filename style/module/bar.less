@@ -77,34 +77,35 @@
     body.body--blur:not(.body--win32) & {
         padding-left: 69px;
     }
-}
 
-/* 顶部工具栏按钮 */
-div:not(#windowControls)>.toolbar__item {
-    margin: 0 6px;
-    /* border-radius: 1em; */
-}
-
-/* 顶部工具栏标题 */
-#drag {
-    padding: 0 !important;
-}
-
-/* 窗口控件 */
-#windowControls {
-
-    /* margin: 0 !important; */
-    .b3-tooltips {
-        margin: 0 !important;
-        // padding: calc(var(--custom-dock-item-margin-width) + var(--custom-dock-item-padding-width)) !important;
-        padding: var(--custom-dock-item-padding-width) calc(var(--custom-dock-item-margin-width) + var(--custom-dock-item-padding-width)) !important;
-        border-radius: 0 !important;
+    /* 顶部工具栏按钮 */
+    div:not(#windowControls)>.toolbar__item {
+        margin: 0 6px;
+        /* border-radius: 1em; */
     }
-}
 
-/* 窗口关闭控件 */
-#closeWindow {
-    /* padding-right: 6px; */
+    /* 顶部工具栏标题 */
+    #drag {
+        padding: 0 !important;
+    }
+
+    /* 窗口控件 */
+    #windowControls {
+        z-index: 196;
+
+        /* margin: 0 !important; */
+        .b3-tooltips {
+            margin: 0 !important;
+            // padding: calc(var(--custom-dock-item-margin-width) + var(--custom-dock-item-padding-width)) !important;
+            padding: var(--custom-dock-item-padding-width) calc(var(--custom-dock-item-margin-width) + var(--custom-dock-item-padding-width)) !important;
+            border-radius: 0 !important;
+        }
+
+        /* 窗口关闭控件 */
+        #closeWindow {
+            /* padding-right: 6px; */
+        }
+    }
 }
 
 /* 被激活的控件 */
