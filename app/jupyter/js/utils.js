@@ -6,7 +6,6 @@ export {
     setBlockDOMAttrs, // 设置 DOM 中的块属性
     timestampFormat, // 时间格式化
     base64ToBlob, // Base64 转 Blob
-    escapeText, // 转义纯文本
     promptFormat, // 格式化 prompt
     URL2DataURL, // URL 转 DataURL
     HTMLEncode, // HTML 编码
@@ -14,8 +13,8 @@ export {
     createIAL, // 创建内联属性表字符串
     createStyle, // 创建样式字符串
     isEmptyObject, // 判断对象是否为空
-    parseControlCharacters, // 解析控制字符
-    cmdRichText2Kramdown, // 将命令行富文本转换为 Kramdown
+    Output, // 输出解析器
+    parseText, // 解析文本
     markdown2kramdown, // Markdown 转 Kramdown
 };
 
@@ -182,12 +181,6 @@ function base64ToBlob(base64Data, mime) {
     // return new Blob([atob(base64Data)], { type: mime });
 }
 
-/* 转义纯文本 */
-function escapeText(text) {
-    if (text) return text.replaceAll(config.jupyter.regs.mark, '\\$1');
-    else return text;
-}
-
 /* prompt 格式化 */
 function promptFormat(language, name, state) {
     return `${language} | ${name} | ${state}`
@@ -273,186 +266,234 @@ function isEmptyObject(obj) {
     return true;
 }
 
-/**
- * 解析控制字符
- * @params {string} src: 原字符串
- * @params {string} text: 包含控制字符的字符串
- * @return {string}: 解析后的字符串
- */
-function parseControlCharacters(text, src = "") {
-    const chars = [...src];
-    const content = text.replaceAll('\r\n', '\n');
-    const content_length = content.length;
-    let ptr = chars.length;
-    for (let i = 0; i < content_length; ++i) {
-        const c = content[i];
-        switch (c) {
-            case '\b': // backspace
-                if (ptr > 0) ptr--;
-                break;
-            case '\r': // carriage return
-                ptr = 0;
-                break;
-            default:
-                chars[ptr++] = c;
-        }
+/* 处理输出结果的类 */
+class Output {
+    /* 操作的文本对象 */
+    text;
+
+    /* 构造函数 */
+    constructor(text = "") {
+        this.text = text.toString();
     }
-    return chars.slice(0, ptr).join('');
+
+    /* 文本 */
+    set text(text) {
+        this.text = text.toString();
+    }
+
+    get text() {
+        return this.text;
+    }
+
+    toString() {
+        return this.text;
+    }
+
+    /* 👇可链式调用的方法👇 */
+
+    /* 转义符号 */
+    escapeMark() {
+        this.text = this.text.replaceAll(config.jupyter.regs.mark, '\\$1');
+        return this;
+    }
+
+    /**
+     * 解析控制字符
+     * @params {string} src: 原字符串
+     */
+    parseControlChars(src = "") {
+        const chars = [...src];
+        const content = this.text.replaceAll('\r\n', '\n');
+        const content_length = content.length;
+        let ptr = chars.length;
+        for (let i = 0; i < content_length; ++i) {
+            const c = content[i];
+            switch (c) {
+                case '\b': // backspace
+                    if (ptr > 0) ptr--;
+                    break;
+                case '\r': // carriage return
+                    ptr = 0;
+                    break;
+                default:
+                    chars[ptr++] = c;
+            }
+        }
+        this.text = chars.slice(0, ptr).join('');
+        return this;
+    }
+
+    /* 解析控制台控制字符 */
+    parseCmdControlChars() {
+        this.text = this.text
+            .replaceAll(/\x1bc/g, '') // 不解析清屏命令
+            .replaceAll(/\x1b\\?\[\\?\?\d+[lh]/g, '') // 不解析光标显示命令
+            .replaceAll(/\x1b\\?\[\d*(\\?;\d+)*[^\dm]/g, '') // 不解析光标位置命令
+            .replaceAll(
+                config.jupyter.regs.richtext,
+                (match, p1, p2, offset, string) => {
+                    // REF [将一个函数指定为一个参数](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll#%E5%B0%86%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E6%8C%87%E5%AE%9A%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%8F%82%E6%95%B0)
+                    let mark = {
+                        strong: false, // 加粗
+                        em: false, // 倾斜
+                        u: false, // 下划线
+                        s: false, // 删除线
+                    }; // 标志
+                    let style = {}; // ial 样式列表
+                    let ial = ""; // 行级元素的 IAL 字符串
+
+                    const params = p1
+                        .replaceAll('\\;', ';') // 替换转义的分号
+                        .split(';'); // 根据分号分割所有参数
+                    for (const param of params) {
+                        switch (parseInt(param)) {
+                            case 0: // 清除样式
+                                mark = {};
+                                style = {};
+                                break;
+                            case 1: // 加粗
+                                mark.strong = true;
+                                break;
+                            case 2: // 字体变暗
+                                style.opacity = '0.75';
+                                break;
+                            case 3: // 斜体
+                                mark.em = true;
+                                break;
+                            case 4: // 下划线
+                                mark.u = true;
+                                break;
+                            case 5: // 呼吸闪烁
+                                style.animation = 'breath 4s ease-in-out infinite';
+                                break;
+                            case 6: // 快速闪烁
+                                style.animation = 'blink 1s steps(2) infinite';
+                                break;
+                            case 7: // 反色
+                                style.filter = 'invert(1)';
+                                break;
+                            case 8: // 透明
+                                style.opacity = '0';
+                                break;
+                            case 9: // 删除线
+                                mark.s = true
+                                break;
+                            default:
+                                {
+                                    let k;
+                                    /* 前景/背景 */
+                                    if (param[0] === '3') {
+                                        k = 'color';
+                                    }
+                                    else if (param[0] === '4') {
+                                        k = 'background-color';
+                                    }
+                                    /* 颜色 */
+                                    /**
+                                     * windows:
+                                     * cmd: `color /?`
+                                     * 0 = 黑色       8 = 灰色
+                                     * 1 = 蓝色       9 = 淡蓝色
+                                     * 2 = 绿色       A = 淡绿色
+                                     * 3 = 浅绿色     B = 淡浅绿色
+                                     * 4 = 红色       C = 淡红色
+                                     * 5 = 紫色       D = 淡紫色
+                                     * 6 = 黄色       E = 淡黄色
+                                     * 7 = 白色       F = 亮白色
+                                     */
+                                    switch (parseInt(param.substring(1))) {
+                                        case 0: // 黑色
+                                            style[k] = 'var(--custom-jupyter-color-black)';
+                                            break;
+                                        case 1: // 红色
+                                            style[k] = 'var(--custom-jupyter-color-red)';
+                                            break;
+                                        case 2: // 绿色
+                                            style[k] = 'var(--custom-jupyter-color-green)';
+                                            break;
+                                        case 3: // 黄色
+                                            style[k] = 'var(--custom-jupyter-color-yellow)';
+                                            break;
+                                        case 4: // 蓝色
+                                            style[k] = 'var(--custom-jupyter-color-blue)';
+                                            break;
+                                        case 5: // 紫色
+                                            style[k] = 'var(--custom-jupyter-color-magenta)';
+                                            break;
+                                        case 6: // 青色
+                                            style[k] = 'var(--custom-jupyter-color-cyan)';
+                                            break;
+                                        case 7: // 白色
+                                            style[k] = 'var(--custom-jupyter-color-white)';
+                                            break;
+                                        case 9: // 默认
+                                        // REF [node.js - What is this \u001b[9... syntax of choosing what color text appears on console, and how can I add more colors? - Stack Overflow](https://stackoverflow.com/questions/23975735/what-is-this-u001b9-syntax-of-choosing-what-color-text-appears-on-console)
+                                        default:
+                                            delete style[k];
+                                            break;
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                    /* 添加行级 IAL */
+                    if (!isEmptyObject(style)) {
+                        ial = createIAL({ style: createStyle(style) });
+                    }
+                    const pre_mark =
+                        `${mark.strong || !isEmptyObject(style) ? '**' : ''
+                        }${mark.em ? '*' : ''
+                        }${mark.u ? '<u>' : ''
+                        }${mark.s ? '~~' : ''
+                        }`; // 前缀标志
+                    const suf_mark =
+                        `${mark.s ? '~~' : ''
+                        }${mark.u ? '</u>' : ''
+                        }${mark.em ? '*' : ''
+                        }${mark.strong || !isEmptyObject(style) ? '**' : ''
+                        }`; // 后缀标志
+                    return p2
+                        .replaceAll('\r\n', '\n') // 替换换行符
+                        .replaceAll('\n{2,}', '\n\n') // 替换多余的换行符
+                        .split('\n\n') // 按块分割
+                        .map(block => block
+                            .split('\n') // 按照换行分隔
+                            .map(line => {
+                                if (line.length > 0) {
+                                    /* markdown 标志内测不能存在空白字符 */
+                                    const pre_blank = line.substring(0, line.length - line.trimLeft().length);
+                                    const sub_blank = line.substring(line.trimRight().length);
+                                    return `${pre_blank}${pre_mark}${line.trim()}${suf_mark}${ial}${sub_blank}`
+                                }
+                                else return '';
+                            })
+                            .join('\n')
+                        ) // 添加标志和行级 IAL
+                        .join('\n\n');
+                }
+            );
+        return this;
+    }
+
+    /* 移除控制台转义字符 */
+    removeCmdControlChars() {
+        this.text = this.text.replaceAll(/\x1b[^a-zA-Z]*[a-zA-Z]/g, '');
+        return this;
+    }
 }
 
 /**
- * 命令行富文本转换为 kramdown 文本
- * REF [反斜杆e，Linux下五彩斑斓的命令行输出_一只杨阳羊的博客-CSDN博客_linux \e](https://blog.csdn.net/qq_43617936/article/details/112898061)
- * @params {string} text: 富文本
- * @params {boolean} escaped: 是否被转义
- * @return {string}: kramdown 文本
+ * 解析文本
+ * @params {string | Output} text: 文本
+ * @params {object} params: 解析选项
+ * @return {string} 解析后的文本
  */
-function cmdRichText2Kramdown(text, escaped = false) {
-    const reg = escaped
-        ? config.jupyter.regs.richtext_escaped
-        : config.jupyter.regs.richtext;
-    return text.replaceAll(
-        reg,
-        (match, p1, p2, offset, string) => {
-            // REF [将一个函数指定为一个参数](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll#%E5%B0%86%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E6%8C%87%E5%AE%9A%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%8F%82%E6%95%B0)
-            let mark = {
-                strong: false, // 加粗
-                em: false, // 倾斜
-                u: false, // 下划线
-                s: false, // 删除线
-            }; // 标志
-            let style = {}; // ial 样式列表
-            let ial = ""; // 行级元素的 IAL 字符串
-            const params = escaped
-                ? p1.split('\\;') // 所有参数
-                : p1.split(';'); // 所有参数
-            for (const param of params) {
-                switch (parseInt(param)) {
-                    case 0: // 清除样式
-                        mark = {};
-                        style = {};
-                        break;
-                    case 1: // 加粗
-                        mark.strong = true;
-                        break;
-                    case 2: // 字体变暗
-                        style.opacity = '0.75';
-                        break;
-                    case 3: // 斜体
-                        mark.em = true;
-                        break;
-                    case 4: // 下划线
-                        mark.u = true;
-                        break;
-                    case 5: // 呼吸闪烁
-                        style.animation = 'breath 4s ease-in-out infinite';
-                        break;
-                    case 6: // 快速闪烁
-                        style.animation = 'blink 1s steps(2) infinite';
-                        break;
-                    case 7: // 反色
-                        style.filter = 'invert(1)';
-                        break;
-                    case 8: // 透明
-                        style.opacity = '0';
-                        break;
-                    case 9: // 删除线
-                        mark.s = true
-                        break;
-                    default:
-                        {
-                            let k;
-                            /* 前景/背景 */
-                            if (param[0] === '3') {
-                                k = 'color';
-                            }
-                            else if (param[0] === '4') {
-                                k = 'background-color';
-                            }
-                            /* 颜色 */
-                            /**
-                             * windows:
-                             * cmd: `color /?`
-                             * 0 = 黑色       8 = 灰色
-                             * 1 = 蓝色       9 = 淡蓝色
-                             * 2 = 绿色       A = 淡绿色
-                             * 3 = 浅绿色     B = 淡浅绿色
-                             * 4 = 红色       C = 淡红色
-                             * 5 = 紫色       D = 淡紫色
-                             * 6 = 黄色       E = 淡黄色
-                             * 7 = 白色       F = 亮白色
-                             */
-                            switch (parseInt(param.substring(1))) {
-                                case 0: // 黑色
-                                    style[k] = 'var(--custom-jupyter-color-black)';
-                                    break;
-                                case 1: // 红色
-                                    style[k] = 'var(--custom-jupyter-color-red)';
-                                    break;
-                                case 2: // 绿色
-                                    style[k] = 'var(--custom-jupyter-color-green)';
-                                    break;
-                                case 3: // 黄色
-                                    style[k] = 'var(--custom-jupyter-color-yellow)';
-                                    break;
-                                case 4: // 蓝色
-                                    style[k] = 'var(--custom-jupyter-color-blue)';
-                                    break;
-                                case 5: // 紫色
-                                    style[k] = 'var(--custom-jupyter-color-magenta)';
-                                    break;
-                                case 6: // 青色
-                                    style[k] = 'var(--custom-jupyter-color-cyan)';
-                                    break;
-                                case 7: // 白色
-                                    style[k] = 'var(--custom-jupyter-color-white)';
-                                    break;
-                                case 9: // 默认
-                                // REF [node.js - What is this \u001b[9... syntax of choosing what color text appears on console, and how can I add more colors? - Stack Overflow](https://stackoverflow.com/questions/23975735/what-is-this-u001b9-syntax-of-choosing-what-color-text-appears-on-console)
-                                default:
-                                    delete style[k];
-                                    break;
-                            }
-                        }
-                        break;
-                }
-            }
-            /* 添加行级 IAL */
-            if (!isEmptyObject(style)) {
-                ial = createIAL({ style: createStyle(style) });
-            }
-            const pre_mark =
-                `${mark.strong || !isEmptyObject(style) ? '**' : ''
-                }${mark.em ? '*' : ''
-                }${mark.u ? '<u>' : ''
-                }${mark.s ? '~~' : ''
-                }`; // 前缀标志
-            const suf_mark =
-                `${mark.s ? '~~' : ''
-                }${mark.u ? '</u>' : ''
-                }${mark.em ? '*' : ''
-                }${mark.strong || !isEmptyObject(style) ? '**' : ''
-                }`; // 后缀标志
-            return p2
-                .replaceAll('\r\n', '\n') // 替换换行符
-                .replaceAll('\n{2,}', '\n\n') // 替换多余的换行符
-                .split('\n\n') // 按块分割
-                .map(block => block
-                    .split('\n') // 按照换行分隔
-                    .map(line => {
-                        if (line.length > 0) {
-                            /* markdown 标志内测不能存在空白字符 */
-                            const pre_blank = line.substring(0, line.length - line.trimLeft().length);
-                            const sub_blank = line.substring(line.trimRight().length);
-                            return `${pre_blank}${pre_mark}${line.trim()}${suf_mark}${ial}${sub_blank}`
-                        }
-                        else return '';
-                    })
-                    .join('\n')
-                ) // 添加标志和行级 IAL
-                .join('\n\n');
-        }
-    )
+function parseText(text, params) {
+    const output = new Output(text);
+    if (params.escaped) output.escapeMark();
+    if (params.cntrl) output.parseCmdControlChars();
+    else output.removeCmdControlChars();
+    return output.toString();
 }
 
 /**

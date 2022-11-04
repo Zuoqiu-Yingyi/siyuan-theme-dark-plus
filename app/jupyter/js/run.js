@@ -20,12 +20,11 @@ import {
 import { custom } from './../../public/custom.js';
 import {
     Queue,
+    Output,
     timestampFormat,
     base64ToBlob,
-    escapeText,
     promptFormat,
-    parseControlCharacters,
-    cmdRichText2Kramdown,
+    parseText,
     markdown2kramdown,
 } from './utils.js';
 
@@ -50,7 +49,10 @@ var websockets = {
     //                 id: id, // 当前块 ID
     //                 markdown: markdown, // 当前内容
     //             },
-    //             escaped: boolean, // 是否转义输出结果
+    //             params: {
+    //                 escaped: boolean, // 是否转义输出结果
+    //                 cntrl: boolean, // 是否解析控制字符
+    //             },
     //             index: int, // 消息序号
     //         },
     //     },
@@ -70,7 +72,7 @@ style.href = config.jupyter.id.siyuan.style.href;
 document.getElementById('themeStyle').insertAdjacentElement("afterend", style);
 
 /* 解析数据 */
-async function parseData(data, escaped) {
+async function parseData(data, params) {
     let text, html, image, ext, mime;
     for (const item in data) {
         switch (true) {
@@ -128,14 +130,14 @@ async function parseData(data, escaped) {
         markdown = `![${filename}](${filepath} "${text.length < config.jupyter.output.image.title.max ? text : ""}")`;
     }
     else if (text && html) {
-        text = cmdRichText2Kramdown(escaped ? escapeText(text) : text, escaped);
+        text = parseText(text, params);
         markdown = `${text}\n\n<div>${html}</div>`;
     }
     else if (html) {
         markdown = html;
     }
     else if (text) {
-        text = cmdRichText2Kramdown(escaped ? escapeText(text) : text, escaped);
+        text = parseText(text, params);
         markdown = text;
     }
     return markdown;
@@ -183,7 +185,7 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
         case "display_data": // 代码输出展示信息
             {
                 const data = message.content.data;
-                markdown = await parseData(data, message_info.escaped);
+                markdown = await parseData(data, message_info.params);
             }
             break;
         case "error": // 代码输出错误信息
@@ -208,12 +210,7 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                 //     message_info.escaped ? escapeText(t) : t,
                 //     message_info.escaped,
                 // )));
-                const t = traceback.join('\n');
-                markdowns.push(cmdRichText2Kramdown(
-                    message_info.escaped ? escapeText(t) : t,
-                    message_info.escaped,
-                    
-                ));
+                markdowns.push(parseData(traceback.join('\n'), message_info.params));
                 markdowns.push('}}}');
                 markdown = markdowns.join('\n');
                 ial.style = config.jupyter.style.error;
@@ -245,7 +242,7 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                     /* 解析运行结果文本 */
                     for (const payload of payloads) {
                         const data = payload.data;
-                        const text = await parseData(data, message_info.escaped);
+                        const text = await parseData(data, message_info.params);
                         if (text) markdowns.push(text);
                     }
                 }
@@ -319,44 +316,25 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                     message_info.current = null;
                     return;
                 }
-
                 /* 更新原块 */
                 else {
                     /* 更新原块内容 */
-                    markdown = parseControlCharacters(
-                        markdown,
-                        message_info.current.markdown,
-                    );
-                    /* 转义 */
-                    markdown = message_info.escaped
-                        ? escapeText(markdown)
-                        : markdown;
-                    /* 解析富文本 */
-                    markdown = cmdRichText2Kramdown(markdown, message_info.escaped);
+                    markdown = new Output(markdown)
+                        .parseControlChars(message_info.current.markdown) // 解析控制字符
+                        .toString();
                     /* 更新块 */
                     response = await updateBlock(
                         message_info.current.id,
-                        markdown2kramdown(
-                            message_info.escaped
-                                ? escapeText(markdown)
-                                : markdown,
-                            ial,
-                        ),
+                        markdown2kramdown(parseText(markdown, message_info.params), ial),
                     );
                 }
             }
             /* 生成新块 */
             else {
-                /* 转义 */
-                markdown = message_info.escaped
-                    ? escapeText(markdown)
-                    : markdown;
-                /* 解析富文本 */
-                markdown = cmdRichText2Kramdown(markdown, message_info.escaped);
                 /* 插入块 */
                 response = await appendBlock(
                     message_info.output,
-                    markdown2kramdown(markdown, ial),
+                    markdown2kramdown(parseText(markdown, message_info.params), ial),
                 );
             }
         }
@@ -480,7 +458,7 @@ async function runCode(e, code_id, params) {
             doc: doc_id,
             code: code_id,
             output: output_id,
-            escaped: params.escaped,
+            params: params,
             index: index,
         };
         const message = JSON.stringify(createSendMessage( // 创建消息
