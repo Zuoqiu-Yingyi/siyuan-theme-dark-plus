@@ -1099,8 +1099,8 @@ export var config = {
                                 mode: "button",
                                 icon: "#iconPlay",
                                 label: {
-                                    zh_CN: "运行代码",
-                                    other: "Run Code",
+                                    zh_CN: "运行代码 (转义输出: ✔ 控制字符: ✔)",
+                                    other: "Run Code (Escape: ✔ cntrl: ✔)",
                                 },
                                 click: {
                                     enable: true,
@@ -1108,7 +1108,7 @@ export var config = {
                                     tasks: [
                                         {
                                             type: 'jupyter-run-code',
-                                            params: { escaped: false },
+                                            params: { escaped: true, cntrl: true },
                                         },
                                     ],
                                 },
@@ -1119,8 +1119,8 @@ export var config = {
                                 mode: "button",
                                 icon: "#iconPlay",
                                 label: {
-                                    zh_CN: "运行代码 (转义输出结果)",
-                                    other: "Run Code (Escape Output)",
+                                    zh_CN: "运行代码 (转义输出: ✔ 控制字符: ✖)",
+                                    other: "Run Code (Escape: ✔ cntrl: ✖)",
                                 },
                                 click: {
                                     enable: true,
@@ -1128,7 +1128,47 @@ export var config = {
                                     tasks: [
                                         {
                                             type: 'jupyter-run-code',
-                                            params: { escaped: true },
+                                            params: { escaped: true, cntrl: false },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: { NodeCodeBlock: { enable: true, subtype: { null: true } } },
+                                mode: "button",
+                                icon: "#iconPlay",
+                                label: {
+                                    zh_CN: "运行代码 (转义输出: ✖ 控制字符: ✔)",
+                                    other: "Run Code (Escape: ✖ cntrl: ✔)",
+                                },
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'jupyter-run-code',
+                                            params: { escaped: false, cntrl: true },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: { NodeCodeBlock: { enable: true, subtype: { null: true } } },
+                                mode: "button",
+                                icon: "#iconPlay",
+                                label: {
+                                    zh_CN: "运行代码 (转义输出: ✖ 控制字符: ✖)",
+                                    other: "Run Code (Escape: ✖ cntrl: ✖)",
+                                },
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'jupyter-run-code',
+                                            params: { escaped: false, cntrl: false },
                                         },
                                     ],
                                 },
