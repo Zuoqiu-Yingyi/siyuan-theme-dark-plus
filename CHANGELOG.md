@@ -28,6 +28,7 @@
 - jupyter 支持解析 `\e` 输出 | Jupyter supports parsing `\e` output.
 - 优化对 jupyter 富文本输出的解析 | Optimized the parsing of jupyter rich text output.
 - jupyter 输出可选是否解析控制台控制字符 | Jupyter output can optionally parse console control characters.
+- [#152](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/152) 降低窗口空间层级 | Lowered the level of window space.
 
 ## v1.3.7/2022-10-27
 
