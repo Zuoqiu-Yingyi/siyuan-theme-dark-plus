@@ -30,6 +30,7 @@
 - jupyter 输出可选是否解析控制台控制字符 | Jupyter output can optionally parse console control characters.
 - [#152](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/152) 降低窗口空间层级 | Lowered the level of window space.
 - jupyter 输出支持解析 8 位颜色与 24 位颜色 | Jupyter output supports parsing 8-bit colors and 24-bit colors.
+- jupyter 优化基于 MIME 的数据解析 | Jupyter optimizes the parsing of data based on MIME.
 
 ## v1.3.7/2022-10-27
 
