@@ -32,6 +32,7 @@
 - jupyter 输出支持解析 8 位颜色与 24 位颜色 | Jupyter output supports parsing 8-bit colors and 24-bit colors.
 - jupyter 优化基于 MIME 的数据解析 | Jupyter optimizes the parsing of data based on MIME.
 - [#153](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/153) 使用 `theme.js` 加载主题样式文件前判断主题是否为 `Dark+` | Determine whether the theme is `Dark+` before loading the theme style file with `theme.js`.
+- jupyter 调整输出开始与结束分割线位置 | Adjusted the position of the output start and end divider lines.
 
 ## v1.3.7/2022-10-27
 

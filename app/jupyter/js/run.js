@@ -157,7 +157,7 @@ async function parseData(data, params) {
             case 'application':
                 switch (sub) {
                     case 'json':
-                        markdowns.enqueue(`\`\`\`json\n${JSON.stringify(data[mime], undefined, 4) }\n\`\`\``, 4);
+                        markdowns.enqueue(`\`\`\`json\n${JSON.stringify(data[mime], undefined, 4)}\n\`\`\``, 4);
                         break;
                     default:
                         markdowns.enqueue(parseText(`<${mime}>`, params), 4);
@@ -192,6 +192,28 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                     )
                 };
                 await setBlockAttrs(message_info.doc, doc_attrs);
+
+                /* 更新块序号状态与启动时间 */
+                switch (execution_state) {
+                    case 'busy':
+                        {
+                            const date = new Date(message.header.date);
+                            const code_attrs = {
+                                [config.jupyter.attrs.code.index]: '*',
+                                [config.jupyter.attrs.code.time]: `${i18n('start', lang)}: ${date.format('yyyy-MM-dd hh:mm:ss')}`,
+                            };
+                            const output_attrs = { [config.jupyter.attrs.output.index]: '*' };
+
+                            await setBlockAttrs(message_info.code, code_attrs);
+                            await setBlockAttrs(message_info.output, output_attrs);
+                        }
+                        break;
+                    case 'idle':
+                        markdown = '---'; // 末尾分割线
+                        break;
+                    default:
+                        break;
+                }
             }
             break;
         case "stream": // 代码输出文本信息
@@ -233,19 +255,20 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                 ial.style = config.jupyter.style.error;
             }
             break;
-        case "execute_input": // 代码输入信息
-            {
-                /* 更新块序号状态与启动时间 */
-                const date = new Date(message.header.date);
-                let code_attrs = {
-                    [config.jupyter.attrs.code.index]: '*',
-                    [config.jupyter.attrs.code.time]: `${i18n('start', lang)}: ${date.format('yyyy-MM-dd hh:mm:ss')}`,
-                };
-                let output_attrs = { [config.jupyter.attrs.output.index]: '*' };
+        case "execute_input": // 代码输入信息\
+            // /* 调整至 status 消息解析处 */
+            // {
+            //     /* 更新块序号状态与启动时间 */
+            //     const date = new Date(message.header.date);
+            //     let code_attrs = {
+            //         [config.jupyter.attrs.code.index]: '*',
+            //         [config.jupyter.attrs.code.time]: `${i18n('start', lang)}: ${date.format('yyyy-MM-dd hh:mm:ss')}`,
+            //     };
+            //     let output_attrs = { [config.jupyter.attrs.output.index]: '*' };
 
-                await setBlockAttrs(message_info.code, code_attrs);
-                await setBlockAttrs(message_info.output, output_attrs);
-            }
+            //     await setBlockAttrs(message_info.code, code_attrs);
+            //     await setBlockAttrs(message_info.output, output_attrs);
+            // }
             break;
         case "input_request": // 需要输入信息
             break;
@@ -301,7 +324,7 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                 await setBlockAttrs(message_info.code, code_attrs);
                 await setBlockAttrs(message_info.output, output_attrs);
 
-                markdowns.push('---');
+                // markdowns.push('---');
                 markdown = markdowns.join('\n');
             }
             break;
