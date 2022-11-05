@@ -271,12 +271,14 @@ window.theme.changeThemeMode = function (
 // });
 
 /* 根据当前主题模式加载样式配置文件 */
-window.theme.changeThemeMode(
-    `/appearance/themes/Dark+/style/color/light.css`,
-    `/appearance/themes/Dark+/style/color/dark.css`,
-    `/widgets/custom-light.css`,
-    `/widgets/custom-dark.css`,
-);
+if (window.siyuan.config.appearance[window.siyuan.config.appearance.mode ? "themeDark" : "themeLight"] === "Dark+") {
+    window.theme.changeThemeMode(
+        `/appearance/themes/Dark+/style/color/light.css`,
+        `/appearance/themes/Dark+/style/color/dark.css`,
+        `/widgets/custom-light.css`,
+        `/widgets/custom-dark.css`,
+    );
+}
 
 /* 加载 HTML 块中使用的小工具 */
 window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/html.js"), "text/javascript", undefined, true);
