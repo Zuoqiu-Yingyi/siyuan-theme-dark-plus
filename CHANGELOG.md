@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- jupyter 控制台富文本使用零宽空格设置边界 | jupyter console rich text uses zero-width spaces to set boundaries.
+
 ## v1.4.0/2022-11-06
 
 - [v1.3.7 <=> v1.4.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.7...v1.4.0)
