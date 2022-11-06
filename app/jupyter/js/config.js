@@ -40,6 +40,7 @@ var config = {
                     max: 128, // 图片标题最大长度
                 },
             },
+            ZWS: '\u200B', // 零宽空格
         },
         style: {
             success: 'color: var(--b3-card-success-color); background-color: var(--b3-card-success-background);',

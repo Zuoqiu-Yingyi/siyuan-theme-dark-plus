@@ -562,17 +562,15 @@ class Output {
                         .replaceAll('\r\n', '\n') // 替换换行符
                         .replaceAll('\n{2,}', '\n\n') // 替换多余的换行符
                         .split('\n\n') // 按块分割
-                        .map(block => '\u200b' + block // 段首添加零宽空格
+                        .map(block => config.jupyter.output.ZWS + block // 段首添加零宽空格
                             .split('\n') // 按照换行分隔
                             .map(line => {
                                 if (line.length > 0) {
                                     /* markdown 标志内测不能存在空白字符 */
-                                    const pre_blank = line.substring(0, line.length - line.trimLeft().length);
-                                    const sub_blank = line.substring(line.trimRight().length);
-                                    let content = line.trim();
                                     if (mark.u && escaped) // 移除 <u></u> 标签内的转义符号
-                                        content = content.replaceAll(config.jupyter.regs.escaped.mark, '\$1');
-                                    return `${pre_blank}${pre_mark}${content}${suf_mark}${ial}${sub_blank}`;
+                                        line = line.replaceAll(config.jupyter.regs.escaped.mark, '\$1');
+                                    /* 标志内测添加零宽空格 */
+                                    return `${pre_mark}${config.jupyter.output.ZWS}${line}${config.jupyter.output.ZWS}${suf_mark}${ial}`;
                                 }
                                 else return '';
                             })
