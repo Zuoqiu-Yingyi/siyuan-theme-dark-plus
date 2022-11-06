@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.4.0/2022-11-06
+
+- [v1.3.7 <=> v1.4.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.7...v1.4.0)
 - [#145](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/145) 修复设置 `--custom-tab-bar-item-min-width` 后关闭按钮位置问题 | Fixed the issue of closing button position after setting `--custom-tab-bar-item-min-width`.
 - 修复块菜单项有时未显示问题 | Fixed the issue that block menu items sometimes were not displayed.
 - 移除未使用的背景图片 | Removed unused background images.
