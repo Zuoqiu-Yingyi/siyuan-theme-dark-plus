@@ -117,3 +117,7 @@
 
 /* 自定义配置文件 */
 @import url(/widgets/custom.css);
+
+
+/* 其他应用样式配置文件(方便导出时渲染) */
+@import url(/appearance/themes/Dark+/app/jupyter/css/jupyter.css);
