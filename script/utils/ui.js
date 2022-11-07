@@ -28,20 +28,24 @@ import { Iterator } from './misc.js';
 import { drag } from './drag.js';
 import { compareVersion } from './string.js';
 import {
+    sql,
     getBlockBreadcrumb,
     getBlockByID,
     getBlockAttrs,
+    getBlockIndex,
     setBlockAttrs,
     pushMsg,
     pushErrMsg,
 } from './api.js';
 
 import {
+    getConf,
     runCell,
     restartKernel,
     closeConnection,
 } from '/appearance/themes/Dark+/app/jupyter/js/run.js';
 
+const jupyterConf = getConf();
 var toolbarItemList = [];
 
 /**
@@ -861,6 +865,21 @@ const TASK_HANDLER = {
     'jupyter-run-cell': runCell,
     /* 运行所有单元格 */
     'jupyter-run-all-cells': async (e, id, params) => {
+        const stmt = `SELECT a.block_id FROM attributes AS a WHERE a.root_id = '${id}' AND a.name = '${jupyterConf.jupyter.attrs.code.type.key}' AND a.value = '${jupyterConf.jupyter.attrs.code.type.value}';`;
+        const rows = await sql(stmt);
+        if (rows && rows.length > 0) {
+            for (let i = 0; i < rows.length; ++i) {
+                const index = await getBlockIndex(rows[i].block_id);
+                if (!index) return;
+                rows[i].index = index;
+            }
+            rows.sort((a, b) => a.index - b.index);
+            const call = async i => {
+                if (i < rows.length)
+                    runCell(e, rows[i].block_id, params, async _ => call(i + 1));
+            };
+            call(0);
+        }
     },
     /* 归档页签 */
     'tab-archive': async (e, id, params) => {

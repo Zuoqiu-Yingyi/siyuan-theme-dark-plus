@@ -4,6 +4,7 @@
 - 将 jupyter 的样式配置文件引用添加到 `theme.css` 方便导出 | Add jupyter style config reference to `theme.css` for easy export.
 - jupyter 运行阻塞时块序号设置为 `*` | jupyter block number set to `*` when running is blocked.
 - 为文档块菜单添加 jupyter `重启内核` 菜单项 | Add jupyter `Restart Kernel` menu item to document block menu.
+- 为文档块菜单添加 jupyter `运行所有单元格` 菜单项 | Add jupyter Run All Cells` menu item to document block menu.
 
 ## v1.4.0/2022-11-06
 

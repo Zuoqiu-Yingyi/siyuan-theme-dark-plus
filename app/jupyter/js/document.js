@@ -126,6 +126,7 @@ function updateDocAttrs(del = false) {
         // 非删除会话
         const kernel_id = session.kernel.id;
         const kernel_name = session.kernel.name;
+        const kernel_display_name = getKernelDisplayName(kernel_name);
         const kernel_state = session.kernel.execution_state;
         const kernel_language = kernelspecs.kernelspecs[kernel_name].spec.language;
         const session_id = session.id;
@@ -134,13 +135,14 @@ function updateDocAttrs(del = false) {
         attrs = {
             [config.jupyter.attrs.kernel.id]: kernel_id,
             [config.jupyter.attrs.kernel.name]: kernel_name,
+            [config.jupyter.attrs.kernel.display_name]: kernel_display_name,
             [config.jupyter.attrs.kernel.language]: kernel_language,
             [config.jupyter.attrs.session.id]: session_id,
             [config.jupyter.attrs.session.name]: session_name,
             [config.jupyter.attrs.session.path]: session_path,
             [config.jupyter.attrs.other.prompt]: promptFormat(
                 kernel_language,
-                getKernelDisplayName(kernel_name),
+                kernel_display_name,
                 i18n(kernel_state, lang)
             ),
         };

@@ -1,4 +1,5 @@
 export {
+    getConf, // 获取配置
     runCell, // 运行单元格
     restartKernel, // 重启内核
     closeConnection, // 关闭连接
@@ -189,7 +190,7 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                 const doc_attrs = {
                     [config.jupyter.attrs.other.prompt]: promptFormat(
                         websocket.kernel.language,
-                        websocket.kernel.name,
+                        websocket.kernel.display_name,
                         i18n(execution_state, lang),
                     )
                 };
@@ -429,26 +430,32 @@ function createSendMessage(
     };
 }
 
+function getConf() {
+    return config;
+}
+
 async function restartKernel(e, doc_id, params) {
+    /* 关闭当前会话 */
+    await closeConnection(e, doc_id, params);
+
     /* 获得文档块的块属性 */
     const doc_attrs = await getBlockAttrs(doc_id);
     if (!doc_attrs) return;
 
     const kernel_id = doc_attrs[config.jupyter.attrs.kernel.id];
     const kernel = await jupyter.kernels.restart(kernel_id);
-    const kernelspecs = await jupyter.kernelspecs.get();
-    if (kernel && kernelspecs) {
+    if (kernel) {
         await setBlockAttrs(doc_id, {
             [config.jupyter.attrs.other.prompt]: promptFormat(
                 doc_attrs[config.jupyter.attrs.kernel.language],
-                kernelspecs?.kernelspecs?.[kernel?.name]?.spec?.display_name,
+                doc_attrs[config.jupyter.attrs.kernel.display_name],
                 i18n(kernel?.execution_state, lang),
             ),
         }); // 更新文档块的属性
     }
 }
 
-async function runCell(e, code_id, params) {
+async function runCell(e, code_id, params, opened = null) {
     /* 获得代码块 */
     let code_block, output_block;
     code_block = await queryBlock(code_id);
@@ -536,16 +543,17 @@ async function runCell(e, code_id, params) {
         websocket.ws.send(message); // 发送消息
     }
 
-    if (websockets[doc_id]
-        && websockets[doc_id].ws
-        && websockets[doc_id].ws.readyState === WebSocket.OPEN
-    ) {
+    if (websockets?.[doc_id]?.ws?.readyState === WebSocket.OPEN) {
         websocket = websockets[doc_id];
-        run();
+        await run();
+        if (typeof opened === 'function') opened(websocket);
     }
     else {
+        // websockets?.[doc_id]?.ws?.close();
+
         const kernel_id = doc_attrs[config.jupyter.attrs.kernel.id];
         const kernel_name = doc_attrs[config.jupyter.attrs.kernel.name];
+        const kernel_display_name = doc_attrs[config.jupyter.attrs.kernel.display_name];
         const kernel_language = doc_attrs[config.jupyter.attrs.kernel.language];
         const session_id = doc_attrs[config.jupyter.attrs.session.id];
 
@@ -560,6 +568,7 @@ async function runCell(e, code_id, params) {
             kernel: {
                 id: kernel_id,
                 name: kernel_name,
+                display_name: kernel_display_name,
                 language: kernel_language,
             },
             session: session_id,
@@ -569,6 +578,7 @@ async function runCell(e, code_id, params) {
             flag: false,
             queue: new Queue(),
         };
+
         /** 消息队列处理
          *  REF [JavaScript 通过队列实现异步流控制 - 从过去穿越到现在 - 博客园](https://www.cnblogs.com/liaozhenting/p/8681527.html)
          */
@@ -594,7 +604,8 @@ async function runCell(e, code_id, params) {
         };
         websocket.ws.onopen = async e => {
             console.log(e);
-            run();
+            await run();
+            if (typeof opened === 'function') opened(websocket);
         };
         websocket.ws.onerror = async e => {
             console.warn(e);
@@ -610,5 +621,5 @@ async function runCell(e, code_id, params) {
 
 /* 关闭当前活动连接 */
 async function closeConnection(e, doc_id, params) {
-    if (websockets[doc_id]) websockets[doc_id].ws.close();
+    websockets?.[doc_id]?.ws?.close();
 }

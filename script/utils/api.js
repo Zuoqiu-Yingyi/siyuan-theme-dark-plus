@@ -55,6 +55,7 @@ export {
     以id获取思源块信息 as getBlockByID,
     获取块kramdown源码 as getBlockKramdown,
     获取块面包屑 as getBlockBreadcrumb,
+    获取块索引 as getBlockIndex,
 
     获取系统字体列表 as getSysFonts,
     获取文件 as getFile,
@@ -267,6 +268,14 @@ async function 获取块面包屑(ID) {
         id: ID,
     }
     const url = '/api/block/getBlockBreadcrumb'
+    return 解析响应体(向思源请求数据(url, data))
+}
+
+async function 获取块索引(ID) {
+    const data = {
+        id: ID,
+    }
+    const url = '/api/block/getBlockIndex'
     return 解析响应体(向思源请求数据(url, data))
 }
 

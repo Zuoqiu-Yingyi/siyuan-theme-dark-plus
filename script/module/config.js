@@ -1115,6 +1115,86 @@ export var config = {
                             },
                             {
                                 enable: true,
+                                type: { NodeDocument: { enable: true } },
+                                mode: "button",
+                                icon: "#iconPlay",
+                                label: {
+                                    zh_CN: "运行所有单元格 (转义输出: ✔ 控制字符: ✔)",
+                                    other: "Run All Cells (Escape: ✔ cntrl: ✔)",
+                                },
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'jupyter-run-all-cells',
+                                            params: { escaped: true, cntrl: true },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: { NodeDocument: { enable: true } },
+                                mode: "button",
+                                icon: "#iconPlay",
+                                label: {
+                                    zh_CN: "运行所有单元格 (转义输出: ✔ 控制字符: ✖)",
+                                    other: "Run All Cells (Escape: ✔ cntrl: ✖)",
+                                },
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'jupyter-run-all-cells',
+                                            params: { escaped: true, cntrl: false },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: { NodeDocument: { enable: true } },
+                                mode: "button",
+                                icon: "#iconPlay",
+                                label: {
+                                    zh_CN: "运行所有单元格 (转义输出: ✖ 控制字符: ✔)",
+                                    other: "Run All Cells (Escape: ✖ cntrl: ✔)",
+                                },
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'jupyter-run-all-cells',
+                                            params: { escaped: false, cntrl: true },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: { NodeDocument: { enable: true } },
+                                mode: "button",
+                                icon: "#iconPlay",
+                                label: {
+                                    zh_CN: "运行所有单元格 (转义输出: ✖ 控制字符: ✖)",
+                                    other: "Run All Cells (Escape: ✖ cntrl: ✖)",
+                                },
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'jupyter-run-all-cells',
+                                            params: { escaped: false, cntrl: false },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
                                 type: { NodeCodeBlock: { enable: true, subtype: { null: true } } },
                                 mode: "button",
                                 icon: "#iconPlay",
