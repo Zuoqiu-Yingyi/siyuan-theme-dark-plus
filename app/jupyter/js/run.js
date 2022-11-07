@@ -1,9 +1,11 @@
 export {
-    runCode, // 运行代码
+    runCell, // 运行单元格
+    restartKernel, // 重启内核
     closeConnection, // 关闭连接
 }
 
 import {
+    jupyter,
     upload,
     queryBlock,
     getBlockAttrs,
@@ -427,7 +429,26 @@ function createSendMessage(
     };
 }
 
-async function runCode(e, code_id, params) {
+async function restartKernel(e, doc_id, params) {
+    /* 获得文档块的块属性 */
+    const doc_attrs = await getBlockAttrs(doc_id);
+    if (!doc_attrs) return;
+
+    const kernel_id = doc_attrs[config.jupyter.attrs.kernel.id];
+    const kernel = await jupyter.kernels.restart(kernel_id);
+    const kernelspecs = await jupyter.kernelspecs.get();
+    if (kernel && kernelspecs) {
+        await setBlockAttrs(doc_id, {
+            [config.jupyter.attrs.other.prompt]: promptFormat(
+                doc_attrs[config.jupyter.attrs.kernel.language],
+                kernelspecs?.kernelspecs?.[kernel?.name]?.spec?.display_name,
+                i18n(kernel?.execution_state, lang),
+            ),
+        }); // 更新文档块的属性
+    }
+}
+
+async function runCell(e, code_id, params) {
     /* 获得代码块 */
     let code_block, output_block;
     code_block = await queryBlock(code_id);
@@ -441,7 +462,7 @@ async function runCode(e, code_id, params) {
     let code_attrs = await getBlockAttrs(code_id);
     if (!code_attrs) return;
 
-    /* 获得代码块所在文档块 */
+    /* 获得代码块所在文档块的块属性 */
     const doc_attrs = await getBlockAttrs(doc_id);
     if (!doc_attrs) return;
 

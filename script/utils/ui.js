@@ -37,7 +37,8 @@ import {
 } from './api.js';
 
 import {
-    runCode,
+    runCell,
+    restartKernel,
     closeConnection,
 } from '/appearance/themes/Dark+/app/jupyter/js/run.js';
 
@@ -852,10 +853,15 @@ const TASK_HANDLER = {
     },
     /* 处理输入框内容 */
     'handle-input-value': async (e, id, params) => params.handler(e, id, params),
-    /* 运行代码 */
-    'jupyter-run-code': runCode,
     /* 关闭会话 */
     'jupyter-close-connection': closeConnection,
+    /* 重启内核 */
+    'jupyter-restart-kernel': restartKernel,
+    /* 运行单元格 */
+    'jupyter-run-cell': runCell,
+    /* 运行所有单元格 */
+    'jupyter-run-all-cells': async (e, id, params) => {
+    },
     /* 归档页签 */
     'tab-archive': async (e, id, params) => {
         const editors = getEditors().filter(editor => {
