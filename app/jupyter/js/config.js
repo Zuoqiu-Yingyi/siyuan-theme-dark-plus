@@ -52,6 +52,7 @@ var config = {
             kernel: {
                 id: 'custom-jupyter-kernel-id', // 内核 ID
                 name: 'custom-jupyter-kernel-name', // 内核名称
+                display_name: 'custom-jupyter-kernel-display-name', // 内核友好名称
                 language: 'custom-jupyter-kernel-language', // 内核语言
             },
             session: {
