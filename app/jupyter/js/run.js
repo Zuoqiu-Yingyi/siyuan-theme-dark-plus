@@ -286,7 +286,7 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                         if (text) markdowns.push(text);
                     }
                 }
-                let code_index = message_info.index;
+                let code_index = `${message_info.index}`;
                 let output_index, output_style;
                 switch (status) {
                     case 'ok': // 成功
@@ -480,8 +480,9 @@ async function runCode(e, code_id, params) {
         code_attrs = {}, output_attrs = {};
 
         /* 设置块序号 */
-        websocket.index += 1; // 更新消息序号
-        const index = String(websocket.index);
+        websocket.index++; // 更新消息序号
+        // const index = String(websocket.index);
+        const index = '*';
         code_attrs[config.jupyter.attrs.code.index] = index;
         output_attrs[config.jupyter.attrs.output.index] = index;
 
@@ -499,7 +500,7 @@ async function runCode(e, code_id, params) {
             code: code_id,
             output: output_id,
             params: params,
-            index: index,
+            index: websocket.index,
         };
         const message = JSON.stringify(createSendMessage( // 创建消息
             code_block.content,
@@ -508,10 +509,10 @@ async function runCode(e, code_id, params) {
             websocket.version,
             msg_id,
         ));
-        websocket.ws.send(message); // 发送消息
-
         await setBlockAttrs(code_id, code_attrs); // 更新代码块的属性
         await setBlockAttrs(output_id, output_attrs); // 更新输出块的属性
+
+        websocket.ws.send(message); // 发送消息
     }
 
     if (websockets[doc_id]
