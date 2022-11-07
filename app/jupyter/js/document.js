@@ -77,9 +77,7 @@ function redirect() {
 
 /* 获得内核可读名字 */
 function getKernelDisplayName(kernelName) {
-    return kernelspecs
-        && kernelspecs.kernelspecs[kernelName]
-        && kernelspecs.kernelspecs[kernelName].spec.display_name
+    return kernelspecs?.kernelspecs?.[kernelName]?.spec?.display_name
 }
 
 /* 更新内核下拉选择器 */

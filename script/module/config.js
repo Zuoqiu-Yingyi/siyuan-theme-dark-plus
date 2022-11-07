@@ -1095,6 +1095,26 @@ export var config = {
                             },
                             {
                                 enable: true,
+                                type: { NodeDocument: { enable: true } },
+                                mode: "button",
+                                icon: "#iconRefresh",
+                                label: {
+                                    zh_CN: "重启内核",
+                                    other: "Restart Kernel",
+                                },
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'jupyter-restart-kernel',
+                                            params: {},
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
                                 type: { NodeCodeBlock: { enable: true, subtype: { null: true } } },
                                 mode: "button",
                                 icon: "#iconPlay",
@@ -1107,7 +1127,7 @@ export var config = {
                                     callback: null,
                                     tasks: [
                                         {
-                                            type: 'jupyter-run-code',
+                                            type: 'jupyter-run-cell',
                                             params: { escaped: true, cntrl: true },
                                         },
                                     ],
@@ -1127,7 +1147,7 @@ export var config = {
                                     callback: null,
                                     tasks: [
                                         {
-                                            type: 'jupyter-run-code',
+                                            type: 'jupyter-run-cell',
                                             params: { escaped: true, cntrl: false },
                                         },
                                     ],
@@ -1147,7 +1167,7 @@ export var config = {
                                     callback: null,
                                     tasks: [
                                         {
-                                            type: 'jupyter-run-code',
+                                            type: 'jupyter-run-cell',
                                             params: { escaped: false, cntrl: true },
                                         },
                                     ],
@@ -1167,7 +1187,7 @@ export var config = {
                                     callback: null,
                                     tasks: [
                                         {
-                                            type: 'jupyter-run-code',
+                                            type: 'jupyter-run-cell',
                                             params: { escaped: false, cntrl: false },
                                         },
                                     ],
