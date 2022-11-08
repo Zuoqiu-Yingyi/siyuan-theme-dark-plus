@@ -361,6 +361,8 @@
 
     /* 表格块背景颜色 | The background color of table block */
     --custom-block-table-background-color: transparent;
+    /* 表格块单元格边框颜色 | The color of table block cell borders */
+    --custom-block-table-cell-border-color: var(--b3-border-color);
     /* 表头 | thead */
     --custom-block-table-thead-background-color: var(--custom-components-light);
     /* 奇数行 | odd line */

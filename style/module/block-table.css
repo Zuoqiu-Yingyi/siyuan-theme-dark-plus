@@ -4,6 +4,12 @@
   /* 表格 */
   background-color: var(--custom-block-table-background-color);
 }
+.b3-typography table th,
+.protyle-wysiwyg table th,
+.b3-typography table td,
+.protyle-wysiwyg table td {
+  border-color: var(--custom-block-table-cell-border-color);
+}
 .b3-typography table thead,
 .protyle-wysiwyg table thead {
   /* 表头 */
