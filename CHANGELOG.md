@@ -7,6 +7,7 @@
 - 为文档块菜单添加 jupyter `运行所有单元格` 菜单项 | Add jupyter Run All Cells` menu item to document block menu.
 - [#154](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/154) 调整表格单元格边框颜色 | Adjust table cell border color.
   - 添加 CSS 自定义变量 `--custom-block-table-cell-border-color` | Add CSS custom variable `--custom-block-table-cell-border-color`.
+- 双击 `iframe 块` / `挂件块`全屏显示块内容 | Double click `iframe block` / `widget block` to display block content in full screen.
 
 ## v1.4.0/2022-11-06
 

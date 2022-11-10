@@ -898,10 +898,18 @@ const TASK_HANDLER = {
         }
         else pushErrMsg(params.message.error);
     },
+    /* 全屏显示 iframe 块/挂件块 */
+    'full-screen': async (e, id, params) => {
+        // console.log(e.target);
+        document
+            ?.querySelector(`.protyle-wysiwyg--select[data-node-id="${id}"]`)
+            ?.querySelector('iframe')
+            ?.requestFullscreen();
+    },
     /* 显示嵌入块查询结果的路径 */
     // REF [思源笔记渲染 SQL 文档路径代码 - 链滴](https://ld246.com/article/1665129901544)
+    // @deprecated
     'show-hpath': async (e, id, params) => {
-        // TODO
         /* 定位到嵌入块的 DOM */
         document.querySelectorAll(`.render-node[data-node-id="${id}"]`).forEach(block => {
             const callback = () => {
