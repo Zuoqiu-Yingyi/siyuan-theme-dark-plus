@@ -270,6 +270,13 @@ export var config = {
                 enable: true, // 是否启用 iframe 重新加载
             },
         },
+        fullscreen: {
+            // 全屏
+            enable: true, // 是否启用全屏
+            iframe: {
+                enable: true, // 是否启用 iframe/widgets 全屏
+            },
+        },
         doc: {
             enable: true, // 是否启用文档扩展功能
             heading: { // 标题操作
@@ -1740,6 +1747,30 @@ export var config = {
                             {
                                 enable: true,
                                 type: {
+                                    NodeVideo: { enable: true },
+                                    NodeWidget: { enable: true },
+                                },
+                                mode: "button",
+                                icon: "#iconFullscreen",
+                                label: {
+                                    zh_CN: "全屏显示",
+                                    other: "Full-screen Display",
+                                },
+                                accelerator: () => config.theme.hotkeys.fullscreen.iframe,
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'full-screen',
+                                            params: {},
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: {
                                     NodeDocument: { enable: true },
                                     NodeBlockQueryEmbed: { enable: true },
                                     NodeBlockquote: { enable: true },
@@ -2125,7 +2156,7 @@ export var config = {
                                 mode: "separator",
                             },
                             {
-                                enable: false,
+                                enable: false, // deprecated
                                 type: {
                                     NodeBlockQueryEmbed: { enable: true },
                                 },
@@ -2501,13 +2532,24 @@ export var config = {
                     key: 'F5',
                 },
                 iframe: {
-                    // 刷新 iframe 块(Ctrl + 单击)
+                    // 刷新 iframe/widgets 块 (Ctrl + 单击)
                     enable: true,
                     CtrlCmd: true,
                     WinCtrl: false,
                     Shift: false,
                     Alt: false,
                     type: 'click',
+                },
+            },
+            fullscreen: {
+                iframe: {
+                    // 全屏 iframe/widgets 块 (双击)
+                    enable: true,
+                    CtrlCmd: false,
+                    WinCtrl: false,
+                    Shift: false,
+                    Alt: false,
+                    type: 'dblclick',
                 },
             },
             doc: {
