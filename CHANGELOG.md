@@ -8,6 +8,8 @@
 - [#154](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/154) 调整表格单元格边框颜色 | Adjust table cell border color.
   - 添加 CSS 自定义变量 `--custom-block-table-cell-border-color` | Add CSS custom variable `--custom-block-table-cell-border-color`.
 - 双击 `iframe 块` / `挂件块`全屏显示块内容 | Double click `iframe block` / `widget block` to display block content in full screen.
+- 调整折叠的列表项的样式 | Adjust the style of the folded list item.
+  - REF: https://ld246.com/article/1668079616719/comment/1668156458492?r=shuoying#comments
 
 ## v1.4.0/2022-11-06
 
