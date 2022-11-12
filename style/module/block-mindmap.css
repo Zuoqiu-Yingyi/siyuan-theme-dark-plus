@@ -1,0 +1,9 @@
+/* 脑图 */
+.protyle-wysiwyg [data-node-id][data-subtype="mindmap"].render-node:fullscreen {
+  /* 全屏状态 */
+}
+.protyle-wysiwyg [data-node-id][data-subtype="mindmap"].render-node:fullscreen canvas,
+.protyle-wysiwyg [data-node-id][data-subtype="mindmap"].render-node:fullscreen div:has(canvas) {
+  width: 100% !important;
+  height: 100% !important;
+}
