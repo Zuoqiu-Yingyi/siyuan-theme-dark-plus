@@ -11,6 +11,7 @@
 - 调整折叠的列表项的样式 | Adjust the style of the folded list item.
   - REF: https://ld246.com/article/1668079616719/comment/1668156458492?r=shuoying#comments
 - 双击块标全屏显示该块 | Double click the block mark to display the block in full screen.
+- 调整渲染块全屏模式时的样式 | Adjust the style when rendering the block in full screen mode.
 
 ## v1.4.0/2022-11-06
 

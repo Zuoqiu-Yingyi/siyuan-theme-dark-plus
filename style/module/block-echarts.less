@@ -1,0 +1,15 @@
+/* 图表 */
+
+.protyle-wysiwyg {
+    [data-node-id][data-subtype="echarts"].render-node {
+        &:fullscreen {
+
+            /* 全屏状态 */
+            canvas,
+            div:has(canvas) {
+                width: 100% !important;
+                height: 100% !important;
+            }
+        }
+    }
+}

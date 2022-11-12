@@ -27,15 +27,56 @@ async function ondblclickBlockMark(e) {
     if (mark) requestFullscreen(mark.id);
 }
 
+
+/* 处理全屏事件 */
+const fullscreen = { // 全屏的元素原属性
+    // id: { // 全屏的元素的块 ID
+    //     /* 属性 */
+    // },
+};
+
 async function onfullscreenchange(e) {
     // console.log(e);
     const target = e.target;
     if (target.dataset.nodeId) { // 非 iframe/widgets/document 的其他块
-        if (document.fullscreenElement === target) { // 已全屏
-            target.classList.remove('protyle-wysiwyg--select'); // 移除已选择样式
-        }
-        else {
-            target.classList.remove('protyle-wysiwyg--select'); // 添加已选择样式
+        /* 根据是否全屏删除/添加已选择样式 */
+        document.fullscreenElement === target
+            ? target.classList.remove('protyle-wysiwyg--select')
+            : target.classList.add('protyle-wysiwyg--select');
+
+        switch (target.dataset.subtype) {
+            case 'mindmap':
+                const canvas = target.querySelector('canvas');
+                if (canvas) {
+                    let width, height;
+
+                    if (document.fullscreenElement === target) { // 全屏
+                        fullscreen[target.dataset.nodeId] = {
+                            canvas: {
+                                width: canvas.width,
+                                height: canvas.height,
+                            }
+                        };
+
+                        width = canvas.parentElement.clientWidth;
+                        height = canvas.parentElement.clientHeight;
+
+                        /* 矫正鼠标相对位置 */
+                        width *= 1.5;
+                        height *= 1.5;
+                    }
+                    else { // 取消全屏
+                        width =  fullscreen[target.dataset.nodeId].canvas.width;
+                        height =  fullscreen[target.dataset.nodeId].canvas.height;
+                        
+                        delete fullscreen[target.dataset.nodeId];
+                    }
+                    canvas.width = width;
+                    canvas.height = height;
+                }
+                break;
+            default:
+                break;
         }
     }
     else if (target.classList.contains('protyle')) { // 文档块全屏
