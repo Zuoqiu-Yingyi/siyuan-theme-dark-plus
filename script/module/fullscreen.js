@@ -10,7 +10,7 @@ import { globalEventHandler } from './../utils/listener.js';
 
 async function fullscreenIframe(target) {
     const block = getTargetBlock(target);
-    switch (block.dataset.type) {
+    switch (block?.dataset.type) {
         case 'NodeVideo':
         case 'NodeIFrame':
         case 'NodeWidget':

@@ -53,6 +53,9 @@
 /* 空白页面与空白行 */
 @import url(/appearance/themes/Dark+/style/module/empty.css);
 
+/* 全屏 */
+@import url(/appearance/themes/Dark+/style/module/fullscreen.css);
+
 /* 全局 */
 @import url(/appearance/themes/Dark+/style/module/global.css);
 

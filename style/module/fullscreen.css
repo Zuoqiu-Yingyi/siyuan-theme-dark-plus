@@ -1,0 +1,14 @@
+/* 全屏样式 */
+/* 其他块全屏模式 */
+[data-node-id]:not(:root):fullscreen {
+  overflow: auto;
+}
+[data-node-id]:not(:root):fullscreen[custom-render] {
+  --custom-scroll-max-height: none;
+}
+[data-node-id]:not(:root):fullscreen[custom-render] table {
+  overflow: hidden;
+}
+[data-node-id]:not(:root):fullscreen:not([style *="background-color"]) {
+  background-color: var(--b3-theme-background) !important;
+}
