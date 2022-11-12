@@ -28,6 +28,8 @@ export {
     countElementIndex, // 计算当前节点是上级节点的第几个节点
     getTooltipDirection, // 计算当前节点应使用的提示方向
     setTooltipDirection, // 设置提示信息朝向方向
+    requestFullscreen, // 请求全屏
+    requestFullscreenBlock, // 请求对指定的块全屏
 };
 
 import { url2id } from './misc.js';
@@ -718,4 +720,46 @@ function setTooltipDirection(classname, ...items) {
         item.classList.remove(...tooltips_class_list);
         item.classList.add(classname(item));
     });
+}
+
+/**
+ * 请求对指定的块全屏
+ * @params {HTMLElement} block: 块元素
+ */
+function requestFullscreenBlock(block) {
+    switch (block.dataset.type) {
+        case 'NodeVideo':
+            block.querySelector('video')?.requestFullscreen();
+            break;
+        case 'NodeIFrame':
+        case 'NodeWidget':
+            block.querySelector('iframe')?.requestFullscreen();
+            break;
+        default:
+            block.requestFullscreen();
+            break;
+    }
+}
+
+/**
+ * 请求对指定 ID 的块全屏
+ * @params {string} id: 块 ID
+ */
+function requestFullscreen(id) {
+    // console.log();
+    const block = document.querySelector(`.protyle-wysiwyg--select[data-node-id="${id}"]`);
+    if (block) {
+        requestFullscreenBlock(block);
+    }
+    else { // 可能是文档块标
+        // console.log(getEditor(id));
+        const protyle = getEditor(id)?.protyle;
+        if (protyle) {
+            /* 窗口内全屏 */
+            protyle?.element.classList.toggle('fullscreen');
+
+            /* 屏幕全屏 */
+            // protyle?.element.requestFullscreen();
+        }
+    }
 }
