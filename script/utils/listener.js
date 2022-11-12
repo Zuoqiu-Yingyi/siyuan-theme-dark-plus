@@ -57,6 +57,10 @@ class EventHandler {
                 is: isEvent,
                 handlers: [],
             },
+            fullscreenchange: {
+                is: null,
+                handlers: [],
+            },
         };
 
         for (const listener in this.listeners) {

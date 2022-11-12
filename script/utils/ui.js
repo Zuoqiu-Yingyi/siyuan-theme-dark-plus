@@ -18,11 +18,13 @@ import {
     editBlockKramdown,
 } from './markdown.js';
 import {
+    getEditor,
     getEditors,
     setBlockDOMAttrs,
     countElementIndex,
     getTooltipDirection,
     setTooltipDirection,
+    requestFullscreen,
 } from './dom.js';
 import { Iterator } from './misc.js';
 import { drag } from './drag.js';
@@ -900,11 +902,7 @@ const TASK_HANDLER = {
     },
     /* 全屏显示 iframe 块/挂件块 */
     'full-screen': async (e, id, params) => {
-        // console.log(e.target);
-        document
-            ?.querySelector(`.protyle-wysiwyg--select[data-node-id="${id}"]`)
-            ?.querySelector('iframe')
-            ?.requestFullscreen();
+        requestFullscreen(id);
     },
     /* 显示嵌入块查询结果的路径 */
     // REF [思源笔记渲染 SQL 文档路径代码 - 链滴](https://ld246.com/article/1665129901544)

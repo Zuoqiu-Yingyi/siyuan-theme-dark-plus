@@ -274,7 +274,10 @@ export var config = {
             // 全屏
             enable: true, // 是否启用全屏
             iframe: {
-                enable: true, // 是否启用 iframe/widgets 全屏
+                enable: true, // 是否启用 iframe/widgets/video 全屏
+            },
+            mark: {
+                enable: true, // 是否开启双击块标全屏某个块
             },
         },
         doc: {
@@ -1746,10 +1749,7 @@ export var config = {
                             },
                             {
                                 enable: true,
-                                type: {
-                                    NodeVideo: { enable: true },
-                                    NodeWidget: { enable: true },
-                                },
+                                type: null,
                                 mode: "button",
                                 icon: "#iconFullscreen",
                                 label: {
@@ -2544,6 +2544,15 @@ export var config = {
             fullscreen: {
                 iframe: {
                     // 全屏 iframe/widgets 块 (双击)
+                    enable: true,
+                    CtrlCmd: false,
+                    WinCtrl: false,
+                    Shift: false,
+                    Alt: false,
+                    type: 'dblclick',
+                },
+                mark: {
+                    // 全屏指定块 (双击块标)
                     enable: true,
                     CtrlCmd: false,
                     WinCtrl: false,
