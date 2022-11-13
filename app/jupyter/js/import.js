@@ -4,6 +4,9 @@
 import {
     config,
 } from './config.js';
+import {
+    upload,
+} from './api.js';
 
 class Import {
     ipynb; // 文件内容
@@ -36,13 +39,13 @@ class Import {
         this.kramdown = [];
         this.attributes = {};
 
-        this.cells = this.ipynb.cells;
-        this.metadata = this.ipynb.metadata;
-        this.nbformat = this.ipynb.nbformat;
-        this.nbformat_minor = this.ipynb.nbformat_minor;
+        this.cells = this.ipynb.cells; // 单元格
+        this.metadata = this.ipynb.metadata; // 笔记本级元数据
+        this.nbformat = this.ipynb.nbformat; // 缩进长度
+        this.nbformat_minor = this.ipynb.nbformat_minor; // 次要缩进长度
 
-        this.parseMarkdown;
-        this.parseCells;
+        this.parseMarkdown(); // 解析文档元数据
+        this.parseCells; // 解析所有单元格
         return this.kramdown.join('\n');
     }
 
@@ -56,9 +59,13 @@ class Import {
         this.attributes[config.jupyter.attrs.kernel.language] =
             this.metadata.kernelspec.language
             ?? this.metadata.language_info.name;
+        this.attributes[config.jupyter.attrs.kernel.display_name] =
+            this.metadata.kernelspec.display_name
+            ?? this.metadata.kernelspec.name
+            ?? this.metadata.kernel_info.name;
     }
 
-    /* 解析块 */
+    /* 解析单元格 */
     parseCells() {
         for (let i = 0; i < this.cells.length; ++i) {
             this.kramdown.push(...this.parseCell(this.cells[i]));
@@ -68,7 +75,7 @@ class Import {
     /**解析单个块
      * REF: https://nbformat.readthedocs.io/en/latest/format_description.html#cell-types
      */
-    parseCell(cell) {
+    async parseCell(cell) {
         switch (cell.cell_type) {
             case 'markdown':
                 return this.parseMarkdown(cell);
@@ -82,7 +89,13 @@ class Import {
     /**解析 markdown 块
      * REF: https://nbformat.readthedocs.io/en/latest/format_description.html#markdown-cells
      */
-    parseMarkdown(cell) {
+    async parseMarkdown(cell) {
+        const markdown = cell.source.join(); // markdown 文本
+        const attachments = await this.parseAttachments(cell.attachments); // 附件
+        for (const filename of attachments) {
+            markdown.replace(`attachment:${filename}`, attachments[filename]);
+        }
+        return markdown;
     }
 
     /**解析 code 块
@@ -95,5 +108,26 @@ class Import {
      * REF: https://nbformat.readthedocs.io/en/latest/format_description.html#raw-nbconvert-cells
      */
     parseRaw(cell) {
+    }
+
+    /**解析附件
+     * REF: https://nbformat.readthedocs.io/en/latest/format_description.html#cell-attachments
+     * @return {object}: 附件引用名(attachment:xxx.ext) -> 附件文件引用(assets/xxx.ext)
+     */
+    async parseAttachments(attachments) {
+        const map = {}; // attachment -> assets
+        for (const filename of attachments) {
+            const attachment = attachments[filename];
+            for (const mime of attachment) {
+                const response = await upload(
+                    base64ToBlob(attachment[mime], mime),
+                    undefined,
+                    filename,
+                );
+                const filepath = response?.data?.succMap[filename];
+                map[filename] = filepath;
+            }
+        }
+        return map;
     }
 }
