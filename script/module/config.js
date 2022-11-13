@@ -1833,7 +1833,7 @@ export var config = {
                                     NodeTable: { enable: true },
                                 },
                                 mode: "button",
-                                icon: "#iconInsertColumn",
+                                icon: "#iconEdit",
                                 label: {
                                     zh_CN: "切换书写模式",
                                     other: "Toggle Writing Modes",
