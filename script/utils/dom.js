@@ -727,18 +727,20 @@ function setTooltipDirection(classname, ...items) {
  * @params {HTMLElement} block: 块元素
  */
 function requestFullscreenBlock(block) {
+    let element;
     switch (block.dataset.type) {
         case 'NodeVideo':
-            block.querySelector('video')?.requestFullscreen();
+            element = block.querySelector('video');
             break;
         case 'NodeIFrame':
         case 'NodeWidget':
-            block.querySelector('iframe')?.requestFullscreen();
+            element = block.querySelector('iframe');
             break;
         default:
-            block.requestFullscreen();
+            element = block;
             break;
     }
+    element.requestFullscreen();
 }
 
 /**

@@ -13,6 +13,7 @@
 - 双击块标全屏显示该块 | Double click the block mark to display the block in full screen.
 - 调整渲染块全屏模式时的样式 | Adjust the style when rendering the block in full screen mode.
 - 为块全屏显示模式添加滚动条 | Add scroll bar to block full screen display mode.
+- 调整部分按钮图标 | Adjust some button icons.
 
 ## v1.4.0/2022-11-06
 
