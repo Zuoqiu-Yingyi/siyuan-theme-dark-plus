@@ -28,70 +28,73 @@
 }
 
 .protyle-wysiwyg {
-
-    // 列表项折叠样式
-    // REF https://ld246.com/article/1668079616719/comment/1668156458492?r=shuoying#comments
-    [data-node-id][fold="1"].li {
-        >.protyle-action {
+    [fold="1"][data-node-id] {
+        // 列表项折叠样式
+        // REF https://ld246.com/article/1668079616719/comment/1668156458492?r=shuoying#comments
+        &.li {
+            >.protyle-action {
+                &::after {
+                    width: 1em;
+                    height: 1em;
+                    outline: 2px dashed;
+                }
+            }
+    
+            &[data-subtype="o"]>.protyle-action::after {
+                /* 有序列表项 */
+                width: 1.75em;
+                margin: -0.5em 0 0 -1em;
+            }
+    
+            &[data-subtype="t"]>.protyle-action::after {
+                /* 任务列表项 */
+                border-radius: 0;
+                margin: -0.5em 0 0 -0.5em;
+            }
+    
+        }
+    
+        // 子标题折叠样式
+        &[data-type="NodeHeading"] {
+            &::before {
+                /* 移除子标题折叠原有样式 */
+                content: none;
+                height: auto;
+                width: auto;
+                background: none;
+                display: none;
+                position: static;
+                left: auto;
+                top: auto;
+                border-radius: 0;
+                margin-top: 0;
+    
+            }
+    
             &::after {
-                width: 1em;
-                height: 1em;
-                outline: 2px dashed;
+                /* 添加子标题折叠标记 */
+                content: var(--custom-h-fold-mark);
+            }
+    
+        }
+    
+        // 代码块折叠样式
+        &.code-block {
+            >.protyle-action {
+                /* 代码块功能按钮 */
+                position: absolute;
+                top: 2px;
+            }
+    
+            >.hljs,
+            >.protyle-linenumber__rows {
+                /* 代码块编辑区 */
+                padding-top: 2px;
+                padding-bottom: 2px;
             }
         }
-
-        &[data-subtype="o"]>.protyle-action::after {
-            /* 有序列表项 */
-            width: 1.75em;
-            margin: -0.5em 0 0 -1em;
-        }
-
-        &[data-subtype="t"]>.protyle-action::after {
-            /* 任务列表项 */
-            border-radius: 0;
-            margin: -0.5em 0 0 -0.5em;
-        }
-
     }
 
-    // 子标题折叠样式
-    [data-node-id][fold="1"][data-type="NodeHeading"] {
-        &::before {
-            /* 移除子标题折叠原有样式 */
-            content: none;
-            height: auto;
-            width: auto;
-            background: none;
-            display: none;
-            position: static;
-            left: auto;
-            top: auto;
-            border-radius: 0;
-            margin-top: 0;
-
-        }
-
-        &::after {
-            /* 添加子标题折叠标记 */
-            content: var(--custom-h-fold-mark);
-        }
-
-    }
-
-    // 代码块折叠样式
-    [data-node-id][fold="1"].code-block {
-        >.protyle-action {
-            /* 代码块功能按钮 */
-            top: 2px;
-        }
-
-        >.hljs,
-        >.protyle-linenumber__rows {
-            /* 代码块编辑区 */
-            padding-top: 2px;
-            padding-bottom: 2px;
-        }
-    }
 
     .display(~'[data-type="NodeTable"]', tbody);
     .fold(~'[data-type="NodeBlockQueryEmbed"]', div, "[Query Embed]");
