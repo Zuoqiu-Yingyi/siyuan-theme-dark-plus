@@ -13,11 +13,11 @@
 .b3-dialog__container {
   /* 对话框图片 */
   background-image: var(--custom-background-image-dialog);
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-attachment: fixed !important;
-  background-color: transparent !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: transparent;
   border-radius: var(--custom-border-radius);
 }
 .b3-dialog__container > .b3-dialog__close:hover {

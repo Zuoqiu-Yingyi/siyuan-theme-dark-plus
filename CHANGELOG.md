@@ -21,6 +21,9 @@
 - 调整粗体颜色与标题字重 | Adjust bold color and title font weight.
 - 代码块折叠时显示首行 | Display the first line when the code block is folded.
 - 代码块控件栏使用 `sticky` 样式 | Code block control bar uses `sticky` style.
+- 背景图片支持横向背景图片与纵向背景图片 | Background image supports horizontal background image and vertical background image.
+  - `--custom-background-image-landscape`: 横向背景图片 | Horizontal background image.
+  - `--custom-background-image-portrait`: 纵向背景图片 | Vertical background image.
 
 ## v1.4.0/2022-11-06
 
