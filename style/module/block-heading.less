@@ -3,17 +3,19 @@
 
 .heading-content() {
     @1: counter(h1-counter) "\00A0";
-    @2: counter(h1-counter) "."counter(h2-counter) "\00A0";
-    @3: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "\00A0";
-    @4: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "."counter(h4-counter) "\00A0";
-    @5: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "."counter(h4-counter) "."counter(h5-counter) "\00A0";
-    @6: counter(h1-counter) "."counter(h2-counter) "."counter(h3-counter) "."counter(h4-counter) "."counter(h5-counter) "."counter(h6-counter) "\00A0";
+    @2: counter(h1-counter) "." counter(h2-counter) "\00A0";
+    @3: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) "\00A0";
+    @4: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) "\00A0";
+    @5: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) "." counter(h5-counter) "\00A0";
+    @6: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) "." counter(h5-counter) "." counter(h6-counter) "\00A0";
 }
 
 .heading(@level) {
 
     .protyle-wysiwyg>[data-node-id].h@{level},
     .b3-typography>h@{level} {
+        font-weight: var(--custom-h-font-weight);
+
         counter-increment: e(%("h%d-counter", @level));
         counter-reset: e(%("h%d-counter", @level + 1)) 0;
 
@@ -28,6 +30,7 @@
             // margin-right: var(--custom-h-mark-blank);
         }
     }
+
     .protyle-wysiwyg [data-node-id].h@{level},
     .b3-typography h@{level} {
         // font-size: e(%("1.%dem", 7 - @level)) !important;

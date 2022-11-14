@@ -125,8 +125,11 @@
     --custom-components: #222;
     --custom-components-deep: #111;
 
-    /* 标题层级标记与标题之间宽度 */
+    /* 标题层级标记与标题之间宽度 | The width between the title hierarchy tag and the title */
     --custom-h-mark-blank: 4px;
+
+    /* 标题字重 | Title font weight */
+    --custom-h-font-weight: 500;
 
     /* 子标题折叠标记 | Subheadings collapse marker */
     /* REF [箭头图案 - Unicode 字符百科](https://unicode-table.com/cn/sets/arrow-symbols/) 
@@ -485,6 +488,12 @@
 
     /* 思源标记阴影宽度 | The shadow width of mark */
     --custom-span-mark-shadow-width: 4px;
+
+    /* 思源加粗文本颜色 | The color of bold text */
+    /* 原样式 | Original style */
+    /* --custom-span-strong-color: var(--b3-protyle-inline-strong-color); */
+    /* 继承样式 | Inherit style */
+    --custom-span-strong-color: unset;
 
     /* 拖拽参考线颜色 | The color of drag guide */
     --custom-drag-top-shadow-color: var(--b3-theme-primary-lighter);

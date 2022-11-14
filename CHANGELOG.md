@@ -15,6 +15,7 @@
 - 为块全屏显示模式添加滚动条 | Add scroll bar to block full screen display mode.
 - 调整部分按钮图标 | Adjust some button icons.
 - 实现 jupyter 导入的 markdown 单元格解析 | Implement jupyter imported markdown cell parsing.
+- 调整粗体颜色与标题字重 | Adjust bold color and title font weight.
 
 ## v1.4.0/2022-11-06
 
