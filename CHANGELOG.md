@@ -19,6 +19,7 @@
 - 调整部分按钮图标 | Adjust some button icons.
 - 实现 jupyter 导入的 markdown 单元格解析 | Implement jupyter imported markdown cell parsing.
 - 调整粗体颜色与标题字重 | Adjust bold color and title font weight.
+- 代码块折叠时显示首行 | Display the first line when the code block is folded.
 
 ## v1.4.0/2022-11-06
 

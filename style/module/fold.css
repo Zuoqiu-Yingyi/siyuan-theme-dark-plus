@@ -1,22 +1,22 @@
 /* 折叠样式
  * REF https: //github.com/UserZYF/zhang-light/blob/d309151036bafe324bcf9eb754829ebc93a88d03/theme.css#L1661
  */
-.protyle-wysiwyg [data-node-id][fold="1"].li > .protyle-action::after {
+.protyle-wysiwyg [fold="1"][data-node-id].li > .protyle-action::after {
   width: 1em;
   height: 1em;
   outline: 2px dashed;
 }
-.protyle-wysiwyg [data-node-id][fold="1"].li[data-subtype="o"] > .protyle-action::after {
+.protyle-wysiwyg [fold="1"][data-node-id].li[data-subtype="o"] > .protyle-action::after {
   /* 有序列表项 */
   width: 1.75em;
   margin: -0.5em 0 0 -1em;
 }
-.protyle-wysiwyg [data-node-id][fold="1"].li[data-subtype="t"] > .protyle-action::after {
+.protyle-wysiwyg [fold="1"][data-node-id].li[data-subtype="t"] > .protyle-action::after {
   /* 任务列表项 */
   border-radius: 0;
   margin: -0.5em 0 0 -0.5em;
 }
-.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeHeading"]::before {
+.protyle-wysiwyg [fold="1"][data-node-id][data-type="NodeHeading"]::before {
   /* 移除子标题折叠原有样式 */
   content: none;
   height: auto;
@@ -29,16 +29,17 @@
   border-radius: 0;
   margin-top: 0;
 }
-.protyle-wysiwyg [data-node-id][fold="1"][data-type="NodeHeading"]::after {
+.protyle-wysiwyg [fold="1"][data-node-id][data-type="NodeHeading"]::after {
   /* 添加子标题折叠标记 */
   content: var(--custom-h-fold-mark);
 }
-.protyle-wysiwyg [data-node-id][fold="1"].code-block > .protyle-action {
+.protyle-wysiwyg [fold="1"][data-node-id].code-block > .protyle-action {
   /* 代码块功能按钮 */
+  position: absolute;
   top: 2px;
 }
-.protyle-wysiwyg [data-node-id][fold="1"].code-block > .hljs,
-.protyle-wysiwyg [data-node-id][fold="1"].code-block > .protyle-linenumber__rows {
+.protyle-wysiwyg [fold="1"][data-node-id].code-block > .hljs,
+.protyle-wysiwyg [fold="1"][data-node-id].code-block > .protyle-linenumber__rows {
   /* 代码块编辑区 */
   padding-top: 2px;
   padding-bottom: 2px;
