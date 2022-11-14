@@ -1,0 +1,7 @@
+/* 粗体样式 */
+.b3-typography strong,
+.protyle-wysiwyg strong,
+.b3-typography span[data-type~=strong],
+.protyle-wysiwyg span[data-type~=strong] {
+  color: var(--custom-span-strong-color);
+}
