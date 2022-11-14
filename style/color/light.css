@@ -4,7 +4,8 @@
 
 :root {
     /* 背景图片 */
-    --custom-background-image: url(/appearance/themes/Dark+/image/light/background-main.jpg);
+    --custom-background-image-landscape: url(/appearance/themes/Dark+/image/light/background-main.jpg);
+    --custom-background-image-portrait: url(/appearance/themes/Dark+/image/light/background-main-portrait.jpg);
 
     /* 对话框背景图片 */
     --custom-background-image-dialog: url(/appearance/themes/Dark+/image/light/background-dialog.jpg);

@@ -1,14 +1,17 @@
 /* 全局页面 */
 /* 背景图片 */
-body.fn__flex-column,
-.fn__flex-1.protyle.fullscreen {
-  background-image: var(--custom-background-image);
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-attachment: fixed !important;
-  background-color: var(--custom-background-color);
+body,
+.protyle.fullscreen {
   border: none;
+  background-image: var(--custom-background-image);
+  background-attachment: var(--custom-background-attachment);
+  background-blend-mode: var(--custom-background-blend-mode);
+  background-clip: var(--custom-background-clip);
+  background-origin: var(--custom-background-origin);
+  background-position: var(--custom-background-position);
+  background-repeat: var(--custom-background-repeat);
+  background-size: var(--custom-background-size);
+  background-color: var(--custom-background-color);
 }
 /* 文本选择 */
 ::selection {
