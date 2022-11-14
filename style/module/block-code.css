@@ -23,7 +23,7 @@
 }
 .protyle-wysiwyg [data-node-id].code-block > .protyle-action {
   /* 功能按钮栏 */
-  position: relative;
+  position: sticky;
   width: 100%;
   justify-content: end;
   left: 0;
