@@ -726,7 +726,7 @@ function setTooltipDirection(classname, ...items) {
  */
 function requestFullscreenBlock(block) {
     let element;
-    switch (block.dataset.type) {
+    switch (block?.dataset.type) {
         case 'NodeVideo':
             element = block.querySelector('video');
             break;
@@ -738,7 +738,7 @@ function requestFullscreenBlock(block) {
             element = block;
             break;
     }
-    element.requestFullscreen();
+    element?.requestFullscreen();
 }
 
 /**

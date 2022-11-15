@@ -1,8 +1,8 @@
 # 更改日志 | CHANGE LOG
 
-## v1.4.1/2022-11-14
+## v1.5.0/2022-11-15
 
-- [v1.4.0 <=> v1.4.1](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.4.0...v1.4.1)
+- [v1.4.0 <=> v1.5.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.4.0...v1.5.0)
 - jupyter 控制台富文本使用零宽空格设置边界 | jupyter console rich text uses zero-width spaces to set boundaries.
 - 将 jupyter 的样式配置文件引用添加到 `theme.css` 方便导出 | Add jupyter style config reference to `theme.css` for easy export.
 - jupyter 运行阻塞时块序号设置为 `*` | jupyter block number set to `*` when running is blocked.
