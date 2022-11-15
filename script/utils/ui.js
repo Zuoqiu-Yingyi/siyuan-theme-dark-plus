@@ -49,6 +49,7 @@ import {
 
 const jupyterConf = getConf();
 var toolbarItemList = [];
+var toolbar_timeout_id = null; // 工具栏延时显示定时器
 
 /**
  * 重置节点, 可所有监听器
@@ -117,10 +118,11 @@ function itemStateLoad(id, states, node) {
 function toolbarItemListPush(item) {
     toolbarItemList.push(item);
     const toolbar = document.getElementById('toolbar');
-    const windowControls = document.getElementById('windowControls');
-    var custom_toolbar = document.getElementById(config.theme.toolbar.id);
 
     if (window.theme.clientMode !== 'mobile' && toolbar) {
+        const windowControls = document.getElementById('windowControls');
+        var custom_toolbar = document.getElementById(config.theme.toolbar.id);
+
         if (!custom_toolbar) {
             /* 自定义工具栏按钮的容器 */
             custom_toolbar = document.createElement('div');
@@ -349,6 +351,7 @@ function toolbarItemListPush(item) {
                 if (position) {
                     float(); // 悬浮
                     if (!conf.fold) more.dispatchEvent(new Event('dblclick')); // 展开
+
                     /* 设置位置 */
                     custom_tooldock.style.left = position.left;
                     custom_tooldock.style.right = position.right;
@@ -358,20 +361,37 @@ function toolbarItemListPush(item) {
                     custom_tooldock.style.height = position.height;
                 }
             }
+
         }
 
-        /* 工具栏按钮排序 */
-        toolbarItemList = toolbarItemList.sort((a, b) => a.index - b.index);
-        for (let item of toolbarItemList) {
-            if (item.display) {
-                let node = document.getElementById(item.id);
-                custom_toolbar.append(node || item.node);
-            }
-        }
     }
 
-    /* 恢复保存的状态 */
-    itemStateLoad(item.id, custom.theme.toolbar, item.node);
+    /* 重新计时 */
+    clearTimeout(toolbar_timeout_id);
+    toolbar_timeout_id = setTimeout(() => {
+        if (window.theme.clientMode !== 'mobile' && toolbar) {
+            /* 工具栏按钮排序 */
+            toolbarItemList = toolbarItemList.sort((a, b) => a.index - b.index);
+            for (let item of toolbarItemList) {
+                if (item.display) {
+                    let node = document.getElementById(item.id);
+                    custom_toolbar.append(node || item.node);
+                }
+            }
+
+            const custom_tooldock = document.getElementById(config.theme.tooldock.id);
+            if (custom_tooldock) {
+                /* 调整提示标签 */
+                setTooltipDirection(
+                    getTooltipDirection,
+                    ...custom_tooldock.querySelectorAll('.toolbar__item'),
+                );
+            }
+        }
+
+        /* 恢复保存的状态 */
+        itemStateLoad(item.id, custom.theme.toolbar, item.node);
+    }, config.theme.toolbar.delay);
 }
 
 /**
