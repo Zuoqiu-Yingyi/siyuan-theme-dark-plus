@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 优化悬浮工具栏加载速度 | Optimize the loading speed of the floating toolbar.
+
 ## v1.5.0/2022-11-15
 
 - [v1.4.0 <=> v1.5.0](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.4.0...v1.5.0)
@@ -25,7 +27,7 @@
   - `--custom-background-image-landscape`: 横向背景图片 | Horizontal background image.
   - `--custom-background-image-portrait`: 纵向背景图片 | Vertical background image.
 - 更换背景图片功能支持分别设置航向背景图片与纵向背景图片 | The change background image function supports setting the horizontal background image and vertical background image separately.
-- 调整快滚动条位置 | Adjust the position of the fast scroll bar.
+- 调整块滚动条位置 | Adjust block scrollbar position.
 
 ## v1.4.0/2022-11-06
 

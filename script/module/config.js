@@ -64,6 +64,7 @@ export var config = {
         toolbar: {
             // 工具栏
             id: 'custom-toolbar', // 工具栏 ID
+            delay: 250, // 延迟显示工具栏的时间
             more: {
                 id: 'custom-toolbar-more',
                 enable: true,
