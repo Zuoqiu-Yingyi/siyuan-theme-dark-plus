@@ -203,10 +203,8 @@ async function getTargetBlockIndex(target) {
         const scroll = top
             .parentElement
             .parentElement
-            .nextElementSibling
-            .nextElementSibling
-            .nextElementSibling; // 块滚动条
-        const MAX = parseInt(scroll.firstElementChild.max); // 当前文档的块数
+            .querySelector('protyle-scroll__bar'); // 块滚动条
+        const MAX = parseInt(scroll?.firstElementChild.max); // 当前文档的块数
         let index = parseInt(top.dataset.nodeIndex); // 当前块序号
         let first_index = parseInt(top.parentElement.firstElementChild.dataset.nodeIndex);
         let offset = first_index ? 0 : 1; // 块序号偏移量, 如果是从 0 开始, 则偏移量为 1
