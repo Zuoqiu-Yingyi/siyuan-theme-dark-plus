@@ -1,6 +1,7 @@
 export {
     getConf, // 获取配置
     runCell, // 运行单元格
+    runCells, // 运行多个单元格
     restartKernel, // 重启内核
     closeConnection, // 关闭连接
 }
@@ -31,6 +32,7 @@ import {
     markdown2kramdown,
 } from './utils.js';
 
+var lang;
 var websockets = {
     // doc_id: { // 文档 ID
     //     ws: WebSocket, // WebSocket 对象
@@ -63,16 +65,6 @@ var websockets = {
     //     queue: new Queue(), // 接收的消息队列
     // },
 };
-
-/* 加载样式 */
-const style = document.getElementById(config.jupyter.id.siyuan.style.id) || document.createElement('link');
-const lang = window.theme.languageMode;
-style.id = config.jupyter.id.siyuan.style.id;
-style.type = 'text/css';
-style.rel = 'stylesheet';
-style.href = config.jupyter.id.siyuan.style.href;
-// document.head.appendChild(style);
-document.getElementById('themeStyle').insertAdjacentElement("afterend", style);
 
 /* 解析数据 */
 async function parseData(data, params) {
@@ -430,10 +422,22 @@ function createSendMessage(
     };
 }
 
+/* 设置语言 */
+function setLang(l) {
+    lang = l;
+}
+
+/* 获得 jupyter 配置项 */
 function getConf() {
     return config;
 }
 
+/* 关闭当前活动连接 */
+async function closeConnection(e, doc_id, params) {
+    websockets?.[doc_id]?.ws?.close();
+}
+
+/* 重启内核 */
 async function restartKernel(e, doc_id, params) {
     /* 关闭当前会话 */
     await closeConnection(e, doc_id, params);
@@ -455,6 +459,7 @@ async function restartKernel(e, doc_id, params) {
     }
 }
 
+/* 运行代码单元格 */
 async function runCell(e, code_id, params, opened = null) {
     /* 获得代码块 */
     let code_block, output_block;
@@ -619,7 +624,37 @@ async function runCell(e, code_id, params, opened = null) {
     }
 }
 
-/* 关闭当前活动连接 */
-async function closeConnection(e, doc_id, params) {
-    websockets?.[doc_id]?.ws?.close();
+/* 依次运行多个单元格 */
+async function runCells(e, IDs, params) {
+    const call = async i => {
+        if (i < IDs.length) runCell(e, IDs[i], params, async _ => call(i + 1));
+    };
+    call(0);
 }
+
+self.addEventListener('error', e => {
+    console.error(e);
+});
+self.addEventListener('message', async e => {
+    // console.log(e);
+    const data = JSON.parse(e.data);
+
+    const message = {
+        type: data.type,
+        handle: data.handle,
+    };
+
+    switch (data.type) {
+        case 'call':
+            const handle = eval(data.handle);
+            message.return = await handle(...data.params);
+            break;
+        default:
+            break;
+    }
+
+    self.postMessage(JSON.stringify(message));
+});
+self.addEventListener('messageerror', e => {
+    console.error(e);
+});

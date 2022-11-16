@@ -87,13 +87,13 @@ function merge(target, ...arg) {
     }, target)
 }
 
-function getCookie(name, cookies = document.cookie) {
+function getCookie(name, cookies = document?.cookie) {
     // from tornado docs: http://www.tornadoweb.org/en/stable/guide/security.html
     const r = cookies.match(`\\b${name}=([^;]*)\\b`);
     return r ? r[1] : undefined;
 }
 
-function setCookie(name, value, cookies = document.cookie) {
+function setCookie(name, value, cookies = document?.cookie) {
     const r = cookies.match(`\\b${name}=([^;]*)\\b`);
     if (r) {
         cookies = cookies.replace(r[0], `${name}=${value}`)
@@ -215,17 +215,35 @@ async function URL2DataURL(src, dom) {
 /* HTML 转义 */
 function HTMLEncode(text) {
     // REF: [javascript处理HTML的Encode(转码)和Decode(解码)总结 - 孤傲苍狼 - 博客园](https://www.cnblogs.com/xdp-gacl/p/3722642.html)
-    let temp = document.createElement("div");
-    temp.textContent = text;
-    return temp.innerHTML;;
+    if (self.document) {
+        let temp = document.createElement("div");
+        temp.textContent = text;
+        return temp.innerHTML;
+    }
+    else {
+        return text
+            .replaceAll('&', '&amp;')
+            .replaceAll('<', '&lt;')
+            .replaceAll('>', '&gt;')
+            .replaceAll('"', '&quot;');
+    }
 }
 
 /* HTML 反转义 */
 function HTMLDecode(text) {
     // REF: [javascript处理HTML的Encode(转码)和Decode(解码)总结 - 孤傲苍狼 - 博客园](https://www.cnblogs.com/xdp-gacl/p/3722642.html)
-    let temp = document.createElement("div");
-    temp.innerHTML = text;
-    return temp.textContent;;
+    if (self.document) {
+        let temp = document.createElement("div");
+        temp.innerHTML = text;
+        return temp.textContent;
+    }
+    else {
+        return text
+            .replaceAll('&quot;', '"')
+            .replaceAll('&gt;', '>')
+            .replaceAll('&lt;', '<')
+            .replaceAll('&amp;', '&');
+    }
 }
 
 /**
@@ -317,8 +335,8 @@ class Output {
     /* 解析控制台控制字符 */
     parseCmdControlChars(escaped) {
         const reg = escaped
-            ? config.jupyter.regs.richtext
-            : config.jupyter.regs.params.richtext;
+            ? config.jupyter.regs.escaped.richtext
+            : config.jupyter.regs.richtext;
         this.text = this.text
             .replaceAll(/\x1bc/g, '') // 不解析清屏命令
             .replaceAll(/\x1b\\?\[\\?\?\d+[lh]/g, '') // 不解析光标显示命令
@@ -378,6 +396,7 @@ class Output {
                         }
                         else {
                             switch (num) {
+                                case NaN: // 无效参数
                                 case 0: // 清除样式
                                     mark = {};
                                     style = {};
@@ -582,7 +601,7 @@ class Output {
         return this;
     }
 
-    /* 移除控制台 ANSI 转义序列 */
+    /* 移除控制台 ANSI 转义序列(保留 \b, \r) */
     removeCmdControlChars() {
         this.text = this.text.replaceAll(config.jupyter.regs.ANSIesc, '');
         return this;
