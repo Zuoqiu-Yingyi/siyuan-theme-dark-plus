@@ -40,17 +40,48 @@ import {
     pushErrMsg,
 } from './api.js';
 
-import {
-    getConf,
-    runCell,
-    restartKernel,
-    closeConnection,
-} from '/appearance/themes/Dark+/app/jupyter/js/run.js';
+// const jupyterConfig = getConf();
+// REF [Web Workers API - Web API 接口参考 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API)
+const jupyterWorker = new Worker('/appearance/themes/Dark+/app/jupyter/js/run.js', { type: 'module' });
+var jupyterConfig;
 
-const jupyterConf = getConf();
+jupyterWorker.addEventListener('error', e => {
+    console.error(e);
+});
+jupyterWorker.addEventListener('message', e => {
+    // console.log(e);
+    const data = JSON.parse(e.data);
+    switch (data.type) {
+        case 'call':
+            switch (data.handle) {
+                case 'getConf':
+                    jupyterConfig = data.return;
+                    break;
+                default:
+                    break;
+            }
+            break;
+        default:
+            break;
+    }
+});
+jupyterWorker.addEventListener('messageerror', e => {
+    console.error(e);
+});
+
+jupyterWorker.postMessage(JSON.stringify({
+    type: 'call',
+    handle: 'getConf',
+    params: [],
+}));
+jupyterWorker.postMessage(JSON.stringify({
+    type: 'call',
+    handle: 'setLang',
+    params: [window.theme.languageMode],
+}));
+
 var toolbarItemList = [];
 var toolbar_timeout_id = null; // 工具栏延时显示定时器
-
 /**
  * 重置节点, 可所有监听器
  * @node (HTMLElementNode): DOM 节点
@@ -877,14 +908,29 @@ const TASK_HANDLER = {
     /* 处理输入框内容 */
     'handle-input-value': async (e, id, params) => params.handler(e, id, params),
     /* 关闭会话 */
-    'jupyter-close-connection': closeConnection,
+    // 'jupyter-close-connection': closeConnection,
+    'jupyter-close-connection': async (...args) => jupyterWorker.postMessage(JSON.stringify({
+        type: 'call',
+        handle: 'closeConnection',
+        params: args,
+    })),
     /* 重启内核 */
-    'jupyter-restart-kernel': restartKernel,
+    // 'jupyter-restart-kernel': restartKernel,
+    'jupyter-restart-kernel': async (...args) => jupyterWorker.postMessage(JSON.stringify({
+        type: 'call',
+        handle: 'restartKernel',
+        params: args,
+    })),
     /* 运行单元格 */
-    'jupyter-run-cell': runCell,
+    // 'jupyter-run-cell': runCell,
+    'jupyter-run-cell': async (...args) => jupyterWorker.postMessage(JSON.stringify({
+        type: 'call',
+        handle: 'runCell',
+        params: args,
+    })),
     /* 运行所有单元格 */
     'jupyter-run-all-cells': async (e, id, params) => {
-        const stmt = `SELECT a.block_id FROM attributes AS a WHERE a.root_id = '${id}' AND a.name = '${jupyterConf.jupyter.attrs.code.type.key}' AND a.value = '${jupyterConf.jupyter.attrs.code.type.value}';`;
+        const stmt = `SELECT a.block_id FROM attributes AS a WHERE a.root_id = '${id}' AND a.name = '${jupyterConfig.jupyter.attrs.code.type.key}' AND a.value = '${jupyterConfig.jupyter.attrs.code.type.value}';`;
         const rows = await sql(stmt);
         if (rows && rows.length > 0) {
             for (let i = 0; i < rows.length; ++i) {
@@ -893,11 +939,17 @@ const TASK_HANDLER = {
                 rows[i].index = index;
             }
             rows.sort((a, b) => a.index - b.index);
-            const call = async i => {
-                if (i < rows.length)
-                    runCell(e, rows[i].block_id, params, async _ => call(i + 1));
-            };
-            call(0);
+            const IDs = rows.map(row => row.block_id);
+
+            jupyterWorker.postMessage(JSON.stringify({
+                type: 'call',
+                handle: 'runCells',
+                params: [
+                    e,
+                    IDs,
+                    params,
+                ],
+            }));
         }
     },
     /* 归档页签 */
