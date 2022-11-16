@@ -364,12 +364,9 @@ function toolbarItemListPush(item) {
 
         }
 
-    }
-
-    /* 重新计时 */
-    clearTimeout(toolbar_timeout_id);
-    toolbar_timeout_id = setTimeout(() => {
-        if (window.theme.clientMode !== 'mobile' && toolbar) {
+        /* 重新计时 */
+        clearTimeout(toolbar_timeout_id);
+        toolbar_timeout_id = setTimeout(() => {
             /* 工具栏按钮排序 */
             toolbarItemList = toolbarItemList.sort((a, b) => a.index - b.index);
             for (let item of toolbarItemList) {
@@ -387,11 +384,11 @@ function toolbarItemListPush(item) {
                     ...custom_tooldock.querySelectorAll('.toolbar__item'),
                 );
             }
-        }
+        }, config.theme.toolbar.delay);
+    }
 
-        /* 恢复保存的状态 */
-        itemStateLoad(item.id, custom.theme.toolbar, item.node);
-    }, config.theme.toolbar.delay);
+    /* 恢复保存的状态 */
+    itemStateLoad(item.id, custom.theme.toolbar, item.node);
 }
 
 /**
