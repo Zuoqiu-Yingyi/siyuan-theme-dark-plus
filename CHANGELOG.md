@@ -2,6 +2,7 @@
 
 - 优化悬浮工具栏加载速度 | Optimize the loading speed of the floating toolbar.
 - 修复块引用数量标志被块滚动条覆盖问题 | Fix the issue that the block quote number flag is covered by the block scrollbar.
+- 修复悬浮工具栏状态恢复失效问题 | Fix the issue that the floating toolbar state recovery is invalid.
 
 ## v1.5.0/2022-11-15
 
