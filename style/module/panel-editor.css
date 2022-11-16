@@ -53,6 +53,7 @@
 }
 .protyle-scroll .protyle-scroll__bar {
   right: -98px;
+  z-index: auto;
 }
 .protyle-preview {
   /* 内容 */
