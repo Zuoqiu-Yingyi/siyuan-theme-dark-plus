@@ -205,13 +205,17 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 
 #### Jupyter 功能 | JUPYTER FEATURES
 
+注意: 使用浏览器访问思源时该功能可能会被浏览器安全策略阻止, 请使用桌面客户端访问思源以使用该功能  
+Note: When using the browser to access SiYuan, this feature may be blocked by the browser's security policy. Please use the desktop client to access SiYuan to use this feature.
+
 - 添加 Jupyter 服务对思源的信任
   1. 打开文件 `jupyter_lab_config.py` 或 `jupyter_notebook_config.py`
   2. 找到 `c.ServerApp.allow_origin` 或 `c.NotebookApp.allow_origin` 字段
   3. 将该字段设置为思源 `'location.origin'` 或 `'*'`
      - <kbd>Ctrl + Shift + I</kbd> 打开思源的开发者工具, 在控制台中输入 `location.origin` 后回车即可获得
-  4. (可选, Token 认证方案) 找到 `c.ServerApp.token` 字段并将该字段设置为一个足够安全的值
-  5. 保存文件并启动 jupyter 服务
+  4. 将 `c.ServerApp.disable_check_xsrf` 或 `c.NotebookApp.disable_check_xsrf` 字段值设置为 `True`.
+  5. (可选, Token 认证方案) 找到 `c.ServerApp.token` 字段并将该字段设置为一个足够安全的值
+  6. 保存文件并启动 jupyter 服务
 - 登录 Jupyter 服务
   1. <kbd>文档块菜单</kbd> > <kbd>Jupyter</kbd> > <kbd>全局设置</kbd>
   2. 打开全局设置窗口
@@ -259,8 +263,9 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   2. Find `c.ServerApp.allow_origin` or `c.NotebookApp.allow_origin` field.
   3. Set the field to Siyuan `location.origin` or `*`.
      - <kbd>Ctrl + Shift + I</kbd> open Siyuan's developer tools, then enter `location.origin` in the console.
-  4. (Optional, Token certification scheme) Find `c.ServerApp.token` field and set it to a sufficiently secure value.
-  5. Save the file and start jupyter service.
+  4. Set the value of field `c.ServerApp.disable_check_xsrf` or `c.NotebookApp.disable_check_xsrf` to `True`.
+  5. (Optional, Token certification scheme) Find `c.ServerApp.token` field and set it to a sufficiently secure value.
+  6. Save the file and start jupyter service.
 - Log in to the jupyter service.
   1. <kbd>Doc Block Menu</kbd> > <kbd>Jupyter</kbd> > <kbd>Global Settings</kbd>
   2. Open the Global Settings Window.
