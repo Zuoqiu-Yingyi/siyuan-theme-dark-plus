@@ -4,6 +4,8 @@
 - 修复块引用数量标志被块滚动条覆盖问题 | Fix the issue that the block quote number flag is covered by the block scrollbar.
 - 修复悬浮工具栏状态恢复失效问题 | Fix the issue that the floating toolbar state recovery is invalid.
 - jupyter 客户端使用 `Web Workers` 重构 | Refactor the jupyter client using `Web Workers`.
+- 调整块滚动条位置 | Adjust the position of the block scrollbar.
+  - Adapt: [Issue #6588 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6588)
 
 ## v1.5.0/2022-11-15
 

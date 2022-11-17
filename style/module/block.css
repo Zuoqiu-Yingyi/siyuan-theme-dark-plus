@@ -1,5 +1,1 @@
 /* 块全局样式 */
-.protyle-wysiwyg [data-node-id] > .protyle-attr > .protyle-attr--refcount {
-  box-shadow: 0 0 var(--custom-toolbar-tiem-active-box-shadow-spread) 0 var(--custom-box-shadow-color);
-  z-index: 1;
-}

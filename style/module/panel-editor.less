@@ -13,6 +13,17 @@
     }
 }
 
+// 块引用计数
+.refcont() {
+    .protyle-attr {
+        .protyle-attr--refcount {
+            /* 块引用计数 */
+            box-shadow: 0 0 var(--custom-toolbar-tiem-active-box-shadow-spread) 0 var(--custom-box-shadow-color);
+            z-index: 1; // 避免被块滚动条覆盖
+        }
+    }
+}
+
 .fn__flex-1.protyle.fullscreen {
     .protyle-content {
         /* 全屏模式编辑区 */
@@ -77,6 +88,8 @@
         // deprecated: 使用 [data-fullwidth="true"] 判断是否开启自适应宽度
         // .page-margins();
 
+        .refcont(); // 块引用计数
+
         .protyle-title__input {
             /*编辑区文件名*/
             background: transparent;
@@ -86,6 +99,8 @@
     >.protyle-wysiwyg {
         // deprecated: 使用 [data-fullwidth="true"] 判断是否开启自适应宽度
         // .page-margins();
+
+        .refcont(); // 块引用计数
 
         // 拖拽
         .dragover__top {
@@ -111,6 +126,7 @@
     width: 15px;
     right: 8px;
     margin: 0 4px;
+    padding: 0;
 
     .protyle-scroll__bar {
         right: -98px;
