@@ -6,6 +6,7 @@
 - jupyter 客户端使用 `Web Workers` 重构 | Refactor the jupyter client using `Web Workers`.
 - 调整块滚动条位置 | Adjust the position of the block scrollbar.
   - Adapt: [Issue #6588 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6588)
+- 更新自述文档中自定义背景图片集的设置方法 | Updates how to set up a custom background image set in README.
 
 ## v1.5.0/2022-11-15
 

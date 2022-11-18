@@ -655,11 +655,11 @@ Note: When using the browser to access SiYuan, this feature may be blocked by th
  *    <workspace>/data/widgets/custom.js
  * 示例功能 | Example function:
  *    自定义背景图片序列
- *        示例中浅色背景图片的目录为 <工作空间>/data/assets/images/background-light
- *        示例中深色背景图片的目录为 <工作空间>/data/assets/images/background-dark
+ *        示例中浅色背景图片的目录为 <工作空间>/data/snippets/images/background-light
+ *        示例中深色背景图片的目录为 <工作空间>/data/snippets/images/background-dark
  *    Custom background image list
- *        The directory of the light background image in the example is <workspace>/data/assets/images/background-light
- *        The directory of the dark background image in the example is <workspace>/data/assets/images/background-dark
+ *        The directory of the light background image in the example is <workspace>/data/snippets/images/background-light
+ *        The directory of the dark background image in the example is <workspace>/data/snippets/images/background-dark
  */
 
 export const config = {
@@ -669,20 +669,34 @@ export const config = {
                 custom: {
                     random: false,
                     default: true,
-                    light: [
-                        '/assets/images/background-light/background-1.png',
-                        '/assets/images/background-light/background-2.png',
-                        '/assets/images/background-light/background-3.png',
-                        '/assets/images/background-light/background-4.png',
-                        '/assets/images/background-light/background-5.png',
-                    ],
-                    dark: [
-                        '/assets/images/background-dark/background-1.png',
-                        '/assets/images/background-dark/background-2.png',
-                        '/assets/images/background-dark/background-3.png',
-                        '/assets/images/background-dark/background-4.png',
-                        '/assets/images/background-dark/background-5.png',
-                    ],
+                    landscape: { // 横屏背景图片 | Landscape background image
+                      light: [
+                          '/snippets/images/background-light/landscape-background-1.png',
+                          '/snippets/images/background-light/landscape-background-2.png',
+                          '/snippets/images/background-light/landscape-background-3.png',
+                          '/snippets/images/background-light/landscape-background-4.png',
+                      ],
+                      dark: [
+                          '/snippets/images/background-dark/landscape-background-1.png',
+                          '/snippets/images/background-dark/landscape-background-2.png',
+                          '/snippets/images/background-dark/landscape-background-3.png',
+                          '/snippets/images/background-dark/landscape-background-4.png',
+                      ],
+                    },
+                    portrait: { // 竖屏背景图片 | Portrait background image
+                      light: [
+                          '/snippets/images/background-light/portrait-background-1.png',
+                          '/snippets/images/background-light/portrait-background-2.png',
+                          '/snippets/images/background-light/portrait-background-3.png',
+                          '/snippets/images/background-light/portrait-background-4.png',
+                      ],
+                      dark: [
+                          '/snippets/images/background-dark/portrait-background-1.png',
+                          '/snippets/images/background-dark/portrait-background-2.png',
+                          '/snippets/images/background-dark/portrait-background-3.png',
+                          '/snippets/images/background-dark/portrait-background-4.png',
+                      ],
+                    },
                 },
             },
         },
