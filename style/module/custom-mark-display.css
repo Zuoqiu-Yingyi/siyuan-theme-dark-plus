@@ -1,11 +1,9 @@
 /* 显示标记文本内容 */
-
-
-.protyle-content [custom-mark~=显示] mark,
-.protyle-content [custom-mark~=显示] mark:hover,
-.protyle-content [custom-mark~=display] mark,
-.protyle-content [custom-mark~=display] mark:hover {
-    background-color: var(--cusotm-span-mark-background-color);
-    color: var(--b3-protyle-inline-mark-color);
-    text-shadow: none;
+.protyle-content [custom-mark~="显示"],
+.protyle-content [custom-mark~=display],
+.protyle-content [custom-mark~="显示"]:hover,
+.protyle-content [custom-mark~=display]:hover {
+  background-color: var(--cusotm-span-mark-background-color);
+  color: var(--b3-protyle-inline-mark-color);
+  text-shadow: none;
 }
