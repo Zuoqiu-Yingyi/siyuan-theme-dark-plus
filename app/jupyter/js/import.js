@@ -95,6 +95,14 @@ class Import {
         for (const filename of attachments) {
             markdown.replace(`attachment:${filename}`, attachments[filename]);
         }
+        // TODO: 解析 metadata 为块属性, 属性嵌套使用 `-` 展开
+        /**幻灯片类型
+         * slideshow.slide_type.slide
+         * slideshow.slide_type.subslide
+         * slideshow.slide_type.fragment
+         * slideshow.slide_type.skip
+         * slideshow.slide_type.notes
+         */
         return markdown;
     }
 
@@ -108,6 +116,49 @@ class Import {
      * REF: https://nbformat.readthedocs.io/en/latest/format_description.html#raw-nbconvert-cells
      */
     parseRaw(cell) {
+        var mime_main, mime_sub;
+        const mime = cell.metadata.raw_mimetype;
+        [mime_main, mime_sub] = mime.split('/');
+        const markdown = [];
+        switch (mime_main) {
+            case 'text':
+                switch (mime_sub) {
+                    case 'markdown':
+                        markdown.push(...cell.source);
+                        break;
+                    case 'html':
+                        markdown.push(
+                            '<div>',
+                            ...cell.source,
+                            '</div>',
+                        );
+                        break;
+                    case 'asciidoc':
+                    case 'latex':
+                    case 'restructuredtext':
+                    case 'x-python':
+                    default:
+                        markdown.push(
+                            `\`\`\`${mime_sub}`,
+                            ...cell.source,
+                            '```',
+                        );
+                        break;
+                }
+                break;
+            case 'pdf':
+            case 'slides':
+            case 'script':
+            case 'notebook':
+            case 'custom':
+            default:
+                markdown.push(
+                    `\`\`\`${mime_main}`,
+                    ...cell.source,
+                    '```',
+                );
+                break;
+        }
     }
 
     /**解析附件
