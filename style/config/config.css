@@ -489,19 +489,6 @@
   --custom-scroll-max-height: 50vh;
   /* 表格单元格等宽启用时单元格宽度 | Table cell width when cell equal function is enabled */
   --custom-table-cell-equal-width: 256px;
-  /* 自定义背景图片路径 | The file path of customize background image. */
-  --custom-background-01: url("/appearance/themes/Dark+/image/background (01).jpg");
-  --custom-background-02: url("/appearance/themes/Dark+/image/background (02).jpg");
-  --custom-background-03: url("/appearance/themes/Dark+/image/background (03).jpg");
-  --custom-background-04: url("/appearance/themes/Dark+/image/background (04).jpg");
-  --custom-background-05: url("/appearance/themes/Dark+/image/background (05).jpg");
-  --custom-background-06: url("/appearance/themes/Dark+/image/background (06).jpg");
-  --custom-background-07: url("/appearance/themes/Dark+/image/background (07).jpg");
-  --custom-background-08: url("/appearance/themes/Dark+/image/background (08).jpg");
-  --custom-background-09: url("/appearance/themes/Dark+/image/background (09).jpg");
-  --custom-background-10: url("/appearance/themes/Dark+/image/background (10).jpg");
-  --custom-background-11: url("/appearance/themes/Dark+/image/background (11).jpg");
-  --custom-background-12: url("/appearance/themes/Dark+/image/background (12).jpg");
 }
 @media (orientation: landscape) {
   :root {

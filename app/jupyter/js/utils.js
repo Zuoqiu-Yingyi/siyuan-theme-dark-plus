@@ -16,6 +16,7 @@ export {
     Output, // 输出解析器
     parseText, // 解析文本
     markdown2kramdown, // Markdown 转 Kramdown
+    nodeIdMaker, // 块 ID 生成器
 };
 
 import { config } from './config.js';
@@ -641,4 +642,16 @@ function markdown2kramdown(markdown, ial) {
         default:
             return markdown;
     }
+}
+
+/**
+ * 返回一个块 ID 生成器
+ * @return {Function}: 块 ID 生成器
+ */
+function nodeIdMaker() {
+    var index = 0;
+    return (time = new Date()) => `${time.toLocaleString().replace(
+        /(\d{4})\/(\d{2})\/(\d{2})\s+(\d{2}):(\d{2}):(\d{2})/,
+        '$1$2$3$4$5$6',
+    )}-${(index++).toString(36).padStart(7, '0')}`;
 }
