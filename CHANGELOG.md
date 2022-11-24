@@ -9,6 +9,7 @@
 - 更新自述文档中自定义背景图片集的设置方法 | Updates how to set up a custom background image set in README.
 - 使用 `Less` 重构 `custom-mark-display.css` | Refactored `custom-mark-display.css` with `Less`.
 - jupyter 导入工具支持解析 `raw` 类型单元块 | The jupyter import tool supports parsing `raw` cells.
+- 编辑 kramdown 源代码功能兼容 `v2.5.1` | The editing kramdown source code function is compatible with `v2.5.1`.
 
 ## v1.5.0/2022-11-15
 

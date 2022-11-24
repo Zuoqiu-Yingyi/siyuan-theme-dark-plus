@@ -24,6 +24,16 @@ var config = {
                 richtext: /\x1b\\\[((?:\d*)(?:\\;\d+)*)m([^\x1b]*)/g, // 控制台富文本控制字符(被转义)
             },
         },
+        import: { // 导入相关配置
+            fold: {
+                headling: true, // 若标题折叠, 导入后也折叠
+                source: true, // 若内容折叠, 导入后也折叠
+                output: true, // 若输出折叠, 导入后也折叠
+                attrs: { // 折叠属性
+                    fold: '1',
+                },
+            }
+        },
         output: {
             init: [ // 输出块初始化内容
                 '{{{row',

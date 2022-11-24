@@ -2,6 +2,7 @@
 
 export {
     request,
+    version,
     getConf,
     getNotebookConf,
     getFullHPathByID,
@@ -35,6 +36,10 @@ async function request(url, data, token = config.token) {
             return r.json();
         else return null;
     });
+}
+
+async function version() {
+    return request('/api/system/version', {});
 }
 
 async function getConf() {

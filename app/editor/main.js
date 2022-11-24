@@ -6,8 +6,11 @@ import {
     merge,
     getRelativePath,
     copyToClipboard,
+    removeOuterIAL,
+    compareVersion,
 } from './js/utils.js';
 import {
+    version,
     queryBlock,
     getFullHPathByID,
     exportMdContent,
@@ -22,13 +25,19 @@ import {
 } from './js/api.js';
 
 async function init(params) {
-    // 设置界面字体
-    params.fontFamily = document.body.style.fontFamily = params.fontFamily.concat(config.editor.UI.fontFamily).join(',');
-
     let r; // 响应
     let b; // 块
     let n; // 笔记本
     let t; // 临时
+
+    // 设置界面字体
+    params.fontFamily = document.body.style.fontFamily = params.fontFamily.concat(config.editor.UI.fontFamily).join(',');
+
+    // 获得内核版本
+    r = await version();
+    console.assert(r?.code === 0, '获取内核信息失败');
+    params.version = r.data;
+
     switch (params.mode) {
         case 'history': // 历史文档
             // 获取文档路径
@@ -78,7 +87,10 @@ async function init(params) {
                     // r = await getBlockDomByID(params.id);
                     // r = await getDoc(params.id);
                     if (r && r.code === 0) {
-                        params.value.modified = r.data.kramdown;
+                        // REF: [使用 API `/api/block/getBlockKramdown` 查询时返回 IAL · Issue #6670 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6670)
+                        params.value.modified = compareVersion(params.version, '2.5.1') >= 0
+                            ? removeOuterIAL(r.data.kramdown)
+                            : r.data.kramdown;
                         // params.value.modified = window.editor.lute.BlockDOM2Md(r.data.blocks[0].content);
                         // params.value.modified = window.editor.lute.BlockDOM2Md(r.data.content);
                     }
@@ -93,7 +105,6 @@ async function init(params) {
 
             params.language = 'markdown';
             params.tabSize = 2;
-            params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
 
             params.breadcrumb.set(
                 `${config.editor.mark.history}${config.editor.MAP.LABELS.mode[params.mode][params.lang] || config.editor.MAP.LABELS.mode[params.mode].default}`,
@@ -110,7 +121,6 @@ async function init(params) {
                 params.value = await r.text();
                 params.language = 'markdown';
                 params.tabSize = 2;
-                params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
                 let typeText, hpathText, typeTitle, hpathTitle, blockHref, docHref;
                 try {
                     const url = new URL(params.url);
@@ -338,7 +348,6 @@ async function init(params) {
                         params.value = b.markdown;
                         params.language = 'markdown';
                         // params.tabSize = 2;
-                        params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
                     }
                     break;
                 case 'd': // 文档块
@@ -360,7 +369,10 @@ async function init(params) {
                                 // 使用 API /api/block/getBlockKramdown
                                 r = await getBlockKramdown(b.id);
                                 if (r && r.code === 0) {
-                                    params.value = r.data.kramdown;
+                                    // REF: [使用 API `/api/block/getBlockKramdown` 查询时返回 IAL · Issue #6670 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6670)
+                                    params.value = compareVersion(params.version, '2.5.1') >= 0
+                                        ? removeOuterIAL(r.data.kramdown)
+                                        : r.data.kramdown;
                                     break;
                                 }
                             }
@@ -381,7 +393,6 @@ async function init(params) {
                     params.mode = 'doc';
                     params.language = 'markdown';
                     params.tabSize = 2;
-                    params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
                     break;
                 case 'c': // 代码块
                     t = config.editor.regs.code.exec(b.markdown);
@@ -395,23 +406,14 @@ async function init(params) {
                         params.value = b.markdown;
                         params.language = 'markdown';
                         // params.tabSize = 2;
-                        params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
                     }
                     break;
                 case 'm': // 公式块
                     params.mode = 'leaf';
                     params.value = b.markdown;
                     params.language = 'markdown';
-                    params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
                     break;
-                case `h`:
-                case `t`:
-                case `p`:
-                case `tb`:
-                    // 其他叶子块
-                    params.mode = 'leaf';
-                default:
-                    // 其他容器块
+                case 'i': // 列表项
                     switch (params.type) {
                         case 'kramdown':
                             r = await getBlockKramdown(b.id);
@@ -424,12 +426,40 @@ async function init(params) {
                             params.value = b.markdown;
                             break;
                     }
-                    params.mode = params.mode === 'leaf'
-                        ? 'leaf'
-                        : 'container';
+                    params.mode = 'item'
                     params.language = 'markdown';
                     params.tabSize = 2;
-                    params.IStandaloneEditorConstructionOptions.copyWithSyntaxHighlighting = false;
+                    break;
+                case `h`:
+                case `t`:
+                case `p`:
+                case `tb`:
+                    // 其他叶子块
+                    params.value = b.markdown;
+                    params.mode = 'leaf';
+                    params.language = 'markdown';
+                    params.tabSize = 2;
+                    break;
+                default:
+                    // 其他容器块
+                    switch (params.type) {
+                        case 'kramdown':
+                            r = await getBlockKramdown(b.id);
+                            if (r && r.code === 0) {
+                                // REF: [使用 API `/api/block/getBlockKramdown` 查询时返回 IAL · Issue #6670 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6670)
+                                params.value = compareVersion(params.version, '2.5.1') >= 0
+                                    ? removeOuterIAL(r.data.kramdown)
+                                    : r.data.kramdown;
+                                break;
+                            }
+                        case 'markdown':
+                        default:
+                            params.value = b.markdown;
+                            break;
+                    }
+                    params.mode = 'container';
+                    params.language = 'markdown';
+                    params.tabSize = 2;
                     break;
             }
             // params.value = `${b.markdown}\n${b.ial}`;
@@ -669,6 +699,7 @@ window.onload = () => {
                                 `\`\`\`${window.editor.params.language}\n${window.editor.editor.getValue()}\n\`\`\`\n${window.editor.params.block.ial}`,
                             );
                             break;
+                        case 'item':
                         case 'doc':
                         case 'history':
                             response = await updateBlock(
