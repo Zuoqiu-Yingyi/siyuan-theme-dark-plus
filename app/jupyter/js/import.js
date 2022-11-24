@@ -7,18 +7,24 @@ import {
 import {
     upload,
 } from './api.js';
+import {
+    createIAL,
+    nodeIdMaker,
+} from './utils.js';
 
 class Import {
     ipynb; // 文件内容
     cells; // 内容块
+    language; // 单元格语言
     metadata; // notebook 元数据
     nbformat; // 缩进长度
     nbformat_minor; // 次要缩进长度
     kramdown; // 导入的 kramdown 字符串数组
     attributes; // 导入的文档块属性
+    newNodeID; // 块 ID 生成器
 
     constructor() {
-
+        this.newNodeID = nodeIdMaker();
     }
 
     /* 从文件导入 */
@@ -53,12 +59,15 @@ class Import {
      * REF: https://jupyter-client.readthedocs.io/en/stable/kernels.html#kernel-specs
      */
     parseMetadata() {
+        this.language =
+            this.metadata.kernelspec.language
+            ?? this.metadata.language_info.name
+            ?? this.metadata.language_info.nbconvert_exporter;
+        this.attributes[config.jupyter.attrs.kernel.language] = this.language;
+
         this.attributes[config.jupyter.attrs.kernel.name] =
             this.metadata.kernelspec.name
             ?? this.metadata.kernel_info.name;
-        this.attributes[config.jupyter.attrs.kernel.language] =
-            this.metadata.kernelspec.language
-            ?? this.metadata.language_info.name;
         this.attributes[config.jupyter.attrs.kernel.display_name] =
             this.metadata.kernelspec.display_name
             ?? this.metadata.kernelspec.name
@@ -68,7 +77,7 @@ class Import {
     /* 解析单元格 */
     parseCells() {
         for (let i = 0; i < this.cells.length; ++i) {
-            this.kramdown.push(...this.parseCell(this.cells[i]));
+            this.kramdown.push(this.parseCell(this.cells[i]));
         }
     }
 
@@ -90,6 +99,28 @@ class Import {
      * REF: https://nbformat.readthedocs.io/en/latest/format_description.html#markdown-cells
      */
     async parseMarkdown(cell) {
+        /* 标题折叠 */
+        if (cell.metadata['jp-MarkdownHeadingCollapsed']) {
+            let index = -1; // 级别最高的标题所有序号
+            let top_level = 7; // 当前级别最高的标题级别
+            for (let i = 0; i < cell.source.length; ++i) {
+                const line = cell.source[i];
+                if (/^#{1,6}\s/.test(line)) { // 是否为标题块
+                    for (let j = 0; j < line.length && j < 6; ++j) {
+                        if (line.charAt(j) !== '#') {
+                            if (j + 1 < top_level) {
+                                top_level = j + 1;
+                                index = i;
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+            if (index >= 0 && 1 <= top_level && top_level <= 6) { // 存在待折叠的标题
+                cell.source[index] = `${cell.source[index].trim()}\n${createIAL(config.jupyter.import.attrs.fold)}\n`;
+            }
+        }
         const markdown = cell.source.join(); // markdown 文本
         const attachments = await this.parseAttachments(cell.attachments); // 附件
         for (const filename of attachments) {
@@ -110,6 +141,46 @@ class Import {
      * REF: https://nbformat.readthedocs.io/en/latest/format_description.html#code-cells
      */
     parseCode(cell) {
+        const markdown = [];
+        const execution_count = cell.execution_count?.toString() ?? '*'; // 当前块运行计数器
+        const source_hidden = cell.matedate?.jupyter?.source_hidden; // 代码是否折叠
+        const outputs_hidden = cell.matedate?.jupyter?.outputs_hidden; // 输出是否折叠
+        const code_id = this.newNodeID(); // 代码块 ID
+        const output_id = this.newNodeID(); // 输出块 ID
+
+        const code_attrs = {
+            [config.jupyter.attrs.code.index]: execution_count,
+            [config.jupyter.attrs.code.output]: output_id,
+            [config.jupyter.attrs.code.type.key]: config.jupyter.attrs.code.type.value,
+            fold: source_hidden ? '1' : null,
+        }; // 代码块属性
+        const output_attrs = {
+            [config.jupyter.attrs.output.index]: execution_count,
+            [config.jupyter.attrs.output.code]: code_id,
+            [config.jupyter.attrs.output.type.key]: config.jupyter.attrs.output.type.value,
+            fold: outputs_hidden ? '1' : null,
+        }; // 输出块属性
+
+        /* 代码块 */
+        markdown.push(
+            `\`\`\`${this.language}`,
+            cell.source.json(),
+            '```',
+            createIAL(code_attrs),
+        );
+        /* 输出块 */
+        markdown.push(
+            `{{{row`,
+            '---',
+        );
+        // TODO: 解析 outputs
+        // TODO: 将输出消息解析与 run.js 解耦
+        markdown.push(
+            `---`,
+            '}}}',
+            createIAL(output_attrs),
+        );
+        return markdown.join('\n');
     }
 
     /**解析 raw 块
@@ -124,23 +195,33 @@ class Import {
             case 'text':
                 switch (mime_sub) {
                     case 'markdown':
-                        markdown.push(...cell.source);
+                        markdown.push(
+                            '{{{row',
+                            cell.source.json(),
+                            '}}}',
+                        );
                         break;
                     case 'html':
                         markdown.push(
                             '<div>',
-                            ...cell.source,
+                            cell.source.json(),
                             '</div>',
+                        );
+                        break;
+                    case 'x-python':
+                        markdown.push(
+                            '```python',
+                            cell.source.json(),
+                            '```',
                         );
                         break;
                     case 'asciidoc':
                     case 'latex':
                     case 'restructuredtext':
-                    case 'x-python':
                     default:
                         markdown.push(
                             `\`\`\`${mime_sub}`,
-                            ...cell.source,
+                            cell.source.json(),
                             '```',
                         );
                         break;
@@ -154,11 +235,15 @@ class Import {
             default:
                 markdown.push(
                     `\`\`\`${mime_main}`,
-                    ...cell.source,
+                    cell.source.json(),
                     '```',
                 );
                 break;
         }
+        if (cell.metadata?.jupyter?.source_hidden) { // 折叠内容
+            markdown.push(createIAL({ fold: '1' }));
+        }
+        return markdown.join('\n');
     }
 
     /**解析附件

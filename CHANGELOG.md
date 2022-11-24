@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- jupyter 导入工具支持解析 `code` 类型单元块的输入 | jupyter import tool support parsing input of `code` type cell.
+
 ## v1.5.1/2022-11-24
 
 - [v1.5.0 <=> v1.5.1](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.5.0...v1.5.1)
@@ -13,6 +15,7 @@
 - 使用 `Less` 重构 `custom-mark-display.css` | Refactored `custom-mark-display.css` with `Less`.
 - jupyter 导入工具支持解析 `raw` 类型单元块 | The jupyter import tool supports parsing `raw` cells.
 - 编辑 kramdown 源代码功能兼容 `v2.5.1` | The editing kramdown source code function is compatible with `v2.5.1`.
+  - Adapt: [Issue #6670 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6670)
 - 编辑 kramdown 源代码功能支持编辑当前块的 IAL | Edit kramdown source code feature supports editing IAL of current block.
 
 ## v1.5.0/2022-11-15
