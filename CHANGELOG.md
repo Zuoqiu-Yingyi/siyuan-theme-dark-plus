@@ -13,6 +13,7 @@
 - 使用 `Less` 重构 `custom-mark-display.css` | Refactored `custom-mark-display.css` with `Less`.
 - jupyter 导入工具支持解析 `raw` 类型单元块 | The jupyter import tool supports parsing `raw` cells.
 - 编辑 kramdown 源代码功能兼容 `v2.5.1` | The editing kramdown source code function is compatible with `v2.5.1`.
+- 编辑 kramdown 源代码功能支持编辑当前块的 IAL | Edit kramdown source code feature supports editing IAL of current block.
 
 ## v1.5.0/2022-11-15
 
