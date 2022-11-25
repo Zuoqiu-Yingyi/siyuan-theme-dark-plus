@@ -176,7 +176,9 @@ function base64ToBlob(base64Data, mime) {
     // while (n--) {
     //     buffer[n] = bstr.charCodeAt(n);
     // }
-    let buffer = Buffer.from(base64Data, 'base64');
+
+    // let buffer = Buffer.from(base64Data, 'base64'); // Worker 环境下不支持 Buffer
+    let buffer = Uint8Array.from(atob(base64Data), c => c.charCodeAt(0));
     return new Blob([buffer], { type: mime });
 
     // return new Blob([atob(base64Data)], { type: mime });
