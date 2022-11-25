@@ -68,7 +68,7 @@ var websockets = {
 
 /* 解析数据 */
 async function parseData(data, params) {
-    let file;
+    let filedata;
     const markdowns = new Queue();
     for (const mime in data) {
         // REF [Media Types](https://www.iana.org/assignments/media-types/media-types.xhtml)
@@ -97,17 +97,18 @@ async function parseData(data, params) {
             case 'image':
                 switch (sub) {
                     case 'svg+xml':
-                        file = Buffer.from(data[mime]).toString('base64');
+                        // filedata = Buffer.from(data[mime]).toString('base64');
+                        filedata = btoa(data[mime]);
                         break;
                     default:
-                        file = data[mime].split('\n')[0];
+                        filedata = data[mime].split('\n')[0];
                         break;
                 }
                 {
                     const title = data['text/plain'];
                     const filename = `jupyter-output.${ext}`;
                     const response = await upload(
-                        base64ToBlob(file, mime),
+                        base64ToBlob(filedata, mime),
                         undefined,
                         filename,
                     );
@@ -118,13 +119,13 @@ async function parseData(data, params) {
             case 'audio':
                 switch (sub) {
                     default:
-                        file = data[mime].split('\n')[0];
+                        filedata = data[mime].split('\n')[0];
                         break;
                 }
                 {
                     const filename = `jupyter-output.${ext}`;
                     const response = await upload(
-                        base64ToBlob(file, mime),
+                        base64ToBlob(filedata, mime),
                         undefined,
                         filename,
                     );
@@ -135,13 +136,13 @@ async function parseData(data, params) {
             case 'video':
                 switch (sub) {
                     default:
-                        file = data[mime].split('\n')[0];
+                        filedata = data[mime].split('\n')[0];
                         break;
                 }
                 {
                     const filename = `jupyter-output.${ext}`;
                     const response = await upload(
-                        base64ToBlob(file, mime),
+                        base64ToBlob(filedata, mime),
                         undefined,
                         filename,
                     );
