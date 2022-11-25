@@ -316,17 +316,21 @@ class Output {
         const content = this.text.replaceAll('\r\n', '\n');
         const content_length = content.length;
         let ptr = chars.length;
+        let start = src.lastIndexOf('\n') + 1;
         for (let i = 0; i < content_length; ++i) {
             const c = content[i];
             switch (c) {
                 case '\b': // backspace
-                    if (ptr > 0) ptr--;
+                    if (ptr > start) ptr--;
                     break;
                 case '\r': // carriage return
-                    ptr = 0;
+                    ptr = start;
                     break;
+                case '\n': // line feed
+                    start = ptr + 1;
                 default:
                     chars[ptr++] = c;
+                    break;
             }
         }
         this.text = chars.slice(0, ptr).join('');

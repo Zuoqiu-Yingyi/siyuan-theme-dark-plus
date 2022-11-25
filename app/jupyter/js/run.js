@@ -336,22 +336,40 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
         if (msg_type === 'stream') { // 输出流
             if (markdown.indexOf('\r') >= 0 || markdown.indexOf('\b') >= 0) { // 编辑原块
                 if (message_info.current?.id) { // 有上一个块
-                    /* 删除原块 */
-                    if (/^\r\s*$/.test(markdown)) {
-                        await deleteBlock(message_info.current.id);
-                        message_info.current = null;
-                        return;
+                    /* 更新原块内容 */
+                    markdown = new Output(markdown)
+                        .parseControlChars(message_info.current.markdown) // 解析控制字符
+                        .toString();
+
+                    if (/^\s*$/.test(markdown)) { // 更新的都是空白字符
+                        /* 删除原块 */
+                        // await deleteBlock(message_info.current.id);
+                        // message_info.current = null;
+                        // return;
+
+                        /* 更新为空块 */
+                        markdown = '';
                     }
+
+                    let blocks = markdown.split('\n\n'); // 分割块
+
                     /* 更新原块 */
-                    else {
-                        /* 更新原块内容 */
-                        markdown = new Output(markdown)
-                            .parseControlChars(message_info.current.markdown) // 解析控制字符
-                            .toString();
-                        /* 更新块 */
-                        response = await updateBlock(
-                            message_info.current.id,
-                            markdown2kramdown(parseText(markdown, message_info.params), ial),
+                    response = await updateBlock(
+                        message_info.current.id,
+                        markdown2kramdown(
+                            parseText(blocks[0], message_info.params),
+                            blocks.length > 1
+                                ? null
+                                : ial,
+                        ),
+                    );
+
+                    /* 插入剩余块(若有) */
+                    for (let i = 1; i < blocks.length; ++i) {
+                        markdown = blocks[i];
+                        response = await appendBlock(
+                            message_info.output,
+                            markdown2kramdown(parseText(blocks[i], message_info.params), ial),
                         );
                     }
                 }
@@ -382,10 +400,15 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
         }
 
         /* 更新当前块信息 */
-        message_info.current = {
-            id: response?.[0]?.doOperations?.[0]?.id,
-            markdown: markdown,
-        };
+        if (/\n\s*$/.test(markdown)) { // 若以换行为结尾
+            message_info.current = null; // 当前块结束
+        }
+        else { // 若不以换行为结尾
+            message_info.current = { // 当前块可继续处理
+                id: response?.[0]?.doOperations?.[0]?.id,
+                markdown: markdown,
+            };
+        }
     }
 }
 

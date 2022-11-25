@@ -3,6 +3,7 @@
 - jupyter 导入工具支持解析 `code` 类型单元块的输入 | jupyter import tool support parsing input of `code` type cell.
 - 移除 monaco 编辑器中行内元素 IAL Token 前的零宽空格 | Remove zero-width space before IAL Token in inline element in monaco editor.
   - Adapt: [Issue #6712 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6712)
+- 修复 jupyter 对输出中的 `\r` 与 `\b` 控制字符的处理 | Fix jupyter processing of `\r` and `\b` control characters in output.
 
 ## v1.5.1/2022-11-24
 
