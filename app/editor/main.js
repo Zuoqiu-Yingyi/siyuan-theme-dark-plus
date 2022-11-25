@@ -738,33 +738,38 @@ window.onload = () => {
                 async function save() {
                     // 保存文件
                     let response;
+                    // REF: [数据库 `markdown` 字段与 API `getBlockKramdown` 中行级元素 IAL 前存在零宽空格 · Issue #6712 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6712)
+                    const content = compareVersion(window.editor.params.version, '2.5.1') <= 0
+                        ? window.editor.editor.getValue().replaceAll('**\u200b{:', '**{:')
+                        : window.editor.editor.getValue();
+
                     switch (window.editor.params.mode) {
                         case 'web':
                         case 'inbox':
-                            response = await saveAsFile(window.editor.editor.getValue(), window.editor.params.filename || undefined);
+                            response = await saveAsFile(content, window.editor.params.filename || undefined);
                             break;
                         case 'local':
                             response = await putFile(
                                 window.editor.params.path,
-                                window.editor.editor.getValue(),
+                                content,
                             ).then(() => config.editor.command.SAVED());
                             break;
                         case 'assets':
                             response = await putFile(
                                 window.editor.params.path,
-                                window.editor.editor.getValue(),
+                                content,
                             );
                             break;
                         case 'query':
                             response = await updateBlock(
                                 window.editor.params.id,
-                                `\{\{${window.editor.editor.getValue().trim()}\}\}\n${window.editor.params.block.ial}`,
+                                `\{\{${content.trim()}\}\}\n${window.editor.params.block.ial}`,
                             );
                             break;
                         case 'code':
                             response = await updateBlock(
                                 window.editor.params.id,
-                                `\`\`\`${window.editor.params.language}\n${window.editor.editor.getValue()}\n\`\`\`\n${window.editor.params.block.ial}`,
+                                `\`\`\`${window.editor.params.language}\n${content}\n\`\`\`\n${window.editor.params.block.ial}`,
                             );
                             break;
                         case 'item':
@@ -774,7 +779,7 @@ window.onload = () => {
                                 case 'kramdown':
                                     response = await updateBlock(
                                         window.editor.params.id,
-                                        window.editor.editor.getValue(),
+                                        content,
                                     );
                                     break;
                                 case 'markdown':
@@ -788,13 +793,13 @@ window.onload = () => {
                                 case 'kramdown':
                                     response = await updateBlock(
                                         window.editor.params.id,
-                                        window.editor.editor.getValue(),
+                                        content,
                                     );
                                     break;
                                 case 'markdown':
                                     response = await updateBlock(
                                         window.editor.params.id,
-                                        `${window.editor.editor.getValue().trim()}\n${window.editor.params.block.ial}`,
+                                        `${content.trim()}\n${window.editor.params.block.ial}`,
                                     );
                                 default:
                                     break;
@@ -805,10 +810,10 @@ window.onload = () => {
                                     let data;
                                     if (compareVersion(window.editor.params.version, '2.5.1') >= 0) {
                                         // REF: [使用 API `/api/block/getBlockKramdown` 查询时返回 IAL · Issue #6670 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6670)
-                                        data = window.editor.editor.getValue();
+                                        data = content;
                                     }
                                     else {
-                                        data = `${window.editor.editor.getValue().trim()}\n${window.editor.params.block.ial}`;
+                                        data = `${content.trim()}\n${window.editor.params.block.ial}`;
                                     }
                                     response = await updateBlock(
                                         window.editor.params.id,
