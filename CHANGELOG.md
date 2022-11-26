@@ -7,6 +7,7 @@
 - 修复 jupyter 在 Worker 环境无法进行 base64 解码问题 | Fix jupyter base64 decoding problem in Worker environment.
 - 设置 jupyter 输出块字体为等宽字体 | Set jupyter output block font to monospace font.
 - 修复块自定义字体功能 | Fix block custom font feature.
+- 完整实现 `*.ipynb` 解析工具 | Complete implementation of `*.ipynb` parsing tool.
 
 ## v1.5.1/2022-11-24
 

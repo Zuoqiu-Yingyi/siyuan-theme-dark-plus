@@ -34,7 +34,11 @@ var config = {
                 attrs: { // 折叠属性
                     fold: '1',
                 },
-            }
+            },
+            params: { // 解析参数
+                escaped: true, // 是否转义
+                cntrl: true, // 是否解析控制字符
+            },
         },
         output: {
             init: [ // 输出块初始化内容
