@@ -15,6 +15,7 @@ export {
     isEmptyObject, // 判断对象是否为空
     Output, // 输出解析器
     parseText, // 解析文本
+    parseData,
     markdown2kramdown, // Markdown 转 Kramdown
     nodeIdMaker, // 块 ID 生成器
 };
@@ -257,7 +258,8 @@ function HTMLDecode(text) {
 function createIAL(obj) {
     let IAL = [];
     for (const key in obj) {
-        IAL.push(`${key}="${HTMLEncode(obj[key]).replaceAll('\n', '_esc_newline_')}"`);
+        if (obj[key])
+            IAL.push(`${key}="${HTMLEncode(obj[key]).replaceAll('\n', '_esc_newline_')}"`);
     }
     return `{: ${IAL.join(' ')}}`;
 }
@@ -627,6 +629,115 @@ function parseText(text, params) {
     if (params.cntrl) output.parseCmdControlChars(params.escaped);
     else output.removeCmdControlChars();
     return output.toString();
+}
+
+
+/**
+ * 解析数据
+ * @params {object} data: 数据
+ * @params {object} params: 解析选项
+ * @return {string} 解析后的文本
+ */
+async function parseData(data, params) {
+    let filedata;
+    const markdowns = new Queue();
+    for (const mime in data) {
+        // REF [Media Types](https://www.iana.org/assignments/media-types/media-types.xhtml)
+        const main = mime.split('/')[0];
+        const sub = mime.split('/')[1];
+        const ext = sub.split('+')[0];
+        const serialized = sub.split('+')[1];
+
+        switch (main) {
+            case 'text':
+                switch (sub) {
+                    case 'plain':
+                        markdowns.enqueue(parseText(data[mime], params), 0);
+                        break;
+                    case 'html':
+                        markdowns.enqueue(`<div>${data[mime]}</div>`, 1);
+                        break;
+                    case 'markdown':
+                        markdowns.enqueue(data[mime], 1);
+                        break;
+                    default:
+                        markdowns.enqueue(`\`\`\`${ext}\n${data[mime]}\n\`\`\``, 2);
+                        break;
+                }
+                break;
+            case 'image':
+                switch (sub) {
+                    case 'svg+xml':
+                        // filedata = Buffer.from(data[mime]).toString('base64');
+                        filedata = btoa(data[mime]);
+                        break;
+                    default:
+                        filedata = data[mime].split('\n')[0];
+                        break;
+                }
+                {
+                    const title = data['text/plain'];
+                    const filename = `jupyter-output.${ext}`;
+                    const response = await upload(
+                        base64ToBlob(filedata, mime),
+                        undefined,
+                        filename,
+                    );
+                    const filepath = response?.data?.succMap[filename];
+                    if (filepath) markdowns.enqueue(`![${filename}](${filepath}${title ? ` "${title.replaceAll('"', '&quot;')}"` : ''})`, 3);
+                }
+                break;
+            case 'audio':
+                switch (sub) {
+                    default:
+                        filedata = data[mime].split('\n')[0];
+                        break;
+                }
+                {
+                    const filename = `jupyter-output.${ext}`;
+                    const response = await upload(
+                        base64ToBlob(filedata, mime),
+                        undefined,
+                        filename,
+                    );
+                    const filepath = response?.data?.succMap[filename];
+                    if (filepath) markdowns.enqueue(`<audio controls="controls" src="${filepath}" data-src="${filepath}"></audio>`, 3);
+                }
+                break;
+            case 'video':
+                switch (sub) {
+                    default:
+                        filedata = data[mime].split('\n')[0];
+                        break;
+                }
+                {
+                    const filename = `jupyter-output.${ext}`;
+                    const response = await upload(
+                        base64ToBlob(filedata, mime),
+                        undefined,
+                        filename,
+                    );
+                    const filepath = response?.data?.succMap[filename];
+                    if (filepath) markdowns.enqueue(`<video controls="controls" src="${filepath}" data-src="${filepath}"></video>`, 3);
+                }
+                break;
+            case 'application':
+                switch (sub) {
+                    case 'json':
+                        markdowns.enqueue(`\`\`\`json\n${JSON.stringify(data[mime], undefined, 4)}\n\`\`\``, 4);
+                        break;
+                    default:
+                        markdowns.enqueue(parseText(`<${mime}>`, params), 4);
+                        break;
+                }
+                break;
+            default:
+                markdowns.enqueue(parseText(`<${mime}>`, params), 4);
+                break;
+        }
+
+    }
+    return markdowns.items.map((item) => item.value).join('\n');
 }
 
 /**
