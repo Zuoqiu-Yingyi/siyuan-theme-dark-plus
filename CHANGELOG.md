@@ -5,6 +5,7 @@
   - Adapt: [Issue #6712 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6712)
 - 修复 jupyter 对输出中的 `\r` 与 `\b` 控制字符的处理 | Fix jupyter processing of `\r` and `\b` control characters in output.
 - 修复 jupyter 在 Worker 环境无法进行 base64 解码问题 | Fix jupyter base64 decoding problem in Worker environment.
+- 设置 jupyter 输出块字体为等宽字体 | Set jupyter output block font to monospace font.
 
 ## v1.5.1/2022-11-24
 
