@@ -374,6 +374,9 @@
   /* 运行时间-不显示行号 */
   left: 0.25em;
 }
+.protyle-wysiwyg [data-node-id][custom-jupyter-index].sb {
+  font-family: var(--b3-font-family-code);
+}
 .protyle-wysiwyg [data-node-id][custom-jupyter-index].sb::before {
   /* 运行结果 */
   color: var(--b3-card-info-color);
