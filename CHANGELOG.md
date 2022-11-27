@@ -8,6 +8,7 @@
 - 设置 jupyter 输出块字体为等宽字体 | Set jupyter output block font to monospace font.
 - 修复块自定义字体功能 | Fix block custom font feature.
 - 完整实现 `*.ipynb` 解析工具 | Complete implementation of `*.ipynb` parsing tool.
+- [#162](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/162) 修复 macOS 系统桌面端窗口控件重叠问题 | Fix macOS desktop window control overlap problem.
 
 ## v1.5.1/2022-11-24
 
