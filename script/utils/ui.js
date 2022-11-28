@@ -26,9 +26,15 @@ import {
     setTooltipDirection,
     requestFullscreen,
 } from './dom.js';
-import { Iterator } from './misc.js';
+import {
+    Iterator,
+    fileSelect,
+} from './misc.js';
 import { drag } from './drag.js';
-import { compareVersion } from './string.js';
+import {
+    removeOuterIAL,
+    compareVersion,
+} from './string.js';
 import {
     sql,
     getBlockBreadcrumb,
@@ -36,18 +42,41 @@ import {
     getBlockAttrs,
     getBlockIndex,
     setBlockAttrs,
+    getBlockKramdown,
     pushMsg,
     pushErrMsg,
 } from './api.js';
 
 // const jupyterConfig = getConf();
 // REF [Web Workers API - Web API 接口参考 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API)
-const jupyterWorker = new Worker('/appearance/themes/Dark+/app/jupyter/js/run.js', { type: 'module' });
+const jupyterWorker = new Worker(
+    '/appearance/themes/Dark+/app/jupyter/js/run.js',
+    {
+        type: 'module',
+        name: 'ui',
+    },
+);
+const jupyterImportWorker = new Worker(
+    '/appearance/themes/Dark+/app/jupyter/js/import.js',
+    {
+        type: 'module',
+        name: 'ui',
+    },
+);
+
 var jupyterConfig;
 
-jupyterWorker.addEventListener('error', e => {
+/* worker 错误捕获 */
+const worker_error_handler = e => {
     console.error(e);
-});
+};
+
+jupyterWorker.addEventListener('error', worker_error_handler);
+jupyterWorker.addEventListener('messageerror', worker_error_handler);
+
+jupyterImportWorker.addEventListener('error', worker_error_handler);
+jupyterImportWorker.addEventListener('messageerror', worker_error_handler);
+
 jupyterWorker.addEventListener('message', e => {
     // console.log(e);
     const data = JSON.parse(e.data);
@@ -65,9 +94,7 @@ jupyterWorker.addEventListener('message', e => {
             break;
     }
 });
-jupyterWorker.addEventListener('messageerror', e => {
-    console.error(e);
-});
+
 
 jupyterWorker.postMessage(JSON.stringify({
     type: 'call',
@@ -899,6 +926,13 @@ const TASK_HANDLER = {
         else
             editDocKramdown(id);
     },
+    /* 选择文件 */
+    'file-select': async (e, id, params) => {
+        fileSelect(params.accept, params.multiple).then(files => {
+            params.files = files;
+            TASK_HANDLER?.[params.callback](e, id, params);
+        });
+    },
     /* 保存输入框内容 */
     'save-input-value': async (e, id, params) => {
         const value = document.getElementById(params.id).value;
@@ -906,7 +940,7 @@ const TASK_HANDLER = {
         saveCustomFile(custom);
     },
     /* 处理输入框内容 */
-    'handle-input-value': async (e, id, params) => params.handler(e, id, params),
+    'handler': async (e, id, params) => params.handler(e, id, params),
     /* 关闭会话 */
     // 'jupyter-close-connection': closeConnection,
     'jupyter-close-connection': async (...args) => jupyterWorker.postMessage(JSON.stringify({
@@ -951,6 +985,16 @@ const TASK_HANDLER = {
                 ],
             }));
         }
+    },
+    /* 导入 *.ipynb */
+    'jupyter-import-ipynb': async (e, id, params) => {
+        /* 读取并解析 ipynb */
+        const ipynb = await params.files[0].text();
+        jupyterImportWorker.postMessage(JSON.stringify({
+            type: 'call',
+            handle: 'importJson',
+            params: [id, ipynb, params.mode],
+        }));
     },
     /* 归档页签 */
     'tab-archive': async (e, id, params) => {

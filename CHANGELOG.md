@@ -9,6 +9,11 @@
 - 修复块自定义字体功能 | Fix block custom font feature.
 - 完整实现 `*.ipynb` 解析工具 | Complete implementation of `*.ipynb` parsing tool.
 - [#162](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/162) 修复 macOS 系统桌面端窗口控件重叠问题 | Fix macOS desktop window control overlap problem.
+- 新增 jupyter Notebook (`*.ipynb`) 导入功能 | Add jupyter Notebook (`*.ipynb`) import feature.
+  - 覆盖模式 | Overwrite mode
+    - 导入的内容覆盖当前文档 | Import content overwrites current document.
+  - 追加模式 | Append mode
+    - 导入的内容追加到当前文档末尾 | Import content is appended to the end of the current document.
 
 ## v1.5.1/2022-11-24
 

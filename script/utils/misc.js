@@ -19,6 +19,7 @@ export {
     Iterator, // 创建循环迭代器
     getObjectLength, // 获取对象属性数量
     copyToClipboard, // 复制到剪贴板
+    fileSelect, // 文件选择
 };
 
 import { config } from './../module/config.js';
@@ -373,3 +374,34 @@ Date.prototype.format = function (fmt) {
     }
     return fmt;
 };
+
+/**
+ * 文件选择
+ * REF [<input type="file"> - HTML（超文本标记语言） | MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/file)
+ * @params {Array} accept: 可选择文件类型的字符串数组
+ * @params {boolean} multiple: 是否可多选
+ * @return {Promise}: 返回一个 Promise 对象，resolve 时返回文件对象数组
+ */
+async function fileSelect(accept = [], multiple = false) {
+    const input = document.createElement('input');
+    const handler = {};
+    input.type = 'file';
+    input.multiple = multiple;
+    input.accept = accept.join(',');
+    input.addEventListener('change', async e => {
+        // console.log(e);
+        // console.log(input);
+        // console.log(input.files);
+        if (input?.files?.length > 0) {
+            handler.resolve(input.files);
+        }
+        else {
+            handler.reject();
+        }
+    });
+    return new Promise((resolve, reject) => {
+        handler.resolve = resolve;
+        handler.reject = reject;
+        input.click();
+    });
+}
