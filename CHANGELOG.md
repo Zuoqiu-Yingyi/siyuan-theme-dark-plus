@@ -18,6 +18,7 @@
   - 追加模式 | Append mode
     - 导入的内容追加到当前文档末尾 | Import content is appended to the end of the current document.
 - 样式兼容 `v2.5.2` | Style compatible with `v2.5.2`.
+- 调整搜索结果列表样式 | Adjust search result list style.
 
 ## v1.5.1/2022-11-24
 

@@ -133,9 +133,14 @@
         }
     }
 
-    // 搜索结果内容显示方式
-    #searchList {
-        >.b3-list-item[data-type="search-item"] {
+}
+
+// 搜索结果内容显示方式
+#searchList,
+.search__list {
+    >.b3-list-item {
+        &[data-type="search-item"] {
+            /* 未分组 */
             padding-bottom: calc(1.25em + 1px);
 
             .b3-list-item__text {
@@ -148,6 +153,13 @@
                 bottom: 0.25em;
                 max-width: calc(100% - 12px);
                 line-height: 1.25em;
+            }
+        }
+
+        // 已分组
+        &:not([data-type="search-item"]) {
+            .b3-list-item__text {
+                color: var(--custom-popover-menu-path-color);
             }
         }
     }
