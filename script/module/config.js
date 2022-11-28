@@ -1309,6 +1309,58 @@ export var config = {
                                     ],
                                 },
                             },
+                            {
+                                enable: true,
+                                type: { NodeDocument: { enable: true } },
+                                mode: "button",
+                                icon: "#iconDownload",
+                                accelerator: "*.ipynb",
+                                label: {
+                                    zh_CN: "导入笔记 (覆盖)",
+                                    other: "Import Notebook (Overwrite)",
+                                },
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'file-select',
+                                            params: {
+                                                accept: ['.ipynb'], // 选择文件类型
+                                                multiple: false, // 是否允许多选
+                                                mode: 'w', // 覆盖当前文档
+                                                callback: 'jupyter-import-ipynb', // 处理方法
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: { NodeDocument: { enable: true } },
+                                mode: "button",
+                                icon: "#iconDownload",
+                                accelerator: "*.ipynb",
+                                label: {
+                                    zh_CN: "导入笔记 (追加)",
+                                    other: "Import Notebook (Append)",
+                                },
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'file-select',
+                                            params: {
+                                                accept: ['.ipynb'],
+                                                multiple: false,
+                                                mode: 'a', // 在当前文档末尾追加
+                                                callback: 'jupyter-import-ipynb',
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
                         ],
                     },
                     { // 发布设置

@@ -13,15 +13,20 @@ export {
     createIAL, // 创建内联属性表字符串
     createStyle, // 创建样式字符串
     isEmptyObject, // 判断对象是否为空
+    isString, // 判断对象是否为字符串
     Output, // 输出解析器
     parseText, // 解析文本
-    parseData,
+    parseData, // 解析数据
     markdown2kramdown, // Markdown 转 Kramdown
     nodeIdMaker, // 块 ID 生成器
+    workerInit, // 初始化 worker
 };
 
 import { config } from './config.js';
-import { jupyter } from './api.js';
+import {
+    upload,
+    jupyter,
+} from './api.js';
 
 /* 消息序列 */
 class Queue {
@@ -684,7 +689,7 @@ async function parseData(data, params) {
                         filename,
                     );
                     const filepath = response?.data?.succMap[filename];
-                    if (filepath) markdowns.enqueue(`![${filename}](${filepath}${title ? ` "${title.replaceAll('"', '&quot;')}"` : ''})`, 3);
+                    if (filepath) markdowns.enqueue(`![${filename}](${filepath}${isString(title) ? ` "${title.replaceAll('"', '&quot;')}"` : ''})`, 3);
                 }
                 break;
             case 'audio':
@@ -772,3 +777,35 @@ function nodeIdMaker() {
         '$1$2$3$4$5$6',
     )}-${(index++).toString(36).padStart(7, '0')}`;
 }
+
+/* worker 初始化 */
+function workerInit(self) {
+    if (self.name) { // 设置了 DedicatedWorkerGlobalScope.name 后才能正常运行
+        const worker_error_handler = e => {
+            console.error(e);
+        };
+        self.addEventListener('error', worker_error_handler);
+        self.addEventListener('messageerror', worker_error_handler);
+
+        self.addEventListener('message', async e => {
+            // console.log(e);
+            const data = JSON.parse(e.data);
+
+            const message = {
+                type: data.type,
+                handle: data.handle,
+            };
+
+            switch (data.type) {
+                case 'call':
+                    const handle = self?.handlers?.[data.handle];
+                    if (handle) message.return = await handle(...data.params);
+                    break;
+                default:
+                    break;
+            }
+
+            self.postMessage(JSON.stringify(message));
+        });
+    }
+};

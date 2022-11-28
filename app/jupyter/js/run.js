@@ -1,11 +1,3 @@
-export {
-    getConf, // 获取配置
-    runCell, // 运行单元格
-    runCells, // 运行多个单元格
-    restartKernel, // 重启内核
-    closeConnection, // 关闭连接
-}
-
 import {
     jupyter,
     queryBlock,
@@ -28,9 +20,24 @@ import {
     parseText,
     parseData,
     markdown2kramdown,
+    workerInit,
 } from './utils.js';
 
-import('./import.js');
+export {
+    getConf, // 获取配置
+    runCell, // 运行单元格
+    runCells, // 运行多个单元格
+    restartKernel, // 重启内核
+    closeConnection, // 关闭连接
+}
+
+self.handlers = {
+    getConf,
+    runCell,
+    runCells,
+    restartKernel,
+    closeConnection,
+};
 
 var lang;
 var websockets = {
@@ -553,29 +560,4 @@ async function runCells(e, IDs, params) {
     call(0);
 }
 
-self.addEventListener('error', e => {
-    console.error(e);
-});
-self.addEventListener('message', async e => {
-    // console.log(e);
-    const data = JSON.parse(e.data);
-
-    const message = {
-        type: data.type,
-        handle: data.handle,
-    };
-
-    switch (data.type) {
-        case 'call':
-            const handle = eval(data.handle);
-            message.return = await handle(...data.params);
-            break;
-        default:
-            break;
-    }
-
-    self.postMessage(JSON.stringify(message));
-});
-self.addEventListener('messageerror', e => {
-    console.error(e);
-});
+workerInit(self); // 初始化工作线程
