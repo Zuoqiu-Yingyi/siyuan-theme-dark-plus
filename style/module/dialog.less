@@ -9,6 +9,7 @@
             margin: 0 !important;
 
             ~div {
+
                 // 次级项
                 .b3-list-item {
                     &::before {
@@ -53,7 +54,7 @@
         background-color: var(--custom-dialog-background-color);
     }
 
-    >div:nth-child(3) {
+    .fn__flex-column {
         background-color: var(--custom-dialog-background-color);
         border-radius: inherit;
 
@@ -66,12 +67,37 @@
             }
         }
 
+        // 搜索提示信息
+        .b3-form__space--small {
+            >span {
+                font-size: 1em;
+            }
+
+            #searchPathInput {
+
+                .search__rmpath {
+                    /* 搜索路径移除按钮 */
+                    top: 0;
+
+                    &:hover {
+                        background-color: var(--b3-theme-on-surface);
+                    }
+                }
+            }
+
+            #searchPath {
+                padding: 0 !important;
+            }
+        }
+
         .layout-tab-bar {
             background-color: transparent;
 
-            .item__text {
-                /* 对话框页签 */
-                padding: 0 0.5em;
+            .item {
+                .item__text {
+                    /* 对话框页签 */
+                    padding: 0 0.5em;
+                }
             }
         }
     }
@@ -109,7 +135,7 @@
 
     // 搜索结果内容显示方式
     #searchList {
-        .b3-list-item[data-type="search-item"] {
+        >.b3-list-item[data-type="search-item"] {
             padding-bottom: calc(1.25em + 1px);
 
             .b3-list-item__text {
@@ -170,7 +196,7 @@ body {
             >.b3-dialog__container {
 
                 &,
-                >div>.fn__flex>.fn__flex-column {
+                &>div[style*="height"] {
                     width: var(--custom-dialog-search-width) !important;
                     height: var(--custom-dialog-search-height) !important;
                 }
@@ -190,38 +216,47 @@ body {
         >div[data-key] {
             >.b3-dialog {
                 >.b3-dialog__container {
-                    >div>.fn__flex>.fn__flex-column {
-                        /* 弹性盒子模式: 水平显示, 必要时折行 */
-                        flex-direction: row !important;
-                        flex-wrap: wrap;
 
-                        .search__header,
-                        .b3-form__space--small {
-                            /* 设置需要占满一行的项目 */
-                            width: 100%;
-                        }
+                    >div,
+                    >div.fn__flex {
+                        >.fn__flex-column {
+                            /* 弹性盒子模式: 水平显示, 必要时折行 */
+                            flex-direction: row !important;
+                            flex-wrap: wrap;
 
-                        #searchList,
-                        #searchPreview {
-                            /* 搜索结果与搜索结果预览分栏 */
-                            float: left;
-                            width: 50% !important;
-                        }
-
-                        .search__header:first-child {
-                            +.search__header:is(.fn__none) {
-
-                                ~#searchList,
-                                ~#searchPreview {
-                                    height: calc(100% - 92px) !important;
-                                }
+                            .search__header,
+                            .b3-form__space--small {
+                                /* 设置需要占满一行的项目 */
+                                width: 100%;
                             }
 
-                            +.search__header:not(.fn__none) {
+                            .search__header {
+                                /* 搜索栏 */
+                                border-bottom-color: var(--b3-theme-on-surface-light);
+                            }
 
-                                ~#searchList,
-                                ~#searchPreview {
-                                    height: calc(100% - 142px) !important;
+                            #searchList,
+                            #searchPreview {
+                                /* 搜索结果与搜索结果预览分栏 */
+                                float: left;
+                                width: 50% !important;
+                            }
+
+                            .search__header:first-child {
+                                +.search__header:is(.fn__none) {
+
+                                    ~#searchList,
+                                    ~#searchPreview {
+                                        height: calc(100% - 92px) !important;
+                                    }
+                                }
+
+                                +.search__header:not(.fn__none) {
+
+                                    ~#searchList,
+                                    ~#searchPreview {
+                                        height: calc(100% - 142px) !important;
+                                    }
                                 }
                             }
                         }

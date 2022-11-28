@@ -125,7 +125,7 @@ class SiyuanUtil {
     if (mutation.addedNodes.length > 0) {
       let node = mutation.addedNodes.item(0)
       // 新增 protyle 节点，即判断为打开了新文档
-      if (node && node.classList.contains('block__popover')) {
+      if (node?.classList?.contains('block__popover')) {
         // 因为 dom 树可能没有完全加载，需要延迟处理
         this.comment.appendToolbarBtn(node.querySelector('.protyle'))
       }

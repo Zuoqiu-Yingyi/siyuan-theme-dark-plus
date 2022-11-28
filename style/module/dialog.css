@@ -27,18 +27,31 @@
 .b3-dialog__container > .b3-dialog__header {
   background-color: var(--custom-dialog-background-color);
 }
-.b3-dialog__container > div:nth-child(3) {
+.b3-dialog__container .fn__flex-column {
   background-color: var(--custom-dialog-background-color);
   border-radius: inherit;
 }
-.b3-dialog__container > div:nth-child(3) .search__header,
-.b3-dialog__container > div:nth-child(3) .search__header > input {
+.b3-dialog__container .fn__flex-column .search__header,
+.b3-dialog__container .fn__flex-column .search__header > input {
   background-color: transparent;
 }
-.b3-dialog__container > div:nth-child(3) .layout-tab-bar {
+.b3-dialog__container .fn__flex-column .b3-form__space--small > span {
+  font-size: 1em;
+}
+.b3-dialog__container .fn__flex-column .b3-form__space--small #searchPathInput .search__rmpath {
+  /* 搜索路径移除按钮 */
+  top: 0;
+}
+.b3-dialog__container .fn__flex-column .b3-form__space--small #searchPathInput .search__rmpath:hover {
+  background-color: var(--b3-theme-on-surface);
+}
+.b3-dialog__container .fn__flex-column .b3-form__space--small #searchPath {
+  padding: 0 !important;
+}
+.b3-dialog__container .fn__flex-column .layout-tab-bar {
   background-color: transparent;
 }
-.b3-dialog__container > div:nth-child(3) .layout-tab-bar .item__text {
+.b3-dialog__container .fn__flex-column .layout-tab-bar .item .item__text {
   /* 对话框页签 */
   padding: 0 0.5em;
 }
@@ -58,13 +71,13 @@
   min-width: 100px;
   width: auto !important;
 }
-.b3-dialog__container #searchList .b3-list-item[data-type="search-item"] {
+.b3-dialog__container #searchList > .b3-list-item[data-type="search-item"] {
   padding-bottom: calc(1.25em + 1px);
 }
-.b3-dialog__container #searchList .b3-list-item[data-type="search-item"] .b3-list-item__text {
+.b3-dialog__container #searchList > .b3-list-item[data-type="search-item"] .b3-list-item__text {
   display: var(--custom-search-display);
 }
-.b3-dialog__container #searchList .b3-list-item[data-type="search-item"] .b3-list-item__meta {
+.b3-dialog__container #searchList > .b3-list-item[data-type="search-item"] .b3-list-item__meta {
   position: absolute;
   right: 8px;
   bottom: 0.25em;
@@ -99,7 +112,7 @@
  */
 /* 搜索对话框尺寸 */
 body > div[data-key] > .b3-dialog > .b3-dialog__container,
-body > div[data-key] > .b3-dialog > .b3-dialog__container > div > .fn__flex > .fn__flex-column {
+body > div[data-key] > .b3-dialog > .b3-dialog__container > div[style*="height"] {
   width: var(--custom-dialog-search-width) !important;
   height: var(--custom-dialog-search-height) !important;
 }
@@ -109,28 +122,42 @@ body > div[data-key] > .b3-dialog > .b3-dialog__container > .b3-dialog__close {
 }
 /* 窗口较宽时并排显示搜索结果 */
 @media screen and (min-width: 960px) {
-  body > div[data-key] > .b3-dialog > .b3-dialog__container > div > .fn__flex > .fn__flex-column {
+  body > div[data-key] > .b3-dialog > .b3-dialog__container > div > .fn__flex-column,
+  body > div[data-key] > .b3-dialog > .b3-dialog__container > div.fn__flex > .fn__flex-column {
     /* 弹性盒子模式: 水平显示, 必要时折行 */
     flex-direction: row !important;
     flex-wrap: wrap;
   }
-  body > div[data-key] > .b3-dialog > .b3-dialog__container > div > .fn__flex > .fn__flex-column .search__header,
-  body > div[data-key] > .b3-dialog > .b3-dialog__container > div > .fn__flex > .fn__flex-column .b3-form__space--small {
+  body > div[data-key] > .b3-dialog > .b3-dialog__container > div > .fn__flex-column .search__header,
+  body > div[data-key] > .b3-dialog > .b3-dialog__container > div.fn__flex > .fn__flex-column .search__header,
+  body > div[data-key] > .b3-dialog > .b3-dialog__container > div > .fn__flex-column .b3-form__space--small,
+  body > div[data-key] > .b3-dialog > .b3-dialog__container > div.fn__flex > .fn__flex-column .b3-form__space--small {
     /* 设置需要占满一行的项目 */
     width: 100%;
   }
-  body > div[data-key] > .b3-dialog > .b3-dialog__container > div > .fn__flex > .fn__flex-column #searchList,
-  body > div[data-key] > .b3-dialog > .b3-dialog__container > div > .fn__flex > .fn__flex-column #searchPreview {
+  body > div[data-key] > .b3-dialog > .b3-dialog__container > div > .fn__flex-column .search__header,
+  body > div[data-key] > .b3-dialog > .b3-dialog__container > div.fn__flex > .fn__flex-column .search__header {
+    /* 搜索栏 */
+    border-bottom-color: var(--b3-theme-on-surface-light);
+  }
+  body > div[data-key] > .b3-dialog > .b3-dialog__container > div > .fn__flex-column #searchList,
+  body > div[data-key] > .b3-dialog > .b3-dialog__container > div.fn__flex > .fn__flex-column #searchList,
+  body > div[data-key] > .b3-dialog > .b3-dialog__container > div > .fn__flex-column #searchPreview,
+  body > div[data-key] > .b3-dialog > .b3-dialog__container > div.fn__flex > .fn__flex-column #searchPreview {
     /* 搜索结果与搜索结果预览分栏 */
     float: left;
     width: 50% !important;
   }
-  body > div[data-key] > .b3-dialog > .b3-dialog__container > div > .fn__flex > .fn__flex-column .search__header:first-child + .search__header:is(.fn__none) ~ #searchList,
-  body > div[data-key] > .b3-dialog > .b3-dialog__container > div > .fn__flex > .fn__flex-column .search__header:first-child + .search__header:is(.fn__none) ~ #searchPreview {
+  body > div[data-key] > .b3-dialog > .b3-dialog__container > div > .fn__flex-column .search__header:first-child + .search__header:is(.fn__none) ~ #searchList,
+  body > div[data-key] > .b3-dialog > .b3-dialog__container > div.fn__flex > .fn__flex-column .search__header:first-child + .search__header:is(.fn__none) ~ #searchList,
+  body > div[data-key] > .b3-dialog > .b3-dialog__container > div > .fn__flex-column .search__header:first-child + .search__header:is(.fn__none) ~ #searchPreview,
+  body > div[data-key] > .b3-dialog > .b3-dialog__container > div.fn__flex > .fn__flex-column .search__header:first-child + .search__header:is(.fn__none) ~ #searchPreview {
     height: calc(100% - 92px) !important;
   }
-  body > div[data-key] > .b3-dialog > .b3-dialog__container > div > .fn__flex > .fn__flex-column .search__header:first-child + .search__header:not(.fn__none) ~ #searchList,
-  body > div[data-key] > .b3-dialog > .b3-dialog__container > div > .fn__flex > .fn__flex-column .search__header:first-child + .search__header:not(.fn__none) ~ #searchPreview {
+  body > div[data-key] > .b3-dialog > .b3-dialog__container > div > .fn__flex-column .search__header:first-child + .search__header:not(.fn__none) ~ #searchList,
+  body > div[data-key] > .b3-dialog > .b3-dialog__container > div.fn__flex > .fn__flex-column .search__header:first-child + .search__header:not(.fn__none) ~ #searchList,
+  body > div[data-key] > .b3-dialog > .b3-dialog__container > div > .fn__flex-column .search__header:first-child + .search__header:not(.fn__none) ~ #searchPreview,
+  body > div[data-key] > .b3-dialog > .b3-dialog__container > div.fn__flex > .fn__flex-column .search__header:first-child + .search__header:not(.fn__none) ~ #searchPreview {
     height: calc(100% - 142px) !important;
   }
 }
