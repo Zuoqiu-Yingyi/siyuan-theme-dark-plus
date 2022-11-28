@@ -14,6 +14,7 @@
     - 导入的内容覆盖当前文档 | Import content overwrites current document.
   - 追加模式 | Append mode
     - 导入的内容追加到当前文档末尾 | Import content is appended to the end of the current document.
+- 样式兼容 `v2.5.2` | Style compatible with `v2.5.2`.
 
 ## v1.5.1/2022-11-24
 
