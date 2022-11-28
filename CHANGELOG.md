@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.5.2/2022-11-29
+
+- [v1.5.1 <=> v1.5.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.5.1...v1.5.2)
 - jupyter 导入工具支持解析 `code` 类型单元块的输入 | jupyter import tool support parsing input of `code` type cell.
 - 移除 monaco 编辑器中行内元素 IAL Token 前的零宽空格 | Remove zero-width space before IAL Token in inline element in monaco editor.
   - Adapt: [Issue #6712 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6712)
