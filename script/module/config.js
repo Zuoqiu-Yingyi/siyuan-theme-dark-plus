@@ -1316,8 +1316,8 @@ export var config = {
                                 icon: "#iconDownload",
                                 accelerator: "*.ipynb",
                                 label: {
-                                    zh_CN: "导入笔记 (覆盖)",
-                                    other: "Import Notebook (Overwrite)",
+                                    zh_CN: "导入 Jupyter 笔记本 (覆盖)",
+                                    other: "Import Jupyter Notebook (Overwrite)",
                                 },
                                 click: {
                                     enable: true,
@@ -1342,8 +1342,8 @@ export var config = {
                                 icon: "#iconDownload",
                                 accelerator: "*.ipynb",
                                 label: {
-                                    zh_CN: "导入笔记 (追加)",
-                                    other: "Import Notebook (Append)",
+                                    zh_CN: "导入 Jupyter 笔记本 (追加)",
+                                    other: "Import Jupyter Notebook (Append)",
                                 },
                                 click: {
                                     enable: true,
