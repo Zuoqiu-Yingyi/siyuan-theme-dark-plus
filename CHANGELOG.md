@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 调整对话框样式 | Adjust dialog style.
+
 ## v1.5.2/2022-11-29
 
 - [v1.5.1 <=> v1.5.2](https:///github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.5.1...v1.5.2)

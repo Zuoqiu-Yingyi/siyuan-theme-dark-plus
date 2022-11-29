@@ -40,7 +40,7 @@
     background-attachment: fixed;
     background-color: transparent;
 
-    border-radius: var(--custom-border-radius);
+    border-radius: var(--custom-border-radius) !important;
 
     >.b3-dialog__close {
         &:hover {
@@ -52,6 +52,10 @@
     // 对话框半透明颜色
     >.b3-dialog__header {
         background-color: var(--custom-dialog-background-color);
+
+        +div {
+            border-radius: inherit;
+        }
     }
 
     .fn__flex-column {
@@ -165,6 +169,10 @@
     }
 }
 
+/* 搜索输入框 */
+.search__header,
+#searchInput,
+#replaceInput,
 /* 搜索结果列表 */
 #searchList,
 /* 搜索结果预览 */
@@ -229,46 +237,43 @@ body {
             >.b3-dialog {
                 >.b3-dialog__container {
 
-                    >div,
-                    >div.fn__flex {
-                        >.fn__flex-column {
-                            /* 弹性盒子模式: 水平显示, 必要时折行 */
-                            flex-direction: row !important;
-                            flex-wrap: wrap;
+                    .fn__flex-column {
+                        /* 弹性盒子模式: 水平显示, 必要时折行 */
+                        flex-direction: row !important;
+                        flex-wrap: wrap;
 
-                            .search__header,
-                            .b3-form__space--small {
-                                /* 设置需要占满一行的项目 */
-                                width: 100%;
-                            }
+                        .search__header,
+                        .b3-form__space--small {
+                            /* 设置需要占满一行的项目 */
+                            width: 100%;
+                        }
 
-                            .search__header {
-                                /* 搜索栏 */
-                                border-bottom-color: var(--b3-theme-on-surface-light);
-                            }
+                        .search__header {
+                            /* 搜索栏 */
+                            border-bottom-color: var(--b3-theme-on-surface-light);
+                        }
 
-                            #searchList,
-                            #searchPreview {
-                                /* 搜索结果与搜索结果预览分栏 */
-                                float: left;
-                                width: 50% !important;
-                            }
+                        #searchList,
+                        #searchPreview {
+                            /* 搜索结果与搜索结果预览分栏 */
+                            float: left;
+                            width: 50% !important;
+                        }
 
-                            .search__header:first-child {
-                                +.search__header:is(.fn__none) {
+                        .search__header:first-child {
+                            +.search__header:is(.fn__none) {
 
-                                    ~#searchList,
-                                    ~#searchPreview {
-                                        height: calc(100% - 92px) !important;
-                                    }
+                                ~#searchList,
+                                ~#searchPreview {
+                                    height: calc(100% - 92px) !important;
                                 }
+                            }
 
-                                +.search__header:not(.fn__none) {
+                            +.search__header:not(.fn__none) {
 
-                                    ~#searchList,
-                                    ~#searchPreview {
-                                        height: calc(100% - 142px) !important;
-                                    }
+                                ~#searchList,
+                                ~#searchPreview {
+                                    height: calc(100% - 142px) !important;
                                 }
                             }
                         }
