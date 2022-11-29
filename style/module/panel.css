@@ -335,3 +335,17 @@
 .layout-tab-container .block__icons {
   height: var(--custom-panel-title-height);
 }
+.block__popover .block__icons .counter,
+.layout-tab-container .block__icons .counter {
+  /* 计数器 */
+  margin: 0;
+  color: var(--b3-theme-on-background);
+  background-color: transparent;
+  outline: 1px solid;
+}
+.block__popover .block__icons .b3-text-field,
+.layout-tab-container .block__icons .b3-text-field {
+  /* 关键字过滤 */
+  background-color: transparent;
+  line-height: 22px;
+}

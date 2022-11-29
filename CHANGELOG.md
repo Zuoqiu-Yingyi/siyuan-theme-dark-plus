@@ -3,6 +3,7 @@
 - 调整对话框样式 | Adjust dialog style.
 - 调整搜索页签样式 | Adjust search tab style.
 - 调整对话框样式 | Adjust dialog style.
+- 调整反链面板控件样式 | Adjust backlink panel control style.
 
 ## v1.5.2/2022-11-29
 
