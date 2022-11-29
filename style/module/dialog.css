@@ -38,19 +38,6 @@
 .b3-dialog__container .fn__flex-column .search__header > input {
   background-color: transparent;
 }
-.b3-dialog__container .fn__flex-column .b3-form__space--small > span {
-  font-size: 1em;
-}
-.b3-dialog__container .fn__flex-column .b3-form__space--small #searchPathInput .search__rmpath {
-  /* 搜索路径移除按钮 */
-  top: 0;
-}
-.b3-dialog__container .fn__flex-column .b3-form__space--small #searchPathInput .search__rmpath:hover {
-  background-color: var(--b3-theme-on-surface);
-}
-.b3-dialog__container .fn__flex-column .b3-form__space--small #searchPath {
-  padding: 0 !important;
-}
 .b3-dialog__container .fn__flex-column .layout-tab-bar {
   background-color: transparent;
 }
@@ -73,6 +60,21 @@
   /* 自定义属性名称全宽显示 */
   min-width: 100px;
   width: auto !important;
+}
+.b3-form__space--small > span {
+  font-size: 1em;
+}
+.b3-form__space--small .search__path .search__rmpath {
+  /* 搜索路径移除按钮 */
+  top: 0;
+  background-color: transparent;
+}
+.b3-form__space--small .search__path .search__rmpath:hover {
+  color: var(--b3-theme-surface);
+  background-color: var(--b3-theme-on-surface);
+}
+.b3-form__space--small .block__icon {
+  padding: 0 !important;
 }
 #searchList > .b3-list-item[data-type="search-item"],
 .search__list > .b3-list-item[data-type="search-item"] {
