@@ -31,6 +31,9 @@
   background-color: var(--custom-dialog-background-color);
   border-radius: inherit;
 }
+.b3-dialog__container .b3-dialog__content {
+  background-color: transparent !important;
+}
 .b3-dialog__container .fn__flex-column {
   border-radius: inherit;
 }
@@ -111,8 +114,8 @@
 }
 #historyContainer .history__repo .history__repoheader {
   /* 历史控件栏 */
-  border-top: 1px solid var(--b3-theme-on-surface-light);
-  border-bottom: 1px solid var(--b3-theme-on-surface-light);
+  border-top: 1px solid var(--b3-scroll-color);
+  border-bottom: 1px solid var(--b3-scroll-color);
 }
 #historyContainer .history__asset,
 #historyContainer .history__text {
