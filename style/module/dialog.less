@@ -71,29 +71,6 @@
             }
         }
 
-        // 搜索提示信息
-        .b3-form__space--small {
-            >span {
-                font-size: 1em;
-            }
-
-            #searchPathInput {
-
-                .search__rmpath {
-                    /* 搜索路径移除按钮 */
-                    top: 0;
-
-                    &:hover {
-                        background-color: var(--b3-theme-on-surface);
-                    }
-                }
-            }
-
-            #searchPath {
-                padding: 0 !important;
-            }
-        }
-
         .layout-tab-bar {
             background-color: transparent;
 
@@ -137,6 +114,31 @@
         }
     }
 
+}
+
+// 搜索提示信息
+.b3-form__space--small {
+    >span {
+        font-size: 1em;
+    }
+
+    .search__path {
+
+        .search__rmpath {
+            /* 搜索路径移除按钮 */
+            top: 0;
+            background-color: transparent;
+
+            &:hover {
+                color: var(--b3-theme-surface);
+                background-color: var(--b3-theme-on-surface);
+            }
+        }
+    }
+
+    .block__icon {
+        padding: 0 !important;
+    }
 }
 
 // 搜索结果内容显示方式

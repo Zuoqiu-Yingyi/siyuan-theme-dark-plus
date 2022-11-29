@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 调整对话框样式 | Adjust dialog style.
+- 调整搜索页签样式 | Adjust search tab style.
 
 ## v1.5.2/2022-11-29
 
