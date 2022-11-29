@@ -54,12 +54,12 @@
         background-color: var(--custom-dialog-background-color);
 
         +div {
+            background-color: var(--custom-dialog-background-color);
             border-radius: inherit;
         }
     }
 
     .fn__flex-column {
-        background-color: var(--custom-dialog-background-color);
         border-radius: inherit;
 
         // 搜索内容输入框
@@ -186,6 +186,13 @@
 #historyContainer {
     >* {
         background-color: transparent !important;
+    }
+    .history__repo {
+        .history__repoheader {
+            /* 历史控件栏 */
+            border-top: 1px solid var(--b3-theme-on-surface-light);
+            border-bottom: 1px solid var(--b3-theme-on-surface-light);
+        }
     }
 
     .history__asset,
