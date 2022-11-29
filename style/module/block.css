@@ -1,1 +1,7 @@
 /* 块全局样式 */
+.b3-typography p,
+.protyle-wysiwyg p,
+.b3-typography [data-node-id],
+.protyle-wysiwyg [data-node-id] {
+  margin-bottom: 0;
+}

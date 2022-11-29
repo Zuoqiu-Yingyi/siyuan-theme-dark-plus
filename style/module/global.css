@@ -1,6 +1,6 @@
 /* 全局页面 */
 /* 背景图片 */
-body,
+body.fn__flex-column,
 .protyle.fullscreen {
   border: none;
   background-image: var(--custom-background-image);
