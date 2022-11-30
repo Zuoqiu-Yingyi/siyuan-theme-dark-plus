@@ -20,6 +20,14 @@ A dark theme (which also supports light mode, can you imagine that ~) of [SiYuan
 现已上架[思源笔记社区集市](https://github.com/siyuan-note/bazaar), 如果您喜欢本主题, 欢迎为本项目点亮一个⭐!  
 It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.com/siyuan-note/bazaar). If you like this theme, welcome to light up ⭐ for this project!
 
+## 反馈 | FEEDBACK
+
+- 中文 | Chinese
+  - [Dark+ - 链滴](https://ld246.com/tag/dark%2b)
+  - [Issues · Zuoqiu-Yingyi/siyuan-theme-dark-plus](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues)
+- 英文 | English
+  - [Issues · Zuoqiu-Yingyi/siyuan-theme-dark-plus](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues)
+
 ## 预览 | PREVIEW
 
 ![浅色-relative](./image/README/preview-light.png)

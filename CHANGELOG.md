@@ -6,6 +6,7 @@
 - 调整反链面板控件样式 | Adjust backlink panel control style.
 - 新增导出样式文件 `export.css` | Added export style file `export.css`.
 - 优化导出样式 | Optimize export style.
+- 添加反馈途径说明 | Add feedback method description.
 
 ## v1.5.2/2022-11-29
 
