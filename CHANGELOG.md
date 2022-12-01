@@ -7,6 +7,7 @@
 - 新增导出样式文件 `export.css` | Added export style file `export.css`.
 - 优化导出样式 | Optimize export style.
 - 添加反馈途径说明 | Add feedback method description.
+- 调整搜索与反链面板列表项样式 | Adjust search and backlink panel list item style.
 
 ## v1.5.2/2022-11-29
 
