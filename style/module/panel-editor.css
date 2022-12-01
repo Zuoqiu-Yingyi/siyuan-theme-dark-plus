@@ -67,9 +67,22 @@
   z-index: auto;
 }
 .protyle-preview {
-  /* 内容 */
+  /* 导出预览 */
   background-color: transparent;
   backdrop-filter: none;
+}
+.protyle-preview .protyle-preview__action {
+  /* 预览样式选择栏 */
+  background-color: var(--custom-components-deep);
+}
+.protyle-preview .protyle-preview__action > button {
+  /* 预览样式选择按钮 */
+  background-color: transparent;
+  border-radius: var(--custom-border-radius);
+}
+.protyle-preview .protyle-preview__action > button:hover {
+  /* 鼠标悬浮 */
+  background-color: var(--b3-theme-background-light);
 }
 .protyle-preview > .b3-typography {
   padding-left: var(--custom-editor-padding-left) !important;

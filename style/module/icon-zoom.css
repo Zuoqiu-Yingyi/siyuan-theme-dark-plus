@@ -7,11 +7,13 @@ svg.popover__block:hover,
 }
 .b3-list-item__icon:hover svg,
 .dock__item:hover svg,
+.b3-tooltips:hover svg,
 .toolbar__item:hover svg,
 .b3-list-item__action:hover svg,
 .block__icon:hover svg,
 .b3-list-item__icon:hover img,
 .dock__item:hover img,
+.b3-tooltips:hover img,
 .toolbar__item:hover img,
 .b3-list-item__action:hover img,
 .block__icon:hover img {
