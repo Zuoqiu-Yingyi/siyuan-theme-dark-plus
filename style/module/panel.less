@@ -93,10 +93,11 @@
     /* 侧边分栏面板 */
     .file-tree {
 
-        &:not(.sy__file, .sy__outline) {
+        &:not(.sy__file, .sy__tag, .sy__outline) {
             .tree(12px, 12px, 16px);
         }
 
+        &.sy__tag,
         &.sy__outline {
             &:hover {
                 .tree(12px, 12px, 18px);
