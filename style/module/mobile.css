@@ -4,6 +4,11 @@
   background-color: var(--custom-editor-background-color);
   backdrop-filter: var(--custom-backdrop-filter);
 }
+/* 移动端工具栏 */
+#keyboardToolbar,
+.toolbar--border {
+  background-color: var(--custom-editor-background-color);
+}
 #sidebar {
   background-color: var(--custom-popover-background-color);
 }
