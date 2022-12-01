@@ -10,6 +10,7 @@
 - 调整搜索与反链面板列表项样式 | Adjust search and backlink panel list item style.
 - 修复标签面板列表辅助线样式问题 | Fix ths issue of tag panel list guide line style.
 - 调整移动端工具栏样式 | Adjust mobile toolbar style.
+- 设置预览样式选择栏样式 | Set preview style select bar style.
 
 ## v1.5.2/2022-11-29
 
