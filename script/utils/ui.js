@@ -140,7 +140,7 @@ function createToolbarItem(toolbarConfig, className) {
     ) { // 按钮是否有多个状态且有默认状态
         const status = toolbarConfig.status[toolbarConfig.status.default];
         icon = status.icon;
-        label = status.label[language] || toolbarConfig.label.other;
+        label = status.label[language] || status.label.other;
         label += (status.hotkey && status.hotkey().enable !== false) ? ` [${printHotKey(status.hotkey())}]` : '';
     }
     else { // 按钮没有多个状态

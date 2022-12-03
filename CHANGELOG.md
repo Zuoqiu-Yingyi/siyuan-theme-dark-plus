@@ -11,6 +11,7 @@
 - 修复标签面板列表辅助线样式问题 | Fix ths issue of tag panel list guide line style.
 - 调整移动端工具栏样式 | Adjust mobile toolbar style.
 - 设置预览样式选择栏样式 | Set preview style select bar style.
+- [#164](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/164) 修复 i10n 回退至默认语言时出现的问题 | Fix an issue where i10n fell back to the default language.
 
 ## v1.5.2/2022-11-29
 
