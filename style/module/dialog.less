@@ -248,55 +248,56 @@ body {
 }
 
 /* 窗口较宽时并排显示搜索结果 */
-@media screen and (min-width: 960px) {
-    body {
-        >div[data-key] {
-            >.b3-dialog {
-                >.b3-dialog__container {
+/* @deprecated: [搜索界面支持左右布局 · Issue #6744 · siyuan-note/siyuan · GitHub](https://github.com/siyuan-note/siyuan/issues/6744) */
+// @media screen and (min-width: 960px) {
+//     body {
+//         >div[data-key] {
+//             >.b3-dialog {
+//                 >.b3-dialog__container {
 
-                    .fn__flex-column {
-                        /* 弹性盒子模式: 水平显示, 必要时折行 */
-                        flex-direction: row !important;
-                        flex-wrap: wrap;
+//                     .fn__flex-column {
+//                         /* 弹性盒子模式: 水平显示, 必要时折行 */
+//                         flex-direction: row !important;
+//                         flex-wrap: wrap;
 
-                        .search__header,
-                        .b3-form__space--small {
-                            /* 设置需要占满一行的项目 */
-                            width: 100%;
-                        }
+//                         .search__header,
+//                         .b3-form__space--small {
+//                             /* 设置需要占满一行的项目 */
+//                             width: 100%;
+//                         }
 
-                        .search__header {
-                            /* 搜索栏 */
-                            border-bottom-color: var(--b3-theme-on-surface-light);
-                        }
+//                         .search__header {
+//                             /* 搜索栏 */
+//                             border-bottom-color: var(--b3-theme-on-surface-light);
+//                         }
 
-                        #searchList,
-                        #searchPreview {
-                            /* 搜索结果与搜索结果预览分栏 */
-                            float: left;
-                            width: 50% !important;
-                        }
+//                         #searchList,
+//                         #searchPreview {
+//                             /* 搜索结果与搜索结果预览分栏 */
+//                             float: left;
+//                             width: 50% !important;
+//                         }
 
-                        .search__header:first-child {
-                            +.search__header:is(.fn__none) {
+//                         .search__header:first-child {
+//                             +.search__header:is(.fn__none) {
 
-                                ~#searchList,
-                                ~#searchPreview {
-                                    height: calc(100% - 92px) !important;
-                                }
-                            }
+//                                 ~#searchList,
+//                                 ~#searchPreview {
+//                                     height: calc(100% - 92px) !important;
+//                                 }
+//                             }
 
-                            +.search__header:not(.fn__none) {
+//                             +.search__header:not(.fn__none) {
 
-                                ~#searchList,
-                                ~#searchPreview {
-                                    height: calc(100% - 142px) !important;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+//                                 ~#searchList,
+//                                 ~#searchPreview {
+//                                     height: calc(100% - 142px) !important;
+//                                 }
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
