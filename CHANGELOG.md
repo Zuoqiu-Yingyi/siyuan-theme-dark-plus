@@ -16,6 +16,7 @@
   - Adapt: [Issue #6744 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6744)
 - 调整搜索对话框样式 | Adjust search dialog style.
   - Adapt: [Issue #6743 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6743)
+- 调整对话框关闭按钮样式 | Adjust the style of dialog close button.
 
 ## v1.5.2/2022-11-29
 
