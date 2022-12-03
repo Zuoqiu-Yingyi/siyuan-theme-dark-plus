@@ -155,7 +155,7 @@ window.theme.openNewWindow = function (
                 switch (mode.toLowerCase()) {
                     case 'editor':
                     case 'desktop':
-                        // newWin.removeMenu(); // 移除窗口的菜单栏
+                        newWin.removeMenu(); // 移除窗口的菜单栏
                         break;
                     case 'app':
                     case 'mobile':
