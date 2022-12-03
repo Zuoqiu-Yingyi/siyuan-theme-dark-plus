@@ -149,33 +149,4 @@ body > div[data-key] > .b3-dialog > .b3-dialog__container > .b3-dialog__close {
   right: calc((100vw - var(--custom-dialog-search-width)) / -2);
 }
 /* 窗口较宽时并排显示搜索结果 */
-@media screen and (min-width: 960px) {
-  body > div[data-key] > .b3-dialog > .b3-dialog__container .fn__flex-column {
-    /* 弹性盒子模式: 水平显示, 必要时折行 */
-    flex-direction: row !important;
-    flex-wrap: wrap;
-  }
-  body > div[data-key] > .b3-dialog > .b3-dialog__container .fn__flex-column .search__header,
-  body > div[data-key] > .b3-dialog > .b3-dialog__container .fn__flex-column .b3-form__space--small {
-    /* 设置需要占满一行的项目 */
-    width: 100%;
-  }
-  body > div[data-key] > .b3-dialog > .b3-dialog__container .fn__flex-column .search__header {
-    /* 搜索栏 */
-    border-bottom-color: var(--b3-theme-on-surface-light);
-  }
-  body > div[data-key] > .b3-dialog > .b3-dialog__container .fn__flex-column #searchList,
-  body > div[data-key] > .b3-dialog > .b3-dialog__container .fn__flex-column #searchPreview {
-    /* 搜索结果与搜索结果预览分栏 */
-    float: left;
-    width: 50% !important;
-  }
-  body > div[data-key] > .b3-dialog > .b3-dialog__container .fn__flex-column .search__header:first-child + .search__header:is(.fn__none) ~ #searchList,
-  body > div[data-key] > .b3-dialog > .b3-dialog__container .fn__flex-column .search__header:first-child + .search__header:is(.fn__none) ~ #searchPreview {
-    height: calc(100% - 92px) !important;
-  }
-  body > div[data-key] > .b3-dialog > .b3-dialog__container .fn__flex-column .search__header:first-child + .search__header:not(.fn__none) ~ #searchList,
-  body > div[data-key] > .b3-dialog > .b3-dialog__container .fn__flex-column .search__header:first-child + .search__header:not(.fn__none) ~ #searchPreview {
-    height: calc(100% - 142px) !important;
-  }
-}
+/* @deprecated: [搜索界面支持左右布局 · Issue #6744 · siyuan-note/siyuan · GitHub](https://github.com/siyuan-note/siyuan/issues/6744) */
