@@ -14,6 +14,8 @@
 - [#164](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/164) 修复 i10n 回退至默认语言时出现的问题 | Fix an issue where i10n fell back to the default language.
 - 移除搜索对话框左右分栏样式 | Removes the left and right column styles of the search dialog.
   - Adapt: [Issue #6744 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6744)
+- 调整搜索对话框样式 | Adjust search dialog style.
+  - Adapt: [Issue #6743 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6743)
 
 ## v1.5.2/2022-11-29
 
