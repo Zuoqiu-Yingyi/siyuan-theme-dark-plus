@@ -18,15 +18,26 @@
   backdrop-filter: var(--custom-backdrop-popover-filter);
   padding: var(--custom-popover-menu-padding-width);
 }
+.b3-menu .b3-menu__item .b3-menu__action:hover {
+  /* 菜单按钮控件 */
+  color: var(--b3-theme-surface);
+  background-color: var(--b3-theme-on-surface);
+}
+.b3-menu .b3-menu__item .b3-menu__icon.fn__a {
+  width: 8px;
+  height: 8px;
+  padding: 4px;
+  border-radius: 8px;
+}
+.b3-menu .b3-menu__item .b3-menu__icon.fn__a:hover {
+  /* 菜单按钮控件 */
+  color: var(--b3-theme-surface);
+  background-color: var(--b3-theme-on-surface);
+}
 .b3-menu .b3-menu__separator {
   /* 菜单分割线 */
   height: 2px;
   background-color: var(--custom-popover-menu-separator-color);
-}
-.b3-menu .b3-menu__action:hover {
-  /* 菜单按钮控件 */
-  color: var(--b3-theme-surface);
-  background-color: var(--b3-theme-on-surface);
 }
 .b3-menu > *:not(.emojis) input.b3-text-field {
   /* 输入框 */
