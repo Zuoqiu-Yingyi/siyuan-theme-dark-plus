@@ -18,6 +18,7 @@
   - Adapt: [Issue #6743 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6743)
 - 调整对话框关闭按钮样式 | Adjust the style of dialog close button.
 - 设置右键菜单项的关闭按钮的样式 | Set the style of the close button of the right-click menu item.
+- 调整块引用计数器样式 | Adjust block quote counter style.
 
 ## v1.5.2/2022-11-29
 
