@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - `i10n` 支持繁体中文 `zh_CHT` | Support Traditional Chinese `zh_CHT`.
+- 调整容器块宽度 | Adjust block container width.
 
 ## v1.5.3/2022-12-05
 
