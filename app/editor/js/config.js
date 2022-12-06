@@ -98,50 +98,171 @@ export var config = {
         },
         MAP: { // 字段映射
             LABELS: { // 标签
-                save: { zh_CN: '保存', default: 'Save' },
-                saveAs: { zh_CN: '另存为', default: 'Save As' },
-                openFileInVscode: { zh_CN: '在 VS Code 中打开文件', default: 'Open File in VS Code' },
-                openDirInVscode: { zh_CN: '在 VS Code 中打开目录', default: 'Open Directory in VS Code' },
-                copyhref: { zh_CN: '复制页面链接', default: 'Copy Link' },
-                copyfullhref: { zh_CN: '复制页面完整链接', default: 'Copy Full Link' },
-                wrap: { zh_CN: '切换自动换行', default: 'Toggle Word Wrap' },
-                pin: { zh_CN: '窗口置顶/取消置顶', default: 'Window Pin/Unpin' },
+                save: {
+                    zh_CN: '保存',
+                    zh_CHT: '保存',
+                    default: 'Save'
+                },
+                saveAs: {
+                    zh_CN: '另存为',
+                    zh_CHT: '另存為',
+                    default: 'Save As'
+                },
+                openFileInVscode: {
+                    zh_CN: '在 VS Code 中打开文件',
+                    zh_CHT: '在 VS Code 中打開文件',
+                    default: 'Open File in VS Code'
+                },
+                openDirInVscode: {
+                    zh_CN: '在 VS Code 中打开目录',
+                    zh_CHT: '在 VS Code 中打開目錄',
+                    default: 'Open Directory in VS Code'
+                },
+                copyhref: {
+                    zh_CN: '复制页面链接',
+                    zh_CHT: '復製頁面鏈接',
+                    default: 'Copy Link'
+                },
+                copyfullhref: {
+                    zh_CN: '复制页面完整链接',
+                    zh_CHT: '復製頁面完整鏈接',
+                    default: 'Copy Full Link'
+                },
+                wrap: {
+                    zh_CN: '切换自动换行',
+                    zh_CHT: '切換自動換行',
+                    default: 'Toggle Word Wrap'
+                },
+                pin: {
+                    zh_CN: '窗口置顶/取消置顶',
+                    zh_CHT: '窗口置頂/取消置頂',
+                    default: 'Window Pin/Unpin'
+                },
                 unSaved: {
                     zh_CN: "是否不保存更改？\n如果不保存，你的更改将丢失。",
+                    zh_CHT: "是否不保存更改？\n如果不保存，你的更改將丟失。",
                     default: "Do you not save your changes?\nIf you don't save, your changes will be lost"
                 },
                 mode: {
-                    local: { zh_CN: '本地文件', default: 'Local File' },
-                    assets: { zh_CN: '资源文件', default: 'Asset File' },
-                    web: { zh_CN: '网络文件', default: 'Web File' },
-                    inbox: { zh_CN: '收集箱', default: 'Inbox' },
-                    history: { zh_CN: '文档历史', default: 'History' },
+                    local: {
+                        zh_CN: '本地文件',
+                        zh_CHT: '本地文件',
+                        default: 'Local File'
+                    },
+                    assets: {
+                        zh_CN: '资源文件',
+                        zh_CHT: '資源文件',
+                        default: 'Asset File'
+                    },
+                    web: {
+                        zh_CN: '网络文件',
+                        zh_CHT: '網絡文件',
+                        default: 'Web File'
+                    },
+                    inbox: {
+                        zh_CN: '收集箱',
+                        zh_CHT: '收集箱',
+                        default: 'Inbox'
+                    },
+                    history: {
+                        zh_CN: '文档历史',
+                        zh_CHT: '文檔歷史',
+                        default: 'History'
+                    },
                 },
 
                 type: {
-                    d: { zh_CN: '文档块', default: 'Document' },
-                    h: { zh_CN: '标题块', default: 'Heading' },
-                    l: { zh_CN: '列表块', default: 'List' },
-                    i: { zh_CN: '列表项', default: 'List Item' },
-                    c: { zh_CN: '代码块', default: 'Code' },
-                    m: { zh_CN: '公式块', default: 'Math' },
-                    t: { zh_CN: '表格块', default: 'Table' },
-                    b: { zh_CN: '引述块', default: 'Quote' },
-                    s: { zh_CN: '超级块', default: 'Super' },
-                    p: { zh_CN: '段落块', default: 'Paragraph' },
-                    tb: { zh_CN: '分隔线', default: 'hr' },
-                    html: { zh_CN: 'HTML块', default: 'HTML' },
-                    video: { zh_CN: '视频块', default: 'Video' },
-                    audio: { zh_CN: '音频块', default: 'Audio' },
-                    widget: { zh_CN: '挂件块', default: 'Widget' },
-                    iframe: { zh_CN: 'iframe', default: 'Iframe' },
-                    query_embed: { zh_CN: '嵌入块', default: 'Query' },
+                    d: {
+                        zh_CN: '文档块',
+                        zh_CHT: '文檔塊',
+                        default: 'Document'
+                    },
+                    h: {
+                        zh_CN: '标题块',
+                        zh_CHT: '標題塊',
+                        default: 'Heading'
+                    },
+                    l: {
+                        zh_CN: '列表块',
+                        zh_CHT: '列表塊',
+                        default: 'List'
+                    },
+                    i: {
+                        zh_CN: '列表项',
+                        zh_CHT: '列表項',
+                        default: 'List Item'
+                    },
+                    c: {
+                        zh_CN: '代码块',
+                        zh_CHT: '代碼塊',
+                        default: 'Code'
+                    },
+                    m: {
+                        zh_CN: '公式块',
+                        zh_CHT: '公式塊',
+                        default: 'Math'
+                    },
+                    t: {
+                        zh_CN: '表格块',
+                        zh_CHT: '表格塊',
+                        default: 'Table'
+                    },
+                    b: {
+                        zh_CN: '引述块',
+                        zh_CHT: '引述塊',
+                        default: 'Quote'
+                    },
+                    s: {
+                        zh_CN: '超级块',
+                        zh_CHT: '超級塊',
+                        default: 'Super'
+                    },
+                    p: {
+                        zh_CN: '段落块',
+                        zh_CHT: '段落塊',
+                        default: 'Paragraph'
+                    },
+                    tb: {
+                        zh_CN: '分隔线',
+                        zh_CHT: '分隔線',
+                        default: 'hr'
+                    },
+                    html: {
+                        zh_CN: 'HTML块',
+                        zh_CHT: 'HTML塊',
+                        default: 'HTML'
+                    },
+                    video: {
+                        zh_CN: '视频块',
+                        zh_CHT: '視頻塊',
+                        default: 'Video'
+                    },
+                    audio: {
+                        zh_CN: '音频块',
+                        zh_CHT: '音頻塊',
+                        default: 'Audio'
+                    },
+                    widget: {
+                        zh_CN: '挂件块',
+                        zh_CHT: '掛件塊',
+                        default: 'Widget'
+                    },
+                    iframe: {
+                        zh_CN: 'iframe',
+                        zh_CHT: 'iframe',
+                        default: 'Iframe'
+                    },
+                    query_embed: {
+                        zh_CN: '嵌入块',
+                        zh_CHT: '嵌入塊',
+                        default: 'Query'
+                    },
 
                 },
             },
             LANGS: {
                 zh_CN: 'zh-cn',
-                zh_CNT: 'zh-tw',
+                zh_CHT: 'zh-tw',
                 en_US: '',
                 fr_FR: 'fr',
                 default: '',

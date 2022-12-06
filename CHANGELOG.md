@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- `i10n` 支持繁体中文 `zh_CHT` | Support Traditional Chinese `zh_CHT`.
+
 ## v1.5.3/2022-12-05
 
 - [v1.5.2 <=> v1.5.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.5.2...v1.5.3)
