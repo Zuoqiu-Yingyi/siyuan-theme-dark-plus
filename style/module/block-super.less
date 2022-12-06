@@ -5,21 +5,16 @@
     [data-node-id].sb {
         /* 调整超级块中元素间距 */
         // REF [roeseth/Siyuan-Golden-Topaz-Refined](https://github.com/roeseth/Siyuan-Golden-Topaz-Refined)
-        // background-color: var(--b3-theme-background-secondary);
         border-radius: var(--custom-border-radius);
-        padding: var(--custom-block-padding);
+        margin: var(--custom-block-super-margin);
+        padding: var(--custom-block-super-padding);
+
         background-color: var(--custom-block-super-background-color);
-        box-shadow: 0 0 var(--custom-box-shadow-spread) 0 var(--b3-theme-on-surface-light);
-        // margin-bottom: 16px;
+        box-shadow: 0 0 var(--custom-block-super-margin) 0 var(--b3-theme-on-surface-light);
 
         &:hover {
             /* 超级块鼠标悬停时显示边框 */
             outline: 1px solid var(--b3-theme-on-surface);
-        }
-
-        [data-node-id].sb {
-            border-radius: var(--custom-border-radius);
-            margin: var(--custom-block-padding);
         }
     }
 }
