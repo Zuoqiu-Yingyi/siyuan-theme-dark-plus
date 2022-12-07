@@ -2,6 +2,7 @@
 
 - `i10n` 支持繁体中文 `zh_CHT` | Support Traditional Chinese `zh_CHT`.
 - 调整容器块宽度 | Adjust block container width.
+- 修复页面加载时功能按钮状态未显示问题 | Fix the issue that the function button status is not displayed when the page is loaded.
 
 ## v1.5.3/2022-12-05
 

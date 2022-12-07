@@ -162,9 +162,9 @@ function createToolbarItem(toolbarConfig, className) {
  * 恢复工具栏菜单项用户默认配置
  */
 function itemStateLoad(id, states, node) {
-    if (states[id]) {
+    const conf = states[id];
+    if (conf) {
         // 存在自定义配置
-        const conf = states[id];
         // console.log(conf, conf.state, conf.state == null);
         const state = conf.state ?? conf.default ?? false;
         // console.log(state);
@@ -419,8 +419,10 @@ function toolbarItemListPush(item) {
                     custom_tooldock.style.height = position.height;
                 }
             }
-
         }
+
+        /* 将元素插入界面 */
+        custom_toolbar.append(item.node);
 
         /* 重新计时 */
         clearTimeout(toolbar_timeout_id);
@@ -444,9 +446,6 @@ function toolbarItemListPush(item) {
             }
         }, config.theme.toolbar.delay);
     }
-
-    /* 恢复保存的状态 */
-    itemStateLoad(item.id, custom.theme.toolbar, item.node);
 }
 
 /**
@@ -562,9 +561,10 @@ function toolbarItemChangeStatu(
 function toolbarItemInit(toolbarConfig, handler, svgClassIndex = 0) {
     let fn = () => setTimeout(handler, 0);
 
+    // 添加按钮点击监听器
+    let listener = e => e.addEventListener('click', (_) => fn());
     // 在工具栏添加按钮
     let node = toolbarItemInsert(toolbarConfig);
-    let listener = e => e.addEventListener('click', (_) => fn());
 
     // 是否禁用该按钮
     toolbarItemChangeStatu(
@@ -576,6 +576,9 @@ function toolbarItemInit(toolbarConfig, handler, svgClassIndex = 0) {
         undefined,
         listener,
     )
+
+    // 加载该按钮的原状态
+    itemStateLoad(toolbarConfig.id, custom.theme.toolbar, node);
 
     // 是否设置颜色
     if (svgClassIndex > 0 && svgClassIndex < svgClassList.length) {
@@ -941,6 +944,25 @@ const TASK_HANDLER = {
     },
     /* 处理输入框内容 */
     'handler': async (e, id, params) => params.handler(e, id, params),
+    /* 打开全局设置窗口 */
+    'jupyter-open-global-settings': async (e, id, params) => {
+        window.theme.openNewWindow(
+            'browser',
+            params.href,
+            Object.assign({ id: id }, params.urlParams),
+            config.theme.window.windowParams,
+            config.theme.window.menu.template,
+            undefined,
+            undefined,
+            undefined,
+            async (...args) => jupyterWorker.postMessage(JSON.stringify({
+                type: 'call',
+                handle: 'reloadCustomJson',
+                params: [],
+            })),
+        );
+        return null;
+    },
     /* 关闭会话 */
     // 'jupyter-close-connection': closeConnection,
     'jupyter-close-connection': async (...args) => jupyterWorker.postMessage(JSON.stringify({

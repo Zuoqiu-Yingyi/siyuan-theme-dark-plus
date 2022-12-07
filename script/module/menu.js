@@ -114,6 +114,7 @@ function blockMenuEnable() {
         block_menu_observer.takeRecords();
         block_menu_enable = false;
     }
+    console.log('block menu enable:', block_menu_enable);
     // 更改菜单栏按钮状态
     toolbarItemChangeStatu(
         config.theme.menu.block.toolbar.id,
@@ -186,7 +187,7 @@ async function loadFonts(menuItems, fonts, mode) {
 }
 
 /* 加载字体菜单项 */
-async function loadFontsItem(items, fontList) {
+async function loadFontsItem() {
     let system_fonts = await getSysFonts();
     loadFonts(config.theme.menu.block.items[0].items, COMMON_FONTS, 'custom-font-family');
     loadFonts(config.theme.menu.block.items[1].items, system_fonts, 'style');
