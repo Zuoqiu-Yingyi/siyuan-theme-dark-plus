@@ -2,6 +2,7 @@ export {
     url,
     config,
     i18n,
+    loadCustomJs,
 }
 
 import { merge } from './utils.js';
@@ -300,12 +301,16 @@ var config = {
 
 const i18n = (key, lang) => config.jupyter.i18n[key][lang] || config.jupyter.i18n[key].default;
 
-try {
-    // 合并配置文件 custom.js
-    const customjs = await import('/widgets/custom.js');
-    if (customjs.config) merge(config, customjs.config);
-} catch (err) {
-    console.warn(err);
-} finally {
-    console.log(config);
+async function loadCustomJs(path = '/widgets/custom.js') {
+    try {
+        // 合并配置文件 custom.js
+        const customjs = await import(path);
+        if (customjs?.config?.jupyter) merge(config.jupyter, customjs.config.jupyter);
+    } catch (err) {
+        console.warn(err);
+    } finally {
+        console.log(config);
+    }
 }
+
+await loadCustomJs();

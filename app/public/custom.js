@@ -4,6 +4,7 @@ export {
     custom,
     saveCustomFile,
     loadCustomFile,
+    loadCustomJson,
 };
 
 import { config } from './config.js';
@@ -36,12 +37,16 @@ async function loadCustomFile(path = config.customJsonFilePath) {
     return customjson;
 }
 
-try {
-    const customjson = await loadCustomFile();
-    if (customjson) merge(custom, customjson);
-    await saveCustomFile(custom);
-} catch (err) {
-    console.warn(err);
-} finally {
-    console.log(custom);
+async function loadCustomJson(path = config.customJsonFilePath) {
+    try {
+        const customjson = await loadCustomFile(path);
+        if (customjson) merge(custom, customjson);
+        await saveCustomFile(custom);
+    } catch (err) {
+        console.warn(err);
+    } finally {
+        console.log(custom);
+    }
 }
+
+await loadCustomJson();

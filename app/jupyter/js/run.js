@@ -11,7 +11,10 @@ import {
     config,
     i18n,
 } from './config.js';
-import { custom } from './../../public/custom.js';
+import {
+    custom,
+    loadCustomJson,
+} from './../../public/custom.js';
 import {
     Queue,
     Output,
@@ -29,6 +32,7 @@ export {
     runCells, // 运行多个单元格
     restartKernel, // 重启内核
     closeConnection, // 关闭连接
+    reloadCustomJson, // 重新加载配置
 }
 
 self.handlers = {
@@ -37,6 +41,7 @@ self.handlers = {
     runCells,
     restartKernel,
     closeConnection,
+    reloadCustomJson,
 };
 
 var lang;
@@ -558,6 +563,11 @@ async function runCells(e, IDs, params) {
         if (i < IDs.length) runCell(e, IDs[i], params, async _ => call(i + 1));
     };
     call(0);
+}
+
+/* 重新加载配置 */
+async function reloadCustomJson(...args) {
+    loadCustomJson();
 }
 
 workerInit(self); // 初始化工作线程

@@ -1,5 +1,13 @@
 /* 配置文件(可以被 data/widgets/custom.js 覆盖) */
 
+export {
+    config,
+    custom,
+    loadCustomJs,
+    saveCustomFile,
+    loadCustomJson,
+}
+
 import { merge } from './../utils/misc.js';
 import {
     getFile,
@@ -8,8 +16,7 @@ import {
 
 const THEME_PATHNAME = "/appearance/themes/Dark+";
 
-export var config = {
-    token: '', // API token, 无需填写
+const config = {
     custom: {
         // 自定义配置
         path: '/data/widgets/custom.json', // 自定义配置文件路径
@@ -1134,7 +1141,7 @@ export var config = {
                                     callback: null,
                                     tasks: [
                                         {
-                                            type: 'window-open',
+                                            type: 'jupyter-open-global-settings',
                                             params: {
                                                 href: `${THEME_PATHNAME}/app/jupyter/settings-global.html`,
                                                 urlParams: { lang: window.theme.languageMode },
@@ -3002,21 +3009,24 @@ export var config = {
     },
 };
 
-try {
-    // 合并配置文件 custom.js
-    const customjs = await import('/widgets/custom.js');
-    if (customjs) {
-        if (customjs.config) merge(config, customjs.config);
-        if (customjs.scripts) customjs.scripts.forEach(_ => eval(_));
+async function loadCustomJs(path = '/widgets/custom.js') {
+    try {
+        // 合并配置文件 custom.js
+        const customjs = await import(path);
+        if (customjs?.config?.custom) merge(config.custom, customjs.config.custom);
+        if (customjs?.config?.theme) merge(config.theme, customjs.config.theme);
+        if (customjs?.scripts) customjs.scripts.forEach(_ => eval(_));
+    } catch (err) {
+        console.warn(err);
+    } finally {
+        console.log(config);
     }
-} catch (err) {
-    console.warn(err);
-} finally {
-    console.log(config);
 }
 
+await loadCustomJs();
+
 // 用户配置
-export var custom = {
+const custom = {
     theme: {
         toolbar: {
             [config.theme.toolbar.more.id]: {
@@ -3039,19 +3049,23 @@ export var custom = {
 };
 
 /* 保存用户配置至文件 */
-export async function saveCustomFile(data = custom, path = config.custom.path) {
+async function saveCustomFile(data = custom, path = config.custom.path) {
     const response = await putFile(path, JSON.stringify(data, undefined, 4));
     // console.log(response);
     return response;
 }
 
-try {
-    // 合并配置文件 custom.json
-    let customjson = await getFile(config.custom.path);
-    if (customjson) customjson = await customjson.json();
-    if (customjson) merge(custom, customjson);
-} catch (err) {
-    console.warn(err);
-} finally {
-    console.log(custom);
+async function loadCustomJson(path = config.custom.path) {
+    try {
+        // 合并配置文件 custom.json
+        let customjson = await getFile(path);
+        if (customjson) customjson = await customjson.json();
+        if (customjson) merge(custom, customjson);
+    } catch (err) {
+        console.warn(err);
+    } finally {
+        console.log(custom);
+    }
 }
+
+await loadCustomJson();
