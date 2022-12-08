@@ -114,7 +114,6 @@ function blockMenuEnable() {
         block_menu_observer.takeRecords();
         block_menu_enable = false;
     }
-    console.log('block menu enable:', block_menu_enable);
     // 更改菜单栏按钮状态
     toolbarItemChangeStatu(
         config.theme.menu.block.toolbar.id,

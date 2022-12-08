@@ -65,9 +65,13 @@ function getDockFromPanel(panelName) {
  * @return {null} 光标不在块内
  */
 function getFocusedBlock() {
-    let block = window.getSelection()?.focusNode?.parentElement; // 当前光标
-    while (block != null && block.dataset.nodeId == null) block = block.parentElement;
-    return block;
+    if (document.activeElement.classList.contains('protyle-wysiwyg')) {
+        /* 光标在编辑区内 */
+        let block = window.getSelection()?.focusNode?.parentElement; // 当前光标
+        while (block != null && block?.dataset?.nodeId == null) block = block.parentElement;
+        return block;
+    }
+    else return null;
 }
 
 /**
@@ -89,6 +93,12 @@ function getFocusedBlockID() {
  * @return {null} 没有聚焦的文档
  */
 function getFocusedDoc() {
+    /* 点击按钮后焦点就发生了变化, 不能通过 document.activeElement 获取文档 */
+    // const wysiwyg = document.activeElement;
+    // return wysiwyg.classList.contains('protyle-wysiwyg')
+    //     ? wysiwyg
+    //     : null;
+
     return document.querySelector('div.layout__wnd--active div.protyle:not(.fn__none) > div.protyle-content > div.protyle-wysiwyg[data-doc-type]')
         || document.querySelector('#editor > div.protyle-content >  div.protyle-wysiwyg[data-doc-type]')
         || null;
@@ -100,9 +110,19 @@ function getFocusedDoc() {
  * @return {null} 没有聚焦的文档
  */
 function getFocusedDocBackground() {
-    return document.querySelector('div.layout__wnd--active div.protyle:not(.fn__none) > div.protyle-content > div.protyle-background')
-        || document.querySelector('#editor > div.protyle-content > div.protyle-background')
-        || null;
+    // return document.querySelector('div.layout__wnd--active div.protyle:not(.fn__none) > div.protyle-content > div.protyle-background')
+    //     || document.querySelector('#editor > div.protyle-content > div.protyle-background')
+    //     || null;
+
+    const wysiwyg = getFocusedDoc();
+    // console.log(wysiwyg);
+
+    var background = wysiwyg;
+    while (background != null && background.classList.contains('protyle-background') === false)
+        background = background.previousElementSibling;
+    return background
+        ? background
+        : null;
 }
 
 /**
@@ -112,6 +132,7 @@ function getFocusedDocBackground() {
  */
 function getFocusedDocID() {
     let background = getFocusedDocBackground();
+    // console.log(background);
     if (background) {
         return background.dataset.nodeId;
     }
