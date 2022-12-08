@@ -75,8 +75,9 @@ async function updateSliderHandler(target, mode = config.theme.location.record.m
 /**
  * 处理焦点事件
  */
-async function focusHandler(e) {
-    // console.log(e);
+async function focusHandler() {
+    // console.log(document.getSelection()?.focusNode?.parentElement);
+
     /* 取消当前编辑区 */
     const block = getFocusedBlock(); // 当前光标所在块
     /* 当前块已经设置焦点 */
@@ -87,8 +88,18 @@ async function focusHandler(e) {
     /* 当前块未设置焦点 */
     const editor = getTargetEditor(block); // 当前光标所在块位于的编辑区
     if (editor) {
-        editor.querySelectorAll(`.${config.theme.location.focus.className}`).forEach(element => element.classList.remove(config.theme.location.focus.className));
-        document.querySelectorAll(`#${config.theme.location.focus.id}`).forEach(element => element.removeAttribute('id'));
+        // editor.querySelectorAll(`.${config.theme.location.focus.className}`).forEach(element => element.classList.remove(config.theme.location.focus.className));
+        // document.querySelectorAll(`#${config.theme.location.focus.id}`).forEach(element => element.removeAttribute('id'));
+
+        let element;
+        while (element = document.getElementById(config.theme.location.focus.id)) {
+            element.removeAttribute('id');
+        }
+
+        Array.prototype.forEach.call(
+            editor.getElementsByClassName(config.theme.location.focus.className),
+            element => element.classList.remove(config.theme.location.focus.className),
+        )
 
         block.classList.add(config.theme.location.focus.className);
         block.id = config.theme.location.focus.id;
@@ -261,8 +272,9 @@ setTimeout(() => {
             }
             if (config.theme.location.focus.enable) {
                 // 跟踪当前所在块
-                window.addEventListener('mouseup', focusHandler, true);
-                window.addEventListener('keyup', focusHandler, true);
+                const handler = _ => setTimeout(focusHandler, 0);
+                window.addEventListener('mouseup', handler, true);
+                window.addEventListener('keyup', handler, true);
             }
             if (config.theme.location.record.enable) {
                 // 开关浏览位置记录功能
