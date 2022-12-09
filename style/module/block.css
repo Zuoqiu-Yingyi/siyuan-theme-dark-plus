@@ -5,3 +5,9 @@
 .protyle-wysiwyg [data-node-id] {
   margin-bottom: 0;
 }
+.b3-typography p .protyle-attr,
+.protyle-wysiwyg p .protyle-attr,
+.b3-typography [data-node-id] .protyle-attr,
+.protyle-wysiwyg [data-node-id] .protyle-attr {
+  z-index: 2;
+}
