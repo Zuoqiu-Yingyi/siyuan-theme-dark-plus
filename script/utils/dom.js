@@ -9,6 +9,7 @@ export {
     getFocusedDocID, // 获得焦点所在文档的 ID
     getFocusedID, // 获得焦点所在的块 ID, 否则获得焦点所在文档的 ID
     getTargetEditor, // 获得指定块位于的编辑区
+    getTargetDocID, // 获得目标的文档 ID
     getTargetBlock, // 获得目标的块
     getTargetBlockID, // 获得目标的块 ID
     getTargetBlockIndex, // 获得目标的块在文档中的索引
@@ -150,9 +151,9 @@ function getFocusedID() {
 
 /**
  * 获得指定块位于的编辑区
- * @params {HTMLElement} 
+ * @params {HTMLElement} block: 块
  * @return {HTMLElement} 光标所在块位于的编辑区
- * @return {null} 光标不在块内
+ * @return {null} 目标不在块内
  */
 function getTargetEditor(block) {
     while (block != null && !block.classList.contains('protyle-content')) block = block.parentElement;
@@ -160,10 +161,22 @@ function getTargetEditor(block) {
 }
 
 /**
+ * 获得目标的文档 ID
+ * @params {HTMLElement} target: 目标
+ * @return {HTMLElement} 目标文档
+ * @return {null} 目标不在块内
+ */
+function getTargetDocID(block) {
+    const content = getTargetEditor(block);
+    return content?.getElementsByClassName('protyle-background')?.[0]?.dataset?.nodeId
+        ?? null;
+}
+
+/**
  * 获得目标的块
  * @params {HTMLElement} target: 目标
- * @return {HTMLElement} 光标所在块
- * @return {null} 光标不在块内
+ * @return {HTMLElement} 目标所在块
+ * @return {null} 目标不在块内
  */
 function getTargetBlock(target) {
     let element = target;

@@ -430,6 +430,8 @@ Note: When using the browser to access SiYuan, this feature may be blocked by th
   Use the shortcut key <kbd>Shift + Alt + G</kbd> to turn on/off list guides (list, table list, mind map list).
 - 使用快捷键 <kbd>Shift + Alt + L</kbd> 启动/关闭记录当前浏览位置功能  
   Use the shortcut key <kbd>Shift + Alt + L</kbd> to turn on/off record the current browsing location.
+  - 开启后可以使用 <kbd>鼠标左键</kbd> 双击文档中的某个块以记住当前位置  
+    Use button <kbd>Left Mouse Button</kbd> double-click a block to record this location when turned on.
   - 开启后可以使用 <kbd>鼠标右键</kbd> 单击文档右侧的滑块, 跳转到文档上次浏览位置  
     You can click on a slider on the right side of the document to jump to where the document was last browsed using the <kbd>Right Mouse Button</kbd> when turned on.
 - 使用快捷键 <kbd>Shift + Alt + M</kbd> 启动/关闭块菜单增强功能  

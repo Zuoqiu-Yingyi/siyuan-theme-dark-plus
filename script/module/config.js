@@ -2973,6 +2973,15 @@ const config = {
                     Alt: true,
                     key: 'L',
                 },
+                update: {
+                    // 更新当前浏览位置(double-click)
+                    enable: true,
+                    CtrlCmd: false,
+                    WinCtrl: false,
+                    Shift: false,
+                    Alt: false,
+                    type: 'dblclick',
+                },
                 clear: {
                     // 移除浏览位置(Ctrl + Shift + Alt + L)
                     enable: true,
