@@ -5,6 +5,7 @@
 - 修复页面加载时功能按钮状态未显示问题 | Fix the issue that the function button status is not displayed when the page is loaded.
 - 修复使用 <kbd>Esc</kbd> 键后光标丢失问题 | Fix the issue that the cursor is lost after using <kbd>Esc</kbd> key.
 - [#167](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/167) 修复记住当前浏览位置功能 | Fix the issue that the current browsing position is not remembered.
+- 修复块滚动条层级问题 | Fix the issue of the block scrollbar layer.
 
 ## v1.5.3/2022-12-05
 
