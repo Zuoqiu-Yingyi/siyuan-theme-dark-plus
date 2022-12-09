@@ -7,6 +7,7 @@
 - [#167](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/167) 修复记住当前浏览位置功能 | Fix the issue that the current browsing position is not remembered.
 - 修复块滚动条层级问题 | Fix the issue of the block scrollbar layer.
 - 提高块属性样式层级 | Improve the block attribute style layer.
+- 调整超级块边距 | Adjust the super block margin.
 
 ## v1.5.3/2022-12-05
 
