@@ -1,0 +1,37 @@
+/**
+ * 列表转看板
+ * REF [notion-theme/list2board.css](https://github.com/royc01/notion-theme/blob/main/style/list2board.css)
+ */
+
+.protyle-content {
+
+    [custom-type~="看板"],
+    [custom-type~=board] {
+
+        // 为列表块设置块属性
+        &,
+        // 为文档块设置块属性
+        >[data-node-index] {
+            &[data-node-id].list {
+                /* 看板块样式 */
+                display: flex;
+
+                >[data-node-id].li {
+                    /* 子看板 */
+                    min-width: var(--custom-list-board-min-width);
+
+                    &::before {
+                        /* 子看板列表辅助线 */
+                        content: unset;
+                    }
+
+                    >[data-node-id].list {
+                        /* 子看板内容 */
+                        margin-left: 0 !important;
+                        padding-left: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+}

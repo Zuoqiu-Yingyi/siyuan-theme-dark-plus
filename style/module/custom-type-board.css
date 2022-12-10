@@ -1,0 +1,33 @@
+/**
+ * 列表转看板
+ * REF [notion-theme/list2board.css](https://github.com/royc01/notion-theme/blob/main/style/list2board.css)
+ */
+.protyle-content [custom-type~="看板"][data-node-id].list,
+.protyle-content [custom-type~=board][data-node-id].list,
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list,
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list {
+  /* 看板块样式 */
+  display: flex;
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li,
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li,
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li,
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li {
+  /* 子看板 */
+  min-width: var(--custom-list-board-min-width);
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li::before,
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li::before,
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li::before,
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li::before {
+  /* 子看板列表辅助线 */
+  content: unset;
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li > [data-node-id].list,
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li > [data-node-id].list,
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li > [data-node-id].list,
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li > [data-node-id].list {
+  /* 子看板内容 */
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
