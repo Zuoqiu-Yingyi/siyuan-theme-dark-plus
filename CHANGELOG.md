@@ -8,6 +8,7 @@
 - 修复块滚动条层级问题 | Fix the issue of the block scrollbar layer.
 - 提高块属性样式层级 | Improve the block attribute style layer.
 - 调整超级块边距 | Adjust the super block margin.
+- [#113](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/113) 列表看板视图 | List board view.
 
 ## v1.5.3/2022-12-05
 
