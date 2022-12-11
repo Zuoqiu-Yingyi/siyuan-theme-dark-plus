@@ -16,6 +16,84 @@
   /* 子看板 */
   min-width: var(--custom-list-board-min-width);
 }
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(1) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(1) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(1) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(1) > [data-node-id]:not(.list) {
+  background-color: var(--b3-font-background1);
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(2) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(2) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(2) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(2) > [data-node-id]:not(.list) {
+  background-color: var(--b3-font-background2);
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(3) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(3) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(3) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(3) > [data-node-id]:not(.list) {
+  background-color: var(--b3-font-background3);
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(4) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(4) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(4) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(4) > [data-node-id]:not(.list) {
+  background-color: var(--b3-font-background4);
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(5) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(5) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(5) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(5) > [data-node-id]:not(.list) {
+  background-color: var(--b3-font-background5);
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(6) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(6) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(6) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(6) > [data-node-id]:not(.list) {
+  background-color: var(--b3-font-background6);
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(7) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(7) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(7) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(7) > [data-node-id]:not(.list) {
+  background-color: var(--b3-font-background7);
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(8) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(8) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(8) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(8) > [data-node-id]:not(.list) {
+  background-color: var(--b3-font-background8);
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(9) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(9) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(9) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(9) > [data-node-id]:not(.list) {
+  background-color: var(--b3-font-background9);
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(10) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(10) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(10) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(10) > [data-node-id]:not(.list) {
+  background-color: var(--b3-font-background10);
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(11) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(11) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(11) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(11) > [data-node-id]:not(.list) {
+  background-color: var(--b3-font-background11);
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12) > [data-node-id]:not(.list) {
+  background-color: var(--b3-font-background12);
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(13) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(13) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(13) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(13) > [data-node-id]:not(.list) {
+  background-color: var(--b3-font-background13);
+}
 .protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li::before,
 .protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li::before,
 .protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li::before,

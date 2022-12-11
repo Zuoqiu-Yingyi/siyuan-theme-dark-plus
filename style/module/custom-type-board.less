@@ -3,6 +3,22 @@
  * REF [notion-theme/list2board.css](https://github.com/royc01/notion-theme/blob/main/style/list2board.css)
  */
 
+// 循环
+// REF [Less 循环 - 知乎](https://zhuanlan.zhihu.com/p/192364861)
+.loop(@i) when (@i > 0) {
+    .loop((@i - 1)); // 递归调用自身
+    .board-background-color(@i);
+}
+
+// 字看板标题背景颜色
+.board-background-color(@index) {
+    &:nth-child(@{index}) {
+        >[data-node-id]:not(.list) {
+            background-color: var(e(%("--b3-font-background%d", @index)));
+        }
+    }
+}
+
 .protyle-content {
 
     [custom-type~="看板"],
@@ -19,6 +35,8 @@
                 >[data-node-id].li {
                     /* 子看板 */
                     min-width: var(--custom-list-board-min-width);
+
+                    .loop(13);
 
                     &::before {
                         /* 子看板列表辅助线 */
