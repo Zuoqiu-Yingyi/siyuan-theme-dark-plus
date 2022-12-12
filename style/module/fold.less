@@ -29,6 +29,7 @@
 
 .protyle-wysiwyg {
     [fold="1"][data-node-id] {
+
         // 列表项折叠样式
         // REF https://ld246.com/article/1668079616719/comment/1668156458492?r=shuoying#comments
         &.li {
@@ -39,21 +40,21 @@
                     outline: 2px dashed;
                 }
             }
-    
+
             &[data-subtype="o"]>.protyle-action::after {
                 /* 有序列表项 */
                 width: 1.75em;
                 margin: -0.5em 0 0 -1em;
             }
-    
+
             &[data-subtype="t"]>.protyle-action::after {
                 /* 任务列表项 */
                 border-radius: 0;
                 margin: -0.5em 0 0 -0.5em;
             }
-    
+
         }
-    
+
         // 子标题折叠样式
         &[data-type="NodeHeading"] {
             &::before {
@@ -68,16 +69,16 @@
                 top: auto;
                 border-radius: 0;
                 margin-top: 0;
-    
+
             }
-    
+
             &::after {
                 /* 添加子标题折叠标记 */
                 content: var(--custom-h-fold-mark);
             }
-    
+
         }
-    
+
         // 代码块折叠样式
         &.code-block {
             >.protyle-action {
@@ -85,7 +86,7 @@
                 position: absolute;
                 top: 2px;
             }
-    
+
             >.hljs,
             >.protyle-linenumber__rows {
                 /* 代码块编辑区 */
