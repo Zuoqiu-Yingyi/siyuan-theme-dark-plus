@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.6.0/2022-12-12
+
+- [v1.5.3 <=> v1.6.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.5.3...v1.6.0)
 - `i10n` 支持繁体中文 `zh_CHT` | Support Traditional Chinese `zh_CHT`.
 - 调整容器块宽度 | Adjust block container width.
 - 修复页面加载时功能按钮状态未显示问题 | Fix the issue that the function button status is not displayed when the page is loaded.
