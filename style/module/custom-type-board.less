@@ -5,15 +5,22 @@
 
 // 循环
 // REF [Less 循环 - 知乎](https://zhuanlan.zhihu.com/p/192364861)
-.loop(@i) when (@i > 0) {
-    .loop((@i - 1)); // 递归调用自身
-    .board-background-color(@i);
+.loop(@base, @i) when (@i > 0) {
+    .loop(@base, (@i - 1)); // 递归调用自身
+    .board-background-color(e("@{base}n + @{i}"), @i);
 }
 
 // 字看板标题背景颜色
-.board-background-color(@index) {
-    &:nth-child(@{index}) {
+.board-background-color(@nth, @index) {
+    &:nth-child(@{nth}) {
+        >.protyle-action {
+            // display: none;
+            visibility: hidden;
+        }
+
         >[data-node-id]:not(.list) {
+            margin-left: 0 !important;
+            border-radius: var(--custom-border-radius);
             background-color: var(e(%("--b3-font-background%d", @index)));
         }
     }
@@ -31,12 +38,21 @@
             &[data-node-id].list {
                 /* 看板块样式 */
                 display: flex;
+                overflow-x: auto;
 
                 >[data-node-id].li {
                     /* 子看板 */
                     min-width: var(--custom-list-board-min-width);
+                    margin-left: 0.25em;
+                    margin-right: 0.25em;
 
-                    .loop(13);
+                    &[fold="1"] {
+                        >[data-node-id]:not(.list) {
+                            outline: 2px dashed;
+                        }
+                    }
+
+                    .loop(12, 12);
 
                     &::before {
                         /* 子看板列表辅助线 */
@@ -47,6 +63,13 @@
                         /* 子看板内容 */
                         margin-left: 0 !important;
                         padding-left: 0 !important;
+
+                        >[data-node-id].li {
+                            /* 子看板项 */
+                            margin-top: 0.5em;
+                            border-radius: var(--custom-border-radius);
+                            background-color: var(--b3-font-background5);
+                        }
                     }
                 }
             }

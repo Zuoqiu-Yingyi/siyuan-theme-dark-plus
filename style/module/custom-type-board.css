@@ -8,6 +8,7 @@
 .protyle-content [custom-type~=board] > [data-node-index][data-node-id].list {
   /* 看板块样式 */
   display: flex;
+  overflow-x: auto;
 }
 .protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li,
 .protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li,
@@ -15,84 +16,182 @@
 .protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li {
   /* 子看板 */
   min-width: var(--custom-list-board-min-width);
+  margin-left: 0.25em;
+  margin-right: 0.25em;
 }
-.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(1) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(1) > [data-node-id]:not(.list),
-.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(1) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(1) > [data-node-id]:not(.list) {
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li[fold="1"] > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li[fold="1"] > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li[fold="1"] > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li[fold="1"] > [data-node-id]:not(.list) {
+  outline: 2px dashed;
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 1) > .protyle-action,
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 1) > .protyle-action,
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 1) > .protyle-action,
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 1) > .protyle-action {
+  visibility: hidden;
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 1) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 1) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 1) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 1) > [data-node-id]:not(.list) {
+  margin-left: 0 !important;
+  border-radius: var(--custom-border-radius);
   background-color: var(--b3-font-background1);
 }
-.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(2) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(2) > [data-node-id]:not(.list),
-.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(2) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(2) > [data-node-id]:not(.list) {
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 2) > .protyle-action,
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 2) > .protyle-action,
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 2) > .protyle-action,
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 2) > .protyle-action {
+  visibility: hidden;
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 2) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 2) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 2) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 2) > [data-node-id]:not(.list) {
+  margin-left: 0 !important;
+  border-radius: var(--custom-border-radius);
   background-color: var(--b3-font-background2);
 }
-.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(3) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(3) > [data-node-id]:not(.list),
-.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(3) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(3) > [data-node-id]:not(.list) {
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 3) > .protyle-action,
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 3) > .protyle-action,
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 3) > .protyle-action,
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 3) > .protyle-action {
+  visibility: hidden;
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 3) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 3) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 3) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 3) > [data-node-id]:not(.list) {
+  margin-left: 0 !important;
+  border-radius: var(--custom-border-radius);
   background-color: var(--b3-font-background3);
 }
-.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(4) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(4) > [data-node-id]:not(.list),
-.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(4) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(4) > [data-node-id]:not(.list) {
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 4) > .protyle-action,
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 4) > .protyle-action,
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 4) > .protyle-action,
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 4) > .protyle-action {
+  visibility: hidden;
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 4) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 4) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 4) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 4) > [data-node-id]:not(.list) {
+  margin-left: 0 !important;
+  border-radius: var(--custom-border-radius);
   background-color: var(--b3-font-background4);
 }
-.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(5) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(5) > [data-node-id]:not(.list),
-.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(5) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(5) > [data-node-id]:not(.list) {
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 5) > .protyle-action,
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 5) > .protyle-action,
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 5) > .protyle-action,
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 5) > .protyle-action {
+  visibility: hidden;
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 5) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 5) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 5) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 5) > [data-node-id]:not(.list) {
+  margin-left: 0 !important;
+  border-radius: var(--custom-border-radius);
   background-color: var(--b3-font-background5);
 }
-.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(6) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(6) > [data-node-id]:not(.list),
-.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(6) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(6) > [data-node-id]:not(.list) {
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 6) > .protyle-action,
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 6) > .protyle-action,
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 6) > .protyle-action,
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 6) > .protyle-action {
+  visibility: hidden;
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 6) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 6) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 6) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 6) > [data-node-id]:not(.list) {
+  margin-left: 0 !important;
+  border-radius: var(--custom-border-radius);
   background-color: var(--b3-font-background6);
 }
-.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(7) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(7) > [data-node-id]:not(.list),
-.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(7) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(7) > [data-node-id]:not(.list) {
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 7) > .protyle-action,
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 7) > .protyle-action,
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 7) > .protyle-action,
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 7) > .protyle-action {
+  visibility: hidden;
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 7) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 7) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 7) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 7) > [data-node-id]:not(.list) {
+  margin-left: 0 !important;
+  border-radius: var(--custom-border-radius);
   background-color: var(--b3-font-background7);
 }
-.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(8) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(8) > [data-node-id]:not(.list),
-.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(8) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(8) > [data-node-id]:not(.list) {
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 8) > .protyle-action,
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 8) > .protyle-action,
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 8) > .protyle-action,
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 8) > .protyle-action {
+  visibility: hidden;
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 8) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 8) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 8) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 8) > [data-node-id]:not(.list) {
+  margin-left: 0 !important;
+  border-radius: var(--custom-border-radius);
   background-color: var(--b3-font-background8);
 }
-.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(9) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(9) > [data-node-id]:not(.list),
-.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(9) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(9) > [data-node-id]:not(.list) {
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 9) > .protyle-action,
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 9) > .protyle-action,
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 9) > .protyle-action,
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 9) > .protyle-action {
+  visibility: hidden;
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 9) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 9) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 9) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 9) > [data-node-id]:not(.list) {
+  margin-left: 0 !important;
+  border-radius: var(--custom-border-radius);
   background-color: var(--b3-font-background9);
 }
-.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(10) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(10) > [data-node-id]:not(.list),
-.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(10) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(10) > [data-node-id]:not(.list) {
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 10) > .protyle-action,
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 10) > .protyle-action,
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 10) > .protyle-action,
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 10) > .protyle-action {
+  visibility: hidden;
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 10) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 10) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 10) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 10) > [data-node-id]:not(.list) {
+  margin-left: 0 !important;
+  border-radius: var(--custom-border-radius);
   background-color: var(--b3-font-background10);
 }
-.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(11) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(11) > [data-node-id]:not(.list),
-.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(11) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(11) > [data-node-id]:not(.list) {
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 11) > .protyle-action,
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 11) > .protyle-action,
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 11) > .protyle-action,
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 11) > .protyle-action {
+  visibility: hidden;
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 11) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 11) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 11) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 11) > [data-node-id]:not(.list) {
+  margin-left: 0 !important;
+  border-radius: var(--custom-border-radius);
   background-color: var(--b3-font-background11);
 }
-.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12) > [data-node-id]:not(.list),
-.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12) > [data-node-id]:not(.list) {
-  background-color: var(--b3-font-background12);
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 12) > .protyle-action,
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 12) > .protyle-action,
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 12) > .protyle-action,
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 12) > .protyle-action {
+  visibility: hidden;
 }
-.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(13) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(13) > [data-node-id]:not(.list),
-.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(13) > [data-node-id]:not(.list),
-.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(13) > [data-node-id]:not(.list) {
-  background-color: var(--b3-font-background13);
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li:nth-child(12n + 12) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li:nth-child(12n + 12) > [data-node-id]:not(.list),
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 12) > [data-node-id]:not(.list),
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li:nth-child(12n + 12) > [data-node-id]:not(.list) {
+  margin-left: 0 !important;
+  border-radius: var(--custom-border-radius);
+  background-color: var(--b3-font-background12);
 }
 .protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li::before,
 .protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li::before,
@@ -108,4 +207,13 @@
   /* 子看板内容 */
   margin-left: 0 !important;
   padding-left: 0 !important;
+}
+.protyle-content [custom-type~="看板"][data-node-id].list > [data-node-id].li > [data-node-id].list > [data-node-id].li,
+.protyle-content [custom-type~=board][data-node-id].list > [data-node-id].li > [data-node-id].list > [data-node-id].li,
+.protyle-content [custom-type~="看板"] > [data-node-index][data-node-id].list > [data-node-id].li > [data-node-id].list > [data-node-id].li,
+.protyle-content [custom-type~=board] > [data-node-index][data-node-id].list > [data-node-id].li > [data-node-id].list > [data-node-id].li {
+  /* 子看板项 */
+  margin-top: 0.5em;
+  border-radius: var(--custom-border-radius);
+  background-color: var(--b3-font-background5);
 }
