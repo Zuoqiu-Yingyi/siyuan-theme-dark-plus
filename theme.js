@@ -299,7 +299,7 @@ if (window.siyuan.config.appearance[window.siyuan.config.appearance.mode ? "them
 }
 
 /* 加载 HTML 块中使用的小工具 */
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/html.js"), "text/javascript", undefined, true);
+window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/html.js"), undefined, true);
 
 /* 加载主题功能 */
 window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/background.js"), undefined, true);
