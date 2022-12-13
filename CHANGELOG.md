@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+- 调整最近打开文档对话框样式 | Adjust the style of recently opened document dialog.
+  - Adapt: [Issue #3293 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/3293)
+
 ## v1.6.0/2022-12-12
 
 - [v1.5.3 <=> v1.6.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.5.3...v1.6.0)

@@ -140,12 +140,12 @@
  *  REF: [自定义样式：搜索窗口改造（窗口放大+左右布局） - 链滴](https: //ld246.com/article/1648269766832)
  */
 /* 搜索对话框尺寸 */
-body > div[data-key] > .b3-dialog > .b3-dialog__container,
-body > div[data-key] > .b3-dialog > .b3-dialog__container > div[style*="height"] {
+body > div[data-key]:not([data-key="⌘E"]) > .b3-dialog > .b3-dialog__container,
+body > div[data-key]:not([data-key="⌘E"]) > .b3-dialog > .b3-dialog__container > div[style*="height"] {
   width: var(--custom-dialog-search-width) !important;
   height: var(--custom-dialog-search-height) !important;
 }
-body > div[data-key] > .b3-dialog > .b3-dialog__container > .b3-dialog__close {
+body > div[data-key]:not([data-key="⌘E"]) > .b3-dialog > .b3-dialog__container > .b3-dialog__close {
   /* 调整搜索框关闭按钮位置, 避免被遮挡 */
   right: calc((100vw - var(--custom-dialog-search-width)) / -2);
 }
