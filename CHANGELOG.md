@@ -2,6 +2,7 @@
 
 - 调整最近打开文档对话框样式 | Adjust the style of recently opened document dialog.
   - Adapt: [Issue #3293 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/3293)
+- 文本输入区设置最大宽度 | Set the maximum width of text input area.
 
 ## v1.6.0/2022-12-12
 
