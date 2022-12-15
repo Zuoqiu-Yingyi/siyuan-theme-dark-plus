@@ -1,14 +1,30 @@
 /* 反链面板 */
 /* 过长反链条目显示样式 */
-.sy__backlink .b3-list-item__text {
-  display: var(--custom-backlink-display);
+.layout-tab-container:has(>.sy__backlink) {
+  /* 反链面板 */
+  background-color: transparent;
 }
-.sy__backlink .protyle-content[data-fullwidth="true"] > .protyle-wysiwyg {
-  /* 反链面板编辑区 */
-  margin-right: 2px !important;
+.layout-tab-container .sy__backlink > div {
+  background-color: var(--custom-editor-background-color);
 }
-.backlinkList .b3-list.b3-list--background .b3-list-item,
-.backlinkMList .b3-list.b3-list--background .b3-list-item {
+.layout-tab-container .sy__backlink > div:nth-child(2) {
+  border-bottom-left-radius: var(--custom-border-radius);
+  border-bottom-right-radius: var(--custom-border-radius);
+}
+.layout-tab-container .sy__backlink > div:nth-child(3) {
+  margin-top: var(--custom-panel-distance);
+  border-top-left-radius: var(--custom-border-radius);
+  border-top-right-radius: var(--custom-border-radius);
+}
+.layout-tab-container .sy__backlink .backlinkList .b3-list.b3-list--background .b3-list-item,
+.layout-tab-container .sy__backlink .backlinkMList .b3-list.b3-list--background .b3-list-item {
   /* 反链与提及面板项 */
   outline-color: var(--b3-theme-on-background);
+}
+.layout-tab-container .sy__backlink .b3-list-item__text {
+  display: var(--custom-backlink-display);
+}
+.layout-tab-container .sy__backlink .protyle-content[data-fullwidth="true"] > .protyle-wysiwyg {
+  /* 反链面板编辑区 */
+  margin-right: 2px !important;
 }
