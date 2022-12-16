@@ -7,12 +7,16 @@
 .layout-tab-container .sy__backlink > div {
   background-color: var(--custom-editor-background-color);
 }
+.layout-tab-container .sy__backlink > div:nth-child(1):has(+.fn__none) {
+  border-bottom-left-radius: var(--custom-border-radius);
+  border-bottom-right-radius: var(--custom-border-radius);
+}
 .layout-tab-container .sy__backlink > div:nth-child(2) {
+  margin-bottom: var(--custom-panel-distance);
   border-bottom-left-radius: var(--custom-border-radius);
   border-bottom-right-radius: var(--custom-border-radius);
 }
 .layout-tab-container .sy__backlink > div:nth-child(3) {
-  margin-top: var(--custom-panel-distance);
   border-top-left-radius: var(--custom-border-radius);
   border-top-right-radius: var(--custom-border-radius);
 }
