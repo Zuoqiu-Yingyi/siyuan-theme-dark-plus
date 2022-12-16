@@ -4,7 +4,7 @@
 .protyle-wysiwyg [fold="1"][data-node-id].li > .protyle-action::after {
   width: 1em;
   height: 1em;
-  outline: 2px dashed;
+  outline: 2px dotted;
 }
 .protyle-wysiwyg [fold="1"][data-node-id].li[data-subtype="o"] > .protyle-action::after {
   /* 有序列表项 */
