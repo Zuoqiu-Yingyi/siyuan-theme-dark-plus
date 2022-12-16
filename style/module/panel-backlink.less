@@ -13,15 +13,22 @@
         >div {
             background-color: var(--custom-editor-background-color);
 
+            &:nth-child(1) {
+                &:has(+.fn__none) {
+                    border-bottom-left-radius: var(--custom-border-radius);
+                    border-bottom-right-radius: var(--custom-border-radius);
+                }
+            }
+
+            // backlinkList 隐藏后 block__icons 不能自适应伸缩, 因此需要同时隐藏间隔以避免出现滚动条
             &:nth-child(2) {
-                // border-radius: ;
+                margin-bottom: var(--custom-panel-distance);
+
                 border-bottom-left-radius: var(--custom-border-radius);
                 border-bottom-right-radius: var(--custom-border-radius);
             }
 
             &:nth-child(3) {
-                margin-top: var(--custom-panel-distance);
-
                 border-top-left-radius: var(--custom-border-radius);
                 border-top-right-radius: var(--custom-border-radius);
             }
