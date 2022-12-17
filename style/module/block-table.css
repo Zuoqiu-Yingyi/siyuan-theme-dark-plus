@@ -35,10 +35,21 @@
   /* 鼠标悬浮行 */
   outline: 1px solid var(--b3-theme-on-surface);
 }
+.b3-typography table tr th[colspan]:not([colspan="1"]),
+.protyle-wysiwyg table tr th[colspan]:not([colspan="1"]),
+.b3-typography table tr td[colspan]:not([colspan="1"]),
+.protyle-wysiwyg table tr td[colspan]:not([colspan="1"]),
+.b3-typography table tr th[rowspan]:not([rowspan="1"]),
+.protyle-wysiwyg table tr th[rowspan]:not([rowspan="1"]),
+.b3-typography table tr td[rowspan]:not([rowspan="1"]),
+.protyle-wysiwyg table tr td[rowspan]:not([rowspan="1"]) {
+  /* 合并的单元格 */
+  box-shadow: 0 0 0 1px var(--b3-theme-on-surface-light) inset;
+}
 .b3-typography table tr th:hover,
 .protyle-wysiwyg table tr th:hover,
 .b3-typography table tr td:hover,
 .protyle-wysiwyg table tr td:hover {
   /* 鼠标悬浮单元格 */
-  box-shadow: 0 0 0 1px var(--b3-theme-secondary) inset;
+  box-shadow: 0 0 0 1px var(--b3-theme-secondary) inset !important;
 }
