@@ -73,7 +73,6 @@
 }
 .search__header .search__path .search__rmpath {
   /* 搜索路径移除按钮 */
-  top: 0;
   background-color: transparent;
 }
 .search__header .search__path .search__rmpath:hover {
