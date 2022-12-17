@@ -5,6 +5,7 @@
 - 文本输入区设置最大宽度 | Set the maximum width of text input area.
 - 调整反链面板子面板样式 | Adjust the style of sub-panel in backlink panel.
 - 调整折叠列表项样式 | Adjust the style of folded list item.
+- 调整搜索路径移除按钮样式 | Adjust the style of remove button of search path.
 
 ## v1.6.0/2022-12-12
 
