@@ -46,11 +46,18 @@
 
             th,
             td {
+
+                &[colspan]:not([colspan="1"]),
+                &[rowspan]:not([rowspan="1"]) {
+                    /* 合并的单元格 */
+                    box-shadow: 0 0 0 1px var(--b3-theme-on-surface-light) inset;
+                }
+
                 &:hover {
                     /* 鼠标悬浮单元格 */
                     // outline: 2px solid var(--b3-theme-secondary);
                     // border: 1px solid var(--b3-theme-secondary);
-                    box-shadow: 0 0 0 1px var(--b3-theme-secondary) inset;
+                    box-shadow: 0 0 0 1px var(--b3-theme-secondary) inset !important;
                     // box-sizing: border-box;
                 }
             }
