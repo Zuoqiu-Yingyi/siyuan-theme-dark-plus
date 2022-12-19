@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.6.1/2022-12-20
+
+- [v1.6.0 <=> v1.6.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.0...v1.6.1)
 - 调整最近打开文档对话框样式 | Adjust the style of recently opened document dialog.
   - Adapt: [Issue #3293 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/3293)
 - 文本输入区设置最大宽度 | Set the maximum width of text input area.
