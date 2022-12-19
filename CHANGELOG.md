@@ -7,6 +7,7 @@
 - 调整折叠列表项样式 | Adjust the style of folded list item.
 - 调整搜索路径移除按钮样式 | Adjust the style of remove button of search path.
 - 显示表格中合并的单元格轮廓 | Show the outline of merged cells in table.
+- 为块菜单扩展添加块样式输入框 | Add block style input box for block menu extension.
 
 ## v1.6.0/2022-12-12
 

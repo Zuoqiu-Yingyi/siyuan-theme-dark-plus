@@ -607,7 +607,7 @@ function createMenuItemIconNode(href = '#', style = '', className = 'b3-menu__ic
 /**
  * 创建右键菜单项输入框
  */
-function createMenuItemInputNode(id = null, placeholder = '', value = '', style = '', className = 'b3-text-field fn__size200') {
+function createMenuItemInputNode(id = null, placeholder = '', value = null, style = null, className = 'b3-text-field fn__size200') {
     let span = document.createElement('span');
     span.className = 'b3-menu__label';
 
@@ -628,7 +628,10 @@ function createMenuItemInputNode(id = null, placeholder = '', value = '', style 
     span.appendChild(hr_head);
     span.appendChild(input);
     span.appendChild(hr_tail);
-    return span;
+    return {
+        span,
+        input,
+    }
 }
 
 /**
@@ -938,9 +941,18 @@ const TASK_HANDLER = {
     },
     /* 保存输入框内容 */
     'save-input-value': async (e, id, params) => {
-        const value = document.getElementById(params.id).value;
-        eval(`${params.key} = value`);
-        saveCustomFile(custom);
+        const value = e.target.value;
+        // console.log(value);
+        switch (params.mode) {
+            case 'attr':
+                setBlockAttrs(
+                    id,
+                    { [params.key]: value },
+                );
+                break;
+            default:
+                break;
+        }
     },
     /* 处理输入框内容 */
     'handler': async (e, id, params) => params.handler(e, id, params),
@@ -1110,34 +1122,76 @@ const TASK_HANDLER = {
 function createMenuItemNode(language, config, id, type, subtype, className = 'b3-menu__item') {
     let node;
     switch (config.mode.toLowerCase()) {
-        case 'separator':
+        case 'separator': // 分割线
             if (!isBlockTypeEnabled(config, type, subtype)) return null;
             node = createMenuItemSeparatorNode();
             return node;
-        case 'input':
+        case 'input': { // 输入框
             if (!isBlockTypeEnabled(config, type, subtype)) return null;
             node = document.createElement('button');
             node.className = className;
-            node.appendChild(createMenuItemIconNode(config.icon));
-            node.appendChild(createMenuItemInputNode(
+            node.appendChild(createMenuItemIconNode(config.icon)); // 图标
+            const { span, input } = createMenuItemInputNode(
                 config.id,
                 config.placeholder[language] || config.placeholder.other,
-                eval(config.value),
-            ));
-            if (config.click.enable) {
-                if (config.click.callback) node.addEventListener('click', async e => await config.click.callback(e, id));
+            );
+            node.appendChild(span); // 输入框
+
+            /* 备注 */
+            let accelerator = config.accelerator;
+            if (typeof accelerator === 'function') accelerator = printHotKey(accelerator(id));
+            if (typeof accelerator === 'string') node.appendChild(createMenuItemAcceleratorNode(accelerator));
+
+            switch (config.value?.mode) {
+                case 'attr': // 使用块属性初始化 input 内容
+                    getBlockAttrs(id).then(attrs => {
+                        console.log(attrs);
+                        if (attrs?.[config.value?.key]) input.value = attrs?.[config.value?.key];
+                    });
+                    break;
+                default:
+                    break;
+            }
+
+            /* 绑定事件处理 */
+            function boundTaskHandlers(id, type, taskHandler, element = input) {
+                if (taskHandler.callback)
+                    element.addEventListener(
+                        type,
+                        async e => await taskHandler.callback(e, id),
+                        true,
+                    );
                 else {
                     let handlers = [];
-                    config.click.tasks.forEach((task) => {
+                    taskHandler.tasks.forEach((task) => {
                         if (TASK_HANDLER[task.type]) handlers.push(async e => TASK_HANDLER[task.type](e, id, task.params));
                     });
-                    node.addEventListener('click', e => {
-                        handlers.forEach((handler) => handlere);
-                    });
+                    element.addEventListener(
+                        type,
+                        e => handlers.forEach((handler) => handler(e)),
+                        true,
+                    );
                 }
+            }
+
+            if (config.onchange?.enable) { // 绑定 onchange 事件
+                boundTaskHandlers(
+                    id,
+                    'change',
+                    config.onchange,
+                )
             };
+            if (config.oninput?.enable) { // 绑定 oninput 事件
+                boundTaskHandlers(
+                    id,
+                    'input',
+                    config.oninput,
+                )
+            };
+
             return node;
-        case 'button':
+        }
+        case 'button': // 按钮
             if (!isBlockTypeEnabled(config, type, subtype)) return null;
             node = document.createElement('button');
             node.className = className;
@@ -1165,7 +1219,7 @@ function createMenuItemNode(language, config, id, type, subtype, className = 'b3
             if (config.itemsLoad && config.items && config.items.length > 0) {
                 let subMenuNodes = [];
                 let separator = 0; // 启用的子菜单项数量
-                config.items.forEach((subConfig) => {
+                config.items.forEach(subConfig => {
                     let item = createMenuItemNode(language, subConfig, id, type, subtype); // 创建子菜单项
                     if (item) {
                         subMenuNodes.push(item);
@@ -1175,12 +1229,12 @@ function createMenuItemNode(language, config, id, type, subtype, className = 'b3
                 // 有效节点大于0, 则创建子菜单
                 if (subMenuNodes.length - separator > 0) {
                     let subMenuNode = createMenuItemSubMenuNode(); // 子菜单容器
-                    subMenuNodes.forEach((item) => subMenuNode.appendChild(item));
+                    subMenuNodes.forEach(item => subMenuNode.appendChild(item));
                     node.appendChild(subMenuNode);
                 }
             }
             if (config.click.enable) {
-                if (config.click.callback) node.addEventListener('click', async e => await config.click.callback(e, id));
+                if (config.click.callback) node.addEventListener('click', async e => await config.click.callback(e, id), true);
                 else {
                     let handlers = [];
                     config.click.tasks.forEach((task) => {
@@ -1188,7 +1242,7 @@ function createMenuItemNode(language, config, id, type, subtype, className = 'b3
                     });
                     node.addEventListener('click', e => {
                         handlers.forEach((handler) => handler(e));
-                    });
+                    }, true);
                 }
             };
             return node;
@@ -1209,7 +1263,7 @@ function createMenuItemNode(language, config, id, type, subtype, className = 'b3
 function menuInit(configs, id, type, subtype) {
     let items = [];
     let language = window.theme.languageMode;
-    configs.forEach((config) => {
+    configs.forEach(config => {
         let item = createMenuItemNode(language, config, id, type, subtype);
         if (item) {
             if (config.prefixSeparator) items.push(createMenuItemSeparatorNode());
