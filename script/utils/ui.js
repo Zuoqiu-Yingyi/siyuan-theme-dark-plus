@@ -688,11 +688,15 @@ function isBlockTypeEnabled(config, type, subtype) {
     if (!config.enable) return false; // 不启用菜单项
     if (!config.type) return true; // 没有设置类型, 全部启用
 
-    // !config.type[type] // 主类型未定义, 不启用
-    // !config.type[type].enable // 主类型被禁用, 不启用
-    if (!config.type[type]
-        || !config.type[type].enable
-    ) return false;
+    // !config.type[type] // 主类型存在
+    if (config.type[type]) {
+        // !config.type[type].enable // 主类型被禁用, 不启用
+        if (!config.type[type].enable) return false;
+    }
+    else { // 主类型不存在
+        return config.default?.enable // 应用默认配置
+            ?? false; // 默认配置不存在则不启用
+    }
 
     // config.type[type].subtype // 定义了子类型, 需要判断子类型是否启用
     // !config.type[type].subtype[subtype] // 该子类型未定义或被禁用, 不启用

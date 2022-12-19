@@ -8,6 +8,7 @@
 - 调整搜索路径移除按钮样式 | Adjust the style of remove button of search path.
 - 显示表格中合并的单元格轮廓 | Show the outline of merged cells in table.
 - 为块菜单扩展添加块样式输入框 | Add block style input box for block menu extension.
+- 块菜单扩展块类型过滤器支持默认配置 | Block type filter of block menu extension supports default configuration.
 
 ## v1.6.0/2022-12-12
 
