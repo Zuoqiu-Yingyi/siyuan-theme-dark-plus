@@ -694,7 +694,7 @@ function isBlockTypeEnabled(config, type, subtype) {
         if (!config.type[type].enable) return false;
     }
     else { // 主类型不存在
-        return config.default?.enable // 应用默认配置
+        return config.type.default?.enable // 应用默认配置
             ?? false; // 默认配置不存在则不启用
     }
 
