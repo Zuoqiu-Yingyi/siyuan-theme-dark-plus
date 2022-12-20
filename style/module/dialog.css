@@ -68,11 +68,9 @@
   min-width: 100px;
   width: auto !important;
 }
-.search__header .search__path {
-  font-size: 1em;
-}
 .search__header .search__path .search__rmpath {
   /* 搜索路径移除按钮 */
+  top: 0;
   background-color: transparent;
 }
 .search__header .search__path .search__rmpath:hover {
