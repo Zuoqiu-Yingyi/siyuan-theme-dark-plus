@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 调整悬浮菜单捷径样式 | Adjust the style of the shortcut in the floating menu.
+
 ## v1.6.1/2022-12-20
 
 - [v1.6.0 <=> v1.6.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.0...v1.6.1)
