@@ -3,6 +3,7 @@
 - 调整悬浮菜单捷径样式 | Adjust the style of the shortcut in the floating menu.
 - 调整搜索路径样式 | Adjust the style of the search path.
 - 优化历史记录对比功能 | Optimize the comparison function of the history record.
+- 新增 Monaco Editor 快照查看与差异对比功能 | Added Monaco Editor snapshot viewing and compare with difference function.
 
 ## v1.6.1/2022-12-20
 
