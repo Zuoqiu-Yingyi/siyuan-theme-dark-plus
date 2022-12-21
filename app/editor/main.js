@@ -8,6 +8,7 @@ import {
     copyToClipboard,
     removeOuterIAL,
     compareVersion,
+    preProcessBlockDOM,
 } from './js/utils.js';
 import {
     version,
@@ -68,7 +69,7 @@ async function init(params) {
                 case 'markdown': // 查看 markdown
                     params.value.original = b.data.isLargeDoc
                         ? b.data.content
-                        : window.editor.lute.BlockDOM2StdMd(b.data.content);
+                        : window.editor.lute.BlockDOM2StdMd(preProcessBlockDOM(b.data.content));
                     r = await getDoc(params.id);
                     if (r && r.code === 0) {
                         params.value.modified = window.editor.lute.BlockDOM2StdMd(r.data.content);
@@ -81,18 +82,21 @@ async function init(params) {
                 case 'kramdown': // 对比历史与当前 kramdown
                     params.value.original = b.data.isLargeDoc
                         ? b.data.content
-                        : window.editor.lute.BlockDOM2Md(b.data.content);
+                        : window.editor.lute.BlockDOM2Md(preProcessBlockDOM(b.data.content));
 
-                    r = await getBlockKramdown(params.id);
+                    // r = await getBlockKramdown(params.id);
                     // r = await getBlockDomByID(params.id);
-                    // r = await getDoc(params.id);
+                    r = await getDoc(params.id);
+
                     if (r && r.code === 0) {
                         // REF: [使用 API `/api/block/getBlockKramdown` 查询时返回 IAL · Issue #6670 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6670)
-                        params.value.modified = compareVersion(params.version, '2.5.1') >= 0
-                            ? removeOuterIAL(r.data.kramdown)
-                            : r.data.kramdown;
+                        // params.value.modified = compareVersion(params.version, '2.5.1') >= 0
+                        //     ? removeOuterIAL(r.data.kramdown)
+                        //     : r.data.kramdown;
+
                         // params.value.modified = window.editor.lute.BlockDOM2Md(r.data.blocks[0].content);
-                        // params.value.modified = window.editor.lute.BlockDOM2Md(r.data.content);
+
+                        params.value.modified = window.editor.lute.BlockDOM2Md(r.data.content);
                     }
                     else {
                         params.mode = 'none';
