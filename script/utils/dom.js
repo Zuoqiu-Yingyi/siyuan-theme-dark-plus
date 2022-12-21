@@ -15,6 +15,7 @@ export {
     getTargetBlockIndex, // 获得目标的块在文档中的索引
     getTargetInboxID, // 获得目标的收件箱 ID
     getTargetHistory, // 获得目标的历史文档路径与 ID
+    getTargetSnapshotDoc, // 获得目标的快照文档 ID
     getTargetHref, // 获得目标超链接
     getBlockMark, // 获得块标记
     getBlockSelected, // 获得块选中
@@ -323,13 +324,45 @@ function getTargetHistory(target) {
 
     if (element != null) {
         const result = config.theme.regs.historypath.exec(element.dataset.path);
-        if (result
+        if (result?.length > 1
             && element.dataset.type === 'doc'
             && element.classList.contains('b3-list-item')
         ) {
             return {
                 path: element.dataset.path,
                 id: result[1],
+            };
+        }
+    }
+    return null;
+}
+
+/**
+ * 获得目标的快照文档 ID
+ * @params {HTMLElement} target: 目标
+ * @return {object}
+ *      diff: 是否为对比
+ *      id: 快照文件 1
+ *      id2: 快照文件 2
+ * @return {null} 没有找到快照文档
+ */
+function getTargetSnapshotDoc(target) {
+    let element = target;
+    while (element != null && element.localName !== 'li') element = element.parentElement;
+
+    if (element != null) {
+        let node = element;
+        while (node != null && node.classList.contains('b3-dialog__diff')) node = node.parentElement;
+
+        const REG_id = /^[0-9a-f]{40}$/;
+        if (node
+            && REG_id.test(element.dataset?.id)
+            && element.classList.contains('b3-list-item')
+        ) {
+            return {
+                diff: REG_id.test(element.dataset?.id2),
+                id: element.dataset.id,
+                id2: element.dataset.id2,
             };
         }
     }

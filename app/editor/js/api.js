@@ -12,6 +12,7 @@ export {
     getBlockKramdown,
     exportMdContent,
     getDocHistoryContent,
+    openRepoSnapshotDoc,
     getBlockDomByID,
     getDoc,
     getAsset,
@@ -110,6 +111,12 @@ async function getDoc(id, mode = 0, size = 2147483647) {
         id,
         mode,
         size,
+    });
+}
+
+async function openRepoSnapshotDoc(id) {
+    return request('/api/repo/openRepoSnapshotDoc', {
+        id,
     });
 }
 
