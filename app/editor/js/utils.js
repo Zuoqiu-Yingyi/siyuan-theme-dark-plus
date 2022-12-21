@@ -7,6 +7,7 @@ export {
     copyToClipboard,
     removeOuterIAL, // 移除非列表项块的 IAL
     compareVersion, // 比较版本号
+    preProcessBlockDOM, // 预处理 BlockDOM
 };
 
 // REF [js - 对象递归合并merge - zc-lee - 博客园](https://www.cnblogs.com/zc-lee/p/15873611.html)
@@ -222,4 +223,15 @@ function compareVersion(version1, version2) {
         }
     }
     return 0;
+}
+
+/**
+ * 预处理 BlockDOM
+ * @params {string} blockDOM: blockDOM 字符串
+ * @return {string}: 处理后的 blockDOM
+ */
+function preProcessBlockDOM(blockDOM) {
+    return blockDOM
+        .replaceAll(`contenteditable="false"`, `contenteditable="true"`) // 默认 contenteditable 为 true
+        ;
 }
