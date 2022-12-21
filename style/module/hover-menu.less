@@ -233,8 +233,12 @@
         padding-bottom: 0 !important;
 
         >.b3-list-item {
-            &:hover:not(.b3-list-item--focus) {
+            &:hover {
                 background-color: var(--b3-list-hover);
+            }
+
+            &.b3-list-item--focus {
+                outline-color: var(--custom-popover-menu-focus-outline-color);
             }
 
             &.b3-list-item--hide-action:not(:hover) {

@@ -133,8 +133,11 @@
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
   padding-bottom: 0 !important;
 }
-#historyContainer .b3-list.b3-list--background > .b3-list-item:hover:not(.b3-list-item--focus) {
+#historyContainer .b3-list.b3-list--background > .b3-list-item:hover {
   background-color: var(--b3-list-hover);
+}
+#historyContainer .b3-list.b3-list--background > .b3-list-item.b3-list-item--focus {
+  outline-color: var(--custom-popover-menu-focus-outline-color);
 }
 #historyContainer .b3-list.b3-list--background > .b3-list-item.b3-list-item--hide-action:not(:hover) .b3-list-item__action {
   /* 占空间并隐藏元素 */
