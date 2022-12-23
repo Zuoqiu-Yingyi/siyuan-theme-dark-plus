@@ -5,6 +5,7 @@
 - 优化历史记录对比功能 | Optimize the comparison function of the history record.
 - 新增 Monaco Editor 快照查看与差异对比功能 | Added Monaco Editor snapshot viewing and compare with difference function.
 - 调整选中的菜单项样式 | Adjust the style of the selected menu item.
+- 调整搜索路径移除按钮样式 | Adjust the style of remove button of search path.
 
 ## v1.6.1/2022-12-20
 
