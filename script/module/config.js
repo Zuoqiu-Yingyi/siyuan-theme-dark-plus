@@ -2169,7 +2169,7 @@ const config = {
                                     zh_CHT: "清除瀏覽位置記錄",
                                     other: "Clear Browsing Location History",
                                 },
-                                accelerator: "location: null",
+                                accelerator: "",
                                 click: {
                                     enable: true,
                                     callback: null,
