@@ -7,6 +7,8 @@
 - 调整选中的菜单项样式 | Adjust the style of the selected menu item.
 - 调整搜索路径移除按钮样式 | Adjust the style of remove button of search path.
 - 调整自定义悬浮工具栏层级 | Adjust the level of the custom floating toolbar.
+- 支持闪卡挖空样式 | Support the hollow style of the flash card.
+  - Adapt: [Issue #6710 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6710)
 
 ## v1.6.1/2022-12-20
 

@@ -7,7 +7,6 @@
     mark,
     span[data-type~=mark] {
         background-color: var(--cusotm-span-mark-background-color);
-
     }
 
 }
@@ -18,6 +17,13 @@
     span[data-type~=mark] {
         color: transparent;
         transition: all 200ms linear 0ms;
+
+        .b3-dialog__cardblock--show & {
+            /* 闪卡显示后样式 */
+            background-color: var(--cusotm-span-mark-background-color);
+            color: var(--custom-span-mark-color) !important;
+            text-shadow: none;
+        }
 
         &:hover {
             background-color: transparent;
