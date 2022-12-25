@@ -9,6 +9,7 @@
 - 调整自定义悬浮工具栏层级 | Adjust the level of the custom floating toolbar.
 - 支持闪卡挖空样式 | Support the hollow style of the flash card.
   - Adapt: [Issue #6710 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6710)
+- 设置闪卡复习对话框样式 | Set the style of the flash card review dialog.
 
 ## v1.6.1/2022-12-20
 
