@@ -5,6 +5,63 @@
 // // 全局右键菜单
 // #commonMenu,
 
+// 单层列表
+.single-level-list() {
+    /* REF: [第一个子元素在未超过父元素高度的情况下设置margin-top导致出现竖向滚动条的问题_Andrasen的博客-CSDN博客](https://blog.csdn.net/Andrasen/article/details/105676175) */
+    padding: var(--custom-popover-menu-padding-width) !important;
+    // background-color: var(--custom-popover-menu-background-color);
+    // backdrop-filter: var(--custom-backdrop-popover-filter);
+    background-color: transparent !important;
+    backdrop-filter: none;
+    // 块引用搜索结果宽度设置为自动宽度
+    width: var(--custom-popover-menu-width) !important;
+    outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
+    overflow-x: visible !important;
+}
+
+// 单层列表项
+.single-level-list-item() {
+    >.b3-list-item {
+        &:first-child {
+            /* 补偿第一项 */
+            margin-top: 0 !important;
+        }
+
+        /* padding-top: var(--custom-popover-menu-margin-width); */
+        /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
+        margin: var(--custom-popover-menu-margin-width) 0 !important;
+        border-radius: var(--custom-border-radius);
+        // padding: 0.5em;
+
+        outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
+
+        &:last-child:not(.fn_none) {
+            /* 补偿最后一项 */
+            margin-bottom: 0 !important;
+        }
+
+        &button {
+            margin: var(--custom-popover-menu-margin-width) auto !important;
+        }
+
+        .b3-list-item__meta {
+            &:not(.fn__flex) {
+                /* 文档可读路径 */
+                color: var(--custom-popover-menu-path-color);
+                margin: 0;
+                border: 0;
+                padding: 0;
+            }
+
+            &.fn__flex {
+                /* 块属性 */
+                padding: 0.5em;
+                color: var(--custom-popover-menu-attribute-color);
+            }
+        }
+    }
+}
+
 // 菜单
 .b3-menu {
     background-color: var(--custom-popover-function-menu-background-color);
@@ -77,17 +134,7 @@
 
 // 搜索结果列表
 .b3-list.b3-list--background {
-
-    /* REF: [第一个子元素在未超过父元素高度的情况下设置margin-top导致出现竖向滚动条的问题_Andrasen的博客-CSDN博客](https://blog.csdn.net/Andrasen/article/details/105676175) */
-    padding: var(--custom-popover-menu-padding-width) !important;
-    // background-color: var(--custom-popover-menu-background-color);
-    // backdrop-filter: var(--custom-backdrop-popover-filter);
-    background-color: transparent !important;
-    backdrop-filter: none;
-    // 块引用搜索结果宽度设置为自动宽度
-    width: var(--custom-popover-menu-width) !important;
-    outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
-    overflow-x: visible !important;
+    .single-level-list();
 
     .b3-list-item {
         /* 菜单项 */
@@ -222,9 +269,11 @@
     &.b3-tab-bar,
     .sy__backlink &,
     #historyContainer & {
-        >.b3-list-item {
-            &:extend(#searchPanel>.b3-list-item all);
-        }
+        // >.b3-list-item {
+        //     &:extend(#searchPanel>.b3-list-item all);
+        // }
+
+        .single-level-list-item();
     }
 
     // 历史对话框中的列表
@@ -253,43 +302,9 @@
 }
 
 // 移动端搜索面板
-#searchPanel>.b3-list-item {
-    &:first-child {
-        /* 补偿第一项 */
-        margin-top: 0 !important;
-    }
-
-    /* padding-top: var(--custom-popover-menu-margin-width); */
-    /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
-    margin: var(--custom-popover-menu-margin-width) 0 !important;
-    // padding: 0.5em;
-    outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
-
-    &:last-child:not(.fn_none) {
-        /* 补偿最后一项 */
-        margin-bottom: 0 !important;
-    }
-
-    &button {
-        margin: var(--custom-popover-menu-margin-width) auto !important;
-    }
-
-    .b3-list-item__meta {
-        &:not(.fn__flex) {
-            /* 文档可读路径 */
-            color: var(--custom-popover-menu-path-color);
-            margin: 0;
-            border: 0;
-            padding: 0;
-        }
-
-        &.fn__flex {
-            /* 块属性 */
-            padding: 0.5em;
-            color: var(--custom-popover-menu-attribute-color);
-        }
-    }
-
+#searchPanel {
+    .single-level-list();
+    .single-level-list-item();
 }
 
 // 搜索结果列表匹配关键词
