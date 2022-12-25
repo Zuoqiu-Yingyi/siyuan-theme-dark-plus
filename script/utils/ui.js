@@ -1149,7 +1149,7 @@ function createMenuItemNode(language, config, id, type, subtype, className = 'b3
             switch (config.value?.mode) {
                 case 'attr': // 使用块属性初始化 input 内容
                     getBlockAttrs(id).then(attrs => {
-                        console.log(attrs);
+                        // console.log(attrs);
                         if (attrs?.[config.value?.key]) input.value = attrs?.[config.value?.key];
                     });
                     break;
