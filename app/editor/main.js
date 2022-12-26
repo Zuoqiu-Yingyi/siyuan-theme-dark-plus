@@ -769,9 +769,23 @@ window.onload = () => {
             require(['vs/editor/editor.main'], async () => {
                 window.editor.completion = await import('./js/completion.js');
 
-                const language = config.editor.MAP.LANGUAGES[window.editor.params.language.toLowerCase()]
-                    || window.editor.params.language
-                    || 'plaintext';
+                let language;
+                switch (window.editor.params.language.toLowerCase()) {
+                    case 'echarts': // ECharts 图表支持 JSON/JavaScript
+                        try {
+                            JSON.parse(window.editor.params.value);
+                            language = 'json';
+                        }
+                        catch (error) {
+                            language = 'javascript';
+                        }
+                        break;
+                    default:
+                        language = config.editor.MAP.LANGUAGES[window.editor.params.language.toLowerCase()]
+                            || window.editor.params.language
+                            || 'plaintext';
+                        break;
+                }
                 window.editor.picker.value = language;
 
                 // 编辑器配置
