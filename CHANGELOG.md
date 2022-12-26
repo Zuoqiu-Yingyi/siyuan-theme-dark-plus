@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.6.2/2022-12-27
+
+- [v1.6.1 <=> v1.6.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.1...v1.6.2)
 - 调整悬浮菜单捷径样式 | Adjust the style of the shortcut in the floating menu.
 - 调整搜索路径样式 | Adjust the style of the search path.
 - 优化历史记录对比功能 | Optimize the comparison function of the history record.
