@@ -10,6 +10,7 @@
 - 支持闪卡挖空样式 | Support the hollow style of the flash card.
   - Adapt: [Issue #6710 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6710)
 - 设置闪卡复习对话框样式 | Set the style of the flash card review dialog.
+- 使用 `Function` 替代 `eval` 方法 | Use `Function` instead of `eval` method.
 
 ## v1.6.1/2022-12-20
 

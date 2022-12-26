@@ -9,6 +9,7 @@ import {
 } from './../utils/misc.js';
 import {
     HTMLDecode,
+    looseJsonParse,
     compareVersion,
 } from './../utils/string.js';
 
@@ -19,7 +20,7 @@ async function setter(target) {
         && config.theme.regs.url.test(target.dataset.href)
     ) {
         let id = url2id(target.dataset.href);
-        let attrs = eval(`(${HTMLDecode(target.dataset.title)})`);
+        let attrs = looseJsonParse(HTMLDecode(target.dataset.title));
         // console.log(attrs);
         if (compareVersion(window.theme.kernelVersion, '2.2.0') < 0)
             setBlockDOMAttrs(id, attrs);
