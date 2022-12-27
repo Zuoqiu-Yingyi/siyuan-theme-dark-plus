@@ -696,12 +696,12 @@ const config = {
                 webPreferences: {
                     nodeIntegration: true, // 是否启用 Node.js 内置模块
                     nativeWindowOpen: true,
-                    // webviewTag: true,
+                    webviewTag: true, // 是否启用 webview 标签 (类似于 iframe 标签)
                     webSecurity: false, // 是否启用 Web 安全
-                    // contextIsolation: false,
-                    // defaultFontFamily: { // 默认字体
-                    //     standard: window.siyuan.config.editor.fontFamily,
-                    // },
+                    contextIsolation: false, // 上下文隔离, 设置 false 之后可以使用 require
+                    defaultFontFamily: { // 默认字体
+                        standard: window.siyuan.config.editor.fontFamily,
+                    },
                 },
             },
             menu: {

@@ -129,6 +129,9 @@ window.theme.openNewWindow = function (
             // 新建窗口(Electron 环境)
             var newWin = new BrowserWindow(windowParams);
             const menu = Menu.buildFromTemplate(menuTemplate);
+            
+            // require('@electron/remote/main').initialize();
+            require('@electron/remote').require('@electron/remote/main').enable(newWin.webContents);
 
             // console.log(menu);
             console.log(url.href);

@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 支持在子窗口打开子窗口 | Support open sub window in sub window.
+
 ## v1.6.2/2022-12-27
 
 - [v1.6.1 <=> v1.6.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.1...v1.6.2)
