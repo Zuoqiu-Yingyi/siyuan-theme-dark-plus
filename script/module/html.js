@@ -109,8 +109,13 @@ window.theme.openNewWindow = function (
                     url.pathname = `/stage/build/${mode.toLowerCase()}/`;
                     break;
                 case 'editor':
+                    windowParams = JSON.parse(JSON.stringify(windowParams));
+                    windowParams.webPreferences.contextIsolation = true;
                     break;
                 default:
+                    windowParams = JSON.parse(JSON.stringify(windowParams));
+                    windowParams.webPreferences.nodeIntegration = false;
+                    windowParams.webPreferences.contextIsolation = true;
                     break;
             }
         }
@@ -129,9 +134,18 @@ window.theme.openNewWindow = function (
             // 新建窗口(Electron 环境)
             var newWin = new BrowserWindow(windowParams);
             const menu = Menu.buildFromTemplate(menuTemplate);
-            
-            // require('@electron/remote/main').initialize();
-            require('@electron/remote').require('@electron/remote/main').enable(newWin.webContents);
+
+            switch (mode.toLowerCase()) {
+                case 'app':
+                case 'desktop':
+                case 'mobile':
+                case 'editor':
+                    // require('@electron/remote/main').initialize();
+                    require('@electron/remote').require('@electron/remote/main').enable(newWin.webContents);
+                    break;
+                default:
+                    break;
+            }
 
             // console.log(menu);
             console.log(url.href);

@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 支持在子窗口打开子窗口 | Support open sub window in sub window.
+- 修复在子窗口打开的 Monaco 编辑器无法加载的问题 | Fixed the issue of Monaco editor can't load in sub window.
 
 ## v1.6.2/2022-12-27
 
