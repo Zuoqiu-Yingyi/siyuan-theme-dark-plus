@@ -8,7 +8,7 @@
   position: absolute;
   width: var(--custom-dock-width);
   height: auto;
-  z-index: 4;
+  z-index: 201;
   line-height: normal;
   -webkit-app-region: no-drag;
 }
