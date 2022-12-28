@@ -8,12 +8,14 @@
   counter-reset: h1-counter 0 h2-counter 0 h3-counter 0 h4-counter 0 h5-counter 0 h6-counter 0;
 }
 .protyle-wysiwyg > [data-node-id].h1,
+.protyle-wysiwyg > [data-node-id][fold="1"].h1,
 .b3-typography > h1 {
   font-weight: var(--custom-h-font-weight);
   counter-increment: h1-counter;
   counter-reset: h2-counter 0;
 }
 .protyle-wysiwyg > [data-node-id].h1::before,
+.protyle-wysiwyg > [data-node-id][fold="1"].h1::before,
 .b3-typography > h1::before {
   display: block !important;
   float: left;
@@ -30,12 +32,14 @@
   padding-left: var(--custom-h1-indentation);
 }
 .protyle-wysiwyg > [data-node-id].h2,
+.protyle-wysiwyg > [data-node-id][fold="1"].h2,
 .b3-typography > h2 {
   font-weight: var(--custom-h-font-weight);
   counter-increment: h2-counter;
   counter-reset: h3-counter 0;
 }
 .protyle-wysiwyg > [data-node-id].h2::before,
+.protyle-wysiwyg > [data-node-id][fold="1"].h2::before,
 .b3-typography > h2::before {
   display: block !important;
   float: left;
@@ -52,12 +56,14 @@
   padding-left: var(--custom-h2-indentation);
 }
 .protyle-wysiwyg > [data-node-id].h3,
+.protyle-wysiwyg > [data-node-id][fold="1"].h3,
 .b3-typography > h3 {
   font-weight: var(--custom-h-font-weight);
   counter-increment: h3-counter;
   counter-reset: h4-counter 0;
 }
 .protyle-wysiwyg > [data-node-id].h3::before,
+.protyle-wysiwyg > [data-node-id][fold="1"].h3::before,
 .b3-typography > h3::before {
   display: block !important;
   float: left;
@@ -74,12 +80,14 @@
   padding-left: var(--custom-h3-indentation);
 }
 .protyle-wysiwyg > [data-node-id].h4,
+.protyle-wysiwyg > [data-node-id][fold="1"].h4,
 .b3-typography > h4 {
   font-weight: var(--custom-h-font-weight);
   counter-increment: h4-counter;
   counter-reset: h5-counter 0;
 }
 .protyle-wysiwyg > [data-node-id].h4::before,
+.protyle-wysiwyg > [data-node-id][fold="1"].h4::before,
 .b3-typography > h4::before {
   display: block !important;
   float: left;
@@ -96,12 +104,14 @@
   padding-left: var(--custom-h4-indentation);
 }
 .protyle-wysiwyg > [data-node-id].h5,
+.protyle-wysiwyg > [data-node-id][fold="1"].h5,
 .b3-typography > h5 {
   font-weight: var(--custom-h-font-weight);
   counter-increment: h5-counter;
   counter-reset: h6-counter 0;
 }
 .protyle-wysiwyg > [data-node-id].h5::before,
+.protyle-wysiwyg > [data-node-id][fold="1"].h5::before,
 .b3-typography > h5::before {
   display: block !important;
   float: left;
@@ -118,12 +128,14 @@
   padding-left: var(--custom-h5-indentation);
 }
 .protyle-wysiwyg > [data-node-id].h6,
+.protyle-wysiwyg > [data-node-id][fold="1"].h6,
 .b3-typography > h6 {
   font-weight: var(--custom-h-font-weight);
   counter-increment: h6-counter;
   counter-reset: h7-counter 0;
 }
 .protyle-wysiwyg > [data-node-id].h6::before,
+.protyle-wysiwyg > [data-node-id][fold="1"].h6::before,
 .b3-typography > h6::before {
   display: block !important;
   float: left;
