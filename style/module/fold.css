@@ -18,16 +18,14 @@
 }
 .protyle-wysiwyg [fold="1"][data-node-id][data-type="NodeHeading"]::before {
   /* 移除子标题折叠原有样式 */
-  content: none;
-  height: auto;
-  width: auto;
-  background: none;
-  display: none;
-  position: static;
-  left: auto;
-  top: auto;
-  border-radius: 0;
-  margin-top: 0;
+  height: unset;
+  width: unset;
+  background: unset;
+  position: unset;
+  left: unset;
+  top: unset;
+  border-radius: unset;
+  margin-top: unset;
 }
 .protyle-wysiwyg [fold="1"][data-node-id][data-type="NodeHeading"]::after {
   /* 添加子标题折叠标记 */
