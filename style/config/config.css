@@ -421,6 +421,8 @@
   --custom-span-mark-shadow-color: var(--b3-theme-on-primary);
   /* 思源标记阴影宽度 | The shadow width of mark */
   --custom-span-mark-shadow-width: 4px;
+  /* 闪卡标记颜色 | Flash card marker color */
+  --custom-riff-decks-color: var(--b3-theme-primary-light);
   /* 思源加粗文本颜色 | The color of bold text */
   /* 原样式 | Original style */
   /* --custom-span-strong-color: var(--b3-protyle-inline-strong-color); */

@@ -18,18 +18,37 @@
         color: transparent;
         transition: all 200ms linear 0ms;
 
-        .b3-dialog__cardblock--show & {
-            /* 闪卡显示后样式 */
+        &:hover {
+            background-color: transparent;
+            color: var(--custom-span-mark-color) !important;
+            text-shadow: 0 0 var(--custom-span-mark-shadow-width) var(--custom-span-mark-shadow-color);
+            /* font-weight: bold; */
+        }
+    }
+}
+
+.protyle.b3-dialog__cardblock {
+
+    // &.b3-dialog__cardblock--show,
+    &:not(.b3-dialog__cardblock--hide) {
+        .protyle-wysiwyg span[data-type~=mark] {
+            /* 闪卡挖空显示样式 */
             background-color: var(--cusotm-span-mark-background-color);
             color: var(--custom-span-mark-color) !important;
             text-shadow: none;
         }
+    }
 
-        &:hover {
-            background-color: transparent;
-            color: var(--custom-span-mark-color);
-            text-shadow: 0 0 var(--custom-span-mark-shadow-width) var(--custom-span-mark-shadow-color);
-            /* font-weight: bold; */
+    // &:not(.b3-dialog__cardblock--show),
+    &.b3-dialog__cardblock--hide {
+        .protyle-wysiwyg span[data-type~=mark] {
+            /* 闪卡挖空隐藏样式 */
+            color: transparent !important;
+
+            &:hover {
+                /* 闪卡挖空鼠标悬浮显示样式 */
+                color: var(--custom-span-mark-color) !important;
+            }
         }
     }
 }

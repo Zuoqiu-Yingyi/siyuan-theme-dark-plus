@@ -105,6 +105,20 @@
 .search__list > .b3-list-item:not([data-type="search-item"]) .b3-list-item__text {
   color: var(--custom-popover-menu-path-color);
 }
+.b3-list.b3-list--background > .b3-list-item[data-type="card-item"] {
+  /* 卡包列表 */
+  padding-bottom: calc(1.25em + 1px);
+}
+.b3-list.b3-list--background > .b3-list-item[data-type="card-item"] .b3-list-item__text {
+  display: var(--custom-search-display);
+}
+.b3-list.b3-list--background > .b3-list-item[data-type="card-item"] .b3-list-item__meta {
+  position: absolute;
+  right: 8px;
+  bottom: 0.25em;
+  max-width: calc(100% - 12px);
+  line-height: 1.25em;
+}
 /* 搜索输入框 */
 .search__header,
 #searchInput,
