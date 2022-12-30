@@ -5,6 +5,7 @@
 - 调整自定义悬浮工具栏层级 | Adjust the level of the custom floating toolbar.
 - 调整折叠标题块样式 | Adjust the style of the folded title block.
 - 使用 `unset` 属性值替代 `initial` 属性值 | Replace the `initial` property value with the `unset` property value.
+- 完善闪卡挖空样式 | Improve the hollow style of the flash card.
 
 ## v1.6.2/2022-12-27
 

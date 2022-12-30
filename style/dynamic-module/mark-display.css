@@ -4,6 +4,12 @@
 .protyle-wysiwyg mark:hover,
 .protyle-wysiwyg span[data-type~=mark]:hover {
   background-color: var(--cusotm-span-mark-background-color);
-  color: var(--custom-span-mark-color);
+  color: var(--custom-span-mark-color) !important;
+  text-shadow: none;
+}
+.protyle.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg span[data-type~=mark],
+.protyle.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg span[data-type~=mark] {
+  background-color: var(--cusotm-span-mark-background-color);
+  color: var(--custom-span-mark-color) !important;
   text-shadow: none;
 }

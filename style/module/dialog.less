@@ -1,5 +1,22 @@
 /* 对话框 */
 
+// 搜索结果列表项
+.search-list-item() {
+    padding-bottom: calc(1.25em + 1px);
+
+    .b3-list-item__text {
+        display: var(--custom-search-display);
+    }
+
+    .b3-list-item__meta {
+        position: absolute;
+        right: 8px;
+        bottom: 0.25em;
+        max-width: calc(100% - 12px);
+        line-height: 1.25em;
+    }
+}
+
 // 快捷键设置列表
 #keymapList {
     .b3-list--border {
@@ -150,19 +167,7 @@
     >.b3-list-item {
         &[data-type="search-item"] {
             /* 未分组 */
-            padding-bottom: calc(1.25em + 1px);
-
-            .b3-list-item__text {
-                display: var(--custom-search-display);
-            }
-
-            .b3-list-item__meta {
-                position: absolute;
-                right: 8px;
-                bottom: 0.25em;
-                max-width: calc(100% - 12px);
-                line-height: 1.25em;
-            }
+            .search-list-item();
         }
 
         // 已分组
@@ -172,6 +177,16 @@
             .b3-list-item__text {
                 color: var(--custom-popover-menu-path-color);
             }
+        }
+    }
+}
+
+// 其他列表内容显示方式
+.b3-list.b3-list--background {
+    >.b3-list-item {
+        &[data-type="card-item"] {
+            /* 卡包列表 */
+            .search-list-item();
         }
     }
 }

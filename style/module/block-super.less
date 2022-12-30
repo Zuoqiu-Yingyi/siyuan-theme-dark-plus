@@ -2,7 +2,7 @@
 
 
 .protyle-wysiwyg {
-    [data-node-id].sb {
+    .sb[data-node-id] {
         /* 调整超级块中元素间距 */
         // REF [roeseth/Siyuan-Golden-Topaz-Refined](https://github.com/roeseth/Siyuan-Golden-Topaz-Refined)
         border-radius: var(--custom-border-radius);
@@ -10,7 +10,7 @@
         box-shadow: 0 0 var(--custom-block-super-margin) 0 var(--b3-theme-on-surface-light);
 
         &,
-        & [data-node-id].sb {
+        & .sb[data-node-id] {
             /* 超级块边距 */
             margin: var(--custom-block-super-margin);
             padding: var(--custom-block-super-padding);
