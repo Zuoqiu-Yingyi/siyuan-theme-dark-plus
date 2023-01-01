@@ -1,15 +1,24 @@
 /* 显示标记文本内容 */
 
+@import (reference) "./../utils/loop-font-color.less";
+
 .protyle-content {
 
     [custom-mark~="显示"],
     [custom-mark~=display] {
 
-        &,
-        &:hover {
-            background-color: var(--cusotm-span-mark-background-color);
-            color: var(--b3-protyle-inline-mark-color);
-            text-shadow: none;
+        span[data-type~=mark] {
+
+            &,
+            &:hover,
+            &:not(:hover) {
+                &:not([style]) {
+                    color: var(--custom-span-mark-color) !important;
+                }
+
+                .loop-font-color(13);
+            }
         }
+
     }
 }

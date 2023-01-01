@@ -1,9 +1,113 @@
 /* 显示标记文本内容 */
-.protyle-content [custom-mark~="显示"],
-.protyle-content [custom-mark~=display],
-.protyle-content [custom-mark~="显示"]:hover,
-.protyle-content [custom-mark~=display]:hover {
-  background-color: var(--cusotm-span-mark-background-color);
-  color: var(--b3-protyle-inline-mark-color);
-  text-shadow: none;
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:not([style]),
+.protyle-content [custom-mark~=display] span[data-type~=mark]:not([style]),
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:hover:not([style]),
+.protyle-content [custom-mark~=display] span[data-type~=mark]:hover:not([style]),
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:not(:hover):not([style]),
+.protyle-content [custom-mark~=display] span[data-type~=mark]:not(:hover):not([style]) {
+  color: var(--custom-span-mark-color) !important;
+}
+.protyle-content [custom-mark~="显示"] span[data-type~=mark][style*="color: var(--b3-font-color1)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark][style*="color: var(--b3-font-color1)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:hover[style*="color: var(--b3-font-color1)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:hover[style*="color: var(--b3-font-color1)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color1)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color1)"] {
+  color: var(--b3-font-color1) !important;
+}
+.protyle-content [custom-mark~="显示"] span[data-type~=mark][style*="color: var(--b3-font-color2)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark][style*="color: var(--b3-font-color2)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:hover[style*="color: var(--b3-font-color2)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:hover[style*="color: var(--b3-font-color2)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color2)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color2)"] {
+  color: var(--b3-font-color2) !important;
+}
+.protyle-content [custom-mark~="显示"] span[data-type~=mark][style*="color: var(--b3-font-color3)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark][style*="color: var(--b3-font-color3)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:hover[style*="color: var(--b3-font-color3)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:hover[style*="color: var(--b3-font-color3)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color3)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color3)"] {
+  color: var(--b3-font-color3) !important;
+}
+.protyle-content [custom-mark~="显示"] span[data-type~=mark][style*="color: var(--b3-font-color4)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark][style*="color: var(--b3-font-color4)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:hover[style*="color: var(--b3-font-color4)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:hover[style*="color: var(--b3-font-color4)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color4)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color4)"] {
+  color: var(--b3-font-color4) !important;
+}
+.protyle-content [custom-mark~="显示"] span[data-type~=mark][style*="color: var(--b3-font-color5)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark][style*="color: var(--b3-font-color5)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:hover[style*="color: var(--b3-font-color5)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:hover[style*="color: var(--b3-font-color5)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color5)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color5)"] {
+  color: var(--b3-font-color5) !important;
+}
+.protyle-content [custom-mark~="显示"] span[data-type~=mark][style*="color: var(--b3-font-color6)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark][style*="color: var(--b3-font-color6)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:hover[style*="color: var(--b3-font-color6)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:hover[style*="color: var(--b3-font-color6)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color6)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color6)"] {
+  color: var(--b3-font-color6) !important;
+}
+.protyle-content [custom-mark~="显示"] span[data-type~=mark][style*="color: var(--b3-font-color7)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark][style*="color: var(--b3-font-color7)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:hover[style*="color: var(--b3-font-color7)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:hover[style*="color: var(--b3-font-color7)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color7)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color7)"] {
+  color: var(--b3-font-color7) !important;
+}
+.protyle-content [custom-mark~="显示"] span[data-type~=mark][style*="color: var(--b3-font-color8)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark][style*="color: var(--b3-font-color8)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:hover[style*="color: var(--b3-font-color8)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:hover[style*="color: var(--b3-font-color8)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color8)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color8)"] {
+  color: var(--b3-font-color8) !important;
+}
+.protyle-content [custom-mark~="显示"] span[data-type~=mark][style*="color: var(--b3-font-color9)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark][style*="color: var(--b3-font-color9)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:hover[style*="color: var(--b3-font-color9)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:hover[style*="color: var(--b3-font-color9)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color9)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color9)"] {
+  color: var(--b3-font-color9) !important;
+}
+.protyle-content [custom-mark~="显示"] span[data-type~=mark][style*="color: var(--b3-font-color10)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark][style*="color: var(--b3-font-color10)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:hover[style*="color: var(--b3-font-color10)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:hover[style*="color: var(--b3-font-color10)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color10)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color10)"] {
+  color: var(--b3-font-color10) !important;
+}
+.protyle-content [custom-mark~="显示"] span[data-type~=mark][style*="color: var(--b3-font-color11)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark][style*="color: var(--b3-font-color11)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:hover[style*="color: var(--b3-font-color11)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:hover[style*="color: var(--b3-font-color11)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color11)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color11)"] {
+  color: var(--b3-font-color11) !important;
+}
+.protyle-content [custom-mark~="显示"] span[data-type~=mark][style*="color: var(--b3-font-color12)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark][style*="color: var(--b3-font-color12)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:hover[style*="color: var(--b3-font-color12)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:hover[style*="color: var(--b3-font-color12)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color12)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color12)"] {
+  color: var(--b3-font-color12) !important;
+}
+.protyle-content [custom-mark~="显示"] span[data-type~=mark][style*="color: var(--b3-font-color13)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark][style*="color: var(--b3-font-color13)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:hover[style*="color: var(--b3-font-color13)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:hover[style*="color: var(--b3-font-color13)"],
+.protyle-content [custom-mark~="显示"] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color13)"],
+.protyle-content [custom-mark~=display] span[data-type~=mark]:not(:hover)[style*="color: var(--b3-font-color13)"] {
+  color: var(--b3-font-color13) !important;
 }

@@ -1,54 +1,51 @@
 /* 标记(挖空) */
 
+@import (reference) "./../utils/loop-font-color.less";
 
+// 导出时只有背景色
 .b3-typography,
 .protyle-wysiwyg {
 
     mark,
     span[data-type~=mark] {
-        background-color: var(--cusotm-span-mark-background-color);
+        &:not([style]) {
+            color: var(--custom-span-mark-color);
+            background-color: var(--cusotm-span-mark-background-color);
+        }
     }
 
 }
 
+// 编辑时字体隐藏
 .protyle-wysiwyg {
 
     mark,
     span[data-type~=mark] {
-        color: transparent;
         transition: all 200ms linear 0ms;
 
-        &:hover {
-            background-color: transparent;
-            color: var(--custom-span-mark-color) !important;
-            text-shadow: 0 0 var(--custom-span-mark-shadow-width) var(--custom-span-mark-shadow-color);
-            /* font-weight: bold; */
-        }
-    }
-}
+        // 闪卡挖空隐藏样式
+        .b3-dialog__cardblock.b3-dialog__cardblock--hide &,
+        // 鼠标未悬浮样式
+        &:not(:hover) {
+            color: transparent;
 
-.protyle.b3-dialog__cardblock {
-
-    // &.b3-dialog__cardblock--show,
-    &:not(.b3-dialog__cardblock--hide) {
-        .protyle-wysiwyg span[data-type~=mark] {
-            /* 闪卡挖空显示样式 */
-            background-color: var(--cusotm-span-mark-background-color);
-            color: var(--custom-span-mark-color) !important;
-            text-shadow: none;
-        }
-    }
-
-    // &:not(.b3-dialog__cardblock--show),
-    &.b3-dialog__cardblock--hide {
-        .protyle-wysiwyg span[data-type~=mark] {
-            /* 闪卡挖空隐藏样式 */
-            color: transparent !important;
-
-            &:hover {
-                /* 闪卡挖空鼠标悬浮显示样式 */
-                color: var(--custom-span-mark-color) !important;
+            &[style] {
+                color: transparent !important;
             }
+        }
+
+        // 闪卡挖空显示样式
+        .b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) &,
+        // 闪卡挖空鼠标悬浮样式
+        .b3-dialog__cardblock.b3-dialog__cardblock--hide &:hover {
+            &:not([style]) {
+                color: var(--custom-span-mark-color) !important;
+                // background-color: transparent;
+                // text-shadow: 0 0 var(--custom-span-mark-shadow-width) var(--custom-span-mark-shadow-color);
+                // font-weight: bold;
+            }
+
+            .loop-font-color(13);
         }
     }
 }
