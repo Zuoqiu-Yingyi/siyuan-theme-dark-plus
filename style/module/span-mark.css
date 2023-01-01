@@ -1,33 +1,108 @@
 /* 标记(挖空) */
-.b3-typography mark,
-.protyle-wysiwyg mark,
-.b3-typography span[data-type~=mark],
-.protyle-wysiwyg span[data-type~=mark] {
+.b3-typography mark:not([style]),
+.protyle-wysiwyg mark:not([style]),
+.b3-typography span[data-type~=mark]:not([style]),
+.protyle-wysiwyg span[data-type~=mark]:not([style]) {
+  color: var(--custom-span-mark-color);
   background-color: var(--cusotm-span-mark-background-color);
 }
 .protyle-wysiwyg mark,
 .protyle-wysiwyg span[data-type~=mark] {
-  color: transparent;
   transition: all 200ms linear 0ms;
 }
-.protyle-wysiwyg mark:hover,
-.protyle-wysiwyg span[data-type~=mark]:hover {
-  background-color: transparent;
-  color: var(--custom-span-mark-color) !important;
-  text-shadow: 0 0 var(--custom-span-mark-shadow-width) var(--custom-span-mark-shadow-color);
-  /* font-weight: bold; */
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg mark,
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg span[data-type~=mark],
+.protyle-wysiwyg mark:not(:hover),
+.protyle-wysiwyg span[data-type~=mark]:not(:hover) {
+  color: transparent;
 }
-.protyle.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg span[data-type~=mark] {
-  /* 闪卡挖空显示样式 */
-  background-color: var(--cusotm-span-mark-background-color);
-  color: var(--custom-span-mark-color) !important;
-  text-shadow: none;
-}
-.protyle.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg span[data-type~=mark] {
-  /* 闪卡挖空隐藏样式 */
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg mark[style],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg span[data-type~=mark][style],
+.protyle-wysiwyg mark:not(:hover)[style],
+.protyle-wysiwyg span[data-type~=mark]:not(:hover)[style] {
   color: transparent !important;
 }
-.protyle.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg span[data-type~=mark]:hover {
-  /* 闪卡挖空鼠标悬浮显示样式 */
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg mark:not([style]),
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg span[data-type~=mark]:not([style]),
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg mark:hover:not([style]),
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg span[data-type~=mark]:hover:not([style]) {
   color: var(--custom-span-mark-color) !important;
+}
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg mark[style*="color: var(--b3-font-color1)"],
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg span[data-type~=mark][style*="color: var(--b3-font-color1)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg mark:hover[style*="color: var(--b3-font-color1)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg span[data-type~=mark]:hover[style*="color: var(--b3-font-color1)"] {
+  color: var(--b3-font-color1) !important;
+}
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg mark[style*="color: var(--b3-font-color2)"],
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg span[data-type~=mark][style*="color: var(--b3-font-color2)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg mark:hover[style*="color: var(--b3-font-color2)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg span[data-type~=mark]:hover[style*="color: var(--b3-font-color2)"] {
+  color: var(--b3-font-color2) !important;
+}
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg mark[style*="color: var(--b3-font-color3)"],
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg span[data-type~=mark][style*="color: var(--b3-font-color3)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg mark:hover[style*="color: var(--b3-font-color3)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg span[data-type~=mark]:hover[style*="color: var(--b3-font-color3)"] {
+  color: var(--b3-font-color3) !important;
+}
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg mark[style*="color: var(--b3-font-color4)"],
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg span[data-type~=mark][style*="color: var(--b3-font-color4)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg mark:hover[style*="color: var(--b3-font-color4)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg span[data-type~=mark]:hover[style*="color: var(--b3-font-color4)"] {
+  color: var(--b3-font-color4) !important;
+}
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg mark[style*="color: var(--b3-font-color5)"],
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg span[data-type~=mark][style*="color: var(--b3-font-color5)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg mark:hover[style*="color: var(--b3-font-color5)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg span[data-type~=mark]:hover[style*="color: var(--b3-font-color5)"] {
+  color: var(--b3-font-color5) !important;
+}
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg mark[style*="color: var(--b3-font-color6)"],
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg span[data-type~=mark][style*="color: var(--b3-font-color6)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg mark:hover[style*="color: var(--b3-font-color6)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg span[data-type~=mark]:hover[style*="color: var(--b3-font-color6)"] {
+  color: var(--b3-font-color6) !important;
+}
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg mark[style*="color: var(--b3-font-color7)"],
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg span[data-type~=mark][style*="color: var(--b3-font-color7)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg mark:hover[style*="color: var(--b3-font-color7)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg span[data-type~=mark]:hover[style*="color: var(--b3-font-color7)"] {
+  color: var(--b3-font-color7) !important;
+}
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg mark[style*="color: var(--b3-font-color8)"],
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg span[data-type~=mark][style*="color: var(--b3-font-color8)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg mark:hover[style*="color: var(--b3-font-color8)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg span[data-type~=mark]:hover[style*="color: var(--b3-font-color8)"] {
+  color: var(--b3-font-color8) !important;
+}
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg mark[style*="color: var(--b3-font-color9)"],
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg span[data-type~=mark][style*="color: var(--b3-font-color9)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg mark:hover[style*="color: var(--b3-font-color9)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg span[data-type~=mark]:hover[style*="color: var(--b3-font-color9)"] {
+  color: var(--b3-font-color9) !important;
+}
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg mark[style*="color: var(--b3-font-color10)"],
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg span[data-type~=mark][style*="color: var(--b3-font-color10)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg mark:hover[style*="color: var(--b3-font-color10)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg span[data-type~=mark]:hover[style*="color: var(--b3-font-color10)"] {
+  color: var(--b3-font-color10) !important;
+}
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg mark[style*="color: var(--b3-font-color11)"],
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg span[data-type~=mark][style*="color: var(--b3-font-color11)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg mark:hover[style*="color: var(--b3-font-color11)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg span[data-type~=mark]:hover[style*="color: var(--b3-font-color11)"] {
+  color: var(--b3-font-color11) !important;
+}
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg mark[style*="color: var(--b3-font-color12)"],
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg span[data-type~=mark][style*="color: var(--b3-font-color12)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg mark:hover[style*="color: var(--b3-font-color12)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg span[data-type~=mark]:hover[style*="color: var(--b3-font-color12)"] {
+  color: var(--b3-font-color12) !important;
+}
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg mark[style*="color: var(--b3-font-color13)"],
+.b3-dialog__cardblock:not(.b3-dialog__cardblock--hide) .protyle-wysiwyg span[data-type~=mark][style*="color: var(--b3-font-color13)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg mark:hover[style*="color: var(--b3-font-color13)"],
+.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg span[data-type~=mark]:hover[style*="color: var(--b3-font-color13)"] {
+  color: var(--b3-font-color13) !important;
 }

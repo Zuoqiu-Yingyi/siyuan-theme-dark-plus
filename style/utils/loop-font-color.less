@@ -1,0 +1,18 @@
+// out: false
+// 设置 --b3-font-color1 ~ --b3-font-color13 颜色
+
+// REF [Less 循环 - 知乎](https://zhuanlan.zhihu.com/p/192364861)
+.loop-font-color(@i) when (@i > 0) {
+    .loop-font-color(@i - 1); // 递归调用自身
+
+    @value: %("--b3-font-color%d", @i);
+    .font-color(@value);
+}
+
+// 同时设置字体颜色的高亮元素
+.font-color(@value) {
+
+    &[style *="color: var(@{value})"] {
+        color: var(e(@value)) !important;
+    }
+}
