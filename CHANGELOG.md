@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.6.3/2023-01-03
+
+- [v1.6.2 <=> v1.6.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.2...v1.6.3)
 - 支持在子窗口打开子窗口 | Support open sub window in sub window.
 - 修复在子窗口打开的 Monaco 编辑器无法加载的问题 | Fixed the issue of Monaco editor can't load in sub window.
 - 调整自定义悬浮工具栏层级 | Adjust the level of the custom floating toolbar.
