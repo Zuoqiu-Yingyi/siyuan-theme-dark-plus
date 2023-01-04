@@ -7,10 +7,10 @@
 /* -------------------------------- 标题匹配 -------------------------------- */
 
 /* 备注 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="note"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="备注"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-title ^="note"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-title ^="备注"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="note"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="备注"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-title ^="note"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-title ^="备注"]:not(:empty)::before,
 .b3-typography a[href ^="note"]::before,
 .b3-typography a[href ^="备注"]::before,
 .b3-typography a[title ^="note"]::before,
@@ -20,184 +20,189 @@
 
 /* -------------------------------- URL Scheme -------------------------------- */
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="brain:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="brain:"]:not(:empty)::before,
 .b3-typography a[href ^="brain:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/thebrain.svg) !important;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="bookxnotepro:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="bookxnotepro:"]:not(:empty)::before,
 .b3-typography a[href ^="bookxnotepro:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/bookxnote.svg) !important;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="calibre:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="calibre:"]:not(:empty)::before,
 .b3-typography a[href ^="calibre:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/calibre.png) !important;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="es:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="es:"]:not(:empty)::before,
 .b3-typography a[href ^="es:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/everything.svg) !important;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="evernote:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="evernote:"]:not(:empty)::before,
 .b3-typography a[href ^="evernote:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/evernote.svg) !important;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="file:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="file:"]:not(:empty)::before,
 .b3-typography a[href ^="file:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/folder.svg) !important;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="http:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="http:"]:not(:empty)::before,
 .b3-typography a[href ^="http:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/http.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="https:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="https:"]:not(:empty)::before,
 .b3-typography a[href ^="https:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/https.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="joplin:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="joplin:"]:not(:empty)::before,
 .b3-typography a[href ^="joplin:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/joplin.svg) !important;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="lt:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="lt:"]:not(:empty)::before,
 .b3-typography a[href ^="lt:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/liquidtext.svg) !important;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="mailto:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="mailto:"]:not(:empty)::before,
 .b3-typography a[href ^="mailto:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/mailto.svg) !important;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="marginnote3app:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="marginnote3app:"]:not(:empty)::before,
 .b3-typography a[href ^="marginnote3app:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/marginnote.svg) !important;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="obsidian:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="obsidian:"]:not(:empty)::before,
 .b3-typography a[href ^="obsidian:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/obsidian.svg) !important;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="onenote:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="onenote:"]:not(:empty)::before,
 .b3-typography a[href ^="onenote:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/onenote.svg) !important;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="quicker:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="quicker:"]:not(:empty)::before,
 .b3-typography a[href ^="quicker:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/quicker.svg) !important;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="runcmd:"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="runpwsh:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="runcmd:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="runpwsh:"]:not(:empty)::before,
 .b3-typography a[href ^="runcmd:"]::before,
 .b3-typography a[href ^="runpwsh:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/pwsh.svg) !important;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="siyuan:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="siyuan:"]:not(:empty)::before,
 .b3-typography a[href ^="siyuan:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/siyuan.svg) !important;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="sm:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="sm:"]:not(:empty)::before,
 .b3-typography a[href ^="sm:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/supermemo.svg) !important;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="ticktick:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="tel:"]:not(:empty)::before,
+.b3-typography a[href ^="tel:"]::before {
+    background-image: url(/appearance/themes/Dark+/icon/tel.svg) !important;
+}
+
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="ticktick:"]:not(:empty)::before,
 .b3-typography a[href ^="ticktick:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/ticktick.svg) !important;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="vscode:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="vscode:"]:not(:empty)::before,
 .b3-typography a[href ^="vscode:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/vscode.svg) !important;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="vscode:"][data-href $="/"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="vscode:"][data-href $="\\"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="vscode:"][data-href $="/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="vscode:"][data-href $="\\"]:not(:empty)::before,
 .b3-typography a[href ^="vscode:"][href $="/"]::before,
 .b3-typography a[href ^="vscode:"][href $="\\"]::before {
     background-image: url(/appearance/themes/Dark+/icon/vscode-folder.svg) !important;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="zotero:"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="zotero:"]:not(:empty)::before,
 .b3-typography a[href ^="zotero:"]::before {
     background-image: url(/appearance/themes/Dark+/icon/zotero.ico) !important;
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="zotero://open-pdf/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="zotero://open-pdf/"]:not(:empty)::before,
 .b3-typography a[href ^="zotero://open-pdf/"]::before {
     background-image: url(/appearance/themes/Dark+/icon/zotero-light.ico) !important;
 }
 
 /* -------------------------------- 其他特化超链接 -------------------------------- */
 /* 视频时间戳 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-title *="custom-time"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-title *="custom-time"]:not(:empty)::before,
 .b3-typography a[title *="custom-time"]::before {
     background-image: url(/appearance/themes/Dark+/icon/timestamp.svg) !important;
 }
 
 /* -------------------------------- 静态文件目录 -------------------------------- */
 /* 资源 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $="/"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $="/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $="/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $="/"]:not(:empty)::before,
 .b3-typography a[href *="assets/"][href $="/"]::before,
 .b3-typography a[href *="/assets/"][href $="/"]::before {
     background-image: url(/appearance/themes/Dark+/icon/assets.svg);
 }
 
 /* 表情 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="emojis/"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/emojis/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="emojis/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/emojis/"]:not(:empty)::before,
 .b3-typography a[href *="emojis/"]::before,
 .b3-typography a[href *="/emojis/"]::before {
     background-image: url(/appearance/themes/Dark+/icon/emojis.svg);
 }
 
 /* 挂件 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="widgets/"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/widgets/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="widgets/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/widgets/"]:not(:empty)::before,
 .b3-typography a[href *="widgets/"]::before,
 .b3-typography a[href *="/widgets/"]::before {
     background-image: url(/appearance/themes/Dark+/icon/widgets.svg);
 }
 
 /* 片段 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="snippets/"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/snippets/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="snippets/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/snippets/"]:not(:empty)::before,
 .b3-typography a[href *="snippets/"]::before,
 .b3-typography a[href *="/snippets/"]::before {
     background-image: url(/appearance/themes/Dark+/icon/snippets.svg);
 }
 
 /* 外观 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="appearance/"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/appearance/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="appearance/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/appearance/"]:not(:empty)::before,
 .b3-typography a[href *="appearance/"]::before,
 .b3-typography a[href *="/appearance/"]::before {
     background-image: url(/appearance/themes/Dark+/icon/appearance.svg);
 }
 
 /* 导出 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="export/"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/export/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="export/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/export/"]:not(:empty)::before,
 .b3-typography a[href *="export/"]::before,
 .b3-typography a[href *="/export/"]::before {
     background-image: url(/appearance/themes/Dark+/icon/export.svg);
 }
 
 /* 历史 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="history/"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/history/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="history/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/history/"]:not(:empty)::before,
 .b3-typography a[href *="history/"]::before,
 .b3-typography a[href *="/history/"]::before {
     background-image: url(/appearance/themes/Dark+/icon/history.svg);
@@ -205,1173 +210,1173 @@
 
 /* -------------------------------- assets -------------------------------- */
 /* 默认样式 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"]:not(:empty)::before,
 .b3-typography a[href *="assets/"]::before,
 .b3-typography a[href *="/assets/"]::before {
     background-image: url(/appearance/themes/Dark+/icon/asset.svg);
 }
 
 /* PDF 文件 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".pdf"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".pdf"]:not(:empty)::before,
-.b3-typography [href *="assets/"][href $=".pdf"]::before,
-.b3-typography [href *="/assets/"][href $=".pdf"]::before {
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".pdf"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".pdf"]:not(:empty)::before,
+.b3-typography a[href *="assets/"][href $=".pdf"]::before,
+.b3-typography a[href *="/assets/"][href $=".pdf"]::before {
     background-image: url(/appearance/themes/Dark+/icon/pdf.svg);
 }
 
 /* Word 文件 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".doc"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".docx"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".doc"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".docx"]:not(:empty)::before,
-.b3-typography [href *="assets/"][href $=".doc"]::before,
-.b3-typography [href *="assets/"][href $=".doc"]::before,
-.b3-typography [href *="/assets/"][href $=".docx"]::before,
-.b3-typography [href *="/assets/"][href $=".docx"]::before {
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".doc"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".docx"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".doc"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".docx"]:not(:empty)::before,
+.b3-typography a[href *="assets/"][href $=".doc"]::before,
+.b3-typography a[href *="assets/"][href $=".doc"]::before,
+.b3-typography a[href *="/assets/"][href $=".docx"]::before,
+.b3-typography a[href *="/assets/"][href $=".docx"]::before {
     background-image: url(/appearance/themes/Dark+/icon/word.svg);
 }
 
 /* Powerpoint 文件 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".ppt"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".pptx"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".ppt"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".pptx"]:not(:empty)::before,
-.b3-typography [href *="assets/"][href $=".ppt"]::before,
-.b3-typography [href *="assets/"][href $=".ppt"]::before,
-.b3-typography [href *="/assets/"][href $=".pptx"]::before,
-.b3-typography [href *="/assets/"][href $=".pptx"]::before {
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".ppt"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".pptx"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".ppt"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".pptx"]:not(:empty)::before,
+.b3-typography a[href *="assets/"][href $=".ppt"]::before,
+.b3-typography a[href *="assets/"][href $=".ppt"]::before,
+.b3-typography a[href *="/assets/"][href $=".pptx"]::before,
+.b3-typography a[href *="/assets/"][href $=".pptx"]::before {
     background-image: url(/appearance/themes/Dark+/icon/powerpoint.svg);
 }
 
 /* Excel 文件 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".xls"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".xlsx"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".xls"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".xlsx"]:not(:empty)::before,
-.b3-typography [href *="assets/"][href $=".xls"]::before,
-.b3-typography [href *="assets/"][href $=".xls"]::before,
-.b3-typography [href *="/assets/"][href $=".xlsx"]::before,
-.b3-typography [href *="/assets/"][href $=".xlsx"]::before {
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".xls"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".xlsx"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".xls"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".xlsx"]:not(:empty)::before,
+.b3-typography a[href *="assets/"][href $=".xls"]::before,
+.b3-typography a[href *="assets/"][href $=".xls"]::before,
+.b3-typography a[href *="/assets/"][href $=".xlsx"]::before,
+.b3-typography a[href *="/assets/"][href $=".xlsx"]::before {
     background-image: url(/appearance/themes/Dark+/icon/excel.svg);
 }
 
 /* 音频文件 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".aac"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".aiff"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".amr"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".au"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".flac"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".m4a"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".mka"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".mp3"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".oga"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".opus"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".ra"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".wav"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".wma"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".aac"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".aiff"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".amr"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".au"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".flac"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".m4a"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".mka"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".mp3"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".oga"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".opus"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".ra"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".wav"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".wma"]:not(:empty)::before,
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".aac"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".aiff"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".amr"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".au"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".flac"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".m4a"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".mka"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".mp3"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".oga"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".opus"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".ra"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".wav"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".wma"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".aac"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".aiff"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".amr"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".au"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".flac"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".m4a"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".mka"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".mp3"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".oga"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".opus"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".ra"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".wav"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".wma"]:not(:empty)::before,
 
-.b3-typography [href *="assets/"][href $=".aac"]::before,
-.b3-typography [href *="assets/"][href $=".aiff"]::before,
-.b3-typography [href *="assets/"][href $=".amr"]::before,
-.b3-typography [href *="assets/"][href $=".au"]::before,
-.b3-typography [href *="assets/"][href $=".flac"]::before,
-.b3-typography [href *="assets/"][href $=".m4a"]::before,
-.b3-typography [href *="assets/"][href $=".mka"]::before,
-.b3-typography [href *="assets/"][href $=".mp3"]::before,
-.b3-typography [href *="assets/"][href $=".oga"]::before,
-.b3-typography [href *="assets/"][href $=".opus"]::before,
-.b3-typography [href *="assets/"][href $=".ra"]::before,
-.b3-typography [href *="assets/"][href $=".wav"]::before,
-.b3-typography [href *="assets/"][href $=".wma"]::before,
+.b3-typography a[href *="assets/"][href $=".aac"]::before,
+.b3-typography a[href *="assets/"][href $=".aiff"]::before,
+.b3-typography a[href *="assets/"][href $=".amr"]::before,
+.b3-typography a[href *="assets/"][href $=".au"]::before,
+.b3-typography a[href *="assets/"][href $=".flac"]::before,
+.b3-typography a[href *="assets/"][href $=".m4a"]::before,
+.b3-typography a[href *="assets/"][href $=".mka"]::before,
+.b3-typography a[href *="assets/"][href $=".mp3"]::before,
+.b3-typography a[href *="assets/"][href $=".oga"]::before,
+.b3-typography a[href *="assets/"][href $=".opus"]::before,
+.b3-typography a[href *="assets/"][href $=".ra"]::before,
+.b3-typography a[href *="assets/"][href $=".wav"]::before,
+.b3-typography a[href *="assets/"][href $=".wma"]::before,
 
-.b3-typography [href *="/assets/"][href $=".aac"]::before,
-.b3-typography [href *="/assets/"][href $=".aiff"]::before,
-.b3-typography [href *="/assets/"][href $=".amr"]::before,
-.b3-typography [href *="/assets/"][href $=".au"]::before,
-.b3-typography [href *="/assets/"][href $=".flac"]::before,
-.b3-typography [href *="/assets/"][href $=".m4a"]::before,
-.b3-typography [href *="/assets/"][href $=".mka"]::before,
-.b3-typography [href *="/assets/"][href $=".mp3"]::before,
-.b3-typography [href *="/assets/"][href $=".oga"]::before,
-.b3-typography [href *="/assets/"][href $=".opus"]::before,
-.b3-typography [href *="/assets/"][href $=".ra"]::before,
-.b3-typography [href *="/assets/"][href $=".wav"]::before,
-.b3-typography [href *="/assets/"][href $=".wma"]::before {
+.b3-typography a[href *="/assets/"][href $=".aac"]::before,
+.b3-typography a[href *="/assets/"][href $=".aiff"]::before,
+.b3-typography a[href *="/assets/"][href $=".amr"]::before,
+.b3-typography a[href *="/assets/"][href $=".au"]::before,
+.b3-typography a[href *="/assets/"][href $=".flac"]::before,
+.b3-typography a[href *="/assets/"][href $=".m4a"]::before,
+.b3-typography a[href *="/assets/"][href $=".mka"]::before,
+.b3-typography a[href *="/assets/"][href $=".mp3"]::before,
+.b3-typography a[href *="/assets/"][href $=".oga"]::before,
+.b3-typography a[href *="/assets/"][href $=".opus"]::before,
+.b3-typography a[href *="/assets/"][href $=".ra"]::before,
+.b3-typography a[href *="/assets/"][href $=".wav"]::before,
+.b3-typography a[href *="/assets/"][href $=".wma"]::before {
     background-image: url(/appearance/themes/Dark+/icon/audio.svg);
 }
 
 /* 视频文件 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".3gp"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".avi"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".flv"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".gifv"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".m2ts"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".m2v"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".m4p"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".m4v"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".mkv"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".mov"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".mp2"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".mp4"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".mpe"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".mpeg"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".mpg"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".mpv"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".ogg"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".ogv"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".qt"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".rm"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".rmvb"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".swf"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".vob"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".webm"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".wmv"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".yuv"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".3gp"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".avi"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".flv"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".gifv"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".m2ts"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".m2v"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".m4p"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".m4v"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".mkv"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".mov"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".mp2"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".mp4"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".mpe"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".mpeg"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".mpg"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".mpv"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".ogg"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".ogv"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".qt"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".rm"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".rmvb"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".swf"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".vob"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".webm"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".wmv"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".yuv"]:not(:empty)::before,
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".3gp"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".avi"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".flv"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".gifv"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".m2ts"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".m2v"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".m4p"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".m4v"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".mkv"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".mov"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".mp2"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".mp4"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".mpe"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".mpeg"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".mpg"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".mpv"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".ogg"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".ogv"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".qt"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".rm"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".rmvb"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".swf"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".vob"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".webm"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".wmv"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".yuv"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".3gp"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".avi"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".flv"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".gifv"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".m2ts"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".m2v"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".m4p"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".m4v"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".mkv"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".mov"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".mp2"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".mp4"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".mpe"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".mpeg"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".mpg"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".mpv"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".ogg"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".ogv"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".qt"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".rm"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".rmvb"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".swf"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".vob"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".webm"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".wmv"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".yuv"]:not(:empty)::before,
 
-.b3-typography [href *="assets/"][href $=".3gp"]::before,
-.b3-typography [href *="assets/"][href $=".avi"]::before,
-.b3-typography [href *="assets/"][href $=".flv"]::before,
-.b3-typography [href *="assets/"][href $=".gifv"]::before,
-.b3-typography [href *="assets/"][href $=".m2ts"]::before,
-.b3-typography [href *="assets/"][href $=".m2v"]::before,
-.b3-typography [href *="assets/"][href $=".m4p"]::before,
-.b3-typography [href *="assets/"][href $=".m4v"]::before,
-.b3-typography [href *="assets/"][href $=".mkv"]::before,
-.b3-typography [href *="assets/"][href $=".mov"]::before,
-.b3-typography [href *="assets/"][href $=".mp2"]::before,
-.b3-typography [href *="assets/"][href $=".mp4"]::before,
-.b3-typography [href *="assets/"][href $=".mpe"]::before,
-.b3-typography [href *="assets/"][href $=".mpeg"]::before,
-.b3-typography [href *="assets/"][href $=".mpg"]::before,
-.b3-typography [href *="assets/"][href $=".mpv"]::before,
-.b3-typography [href *="assets/"][href $=".ogg"]::before,
-.b3-typography [href *="assets/"][href $=".ogv"]::before,
-.b3-typography [href *="assets/"][href $=".qt"]::before,
-.b3-typography [href *="assets/"][href $=".rm"]::before,
-.b3-typography [href *="assets/"][href $=".rmvb"]::before,
-.b3-typography [href *="assets/"][href $=".swf"]::before,
-.b3-typography [href *="assets/"][href $=".vob"]::before,
-.b3-typography [href *="assets/"][href $=".webm"]::before,
-.b3-typography [href *="assets/"][href $=".wmv"]::before,
-.b3-typography [href *="assets/"][href $=".yuv"]::before,
+.b3-typography a[href *="assets/"][href $=".3gp"]::before,
+.b3-typography a[href *="assets/"][href $=".avi"]::before,
+.b3-typography a[href *="assets/"][href $=".flv"]::before,
+.b3-typography a[href *="assets/"][href $=".gifv"]::before,
+.b3-typography a[href *="assets/"][href $=".m2ts"]::before,
+.b3-typography a[href *="assets/"][href $=".m2v"]::before,
+.b3-typography a[href *="assets/"][href $=".m4p"]::before,
+.b3-typography a[href *="assets/"][href $=".m4v"]::before,
+.b3-typography a[href *="assets/"][href $=".mkv"]::before,
+.b3-typography a[href *="assets/"][href $=".mov"]::before,
+.b3-typography a[href *="assets/"][href $=".mp2"]::before,
+.b3-typography a[href *="assets/"][href $=".mp4"]::before,
+.b3-typography a[href *="assets/"][href $=".mpe"]::before,
+.b3-typography a[href *="assets/"][href $=".mpeg"]::before,
+.b3-typography a[href *="assets/"][href $=".mpg"]::before,
+.b3-typography a[href *="assets/"][href $=".mpv"]::before,
+.b3-typography a[href *="assets/"][href $=".ogg"]::before,
+.b3-typography a[href *="assets/"][href $=".ogv"]::before,
+.b3-typography a[href *="assets/"][href $=".qt"]::before,
+.b3-typography a[href *="assets/"][href $=".rm"]::before,
+.b3-typography a[href *="assets/"][href $=".rmvb"]::before,
+.b3-typography a[href *="assets/"][href $=".swf"]::before,
+.b3-typography a[href *="assets/"][href $=".vob"]::before,
+.b3-typography a[href *="assets/"][href $=".webm"]::before,
+.b3-typography a[href *="assets/"][href $=".wmv"]::before,
+.b3-typography a[href *="assets/"][href $=".yuv"]::before,
 
-.b3-typography [href *="/assets/"][href $=".3gp"]::before,
-.b3-typography [href *="/assets/"][href $=".avi"]::before,
-.b3-typography [href *="/assets/"][href $=".flv"]::before,
-.b3-typography [href *="/assets/"][href $=".gifv"]::before,
-.b3-typography [href *="/assets/"][href $=".m2ts"]::before,
-.b3-typography [href *="/assets/"][href $=".m2v"]::before,
-.b3-typography [href *="/assets/"][href $=".m4p"]::before,
-.b3-typography [href *="/assets/"][href $=".m4v"]::before,
-.b3-typography [href *="/assets/"][href $=".mkv"]::before,
-.b3-typography [href *="/assets/"][href $=".mov"]::before,
-.b3-typography [href *="/assets/"][href $=".mp2"]::before,
-.b3-typography [href *="/assets/"][href $=".mp4"]::before,
-.b3-typography [href *="/assets/"][href $=".mpe"]::before,
-.b3-typography [href *="/assets/"][href $=".mpeg"]::before,
-.b3-typography [href *="/assets/"][href $=".mpg"]::before,
-.b3-typography [href *="/assets/"][href $=".mpv"]::before,
-.b3-typography [href *="/assets/"][href $=".ogg"]::before,
-.b3-typography [href *="/assets/"][href $=".ogv"]::before,
-.b3-typography [href *="/assets/"][href $=".qt"]::before,
-.b3-typography [href *="/assets/"][href $=".rm"]::before,
-.b3-typography [href *="/assets/"][href $=".rmvb"]::before,
-.b3-typography [href *="/assets/"][href $=".swf"]::before,
-.b3-typography [href *="/assets/"][href $=".vob"]::before,
-.b3-typography [href *="/assets/"][href $=".webm"]::before,
-.b3-typography [href *="/assets/"][href $=".wmv"]::before,
-.b3-typography [href *="/assets/"][href $=".yuv"]::before {
+.b3-typography a[href *="/assets/"][href $=".3gp"]::before,
+.b3-typography a[href *="/assets/"][href $=".avi"]::before,
+.b3-typography a[href *="/assets/"][href $=".flv"]::before,
+.b3-typography a[href *="/assets/"][href $=".gifv"]::before,
+.b3-typography a[href *="/assets/"][href $=".m2ts"]::before,
+.b3-typography a[href *="/assets/"][href $=".m2v"]::before,
+.b3-typography a[href *="/assets/"][href $=".m4p"]::before,
+.b3-typography a[href *="/assets/"][href $=".m4v"]::before,
+.b3-typography a[href *="/assets/"][href $=".mkv"]::before,
+.b3-typography a[href *="/assets/"][href $=".mov"]::before,
+.b3-typography a[href *="/assets/"][href $=".mp2"]::before,
+.b3-typography a[href *="/assets/"][href $=".mp4"]::before,
+.b3-typography a[href *="/assets/"][href $=".mpe"]::before,
+.b3-typography a[href *="/assets/"][href $=".mpeg"]::before,
+.b3-typography a[href *="/assets/"][href $=".mpg"]::before,
+.b3-typography a[href *="/assets/"][href $=".mpv"]::before,
+.b3-typography a[href *="/assets/"][href $=".ogg"]::before,
+.b3-typography a[href *="/assets/"][href $=".ogv"]::before,
+.b3-typography a[href *="/assets/"][href $=".qt"]::before,
+.b3-typography a[href *="/assets/"][href $=".rm"]::before,
+.b3-typography a[href *="/assets/"][href $=".rmvb"]::before,
+.b3-typography a[href *="/assets/"][href $=".swf"]::before,
+.b3-typography a[href *="/assets/"][href $=".vob"]::before,
+.b3-typography a[href *="/assets/"][href $=".webm"]::before,
+.b3-typography a[href *="/assets/"][href $=".wmv"]::before,
+.b3-typography a[href *="/assets/"][href $=".yuv"]::before {
     background-image: url(/appearance/themes/Dark+/icon/video.svg);
 }
 
 /* 图片文件 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".aai"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".afphoto"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".ami"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".apng"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".apx"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".ase"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".aseprite"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".avif"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".avs"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".bmp"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".bpg"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".brk"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".cin"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".clip"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".cmyk"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".cmyka"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".cpt"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".cur"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".dcx"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".dds"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".dib"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".dng"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".dpx"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".eits"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".epdf"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".epi"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".eps"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".eps2"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".eps3"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".epsf"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".epsi"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".ept"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".exr"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".fax"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".fpx"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".gbr"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".gif"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".gray"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".hdr"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".heic"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".heif"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".hrz"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".icns"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".ico"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".img"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".info"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".j2c"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".j2k"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".jb2"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".jbig"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".jbig2"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".jfif"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".jng"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".jp2"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".jpeg"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".jpg"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".jpt"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".jxr"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".kra"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".mdp"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".miff"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".mng"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".mono"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".mpc"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".mtv"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".ora"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".otb"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".p7"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".palm"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".pam"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".pbm"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".pcd"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".pcl"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".pcx"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".pdb"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".pdn"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".pfm"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".pgf"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".pgm"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".pic"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".pict"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".pjp"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".pjpeg"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".png"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".pnm"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".ppm"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".ps"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".ps2"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".ps3"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".psb"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".psd"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".ptif"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".qoi"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".rad"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".raw"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".reb"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".rfg"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".sai"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".sgi"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".sun"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".svg"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".svgz"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".tga"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".tif"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".tiff"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".uil"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".uyvy"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".vicar"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".viff"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".wbmp"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".wdp"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".webp"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".xbm"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".xcf"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".xpm"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".xwd"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".aai"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".afphoto"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".ami"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".apng"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".apx"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".ase"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".aseprite"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".avif"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".avs"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".bmp"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".bpg"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".brk"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".cin"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".clip"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".cmyk"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".cmyka"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".cpt"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".cur"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".dcx"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".dds"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".dib"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".dng"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".dpx"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".eits"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".epdf"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".epi"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".eps"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".eps2"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".eps3"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".epsf"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".epsi"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".ept"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".exr"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".fax"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".fpx"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".gbr"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".gif"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".gray"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".hdr"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".heic"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".heif"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".hrz"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".icns"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".ico"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".img"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".info"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".j2c"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".j2k"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".jb2"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".jbig"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".jbig2"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".jfif"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".jng"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".jp2"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".jpeg"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".jpg"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".jpt"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".jxr"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".kra"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".mdp"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".miff"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".mng"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".mono"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".mpc"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".mtv"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".ora"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".otb"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".p7"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".palm"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".pam"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".pbm"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".pcd"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".pcl"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".pcx"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".pdb"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".pdn"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".pfm"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".pgf"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".pgm"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".pic"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".pict"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".pjp"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".pjpeg"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".png"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".pnm"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".ppm"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".ps"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".ps2"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".ps3"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".psb"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".psd"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".ptif"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".qoi"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".rad"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".raw"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".reb"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".rfg"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".sai"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".sgi"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".sun"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".svg"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".svgz"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".tga"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".tif"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".tiff"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".uil"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".uyvy"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".vicar"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".viff"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".wbmp"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".wdp"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".webp"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".xbm"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".xcf"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".xpm"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".xwd"]:not(:empty)::before,
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".aai"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".afphoto"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".ami"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".apng"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".apx"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".ase"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".aseprite"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".avif"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".avs"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".bmp"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".bpg"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".brk"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".cin"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".clip"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".cmyk"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".cmyka"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".cpt"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".cur"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".dcx"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".dds"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".dib"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".dng"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".dpx"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".eits"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".epdf"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".epi"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".eps"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".eps2"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".eps3"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".epsf"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".epsi"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".ept"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".exr"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".fax"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".fpx"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".gbr"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".gif"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".gray"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".hdr"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".heic"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".heif"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".hrz"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".icns"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".ico"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".img"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".info"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".j2c"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".j2k"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".jb2"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".jbig"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".jbig2"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".jfif"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".jng"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".jp2"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".jpeg"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".jpg"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".jpt"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".jxr"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".kra"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".mdp"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".miff"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".mng"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".mono"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".mpc"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".mtv"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".ora"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".otb"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".p7"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".palm"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".pam"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".pbm"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".pcd"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".pcl"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".pcx"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".pdb"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".pdn"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".pfm"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".pgf"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".pgm"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".pic"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".pict"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".pjp"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".pjpeg"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".png"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".pnm"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".ppm"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".ps"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".ps2"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".ps3"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".psb"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".psd"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".ptif"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".qoi"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".rad"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".raw"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".reb"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".rfg"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".sai"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".sgi"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".sun"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".svg"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".svgz"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".tga"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".tif"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".tiff"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".uil"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".uyvy"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".vicar"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".viff"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".wbmp"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".wdp"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".webp"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".xbm"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".xcf"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".xpm"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".xwd"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".aai"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".afphoto"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".ami"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".apng"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".apx"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".ase"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".aseprite"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".avif"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".avs"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".bmp"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".bpg"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".brk"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".cin"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".clip"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".cmyk"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".cmyka"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".cpt"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".cur"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".dcx"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".dds"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".dib"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".dng"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".dpx"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".eits"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".epdf"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".epi"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".eps"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".eps2"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".eps3"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".epsf"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".epsi"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".ept"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".exr"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".fax"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".fpx"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".gbr"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".gif"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".gray"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".hdr"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".heic"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".heif"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".hrz"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".icns"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".ico"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".img"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".info"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".j2c"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".j2k"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".jb2"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".jbig"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".jbig2"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".jfif"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".jng"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".jp2"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".jpeg"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".jpg"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".jpt"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".jxr"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".kra"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".mdp"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".miff"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".mng"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".mono"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".mpc"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".mtv"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".ora"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".otb"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".p7"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".palm"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".pam"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".pbm"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".pcd"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".pcl"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".pcx"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".pdb"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".pdn"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".pfm"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".pgf"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".pgm"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".pic"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".pict"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".pjp"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".pjpeg"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".png"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".pnm"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".ppm"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".ps"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".ps2"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".ps3"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".psb"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".psd"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".ptif"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".qoi"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".rad"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".raw"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".reb"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".rfg"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".sai"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".sgi"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".sun"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".svg"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".svgz"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".tga"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".tif"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".tiff"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".uil"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".uyvy"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".vicar"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".viff"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".wbmp"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".wdp"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".webp"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".xbm"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".xcf"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".xpm"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".xwd"]:not(:empty)::before,
 
-.b3-typography [href *="assets/"][href $=".aai"]::before,
-.b3-typography [href *="assets/"][href $=".afphoto"]::before,
-.b3-typography [href *="assets/"][href $=".ami"]::before,
-.b3-typography [href *="assets/"][href $=".apng"]::before,
-.b3-typography [href *="assets/"][href $=".apx"]::before,
-.b3-typography [href *="assets/"][href $=".ase"]::before,
-.b3-typography [href *="assets/"][href $=".aseprite"]::before,
-.b3-typography [href *="assets/"][href $=".avif"]::before,
-.b3-typography [href *="assets/"][href $=".avs"]::before,
-.b3-typography [href *="assets/"][href $=".bmp"]::before,
-.b3-typography [href *="assets/"][href $=".bpg"]::before,
-.b3-typography [href *="assets/"][href $=".brk"]::before,
-.b3-typography [href *="assets/"][href $=".cin"]::before,
-.b3-typography [href *="assets/"][href $=".clip"]::before,
-.b3-typography [href *="assets/"][href $=".cmyk"]::before,
-.b3-typography [href *="assets/"][href $=".cmyka"]::before,
-.b3-typography [href *="assets/"][href $=".cpt"]::before,
-.b3-typography [href *="assets/"][href $=".cur"]::before,
-.b3-typography [href *="assets/"][href $=".dcx"]::before,
-.b3-typography [href *="assets/"][href $=".dds"]::before,
-.b3-typography [href *="assets/"][href $=".dib"]::before,
-.b3-typography [href *="assets/"][href $=".dng"]::before,
-.b3-typography [href *="assets/"][href $=".dpx"]::before,
-.b3-typography [href *="assets/"][href $=".eits"]::before,
-.b3-typography [href *="assets/"][href $=".epdf"]::before,
-.b3-typography [href *="assets/"][href $=".epi"]::before,
-.b3-typography [href *="assets/"][href $=".eps"]::before,
-.b3-typography [href *="assets/"][href $=".eps2"]::before,
-.b3-typography [href *="assets/"][href $=".eps3"]::before,
-.b3-typography [href *="assets/"][href $=".epsf"]::before,
-.b3-typography [href *="assets/"][href $=".epsi"]::before,
-.b3-typography [href *="assets/"][href $=".ept"]::before,
-.b3-typography [href *="assets/"][href $=".exr"]::before,
-.b3-typography [href *="assets/"][href $=".fax"]::before,
-.b3-typography [href *="assets/"][href $=".fpx"]::before,
-.b3-typography [href *="assets/"][href $=".gbr"]::before,
-.b3-typography [href *="assets/"][href $=".gif"]::before,
-.b3-typography [href *="assets/"][href $=".gray"]::before,
-.b3-typography [href *="assets/"][href $=".hdr"]::before,
-.b3-typography [href *="assets/"][href $=".heic"]::before,
-.b3-typography [href *="assets/"][href $=".heif"]::before,
-.b3-typography [href *="assets/"][href $=".hrz"]::before,
-.b3-typography [href *="assets/"][href $=".icns"]::before,
-.b3-typography [href *="assets/"][href $=".ico"]::before,
-.b3-typography [href *="assets/"][href $=".img"]::before,
-.b3-typography [href *="assets/"][href $=".info"]::before,
-.b3-typography [href *="assets/"][href $=".j2c"]::before,
-.b3-typography [href *="assets/"][href $=".j2k"]::before,
-.b3-typography [href *="assets/"][href $=".jb2"]::before,
-.b3-typography [href *="assets/"][href $=".jbig"]::before,
-.b3-typography [href *="assets/"][href $=".jbig2"]::before,
-.b3-typography [href *="assets/"][href $=".jfif"]::before,
-.b3-typography [href *="assets/"][href $=".jng"]::before,
-.b3-typography [href *="assets/"][href $=".jp2"]::before,
-.b3-typography [href *="assets/"][href $=".jpeg"]::before,
-.b3-typography [href *="assets/"][href $=".jpg"]::before,
-.b3-typography [href *="assets/"][href $=".jpt"]::before,
-.b3-typography [href *="assets/"][href $=".jxr"]::before,
-.b3-typography [href *="assets/"][href $=".kra"]::before,
-.b3-typography [href *="assets/"][href $=".mdp"]::before,
-.b3-typography [href *="assets/"][href $=".miff"]::before,
-.b3-typography [href *="assets/"][href $=".mng"]::before,
-.b3-typography [href *="assets/"][href $=".mono"]::before,
-.b3-typography [href *="assets/"][href $=".mpc"]::before,
-.b3-typography [href *="assets/"][href $=".mtv"]::before,
-.b3-typography [href *="assets/"][href $=".ora"]::before,
-.b3-typography [href *="assets/"][href $=".otb"]::before,
-.b3-typography [href *="assets/"][href $=".p7"]::before,
-.b3-typography [href *="assets/"][href $=".palm"]::before,
-.b3-typography [href *="assets/"][href $=".pam"]::before,
-.b3-typography [href *="assets/"][href $=".pbm"]::before,
-.b3-typography [href *="assets/"][href $=".pcd"]::before,
-.b3-typography [href *="assets/"][href $=".pcl"]::before,
-.b3-typography [href *="assets/"][href $=".pcx"]::before,
-.b3-typography [href *="assets/"][href $=".pdb"]::before,
-.b3-typography [href *="assets/"][href $=".pdn"]::before,
-.b3-typography [href *="assets/"][href $=".pfm"]::before,
-.b3-typography [href *="assets/"][href $=".pgf"]::before,
-.b3-typography [href *="assets/"][href $=".pgm"]::before,
-.b3-typography [href *="assets/"][href $=".pic"]::before,
-.b3-typography [href *="assets/"][href $=".pict"]::before,
-.b3-typography [href *="assets/"][href $=".pjp"]::before,
-.b3-typography [href *="assets/"][href $=".pjpeg"]::before,
-.b3-typography [href *="assets/"][href $=".png"]::before,
-.b3-typography [href *="assets/"][href $=".pnm"]::before,
-.b3-typography [href *="assets/"][href $=".ppm"]::before,
-.b3-typography [href *="assets/"][href $=".ps"]::before,
-.b3-typography [href *="assets/"][href $=".ps2"]::before,
-.b3-typography [href *="assets/"][href $=".ps3"]::before,
-.b3-typography [href *="assets/"][href $=".psb"]::before,
-.b3-typography [href *="assets/"][href $=".psd"]::before,
-.b3-typography [href *="assets/"][href $=".ptif"]::before,
-.b3-typography [href *="assets/"][href $=".qoi"]::before,
-.b3-typography [href *="assets/"][href $=".rad"]::before,
-.b3-typography [href *="assets/"][href $=".raw"]::before,
-.b3-typography [href *="assets/"][href $=".reb"]::before,
-.b3-typography [href *="assets/"][href $=".rfg"]::before,
-.b3-typography [href *="assets/"][href $=".sai"]::before,
-.b3-typography [href *="assets/"][href $=".sgi"]::before,
-.b3-typography [href *="assets/"][href $=".sun"]::before,
-.b3-typography [href *="assets/"][href $=".svg"]::before,
-.b3-typography [href *="assets/"][href $=".svgz"]::before,
-.b3-typography [href *="assets/"][href $=".tga"]::before,
-.b3-typography [href *="assets/"][href $=".tif"]::before,
-.b3-typography [href *="assets/"][href $=".tiff"]::before,
-.b3-typography [href *="assets/"][href $=".uil"]::before,
-.b3-typography [href *="assets/"][href $=".uyvy"]::before,
-.b3-typography [href *="assets/"][href $=".vicar"]::before,
-.b3-typography [href *="assets/"][href $=".viff"]::before,
-.b3-typography [href *="assets/"][href $=".wbmp"]::before,
-.b3-typography [href *="assets/"][href $=".wdp"]::before,
-.b3-typography [href *="assets/"][href $=".webp"]::before,
-.b3-typography [href *="assets/"][href $=".xbm"]::before,
-.b3-typography [href *="assets/"][href $=".xcf"]::before,
-.b3-typography [href *="assets/"][href $=".xpm"]::before,
-.b3-typography [href *="assets/"][href $=".xwd"]::before,
+.b3-typography a[href *="assets/"][href $=".aai"]::before,
+.b3-typography a[href *="assets/"][href $=".afphoto"]::before,
+.b3-typography a[href *="assets/"][href $=".ami"]::before,
+.b3-typography a[href *="assets/"][href $=".apng"]::before,
+.b3-typography a[href *="assets/"][href $=".apx"]::before,
+.b3-typography a[href *="assets/"][href $=".ase"]::before,
+.b3-typography a[href *="assets/"][href $=".aseprite"]::before,
+.b3-typography a[href *="assets/"][href $=".avif"]::before,
+.b3-typography a[href *="assets/"][href $=".avs"]::before,
+.b3-typography a[href *="assets/"][href $=".bmp"]::before,
+.b3-typography a[href *="assets/"][href $=".bpg"]::before,
+.b3-typography a[href *="assets/"][href $=".brk"]::before,
+.b3-typography a[href *="assets/"][href $=".cin"]::before,
+.b3-typography a[href *="assets/"][href $=".clip"]::before,
+.b3-typography a[href *="assets/"][href $=".cmyk"]::before,
+.b3-typography a[href *="assets/"][href $=".cmyka"]::before,
+.b3-typography a[href *="assets/"][href $=".cpt"]::before,
+.b3-typography a[href *="assets/"][href $=".cur"]::before,
+.b3-typography a[href *="assets/"][href $=".dcx"]::before,
+.b3-typography a[href *="assets/"][href $=".dds"]::before,
+.b3-typography a[href *="assets/"][href $=".dib"]::before,
+.b3-typography a[href *="assets/"][href $=".dng"]::before,
+.b3-typography a[href *="assets/"][href $=".dpx"]::before,
+.b3-typography a[href *="assets/"][href $=".eits"]::before,
+.b3-typography a[href *="assets/"][href $=".epdf"]::before,
+.b3-typography a[href *="assets/"][href $=".epi"]::before,
+.b3-typography a[href *="assets/"][href $=".eps"]::before,
+.b3-typography a[href *="assets/"][href $=".eps2"]::before,
+.b3-typography a[href *="assets/"][href $=".eps3"]::before,
+.b3-typography a[href *="assets/"][href $=".epsf"]::before,
+.b3-typography a[href *="assets/"][href $=".epsi"]::before,
+.b3-typography a[href *="assets/"][href $=".ept"]::before,
+.b3-typography a[href *="assets/"][href $=".exr"]::before,
+.b3-typography a[href *="assets/"][href $=".fax"]::before,
+.b3-typography a[href *="assets/"][href $=".fpx"]::before,
+.b3-typography a[href *="assets/"][href $=".gbr"]::before,
+.b3-typography a[href *="assets/"][href $=".gif"]::before,
+.b3-typography a[href *="assets/"][href $=".gray"]::before,
+.b3-typography a[href *="assets/"][href $=".hdr"]::before,
+.b3-typography a[href *="assets/"][href $=".heic"]::before,
+.b3-typography a[href *="assets/"][href $=".heif"]::before,
+.b3-typography a[href *="assets/"][href $=".hrz"]::before,
+.b3-typography a[href *="assets/"][href $=".icns"]::before,
+.b3-typography a[href *="assets/"][href $=".ico"]::before,
+.b3-typography a[href *="assets/"][href $=".img"]::before,
+.b3-typography a[href *="assets/"][href $=".info"]::before,
+.b3-typography a[href *="assets/"][href $=".j2c"]::before,
+.b3-typography a[href *="assets/"][href $=".j2k"]::before,
+.b3-typography a[href *="assets/"][href $=".jb2"]::before,
+.b3-typography a[href *="assets/"][href $=".jbig"]::before,
+.b3-typography a[href *="assets/"][href $=".jbig2"]::before,
+.b3-typography a[href *="assets/"][href $=".jfif"]::before,
+.b3-typography a[href *="assets/"][href $=".jng"]::before,
+.b3-typography a[href *="assets/"][href $=".jp2"]::before,
+.b3-typography a[href *="assets/"][href $=".jpeg"]::before,
+.b3-typography a[href *="assets/"][href $=".jpg"]::before,
+.b3-typography a[href *="assets/"][href $=".jpt"]::before,
+.b3-typography a[href *="assets/"][href $=".jxr"]::before,
+.b3-typography a[href *="assets/"][href $=".kra"]::before,
+.b3-typography a[href *="assets/"][href $=".mdp"]::before,
+.b3-typography a[href *="assets/"][href $=".miff"]::before,
+.b3-typography a[href *="assets/"][href $=".mng"]::before,
+.b3-typography a[href *="assets/"][href $=".mono"]::before,
+.b3-typography a[href *="assets/"][href $=".mpc"]::before,
+.b3-typography a[href *="assets/"][href $=".mtv"]::before,
+.b3-typography a[href *="assets/"][href $=".ora"]::before,
+.b3-typography a[href *="assets/"][href $=".otb"]::before,
+.b3-typography a[href *="assets/"][href $=".p7"]::before,
+.b3-typography a[href *="assets/"][href $=".palm"]::before,
+.b3-typography a[href *="assets/"][href $=".pam"]::before,
+.b3-typography a[href *="assets/"][href $=".pbm"]::before,
+.b3-typography a[href *="assets/"][href $=".pcd"]::before,
+.b3-typography a[href *="assets/"][href $=".pcl"]::before,
+.b3-typography a[href *="assets/"][href $=".pcx"]::before,
+.b3-typography a[href *="assets/"][href $=".pdb"]::before,
+.b3-typography a[href *="assets/"][href $=".pdn"]::before,
+.b3-typography a[href *="assets/"][href $=".pfm"]::before,
+.b3-typography a[href *="assets/"][href $=".pgf"]::before,
+.b3-typography a[href *="assets/"][href $=".pgm"]::before,
+.b3-typography a[href *="assets/"][href $=".pic"]::before,
+.b3-typography a[href *="assets/"][href $=".pict"]::before,
+.b3-typography a[href *="assets/"][href $=".pjp"]::before,
+.b3-typography a[href *="assets/"][href $=".pjpeg"]::before,
+.b3-typography a[href *="assets/"][href $=".png"]::before,
+.b3-typography a[href *="assets/"][href $=".pnm"]::before,
+.b3-typography a[href *="assets/"][href $=".ppm"]::before,
+.b3-typography a[href *="assets/"][href $=".ps"]::before,
+.b3-typography a[href *="assets/"][href $=".ps2"]::before,
+.b3-typography a[href *="assets/"][href $=".ps3"]::before,
+.b3-typography a[href *="assets/"][href $=".psb"]::before,
+.b3-typography a[href *="assets/"][href $=".psd"]::before,
+.b3-typography a[href *="assets/"][href $=".ptif"]::before,
+.b3-typography a[href *="assets/"][href $=".qoi"]::before,
+.b3-typography a[href *="assets/"][href $=".rad"]::before,
+.b3-typography a[href *="assets/"][href $=".raw"]::before,
+.b3-typography a[href *="assets/"][href $=".reb"]::before,
+.b3-typography a[href *="assets/"][href $=".rfg"]::before,
+.b3-typography a[href *="assets/"][href $=".sai"]::before,
+.b3-typography a[href *="assets/"][href $=".sgi"]::before,
+.b3-typography a[href *="assets/"][href $=".sun"]::before,
+.b3-typography a[href *="assets/"][href $=".svg"]::before,
+.b3-typography a[href *="assets/"][href $=".svgz"]::before,
+.b3-typography a[href *="assets/"][href $=".tga"]::before,
+.b3-typography a[href *="assets/"][href $=".tif"]::before,
+.b3-typography a[href *="assets/"][href $=".tiff"]::before,
+.b3-typography a[href *="assets/"][href $=".uil"]::before,
+.b3-typography a[href *="assets/"][href $=".uyvy"]::before,
+.b3-typography a[href *="assets/"][href $=".vicar"]::before,
+.b3-typography a[href *="assets/"][href $=".viff"]::before,
+.b3-typography a[href *="assets/"][href $=".wbmp"]::before,
+.b3-typography a[href *="assets/"][href $=".wdp"]::before,
+.b3-typography a[href *="assets/"][href $=".webp"]::before,
+.b3-typography a[href *="assets/"][href $=".xbm"]::before,
+.b3-typography a[href *="assets/"][href $=".xcf"]::before,
+.b3-typography a[href *="assets/"][href $=".xpm"]::before,
+.b3-typography a[href *="assets/"][href $=".xwd"]::before,
 
-.b3-typography [href *="/assets/"][href $=".aai"]::before,
-.b3-typography [href *="/assets/"][href $=".afphoto"]::before,
-.b3-typography [href *="/assets/"][href $=".ami"]::before,
-.b3-typography [href *="/assets/"][href $=".apng"]::before,
-.b3-typography [href *="/assets/"][href $=".apx"]::before,
-.b3-typography [href *="/assets/"][href $=".ase"]::before,
-.b3-typography [href *="/assets/"][href $=".aseprite"]::before,
-.b3-typography [href *="/assets/"][href $=".avif"]::before,
-.b3-typography [href *="/assets/"][href $=".avs"]::before,
-.b3-typography [href *="/assets/"][href $=".bmp"]::before,
-.b3-typography [href *="/assets/"][href $=".bpg"]::before,
-.b3-typography [href *="/assets/"][href $=".brk"]::before,
-.b3-typography [href *="/assets/"][href $=".cin"]::before,
-.b3-typography [href *="/assets/"][href $=".clip"]::before,
-.b3-typography [href *="/assets/"][href $=".cmyk"]::before,
-.b3-typography [href *="/assets/"][href $=".cmyka"]::before,
-.b3-typography [href *="/assets/"][href $=".cpt"]::before,
-.b3-typography [href *="/assets/"][href $=".cur"]::before,
-.b3-typography [href *="/assets/"][href $=".dcx"]::before,
-.b3-typography [href *="/assets/"][href $=".dds"]::before,
-.b3-typography [href *="/assets/"][href $=".dib"]::before,
-.b3-typography [href *="/assets/"][href $=".dng"]::before,
-.b3-typography [href *="/assets/"][href $=".dpx"]::before,
-.b3-typography [href *="/assets/"][href $=".eits"]::before,
-.b3-typography [href *="/assets/"][href $=".epdf"]::before,
-.b3-typography [href *="/assets/"][href $=".epi"]::before,
-.b3-typography [href *="/assets/"][href $=".eps"]::before,
-.b3-typography [href *="/assets/"][href $=".eps2"]::before,
-.b3-typography [href *="/assets/"][href $=".eps3"]::before,
-.b3-typography [href *="/assets/"][href $=".epsf"]::before,
-.b3-typography [href *="/assets/"][href $=".epsi"]::before,
-.b3-typography [href *="/assets/"][href $=".ept"]::before,
-.b3-typography [href *="/assets/"][href $=".exr"]::before,
-.b3-typography [href *="/assets/"][href $=".fax"]::before,
-.b3-typography [href *="/assets/"][href $=".fpx"]::before,
-.b3-typography [href *="/assets/"][href $=".gbr"]::before,
-.b3-typography [href *="/assets/"][href $=".gif"]::before,
-.b3-typography [href *="/assets/"][href $=".gray"]::before,
-.b3-typography [href *="/assets/"][href $=".hdr"]::before,
-.b3-typography [href *="/assets/"][href $=".heic"]::before,
-.b3-typography [href *="/assets/"][href $=".heif"]::before,
-.b3-typography [href *="/assets/"][href $=".hrz"]::before,
-.b3-typography [href *="/assets/"][href $=".icns"]::before,
-.b3-typography [href *="/assets/"][href $=".ico"]::before,
-.b3-typography [href *="/assets/"][href $=".img"]::before,
-.b3-typography [href *="/assets/"][href $=".info"]::before,
-.b3-typography [href *="/assets/"][href $=".j2c"]::before,
-.b3-typography [href *="/assets/"][href $=".j2k"]::before,
-.b3-typography [href *="/assets/"][href $=".jb2"]::before,
-.b3-typography [href *="/assets/"][href $=".jbig"]::before,
-.b3-typography [href *="/assets/"][href $=".jbig2"]::before,
-.b3-typography [href *="/assets/"][href $=".jfif"]::before,
-.b3-typography [href *="/assets/"][href $=".jng"]::before,
-.b3-typography [href *="/assets/"][href $=".jp2"]::before,
-.b3-typography [href *="/assets/"][href $=".jpeg"]::before,
-.b3-typography [href *="/assets/"][href $=".jpg"]::before,
-.b3-typography [href *="/assets/"][href $=".jpt"]::before,
-.b3-typography [href *="/assets/"][href $=".jxr"]::before,
-.b3-typography [href *="/assets/"][href $=".kra"]::before,
-.b3-typography [href *="/assets/"][href $=".mdp"]::before,
-.b3-typography [href *="/assets/"][href $=".miff"]::before,
-.b3-typography [href *="/assets/"][href $=".mng"]::before,
-.b3-typography [href *="/assets/"][href $=".mono"]::before,
-.b3-typography [href *="/assets/"][href $=".mpc"]::before,
-.b3-typography [href *="/assets/"][href $=".mtv"]::before,
-.b3-typography [href *="/assets/"][href $=".ora"]::before,
-.b3-typography [href *="/assets/"][href $=".otb"]::before,
-.b3-typography [href *="/assets/"][href $=".p7"]::before,
-.b3-typography [href *="/assets/"][href $=".palm"]::before,
-.b3-typography [href *="/assets/"][href $=".pam"]::before,
-.b3-typography [href *="/assets/"][href $=".pbm"]::before,
-.b3-typography [href *="/assets/"][href $=".pcd"]::before,
-.b3-typography [href *="/assets/"][href $=".pcl"]::before,
-.b3-typography [href *="/assets/"][href $=".pcx"]::before,
-.b3-typography [href *="/assets/"][href $=".pdb"]::before,
-.b3-typography [href *="/assets/"][href $=".pdn"]::before,
-.b3-typography [href *="/assets/"][href $=".pfm"]::before,
-.b3-typography [href *="/assets/"][href $=".pgf"]::before,
-.b3-typography [href *="/assets/"][href $=".pgm"]::before,
-.b3-typography [href *="/assets/"][href $=".pic"]::before,
-.b3-typography [href *="/assets/"][href $=".pict"]::before,
-.b3-typography [href *="/assets/"][href $=".pjp"]::before,
-.b3-typography [href *="/assets/"][href $=".pjpeg"]::before,
-.b3-typography [href *="/assets/"][href $=".png"]::before,
-.b3-typography [href *="/assets/"][href $=".pnm"]::before,
-.b3-typography [href *="/assets/"][href $=".ppm"]::before,
-.b3-typography [href *="/assets/"][href $=".ps"]::before,
-.b3-typography [href *="/assets/"][href $=".ps2"]::before,
-.b3-typography [href *="/assets/"][href $=".ps3"]::before,
-.b3-typography [href *="/assets/"][href $=".psb"]::before,
-.b3-typography [href *="/assets/"][href $=".psd"]::before,
-.b3-typography [href *="/assets/"][href $=".ptif"]::before,
-.b3-typography [href *="/assets/"][href $=".qoi"]::before,
-.b3-typography [href *="/assets/"][href $=".rad"]::before,
-.b3-typography [href *="/assets/"][href $=".raw"]::before,
-.b3-typography [href *="/assets/"][href $=".reb"]::before,
-.b3-typography [href *="/assets/"][href $=".rfg"]::before,
-.b3-typography [href *="/assets/"][href $=".sai"]::before,
-.b3-typography [href *="/assets/"][href $=".sgi"]::before,
-.b3-typography [href *="/assets/"][href $=".sun"]::before,
-.b3-typography [href *="/assets/"][href $=".svg"]::before,
-.b3-typography [href *="/assets/"][href $=".svgz"]::before,
-.b3-typography [href *="/assets/"][href $=".tga"]::before,
-.b3-typography [href *="/assets/"][href $=".tif"]::before,
-.b3-typography [href *="/assets/"][href $=".tiff"]::before,
-.b3-typography [href *="/assets/"][href $=".uil"]::before,
-.b3-typography [href *="/assets/"][href $=".uyvy"]::before,
-.b3-typography [href *="/assets/"][href $=".vicar"]::before,
-.b3-typography [href *="/assets/"][href $=".viff"]::before,
-.b3-typography [href *="/assets/"][href $=".wbmp"]::before,
-.b3-typography [href *="/assets/"][href $=".wdp"]::before,
-.b3-typography [href *="/assets/"][href $=".webp"]::before,
-.b3-typography [href *="/assets/"][href $=".xbm"]::before,
-.b3-typography [href *="/assets/"][href $=".xcf"]::before,
-.b3-typography [href *="/assets/"][href $=".xpm"]::before,
-.b3-typography [href *="/assets/"][href $=".xwd"]::before {
+.b3-typography a[href *="/assets/"][href $=".aai"]::before,
+.b3-typography a[href *="/assets/"][href $=".afphoto"]::before,
+.b3-typography a[href *="/assets/"][href $=".ami"]::before,
+.b3-typography a[href *="/assets/"][href $=".apng"]::before,
+.b3-typography a[href *="/assets/"][href $=".apx"]::before,
+.b3-typography a[href *="/assets/"][href $=".ase"]::before,
+.b3-typography a[href *="/assets/"][href $=".aseprite"]::before,
+.b3-typography a[href *="/assets/"][href $=".avif"]::before,
+.b3-typography a[href *="/assets/"][href $=".avs"]::before,
+.b3-typography a[href *="/assets/"][href $=".bmp"]::before,
+.b3-typography a[href *="/assets/"][href $=".bpg"]::before,
+.b3-typography a[href *="/assets/"][href $=".brk"]::before,
+.b3-typography a[href *="/assets/"][href $=".cin"]::before,
+.b3-typography a[href *="/assets/"][href $=".clip"]::before,
+.b3-typography a[href *="/assets/"][href $=".cmyk"]::before,
+.b3-typography a[href *="/assets/"][href $=".cmyka"]::before,
+.b3-typography a[href *="/assets/"][href $=".cpt"]::before,
+.b3-typography a[href *="/assets/"][href $=".cur"]::before,
+.b3-typography a[href *="/assets/"][href $=".dcx"]::before,
+.b3-typography a[href *="/assets/"][href $=".dds"]::before,
+.b3-typography a[href *="/assets/"][href $=".dib"]::before,
+.b3-typography a[href *="/assets/"][href $=".dng"]::before,
+.b3-typography a[href *="/assets/"][href $=".dpx"]::before,
+.b3-typography a[href *="/assets/"][href $=".eits"]::before,
+.b3-typography a[href *="/assets/"][href $=".epdf"]::before,
+.b3-typography a[href *="/assets/"][href $=".epi"]::before,
+.b3-typography a[href *="/assets/"][href $=".eps"]::before,
+.b3-typography a[href *="/assets/"][href $=".eps2"]::before,
+.b3-typography a[href *="/assets/"][href $=".eps3"]::before,
+.b3-typography a[href *="/assets/"][href $=".epsf"]::before,
+.b3-typography a[href *="/assets/"][href $=".epsi"]::before,
+.b3-typography a[href *="/assets/"][href $=".ept"]::before,
+.b3-typography a[href *="/assets/"][href $=".exr"]::before,
+.b3-typography a[href *="/assets/"][href $=".fax"]::before,
+.b3-typography a[href *="/assets/"][href $=".fpx"]::before,
+.b3-typography a[href *="/assets/"][href $=".gbr"]::before,
+.b3-typography a[href *="/assets/"][href $=".gif"]::before,
+.b3-typography a[href *="/assets/"][href $=".gray"]::before,
+.b3-typography a[href *="/assets/"][href $=".hdr"]::before,
+.b3-typography a[href *="/assets/"][href $=".heic"]::before,
+.b3-typography a[href *="/assets/"][href $=".heif"]::before,
+.b3-typography a[href *="/assets/"][href $=".hrz"]::before,
+.b3-typography a[href *="/assets/"][href $=".icns"]::before,
+.b3-typography a[href *="/assets/"][href $=".ico"]::before,
+.b3-typography a[href *="/assets/"][href $=".img"]::before,
+.b3-typography a[href *="/assets/"][href $=".info"]::before,
+.b3-typography a[href *="/assets/"][href $=".j2c"]::before,
+.b3-typography a[href *="/assets/"][href $=".j2k"]::before,
+.b3-typography a[href *="/assets/"][href $=".jb2"]::before,
+.b3-typography a[href *="/assets/"][href $=".jbig"]::before,
+.b3-typography a[href *="/assets/"][href $=".jbig2"]::before,
+.b3-typography a[href *="/assets/"][href $=".jfif"]::before,
+.b3-typography a[href *="/assets/"][href $=".jng"]::before,
+.b3-typography a[href *="/assets/"][href $=".jp2"]::before,
+.b3-typography a[href *="/assets/"][href $=".jpeg"]::before,
+.b3-typography a[href *="/assets/"][href $=".jpg"]::before,
+.b3-typography a[href *="/assets/"][href $=".jpt"]::before,
+.b3-typography a[href *="/assets/"][href $=".jxr"]::before,
+.b3-typography a[href *="/assets/"][href $=".kra"]::before,
+.b3-typography a[href *="/assets/"][href $=".mdp"]::before,
+.b3-typography a[href *="/assets/"][href $=".miff"]::before,
+.b3-typography a[href *="/assets/"][href $=".mng"]::before,
+.b3-typography a[href *="/assets/"][href $=".mono"]::before,
+.b3-typography a[href *="/assets/"][href $=".mpc"]::before,
+.b3-typography a[href *="/assets/"][href $=".mtv"]::before,
+.b3-typography a[href *="/assets/"][href $=".ora"]::before,
+.b3-typography a[href *="/assets/"][href $=".otb"]::before,
+.b3-typography a[href *="/assets/"][href $=".p7"]::before,
+.b3-typography a[href *="/assets/"][href $=".palm"]::before,
+.b3-typography a[href *="/assets/"][href $=".pam"]::before,
+.b3-typography a[href *="/assets/"][href $=".pbm"]::before,
+.b3-typography a[href *="/assets/"][href $=".pcd"]::before,
+.b3-typography a[href *="/assets/"][href $=".pcl"]::before,
+.b3-typography a[href *="/assets/"][href $=".pcx"]::before,
+.b3-typography a[href *="/assets/"][href $=".pdb"]::before,
+.b3-typography a[href *="/assets/"][href $=".pdn"]::before,
+.b3-typography a[href *="/assets/"][href $=".pfm"]::before,
+.b3-typography a[href *="/assets/"][href $=".pgf"]::before,
+.b3-typography a[href *="/assets/"][href $=".pgm"]::before,
+.b3-typography a[href *="/assets/"][href $=".pic"]::before,
+.b3-typography a[href *="/assets/"][href $=".pict"]::before,
+.b3-typography a[href *="/assets/"][href $=".pjp"]::before,
+.b3-typography a[href *="/assets/"][href $=".pjpeg"]::before,
+.b3-typography a[href *="/assets/"][href $=".png"]::before,
+.b3-typography a[href *="/assets/"][href $=".pnm"]::before,
+.b3-typography a[href *="/assets/"][href $=".ppm"]::before,
+.b3-typography a[href *="/assets/"][href $=".ps"]::before,
+.b3-typography a[href *="/assets/"][href $=".ps2"]::before,
+.b3-typography a[href *="/assets/"][href $=".ps3"]::before,
+.b3-typography a[href *="/assets/"][href $=".psb"]::before,
+.b3-typography a[href *="/assets/"][href $=".psd"]::before,
+.b3-typography a[href *="/assets/"][href $=".ptif"]::before,
+.b3-typography a[href *="/assets/"][href $=".qoi"]::before,
+.b3-typography a[href *="/assets/"][href $=".rad"]::before,
+.b3-typography a[href *="/assets/"][href $=".raw"]::before,
+.b3-typography a[href *="/assets/"][href $=".reb"]::before,
+.b3-typography a[href *="/assets/"][href $=".rfg"]::before,
+.b3-typography a[href *="/assets/"][href $=".sai"]::before,
+.b3-typography a[href *="/assets/"][href $=".sgi"]::before,
+.b3-typography a[href *="/assets/"][href $=".sun"]::before,
+.b3-typography a[href *="/assets/"][href $=".svg"]::before,
+.b3-typography a[href *="/assets/"][href $=".svgz"]::before,
+.b3-typography a[href *="/assets/"][href $=".tga"]::before,
+.b3-typography a[href *="/assets/"][href $=".tif"]::before,
+.b3-typography a[href *="/assets/"][href $=".tiff"]::before,
+.b3-typography a[href *="/assets/"][href $=".uil"]::before,
+.b3-typography a[href *="/assets/"][href $=".uyvy"]::before,
+.b3-typography a[href *="/assets/"][href $=".vicar"]::before,
+.b3-typography a[href *="/assets/"][href $=".viff"]::before,
+.b3-typography a[href *="/assets/"][href $=".wbmp"]::before,
+.b3-typography a[href *="/assets/"][href $=".wdp"]::before,
+.b3-typography a[href *="/assets/"][href $=".webp"]::before,
+.b3-typography a[href *="/assets/"][href $=".xbm"]::before,
+.b3-typography a[href *="/assets/"][href $=".xcf"]::before,
+.b3-typography a[href *="/assets/"][href $=".xpm"]::before,
+.b3-typography a[href *="/assets/"][href $=".xwd"]::before {
     background-image: url(/appearance/themes/Dark+/icon/image.svg);
 }
 
 /* 压缩文件 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".7z"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".br"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".brotli"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".bzip2"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".gz"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".gzip"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".rar"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".tar"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".tgz"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".wim"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".xz"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".zip"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".7z"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".br"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".brotli"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".bzip2"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".gz"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".gzip"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".rar"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".tar"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".tgz"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".wim"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".xz"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".zip"]:not(:empty)::before,
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".7z"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".br"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".brotli"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".bzip2"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".gz"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".gzip"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".rar"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".tar"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".tgz"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".wim"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".xz"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".zip"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".7z"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".br"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".brotli"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".bzip2"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".gz"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".gzip"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".rar"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".tar"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".tgz"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".wim"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".xz"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".zip"]:not(:empty)::before,
 
-.b3-typography [href *="assets/"][href $=".7z"]::before,
-.b3-typography [href *="assets/"][href $=".br"]::before,
-.b3-typography [href *="assets/"][href $=".brotli"]::before,
-.b3-typography [href *="assets/"][href $=".bzip2"]::before,
-.b3-typography [href *="assets/"][href $=".gz"]::before,
-.b3-typography [href *="assets/"][href $=".gzip"]::before,
-.b3-typography [href *="assets/"][href $=".rar"]::before,
-.b3-typography [href *="assets/"][href $=".tar"]::before,
-.b3-typography [href *="assets/"][href $=".tgz"]::before,
-.b3-typography [href *="assets/"][href $=".wim"]::before,
-.b3-typography [href *="assets/"][href $=".xz"]::before,
-.b3-typography [href *="assets/"][href $=".zip"]::before,
+.b3-typography a[href *="assets/"][href $=".7z"]::before,
+.b3-typography a[href *="assets/"][href $=".br"]::before,
+.b3-typography a[href *="assets/"][href $=".brotli"]::before,
+.b3-typography a[href *="assets/"][href $=".bzip2"]::before,
+.b3-typography a[href *="assets/"][href $=".gz"]::before,
+.b3-typography a[href *="assets/"][href $=".gzip"]::before,
+.b3-typography a[href *="assets/"][href $=".rar"]::before,
+.b3-typography a[href *="assets/"][href $=".tar"]::before,
+.b3-typography a[href *="assets/"][href $=".tgz"]::before,
+.b3-typography a[href *="assets/"][href $=".wim"]::before,
+.b3-typography a[href *="assets/"][href $=".xz"]::before,
+.b3-typography a[href *="assets/"][href $=".zip"]::before,
 
-.b3-typography [href *="/assets/"][href $=".7z"]::before,
-.b3-typography [href *="/assets/"][href $=".br"]::before,
-.b3-typography [href *="/assets/"][href $=".brotli"]::before,
-.b3-typography [href *="/assets/"][href $=".bzip2"]::before,
-.b3-typography [href *="/assets/"][href $=".gz"]::before,
-.b3-typography [href *="/assets/"][href $=".gzip"]::before,
-.b3-typography [href *="/assets/"][href $=".rar"]::before,
-.b3-typography [href *="/assets/"][href $=".tar"]::before,
-.b3-typography [href *="/assets/"][href $=".tgz"]::before,
-.b3-typography [href *="/assets/"][href $=".wim"]::before,
-.b3-typography [href *="/assets/"][href $=".xz"]::before,
-.b3-typography [href *="/assets/"][href $=".zip"]::before {
+.b3-typography a[href *="/assets/"][href $=".7z"]::before,
+.b3-typography a[href *="/assets/"][href $=".br"]::before,
+.b3-typography a[href *="/assets/"][href $=".brotli"]::before,
+.b3-typography a[href *="/assets/"][href $=".bzip2"]::before,
+.b3-typography a[href *="/assets/"][href $=".gz"]::before,
+.b3-typography a[href *="/assets/"][href $=".gzip"]::before,
+.b3-typography a[href *="/assets/"][href $=".rar"]::before,
+.b3-typography a[href *="/assets/"][href $=".tar"]::before,
+.b3-typography a[href *="/assets/"][href $=".tgz"]::before,
+.b3-typography a[href *="/assets/"][href $=".wim"]::before,
+.b3-typography a[href *="/assets/"][href $=".xz"]::before,
+.b3-typography a[href *="/assets/"][href $=".zip"]::before {
     background-image: url(/appearance/themes/Dark+/icon/zip.svg);
 }
 
 /* drawio 文件 */
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="assets/"][data-href $=".drawio"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href ^="/assets/"][data-href $=".drawio"]:not(:empty)::before,
-.b3-typography [href *="assets/"][href $=".drawio"]::before,
-.b3-typography [href *="/assets/"][href $=".drawio"]::before {
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"][data-href $=".drawio"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"][data-href $=".drawio"]:not(:empty)::before,
+.b3-typography a[href *="assets/"][href $=".drawio"]::before,
+.b3-typography a[href *="/assets/"][href $=".drawio"]::before {
     background-image: url(/appearance/themes/Dark+/icon/drawio.svg);
 }
 
 /* -------------------------------- domain -------------------------------- */
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="cnblogs.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="cnblogs.com"]:not(:empty)::before,
 .b3-typography a[href *="cnblogs.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/cnblogs.ico);
     filter: invert(1) hue-rotate(.5turn);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="bilibili.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="bilibili.com"]:not(:empty)::before,
 .b3-typography a[href *="bilibili.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/bilibili.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="zhihu.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="zhihu.com"]:not(:empty)::before,
 .b3-typography a[href *="zhihu.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/zhihu.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="microsoft.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="microsoft.com"]:not(:empty)::before,
 .b3-typography a[href *="microsoft.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/microsoft.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="ld246.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="ld246.com"]:not(:empty)::before,
 .b3-typography a[href *="ld246.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/ld246.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="google.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="google.com"]:not(:empty)::before,
 .b3-typography a[href *="google.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/logo_google_icon.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="chrome.google.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="chrome.google.com"]:not(:empty)::before,
 .b3-typography a[href *="chrome.google.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/chrome-web-store.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="taobao.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="taobao.com"]:not(:empty)::before,
 .b3-typography a[href *="taobao.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/taobao.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="jd.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="jd.com"]:not(:empty)::before,
 .b3-typography a[href *="jd.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/jd.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="xiaohongshu.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="xiaohongshu.com"]:not(:empty)::before,
 .b3-typography a[href *="xiaohongshu.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/xiaohongshu.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="pinduoduo.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="pinduoduo.com"]:not(:empty)::before,
 .b3-typography a[href *="pinduoduo.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/pinduoduo.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="alibaba.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="alibaba.com"]:not(:empty)::before,
 .b3-typography a[href *="alibaba.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/alibaba.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="tmall.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="tmall.com"]:not(:empty)::before,
 .b3-typography a[href *="tmall.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/tianmao.png);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="amazon.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="amazon.com"]:not(:empty)::before,
 .b3-typography a[href *="amazon.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/amazon.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="iq.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="iq.com"]:not(:empty)::before,
 .b3-typography a[href *="iq.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/aiqiyi.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="youku.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="youku.com"]:not(:empty)::before,
 .b3-typography a[href *="youku.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/youku.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="lanzoui.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="lanzoui.com"]:not(:empty)::before,
 .b3-typography a[href *="lanzoui.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/lanzouyun.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="aliyundrive.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="aliyundrive.com"]:not(:empty)::before,
 .b3-typography a[href *="aliyundrive.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/aliyundrive.png);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="cloud.189.cn"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="cloud.189.cn"]:not(:empty)::before,
 .b3-typography a[href *="cloud.189.cn"]::before {
     background-image: url(/appearance/themes/Dark+/icon/tianyiyun.png);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="1drv.ms"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="1drv.ms"]:not(:empty)::before,
 .b3-typography a[href *="1drv.ms"]::before {
     background-image: url(/appearance/themes/Dark+/icon/onedrive.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="sharepoint.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="sharepoint.com"]:not(:empty)::before,
 .b3-typography a[href *="sharepoint.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/sharepoint.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="weiyun.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="weiyun.com"]:not(:empty)::before,
 .b3-typography a[href *="weiyun.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/weiyun.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="baidu.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="baidu.com"]:not(:empty)::before,
 .b3-typography a[href *="baidu.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/baidu.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="pan.baidu.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="pan.baidu.com"]:not(:empty)::before,
 .b3-typography a[href *="pan.baidu.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/baiduwangpan.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="tieba.baidu.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="tieba.baidu.com"]:not(:empty)::before,
 .b3-typography a[href *="tieba.baidu.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/logo_baidu_tieba_logo.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="obsidian.md"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="obsidian.md"]:not(:empty)::before,
 .b3-typography a[href *="obsidian.md"]::before {
     background-image: url(/appearance/themes/Dark+/icon/obsidian.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="yuque.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="yuque.com"]:not(:empty)::before,
 .b3-typography a[href *="yuque.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/yuque.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="blog.csdn.net"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="blog.csdn.net"]:not(:empty)::before,
 .b3-typography a[href *="blog.csdn.net"]::before {
     background-image: url(/appearance/themes/Dark+/icon/csdn.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="jianshu.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="jianshu.com"]:not(:empty)::before,
 .b3-typography a[href *="jianshu.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/jianshu.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="gitee.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="gitee.com"]:not(:empty)::before,
 .b3-typography a[href *="gitee.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/gitee.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="wikipedia.org"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="wikipedia.org"]:not(:empty)::before,
 .b3-typography a[href *="wikipedia.org"]::before {
     background-image: url(/appearance/themes/Dark+/icon/wikipedia.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="weixin.qq.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="weixin.qq.com"]:not(:empty)::before,
 .b3-typography a[href *="weixin.qq.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/wechat.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="y.qq.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="y.qq.com"]:not(:empty)::before,
 .b3-typography a[href *="y.qq.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/qqmusic.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="v.qq.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="v.qq.com"]:not(:empty)::before,
 .b3-typography a[href *="v.qq.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/qqvideo.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="news.qq.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="news.qq.com"]:not(:empty)::before,
 .b3-typography a[href *="news.qq.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/newsqq.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="163.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="163.com"]:not(:empty)::before,
 .b3-typography a[href *="163.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/news163.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="music.163.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="music.163.com"]:not(:empty)::before,
 .b3-typography a[href *="music.163.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/netease_music.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="sohu.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="sohu.com"]:not(:empty)::before,
 .b3-typography a[href *="sohu.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/souhu.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="guancha.cn"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="guancha.cn"]:not(:empty)::before,
 .b3-typography a[href *="guancha.cn"]::before {
     background-image: url(/appearance/themes/Dark+/icon/guancha.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="thepaper.cn"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="thepaper.cn"]:not(:empty)::before,
 .b3-typography a[href *="thepaper.cn"]::before {
     background-image: url(/appearance/themes/Dark+/icon/thepaper.ico);
     filter: invert(1) hue-rotate(.5turn);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="toutiao.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="toutiao.com"]:not(:empty)::before,
 .b3-typography a[href *="toutiao.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/toutiao.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="facebook.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="facebook.com"]:not(:empty)::before,
 .b3-typography a[href *="facebook.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/facebook.png);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="cctv.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="cctv.com"]:not(:empty)::before,
 .b3-typography a[href *="cctv.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/cctv.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="sspai.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="sspai.com"]:not(:empty)::before,
 .b3-typography a[href *="sspai.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/sspai.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="weibo.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="weibo.com"]:not(:empty)::before,
 .b3-typography a[href *="weibo.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/logo_weibo_icon.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="github.io"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="github.io"]:not(:empty)::before,
 .b3-typography a[href *="github.io"]::before {
     background-image: url(/appearance/themes/Dark+/icon/blog.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="github.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="github.com"]:not(:empty)::before,
 .b3-typography a[href *="github.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/github_icon.png);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="bing.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="bing.com"]:not(:empty)::before,
 .b3-typography a[href *="bing.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/bing.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="sogou.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="sogou.com"]:not(:empty)::before,
 .b3-typography a[href *="sogou.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/sogou.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="so.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="so.com"]:not(:empty)::before,
 .b3-typography a[href *="so.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/so.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="stackoverflow.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="stackoverflow.com"]:not(:empty)::before,
 .b3-typography a[href *="stackoverflow.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/stack-overflow.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="icourse163.org"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="icourse163.org"]:not(:empty)::before,
 .b3-typography a[href *="icourse163.org"]::before {
     background-image: url(/appearance/themes/Dark+/icon/mooc.png);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="imooc.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="imooc.com"]:not(:empty)::before,
 .b3-typography a[href *="imooc.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/imooc.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="pornhub.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="pornhub.com"]:not(:empty)::before,
 .b3-typography a[href *="pornhub.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/pornhub.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="twitter.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="twitter.com"]:not(:empty)::before,
 .b3-typography a[href *="twitter.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/logo_twitter.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="youtube.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="youtube.com"]:not(:empty)::before,
 .b3-typography a[href *="youtube.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/logo_youtube_play_video_icon.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="wolai.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="wolai.com"]:not(:empty)::before,
 .b3-typography a[href *="wolai.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/wolai_dark.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="notion."]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="notion."]:not(:empty)::before,
 .b3-typography a[href *="notion."]::before {
     background-image: url(/appearance/themes/Dark+/icon/logo_notion-logo.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="douban.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="douban.com"]:not(:empty)::before,
 .b3-typography a[href *="douban.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/social-douban.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="ncbi"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="ncbi"]:not(:empty)::before,
 .b3-typography a[href *="ncbi"]::before {
     background-image: url(/appearance/themes/Dark+/icon/ncbi.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="pubmed.ncbi.nlm.nih.gov"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="pubmed.ncbi.nlm.nih.gov"]:not(:empty)::before,
 .b3-typography a[href *="pubmed.ncbi.nlm.nih.gov"]::before {
     background-image: url(/appearance/themes/Dark+/icon/pubmed.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="cell.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="cell.com"]:not(:empty)::before,
 .b3-typography a[href *="cell.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/cell.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="nature.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="nature.com"]:not(:empty)::before,
 .b3-typography a[href *="nature.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/nature.png);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="discord."]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="discord."]:not(:empty)::before,
 .b3-typography a[href *="discord."]::before {
     background-image: url(/appearance/themes/Dark+/icon/discord.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="hust.edu.cn"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="hust.edu.cn"]:not(:empty)::before,
 .b3-typography a[href *="hust.edu.cn"]::before {
     background-image: url(/appearance/themes/Dark+/icon/hust.jpg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="coursera.org"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="coursera.org"]:not(:empty)::before,
 .b3-typography a[href *="coursera.org"]::before {
     background-image: url(/appearance/themes/Dark+/icon/coursera.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="runoob.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="runoob.com"]:not(:empty)::before,
 .b3-typography a[href *="runoob.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/runoob.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="liaoxuefeng.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="liaoxuefeng.com"]:not(:empty)::before,
 .b3-typography a[href *="liaoxuefeng.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/liaoxuefeng.png);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="juejin.cn"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="juejin.cn"]:not(:empty)::before,
 .b3-typography a[href *="juejin.cn"]::before {
     background-image: url(/appearance/themes/Dark+/icon/juejin.png);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="vue"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="vue"]:not(:empty)::before,
 .b3-typography a[href *="liaoxuefeng.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/vue.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="52pojie.cn"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="52pojie.cn"]:not(:empty)::before,
 .b3-typography a[href *="52pojie.cn"]::before {
     background-image: url(/appearance/themes/Dark+/icon/52pojie.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="douyin.com"]:not(:empty)::before,
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="tiktok.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="douyin.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="tiktok.com"]:not(:empty)::before,
 .b3-typography a[href *="douyin.com"]::before,
 .b3-typography a[href *="tiktok.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/douyin.png);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="segmentfault.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="segmentfault.com"]:not(:empty)::before,
 .b3-typography a[href *="segmentfault.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/segmentfault.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="51cto.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="51cto.com"]:not(:empty)::before,
 .b3-typography a[href *="51cto.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/51cto.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="cloud.tencent.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="cloud.tencent.com"]:not(:empty)::before,
 .b3-typography a[href *="cloud.tencent.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/tencentcloud.png);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="aliyun.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="aliyun.com"]:not(:empty)::before,
 .b3-typography a[href *="aliyun.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/aliyun.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="oschina.net"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="oschina.net"]:not(:empty)::before,
 .b3-typography a[href *="oschina.net"]::before {
     background-image: url(/appearance/themes/Dark+/icon/oschina.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="v2ex.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="v2ex.com"]:not(:empty)::before,
 .b3-typography a[href *="v2ex.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/v2ex.ico);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="iconfont.cn"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="iconfont.cn"]:not(:empty)::before,
 .b3-typography a[href *="iconfont.cn"]::before {
     background-image: url(/appearance/themes/Dark+/icon/iconfont.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="ruanyifeng.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="ruanyifeng.com"]:not(:empty)::before,
 .b3-typography a[href *="ruanyifeng.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/ruanyifeng.png);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="getquicker.net"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="getquicker.net"]:not(:empty)::before,
 .b3-typography a[href *="getquicker.net"]::before {
     background-image: url(/appearance/themes/Dark+/icon/Quicker.svg);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type='a'][data-href *="visualstudio.com"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href *="visualstudio.com"]:not(:empty)::before,
 .b3-typography a[href *="visualstudio.com"]::before {
     background-image: url(/appearance/themes/Dark+/icon/visualstudio.svg);
 }
