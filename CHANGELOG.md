@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 新增电话 URL Scheme 超链接 `tel://` 图标 | Added the URL Scheme link `tel://` icon of Telephone.
+
 ## v1.6.3/2023-01-03
 
 - [v1.6.2 <=> v1.6.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.2...v1.6.3)
