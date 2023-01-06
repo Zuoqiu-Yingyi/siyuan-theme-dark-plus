@@ -28,7 +28,7 @@ async function getFile(path, token = config.token) {
             path: path,
         }),
     });
-    if (response.status === 200)
+    if (response.ok)
         return response;
     else return null;
 }
@@ -51,7 +51,7 @@ async function putFile(path, filedata, isDir = false, modTime = Date.now(), toke
                 Authorization: `Token ${token}`,
             },
         });
-    if (response.status === 200)
+    if (response.ok)
         return await response.json();
     else return null;
 }
@@ -78,7 +78,7 @@ async function upload(
                 Authorization: `Token ${token}`,
             },
         });
-    if (response.status === 200)
+    if (response.ok)
         return await response.json();
     else return null;
 }
@@ -95,7 +95,7 @@ async function siyuanRequest(url, data, token) {
             body: JSON.stringify(data),
         },
     );
-    if (response.status === 200) response = await response.json();
+    if (response.ok) response = await response.json();
     else return null;
     if (response.code === 0) return response.data;
     else return null;

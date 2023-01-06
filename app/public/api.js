@@ -17,7 +17,7 @@ async function getFile(path, token = config.token) {
             path: path,
         }),
     });
-    if (response.status === 200)
+    if (response.ok)
         return response;
     else return null;
 }
@@ -40,7 +40,7 @@ async function putFile(path, filedata, isDir = false, modTime = Date.now(), toke
                 Authorization: `Token ${token}`,
             },
         });
-    if (response.status === 200)
+    if (response.ok)
         return await response.json();
     else return null;
 }
