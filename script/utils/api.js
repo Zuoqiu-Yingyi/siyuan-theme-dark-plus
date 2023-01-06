@@ -506,7 +506,7 @@ async function 获取文件(path) {
             path: path,
         }),
     });
-    if (response.status === 200)
+    if (response.ok)
         return response;
     else return null;
 }
@@ -527,7 +527,7 @@ async function 写入文件(path, filedata, isDir = false, modTime = Date.now())
             Authorization: `Token ${config.token}`,
         },
     });
-    if (response.status === 200)
+    if (response.ok)
         return await response.json();
     else return null;
 }

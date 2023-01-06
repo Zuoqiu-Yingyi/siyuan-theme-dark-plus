@@ -2,6 +2,7 @@
 
 - 新增电话 URL Scheme 超链接 `tel://` 图标 | Added the URL Scheme link `tel://` icon of Telephone.
 - 使用 `Less` 重构 `panel-inbox.css` | Refactored `panel-inbox.css` with `Less`.
+- 使用 `response.ok` 作为 `fetch` 请求成功的判断条件 | Use `response.ok` as a criterion for the success of the `fetch` request.
 
 ## v1.6.3/2023-01-03
 

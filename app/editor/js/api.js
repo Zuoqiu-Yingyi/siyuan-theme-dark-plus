@@ -33,7 +33,7 @@ async function request(url, data, token = config.token) {
             Authorization: `Token ${token}`,
         }
     }).then(r => {
-        if (r.status === 200)
+        if (r.ok)
             return r.json();
         else return null;
     });
