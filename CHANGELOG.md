@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 新增电话 URL Scheme 超链接 `tel://` 图标 | Added the URL Scheme link `tel://` icon of Telephone.
+- 使用 `Less` 重构 `panel-inbox.css` | Refactored `panel-inbox.css` with `Less`.
 
 ## v1.6.3/2023-01-03
 
