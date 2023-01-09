@@ -367,17 +367,13 @@ function toolbarItemListPush(item) {
                     );
 
                     /* 保存当前位置 */
-                    localStorage.setItem(config.theme.tooldock.key, JSON.stringify({
-                        position: {
-                            left: custom_tooldock.style.left,
-                            right: custom_tooldock.style.right,
-                            top: custom_tooldock.style.top,
-                            bottom: custom_tooldock.style.bottom,
-                            width: custom_tooldock.style.width,
-                            height: custom_tooldock.style.height,
-                        },
-                    }));
-
+                    custom.theme.tooldock.position.left = custom_tooldock.style.left;
+                    custom.theme.tooldock.position.right = custom_tooldock.style.right;
+                    custom.theme.tooldock.position.top = custom_tooldock.style.top;
+                    custom.theme.tooldock.position.bottom = custom_tooldock.style.bottom;
+                    custom.theme.tooldock.position.width = custom_tooldock.style.width;
+                    custom.theme.tooldock.position.height = custom_tooldock.style.height;
+                    setTimeout(async () => saveCustomFile(custom), 0);
                 },
             );
 
@@ -405,7 +401,7 @@ function toolbarItemListPush(item) {
                 ?? conf?.default
                 ?? false;
             if (state) {
-                const position = JSON.parse(localStorage.getItem(config.theme.tooldock.key))?.position;
+                const position = custom.theme.tooldock.position;
                 if (position) {
                     float(); // 悬浮
                     if (!conf.fold) more.dispatchEvent(new Event('dblclick')); // 展开
