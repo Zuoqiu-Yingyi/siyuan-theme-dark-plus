@@ -239,7 +239,7 @@
 }
 .b3-list-item mark,
 .protyle-wysiwyg [data-node-id] span.def--mark,
-.protyle-wysiwyg [data-node-id] span[data-type="search-mark"] {
+.protyle-wysiwyg [data-node-id] span[data-type~=search-mark] {
   margin: 0 0.25em;
   border: 0;
   padding: 0 0.125em;
@@ -249,12 +249,12 @@
 }
 .b3-list-item mark:not(.def--mark),
 .protyle-wysiwyg [data-node-id] span.def--mark:not(.def--mark),
-.protyle-wysiwyg [data-node-id] span[data-type="search-mark"]:not(.def--mark) {
+.protyle-wysiwyg [data-node-id] span[data-type~=search-mark]:not(.def--mark) {
   outline-style: var(--custom-popover-menu-outline-style);
 }
 .b3-list-item mark:is(.def--mark),
 .protyle-wysiwyg [data-node-id] span.def--mark:is(.def--mark),
-.protyle-wysiwyg [data-node-id] span[data-type="search-mark"]:is(.def--mark) {
+.protyle-wysiwyg [data-node-id] span[data-type~=search-mark]:is(.def--mark) {
   border-width: var(--custom-popover-menu-outline-width);
   border-style: var(--custom-popover-menu-outline-style);
 }
