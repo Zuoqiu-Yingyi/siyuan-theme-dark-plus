@@ -5,6 +5,7 @@
 - 使用 `response.ok` 作为 `fetch` 请求成功的判断条件 | Use `response.ok` as a criterion for the success of the `fetch` request.
 - 调整搜索结果中匹配的关键字样式 | Adjust the style of matching keywords in search results.
 - 将悬浮工具栏位置状态保存在 `custom.json` 中 | Save the floating toolbar position status in `custom.json`.
+- 设置字体选择菜单中字体颜色样式 | Set the font color style in the font selection menu.
 
 ## v1.6.3/2023-01-03
 

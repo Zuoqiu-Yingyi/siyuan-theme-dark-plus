@@ -132,6 +132,27 @@
     }
 }
 
+// 编辑菜单
+.protyle-util {
+
+    // 字体样式菜单
+    .protyle-font {
+
+        // 颜色
+        .b3-color__square {
+            &[data-type=color] {
+                /* 字体颜色 */
+                border-radius: 100%;
+            }
+
+            &[data-type=backgroundColor] {
+                /* 背景颜色 */
+                border-radius: unset;
+            }
+        }
+    }
+}
+
 // 搜索结果列表
 .b3-list.b3-list--background {
     .single-level-list();

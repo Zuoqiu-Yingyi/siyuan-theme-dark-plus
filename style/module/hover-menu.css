@@ -48,6 +48,14 @@
   /* 输入框 */
   min-width: var(--custom-popover-menu-input-min-width);
 }
+.protyle-util .protyle-font .b3-color__square[data-type=color] {
+  /* 字体颜色 */
+  border-radius: 100%;
+}
+.protyle-util .protyle-font .b3-color__square[data-type=backgroundColor] {
+  /* 背景颜色 */
+  border-radius: unset;
+}
 .b3-list.b3-list--background {
   /* REF: [第一个子元素在未超过父元素高度的情况下设置margin-top导致出现竖向滚动条的问题_Andrasen的博客-CSDN博客](https://blog.csdn.net/Andrasen/article/details/105676175) */
   padding: var(--custom-popover-menu-padding-width) !important;
