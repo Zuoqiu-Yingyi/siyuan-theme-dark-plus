@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 修复部分面板背景颜色样式问题 | Fixed the issue of some panel background color style.
+- 调整反链面板的面包屑样式 | Adjust the breadcrumb style of the backlink panel.
 
 ## v1.6.4/2023-01-10
 
