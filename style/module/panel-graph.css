@@ -16,5 +16,5 @@
 .sy__globalGraph .graph__svg,
 .sy__graph .graph__svg .graph__loading,
 .sy__globalGraph .graph__svg .graph__loading {
-  background-color: transparent;
+  background-color: transparent !important;
 }

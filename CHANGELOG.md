@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 修复部分面板背景颜色样式问题 | Fixed the issue of some panel background color style.
+
 ## v1.6.4/2023-01-10
 
 - [v1.6.3 <=> v1.6.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.3...v1.6.4)
