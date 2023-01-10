@@ -23,8 +23,7 @@
   padding: 0 3px;
 }
 .sy__backlink .protyle-breadcrumb__bar {
-  border-radius: 2px;
-  outline: 2px solid var(--b3-theme-on-surface-light);
+  outline: 1px dotted var(--b3-theme-on-surface);
 }
 .protyle-wysiwyg__embed .protyle-breadcrumb__bar {
   position: sticky;

@@ -26,7 +26,7 @@
 .layout-tab-container .sy__backlink .backlinkList .b3-list.b3-list--background .b3-list-item,
 .layout-tab-container .sy__backlink .backlinkMList .b3-list.b3-list--background .b3-list-item {
   /* 反链与提及面板项 */
-  outline-color: var(--b3-theme-on-background);
+  outline-color: var(--b3-theme-on-surface);
 }
 .layout-tab-container .sy__backlink .b3-list-item__text {
   display: var(--custom-backlink-display);
