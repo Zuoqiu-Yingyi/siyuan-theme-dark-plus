@@ -4,6 +4,9 @@
   /* 反链面板 */
   background-color: transparent;
 }
+.layout-tab-container:has(>.sy__backlink) > .file-tree:not(.sy__backlink) {
+  background-color: var(--custom-editor-background-color);
+}
 .layout-tab-container .sy__backlink > div {
   background-color: var(--custom-editor-background-color);
 }

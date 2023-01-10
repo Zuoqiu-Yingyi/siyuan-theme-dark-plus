@@ -71,7 +71,7 @@
   /* 顶部工具栏标题 */
   /* 窗口控件 */
 }
-body:not(.body--win32) #toolbar {
+body:not(.body--win32) #toolbar:not(.toolbar--browser) {
   padding-left: 69px;
 }
 #toolbar div:not(#windowControls) > .toolbar__item {

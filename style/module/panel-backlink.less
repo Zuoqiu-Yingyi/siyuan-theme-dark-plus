@@ -7,7 +7,12 @@
     &:has(>.sy__backlink) {
         /* 反链面板 */
         background-color: transparent;
+
+        >.file-tree:not(.sy__backlink) {
+            background-color: var(--custom-editor-background-color);
+        }
     }
+
 
     .sy__backlink {
         >div {
