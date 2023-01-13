@@ -20,5 +20,21 @@
             /* 超级块鼠标悬停时显示边框 */
             outline: 1px solid var(--b3-theme-on-surface);
         }
+
+        >.protyle-attr {
+            /* 超级块块属性标识 */
+            top: -16px;
+        }
+    }
+
+    &,
+    [data-node-id]:not(.sb[data-sb-layout="col"]) {
+        /* 非横排的超级块 */
+        >.sb[data-node-id] {
+            +.sb[data-node-id] {
+                /* 超级块之间的间距 */
+                margin-top: var(--custom-block-super-spacing);
+            }
+        }
     }
 }
