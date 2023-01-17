@@ -7,6 +7,7 @@
 - 调整桌面端界面左上角应用图标样式 | Adjuct the style of the apply icon in the upper-left corner of the desktop interface.
 - 思源 `2.7.0+` 版本禁用使用 URL 参数跳转指定块功能 | Siyuan `2.7.0+` version disables the function of jumping to the specified block with URL parameters.
   - Adapt: [Pull Request #7086 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/pull/7086)
+- 完整显示文本内容功能支持搜索结果 | The full display of text content function supports search results.
 
 ## v1.6.4/2023-01-10
 

@@ -298,6 +298,15 @@
         .single-level-list-item();
     }
 
+    // 按文档分组的搜索结果
+    &.search__list {
+        >.b3-list-item {
+            +div:not(.b3-list-item) {
+                .single-level-list-item();
+            }
+        }
+    }
+
     // 历史对话框中的列表
     #historyContainer & {
         outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
