@@ -5,6 +5,8 @@
 - 调整超级块块属性标识样式 | Adjust the style of the block attribute identifier of the super block.
 - [#173](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/173) 添加行内代码文本颜色 CSS 变量 `--custom-span-code-color` | Add inline code text color CSS variable `--custom-span-code-color`.
 - 调整桌面端界面左上角应用图标样式 | Adjuct the style of the apply icon in the upper-left corner of the desktop interface.
+- 思源 `2.7.0+` 版本禁用使用 URL 参数跳转指定块功能 | Siyuan `2.7.0+` version disables the function of jumping to the specified block with URL parameters.
+  - Adapt: [Pull Request #7086 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/pull/7086)
 
 ## v1.6.4/2023-01-10
 
