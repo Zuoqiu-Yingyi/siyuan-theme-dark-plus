@@ -12,3 +12,7 @@
 .protyle-breadcrumb__text--ellipsis {
   max-width: none;
 }
+.b3-list-item__text {
+  display: table-cell !important;
+  word-wrap: break-word;
+}
