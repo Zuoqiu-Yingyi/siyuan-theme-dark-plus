@@ -1,19 +1,25 @@
 /* 面包屑 */
 .protyle-breadcrumb {
   /* 导航栏(面包屑) */
-  padding: 0;
+  padding: 0 2px 0 0;
   background-color: var(--custom-editor-breadcrumb-bar-background-color);
   /* box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5); */
 }
+.protyle-breadcrumb .protyle-breadcrumb__space {
+  /* 面包屑与右侧按钮之间的间距 */
+  min-width: none;
+}
 .protyle-breadcrumb .block__icon {
-  /* 更多按钮 */
-  margin-left: 4px;
-  margin-right: 6px;
+  /* 面包屑右侧按钮 */
+  margin: 0 4px;
   padding: 4px;
 }
 .protyle-breadcrumb .block__icon > svg {
   width: 16px;
   height: 16px;
+}
+.protyle-breadcrumb .block__icon + .fn__space {
+  display: none;
 }
 .protyle-breadcrumb .protyle-breadcrumb__bar {
   margin: 0 4px;

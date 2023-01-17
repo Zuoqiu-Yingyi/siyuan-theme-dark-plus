@@ -14,4 +14,12 @@
 }
 .block__popover .block__icons--border {
   background-color: var(--custom-popover-title-bar-background-color);
+  padding: 0 6px;
+}
+.block__popover .block__icons--border .block__icon[data-type=close] {
+  width: 1em;
+  /* 关闭按钮 */
+}
+.block__popover .block__icons--border .block__icon[data-type=close] > svg {
+  width: unset !important;
 }
