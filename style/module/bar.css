@@ -1,6 +1,6 @@
 /* 边栏 */
-/* 聚焦的侧边面板标题 */
 .block__icons--active {
+  /* 聚焦的侧边面板标题 */
   background-color: var(--b3-list-hover);
 }
 /* ↑👆👈👉👇↓ */
@@ -64,27 +64,29 @@
 #dockRight {
   width: var(--custom-dock-width);
 }
-/* ↑顶部工具栏↑ */
 #toolbar {
+  /* ↑顶部工具栏↑ */
   background-color: var(--custom-tool-bar-background-color);
-  /* 顶部工具栏按钮 */
-  /* 顶部工具栏标题 */
-  /* 窗口控件 */
 }
 body:not(.body--win32) #toolbar:not(.toolbar--browser) {
   padding-left: 69px;
 }
 #toolbar div:not(#windowControls) > .toolbar__item {
+  /* 顶部工具栏按钮 */
   margin: 0 6px;
-  /* border-radius: 1em; */
+}
+#toolbar #windowAppIcon {
+  /* 应用图标 */
+  padding: 6px;
+  width: 36px;
 }
 #toolbar #drag {
+  /* 顶部工具栏标题 */
   padding: 0 !important;
 }
 #toolbar #windowControls {
+  /* 窗口控件 */
   z-index: 196;
-  /* margin: 0 !important; */
-  /* 窗口关闭控件 */
 }
 #toolbar #windowControls .b3-tooltips {
   margin: 0 !important;
@@ -92,7 +94,7 @@ body:not(.body--win32) #toolbar:not(.toolbar--browser) {
   border-radius: 0 !important;
 }
 #toolbar #windowControls #closeWindow {
-  /* padding-right: 6px; */
+  /* 窗口关闭控件 */
 }
 /* 被激活的控件 */
 .block__icon--active,
