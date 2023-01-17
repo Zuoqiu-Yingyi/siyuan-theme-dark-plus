@@ -1,8 +1,8 @@
 /* 边栏 */
 @tool-height: calc(var(--custom-dock-width) - var(--custom-dock-item-margin-width) * 2);
 
-/* 聚焦的侧边面板标题 */
 .block__icons--active {
+    /* 聚焦的侧边面板标题 */
     background-color: var(--b3-list-hover);
 }
 
@@ -69,8 +69,8 @@
     width: var(--custom-dock-width);
 }
 
-/* ↑顶部工具栏↑ */
 #toolbar {
+    /* ↑顶部工具栏↑ */
     background-color: var(--custom-tool-bar-background-color);
 
     // macOS 系统桌面端窗口控件位置
@@ -78,22 +78,28 @@
         padding-left: 69px;
     }
 
-    /* 顶部工具栏按钮 */
     div:not(#windowControls)>.toolbar__item {
+        /* 顶部工具栏按钮 */
         margin: 0 6px;
-        /* border-radius: 1em; */
+        // border-radius: 1em;
     }
 
-    /* 顶部工具栏标题 */
+    #windowAppIcon {
+        /* 应用图标 */
+        padding: 6px;
+        width: 36px;
+    }
+
     #drag {
+        /* 顶部工具栏标题 */
         padding: 0 !important;
     }
 
-    /* 窗口控件 */
     #windowControls {
+        /* 窗口控件 */
         z-index: 196;
+        // margin: 0 !important;
 
-        /* margin: 0 !important; */
         .b3-tooltips {
             margin: 0 !important;
             // padding: calc(var(--custom-dock-item-margin-width) + var(--custom-dock-item-padding-width)) !important;
@@ -101,9 +107,9 @@
             border-radius: 0 !important;
         }
 
-        /* 窗口关闭控件 */
         #closeWindow {
-            /* padding-right: 6px; */
+            /* 窗口关闭控件 */
+            // padding-right: 6px;
         }
     }
 }
