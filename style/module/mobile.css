@@ -9,6 +9,10 @@
 .toolbar--border {
   background-color: var(--custom-editor-background-color);
 }
+/* 底部控件栏 */
+#keyboardToolbar {
+  z-index: 219;
+}
 #sidebar {
   background-color: var(--custom-popover-background-color);
 }

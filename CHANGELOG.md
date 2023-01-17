@@ -9,6 +9,7 @@
   - Adapt: [Pull Request #7086 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/pull/7086)
 - 完整显示文本内容功能支持搜索结果 | The full display of text content function supports search results.
 - 调整面包屑右侧按钮样式 | Adjust the style of the button on the right side of the breadcrumb.
+- 调整移动端底部控件栏的层级 | Adjust the level of the bottom control bar of the mobile terminal.
 
 ## v1.6.4/2023-01-10
 
