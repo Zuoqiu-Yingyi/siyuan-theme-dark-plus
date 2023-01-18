@@ -20,9 +20,9 @@
 #dockBottom .b3-tooltips,
 #status .b3-tooltips {
   /* 边栏按钮 */
-  margin: var(--custom-dock-item-margin-width) !important;
-  padding: var(--custom-dock-item-padding-width) !important;
-  border-radius: var(--custom-border-radius) !important;
+  margin: var(--custom-dock-item-margin-width);
+  padding: var(--custom-dock-item-padding-width);
+  border-radius: var(--custom-border-radius);
 }
 #toolbar .b3-tooltips > svg,
 #dockTop .b3-tooltips > svg,
@@ -31,8 +31,8 @@
 #dockBottom .b3-tooltips > svg,
 #status .b3-tooltips > svg {
   /* 边栏按钮图标 */
-  width: var(--custom-dock-item-icon-size) !important;
-  height: var(--custom-dock-item-icon-size) !important;
+  width: var(--custom-dock-item-icon-size);
+  height: var(--custom-dock-item-icon-size);
 }
 /* 👆👈👉👇 */
 #dockTop,
@@ -50,8 +50,8 @@
 #toolbar .b3-tooltips,
 #status .b3-tooltips {
   /* 边栏按钮 */
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 /* 👆👇 */
 #dockTop,
@@ -71,9 +71,14 @@
 body:not(.body--win32) #toolbar:not(.toolbar--browser) {
   padding-left: 69px;
 }
-#toolbar div:not(#windowControls) > .toolbar__item {
+#toolbar .toolbar__item {
   /* 顶部工具栏按钮 */
-  margin: 0 6px;
+  margin: 0px 6px;
+}
+#toolbar .toolbar__item.toolbar__item--active {
+  /* 顶部工具栏激活的按钮 */
+  margin: calc(0px + 2px) calc(6px + 2px);
+  padding: calc(var(--custom-dock-item-padding-width) - 2px);
 }
 #toolbar #windowAppIcon {
   /* 应用图标 */
@@ -82,16 +87,21 @@ body:not(.body--win32) #toolbar:not(.toolbar--browser) {
 }
 #toolbar #drag {
   /* 顶部工具栏标题 */
-  padding: 0 !important;
+  padding: 0;
 }
 #toolbar #windowControls {
   /* 窗口控件 */
   z-index: 196;
 }
 #toolbar #windowControls .b3-tooltips {
-  margin: 0 !important;
-  padding: var(--custom-dock-item-padding-width) calc(var(--custom-dock-item-margin-width) + var(--custom-dock-item-padding-width)) !important;
-  border-radius: 0 !important;
+  margin: 0;
+  padding: calc(var(--custom-dock-item-padding-width) + 2px) calc(var(--custom-dock-item-margin-width) + var(--custom-dock-item-padding-width) + 2px);
+  border-radius: 0;
+}
+#toolbar #windowControls .b3-tooltips > svg {
+  /* 按钮图标 */
+  width: calc(var(--custom-dock-item-icon-size) - 2px * 2) !important;
+  height: calc(var(--custom-dock-item-icon-size) - 2px * 2) !important;
 }
 #toolbar #windowControls #closeWindow {
   /* 窗口关闭控件 */
