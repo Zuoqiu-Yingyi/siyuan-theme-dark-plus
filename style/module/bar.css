@@ -73,11 +73,11 @@ body:not(.body--win32) #toolbar:not(.toolbar--browser) {
 }
 #toolbar .toolbar__item {
   /* 顶部工具栏按钮 */
-  margin: 0px 6px;
+  margin: 0px 4px;
 }
 #toolbar .toolbar__item.toolbar__item--active {
   /* 顶部工具栏激活的按钮 */
-  margin: calc(0px + 2px) calc(6px + 2px);
+  margin: calc(0px + 2px) calc(4px + 2px);
   padding: calc(var(--custom-dock-item-padding-width) - 2px);
 }
 #toolbar #windowAppIcon {

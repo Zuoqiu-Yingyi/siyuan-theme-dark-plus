@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 调整工具栏已激活按钮的样式 | Adjust the style of the activated button in the toolbar.
+- 调整工具栏按钮宽度 | Adjust the width of the toolbar button.
 
 ## v1.6.5/2023-01-18
 
