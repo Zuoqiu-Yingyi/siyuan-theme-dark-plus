@@ -18,14 +18,14 @@
 
     .b3-tooltips {
         /* 边栏按钮 */
-        margin: var(--custom-dock-item-margin-width) !important;
-        padding: var(--custom-dock-item-padding-width) !important;
-        border-radius: var(--custom-border-radius) !important;
+        margin: var(--custom-dock-item-margin-width);
+        padding: var(--custom-dock-item-padding-width);
+        border-radius: var(--custom-border-radius);
 
         >svg {
             /* 边栏按钮图标 */
-            width: var(--custom-dock-item-icon-size) !important;
-            height: var(--custom-dock-item-icon-size) !important;
+            width: var(--custom-dock-item-icon-size);
+            height: var(--custom-dock-item-icon-size);
         }
     }
 }
@@ -51,8 +51,8 @@
 
     .b3-tooltips {
         /* 边栏按钮 */
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 }
 
@@ -78,10 +78,20 @@
         padding-left: 69px;
     }
 
-    div:not(#windowControls)>.toolbar__item {
+    .toolbar__item {
         /* 顶部工具栏按钮 */
-        margin: 0 6px;
-        // border-radius: 1em;
+        @margin-height: 0px;
+        @margin-width: 6px;
+
+        margin: @margin-height @margin-width;
+
+        &.toolbar__item--active {
+            /* 顶部工具栏激活的按钮 */
+            @offset: 2px; // 调整量
+
+            margin: (calc(@margin-height + @offset)) calc(@margin-width + @offset);
+            padding: calc(var(--custom-dock-item-padding-width) - @offset)
+        }
     }
 
     #windowAppIcon {
@@ -92,7 +102,7 @@
 
     #drag {
         /* 顶部工具栏标题 */
-        padding: 0 !important;
+        padding: 0;
     }
 
     #windowControls {
@@ -101,10 +111,18 @@
         // margin: 0 !important;
 
         .b3-tooltips {
-            margin: 0 !important;
+            @offset: 2px; // 窗口控件大小调整量
+
+            margin: 0;
             // padding: calc(var(--custom-dock-item-margin-width) + var(--custom-dock-item-padding-width)) !important;
-            padding: var(--custom-dock-item-padding-width) calc(var(--custom-dock-item-margin-width) + var(--custom-dock-item-padding-width)) !important;
-            border-radius: 0 !important;
+            padding: calc(var(--custom-dock-item-padding-width) + @offset) calc(var(--custom-dock-item-margin-width) + var(--custom-dock-item-padding-width) + @offset);
+            border-radius: 0;
+
+            >svg {
+                /* 按钮图标 */
+                width: calc(var(--custom-dock-item-icon-size) - @offset * 2) !important;
+                height: calc(var(--custom-dock-item-icon-size) - @offset * 2) !important;
+            }
         }
 
         #closeWindow {

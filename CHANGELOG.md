@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 调整工具栏已激活按钮的样式 | Adjust the style of the activated button in the toolbar.
+
 ## v1.6.5/2023-01-18
 
 - [v1.6.4 <=> v1.6.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.4...v1.6.5)
