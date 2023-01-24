@@ -83,6 +83,7 @@ body:not(.body--win32) #toolbar:not(.toolbar--browser) {
 #toolbar #windowAppIcon {
   /* 应用图标 */
   padding: 6px;
+  margin: 0;
   width: 36px;
 }
 #toolbar #drag {
