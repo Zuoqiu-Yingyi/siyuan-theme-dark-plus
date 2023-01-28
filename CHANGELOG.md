@@ -3,6 +3,7 @@
 - 调整工具栏已激活按钮的样式 | Adjust the style of the activated button in the toolbar.
 - 调整工具栏按钮宽度 | Adjust the width of the toolbar button.
 - 调整窗口标题栏应用图标宽度 | Adjust the width of the app icon for the window title bar.
+- 调整 <kbd>Ctrl + 鼠标滚轮</kbd> 缩放功能 | Adjust the function of zoom using <kbd>Ctrl + Mouse-Wheel</kbd>.
 
 ## v1.6.5/2023-01-18
 

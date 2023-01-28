@@ -86,6 +86,10 @@ body:not(.body--win32) #toolbar:not(.toolbar--browser) {
   margin: 0;
   width: 36px;
 }
+#toolbar #barWorkspace {
+  /* 工作空间下拉菜单 */
+  margin: 0;
+}
 #toolbar #drag {
   /* 顶部工具栏标题 */
   padding: 0;

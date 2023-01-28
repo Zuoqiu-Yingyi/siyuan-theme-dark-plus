@@ -490,6 +490,7 @@ function setFontSize(fontSize) {
 .protyle-wysiwyg [data-node-id].li > .protyle-action:after {height: ${fontSize}px;width: ${fontSize}px;margin:-${fontSize / 2}px 0 0 -${fontSize / 2}px}
 .protyle-wysiwyg [data-node-id].li > .protyle-action svg {height: ${Math.max(14, fontSize - 8)}px}
 .protyle-wysiwyg [data-node-id] [spellcheck="false"] {min-height:${height}px}
+.protyle-wysiwyg [data-node-id] {${window.siyuan.config.editor.rtl ? " direction: rtl;" : ""}${window.siyuan.config.editor.justify ? " text-align: justify;" : ""}}
 .protyle-wysiwyg .li {min-height:${height + 8}px}
 .protyle-gutters button svg {height:${height}px}
 .protyle-wysiwyg img.emoji, .b3-typography img.emoji {width:${height - 8}px}
