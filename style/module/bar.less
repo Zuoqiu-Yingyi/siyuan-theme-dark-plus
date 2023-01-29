@@ -1,9 +1,66 @@
 /* 边栏 */
 @tool-height: calc(var(--custom-dock-width) - var(--custom-dock-item-margin-width) * 2);
 
+/* 窗口控件 */
+.window-tools {
+    .b3-tooltips {
+        @offset: 2px; // 窗口控件大小调整量
+
+        margin: 0;
+        // padding: calc(var(--custom-dock-item-margin-width) + var(--custom-dock-item-padding-width)) !important;
+        padding: calc(var(--custom-dock-item-padding-width) + @offset) calc(var(--custom-dock-item-margin-width) + var(--custom-dock-item-padding-width) + @offset);
+        border-radius: 0;
+
+        >svg {
+            /* 按钮图标 */
+            width: calc(var(--custom-dock-item-icon-size) - @offset * 2) !important;
+            height: calc(var(--custom-dock-item-icon-size) - @offset * 2) !important;
+        }
+    }
+}
+
 .block__icons--active {
     /* 聚焦的侧边面板标题 */
     background-color: var(--b3-list-hover);
+}
+
+/* 页签新窗口 */
+body.body--window {
+    #layouts {
+        // padding-top: @tool-height;
+
+        .layout-tab-bar--readonly {
+            /* 页签栏 */
+            padding-right: 0 !important;
+
+            .item--readonly {
+                >.fn__flex-1 {
+                    /* 页签栏按钮填充间隔 */
+                    height: unset !important;
+                }
+            }
+        }
+    }
+
+    .toolbar__window {
+        width: 100%;
+        position: unset;
+
+        // 按钮靠右
+        display: flex;
+        justify-content: flex-end;
+
+        background-color: var(--custom-tool-bar-background-color);
+        border-bottom: 1px solid var(--b3-border-color);
+
+        app-region: drag;
+
+        >* {
+            app-region: no-drag;
+        }
+
+        .window-tools();
+    }
 }
 
 /* ↑👆👈👉👇↓ */
@@ -111,30 +168,9 @@
         padding: 0;
     }
 
+    // 窗口控件
     #windowControls {
-        /* 窗口控件 */
-        z-index: 196;
-        // margin: 0 !important;
-
-        .b3-tooltips {
-            @offset: 2px; // 窗口控件大小调整量
-
-            margin: 0;
-            // padding: calc(var(--custom-dock-item-margin-width) + var(--custom-dock-item-padding-width)) !important;
-            padding: calc(var(--custom-dock-item-padding-width) + @offset) calc(var(--custom-dock-item-margin-width) + var(--custom-dock-item-padding-width) + @offset);
-            border-radius: 0;
-
-            >svg {
-                /* 按钮图标 */
-                width: calc(var(--custom-dock-item-icon-size) - @offset * 2) !important;
-                height: calc(var(--custom-dock-item-icon-size) - @offset * 2) !important;
-            }
-        }
-
-        #closeWindow {
-            /* 窗口关闭控件 */
-            // padding-right: 6px;
-        }
+        .window-tools();
     }
 }
 
