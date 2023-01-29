@@ -6,6 +6,7 @@
 - 调整 <kbd>Ctrl + 鼠标滚轮</kbd> 缩放功能 | Adjust the function of zoom using <kbd>Ctrl + Mouse-Wheel</kbd>.
 - 兼容新窗口的样式 | Compatible with the style of the new window.
   - Adapt: [Issue #2955 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/2955)
+- 为未激活的窗口标题栏设置颜色 | Set the color for the title bar of the inactive window.
 
 ## v1.6.5/2023-01-18
 
