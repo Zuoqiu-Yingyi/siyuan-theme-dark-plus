@@ -208,8 +208,10 @@ window.theme.orientation = () => {
  * @return {string} 'app' 或 'desktop' 或 'mobile'
  */
 window.theme.clientMode = (() => {
-    let url = new URL(window.location.href);
+    const url = new URL(window.location.href);
     switch (true) {
+        case url.pathname.startsWith('/stage/build/app/window.html'):
+            return 'window';
         case url.pathname.startsWith('/stage/build/app'):
             return 'app';
         case url.pathname.startsWith('/stage/build/desktop'):
@@ -296,6 +298,15 @@ if (window.siyuan.config.appearance[window.siyuan.config.appearance.mode ? "them
         `/widgets/custom-light.css`,
         `/widgets/custom-dark.css`,
     );
+}
+
+/* 调整窗口控件位置 */
+if (window.theme.clientMode === "window") {
+    const toolbar__window = document.querySelector("body > .toolbar__window");
+    const layouts = document.getElementById("layouts")?.parentElement;
+    if (toolbar__window && layouts) {
+        document.body.insertBefore(toolbar__window, layouts);
+    }
 }
 
 /* 加载 HTML 块中使用的小工具 */

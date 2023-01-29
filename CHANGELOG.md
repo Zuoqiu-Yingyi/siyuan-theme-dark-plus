@@ -4,6 +4,8 @@
 - 调整工具栏按钮宽度 | Adjust the width of the toolbar button.
 - 调整窗口标题栏应用图标宽度 | Adjust the width of the app icon for the window title bar.
 - 调整 <kbd>Ctrl + 鼠标滚轮</kbd> 缩放功能 | Adjust the function of zoom using <kbd>Ctrl + Mouse-Wheel</kbd>.
+- 兼容新窗口的样式 | Compatible with the style of the new window.
+  - Adapt: [Issue #2955 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/2955)
 
 ## v1.6.5/2023-01-18
 
