@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.6.6/2023-01-30
+
+- [v1.6.5 <=> v1.6.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.5...v1.6.6)
 - 调整工具栏已激活按钮的样式 | Adjust the style of the activated button in the toolbar.
 - 调整工具栏按钮宽度 | Adjust the width of the toolbar button.
 - 调整窗口标题栏应用图标宽度 | Adjust the width of the app icon for the window title bar.
