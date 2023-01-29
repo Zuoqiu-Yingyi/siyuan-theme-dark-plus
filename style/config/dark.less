@@ -1,8 +1,8 @@
-/* 高优先级的深色主题配置 */
+/* 自动应用的深色主题配置 */
 
 /* @import url(/appearance/themes/midnight/theme.css); */
 
-:root {
+.dark-root() {
     /* 背景图片 */
     --custom-background-image-landscape: url(/appearance/themes/Dark+/image/dark/background-main.jpg);
     --custom-background-image-portrait: url(/appearance/themes/Dark+/image/dark/background-main-portrait.jpg);
@@ -65,4 +65,19 @@
 
     /* 👇👇👇 覆盖默认主题颜色 👇👇👇 */
     --b3-list-hover: #3f4041;
+}
+
+// @media (prefers-color-scheme: dark) {
+//     :root {
+//         .dark-root();
+//     }
+// }
+
+:root {
+    // 回退
+    &[data-color-scheme=dark],
+    // 支持 :has 选择器的浏览器/客户端
+    &:has(#themeDefaultStyle[href *="/appearance/themes/midnight/"]) {
+        .dark-root();
+    }
 }

@@ -277,47 +277,72 @@
     --custom-jupyter-256-color-255: #EEEEEE;
 }
 
+.light-root() {
+    --custom-jupyter-ansi-color-black: var(--custom-jupyter-ansi-color-0);
+    --custom-jupyter-ansi-color-red: var(--custom-jupyter-ansi-color-1);
+    --custom-jupyter-ansi-color-green: var(--custom-jupyter-ansi-color-2);
+    --custom-jupyter-ansi-color-yellow: var(--custom-jupyter-ansi-color-3);
+    --custom-jupyter-ansi-color-blue: var(--custom-jupyter-ansi-color-4);
+    --custom-jupyter-ansi-color-magenta: var(--custom-jupyter-ansi-color-5);
+    --custom-jupyter-ansi-color-cyan: var(--custom-jupyter-ansi-color-6);
+    --custom-jupyter-ansi-color-white: var(--custom-jupyter-ansi-color-7);
+
+    --custom-jupyter-ansi-color-black-intense: var(--custom-jupyter-ansi-color-8);
+    --custom-jupyter-ansi-color-red-intense: var(--custom-jupyter-ansi-color-9);
+    --custom-jupyter-ansi-color-green-intense: var(--custom-jupyter-ansi-color-A);
+    --custom-jupyter-ansi-color-yellow-intense: var(--custom-jupyter-ansi-color-B);
+    --custom-jupyter-ansi-color-blue-intense: var(--custom-jupyter-ansi-color-C);
+    --custom-jupyter-ansi-color-magenta-intense: var(--custom-jupyter-ansi-color-D);
+    --custom-jupyter-ansi-color-cyan-intense: var(--custom-jupyter-ansi-color-E);
+    --custom-jupyter-ansi-color-white-intense: var(--custom-jupyter-ansi-color-F);
+}
+
+.dark-root() {
+    --custom-jupyter-ansi-color-black: var(--custom-jupyter-ansi-color-8);
+    --custom-jupyter-ansi-color-red: var(--custom-jupyter-ansi-color-9);
+    --custom-jupyter-ansi-color-green: var(--custom-jupyter-ansi-color-A);
+    --custom-jupyter-ansi-color-yellow: var(--custom-jupyter-ansi-color-B);
+    --custom-jupyter-ansi-color-blue: var(--custom-jupyter-ansi-color-C);
+    --custom-jupyter-ansi-color-magenta: var(--custom-jupyter-ansi-color-D);
+    --custom-jupyter-ansi-color-cyan: var(--custom-jupyter-ansi-color-E);
+    --custom-jupyter-ansi-color-white: var(--custom-jupyter-ansi-color-F);
+
+    --custom-jupyter-ansi-color-black-intense: var(--custom-jupyter-ansi-color-0);
+    --custom-jupyter-ansi-color-red-intense: var(--custom-jupyter-ansi-color-1);
+    --custom-jupyter-ansi-color-green-intense: var(--custom-jupyter-ansi-color-2);
+    --custom-jupyter-ansi-color-yellow-intense: var(--custom-jupyter-ansi-color-3);
+    --custom-jupyter-ansi-color-blue-intense: var(--custom-jupyter-ansi-color-4);
+    --custom-jupyter-ansi-color-magenta-intense: var(--custom-jupyter-ansi-color-5);
+    --custom-jupyter-ansi-color-cyan-intense: var(--custom-jupyter-ansi-color-6);
+    --custom-jupyter-ansi-color-white-intense: var(--custom-jupyter-ansi-color-7);
+}
+
 @media (prefers-color-scheme: light) {
     :root {
-        --custom-jupyter-ansi-color-black: var(--custom-jupyter-ansi-color-0);
-        --custom-jupyter-ansi-color-red: var(--custom-jupyter-ansi-color-1);
-        --custom-jupyter-ansi-color-green: var(--custom-jupyter-ansi-color-2);
-        --custom-jupyter-ansi-color-yellow: var(--custom-jupyter-ansi-color-3);
-        --custom-jupyter-ansi-color-blue: var(--custom-jupyter-ansi-color-4);
-        --custom-jupyter-ansi-color-magenta: var(--custom-jupyter-ansi-color-5);
-        --custom-jupyter-ansi-color-cyan: var(--custom-jupyter-ansi-color-6);
-        --custom-jupyter-ansi-color-white: var(--custom-jupyter-ansi-color-7);
-
-        --custom-jupyter-ansi-color-black-intense: var(--custom-jupyter-ansi-color-8);
-        --custom-jupyter-ansi-color-red-intense: var(--custom-jupyter-ansi-color-9);
-        --custom-jupyter-ansi-color-green-intense: var(--custom-jupyter-ansi-color-A);
-        --custom-jupyter-ansi-color-yellow-intense: var(--custom-jupyter-ansi-color-B);
-        --custom-jupyter-ansi-color-blue-intense: var(--custom-jupyter-ansi-color-C);
-        --custom-jupyter-ansi-color-magenta-intense: var(--custom-jupyter-ansi-color-D);
-        --custom-jupyter-ansi-color-cyan-intense: var(--custom-jupyter-ansi-color-E);
-        --custom-jupyter-ansi-color-white-intense: var(--custom-jupyter-ansi-color-F);
+        .light-root();
     }
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --custom-jupyter-ansi-color-black: var(--custom-jupyter-ansi-color-8);
-        --custom-jupyter-ansi-color-red: var(--custom-jupyter-ansi-color-9);
-        --custom-jupyter-ansi-color-green: var(--custom-jupyter-ansi-color-A);
-        --custom-jupyter-ansi-color-yellow: var(--custom-jupyter-ansi-color-B);
-        --custom-jupyter-ansi-color-blue: var(--custom-jupyter-ansi-color-C);
-        --custom-jupyter-ansi-color-magenta: var(--custom-jupyter-ansi-color-D);
-        --custom-jupyter-ansi-color-cyan: var(--custom-jupyter-ansi-color-E);
-        --custom-jupyter-ansi-color-white: var(--custom-jupyter-ansi-color-F);
+        .dark-root();
+    }
+}
 
-        --custom-jupyter-ansi-color-black-intense: var(--custom-jupyter-ansi-color-0);
-        --custom-jupyter-ansi-color-red-intense: var(--custom-jupyter-ansi-color-1);
-        --custom-jupyter-ansi-color-green-intense: var(--custom-jupyter-ansi-color-2);
-        --custom-jupyter-ansi-color-yellow-intense: var(--custom-jupyter-ansi-color-3);
-        --custom-jupyter-ansi-color-blue-intense: var(--custom-jupyter-ansi-color-4);
-        --custom-jupyter-ansi-color-magenta-intense: var(--custom-jupyter-ansi-color-5);
-        --custom-jupyter-ansi-color-cyan-intense: var(--custom-jupyter-ansi-color-6);
-        --custom-jupyter-ansi-color-white-intense: var(--custom-jupyter-ansi-color-7);
+:root {
+
+    // 回退
+    &[data-color-scheme=light],
+    // 支持 :has 选择器的浏览器/客户端
+    &:has(#themeDefaultStyle[href *="/appearance/themes/daylight/"]) {
+        .light-root();
+    }
+
+    // 回退
+    &[data-color-scheme=dark],
+    // 支持 :has 选择器的浏览器/客户端
+    &:has(#themeDefaultStyle[href *="/appearance/themes/midnight/"]) {
+        .dark-root();
     }
 }
 
