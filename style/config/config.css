@@ -108,7 +108,6 @@
   --custom-components-light: #444;
   --custom-components: #222;
   --custom-components-deep: #111;
-  --custom-components-deepest: #000;
   /* 标题层级标记与标题之间宽度 | The width between the title hierarchy tag and the title */
   --custom-h-mark-blank: 4px;
   /* 标题字重 | Title font weight */
@@ -505,8 +504,11 @@
   --custom-scroll-max-height: 50vh;
   /* 表格单元格等宽启用时单元格宽度 | Table cell width when cell equal function is enabled */
   --custom-table-cell-equal-width: 256px;
-  /* 窗口标题栏背景颜色 */
-  --custom-window-unfocused-title-bar-background-color: var(--custom-components-deepest);
+  /* 未激活的窗口 */
+  /* 窗口标题栏背景颜色 | The window title bar background color */
+  --custom-window-inactive-title-bar-background-color: var(--b3-theme-background);
+  /* 窗口标题栏颜色 | The window title bar color */
+  --custom-window-inactive-title-bar-color: var(--b3-theme-on-surface-light);
 }
 @media (orientation: landscape) {
   :root {
