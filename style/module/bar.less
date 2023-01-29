@@ -153,12 +153,21 @@
         padding-left: 69px;
     }
 
+    .toolbar__text {
+        color: var(--b3-theme-on-background);
+    }
+
     .toolbar__item {
         /* 顶部工具栏按钮 */
         @margin-height: 0px;
         @margin-width: 4px;
 
         margin: @margin-height @margin-width;
+
+
+        &:not(.toolbar__item--disabled):not(.toolbar__item--close):hover {
+            background-color: var(--b3-theme-background-light);
+        }
 
         &.toolbar__item--active {
             /* 顶部工具栏激活的按钮 */

@@ -135,9 +135,15 @@
 body:not(.body--win32) #toolbar:not(.toolbar--browser) {
   padding-left: 69px;
 }
+#toolbar .toolbar__text {
+  color: var(--b3-theme-on-background);
+}
 #toolbar .toolbar__item {
   /* 顶部工具栏按钮 */
   margin: 0px 4px;
+}
+#toolbar .toolbar__item:not(.toolbar__item--disabled):not(.toolbar__item--close):hover {
+  background-color: var(--b3-theme-background-light);
 }
 #toolbar .toolbar__item.toolbar__item--active {
   /* 顶部工具栏激活的按钮 */
