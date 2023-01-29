@@ -27,7 +27,6 @@
     --custom-components-light: #CCC;
     --custom-components: #DDD;
     --custom-components-deep: #EEE;
-    --custom-components-deepest: #FFF;
 
     /* 鲜明颜色 | Striking color */
     --custom-striking-color: var(--b3-graph-listitem-point);

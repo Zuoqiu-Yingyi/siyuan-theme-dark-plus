@@ -19,6 +19,16 @@
     }
 }
 
+/* 未激活的窗口标题栏 */
+.inactive-window-title-bar {
+    /* 未激活的窗口标题栏 */
+    background-color: var(--custom-window-inactive-title-bar-background-color);
+
+    .toolbar__item {
+        color: var(--custom-window-inactive-title-bar-color);
+    }
+}
+
 .block__icons--active {
     /* 聚焦的侧边面板标题 */
     background-color: var(--b3-list-hover);
@@ -54,7 +64,7 @@
         border-bottom: 1px solid var(--b3-border-color);
 
         .body--blur& {
-            background-color: var(--custom-window-unfocused-title-bar-background-color);
+            .inactive-window-title-bar();
         }
 
         app-region: drag;
@@ -135,7 +145,7 @@
     background-color: var(--custom-tool-bar-background-color);
 
     .body--blur & {
-        background-color: var(--custom-window-unfocused-title-bar-background-color);
+        .inactive-window-title-bar();
     }
 
     // macOS 系统桌面端窗口控件位置

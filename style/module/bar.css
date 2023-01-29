@@ -10,6 +10,14 @@
   width: calc(var(--custom-dock-item-icon-size) - 2px * 2) !important;
   height: calc(var(--custom-dock-item-icon-size) - 2px * 2) !important;
 }
+/* 未激活的窗口标题栏 */
+.inactive-window-title-bar {
+  /* 未激活的窗口标题栏 */
+  background-color: var(--custom-window-inactive-title-bar-background-color);
+}
+.inactive-window-title-bar .toolbar__item {
+  color: var(--custom-window-inactive-title-bar-color);
+}
 .block__icons--active {
   /* 聚焦的侧边面板标题 */
   background-color: var(--b3-list-hover);
@@ -33,7 +41,11 @@
   app-region: drag;
 }
 .body--blur.body--window .toolbar__window {
-  background-color: var(--custom-window-unfocused-title-bar-background-color);
+  /* 未激活的窗口标题栏 */
+  background-color: var(--custom-window-inactive-title-bar-background-color);
+}
+.body--blur.body--window .toolbar__window .toolbar__item {
+  color: var(--custom-window-inactive-title-bar-color);
 }
 .body--window .toolbar__window > * {
   app-region: no-drag;
@@ -114,7 +126,11 @@
   background-color: var(--custom-tool-bar-background-color);
 }
 .body--blur #toolbar {
-  background-color: var(--custom-window-unfocused-title-bar-background-color);
+  /* 未激活的窗口标题栏 */
+  background-color: var(--custom-window-inactive-title-bar-background-color);
+}
+.body--blur #toolbar .toolbar__item {
+  color: var(--custom-window-inactive-title-bar-color);
 }
 body:not(.body--win32) #toolbar:not(.toolbar--browser) {
   padding-left: 69px;
