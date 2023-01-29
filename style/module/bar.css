@@ -15,15 +15,15 @@
   background-color: var(--b3-list-hover);
 }
 /* 页签新窗口 */
-body.body--window #layouts .layout-tab-bar--readonly {
+.body--window #layouts .layout-tab-bar--readonly {
   /* 页签栏 */
   padding-right: 0 !important;
 }
-body.body--window #layouts .layout-tab-bar--readonly .item--readonly > .fn__flex-1 {
+.body--window #layouts .layout-tab-bar--readonly .item--readonly > .fn__flex-1 {
   /* 页签栏按钮填充间隔 */
   height: unset !important;
 }
-body.body--window .toolbar__window {
+.body--window .toolbar__window {
   width: 100%;
   position: unset;
   display: flex;
@@ -32,15 +32,18 @@ body.body--window .toolbar__window {
   border-bottom: 1px solid var(--b3-border-color);
   app-region: drag;
 }
-body.body--window .toolbar__window > * {
+.body--blur.body--window .toolbar__window {
+  background-color: var(--custom-window-unfocused-title-bar-background-color);
+}
+.body--window .toolbar__window > * {
   app-region: no-drag;
 }
-body.body--window .toolbar__window .b3-tooltips {
+.body--window .toolbar__window .b3-tooltips {
   margin: 0;
   padding: calc(var(--custom-dock-item-padding-width) + 2px) calc(var(--custom-dock-item-margin-width) + var(--custom-dock-item-padding-width) + 2px);
   border-radius: 0;
 }
-body.body--window .toolbar__window .b3-tooltips > svg {
+.body--window .toolbar__window .b3-tooltips > svg {
   /* 按钮图标 */
   width: calc(var(--custom-dock-item-icon-size) - 2px * 2) !important;
   height: calc(var(--custom-dock-item-icon-size) - 2px * 2) !important;
@@ -109,6 +112,9 @@ body.body--window .toolbar__window .b3-tooltips > svg {
 #toolbar {
   /* ↑顶部工具栏↑ */
   background-color: var(--custom-tool-bar-background-color);
+}
+.body--blur #toolbar {
+  background-color: var(--custom-window-unfocused-title-bar-background-color);
 }
 body:not(.body--win32) #toolbar:not(.toolbar--browser) {
   padding-left: 69px;

@@ -25,7 +25,7 @@
 }
 
 /* 页签新窗口 */
-body.body--window {
+.body--window {
     #layouts {
         // padding-top: @tool-height;
 
@@ -52,6 +52,10 @@ body.body--window {
 
         background-color: var(--custom-tool-bar-background-color);
         border-bottom: 1px solid var(--b3-border-color);
+
+        .body--blur& {
+            background-color: var(--custom-window-unfocused-title-bar-background-color);
+        }
 
         app-region: drag;
 
@@ -129,6 +133,10 @@ body.body--window {
 #toolbar {
     /* ↑顶部工具栏↑ */
     background-color: var(--custom-tool-bar-background-color);
+
+    .body--blur & {
+        background-color: var(--custom-window-unfocused-title-bar-background-color);
+    }
 
     // macOS 系统桌面端窗口控件位置
     body:not(.body--win32) &:not(.toolbar--browser) {

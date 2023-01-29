@@ -27,6 +27,7 @@
     --custom-components-light: #444;
     --custom-components: #222;
     --custom-components-deep: #111;
+    --custom-components-deepest: #000;
 
     /* 鲜明颜色 | Striking color */
     --custom-striking-color: var(--b3-font-color12);
