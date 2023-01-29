@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 重构主题配色加载方案 | Refactored the theme color scheme loading scheme.
+- 调整标题栏按钮样式 | Adjust the style of the title bar button.
 
 ## v1.6.6/2023-01-30
 
