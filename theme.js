@@ -254,26 +254,22 @@ window.theme.lute = window.Lute.New();
  * @params {string} customDarkStyle 深色主题自定义配置文件路径
  */
 window.theme.changeThemeMode = function (
-    lightStyle,
-    darkStyle,
     customLightStyle,
     customDarkStyle,
 ) {
-    let href_color = null;
     let href_custom = null;
     switch (window.theme.themeMode) {
         case 'light':
-            href_color = lightStyle;
+            document.documentElement.dataset.colorScheme = 'light';
             href_custom = customLightStyle;
             break;
         case 'dark':
         default:
-            href_color = darkStyle;
+            document.documentElement.dataset.colorScheme = 'dark';
             href_custom = customDarkStyle;
             break;
     }
     window.theme.updateStyle(window.theme.ID_CUSTOM_STYLE, href_custom);
-    window.theme.updateStyle(window.theme.ID_COLOR_STYLE, href_color);
 }
 
 /* 禁用缓存(无效) */
@@ -293,8 +289,6 @@ window.theme.changeThemeMode = function (
 /* 根据当前主题模式加载样式配置文件 */
 if (window.siyuan.config.appearance[window.siyuan.config.appearance.mode ? "themeDark" : "themeLight"] === "Dark+") {
     window.theme.changeThemeMode(
-        `/appearance/themes/Dark+/style/color/light.css`,
-        `/appearance/themes/Dark+/style/color/dark.css`,
         `/widgets/custom-light.css`,
         `/widgets/custom-dark.css`,
     );

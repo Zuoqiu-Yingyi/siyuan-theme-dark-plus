@@ -1,8 +1,8 @@
-/* 高优先级的浅色主题配置 */
+/* 自动应用的浅色主题配置 */
 
 /* @import url(/appearance/themes/daylight/theme.css); */
 
-:root {
+.light-root() {
     /* 背景图片 */
     --custom-background-image-landscape: url(/appearance/themes/Dark+/image/light/background-main.jpg);
     --custom-background-image-portrait: url(/appearance/themes/Dark+/image/light/background-main-portrait.jpg);
@@ -65,4 +65,20 @@
 
     /* 👇👇👇 覆盖默认主题颜色 👇👇👇 */
     --b3-list-hover: var(--b3-theme-background-light);
+}
+
+// @media (prefers-color-scheme: light) {
+//     :root {
+//         .light-root();
+//     }
+// }
+
+:root {
+
+    // 回退
+    &[data-color-scheme=light],
+    // 支持 :has 选择器的浏览器/客户端
+    &:has(#themeDefaultStyle[href *="/appearance/themes/daylight/"]) {
+        .light-root();
+    }
 }

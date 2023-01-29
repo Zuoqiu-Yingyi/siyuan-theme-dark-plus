@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 重构主题配色加载方案 | Refactored the theme color scheme loading scheme.
+
 ## v1.6.6/2023-01-30
 
 - [v1.6.5 <=> v1.6.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.5...v1.6.6)
