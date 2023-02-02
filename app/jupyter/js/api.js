@@ -211,7 +211,7 @@ async function jupyterRequest(
             break;
     }
     return fetch(url, init).then(r => {
-        if (r.status >= 200 && r.status < 300)
+        if (r.ok)
             return isParser ? r.json() : r;
         else return null;
     });
