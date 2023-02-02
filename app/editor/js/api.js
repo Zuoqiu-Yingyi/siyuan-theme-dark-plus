@@ -131,7 +131,7 @@ async function getFile(path, token = config.token) {
             path,
         }),
     });
-    if (response.status === 200)
+    if (response.ok)
         return response;
     else return null;
 }
@@ -142,7 +142,7 @@ async function getLocalFile(path) {
         {
             method: "GET",
         });
-    if (response.status === 200)
+    if (response.ok)
         return response;
     else return null;
 }
@@ -156,7 +156,7 @@ async function getAsset(path, token = config.token) {
                 Authorization: `Token ${token}`,
             },
         });
-    if (response.status === 200)
+    if (response.ok)
         return response;
     else return null;
 }
@@ -178,7 +178,7 @@ async function putFile(path, filedata, isDir = false, modTime = Date.now(), toke
                 Authorization: `Token ${token}`,
             },
         });
-    if (response.status === 200)
+    if (response.ok)
         return await response.json();
     else return null;
 }
@@ -206,7 +206,7 @@ async function upload(filename, filedata, path = '/assets/', mine = null, token 
                 Authorization: `Token ${token}`,
             },
         });
-    if (response.status === 200)
+    if (response.ok)
         return await response.json();
     else return null;
 }
