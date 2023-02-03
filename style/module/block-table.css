@@ -4,11 +4,13 @@
   /* 表格 */
   background-color: var(--custom-block-table-background-color);
 }
-.b3-typography table th,
-.protyle-wysiwyg table th,
-.b3-typography table td,
-.protyle-wysiwyg table td {
+.b3-typography table tr th,
+.protyle-wysiwyg table tr th,
+.b3-typography table tr td,
+.protyle-wysiwyg table tr td {
+  /* 单元格 */
   border-color: var(--custom-block-table-cell-border-color);
+  background-color: transparent;
 }
 .b3-typography table thead,
 .protyle-wysiwyg table thead {
@@ -28,7 +30,7 @@
 .b3-typography table tbody tr:nth-child(2n),
 .protyle-wysiwyg table tbody tr:nth-child(2n) {
   /* 偶数行 */
-  background-color: var(--custom-block-table-odd-background-color);
+  background-color: var(--custom-block-table-even-background-color);
 }
 .b3-typography table tr:hover,
 .protyle-wysiwyg table tr:hover {
