@@ -328,7 +328,7 @@
   /* 表格块单元格边框颜色 | The color of table block cell borders */
   --custom-block-table-cell-border-color: var(--b3-border-color);
   /* 表头 | thead */
-  --custom-block-table-thead-background-color: var(--custom-components-light);
+  --custom-block-table-thead-background-color: var(--custom-components);
   /* 奇数行 | odd line */
   --custom-block-table-odd-background-color: var(--custom-transparent-lighter);
   /* 偶数行 | even line */

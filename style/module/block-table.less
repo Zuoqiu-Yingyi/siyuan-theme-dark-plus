@@ -8,9 +8,11 @@
         background-color: var(--custom-block-table-background-color);
         // margin: 1px 1px 1px 0px;
 
-        th,
-        td {
+        tr th,
+        tr td {
+            /* 单元格 */
             border-color: var(--custom-block-table-cell-border-color);
+            background-color: transparent;
         }
 
         thead {
@@ -32,7 +34,7 @@
 
                 &:nth-child(2n) {
                     /* 偶数行 */
-                    background-color: var(--custom-block-table-odd-background-color);
+                    background-color: var(--custom-block-table-even-background-color);
                 }
             }
         }
