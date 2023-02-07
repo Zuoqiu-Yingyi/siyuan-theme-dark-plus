@@ -7,6 +7,8 @@
 - 调整表格样式 | Adjust the style of the table.
 - 修复浮窗中块滚动条样式异常问题 | Fixed the issue of abnormal style of block scrollbar in the floating window.
 - 修复行内备注功能异常 | Fixed the abnormality of the inline note function.
+- 调整主题配色加载方案 | Adjust the theme color scheme loading scheme.
+  - Adapt: [Issue #7259 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/7259)
 
 ## v1.6.6/2023-01-30
 

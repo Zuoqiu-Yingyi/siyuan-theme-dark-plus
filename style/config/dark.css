@@ -1,7 +1,7 @@
 /* 自动应用的深色主题配置 */
 /* @import url(/appearance/themes/midnight/theme.css); */
-:root[data-color-scheme=dark],
-:root:has(#themeDefaultStyle[href *="/appearance/themes/midnight/"]) {
+:root:has(#themeDefaultStyle[href *="/appearance/themes/midnight/"]),
+:root[data-theme-mode=dark] {
   /* 背景图片 */
   --custom-background-image-landscape: url(/appearance/themes/Dark+/image/dark/background-main.jpg);
   --custom-background-image-portrait: url(/appearance/themes/Dark+/image/dark/background-main-portrait.jpg);
