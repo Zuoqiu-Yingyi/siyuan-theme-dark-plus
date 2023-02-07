@@ -662,19 +662,19 @@ ${commentMd}
   appendToolbarBtn(protyle) {
     if (protyle) {
       // 处理新增的 protyle
-      let icon = protyle.querySelector('[data-type="comment"]')
+      const icon = protyle.querySelector('[data-type="comment"]')
       if (!icon) {
-        let toolbar = protyle.querySelector('.protyle-toolbar')
-        let fragment = this.createToolbarBtn()
-        toolbar.appendChild(fragment)
+        const toolbar = protyle.querySelector('.protyle-toolbar')
+        const fragment = this.createToolbarBtn()
+        toolbar?.appendChild(fragment)
       }
     } else {
       // 初始化时找到所有 protyle-toolbar
-      let toolbars = document.querySelectorAll('.protyle-toolbar')
+      const toolbars = document.querySelectorAll('.protyle-toolbar')
       if (toolbars) {
         toolbars.forEach((item, index, node) => {
           if (!item.querySelector('[data-type="comment"]')) {
-            let fragment = this.createToolbarBtn()
+            const fragment = this.createToolbarBtn()
             item.appendChild(fragment)
           }
         })
