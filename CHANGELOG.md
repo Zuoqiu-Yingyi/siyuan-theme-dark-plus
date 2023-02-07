@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.7.0/2023-02-08
+
+- [v1.6.6 <=> v1.7.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.6...v1.7.0)
 - 重构主题配色加载方案 | Refactored the theme color scheme loading scheme.
 - 调整标题栏按钮样式 | Adjust the style of the title bar button.
 - 重构响应状态判断方案 | Refactored the response status judgment scheme.
