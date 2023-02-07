@@ -35,6 +35,7 @@
   background-color: transparent;
   box-shadow: 0 0 var(--custom-toolbar-tiem-active-box-shadow-spread) 0 var(--custom-box-shadow-color);
   z-index: 1;
+  right: -20px;
 }
 .protyle-content > .protyle-title .protyle-title__input {
   /*编辑区文件名*/
@@ -45,6 +46,7 @@
   background-color: transparent;
   box-shadow: 0 0 var(--custom-toolbar-tiem-active-box-shadow-spread) 0 var(--custom-box-shadow-color);
   z-index: 1;
+  right: -20px;
 }
 .protyle-content > .protyle-wysiwyg .dragover__top {
   box-shadow: 0 -4px 0 var(--custom-drag-top-shadow-color);
@@ -65,7 +67,7 @@
   padding: 0;
 }
 .protyle-scroll .protyle-scroll__bar {
-  right: -98px;
+  right: calc(3px - var(--b3-dynamicscroll-width) / 2);
 }
 .protyle-preview {
   /* 导出预览 */
