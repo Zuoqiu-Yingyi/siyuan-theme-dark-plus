@@ -314,8 +314,8 @@
     --custom-jupyter-ansi-color-white-intense: var(--custom-jupyter-ansi-color-7);
   }
 }
-:root[data-color-scheme=light],
-:root:has(#themeDefaultStyle[href *="/appearance/themes/daylight/"]) {
+:root:has(#themeDefaultStyle[href *="/appearance/themes/daylight/"]),
+:root[data-theme-mode=light] {
   --custom-jupyter-ansi-color-black: var(--custom-jupyter-ansi-color-0);
   --custom-jupyter-ansi-color-red: var(--custom-jupyter-ansi-color-1);
   --custom-jupyter-ansi-color-green: var(--custom-jupyter-ansi-color-2);
@@ -333,8 +333,8 @@
   --custom-jupyter-ansi-color-cyan-intense: var(--custom-jupyter-ansi-color-E);
   --custom-jupyter-ansi-color-white-intense: var(--custom-jupyter-ansi-color-F);
 }
-:root[data-color-scheme=dark],
-:root:has(#themeDefaultStyle[href *="/appearance/themes/midnight/"]) {
+:root:has(#themeDefaultStyle[href *="/appearance/themes/midnight/"]),
+:root[data-theme-mode=dark] {
   --custom-jupyter-ansi-color-black: var(--custom-jupyter-ansi-color-8);
   --custom-jupyter-ansi-color-red: var(--custom-jupyter-ansi-color-9);
   --custom-jupyter-ansi-color-green: var(--custom-jupyter-ansi-color-A);

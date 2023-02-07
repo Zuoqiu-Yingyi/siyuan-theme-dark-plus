@@ -260,14 +260,28 @@ window.theme.changeThemeMode = function (
     let href_custom = null;
     switch (window.theme.themeMode) {
         case 'light':
-            document.documentElement.dataset.colorScheme = 'light';
             href_custom = customLightStyle;
+            document.documentElement.dataset.themeMode = 'light';
             break;
         case 'dark':
         default:
-            document.documentElement.dataset.colorScheme = 'dark';
+            // 兼容思源 v2.7.2- 版本
+            document.documentElement.dataset.themeMode = 'dark';
             href_custom = customDarkStyle;
             break;
+    }
+
+    // 兼容思源 v2.7.2- 版本
+    if (!document.documentElement.dataset.themeMode) {
+        switch (window.theme.themeMode) {
+            case 'light':
+            default:
+                document.documentElement.dataset.themeMode = 'light';
+                break;
+            case 'dark':
+                document.documentElement.dataset.themeMode = 'dark';
+                break;
+        }
     }
     window.theme.updateStyle(window.theme.ID_CUSTOM_STYLE, href_custom);
 }

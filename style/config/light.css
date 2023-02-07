@@ -1,7 +1,7 @@
 /* 自动应用的浅色主题配置 */
 /* @import url(/appearance/themes/daylight/theme.css); */
-:root[data-color-scheme=light],
-:root:has(#themeDefaultStyle[href *="/appearance/themes/daylight/"]) {
+:root:has(#themeDefaultStyle[href *="/appearance/themes/daylight/"]),
+:root[data-theme-mode=light] {
   /* 背景图片 */
   --custom-background-image-landscape: url(/appearance/themes/Dark+/image/light/background-main.jpg);
   --custom-background-image-portrait: url(/appearance/themes/Dark+/image/light/background-main-portrait.jpg);
