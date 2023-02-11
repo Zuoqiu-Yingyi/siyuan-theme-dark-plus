@@ -261,12 +261,9 @@ window.theme.changeThemeMode = function (
     switch (window.theme.themeMode) {
         case 'light':
             href_custom = customLightStyle;
-            document.documentElement.dataset.themeMode = 'light';
             break;
         case 'dark':
         default:
-            // 兼容思源 v2.7.2- 版本
-            document.documentElement.dataset.themeMode = 'dark';
             href_custom = customDarkStyle;
             break;
     }
@@ -283,6 +280,7 @@ window.theme.changeThemeMode = function (
                 break;
         }
     }
+
     window.theme.updateStyle(window.theme.ID_CUSTOM_STYLE, href_custom);
 }
 
