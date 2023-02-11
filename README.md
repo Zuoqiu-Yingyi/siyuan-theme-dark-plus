@@ -649,12 +649,12 @@ Note: When using the browser to access SiYuan, this feature may be blocked by th
 
 ## 自定义配置 | CUSTOM CONFIG
 
-| 自定义配置文件 \| Custom configuration files          | 说明 \| Product                                                                                                                                                                                                                                                |
-| :---------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<工作空间(workspace)>/data/widgets/custom.js`        | 主题功能配置选项, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/module/config.js` 中对应的值<br/>Theme feature configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/module/config.js`         |
-| `<工作空间(workspace)>/data/widgets/custom.css`       | 主题共用样式配置, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/module/config.css` 中对应的值<br/>Themes share style configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/module/config.css`  |
-| `<工作空间(workspace)>/data/widgets/custom-light.css` | 主题浅色样式配置, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/color/light.css` 中对应的值<br/>Theme light color style configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/color/light.css` |
-| `<工作空间(workspace)>/data/widgets/custom-dark.css`  | 主题深色样式配置, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/color/dark.css` 中对应的值<br/>Theme dark color style configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/color/dark.css`    |
+| 自定义配置文件 \| Custom configuration files          | 说明 \| Product                                                                                                                                                                                                                                                  |
+| :---------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `<工作空间(workspace)>/data/widgets/custom.js`        | 主题功能配置选项, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/module/config.js` 中对应的值<br/>Theme feature configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/module/config.js`           |
+| `<工作空间(workspace)>/data/widgets/custom.css`       | 主题共用样式配置, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/module/config.css` 中对应的值<br/>Themes share style configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/module/config.css`    |
+| `<工作空间(workspace)>/data/widgets/custom-light.css` | 主题浅色样式配置, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/config/light.css` 中对应的值<br/>Theme light color style configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/config/light.css` |
+| `<工作空间(workspace)>/data/widgets/custom-dark.css`  | 主题深色样式配置, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/config/dark.css` 中对应的值<br/>Theme dark config style configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/color/dark.css`    |
 
 ### 配置示例 | CONFIG EXAMPLE
 
@@ -774,8 +774,8 @@ For more configuration items, see [config.css](./style/module/config.css).
 
 ```
 
-更多配置项请参考 [config.css](./style/module/config.css) 与 [light.css](./style/color/light.css)  
-For more configuration items, see [config.css](./style/module/config.css) and [light.css](./style/color/light.css).
+更多配置项请参考 [config.css](./style/module/config.css) 与 [light.css](./style/config/light.css)  
+For more configuration items, see [config.css](./style/module/config.css) and [light.css](./style/config/light.css).
 
 #### custom-dark.css
 
@@ -805,8 +805,8 @@ For more configuration items, see [config.css](./style/module/config.css) and [l
 
 ```
 
-更多配置项请参考 [config.css](./style/module/config.css) 与 [dark.css](./style/color/dark.css)  
-For more configuration items, see [config.css](./style/module/config.css) and [dark.css](./style/color/dark.css).
+更多配置项请参考 [config.css](./style/module/config.css) 与 [dark.css](./style/config/dark.css)  
+For more configuration items, see [config.css](./style/module/config.css) and [dark.css](./style/config/dark.css).
 
 ## 开始 | START
 
