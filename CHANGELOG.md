@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- [#179](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/179) 修复自定义样式加载问题 | Fixed the issue of custom style loading.
+
 ## v1.7.0/2023-02-08
 
 - [v1.6.6 <=> v1.7.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.6...v1.7.0)
