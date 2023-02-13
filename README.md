@@ -746,6 +746,23 @@ For more configuration items, see [config.js](./script/module/config.js).
 更多配置项请参考 [config.css](./style/module/config.css)  
 For more configuration items, see [config.css](./style/module/config.css).
 
+上述示例等效于如下代码片段:  
+The above example is equivalent to the following code snippet:
+
+```css
+:root:is([data-theme-mode="light"][data-light-theme="Dark+"], [data-theme-mode="dark"][data-dark-theme="Dark+"]) {
+    /* 空行提示 | Blank line prompt */
+    --custom-empty-p: "这里是空的 (´･-･)ﾉ㊫";
+    --custom-empty-c: "这里是空的 (´･-･)ﾉ↹";
+    --custom-empty-t: "这里是空的 (´･-･)ﾉ☑";
+    --custom-empty-u: "这里是空的 (´･-･)ﾉ◉";
+    --custom-empty-o: "这里是空的 (´･-･)ﾉ①";
+}
+```
+
+代码片段可以在思源 <kbd>设置 > 外观 > 代码片段 > CSS</kbd> 中设置  
+Code snippets can be set in Siyuan <kbd>Settings > Appearance > Code Snippet > CSS</kbd>.
+
 #### custom-light.css
 
 ```css
@@ -777,6 +794,22 @@ For more configuration items, see [config.css](./style/module/config.css).
 更多配置项请参考 [config.css](./style/module/config.css) 与 [light.css](./style/config/light.css)  
 For more configuration items, see [config.css](./style/module/config.css) and [light.css](./style/config/light.css).
 
+上述示例等效于如下代码片段:  
+The above example is equivalent to the following code snippet:
+
+```css
+:root[data-theme-mode="dark"][data-light-theme="Dark+"] {
+    /* 浅色主题默认背景图片 | default background image for light color theme */
+    --custom-background-image: url("/widgets/background-light.png");
+
+    /* 浅色主题默认对话框背景图片 | default dialog background image for light color theme */
+    --custom-background-image-dialog: url("/widgets/background-light-dialog.png");
+}
+```
+
+代码片段可以在思源 <kbd>设置 > 外观 > 代码片段 > CSS</kbd> 中设置  
+Code snippets can be set in Siyuan <kbd>Settings > Appearance > Code Snippet > CSS</kbd>.
+
 #### custom-dark.css
 
 ```css
@@ -807,6 +840,22 @@ For more configuration items, see [config.css](./style/module/config.css) and [l
 
 更多配置项请参考 [config.css](./style/module/config.css) 与 [dark.css](./style/config/dark.css)  
 For more configuration items, see [config.css](./style/module/config.css) and [dark.css](./style/config/dark.css).
+
+上述示例等效于如下代码片段:  
+The above example is equivalent to the following code snippet:
+
+```css
+:root[data-theme-mode="light"][data-dark-theme="Dark+"] {
+    /* 深色主题默认背景图片 | default background image for dark color theme */
+    --custom-background-image: url("/widgets/background-dark.png");
+
+    /* 深色主题默认对话框背景图片 | default dialog background image for dark color theme */
+    --custom-background-image-dialog: url("/widgets/background-dark-dialog.png");
+}
+```
+
+代码片段可以在思源 <kbd>设置 > 外观 > 代码片段 > CSS</kbd> 中设置  
+Code snippets can be set in Siyuan <kbd>Settings > Appearance > Code Snippet > CSS</kbd>.
 
 ## 开始 | START
 
