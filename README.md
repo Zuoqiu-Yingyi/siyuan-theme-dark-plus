@@ -798,7 +798,7 @@ For more configuration items, see [config.css](./style/module/config.css) and [l
 The above example is equivalent to the following code snippet:
 
 ```css
-:root[data-theme-mode="dark"][data-light-theme="Dark+"] {
+:root[data-theme-mode="light"][data-light-theme="Dark+"] {
     /* 浅色主题默认背景图片 | default background image for light color theme */
     --custom-background-image: url("/widgets/background-light.png");
 
@@ -845,7 +845,7 @@ For more configuration items, see [config.css](./style/module/config.css) and [d
 The above example is equivalent to the following code snippet:
 
 ```css
-:root[data-theme-mode="light"][data-dark-theme="Dark+"] {
+:root[data-theme-mode="dark"][data-dark-theme="Dark+"] {
     /* 深色主题默认背景图片 | default background image for dark color theme */
     --custom-background-image: url("/widgets/background-dark.png");
 
