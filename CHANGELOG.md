@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - [#179](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/179) 修复自定义样式加载问题 | Fixed the issue of custom style loading.
+- 完善 `README.md` 文档中的自定义 CSS 配置实例 | Improved the custom CSS configuration example in the `README.md` document.
 
 ## v1.7.0/2023-02-08
 
