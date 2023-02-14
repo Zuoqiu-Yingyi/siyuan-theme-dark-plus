@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.7.1/2023-02-15
+
+- [v1.7.0 <=> v1.7.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1...v1.7.1)
 - [#179](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/179) 修复自定义样式加载问题 | Fixed the issue of custom style loading.
 - 完善 `README.md` 文档中的自定义 CSS 配置示例 | Improved the custom CSS configuration example in the `README.md` document.
 - 调整钉住窗口控件样式 | Adjust the style of pinned window control.
