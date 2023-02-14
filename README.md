@@ -732,7 +732,8 @@ For more configuration items, see [config.js](./script/module/config.js).
  *    Custom the blank line prompt text
  */
 
-:root {
+:root[data-theme-mode=light],
+:root[data-theme-mode=dark] {
     /* 空行提示 | Blank line prompt */
     --custom-empty-p: "这里是空的 (´･-･)ﾉ㊫";
     --custom-empty-c: "这里是空的 (´･-･)ﾉ↹";
@@ -750,7 +751,8 @@ For more configuration items, see [config.css](./style/module/config.css).
 The above example is equivalent to the following code snippet:
 
 ```css
-:root:is([data-theme-mode="light"][data-light-theme="Dark+"], [data-theme-mode="dark"][data-dark-theme="Dark+"]) {
+:root[data-theme-mode=light][data-light-theme="Dark+"], 
+:root[data-theme-mode=dark][data-dark-theme="Dark+"] {
     /* 空行提示 | Blank line prompt */
     --custom-empty-p: "这里是空的 (´･-･)ﾉ㊫";
     --custom-empty-c: "这里是空的 (´･-･)ﾉ↹";
@@ -781,7 +783,7 @@ Code snippets can be set in Siyuan <kbd>Settings > Appearance > Code Snippet > C
  *            <workspace>/data/widgets/background-light-dialog.png
  */
 
-:root {
+:root[data-theme-mode=light] {
     /* 浅色主题默认背景图片 | default background image for light color theme */
     --custom-background-image: url("/widgets/background-light.png");
 
@@ -798,7 +800,7 @@ For more configuration items, see [config.css](./style/module/config.css) and [l
 The above example is equivalent to the following code snippet:
 
 ```css
-:root[data-theme-mode="light"][data-light-theme="Dark+"] {
+:root[data-theme-mode=light][data-light-theme="Dark+"] {
     /* 浅色主题默认背景图片 | default background image for light color theme */
     --custom-background-image: url("/widgets/background-light.png");
 
@@ -828,7 +830,7 @@ Code snippets can be set in Siyuan <kbd>Settings > Appearance > Code Snippet > C
  *            <workspace>/data/widgets/background-dark-dialog.png
  */
 
-:root {
+:root[data-theme-mode=dark] {
     /* 深色主题默认背景图片 | default background image for dark color theme */
     --custom-background-image: url("/widgets/background-dark.png");
 
@@ -845,7 +847,7 @@ For more configuration items, see [config.css](./style/module/config.css) and [d
 The above example is equivalent to the following code snippet:
 
 ```css
-:root[data-theme-mode="dark"][data-dark-theme="Dark+"] {
+:root[data-theme-mode=dark][data-dark-theme="Dark+"] {
     /* 深色主题默认背景图片 | default background image for dark color theme */
     --custom-background-image: url("/widgets/background-dark.png");
 
