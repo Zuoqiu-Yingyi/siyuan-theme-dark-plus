@@ -20,6 +20,10 @@
   /* 文档标志 */
   left: var(--custom-editor-padding-left) !important;
 }
+.protyle-content[data-fullwidth="true"] > .protyle-background .protyle-icons .protyle-icon input[type=file] {
+  /* 上传文件控件 */
+  z-index: 1;
+}
 .protyle-content[data-fullwidth="true"] > .protyle-title,
 .protyle-content[data-fullwidth="true"] > .protyle-wysiwyg {
   margin-left: var(--custom-editor-padding-left) !important;

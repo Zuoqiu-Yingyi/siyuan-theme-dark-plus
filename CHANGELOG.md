@@ -4,6 +4,7 @@
 - 完善 `README.md` 文档中的自定义 CSS 配置示例 | Improved the custom CSS configuration example in the `README.md` document.
 - 调整钉住窗口控件样式 | Adjust the style of pinned window control.
 - [#180](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/180) 修复 `#iconExport` 图标失效问题 | Fixed the issue of `#iconExport` icon invalidation.
+- [#181](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/181) 修题头图 `上传` 控件失效问题 | Fixed the issue of the `Upload` control of the header image invalidation.
 
 ## v1.7.0/2023-02-08
 

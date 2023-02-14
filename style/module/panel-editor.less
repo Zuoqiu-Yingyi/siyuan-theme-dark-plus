@@ -63,6 +63,17 @@
                 /* 文档标志 */
                 left: var(--custom-editor-padding-left) !important;
             }
+
+            // 题头图控件组
+            .protyle-icons {
+                // 题头图控件
+                .protyle-icon {
+                    input[type=file] {
+                        /* 上传文件控件 */
+                        z-index: 1; // position: absolute, 需要设置 z-index, 否则无法捕获点击事件
+                    }
+                }
+            }
         }
 
         >.protyle-title,
