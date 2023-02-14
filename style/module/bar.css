@@ -40,6 +40,10 @@
   border-bottom: 1px solid var(--b3-border-color);
   app-region: drag;
 }
+.body--window .toolbar__window > .toolbar__item--active {
+  /* 被激活的窗口控件 */
+  box-shadow: unset;
+}
 .body--blur.body--window .toolbar__window {
   /* 未激活的窗口标题栏 */
   background-color: var(--custom-window-inactive-title-bar-background-color);

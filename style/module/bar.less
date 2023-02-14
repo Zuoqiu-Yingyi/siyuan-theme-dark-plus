@@ -63,6 +63,11 @@
         background-color: var(--custom-tool-bar-background-color);
         border-bottom: 1px solid var(--b3-border-color);
 
+        >.toolbar__item--active {
+            /* 被激活的窗口控件 */
+            box-shadow: unset;
+        }
+
         .body--blur& {
             .inactive-window-title-bar();
         }
