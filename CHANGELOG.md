@@ -3,7 +3,7 @@
 - [#179](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/179) 修复自定义样式加载问题 | Fixed the issue of custom style loading.
 - 完善 `README.md` 文档中的自定义 CSS 配置实例 | Improved the custom CSS configuration example in the `README.md` document.
 - 调整钉住窗口控件样式 | Adjust the style of pinned window control.
-
+- [#180](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/180) 修复 `#iconExport` 图标失效问题 | Fixed the issue of `#iconExport` icon invalidation.
 
 ## v1.7.0/2023-02-08
 
