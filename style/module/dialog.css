@@ -141,9 +141,9 @@
   /* 历史对话框内容框 */
   background-color: transparent;
 }
-#historyContainer .b3-dialog__scrim {
+.b3-dialog__scrim {
   /* 对话框遮罩 */
-  background-color: var(--custom-scrim-background-color);
+  background-color: var(--custom-scrim-background-color) !important;
 }
 /* 闪卡显示容器 */
 .b3-dialog__cardblock {
