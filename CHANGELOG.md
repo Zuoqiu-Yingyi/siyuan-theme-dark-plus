@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 调整对话框遮罩样式 | Adjust the style of the dialog mask.
+
 ## v1.7.1/2023-02-15
 
 - [v1.7.0 <=> v1.7.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1...v1.7.1)
