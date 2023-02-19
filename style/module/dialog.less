@@ -269,6 +269,28 @@ body {
     }
 }
 
+/* 制卡(添加到卡包)对话框 */
+.b3-dialog--open[data-key="makeCard"] {
+
+    .b3-dialog__container {
+
+        // 卡包列表
+        .b3-list.b3-list--background {
+
+            // 卡包
+            >.b3-list-item {
+
+                // 卡包信息
+                >.b3-list-item__meta {
+                    margin-left: 8px;
+                }
+            }
+        }
+    }
+
+}
+
+
 /* 窗口较宽时并排显示搜索结果 */
 /* @deprecated: [搜索界面支持左右布局 · Issue #6744 · siyuan-note/siyuan · GitHub](https://github.com/siyuan-note/siyuan/issues/6744) */
 // @media screen and (min-width: 960px) {
