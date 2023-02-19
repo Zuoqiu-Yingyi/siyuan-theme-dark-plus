@@ -167,5 +167,9 @@ body > .b3-dialog--open[data-key] > .b3-dialog > .b3-dialog__container > .b3-dia
   /* 调整搜索框关闭按钮位置, 避免被遮挡 */
   right: calc((100vw - var(--custom-dialog-search-width)) / -2);
 }
+/* 制卡(添加到卡包)对话框 */
+.b3-dialog--open[data-key="makeCard"] .b3-dialog__container .b3-list.b3-list--background > .b3-list-item > .b3-list-item__meta {
+  margin-left: 8px;
+}
 /* 窗口较宽时并排显示搜索结果 */
 /* @deprecated: [搜索界面支持左右布局 · Issue #6744 · siyuan-note/siyuan · GitHub](https://github.com/siyuan-note/siyuan/issues/6744) */

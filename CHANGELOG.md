@@ -2,6 +2,7 @@
 
 - 调整对话框遮罩样式 | Adjust the style of the dialog mask.
 - 添加表格头边框 | Add the table header border.
+- 调整制卡对话框卡包信息标签样式 | Adjust the card package information label style in the card making dialog.
 
 ## v1.7.1/2023-02-15
 
