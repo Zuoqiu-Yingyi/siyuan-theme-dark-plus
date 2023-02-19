@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 调整对话框遮罩样式 | Adjust the style of the dialog mask.
+- 添加表格头边框 | Add the table header border.
 
 ## v1.7.1/2023-02-15
 
