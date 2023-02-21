@@ -64,7 +64,10 @@ function blockMenuCallback(mutationList, observer) {
         // 块菜单已经加载完成
         if (mutation.addedNodes.length === 1
             && mutation.addedNodes[0].classList.contains('b3-menu__item--readonly')
-            && mutation.addedNodes[0].lastElementChild.childElementCount === 1
+            && (
+                mutation.addedNodes[0].lastElementChild.childElementCount === 0 // 仅有创建时间
+                || mutation.addedNodes[0].lastElementChild.childElementCount === 1 // 存在更新时间
+            )
             && mutation.previousSibling.classList?.contains('b3-menu__separator')
         ) {
             // 块菜单添加
