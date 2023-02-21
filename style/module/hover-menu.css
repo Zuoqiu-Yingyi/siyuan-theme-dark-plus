@@ -46,11 +46,11 @@
 }
 .b3-menu > *:not(.emojis) input.b3-text-field {
   /* 输入框 */
-  width: var(--custom-popover-menu-input-width);
+  min-width: var(--custom-popover-menu-input-min-width);
 }
 .b3-menu > *:not(.emojis) textarea.b3-text-field {
   /* 输入区域 */
-  width: var(--custom-popover-menu-textarea-width);
+  min-width: var(--custom-popover-menu-textarea-min-width);
 }
 .protyle-util .protyle-font .b3-color__square[data-type=color] {
   /* 字体颜色 */
