@@ -6,6 +6,7 @@
 - 添加 CSS 变量 `--custom-popover-menu-input-min-width` 与 `--custom-popover-menu-textarea-min-width` | Add CSS variable `--custom-popover-menu-input-min-width` and `--custom-popover-menu-textarea-min-width`.
 - [#183](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/183) 修复无更新时间的块菜单不显示更多选项问题 | Fixed an issue where block menus without update time did not show more options.
 - 调整 `添加到卡包` 对话框大小 | Adjust the size of the `Add to Card Package` dialog.
+- 调整子标题字重 | Adjust the font weight of subtitle.
 
 ## v1.7.1/2023-02-15
 

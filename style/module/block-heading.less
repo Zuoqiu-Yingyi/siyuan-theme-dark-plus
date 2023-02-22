@@ -15,8 +15,6 @@
     .protyle-wysiwyg>[data-node-id].h@{level},
     .protyle-wysiwyg>[data-node-id][fold="1"].h@{level},
     .b3-typography>h@{level} {
-        font-weight: var(--custom-h-font-weight);
-
         counter-increment: e(%("h%d-counter", @level));
         counter-reset: e(%("h%d-counter", @level + 1)) 0;
 
@@ -38,6 +36,8 @@
         color: var(e(%("--custom-h%d-color", @level)));
         border-left: 3px solid var(e(%("--custom-h%d-color", @level)));
         padding-left: 9px;
+
+        font-weight: var(--custom-h-font-weight);
     }
 
     .protyle-wysiwyg>[data-node-id].h@{level}>[contenteditable][spellcheck]:empty {
