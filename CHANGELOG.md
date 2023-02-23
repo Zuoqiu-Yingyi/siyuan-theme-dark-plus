@@ -7,6 +7,7 @@
 - [#183](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/183) 修复无更新时间的块菜单不显示更多选项问题 | Fixed an issue where block menus without update time did not show more options.
 - 调整 `添加到卡包` 对话框大小 | Adjust the size of the `Add to Card Package` dialog.
 - 调整子标题字重 | Adjust the font weight of subtitle.
+- 调整卡包列表样式 | Adjust the style of the card package list.
 
 ## v1.7.1/2023-02-15
 
