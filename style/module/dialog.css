@@ -170,6 +170,10 @@ body > .b3-dialog--open[data-key]:not([data-key="makeCard"]) > .b3-dialog > .b3-
 /* 制卡(添加到卡包)对话框 */
 .b3-dialog--open[data-key="makeCard"] .b3-dialog__container .b3-list.b3-list--background > .b3-list-item > .b3-list-item__meta {
   margin-left: 8px;
+  font-size: unset;
+}
+.b3-dialog--open[data-key="makeCard"] .b3-dialog__container .b3-list.b3-list--background > .b3-list-item > .b3-list-item__action {
+  height: 24px;
 }
 /* 窗口较宽时并排显示搜索结果 */
 /* @deprecated: [搜索界面支持左右布局 · Issue #6744 · siyuan-note/siyuan · GitHub](https://github.com/siyuan-note/siyuan/issues/6744) */
