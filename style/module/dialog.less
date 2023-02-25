@@ -245,7 +245,7 @@
  */
 /* 搜索对话框尺寸 */
 body {
-    >.b3-dialog--open[data-key]:not([data-key="makeCard"]) {
+    >.b3-dialog--open:has(#searchInput) {
         >.b3-dialog {
             >.b3-dialog__container {
 
@@ -270,7 +270,7 @@ body {
 }
 
 /* 制卡(添加到卡包)对话框 */
-.b3-dialog--open[data-key="makeCard"] {
+.b3-dialog--open[data-key=makeCard] {
 
     .b3-dialog__container {
 
@@ -293,7 +293,44 @@ body {
             }
         }
     }
+}
 
+/* 闪卡复习对话框 */
+.b3-dialog--open:has(.card__block) {
+
+    .b3-dialog__container {
+
+        // 卡片内容
+        .card__block.protyle {
+            border-bottom: 2px solid var(--b3-border-color);
+        }
+
+        // 无复习内容
+        .card__empty {
+            background-color: unset;
+        }
+
+        // 按钮栏
+        .card__action {
+            >div {
+                /* 复习按钮容器 */
+                text-align: center;
+
+                .b3-button {
+                    /* 复习按钮 */
+                    padding: 0;
+                    display: inline-flex;
+                    
+                    >div {
+                        /* 按钮 emoji */
+                        font-size: 1.5em;
+                        line-height: 2em;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
 }
 
 
