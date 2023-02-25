@@ -8,6 +8,7 @@
 - 调整 `添加到卡包` 对话框大小 | Adjust the size of the `Add to Card Package` dialog.
 - 调整子标题字重 | Adjust the font weight of subtitle.
 - 调整卡包列表样式 | Adjust the style of the card package list.
+- 修复闪卡对话框尺寸问题 | Fixed the issue of the size of the flash card dialog.
 
 ## v1.7.1/2023-02-15
 
