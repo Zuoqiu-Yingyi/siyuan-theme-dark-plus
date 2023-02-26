@@ -38,6 +38,9 @@
 .b3-dialog__container .b3-dialog__content {
   background-color: transparent !important;
 }
+.b3-dialog__container .config__tab-container {
+  background-color: transparent;
+}
 .b3-dialog__container .fn__flex-column {
   border-radius: inherit;
 }
