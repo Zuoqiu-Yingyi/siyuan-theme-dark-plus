@@ -83,7 +83,7 @@
     .b3-dialog__content {
         background-color: transparent !important;
     }
-    
+
     // 设置对话框
     .config__tab-container {
         background-color: transparent;
@@ -325,7 +325,7 @@ body {
                     /* 复习按钮 */
                     padding: 0;
                     display: inline-flex;
-                    
+
                     >div {
                         /* 按钮 emoji */
                         font-size: 1.5em;
@@ -333,6 +333,12 @@ body {
                         margin: 0;
                     }
                 }
+            }
+
+            >.b3-button--cancel {
+                /* 撤销复习按钮 */
+                opacity: unset;
+                outline: 1px solid var(--b3-theme-primary);
             }
         }
     }

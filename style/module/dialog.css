@@ -200,5 +200,10 @@ body > .b3-dialog--open:has(#searchInput) > .b3-dialog > .b3-dialog__container >
   line-height: 2em;
   margin: 0;
 }
+.b3-dialog--open:has(.card__block) .b3-dialog__container .card__action > .b3-button--cancel {
+  /* 撤销复习按钮 */
+  opacity: unset;
+  outline: 1px solid var(--b3-theme-primary);
+}
 /* 窗口较宽时并排显示搜索结果 */
 /* @deprecated: [搜索界面支持左右布局 · Issue #6744 · siyuan-note/siyuan · GitHub](https://github.com/siyuan-note/siyuan/issues/6744) */
