@@ -428,13 +428,18 @@
   --custom-span-mark-shadow-color: var(--b3-theme-on-primary);
   /* 思源标记阴影宽度 | The shadow width of mark */
   --custom-span-mark-shadow-width: 2px;
-  /* 闪卡标记颜色 | Flash card marker color */
-  --custom-riff-decks-color: var(--b3-theme-primary-light);
+  /* 闪卡阴影颜色 | Flash card shadow color */
+  --custom-riff-decks-shadow-color-default: var(--b3-card-info-color);
+  --custom-riff-decks-shadow-color-super: var(--b3-card-warning-color);
+  --custom-riff-decks-shadow-color-list: var(--b3-card-error-color);
+  --custom-riff-decks-shadow-color-li: var(--b3-card-success-color);
+  /* 闪卡阴影宽度 | Flash cord shadow width */
+  --custom-riff-decks-shadow-width: 0.25em;
   /* 思源加粗文本颜色 | The color of bold text */
   /* 原样式 | Original style */
   /* --custom-span-strong-color: var(--b3-protyle-inline-strong-color); */
   /* 继承样式 | Inherit style */
-  --custom-span-strong-color: unset;
+  --custom-span-strong-color: var(--b3-protyle-inline-strong-color);
   /* 拖拽参考线颜色 | The color of drag guide */
   --custom-drag-top-shadow-color: var(--b3-theme-primary-lighter);
   --custom-drag-bottom-shadow-color: var(--b3-theme-primary-lighter);
