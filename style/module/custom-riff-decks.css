@@ -1,9 +1,17 @@
 /* 闪卡 */
-.protyle-wysiwyg [data-node-id][custom-riff-decks] {
+.protyle-wysiwyg [data-node-id][custom-riff-decks]:not(.sb, .list, .li) {
   /* 设置为闪卡的块 */
-  box-shadow: 3px 0px 0px -1px var(--custom-riff-decks-color);
+  box-shadow: 0 0 var(--custom-riff-decks-shadow-width) 0 var(--custom-riff-decks-shadow-color-default) inset;
 }
 .protyle-wysiwyg [data-node-id][custom-riff-decks].sb {
   /* 设置为闪卡的超级块 */
-  box-shadow: 0 0 var(--custom-block-super-margin) 0 var(--custom-riff-decks-color);
+  box-shadow: 0 0 var(--custom-riff-decks-shadow-width) 0 var(--custom-riff-decks-shadow-color-super);
+}
+.protyle-wysiwyg [data-node-id][custom-riff-decks].list {
+  /* 设置为闪卡的列表块 */
+  box-shadow: 0 0 var(--custom-riff-decks-shadow-width) 0 var(--custom-riff-decks-shadow-color-list) inset;
+}
+.protyle-wysiwyg [data-node-id][custom-riff-decks].li {
+  /* 设置为闪卡的列表项 */
+  box-shadow: 0 0 var(--custom-riff-decks-shadow-width) 0 var(--custom-riff-decks-shadow-color-li) inset;
 }
