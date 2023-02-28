@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.7.2/2023-02-28
+
+- [v1.7.1 <=> v1.7.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.1...v1.7.2)
 - 调整对话框遮罩样式 | Adjust the style of the dialog mask.
 - 添加表格头边框 | Add the table header border.
 - 调整制卡对话框卡包信息标签样式 | Adjust the card package information label style in the card making dialog.
@@ -16,7 +19,7 @@
 
 ## v1.7.1/2023-02-15
 
-- [v1.7.0 <=> v1.7.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1...v1.7.1)
+- [v1.7.0 <=> v1.7.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.0...v1.7.1)
 - [#179](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/179) 修复自定义样式加载问题 | Fixed the issue of custom style loading.
 - 完善 `README.md` 文档中的自定义 CSS 配置示例 | Improved the custom CSS configuration example in the `README.md` document.
 - 调整钉住窗口控件样式 | Adjust the style of pinned window control.
