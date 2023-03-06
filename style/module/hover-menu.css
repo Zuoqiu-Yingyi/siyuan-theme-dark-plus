@@ -108,11 +108,6 @@
   /* 分割线 */
   background-color: var(--b3-theme-on-surface);
 }
-.b3-list.b3-list--background.hint--menu > div.b3-menu__separator:first-of-type {
-  /* 第1条分割线 */
-  height: 34px;
-  background-color: transparent;
-}
 .b3-list.b3-list--background.hint--menu > div.b3-menu__separator:first-of-type + button *:is(.b3-list-item__graphic, .b3-list-item__text) {
   /* 一级子标题 */
   color: var(--custom-h1-color);
