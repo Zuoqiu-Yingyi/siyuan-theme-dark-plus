@@ -8,17 +8,21 @@
     border-bottom-color: inherit;
     color: var(--b3-protyle-inline-link-color);
 
-    .link-icon();
+    &:hover {
+        border-bottom: 1px solid;
+    }
+
+    .link-icon(url(/appearance/themes/Dark+/icon/unknown.svg));
 }
 
-.link-icon() {
+.link-icon(@url) {
     &::before {
         /* 超链接前标志 */
         content: "";
         display: inline-block;
         position: relative;
 
-        background-image: url(/appearance/themes/Dark+/icon/unknown.svg);
+        background-image: @url;
         background-size: 0.875em auto;
         background-repeat: no-repeat;
         background-position: center;
@@ -52,10 +56,6 @@
             &[data-href ^="siyuan:"] {
                 .link-siyuan();
             }
-        }
-
-        &[data-type='file-annotation-ref'] {
-            .link-icon();
         }
     }
 }

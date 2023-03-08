@@ -3,8 +3,9 @@
 @import (reference) "./../utils/loop-font-color.less";
 
 // 导出时只有背景色
-.b3-typography,
-.protyle-wysiwyg {
+.sy__outline [data-node-id],
+.protyle-wysiwyg [data-node-id],
+.b3-typography {
 
     mark,
     span[data-type~=mark] {
@@ -18,34 +19,36 @@
 
 // 编辑时字体隐藏
 .protyle-wysiwyg {
+    [data-node-id] {
 
-    mark,
-    span[data-type~=mark] {
-        transition: all 200ms linear 0ms;
+        mark,
+        span[data-type~=mark] {
+            transition: all 200ms linear 0ms;
 
-        // 闪卡挖空隐藏样式
-        .b3-dialog__cardblock.b3-dialog__cardblock--hide &,
-        // 鼠标未悬浮样式
-        &:not(:hover) {
-            color: transparent;
+            // 闪卡挖空隐藏样式
+            .b3-dialog__cardblock.b3-dialog__cardblock--hide &,
+            // 鼠标未悬浮样式
+            &:not(:hover) {
+                color: transparent;
 
-            &[style] {
-                color: transparent !important;
-            }
-        }
-
-        // 闪卡挖空显示样式
-        .card__block:not(.card__block--hide) &,
-        // 闪卡挖空鼠标悬浮样式
-        .card__block.card__block--hide &:hover {
-            &:not([style]) {
-                color: var(--custom-span-mark-color) !important;
-                // background-color: transparent;
-                // text-shadow: 0 0 var(--custom-span-mark-shadow-width) var(--custom-span-mark-shadow-color);
-                // font-weight: bold;
+                &[style] {
+                    color: transparent !important;
+                }
             }
 
-            .loop-font-color(13);
+            // 闪卡挖空显示样式
+            .card__block:not(.card__block--hide) &,
+            // 闪卡挖空鼠标悬浮样式
+            .card__block.card__block--hide &:hover {
+                &:not([style]) {
+                    color: var(--custom-span-mark-color) !important;
+                    // background-color: transparent;
+                    // text-shadow: 0 0 var(--custom-span-mark-shadow-width) var(--custom-span-mark-shadow-color);
+                    // font-weight: bold;
+                }
+
+                .loop-font-color(13);
+            }
         }
     }
 }

@@ -1,8 +1,13 @@
 /* 删除文字样式 */
+.sy__outline [data-node-id] s,
+.protyle-wysiwyg [data-node-id] s,
 .b3-typography s,
-.protyle-wysiwyg s,
-.b3-typography span[data-type~=s],
-.protyle-wysiwyg span[data-type~=s] {
+.sy__outline [data-node-id] span[data-type~=s],
+.protyle-wysiwyg [data-node-id] span[data-type~=s],
+.b3-typography span[data-type~=s] {
   color: inherit;
   opacity: 75%;
+}
+.sy__outline [data-node-id] span[data-type~=s] {
+  text-decoration: line-through;
 }

@@ -3,6 +3,7 @@
 - 调整 `/` 菜单样式 | Adjust the style of the `/` menu.
   - Adapt: [Issue #7560 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/7560)
 - 优化超链接图标样式 | Optimize the style of the hyperlink icon.
+- 统一正文与大纲的行内元素样式 | Unify the style of inline element for main body and outline.
 
 ## v1.7.2/2023-02-28
 

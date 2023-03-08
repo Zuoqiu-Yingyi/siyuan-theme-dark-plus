@@ -1,0 +1,6 @@
+/* 上标 */
+.sy__outline [data-node-id] span[data-type~=sup] {
+  position: relative;
+  top: -0.5em;
+  font-size: 75%;
+}
