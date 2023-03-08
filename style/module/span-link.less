@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     border-bottom-color: inherit;
+    color: var(--b3-protyle-inline-link-color);
 
     .link-icon();
 }
@@ -42,20 +43,19 @@
     }
 }
 
+.sy__outline,
 .protyle-wysiwyg {
     [data-node-id] {
-        span:not(:empty) {
-            &[data-type~=a] {
-                .link();
+        span[data-type~=a] {
+            .link();
 
-                &[data-href ^="siyuan:"] {
-                    .link-siyuan();
-                }
+            &[data-href ^="siyuan:"] {
+                .link-siyuan();
             }
+        }
 
-            &[data-type='file-annotation-ref'] {
-                .link-icon();
-            }
+        &[data-type='file-annotation-ref'] {
+            .link-icon();
         }
     }
 }

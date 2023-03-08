@@ -1,11 +1,14 @@
 /* 超链接 */
-.protyle-wysiwyg [data-node-id] span:not(:empty)[data-type~=a] {
+.sy__outline [data-node-id] span[data-type~=a],
+.protyle-wysiwyg [data-node-id] span[data-type~=a] {
   /* 默认样式 */
   margin: 0;
   padding: 0;
   border-bottom-color: inherit;
+  color: var(--b3-protyle-inline-link-color);
 }
-.protyle-wysiwyg [data-node-id] span:not(:empty)[data-type~=a]::before {
+.sy__outline [data-node-id] span[data-type~=a]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a]::before {
   /* 超链接前标志 */
   content: "";
   display: inline-block;
@@ -19,16 +22,20 @@
   margin: 0.125em 0.125em -0.125em 0;
   padding: 0;
 }
-.protyle-wysiwyg [data-node-id] span:not(:empty)[data-type~=a][data-href^="siyuan:"] {
+.sy__outline [data-node-id] span[data-type~=a][data-href^="siyuan:"],
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href^="siyuan:"] {
   /* 思源内部的超链接特化 */
   color: var(--custom-span-siyuan-link-color);
 }
-.protyle-wysiwyg [data-node-id] span:not(:empty)[data-type~=a][data-href^="siyuan:"][data-href*="focus=1"]::before,
-.protyle-wysiwyg [data-node-id] span:not(:empty)[data-type~=a][data-href^="siyuan:"][href*="focus=1"]::before {
+.sy__outline [data-node-id] span[data-type~=a][data-href^="siyuan:"][data-href*="focus=1"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href^="siyuan:"][data-href*="focus=1"]::before,
+.sy__outline [data-node-id] span[data-type~=a][data-href^="siyuan:"][href*="focus=1"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href^="siyuan:"][href*="focus=1"]::before {
   /* 思源聚焦超链接特化 */
   outline: 1px solid var(--custom-span-siyuan-link-color);
 }
-.protyle-wysiwyg [data-node-id] span:not(:empty)[data-type='file-annotation-ref']::before {
+.sy__outline [data-node-id][data-type='file-annotation-ref']::before,
+.protyle-wysiwyg [data-node-id][data-type='file-annotation-ref']::before {
   /* 超链接前标志 */
   content: "";
   display: inline-block;
@@ -47,6 +54,7 @@
   margin: 0;
   padding: 0;
   border-bottom-color: inherit;
+  color: var(--b3-protyle-inline-link-color);
 }
 .b3-typography a::before {
   /* 超链接前标志 */

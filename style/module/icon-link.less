@@ -1,0 +1,404 @@
+/* 超链接图标 */
+
+
+/* REF https://github.com/Achuan-2/siyuan-themes-tsundoku-dark/blob/c1362a39693703481c8acd3efab67eb390bb789a/theme.css#L2080 */
+/* -------------------------------- custom: 超链接 icon BEGIN -------------------------------- */
+
+/* -------------------------------- 标题匹配 -------------------------------- */
+
+/* 备注 */
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="note"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="备注"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-title ^="note"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-title ^="备注"]::before,
+.b3-typography a[href ^="note"]::before,
+.b3-typography a[href ^="备注"]::before,
+.b3-typography a[title ^="note"]::before,
+.b3-typography a[title ^="备注"]::before {
+    background-image: url(/appearance/themes/Dark+/icon/note.svg);
+}
+
+/* 视频时间戳 */
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-title *="custom-time"]::before,
+.b3-typography a[title *="custom-time"]::before {
+    background-image: url(/appearance/themes/Dark+/icon/timestamp.svg);
+}
+
+/* -------------------------------- URL Scheme -------------------------------- */
+.protocol(@protocol, @url) {
+    .style() {
+        &::before {
+            background-image: @url;
+        }
+    }
+
+    .sy__outline,
+    .protyle-wysiwyg {
+        [data-node-id] {
+            span[data-type~=a] {
+
+                &[data-href ^=@{protocol}] {
+                    .style();
+                }
+            }
+        }
+    }
+
+    .b3-typography {
+        a {
+            &[href ^=@{protocol}] {
+                .style();
+            }
+        }
+    }
+}
+
+.protocol("brain:", url(/appearance/themes/Dark+/icon/thebrain.svg));
+.protocol("bookxnotepro:", url(/appearance/themes/Dark+/icon/bookxnote.svg));
+.protocol("calibre:", url(/appearance/themes/Dark+/icon/calibre.png));
+.protocol("es:", url(/appearance/themes/Dark+/icon/everything.svg));
+.protocol("evernote:", url(/appearance/themes/Dark+/icon/evernote.svg));
+.protocol("file:", url(/appearance/themes/Dark+/icon/folder.svg));
+// .protocol("http:", url(/appearance/themes/Dark+/icon/http.svg));
+// .protocol("https:", url(/appearance/themes/Dark+/icon/https.svg));
+.protocol("joplin:", url(/appearance/themes/Dark+/icon/joplin.svg));
+.protocol("lt:", url(/appearance/themes/Dark+/icon/liquidtext.svg));
+.protocol("mailto:", url(/appearance/themes/Dark+/icon/mailto.svg));
+.protocol("marginnote3app:", url(/appearance/themes/Dark+/icon/marginnote.svg));
+.protocol("obsidian:", url(/appearance/themes/Dark+/icon/obsidian.svg));
+.protocol("onenote:", url(/appearance/themes/Dark+/icon/onenote.svg));
+.protocol("quicker:", url(/appearance/themes/Dark+/icon/quicker.svg));
+.protocol("runcmd:", url(/appearance/themes/Dark+/icon/pwsh.svg));
+.protocol("runpwsh:", url(/appearance/themes/Dark+/icon/pwsh.svg));
+.protocol("siyuan:", url(/appearance/themes/Dark+/icon/siyuan.svg));
+.protocol("sm:", url(/appearance/themes/Dark+/icon/supermemo.svg));
+.protocol("tel:", url(/appearance/themes/Dark+/icon/tel.svg));
+.protocol("ticktick:", url(/appearance/themes/Dark+/icon/ticktick.svg));
+.protocol("vscode:", url(/appearance/themes/Dark+/icon/vscode.svg));
+.protocol("zotero:", url(/appearance/themes/Dark+/icon/zotero.ico));
+
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="vscode:"][data-href $="/"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="vscode:"][data-href $="\\"]::before,
+.b3-typography a[href ^="vscode:"][href $="/"]::before,
+.b3-typography a[href ^="vscode:"][href $="\\"]::before {
+    background-image: url(/appearance/themes/Dark+/icon/vscode-folder.svg);
+}
+
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="zotero://open-pdf/"]::before,
+.b3-typography a[href ^="zotero://open-pdf/"]::before {
+    background-image: url(/appearance/themes/Dark+/icon/zotero-light.ico);
+}
+
+/* -------------------------------- 静态文件目录 -------------------------------- */
+.static-dir(@dir, @url) {
+    @path1: %("%s/", @dir);
+    @path2: %("/%s/", @dir);
+
+    .style() {
+        &::before {
+            background-image: @url;
+        }
+    }
+
+    .sy__outline,
+    .protyle-wysiwyg {
+        [data-node-id] {
+            span[data-type~=a] {
+                &[data-href $="/"] {
+
+                    &[data-href ^=@{path1}],
+                    &[data-href ^=@{path2}] {
+                        .style();
+                    }
+                }
+            }
+        }
+    }
+
+    .b3-typography {
+        a {
+            &[href $="/"] {
+
+                &[href ^=@{path1}],
+                &[href ^=@{path2}] {
+                    .style();
+                }
+            }
+        }
+    }
+}
+
+/* 资源 */
+.static-dir("assets", url(/appearance/themes/Dark+/icon/assets.svg));
+
+/* 表情 */
+.static-dir("emojis", url(/appearance/themes/Dark+/icon/emojis.svg));
+
+/* 挂件 */
+.static-dir("widgets", url(/appearance/themes/Dark+/icon/widgets.svg));
+
+/* 片段 */
+.static-dir("snippets", url(/appearance/themes/Dark+/icon/snippets.svg));
+
+/* 外观 */
+.static-dir("appearance", url(/appearance/themes/Dark+/icon/appearance.svg));
+
+/* 导出 */
+.static-dir("export", url(/appearance/themes/Dark+/icon/export.svg));
+
+/* 历史 */
+.static-dir("history", url(/appearance/themes/Dark+/icon/history.svg));
+
+/* -------------------------------- assets -------------------------------- */
+.static-file(@dir, @exts, @url) {
+    @path1: %("%s/", @dir);
+    @path2: %("/%s/", @dir);
+
+    .style() {
+        &::before {
+            background-image: @url;
+        }
+    }
+
+    each(@exts, {
+
+        .sy__outline,
+        .protyle-wysiwyg {
+            [data-node-id] {
+                span[data-type~=a] {
+
+                    &[data-href ^=@{path1}],
+                    &[data-href ^=@{path2}] {
+                        &[data-href $=@{value}] {
+                            .style();
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .b3-typography {
+            a {
+
+                &[href ^=@{path1}],
+                &[href ^=@{path2}] {
+                    &[href $=@{value}] {
+                        .style();
+                    }
+                }
+            }
+        }
+    });
+}
+
+/* 默认样式 */
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"]:not(:empty)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"]:not(:empty)::before,
+.b3-typography a[href *="assets/"]::before,
+.b3-typography a[href *="/assets/"]::before {
+    background-image: url(/appearance/themes/Dark+/icon/asset.svg);
+}
+
+/* PDF 文件 */
+.static-file("assets", ".pdf", url(/appearance/themes/Dark+/icon/pdf.svg));
+
+/* Word 文件 */
+@word-exts: ".doc", ".docx";
+.static-file("assets", @word-exts, url(/appearance/themes/Dark+/icon/word.svg));
+
+/* Powerpoint 文件 */
+@powerpoint-exts: ".ppt", ".pptx";
+.static-file("assets", @powerpoint-exts, url(/appearance/themes/Dark+/icon/powerpoint.svg));
+
+/* Excel 文件 */
+@excel-exts: ".xls", ".xlsx";
+.static-file("assets", @excel-exts, url(/appearance/themes/Dark+/icon/excel.svg));
+
+/* 音频文件 */
+@audio-exts: ".aac",
+    ".aiff",
+    ".amr",
+    ".au",
+    ".flac",
+    ".m4a",
+    ".mka",
+    ".mp3",
+    ".oga",
+    ".opus",
+    ".ra",
+    ".wav",
+    ".wma";
+.static-file("assets", @audio-exts, url(/appearance/themes/Dark+/icon/audio.svg));
+
+/* 视频文件 */
+@video-exts: ".3gp",
+    ".avi",
+    ".flv",
+    ".gifv",
+    ".m2ts",
+    ".m2v",
+    ".m4p",
+    ".m4v",
+    ".mkv",
+    ".mov",
+    ".mp2",
+    ".mp4",
+    ".mpe",
+    ".mpeg",
+    ".mpg",
+    ".mpv",
+    ".ogg",
+    ".ogv",
+    ".qt",
+    ".rm",
+    ".rmvb",
+    ".swf",
+    ".vob",
+    ".webm",
+    ".wmv",
+    ".yuv";
+.static-file("assets", @video-exts, url(/appearance/themes/Dark+/icon/video.svg));
+
+/* 图片文件 */
+@image-exts: ".aai",
+    ".afphoto",
+    ".ami",
+    ".apng",
+    ".apx",
+    ".ase",
+    ".aseprite",
+    ".avif",
+    ".avs",
+    ".bmp",
+    ".bpg",
+    ".brk",
+    ".cin",
+    ".clip",
+    ".cmyk",
+    ".cmyka",
+    ".cpt",
+    ".cur",
+    ".dcx",
+    ".dds",
+    ".dib",
+    ".dng",
+    ".dpx",
+    ".eits",
+    ".epdf",
+    ".epi",
+    ".eps",
+    ".eps2",
+    ".eps3",
+    ".epsf",
+    ".epsi",
+    ".ept",
+    ".exr",
+    ".fax",
+    ".fpx",
+    ".gbr",
+    ".gif",
+    ".gray",
+    ".hdr",
+    ".heic",
+    ".heif",
+    ".hrz",
+    ".icns",
+    ".ico",
+    ".img",
+    ".info",
+    ".j2c",
+    ".j2k",
+    ".jb2",
+    ".jbig",
+    ".jbig2",
+    ".jfif",
+    ".jng",
+    ".jp2",
+    ".jpeg",
+    ".jpg",
+    ".jpt",
+    ".jxr",
+    ".kra",
+    ".mdp",
+    ".miff",
+    ".mng",
+    ".mono",
+    ".mpc",
+    ".mtv",
+    ".ora",
+    ".otb",
+    ".p7",
+    ".palm",
+    ".pam",
+    ".pbm",
+    ".pcd",
+    ".pcl",
+    ".pcx",
+    ".pdb",
+    ".pdn",
+    ".pfm",
+    ".pgf",
+    ".pgm",
+    ".pic",
+    ".pict",
+    ".pjp",
+    ".pjpeg",
+    ".png",
+    ".pnm",
+    ".ppm",
+    ".ps",
+    ".ps2",
+    ".ps3",
+    ".psb",
+    ".psd",
+    ".ptif",
+    ".qoi",
+    ".rad",
+    ".raw",
+    ".reb",
+    ".rfg",
+    ".sai",
+    ".sgi",
+    ".sun",
+    ".svg",
+    ".svgz",
+    ".tga",
+    ".tif",
+    ".tiff",
+    ".uil",
+    ".uyvy",
+    ".vicar",
+    ".viff",
+    ".wbmp",
+    ".wdp",
+    ".webp",
+    ".xbm",
+    ".xcf",
+    ".xpm",
+    ".xwd";
+.static-file("assets", @image-exts, url(/appearance/themes/Dark+/icon/image.svg));
+
+/* 压缩文件 */
+@zip-exts: ".7z",
+    ".br",
+    ".brotli",
+    ".bzip2",
+    ".gz",
+    ".gzip",
+    ".rar",
+    ".tar",
+    ".tgz",
+    ".wim",
+    ".xz",
+    ".zip";
+.static-file("assets", @zip-exts, url(/appearance/themes/Dark+/icon/zip.svg));
+
+/* drawio 文件 */
+@drawio-exts: ".drawio",
+    ".svg",
+    ".png",
+    ".xml",
+    ".html";
+.static-file("assets/drawio", @drawio-exts, url(/appearance/themes/Dark+/icon/drawio.svg));
+.static-file("assets", ".drawio", url(/appearance/themes/Dark+/icon/drawio.svg));

@@ -1,0 +1,135 @@
+/* 使用域名匹配的超链接图标 */
+@import (reference) "./icon-link.less";
+
+/* REF https://github.com/Achuan-2/siyuan-themes-tsundoku-dark/blob/c1362a39693703481c8acd3efab67eb390bb789a/theme.css#L2080 */
+
+/* -------------------------------- domain -------------------------------- */
+.domain(@domain, @url) {
+    // @domains: %("//%s/", @domain),
+    // %("//%s.", @domain),
+    // %("//%s:", @domain),
+    // %(".%s/", @domain),
+    // %(".%s.", @domain),
+    // %(".%s:", @domain);
+
+    @domains: %("/%s", @domain), %(".%s", @domain);
+
+    .style() {
+        &::before {
+            background-image: @url;
+        }
+    }
+
+    each(@domains, {
+
+        .sy__outline,
+        .protyle-wysiwyg {
+            [data-node-id] {
+                span[data-type~=a] {
+                    &[data-href *=@{value}] {
+                        .style();
+                    }
+                }
+            }
+        }
+
+
+        .b3-typography {
+            a {
+                &[href *=@{value}] {
+                    .style();
+                }
+            }
+        }
+    });
+}
+
+/* 回退到协议 */
+.protocol("//", url(/appearance/themes/Dark+/icon/http.svg));
+.protocol("http:", url(/appearance/themes/Dark+/icon/http.svg));
+.protocol("https:", url(/appearance/themes/Dark+/icon/https.svg));
+
+/* 根据域名设置图标 */
+.domain("163.com", url(/appearance/themes/Dark+/icon/news163.ico));
+.domain("1drv.ms", url(/appearance/themes/Dark+/icon/onedrive.svg));
+.domain("51cto.com", url(/appearance/themes/Dark+/icon/51cto.ico));
+.domain("52pojie.cn", url(/appearance/themes/Dark+/icon/52pojie.svg));
+.domain("alibaba.com", url(/appearance/themes/Dark+/icon/alibaba.svg));
+.domain("aliyun.com", url(/appearance/themes/Dark+/icon/aliyun.ico));
+.domain("aliyundrive.com", url(/appearance/themes/Dark+/icon/aliyundrive.png));
+.domain("amazon.com", url(/appearance/themes/Dark+/icon/amazon.ico));
+.domain("baidu.com", url(/appearance/themes/Dark+/icon/baidu.svg));
+.domain("bilibili.com", url(/appearance/themes/Dark+/icon/bilibili.svg));
+.domain("bing.com", url(/appearance/themes/Dark+/icon/bing.svg));
+.domain("blog.csdn.net", url(/appearance/themes/Dark+/icon/csdn.svg));
+.domain("cctv.com", url(/appearance/themes/Dark+/icon/cctv.ico));
+.domain("cell.com", url(/appearance/themes/Dark+/icon/cell.ico));
+.domain("chrome.google.com", url(/appearance/themes/Dark+/icon/chrome-web-store.svg));
+.domain("cloud.189.cn", url(/appearance/themes/Dark+/icon/tianyiyun.png));
+.domain("cloud.tencent.com", url(/appearance/themes/Dark+/icon/tencentcloud.png));
+.domain("cnblogs.com", url(/appearance/themes/Dark+/icon/cnblogs.ico));
+.domain("coursera.org", url(/appearance/themes/Dark+/icon/coursera.svg));
+.domain("discord.com", url(/appearance/themes/Dark+/icon/discord.svg));
+.domain("douban.com", url(/appearance/themes/Dark+/icon/social-douban.svg));
+.domain("douyin.com", url(/appearance/themes/Dark+/icon/douyin.png));
+.domain("facebook.com", url(/appearance/themes/Dark+/icon/facebook.png));
+.domain("getquicker.net", url(/appearance/themes/Dark+/icon/Quicker.svg));
+.domain("gitee.com", url(/appearance/themes/Dark+/icon/gitee.svg));
+.domain("github.com", url(/appearance/themes/Dark+/icon/github_icon.png));
+.domain("github.io", url(/appearance/themes/Dark+/icon/blog.svg));
+.domain("google.com", url(/appearance/themes/Dark+/icon/logo_google_icon.svg));
+.domain("guancha.cn", url(/appearance/themes/Dark+/icon/guancha.ico));
+.domain("hust.edu.cn", url(/appearance/themes/Dark+/icon/hust.jpg));
+.domain("iconfont.cn", url(/appearance/themes/Dark+/icon/iconfont.svg));
+.domain("icourse163.org", url(/appearance/themes/Dark+/icon/mooc.png));
+.domain("imooc.com", url(/appearance/themes/Dark+/icon/imooc.svg));
+.domain("iq.com", url(/appearance/themes/Dark+/icon/aiqiyi.svg));
+.domain("jd.com", url(/appearance/themes/Dark+/icon/jd.ico));
+.domain("jianshu.com", url(/appearance/themes/Dark+/icon/jianshu.svg));
+.domain("juejin.cn", url(/appearance/themes/Dark+/icon/juejin.png));
+.domain("lanzoui.com", url(/appearance/themes/Dark+/icon/lanzouyun.ico));
+.domain("ld246.com", url(/appearance/themes/Dark+/icon/ld246.ico));
+.domain("liaoxuefeng.com", url(/appearance/themes/Dark+/icon/liaoxuefeng.png));
+.domain("microsoft.com", url(/appearance/themes/Dark+/icon/microsoft.svg));
+.domain("music.163.com", url(/appearance/themes/Dark+/icon/netease_music.svg));
+.domain("nature.com", url(/appearance/themes/Dark+/icon/nature.png));
+.domain("ncbi", url(/appearance/themes/Dark+/icon/ncbi.svg));
+.domain("news.qq.com", url(/appearance/themes/Dark+/icon/newsqq.ico));
+.domain("notion.", url(/appearance/themes/Dark+/icon/logo_notion-logo.svg));
+.domain("obsidian.md", url(/appearance/themes/Dark+/icon/obsidian.ico));
+.domain("oschina.net", url(/appearance/themes/Dark+/icon/oschina.svg));
+.domain("pan.baidu.com", url(/appearance/themes/Dark+/icon/baiduwangpan.svg));
+.domain("pinduoduo.com", url(/appearance/themes/Dark+/icon/pinduoduo.svg));
+.domain("pornhub.com", url(/appearance/themes/Dark+/icon/pornhub.ico));
+.domain("pubmed.ncbi.nlm.nih.gov", url(/appearance/themes/Dark+/icon/pubmed.ico));
+.domain("ruanyifeng.com", url(/appearance/themes/Dark+/icon/ruanyifeng.png));
+.domain("runoob.com", url(/appearance/themes/Dark+/icon/runoob.ico));
+.domain("segmentfault.com", url(/appearance/themes/Dark+/icon/segmentfault.ico));
+.domain("sharepoint.com", url(/appearance/themes/Dark+/icon/sharepoint.svg));
+.domain("so.com", url(/appearance/themes/Dark+/icon/so.ico));
+.domain("sogou.com", url(/appearance/themes/Dark+/icon/sogou.ico));
+.domain("sohu.com", url(/appearance/themes/Dark+/icon/souhu.svg));
+.domain("sspai.com", url(/appearance/themes/Dark+/icon/sspai.svg));
+.domain("stackoverflow.com", url(/appearance/themes/Dark+/icon/stack-overflow.svg));
+.domain("taobao.com", url(/appearance/themes/Dark+/icon/taobao.svg));
+.domain("thepaper.cn", url(/appearance/themes/Dark+/icon/thepaper.ico));
+.domain("tieba.baidu.com", url(/appearance/themes/Dark+/icon/logo_baidu_tieba_logo.svg));
+.domain("tiktok.com", url(/appearance/themes/Dark+/icon/douyin.png));
+.domain("tmall.com", url(/appearance/themes/Dark+/icon/tianmao.png));
+.domain("toutiao.com", url(/appearance/themes/Dark+/icon/toutiao.ico));
+.domain("twitter.com", url(/appearance/themes/Dark+/icon/logo_twitter.svg));
+.domain("v.qq.com", url(/appearance/themes/Dark+/icon/qqvideo.ico));
+.domain("v2ex.com", url(/appearance/themes/Dark+/icon/v2ex.ico));
+.domain("visualstudio.com", url(/appearance/themes/Dark+/icon/visualstudio.svg));
+.domain("vue", url(/appearance/themes/Dark+/icon/vue.ico));
+.domain("weibo.com", url(/appearance/themes/Dark+/icon/logo_weibo_icon.svg));
+.domain("weixin.qq.com", url(/appearance/themes/Dark+/icon/wechat.svg));
+.domain("weiyun.com", url(/appearance/themes/Dark+/icon/weiyun.svg));
+.domain("wikipedia.org", url(/appearance/themes/Dark+/icon/wikipedia.svg));
+.domain("wolai.com", url(/appearance/themes/Dark+/icon/wolai_dark.svg));
+.domain("xiaohongshu.com", url(/appearance/themes/Dark+/icon/xiaohongshu.ico));
+.domain("y.qq.com", url(/appearance/themes/Dark+/icon/qqmusic.ico));
+.domain("youku.com", url(/appearance/themes/Dark+/icon/youku.ico));
+.domain("youtube.com", url(/appearance/themes/Dark+/icon/logo_youtube_play_video_icon.svg));
+.domain("yuque.com", url(/appearance/themes/Dark+/icon/yuque.svg));
+.domain("zhihu.com", url(/appearance/themes/Dark+/icon/zhihu.svg));
