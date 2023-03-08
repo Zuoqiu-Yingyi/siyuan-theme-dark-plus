@@ -1,0 +1,5 @@
+/* 斜体样式 */
+.sy__outline [data-node-id] span[data-type~=em] {
+  font-style: italic;
+  color: currentColor;
+}

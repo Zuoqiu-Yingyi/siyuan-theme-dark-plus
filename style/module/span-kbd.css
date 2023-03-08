@@ -1,11 +1,19 @@
 /* 键盘样式 */
+.sy__outline [data-node-id] kbd,
+.protyle-wysiwyg [data-node-id] kbd,
 .b3-typography kbd,
-.protyle-wysiwyg kbd,
-.b3-typography span[data-type~=kbd],
-.protyle-wysiwyg span[data-type~=kbd] {
+.sy__outline [data-node-id] span[data-type~=kbd],
+.protyle-wysiwyg [data-node-id] span[data-type~=kbd],
+.b3-typography span[data-type~=kbd] {
   font-size: 1em;
   font-family: var(--b3-font-family-code);
   margin: 0 0.25em;
   padding: 0 0.125em;
   border-width: 0.125em;
+}
+.sy__outline [data-node-id] span[data-type~=kbd] {
+  color: var(--b3-theme-on-surface);
+  background-color: var(--b3-theme-surface);
+  border: solid 1px var(--b3-theme-surface-lighter);
+  border-radius: 3px;
 }

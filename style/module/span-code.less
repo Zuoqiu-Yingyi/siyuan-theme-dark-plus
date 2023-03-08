@@ -1,7 +1,7 @@
 /* 行内代码 */
 
-
-.protyle-wysiwyg,
+.sy__outline [data-node-id],
+.protyle-wysiwyg [data-node-id],
 .b3-typography {
 
     code,
@@ -12,6 +12,15 @@
             margin: 0 0.25em;
             padding: 0.125em 0.25em;
             color: var(--custom-span-code-color);
+        }
+    }
+}
+
+.sy__outline [data-node-id] {
+
+    span[data-type~=code] {
+        &:not(.hljs) {
+            background-color: var(--b3-protyle-code-background);
         }
     }
 }

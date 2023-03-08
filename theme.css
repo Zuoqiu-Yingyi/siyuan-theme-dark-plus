@@ -94,6 +94,7 @@
 
 /* 行内元素 */
 @import url(/appearance/themes/Dark+/style/module/span-code.css);
+@import url(/appearance/themes/Dark+/style/module/span-em.css);
 @import url(/appearance/themes/Dark+/style/module/span-file-annotation-ref.css);
 @import url(/appearance/themes/Dark+/style/module/span-img.css);
 @import url(/appearance/themes/Dark+/style/module/span-kbd.css);
@@ -102,6 +103,8 @@
 @import url(/appearance/themes/Dark+/style/module/span-ref.css);
 @import url(/appearance/themes/Dark+/style/module/span-s.css);
 @import url(/appearance/themes/Dark+/style/module/span-strong.css);
+@import url(/appearance/themes/Dark+/style/module/span-sub.css);
+@import url(/appearance/themes/Dark+/style/module/span-sup.css);
 @import url(/appearance/themes/Dark+/style/module/span-tag.css);
 @import url(/appearance/themes/Dark+/style/module/span-u.css);
 @import url(/appearance/themes/Dark+/style/module/span-virtual-ref.css);

@@ -1,11 +1,16 @@
 /* 行内代码 */
-.protyle-wysiwyg code:not(.hljs),
+.sy__outline [data-node-id] code:not(.hljs),
+.protyle-wysiwyg [data-node-id] code:not(.hljs),
 .b3-typography code:not(.hljs),
-.protyle-wysiwyg span[data-type~=code]:not(.hljs),
+.sy__outline [data-node-id] span[data-type~=code]:not(.hljs),
+.protyle-wysiwyg [data-node-id] span[data-type~=code]:not(.hljs),
 .b3-typography span[data-type~=code]:not(.hljs) {
   font-size: 1em;
   font-family: var(--b3-font-family-code);
   margin: 0 0.25em;
   padding: 0.125em 0.25em;
   color: var(--custom-span-code-color);
+}
+.sy__outline [data-node-id] span[data-type~=code]:not(.hljs) {
+  background-color: var(--b3-protyle-code-background);
 }

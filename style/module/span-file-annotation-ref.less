@@ -1,5 +1,5 @@
 /* 文件注释引用(PDF注释) */
-
+@import (reference) "./span-link.less";
 
 .b3-typography {
     a[href *=".pdf?p="] {
@@ -14,17 +14,14 @@
     }
 }
 
+.sy__outline,
 .protyle-wysiwyg {
     [data-node-id] {
-        span[data-type="file-annotation-ref"] {
+        span[data-type~=file-annotation-ref] {
             /* PDF 引用链接样式 */
             color: var(--custom-span-file-ref-color);
 
-            &::before {
-                /* PDF 引用链接图标 */
-                content: "" !important;
-                background-image: url(/appearance/themes/Dark+/icon/pdf-ref.svg) !important;
-            }
+            .link-icon(url(/appearance/themes/Dark+/icon/pdf-ref.svg));
 
             &:hover {
                 /* PDF 引用链接鼠标悬浮 */
