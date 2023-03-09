@@ -13,6 +13,9 @@
 .protyle {
   background: transparent;
 }
+.protyle {
+  overflow-y: hidden;
+}
 .wysiwygLoading {
   background-color: transparent !important;
 }
