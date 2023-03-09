@@ -38,6 +38,7 @@
   /* 思源聚焦超链接特化 */
   outline: 1px solid var(--custom-span-siyuan-link-color);
 }
+.protyle-wysiwyg a,
 .b3-typography a {
   /* 默认样式 */
   margin: 0;
@@ -45,9 +46,11 @@
   border-bottom-color: inherit;
   color: var(--b3-protyle-inline-link-color);
 }
+.protyle-wysiwyg a:hover,
 .b3-typography a:hover {
   border-bottom: 1px solid;
 }
+.protyle-wysiwyg a::before,
 .b3-typography a::before {
   /* 超链接前标志 */
   content: "";
@@ -62,11 +65,14 @@
   margin: 0.125em 0.125em -0.125em 0;
   padding: 0;
 }
+.protyle-wysiwyg a[href^="siyuan:"],
 .b3-typography a[href^="siyuan:"] {
   /* 思源内部的超链接特化 */
   color: var(--custom-span-siyuan-link-color);
 }
+.protyle-wysiwyg a[href^="siyuan:"][data-href*="focus=1"]::before,
 .b3-typography a[href^="siyuan:"][data-href*="focus=1"]::before,
+.protyle-wysiwyg a[href^="siyuan:"][href*="focus=1"]::before,
 .b3-typography a[href^="siyuan:"][href*="focus=1"]::before {
   /* 思源聚焦超链接特化 */
   outline: 1px solid var(--custom-span-siyuan-link-color);

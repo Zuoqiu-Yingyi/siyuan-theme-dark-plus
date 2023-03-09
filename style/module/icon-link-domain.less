@@ -12,7 +12,8 @@
     // %(".%s.", @domain),
     // %(".%s:", @domain);
 
-    @domains: %("/%s", @domain), %(".%s", @domain);
+    @domains: %("/%s", @domain),
+    %(".%s", @domain);
 
     .style() {
         &::before {
@@ -33,7 +34,7 @@
             }
         }
 
-
+        .protyle-wysiwyg,
         .b3-typography {
             a {
                 &[href *=@{value}] {

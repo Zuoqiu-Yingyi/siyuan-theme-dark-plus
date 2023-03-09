@@ -11,6 +11,10 @@
 .protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="备注"]::before,
 .protyle-wysiwyg [data-node-id] span[data-type~=a][data-title ^="note"]::before,
 .protyle-wysiwyg [data-node-id] span[data-type~=a][data-title ^="备注"]::before,
+.protyle-wysiwyg a[href ^="note"]::before,
+.protyle-wysiwyg a[href ^="备注"]::before,
+.protyle-wysiwyg a[title ^="note"]::before,
+.protyle-wysiwyg a[title ^="备注"]::before,
 .b3-typography a[href ^="note"]::before,
 .b3-typography a[href ^="备注"]::before,
 .b3-typography a[title ^="note"]::before,
@@ -20,6 +24,7 @@
 
 /* 视频时间戳 */
 .protyle-wysiwyg [data-node-id] span[data-type~=a][data-title *="custom-time"]::before,
+.protyle-wysiwyg a[title *="custom-time"]::before,
 .b3-typography a[title *="custom-time"]::before {
     background-image: url(/appearance/themes/Dark+/icon/timestamp.svg);
 }
@@ -44,6 +49,7 @@
         }
     }
 
+    .protyle-wysiwyg,
     .b3-typography {
         a {
             &[href ^=@{protocol}] {
@@ -79,12 +85,15 @@
 
 .protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="vscode:"][data-href $="/"]::before,
 .protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="vscode:"][data-href $="\\"]::before,
+.protyle-wysiwyg a[href ^="vscode:"][href $="/"]::before,
+.protyle-wysiwyg a[href ^="vscode:"][href $="\\"]::before,
 .b3-typography a[href ^="vscode:"][href $="/"]::before,
 .b3-typography a[href ^="vscode:"][href $="\\"]::before {
     background-image: url(/appearance/themes/Dark+/icon/vscode-folder.svg);
 }
 
 .protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="zotero://open-pdf/"]::before,
+.protyle-wysiwyg a[href ^="zotero://open-pdf/"]::before,
 .b3-typography a[href ^="zotero://open-pdf/"]::before {
     background-image: url(/appearance/themes/Dark+/icon/zotero-light.ico);
 }
@@ -115,6 +124,7 @@
         }
     }
 
+    .protyle-wysiwyg,
     .b3-typography {
         a {
             &[href $="/"] {
@@ -177,7 +187,7 @@
             }
         }
 
-
+        .protyle-wysiwyg,
         .b3-typography {
             a {
 
