@@ -8,10 +8,6 @@
     border-bottom-color: inherit;
     color: var(--b3-protyle-inline-link-color);
 
-    &:hover {
-        border-bottom: 1px solid;
-    }
-
     .link-icon(url(/appearance/themes/Dark+/icon/unknown.svg));
 }
 
@@ -59,6 +55,17 @@
         }
     }
 }
+
+.sy__outline {
+    [data-node-id] {
+        span[data-type~=a] {
+            &:hover {
+                border-bottom: 1px solid;
+            }
+        }
+    }
+}
+
 
 .protyle-wysiwyg,
 .b3-typography {
