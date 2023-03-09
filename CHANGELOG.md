@@ -5,6 +5,7 @@
 - 优化超链接图标样式 | Optimize the style of the hyperlink icon.
 - 统一正文与大纲的行内元素样式 | Unify the style of inline element for main body and outline.
 - 调整 `protyle` 元素的滚动条样式 | Adjust the style of the `protyle` element scrollbar.
+- 统一导出与编辑器的链接图标样式 | Unified the style of link icon for export and editor.
 
 ## v1.7.2/2023-02-28
 
