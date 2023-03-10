@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.7.3/2023-03-10
+
+- [v1.7.2 <=> v1.7.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.2...v1.7.3)
 - 调整 `/` 菜单样式 | Adjust the style of the `/` menu.
   - Adapt: [Issue #7560 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/7560)
 - 优化超链接图标样式 | Optimize the style of the hyperlink icon.
