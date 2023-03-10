@@ -5,5 +5,5 @@
 .sy__outline [data-node-id] span[data-type~=strong],
 .protyle-wysiwyg [data-node-id] span[data-type~=strong],
 .b3-typography span[data-type~=strong] {
-  color: var(--custom-span-strong-color);
+  color: currentColor;
 }

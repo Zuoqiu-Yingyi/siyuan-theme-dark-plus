@@ -1,5 +1,12 @@
 /* 斜体样式 */
+.sy__outline [data-node-id] em,
+.protyle-wysiwyg [data-node-id] em,
+.b3-typography em,
+.sy__outline [data-node-id] span[data-type~=em],
+.protyle-wysiwyg [data-node-id] span[data-type~=em],
+.b3-typography span[data-type~=em] {
+  color: currentColor;
+}
 .sy__outline [data-node-id] span[data-type~=em] {
   font-style: italic;
-  color: currentColor;
 }
