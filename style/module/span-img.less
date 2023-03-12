@@ -7,6 +7,11 @@
         // padding: 0 0.125em;
         max-width: none !important;
 
+        &:not([style]) {
+            /* 没有调整宽度的图片 */
+            display: inline-block;
+        }
+
         img:not(.emoji) {
             /* 图片样式 */
             box-shadow: 0 0 var(--custom-box-shadow-spread) 0 var(--custom-box-shadow-color);

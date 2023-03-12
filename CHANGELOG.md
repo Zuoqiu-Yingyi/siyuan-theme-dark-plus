@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+- 调整表格内图片的样式 | Adjust the style of the pictures in the table. 
+  - Adapt: [Issue #7606 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/7606)
+
 ## v1.7.3/2023-03-10
 
 - [v1.7.2 <=> v1.7.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.2...v1.7.3)

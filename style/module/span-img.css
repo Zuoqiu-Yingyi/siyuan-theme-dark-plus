@@ -3,6 +3,11 @@
 .protyle-wysiwyg span.img {
   max-width: none !important;
 }
+.b3-typography span.img:not([style]),
+.protyle-wysiwyg span.img:not([style]) {
+  /* 没有调整宽度的图片 */
+  display: inline-block;
+}
 .b3-typography span.img img:not(.emoji),
 .protyle-wysiwyg span.img img:not(.emoji) {
   /* 图片样式 */
