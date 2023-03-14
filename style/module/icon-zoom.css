@@ -20,3 +20,12 @@ svg.popover__block:hover,
   transform: scale(1.25);
   transition: all 0.1s ease-in-out;
 }
+.b3-list-item__icon {
+  width: 1em;
+  padding-left: 2px;
+  padding-right: 6px;
+}
+.b3-list-item__icon:has(svg, img) {
+  padding-left: 4px;
+  padding-right: 4px;
+}

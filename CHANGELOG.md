@@ -3,6 +3,7 @@
 - 调整表格内图片的样式 | Adjust the style of the pictures in the table. 
   - Adapt: [Issue #7606 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/7606)
 - 为主题自定义配置文件添加回调函数 `callback` | Add callback function `callback` to the theme custom configuration file.
+- 调整文档树图标宽度 | Adjust the width of document tree icon.
 
 ## v1.7.3/2023-03-10
 
