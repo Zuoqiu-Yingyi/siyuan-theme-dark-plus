@@ -3064,7 +3064,7 @@ async function loadCustomJs(path = '/widgets/custom.js') {
         const customjs = await import(path);
         if (customjs?.config?.custom) merge(config.custom, customjs.config.custom);
         if (customjs?.config?.theme) merge(config.theme, customjs.config.theme);
-        if (customjs?.scripts) customjs.scripts.forEach(_ => eval(_));
+        if (customjs?.callback) await customjs.callback(config);
     } catch (err) {
         console.warn(err);
     } finally {
