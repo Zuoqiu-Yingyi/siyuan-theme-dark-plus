@@ -30,9 +30,21 @@ svg,
 .b3-list-item__action,
 .block__icon {
     &:hover {
+
         svg,
         img {
             .popover();
         }
+    }
+}
+
+.b3-list-item__icon {
+    width: 1em;
+    padding-left: 2px;
+    padding-right: 6px;
+
+    &:has(svg, img) {
+        padding-left: 4px;
+        padding-right: 4px;
     }
 }
