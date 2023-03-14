@@ -247,6 +247,33 @@ window.theme.OS = window.siyuan.config.system.os;
 window.theme.lute = window.Lute.New();
 
 /**
+ * 设置原生主题模式
+ * @params {number} mode: 主题模式
+ * @params {boolean} modeOS: 是否启用系统主题
+ */
+window.theme.setNativeTheme = function (
+    mode = window.siyuan.config.appearance.mode,
+    modeOS = window.siyuan.config.appearance.modeOS,
+) {
+    try {
+        const { nativeTheme } = require('@electron/remote');
+        if (modeOS) {
+            if (nativeTheme.themeSource !== 'system') {
+                nativeTheme.themeSource = 'system';
+            }
+        } else {
+            if ((mode === 0 && nativeTheme.themeSource !== 'light') ||
+                (mode === 1 && nativeTheme.themeSource !== 'dark')
+            ) {
+                nativeTheme.themeSource = (mode === 0 ? 'light' : 'dark');
+            }
+        }
+    } catch (error) {
+        console.warn(error);
+    }
+}
+
+/**
  * 更换主题模式
  * @params {string} lightStyle 浅色主题配置文件路径
  * @params {string} darkStyle 深色主题配置文件路径
@@ -306,13 +333,20 @@ if (window.siyuan.config.appearance[window.siyuan.config.appearance.mode ? "them
     );
 }
 
-/* 调整窗口控件位置 */
-if (window.theme.clientMode === "window") {
-    const toolbar__window = document.querySelector("body > .toolbar__window");
-    const layouts = document.getElementById("layouts")?.parentElement;
-    if (toolbar__window && layouts) {
-        document.body.insertBefore(toolbar__window, layouts);
-    }
+switch (window.theme.clientMode) {
+    case "window":
+        /* 调整窗口控件位置 */
+        const toolbar__window = document.querySelector("body > .toolbar__window");
+        const layouts = document.getElementById("layouts")?.parentElement;
+        if (toolbar__window && layouts) {
+            document.body.insertBefore(toolbar__window, layouts);
+        }
+    case "app":
+        /* 设置 Electron 原生主题模式 */
+        window.theme.setNativeTheme();
+        break;
+    default:
+        break;
 }
 
 /* 加载 HTML 块中使用的小工具 */
