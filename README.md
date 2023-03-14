@@ -672,6 +672,8 @@ Note: When using the browser to access SiYuan, this feature may be blocked by th
  *    Custom background image list
  *        The directory of the light background image in the example is <workspace>/data/snippets/images/background-light
  *        The directory of the dark background image in the example is <workspace>/data/snippets/images/background-dark
+ *    关闭自定义字体菜单
+ *    Close the custom fonts menu
  */
 
 export const config = {
@@ -715,6 +717,10 @@ export const config = {
     },
 }
 
+export async function callback(config) {
+    config.theme.menu.block.items[0].enable = false; // 关闭块菜单-常用字体
+    config.theme.menu.block.items[1].enable = false; // 关闭块菜单-其他字体
+}
 ```
 
 更多配置项请参考 [config.js](./script/module/config.js)  
