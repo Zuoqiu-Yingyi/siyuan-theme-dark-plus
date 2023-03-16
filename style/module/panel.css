@@ -1,4 +1,52 @@
 /* 面板全局设置 */
+#sidebar .b3-list--mobile > [data-type^="sidebar"] ul.b3-list > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(20px + 1em * 0) !important;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"] ul.b3-list > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(20px + 1em * 1) !important;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"] ul.b3-list > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(20px + 1em * 2) !important;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"] ul.b3-list > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(20px + 1em * 3) !important;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"] ul.b3-list > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(20px + 1em * 4) !important;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"] ul.b3-list > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(20px + 1em * 5) !important;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"] ul.b3-list > ul > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(20px + 1em * 6) !important;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"] ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(20px + 1em * 7) !important;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"] ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(20px + 1em * 8) !important;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"] ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(20px + 1em * 9) !important;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"] ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(20px + 1em * 10) !important;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"] ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(20px + 1em * 11) !important;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"] ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(20px + 1em * 12) !important;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"] ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(20px + 1em * 13) !important;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"] ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(20px + 1em * 14) !important;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"] ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(20px + 1em * 15) !important;
+}
 #sidebar .b3-list--mobile > [data-type^="sidebar"]:not([data-type="sidebar-file"]) ul {
   position: relative;
   top: 0;
@@ -8,7 +56,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 12px;
+  left: calc(12px + 16px * 0);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -18,7 +66,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 30px;
+  left: calc(12px + 16px * 1);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -28,7 +76,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 48px;
+  left: calc(12px + 16px * 2);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -38,7 +86,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 66px;
+  left: calc(12px + 16px * 3);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -48,7 +96,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 84px;
+  left: calc(12px + 16px * 4);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -58,7 +106,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 102px;
+  left: calc(12px + 16px * 5);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -68,7 +116,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 120px;
+  left: calc(12px + 16px * 6);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -78,7 +126,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 138px;
+  left: calc(12px + 16px * 7);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -88,7 +136,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 156px;
+  left: calc(12px + 16px * 8);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -98,7 +146,67 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 174px;
+  left: calc(12px + 16px * 9);
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"]:not([data-type="sidebar-file"]) ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(12px + 16px * 10);
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"]:not([data-type="sidebar-file"]) ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(12px + 16px * 11);
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"]:not([data-type="sidebar-file"]) ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(12px + 16px * 12);
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"]:not([data-type="sidebar-file"]) ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(12px + 16px * 13);
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"]:not([data-type="sidebar-file"]) ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(12px + 16px * 14);
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+#sidebar .b3-list--mobile > [data-type^="sidebar"]:not([data-type="sidebar-file"]) ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(12px + 16px * 15);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -112,7 +220,54 @@
   margin: var(--custom-panel-distance);
   border-radius: var(--custom-border-radius);
   /* 侧边分栏面板 */
-  /* 文档树面板(影响定位当前文档) */
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(18px + 1em * 0) !important;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(18px + 1em * 1) !important;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(18px + 1em * 2) !important;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(18px + 1em * 3) !important;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(18px + 1em * 4) !important;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(18px + 1em * 5) !important;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(18px + 1em * 6) !important;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(18px + 1em * 7) !important;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(18px + 1em * 8) !important;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(18px + 1em * 9) !important;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(18px + 1em * 10) !important;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(18px + 1em * 11) !important;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(18px + 1em * 12) !important;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(18px + 1em * 13) !important;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(18px + 1em * 14) !important;
+}
+[data-type='wnd'][data-id] .file-tree ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > li.b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(18px + 1em * 15) !important;
 }
 [data-type='wnd'][data-id] .file-tree:not(.sy__file, .sy__tag, .sy__outline) ul {
   position: relative;
@@ -123,7 +278,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 12px;
+  left: calc(12px + 1em * 0);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -133,7 +288,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 28px;
+  left: calc(12px + 1em * 1);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -143,7 +298,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 44px;
+  left: calc(12px + 1em * 2);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -153,7 +308,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 60px;
+  left: calc(12px + 1em * 3);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -163,7 +318,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 76px;
+  left: calc(12px + 1em * 4);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -173,7 +328,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 92px;
+  left: calc(12px + 1em * 5);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -183,7 +338,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 108px;
+  left: calc(12px + 1em * 6);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -193,7 +348,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 124px;
+  left: calc(12px + 1em * 7);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -203,7 +358,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 140px;
+  left: calc(12px + 1em * 8);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -213,7 +368,67 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 156px;
+  left: calc(12px + 1em * 9);
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+[data-type='wnd'][data-id] .file-tree:not(.sy__file, .sy__tag, .sy__outline) ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(12px + 1em * 10);
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+[data-type='wnd'][data-id] .file-tree:not(.sy__file, .sy__tag, .sy__outline) ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(12px + 1em * 11);
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+[data-type='wnd'][data-id] .file-tree:not(.sy__file, .sy__tag, .sy__outline) ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(12px + 1em * 12);
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+[data-type='wnd'][data-id] .file-tree:not(.sy__file, .sy__tag, .sy__outline) ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(12px + 1em * 13);
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+[data-type='wnd'][data-id] .file-tree:not(.sy__file, .sy__tag, .sy__outline) ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(12px + 1em * 14);
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+[data-type='wnd'][data-id] .file-tree:not(.sy__file, .sy__tag, .sy__outline) ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(12px + 1em * 15);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -233,7 +448,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 12px;
+  left: calc(12px + 1em * 0);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -244,7 +459,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 30px;
+  left: calc(12px + 1em * 1);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -255,7 +470,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 48px;
+  left: calc(12px + 1em * 2);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -266,7 +481,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 66px;
+  left: calc(12px + 1em * 3);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -277,7 +492,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 84px;
+  left: calc(12px + 1em * 4);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -288,7 +503,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 102px;
+  left: calc(12px + 1em * 5);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -299,7 +514,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 120px;
+  left: calc(12px + 1em * 6);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -310,7 +525,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 138px;
+  left: calc(12px + 1em * 7);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -321,7 +536,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 156px;
+  left: calc(12px + 1em * 8);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
@@ -332,7 +547,73 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 174px;
+  left: calc(12px + 1em * 9);
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+[data-type='wnd'][data-id] .file-tree.sy__tag:hover ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before,
+[data-type='wnd'][data-id] .file-tree.sy__outline:hover ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(12px + 1em * 10);
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+[data-type='wnd'][data-id] .file-tree.sy__tag:hover ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before,
+[data-type='wnd'][data-id] .file-tree.sy__outline:hover ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(12px + 1em * 11);
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+[data-type='wnd'][data-id] .file-tree.sy__tag:hover ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before,
+[data-type='wnd'][data-id] .file-tree.sy__outline:hover ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(12px + 1em * 12);
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+[data-type='wnd'][data-id] .file-tree.sy__tag:hover ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before,
+[data-type='wnd'][data-id] .file-tree.sy__outline:hover ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(12px + 1em * 13);
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+[data-type='wnd'][data-id] .file-tree.sy__tag:hover ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before,
+[data-type='wnd'][data-id] .file-tree.sy__outline:hover ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(12px + 1em * 14);
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+[data-type='wnd'][data-id] .file-tree.sy__tag:hover ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before,
+[data-type='wnd'][data-id] .file-tree.sy__outline:hover ul.b3-list > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(12px + 1em * 15);
   width: var(--custom-list-guides-line-width);
   height: 100%;
   background-color: var(--custom-list-guides-line-color);
