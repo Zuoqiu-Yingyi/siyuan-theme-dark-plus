@@ -1,9 +1,16 @@
 /* 大纲面板 */
 
 
-/* 过长子标题名显示样式 */
-.sy__outline .b3-list-item__text {
-    display: var(--custom-outline-display);
+.sy__outline {
+    .b3-list-item__graphic {
+        /* 标题图标样式 */
+        padding: 0;
+    }
+
+    .b3-list-item__text {
+        /* 过长子标题名显示样式 */
+        display: var(--custom-outline-display);
+    }
 }
 
 .heading(@selector, @color) {

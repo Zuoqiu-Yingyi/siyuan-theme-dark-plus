@@ -6,6 +6,7 @@
 - 调整文档树图标宽度 | Adjust the width of document tree icon.
 - 新增设置 Electron 原生主题模式功能 | Add the function of setting Electron native theme mode.
 - 调整侧边面板树形列表缩进 | Adjust the indentation of the tree list in the sidebar panel.
+- 调整大纲面板标题图标样式 | Adjust the style of the title icon in the outline panel.
 
 ## v1.7.3/2023-03-10
 
