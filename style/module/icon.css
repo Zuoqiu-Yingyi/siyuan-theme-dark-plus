@@ -1,0 +1,29 @@
+/* 图标 */
+.b3-list-item__icon {
+  width: 1em;
+  padding-left: 2px;
+  padding-right: 6px;
+}
+.b3-list-item__icon svg,
+.b3-list-item__icon img {
+  margin-left: 2px;
+  margin-right: -2px;
+}
+.emojis .emojis__panel .emojis__content .emojis__item {
+  /* 图标 */
+  width: calc(1em + 8px);
+  padding-left: 0px;
+  padding-right: 8px;
+}
+.emojis .emojis__panel .emojis__content .emojis__item svg,
+.emojis .emojis__panel .emojis__content .emojis__item img {
+  padding-left: 4px;
+  padding-right: -4px;
+}
+.sy__outline [data-node-id] .emoji,
+.protyle-wysiwyg [data-node-id] .emoji,
+.b3-typography .emoji {
+  /* 文档内容中的 emoji 图标 */
+  font-size: unset;
+  width: 1em;
+}

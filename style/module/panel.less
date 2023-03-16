@@ -1,22 +1,59 @@
 /* 面板全局设置 */
 
-// 添加 1 级辅助线
-.guides(@base, @interval, @depth) {
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: @base + @interval * @depth;
-        width: var(--custom-list-guides-line-width);
-        height: 100%;
-        // background-color: white;
-        background-color: var(--custom-list-guides-line-color);
-        z-index: 1;
+@max-depth: 16; // 最大深度
+
+
+// 多级缩进
+.tree-indent(@base-root, @interval: 1em, @depth: @max-depth) {
+
+    // 添加 1 级辅助线
+    .indent(@base, @interval, @depth) {
+        >li.b3-list-item {
+            >.b3-list-item__toggle {
+                padding-left: calc(@base-root + @interval * @depth) !important;
+            }
+        }
+    }
+
+    // 递归添加辅助线
+    .subtree(@base-root, @interval, @depth, @index: 0) when (@index < @depth) {
+        >ul {
+            .indent(@base-root, @interval, @index);
+            .subtree(@base-root, @interval, @depth, (@index + 1));
+        }
+    }
+
+    ul.b3-list {
+        // 设置前 16 级的样式
+        .subtree(@base-root, @interval, @depth);
     }
 }
 
-// 添加 10 级辅助线
-.tree(@base-root, @base-default, @interval) {
+// 多级辅助线
+.tree-guides(@base-root, @interval: 1em, @depth: @max-depth) {
+
+    // 添加 1 级辅助线
+    .guides(@base, @interval, @depth) {
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: calc(@base + @interval * @depth);
+            width: var(--custom-list-guides-line-width);
+            height: 100%;
+            // background-color: white;
+            background-color: var(--custom-list-guides-line-color);
+            z-index: 1;
+        }
+    }
+
+    // 递归添加辅助线
+    .subtree(@base-root, @interval, @depth, @index: 0) when (@index < @depth) {
+        >ul {
+            .guides(@base-root, @interval, @index);
+            .subtree(@base-root, @interval, @depth, (@index + 1));
+        }
+    }
 
     // absolute 定位需要上级元素使用 absolute 或 relative 定位方法
     ul {
@@ -26,45 +63,8 @@
     }
 
     ul.b3-list {
-        >ul {
-            .guides(@base-root, @interval, 0);
-
-            >ul {
-                .guides(@base-default, @interval, 1);
-
-                >ul {
-                    .guides(@base-default, @interval, 2);
-
-                    >ul {
-                        .guides(@base-default, @interval, 3);
-
-                        >ul {
-                            .guides(@base-default, @interval, 4);
-
-                            >ul {
-                                .guides(@base-default, @interval, 5);
-
-                                >ul {
-                                    .guides(@base-default, @interval, 6);
-
-                                    >ul {
-                                        .guides(@base-default, @interval, 7);
-
-                                        >ul {
-                                            .guides(@base-default, @interval, 8);
-
-                                            >ul {
-                                                .guides(@base-default, @interval, 9);
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        // 设置前 16 级的样式
+        .subtree(@base-root, @interval, @depth);
 
         // 鼠标悬浮更改辅助线颜色
         ul:hover::before {
@@ -77,8 +77,10 @@
 #sidebar {
     .b3-list--mobile {
         >[data-type ^="sidebar"] {
+            .tree-indent(20px);
+
             &:not([data-type="sidebar-file"]) {
-                .tree(12px, 12px, 18px);
+                .tree-guides(12px, 16px);
             }
         }
     }
@@ -92,26 +94,25 @@
 
     /* 侧边分栏面板 */
     .file-tree {
+        .tree-indent(18px);
 
         &:not(.sy__file, .sy__tag, .sy__outline) {
-            .tree(12px, 12px, 16px);
+            // .tree-guides(16px, 14px);
+            .tree-guides(12px);
         }
 
         &.sy__tag,
         &.sy__outline {
             &:hover {
-                .tree(12px, 12px, 18px);
+                // .tree-guides(16px, 14px);
+                .tree-guides(12px);
             }
         }
+
+        // 文档树面板
+        // .sy__file {
+        // }
     }
-
-    /* 文档树面板(影响定位当前文档) */
-    // .file-tree.sy__file {
-    //     .block__icons+div:hover {
-    //         .tree(15px, 12px);
-    //     }
-    // }
-
 }
 
 /* 悬浮面板与面板标题栏 */
