@@ -780,6 +780,7 @@ function nodeIdMaker() {
 
 /* worker 初始化 */
 function workerInit(self) {
+    // console.log(self);
     if (self.name) { // 设置了 DedicatedWorkerGlobalScope.name 后才能正常运行
         const worker_error_handler = e => {
             console.error(e);
@@ -807,5 +808,10 @@ function workerInit(self) {
 
             self.postMessage(JSON.stringify(message));
         });
+
+        self.postMessage(JSON.stringify({
+            type: 'status',
+            status: 'ready',
+        }));
     }
 };

@@ -81,6 +81,25 @@ jupyterWorker.addEventListener('message', e => {
     // console.log(e);
     const data = JSON.parse(e.data);
     switch (data.type) {
+        case 'status':
+            switch (data.status) {
+                case 'ready':
+                    /* 是否就绪 */
+                    jupyterWorker.postMessage(JSON.stringify({
+                        type: 'call',
+                        handle: 'getConf',
+                        params: [],
+                    }));
+                    jupyterWorker.postMessage(JSON.stringify({
+                        type: 'call',
+                        handle: 'setLang',
+                        params: [window.theme.languageMode],
+                    }));
+                    break;
+                default:
+                    break;
+            }
+            break;
         case 'call':
             switch (data.handle) {
                 case 'getConf':
@@ -94,18 +113,6 @@ jupyterWorker.addEventListener('message', e => {
             break;
     }
 });
-
-
-jupyterWorker.postMessage(JSON.stringify({
-    type: 'call',
-    handle: 'getConf',
-    params: [],
-}));
-jupyterWorker.postMessage(JSON.stringify({
-    type: 'call',
-    handle: 'setLang',
-    params: [window.theme.languageMode],
-}));
 
 var toolbarItemList = [];
 var toolbar_timeout_id = null; // 工具栏延时显示定时器
