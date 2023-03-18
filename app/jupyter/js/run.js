@@ -27,6 +27,7 @@ import {
 } from './utils.js';
 
 export {
+    setLang, // 设置语言
     getConf, // 获取配置
     runCell, // 运行单元格
     runCells, // 运行多个单元格
@@ -36,6 +37,7 @@ export {
 }
 
 self.handlers = {
+    setLang,
     getConf,
     runCell,
     runCells,
@@ -179,7 +181,7 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
             break;
         case "execute_reply": // 运行结果信息
             {
-                const status = message.metadata.status;
+                const status = message.content.status ?? message.metadata.status;
                 const payloads = message.content.payload;
 
                 let markdowns = [];
@@ -217,11 +219,11 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
                 const started = new Date(message?.metadata?.started ?? message.parent_header.date);
                 const stoped = new Date(message.header.date);
 
-                let code_attrs = {
+                const code_attrs = {
                     [config.jupyter.attrs.code.index]: code_index,
                     [config.jupyter.attrs.code.time]: `${i18n('start', lang)}: ${started.format('yyyy-MM-dd hh:mm:ss')} | ${i18n('runtime', lang)}: ${timestampFormat(stoped - started)}`,
                 };
-                let output_attrs = {
+                const output_attrs = {
                     [config.jupyter.attrs.output.index]: output_index,
                     // style: output_style,
                 };
