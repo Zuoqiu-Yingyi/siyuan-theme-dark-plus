@@ -8,6 +8,7 @@
 - 调整侧边面板树形列表缩进 | Adjust the indentation of the tree list in the sidebar panel.
 - 调整大纲面板标题图标样式 | Adjust the style of the title icon in the outline panel.
 - 修复 jupyter 语言设置错误问题 | Fixed the issue of jupyter language setting error.
+- 默认禁用部分功能快捷键 | Disable some function shortcuts by default.
 
 ## v1.7.3/2023-03-10
 

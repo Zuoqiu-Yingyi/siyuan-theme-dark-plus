@@ -2702,7 +2702,7 @@ const config = {
                 },
                 tabbar: {
                     // 纵向排列选项卡(Shift + Alt + B)
-                    enable: true,
+                    enable: false,
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,
@@ -2711,7 +2711,7 @@ const config = {
                 },
                 guides: {
                     // 列表辅助线样式(Shift + Alt + G)
-                    enable: true,
+                    enable: false,
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,
@@ -2720,7 +2720,7 @@ const config = {
                 },
                 mark: {
                     // 标记文本显示(Shift + Alt + E)
-                    enable: true,
+                    enable: false,
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,
@@ -2802,7 +2802,7 @@ const config = {
             doc: {
                 copy: {
                     // 复制当前文档全文(Shift + Alt + C)
-                    enable: true,
+                    enable: false,
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,
@@ -2811,7 +2811,7 @@ const config = {
                 },
                 delete: {
                     // 删除当前文档全文(Shift + Alt + D)
-                    enable: true,
+                    enable: false,
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,
@@ -2820,7 +2820,7 @@ const config = {
                 },
                 cut: {
                     // 剪切当前文档全文(Shift + Alt + X)
-                    enable: true,
+                    enable: false,
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,
@@ -2830,7 +2830,7 @@ const config = {
                 heading: {
                     fold: {
                         // 一键折叠当前文档所有标题(Shift + Alt + ↑)
-                        enable: true,
+                        enable: false,
                         CtrlCmd: false,
                         WinCtrl: false,
                         Shift: true,
@@ -2839,7 +2839,7 @@ const config = {
                     },
                     unfold: {
                         // 一键折展开当前文档所有标题(Shift + Alt + ↓)
-                        enable: true,
+                        enable: false,
                         CtrlCmd: false,
                         WinCtrl: false,
                         Shift: true,
@@ -2850,7 +2850,7 @@ const config = {
                 outline: {
                     u: {
                         // 复制当前文档大纲(无序列表)至剪贴板(Ctrl + Shift + Alt + U)
-                        enable: true,
+                        enable: false,
                         CtrlCmd: true,
                         WinCtrl: false,
                         Shift: true,
@@ -2859,7 +2859,7 @@ const config = {
                     },
                     o: {
                         // 复制当前文档大纲(有序列表)至剪贴板(Ctrl + Shift + Alt + O)
-                        enable: true,
+                        enable: false,
                         CtrlCmd: true,
                         WinCtrl: false,
                         Shift: true,
@@ -2868,7 +2868,7 @@ const config = {
                     },
                     t: {
                         // 复制当前文档大纲(任务列表)至剪贴板(Ctrl + Shift + Alt + T)
-                        enable: true,
+                        enable: false,
                         CtrlCmd: true,
                         WinCtrl: false,
                         Shift: true,
@@ -2880,7 +2880,7 @@ const config = {
             typewriter: {
                 switch: {
                     // 打字机模式开关(Shift + Alt + T)
-                    enable: true,
+                    enable: false,
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,
@@ -2890,7 +2890,7 @@ const config = {
             },
             invert: {
                 // 反色开关(Shift + Alt + I)
-                enable: true,
+                enable: false,
                 CtrlCmd: false,
                 WinCtrl: false,
                 Shift: true,
@@ -2901,7 +2901,7 @@ const config = {
                 image: {
                     web: {
                         // 更换网络背景图片(Shift + Alt + R)
-                        enable: true,
+                        enable: false,
                         CtrlCmd: false,
                         WinCtrl: false,
                         Shift: true,
@@ -2910,7 +2910,7 @@ const config = {
                     },
                     custom: {
                         // 更换自定义背景图片(Ctrl + Shift + Alt + I)
-                        enable: true,
+                        enable: false,
                         CtrlCmd: true,
                         WinCtrl: false,
                         Shift: true,
@@ -3006,7 +3006,7 @@ const config = {
                 },
                 record: {
                     // 记录浏览位置(Shift + Alt + L)
-                    enable: true,
+                    enable: false,
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,
@@ -3024,7 +3024,7 @@ const config = {
                 },
                 clear: {
                     // 移除浏览位置(Ctrl + Shift + Alt + L)
-                    enable: true,
+                    enable: false,
                     CtrlCmd: true,
                     WinCtrl: false,
                     Shift: true,
@@ -3034,8 +3034,8 @@ const config = {
             },
             dock: {
                 fold: {
-                    // 一键折叠/展开功能面板(Shift + Alt + F)
-                    enable: true,
+                    // 一键折叠/展开功能面板 | 专注模式 (Shift + Alt + F)
+                    enable: false,
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,
@@ -3046,7 +3046,7 @@ const config = {
             menu: {
                 block: {
                     // 块菜单开关(Shift + Alt + M)
-                    enable: true,
+                    enable: false,
                     CtrlCmd: false,
                     WinCtrl: false,
                     Shift: true,

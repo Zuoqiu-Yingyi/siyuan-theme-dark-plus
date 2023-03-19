@@ -113,46 +113,46 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 
 #### 主题快捷键 | THEME SHORTCUT KEYS
 
-| 快捷键 \| Shortcut Key                                                             | 操作对象 \| Operational objectives                                                                                | 功能 \| Function                                                                                                            |
-| :--------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------- |
-| <kbd>鼠标中键</kbd><br/><kbd>Middle Mouse Button</kbd>                             | 整个窗口<br/>entire window                                                                                        | 在新窗口打开块或超链接<br/>open the block or hyperlink in a new window                                                      |
-| <kbd>鼠标右键</kbd><br/><kbd>Right Mouse Button</kbd>                              | 文档右侧滑块 / 当前阅读进度标识<br/>slider on the right side of the document / current reading progress indicator | 跳转到文档上次浏览位置<br/>jump to where the document was last browsed                                                      |
-| <kbd>Shift + 鼠标中键</kbd><br/><kbd>Shift + Middle Mouse Button</kbd>             | 整个窗口<br/>entire window                                                                                        | 在新窗口打开块并聚焦<br/>open the block in a new window and focus                                                           |
-| <kbd>Alt + 鼠标中键</kbd><br/><kbd>Alt + Middle Mouse Button</kbd>                 | 整个窗口<br/>entire window                                                                                        | 在新窗口打开 Monaco 编辑器并编辑单击的内容<br/>open the Monaco Editor in a new window and edit the content                  |
-| <kbd>Shift + Alt + 鼠标中键</kbd><br/><kbd>Shift + Alt + Middle Mouse Button</kbd> | 整个窗口<br/>entire window                                                                                        | 在新窗口打开 Monaco 编辑器并查看 markdown 源码<br/>open the Monaco Editor in a new window and edit the markdown source code |
-| <kbd>Ctrl/⌘ + 鼠标滚轮</kbd><br/><kbd>Ctrl/⌘ + Mouse Wheel</kbd>                   | 整个窗口<br/>entire window                                                                                        | 调整编辑区字体大小<br/>adjust the edit area font size                                                                       |
-| <kbd>Ctrl/⌘ + 鼠标中键</kbd><br/><kbd>Ctrl/⌘ + Middle Mouse Button</kbd>           | 超链接<br/>hyperlink                                                                                              | 设置自定义块属性<br/>set the custom block attributes                                                                        |
-| <kbd>Ctrl/⌘ + 鼠标中键</kbd><br/><kbd>Ctrl/⌘ + Middle Mouse Button</kbd>           | 视频块/音频块/iframe块<br/>video block/audio block/iframe block                                                   | 将当前时间戳写入剪贴板<br/>write the current timestamp to the clipboard                                                     |
-| <kbd>Ctrl/⌘ + 鼠标左键</kbd><br/><kbd>Ctrl/⌘ + Left Mouse Button</kbd>             | 视频块/音频块/iframe块<br/>video block/audio block/iframe block                                                   | 跳转到自定义块属性 `time` 所设置的时间点<br/>jump to the point in time set by the custom block attribute `time`             |
-| <kbd>Ctrl/⌘ + 鼠标左键</kbd><br/><kbd>Ctrl/⌘ + Left Mouse Button</kbd>             | 挂件块/iframe块<br/>widget block/iframe block                                                                     | 重新加载块内容<br/>reload the block contents                                                                                |
-| <kbd>鼠标左键双击</kbd><br/><kbd>Double-click with Left Mouse Button</kbd>         | 挂件块/iframe块<br/>widget block/iframe block                                                                     | 全屏显示块内容<br/>reload the block contents                                                                                |
-| <kbd>Ctrl/⌘ + F1</kbd>                                                             | 当前文档<br/>current document                                                                                     | 渲染当前文档所有块的自定义样式<br/>render the custom style for all blocks in the current document                           |
-| <kbd>Ctrl/⌘ + F5</kbd>                                                             | 整个窗口<br/>entire window                                                                                        | 重新加载整个窗口<br/>display block content in full screen                                                                   |
-| <kbd>Shift + Alt + B</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭页签纵向排列功能<br/>turn on/off the feature of tabs are arranged vertically                                       |
-| <kbd>Shift + Alt + E</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭显示标记文本功能<br/>turn on/off the feature of displaying the mark text                                           |
-| <kbd>Shift + Alt + F</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭专注模式 (折叠/展开功能面板)<br/>turn on/off the focus mode (collapse/expand the feature panels)                   |
-| <kbd>Shift + Alt + G</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭列表辅助线(列表, 表格列表, 思维导图列表)<br/>turn on/off list guides (list, table list, mind map list)             |
-| <kbd>Shift + Alt + I</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭反色模式<br/>turn on/off invert color mode                                                                         |
-| <kbd>Shift + Alt + L</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭记录当前浏览位置功能<br/>turn on/off record the current browsing location                                          |
-| <kbd>Shift + Alt + M</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭块菜单增强功能<br/>turn on/off block menu enhancement                                                              |
-| <kbd>Shift + Alt + N</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 在新窗口打开光标所在块<br/>open the block where the cursor is located in a new window                                       |
-| <kbd>Shift + Alt + R</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 使用网络背景图片<br/>use the web background images                                                                          |
-| <kbd>Shift + Alt + T</kbd>                                                         | 整个窗口<br/>entire window                                                                                        | 启动/关闭打字机模式<br/>turn on/off typewriter mode                                                                         |
-| <kbd>Shift + Alt + C</kbd>                                                         | 当前文档<br/>current document                                                                                     | 复制当前文档 markdown 全文至剪贴板<br/>copy the full markdown text of the current document to the clipboard                 |
-| <kbd>Shift + Alt + X</kbd>                                                         | 当前文档<br/>current document                                                                                     | 剪切当前文档 markdown 全文至剪贴板<br/>cut the full markdown text of the current document to the clipboard                  |
-| <kbd>Shift + Alt + D</kbd>                                                         | 当前文档<br/>current document                                                                                     | 删除当前文档全文<br/>delete the full content of the current documen                                                         |
-| <kbd>Shift + Alt + ↑</kbd>                                                         | 当前文档<br/>current document                                                                                     | 折叠当前文档所有子标题<br/>collapse all sub-headings of the current document                                                |
-| <kbd>Shift + Alt + ↓</kbd>                                                         | 当前文档<br/>current document                                                                                     | 展开当前文档所有子标题<br/>expand all sub-headings of the current document                                                  |
-| <kbd>Ctrl/⌘ + Shift + Alt + R</kbd>                                                | 整个窗口<br/>entire window                                                                                        | 使用自定义背景图片<br/>use the custom background images                                                                     |
-| <kbd>Ctrl/⌘ + Shift + Alt + N</kbd>                                                | 整个窗口<br/>entire window                                                                                        | 在新窗口打开光标所在块并聚焦<br/>open the block and focus where the cursor is located in a new window                       |
-| <kbd>Ctrl/⌘ + Shift + Alt + L</kbd>                                                | 整个窗口<br/>entire window                                                                                        | 清除当前文档浏览位置记录<br/>clear the current document browsing location history                                           |
-| <kbd>Ctrl/⌘ + Shift + Alt + O</kbd>                                                | 当前文档<br/>current document                                                                                     | 复制当前文档大纲为有序列表<br/>copy the current document outline as an ordered list                                         |
-| <kbd>Ctrl/⌘ + Shift + Alt + U</kbd>                                                | 当前文档<br/>current document                                                                                     | 复制当前文档大纲为无序列表<br/>copy the current document outline as an unordered list                                       |
-| <kbd>Ctrl/⌘ + Shift + Alt + T</kbd>                                                | 当前文档<br/>current document                                                                                     | 复制当前文档大纲为任务列表<br/>copy the current document outline as a task list                                             |
+| 快捷键 \| Shortcut Keys                                                                                          | 操作对象 \| Operational objectives                                                                                | 功能 \| Function                                                                                                            |
+| :-------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------- |
+| <kbd>鼠标中键</kbd><br/><kbd>Middle Mouse Button</kbd>                                                          | 整个窗口<br/>entire window                                                                                        | 在新窗口打开块或超链接<br/>open the block or hyperlink in a new window                                                      |
+| <kbd>鼠标右键</kbd><br/><kbd>Right Mouse Button</kbd>                                                           | 文档右侧滑块 / 当前阅读进度标识<br/>slider on the right side of the document / current reading progress indicator | 跳转到文档上次浏览位置<br/>jump to where the document was last browsed                                                      |
+| <kbd>Shift + 鼠标中键</kbd><br/><kbd>Shift + Middle Mouse Button</kbd>                                          | 整个窗口<br/>entire window                                                                                        | 在新窗口打开块并聚焦<br/>open the block in a new window and focus                                                           |
+| <kbd>Alt + 鼠标中键</kbd><br/><kbd>Alt + Middle Mouse Button</kbd>                                              | 整个窗口<br/>entire window                                                                                        | 在新窗口打开 Monaco 编辑器并编辑单击的内容<br/>open the Monaco Editor in a new window and edit the content                  |
+| <kbd>Shift + Alt + 鼠标中键</kbd><br/><kbd>Shift + Alt + Middle Mouse Button</kbd>                              | 整个窗口<br/>entire window                                                                                        | 在新窗口打开 Monaco 编辑器并查看 markdown 源码<br/>open the Monaco Editor in a new window and edit the markdown source code |
+| <kbd>Ctrl/⌘ + 鼠标滚轮</kbd><br/><kbd>Ctrl/⌘ + Mouse Wheel</kbd>                                                | 整个窗口<br/>entire window                                                                                        | 调整编辑区字体大小<br/>adjust the edit area font size                                                                       |
+| <kbd>Ctrl/⌘ + 鼠标中键</kbd><br/><kbd>Ctrl/⌘ + Middle Mouse Button</kbd>                                        | 超链接<br/>hyperlink                                                                                              | 设置自定义块属性<br/>set the custom block attributes                                                                        |
+| <kbd>Ctrl/⌘ + 鼠标中键</kbd><br/><kbd>Ctrl/⌘ + Middle Mouse Button</kbd>                                        | 视频块/音频块/iframe块<br/>video block/audio block/iframe block                                                   | 将当前时间戳写入剪贴板<br/>write the current timestamp to the clipboard                                                     |
+| <kbd>Ctrl/⌘ + 鼠标左键</kbd><br/><kbd>Ctrl/⌘ + Left Mouse Button</kbd>                                          | 视频块/音频块/iframe块<br/>video block/audio block/iframe block                                                   | 跳转到自定义块属性 `time` 所设置的时间点<br/>jump to the point in time set by the custom block attribute `time`             |
+| <kbd>Ctrl/⌘ + 鼠标左键</kbd><br/><kbd>Ctrl/⌘ + Left Mouse Button</kbd>                                          | 挂件块/iframe块<br/>widget block/iframe block                                                                     | 重新加载块内容<br/>reload the block contents                                                                                |
+| <kbd>鼠标左键双击</kbd><br/><kbd>Double-click with Left Mouse Button</kbd>                                      | 挂件块/iframe块<br/>widget block/iframe block                                                                     | 全屏显示块内容<br/>reload the block contents                                                                                |
+| <kbd>Ctrl/⌘ + F1</kbd>                                                                                          | 当前文档<br/>current document                                                                                     | 渲染当前文档所有块的自定义样式<br/>render the custom style for all blocks in the current document                           |
+| <kbd>Ctrl/⌘ + F5</kbd>                                                                                          | 整个窗口<br/>entire window                                                                                        | 重新加载整个窗口<br/>display block content in full screen                                                                   |
+| <kbd>Shift + Alt + B</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile          | 整个窗口<br/>entire window                                                                                        | 启动/关闭页签纵向排列功能<br/>turn on/off the feature of tabs are arranged vertically                                       |
+| <kbd>Shift + Alt + E</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile          | 整个窗口<br/>entire window                                                                                        | 启动/关闭显示标记文本功能<br/>turn on/off the feature of displaying the mark text                                           |
+| <kbd>Shift + Alt + F</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile          | 整个窗口<br/>entire window                                                                                        | 启动/关闭专注模式 (折叠/展开功能面板)<br/>turn on/off the focus mode (collapse/expand the feature panels)                   |
+| <kbd>Shift + Alt + G</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile          | 整个窗口<br/>entire window                                                                                        | 启动/关闭列表辅助线(列表, 表格列表, 思维导图列表)<br/>turn on/off list guides (list, table list, mind map list)             |
+| <kbd>Shift + Alt + I</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile          | 整个窗口<br/>entire window                                                                                        | 启动/关闭反色模式<br/>turn on/off invert color mode                                                                         |
+| <kbd>Shift + Alt + L</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile          | 整个窗口<br/>entire window                                                                                        | 启动/关闭记录当前浏览位置功能<br/>turn on/off record the current browsing location                                          |
+| <kbd>Shift + Alt + M</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile          | 整个窗口<br/>entire window                                                                                        | 启动/关闭块菜单增强功能<br/>turn on/off block menu enhancement                                                              |
+| <kbd>Shift + Alt + N</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile          | 整个窗口<br/>entire window                                                                                        | 在新窗口打开光标所在块<br/>open the block where the cursor is located in a new window                                       |
+| <kbd>Shift + Alt + R</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile          | 整个窗口<br/>entire window                                                                                        | 使用网络背景图片<br/>use the web background images                                                                          |
+| <kbd>Shift + Alt + T</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile          | 整个窗口<br/>entire window                                                                                        | 启动/关闭打字机模式<br/>turn on/off typewriter mode                                                                         |
+| <kbd>Shift + Alt + C</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile          | 当前文档<br/>current document                                                                                     | 复制当前文档 markdown 全文至剪贴板<br/>copy the full markdown text of the current document to the clipboard                 |
+| <kbd>Shift + Alt + X</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile          | 当前文档<br/>current document                                                                                     | 剪切当前文档 markdown 全文至剪贴板<br/>cut the full markdown text of the current document to the clipboard                  |
+| <kbd>Shift + Alt + D</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile          | 当前文档<br/>current document                                                                                     | 删除当前文档全文<br/>delete the full content of the current documen                                                         |
+| <kbd>Shift + Alt + ↑</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile          | 当前文档<br/>current document                                                                                     | 折叠当前文档所有子标题<br/>collapse all sub-headings of the current document                                                |
+| <kbd>Shift + Alt + ↓</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile          | 当前文档<br/>current document                                                                                     | 展开当前文档所有子标题<br/>expand all sub-headings of the current document                                                  |
+| <kbd>Ctrl/⌘ + Shift + Alt + R</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile | 整个窗口<br/>entire window                                                                                        | 使用自定义背景图片<br/>use the custom background images                                                                     |
+| <kbd>Ctrl/⌘ + Shift + Alt + N</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile | 整个窗口<br/>entire window                                                                                        | 在新窗口打开光标所在块并聚焦<br/>open the block and focus where the cursor is located in a new window                       |
+| <kbd>Ctrl/⌘ + Shift + Alt + L</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile | 整个窗口<br/>entire window                                                                                        | 清除当前文档浏览位置记录<br/>clear the current document browsing location history                                           |
+| <kbd>Ctrl/⌘ + Shift + Alt + O</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile | 当前文档<br/>current document                                                                                     | 复制当前文档大纲为有序列表<br/>copy the current document outline as an ordered list                                         |
+| <kbd>Ctrl/⌘ + Shift + Alt + U</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile | 当前文档<br/>current document                                                                                     | 复制当前文档大纲为无序列表<br/>copy the current document outline as an unordered list                                       |
+| <kbd>Ctrl/⌘ + Shift + Alt + T</kbd><br/>需在自定义配置文件中启用<br/>Requires to be enabled in a custom profile | 当前文档<br/>current document                                                                                     | 复制当前文档大纲为任务列表<br/>copy the current document outline as a task list                                             |
 
 #### 编辑器快捷键 | EDITOR SHORTCUT KEYS
 
-| 快捷键 \| Shortcut Key              | 功能 \| Function                                   |
+| 快捷键 \| Shortcut Keys              | 功能 \| Function                                   |
 | :---------------------------------- | :------------------------------------------------- |
 | <kbd>Alt + Z</kbd>                  | 切换自动换行<br/>toggle word wrap                  |
 | <kbd>Ctrl/⌘ + Alt + P</kbd>         | 窗口置顶与取消置顶<br/>window pin/unpin            |
@@ -416,55 +416,97 @@ Note: When using the browser to access SiYuan, this feature may be blocked by th
 - 使用快捷键 <kbd>鼠标左键</kbd> 双击 Iframe 块或挂件块重新加载块内容  
   Use the shortcut keys <kbd>Left Mouse Button</kbd> double-click the iframe block or the widget block to display block content in full screen.
 - 使用快捷键 <kbd>Ctrl/⌘ + F5</kbd> 重新加载整个窗口  
-  Use the shortcut key <kbd>Ctrl/⌘ + F5</kbd> to reload the entire window.
+  Use the shortcut keys <kbd>Ctrl/⌘ + F5</kbd> to reload the entire window.
 - 使用快捷键 <kbd>Shift + Alt + B</kbd> 启动/关闭页签纵向排列功能  
-  Use the shortcut key <kbd>Shift + Alt + B</kbd> to turn on/off the feature of tabs are arranged vertically.
+  Use the shortcut keys <kbd>Shift + Alt + B</kbd> to turn on/off the feature of tabs are arranged vertically.
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
 - 使用快捷键 <kbd>Shift + Alt + E</kbd> 启动/关闭显示标记文本功能  
-  Use the shortcut key <kbd>Shift + Alt + E</kbd> to turn on/off the feature of displaying the mark text.
+  Use the shortcut keys <kbd>Shift + Alt + E</kbd> to turn on/off the feature of displaying the mark text.
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
 - 使用快捷键 <kbd>Shift + Alt + F</kbd> 启动/关闭专注模式 (折叠/展开功能面板)  
-  Use the shortcut key <kbd>Shift + Alt + F</kbd> to turn on/off the focus mode (collapse/expand the feature panels).
+  Use the shortcut keys <kbd>Shift + Alt + F</kbd> to turn on/off the focus mode (collapse/expand the feature panels).
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
 - 使用快捷键 <kbd>Shift + Alt + I</kbd> 启动/关闭反色模式  
-  Use the shortcut key <kbd>Shift + Alt + I</kbd> to turn on/off invert color mode.
+  Use the shortcut keys <kbd>Shift + Alt + I</kbd> to turn on/off invert color mode.
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
 - 使用快捷键 <kbd>Shift + Alt + G</kbd> 启动/关闭列表辅助线(列表, 表格列表, 思维导图列表)  
-  Use the shortcut key <kbd>Shift + Alt + G</kbd> to turn on/off list guides (list, table list, mind map list).
+  Use the shortcut keys <kbd>Shift + Alt + G</kbd> to turn on/off list guides (list, table list, mind map list).
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
 - 使用快捷键 <kbd>Shift + Alt + L</kbd> 启动/关闭记录当前浏览位置功能  
-  Use the shortcut key <kbd>Shift + Alt + L</kbd> to turn on/off record the current browsing location.
+  Use the shortcut keys <kbd>Shift + Alt + L</kbd> to turn on/off record the current browsing location.
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
   - 开启后可以使用 <kbd>鼠标左键</kbd> 双击文档中的某个块以记住当前位置  
     Use button <kbd>Left Mouse Button</kbd> double-click a block to record this location when turned on.
   - 开启后可以使用 <kbd>鼠标右键</kbd> 单击文档右侧的滑块, 跳转到文档上次浏览位置  
     You can click on a slider on the right side of the document to jump to where the document was last browsed using the <kbd>Right Mouse Button</kbd> when turned on.
 - 使用快捷键 <kbd>Shift + Alt + M</kbd> 启动/关闭块菜单增强功能  
-  Use the shortcut key <kbd>Shift + Alt + M</kbd> to turn on/off block menu enhancement.
+  Use the shortcut keys <kbd>Shift + Alt + M</kbd> to turn on/off block menu enhancement.
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
 - 使用快捷键 <kbd>Shift + Alt + N</kbd> 在新窗口打开光标所在块  
-  Use the shortcut key <kbd>Shift + Alt + N</kbd> to open the block where the cursor is located in a new window.
+  Use the shortcut keys <kbd>Shift + Alt + N</kbd> to open the block where the cursor is located in a new window.
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
 - 使用快捷键 <kbd>Shift + Alt + R</kbd> 使用网络背景图片  
-  Use the shortcut key <kbd>Shift + Alt + R</kbd> to use the web background images.
+  Use the shortcut keys <kbd>Shift + Alt + R</kbd> to use the web background images.
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
   - 图片来源: [Beautiful Free Images & Pictures | Unsplash](https://unsplash.com/)  
     Image source: [Beautiful Free Images & Pictures | Unsplash](https://unsplash.com/)
 - 使用快捷键 <kbd>Shift + Alt + T</kbd> 启动/关闭打字机模式  
-  Use the shortcut key <kbd>Shift + Alt + T</kbd> to turn on/off typewriter mode.
+  Use the shortcut keys <kbd>Shift + Alt + T</kbd> to turn on/off typewriter mode.
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
 - 使用快捷键 <kbd>Shift + Alt + C</kbd> 复制当前文档 markdown 全文至剪贴板  
   Use the shortcut keys <kbd>Shift + Alt + C</kbd> to copy the full markdown text of the current document to the clipboard.
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
 - 使用快捷键 <kbd>Shift + Alt + X</kbd> 剪切当前文档 markdown 全文至剪贴板  
   Use the shortcut keys <kbd>Shift + Alt + X</kbd> to cut the full markdown text of the current document to the clipboard.
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
 - 使用快捷键 <kbd>Shift + Alt + D</kbd> 删除当前文档全部内容  
   Use the shortcut keys <kbd>Shift + Alt + D</kbd> to delete the full content of the current documen.
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
 - 使用快捷键 <kbd>Shift + Alt + ↑</kbd> 折叠当前文档所有子标题  
   Use the shortcut keys <kbd>Shift + Alt + ↑</kbd> to collapse all sub-headings of the current document.
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
 - 使用快捷键 <kbd>Shift + Alt + ↓</kbd> 展开当前文档所有子标题  
   Use the shortcut keys <kbd>Shift + Alt + ↓</kbd> to expand all sub-headings of the current document.
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + R</kbd> 使用自定义背景图片  
-  Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + R</kbd> to use the custom background images.
+  Use shortcut keys <kbd>Ctrl/⌘ + Shift + Alt + R</kbd> to use the custom background images.
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + N</kbd> 在新窗口打开光标所在块并聚焦  
-  Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + N</kbd> to open the block where the cursor is located in a new window.
+  Use shortcut keys <kbd>Ctrl/⌘ + Shift + Alt + N</kbd> to open the block where the cursor is located in a new window.
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + L</kbd> 清除当前文档浏览位置记录  
-  Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + L</kbd> to clear the current document browsing location history.
+  Use shortcut keys <kbd>Ctrl/⌘ + Shift + Alt + L</kbd> to clear the current document browsing location history.
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + O</kbd> 复制当前文档大纲为有序列表  
-  Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + O</kbd> to copy the current document outline as an ordered list.
+  Use shortcut keys <kbd>Ctrl/⌘ + Shift + Alt + O</kbd> to copy the current document outline as an ordered list.
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + U</kbd> 复制当前文档大纲为无序列表  
-  Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + U</kbd> to copy the current document outline as an unordered list.
+  Use shortcut keys <kbd>Ctrl/⌘ + Shift + Alt + U</kbd> to copy the current document outline as an unordered list.
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + T</kbd> 复制当前文档大纲为任务列表  
-  Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + T</kbd> to copy the current document outline as a task list.
+  Use shortcut keys <kbd>Ctrl/⌘ + Shift + Alt + T</kbd> to copy the current document outline as a task list.
+  - 需在自定义配置文件中启用快捷键  
+    Shortcut keys need to be enabled in the custom profile.
 - 块自定义属性
   Block custom attributes.
   - `font-family`: 属性名 | key
@@ -672,8 +714,9 @@ Note: When using the browser to access SiYuan, this feature may be blocked by th
  *    Custom background image list
  *        The directory of the light background image in the example is <workspace>/data/snippets/images/background-light
  *        The directory of the dark background image in the example is <workspace>/data/snippets/images/background-dark
- *    关闭自定义字体菜单
- *    Close the custom fonts menu
+ *
+ *    开启复制当前文档全文快捷键 (Shift + Alt + C)
+ *    Turn on the Copy current document full-text shortcut (Shift + Alt + C).
  */
 
 export const config = {
@@ -718,8 +761,7 @@ export const config = {
 }
 
 export async function callback(config) {
-    config.theme.menu.block.items[0].enable = false; // 关闭块菜单-常用字体
-    config.theme.menu.block.items[1].enable = false; // 关闭块菜单-其他字体
+    config.theme.hotkeys.doc.copy.enable = true;
 }
 ```
 
