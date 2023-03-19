@@ -2,6 +2,8 @@
 .b3-menu {
   background-color: var(--custom-popover-function-menu-background-color);
   backdrop-filter: var(--custom-backdrop-popover-filter);
+}
+.b3-menu:not(#menu) {
   padding: var(--custom-popover-menu-padding-width);
 }
 .b3-menu .b3-menu__item {
