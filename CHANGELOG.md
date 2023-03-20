@@ -10,6 +10,7 @@
 - 修复 jupyter 语言设置错误问题 | Fixed the issue of jupyter language setting error.
 - 默认禁用部分功能快捷键 | Disable some function shortcuts by default.
 - 调整移动端侧边菜单样式 | Adjust the style of the side menu on the mobile client.
+- [#188](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/188) 修复设置背景滤波器的次级菜单样式问题 | Fixed the issue of the style of the secondary menu for setting the backdrop filter.
 
 ## v1.7.3/2023-03-10
 
