@@ -195,11 +195,9 @@
   /* 图片反色滤波器 | Image inverted filter */
   --custom-image-filter-invert: invert(100%);
   /* 背景图片滤波器 | Background image filter */
-  /* --custom-backdrop-filter: blur(16px); */
-  --custom-backdrop-filter: none;
-  /* 悬浮面板滤波器(引用预览, 菜单) | Hover panel filters (reference preview, menu)*/
-  /* --custom-backdrop-popover-filter: blur(2px); */
-  --custom-backdrop-popover-filter: none;
+  --custom-backdrop-filter: unset;
+  /* 悬浮面板滤波器(引用预览) | Hover panel filters (reference preview)*/
+  --custom-backdrop-popover-filter: unset;
   /* 悬浮预览窗口最小高度 | The minimum height of the hover preview window */
   --custom-popover-min-height: 50%;
   /* 悬浮预览窗口最大宽度 | The maximum width of the hover preview window */
