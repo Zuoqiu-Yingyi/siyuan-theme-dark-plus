@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.7.4/2023-03-21
+
+- [v1.7.3 <=> v1.7.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.3...v1.7.4)
 - 调整表格内图片的样式 | Adjust the style of the pictures in the table.
   - Adapt: [Issue #7606 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/7606)
 - 为主题自定义配置文件添加回调函数 `callback` | Add callback function `callback` to the theme custom configuration file.
