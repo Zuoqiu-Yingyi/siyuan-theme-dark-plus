@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 新增使用 Monaco 编辑器编辑代码判断功能 | Add the function of using Monaco editor to edit code snippet.
+
 ## v1.7.4/2023-03-21
 
 - [v1.7.3 <=> v1.7.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.3...v1.7.4)

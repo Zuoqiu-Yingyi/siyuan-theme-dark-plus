@@ -21,6 +21,8 @@ import {
     openRepoSnapshotDoc,
     getBlockDomByID,
     getDoc,
+    getSnippet,
+    setSnippet,
     getFile,
     putFile,
     resolveAssetPath,
@@ -41,6 +43,43 @@ async function init(params) {
     params.version = r.data;
 
     switch (params.mode) {
+        case 'snippet': // 代码片段
+            r = await getSnippet(); // 获取代码片段内容
+            if (r && r.code === 0) {
+                const snippets = r.data.snippets;
+                const snippet = snippets.find(s => s.id === params.id);
+                if (snippet) {
+                    params.snippets = snippets;
+                    params.snippet = snippet;
+                    params.value = snippet.content; // 代码片段内容
+                    params.language = snippet.type; // 代码片段语言
+
+                    const snippet_path = config.editor.link.file(params.url); // snippets/conf.json 文件路径
+                    const snippet_url = `/snippets/${snippet.name}.${snippet.type}`; // 代码片段访问 URL
+
+                    params.breadcrumb.set(
+                        `${config.editor.mark.snippet}${config.editor.MAP.LABELS.mode[params.mode][params.lang] || config.editor.MAP.LABELS.mode[params.mode].default}`,
+                        `${config.editor.mark.snapshotpath}snippets${config.editor.mark.pathseparate}${snippet.name}.${snippet.type}`,
+                        snippet_path,
+                        snippet_url,
+                        snippet_path,
+                        snippet_url,
+                    ); // 设置面包屑
+                    params.breadcrumb.crumb.target = '_self'; // 在本窗口打开
+                }
+                else {
+                    // 没有查询到指定 ID 的代码片段
+                    params.mode = 'none';
+                    return;
+                }
+            }
+            else {
+                // 没有查询到代码片段
+                params.mode = 'none';
+                return;
+            }
+            break;
+
         case 'history': // 历史文档
             // 获取文档路径
             r = await getFullHPathByID(params.id);
@@ -240,6 +279,7 @@ async function init(params) {
                 }
             }
             break;
+
         case 'assets': // 资源文件
             switch (true) {
                 case params.path.startsWith('assets/'):
@@ -381,6 +421,7 @@ async function init(params) {
                 return;
             };
             break;
+
         case 'block': // 块
             if (!config.editor.regs.id.test(params.id)) {
                 params.mode = 'none';
@@ -626,6 +667,7 @@ async function init(params) {
                 config.editor.link.siyuan(b.root_id),
             ); // 设置面包屑
             break;
+
         case 'none':
         default:
             break;
@@ -746,6 +788,8 @@ window.onload = () => {
             ),
         };
         init(window.editor.params).then(() => {
+            console.log(window.editor);
+
             window.editor.container = document.getElementById('container');
             window.editor.picker = document.getElementById('picker');
 
@@ -933,6 +977,10 @@ window.onload = () => {
                                 default:
                                     break;
                             }
+                            break;
+                        case 'snippet':
+                            window.editor.params.snippet.content = content;
+                            response = await setSnippet(window.editor.params.snippets);
                             break;
                         case 'snapshot':
                         case 'none':
