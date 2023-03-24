@@ -113,7 +113,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 
 #### 主题快捷键 | THEME SHORTCUT KEYS
 
-| 快捷键 \| Shortcut Keys                                                                                          | 操作对象 \| Operational objectives                                                                                | 功能 \| Function                                                                                                            |
+| 快捷键 \| Shortcut Keys                                                                                         | 操作对象 \| Operational objectives                                                                                | 功能 \| Function                                                                                                            |
 | :-------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------- |
 | <kbd>鼠标中键</kbd><br/><kbd>Middle Mouse Button</kbd>                                                          | 整个窗口<br/>entire window                                                                                        | 在新窗口打开块或超链接<br/>open the block or hyperlink in a new window                                                      |
 | <kbd>鼠标右键</kbd><br/><kbd>Right Mouse Button</kbd>                                                           | 文档右侧滑块 / 当前阅读进度标识<br/>slider on the right side of the document / current reading progress indicator | 跳转到文档上次浏览位置<br/>jump to where the document was last browsed                                                      |
@@ -152,7 +152,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 
 #### 编辑器快捷键 | EDITOR SHORTCUT KEYS
 
-| 快捷键 \| Shortcut Keys              | 功能 \| Function                                   |
+| 快捷键 \| Shortcut Keys             | 功能 \| Function                                   |
 | :---------------------------------- | :------------------------------------------------- |
 | <kbd>Alt + Z</kbd>                  | 切换自动换行<br/>toggle word wrap                  |
 | <kbd>Ctrl/⌘ + Alt + P</kbd>         | 窗口置顶与取消置顶<br/>window pin/unpin            |
@@ -389,10 +389,48 @@ Note: When using the browser to access SiYuan, this feature may be blocked by th
   Click on a slider on the right side of the document or current reading progress indicator to jump to where the document was last browsed using the <kbd>Right Mouse Button</kbd>.
 - 使用 <kbd>Shift + 鼠标中键</kbd> 单击块/超链接/块引用在新窗口打开并聚焦  
   Click on a block/link/block-reference to open a window and focus using the <kbd>Shift + Middle Mouse Button</kbd>.
-- 使用 <kbd>Alt + 鼠标中键</kbd> 单击块/超链接/块引用/收集箱项/历史项/快照项在新窗口打开 [Monaco 编辑器](https://github.com/microsoft/monaco-editor)并编辑 Markdown 源代码  
-  Click on a block/link/block-reference/inbox/history/snapshot to open [Monaco Editor](https://github.com/microsoft/monaco-editor) in a new window and edit source code using the <kbd>Alt + Middle Mouse Button</kbd>.
-- 使用 <kbd>Shift + Alt + 鼠标中键</kbd> 单击块/超链接/块引用/历史项/快照项在新窗口打开 [Monaco 编辑器](https://github.com/microsoft/monaco-editor)并查看指定块的 Kramdown (Markdown with IAL) 源码  
+- 使用 <kbd>Alt + 鼠标中键</kbd> 单击界面的元素在新窗口打开 [Monaco 编辑器](https://github.com/microsoft/monaco-editor)并编辑单击的内容的源码  
+  Click on an element of the interface to open [Monaco Editor](https://github.com/microsoft/monaco-editor) in a new window and edit element's source code using the <kbd>Alt + Middle Mouse Button</kbd>.
+  - 可点击的内容 | Clickable content
+    - 块 | Block
+      - 块 `Markdown` 源码 | Block `Markdown` source code
+      - 仅能编辑叶子块 | Only leaf blocks can be edited
+    - 块引用 | Block Reference
+      - 同上 | Same as above
+    - 超链接 | Hyperlink
+      - 链接目标源码 | Link target source code
+      - 可编辑的内容 | Editable content
+        - `siyuan` 超链接叶子块目标 | `siyuan` hyperlink target to leaf block
+        - 本地文件 | local files
+    - 收集箱项 | Inbox Item
+      - 收集箱内容 `Markdown` 源码 | Inbox content `Markdown` source code
+      - 仅查看 | Only view
+    - 历史项 | History Item
+      - 差异对比查看历史文档与当前文档 `Markdown` 源码 | Diff comparison view history document and current document `Markdown` source code
+      - 仅查看 | Only view
+    - 快照项 | Snapshot Item
+      - 差异对比查看两个快照文档 `Markdown` 源码 | Diff comparison view two snapshot documents `Markdown` source code
+      - 仅查看 | Only view
+    - 代码片段  Code Snippet
+      - `CSS` 与 `JS` 代码片段源码 | `CSS` and `JS` code snippet source code
+      - 可编辑 | Editable
+- 使用 <kbd>Shift + Alt + 鼠标中键</kbd> 单击界面的元素在新窗口打开 [Monaco 编辑器](https://github.com/microsoft/monaco-editor)并编辑单击的内容的源码  
+  Click on an element of the interface to open [Monaco Editor](https://github.com/microsoft/monaco-editor) in a new window and edit element's source code using the <kbd>Shift + Alt + Middle Mouse Button</kbd>.
   Click on a block/link/block-reference/history/snapshot to open [Monaco Editor](https://github.com/microsoft/monaco-editor) in a new window and preview the Kramdown (Markdown with IAL) source code of document using the <kbd>Shift + Alt + Middle Mouse Button</kbd>.
+  - 可点击的内容 | Clickable content
+    - 块 | Block
+      - 块 `Karmdown` 源码 | Block `Karmdown` source code
+      - 可编辑 | Editable
+    - 块引用 | Block Reference
+      - 同上 | Same as above
+    - `siyuan://` 超链接 | Hyperlink `siyuan://`
+      - 同上 | Same as above
+    - 历史项 | History Item
+      - 差异对比编辑历史文档与当前文档 `Karmdown` 源码 | Diff comparison edit history document and current document `Karmdown` source code
+      - 可编辑 | Editable
+    - 快照项 | Snapshot Item
+      - 差异对比编辑两个快照文档 `Karmdown` 源码 | Diff comparison edit two snapshot documents `Karmdown` source code
+      - 可编辑 | Editable
 - 使用快捷键 <kbd>Ctrl/⌘ + 鼠标滚轮</kbd> 可以调整编辑区字体大小  
   Use the shortcut keys <kbd>Ctrl/⌘ + Mouse Wheel</kbd> to adjust the edit area font size.
 - 使用超链接设置块属性  
