@@ -20,9 +20,10 @@ import {
 import {
     getFocusedID,
     getTargetBlockID,
-    getTargetInboxID,
     getTargetHistory,
+    getTargetInboxID,
     getTargetSnapshotDoc,
+    getTargetSnippetID,
 } from './../utils/dom.js';
 
 function open(id = getFocusedID(), urlParams = {}) {
@@ -56,22 +57,29 @@ function infocus(id = getFocusedID()) {
     });
 }
 
-async function middleClick(e, fn_id, fn_href = null, fn_inbox = null, fn_history = null, fn_snapshot = null) {
-    // 历史项
+async function middleClick(e, fn_id, fn_href = null, fn_inbox = null, fn_history = null, fn_snapshot = null, fn_snippet = null) {
+    /* 代码片段 */
+    const snippet = getTargetSnippetID(e.target)
+    if (snippet) {
+        if (fn_snippet) fn_snippet(snippet);
+        return;
+    }
+    
+    /* 历史项 */
     const history = getTargetHistory(e.target)
     if (history) {
         if (fn_history) fn_history(history.path, history.id);
         return;
     }
 
-    // 快照项
+    /* 快照项 */
     const snapshot = getTargetSnapshotDoc(e.target)
     if (snapshot) {
         if (fn_snapshot) fn_snapshot(snapshot.diff, snapshot.id, snapshot.id2);
         return;
     }
 
-    // 收集箱
+    /* 收集箱 */
     const inbox = getTargetInboxID(e.target);
     if (inbox) {
         for (const dock of ['leftDock', 'rightDock', 'topDock', 'bottomDock']) {
@@ -471,6 +479,28 @@ setTimeout(async () => {
                                     };
                                     if (diff) urlParams.id2 = id2;
 
+                                    window.theme.openNewWindow(
+                                        'editor',
+                                        undefined,
+                                        urlParams,
+                                        config.theme.window.windowParams,
+                                        config.theme.window.menu.template,
+                                        config.theme.window.open.editor.path.index,
+                                    );
+                                },
+                                async snippet => { 
+                                    /* 编辑代码片段 */
+                                    const urlParams = {
+                                        id: snippet,
+                                        mode: 'snippet',
+                                        url: encodeURI(`${window.siyuan.config.system.workspaceDir}/data/snippets/conf.json`.replaceAll('\\', '/')),
+                                        lang: window.theme.languageMode,
+                                        // theme: window.siyuan.config.appearance.mode,
+                                        fontFamily: encodeURI(window.siyuan.config.editor.fontFamily),
+                                        tabSize: window.siyuan.config.editor.codeTabSpaces,
+                                        // workspace: window.siyuan.config.system.workspaceDir,
+                                    };
+    
                                     window.theme.openNewWindow(
                                         'editor',
                                         undefined,

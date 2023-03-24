@@ -13,6 +13,7 @@ export {
     getTargetBlock, // 获得目标的块
     getTargetBlockID, // 获得目标的块 ID
     getTargetBlockIndex, // 获得目标的块在文档中的索引
+    getTargetSnippetID, // 获得目标的代码片段 ID
     getTargetInboxID, // 获得目标的收件箱 ID
     getTargetHistory, // 获得目标的历史文档路径与 ID
     getTargetSnapshotDoc, // 获得目标的快照文档 ID
@@ -294,6 +295,24 @@ async function getTargetBlockIndex(target) {
 }
 
 /**
+ * 获得目标的代码片段 ID
+ * @params {HTMLElement} target: 目标
+ * @return {string} 代码片段 ID
+ * @return {null} 没有找到代码片段
+ */
+function getTargetSnippetID(target) {
+    let element = target;
+    if (element?.localName === 'textarea'
+        && element?.classList.contains('b3-text-field')
+        && config.theme.regs.id.test(element?.parentElement.dataset.id)
+        && ['css', 'js'].includes(element?.parentElement.dataset.type)
+    ) {
+        return element.parentElement.dataset.id;
+    }
+    else return null;
+}
+
+/**
  * 获得目标的收集箱 ID
  * @params {HTMLElement} target: 目标
  * @return {string} 收集箱 ID
@@ -301,7 +320,6 @@ async function getTargetBlockIndex(target) {
  */
 function getTargetInboxID(target) {
     let element = target;
-    let rag = /^\d{13}$/
     while (element != null && !config.theme.regs.inboxid.test(element.dataset.id)) element = element.parentElement;
 
     if (element != null) {

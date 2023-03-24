@@ -2,6 +2,7 @@
 
 export {
     request,
+
     version,
     getConf,
     getNotebookConf,
@@ -15,6 +16,9 @@ export {
     openRepoSnapshotDoc,
     getBlockDomByID,
     getDoc,
+    getSnippet,
+    setSnippet,
+
     getAsset,
     getLocalFile,
     getFile,
@@ -111,6 +115,19 @@ async function getDoc(id, mode = 0, size = 2147483647) {
         id,
         mode,
         size,
+    });
+}
+
+async function getSnippet(type = 'all', enabled = 2) {
+    return request('/api/snippet/getSnippet', {
+        type,
+        enabled,
+    });
+}
+
+async function setSnippet(snippets = []) {
+    return request('/api/snippet/setSnippet', {
+        snippets,
     });
 }
 
