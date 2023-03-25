@@ -4,11 +4,13 @@
   /* PDF 引用导出样式 */
   background-image: url(/appearance/themes/Dark+/icon/pdf-page.svg);
 }
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=file-annotation-ref],
 .sy__outline [data-node-id] span[data-type~=file-annotation-ref],
 .protyle-wysiwyg [data-node-id] span[data-type~=file-annotation-ref] {
   /* PDF 引用链接样式 */
   color: var(--custom-span-file-ref-color);
 }
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=file-annotation-ref]::before,
 .sy__outline [data-node-id] span[data-type~=file-annotation-ref]::before,
 .protyle-wysiwyg [data-node-id] span[data-type~=file-annotation-ref]::before {
   /* 超链接前标志 */
@@ -24,6 +26,7 @@
   margin: 0.125em 0.125em -0.125em 0;
   padding: 0;
 }
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=file-annotation-ref]:hover,
 .sy__outline [data-node-id] span[data-type~=file-annotation-ref]:hover,
 .protyle-wysiwyg [data-node-id] span[data-type~=file-annotation-ref]:hover {
   /* PDF 引用链接鼠标悬浮 */

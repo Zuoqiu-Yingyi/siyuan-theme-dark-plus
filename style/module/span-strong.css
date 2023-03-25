@@ -1,7 +1,9 @@
 /* 粗体样式 */
+#sidebar [data-type="sidebar-outline"] [data-node-id] strong,
 .sy__outline [data-node-id] strong,
 .protyle-wysiwyg [data-node-id] strong,
 .b3-typography strong,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=strong],
 .sy__outline [data-node-id] span[data-type~=strong],
 .protyle-wysiwyg [data-node-id] span[data-type~=strong],
 .b3-typography span[data-type~=strong] {

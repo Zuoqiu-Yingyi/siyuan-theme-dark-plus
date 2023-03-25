@@ -1,7 +1,9 @@
 /* 键盘样式 */
+#sidebar [data-type="sidebar-outline"] [data-node-id] kbd,
 .sy__outline [data-node-id] kbd,
 .protyle-wysiwyg [data-node-id] kbd,
 .b3-typography kbd,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=kbd],
 .sy__outline [data-node-id] span[data-type~=kbd],
 .protyle-wysiwyg [data-node-id] span[data-type~=kbd],
 .b3-typography span[data-type~=kbd] {
@@ -11,6 +13,7 @@
   padding: 0 0.125em;
   border-width: 0.125em;
 }
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=kbd],
 .sy__outline [data-node-id] span[data-type~=kbd] {
   color: var(--b3-theme-on-surface);
   background-color: var(--b3-theme-surface);

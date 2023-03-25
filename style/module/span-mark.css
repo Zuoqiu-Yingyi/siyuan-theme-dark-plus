@@ -1,7 +1,9 @@
 /* 标记(挖空) */
+#sidebar [data-type="sidebar-outline"] [data-node-id] mark:not([style]),
 .sy__outline [data-node-id] mark:not([style]),
 .protyle-wysiwyg [data-node-id] mark:not([style]),
 .b3-typography mark:not([style]),
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=mark]:not([style]),
 .sy__outline [data-node-id] span[data-type~=mark]:not([style]),
 .protyle-wysiwyg [data-node-id] span[data-type~=mark]:not([style]),
 .b3-typography span[data-type~=mark]:not([style]) {
