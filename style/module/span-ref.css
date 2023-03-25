@@ -1,8 +1,10 @@
 /* 块引用 */
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref],
 .sy__outline [data-node-id] span[data-type~=block-ref],
 .protyle-wysiwyg [data-node-id] span[data-type~=block-ref] {
   color: var(--custom-span-block-ref-color);
 }
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]::before,
 .sy__outline [data-node-id] span[data-type~=block-ref]::before,
 .protyle-wysiwyg [data-node-id] span[data-type~=block-ref]::before {
   /*前半部分的符号*/
@@ -14,6 +16,7 @@
   width: 0.5em;
   text-align: center;
 }
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]::after,
 .sy__outline [data-node-id] span[data-type~=block-ref]::after,
 .protyle-wysiwyg [data-node-id] span[data-type~=block-ref]::after {
   /*后半部分的符号*/
@@ -28,6 +31,7 @@
   /* text-align: left; */
   text-align: center;
 }
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]:hover,
 .sy__outline [data-node-id] span[data-type~=block-ref]:hover,
 .protyle-wysiwyg [data-node-id] span[data-type~=block-ref]:hover {
   padding-bottom: 2px;

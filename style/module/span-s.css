@@ -1,13 +1,16 @@
 /* 删除文字样式 */
+#sidebar [data-type="sidebar-outline"] [data-node-id] s,
 .sy__outline [data-node-id] s,
 .protyle-wysiwyg [data-node-id] s,
 .b3-typography s,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=s],
 .sy__outline [data-node-id] span[data-type~=s],
 .protyle-wysiwyg [data-node-id] span[data-type~=s],
 .b3-typography span[data-type~=s] {
   color: inherit;
   opacity: 75%;
 }
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=s],
 .sy__outline [data-node-id] span[data-type~=s] {
   text-decoration: line-through;
 }

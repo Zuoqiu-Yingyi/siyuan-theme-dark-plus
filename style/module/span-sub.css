@@ -1,4 +1,5 @@
 /* 下标 */
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=sub],
 .sy__outline [data-node-id] span[data-type~=sub] {
   position: relative;
   bottom: -0.25em;
