@@ -4,6 +4,8 @@
 - 完善在新窗口打开 Monaco 编辑器功能的文档 | Improve the documentation of the function of opening Monaco editor in a new window.
 - 统一移动端正文与大纲的行内元素样式 | Unify the style of inline element for main body and outline on the mobile client.
 - 调整移动端侧边面板树缩进 | Adjust the indentation of the tree in the sidebar panel on the mobile client.
+- 调整部分按钮控件样式 | Adjust the style of some button controls.
+  - Adapt: [Issue #7756 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/7756)
 
 ## v1.7.4/2023-03-21
 

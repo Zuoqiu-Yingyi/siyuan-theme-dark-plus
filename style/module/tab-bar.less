@@ -61,9 +61,9 @@
 
             &:hover {
                 svg {
-                    /* 页签项关闭图标 */
-                    color: var(--b3-theme-surface);
-                    background-color: var(--b3-theme-on-surface);
+                    /* 鼠标悬浮页签项关闭图标 */
+                    // color: var(--b3-theme-surface);
+                    // background-color: var(--b3-theme-on-surface);
                 }
             }
         }
@@ -123,8 +123,12 @@
         }
 
         &.item--readonly {
-            /* 移除控件内边距 */
+            /* 页签栏控件 */
             padding: 0;
+
+            .block__icon {
+                margin: 0 4px;
+            }
         }
     }
 
