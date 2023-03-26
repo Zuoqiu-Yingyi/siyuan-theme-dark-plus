@@ -2510,6 +2510,13 @@ const config = {
                                 type: {
                                     NodeTable: { enable: true },
                                 },
+                                mode: "separator",
+                            },
+                            {
+                                enable: true,
+                                type: {
+                                    NodeTable: { enable: true },
+                                },
                                 mode: "button",
                                 icon: "#iconFullscreen",
                                 label: {

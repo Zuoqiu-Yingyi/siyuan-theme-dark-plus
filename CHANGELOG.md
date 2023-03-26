@@ -8,6 +8,7 @@
   - Adapt: [Issue #7756 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/7756)
 - 调整移动端菜单样式 | Adjust the style of the menu on the mobile client.
   - Adapt: [Issue #7520 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/7520)
+- 优化附加块菜单 | Optimize the additional block menu.
 
 ## v1.7.4/2023-03-21
 
