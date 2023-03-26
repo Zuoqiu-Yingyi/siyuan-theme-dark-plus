@@ -69,7 +69,7 @@ function blockMenuCallback(mutationList, observer) {
         ) {
             // 块菜单添加
             // console.log(mutation);
-            const block = getBlockSelected() || block_mark || null;
+            const block = block_mark || getBlockSelected() || null;
             if (block) {
                 const items = menuInit(
                     config.theme.menu.block.items,
