@@ -6,6 +6,8 @@
 - 调整移动端侧边面板树缩进 | Adjust the indentation of the tree in the sidebar panel on the mobile client.
 - 调整部分按钮控件样式 | Adjust the style of some button controls.
   - Adapt: [Issue #7756 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/7756)
+- 调整移动端菜单样式 | Adjust the style of the menu on the mobile client.
+  - Adapt: [Issue #7520 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/7520)
 
 ## v1.7.4/2023-03-21
 

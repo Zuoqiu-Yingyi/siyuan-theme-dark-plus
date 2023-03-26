@@ -2,7 +2,7 @@
 .b3-menu {
   background-color: var(--custom-popover-function-menu-background-color);
 }
-.b3-menu:not(#menu) {
+.b3-menu:not(.b3-menu--fullscreen) {
   padding: var(--custom-popover-menu-padding-width);
 }
 .b3-menu .b3-menu__item {
