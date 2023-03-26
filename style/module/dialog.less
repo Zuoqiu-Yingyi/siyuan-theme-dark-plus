@@ -64,8 +64,8 @@
 
         &:hover {
             /* 关闭按钮 */
-            color: var(--b3-theme-surface);
-            background-color: var(--b3-theme-on-surface);
+            // color: var(--b3-theme-surface);
+            // background-color: var(--b3-theme-on-surface);
         }
     }
 
@@ -91,6 +91,12 @@
 
     .fn__flex-column {
         border-radius: inherit;
+
+        // 搜索命名查询栏
+        #criteria {
+            background-color: transparent !important;
+            border-bottom: 1px solid var(--b3-theme-surface-lighter);
+        }
 
         // 搜索内容输入框
         .search__header {

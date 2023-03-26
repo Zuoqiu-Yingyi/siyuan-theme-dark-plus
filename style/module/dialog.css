@@ -25,8 +25,6 @@
 }
 .b3-dialog__container > .b3-dialog__close:hover {
   /* 关闭按钮 */
-  color: var(--b3-theme-surface);
-  background-color: var(--b3-theme-on-surface);
 }
 .b3-dialog__container > .b3-dialog__header {
   background-color: var(--custom-dialog-background-color);
@@ -43,6 +41,10 @@
 }
 .b3-dialog__container .fn__flex-column {
   border-radius: inherit;
+}
+.b3-dialog__container .fn__flex-column #criteria {
+  background-color: transparent !important;
+  border-bottom: 1px solid var(--b3-theme-surface-lighter);
 }
 .b3-dialog__container .fn__flex-column .search__header,
 .b3-dialog__container .fn__flex-column .search__header > input {
