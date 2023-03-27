@@ -12,6 +12,20 @@ window.theme = {
         iconDefaultScript: document.getElementById('iconDefaultScript'),
         iconScript: document.getElementById('iconScript'),
     },
+    // REF https://developer.mozilla.org/zh-CN/docs/Web/API/MouseEvent
+    coords: { // 鼠标坐标
+        screenX: undefined, // 鼠标指针相对于全局（屏幕）的 X 坐标
+        screenY: undefined, // 鼠标指针相对于全局（屏幕）的 Y 坐标
+
+        pageX: undefined, // 鼠标指针相对于整个文档的 X 坐标
+        pageY: undefined, // 鼠标指针相对于整个文档的 Y 坐标
+
+        offsetX: undefined, // 鼠标指针相对于目标节点内边位置的 X 坐标
+        offsetY: undefined, // 鼠标指针相对于目标节点内边位置的 Y 坐标
+
+        movementX: undefined, // 鼠标指针相对于最后 mousemove 事件位置的 X 坐标
+        movementY: undefined, // 鼠标指针相对于最后 mousemove 事件位置的 Y 坐标
+    },
 };
 
 /**

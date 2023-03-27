@@ -92,3 +92,22 @@ class EventHandler {
 }
 
 const globalEventHandler = new EventHandler();
+
+/* 更新鼠标坐标 */
+function updateMouseCoords(e) {
+    window.theme.coords = {
+        screenX: e.screenX,
+        screenY: e.screenY,
+        pageX: e.pageX,
+        pageY: e.pageY,
+        offsetX: e.offsetX,
+        offsetY: e.offsetY,
+        movementX: e.movementX,
+        movementY: e.movementY,
+    };
+}
+
+globalEventHandler.addEventHandler('click', null, updateMouseCoords);
+globalEventHandler.addEventHandler('dblclick', null, updateMouseCoords);
+globalEventHandler.addEventHandler('mouseup', null, updateMouseCoords);
+globalEventHandler.addEventHandler('mousedown', null, updateMouseCoords);
