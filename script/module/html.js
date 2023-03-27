@@ -99,6 +99,12 @@ window.theme.openNewWindow = function (
         // 优化思源内部 URL
         url = window.theme.urlFormat(url);
 
+        // 设置窗口位置
+        if (window.theme.coords.screenX && window.theme.coords.screenY) {
+            if (windowParams.x == null) windowParams.x = window.theme.coords.screenX;
+            if (windowParams.y == null) windowParams.x = window.theme.coords.screenY;
+        }
+
         // 设置窗口模式
         if (mode) {
             switch (mode.toLowerCase()) {
@@ -205,6 +211,8 @@ window.theme.openNewWindow = function (
                     popup = true,
                     width = ${windowParams.width},
                     height = ${windowParams.height},
+                    left = ${windowParams.x},
+                    top = ${windowParams.y},
                 `,
             );
             return newWin;

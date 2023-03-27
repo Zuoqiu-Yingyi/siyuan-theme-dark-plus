@@ -64,7 +64,7 @@ async function middleClick(e, fn_id, fn_href = null, fn_inbox = null, fn_history
         if (fn_snippet) fn_snippet(snippet);
         return;
     }
-    
+
     /* 历史项 */
     const history = getTargetHistory(e.target)
     if (history) {
@@ -146,7 +146,12 @@ setTimeout(async () => {
                             const windowParams = merge(
                                 {},
                                 config.theme.window.windowParams,
-                                { alwaysOnTop: false }, // 关闭置顶
+                                {
+                                    width: 1080, // 窗口宽度
+                                    height: 720, // 窗口高度
+                                    center: true, // 居中显示
+                                    alwaysOnTop: false, // 关闭置顶
+                                },
                             );
                             if (config.theme.window.open.panel.url) {
                                 // 打开指定的 URL
@@ -488,7 +493,7 @@ setTimeout(async () => {
                                         config.theme.window.open.editor.path.index,
                                     );
                                 },
-                                async snippet => { 
+                                async snippet => {
                                     /* 编辑代码片段 */
                                     const urlParams = {
                                         id: snippet,
@@ -500,7 +505,7 @@ setTimeout(async () => {
                                         tabSize: window.siyuan.config.editor.codeTabSpaces,
                                         // workspace: window.siyuan.config.system.workspaceDir,
                                     };
-    
+
                                     window.theme.openNewWindow(
                                         'editor',
                                         undefined,
