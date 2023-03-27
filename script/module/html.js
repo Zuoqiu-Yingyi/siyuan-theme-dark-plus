@@ -100,9 +100,9 @@ window.theme.openNewWindow = function (
         url = window.theme.urlFormat(url);
 
         // 设置窗口位置
-        if (window.theme.coords.screenX && window.theme.coords.screenY) {
-            if (windowParams.x == null) windowParams.x = window.theme.coords.screenX;
-            if (windowParams.y == null) windowParams.x = window.theme.coords.screenY;
+        if (window.theme.coords?.screenX && window.theme.coords?.screenY) {
+            windowParams.x = window.theme.coords.screenX;
+            windowParams.y = window.theme.coords.screenY;
         }
 
         // 设置窗口模式
