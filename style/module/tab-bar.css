@@ -47,6 +47,8 @@
 }
 .layout-tab-bar .item .item__close:hover svg {
   /* 鼠标悬浮页签项关闭图标 */
+  color: var(--b3-theme-surface);
+  background-color: var(--b3-theme-on-surface);
 }
 .layout-tab-bar .item.item--focus {
   /* 被选中的页签项 */
