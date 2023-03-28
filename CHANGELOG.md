@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.7.5/2023-03-28
+
+- [v1.7.4 <=> v1.7.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.4...v1.7.5)
 - 新增使用 Monaco 编辑器编辑代码判断功能 | Add the function of using Monaco editor to edit code snippet.
 - 完善在新窗口打开 Monaco 编辑器功能的文档 | Improve the documentation of the function of opening Monaco editor in a new window.
 - 统一移动端正文与大纲的行内元素样式 | Unify the style of inline element for main body and outline on the mobile client.
