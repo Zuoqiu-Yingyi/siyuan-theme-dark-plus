@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 修复导出时的链接图标问题 | Fixed the issue of the hyperlink icon when exporting.
+
 ## v1.7.5/2023-03-28
 
 - [v1.7.4 <=> v1.7.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.4...v1.7.5)
