@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 修复导出时的链接图标问题 | Fixed the issue of the hyperlink icon when exporting.
+- 调整导出预览样式 | Adjust the style of the export preview.
 
 ## v1.7.5/2023-03-28
 

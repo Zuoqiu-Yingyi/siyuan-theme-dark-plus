@@ -78,3 +78,7 @@
   /* 思源聚焦超链接特化 */
   outline: 1px solid var(--custom-span-siyuan-link-color);
 }
+.protyle-wysiwyg a[href^="pdf-outline:"]::before,
+.b3-typography a[href^="pdf-outline:"]::before {
+  display: none;
+}
