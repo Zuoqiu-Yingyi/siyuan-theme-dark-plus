@@ -3,7 +3,7 @@
   background: unset !important;
 }
 #preview {
-  border-right: 1px solid var(--b3-theme-on-surface);
+  border: 1px dashed var(--b3-theme-on-surface);
 }
 #preview.protyle-wysiwyg mark,
 #preview.protyle-wysiwyg span[data-type~=mark],

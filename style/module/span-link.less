@@ -76,5 +76,11 @@
         &[href ^="siyuan:"] {
             .link-siyuan();
         }
+
+        &[href^="pdf-outline:"] {
+            &::before {
+                display: none;
+            }
+        }
     }
 }
