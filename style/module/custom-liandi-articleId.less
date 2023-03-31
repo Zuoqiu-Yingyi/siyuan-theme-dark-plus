@@ -1,0 +1,23 @@
+/* 分享到链滴的文档 */
+
+.protyle-wysiwyg[custom-liandi-articleId] {
+    box-shadow: 0 -0.5em 0.25em -0.25em #D43E2A;
+    // border-top: 0.25em double #D43E2A;
+
+    &::before {
+        content: "";
+
+        width: 1em;
+        height: 1em;
+
+        position: absolute;
+        top: var(--custom-breadcrumb-height);
+        right: 1em;
+        z-index: 1;
+
+        background-image: url(/appearance/themes/Dark+/icon/ld246.ico);
+        background-size: 1em auto;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
