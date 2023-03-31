@@ -8,7 +8,7 @@
     border: 1px solid var(--b3-theme-primary);
     position: absolute;
     top: var(--custom-breadcrumb-height);
-    right: 2rem;
+    right: 1em;
     z-index: 1;
 }
 

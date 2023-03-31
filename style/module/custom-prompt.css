@@ -1,13 +1,11 @@
 /* 文档提示 */
 
-
-/* 显示当前文档阅读进度 */
 .protyle-wysiwyg[custom-prompt]::after {
     content: "\00A0"attr(custom-prompt)"\00A0";
     font-size: 0.75em;
     border: 1px solid var(--b3-theme-secondary);
     position: absolute;
     top: calc(var(--custom-breadcrumb-height) + 2em);
-    right: 2rem;
+    right: 1em;
     z-index: 1;
 }
