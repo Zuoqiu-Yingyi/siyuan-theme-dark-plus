@@ -3,6 +3,7 @@
 - 修复导出时的链接图标问题 | Fixed the issue of the hyperlink icon when exporting.
 - 调整导出预览样式 | Adjust the style of the export preview.
 - 为分享到链滴的文档添加标志 | Add a flag for the document shared to ld246.
+- 调整分享到链滴的文档的样式 | Adjust the style of the document shared to ld246.
 
 ## v1.7.5/2023-03-28
 
