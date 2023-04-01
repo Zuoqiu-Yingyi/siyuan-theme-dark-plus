@@ -4,6 +4,7 @@
 - 调整导出预览样式 | Adjust the style of the export preview.
 - 为分享到链滴的文档添加标志 | Add a flag for the document shared to ld246.
 - 调整分享到链滴的文档的样式 | Adjust the style of the document shared to ld246.
+- 调整被选中的代码块样式 | Adjust the style of the selected code block.
 
 ## v1.7.5/2023-03-28
 
