@@ -97,11 +97,16 @@
 
             >.hljs,
             >.protyle-linenumber__rows {
-                /* 被选中块的样式 */
+                /* 被选中代码块的样式 */
                 background-color: transparent !important;
             }
         }
     }
+}
+
+.protyle-wysiwyg--hl .code-block .hljs {
+    /* 上级块被选中的代码块样式 */
+    background-color: transparent !important;
 }
 
 /* 👆编辑区样式👆 */
