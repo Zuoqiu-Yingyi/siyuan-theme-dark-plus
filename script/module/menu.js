@@ -69,7 +69,14 @@ function blockMenuCallback(mutationList, observer) {
         ) {
             // 块菜单添加
             // console.log(mutation);
-            const block = block_mark || getBlockSelected() || null;
+            const block = (() => {
+                /* 点击文档块块标时可能在文档正文中存在选择的块 */
+                if (block_mark?.type === 'NodeDocument') {
+                    return block_mark;
+                }
+                return getBlockSelected() || block_mark || null;
+            })();
+
             if (block) {
                 const items = menuInit(
                     config.theme.menu.block.items,
@@ -216,6 +223,7 @@ setTimeout(() => {
                     null,
                     e => {
                         block_mark = getBlockMark(e.target);
+                        // console.log(block_mark);
                     },
                 );
             }
