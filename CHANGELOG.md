@@ -7,6 +7,8 @@
 - 调整被选中的代码块样式 | Adjust the style of the selected code block.
 - 添加 `android.com` 链接图标 | Add the hyperlink icon for `android.com`.
 - 添加 `android.google.cn` 链接图标 | Add the hyperlink icon for `android.google.cn`.
+- 兼容闪卡标记制卡功能开关 | Compatible with the switch of the card marking function of flash card.
+  - Adapt: [Issue #7794 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/7794)
 
 ## v1.7.5/2023-03-28
 
