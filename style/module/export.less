@@ -2,10 +2,14 @@
 
 #action {
     background: unset !important;
+
+    +#preview {
+        /* 仅导出预览界面的样式 */
+        border: 1px dashed var(--b3-theme-on-surface);
+    }
 }
 
 #preview {
-    border: 1px dashed var(--b3-theme-on-surface);
 
     // 导出时显示高亮内容
     &.protyle-wysiwyg {
