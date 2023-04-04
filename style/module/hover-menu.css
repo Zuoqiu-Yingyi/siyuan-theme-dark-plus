@@ -25,8 +25,6 @@
 }
 .b3-menu .b3-menu__item .b3-menu__action:hover {
   /* 菜单按钮控件 */
-  color: var(--b3-theme-surface);
-  background-color: var(--b3-theme-on-surface);
 }
 .b3-menu .b3-menu__item .b3-menu__icon.fn__a {
   width: 8px;
