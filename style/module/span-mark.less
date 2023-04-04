@@ -26,9 +26,9 @@
         span[data-type~=mark] {
             transition: all 200ms linear 0ms;
 
-            // 闪卡挖空隐藏样式
-            .b3-dialog__cardblock.b3-dialog__cardblock--hide &,
-            // 鼠标未悬浮样式
+            // 启用标记制卡
+            .card__block.card__block--hidemark &,
+            // 鼠标未悬浮
             &:not(:hover) {
                 color: transparent;
 
@@ -37,10 +37,10 @@
                 }
             }
 
-            // 闪卡挖空显示样式
-            .card__block:not(.card__block--hide) &,
-            // 闪卡挖空鼠标悬浮样式
-            .card__block.card__block--hide &:hover {
+            // 未启用标记制卡 / 启用标记制卡后显示
+            .card__block:not(.card__block--hidemark) &,
+            // 启用标记制卡 & 鼠标悬浮
+            .card__block.card__block--hidemark &:hover {
                 &:not([style]) {
                     color: var(--custom-span-mark-color) !important;
                     // background-color: transparent;

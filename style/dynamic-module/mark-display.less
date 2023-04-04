@@ -3,27 +3,20 @@
 @import (reference) "./../utils/loop-font-color.less";
 
 .protyle-wysiwyg {
+    [data-node-id] {
 
-    mark,
-    span[data-type~=mark] {
+        mark,
+        span[data-type~=mark] {
 
-        &,
-        &:hover,
-        &:not(:hover) {
-            &:not([style]) {
-                color: var(--custom-span-mark-color) !important;
+            &,
+            &:hover,
+            &:not(:hover) {
+                &:not([style]) {
+                    color: var(--custom-span-mark-color) !important;
+                }
+
+                .loop-font-color(13);
             }
-
-            .loop-font-color(13);
         }
-    }
-}
-
-// 闪卡强制显示挖空内容
-.protyle.b3-dialog__cardblock {
-
-    &:not(.b3-dialog__cardblock--hide),
-    &.b3-dialog__cardblock--hide {
-        &:extend(.protyle-wysiwyg all);
     }
 }

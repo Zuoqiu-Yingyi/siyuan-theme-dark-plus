@@ -14,99 +14,99 @@
 .protyle-wysiwyg [data-node-id] span[data-type~=mark] {
   transition: all 200ms linear 0ms;
 }
-.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg [data-node-id] mark,
-.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg [data-node-id] span[data-type~=mark],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] mark,
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] span[data-type~=mark],
 .protyle-wysiwyg [data-node-id] mark:not(:hover),
 .protyle-wysiwyg [data-node-id] span[data-type~=mark]:not(:hover) {
   color: transparent;
 }
-.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg [data-node-id] mark[style],
-.b3-dialog__cardblock.b3-dialog__cardblock--hide .protyle-wysiwyg [data-node-id] span[data-type~=mark][style],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] mark[style],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] span[data-type~=mark][style],
 .protyle-wysiwyg [data-node-id] mark:not(:hover)[style],
 .protyle-wysiwyg [data-node-id] span[data-type~=mark]:not(:hover)[style] {
   color: transparent !important;
 }
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] mark:not([style]),
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] span[data-type~=mark]:not([style]),
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] mark:hover:not([style]),
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover:not([style]) {
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] mark:not([style]),
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] span[data-type~=mark]:not([style]),
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] mark:hover:not([style]),
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover:not([style]) {
   color: var(--custom-span-mark-color) !important;
 }
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color1)"],
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color1)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color1)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color1)"] {
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color1)"],
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color1)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color1)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color1)"] {
   color: var(--b3-font-color1) !important;
 }
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color2)"],
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color2)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color2)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color2)"] {
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color2)"],
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color2)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color2)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color2)"] {
   color: var(--b3-font-color2) !important;
 }
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color3)"],
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color3)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color3)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color3)"] {
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color3)"],
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color3)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color3)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color3)"] {
   color: var(--b3-font-color3) !important;
 }
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color4)"],
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color4)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color4)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color4)"] {
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color4)"],
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color4)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color4)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color4)"] {
   color: var(--b3-font-color4) !important;
 }
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color5)"],
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color5)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color5)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color5)"] {
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color5)"],
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color5)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color5)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color5)"] {
   color: var(--b3-font-color5) !important;
 }
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color6)"],
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color6)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color6)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color6)"] {
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color6)"],
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color6)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color6)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color6)"] {
   color: var(--b3-font-color6) !important;
 }
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color7)"],
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color7)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color7)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color7)"] {
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color7)"],
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color7)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color7)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color7)"] {
   color: var(--b3-font-color7) !important;
 }
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color8)"],
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color8)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color8)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color8)"] {
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color8)"],
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color8)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color8)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color8)"] {
   color: var(--b3-font-color8) !important;
 }
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color9)"],
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color9)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color9)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color9)"] {
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color9)"],
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color9)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color9)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color9)"] {
   color: var(--b3-font-color9) !important;
 }
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color10)"],
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color10)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color10)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color10)"] {
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color10)"],
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color10)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color10)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color10)"] {
   color: var(--b3-font-color10) !important;
 }
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color11)"],
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color11)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color11)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color11)"] {
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color11)"],
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color11)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color11)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color11)"] {
   color: var(--b3-font-color11) !important;
 }
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color12)"],
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color12)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color12)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color12)"] {
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color12)"],
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color12)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color12)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color12)"] {
   color: var(--b3-font-color12) !important;
 }
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color13)"],
-.card__block:not(.card__block--hide) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color13)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color13)"],
-.card__block.card__block--hide .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color13)"] {
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] mark[style*="color: var(--b3-font-color13)"],
+.card__block:not(.card__block--hidemark) .protyle-wysiwyg [data-node-id] span[data-type~=mark][style*="color: var(--b3-font-color13)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] mark:hover[style*="color: var(--b3-font-color13)"],
+.card__block.card__block--hidemark .protyle-wysiwyg [data-node-id] span[data-type~=mark]:hover[style*="color: var(--b3-font-color13)"] {
   color: var(--b3-font-color13) !important;
 }
