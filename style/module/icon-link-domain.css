@@ -2,6 +2,7 @@
 /* REF https://github.com/Achuan-2/siyuan-themes-tsundoku-dark/blob/c1362a39693703481c8acd3efab67eb390bb789a/theme.css#L2080 */
 /* -------------------------------- domain -------------------------------- */
 /* 回退到协议 */
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href^="//"]::before,
 .sy__outline [data-node-id] span[data-type~=a][data-href^="//"]::before,
 .protyle-wysiwyg [data-node-id] span[data-type~=a][data-href^="//"]::before {
   background-image: url(/appearance/themes/Dark+/icon/http.svg);
@@ -10,6 +11,7 @@
 .b3-typography a[href^="//"]::before {
   background-image: url(/appearance/themes/Dark+/icon/http.svg);
 }
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href^="http:"]::before,
 .sy__outline [data-node-id] span[data-type~=a][data-href^="http:"]::before,
 .protyle-wysiwyg [data-node-id] span[data-type~=a][data-href^="http:"]::before {
   background-image: url(/appearance/themes/Dark+/icon/http.svg);
@@ -18,6 +20,7 @@
 .b3-typography a[href^="http:"]::before {
   background-image: url(/appearance/themes/Dark+/icon/http.svg);
 }
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href^="https:"]::before,
 .sy__outline [data-node-id] span[data-type~=a][data-href^="https:"]::before,
 .protyle-wysiwyg [data-node-id] span[data-type~=a][data-href^="https:"]::before {
   background-image: url(/appearance/themes/Dark+/icon/https.svg);
@@ -154,6 +157,22 @@
 .protyle-wysiwyg a[href*=".amazon.com"]::before,
 .b3-typography a[href*=".amazon.com"]::before {
   background-image: url(/appearance/themes/Dark+/icon/amazon.ico);
+}
+.sy__outline [data-node-id] span[data-type~=a][data-href*="/android.com"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href*="/android.com"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/android.png);
+}
+.protyle-wysiwyg a[href*="/android.com"]::before,
+.b3-typography a[href*="/android.com"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/android.png);
+}
+.sy__outline [data-node-id] span[data-type~=a][data-href*=".android.com"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href*=".android.com"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/android.png);
+}
+.protyle-wysiwyg a[href*=".android.com"]::before,
+.b3-typography a[href*=".android.com"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/android.png);
 }
 .sy__outline [data-node-id] span[data-type~=a][data-href*="/baidu.com"]::before,
 .protyle-wysiwyg [data-node-id] span[data-type~=a][data-href*="/baidu.com"]::before {
