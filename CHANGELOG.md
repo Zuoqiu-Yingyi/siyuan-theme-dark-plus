@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.7.6/2023-03-28
+
+- [v1.7.5 <=> v1.7.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.5...v1.7.6)
 - 修复导出时的链接图标问题 | Fixed the issue of the hyperlink icon when exporting.
 - 调整导出预览样式 | Adjust the style of the export preview.
 - 为分享到链滴的文档添加标志 | Add a flag for the document shared to ld246.
