@@ -6,6 +6,7 @@
 - 调整分享到链滴的文档的样式 | Adjust the style of the document shared to ld246.
 - 调整被选中的代码块样式 | Adjust the style of the selected code block.
 - 添加 `android.com` 链接图标 | Add the hyperlink icon for `android.com`.
+- 添加 `android.google.cn` 链接图标 | Add the hyperlink icon for `android.google.cn`.
 
 ## v1.7.5/2023-03-28
 
