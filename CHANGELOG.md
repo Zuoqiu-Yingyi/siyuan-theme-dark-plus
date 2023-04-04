@@ -11,6 +11,7 @@
   - Adapt: [Issue #7794 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/7794)
 - 修复附加块菜单绑定的块 ID 问题 | Fixed the issue of the block ID bound to the additional block menu.
 - 调整菜单按钮控件样式 | Adjust the style of the menu button control.
+- 调整 PDF 导出样式 | Adjust the style of the PDF export.
 
 ## v1.7.5/2023-03-28
 
