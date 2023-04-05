@@ -1,6 +1,8 @@
 # 更改日志 | CHANGE LOG
 
-## v1.7.6/2023-03-28
+- 调整移动端侧边面板树缩进 | Adjust the indentation of the tree in the sidebar panel on the mobile client.
+
+## v1.7.6/2023-04-05
 
 - [v1.7.5 <=> v1.7.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.5...v1.7.6)
 - 修复导出时的链接图标问题 | Fixed the issue of the hyperlink icon when exporting.
