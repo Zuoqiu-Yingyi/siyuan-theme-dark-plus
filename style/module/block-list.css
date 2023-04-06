@@ -62,7 +62,18 @@
   height: calc(100% - 8px - 1em) !important;
 }
 .protyle-wysiwyg [data-node-id].li.protyle-task--done > [data-node-id].p {
+  /* 移除删除线默认样式 */
+  color: currentColor;
+  text-decoration: initial;
+}
+.protyle-wysiwyg [data-node-id].li.protyle-task--done > [data-node-id].h1 [contenteditable][spellcheck],
+.protyle-wysiwyg [data-node-id].li.protyle-task--done > [data-node-id].h2 [contenteditable][spellcheck],
+.protyle-wysiwyg [data-node-id].li.protyle-task--done > [data-node-id].h3 [contenteditable][spellcheck],
+.protyle-wysiwyg [data-node-id].li.protyle-task--done > [data-node-id].h4 [contenteditable][spellcheck],
+.protyle-wysiwyg [data-node-id].li.protyle-task--done > [data-node-id].h5 [contenteditable][spellcheck],
+.protyle-wysiwyg [data-node-id].li.protyle-task--done > [data-node-id].h6 [contenteditable][spellcheck],
+.protyle-wysiwyg [data-node-id].li.protyle-task--done > [data-node-id].p [contenteditable][spellcheck] {
   /* 已完成任务列表项删除线 */
-  text-decoration: line-through var(--custom-list-task-done-color);
-  color: var(--custom-list-task-done-color);
+  text-decoration: var(--custom-list-task-done-text-decoration);
+  opacity: var(--custom-list-task-done-opacity);
 }
