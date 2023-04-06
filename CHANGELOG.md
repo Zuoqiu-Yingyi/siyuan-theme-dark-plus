@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 调整移动端侧边面板树缩进 | Adjust the indentation of the tree in the sidebar panel on the mobile client.
+- 调整已完成任务列表项样式 | Adjust the style of the completed task list item.
 
 ## v1.7.6/2023-04-05
 

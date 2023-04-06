@@ -85,11 +85,30 @@
         }
 
         &.protyle-task--done {
-            >[data-node-id].p {
-                /* 已完成任务列表项删除线 */
-                text-decoration: line-through var(--custom-list-task-done-color);
-                color: var(--custom-list-task-done-color);
+            >[data-node-id] {
+
+                &.p {
+                    /* 移除删除线默认样式 */
+                    // color: var(--b3-theme-on-surface-light);
+                    color: currentColor;
+                    text-decoration: initial;
+                }
+
+                &.h1,
+                &.h2,
+                &.h3,
+                &.h4,
+                &.h5,
+                &.h6,
+                &.p {
+                    [contenteditable][spellcheck] {
+                        /* 已完成任务列表项删除线 */
+                        text-decoration: var(--custom-list-task-done-text-decoration);
+                        opacity: var(--custom-list-task-done-opacity);
+                    }
+                }
             }
+
         }
     }
 }
