@@ -1445,7 +1445,7 @@ const config = {
                                 case window.location.host === 'localhost':
                                 case window.location.host.endsWith('.localhost'):
                                 case window.location.host === '[::1]':
-                                case /127\.\d{1, 3}\.\d{1, 3}\.\d{1, 3}/.test(window.location.host):
+                                case /127\.\d{1,3}\.\d{1,3}\.\d{1,3}/.test(window.location.host):
                                     /* 环回地址关闭分享 */
                                     return false;
                                 default:
