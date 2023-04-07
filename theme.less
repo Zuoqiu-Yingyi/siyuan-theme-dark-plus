@@ -1,0 +1,154 @@
+@theme-version: "1.7.6"; // 主题版本号
+
+// 模块导入
+.import-module(@pathname, @version: @theme-version) {
+    @import (css) url("@{pathname}?v=@{version}");
+}
+
+// 模块批量导入
+.import-modules(@urls, @version: @theme-version) {
+    each(@urls, {
+        .import-module(@value, @version);
+    });
+}
+
+/* 引入各配置模块 */
+/* 边栏 */
+.import-module("/appearance/themes/Dark+/style/module/bar.css");
+
+/* 块级元素 */
+.import-module("/appearance/themes/Dark+/style/module/block-code.css");
+.import-module("/appearance/themes/Dark+/style/module/block-echarts.css");
+.import-module("/appearance/themes/Dark+/style/module/block-embed.css");
+.import-module("/appearance/themes/Dark+/style/module/block-heading.css");
+.import-module("/appearance/themes/Dark+/style/module/block-hr.css");
+.import-module("/appearance/themes/Dark+/style/module/block-iframe.css");
+.import-module("/appearance/themes/Dark+/style/module/block-list.css");
+.import-module("/appearance/themes/Dark+/style/module/block-mindmap.css");
+.import-module("/appearance/themes/Dark+/style/module/block-quote.css");
+.import-module("/appearance/themes/Dark+/style/module/block-super.css");
+.import-module("/appearance/themes/Dark+/style/module/block-table.css");
+
+.import-module("/appearance/themes/Dark+/style/module/block.css");
+
+/* 面包屑 */
+.import-module("/appearance/themes/Dark+/style/module/breadcrumb.css");
+
+/* 自定义属性 */
+.import-module("/appearance/themes/Dark+/style/module/custom-auto-num-f.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-auto-num-h.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-auto-num-t.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-board-kanban.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-font-family.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-liandi-articleId.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-location.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-mark-display.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-position.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-prompt.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-render-danmaku.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-render-invert.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-render-scroll.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-riff-decks.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-render.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-table-width.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-time.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-title.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-type-board.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-type-map.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-type-table.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-type-title.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-width.css");
+.import-module("/appearance/themes/Dark+/style/module/custom-writing-mode.css");
+
+/* 对话框元素 */
+.import-module("/appearance/themes/Dark+/style/module/dialog.css");
+
+/* 折叠 */
+.import-module("/appearance/themes/Dark+/style/module/fold.css");
+
+/* 空白页面与空白行 */
+.import-module("/appearance/themes/Dark+/style/module/empty.css");
+
+/* 导出面板 */
+.import-module("/appearance/themes/Dark+/style/module/export.css");
+
+/* 全屏 */
+.import-module("/appearance/themes/Dark+/style/module/fullscreen.css");
+
+/* 全局 */
+.import-module("/appearance/themes/Dark+/style/module/global.css");
+
+/* 悬浮元素 */
+.import-module("/appearance/themes/Dark+/style/module/hover-preview.css");
+.import-module("/appearance/themes/Dark+/style/module/hover-menu.css");
+.import-module("/appearance/themes/Dark+/style/module/hover-textarea.css");
+
+/* 图标 */
+.import-module("/appearance/themes/Dark+/style/module/icon-link-domain.css");
+.import-module("/appearance/themes/Dark+/style/module/icon-link.css");
+.import-module("/appearance/themes/Dark+/style/module/icon-zoom.css");
+.import-module("/appearance/themes/Dark+/style/module/icon.css");
+
+/* 数学公式 */
+.import-module("/appearance/themes/Dark+/style/module/math.css");
+
+/* 移动端 */
+.import-module("/appearance/themes/Dark+/style/module/mobile.css");
+
+/* 面板 */
+.import-module("/appearance/themes/Dark+/style/module/panel-backlink.css");
+.import-module("/appearance/themes/Dark+/style/module/panel-bookmark.css");
+.import-module("/appearance/themes/Dark+/style/module/panel-editor.css");
+.import-module("/appearance/themes/Dark+/style/module/panel-file.css");
+.import-module("/appearance/themes/Dark+/style/module/panel-graph.css");
+.import-module("/appearance/themes/Dark+/style/module/panel-inbox.css");
+.import-module("/appearance/themes/Dark+/style/module/panel-outline.css");
+.import-module("/appearance/themes/Dark+/style/module/panel-separator.css");
+.import-module("/appearance/themes/Dark+/style/module/panel-tag.css");
+.import-module("/appearance/themes/Dark+/style/module/panel.css");
+
+/* 行内元素 */
+.import-module("/appearance/themes/Dark+/style/module/span-code.css");
+.import-module("/appearance/themes/Dark+/style/module/span-em.css");
+.import-module("/appearance/themes/Dark+/style/module/span-file-annotation-ref.css");
+.import-module("/appearance/themes/Dark+/style/module/span-img.css");
+.import-module("/appearance/themes/Dark+/style/module/span-inline-memo.css");
+.import-module("/appearance/themes/Dark+/style/module/span-kbd.css");
+.import-module("/appearance/themes/Dark+/style/module/span-link.css");
+.import-module("/appearance/themes/Dark+/style/module/span-mark.css");
+.import-module("/appearance/themes/Dark+/style/module/span-ref.css");
+.import-module("/appearance/themes/Dark+/style/module/span-s.css");
+.import-module("/appearance/themes/Dark+/style/module/span-strong.css");
+.import-module("/appearance/themes/Dark+/style/module/span-sub.css");
+.import-module("/appearance/themes/Dark+/style/module/span-sup.css");
+.import-module("/appearance/themes/Dark+/style/module/span-tag.css");
+.import-module("/appearance/themes/Dark+/style/module/span-u.css");
+.import-module("/appearance/themes/Dark+/style/module/span-virtual-ref.css");
+
+/* 底部状态栏 */
+.import-module("/appearance/themes/Dark+/style/module/status-bar.css");
+
+/* 页签栏 */
+.import-module("/appearance/themes/Dark+/style/module/tab-bar.css");
+
+/* 预览窗口 */
+.import-module("/appearance/themes/Dark+/style/module/viewer-image.css");
+
+/* 自定义元素样式 */
+.import-module("/appearance/themes/Dark+/style/module/element.css");
+
+/* 配置文件 */
+.import-module("/appearance/themes/Dark+/style/config/config.css");
+
+/* 明亮主题配色文件 */
+.import-module("/appearance/themes/Dark+/style/config/light.css");
+
+/* 暗黑主题配色文件 */
+.import-module("/appearance/themes/Dark+/style/config/dark.css");
+
+/* 自定义配置文件 */
+.import-module("/widgets/custom.css");
+
+
+/* 其他应用样式配置文件(方便导出时渲染) */
+.import-module("/appearance/themes/Dark+/app/jupyter/css/jupyter.css");
