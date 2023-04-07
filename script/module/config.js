@@ -1439,9 +1439,113 @@ const config = {
                             },
                         ],
                     },
+                    { // 分享设置
+                        enable: (() => {
+                            switch (true) {
+                                case window.location.host === 'localhost':
+                                case window.location.host.endsWith('.localhost'):
+                                case window.location.host === '[::1]':
+                                case /127\.\d{1, 3}\.\d{1, 3}\.\d{1, 3}/.test(window.location.host):
+                                    /* 环回地址关闭分享 */
+                                    return false;
+                                default:
+                                    /* 非环回地址开启分享 */
+                                    return true;
+                            }
+                        })(),
+                        prefixSeparator: true,
+                        suffixSeparator: false,
+                        type: null,
+                        id: 'theme-menu-publish',
+                        mode: "button",
+                        icon: "#iconLanguage",
+                        label: {
+                            zh_CN: "分享",
+                            zh_CHT: "分享",
+                            other: "Share",
+                        },
+                        accelerator: "",
+                        click: { enable: false },
+                        itemsLoad: true, // 是否加载子菜单
+                        itemsIcon: "#iconRight",
+                        items: [
+                            {
+                                enable: true,
+                                type: null,
+                                mode: "button",
+                                icon: "#iconLink",
+                                label: {
+                                    zh_CN: "复制访问链接 (桌面设备)",
+                                    zh_CHT: "複製訪問鏈接 (桌面設備)",
+                                    other: "Copy Access Link (Desktop Device)",
+                                },
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'copy-share-link', // 复制分享链接
+                                            params: {
+                                                focus: false,
+                                                platform: 'desktop',
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: null,
+                                mode: "button",
+                                icon: "#iconLink",
+                                label: {
+                                    zh_CN: "复制访问链接 (移动设备)",
+                                    zh_CHT: "複製訪問鏈接 (移動設備)",
+                                    other: "Copy Access Link (Mobile Device)",
+                                },
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'copy-share-link', // 复制分享链接
+                                            params: {
+                                                focus: false,
+                                                platform: 'mobile',
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                            {
+                                enable: true,
+                                type: null,
+                                mode: "button",
+                                icon: "#iconLink",
+                                label: {
+                                    zh_CN: "复制访问链接 (嵌入网页)",
+                                    zh_CHT: "複製訪問鏈接 (嵌入網頁)",
+                                    other: "Copy Access Link (Embed in Web)",
+                                },
+                                click: {
+                                    enable: true,
+                                    callback: null,
+                                    tasks: [
+                                        {
+                                            type: 'copy-share-link', // 复制分享链接
+                                            params: {
+                                                focus: true,
+                                                platform: 'mobile',
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                        ],
+                    },
                     { // 发布设置
                         enable: false,
-                        prefixSeparator: true,
+                        prefixSeparator: false,
                         suffixSeparator: false,
                         type: {
                             NodeDocument: { enable: true },
