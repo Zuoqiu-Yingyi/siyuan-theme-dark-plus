@@ -29,6 +29,7 @@ import {
 import {
     Iterator,
     fileSelect,
+    copyToClipboard,
 } from './misc.js';
 import { drag } from './drag.js';
 import {
@@ -1057,6 +1058,30 @@ const TASK_HANDLER = {
     /* 全屏显示 iframe 块/挂件块 */
     'full-screen': async (e, id, params) => {
         requestFullscreen(id);
+    },
+    /* 复制分享链接 */
+    'copy-share-link': async (e, id, params) => {
+        const url = new URL(window.location.origin);
+
+        /* 设置块 ID */
+        url.searchParams.set('id', id);
+
+        /* 是否聚焦 */
+        if (params.focus) {
+            url.searchParams.set('focus', 1);
+        }
+
+        /* 平台 */
+        switch (params.platform) {
+            case 'desktop': // 桌面端
+                url.pathname = '/stage/build/desktop';
+                break;
+            case 'mobile': // 移动端
+                url.pathname = '/stage/build/mobile';
+                break;
+        }
+
+        copyToClipboard(url.href);
     },
     /* 显示嵌入块查询结果的路径 */
     // REF [思源笔记渲染 SQL 文档路径代码 - 链滴](https://ld246.com/article/1665129901544)
