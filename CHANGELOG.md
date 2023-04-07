@@ -4,6 +4,7 @@
 - 调整已完成任务列表项样式 | Adjust the style of the completed task list item.
 - 使用 `Less` 重构 `theme.css` | Refactored `theme.css` with `Less`.
 - 新增 `分享` 块菜单项 | Add block menu item `Share`.
+- 调整移动端编辑面板样式 | Adjust the style of the edit panel on the mobile client.
 
 ## v1.7.6/2023-04-05
 

@@ -1,8 +1,7 @@
 /* 移动端优化 */
 /* 移动端编辑区 */
 #editor {
-  background-color: var(--custom-editor-background-color);
-  backdrop-filter: var(--custom-backdrop-filter);
+  margin-bottom: 0 !important;
 }
 /* 移动端工具栏 */
 #keyboardToolbar,
@@ -10,8 +9,9 @@
   background-color: var(--custom-editor-background-color);
 }
 /* 底部控件栏 */
-#keyboardToolbar {
-  z-index: 219;
+/* 底部状态栏 */
+#status {
+  height: initial;
 }
 #sidebar {
   background-color: var(--custom-popover-background-color);
