@@ -491,7 +491,8 @@ function setBlockDOMAttrs(id, attrs) {
 
 /**
  * 设置编辑器字号
- * REF https://github.com/siyuan-note/siyuan/blob/7fbae2f7438a313837218e419468e0b189163c6a/app/src/util/assets.ts#L120-L145
+ * REF https://github.com/siyuan-note/siyuan/blame/dev/app/src/util/assets.ts
+ * @update-date 2022-12-30
  * @param {number} fontSize 字号
  * @return {number} 设置后的字号
  * @return {null} 没有找到字号
@@ -507,7 +508,7 @@ function setFontSize(fontSize) {
 .protyle-wysiwyg [data-node-id].li > .protyle-action ~ .h1, .protyle-wysiwyg [data-node-id].li > .protyle-action ~ .h2, .protyle-wysiwyg [data-node-id].li > .protyle-action ~ .h3, .protyle-wysiwyg [data-node-id].li > .protyle-action ~ .h4, .protyle-wysiwyg [data-node-id].li > .protyle-action ~ .h5, .protyle-wysiwyg [data-node-id].li > .protyle-action ~ .h6 {line-height:${height + 8}px;}
 .protyle-wysiwyg [data-node-id].li > .protyle-action:after {height: ${fontSize}px;width: ${fontSize}px;margin:-${fontSize / 2}px 0 0 -${fontSize / 2}px}
 .protyle-wysiwyg [data-node-id].li > .protyle-action svg {height: ${Math.max(14, fontSize - 8)}px}
-.protyle-wysiwyg [data-node-id] [spellcheck="false"] {min-height:${height}px}
+.protyle-wysiwyg [data-node-id] [spellcheck] {min-height:${height}px}
 .protyle-wysiwyg [data-node-id] {${window.siyuan.config.editor.rtl ? " direction: rtl;" : ""}${window.siyuan.config.editor.justify ? " text-align: justify;" : ""}}
 .protyle-wysiwyg .li {min-height:${height + 8}px}
 .protyle-gutters button svg {height:${height}px}
