@@ -521,7 +521,8 @@ function setFontSize(fontSize) {
 .protyle-wysiwyg .h6 img.emoji, .b3-typography h6 img.emoji {width:${Math.floor(fontSize * 1.25)}px}
 .b3-typography:not(.b3-typography--default), .protyle-wysiwyg, .protyle-title, .protyle-title__input{font-family: "${window.siyuan.config.editor.fontFamily}", "quote", "Helvetica Neue", "Luxi Sans", "DejaVu Sans", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols" !important;}
 `;
-        return parseInt(config.theme.regs.fontsize.exec(style.innerHTML));
+        // return parseInt(config.theme.regs.fontsize.exec(style.innerHTML));
+        return fontSize;
     }
     return null;
 }
