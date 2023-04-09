@@ -1,4 +1,8 @@
 /* 图片样式 */
+.b3-typography span.img,
+.protyle-wysiwyg span.img {
+  white-space: initial;
+}
 .b3-typography span.img:not([style]),
 .protyle-wysiwyg span.img:not([style]) {
   /* 没有调整宽度的图片 */
