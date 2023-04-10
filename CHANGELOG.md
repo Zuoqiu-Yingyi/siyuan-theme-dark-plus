@@ -7,6 +7,7 @@
 - 调整移动端编辑面板样式 | Adjust the style of the edit panel on the mobile client.
 - 兼容鼠标滚轮调整编辑器字号功能 | Compatible with the function of adjusting the editor font size with the mouse wheel.
 - 调整图片样式 | Adjust the style of the picture.
+- 调整深色主题导出为图片的背景颜色 | Adjust the background color of the image exported in the dark theme.
 
 ## v1.7.6/2023-04-05
 
