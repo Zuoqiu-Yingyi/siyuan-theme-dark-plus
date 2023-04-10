@@ -1,3 +1,7 @@
+/* 图片导出对话框 */
+.b3-dialog .b3-dialog__container .b3-dialog__content #preview.export-img {
+  background-color: var(--b3-theme-background);
+}
 /* PDF 导出页面 */
 #action {
   background: unset !important;
