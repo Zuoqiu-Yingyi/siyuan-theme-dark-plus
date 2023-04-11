@@ -13,6 +13,7 @@
 - 调整扩展菜单 | Adjust the extension menu.
 - 修复 `其他字体` 扩展菜单项 | Fixed the extension menu item `Other Fonts`.
 - 调整闪卡复习界面样式 | Adjust the style of the flash card review interface.
+- 调整菜单标题样式 | Adjust the style of the menu title.
 
 ## v1.7.6/2023-04-05
 
