@@ -11,6 +11,7 @@
 - 调整移动端编辑面板样式 | Adjust the style of the edit panel on the mobile client.
 - 调整移动端搜索面板样式 | Adjust the style of the search panel on the mobile client.
 - 调整扩展菜单 | Adjust the extension menu.
+- 修复 `其他字体` 扩展菜单项 | Fixed the extension menu item `Other Fonts`.
 
 ## v1.7.6/2023-04-05
 

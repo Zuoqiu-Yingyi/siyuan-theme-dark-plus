@@ -733,15 +733,19 @@ const TASK_HANDLER = {
         // console.log('attr-replace');
         let old_attrs = await getBlockAttrs(id);
         let new_attrs = {};
+        let changed = false;
         for (let attr of Object.keys(params)) {
             if (old_attrs[attr]) {
                 // 如果属性不为空, 添加到末尾
                 new_attrs[attr] = old_attrs[attr].replace(params[attr].regexp, params[attr].substr);
+                changed = changed || new_attrs[attr] !== old_attrs[attr];
             }
         }
-        if (compareVersion(window.theme.kernelVersion, '2.2.0') < 0)
-            setBlockDOMAttrs(id, new_attrs);
-        setBlockAttrs(id, new_attrs);
+        if (changed) {
+            if (compareVersion(window.theme.kernelVersion, '2.2.0') < 0)
+                setBlockDOMAttrs(id, new_attrs);
+            setBlockAttrs(id, new_attrs);
+        }
     },
     /**
      * 设置属性
