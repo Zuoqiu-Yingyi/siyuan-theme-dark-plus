@@ -307,7 +307,7 @@ body {
 }
 
 /* 闪卡复习对话框 */
-.b3-dialog--open:has(.card__block) {
+.b3-dialog--open:has(.card__block, #cardPreview) {
 
     .b3-dialog__container {
 
@@ -318,7 +318,7 @@ body {
 
         // 无复习内容
         .card__empty {
-            background-color: unset;
+            background-color: transparent;
         }
 
         // 按钮栏

@@ -181,28 +181,28 @@ body > .b3-dialog--open:has(#searchInput) > .b3-dialog > .b3-dialog__container >
   height: 24px;
 }
 /* 闪卡复习对话框 */
-.b3-dialog--open:has(.card__block) .b3-dialog__container .card__block.protyle {
+.b3-dialog--open:has(.card__block, #cardPreview) .b3-dialog__container .card__block.protyle {
   border-bottom: 2px solid var(--b3-border-color);
 }
-.b3-dialog--open:has(.card__block) .b3-dialog__container .card__empty {
-  background-color: unset;
+.b3-dialog--open:has(.card__block, #cardPreview) .b3-dialog__container .card__empty {
+  background-color: transparent;
 }
-.b3-dialog--open:has(.card__block) .b3-dialog__container .card__action > div {
+.b3-dialog--open:has(.card__block, #cardPreview) .b3-dialog__container .card__action > div {
   /* 复习按钮容器 */
   text-align: center;
 }
-.b3-dialog--open:has(.card__block) .b3-dialog__container .card__action > div .b3-button {
+.b3-dialog--open:has(.card__block, #cardPreview) .b3-dialog__container .card__action > div .b3-button {
   /* 复习按钮 */
   padding: 0;
   display: inline-flex;
 }
-.b3-dialog--open:has(.card__block) .b3-dialog__container .card__action > div .b3-button > div {
+.b3-dialog--open:has(.card__block, #cardPreview) .b3-dialog__container .card__action > div .b3-button > div {
   /* 按钮 emoji */
   font-size: 1.5em;
   line-height: 2em;
   margin: 0;
 }
-.b3-dialog--open:has(.card__block) .b3-dialog__container .card__action > .b3-button--cancel {
+.b3-dialog--open:has(.card__block, #cardPreview) .b3-dialog__container .card__action > .b3-button--cancel {
   /* 撤销复习按钮 */
   opacity: unset;
   outline: 1px solid var(--b3-theme-primary);
