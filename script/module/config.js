@@ -1062,18 +1062,18 @@ const config = {
                                             callback: null,
                                             tasks: [
                                                 {
-                                                    type: 'attr-replace',
-                                                    params: {
-                                                        'style': {
-                                                            regexp: /\s*font-family:.*?;/g,
-                                                            substr: '',
-                                                        },
-                                                    },
-                                                },
-                                                {
                                                     type: 'attr-update',
                                                     params: {
                                                         'custom-font-family': null,
+                                                    },
+                                                },
+                                                {
+                                                    type: 'attr-replace',
+                                                    params: {
+                                                        style: {
+                                                            regexp: /\s*font-family:.*?;/g,
+                                                            substr: '',
+                                                        },
                                                     },
                                                 },
                                             ],
