@@ -9,6 +9,7 @@
 - 调整图片样式 | Adjust the style of the picture.
 - 调整深色主题导出为图片的背景颜色 | Adjust the background color of the image exported in the dark theme.
 - 调整移动端编辑面板样式 | Adjust the style of the edit panel on the mobile client.
+- 调整移动端搜索面板样式 | Adjust the style of the search panel on the mobile client.
 
 ## v1.7.6/2023-04-05
 
