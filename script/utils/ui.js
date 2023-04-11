@@ -1152,12 +1152,12 @@ const TASK_HANDLER = {
  * 创建右键菜单项
  */
 function createMenuItemNode(language, config, id, type, subtype, className = 'b3-menu__item') {
-    let node;
+    var node = null;
     switch (config.mode.toLowerCase()) {
         case 'separator': // 分割线
             if (!isBlockTypeEnabled(config, type, subtype)) return null;
             node = createMenuItemSeparatorNode();
-            return node;
+            break;
         case 'input': { // 输入框
             if (!isBlockTypeEnabled(config, type, subtype)) return null;
             node = document.createElement('button');
@@ -1221,7 +1221,7 @@ function createMenuItemNode(language, config, id, type, subtype, className = 'b3
                 )
             };
 
-            return node;
+            break;
         }
         case 'button': // 按钮
             if (!isBlockTypeEnabled(config, type, subtype)) return null;
@@ -1249,18 +1249,26 @@ function createMenuItemNode(language, config, id, type, subtype, className = 'b3
                 }
             };
             if (config.itemsLoad && config.items && config.items.length > 0) {
-                let subMenuNodes = [];
-                let separator = 0; // 启用的子菜单项数量
+                const subMenuNodes = [];
+                let separator = 0; // 分隔线数量
                 config.items.forEach(subConfig => {
-                    let item = createMenuItemNode(language, subConfig, id, type, subtype); // 创建子菜单项
+                    const item = createMenuItemNode(language, subConfig, id, type, subtype); // 创建子菜单项
                     if (item) {
-                        subMenuNodes.push(item);
                         if (item.className === 'b3-menu__separator') separator++;
+                        if (subConfig.prefixSeparator) {
+                            subMenuNodes.push(createMenuItemSeparatorNode());
+                            separator++;
+                        }
+                        subMenuNodes.push(item);
+                        if (subConfig.suffixSeparator) {
+                            subMenuNodes.push(createMenuItemSeparatorNode());
+                            separator++;
+                        }
                     }
                 });
                 // 有效节点大于0, 则创建子菜单
                 if (subMenuNodes.length - separator > 0) {
-                    let subMenuNode = createMenuItemSubMenuNode(); // 子菜单容器
+                    const subMenuNode = createMenuItemSubMenuNode(); // 子菜单容器
                     subMenuNodes.forEach(item => subMenuNode.appendChild(item));
                     node.appendChild(subMenuNode);
                 }
@@ -1268,7 +1276,7 @@ function createMenuItemNode(language, config, id, type, subtype, className = 'b3
             if (config.click.enable) {
                 if (config.click.callback) node.addEventListener('click', async e => await config.click.callback(e, id), true);
                 else {
-                    let handlers = [];
+                    const handlers = [];
                     config.click.tasks.forEach((task) => {
                         if (TASK_HANDLER[task.type]) handlers.push(async e => TASK_HANDLER[task.type](e, id, task.params));
                     });
@@ -1277,10 +1285,11 @@ function createMenuItemNode(language, config, id, type, subtype, className = 'b3
                     }, true);
                 }
             };
-            return node;
+            break;
         default:
             return null;
     }
+    return node;
 }
 
 /**
@@ -1293,17 +1302,27 @@ function createMenuItemNode(language, config, id, type, subtype, className = 'b3
  * @returns {null} 无菜单项
  */
 function menuInit(configs, id, type, subtype) {
-    let items = [];
+    let menuNodes = [];
+    let separator = 0; // 分隔线数量
     let language = window.theme.languageMode;
     configs.forEach(config => {
-        let item = createMenuItemNode(language, config, id, type, subtype);
-        if (item) {
-            if (config.prefixSeparator) items.push(createMenuItemSeparatorNode());
-            items.push(item);
-            if (config.suffixSeparator) items.push(createMenuItemSeparatorNode());
+        const node = createMenuItemNode(language, config, id, type, subtype);
+        // console.log(node);
+        if (node) {
+            if (node.className === 'b3-menu__separator') separator++;
+            if (config.prefixSeparator) {
+                menuNodes.push(createMenuItemSeparatorNode());
+                separator++;
+            }
+            menuNodes.push(node);
+            if (config.suffixSeparator) {
+                menuNodes.push(createMenuItemSeparatorNode());
+                separator++;
+            }
         }
     });
-    return items.length > 0 ? items : null;
+    // 有效节点大于 0, 则创建菜单
+    return menuNodes.length - separator > 0 ? menuNodes : null;
 }
 
 /**

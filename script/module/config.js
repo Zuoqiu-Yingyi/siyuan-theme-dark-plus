@@ -987,36 +987,26 @@ const config = {
                     id: 'toolbar-theme-menu-block',
                     hotkey: () => config.theme.hotkeys.menu.block,
                     label: {
-                        zh_CN: '块菜单增强',
-                        zh_CHT: '塊菜單增強',
-                        other: 'Block Menu Enhancements',
+                        zh_CN: '扩展菜单',
+                        zh_CHT: '擴展菜單',
+                        other: 'Extended Menu',
                     },
                     icon: '#iconMenu',
                     index: -9,
                 },
                 items: [ // 块菜单项
-                    { // 常用字体设置
+                    {
                         enable: true, // 是否启用菜单项
-                        prefixSeparator: true, // 是否添加前缀分隔线
-                        suffixSeparator: false, // 是否添加后缀分隔线
-                        type: { // 哪些类型的块启用, 值 null 则全部启用
-                            NodeBlockQueryEmbed: { enable: true },
-                            NodeBlockquote: { enable: true },
-                            NodeDocument: { enable: true },
-                            NodeHeading: { enable: true },
-                            NodeList: { enable: true },
-                            NodeListItem: { enable: true },
-                            NodeParagraph: { enable: true },
-                            NodeSuperBlock: { enable: true },
-                            NodeTable: { enable: true },
-                        },
-                        id: 'theme-menu-block-common-font', // 菜单项 ID
+                        prefixSeparator: false, // 是否添加前缀分隔线
+                        suffixSeparator: true, // 是否添加后缀分隔线
+                        type: null, // 哪些类型的块启用, 值 null 则全部启用
+                        id: 'theme-menu-block-extend', // 菜单项 ID
                         mode: "button",  // 菜单项类型
-                        icon: "#iconFont",  // 菜单项图标
+                        icon: "#iconMenu",  // 菜单项图标
                         label: {  // 菜单项标签
-                            zh_CN: "常用字体",
-                            zh_CHT: "常用字體",
-                            other: "Common Fonts",
+                            zh_CN: "扩展菜单",
+                            zh_CHT: "擴展菜單",
+                            other: "Extended Menu",
                         },
                         accelerator: "",  // 菜单项快捷键
                         click: {  // 菜单项点击事件
@@ -1025,1674 +1015,1705 @@ const config = {
                         itemsLoad: true, // 是否加载子菜单
                         itemsIcon: "#iconRight",
                         items: [
-                            {
+                            { // 常用字体设置
+                                enable: true, // 是否启用菜单项
+                                prefixSeparator: false, // 是否添加前缀分隔线
+                                suffixSeparator: false, // 是否添加后缀分隔线
+                                type: { // 哪些类型的块启用, 值 null 则全部启用
+                                    NodeBlockQueryEmbed: { enable: true },
+                                    NodeBlockquote: { enable: true },
+                                    NodeDocument: { enable: true },
+                                    NodeHeading: { enable: true },
+                                    NodeList: { enable: true },
+                                    NodeListItem: { enable: true },
+                                    NodeParagraph: { enable: true },
+                                    NodeSuperBlock: { enable: true },
+                                    NodeTable: { enable: true },
+                                },
+                                id: 'theme-menu-block-common-font', // 菜单项 ID
+                                mode: "button",  // 菜单项类型
+                                icon: "#iconFont",  // 菜单项图标
+                                label: {  // 菜单项标签
+                                    zh_CN: "常用字体",
+                                    zh_CHT: "常用字體",
+                                    other: "Common Fonts",
+                                },
+                                accelerator: "",  // 菜单项快捷键
+                                click: {  // 菜单项点击事件
+                                    enable: false, // 是否启用点击事件
+                                },
+                                itemsLoad: true, // 是否加载子菜单
+                                itemsIcon: "#iconRight",
+                                items: [
+                                    {
+                                        enable: true,
+                                        type: null,
+                                        mode: "button",
+                                        icon: "#iconFont",
+                                        label: {
+                                            zh_CN: "默认字体",
+                                            zh_CHT: "默認字體",
+                                            other: "Default Font",
+                                            style: `font-family: "${window.siyuan.config.editor.fontFamily}"`,
+                                        },
+                                        accelerator: window.siyuan.config.editor.fontFamily,
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-replace',
+                                                    params: {
+                                                        'style': {
+                                                            regexp: /\s*font-family:.*?;/g,
+                                                            substr: '',
+                                                        },
+                                                    },
+                                                },
+                                                {
+                                                    type: 'attr-update',
+                                                    params: {
+                                                        'custom-font-family': null,
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                ],
+                            },
+                            { // 其他字体设置
                                 enable: true,
-                                type: null,
+                                prefixSeparator: false,
+                                suffixSeparator: false,
+                                type: {
+                                    NodeBlockQueryEmbed: { enable: true },
+                                    NodeBlockquote: { enable: true },
+                                    NodeHeading: { enable: true },
+                                    NodeList: { enable: true },
+                                    NodeListItem: { enable: true },
+                                    NodeParagraph: { enable: true },
+                                    NodeSuperBlock: { enable: true },
+                                    NodeTable: { enable: true },
+                                },
+                                id: 'theme-menu-block-other-font',
                                 mode: "button",
                                 icon: "#iconFont",
                                 label: {
-                                    zh_CN: "默认字体",
-                                    zh_CHT: "默認字體",
-                                    other: "Default Font",
-                                    style: `font-family: "${window.siyuan.config.editor.fontFamily}"`,
+                                    zh_CN: "其他字体",
+                                    zh_CHT: "其他字體",
+                                    other: "Other Fonts",
                                 },
-                                accelerator: window.siyuan.config.editor.fontFamily,
+                                accelerator: "",
                                 click: {
                                     enable: true,
                                     callback: null,
                                     tasks: [
                                         {
-                                            type: 'attr-replace',
+                                            type: 'menu-unfold', // 展开菜单
                                             params: {
-                                                'style': {
-                                                    regexp: /\s*font-family:.*?;/g,
-                                                    substr: '',
+                                                id: 'theme-menu-block-other-font',
+                                                item: () => config.theme.menu.block.items[0].items[1],
+                                            }
+                                        },
+                                    ],
+                                },
+                                itemsLoad: false,
+                                itemsIcon: {
+                                    fold: "#iconFullscreen",
+                                    unfold: "#iconContract",
+                                },
+                                items: [
+                                ],
+                            },
+                            { // jupyter 设置
+                                enable: true,
+                                prefixSeparator: true,
+                                suffixSeparator: false,
+                                type: {
+                                    NodeDocument: { enable: true },
+                                    NodeCodeBlock: { enable: true, subtype: { null: true } },
+                                },
+                                id: 'theme-menu-jupyter',
+                                mode: "button",
+                                icon: "#iconCode",
+                                label: {
+                                    other: "Jupyter",
+                                },
+                                accelerator: "",
+                                click: { enable: false },
+                                itemsLoad: true, // 是否加载子菜单
+                                itemsIcon: "#iconRight",
+                                items: [
+                                    {
+                                        enable: true,
+                                        type: { NodeDocument: { enable: true } },
+                                        mode: "button",
+                                        icon: "#iconSettings",
+                                        label: {
+                                            zh_CN: "全局设置",
+                                            zh_CHT: "全局設置",
+                                            other: "Global Settings",
+                                        },
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'jupyter-open-global-settings',
+                                                    params: {
+                                                        href: `${THEME_PATHNAME}/app/jupyter/settings-global.html`,
+                                                        urlParams: { lang: window.theme.languageMode },
+                                                    },
                                                 },
-                                            },
+                                            ],
                                         },
-                                        {
-                                            type: 'attr-update',
-                                            params: {
-                                                'custom-font-family': null,
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                        ],
-                    },
-                    { // 其他字体设置
-                        enable: true,
-                        prefixSeparator: false,
-                        suffixSeparator: false,
-                        type: {
-                            NodeBlockQueryEmbed: { enable: true },
-                            NodeBlockquote: { enable: true },
-                            NodeDocument: { enable: true },
-                            NodeHeading: { enable: true },
-                            NodeList: { enable: true },
-                            NodeListItem: { enable: true },
-                            NodeParagraph: { enable: true },
-                            NodeSuperBlock: { enable: true },
-                            NodeTable: { enable: true },
-                        },
-                        id: 'theme-menu-block-other-font',
-                        mode: "button",
-                        icon: "#iconFont",
-                        label: {
-                            zh_CN: "其他字体",
-                            zh_CHT: "其他字體",
-                            other: "Other Fonts",
-                        },
-                        accelerator: "",
-                        click: {
-                            enable: true,
-                            callback: null,
-                            tasks: [
-                                {
-                                    type: 'menu-unfold', // 展开菜单
-                                    params: {
-                                        id: 'theme-menu-block-other-font',
-                                        item: () => config.theme.menu.block.items[1],
-                                    }
-                                },
-                            ],
-                        },
-                        itemsLoad: false,
-                        itemsIcon: {
-                            fold: "#iconFullscreen",
-                            unfold: "#iconContract",
-                        },
-                        items: [
-                        ],
-                    },
-                    { // jupyter 设置
-                        enable: true,
-                        prefixSeparator: true,
-                        suffixSeparator: false,
-                        type: {
-                            NodeDocument: { enable: true },
-                            NodeCodeBlock: { enable: true, subtype: { null: true } },
-                        },
-                        id: 'theme-menu-jupyter',
-                        mode: "button",
-                        icon: "#iconCode",
-                        label: {
-                            other: "Jupyter",
-                        },
-                        accelerator: "",
-                        click: { enable: false },
-                        itemsLoad: true, // 是否加载子菜单
-                        itemsIcon: "#iconRight",
-                        items: [
-                            {
-                                enable: true,
-                                type: { NodeDocument: { enable: true } },
-                                mode: "button",
-                                icon: "#iconSettings",
-                                label: {
-                                    zh_CN: "全局设置",
-                                    zh_CHT: "全局設置",
-                                    other: "Global Settings",
-                                },
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'jupyter-open-global-settings',
-                                            params: {
-                                                href: `${THEME_PATHNAME}/app/jupyter/settings-global.html`,
-                                                urlParams: { lang: window.theme.languageMode },
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: { NodeDocument: { enable: true } },
-                                mode: "button",
-                                icon: "#iconFile",
-                                label: {
-                                    zh_CN: "文档设置",
-                                    zh_CHT: "文檔設置",
-                                    other: "Document Settings",
-                                },
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'window-open',
-                                            params: {
-                                                href: `${THEME_PATHNAME}/app/jupyter/settings-document.html`,
-                                                urlParams: { lang: window.theme.languageMode },
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: { NodeDocument: { enable: true } },
-                                mode: "button",
-                                icon: "#iconClose",
-                                label: {
-                                    zh_CN: "关闭连接",
-                                    zh_CHT: "關閉連接",
-                                    other: "Close Connection",
-                                },
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'jupyter-close-connection',
-                                            params: {},
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: { NodeDocument: { enable: true } },
-                                mode: "button",
-                                icon: "#iconRefresh",
-                                label: {
-                                    zh_CN: "重启内核",
-                                    zh_CHT: "重啟內核",
-                                    other: "Restart Kernel",
-                                },
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'jupyter-restart-kernel',
-                                            params: {},
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: { NodeDocument: { enable: true } },
-                                mode: "button",
-                                icon: "#iconPlay",
-                                label: {
-                                    zh_CN: "运行所有单元格 (转义输出: ✔ 控制字符: ✔)",
-                                    zh_CHT: "運行所有單元格 (轉義輸出: ✔ 控製字符: ✔)",
-                                    other: "Run All Cells (Escape: ✔ cntrl: ✔)",
-                                },
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'jupyter-run-all-cells',
-                                            params: { escaped: true, cntrl: true },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: { NodeDocument: { enable: true } },
-                                mode: "button",
-                                icon: "#iconPlay",
-                                label: {
-                                    zh_CN: "运行所有单元格 (转义输出: ✔ 控制字符: ✖)",
-                                    zh_CHT: "運行所有單元格 (轉義輸出: ✔ 控製字符: ✖)",
-                                    other: "Run All Cells (Escape: ✔ cntrl: ✖)",
-                                },
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'jupyter-run-all-cells',
-                                            params: { escaped: true, cntrl: false },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: { NodeDocument: { enable: true } },
-                                mode: "button",
-                                icon: "#iconPlay",
-                                label: {
-                                    zh_CN: "运行所有单元格 (转义输出: ✖ 控制字符: ✔)",
-                                    zh_CHT: "運行所有單元格 (轉義輸出: ✖ 控製字符: ✔)",
-                                    other: "Run All Cells (Escape: ✖ cntrl: ✔)",
-                                },
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'jupyter-run-all-cells',
-                                            params: { escaped: false, cntrl: true },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: { NodeDocument: { enable: true } },
-                                mode: "button",
-                                icon: "#iconPlay",
-                                label: {
-                                    zh_CN: "运行所有单元格 (转义输出: ✖ 控制字符: ✖)",
-                                    zh_CHT: "運行所有單元格 (轉義輸出: ✖ 控製字符: ✖)",
-                                    other: "Run All Cells (Escape: ✖ cntrl: ✖)",
-                                },
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'jupyter-run-all-cells',
-                                            params: { escaped: false, cntrl: false },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: { NodeCodeBlock: { enable: true, subtype: { null: true } } },
-                                mode: "button",
-                                icon: "#iconPlay",
-                                label: {
-                                    zh_CN: "运行代码 (转义输出: ✔ 控制字符: ✔)",
-                                    zh_CHT: "運行代碼 (轉義輸出: ✔ 控製字符: ✔)",
-                                    other: "Run Code (Escape: ✔ cntrl: ✔)",
-                                },
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'jupyter-run-cell',
-                                            params: { escaped: true, cntrl: true },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: { NodeCodeBlock: { enable: true, subtype: { null: true } } },
-                                mode: "button",
-                                icon: "#iconPlay",
-                                label: {
-                                    zh_CN: "运行代码 (转义输出: ✔ 控制字符: ✖)",
-                                    zh_CHT: "運行代碼 (轉義輸出: ✔ 控製字符: ✖)",
-                                    other: "Run Code (Escape: ✔ cntrl: ✖)",
-                                },
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'jupyter-run-cell',
-                                            params: { escaped: true, cntrl: false },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: { NodeCodeBlock: { enable: true, subtype: { null: true } } },
-                                mode: "button",
-                                icon: "#iconPlay",
-                                label: {
-                                    zh_CN: "运行代码 (转义输出: ✖ 控制字符: ✔)",
-                                    zh_CHT: "運行代碼 (轉義輸出: ✖ 控製字符: ✔)",
-                                    other: "Run Code (Escape: ✖ cntrl: ✔)",
-                                },
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'jupyter-run-cell',
-                                            params: { escaped: false, cntrl: true },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: { NodeCodeBlock: { enable: true, subtype: { null: true } } },
-                                mode: "button",
-                                icon: "#iconPlay",
-                                label: {
-                                    zh_CN: "运行代码 (转义输出: ✖ 控制字符: ✖)",
-                                    zh_CHT: "運行代碼 (轉義輸出: ✖ 控製字符: ✖)",
-                                    other: "Run Code (Escape: ✖ cntrl: ✖)",
-                                },
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'jupyter-run-cell',
-                                            params: { escaped: false, cntrl: false },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: { NodeDocument: { enable: true } },
-                                mode: "button",
-                                icon: "#iconDownload",
-                                accelerator: "*.ipynb",
-                                label: {
-                                    zh_CN: "导入 Jupyter 笔记本 (覆盖)",
-                                    zh_CHT: "導入 Jupyter 筆記本 (覆蓋)",
-                                    other: "Import Jupyter Notebook (Overwrite)",
-                                },
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'file-select',
-                                            params: {
-                                                accept: ['.ipynb'], // 选择文件类型
-                                                multiple: false, // 是否允许多选
-                                                mode: 'w', // 覆盖当前文档
-                                                callback: 'jupyter-import-ipynb', // 处理方法
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: { NodeDocument: { enable: true } },
-                                mode: "button",
-                                icon: "#iconDownload",
-                                accelerator: "*.ipynb",
-                                label: {
-                                    zh_CN: "导入 Jupyter 笔记本 (追加)",
-                                    zh_CHT: "導入 Jupyter 筆記本 (追加)",
-                                    other: "Import Jupyter Notebook (Append)",
-                                },
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'file-select',
-                                            params: {
-                                                accept: ['.ipynb'],
-                                                multiple: false,
-                                                mode: 'a', // 在当前文档末尾追加
-                                                callback: 'jupyter-import-ipynb',
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                        ],
-                    },
-                    { // 分享设置
-                        enable: (() => {
-                            switch (true) {
-                                case window.location.host === 'localhost':
-                                case window.location.host.endsWith('.localhost'):
-                                case window.location.host === '[::1]':
-                                case /127\.\d{1,3}\.\d{1,3}\.\d{1,3}/.test(window.location.host):
-                                    /* 环回地址关闭分享 */
-                                    return false;
-                                default:
-                                    /* 非环回地址开启分享 */
-                                    return true;
-                            }
-                        })(),
-                        prefixSeparator: true,
-                        suffixSeparator: false,
-                        type: null,
-                        id: 'theme-menu-publish',
-                        mode: "button",
-                        icon: "#iconLanguage",
-                        label: {
-                            zh_CN: "分享",
-                            zh_CHT: "分享",
-                            other: "Share",
-                        },
-                        accelerator: "",
-                        click: { enable: false },
-                        itemsLoad: true, // 是否加载子菜单
-                        itemsIcon: "#iconRight",
-                        items: [
-                            {
-                                enable: true,
-                                type: null,
-                                mode: "button",
-                                icon: "#iconLink",
-                                label: {
-                                    zh_CN: "复制访问链接 (桌面设备)",
-                                    zh_CHT: "複製訪問鏈接 (桌面設備)",
-                                    other: "Copy Access Link (Desktop Device)",
-                                },
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'copy-share-link', // 复制分享链接
-                                            params: {
-                                                focus: false,
-                                                platform: 'desktop',
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: null,
-                                mode: "button",
-                                icon: "#iconLink",
-                                label: {
-                                    zh_CN: "复制访问链接 (移动设备)",
-                                    zh_CHT: "複製訪問鏈接 (移動設備)",
-                                    other: "Copy Access Link (Mobile Device)",
-                                },
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'copy-share-link', // 复制分享链接
-                                            params: {
-                                                focus: false,
-                                                platform: 'mobile',
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: null,
-                                mode: "button",
-                                icon: "#iconLink",
-                                label: {
-                                    zh_CN: "复制访问链接 (嵌入网页)",
-                                    zh_CHT: "複製訪問鏈接 (嵌入網頁)",
-                                    other: "Copy Access Link (Embed in Web)",
-                                },
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'copy-share-link', // 复制分享链接
-                                            params: {
-                                                focus: true,
-                                                platform: 'mobile',
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                        ],
-                    },
-                    { // 发布设置
-                        enable: false,
-                        prefixSeparator: false,
-                        suffixSeparator: false,
-                        type: {
-                            NodeDocument: { enable: true },
-                        },
-                        id: 'theme-menu-publish',
-                        mode: "button",
-                        icon: "#iconLanguage",
-                        label: {
-                            zh_CN: "发布",
-                            zh_CHT: "發布",
-                            other: "Publish",
-                        },
-                        accelerator: "",
-                        click: { enable: false },
-                        itemsLoad: true, // 是否加载子菜单
-                        itemsIcon: "#iconRight",
-                        items: [
-                            {
-                                enable: true,
-                                type: { NodeDocument: { enable: true } },
-                                mode: "button",
-                                icon: "#iconTrashcan",
-                                label: {
-                                    zh_CN: "删除访问权限",
-                                    zh_CHT: "刪除訪問權限",
-                                    other: "Remove Access",
-                                },
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-update', // 覆盖属性值
-                                            params: {
-                                                'custom-publish-access': null,
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: { NodeDocument: { enable: true } },
-                                mode: "button",
-                                icon: "#iconLanguage",
-                                label: {
-                                    zh_CN: "访问权限: 公开",
-                                    zh_CHT: "訪問權限: 公開",
-                                    other: "Access: Public",
-                                },
-                                accelerator: "publish-access: public",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-update', // 覆盖属性值
-                                            params: {
-                                                'custom-publish-access': 'public',
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: { NodeDocument: { enable: true } },
-                                mode: "button",
-                                icon: "#iconLock",
-                                label: {
-                                    zh_CN: "访问权限: 受保护",
-                                    zh_CHT: "訪問權限: 受保護",
-                                    other: "Access: Protected",
-                                },
-                                accelerator: "publish-access: protected",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-update', // 覆盖属性值
-                                            params: {
-                                                'custom-publish-access': 'protected',
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: { NodeDocument: { enable: true } },
-                                mode: "button",
-                                icon: "#iconAccount",
-                                label: {
-                                    zh_CN: "访问权限: 私有",
-                                    zh_CHT: "訪問權限: 私有",
-                                    other: "Access: Private",
-                                },
-                                accelerator: "publish-access: private",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-update', // 覆盖属性值
-                                            params: {
-                                                'custom-publish-access': 'private',
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            // { // 菜单项中的输入框
-                            //     enable: true,
-                            //     type: null,
-                            //     mode: "input",
-                            //     icon: "#iconSelect",
-                            //     id: "theme-menu-token",
-                            //     value: 'custom.theme.jupyter.server', // eval(value)
-                            //     placeholder: { // 占位符
-                            //         zh_CN: "访问令牌",
-                            //         zh_CHT: "訪問令牌",
-                            //         other: "Token",
-                            //     },
-                            //     click: {
-                            //         enable: true,
-                            //         callback: null,
-                            //         tasks: [
-                            //             {
-                            //                 type: 'save-input-value',
-                            //                 params: {
-                            //                     id: "theme-menu-token",
-                            //                     key: "custom.theme.jupyter.server", // eval(key = value)
-                            //                 },
-                            //             },
-                            //         ],
-                            //     },
-                            // },
-                        ],
-                    },
-                    { // 其他功能
-                        enable: true,
-                        prefixSeparator: true,
-                        suffixSeparator: false,
-                        type: null,
-                        id: 'theme-menu-block-more',
-                        mode: "button",
-                        icon: "#iconMore",
-                        label: {
-                            zh_CN: "更多",
-                            zh_CHT: "更多",
-                            other: "More",
-                        },
-                        accelerator: "",
-                        click: {
-                            enable: false,
-                        },
-                        itemsLoad: true,
-                        itemsIcon: "#iconRight",
-                        items: [ // 子菜单项列表
-                            {
-                                enable: true,
-                                type: null,
-                                mode: "button",
-                                icon: "#iconOpenWindow",
-                                label: {
-                                    zh_CN: "在新窗口打开",
-                                    zh_CHT: "在新窗口打開",
-                                    other: "Open in a New Window",
-                                },
-                                accelerator: () => config.theme.hotkeys.window.open.block.outfocus,
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'window-open',
-                                            params: {},
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: null,
-                                mode: "button",
-                                icon: "#iconFocus",
-                                label: {
-                                    zh_CN: "在新窗口打开并聚焦",
-                                    zh_CHT: "在新窗口打開並聚焦",
-                                    other: "Open in a New Window and Focus",
-                                },
-                                accelerator: () => config.theme.hotkeys.window.open.block.infocus,
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'window-open',
-                                            params: {
-                                                focus: true,
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeAudio: { enable: true },
-                                    NodeIFrame: { enable: true },
-                                    NodeVideo: { enable: true },
-                                    NodeWidget: { enable: true },
-                                },
-                                mode: "button",
-                                icon: "#iconLanguage",
-                                label: {
-                                    zh_CN: "在新窗口打开资源",
-                                    zh_CHT: "在新窗口打開資源",
-                                    other: "Open the resource in a New Window",
-                                },
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'window-open',
-                                            params: {
-                                                src: true,
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: null,
-                                mode: "separator",
-                            },
-                            {
-                                enable: true,
-                                type: null,
-                                mode: "button",
-                                icon: "#iconPreview",
-                                label: {
-                                    zh_CN: "查看 Markdown 源代码",
-                                    zh_CHT: "查看 Markdown 源代碼",
-                                    other: "Review the Markdown Source Code",
-                                },
-                                accelerator: () => config.theme.hotkeys.window.open.editor,
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'window-open-editor',
-                                            params: {
-                                                mode: 'block',
-                                                type: 'markdown',
-                                                lang: (() => window.theme.languageMode)(),
-                                                fontFamily: (() => encodeURI(window.siyuan.config.editor.fontFamily))(),
-                                                tabSize: (() => window.siyuan.config.editor.codeTabSpaces)(),
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: null,
-                                mode: "button",
-                                icon: "#iconEdit",
-                                label: {
-                                    zh_CN: "编辑 Kramdown 源代码",
-                                    zh_CHT: "編輯 Kramdown 源代碼",
-                                    other: "Edit the Kramdown Source Code",
-                                },
-                                accelerator: () => config.theme.hotkeys.window.open.markdown,
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'window-open-editor',
-                                            params: {
-                                                mode: 'block',
-                                                type: 'kramdown',
-                                                lang: (() => window.theme.languageMode)(),
-                                                fontFamily: (() => encodeURI(window.siyuan.config.editor.fontFamily))(),
-                                                tabSize: (() => window.siyuan.config.editor.codeTabSpaces)(),
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: false },
-                                    default: { enable: true },
-                                },
-                                mode: "separator",
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: false },
-                                    default: { enable: true },
-                                }, mode: "input",
-                                icon: "#iconTheme",
-                                id: 'theme-input-style',
-                                value: {
-                                    mode: 'attr',
-                                    key: 'style',
-                                },
-                                placeholder: { // 占位符
-                                    zh_CN: "块样式",
-                                    zh_CHT: "塊樣式",
-                                    other: "Block Style",
-                                },
-                                accelerator: 'style',
-                                onchange: { // 为 input 绑定 onchange 事件
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'save-input-value',
-                                            params: {
-                                                mode: 'attr',
-                                                key: 'style',
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: null,
-                                mode: "separator",
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: false },
-                                    default: { enable: true },
-                                },
-                                mode: "button",
-                                icon: "#iconUpload",
-                                label: {
-                                    zh_CN: "固定到顶部",
-                                    zh_CHT: "固定到頂部",
-                                    other: "Pin to Top",
-                                },
-                                accelerator: "position: top",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-switch',
-                                            params: {
-                                                'custom-position': [
-                                                    'top',
-                                                    null,
-                                                ],
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: false },
-                                    default: { enable: true },
-                                },
-                                mode: "button",
-                                icon: "#iconDownload",
-                                label: {
-                                    zh_CN: "固定到底部",
-                                    zh_CHT: "固定到底部",
-                                    other: "Pin to Bottom",
-                                },
-                                accelerator: "position: bottom",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-switch',
-                                            params: {
-                                                'custom-position': [
-                                                    'bottom',
-                                                    null,
-                                                ],
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: null,
-                                mode: "button",
-                                icon: "#iconBefore",
-                                label: {
-                                    zh_CN: "弹幕",
-                                    zh_CHT: "彈幕",
-                                    other: "Danmaku",
-                                },
-                                accelerator: "render: danmaku",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-switch',
-                                            params: {
-                                                'custom-render': [
-                                                    'danmaku',
-                                                    null,
-                                                ],
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: null,
-                                mode: "button",
-                                icon: "#iconScrollWrapped",
-                                label: {
-                                    zh_CN: "滚屏显示",
-                                    zh_CHT: "滾屏顯示",
-                                    other: "Scrolling Display",
-                                },
-                                accelerator: "render: scroll",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-switch',
-                                            params: {
-                                                'custom-render': [
-                                                    'scroll',
-                                                    null,
-                                                ],
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeAudio: { enable: true },
-                                    NodeIFrame: { enable: true },
-                                    NodeVideo: { enable: true },
-                                    NodeWidget: { enable: true },
-                                },
-                                mode: "button",
-                                icon: "#iconMenu",
-                                label: {
-                                    zh_CN: "全宽显示",
-                                    zh_CHT: "全寬顯示",
-                                    other: "Full-width Display",
-                                },
-                                accelerator: "width: 100%",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-switch',
-                                            params: {
-                                                'custom-width': [
-                                                    '100%',
-                                                    null,
-                                                ],
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: null,
-                                mode: "button",
-                                icon: "#iconFullscreen",
-                                label: {
-                                    zh_CN: "全屏显示",
-                                    zh_CHT: "全屏顯示",
-                                    other: "Full-screen Display",
-                                },
-                                accelerator: () => config.theme.hotkeys.fullscreen.iframe,
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'full-screen',
-                                            params: {},
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                    NodeBlockQueryEmbed: { enable: true },
-                                    NodeBlockquote: { enable: true },
-                                    NodeList: { enable: true },
-                                    NodeListItem: { enable: true },
-                                    NodeSuperBlock: { enable: true },
-                                    NodeHeading: { enable: true },
-                                    NodeParagraph: { enable: true },
-                                    NodeTable: { enable: true },
-                                },
-                                mode: "separator",
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                    NodeBlockQueryEmbed: { enable: true },
-                                    NodeBlockquote: { enable: true },
-                                    NodeList: { enable: true },
-                                    NodeListItem: { enable: true },
-                                    NodeSuperBlock: { enable: true },
-                                    NodeHeading: { enable: true },
-                                    NodeParagraph: { enable: true },
-                                    NodeTable: { enable: true },
-                                },
-                                mode: "button",
-                                icon: "#iconMark",
-                                label: {
-                                    zh_CN: "显示标记文本",
-                                    zh_CHT: "顯示標記文本",
-                                    other: "Display Marked Text",
-                                },
-                                accelerator: "mark: display",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-switch',
-                                            params: {
-                                                'custom-mark': [
-                                                    'display',
-                                                    null,
-                                                ],
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                    NodeBlockQueryEmbed: { enable: true },
-                                    NodeBlockquote: { enable: true },
-                                    NodeList: { enable: true },
-                                    NodeListItem: { enable: true },
-                                    NodeSuperBlock: { enable: true },
-                                    NodeHeading: { enable: true },
-                                    NodeParagraph: { enable: true },
-                                    NodeTable: { enable: true },
-                                },
-                                mode: "button",
-                                icon: "#iconEdit",
-                                label: {
-                                    zh_CN: "切换书写模式",
-                                    zh_CHT: "切換書寫模式",
-                                    other: "Toggle Writing Modes",
-                                },
-                                accelerator: "writing-mode",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-switch',
-                                            params: {
-                                                'custom-writing-mode': [
-                                                    'vertical-rl',
-                                                    'vertical-lr',
-                                                    'sideways-rl',
-                                                    'sideways-lr',
-                                                    null,
-                                                ],
-                                            },
-                                        },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                },
-                                mode: "separator",
-                            },
-                            {
-                                enable: true, // 是否启用子菜单项
-                                type: { // 在哪些块启用菜单项
-                                    NodeDocument: {
-                                        enable: true, // 是否在该块类型启用菜单项
                                     },
-                                },
-                                mode: "button", // 模式: button, separator
-                                icon: "#iconH1", // 子菜单项图标
-                                label: {
-                                    zh_CN: "标题自动编号",
-                                    zh_CHT: "標題自動編號",
-                                    other: "Automatic Headling Numbering",
-                                },
-                                accelerator: "auto-num-h: 0", // 子菜单项快捷键
-                                click: { // 子菜单项点击事件
-                                    enable: true, // 是否启用点击事件
-                                    callback: null, // 点击事件回调(优先使用)
-                                    // callback: (id) => {}, // 示例
-                                    tasks: [ // 点击事件任务列表(次优使用)
-                                        {
-                                            type: 'attr-switch', // 任务处理方法名(属性值切换)
-                                            params: { // 任务处理方法参数
-                                                'custom-auto-num-h': [
-                                                    '0',
-                                                    null,
-                                                ],
-                                            },
+                                    {
+                                        enable: true,
+                                        type: { NodeDocument: { enable: true } },
+                                        mode: "button",
+                                        icon: "#iconFile",
+                                        label: {
+                                            zh_CN: "文档设置",
+                                            zh_CHT: "文檔設置",
+                                            other: "Document Settings",
                                         },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                },
-                                mode: "button",
-                                icon: "#iconImage",
-                                label: {
-                                    zh_CN: "图片自动编号",
-                                    zh_CHT: "圖片自動編號",
-                                    other: "Automatic Picture Numbering",
-                                },
-                                accelerator: "auto-num-f: Fig.",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-switch',
-                                            params: {
-                                                'custom-auto-num-f': [
-                                                    '图',
-                                                    '图片',
-                                                    'Fig.',
-                                                    'figure',
-                                                    'Figure',
-                                                    'FIGURE',
-                                                    null,
-                                                ],
-                                            },
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'window-open',
+                                                    params: {
+                                                        href: `${THEME_PATHNAME}/app/jupyter/settings-document.html`,
+                                                        urlParams: { lang: window.theme.languageMode },
+                                                    },
+                                                },
+                                            ],
                                         },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                },
-                                mode: "button",
-                                icon: "#iconTable",
-                                label: {
-                                    zh_CN: "表格自动编号",
-                                    zh_CHT: "表格自動編號",
-                                    other: "Automatic Table Numbering",
-                                },
-                                accelerator: "auto-num-t: Tab.",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-switch',
-                                            params: {
-                                                'custom-auto-num-t': [
-                                                    '表',
-                                                    '表格',
-                                                    'Tab.',
-                                                    'table',
-                                                    'Table',
-                                                    'TABLE',
-                                                    null,
-                                                ],
-                                            },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: { NodeDocument: { enable: true } },
+                                        mode: "button",
+                                        icon: "#iconClose",
+                                        label: {
+                                            zh_CN: "关闭连接",
+                                            zh_CHT: "關閉連接",
+                                            other: "Close Connection",
                                         },
-                                    ],
-                                },
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'jupyter-close-connection',
+                                                    params: {},
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: { NodeDocument: { enable: true } },
+                                        mode: "button",
+                                        icon: "#iconRefresh",
+                                        label: {
+                                            zh_CN: "重启内核",
+                                            zh_CHT: "重啟內核",
+                                            other: "Restart Kernel",
+                                        },
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'jupyter-restart-kernel',
+                                                    params: {},
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: { NodeDocument: { enable: true } },
+                                        mode: "button",
+                                        icon: "#iconPlay",
+                                        label: {
+                                            zh_CN: "运行所有单元格 (转义输出: ✔ 控制字符: ✔)",
+                                            zh_CHT: "運行所有單元格 (轉義輸出: ✔ 控製字符: ✔)",
+                                            other: "Run All Cells (Escape: ✔ cntrl: ✔)",
+                                        },
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'jupyter-run-all-cells',
+                                                    params: { escaped: true, cntrl: true },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: { NodeDocument: { enable: true } },
+                                        mode: "button",
+                                        icon: "#iconPlay",
+                                        label: {
+                                            zh_CN: "运行所有单元格 (转义输出: ✔ 控制字符: ✖)",
+                                            zh_CHT: "運行所有單元格 (轉義輸出: ✔ 控製字符: ✖)",
+                                            other: "Run All Cells (Escape: ✔ cntrl: ✖)",
+                                        },
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'jupyter-run-all-cells',
+                                                    params: { escaped: true, cntrl: false },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: { NodeDocument: { enable: true } },
+                                        mode: "button",
+                                        icon: "#iconPlay",
+                                        label: {
+                                            zh_CN: "运行所有单元格 (转义输出: ✖ 控制字符: ✔)",
+                                            zh_CHT: "運行所有單元格 (轉義輸出: ✖ 控製字符: ✔)",
+                                            other: "Run All Cells (Escape: ✖ cntrl: ✔)",
+                                        },
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'jupyter-run-all-cells',
+                                                    params: { escaped: false, cntrl: true },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: { NodeDocument: { enable: true } },
+                                        mode: "button",
+                                        icon: "#iconPlay",
+                                        label: {
+                                            zh_CN: "运行所有单元格 (转义输出: ✖ 控制字符: ✖)",
+                                            zh_CHT: "運行所有單元格 (轉義輸出: ✖ 控製字符: ✖)",
+                                            other: "Run All Cells (Escape: ✖ cntrl: ✖)",
+                                        },
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'jupyter-run-all-cells',
+                                                    params: { escaped: false, cntrl: false },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: { NodeCodeBlock: { enable: true, subtype: { null: true } } },
+                                        mode: "button",
+                                        icon: "#iconPlay",
+                                        label: {
+                                            zh_CN: "运行代码 (转义输出: ✔ 控制字符: ✔)",
+                                            zh_CHT: "運行代碼 (轉義輸出: ✔ 控製字符: ✔)",
+                                            other: "Run Code (Escape: ✔ cntrl: ✔)",
+                                        },
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'jupyter-run-cell',
+                                                    params: { escaped: true, cntrl: true },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: { NodeCodeBlock: { enable: true, subtype: { null: true } } },
+                                        mode: "button",
+                                        icon: "#iconPlay",
+                                        label: {
+                                            zh_CN: "运行代码 (转义输出: ✔ 控制字符: ✖)",
+                                            zh_CHT: "運行代碼 (轉義輸出: ✔ 控製字符: ✖)",
+                                            other: "Run Code (Escape: ✔ cntrl: ✖)",
+                                        },
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'jupyter-run-cell',
+                                                    params: { escaped: true, cntrl: false },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: { NodeCodeBlock: { enable: true, subtype: { null: true } } },
+                                        mode: "button",
+                                        icon: "#iconPlay",
+                                        label: {
+                                            zh_CN: "运行代码 (转义输出: ✖ 控制字符: ✔)",
+                                            zh_CHT: "運行代碼 (轉義輸出: ✖ 控製字符: ✔)",
+                                            other: "Run Code (Escape: ✖ cntrl: ✔)",
+                                        },
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'jupyter-run-cell',
+                                                    params: { escaped: false, cntrl: true },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: { NodeCodeBlock: { enable: true, subtype: { null: true } } },
+                                        mode: "button",
+                                        icon: "#iconPlay",
+                                        label: {
+                                            zh_CN: "运行代码 (转义输出: ✖ 控制字符: ✖)",
+                                            zh_CHT: "運行代碼 (轉義輸出: ✖ 控製字符: ✖)",
+                                            other: "Run Code (Escape: ✖ cntrl: ✖)",
+                                        },
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'jupyter-run-cell',
+                                                    params: { escaped: false, cntrl: false },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: { NodeDocument: { enable: true } },
+                                        mode: "button",
+                                        icon: "#iconDownload",
+                                        accelerator: "*.ipynb",
+                                        label: {
+                                            zh_CN: "导入 Jupyter 笔记本 (覆盖)",
+                                            zh_CHT: "導入 Jupyter 筆記本 (覆蓋)",
+                                            other: "Import Jupyter Notebook (Overwrite)",
+                                        },
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'file-select',
+                                                    params: {
+                                                        accept: ['.ipynb'], // 选择文件类型
+                                                        multiple: false, // 是否允许多选
+                                                        mode: 'w', // 覆盖当前文档
+                                                        callback: 'jupyter-import-ipynb', // 处理方法
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: { NodeDocument: { enable: true } },
+                                        mode: "button",
+                                        icon: "#iconDownload",
+                                        accelerator: "*.ipynb",
+                                        label: {
+                                            zh_CN: "导入 Jupyter 笔记本 (追加)",
+                                            zh_CHT: "導入 Jupyter 筆記本 (追加)",
+                                            other: "Import Jupyter Notebook (Append)",
+                                        },
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'file-select',
+                                                    params: {
+                                                        accept: ['.ipynb'],
+                                                        multiple: false,
+                                                        mode: 'a', // 在当前文档末尾追加
+                                                        callback: 'jupyter-import-ipynb',
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                ],
                             },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                },
-                                mode: "separator",
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                },
+                            { // 分享设置
+                                enable: (() => {
+                                    switch (true) {
+                                        case window.location.host === 'localhost':
+                                        case window.location.host.endsWith('.localhost'):
+                                        case window.location.host === '[::1]':
+                                        case /127\.\d{1,3}\.\d{1,3}\.\d{1,3}/.test(window.location.host):
+                                            /* 环回地址关闭分享 */
+                                            return false;
+                                        default:
+                                            /* 非环回地址开启分享 */
+                                            return true;
+                                    }
+                                })(),
+                                prefixSeparator: true,
+                                suffixSeparator: false,
+                                type: null,
+                                id: 'theme-menu-publish',
                                 mode: "button",
-                                icon: "#iconTrashcan",
+                                icon: "#iconLanguage",
                                 label: {
-                                    zh_CN: "清除浏览位置记录",
-                                    zh_CHT: "清除瀏覽位置記錄",
-                                    other: "Clear Browsing Location History",
+                                    zh_CN: "分享",
+                                    zh_CHT: "分享",
+                                    other: "Share",
                                 },
                                 accelerator: "",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-update', // 覆盖属性值
-                                            params: {
-                                                'custom-location': null,
-                                            },
+                                click: { enable: false },
+                                itemsLoad: true, // 是否加载子菜单
+                                itemsIcon: "#iconRight",
+                                items: [
+                                    {
+                                        enable: true,
+                                        type: null,
+                                        mode: "button",
+                                        icon: "#iconLink",
+                                        label: {
+                                            zh_CN: "复制访问链接 (桌面设备)",
+                                            zh_CHT: "複製訪問鏈接 (桌面設備)",
+                                            other: "Copy Access Link (Desktop Device)",
                                         },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                },
-                                mode: "separator",
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                },
-                                mode: "button",
-                                icon: "#iconInfo",
-                                label: {
-                                    zh_CN: "显示 ID",
-                                    zh_CHT: "顯示 ID",
-                                    other: "Display ID",
-                                },
-                                accelerator: "render: id",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-switch',
-                                            params: {
-                                                'custom-render': [
-                                                    'id',
-                                                    null,
-                                                ],
-                                            },
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'copy-share-link', // 复制分享链接
+                                                    params: {
+                                                        focus: false,
+                                                        platform: 'desktop',
+                                                    },
+                                                },
+                                            ],
                                         },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                },
-                                mode: "button",
-                                icon: "#iconLink",
-                                label: {
-                                    zh_CN: "显示超链接",
-                                    zh_CHT: "顯示超鏈接",
-                                    other: "Display Hypertext ",
-                                },
-                                accelerator: "render: href",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-switch',
-                                            params: {
-                                                'custom-render': [
-                                                    'href',
-                                                    null,
-                                                ],
-                                            },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: null,
+                                        mode: "button",
+                                        icon: "#iconLink",
+                                        label: {
+                                            zh_CN: "复制访问链接 (移动设备)",
+                                            zh_CHT: "複製訪問鏈接 (移動設備)",
+                                            other: "Copy Access Link (Mobile Device)",
                                         },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                },
-                                mode: "separator",
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                },
-                                mode: "button",
-                                icon: "#iconSpreadOdd",
-                                label: {
-                                    zh_CN: "显示块序号",
-                                    zh_CHT: "顯示塊序號",
-                                    other: "Display Block Number",
-                                },
-                                accelerator: "render: index",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-switch',
-                                            params: {
-                                                'custom-render': [
-                                                    'index',
-                                                    null,
-                                                ],
-                                            },
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'copy-share-link', // 复制分享链接
+                                                    params: {
+                                                        focus: false,
+                                                        platform: 'mobile',
+                                                    },
+                                                },
+                                            ],
                                         },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                },
-                                mode: "button",
-                                icon: "#iconMarkdown",
-                                label: {
-                                    zh_CN: "显示块内容",
-                                    zh_CHT: "顯示塊內容",
-                                    other: "Display Block Content",
-                                },
-                                accelerator: "render: content",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-switch',
-                                            params: {
-                                                'custom-render': [
-                                                    'content',
-                                                    null,
-                                                ],
-                                            },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: null,
+                                        mode: "button",
+                                        icon: "#iconLink",
+                                        label: {
+                                            zh_CN: "复制访问链接 (嵌入网页)",
+                                            zh_CHT: "複製訪問鏈接 (嵌入網頁)",
+                                            other: "Copy Access Link (Embed in Web)",
                                         },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                },
-                                mode: "button",
-                                icon: "#iconMax",
-                                label: {
-                                    zh_CN: "显示块轮廓",
-                                    zh_CHT: "顯示塊輪廓",
-                                    other: "Display Block Outline",
-                                },
-                                accelerator: "render: outline",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-switch',
-                                            params: {
-                                                'custom-render': [
-                                                    'outline',
-                                                    null,
-                                                ],
-                                            },
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'copy-share-link', // 复制分享链接
+                                                    params: {
+                                                        focus: true,
+                                                        platform: 'mobile',
+                                                    },
+                                                },
+                                            ],
                                         },
-                                    ],
-                                },
+                                    },
+                                ],
                             },
-                            {
+                            { // 发布设置
                                 enable: false,
+                                prefixSeparator: false,
+                                suffixSeparator: false,
                                 type: {
-                                    NodeBlockQueryEmbed: { enable: true },
+                                    NodeDocument: { enable: true },
                                 },
-                                mode: "separator",
-                            },
-                            {
-                                enable: false, // deprecated
-                                type: {
-                                    NodeBlockQueryEmbed: { enable: true },
-                                },
+                                id: 'theme-menu-publish',
                                 mode: "button",
-                                icon: "#iconFile",
+                                icon: "#iconLanguage",
                                 label: {
-                                    zh_CN: "显示查询结果路径",
-                                    zh_CHT: "顯示查詢結果路徑",
-                                    other: "Display Query Results' Path",
+                                    zh_CN: "发布",
+                                    zh_CHT: "發布",
+                                    other: "Publish",
                                 },
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'show-hpath',
-                                            params: {},
+                                accelerator: "",
+                                click: { enable: false },
+                                itemsLoad: true, // 是否加载子菜单
+                                itemsIcon: "#iconRight",
+                                items: [
+                                    {
+                                        enable: true,
+                                        type: { NodeDocument: { enable: true } },
+                                        mode: "button",
+                                        icon: "#iconTrashcan",
+                                        label: {
+                                            zh_CN: "删除访问权限",
+                                            zh_CHT: "刪除訪問權限",
+                                            other: "Remove Access",
                                         },
-                                    ],
-                                },
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-update', // 覆盖属性值
+                                                    params: {
+                                                        'custom-publish-access': null,
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: { NodeDocument: { enable: true } },
+                                        mode: "button",
+                                        icon: "#iconLanguage",
+                                        label: {
+                                            zh_CN: "访问权限: 公开",
+                                            zh_CHT: "訪問權限: 公開",
+                                            other: "Access: Public",
+                                        },
+                                        accelerator: "publish-access: public",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-update', // 覆盖属性值
+                                                    params: {
+                                                        'custom-publish-access': 'public',
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: { NodeDocument: { enable: true } },
+                                        mode: "button",
+                                        icon: "#iconLock",
+                                        label: {
+                                            zh_CN: "访问权限: 受保护",
+                                            zh_CHT: "訪問權限: 受保護",
+                                            other: "Access: Protected",
+                                        },
+                                        accelerator: "publish-access: protected",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-update', // 覆盖属性值
+                                                    params: {
+                                                        'custom-publish-access': 'protected',
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: { NodeDocument: { enable: true } },
+                                        mode: "button",
+                                        icon: "#iconAccount",
+                                        label: {
+                                            zh_CN: "访问权限: 私有",
+                                            zh_CHT: "訪問權限: 私有",
+                                            other: "Access: Private",
+                                        },
+                                        accelerator: "publish-access: private",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-update', // 覆盖属性值
+                                                    params: {
+                                                        'custom-publish-access': 'private',
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    // { // 菜单项中的输入框
+                                    //     enable: true,
+                                    //     type: null,
+                                    //     mode: "input",
+                                    //     icon: "#iconSelect",
+                                    //     id: "theme-menu-token",
+                                    //     value: 'custom.theme.jupyter.server', // eval(value)
+                                    //     placeholder: { // 占位符
+                                    //         zh_CN: "访问令牌",
+                                    //         zh_CHT: "訪問令牌",
+                                    //         other: "Token",
+                                    //     },
+                                    //     click: {
+                                    //         enable: true,
+                                    //         callback: null,
+                                    //         tasks: [
+                                    //             {
+                                    //                 type: 'save-input-value',
+                                    //                 params: {
+                                    //                     id: "theme-menu-token",
+                                    //                     key: "custom.theme.jupyter.server", // eval(key = value)
+                                    //                 },
+                                    //             },
+                                    //         ],
+                                    //     },
+                                    // },
+                                ],
                             },
-                            {
+                            { // 其他功能
                                 enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                    NodeList: { enable: true },
-                                    NodeSuperBlock: { enable: true },
-                                    NodeBlockquote: { enable: true },
-                                    NodeBlockQueryEmbed: { enable: true },
-                                },
-                                mode: "separator",
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                    NodeList: { enable: true },
-                                    NodeSuperBlock: { enable: true },
-                                    NodeBlockquote: { enable: true },
-                                    NodeBlockQueryEmbed: { enable: true },
-                                },
+                                prefixSeparator: true,
+                                suffixSeparator: false,
+                                type: null,
+                                id: 'theme-menu-block-more',
                                 mode: "button",
-                                icon: "#iconList",
+                                icon: "#iconMore",
                                 label: {
-                                    zh_CN: "列表-默认视图",
-                                    zh_CHT: "列表-默認視圖",
-                                    other: "List-Default View",
+                                    zh_CN: "更多",
+                                    zh_CHT: "更多",
+                                    other: "More",
                                 },
                                 accelerator: "",
                                 click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-update', // 覆盖属性值
-                                            params: {
-                                                'custom-type': null,
+                                    enable: false,
+                                },
+                                itemsLoad: true,
+                                itemsIcon: "#iconRight",
+                                items: [ // 子菜单项列表
+                                    {
+                                        enable: true,
+                                        type: null,
+                                        mode: "button",
+                                        icon: "#iconOpenWindow",
+                                        label: {
+                                            zh_CN: "在新窗口打开",
+                                            zh_CHT: "在新窗口打開",
+                                            other: "Open in a New Window",
+                                        },
+                                        accelerator: () => config.theme.hotkeys.window.open.block.outfocus,
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'window-open',
+                                                    params: {},
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: null,
+                                        mode: "button",
+                                        icon: "#iconFocus",
+                                        label: {
+                                            zh_CN: "在新窗口打开并聚焦",
+                                            zh_CHT: "在新窗口打開並聚焦",
+                                            other: "Open in a New Window and Focus",
+                                        },
+                                        accelerator: () => config.theme.hotkeys.window.open.block.infocus,
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'window-open',
+                                                    params: {
+                                                        focus: true,
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeAudio: { enable: true },
+                                            NodeIFrame: { enable: true },
+                                            NodeVideo: { enable: true },
+                                            NodeWidget: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconLanguage",
+                                        label: {
+                                            zh_CN: "在新窗口打开资源",
+                                            zh_CHT: "在新窗口打開資源",
+                                            other: "Open the resource in a New Window",
+                                        },
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'window-open',
+                                                    params: {
+                                                        src: true,
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: null,
+                                        mode: "separator",
+                                    },
+                                    {
+                                        enable: true,
+                                        type: null,
+                                        mode: "button",
+                                        icon: "#iconPreview",
+                                        label: {
+                                            zh_CN: "查看 Markdown 源代码",
+                                            zh_CHT: "查看 Markdown 源代碼",
+                                            other: "Review the Markdown Source Code",
+                                        },
+                                        accelerator: () => config.theme.hotkeys.window.open.editor,
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'window-open-editor',
+                                                    params: {
+                                                        mode: 'block',
+                                                        type: 'markdown',
+                                                        lang: (() => window.theme.languageMode)(),
+                                                        fontFamily: (() => encodeURI(window.siyuan.config.editor.fontFamily))(),
+                                                        tabSize: (() => window.siyuan.config.editor.codeTabSpaces)(),
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: null,
+                                        mode: "button",
+                                        icon: "#iconEdit",
+                                        label: {
+                                            zh_CN: "编辑 Kramdown 源代码",
+                                            zh_CHT: "編輯 Kramdown 源代碼",
+                                            other: "Edit the Kramdown Source Code",
+                                        },
+                                        accelerator: () => config.theme.hotkeys.window.open.markdown,
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'window-open-editor',
+                                                    params: {
+                                                        mode: 'block',
+                                                        type: 'kramdown',
+                                                        lang: (() => window.theme.languageMode)(),
+                                                        fontFamily: (() => encodeURI(window.siyuan.config.editor.fontFamily))(),
+                                                        tabSize: (() => window.siyuan.config.editor.codeTabSpaces)(),
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: false },
+                                            default: { enable: true },
+                                        },
+                                        mode: "separator",
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: false },
+                                            default: { enable: true },
+                                        }, mode: "input",
+                                        icon: "#iconTheme",
+                                        id: 'theme-input-style',
+                                        value: {
+                                            mode: 'attr',
+                                            key: 'style',
+                                        },
+                                        placeholder: { // 占位符
+                                            zh_CN: "块样式",
+                                            zh_CHT: "塊樣式",
+                                            other: "Block Style",
+                                        },
+                                        accelerator: 'style',
+                                        onchange: { // 为 input 绑定 onchange 事件
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'save-input-value',
+                                                    params: {
+                                                        mode: 'attr',
+                                                        key: 'style',
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: null,
+                                        mode: "separator",
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: false },
+                                            default: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconUpload",
+                                        label: {
+                                            zh_CN: "固定到顶部",
+                                            zh_CHT: "固定到頂部",
+                                            other: "Pin to Top",
+                                        },
+                                        accelerator: "position: top",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-switch',
+                                                    params: {
+                                                        'custom-position': [
+                                                            'top',
+                                                            null,
+                                                        ],
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: false },
+                                            default: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconDownload",
+                                        label: {
+                                            zh_CN: "固定到底部",
+                                            zh_CHT: "固定到底部",
+                                            other: "Pin to Bottom",
+                                        },
+                                        accelerator: "position: bottom",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-switch',
+                                                    params: {
+                                                        'custom-position': [
+                                                            'bottom',
+                                                            null,
+                                                        ],
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: null,
+                                        mode: "button",
+                                        icon: "#iconBefore",
+                                        label: {
+                                            zh_CN: "弹幕",
+                                            zh_CHT: "彈幕",
+                                            other: "Danmaku",
+                                        },
+                                        accelerator: "render: danmaku",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-switch',
+                                                    params: {
+                                                        'custom-render': [
+                                                            'danmaku',
+                                                            null,
+                                                        ],
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: null,
+                                        mode: "button",
+                                        icon: "#iconScrollWrapped",
+                                        label: {
+                                            zh_CN: "滚屏显示",
+                                            zh_CHT: "滾屏顯示",
+                                            other: "Scrolling Display",
+                                        },
+                                        accelerator: "render: scroll",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-switch',
+                                                    params: {
+                                                        'custom-render': [
+                                                            'scroll',
+                                                            null,
+                                                        ],
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeAudio: { enable: true },
+                                            NodeIFrame: { enable: true },
+                                            NodeVideo: { enable: true },
+                                            NodeWidget: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconMenu",
+                                        label: {
+                                            zh_CN: "全宽显示",
+                                            zh_CHT: "全寬顯示",
+                                            other: "Full-width Display",
+                                        },
+                                        accelerator: "width: 100%",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-switch',
+                                                    params: {
+                                                        'custom-width': [
+                                                            '100%',
+                                                            null,
+                                                        ],
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: null,
+                                        mode: "button",
+                                        icon: "#iconFullscreen",
+                                        label: {
+                                            zh_CN: "全屏显示",
+                                            zh_CHT: "全屏顯示",
+                                            other: "Full-screen Display",
+                                        },
+                                        accelerator: () => config.theme.hotkeys.fullscreen.iframe,
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'full-screen',
+                                                    params: {},
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: true },
+                                            NodeBlockQueryEmbed: { enable: true },
+                                            NodeBlockquote: { enable: true },
+                                            NodeList: { enable: true },
+                                            NodeListItem: { enable: true },
+                                            NodeSuperBlock: { enable: true },
+                                            NodeHeading: { enable: true },
+                                            NodeParagraph: { enable: true },
+                                            NodeTable: { enable: true },
+                                        },
+                                        mode: "separator",
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: true },
+                                            NodeBlockQueryEmbed: { enable: true },
+                                            NodeBlockquote: { enable: true },
+                                            NodeList: { enable: true },
+                                            NodeListItem: { enable: true },
+                                            NodeSuperBlock: { enable: true },
+                                            NodeHeading: { enable: true },
+                                            NodeParagraph: { enable: true },
+                                            NodeTable: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconMark",
+                                        label: {
+                                            zh_CN: "显示标记文本",
+                                            zh_CHT: "顯示標記文本",
+                                            other: "Display Marked Text",
+                                        },
+                                        accelerator: "mark: display",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-switch',
+                                                    params: {
+                                                        'custom-mark': [
+                                                            'display',
+                                                            null,
+                                                        ],
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: true },
+                                            NodeBlockQueryEmbed: { enable: true },
+                                            NodeBlockquote: { enable: true },
+                                            NodeList: { enable: true },
+                                            NodeListItem: { enable: true },
+                                            NodeSuperBlock: { enable: true },
+                                            NodeHeading: { enable: true },
+                                            NodeParagraph: { enable: true },
+                                            NodeTable: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconEdit",
+                                        label: {
+                                            zh_CN: "切换书写模式",
+                                            zh_CHT: "切換書寫模式",
+                                            other: "Toggle Writing Modes",
+                                        },
+                                        accelerator: "writing-mode",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-switch',
+                                                    params: {
+                                                        'custom-writing-mode': [
+                                                            'vertical-rl',
+                                                            'vertical-lr',
+                                                            'sideways-rl',
+                                                            'sideways-lr',
+                                                            null,
+                                                        ],
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: true },
+                                        },
+                                        mode: "separator",
+                                    },
+                                    {
+                                        enable: true, // 是否启用子菜单项
+                                        type: { // 在哪些块启用菜单项
+                                            NodeDocument: {
+                                                enable: true, // 是否在该块类型启用菜单项
                                             },
                                         },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                    NodeList: { enable: true },
-                                    NodeSuperBlock: { enable: true },
-                                    NodeBlockquote: { enable: true },
-                                    NodeBlockQueryEmbed: { enable: true },
-                                },
-                                mode: "button",
-                                icon: "#iconGraph",
-                                label: {
-                                    zh_CN: "列表-脑图视图",
-                                    zh_CHT: "列表-腦圖視圖",
-                                    other: "List-Mind Map View",
-                                },
-                                accelerator: "type: map",
-                                click: {
-                                    enable: true,
-                                    callback: null,
+                                        mode: "button", // 模式: button, separator
+                                        icon: "#iconH1", // 子菜单项图标
+                                        label: {
+                                            zh_CN: "标题自动编号",
+                                            zh_CHT: "標題自動編號",
+                                            other: "Automatic Headling Numbering",
+                                        },
+                                        accelerator: "auto-num-h: 0", // 子菜单项快捷键
+                                        click: { // 子菜单项点击事件
+                                            enable: true, // 是否启用点击事件
+                                            callback: null, // 点击事件回调(优先使用)
+                                            // callback: (id) => {}, // 示例
+                                            tasks: [ // 点击事件任务列表(次优使用)
+                                                {
+                                                    type: 'attr-switch', // 任务处理方法名(属性值切换)
+                                                    params: { // 任务处理方法参数
+                                                        'custom-auto-num-h': [
+                                                            '0',
+                                                            null,
+                                                        ],
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconImage",
+                                        label: {
+                                            zh_CN: "图片自动编号",
+                                            zh_CHT: "圖片自動編號",
+                                            other: "Automatic Picture Numbering",
+                                        },
+                                        accelerator: "auto-num-f: Fig.",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-switch',
+                                                    params: {
+                                                        'custom-auto-num-f': [
+                                                            '图',
+                                                            '图片',
+                                                            'Fig.',
+                                                            'figure',
+                                                            'Figure',
+                                                            'FIGURE',
+                                                            null,
+                                                        ],
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconTable",
+                                        label: {
+                                            zh_CN: "表格自动编号",
+                                            zh_CHT: "表格自動編號",
+                                            other: "Automatic Table Numbering",
+                                        },
+                                        accelerator: "auto-num-t: Tab.",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-switch',
+                                                    params: {
+                                                        'custom-auto-num-t': [
+                                                            '表',
+                                                            '表格',
+                                                            'Tab.',
+                                                            'table',
+                                                            'Table',
+                                                            'TABLE',
+                                                            null,
+                                                        ],
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: true },
+                                        },
+                                        mode: "separator",
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconTrashcan",
+                                        label: {
+                                            zh_CN: "清除浏览位置记录",
+                                            zh_CHT: "清除瀏覽位置記錄",
+                                            other: "Clear Browsing Location History",
+                                        },
+                                        accelerator: "",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-update', // 覆盖属性值
+                                                    params: {
+                                                        'custom-location': null,
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: true },
+                                        },
+                                        mode: "separator",
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconInfo",
+                                        label: {
+                                            zh_CN: "显示 ID",
+                                            zh_CHT: "顯示 ID",
+                                            other: "Display ID",
+                                        },
+                                        accelerator: "render: id",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-switch',
+                                                    params: {
+                                                        'custom-render': [
+                                                            'id',
+                                                            null,
+                                                        ],
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconLink",
+                                        label: {
+                                            zh_CN: "显示超链接",
+                                            zh_CHT: "顯示超鏈接",
+                                            other: "Display Hypertext ",
+                                        },
+                                        accelerator: "render: href",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-switch',
+                                                    params: {
+                                                        'custom-render': [
+                                                            'href',
+                                                            null,
+                                                        ],
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: true },
+                                        },
+                                        mode: "separator",
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconSpreadOdd",
+                                        label: {
+                                            zh_CN: "显示块序号",
+                                            zh_CHT: "顯示塊序號",
+                                            other: "Display Block Number",
+                                        },
+                                        accelerator: "render: index",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-switch',
+                                                    params: {
+                                                        'custom-render': [
+                                                            'index',
+                                                            null,
+                                                        ],
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconMarkdown",
+                                        label: {
+                                            zh_CN: "显示块内容",
+                                            zh_CHT: "顯示塊內容",
+                                            other: "Display Block Content",
+                                        },
+                                        accelerator: "render: content",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-switch',
+                                                    params: {
+                                                        'custom-render': [
+                                                            'content',
+                                                            null,
+                                                        ],
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconMax",
+                                        label: {
+                                            zh_CN: "显示块轮廓",
+                                            zh_CHT: "顯示塊輪廓",
+                                            other: "Display Block Outline",
+                                        },
+                                        accelerator: "render: outline",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-switch',
+                                                    params: {
+                                                        'custom-render': [
+                                                            'outline',
+                                                            null,
+                                                        ],
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: false,
+                                        type: {
+                                            NodeBlockQueryEmbed: { enable: true },
+                                        },
+                                        mode: "separator",
+                                    },
+                                    {
+                                        enable: false, // deprecated
+                                        type: {
+                                            NodeBlockQueryEmbed: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconFile",
+                                        label: {
+                                            zh_CN: "显示查询结果路径",
+                                            zh_CHT: "顯示查詢結果路徑",
+                                            other: "Display Query Results' Path",
+                                        },
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'show-hpath',
+                                                    params: {},
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: true },
+                                            NodeList: { enable: true },
+                                            NodeSuperBlock: { enable: true },
+                                            NodeBlockquote: { enable: true },
+                                            NodeBlockQueryEmbed: { enable: true },
+                                        },
+                                        mode: "separator",
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: true },
+                                            NodeList: { enable: true },
+                                            NodeSuperBlock: { enable: true },
+                                            NodeBlockquote: { enable: true },
+                                            NodeBlockQueryEmbed: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconList",
+                                        label: {
+                                            zh_CN: "列表-默认视图",
+                                            zh_CHT: "列表-默認視圖",
+                                            other: "List-Default View",
+                                        },
+                                        accelerator: "",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-update', // 覆盖属性值
+                                                    params: {
+                                                        'custom-type': null,
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: true },
+                                            NodeList: { enable: true },
+                                            NodeSuperBlock: { enable: true },
+                                            NodeBlockquote: { enable: true },
+                                            NodeBlockQueryEmbed: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconGraph",
+                                        label: {
+                                            zh_CN: "列表-脑图视图",
+                                            zh_CHT: "列表-腦圖視圖",
+                                            other: "List-Mind Map View",
+                                        },
+                                        accelerator: "type: map",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
 
-                                    tasks: [
-                                        {
-                                            type: 'attr-update',
-                                            params: {
-                                                'custom-type': 'map',
-                                            },
+                                            tasks: [
+                                                {
+                                                    type: 'attr-update',
+                                                    params: {
+                                                        'custom-type': 'map',
+                                                    },
+                                                },
+                                            ],
                                         },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                    NodeList: { enable: true },
-                                    NodeSuperBlock: { enable: true },
-                                    NodeBlockquote: { enable: true },
-                                    NodeBlockQueryEmbed: { enable: true },
-                                },
-                                mode: "button",
-                                icon: "#iconTable",
-                                label: {
-                                    zh_CN: "列表-表格视图",
-                                    zh_CHT: "列表-表格視圖",
-                                    other: "List-Table View",
-                                },
-                                accelerator: "type: table",
-                                click: {
-                                    enable: true,
-                                    callback: null,
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: true },
+                                            NodeList: { enable: true },
+                                            NodeSuperBlock: { enable: true },
+                                            NodeBlockquote: { enable: true },
+                                            NodeBlockQueryEmbed: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconTable",
+                                        label: {
+                                            zh_CN: "列表-表格视图",
+                                            zh_CHT: "列表-表格視圖",
+                                            other: "List-Table View",
+                                        },
+                                        accelerator: "type: table",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
 
-                                    tasks: [
-                                        {
-                                            type: 'attr-update',
-                                            params: {
-                                                'custom-type': 'table',
-                                            },
+                                            tasks: [
+                                                {
+                                                    type: 'attr-update',
+                                                    params: {
+                                                        'custom-type': 'table',
+                                                    },
+                                                },
+                                            ],
                                         },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeDocument: { enable: true },
-                                    NodeList: { enable: true },
-                                    NodeSuperBlock: { enable: true },
-                                    NodeBlockquote: { enable: true },
-                                    NodeBlockQueryEmbed: { enable: true },
-                                },
-                                mode: "button",
-                                icon: "#iconSplitLR",
-                                label: {
-                                    zh_CN: "列表-看板视图",
-                                    zh_CHT: "列表-看板視圖",
-                                    other: "List-Board View",
-                                },
-                                accelerator: "type: board",
-                                click: {
-                                    enable: true,
-                                    callback: null,
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeDocument: { enable: true },
+                                            NodeList: { enable: true },
+                                            NodeSuperBlock: { enable: true },
+                                            NodeBlockquote: { enable: true },
+                                            NodeBlockQueryEmbed: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconSplitLR",
+                                        label: {
+                                            zh_CN: "列表-看板视图",
+                                            zh_CHT: "列表-看板視圖",
+                                            other: "List-Board View",
+                                        },
+                                        accelerator: "type: board",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
 
-                                    tasks: [
-                                        {
-                                            type: 'attr-update',
-                                            params: {
-                                                'custom-type': 'board',
-                                            },
+                                            tasks: [
+                                                {
+                                                    type: 'attr-update',
+                                                    params: {
+                                                        'custom-type': 'board',
+                                                    },
+                                                },
+                                            ],
                                         },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeTable: { enable: true },
-                                },
-                                mode: "separator",
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeTable: { enable: true },
-                                },
-                                mode: "button",
-                                icon: "#iconFullscreen",
-                                label: {
-                                    zh_CN: "默认宽度",
-                                    zh_CHT: "默認寬度",
-                                    other: "Full Width",
-                                },
-                                accelerator: "",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-update',
-                                            params: {
-                                                'custom-table-width': null,
-                                            },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeTable: { enable: true },
                                         },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeTable: { enable: true },
-                                },
-                                mode: "button",
-                                icon: "#iconContract",
-                                label: {
-                                    zh_CN: "自动宽度",
-                                    zh_CHT: "自動寬度",
-                                    other: "Automatic Width",
-                                },
-                                accelerator: "table-width: auto",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-update',
-                                            params: {
-                                                'custom-table-width': 'auto',
-                                            },
+                                        mode: "separator",
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeTable: { enable: true },
                                         },
-                                    ],
-                                },
-                            },
-                            {
-                                enable: true,
-                                type: {
-                                    NodeTable: { enable: true },
-                                },
-                                mode: "button",
-                                icon: "#iconPause",
-                                label: {
-                                    zh_CN: "全等宽度",
-                                    zh_CHT: "全等寬度",
-                                    other: "Equal Width",
-                                },
-                                accelerator: "table-width: equal",
-                                click: {
-                                    enable: true,
-                                    callback: null,
-                                    tasks: [
-                                        {
-                                            type: 'attr-update',
-                                            params: {
-                                                'custom-table-width': 'equal',
-                                            },
+                                        mode: "button",
+                                        icon: "#iconFullscreen",
+                                        label: {
+                                            zh_CN: "默认宽度",
+                                            zh_CHT: "默認寬度",
+                                            other: "Full Width",
                                         },
-                                    ],
-                                },
+                                        accelerator: "",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-update',
+                                                    params: {
+                                                        'custom-table-width': null,
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeTable: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconContract",
+                                        label: {
+                                            zh_CN: "自动宽度",
+                                            zh_CHT: "自動寬度",
+                                            other: "Automatic Width",
+                                        },
+                                        accelerator: "table-width: auto",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-update',
+                                                    params: {
+                                                        'custom-table-width': 'auto',
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                    {
+                                        enable: true,
+                                        type: {
+                                            NodeTable: { enable: true },
+                                        },
+                                        mode: "button",
+                                        icon: "#iconPause",
+                                        label: {
+                                            zh_CN: "全等宽度",
+                                            zh_CHT: "全等寬度",
+                                            other: "Equal Width",
+                                        },
+                                        accelerator: "table-width: equal",
+                                        click: {
+                                            enable: true,
+                                            callback: null,
+                                            tasks: [
+                                                {
+                                                    type: 'attr-update',
+                                                    params: {
+                                                        'custom-table-width': 'equal',
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    },
+                                ],
                             },
                         ],
                     },
