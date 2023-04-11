@@ -1,8 +1,5 @@
 /* 移动端优化 */
 /* 移动端编辑区 */
-#editor {
-  margin-bottom: 0 !important;
-}
 /* 移动端工具栏 */
 #keyboardToolbar,
 .toolbar--border {
