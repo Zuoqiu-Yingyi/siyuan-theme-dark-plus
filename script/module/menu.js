@@ -142,6 +142,8 @@ function menuOverride() {
     /* 复写 append 方法 */
     menu.append = function (...args) {
         // console.log(this);
+        // console.log(args);
+
         /* 记录最近添加的菜单项 */
         if (args.length > 0) {
             menu_item_append_recently = args[0];
@@ -156,6 +158,8 @@ function menuOverride() {
     /* 复写 popup 方法 */
     menu.popup = function (...args) {
         // console.log(this);
+        // console.log(args);
+
         /* 启用扩展菜单 */
         if (block_menu_enable) {
             const menu_item_last_origin = menu_item_append_recently; // 原菜单项最后一项
@@ -165,7 +169,6 @@ function menuOverride() {
                 && menu_item_last_origin?.lastElementChild.childElementCount <= 1
             ) {
                 // 块菜单添加
-                // console.log(mutation);
                 const block = (() => {
                     /* 点击文档块块标时可能在文档正文中存在选择的块 */
                     if (block_mark?.type === 'NodeDocument') {

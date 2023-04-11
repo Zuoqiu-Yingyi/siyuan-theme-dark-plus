@@ -16,3 +16,15 @@
         background-color: var(--b3-theme-background) !important;
     }
 }
+
+/* 闪卡全屏样式 */
+.card__main {
+    &.fullscreen {
+        /* 全屏 */
+        background-color: var(--custom-card-main-fullscreen-background-color);
+    }
+    &:not(.fullscreen) {
+        /* 非全屏 */
+        background-color: unset;
+    }
+}

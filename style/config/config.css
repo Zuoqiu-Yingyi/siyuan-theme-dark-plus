@@ -212,6 +212,8 @@
   --custom-panel-graph-fullscreen-toolbar-background-color: var(--custom-editor-background-color);
   /* 全屏关系图内容背景颜色 | The background color of the full-screen diagram content */
   --custom-panel-graph-fullscreen-background-color: transparent;
+  /* 全屏闪卡背景颜色 | The background color of the flash card with fullscreen */
+  --custom-card-main-fullscreen-background-color: var(--custom-editor-background-color);
   /* 功能面板分隔线补偿距离 | Function panel dividers compensate for distance
      * 需要设置为 --custom-panel-distance 的负值 | A negative value of --custom-panel-distance is required
      */
