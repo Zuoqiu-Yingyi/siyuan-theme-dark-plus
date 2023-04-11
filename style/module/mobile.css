@@ -5,6 +5,11 @@
 .toolbar--border {
   background-color: var(--custom-editor-background-color);
 }
+/* 移动端搜索面板 */
+#model #modelMain .toolbar {
+  /* 移动端搜索控件栏 */
+  background-color: transparent;
+}
 /* 底部控件栏 */
 /* 底部状态栏 */
 #status {
