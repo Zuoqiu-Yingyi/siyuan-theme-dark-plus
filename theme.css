@@ -1,114 +1,114 @@
 /* 引入各配置模块 */
 /* 边栏 */
-@import url("/appearance/themes/Dark+/style/module/bar.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/module/bar.css?v=1.8.0");
 /* 块级元素 */
-@import url("/appearance/themes/Dark+/style/module/block-code.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/block-echarts.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/block-embed.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/block-heading.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/block-hr.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/block-iframe.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/block-list.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/block-mindmap.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/block-quote.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/block-super.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/block-table.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/block.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/module/block-code.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/block-echarts.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/block-embed.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/block-heading.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/block-hr.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/block-iframe.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/block-list.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/block-mindmap.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/block-quote.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/block-super.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/block-table.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/block.css?v=1.8.0");
 /* 面包屑 */
-@import url("/appearance/themes/Dark+/style/module/breadcrumb.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/module/breadcrumb.css?v=1.8.0");
 /* 自定义属性 */
-@import url("/appearance/themes/Dark+/style/module/custom-auto-num-f.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-auto-num-h.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-auto-num-t.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-board-kanban.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-font-family.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-liandi-articleId.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-location.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-mark-display.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-position.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-prompt.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-render-danmaku.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-render-invert.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-render-scroll.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-riff-decks.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-render.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-table-width.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-time.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-title.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-type-board.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-type-map.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-type-table.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-type-title.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-width.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/custom-writing-mode.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/module/custom-auto-num-f.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-auto-num-h.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-auto-num-t.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-board-kanban.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-font-family.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-liandi-articleId.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-location.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-mark-display.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-position.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-prompt.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-render-danmaku.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-render-invert.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-render-scroll.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-riff-decks.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-render.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-table-width.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-time.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-title.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-type-board.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-type-map.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-type-table.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-type-title.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-width.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/custom-writing-mode.css?v=1.8.0");
 /* 对话框元素 */
-@import url("/appearance/themes/Dark+/style/module/dialog.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/module/dialog.css?v=1.8.0");
 /* 折叠 */
-@import url("/appearance/themes/Dark+/style/module/fold.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/module/fold.css?v=1.8.0");
 /* 空白页面与空白行 */
-@import url("/appearance/themes/Dark+/style/module/empty.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/module/empty.css?v=1.8.0");
 /* 导出面板 */
-@import url("/appearance/themes/Dark+/style/module/export.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/module/export.css?v=1.8.0");
 /* 全屏 */
-@import url("/appearance/themes/Dark+/style/module/fullscreen.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/module/fullscreen.css?v=1.8.0");
 /* 全局 */
-@import url("/appearance/themes/Dark+/style/module/global.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/module/global.css?v=1.8.0");
 /* 悬浮元素 */
-@import url("/appearance/themes/Dark+/style/module/hover-preview.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/hover-menu.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/hover-textarea.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/module/hover-preview.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/hover-menu.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/hover-textarea.css?v=1.8.0");
 /* 图标 */
-@import url("/appearance/themes/Dark+/style/module/icon-link-domain.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/icon-link.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/icon-zoom.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/icon.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/module/icon-link-domain.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/icon-link.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/icon-zoom.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/icon.css?v=1.8.0");
 /* 数学公式 */
-@import url("/appearance/themes/Dark+/style/module/math.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/module/math.css?v=1.8.0");
 /* 移动端 */
-@import url("/appearance/themes/Dark+/style/module/mobile.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/module/mobile.css?v=1.8.0");
 /* 面板 */
-@import url("/appearance/themes/Dark+/style/module/panel-backlink.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/panel-bookmark.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/panel-editor.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/panel-file.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/panel-graph.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/panel-inbox.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/panel-outline.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/panel-separator.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/panel-tag.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/panel.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/module/panel-backlink.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/panel-bookmark.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/panel-editor.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/panel-file.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/panel-graph.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/panel-inbox.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/panel-outline.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/panel-separator.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/panel-tag.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/panel.css?v=1.8.0");
 /* 行内元素 */
-@import url("/appearance/themes/Dark+/style/module/span-code.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/span-em.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/span-file-annotation-ref.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/span-img.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/span-inline-memo.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/span-kbd.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/span-link.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/span-mark.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/span-ref.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/span-s.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/span-strong.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/span-sub.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/span-sup.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/span-tag.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/span-u.css?v=1.7.6");
-@import url("/appearance/themes/Dark+/style/module/span-virtual-ref.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/module/span-code.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/span-em.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/span-file-annotation-ref.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/span-img.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/span-inline-memo.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/span-kbd.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/span-link.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/span-mark.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/span-ref.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/span-s.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/span-strong.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/span-sub.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/span-sup.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/span-tag.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/span-u.css?v=1.8.0");
+@import url("/appearance/themes/Dark+/style/module/span-virtual-ref.css?v=1.8.0");
 /* 底部状态栏 */
-@import url("/appearance/themes/Dark+/style/module/status-bar.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/module/status-bar.css?v=1.8.0");
 /* 页签栏 */
-@import url("/appearance/themes/Dark+/style/module/tab-bar.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/module/tab-bar.css?v=1.8.0");
 /* 预览窗口 */
-@import url("/appearance/themes/Dark+/style/module/viewer-image.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/module/viewer-image.css?v=1.8.0");
 /* 自定义元素样式 */
-@import url("/appearance/themes/Dark+/style/module/element.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/module/element.css?v=1.8.0");
 /* 配置文件 */
-@import url("/appearance/themes/Dark+/style/config/config.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/config/config.css?v=1.8.0");
 /* 明亮主题配色文件 */
-@import url("/appearance/themes/Dark+/style/config/light.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/config/light.css?v=1.8.0");
 /* 暗黑主题配色文件 */
-@import url("/appearance/themes/Dark+/style/config/dark.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/style/config/dark.css?v=1.8.0");
 /* 自定义配置文件 */
-@import url("/widgets/custom.css?v=1.7.6");
+@import url("/widgets/custom.css?v=1.8.0");
 /* 其他应用样式配置文件(方便导出时渲染) */
-@import url("/appearance/themes/Dark+/app/jupyter/css/jupyter.css?v=1.7.6");
+@import url("/appearance/themes/Dark+/app/jupyter/css/jupyter.css?v=1.8.0");
