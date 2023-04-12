@@ -10,20 +10,34 @@ import {
     Iterator,
 } from './../utils/misc.js';
 
-function changeBackground(background, mode = 'image') {
+function changeBackground(background = null, mode = 'image') {
     // console.log(background);
     let element = document.querySelector('.fn__flex-1.protyle.fullscreen') || document.body;
     switch (mode) {
         case 'color':
-            element.style.backgroundColor = ``;
-            element.style.backgroundColor = `${background}`;
+            if (background) {
+                /* 设置背景颜色 */
+                document.documentElement.style.setProperty(config.theme.background.color.propertyName, background);
+            }
+            else {
+                /* 移除所设背景颜色 */
+                document.documentElement.style.removeProperty(config.theme.background.color.propertyName);
+            }
             break;
         case 'image':
         default:
-            element.style.backgroundImage = ``;
-            // element.style.backgroundImage = `url("${background}")`;
-            document.body.parentElement.style.setProperty(config.theme.background.image.propertyName, `url("${background}")`);
-            break;
+            if (background) {
+                /* 移除背景颜色并设置背景图片 */
+                changeBackground(null, 'color');
+                document.documentElement.style.setProperty(config.theme.background.image.propertyName, `url("${background}")`);
+            }
+            else {
+                /* 设置背景颜色并取消背景图片 */
+                const color = config.theme.background.color.default[window.theme.themeMode];
+                changeBackground(color, 'color');
+                /* 由于存在默认背景图片, 因此需要使用 unset 取消默认设置的背景图片 */
+                document.documentElement.style.setProperty(config.theme.background.image.propertyName, 'unset');
+            }
     }
 }
 
