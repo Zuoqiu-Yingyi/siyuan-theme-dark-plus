@@ -1,11 +1,14 @@
 /* 鼠标滚轮功能 */
 
 import { config } from './config.js';
-import { setFontSize } from './../utils/dom.js';
+import {
+    setFontSize,
+    disableMouseWheelZoomDom,
+} from './../utils/dom.js';
 import { globalEventHandler } from './../utils/listener.js';
 
 /* 字号更改 */
-function changeFontSize(delta) { 
+function changeFontSize(delta) {
     let size = delta / config.theme.wheel.zoom.threshold | 0;
     let old_size = window.siyuan.config.editor.fontSize;
     let new_size = Math.max(Math.min(old_size + size, config.theme.wheel.zoom.max), config.theme.wheel.zoom.min);
@@ -23,6 +26,8 @@ setTimeout(() => {
                     config.theme.hotkeys.wheel.zoom,
                     e => setTimeout(() => changeFontSize(e.wheelDeltaY), 0),
                 );
+
+                disableMouseWheelZoomDom();
             }
         }
     } catch (err) {
