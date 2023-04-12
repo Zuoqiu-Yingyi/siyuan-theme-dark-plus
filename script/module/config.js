@@ -595,6 +595,13 @@ const config = {
         background: {
             // 背景图片功能开关
             enable: true,
+            color: {
+                propertyName: '--custom-background-color', // CSS 全局变量名称
+                default: { // 背景图片为空时的默认背景颜色
+                    light: 'white',
+                    dark: 'black',
+                },
+            },
             image: {
                 enable: true, // 是否启用背景图片更改功能
                 propertyName: '--custom-background-image', // CSS 全局变量名称
@@ -613,7 +620,7 @@ const config = {
                         icon: '#iconImage',
                         index: 5,
                     },
-                    random: true, // 是否随机切换网络背景图片 URL
+                    random: false, // 是否随机切换网络背景图片 URL
                     landscape: { // 横屏背景图片
                         light: [ // 随机亮色背景图片 URL
                             'https://source.unsplash.com/random/1920x1080/?bright',
@@ -654,14 +661,16 @@ const config = {
                         icon: '#iconImage',
                         index: 6,
                     },
-                    random: true, // 是否随机选择自定义背景图片
+                    random: false, // 是否随机选择自定义背景图片
                     default: false, // 是否默认使用自定义背景图片
                     landscape: { // 横屏背景图片
                         light: [ // 自定义亮色背景图片 URL 列表
+                            null, // 纯白色背景
                             `${THEME_PATHNAME}/image/light/background-main.jpg`,
                             `${THEME_PATHNAME}/image/light/background-dialog.jpg`,
                         ],
                         dark: [ // 自定义暗色背景图片 URL 列表
+                            null, // 纯黑色背景
                             `${THEME_PATHNAME}/image/dark/background-main.jpg`,
                             `${THEME_PATHNAME}/image/dark/background-dialog.jpg`,
                         ],
