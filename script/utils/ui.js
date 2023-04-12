@@ -1259,7 +1259,7 @@ function createMenuItemNode(language, config, id, type, subtype, className = 'b3
                     const item = createMenuItemNode(language, subConfig, id, type, subtype); // 创建子菜单项
                     if (item) {
                         if (item.className === 'b3-menu__separator') separator++;
-                        if (subConfig.prefixSeparator) {
+                        if (subConfig.prefixSeparator && subMenuNodes.length > 0) {
                             subMenuNodes.push(createMenuItemSeparatorNode());
                             separator++;
                         }
@@ -1314,7 +1314,7 @@ function menuInit(configs, id, type, subtype) {
         // console.log(node);
         if (node) {
             if (node.className === 'b3-menu__separator') separator++;
-            if (config.prefixSeparator) {
+            if (config.prefixSeparator && menuNodes.length > 0) {
                 menuNodes.push(createMenuItemSeparatorNode());
                 separator++;
             }

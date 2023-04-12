@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 更换背景图片功能支持设置无背景图片 | The background image replacement function supports setting no background image.
+- 优化扩展菜单的分割线 | Optimize the separator of the extension menu.
 
 ## v1.8.0/2023-04-12
 
