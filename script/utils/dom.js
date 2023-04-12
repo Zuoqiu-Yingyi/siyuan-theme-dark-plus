@@ -33,9 +33,11 @@ export {
     setTooltipDirection, // 设置提示信息朝向方向
     requestFullscreen, // 请求全屏
     requestFullscreenBlock, // 请求对指定的块全屏
+    disableMouseWheelZoomDom, // 禁用鼠标滚轮缩放 DOM
 };
 
 import { url2id } from './misc.js';
+import { isEvent } from './hotkey.js';
 import { config } from './../module/config.js';
 
 /**
@@ -850,4 +852,31 @@ function requestFullscreen(id) {
             // protyle?.element.requestFullscreen();
         }
     }
+}
+
+/**
+ * 禁用鼠标滚轮缩放 DOM
+ * REF https://blog.csdn.net/weixin_44188300/article/details/105256878
+ */
+function disableMouseWheelZoomDom() {
+    const blocker = function (e) {
+        if (e.altKey === false
+            && e.shiftKey === false
+            && (e.ctrlKey || e.metaKey) === true
+            && (e.ctrlKey && e.metaKey) === false
+        ) {
+            e.preventDefault();
+        }
+    }
+
+    const options = {
+        capture: true,
+        passive: false,
+    };
+
+    /* chromium */
+    window.addEventListener('mousewheel', blocker, options);
+
+    /* firefox */
+    window.addEventListener('DOMMouseScroll', blocker, options);
 }
