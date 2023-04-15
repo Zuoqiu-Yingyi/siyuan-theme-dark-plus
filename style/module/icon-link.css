@@ -186,6 +186,15 @@
 .b3-typography a[href^="tel:"]::before {
   background-image: url(/appearance/themes/Dark+/icon/tel.svg);
 }
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href^="tg:"]::before,
+.sy__outline [data-node-id] span[data-type~=a][data-href^="tg:"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href^="tg:"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/telegram.ico);
+}
+.protyle-wysiwyg a[href^="tg:"]::before,
+.b3-typography a[href^="tg:"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/telegram.ico);
+}
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href^="ticktick:"]::before,
 .sy__outline [data-node-id] span[data-type~=a][data-href^="ticktick:"]::before,
 .protyle-wysiwyg [data-node-id] span[data-type~=a][data-href^="ticktick:"]::before {
