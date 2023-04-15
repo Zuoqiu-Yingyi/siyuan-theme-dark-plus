@@ -375,6 +375,7 @@ Note: When using the browser to access SiYuan, this feature may be blocked by th
   - <img alt="pwsh" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/pwsh.svg" style="height: 1em; width: 1em;" />: `runpwsh:` `runcmd:` [url-run-command](https://github.com/Zuoqiu-Yingyi/url-run-command)
   - <img alt="siyuan" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/siyuan.svg" style="height: 1em; width: 1em;" />: `siyuan:` [思源笔记](https://b3log.org/siyuan/)
   - <img alt="supermemo" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/supermemo.svg" style="height: 1em; width: 1em;" />: `sm:` [Super Memory](https://www.super-memory.com/)
+  - <img alt="telegram" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/telegram.ico" style="height: 1em; width: 1em;" />: `tg:` [TickTick](https://telegram.org/)
   - <img alt="ticktick" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/ticktick.svg" style="height: 1em; width: 1em;" />: `ticktick:` [TickTick](https://ticktick.com/)
   - <img alt="vscode" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/vscode.svg" style="height: 1em; width: 1em;" />: `vscode:` [Visual Studio Code](https://code.visualstudio.com/)
   - <img alt="zotero" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/zotero.svg" style="height: 1em; width: 1em;" />: `zotero:` [Zotero](https://www.zotero.org/)

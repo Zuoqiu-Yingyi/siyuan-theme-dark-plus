@@ -37,7 +37,6 @@ export {
 };
 
 import { url2id } from './misc.js';
-import { isEvent } from './hotkey.js';
 import { config } from './../module/config.js';
 
 /**
