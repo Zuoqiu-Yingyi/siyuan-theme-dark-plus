@@ -26,7 +26,7 @@ import {
     workerInit,
 } from './utils.js';
 
-export {
+self.handlers = {
     setLang, // 设置语言
     getConf, // 获取配置
     runCell, // 运行单元格
@@ -34,16 +34,6 @@ export {
     restartKernel, // 重启内核
     closeConnection, // 关闭连接
     reloadCustomJson, // 重新加载配置
-}
-
-self.handlers = {
-    setLang,
-    getConf,
-    runCell,
-    runCells,
-    restartKernel,
-    closeConnection,
-    reloadCustomJson,
 };
 
 var lang;

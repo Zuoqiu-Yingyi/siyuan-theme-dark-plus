@@ -1,10 +1,5 @@
 /* 导入 *.ipynb 文件 */
 // REF [The Notebook file format — nbformat 5.7 documentation](https://nbformat.readthedocs.io/en/latest/format_description.html#notebook-file-format)
-export {
-    IpynbImport,
-    importJson,
-};
-
 import {
     config,
 } from './config.js';
