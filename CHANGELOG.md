@@ -4,6 +4,7 @@
 - 优化扩展菜单的分割线 | Optimize the separator of the extension menu.
 - 禁用浏览器中 <kbd>Ctrl/⌘ + 鼠标滚轮</kbd> 缩放 DOM | Disable the DOM zooming with <kbd>Ctrl/⌘ + Mouse Wheel</kbd> in the browser.
 - 新增 Telegram URL Scheme 超链接 `tg://` 图标 | Added the URL Scheme link `tel://` icon of Telegram.
+- 更新 Monaco Editor 至 `v0.37.1` | Updated Monaco Editor to `v0.37.1`.
 
 ## v1.8.0/2023-04-12
 
