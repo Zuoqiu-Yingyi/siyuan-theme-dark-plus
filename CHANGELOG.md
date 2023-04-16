@@ -5,6 +5,7 @@
 - 禁用浏览器中 <kbd>Ctrl/⌘ + 鼠标滚轮</kbd> 缩放 DOM | Disable the DOM zooming with <kbd>Ctrl/⌘ + Mouse Wheel</kbd> in the browser.
 - 新增 Telegram URL Scheme 超链接 `tg://` 图标 | Added the URL Scheme link `tel://` icon of Telegram.
 - 更新 Monaco Editor 至 `v0.37.1` | Updated Monaco Editor to `v0.37.1`.
+- 新增静态文件目录 `data/templates` 超链接图标 | Added the hyperlink icon of the static file directory `data/templates`.
 
 ## v1.8.0/2023-04-12
 
