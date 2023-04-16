@@ -296,6 +296,21 @@
 .b3-typography a[href$="/"][href^="/snippets/"]::before {
   background-image: url(/appearance/themes/Dark+/icon/snippets.svg);
 }
+/* 片段 */
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href$="/"][data-href^="templates/"]::before,
+.sy__outline [data-node-id] span[data-type~=a][data-href$="/"][data-href^="templates/"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href$="/"][data-href^="templates/"]::before,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href$="/"][data-href^="/templates/"]::before,
+.sy__outline [data-node-id] span[data-type~=a][data-href$="/"][data-href^="/templates/"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href$="/"][data-href^="/templates/"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/templates.svg);
+}
+.protyle-wysiwyg a[href$="/"][href^="templates/"]::before,
+.b3-typography a[href$="/"][href^="templates/"]::before,
+.protyle-wysiwyg a[href$="/"][href^="/templates/"]::before,
+.b3-typography a[href$="/"][href^="/templates/"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/templates.svg);
+}
 /* 外观 */
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href$="/"][data-href^="appearance/"]::before,
 .sy__outline [data-node-id] span[data-type~=a][data-href$="/"][data-href^="appearance/"]::before,

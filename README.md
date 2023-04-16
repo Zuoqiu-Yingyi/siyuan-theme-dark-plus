@@ -338,6 +338,8 @@ Note: When using the browser to access SiYuan, this feature may be blocked by th
     - `data/widgets/`
   - <img alt="snippets" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/snippets.svg" style="height: 1em; width: 1em;" /> `snippets/`: 片段文件目录 | Snippet file directory
     - `data/snippets/`
+  - <img alt="templates" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/templates.svg" style="height: 1em; width: 1em;" /> `templates/`: 片段文件目录 | Snippet file directory
+    - `data/templates/`
   - <img alt="appearance" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/appearance.svg" style="height: 1em; width: 1em;" /> `appearance/`: 外观文件目录 | Appearance file directory
     - `conf/appearance/`
   - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/export.svg" style="height: 1em; width: 1em;" /> `export/`: 导出文件目录 | Export file directory
