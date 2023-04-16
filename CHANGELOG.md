@@ -6,6 +6,7 @@
 - 新增 Telegram URL Scheme 超链接 `tg://` 图标 | Added the URL Scheme link `tel://` icon of Telegram.
 - 更新 Monaco Editor 至 `v0.37.1` | Updated Monaco Editor to `v0.37.1`.
 - 新增静态文件目录 `data/templates` 超链接图标 | Added the hyperlink icon of the static file directory `data/templates`.
+- 移除 worker 中 `es6 module export` 相关代码 | Removed the `es6 module export` related code in the worker.
 
 ## v1.8.0/2023-04-12
 
