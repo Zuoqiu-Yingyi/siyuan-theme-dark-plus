@@ -4,6 +4,7 @@
 .b3-typography [data-node-id],
 .protyle-wysiwyg [data-node-id] {
   margin-bottom: 0;
+  border-radius: unset;
 }
 .b3-typography p .protyle-attr,
 .protyle-wysiwyg p .protyle-attr,
