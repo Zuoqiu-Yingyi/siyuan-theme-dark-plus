@@ -100,71 +100,6 @@
     background-image: url(/appearance/themes/Dark+/icon/zotero-light.ico);
 }
 
-/* -------------------------------- 静态文件目录 -------------------------------- */
-.static-dir(@dir, @url) {
-    @path1: %("%s/", @dir);
-    @path2: %("/%s/", @dir);
-
-    .style() {
-        &::before {
-            background-image: @url;
-        }
-    }
-
-    #sidebar [data-type="sidebar-outline"],
-    .sy__outline,
-    .protyle-wysiwyg {
-        [data-node-id] {
-            span[data-type~=a] {
-                &[data-href $="/"] {
-
-                    &[data-href ^=@{path1}],
-                    &[data-href ^=@{path2}] {
-                        .style();
-                    }
-                }
-            }
-        }
-    }
-
-    .protyle-wysiwyg,
-    .b3-typography {
-        a {
-            &[href $="/"] {
-
-                &[href ^=@{path1}],
-                &[href ^=@{path2}] {
-                    .style();
-                }
-            }
-        }
-    }
-}
-
-/* 资源 */
-.static-dir("assets", url(/appearance/themes/Dark+/icon/assets.svg));
-
-/* 表情 */
-.static-dir("emojis", url(/appearance/themes/Dark+/icon/emojis.svg));
-
-/* 挂件 */
-.static-dir("widgets", url(/appearance/themes/Dark+/icon/widgets.svg));
-
-/* 片段 */
-.static-dir("snippets", url(/appearance/themes/Dark+/icon/snippets.svg));
-
-/* 片段 */
-.static-dir("templates", url(/appearance/themes/Dark+/icon/templates.svg));
-
-/* 外观 */
-.static-dir("appearance", url(/appearance/themes/Dark+/icon/appearance.svg));
-
-/* 导出 */
-.static-dir("export", url(/appearance/themes/Dark+/icon/export.svg));
-
-/* 历史 */
-.static-dir("history", url(/appearance/themes/Dark+/icon/history.svg));
-
 /* -------------------------------- assets -------------------------------- */
 .static-file(@dir, @exts, @url) {
     @path1: %("%s/", @dir);
@@ -209,9 +144,11 @@
     });
 }
 
-/* 默认样式 */
+/* 默认样式/未知文件样式 */
 .protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="assets/"]:not(:empty)::before,
 .protyle-wysiwyg [data-node-id] span[data-type~=a][data-href ^="/assets/"]:not(:empty)::before,
+.protyle-wysiwyg a[href *="assets/"]::before,
+.protyle-wysiwyg a[href *="/assets/"]::before,
 .b3-typography a[href *="assets/"]::before,
 .b3-typography a[href *="/assets/"]::before {
     background-image: url(/appearance/themes/Dark+/icon/asset.svg);
@@ -419,3 +356,69 @@
     ".html";
 .static-file("assets/drawio", @drawio-exts, url(/appearance/themes/Dark+/icon/drawio.svg));
 .static-file("assets", ".drawio", url(/appearance/themes/Dark+/icon/drawio.svg));
+.static-file("assets", ".ipynb", url(/appearance/themes/Dark+/icon/jupyter-notebook.svg));
+
+/* -------------------------------- 静态文件目录 -------------------------------- */
+.static-dir(@dir, @url) {
+    @path1: %("%s/", @dir);
+    @path2: %("/%s/", @dir);
+
+    .style() {
+        &::before {
+            background-image: @url;
+        }
+    }
+
+    #sidebar [data-type="sidebar-outline"],
+    .sy__outline,
+    .protyle-wysiwyg {
+        [data-node-id] {
+            span[data-type~=a] {
+                &[data-href $="/"] {
+
+                    &[data-href ^=@{path1}],
+                    &[data-href ^=@{path2}] {
+                        .style();
+                    }
+                }
+            }
+        }
+    }
+
+    .protyle-wysiwyg,
+    .b3-typography {
+        a {
+            &[href $="/"] {
+
+                &[href ^=@{path1}],
+                &[href ^=@{path2}] {
+                    .style();
+                }
+            }
+        }
+    }
+}
+
+/* 资源 */
+.static-dir("assets", url(/appearance/themes/Dark+/icon/assets.svg));
+
+/* 表情 */
+.static-dir("emojis", url(/appearance/themes/Dark+/icon/emojis.svg));
+
+/* 挂件 */
+.static-dir("widgets", url(/appearance/themes/Dark+/icon/widgets.svg));
+
+/* 片段 */
+.static-dir("snippets", url(/appearance/themes/Dark+/icon/snippets.svg));
+
+/* 片段 */
+.static-dir("templates", url(/appearance/themes/Dark+/icon/templates.svg));
+
+/* 外观 */
+.static-dir("appearance", url(/appearance/themes/Dark+/icon/appearance.svg));
+
+/* 导出 */
+.static-dir("export", url(/appearance/themes/Dark+/icon/export.svg));
+
+/* 历史 */
+.static-dir("history", url(/appearance/themes/Dark+/icon/history.svg));

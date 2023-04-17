@@ -1,5 +1,7 @@
 /* 文件注释引用(PDF注释) */
+.protyle-wysiwyg a[href*=".pdf?p="][href*="assets/"]::before,
 .b3-typography a[href*=".pdf?p="][href*="assets/"]::before,
+.protyle-wysiwyg a[href*=".pdf?p="][href*="/assets/"]::before,
 .b3-typography a[href*=".pdf?p="][href*="/assets/"]::before {
   /* PDF 引用导出样式 */
   background-image: url(/appearance/themes/Dark+/icon/pdf-page.svg);
