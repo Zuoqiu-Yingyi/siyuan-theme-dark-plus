@@ -9,6 +9,7 @@
 - 移除 worker 中 `es6 module export` 相关代码 | Removed the `es6 module export` related code in the worker.
 - 移除焦点所在的空块提示功能 | Removed the function of prompting the empty block where the focus is.
 - 移除普通块的圆角 | Removed the rounded corner of the normal block.
+- 修复部分超链接图标样式显示问题 | Fixed the issue of the style display of some hyperlink icons.
 
 ## v1.8.0/2023-04-12
 
