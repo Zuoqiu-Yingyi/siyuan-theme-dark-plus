@@ -1,49 +1,82 @@
 /* 空白提示 */
 
 
-.empty(@content, @content-focus, @color) {
+.empty-content(@content, @color) {
+    >[contenteditable][spellcheck] {
 
-    // 内容为空的块
-    &:empty::after {
-        content: var(@content);
-        color: var(@color);
+        // 内容为空的块
+        &:empty {
+            &::after {
+                content: var(@content);
+                color: var(@color);
+                // 过渡无效
+                // transition: all 1000ms linear 0ms;
+            }
+        }
+
+        // &:focus:empty::after {
+        //     content: var(@content-focus);
+        // }
+    }
+}
+
+.empty(@color,
+    @content-p,
+    @content-c,
+    @content-t,
+    @content-u,
+    @content-o,
+) {
+
+    &.p,
+    &[data-type="NodeHeading"] {
+        // 空段落块 & 空标题块
+        .empty-content(@content-p, @color);
     }
 
-    // 焦点在内容为空的块
-    &:focus:empty::after {
-        content: var(@content-focus);
+    &.code-block {
+        // 空代码块
+        .empty-content(@content-c, @color);
+    }
+
+    &[data-subtype="t"].li>.p:nth-of-type(2) {
+        // 空任务列表
+        .empty-content(@content-t, @color);
+    }
+
+    &[data-subtype="u"].li>.p:nth-of-type(2) {
+        // 空无序列表
+        .empty-content(@content-u, @color);
+    }
+
+    &[data-subtype="o"].li>.p:nth-of-type(2) {
+        // 空有序列表
+        .empty-content(@content-o, @color);
     }
 }
 
 /* 👇聚焦提示👇 */
 .protyle-wysiwyg {
-
-    // 聚焦提示👇
-    [data-node-id]:not(.code-block)>[contenteditable][spellcheck] {
-        // 空段落
-        .empty(--custom-empty-p, --custom-empty-focus-p, --b3-theme-on-surface);
+    [data-node-id] {
+        .empty(--b3-theme-on-surface,
+            --custom-empty-p,
+            --custom-empty-c,
+            --custom-empty-t,
+            --custom-empty-u,
+            --custom-empty-o,
+        );
     }
 
-    [data-node-id].code-block>[contenteditable][spellcheck].hljs {
-        // 空代码块
-        .empty(--custom-empty-c, --custom-empty-focus-c, --b3-theme-on-surface);
-    }
-
-    [data-node-id][data-subtype="t"].li>.p:nth-of-type(2)>[contenteditable][spellcheck] {
-        // 空任务列表
-        .empty(--custom-empty-t, --custom-empty-focus-t, --b3-theme-on-surface);
-    }
-
-    [data-node-id][data-subtype="u"].li>.p:nth-of-type(2)>[contenteditable][spellcheck] {
-        // 空无序列表
-        .empty(--custom-empty-u, --custom-empty-focus-u, --b3-theme-on-surface);
-    }
-
-    [data-node-id][data-subtype="o"].li>.p:nth-of-type(2)>[contenteditable][spellcheck] {
-        // 空有序列表
-        .empty(--custom-empty-o, --custom-empty-focus-o, --b3-theme-on-surface);
-    }
-
+    // 效果不太好的焦点所在的空块提示
+    // #theme-focus-block[data-node-id] {
+    //     .empty(--b3-theme-on-surface,
+    //         --custom-empty-focus-p,
+    //         --custom-empty-focus-c,
+    //         --custom-empty-focus-t,
+    //         --custom-empty-focus-u,
+    //         --custom-empty-focus-o,
+    //     );
+    // }
 }
 
 /*不打开文档时的界面*/

@@ -1,39 +1,25 @@
 /* 空白提示 */
 /* 👇聚焦提示👇 */
-.protyle-wysiwyg [data-node-id]:not(.code-block) > [contenteditable][spellcheck]:empty::after {
+.protyle-wysiwyg [data-node-id].p > [contenteditable][spellcheck]:empty::after,
+.protyle-wysiwyg [data-node-id][data-type="NodeHeading"] > [contenteditable][spellcheck]:empty::after {
   content: var(--custom-empty-p);
   color: var(--b3-theme-on-surface);
 }
-.protyle-wysiwyg [data-node-id]:not(.code-block) > [contenteditable][spellcheck]:focus:empty::after {
-  content: var(--custom-empty-focus-p);
-}
-.protyle-wysiwyg [data-node-id].code-block > [contenteditable][spellcheck].hljs:empty::after {
+.protyle-wysiwyg [data-node-id].code-block > [contenteditable][spellcheck]:empty::after {
   content: var(--custom-empty-c);
   color: var(--b3-theme-on-surface);
-}
-.protyle-wysiwyg [data-node-id].code-block > [contenteditable][spellcheck].hljs:focus:empty::after {
-  content: var(--custom-empty-focus-c);
 }
 .protyle-wysiwyg [data-node-id][data-subtype="t"].li > .p:nth-of-type(2) > [contenteditable][spellcheck]:empty::after {
   content: var(--custom-empty-t);
   color: var(--b3-theme-on-surface);
 }
-.protyle-wysiwyg [data-node-id][data-subtype="t"].li > .p:nth-of-type(2) > [contenteditable][spellcheck]:focus:empty::after {
-  content: var(--custom-empty-focus-t);
-}
 .protyle-wysiwyg [data-node-id][data-subtype="u"].li > .p:nth-of-type(2) > [contenteditable][spellcheck]:empty::after {
   content: var(--custom-empty-u);
   color: var(--b3-theme-on-surface);
 }
-.protyle-wysiwyg [data-node-id][data-subtype="u"].li > .p:nth-of-type(2) > [contenteditable][spellcheck]:focus:empty::after {
-  content: var(--custom-empty-focus-u);
-}
 .protyle-wysiwyg [data-node-id][data-subtype="o"].li > .p:nth-of-type(2) > [contenteditable][spellcheck]:empty::after {
   content: var(--custom-empty-o);
   color: var(--b3-theme-on-surface);
-}
-.protyle-wysiwyg [data-node-id][data-subtype="o"].li > .p:nth-of-type(2) > [contenteditable][spellcheck]:focus:empty::after {
-  content: var(--custom-empty-focus-o);
 }
 /*不打开文档时的界面*/
 .layout__empty.b3-list {

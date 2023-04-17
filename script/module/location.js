@@ -81,9 +81,16 @@ async function updateSliderHandler(target, mode = config.theme.location.record.m
 async function focusHandler() {
     // console.log(document.getSelection()?.focusNode?.parentElement);
 
-    /* 获取当前编辑区 */
     const block = getFocusedBlock(); // 当前光标所在块
+
+    /**
+     * 由于一个段落删除最后一个字符时会替换为一个新块
+     * 新块没有所设置的 id 与 class
+     * 会有一个没有 id 与 class 的空窗期
+     */
+
     /* 当前块已经设置焦点 */
+    // console.log(block.attributes, block?.classList.contains(config.theme.location.focus.className), block.id === config.theme.location.focus.id);
     if (block?.classList.contains(config.theme.location.focus.className)
         && block.id === config.theme.location.focus.id
     ) return;
