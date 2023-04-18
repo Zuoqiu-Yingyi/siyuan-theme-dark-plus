@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.8.1/2023-04-19
+
+- [v1.8.0 <=> v1.8.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.8.0...v1.8.1)
 - 更换背景图片功能支持设置无背景图片 | The background image replacement function supports setting no background image.
 - 优化扩展菜单的分割线 | Optimize the separator of the extension menu.
 - 禁用浏览器中 <kbd>Ctrl/⌘ + 鼠标滚轮</kbd> 缩放 DOM | Disable the DOM zooming with <kbd>Ctrl/⌘ + Mouse Wheel</kbd> in the browser.
