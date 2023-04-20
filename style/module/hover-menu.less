@@ -132,18 +132,20 @@
         background-color: var(--custom-popover-menu-separator-color);
     }
 
-    >*:not(.emojis) {
+
+    input.b3-text-field {
+        /* 输入框 */
+        min-width: var(--custom-popover-menu-input-min-width);
+
         // 非表情菜单
-
-        input.b3-text-field {
-            /* 输入框 */
-            min-width: var(--custom-popover-menu-input-min-width);
+        &.b3-form__icon-input {
+            min-width: unset;
         }
+    }
 
-        textarea.b3-text-field {
-            /* 输入区域 */
-            min-width: var(--custom-popover-menu-textarea-min-width);
-        }
+    textarea.b3-text-field {
+        /* 输入区域 */
+        min-width: var(--custom-popover-menu-textarea-min-width);
     }
 }
 

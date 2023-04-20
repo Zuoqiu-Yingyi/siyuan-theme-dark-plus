@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 调整图标搜索菜单样式 | Adjust the style of the icon search menu.
+
 ## v1.8.1/2023-04-19
 
 - [v1.8.0 <=> v1.8.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.8.0...v1.8.1)
