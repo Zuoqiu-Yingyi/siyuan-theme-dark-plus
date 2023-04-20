@@ -45,11 +45,14 @@
   height: 2px;
   background-color: var(--custom-popover-menu-separator-color);
 }
-.b3-menu > *:not(.emojis) input.b3-text-field {
+.b3-menu input.b3-text-field {
   /* 输入框 */
   min-width: var(--custom-popover-menu-input-min-width);
 }
-.b3-menu > *:not(.emojis) textarea.b3-text-field {
+.b3-menu input.b3-text-field.b3-form__icon-input {
+  min-width: unset;
+}
+.b3-menu textarea.b3-text-field {
   /* 输入区域 */
   min-width: var(--custom-popover-menu-textarea-min-width);
 }
