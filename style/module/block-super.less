@@ -21,6 +21,11 @@
             >.sb[data-node-id] {
                 /* 横排超级块内嵌套超级块 */
                 margin-right: var(--custom-block-super-margin);
+
+                +.sb[data-node-id] {
+                    /* 横排超级块内相邻的超级块 */
+                    // margin-left: calc(var(--custom-block-super-margin) * 1);
+                }
             }
         }
 
