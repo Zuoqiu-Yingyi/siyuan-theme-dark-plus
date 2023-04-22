@@ -322,9 +322,7 @@
   /* 超级块内边距 | The padding of super block */
   --custom-block-super-padding: calc(0.5em - var(--custom-block-super-margin));
   /* 超级块块属性标识位置偏移量 | The position offset of superblock attribute identifies */
-  --custom-block-super-attr-offset: -16px;
   /* 超级块之间的间距 | The spacing between superblocks */
-  --custom-block-super-spacing: calc(var(--custom-block-super-margin) - var(--custom-block-super-attr-offset) - 2px);
   /* 表格块背景颜色 | The background color of table block */
   --custom-block-table-background-color: transparent;
   /* 表格块单元格边框颜色 | The color of table block cell borders */

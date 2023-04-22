@@ -11,20 +11,18 @@
   margin: var(--custom-block-super-margin);
   padding: var(--custom-block-super-padding);
 }
+.protyle-wysiwyg .sb[data-node-id][data-sb-layout=col] > .sb[data-node-id] {
+  /* 横排超级块内嵌套超级块 */
+  margin-right: var(--custom-block-super-margin);
+}
+.protyle-wysiwyg .sb[data-node-id][data-sb-layout=row] > .sb[data-node-id] + .sb[data-node-id] {
+  /* 纵排超级块内相邻的超级块 */
+  margin-top: calc(var(--custom-block-super-margin) * 2);
+}
 .protyle-wysiwyg .sb[data-node-id]:hover {
   /* 超级块鼠标悬停时显示边框 */
   outline: 1px solid var(--b3-theme-on-surface);
 }
 .protyle-wysiwyg .sb[data-node-id] > .protyle-attr {
   /* 超级块块属性标识 */
-  top: -16px;
-}
-.protyle-wysiwyg,
-.protyle-wysiwyg [data-node-id]:not(.sb[data-sb-layout="col"]) {
-  /* 非横排的超级块 */
-}
-.protyle-wysiwyg > .sb[data-node-id] + .sb[data-node-id],
-.protyle-wysiwyg [data-node-id]:not(.sb[data-sb-layout="col"]) > .sb[data-node-id] + .sb[data-node-id] {
-  /* 超级块之间的间距 */
-  margin-top: var(--custom-block-super-spacing);
 }

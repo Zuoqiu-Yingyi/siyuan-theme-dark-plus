@@ -10,10 +10,28 @@
         box-shadow: 0 0 var(--custom-block-super-margin) 0 var(--b3-theme-on-surface-light);
 
         &,
-        & .sb[data-node-id] {
+        .sb[data-node-id] {
             /* 超级块边距 */
             margin: var(--custom-block-super-margin);
             padding: var(--custom-block-super-padding);
+        }
+
+        // 横排的超级块
+        &[data-sb-layout=col] {
+            >.sb[data-node-id] {
+                /* 横排超级块内嵌套超级块 */
+                margin-right: var(--custom-block-super-margin);
+            }
+        }
+
+        // 纵排的超级块
+        &[data-sb-layout=row] {
+            >.sb[data-node-id] {
+                +.sb[data-node-id] {
+                    /* 纵排超级块内相邻的超级块 */
+                    margin-top: calc(var(--custom-block-super-margin) * 2);
+                }
+            }
         }
 
         &:hover {
@@ -23,18 +41,8 @@
 
         >.protyle-attr {
             /* 超级块块属性标识 */
-            top: -16px;
+            // top: var(--custom-block-super-attr-offset);
         }
     }
 
-    &,
-    [data-node-id]:not(.sb[data-sb-layout="col"]) {
-        /* 非横排的超级块 */
-        >.sb[data-node-id] {
-            +.sb[data-node-id] {
-                /* 超级块之间的间距 */
-                margin-top: var(--custom-block-super-spacing);
-            }
-        }
-    }
 }
