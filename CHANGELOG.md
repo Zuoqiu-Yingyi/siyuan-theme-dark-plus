@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 调整图标搜索菜单样式 | Adjust the style of the icon search menu.
+- 新增 `window.theme.THIS` 方法 | Added the `window.theme.THIS` method.
 
 ## v1.8.1/2023-04-19
 

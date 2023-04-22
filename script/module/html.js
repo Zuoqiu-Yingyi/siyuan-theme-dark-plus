@@ -14,12 +14,47 @@ window.theme.runcmd = function (commands) {
 }
 
 /**
+ * HTML 块中的脚本获取当前 shadow-root 的 host
+ * REF [思源笔记折腾记录 -html 块 - 链接卡片 - 链滴](https://ld246.com/article/1682099979843)
+ * @params {HTMLElement} element: HTML 块中的 DOM 节点
+ * @return {object}:
+ *      {string} id: 当前 HTML 块 ID
+ *      {HTMLElement} block: 当前 HTML 块
+ *      {HTMLElement} shadowRoot: 当前 HTML 块 shadowRoot
+ * @return {null} null 当前 HTML 块不存在
+ */
+window.theme.THIS = function (element) {
+    try {
+        if (element) {
+            return null;
+        }
+
+        if (element.host) {
+            element = element.host;
+            if (element?.parentElement?.parentElement?.dataset.nodeId) {
+                return {
+                    id: element.parentElement.parentElement.dataset.nodeId,
+                    block: element.parentElement.parentElement,
+                    shadowRoot: element.shadowRoot,
+                };
+            }
+        }
+
+        return this(element.parentNode);
+    } catch (e) {
+        console.log(e);
+        return null;
+    }
+}
+
+/**
  * HTML 块中的脚本获取当前块
- * @param {string} customID 内部定义的 ID
- * @returns {string} id 当前 HTML 块 ID
- * @returns {HTMLElement} block 当前 HTML 块
- * @returns {HTMLElement} shadowRoot 当前 HTML 块 shadowRoot
- * @returns {null} null 当前 HTML 块不存在
+ * @params {string} customID 内部定义的 ID
+ * @return {object}:
+ *      {string} id: 当前 HTML 块 ID
+ *      {HTMLElement} block: 当前 HTML 块
+ *      {HTMLElement} shadowRoot: 当前 HTML 块 shadowRoot
+ * @return {null}: 当前 HTML 块不存在
  */
 window.theme.This = function (customID) {
     let protyle = document.querySelector(`protyle-html[data-content*="${customID}"]`);
@@ -64,18 +99,18 @@ window.theme.urlFormat = function (url, ssl = true) {
 
 /**
  * 新窗口打开
- * @mode (string): 打开窗口模式('app', 'desktop', 'mobile')
- * @url (string): URL
- * @urlParams (object): URL 参数
- * @windowParams (object): 窗体参数
- * @menuTemplate (object): 窗口菜单栏模板
- * @pathname (string): URL 路径名
- * @hash (string): URL hash
- * @consoleMessageCallback (function): 子窗口控制台输出回调
- * @closeCallback (function): 关闭窗口时的回调函数
- * @windowEventHandlers (array): 一组窗口的事件处理器
- * @contentsEventHandlers (array): 一组内容的事件处理器
- * @return (BrowserWindow): 窗口对象
+ * @params {string} mode: 打开窗口模式('app', 'desktop', 'mobile')
+ * @params {string} url: URL
+ * @params {object} urlParams: URL 参数
+ * @params {object} windowParams: 窗体参数
+ * @params {object} menuTemplate: 窗口菜单栏模板
+ * @params {string} pathname: URL 路径名
+ * @params {string} hash: URL hash
+ * @params {function} consoleMessageCallback: 子窗口控制台输出回调
+ * @params {function} closeCallback: 关闭窗口时的回调函数
+ * @params {array} windowEventHandlers: 一组窗口的事件处理器
+ * @params {array} contentsEventHandlers: 一组内容的事件处理器
+ * @return {BrowserWindow}: 窗口对象
  */
 window.theme.openNewWindow = function (
     mode = 'mobile',
