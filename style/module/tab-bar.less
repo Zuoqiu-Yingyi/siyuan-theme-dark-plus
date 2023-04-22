@@ -19,10 +19,11 @@
         /* 页签项 */
         flex: none;
         background-color: transparent;
-        border: 2px solid var(--b3-list-hover) !important;
+        border: 2px solid var(--b3-list-hover);
         border-radius: var(--custom-border-radius);
         box-shadow: none !important;
         min-height: var(--custom-tab-bar-min-height);
+        min-width: unset !important;
         max-width: none;
         box-sizing: border-box;
 
@@ -50,7 +51,7 @@
         }
 
         .item__close {
-            padding: 4px !important;
+            padding: 4px;
 
             // 标签栏右侧新建按钮
             &[data-type="new"],
@@ -71,10 +72,8 @@
         &.item--focus {
             /* 被选中的页签项 */
             background-color: var(--b3-list-hover);
-            box-shadow: none;
-            border-color: var(--b3-list-hover) !important;
-            border-bottom-color: var(--custom-striking-color) !important;
-            border-radius: var(--custom-border-radius);
+            border-color: var(--b3-list-hover);
+            border-bottom-color: var(--custom-striking-color);
 
             &::after {
                 /* 取消当前文档页签的下划线 */
@@ -82,15 +81,13 @@
             }
 
             +.item {
-                border-left-color: var(--b3-list-hover) !important;
+                border-left-color: var(--b3-list-hover);
             }
 
             .layout__wnd--active &,
             .b3-dialog__container & {
                 /* 多窗口被选中的页签项 & 集市被选中的页签项 */
-                box-shadow: none;
-                border-color: var(--custom-striking-color) !important;
-                border-radius: var(--custom-border-radius);
+                border-color: var(--custom-striking-color);
             }
 
         }
