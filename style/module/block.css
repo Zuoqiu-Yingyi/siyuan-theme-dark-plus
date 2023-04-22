@@ -1,14 +1,11 @@
 /* 块全局样式 */
-.b3-typography p,
-.protyle-wysiwyg p,
-.b3-typography [data-node-id],
-.protyle-wysiwyg [data-node-id] {
-  margin-bottom: 0;
+.b3-typography p {
+  margin-top: var(--custom-block-margin-top);
+  margin-bottom: var(--custom-block-margin-bottom);
   border-radius: unset;
 }
-.b3-typography p .protyle-attr,
-.protyle-wysiwyg p .protyle-attr,
-.b3-typography [data-node-id] .protyle-attr,
-.protyle-wysiwyg [data-node-id] .protyle-attr {
-  z-index: 2;
+.protyle-wysiwyg [data-node-id] {
+  margin-top: var(--custom-block-margin-top);
+  margin-bottom: var(--custom-block-margin-bottom);
+  border-radius: unset;
 }

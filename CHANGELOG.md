@@ -5,6 +5,7 @@
 - 调整页签样式 | Adjust the style of the tab.
 - 调整设置面板搜索输入框样式 | Adjust the style of the search input box in the settings panel.
 - 调整嵌套的超级块样式 | Adjust the style of the nested super block.
+- 调整块间距 | Adjust the spacing between blocks.
 
 ## v1.8.1/2023-04-19
 

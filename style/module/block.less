@@ -1,15 +1,19 @@
 /* 块全局样式 */
 
-.b3-typography,
+.block() {
+    margin-top: var(--custom-block-margin-top);
+    margin-bottom: var(--custom-block-margin-bottom);
+    border-radius: unset;
+}
+
+.b3-typography {
+    p {
+        .block();
+    }
+}
+
 .protyle-wysiwyg {
-
-    p,
     [data-node-id] {
-        margin-bottom: 0;
-        border-radius: unset;
-
-        .protyle-attr {
-            z-index: 2;
-        }
+        .block();
     }
 }

@@ -15,6 +15,9 @@
   /* 横排超级块内嵌套超级块 */
   margin-right: var(--custom-block-super-margin);
 }
+.protyle-wysiwyg .sb[data-node-id][data-sb-layout=col] > .sb[data-node-id] + .sb[data-node-id] {
+  /* 横排超级块内相邻的超级块 */
+}
 .protyle-wysiwyg .sb[data-node-id][data-sb-layout=row] > .sb[data-node-id] + .sb[data-node-id] {
   /* 纵排超级块内相邻的超级块 */
   margin-top: calc(var(--custom-block-super-margin) * 2);
