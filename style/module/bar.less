@@ -35,7 +35,7 @@
 }
 
 /* 页签新窗口 */
-.body--window {
+body.body--window {
     #layouts {
         // padding-top: @tool-height;
 
@@ -52,6 +52,17 @@
         }
     }
 
+    // 失焦的窗口
+    &.body--blur {
+        .layout-tab-bar {
+            opacity: unset;
+        }
+
+        .toolbar__window {
+            .inactive-window-title-bar();
+        }
+    }
+
     .toolbar__window {
         width: 100%;
         position: unset;
@@ -63,20 +74,17 @@
         background-color: var(--custom-tool-bar-background-color);
         border-bottom: 1px solid var(--b3-border-color);
 
-        >.toolbar__item--active {
-            /* 被激活的窗口控件 */
-            box-shadow: unset;
-        }
-
-        .body--blur& {
-            .inactive-window-title-bar();
-        }
-
         app-region: drag;
 
         >* {
             app-region: no-drag;
         }
+
+        >.toolbar__item--active {
+            /* 被激活的窗口控件 */
+            box-shadow: unset;
+        }
+
 
         .window-tools();
     }
