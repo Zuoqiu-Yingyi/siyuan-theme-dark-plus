@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.8.2/2023-04-26
+
+- [v1.8.1 ... v1.8.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.8.1...v1.8.2)
 - 调整图标搜索菜单样式 | Adjust the style of the icon search menu.
 - 新增 `window.theme.THIS` 方法 | Added the `window.theme.THIS` method.
 - 调整页签样式 | Adjust the style of the tab.
@@ -12,7 +15,7 @@
 
 ## v1.8.1/2023-04-19
 
-- [v1.8.0 <=> v1.8.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.8.0...v1.8.1)
+- [v1.8.0 ... v1.8.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.8.0...v1.8.1)
 - 更换背景图片功能支持设置无背景图片 | The background image replacement function supports setting no background image.
 - 优化扩展菜单的分割线 | Optimize the separator of the extension menu.
 - 禁用浏览器中 <kbd>Ctrl/⌘ + 鼠标滚轮</kbd> 缩放 DOM | Disable the DOM zooming with <kbd>Ctrl/⌘ + Mouse Wheel</kbd> in the browser.
@@ -26,7 +29,7 @@
 
 ## v1.8.0/2023-04-12
 
-- [v1.7.6 <=> v1.8.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.6...v1.8.0)
+- [v1.7.6 ... v1.8.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.6...v1.8.0)
 - 调整移动端侧边面板树缩进 | Adjust the indentation of the tree in the sidebar panel on the mobile client.
 - 调整已完成任务列表项样式 | Adjust the style of the completed task list item.
 - 使用 `Less` 重构 `theme.css` | Refactored `theme.css` with `Less`.
@@ -44,7 +47,7 @@
 
 ## v1.7.6/2023-04-05
 
-- [v1.7.5 <=> v1.7.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.5...v1.7.6)
+- [v1.7.5 ... v1.7.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.5...v1.7.6)
 - 修复导出时的链接图标问题 | Fixed the issue of the hyperlink icon when exporting.
 - 调整导出预览样式 | Adjust the style of the export preview.
 - 为分享到链滴的文档添加标志 | Add a flag for the document shared to ld246.
@@ -60,7 +63,7 @@
 
 ## v1.7.5/2023-03-28
 
-- [v1.7.4 <=> v1.7.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.4...v1.7.5)
+- [v1.7.4 ... v1.7.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.4...v1.7.5)
 - 新增使用 Monaco 编辑器编辑代码判断功能 | Add the function of using Monaco editor to edit code snippet.
 - 完善在新窗口打开 Monaco 编辑器功能的文档 | Improve the documentation of the function of opening Monaco editor in a new window.
 - 统一移动端正文与大纲的行内元素样式 | Unify the style of inline element for main body and outline on the mobile client.
@@ -74,7 +77,7 @@
 
 ## v1.7.4/2023-03-21
 
-- [v1.7.3 <=> v1.7.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.3...v1.7.4)
+- [v1.7.3 ... v1.7.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.3...v1.7.4)
 - 调整表格内图片的样式 | Adjust the style of the pictures in the table.
   - Adapt: [Issue #7606 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/7606)
 - 为主题自定义配置文件添加回调函数 `callback` | Add callback function `callback` to the theme custom configuration file.
@@ -89,7 +92,7 @@
 
 ## v1.7.3/2023-03-10
 
-- [v1.7.2 <=> v1.7.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.2...v1.7.3)
+- [v1.7.2 ... v1.7.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.2...v1.7.3)
 - 调整 `/` 菜单样式 | Adjust the style of the `/` menu.
   - Adapt: [Issue #7560 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/7560)
 - 优化超链接图标样式 | Optimize the style of the hyperlink icon.
@@ -101,7 +104,7 @@
 
 ## v1.7.2/2023-02-28
 
-- [v1.7.1 <=> v1.7.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.1...v1.7.2)
+- [v1.7.1 ... v1.7.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.1...v1.7.2)
 - 调整对话框遮罩样式 | Adjust the style of the dialog mask.
 - 添加表格头边框 | Add the table header border.
 - 调整制卡对话框卡包信息标签样式 | Adjust the card package information label style in the card making dialog.
@@ -118,7 +121,7 @@
 
 ## v1.7.1/2023-02-15
 
-- [v1.7.0 <=> v1.7.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.0...v1.7.1)
+- [v1.7.0 ... v1.7.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.7.0...v1.7.1)
 - [#179](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/179) 修复自定义样式加载问题 | Fixed the issue of custom style loading.
 - 完善 `README.md` 文档中的自定义 CSS 配置示例 | Improved the custom CSS configuration example in the `README.md` document.
 - 调整钉住窗口控件样式 | Adjust the style of pinned window control.
@@ -127,7 +130,7 @@
 
 ## v1.7.0/2023-02-08
 
-- [v1.6.6 <=> v1.7.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.6...v1.7.0)
+- [v1.6.6 ... v1.7.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.6...v1.7.0)
 - 重构主题配色加载方案 | Refactored the theme color scheme loading scheme.
 - 调整标题栏按钮样式 | Adjust the style of the title bar button.
 - 重构响应状态判断方案 | Refactored the response status judgment scheme.
@@ -140,7 +143,7 @@
 
 ## v1.6.6/2023-01-30
 
-- [v1.6.5 <=> v1.6.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.5...v1.6.6)
+- [v1.6.5 ... v1.6.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.5...v1.6.6)
 - 调整工具栏已激活按钮的样式 | Adjust the style of the activated button in the toolbar.
 - 调整工具栏按钮宽度 | Adjust the width of the toolbar button.
 - 调整窗口标题栏应用图标宽度 | Adjust the width of the app icon for the window title bar.
@@ -151,7 +154,7 @@
 
 ## v1.6.5/2023-01-18
 
-- [v1.6.4 <=> v1.6.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.4...v1.6.5)
+- [v1.6.4 ... v1.6.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.4...v1.6.5)
 - 修复部分面板背景颜色样式问题 | Fixed the issue of some panel background color style.
 - 调整反链面板的面包屑样式 | Adjust the breadcrumb style of the backlink panel.
 - 调整超级块块属性标识样式 | Adjust the style of the block attribute identifier of the super block.
@@ -165,7 +168,7 @@
 
 ## v1.6.4/2023-01-10
 
-- [v1.6.3 <=> v1.6.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.3...v1.6.4)
+- [v1.6.3 ... v1.6.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.3...v1.6.4)
 - 新增电话 URL Scheme 超链接 `tel://` 图标 | Added the URL Scheme link `tel://` icon of Telephone.
 - 使用 `Less` 重构 `panel-inbox.css` | Refactored `panel-inbox.css` with `Less`.
 - 使用 `response.ok` 作为 `fetch` 请求成功的判断条件 | Use `response.ok` as a criterion for the success of the `fetch` request.
@@ -175,7 +178,7 @@
 
 ## v1.6.3/2023-01-03
 
-- [v1.6.2 <=> v1.6.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.2...v1.6.3)
+- [v1.6.2 ... v1.6.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.2...v1.6.3)
 - 支持在子窗口打开子窗口 | Support open sub window in sub window.
 - 修复在子窗口打开的 Monaco 编辑器无法加载的问题 | Fixed the issue of Monaco editor can't load in sub window.
 - 调整自定义悬浮工具栏层级 | Adjust the level of the custom floating toolbar.
@@ -185,7 +188,7 @@
 
 ## v1.6.2/2022-12-27
 
-- [v1.6.1 <=> v1.6.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.1...v1.6.2)
+- [v1.6.1 ... v1.6.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.1...v1.6.2)
 - 调整悬浮菜单捷径样式 | Adjust the style of the shortcut in the floating menu.
 - 调整搜索路径样式 | Adjust the style of the search path.
 - 优化历史记录对比功能 | Optimize the comparison function of the history record.
@@ -201,7 +204,7 @@
 
 ## v1.6.1/2022-12-20
 
-- [v1.6.0 <=> v1.6.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.0...v1.6.1)
+- [v1.6.0 ... v1.6.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.6.0...v1.6.1)
 - 调整最近打开文档对话框样式 | Adjust the style of recently opened document dialog.
   - Adapt: [Issue #3293 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/3293)
 - 文本输入区设置最大宽度 | Set the maximum width of text input area.
@@ -214,7 +217,7 @@
 
 ## v1.6.0/2022-12-12
 
-- [v1.5.3 <=> v1.6.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.5.3...v1.6.0)
+- [v1.5.3 ... v1.6.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.5.3...v1.6.0)
 - `i10n` 支持繁体中文 `zh_CHT` | Support Traditional Chinese `zh_CHT`.
 - 调整容器块宽度 | Adjust block container width.
 - 修复页面加载时功能按钮状态未显示问题 | Fix the issue that the function button status is not displayed when the page is loaded.
@@ -227,7 +230,7 @@
 
 ## v1.5.3/2022-12-05
 
-- [v1.5.2 <=> v1.5.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.5.2...v1.5.3)
+- [v1.5.2 ... v1.5.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.5.2...v1.5.3)
 - 调整对话框样式 | Adjust dialog style.
 - 调整搜索页签样式 | Adjust search tab style.
 - 调整对话框样式 | Adjust dialog style.
@@ -250,7 +253,7 @@
 
 ## v1.5.2/2022-11-29
 
-- [v1.5.1 <=> v1.5.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.5.1...v1.5.2)
+- [v1.5.1 ... v1.5.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.5.1...v1.5.2)
 - jupyter 导入工具支持解析 `code` 类型单元块的输入 | jupyter import tool support parsing input of `code` type cell.
 - 移除 monaco 编辑器中行内元素 IAL Token 前的零宽空格 | Remove zero-width space before IAL Token in inline element in monaco editor.
   - Adapt: [Issue #6712 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/6712)
@@ -270,7 +273,7 @@
 
 ## v1.5.1/2022-11-24
 
-- [v1.5.0 <=> v1.5.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.5.0...v1.5.1)
+- [v1.5.0 ... v1.5.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.5.0...v1.5.1)
 - 优化悬浮工具栏加载速度 | Optimize the loading speed of the floating toolbar.
 - 修复块引用数量标志被块滚动条覆盖问题 | Fix the issue that the block quote number flag is covered by the block scrollbar.
 - 修复悬浮工具栏状态恢复失效问题 | Fix the issue that the floating toolbar state recovery is invalid.
@@ -286,7 +289,7 @@
 
 ## v1.5.0/2022-11-15
 
-- [v1.4.0 <=> v1.5.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.4.0...v1.5.0)
+- [v1.4.0 ... v1.5.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.4.0...v1.5.0)
 - jupyter 控制台富文本使用零宽空格设置边界 | jupyter console rich text uses zero-width spaces to set boundaries.
 - 将 jupyter 的样式配置文件引用添加到 `theme.css` 方便导出 | Add jupyter style config reference to `theme.css` for easy export.
 - jupyter 运行阻塞时块序号设置为 `*` | jupyter block number set to `*` when running is blocked.
@@ -313,7 +316,7 @@
 
 ## v1.4.0/2022-11-06
 
-- [v1.3.7 <=> v1.4.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.7...v1.4.0)
+- [v1.3.7 ... v1.4.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.7...v1.4.0)
 - [#145](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/145) 修复设置 `--custom-tab-bar-item-min-width` 后关闭按钮位置问题 | Fixed the issue of closing button position after setting `--custom-tab-bar-item-min-width`.
 - 修复块菜单项有时未显示问题 | Fixed the issue that block menu items sometimes were not displayed.
 - 移除未使用的背景图片 | Removed unused background images.
@@ -350,7 +353,7 @@
 
 ## v1.3.7/2022-10-27
 
-- [v1.3.6 <=> v1.3.7](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.6...v1.3.7)
+- [v1.3.6 ... v1.3.7](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.6...v1.3.7)
 - 调整大纲栏列表辅助线样式 | Adjusted the style of outline panel guides.
 - 关系图背景设置为半透明 | The diagram background is set to semi-transparent.
 - 修复悬浮工具栏折叠展开时的位置问题 | Fixed the position issue when the floating toolbar was collapsed and expanded.
@@ -369,7 +372,7 @@
 
 ## v1.3.6/2022-10-21
 
-- [v1.3.5 <=> v1.3.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.5...v1.3.6)
+- [v1.3.5 ... v1.3.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.5...v1.3.6)
 - 调整页签按钮样式 | Adjusted the style of tab bar button.
 - 鼠标移出窗口时结束拖拽 | End dragging when the mouse moves out of the window.
 - 优化鼠标移出窗口时结束拖拽 | Optimized to end dragging when the mouse moves out of the window.
@@ -385,7 +388,7 @@
 
 ## v1.3.5/2022-10-17
 
-- [v1.3.4 <=> v1.3.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.4...v1.3.5)
+- [v1.3.4 ... v1.3.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.4...v1.3.5)
 - 修复历史对话框与集市对话框的页签样式问题 | Fixed the issue of the tab style of the History dialog box and the Market dialog box.
 - 修复纵向排列选项卡后页签错位问题 | Fixed the issue of misalignment of tabs in portrait orientation.
 - 调整页签按钮样式 | Adjusted the style of tab bar button.
@@ -393,7 +396,7 @@
 
 ## v1.3.4/2022-10-17
 
-- [v1.3.3 <=> v1.3.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.3...v1.3.4)
+- [v1.3.3 ... v1.3.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.3...v1.3.4)
 - 实现浮窗预览某个块的方法 `popover` | Implement a method `popover` to preview a block using popover window.
 - 新增自定义 CSS 变量 `--custom-template-preview-width` 与 `--custom-template-preview-min-width` 设置模板预览窗口的宽度 | Add the custom CSS variable `--custom-template-preview-width` and `--custom-template-preview-min-width` to customize the width of the template preview window.
 - 兼容删除线样式与背景/前景色样式 | Compatible with strikethrough styles and background/foreground colors.
@@ -410,7 +413,7 @@
 
 ## v1.3.3/2022-10-12
 
-- [v1.3.2 <=> v1.3.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.2...v1.3.3)
+- [v1.3.2 ... v1.3.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.2...v1.3.3)
 - 面包屑样式应用于反链面板 | The breadcrumb style is applied to the reverse chain panel.
 - 移除可编辑反链面板编辑区右侧外边框 | Removes the margin to the right of the editable backchain panel editing area.
 - jupyter 客户端使用消息队列处理接收到的消息 | The jupyter client uses Message Queuing to process the received messages.
@@ -428,7 +431,7 @@
 
 ## v1.3.2/2022-09-30
 
-- [v1.3.1 <=> v1.3.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.1...v1.3.2)
+- [v1.3.1 ... v1.3.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.1...v1.3.2)
 - 添加页签项下拉列表控件样式 | Add the style of tab drop down list control.
 - [#105](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/105) 评论支持输入 markdown 及渲染 | Comments support markdown and rendering.
 - 新增 TheBrain URL Scheme 超链接 `brain://` 图标 | Added the URL Scheme link `brain://` icon of TheBrain.
@@ -444,7 +447,7 @@
 
 ## v1.3.1/2022-09-22
 
-- [v1.3.0 <=> v1.3.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.0...v1.3.1)
+- [v1.3.0 ... v1.3.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.3.0...v1.3.1)
 - 调整表格边距 | Adjust table margins.
 - 调整列表项内水平分割线高度 | Adjust the height of the horizontal rule within the list item.
 - 更换背景图片时同时更换全屏模式背景图片 | Change the full-screen background image when changing the background image.
@@ -468,7 +471,7 @@
 
 ## v1.3.0/2022-09-14
 
-- [v1.2.8 <=> v1.3.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.8...v1.3.0)
+- [v1.2.8 ... v1.3.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.8...v1.3.0)
 - 修复 Monaco Editor 打开本地文件路径问题 | Fixed the issue of Monaco editor open local file.
 - 新增 Monaco Editor 历史查看与差异编辑功能 | Added Monaco Editor history viewing and difference editing function.
 - 新增 Monaco Editor 标准 Markdown 历史查看与差异编辑功能 | Added Monaco Editor standard Markdown history viewing and difference editing function.
@@ -481,7 +484,7 @@
 
 ## v1.2.8/2022-09-07
 
-- [v1.2.7 <=> v1.2.8](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.7...v1.2.8)
+- [v1.2.7 ... v1.2.8](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.7...v1.2.8)
 - 搜索对话框搜索结果文档路径分行显示 | The search dialog box displays the document path in separate lines.
 - [#98](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/98) 修复替换对话框中历史替换文本列表背景颜色问题 | Fixed an issue with the background color of the list of historical replacement text in the Replace dialog box.
 - 更新 Monaco Editor 至 `v0.34.0` | Updated Monaco Editor to `v0.34.0`.
@@ -493,7 +496,7 @@
 
 ## v1.2.7/2022-08-29
 
-- [v1.2.6 <=> v1.2.7](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.6...v1.2.7)
+- [v1.2.6 ... v1.2.7](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.6...v1.2.7)
 - 使用 `Less` 重构 `custom-list-guides.css` | Refactored `custom-list-guides.css` with `Less`.
 - 使用 `Less` 重构 `custom-font-family.css` | Refactored `custom-font-family.css` with `Less`.
 - 使用 `Less` 重构 `custom-board-kanban.css` | Refactored `custom-board-kanban.css` with `Less`.
@@ -511,7 +514,7 @@
 
 ## v1.2.6/2022-08-12
 
-- [v1.2.5 <=> v1.2.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.5...v1.2.6)
+- [v1.2.5 ... v1.2.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.5...v1.2.6)
 - 为 Jupyter 全局配置的 Server 字段输入框添加有效性检查 | Add a check to the Server field of the Jupyter global config to make sure the input is a valid URL.
 - 使用 `data-fullwidth="true"` 属性判断是否启用自适应宽度 | Use the `data-fullwidth="true"` attribute to determine whether to enable adaptive width.
   - REF: [siyuan-note/siyuan: #5468](https://github.com/siyuan-note/siyuan/issues/5468)
@@ -528,7 +531,7 @@
 
 ## v1.2.5/2022-08-03
 
-- [v1.2.4 <=> v1.2.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.4...v1.2.5)
+- [v1.2.4 ... v1.2.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.4...v1.2.5)
 - [#92](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/92) 修复搜索历史菜单背景颜色透明问题 | Fixed an issue where the background color of the search history menu was transparent.
 - 使用 `Less` 重构 `custom-type-title.css` | Refactored `custom-type-title.css` with `Less`.
 - 使用 `Less` 重构 `custom-type-table.css` | Refactored `custom-type-table.css` with `Less`.
@@ -539,7 +542,7 @@
 
 ## v1.2.4/2022-07-26
 
-- [v1.2.3 <=> v1.2.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.3...v1.2.4)
+- [v1.2.3 ... v1.2.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.3...v1.2.4)
 - 使用快捷键 <kbd>Shift + Alt + B</kbd> 启动/关闭页签纵向排列功能 | Use the shortcut <kbd>Shift + Alt + B</kbd> to turn on/off the feature of tabs are arranged vertically.
 - 动态加载样式支持在其他主题调用 | Dynamic loading of style support in other themes called.
 - 移除动态加载样式文件对配置文件的引用 | Removes references to configuration files from dynamically loaded style filesRemoves references to configuration files from dynamically loaded style files.
@@ -551,7 +554,7 @@
 
 ## v1.2.3/2022-07-18
 
-- [v1.2.2 <=> v1.2.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.2...v1.2.3)
+- [v1.2.2 ... v1.2.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.2...v1.2.3)
 - 使用 `Less` 重构 `custom-writing-modes.css` | Refactored `custom-writing-modes.css` with `Less`.
 - [#84](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/84) 适配窗口自适应功能(v2.0.26) | Adapted the window-adaptive function (v2.0.26).
 - 块引用计数元素鼠标悬浮放大 | Blockquote counting element mouse hover zooms in.
@@ -564,7 +567,7 @@
 
 ## v1.2.2/2022-07-13
 
-- [v1.2.1 <=> v1.2.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.1...v1.2.2)
+- [v1.2.1 ... v1.2.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.1...v1.2.2)
 - 修复块反链列表匹配关键词样式失效问题 | Fixed match keyword style invalid issue of block-backlink-list.
 - [#81](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/81) 修复 PDF 标注悬浮预览动画问题 | Fixed PDF annotation floating preview animation issue.
 - `Jupyter` 支持使用 `token` 认证 | `Jupyter` supports `token` authentication.
@@ -575,7 +578,7 @@
 
 ## v1.2.1/2022-07-11
 
-- [v1.2.0 <=> v1.2.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.0...v1.2.1)
+- [v1.2.0 ... v1.2.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.2.0...v1.2.1)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 为面包屑项添加边框 | Added a border to the breadcrumb items
 - 使用 `Less` 重构 `docker.css` | Refactored `docker.css` with `Less`.
@@ -606,7 +609,7 @@
 
 ## v1.2.0/2022-07-03
 
-- [v1.1.4 <=> v1.2.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.4...v1.2.0)
+- [v1.1.4 ... v1.2.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.4...v1.2.0)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 使用 `Less` 重构 `block-code.css` | Refactored `block-code.css` with `Less`.
 - 使用 `Less` 重构 `block-embed.css` | Refactored `block-embed.css` with `Less`.
@@ -624,7 +627,7 @@
 
 ## v1.1.4/2022-06-27
 
-- [v1.1.3 <=> v1.1.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.3...v1.1.4)
+- [v1.1.3 ... v1.1.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.3...v1.1.4)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - [#72](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/72) 修复全局关系图全屏模式样式 | Fixed the global graph full-screen mode style.
@@ -637,7 +640,7 @@
 
 ## v1.1.3/2022-06-18
 
-- [v1.1.2 <=> v1.1.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.2...v1.1.3)
+- [v1.1.2 ... v1.1.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.2...v1.1.3)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 添加复制文档大纲功能的消息提示 | Add a message hint for the function of copying the document outline.
@@ -648,7 +651,7 @@
 
 ## v1.1.2/2022-06-11
 
-- [v1.1.1 <=> v1.1.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.1...v1.1.2)
+- [v1.1.1 ... v1.1.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.1...v1.1.2)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - [#34](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/34) 使用快捷键 <kbd>Shift + Alt + F</kbd> 启动/关闭专注模式 (折叠/展开功能面板) | Use the shortcut <kbd>Shift + Alt + F</kbd> to turn on/off the focus mode (collapse/expand the feature panels).
 - 使用快捷键 <kbd>Shift + Alt + ↑/↓</kbd> 折叠/展开当前文档所有子标题 | Use the shortcut <kbd>Shift + Alt + ↑/↓</kbd> to collapse/expand all sub-headings of the current document.
@@ -658,7 +661,7 @@
 
 ## v1.1.1/2022-06-06
 
-- [v1.1.0 <=> v1.1.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.0...v1.1.1)
+- [v1.1.0 ... v1.1.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.1.0...v1.1.1)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 修复取消聚焦方法 `cancelFocalize` 无法终止问题 | Fixed the issue of function `cancelFocalize` can not terminate.
 - 改进 Jupyter 消息缓存机制 | Improved the Jupyter message cache mechanism.
@@ -671,7 +674,7 @@
 
 ## v1.1.0/2022-06-03
 
-- [v1.0.5 <=> v1.1.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.5...v1.1.0)
+- [v1.0.5 ... v1.1.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.5...v1.1.0)
 - [#65](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/65) 修复 `/` 菜单多栏样式失效问题 | Fixed the issue of the `/` menu multi-column style being invalid.
 - 调整代码块语言样式选择菜单颜色 | Adjusted the color of the code block language selection menu.
 - 移除部分不能使用自定义字体的块字体菜单 | Removed some block font menus that cannot be used with custom fonts.
@@ -692,7 +695,7 @@
 
 ## v1.0.5/2022-05-31
 
-- [v1.0.4 <=> v1.0.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.4...v1.0.5)
+- [v1.0.4 ... v1.0.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.4...v1.0.5)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 添加块自定义属性 `custom-position: top` 与 `custom-position: bottom` | Added `custom-position: top` and `custom-position: bottom` custom attributes to block.
   - `custom-position: top`: 将块固定到父容器顶部 | Pin the block to the top of the parent container
@@ -704,7 +707,7 @@
 
 ## v1.0.4/2022-05-29
 
-- [v1.0.3 <=> v1.0.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.3...v1.0.4)
+- [v1.0.3 ... v1.0.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.3...v1.0.4)
 - 复制大纲功能适配 `v2.0.13` 的 API 与 DOM | Adapted the copy outline function to the API and DOM of `v2.0.13`.
 - 修复图标选择菜单搜索输入框宽度样式问题 | Fixed the width style of the icon selection menu search input.
 - 修复编辑区的 `emojis` 选择菜单样式问题 | Fixed the style of the `emojis` selection menu in the edit area.
@@ -713,7 +716,7 @@
 
 ## v1.0.3/2022-05-25
 
-- [v1.0.2 <=> v1.0.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.2...v1.0.3)
+- [v1.0.2 ... v1.0.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.2...v1.0.3)
 - 可选使用 <kbd>Ctrl + 单击</kbc> 模拟单击面包屑进行聚焦 | Optional use <kbd>Ctrl + Click</kbd> to simulate clicking on a breadcrumb to focus.
 - 重构对话框 CSS 选择器 | Refactored the CSS selector of the dialog.
 - 修复用于解析思源超链接的正则表达式 | Fixed regexp for parsing Synergaia links.
@@ -723,7 +726,7 @@
 
 ## v1.0.2/2022-05-19
 
-- [v1.0.1 <=> v1.0.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.1...v1.0.2)
+- [v1.0.1 ... v1.0.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.1...v1.0.2)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 移除在新窗口打开的桌面版 Web 端的窗口菜单栏 | Removed the menu bar of desktop web side of opening in new window.
 - 调整当前阅读进度标识的位置 | Adjusted the position of the current reading progress indicator.
@@ -736,7 +739,7 @@
 
 ## v1.0.1/2022-05-18
 
-- [v1.0.0 <=> v1.0.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.0...v1.0.1)
+- [v1.0.0 ... v1.0.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.0.0...v1.0.1)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 添加搜索结果匹配的关键词样式配置选项 | Add a configuration option for the style of the keyword in the search results.
 - 修复打开新窗口工具栏按钮 | Fix the button of opening a new window in the toolbar.
@@ -747,7 +750,7 @@
 
 ## v1.0.0/2022-05-17
 
-- [v0.9.9 <=> v1.0.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.9...v1.0.0)
+- [v0.9.9 ... v1.0.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.9...v1.0.0)
 - 统一移动界面大纲样式 | Unified the style of outline on mobile interface.
 - 调整工具栏按钮样式与按钮激活样式 | Adjusted the style of toolbar buttons and the activation style of toolbar buttons.
 - 调整工具栏按钮在窗口较窄时的样式 | Adjusted the style of toolbar buttons when the window is narrower.
@@ -758,7 +761,7 @@
 
 ## v0.9.9/2022-05-16
 
-- [v0.9.8 <=> v0.9.9](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.8...v0.9.9)
+- [v0.9.8 ... v0.9.9](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.8...v0.9.9)
 - 为资源块(挂件块, iframe 块, 视频块与音频块)添加`在新窗口打开资源`菜单项 | Add the `Open the resource in a New Window` menu item for resource blocks (widget blocks, iframe blocks, video blocks and audio blocks).
 - 为子窗口添加窗口置顶/取消置顶菜单项 | Add the `Topmost` menu item for subwindows.
 - 使用 <kbd>Shift + Alt + 鼠标中键</kbd> 单击文档在新窗口打开 [Monaco 编辑器](https://github.com/microsoft/monaco-editor)并编辑文档的 kramdown 源码 | Click on a document to open [Monaco Editor](https://github.com/microsoft/monaco-editor) in a new window and edit the kramdown source code of document using the <kbd>Shift + Alt + Middle Mouse Button</kbd>.
@@ -768,7 +771,7 @@
 
 ## v0.9.8/2022-05-13
 
-- [v0.9.7 <=> v0.9.8](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.7...v0.9.8)
+- [v0.9.7 ... v0.9.8](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.7...v0.9.8)
 - 调整页签项图标的大小 | Adjusted the size of the tab icon.
 - 调整页签中按钮控件样式 | Adjusted the style of the button in the tab.
 - 使用快捷键 <kbd>Shift + Alt + E</kbd> 启用/关闭显示标记文本功能 | Use the shortcut <kbd>Shift + Alt + E</kbd> to enable/disable the feature of displaying mark text.
@@ -777,7 +780,7 @@
 
 ## v0.9.7/2022-05-11
 
-- [v0.9.6 <=> v0.9.7](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.6...v0.9.7)
+- [v0.9.6 ... v0.9.7](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.6...v0.9.7)
 - 修复在新窗口打开无法跳转非文档块问题 | Fixed an issue where opening in a new window could not jump to non-document blocks.
 - 修复获得目标块方法运行时异常问题 | Fixed an issue where the getTargetBlock method would throw an exception.
 - 调整被选择的文本背景颜色 | Changed the background color of the selected text.
@@ -791,7 +794,7 @@
 
 ## v0.9.6/2022-05-09
 
-- [v0.9.5 <=> v0.9.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.5...v0.9.6)
+- [v0.9.5 ... v0.9.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.5...v0.9.6)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 代码块功能按钮固定显示 | Fixed display code block function buttons.
 - 使用自定义块属性 `custom-width` 将 iframe 窗口宽度设置为文档宽度 | Use the custom block attribute `custom-width` to set the width of the iframe window to the document width.
@@ -802,7 +805,7 @@
 
 ## v0.9.5/2022-05-05
 
-- [v0.9.4 <=> v0.9.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.4...v0.9.5)
+- [v0.9.4 ... v0.9.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.4...v0.9.5)
 - 强制显示块滚动条 | Blocks scrollbars are always visible.
 - 调整当前文档浏览位置标识位置 | Adjust the position of the current document indicator.
 - 部分功能移动端支持 | Some features are supported on mobile devices.
@@ -813,7 +816,7 @@
 
 ## v0.9.4/2022-05-04
 
-- [v0.9.3 <=> v0.9.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.3...v0.9.4)
+- [v0.9.3 ... v0.9.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.3...v0.9.4)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 禁用新窗口的 Node.js 组件 | Disable Node.js components in new windows.
 - 调整菜单分隔线颜色 | Adjust the color of the menu separator.
@@ -826,7 +829,7 @@
 
 ## v0.9.3/2022-05-01
 
-- [v0.9.2 <=> v0.9.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.2...v0.9.3)
+- [v0.9.2 ... v0.9.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.2...v0.9.3)
 - 移除列表块脑图视图标题块的左侧边线 | Remove left border of heading block which in list block with mind map view.
 - 调整代码块样式 | Adjust code block style.
 - 移除编辑器窗口的菜单栏 | Remove the menu bar of editor window.
@@ -836,7 +839,7 @@
 
 ## v0.9.2/2022-04-30
 
-- [v0.9.1 <=> v0.9.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.1...v0.9.2)
+- [v0.9.1 ... v0.9.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.1...v0.9.2)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 为复制当前文档大纲增加 API 解析方案 | Added API parsing scheme for copying the current document outline.
 - 优化打字机模式监听器添加方案 | Optimized the typewriter mode listener addition scheme.
@@ -853,7 +856,7 @@
 
 ## v0.9.1/2022-04-24
 
-- [v0.9.0 <=> v0.9.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.0...v0.9.1)
+- [v0.9.0 ... v0.9.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.9.0...v0.9.1)
 - 增加 Monaco Editor 状态指示图标 | Add a status icon for the Monaco Editor.
 - 增加 Monaco Editor 复制当前页面链接功能 | Add a function to copy the current page's link to the clipboard in the Monaco Editor.
 - 增加 Monaco Editor 复制当前页面完整链接功能 | Add a function to copy the current page's full link to the clipboard in the Monaco Editor.
@@ -867,7 +870,7 @@
 
 ## v0.9.0/2022-04-23
 
-- [v0.8.2 <=> v0.9.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.8.2...v0.9.0)
+- [v0.8.2 ... v0.9.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.8.2...v0.9.0)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 列表表格视图与脑图视图内列表项中嵌入块保持纵向排列 | The embedded blocks whitch in list items in a table view or a mind-map view are arranged in portrait orientation.
 - 使用快捷键 <kbd>Ctrl/⌘ + 鼠标滚轮</kbd> 调整编辑区字体大小 | Use the shortcut keys <kbd>Ctrl/⌘ + Mouse Wheel</kbd> to adjust the edit area font size.
@@ -886,7 +889,7 @@
 
 ## v0.8.2/2022-04-20
 
-- [v0.8.1 <=> v0.8.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.8.1...v0.8.2)
+- [v0.8.1 ... v0.8.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.8.1...v0.8.2)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 修复列表辅助线错位问题 | Fixed an issue where the list guides line was misplaced.
 - 完善鼠标中键打开新窗口时获取块 ID 方法 | Improved the method to get the block ID when opening a new window with the middle mouse button.
@@ -902,21 +905,21 @@
 
 ## v0.8.1/2022-04-19
 
-- [v0.8.0 <=> v0.8.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.8.0...v0.8.1)
+- [v0.8.0 ... v0.8.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.8.0...v0.8.1)
 - 修复块菜单中的其他字体子菜单项无法选择问题 | Fixed an issue where other font submenu items in the block menu could not be selected.
 - 修复块菜单中的其他字体无法保存问题 | Fixed an issue where other font could not be saved.
 - 修复块菜单通用项分隔线冗余问题 | Fixed an issue where the common items separator line was redundant.
 
 ## v0.8.0/2022-04-18
 
-- [v0.7.3 <=> v0.8.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.7.3...v0.8.0)
+- [v0.7.3 ... v0.8.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.7.3...v0.8.0)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 使用快捷键 <kbd>Shift + Alt + M</kbd> 启用/关闭块标菜单增强功能 | Use the shortcut <kbd>Shift + Alt + M</kbd> to enable/disable the block menu enhancement feature.
 - 统一移动端与桌面端搜索面板样式 | Unified the search panel style on mobile and desktop.
 
 ## v0.7.3/2022-04-16
 
-- [v0.7.2 <=> v0.7.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.7.2...v0.7.3)
+- [v0.7.2 ... v0.7.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.7.2...v0.7.3)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 添加配置选项 `editable` 控制新窗口的编辑器是否可编辑 | Add configuration option `editable` to control whether the editor is editable in new windows.
 - 修复新窗口 URL 参数解析问题 | Fix the URL parameter parsing problem in new windows.
@@ -939,7 +942,7 @@
 
 ## v0.7.2/2022-04-15
 
-- [v0.7.1 <=> v0.7.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.7.1...v0.7.2)
+- [v0.7.1 ... v0.7.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.7.1...v0.7.2)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 生成超级块动作的拖拽参考线使用鲜明颜色标记 | The draggable guide line for generating super blocks is marked with striking color.
@@ -952,7 +955,7 @@
 
 ## v0.7.1/2022-04-09
 
-- [v0.7.0 <=> v0.7.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.7.0...v0.7.1)
+- [v0.7.0 ... v0.7.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.7.0...v0.7.1)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 添加网络图片 URL 列表 | Added network image URL list.
 - 反色支持 iframe 与视频资源 | Inverted color feature supports iframes and video resources.
@@ -963,7 +966,7 @@
 
 ## v0.7.0/2022-04-08
 
-- [v0.6.2 <=> v0.7.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.6.2...v0.7.0)
+- [v0.6.2 ... v0.7.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.6.2...v0.7.0)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 完善打字机模式对代码块与表格的支持 | Improved support for code blocks and table blocks in the typewriter mode.
 - 为自定义背景是图片功能添加随机开关与默认启用开关 | Added a random switch and a default switch for the background image feature.
@@ -974,7 +977,7 @@
 
 ## v0.6.2/2022-04-06
 
-- [v0.6.1 <=> v0.6.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.6.1...v0.6.2)
+- [v0.6.1 ... v0.6.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.6.1...v0.6.2)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 为集市资源自述文件预览设置背景颜色 | Sets the background color for the Bazaar Resource Readme Preview.
@@ -988,7 +991,7 @@
 
 ## v0.6.1/2022-04-03
 
-- [v0.6.0 <=> v0.6.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.6.0...v0.6.1)
+- [v0.6.0 ... v0.6.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.6.0...v0.6.1)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 配置文件 `light.css` 有变更 | There are changes to the configuration file `light.css`.
 - 修复菜单项输入框选择器使用错误问题 | Fixed an issue where the menu item input box selector was used incorrectly.
@@ -998,7 +1001,7 @@
 
 ## v0.6.0/2022-04-02
 
-- [v0.5.7 <=> v0.6.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.7...v0.6.0)
+- [v0.5.7 ... v0.6.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.7...v0.6.0)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 修复基础配色文件引用问题 | Fixed an issue with the underlying color matching file reference.
 - 为虚拟引用元素添加背景色 | Adds a background color to the virtual reference element.
@@ -1011,14 +1014,14 @@
 
 ## v0.5.7/2022-04-02
 
-- [v0.5.6 <=> v0.5.7](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.6...v0.5.7)
+- [v0.5.6 ... v0.5.7](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.6...v0.5.7)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 复制当前文档大纲可选择添加标题级别标记 `#` | Copy the current document outline with the option of adding a heading level mark `#`.
 - 修复悬浮输入框透明度问题 | Fixed an issue with the transparency of the floating input box.
 
 ## v0.5.6/2022-03-31
 
-- [v0.5.5 <=> v0.5.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.5...v0.5.6)
+- [v0.5.5 ... v0.5.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.5...v0.5.6)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 修复 `.all-contributorsrc` 文件配置问题 | Fix the configuration problem of the `.all-contributorsrc` file.
 - 完善图片, 音频与视频文件扩展名 | Improve the extension of the image, audio and video files.
@@ -1030,7 +1033,7 @@
 
 ## v0.5.5/2022-03-30
 
-- [v0.5.4 <=> v0.5.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.4...v0.5.5)
+- [v0.5.4 ... v0.5.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.4...v0.5.5)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 修复复制当前文档大纲为有序列表时序号错误问题 | Fixed the issue that the number of the list was wrong when copying the current document outline as an ordered list.
@@ -1042,7 +1045,7 @@
 
 ## v0.5.4/2022-03-29
 
-- [v0.5.3 <=> v0.5.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.3...v0.5.4)
+- [v0.5.3 ... v0.5.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.3...v0.5.4)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 使用快捷键 <kbd>Ctrl/⌘ + Shift + Alt + O</kbd> 复制当前文档大纲为有序列表 | Use shortcut key <kbd>Ctrl/⌘ + Shift + Alt + O</kbd> to copy the current document outline as an ordered list.
@@ -1053,7 +1056,7 @@
 
 ## v0.5.3/2022-03-23
 
-- [v0.5.2 <=> v0.5.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.2...v0.5.3)
+- [v0.5.2 ... v0.5.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.2...v0.5.3)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 为对话框添加背景图片 | Add background image for dialogs.
 - 修复块属性设置对话框头部颜色问题 | Fix the issue of the header color of the block attribute setting dialog.
@@ -1062,7 +1065,7 @@
 
 ## v0.5.2/2022-03-21
 
-- [v0.5.1 <=> v0.5.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.1...v0.5.2)
+- [v0.5.1 ... v0.5.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.1...v0.5.2)
 - 修复图文混排无法对齐问题 | Fixed the issue that mixed text and graphics could not be aligned.
 - 修复图片尺寸调整控件偏移问题 | Fixed an issue with the offset of the image sizing control.
 - 将 README.md 中 `<br>` 替换为 `<br/>` | Replaced `<br>` in README.md with `<br/>`.
@@ -1072,7 +1075,7 @@
 
 ## v0.5.1/2022-03-18
 
-- [v0.5.0 <=> v0.5.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.0...v0.5.1)
+- [v0.5.0 ... v0.5.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.5.0...v0.5.1)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 使用自定义块属性 `custom-render: scroll` 为过高的块设置滚动条 | Use the custom block attribute `custom-render: scroll` to set the scroll bar for blocks that are too tall.
@@ -1084,7 +1087,7 @@
 
 ## v0.5.0/2022-03-17
 
-- [v0.4.6 <=> v0.5.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.6...v0.5.0)
+- [v0.4.6 ... v0.5.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.6...v0.5.0)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 调整文档标签样式 | Adjusted the style of the document tags.
@@ -1095,7 +1098,7 @@
 
 ## v0.4.6/2022-03-15
 
-- [v0.4.5 <=> v0.4.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.5...v0.4.6)
+- [v0.4.5 ... v0.4.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.5...v0.4.6)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 新增 `runcmd` URL Scheme 超链接图标 | Added `runcmd` URL Scheme link icon.
@@ -1113,7 +1116,7 @@
 
 ## v0.4.5/2022-03-13
 
-- [v0.4.4 <=> v0.4.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.4...v0.4.5)
+- [v0.4.4 ... v0.4.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.4...v0.4.5)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 为可聚焦的思源内部超链接添加样式 | Add styles to the focused hyperlinks of siyuan.
 - 使用快捷键 <kbd>Shift + Alt + T</kbd> 启动/关闭打字机模式 | Use the shortcut key <kbd>Ctrl/⌘ + F5</kbd> to turn on/off typewriter mode.
@@ -1123,7 +1126,7 @@
 
 ## v0.4.4/2022-03-12
 
-- [v0.4.3 <=> v0.4.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.3...v0.4.4)
+- [v0.4.3 ... v0.4.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.3...v0.4.4)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 调整弹出菜单分隔线样式 | Adjust the style of the separator of the pop-up menu.
 - 添加 SuperMemo URL Scheme(`sm:`) 图标 | Add the SuperMemo URL Scheme(`sm:`) icon.
@@ -1133,7 +1136,7 @@
 
 ## v0.4.3/2022-03-10
 
-- [v0.4.2 <=> v0.4.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.2...v0.4.3)
+- [v0.4.2 ... v0.4.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.2...v0.4.3)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 调整搜索结果原文的高亮样式 | Adjust the highlight style of the original text of the search results.
@@ -1146,7 +1149,7 @@
 
 ## v0.4.2/2022-03-09
 
-- [v0.4.1 <=> v0.4.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.1...v0.4.2)
+- [v0.4.1 ... v0.4.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.1...v0.4.2)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 重构使用 URL 参数 `id` 跳转到指定块 | The refactoring of using the URL parameter `id` to jump to the specified block.
 - 修复使用 URL 参数 `id` 跳转到指定块 | Fix the issue of using the URL parameter `id` to jump to the specified block.
@@ -1158,7 +1161,7 @@
 
 ## v0.4.1/2022-03-07
 
-- [v0.4.0 <=> v0.4.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.0...v0.4.1)
+- [v0.4.0 ... v0.4.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.4.0...v0.4.1)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 设置更细粒度的功能开关 | Set more fine-grained function switches.
@@ -1170,7 +1173,7 @@
 
 ## v0.4.0/2022-03-03
 
-- [v0.3.8 <=> v0.4.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.8...v0.4.0)
+- [v0.3.8 ... v0.4.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.8...v0.4.0)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 更换公式编号默认样式 | Replace the formula numbering default style.
@@ -1201,13 +1204,13 @@
 
 ## v0.3.8/2022-02-24
 
-- [v0.3.7 <=> v0.3.8](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.7...v0.3.8)
+- [v0.3.7 ... v0.3.8](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.7...v0.3.8)
 - 修复特定文档名颜色渲染问题 | Fixed color rendering issue for specific document names.
 - 修复列表内引用块辅助线错位问题 | Fixed the issue of misalignment of reference block guides in the list.
 
 ## v0.3.7/2022-02-20
 
-- [v0.3.6 <=> v0.3.7](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.6...v0.3.7)
+- [v0.3.6 ... v0.3.7](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.6...v0.3.7)
 - 修复列表渲染为表格样式 | Fixed list rendering to table style.
 - 添加各式图标折叠时的样式 | Adds a style for various icons when collapsed.
 - 调整部分样式 | Adjust some of the styles.
@@ -1216,14 +1219,14 @@
 
 ## v0.3.6/2022-02-18
 
-- [v0.3.5 <=> v0.3.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.5...v0.3.6)
+- [v0.3.5 ... v0.3.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.5...v0.3.6)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 使用快捷键 <kbd>Ctrl + 鼠标中键</kbd> 单击视频块将当前时间戳写入剪贴板 | Use the shortcut keys <kbd>Ctrl + Middle Mouse Button</kbd> click the video block to write the current timestamp to the clipboard.
 - 添加时间戳超链接图标 | Add a timestamp hyperlink icon.
 
 ## v0.3.5/2022-02-16
 
-- [v0.3.4 <=> v0.3.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.4...v0.3.5)
+- [v0.3.4 ... v0.3.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.4...v0.3.5)
 - 配置文件 `config.css` 有变更 | There are changes to the configuration file `config.css`.
 - 将文件引用路径更改为绝对路径 | Change the file reference path to an absolute path.
 - 为移动端背景图片添加半透明蒙版 | Add a translucent mask to the mobile background image.
@@ -1238,25 +1241,25 @@
 
 ## v0.3.4/2022-02-14
 
-- [v0.3.3 <=> v0.3.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.3...v0.3.4)
+- [v0.3.3 ... v0.3.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.3...v0.3.4)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 使用快捷键 <kbd>Ctrl + 鼠标中键</kbd> 设置自定义块属性 | Use the shortcut keys <kbd>Ctrl + Middle Mouse Button</kbd> to set custom block properties.
 - 视频时间戳更改为通过 API 查询块属性 | The video timestamp changes to query the block attributes through the API.
 
 ## v0.3.3/2022-02-13
 
-- [v0.3.2 <=> v0.3.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.2...v0.3.3)
+- [v0.3.2 ... v0.3.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.2...v0.3.3)
 - 配置文件 `config.js` 有变更 | There are changes to the configuration file `config.js`.
 - 视频/音频跳转到指定时间点 | The video/audio jumps to the specified point in time.
 
 ## v0.3.2/2022-02-12
 
-- [v0.3.1 <=> v0.3.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.1...v0.3.2)
+- [v0.3.1 ... v0.3.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.1...v0.3.2)
 - 移除 Query 功能(可使用挂件 [Query](https://github.com/Zuoqiu-Yingyi/widget-query) 实现) | Remove the Query feature (This can be implemented using widget [Query](https://github.com/Zuoqiu-Yingyi/widget-query)).
 
 ## v0.3.1/2022-02-10
 
-- [v0.3.0 <=> v0.3.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.0...v0.3.1)
+- [v0.3.0 ... v0.3.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.3.0...v0.3.1)
 - 使用自定义属性 `type` = `query` 的 SQL 代码块从思源数据库中进行查询并将查询结果在其下方渲染为表格 | Use the sql code block of the custom attribute `type` = `query` to query from the siyuan database and render the query results below the code block as a table.
   - 默认快捷键为 <kbd>Ctrl + F2</kbd> | The default shortcut key is <kbd>Ctrl + F2</kbd>.
 - 将渲染自定义块属性指定的样式的默认快捷键更改为 <kbd>Ctrl + F1</kbd> | Changes the default shortcut key for rendering the style specified by the custom block attribute to <kbd>Ctrl + F1</kbd>.
@@ -1267,7 +1270,7 @@
 
 ## v0.3.0/2022-02-07
 
-- [v0.2.0 <=> v0.3.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.2.0...v0.3.0)
+- [v0.2.0 ... v0.3.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v0.2.0...v0.3.0)
 - 编辑区内边距固定为自定义值 | The padding of editor pannel are fixed to custom values.
 - 修复文档树标题颜色模块引用问题 | Fixed an issue with document tree title color module references.
 - 使用自定义块属性渲染块样式 | Use custom block attributes to render the block style.
