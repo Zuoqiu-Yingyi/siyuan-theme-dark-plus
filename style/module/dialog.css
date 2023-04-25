@@ -36,8 +36,12 @@
 .b3-dialog__container .b3-dialog__content {
   background-color: transparent !important;
 }
-.b3-dialog__container .config__tab-container {
+.b3-dialog__container .config__panel .config__tab-container {
   background-color: transparent;
+}
+.b3-dialog__container .config__panel .config__tab-container .config-account__center--text {
+  background-color: transparent;
+  border-left: 1px solid var(--b3-border-color);
 }
 .b3-dialog__container .fn__flex-column {
   border-radius: inherit;
@@ -163,11 +167,6 @@
  *  REF: [自定义样式：搜索窗口改造（窗口放大+左右布局） - 链滴](https: //ld246.com/article/1648269766832)
  */
 /* 搜索对话框尺寸 */
-body > .b3-dialog--open:has(#searchInput) > .b3-dialog > .b3-dialog__container:not(:has(.b3-dialog__cardblock, .b3-dialog--switch)),
-body > .b3-dialog--open:has(#searchInput) > .b3-dialog > .b3-dialog__container > div[style*="height"]:not(:has(.b3-dialog__cardblock, .b3-dialog--switch)) {
-  width: var(--custom-dialog-search-width) !important;
-  height: var(--custom-dialog-search-height) !important;
-}
 body > .b3-dialog--open:has(#searchInput) > .b3-dialog > .b3-dialog__container > .b3-dialog__close {
   /* 调整搜索框关闭按钮位置, 避免被遮挡 */
   right: calc((100vw - var(--custom-dialog-search-width)) / -2);
