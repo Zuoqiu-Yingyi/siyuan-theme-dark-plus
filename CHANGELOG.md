@@ -7,6 +7,7 @@
 - 调整嵌套的超级块样式 | Adjust the style of the nested super block.
 - 调整块间距 | Adjust the spacing between blocks.
 - 调整失焦的窗口标题栏样式 | Adjust the style of the window title bar when it is out of focus.
+- 调整设置对话框中账户设置面板样式 | Adjust the style of the account settings panel in the settings dialog.
 
 ## v1.8.1/2023-04-19
 

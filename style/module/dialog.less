@@ -85,8 +85,16 @@
     }
 
     // 设置对话框
-    .config__tab-container {
-        background-color: transparent;
+    .config__panel {
+        .config__tab-container {
+            background-color: transparent;
+
+            // 账号订阅区域
+            .config-account__center--text {
+                background-color: transparent;
+                border-left: 1px solid var(--b3-border-color);
+            }
+        }
     }
 
     .fn__flex-column {
@@ -259,17 +267,6 @@ body {
     >.b3-dialog--open:has(#searchInput) {
         >.b3-dialog {
             >.b3-dialog__container {
-
-                &,
-                &>div[style*="height"] {
-
-                    // .b3-dialog__cardblock 闪卡
-                    // .b3-dialog--switch 最近打开的文档
-                    &:not(:has(.b3-dialog__cardblock, .b3-dialog--switch)) {
-                        width: var(--custom-dialog-search-width) !important;
-                        height: var(--custom-dialog-search-height) !important;
-                    }
-                }
 
                 >.b3-dialog__close {
                     /* 调整搜索框关闭按钮位置, 避免被遮挡 */
