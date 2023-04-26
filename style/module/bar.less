@@ -228,6 +228,7 @@ body.body--window {
 /* ↓底部状态栏↓ */
 
 #status {
+    background-color: var(--custom-status-bar-background-color);
 
     #barDock,
     #barHelp {
@@ -238,7 +239,8 @@ body.body--window {
     }
 
     .status__msg,
-    .status__counter {
+    .status__counter,
+    .status__backgroundtask {
         line-height: @tool-height;
     }
 }

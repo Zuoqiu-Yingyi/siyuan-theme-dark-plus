@@ -191,12 +191,16 @@ body:not(.body--win32) #toolbar:not(.toolbar--browser) {
 }
 /* ↑顶部工具栏↑ */
 /* ↓底部状态栏↓ */
+#status {
+  background-color: var(--custom-status-bar-background-color);
+}
 #status #barDock .b3-menu,
 #status #barHelp .b3-menu {
   /* 左下右下菜单 */
   bottom: calc(var(--custom-dock-width) - var(--custom-dock-item-margin-width) * 2) !important;
 }
 #status .status__msg,
-#status .status__counter {
+#status .status__counter,
+#status .status__backgroundtask {
   line-height: calc(var(--custom-dock-width) - var(--custom-dock-item-margin-width) * 2);
 }
