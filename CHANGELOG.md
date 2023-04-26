@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 调整状态栏加载滚动条样式 | Adjust the style of the loading scroll bar in the status bar.
+
 ## v1.8.2/2023-04-26
 
 - [v1.8.1 ... v1.8.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.8.1...v1.8.2)
