@@ -3,6 +3,7 @@
 - 调整状态栏加载滚动条样式 | Adjust the style of the loading scroll bar in the status bar.
 - 调整块拖拽移动目的地样式 | Adjust the style of the block drag and drop destination.
 - 使用相对路径引用样式模块 | Use relative path to reference style module.
+- 使用 `import` 加载脚本 | Use `import` to load script.
 
 ## v1.8.2/2023-04-26
 

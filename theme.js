@@ -364,32 +364,32 @@ switch (window.theme.clientMode) {
 }
 
 /* 加载 HTML 块中使用的小工具 */
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/html.js"), undefined, true);
+import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/html.js"));
 
 /* 加载主题功能 */
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/background.js"), undefined, true);
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/blockattrs.js"), undefined, true);
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/doc.js"), undefined, true);
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/dock.js"), undefined, true);
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/fullscreen.js"), undefined, true);
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/goto.js"), undefined, true);
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/invert.js"), undefined, true);
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/location.js"), undefined, true);
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/menu.js"), undefined, true);
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/readonly.js"), undefined, true);
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/reload.js"), undefined, true);
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/style.js"), undefined, true);
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/timestamp.js"), undefined, true);
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/typewriter.js"), undefined, true);
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/wheel.js"), undefined, true);
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/module/window.js"), undefined, true);
+import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/background.js"));
+import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/blockattrs.js"));
+import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/doc.js"));
+import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/dock.js"));
+import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/fullscreen.js"));
+import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/goto.js"));
+import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/invert.js"));
+import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/location.js"));
+import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/menu.js"));
+import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/readonly.js"));
+import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/reload.js"));
+import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/style.js"));
+import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/timestamp.js"));
+import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/typewriter.js"));
+import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/wheel.js"));
+import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/window.js"));
 
 /* 加载独立应用 */
-window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/app/comment/index.js"), undefined, true);
+import(window.theme.addURLParam("/appearance/themes/Dark+/app/comment/index.js"));
 
 /* 加载自定义配置文件 */
-// window.theme.loadScript(window.theme.addURLParam("/widgets/custom.js"));
+// import(window.theme.addURLParam("/widgets/custom.js"));
 
 /* 加载测试模块 */
-// window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/test/worker.js"), undefined, true);
-// window.theme.loadScript(window.theme.addURLParam("/appearance/themes/Dark+/script/test/listener.js"), undefined, true);
+// import(window.theme.addURLParam("/appearance/themes/Dark+/script/test/worker.js"));
+// import(window.theme.addURLParam("/appearance/themes/Dark+/script/test/listener.js"));
