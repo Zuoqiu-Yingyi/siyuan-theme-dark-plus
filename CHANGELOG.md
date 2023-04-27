@@ -4,6 +4,7 @@
 - 调整块拖拽移动目的地样式 | Adjust the style of the block drag and drop destination.
 - 使用相对路径引用样式模块 | Use relative path to reference style module.
 - 使用 `import` 加载脚本 | Use `import` to load script.
+- 调整导出样式 | Adjust the style of the export.
 
 ## v1.8.2/2023-04-26
 

@@ -7,7 +7,7 @@
   background: unset !important;
 }
 #action + #preview {
-  /* 仅导出预览界面的样式 */
+  /* 仅应用于导出预览界面的样式 */
   border: 1px dashed var(--b3-theme-on-surface);
 }
 #preview.protyle-wysiwyg mark,

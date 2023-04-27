@@ -77,6 +77,8 @@
 @import url("style/module/panel-separator.css?v=1.8.2");
 @import url("style/module/panel-tag.css?v=1.8.2");
 @import url("style/module/panel.css?v=1.8.2");
+/* 打印 */
+@import url("style/module/print.css?v=1.8.2");
 /* 行内元素 */
 @import url("style/module/span-code.css?v=1.8.2");
 @import url("style/module/span-em.css?v=1.8.2");
