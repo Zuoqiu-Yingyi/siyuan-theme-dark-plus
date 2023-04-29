@@ -5,6 +5,7 @@
 - 使用相对路径引用样式模块 | Use relative path to reference style module.
 - 使用 `import` 加载脚本 | Use `import` to load script.
 - 调整导出样式 | Adjust the style of the export.
+- 调整设置对话框中账户设置面板样式 | Adjust the style of the account settings panel in the settings dialog.
 
 ## v1.8.2/2023-04-26
 

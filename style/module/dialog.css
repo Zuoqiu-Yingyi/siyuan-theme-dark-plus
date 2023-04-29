@@ -36,6 +36,12 @@
 .b3-dialog__container .b3-dialog__content {
   background-color: transparent !important;
 }
+.b3-dialog__container .config__panel .b3-tab-bar .b3-form__icon {
+  /* 设置搜索输入框 */
+  padding-bottom: 0.5em;
+  margin: 0 0 0.5em;
+  border-bottom: 2px solid var(--custom-popover-menu-separator-color);
+}
 .b3-dialog__container .config__panel .config__tab-container {
   background-color: transparent;
 }
