@@ -53,11 +53,18 @@
                 padding: 0;
             }
 
-            &.fn__flex {
-                /* 块属性 */
-                padding: 0.5em;
+            // 块属性
+            &.fn__flex,
+            // 快照文件内容信息
+            +.b3-list-item__meta {
                 color: var(--custom-popover-menu-attribute-color);
             }
+
+            // 块属性
+            &.fn__flex {
+                padding: 0.5em;
+            }
+
         }
     }
 }

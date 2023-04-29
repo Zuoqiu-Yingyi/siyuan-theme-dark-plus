@@ -188,10 +188,20 @@
 .b3-list.b3-tab-bar > .b3-list-item .b3-list-item__meta.fn__flex,
 .sy__backlink .b3-list > .b3-list-item .b3-list-item__meta.fn__flex,
 .b3-dialog__container .b3-list > .b3-list-item .b3-list-item__meta.fn__flex,
-#historyContainer .b3-list > .b3-list-item .b3-list-item__meta.fn__flex {
-  /* 块属性 */
-  padding: 0.5em;
+#historyContainer .b3-list > .b3-list-item .b3-list-item__meta.fn__flex,
+.b3-list:not(ul) > .b3-list-item .b3-list-item__meta + .b3-list-item__meta,
+.b3-list.b3-tab-bar > .b3-list-item .b3-list-item__meta + .b3-list-item__meta,
+.sy__backlink .b3-list > .b3-list-item .b3-list-item__meta + .b3-list-item__meta,
+.b3-dialog__container .b3-list > .b3-list-item .b3-list-item__meta + .b3-list-item__meta,
+#historyContainer .b3-list > .b3-list-item .b3-list-item__meta + .b3-list-item__meta {
   color: var(--custom-popover-menu-attribute-color);
+}
+.b3-list:not(ul) > .b3-list-item .b3-list-item__meta.fn__flex,
+.b3-list.b3-tab-bar > .b3-list-item .b3-list-item__meta.fn__flex,
+.sy__backlink .b3-list > .b3-list-item .b3-list-item__meta.fn__flex,
+.b3-dialog__container .b3-list > .b3-list-item .b3-list-item__meta.fn__flex,
+#historyContainer .b3-list > .b3-list-item .b3-list-item__meta.fn__flex {
+  padding: 0.5em;
 }
 .b3-list.search__list > .b3-list-item + div:not(.b3-list-item) > .b3-list-item {
   /* padding-top: var(--custom-popover-menu-margin-width); */
@@ -218,10 +228,12 @@
   border: 0;
   padding: 0;
 }
-.b3-list.search__list > .b3-list-item + div:not(.b3-list-item) > .b3-list-item .b3-list-item__meta.fn__flex {
-  /* 块属性 */
-  padding: 0.5em;
+.b3-list.search__list > .b3-list-item + div:not(.b3-list-item) > .b3-list-item .b3-list-item__meta.fn__flex,
+.b3-list.search__list > .b3-list-item + div:not(.b3-list-item) > .b3-list-item .b3-list-item__meta + .b3-list-item__meta {
   color: var(--custom-popover-menu-attribute-color);
+}
+.b3-list.search__list > .b3-list-item + div:not(.b3-list-item) > .b3-list-item .b3-list-item__meta.fn__flex {
+  padding: 0.5em;
 }
 #historyContainer .b3-list {
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
@@ -272,10 +284,12 @@
   border: 0;
   padding: 0;
 }
-#searchPanel > .b3-list-item .b3-list-item__meta.fn__flex {
-  /* 块属性 */
-  padding: 0.5em;
+#searchPanel > .b3-list-item .b3-list-item__meta.fn__flex,
+#searchPanel > .b3-list-item .b3-list-item__meta + .b3-list-item__meta {
   color: var(--custom-popover-menu-attribute-color);
+}
+#searchPanel > .b3-list-item .b3-list-item__meta.fn__flex {
+  padding: 0.5em;
 }
 .b3-list-item mark,
 .protyle-wysiwyg [data-node-id] span.def--mark,
