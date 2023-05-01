@@ -173,10 +173,6 @@
  *  REF: [自定义样式：搜索窗口改造（窗口放大+左右布局） - 链滴](https: //ld246.com/article/1648269766832)
  */
 /* 搜索对话框尺寸 */
-body > .b3-dialog--open:has(#searchInput) > .b3-dialog > .b3-dialog__container > .b3-dialog__close {
-  /* 调整搜索框关闭按钮位置, 避免被遮挡 */
-  right: calc((100vw - var(--custom-dialog-search-width)) / -2);
-}
 /* 制卡(添加到卡包)对话框 */
 .b3-dialog--open[data-key=makeCard] .b3-dialog__container .b3-list.b3-list--background > .b3-list-item > .b3-list-item__meta {
   margin-left: 8px;
