@@ -151,6 +151,16 @@
   border-top: 1px solid var(--b3-scroll-color);
   border-bottom: 1px solid var(--b3-scroll-color);
 }
+#historyContainer .history__repo[data-type=repo] .b3-list .b3-list-item[data-type=repoitem] [data-type=hCreated] {
+  color: var(--custom-snapshot-created-time-color);
+}
+#historyContainer .history__repo[data-type=repo] .b3-list .b3-list-item[data-type=repoitem] .b3-list-item__meta {
+  color: var(--custom-snapshot-additional-info-color);
+  line-height: 1.5em;
+}
+#historyContainer .history__repo[data-type=repo] .b3-list .b3-list-item[data-type=repoitem] .b3-list-item__meta + .b3-list-item__meta {
+  color: var(--custom-snapshot-file-info-color);
+}
 #historyContainer .history__asset,
 #historyContainer .history__text {
   /* 历史对话框内容框 */

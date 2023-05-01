@@ -367,6 +367,13 @@
   /* --custom-popover-menu-input-min-width: 50vw; */
   --custom-popover-menu-input-min-width: unset;
   --custom-popover-menu-textarea-min-width: var(--custom-popover-menu-input-min-width);
+  /* 快照 | snapshot */
+  /* 快照创建时间颜色 | The color of the snapshot creation time */
+  --custom-snapshot-created-time-color: var(--b3-card-success-color);
+  /* 快照附加信息颜色 | The color of the snapshot additional information */
+  --custom-snapshot-additional-info-color: var(--b3-card-info-color);
+  /* 快照文件信息颜色 | The color of the snapshot file information */
+  --custom-snapshot-file-info-color: var(--b3-card-warning-color);
   /* 模板预览 | Template preview */
   /* 模板预览窗口宽度 | The width of the template preview window */
   /* --custom-template-preview-width: 520px; */
