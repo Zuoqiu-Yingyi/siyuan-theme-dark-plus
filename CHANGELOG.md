@@ -7,6 +7,7 @@
 - 调整导出样式 | Adjust the style of the export.
 - 调整设置对话框中账户设置面板样式 | Adjust the style of the account settings panel in the settings dialog.
 - 调整历史快照的文件信息样式 | Adjust the style of the file information of the history snapshot.
+- 取消对话框关闭按钮位置调整 | Cancel the adjustment of the position of the dialog close button.
 
 ## v1.8.2/2023-04-26
 
