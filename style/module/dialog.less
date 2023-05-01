@@ -245,6 +245,32 @@
             border-top: 1px solid var(--b3-scroll-color);
             border-bottom: 1px solid var(--b3-scroll-color);
         }
+
+        // 快照面板
+        &[data-type=repo] {
+            .b3-list {
+
+                // 快照项
+                .b3-list-item[data-type=repoitem] {
+
+                    // 快照创建时间
+                    [data-type=hCreated] {
+                        color: var(--custom-snapshot-created-time-color);
+                    }
+
+                    // 快照附加信息
+                    .b3-list-item__meta {
+                        color: var(--custom-snapshot-additional-info-color);
+                        line-height: 1.5em;
+
+                        // 快照文件信息
+                        +.b3-list-item__meta {
+                            color: var(--custom-snapshot-file-info-color);
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .history__asset,
