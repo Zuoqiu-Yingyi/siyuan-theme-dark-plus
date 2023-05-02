@@ -9,6 +9,8 @@
 - 调整历史快照的文件信息样式 | Adjust the style of the file information of the history snapshot.
 - 取消对话框关闭按钮位置调整 | Cancel the adjustment of the position of the dialog close button.
 - 调整历史快照列表样式 | Adjust the style of the list of the history snapshot.
+- 调整脚本加载路径解析方案 | Adjust the script loading path resolution scheme.
+- 更新 YouTube iframe API 脚本 | Updated the YouTube iframe API script.
 
 ## v1.8.2/2023-04-26
 
