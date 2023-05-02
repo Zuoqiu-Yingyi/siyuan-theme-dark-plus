@@ -255,6 +255,14 @@ window.theme.kernelVersion = window.siyuan.config.system.kernelVersion;
 window.theme.OS = window.siyuan.config.system.os;
 
 /**
+ * 获得主题根目录
+ */
+window.theme.root = (() => {
+    const src = document.currentScript.getAttribute('src');
+    return src.substring(0, src.lastIndexOf('/'));
+})();
+
+/**
  * 获取一个 Lute 对象
  * @return {Lute} Lute 对象
  */
@@ -364,32 +372,32 @@ switch (window.theme.clientMode) {
 }
 
 /* 加载 HTML 块中使用的小工具 */
-import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/html.js"));
+import(window.theme.addURLParam(`${window.theme.root}/script/module/html.js`));
 
 /* 加载主题功能 */
-import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/background.js"));
-import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/blockattrs.js"));
-import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/doc.js"));
-import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/dock.js"));
-import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/fullscreen.js"));
-import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/goto.js"));
-import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/invert.js"));
-import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/location.js"));
-import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/menu.js"));
-import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/readonly.js"));
-import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/reload.js"));
-import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/style.js"));
-import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/timestamp.js"));
-import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/typewriter.js"));
-import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/wheel.js"));
-import(window.theme.addURLParam("/appearance/themes/Dark+/script/module/window.js"));
+import(window.theme.addURLParam(`${window.theme.root}/script/module/background.js`));
+import(window.theme.addURLParam(`${window.theme.root}/script/module/blockattrs.js`));
+import(window.theme.addURLParam(`${window.theme.root}/script/module/doc.js`));
+import(window.theme.addURLParam(`${window.theme.root}/script/module/dock.js`));
+import(window.theme.addURLParam(`${window.theme.root}/script/module/fullscreen.js`));
+import(window.theme.addURLParam(`${window.theme.root}/script/module/goto.js`));
+import(window.theme.addURLParam(`${window.theme.root}/script/module/invert.js`));
+import(window.theme.addURLParam(`${window.theme.root}/script/module/location.js`));
+import(window.theme.addURLParam(`${window.theme.root}/script/module/menu.js`));
+import(window.theme.addURLParam(`${window.theme.root}/script/module/readonly.js`));
+import(window.theme.addURLParam(`${window.theme.root}/script/module/reload.js`));
+import(window.theme.addURLParam(`${window.theme.root}/script/module/style.js`));
+import(window.theme.addURLParam(`${window.theme.root}/script/module/timestamp.js`));
+import(window.theme.addURLParam(`${window.theme.root}/script/module/typewriter.js`));
+import(window.theme.addURLParam(`${window.theme.root}/script/module/wheel.js`));
+import(window.theme.addURLParam(`${window.theme.root}/script/module/window.js`));
 
 /* 加载独立应用 */
-import(window.theme.addURLParam("/appearance/themes/Dark+/app/comment/index.js"));
+import(window.theme.addURLParam(`${window.theme.root}/app/comment/index.js`));
 
 /* 加载自定义配置文件 */
 // import(window.theme.addURLParam("/widgets/custom.js"));
 
 /* 加载测试模块 */
-// import(window.theme.addURLParam("/appearance/themes/Dark+/script/test/worker.js"));
-// import(window.theme.addURLParam("/appearance/themes/Dark+/script/test/listener.js"));
+// import(window.theme.addURLParam(`${window.theme.root}/script/test/worker.js`));
+// import(window.theme.addURLParam(`${window.theme.root}/script/test/listener.js`));

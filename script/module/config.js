@@ -14,7 +14,7 @@ import {
     putFile,
 } from './../utils/api.js';
 
-const THEME_PATHNAME = "/appearance/themes/Dark+";
+const THEME_PATHNAME = window.theme.root;
 
 const config = {
     custom: {
@@ -239,6 +239,7 @@ const config = {
             youtube: { // YouTube 时间戳相关配置
                 // iframe_api: "https://www.youtube.com/iframe_api", // API 工具
                 iframe_api: `${THEME_PATHNAME}/static/youtube/iframe_api.js`, // API 工具
+                type: 'text/javascript', // script 类型
                 polling: 500, // 轮询时间(单位: ms)
             },
             jump: {
