@@ -1,11 +1,14 @@
-// var scriptUrl = 'https:\/\/www.youtube.com\/s\/player\/0c356943\/www-widgetapi.vflset\/www-widgetapi.js';
-var scriptUrl = '/appearance/themes/Dark+/static/youtube/www-widgetapi.js';
+// var scriptUrl = 'https:\/\/www.youtube.com\/s\/player\/c353919c\/www-widgetapi.vflset\/www-widgetapi.js';
+var scriptUrl = `${window.theme.root}/static/youtube/www-widgetapi.js`;
+window['yt_embedsEnableHouseBrandAndYtCoexistence'] = true;
 try {
     var ttPolicy = window.trustedTypes.createPolicy("youtube-widget-api", { createScriptURL: function (x) { return x } });
     scriptUrl = ttPolicy.createScriptURL(scriptUrl)
 } catch (e) { }
-if (!window["YT"]) var YT = { loading: 0, loaded: 0 };
-if (!window["YTConfig"]) var YTConfig = { "host": "https://www.youtube.com" };
+var YT;
+if (!window["YT"]) YT = { loading: 0, loaded: 0 };
+var YTConfig;
+if (!window["YTConfig"]) YTConfig = { "host": "https://www.youtube.com" };
 if (!YT.loading) {
     YT.loading = 1;
     (function () {
@@ -16,7 +19,7 @@ if (!YT.loading) {
         };
         window.onYTReady = function () {
             YT.loaded = 1;
-            for (var i = 0; i < l.length; i++)try { l[i]() } catch (e$0) { }
+            for (var i = 0; i < l.length; i++) try { l[i]() } catch (e$0) { }
         };
         YT.setConfig = function (c) { for (var k in c) if (c.hasOwnProperty(k)) YTConfig[k] = c[k] };
         var a = document.createElement("script");

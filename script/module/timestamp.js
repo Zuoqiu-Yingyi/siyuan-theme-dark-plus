@@ -167,7 +167,7 @@ setTimeout(() => {
             }
 
             if (config.theme.timestamp.create.enable) {
-                window.theme.loadScript(config.theme.timestamp.youtube.iframe_api);
+                window.theme.loadScript(config.theme.timestamp.youtube.iframe_api, config.theme.timestamp.youtube.type);
                 // 生成时间戳并写入剪贴板
                 globalEventHandler.addEventHandler(
                     'mouseup',
