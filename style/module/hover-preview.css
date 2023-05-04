@@ -9,7 +9,7 @@
   background-color: var(--custom-popover-background-color);
   backdrop-filter: var(--custom-backdrop-popover-filter);
 }
-.block__popover.block__popover--top > .block__icons--border {
+.block__popover.block__popover--top > .block__icons {
   background-color: var(--b3-list-hover);
 }
 .block__popover .block__icons--border {
