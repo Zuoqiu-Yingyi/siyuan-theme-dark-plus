@@ -11,6 +11,7 @@
 - 调整历史快照列表样式 | Adjust the style of the list of the history snapshot.
 - 调整脚本加载路径解析方案 | Adjust the script loading path resolution scheme.
 - 更新 YouTube iframe API 脚本 | Updated the YouTube iframe API script.
+- 修复最上层的悬浮预览窗口标题栏样式问题 | Fixed the style issue of the title bar of the top floating preview window.
 
 ## v1.8.2/2023-04-26
 
