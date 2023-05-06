@@ -4,6 +4,7 @@ import { config } from './config.js';
 import {
     setFontSize,
     disableMouseWheelZoomDom,
+    isEventInEditor,
 } from './../utils/dom.js';
 import { globalEventHandler } from './../utils/listener.js';
 
@@ -20,11 +21,15 @@ setTimeout(() => {
     try {
         if (config.theme.wheel.enable) {
             if (config.theme.wheel.zoom.enable) {
-                // 重新加载 iframe
+                // 更改字号
                 globalEventHandler.addEventHandler(
                     'mousewheel',
                     config.theme.hotkeys.wheel.zoom,
-                    e => setTimeout(() => changeFontSize(e.wheelDeltaY), 0),
+                    e => {
+                        if (isEventInEditor(e)) {
+                            setTimeout(() => changeFontSize(e.wheelDeltaY), 0);
+                        }
+                    },
                 );
 
                 disableMouseWheelZoomDom();

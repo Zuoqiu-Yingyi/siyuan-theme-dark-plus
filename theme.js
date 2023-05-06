@@ -400,4 +400,4 @@ import(window.theme.addURLParam(`${window.theme.root}/app/comment/index.js`));
 
 /* 加载测试模块 */
 // import(window.theme.addURLParam(`${window.theme.root}/script/test/worker.js`));
-// import(window.theme.addURLParam(`${window.theme.root}/script/test/listener.js`));
+import(window.theme.addURLParam(`${window.theme.root}/script/test/listener.js`));
