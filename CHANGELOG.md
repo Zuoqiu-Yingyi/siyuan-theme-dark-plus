@@ -12,6 +12,7 @@
 - 调整脚本加载路径解析方案 | Adjust the script loading path resolution scheme.
 - 更新 YouTube iframe API 脚本 | Updated the YouTube iframe API script.
 - 修复最上层的悬浮预览窗口标题栏样式问题 | Fixed the style issue of the title bar of the top floating preview window.
+- [#191](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/191) 修复打开 PDF 后页面缩放失效问题 | Fixed the issue that the page zoom is invalid after opening the PDF.
 
 ## v1.8.2/2023-04-26
 

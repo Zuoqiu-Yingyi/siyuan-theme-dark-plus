@@ -18,7 +18,7 @@ class EventHandler {
      * @params {boolean} capture: 是否在捕获阶段触发
      * @params {HTMLNode} Node: 监听的节点
      */
-    constructor(multiple = true, propagate = true, capture = true, node = window) {
+    constructor(multiple = true, propagate = true, capture = true, node = document) {
         this.multiple = multiple;
         this.propagate = propagate;
         this.capture = capture;

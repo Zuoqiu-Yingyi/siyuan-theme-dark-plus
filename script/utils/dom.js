@@ -34,6 +34,9 @@ export {
     requestFullscreen, // 请求全屏
     requestFullscreenBlock, // 请求对指定的块全屏
     disableMouseWheelZoomDom, // 禁用鼠标滚轮缩放 DOM
+    isElementEditor, // 判断指定元素是否为编辑器/渲染器
+    isElementInEditor, // 判断指定元素是否在编辑区内
+    isEventInEditor, // 判断事件是否发生在编辑区内
 };
 
 import { url2id } from './misc.js';
@@ -823,6 +826,9 @@ function requestFullscreenBlock(block) {
         case 'NodeWidget':
             element = block.querySelector('iframe');
             break;
+        case 'NodeHTMLBlock':
+            element = block.querySelector('protyle-html');
+            break;
         default:
             element = block;
             break;
@@ -878,4 +884,47 @@ function disableMouseWheelZoomDom() {
 
     /* firefox */
     window.addEventListener('DOMMouseScroll', blocker, options);
+}
+
+/**
+ * 判断指定元素是否为编辑器/渲染器
+ * @params {HTMLElement} element: DOM 元素
+ * @return {boolean}: 是否为编辑器/渲染器
+ */
+function isElementEditor(element) {
+    return (element?.classList.contains('protyle-wysiwyg')
+        || element?.classList.contains('b3-typography')
+        || element?.classList.contains('protyle-title')
+    );
+}
+
+/**
+ * 判断指定元素是否在编辑区内
+ * @params {HTMLElement} element: DOM 元素
+ * @return {boolean}: 是否在编辑区内
+ */
+function isElementInEditor(element) {
+    do {
+        if (isElementEditor(element)) {
+            return true;
+        }
+        element = element.parentElement;
+    } while (element);
+    return false;
+}
+
+/**
+ * 判断事件是否发生在编辑区内
+ * @params {Event} e: 时间
+ * @return {boolean}: 是否在编辑区内
+ */
+function isEventInEditor(e) {
+    if (e?.path) {
+        for (let i = 0; i < e.path.length; ++i) {
+            if (isElementEditor(e.path[i])) {
+                return true;
+            }
+        }
+    }
+    return false;
 }
