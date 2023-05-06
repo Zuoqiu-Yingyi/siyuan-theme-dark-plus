@@ -892,9 +892,9 @@ function disableMouseWheelZoomDom() {
  * @return {boolean}: 是否为编辑器/渲染器
  */
 function isElementEditor(element) {
-    return (element?.classList.contains('protyle-wysiwyg')
-        || element?.classList.contains('b3-typography')
-        || element?.classList.contains('protyle-title')
+    return (element?.classList?.contains('protyle-wysiwyg')
+        || element?.classList?.contains('b3-typography')
+        || element?.classList?.contains('protyle-title')
     );
 }
 
