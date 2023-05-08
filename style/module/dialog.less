@@ -1,5 +1,15 @@
 /* 对话框 */
 
+// 对话框背景
+.dialog-background {
+    background-image: var(--custom-background-image-dialog);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: transparent;
+}
+
 // 搜索结果列表项
 .search-list-item() {
     padding-bottom: calc(1.25em + 1px);
@@ -50,12 +60,7 @@
 
 .b3-dialog__container {
     /* 对话框图片 */
-    background-image: var(--custom-background-image-dialog);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-color: transparent;
+    .dialog-background();
 
     border-radius: var(--custom-border-radius) !important;
 
@@ -106,6 +111,21 @@
                 background-color: transparent;
                 border-left: 1px solid var(--b3-border-color);
             }
+        }
+    }
+
+    // 集市内容详情对话框
+    .config-bazaar__readme {
+        // .dialog-background();
+        background-color: var(--custom-dialog-bazaar-readme-background-color);
+
+        // 集市详情侧边栏
+        .item__side {
+            border-right: 2px solid var(--b3-border-color);
+        }
+
+        // 集市详情主体
+        .item__main {
         }
     }
 

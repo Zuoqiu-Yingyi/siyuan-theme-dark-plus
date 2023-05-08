@@ -1,4 +1,12 @@
 /* 对话框 */
+.dialog-background {
+  background-image: var(--custom-background-image-dialog);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: transparent;
+}
 #keymapList .b3-list--border > .b3-list-item.toggle {
   margin: 0 !important;
 }
@@ -48,6 +56,12 @@
 .b3-dialog__container .config__panel .config__tab-container .config-account__center--text {
   background-color: transparent;
   border-left: 1px solid var(--b3-border-color);
+}
+.b3-dialog__container .config-bazaar__readme {
+  background-color: var(--custom-dialog-bazaar-readme-background-color);
+}
+.b3-dialog__container .config-bazaar__readme .item__side {
+  border-right: 2px solid var(--b3-border-color);
 }
 .b3-dialog__container .fn__flex-column {
   border-radius: inherit;
