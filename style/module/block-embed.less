@@ -2,7 +2,7 @@
 
 
 .protyle-wysiwyg {
-    [data-node-id][data-type="NodeBlockQueryEmbed"].render-node {
+    .render-node[data-node-id][data-type="NodeBlockQueryEmbed"] {
         /* 嵌入块 */
         margin: 0;
         padding: 0;
@@ -10,7 +10,7 @@
         // outline: 2px solid var(--custom-line-color);
         background-color: transparent;
 
-        +[data-node-id][data-type="NodeBlockQueryEmbed"].render-node {
+        +.render-node[data-node-id][data-type="NodeBlockQueryEmbed"] {
             /* 两个连续的嵌入块 */
             margin-top: 0.5em;
         }
@@ -47,6 +47,16 @@
                 // position: relative;
                 // border-top: 1px dashed var(--custom-line-color);
                 // border-bottom: 4px double var(--custom-line-color);
+            }
+        }
+    }
+
+    // 横排超级块
+    .sb[data-node-id][data-sb-layout=col] {
+        >.render-node[data-node-id][data-type="NodeBlockQueryEmbed"] {
+            +.render-node[data-node-id][data-type="NodeBlockQueryEmbed"] {
+                /* 移除横排超级块内两个连续的嵌入块的间距 */
+                margin-top: initial;
             }
         }
     }
