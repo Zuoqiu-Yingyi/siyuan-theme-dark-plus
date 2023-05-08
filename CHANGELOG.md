@@ -14,6 +14,7 @@
 - 修复最上层的悬浮预览窗口标题栏样式问题 | Fixed the style issue of the title bar of the top floating preview window.
 - [#191](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/191) 修复打开 PDF 后页面缩放失效问题 | Fixed the issue that the page zoom is invalid after opening the PDF.
 - 移除横排超级块内相邻的两个及以上嵌入块的上边距 | Removed the top margin of two or more embedded blocks in the horizontal super block.
+- 调整集市内容预览界面样式 | Adjust the style of the content preview interface of the bazaar.
 
 ## v1.8.2/2023-04-26
 

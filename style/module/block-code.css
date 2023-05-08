@@ -1,10 +1,14 @@
 /* 代码块 */
 /* 👇编辑区与导出预览共用样式👇 */
+.b3-typography pre,
+.protyle-wysiwyg pre,
 .b3-typography .code-block,
 .protyle-wysiwyg .code-block {
   /* 块背景颜色 */
   background-color: var(--custom-block-code-background-color);
 }
+.b3-typography pre > .hljs,
+.protyle-wysiwyg pre > .hljs,
 .b3-typography .code-block > .hljs,
 .protyle-wysiwyg .code-block > .hljs {
   /* 编辑区 */
