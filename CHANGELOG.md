@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.9.0/2023-05-10
+
+- [v1.8.2 ... v1.9.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.8.2...v1.9.0)
 - 调整状态栏加载滚动条样式 | Adjust the style of the loading scroll bar in the status bar.
 - 调整块拖拽移动目的地样式 | Adjust the style of the block drag and drop destination.
 - 使用相对路径引用样式模块 | Use relative path to reference style module.
