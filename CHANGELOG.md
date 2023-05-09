@@ -16,6 +16,7 @@
 - 移除横排超级块内相邻的两个及以上嵌入块的上边距 | Removed the top margin of two or more embedded blocks in the horizontal super block.
 - 调整集市内容预览界面样式 | Adjust the style of the content preview interface of the bazaar.
 - 中英文文档分离 | Separate Chinese and English documents.
+- 简体中文自述文件重命名为 `README_zh_CN.md` | Renamed the Simplified Chinese README file to `README_zh_CN.md`.
 
 ## v1.8.2/2023-04-26
 
