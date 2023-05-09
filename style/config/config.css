@@ -556,7 +556,7 @@
 @font-face {
   font-family: "Win10 Emoji";
   font-style: normal;
-  src: url(/appearance/themes/Dark+/fonts/seguiemj.ttf);
+  src: url(../../fonts/seguiemj.ttf);
 }
 /* 更改原属性 */
 :root {
