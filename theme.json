@@ -2,7 +2,7 @@
   "name": "Dark+",
   "author": "Zuoqiu Yingyi",
   "url": "https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus",
-  "version": "1.8.2",
+  "version": "1.9.0",
   "modes": [
     "dark",
     "light"
@@ -17,12 +17,14 @@
   },
   "readme": {
     "default": "README.md",
-    "zh_CN": "README-zh-Hans.md"
+    "zh_CN": "README_zh_CN.md"
   },
   "funding": {
     "openCollective": "",
     "patreon": "",
     "github": "",
-    "custom": []
+    "custom": [
+      "https://afdian.net/a/zuoqiu"
+    ]
   }
 }
