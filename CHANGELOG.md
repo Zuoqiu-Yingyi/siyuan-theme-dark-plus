@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 调整集市资源卡片样式 | Adjust the style of the bazaar resource card.
+- 添加赞助链接 | Added sponsor link.
 
 ## v1.9.0/2023-05-10
 
