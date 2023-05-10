@@ -53,15 +53,18 @@
 .b3-dialog__container .config__panel .config__tab-container {
   background-color: transparent;
 }
+.b3-dialog__container .config__panel .config__tab-container[data-name=bazaar] .b3-cards .b3-card {
+  background-color: transparent;
+}
+.b3-dialog__container .config__panel .config__tab-container[data-name=bazaar] .config-bazaar__readme {
+  background-color: var(--custom-dialog-bazaar-readme-background-color);
+}
+.b3-dialog__container .config__panel .config__tab-container[data-name=bazaar] .config-bazaar__readme .item__side {
+  border-right: 2px solid var(--b3-border-color);
+}
 .b3-dialog__container .config__panel .config__tab-container .config-account__center--text {
   background-color: transparent;
   border-left: 1px solid var(--b3-border-color);
-}
-.b3-dialog__container .config-bazaar__readme {
-  background-color: var(--custom-dialog-bazaar-readme-background-color);
-}
-.b3-dialog__container .config-bazaar__readme .item__side {
-  border-right: 2px solid var(--b3-border-color);
 }
 .b3-dialog__container .fn__flex-column {
   border-radius: inherit;
