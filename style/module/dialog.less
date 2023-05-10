@@ -106,26 +106,38 @@
         .config__tab-container {
             background-color: transparent;
 
+            // 集市面板
+            &[data-name=bazaar] {
+
+                // 集市资源卡片容器
+                .b3-cards {
+
+                    // 集市资源卡片
+                    .b3-card {
+                        background-color: transparent;
+                    }
+                }
+
+                // 集市内容详情对话框
+                .config-bazaar__readme {
+                    // .dialog-background();
+                    background-color: var(--custom-dialog-bazaar-readme-background-color);
+
+                    // 集市详情侧边栏
+                    .item__side {
+                        border-right: 2px solid var(--b3-border-color);
+                    }
+
+                    // 集市详情主体
+                    .item__main {}
+                }
+            }
+
             // 账号订阅区域
             .config-account__center--text {
                 background-color: transparent;
                 border-left: 1px solid var(--b3-border-color);
             }
-        }
-    }
-
-    // 集市内容详情对话框
-    .config-bazaar__readme {
-        // .dialog-background();
-        background-color: var(--custom-dialog-bazaar-readme-background-color);
-
-        // 集市详情侧边栏
-        .item__side {
-            border-right: 2px solid var(--b3-border-color);
-        }
-
-        // 集市详情主体
-        .item__main {
         }
     }
 
@@ -189,7 +201,6 @@
             width: auto !important;
         }
     }
-
 }
 
 // 搜索提示信息

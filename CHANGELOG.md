@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 调整集市资源卡片样式 | Adjust the style of the bazaar resource card.
+
 ## v1.9.0/2023-05-10
 
 - [v1.8.2 ... v1.9.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.8.2...v1.9.0)
