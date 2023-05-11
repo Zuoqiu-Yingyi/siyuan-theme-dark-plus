@@ -43,6 +43,15 @@
       "contributions": [
         "video"
       ]
+    },
+    {
+      "login": "StarDustSheep",
+      "name": "吃星尘的羊",
+      "avatar_url": "https://avatars.githubusercontent.com/u/114859111?v=4",
+      "profile": "https://github.com/StarDustSheep",
+      "contributions": [
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
