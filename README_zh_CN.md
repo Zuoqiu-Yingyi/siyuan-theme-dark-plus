@@ -9,7 +9,7 @@
 ![GitHub 仓库大小](https://img.shields.io/github/repo-size/Zuoqiu-Yingyi/siyuan-theme-dark-plus?style=flat-square)
 ![查看次数](https://hits.b3log.org/Zuoqiu-Yingyi/siyuan-theme-dark-plus.svg)
 [![GitHub 发行版本下载次数](https://img.shields.io/github/downloads/Zuoqiu-Yingyi/siyuan-theme-dark-plus/total?style=flat-square)](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/releases)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributor-introduction)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributor-introduction)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ---
@@ -74,10 +74,11 @@
 <table>
   <tbody>
     <tr>
-      <td align="center"><a href="https://github.com/tswwe"><img src="https://avatars.githubusercontent.com/u/36465489?v=4?s=100" width="100px;" alt="thxnder"/><br /><sub><b>thxnder</b></sub></a><br /><a href="https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/commits?author=tswwe" title="Code">💻</a> <a href="https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues?q=author%3Atswwe" title="Bug reports">🐛</a></td>
-      <td align="center"><a href="https://github.com/langzhou"><img src="https://avatars.githubusercontent.com/u/6987229?v=4?s=100" width="100px;" alt="langzhou"/><br /><sub><b>langzhou</b></sub></a><br /><a href="https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/commits?author=langzhou" title="Code">💻</a></td>
-      <td align="center"><a href="https://github.com/royc01"><img src="https://avatars.githubusercontent.com/u/38906705?v=4?s=100" width="100px;" alt="royc01"/><br /><sub><b>royc01</b></sub></a><br /><a href="#ideas-royc01" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/commits?author=royc01" title="Code">💻</a></td>
-      <td align="center"><a href="https://github.com/UserZYF"><img src="https://avatars.githubusercontent.com/u/38289979?v=4?s=100" width="100px;" alt="UserZYF"/><br /><sub><b>UserZYF</b></sub></a><br /><a href="#video-UserZYF" title="Videos">📹</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/tswwe"><img src="https://avatars.githubusercontent.com/u/36465489?v=4?s=100" width="100px;" alt="thxnder"/><br /><sub><b>thxnder</b></sub></a><br /><a href="https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/commits?author=tswwe" title="Code">💻</a> <a href="https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues?q=author%3Atswwe" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/langzhou"><img src="https://avatars.githubusercontent.com/u/6987229?v=4?s=100" width="100px;" alt="langzhou"/><br /><sub><b>langzhou</b></sub></a><br /><a href="https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/commits?author=langzhou" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/royc01"><img src="https://avatars.githubusercontent.com/u/38906705?v=4?s=100" width="100px;" alt="royc01"/><br /><sub><b>royc01</b></sub></a><br /><a href="#ideas-royc01" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/commits?author=royc01" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/UserZYF"><img src="https://avatars.githubusercontent.com/u/38289979?v=4?s=100" width="100px;" alt="UserZYF"/><br /><sub><b>UserZYF</b></sub></a><br /><a href="#video-UserZYF" title="Videos">📹</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/StarDustSheep"><img src="https://avatars.githubusercontent.com/u/114859111?v=4?s=100" width="100px;" alt="吃星尘的羊"/><br /><sub><b>吃星尘的羊</b></sub></a><br /><a href="#design-StarDustSheep" title="Design">🎨</a></td>
     </tr>
   </tbody>
 </table>
