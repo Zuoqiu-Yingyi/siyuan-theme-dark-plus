@@ -4,6 +4,7 @@
 - 添加赞助链接 | Added sponsor link.
 - [#192](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/192) 更改主题图标 `icon.png` | Changed the theme icon `icon.png`.
 - 调整 PDF 属性对话框样式 | Adjust the style of the PDF properties dialog.
+- 添加插件目录图标 | Added the plugin directory icon.
 
 ## v1.9.0/2023-05-10
 

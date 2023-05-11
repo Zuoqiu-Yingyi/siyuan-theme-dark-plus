@@ -253,12 +253,14 @@
     - `data/**/assets/`
   - <img alt="emojis" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/emojis.svg" style="height: 1em; width: 1em;" /> `emojis/`: 表情文件目录
     - `data/emojis/`
-  - <img alt="widgets" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/widgets.svg" style="height: 1em; width: 1em;" /> `widgets/`: 挂件文件目录
-    - `data/widgets/`
+  - <img alt="plugins" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/plugins.svg" style="height: 1em; width: 1em;" /> `plugins/`: 插件文件目录
+    - `data/plugins/`
   - <img alt="snippets" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/snippets.svg" style="height: 1em; width: 1em;" /> `snippets/`: 片段文件目录
     - `data/snippets/`
   - <img alt="templates" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/templates.svg" style="height: 1em; width: 1em;" /> `templates/`: 模板文件目录
     - `data/templates/`
+  - <img alt="widgets" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/widgets.svg" style="height: 1em; width: 1em;" /> `widgets/`: 挂件文件目录
+    - `data/widgets/`
   - <img alt="appearance" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/appearance.svg" style="height: 1em; width: 1em;" /> `appearance/`: 外观文件目录
     - `conf/appearance/`
   - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/export.svg" style="height: 1em; width: 1em;" /> `export/`: 导出文件目录
@@ -557,8 +559,8 @@
 
 ## 自定义配置
 
-| 自定义配置文件                                        | 说明                                                                                                |
-| :---------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
+| 自定义配置文件                             | 说明                                                                                                |
+| :----------------------------------------- | :-------------------------------------------------------------------------------------------------- |
 | `<工作空间>/data/widgets/custom.js`        | 主题功能配置选项, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/module/config.js` 中对应的值  |
 | `<工作空间>/data/widgets/custom.css`       | 主题共用样式配置, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/module/config.css` 中对应的值 |
 | `<工作空间>/data/widgets/custom-light.css` | 主题浅色样式配置, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/config/light.css` 中对应的值  |

@@ -254,12 +254,14 @@ Note: When using the browser to access SiYuan, this feature may be blocked by th
     - `data/**/assets/`
   - <img alt="emojis" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/emojis.svg" style="height: 1em; width: 1em;" /> `emojis/`: Emoji file directory
     - `data/emojis/`
-  - <img alt="widgets" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/widgets.svg" style="height: 1em; width: 1em;" /> `widgets/`: Widget file directory
-    - `data/widgets/`
+  - <img alt="plugins" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/plugins.svg" style="height: 1em; width: 1em;" /> `plugins/`: Plugin file directory
+    - `data/plugins/`
   - <img alt="snippets" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/snippets.svg" style="height: 1em; width: 1em;" /> `snippets/`: Snippet file directory
     - `data/snippets/`
   - <img alt="templates" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/templates.svg" style="height: 1em; width: 1em;" /> `templates/`: Template file directory
     - `data/templates/`
+  - <img alt="widgets" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/widgets.svg" style="height: 1em; width: 1em;" /> `widgets/`: Widget file directory
+    - `data/widgets/`
   - <img alt="appearance" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/appearance.svg" style="height: 1em; width: 1em;" /> `appearance/`: Appearance file directory
     - `conf/appearance/`
   - <img alt="export" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/export.svg" style="height: 1em; width: 1em;" /> `export/`: Export file directory
@@ -558,8 +560,8 @@ Note: When using the browser to access SiYuan, this feature may be blocked by th
 
 ## CUSTOM CONFIG
 
-| Custom configuration files                            | Product                                                                                                                                                   |
-| :---------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Custom configuration files                  | Product                                                                                                                                                   |
+| :------------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `<workspace>/data/widgets/custom.js`        | Theme feature configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/module/config.js`           |
 | `<workspace>/data/widgets/custom.css`       | Themes share style configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/module/config.css`     |
 | `<workspace>/data/widgets/custom-light.css` | Theme light color style configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/config/light.css` |
