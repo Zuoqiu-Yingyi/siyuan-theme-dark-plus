@@ -2819,20 +2819,20 @@
 .b3-typography a[href$="/"][href^="/emojis/"]::before {
   background-image: url(/appearance/themes/Dark+/icon/emojis.svg);
 }
-/* 挂件 */
-#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href$="/"][data-href^="widgets/"]::before,
-.sy__outline [data-node-id] span[data-type~=a][data-href$="/"][data-href^="widgets/"]::before,
-.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href$="/"][data-href^="widgets/"]::before,
-#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href$="/"][data-href^="/widgets/"]::before,
-.sy__outline [data-node-id] span[data-type~=a][data-href$="/"][data-href^="/widgets/"]::before,
-.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href$="/"][data-href^="/widgets/"]::before {
-  background-image: url(/appearance/themes/Dark+/icon/widgets.svg);
+/* 插件 */
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href$="/"][data-href^="plugins/"]::before,
+.sy__outline [data-node-id] span[data-type~=a][data-href$="/"][data-href^="plugins/"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href$="/"][data-href^="plugins/"]::before,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href$="/"][data-href^="/plugins/"]::before,
+.sy__outline [data-node-id] span[data-type~=a][data-href$="/"][data-href^="/plugins/"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href$="/"][data-href^="/plugins/"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/plugins.svg);
 }
-.protyle-wysiwyg a[href$="/"][href^="widgets/"]::before,
-.b3-typography a[href$="/"][href^="widgets/"]::before,
-.protyle-wysiwyg a[href$="/"][href^="/widgets/"]::before,
-.b3-typography a[href$="/"][href^="/widgets/"]::before {
-  background-image: url(/appearance/themes/Dark+/icon/widgets.svg);
+.protyle-wysiwyg a[href$="/"][href^="plugins/"]::before,
+.b3-typography a[href$="/"][href^="plugins/"]::before,
+.protyle-wysiwyg a[href$="/"][href^="/plugins/"]::before,
+.b3-typography a[href$="/"][href^="/plugins/"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/plugins.svg);
 }
 /* 片段 */
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href$="/"][data-href^="snippets/"]::before,
@@ -2849,7 +2849,7 @@
 .b3-typography a[href$="/"][href^="/snippets/"]::before {
   background-image: url(/appearance/themes/Dark+/icon/snippets.svg);
 }
-/* 片段 */
+/* 模板 */
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href$="/"][data-href^="templates/"]::before,
 .sy__outline [data-node-id] span[data-type~=a][data-href$="/"][data-href^="templates/"]::before,
 .protyle-wysiwyg [data-node-id] span[data-type~=a][data-href$="/"][data-href^="templates/"]::before,
@@ -2863,6 +2863,21 @@
 .protyle-wysiwyg a[href$="/"][href^="/templates/"]::before,
 .b3-typography a[href$="/"][href^="/templates/"]::before {
   background-image: url(/appearance/themes/Dark+/icon/templates.svg);
+}
+/* 挂件 */
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href$="/"][data-href^="widgets/"]::before,
+.sy__outline [data-node-id] span[data-type~=a][data-href$="/"][data-href^="widgets/"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href$="/"][data-href^="widgets/"]::before,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href$="/"][data-href^="/widgets/"]::before,
+.sy__outline [data-node-id] span[data-type~=a][data-href$="/"][data-href^="/widgets/"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href$="/"][data-href^="/widgets/"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/widgets.svg);
+}
+.protyle-wysiwyg a[href$="/"][href^="widgets/"]::before,
+.b3-typography a[href$="/"][href^="widgets/"]::before,
+.protyle-wysiwyg a[href$="/"][href^="/widgets/"]::before,
+.b3-typography a[href$="/"][href^="/widgets/"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/widgets.svg);
 }
 /* 外观 */
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href$="/"][data-href^="appearance/"]::before,
