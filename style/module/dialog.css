@@ -183,6 +183,9 @@
   /* 历史对话框内容框 */
   background-color: transparent;
 }
+#dialogContainer .dialog {
+  background-color: var(--custom-editor-background-color);
+}
 .b3-dialog__scrim {
   /* 对话框遮罩 */
   background-color: var(--custom-scrim-background-color) !important;
