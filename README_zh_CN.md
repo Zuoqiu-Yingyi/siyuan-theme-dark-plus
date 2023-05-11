@@ -1,7 +1,7 @@
-# 🌙暗色+
-
 <div align="center">
+<img src="./icon.png" style="width: 8em; height: 8em;">
 
+---
 [![GitHub 最新发行版本 (最新一次发行/预发行)](https://img.shields.io/github/v/release/Zuoqiu-Yingyi/siyuan-theme-dark-plus?include_prereleases&style=flat-square)](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/releases/latest)
 [![GitHub 最新发行时间](https://img.shields.io/github/release-date/Zuoqiu-Yingyi/siyuan-theme-dark-plus?style=flat-square)](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/releases/latest)
 [![GitHub 许可证](https://img.shields.io/github/license/Zuoqiu-Yingyi/siyuan-theme-dark-plus?style=flat-square)](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/blob/main/LICENSE)
@@ -15,6 +15,7 @@
 ---
 简体中文 \| [English](./README.md)
 
+---
 </div>
 
 [思源笔记](https://github.com/siyuan-note/siyuan)的一款深色主题 (同时支持浅色模式, 没想到吧~)

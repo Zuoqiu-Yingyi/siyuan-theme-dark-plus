@@ -1,7 +1,8 @@
-# 🌙Dark+
 
 <div align="center">
+<img src="./icon.png" style="width: 8em; height: 8em;">
 
+---
 [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Zuoqiu-Yingyi/siyuan-theme-dark-plus?include_prereleases&style=flat-square)](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/releases/latest)
 [![GitHub Release Date](https://img.shields.io/github/release-date/Zuoqiu-Yingyi/siyuan-theme-dark-plus?style=flat-square)](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/releases/latest)
 [![GitHub License](https://img.shields.io/github/license/Zuoqiu-Yingyi/siyuan-theme-dark-plus?style=flat-square)](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/blob/main/LICENSE)
@@ -15,6 +16,7 @@
 ---
 [简体中文](./README_zh_CN.md) \| English
 
+---
 </div>
 
 A dark theme (which also supports light mode, can you imagine that ~) of [SiYuan Note](https://github.com/siyuan-note/siyuan).
