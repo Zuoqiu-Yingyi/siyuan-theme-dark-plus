@@ -862,8 +862,11 @@ function requestFullscreen(id) {
 /**
  * 禁用鼠标滚轮缩放 DOM
  * REF https://blog.csdn.net/weixin_44188300/article/details/105256878
+ * @params {boolean} chromium: 是否禁用 chromium 内核浏览器原生界面缩放
+ * @params {boolean} firefox: 是否禁用 firefox 内核浏览器原生界面缩放
+ * @return {callable}: 取消禁用浏览器缩放的函数
  */
-function disableMouseWheelZoomDom() {
+function disableMouseWheelZoomDom(chromium = true, firefox = true) {
     const blocker = function (e) {
         if (e.altKey === false
             && e.shiftKey === false
@@ -879,11 +882,27 @@ function disableMouseWheelZoomDom() {
         passive: false,
     };
 
-    /* chromium */
-    window.addEventListener('mousewheel', blocker, options);
+    if (chromium) {
+        /* chromium */
+        window.addEventListener('mousewheel', blocker, options);
+    }
 
-    /* firefox */
-    window.addEventListener('DOMMouseScroll', blocker, options);
+    if (firefox) {
+        /* firefox */
+        window.addEventListener('DOMMouseScroll', blocker, options);
+    }
+
+    return () => {
+        if (chromium) {
+            /* chromium */
+            window.removeEventListener('mousewheel', blocker, options);
+        }
+
+        if (firefox) {
+            /* firefox */
+            window.removeEventListener('DOMMouseScroll', blocker, options);
+        }
+    }
 }
 
 /**
