@@ -30,7 +30,7 @@ setTimeout(() => {
                          * 2.8.8+ 版本思源原生支持编辑器字体缩放
                          * REF: https://github.com/siyuan-note/siyuan/issues/80
                         */
-                        if (compareVersion(window.theme.kernelVersion, '2.8.7') >= 0) {
+                        if (compareVersion(window.theme.kernelVersion, '2.8.7') > 0) {
                             break;
                         }
 
