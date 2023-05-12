@@ -53,7 +53,7 @@
 .b3-dialog__container .config__panel .config__tab-container {
   background-color: transparent;
 }
-.b3-dialog__container .config__panel .config__tab-container[data-name=bazaar] .b3-cards .b3-card {
+.b3-dialog__container .config__panel .config__tab-container[data-name=bazaar] .b3-card {
   background-color: transparent;
 }
 .b3-dialog__container .config__panel .config__tab-container[data-name=bazaar] .config-bazaar__readme {
