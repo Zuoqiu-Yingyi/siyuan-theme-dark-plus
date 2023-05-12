@@ -899,6 +899,12 @@ const config = {
                 threshold: 100, // 滚轮缩放阈值
                 min: 9, // 最小字号(px)
                 max: 72, // 最大字号(px)
+
+                preventDefault: {
+                    enable: true, // 阻止浏览器原生缩放开关
+                    chromium: true, // 阻止 chromium 内核浏览器缩放
+                    firefox: true, // 阻止 firefox 内核浏览器缩放
+                },
             },
         },
         location: {
