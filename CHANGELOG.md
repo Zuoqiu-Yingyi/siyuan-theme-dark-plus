@@ -7,6 +7,7 @@
 - 添加插件目录图标 | Added the plugin directory icon.
 - 调整鼠标滚轮调整编辑器字号功能 | Adjust the function of adjusting the editor font size with the mouse wheel.
   - Adapt: [Issue #8064 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/8064)
+- 调整空行提示样式 | Adjust the style of the blank line prompt.
 
 ## v1.9.0/2023-05-10
 
