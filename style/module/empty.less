@@ -6,7 +6,7 @@
 
         // 内容为空的块
         &:empty {
-            &::after {
+            &::before {
                 content: var(@content);
                 color: var(@color);
                 // 过渡无效
@@ -14,7 +14,7 @@
             }
         }
 
-        // &:focus:empty::after {
+        // &:focus:empty::before {
         //     content: var(@content-focus);
         // }
     }
@@ -58,7 +58,7 @@
 /* 👇聚焦提示👇 */
 .protyle-wysiwyg {
     [data-node-id] {
-        .empty(--b3-theme-on-surface,
+        .empty(--b3-theme-on-surface-light,
             --custom-empty-p,
             --custom-empty-c,
             --custom-empty-t,
@@ -69,7 +69,7 @@
 
     // 效果不太好的焦点所在的空块提示
     // #theme-focus-block[data-node-id] {
-    //     .empty(--b3-theme-on-surface,
+    //     .empty(--b3-theme-on-surface-light,
     //         --custom-empty-focus-p,
     //         --custom-empty-focus-c,
     //         --custom-empty-focus-t,
