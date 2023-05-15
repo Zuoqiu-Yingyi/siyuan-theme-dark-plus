@@ -87,6 +87,15 @@
 .b3-typography a[href^="joplin:"]::before {
   background-image: url(/appearance/themes/Dark+/icon/joplin.svg);
 }
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href^="logseq:"]::before,
+.sy__outline [data-node-id] span[data-type~=a][data-href^="logseq:"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href^="logseq:"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/logseq.png);
+}
+.protyle-wysiwyg a[href^="logseq:"]::before,
+.b3-typography a[href^="logseq:"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/logseq.png);
+}
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href^="lt:"]::before,
 .sy__outline [data-node-id] span[data-type~=a][data-href^="lt:"]::before,
 .protyle-wysiwyg [data-node-id] span[data-type~=a][data-href^="lt:"]::before {

@@ -287,6 +287,7 @@
   - <img alt="http" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/http.svg" style="height: 1em; width: 1em;" />: `http:` [RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1](https://datatracker.ietf.org/doc/html/rfc2616/)
   - <img alt="https" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/https.svg" style="height: 1em; width: 1em;" />: `https:` [RFC 2818 - HTTP Over TLS](https://datatracker.ietf.org/doc/html/rfc2818)
   - <img alt="joplin" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/joplin.svg" style="height: 1em; width: 1em;" />: `joplin:` [Joplin](https://joplinapp.org/)
+  - <img alt="logseq" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/logseq.png" style="height: 1em; width: 1em;" />: `logseq:` [Logseq](https://logseq.com/)
   - <img alt="liquidtext" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/liquidtext.svg" style="height: 1em; width: 1em;" />: `lt:` [liquidtext](https://www.liquidtext.net/)
   - <img alt="mailto" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/mailto.svg" style="height: 1em; width: 1em;" />: `mailto:` [RFC 6068 - The 'mailto' URI Scheme](https://datatracker.ietf.org/doc/html/rfc6068)
   - <img alt="marginnote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/marginnote.svg" style="height: 1em; width: 1em;" />: `marginnote3app:` [Marginnote](https://www.marginnote.com/)
