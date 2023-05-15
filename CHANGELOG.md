@@ -8,6 +8,7 @@
 - 调整鼠标滚轮调整编辑器字号功能 | Adjust the function of adjusting the editor font size with the mouse wheel.
   - Adapt: [Issue #8064 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/8064)
 - 调整空行提示样式 | Adjust the style of the blank line prompt.
+- 新增 Logseq URL Scheme 超链接 `logseq://` 图标 | Added the URL Scheme link `logseq://` icon of Logseq.
 
 ## v1.9.0/2023-05-10
 
@@ -49,7 +50,7 @@
 - 更换背景图片功能支持设置无背景图片 | The background image replacement function supports setting no background image.
 - 优化扩展菜单的分割线 | Optimize the separator of the extension menu.
 - 禁用浏览器中 <kbd>Ctrl/⌘ + 鼠标滚轮</kbd> 缩放 DOM | Disable the DOM zooming with <kbd>Ctrl/⌘ + Mouse Wheel</kbd> in the browser.
-- 新增 Telegram URL Scheme 超链接 `tg://` 图标 | Added the URL Scheme link `tel://` icon of Telegram.
+- 新增 Telegram URL Scheme 超链接 `tg://` 图标 | Added the URL Scheme link `tg://` icon of Telegram.
 - 更新 Monaco Editor 至 `v0.37.1` | Updated Monaco Editor to `v0.37.1`.
 - 新增静态文件目录 `data/templates` 超链接图标 | Added the hyperlink icon of the static file directory `data/templates`.
 - 移除 worker 中 `es6 module export` 相关代码 | Removed the `es6 module export` related code in the worker.
