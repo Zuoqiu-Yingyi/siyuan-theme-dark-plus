@@ -21,7 +21,7 @@
   content: var(--custom-empty-o);
   color: var(--b3-theme-on-surface-light);
 }
-/*不打开文档时的界面*/
+/* 不打开文档时的界面 */
 .layout__empty.b3-list {
   background: transparent;
 }

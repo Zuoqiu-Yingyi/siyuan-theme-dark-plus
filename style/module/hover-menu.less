@@ -51,6 +51,8 @@
                 margin: 0;
                 border: 0;
                 padding: 0;
+
+                margin-left: 1em;
             }
 
             // 块属性
@@ -365,20 +367,23 @@
 .protyle-wysiwyg [data-node-id] span.def--mark,
 // 搜索结果渲染匹配关键词
 .protyle-wysiwyg [data-node-id] span[data-type~=search-mark] {
-    margin: 0 0.25em;
-    border: 0;
-    padding: 0 0.125em;
-    color: var(--custom-matched-keyword-color);
-    background-color: var(--custom-matched-keyword-background-color);
-    outline-width: var(--custom-popover-menu-outline-width);
 
-    &:not(.def--mark) {
-        outline-style: var(--custom-popover-menu-outline-style);
-    }
+    &:not(:empty) {
+        margin: 0 0.25em;
+        border: 0;
+        padding: 0 0.125em;
+        color: var(--custom-matched-keyword-color);
+        background-color: var(--custom-matched-keyword-background-color);
+        outline-width: var(--custom-popover-menu-outline-width);
 
-    &:is(.def--mark) {
-        border-width: var(--custom-popover-menu-outline-width);
-        border-style: var(--custom-popover-menu-outline-style);
+        &:not(.def--mark) {
+            outline-style: var(--custom-popover-menu-outline-style);
+        }
+
+        &:is(.def--mark) {
+            border-width: var(--custom-popover-menu-outline-width);
+            border-style: var(--custom-popover-menu-outline-style);
+        }
     }
 }
 
