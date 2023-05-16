@@ -183,7 +183,6 @@
   margin: 0;
   border: 0;
   padding: 0;
-  margin-left: 1em;
 }
 .b3-list:not(ul) > .b3-list-item .b3-list-item__meta.fn__flex,
 .b3-list.b3-tab-bar > .b3-list-item .b3-list-item__meta.fn__flex,
@@ -223,7 +222,6 @@
   margin: 0;
   border: 0;
   padding: 0;
-  margin-left: 1em;
 }
 .b3-list.search__list > .b3-list-item + div:not(.b3-list-item) > .b3-list-item .b3-list-item__meta.fn__flex {
   color: var(--custom-popover-menu-attribute-color);
@@ -279,7 +277,6 @@
   margin: 0;
   border: 0;
   padding: 0;
-  margin-left: 1em;
 }
 #searchPanel > .b3-list-item .b3-list-item__meta.fn__flex {
   color: var(--custom-popover-menu-attribute-color);

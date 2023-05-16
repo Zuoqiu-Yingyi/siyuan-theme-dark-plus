@@ -22,6 +22,9 @@
   color: var(--b3-theme-on-surface-light);
 }
 /* 不打开文档时的界面 */
-.layout__empty.b3-list {
+.layout__center .layout__empty.b3-list {
   background: transparent;
+}
+.layout__center .layout__empty.b3-list .b3-list-item .b3-list-item__meta {
+  margin-left: 1em;
 }
