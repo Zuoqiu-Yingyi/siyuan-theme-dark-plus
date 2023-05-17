@@ -18,6 +18,8 @@
 ---
 </div>
 
+# 🌙暗色+
+
 [思源笔记](https://github.com/siyuan-note/siyuan)的一款深色主题 (同时支持浅色模式, 没想到吧~)
 
 现已上架[思源笔记社区集市](https://github.com/siyuan-note/bazaar), 如果您喜欢本主题, 欢迎为本项目点亮一个⭐!

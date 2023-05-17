@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.9.1/2023-05-17
+
+- [v1.9.0 ... v1.9.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.9.0...v1.9.1)
 - 调整集市资源卡片样式 | Adjust the style of the bazaar resource card.
 - 添加赞助链接 | Added sponsor link.
 - [#192](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/192) 更改主题图标 `icon.png` | Changed the theme icon `icon.png`.
