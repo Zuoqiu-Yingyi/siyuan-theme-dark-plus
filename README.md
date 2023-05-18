@@ -791,3 +791,7 @@ ps: Sort by introduction time.
 ## CHANGE LOGS
 
 [CHANGELOG](./CHANGELOG.md)
+
+## SUPPORT & DONATE
+
+[![ko-fi:zuoqiu](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/C1C1LEIJ5)
