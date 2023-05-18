@@ -3,11 +3,6 @@
 .protyle-wysiwyg span.img {
   white-space: initial;
 }
-.b3-typography span.img:not([style]),
-.protyle-wysiwyg span.img:not([style]) {
-  /* 没有调整宽度的图片 */
-  display: inline-block;
-}
 .b3-typography span.img img:not(.emoji),
 .protyle-wysiwyg span.img img:not(.emoji) {
   /* 图片样式 */
@@ -20,6 +15,11 @@
 .protyle-wysiwyg span.img .protyle-action__drag {
   /* 图片尺寸调整控件 */
   right: calc(4px + var(--custom-border-radius)) !important;
+}
+.b3-typography table span.img:not([style]),
+.protyle-wysiwyg table span.img:not([style]) {
+  /* 表格中没有调整宽度的图片 */
+  display: inline-block;
 }
 .b3-typography span.img {
   /* 设置导出预览时样式与编辑时一致 */
