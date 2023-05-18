@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 添加捐助方案 [Ko-fi](https://ko-fi.com/zuoqiu) | Added donation method [Ko-fi](https://ko-fi.com/zuoqiu).
+
 ## v1.9.1/2023-05-17
 
 - [v1.9.0 ... v1.9.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.9.0...v1.9.1)

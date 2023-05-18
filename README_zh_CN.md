@@ -791,3 +791,7 @@ export async function callback(config) {
 ## 更改日志
 
 [CHANGELOG](./CHANGELOG.md)
+
+## 支持 & 捐助
+
+[![爱发电-颖逸](./image/README/1684406908238.jpg)](https://afdian.net/a/zuoqiu?tab=sponsor)

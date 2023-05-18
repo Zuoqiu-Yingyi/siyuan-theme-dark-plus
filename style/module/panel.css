@@ -642,3 +642,7 @@
   background-color: transparent;
   line-height: 22px;
 }
+.block__popover .plugin-sample__custom-tab,
+.layout-tab-container .plugin-sample__custom-tab {
+  background-color: unset;
+}
