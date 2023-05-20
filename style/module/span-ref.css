@@ -11,7 +11,7 @@
   color: var(--custom-ref-mark-color);
   font-weight: bold;
   display: inline-block;
-  width: 0.5em;
+  width: var(--custom-ref-mark-width);
   text-align: center;
 }
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]::after,
@@ -21,7 +21,7 @@
   color: var(--custom-ref-mark-color);
   font-weight: bold;
   display: inline-block;
-  width: 0.5em;
+  width: var(--custom-ref-mark-width);
   text-align: center;
 }
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]:hover,

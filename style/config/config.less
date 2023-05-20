@@ -180,18 +180,26 @@
      * ⁅: U+2045
      * ⁆: U+2046
      */
+
+    /* 块引用标记符号 | Block reference mark symbol */
     /* --custom-quote-l: "「"; */
     /* --custom-quote-r: "」"; */
     --custom-quote-l: "⸢";
     --custom-quote-r: "⸥";
 
-    /* 块引用动态锚文本标记 | Block references dynamic anchor text mark */
+    /* 块引用动态锚文本标记符号 | Block references dynamic anchor text mark symbol */
     --custom-ref-mark-d-l: var(--custom-quote-l);
     --custom-ref-mark-d-r: var(--custom-quote-r);
 
-    /* 块引用静态锚文本标记 | Block references static anchor text mark */
+    /* 块引用静态锚文本标记符号 | Block references static anchor text mark symbol */
     --custom-ref-mark-s-l: var(--custom-quote-l);
     --custom-ref-mark-s-r: var(--custom-quote-r);
+
+    /* 块引用标记颜色 | Block reference mark color */
+    --custom-ref-mark-color: var(--b3-protyle-inline-link-color);
+
+    /* 块引用标记宽度 | Block reference mark width */
+    --custom-ref-mark-width: 0.5em;
 
     /* 最大高度层级 */
     --custom-z-index-max: 2147483647;
@@ -544,9 +552,6 @@
      * - 公式过长时需要滑动滚动条才能看到编号 | Formulas that are too long require sliding the scroll bar to see
      */
     --custom-math-tag-position: relative;
-
-    /* 块引用标志颜色 | Block reference flag color */
-    --custom-ref-mark-color: var(--b3-protyle-inline-link-color);
 
     /* 列表项聚焦颜色 | List item focus color */
     --custom-list-item-color: var(--b3-protyle-inline-link-color);

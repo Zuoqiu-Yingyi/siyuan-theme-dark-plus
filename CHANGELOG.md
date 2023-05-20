@@ -8,6 +8,8 @@
   - `--custom-ref-mark-d-r`: 块引用动态锚文本标记 (右) | Block references dynamic anchor text mark (right)
   - `--custom-ref-mark-s-l`: 块引用静态锚文本标记 (左) | Block references static anchor text mark (left)
   - `--custom-ref-mark-s-r`: 块引用静态锚文本标记 (右) | Block references static anchor text mark (right)
+- 支持使用 CSS 变量设置块引用标记符号宽度 | Support using CSS variables to set the width of the block reference mark symbol.
+  - `--custom-ref-mark-width`: 块引用标记符号宽度 | Block reference mark symbol width
 
 ## v1.9.1/2023-05-17
 
