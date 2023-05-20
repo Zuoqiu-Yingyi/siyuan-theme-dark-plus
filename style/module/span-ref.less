@@ -9,10 +9,7 @@
 
             // REF https://github.com/Morganwan90/Lightblue-siyuan-theme/blob/d03e93da4130bfbc941cdd940683e97daf4d7bf1/theme.css#L786
             &::before {
-                /* 前半部分的符号 */
-                content: var(--custom-quote-l);
-
-                /* 修改前半部分颜色 */
+                /* 前半部分颜色 */
                 color: var(--custom-ref-mark-color);
 
                 font-weight: bold;
@@ -22,10 +19,7 @@
             }
 
             &::after {
-                /* 后半部分的符号 */
-                content: var(--custom-quote-r);
-
-                /* 后改前半部分颜色 */
+                /* 后半部分颜色 */
                 color: var(--custom-ref-mark-color);
 
                 font-weight: bold;
@@ -39,6 +33,30 @@
                 animation: waveMove 1s infinite linear;
                 background: var(--custom-span-ref-animation-icon) repeat-x 0 100%;
                 background-size: 16px auto;
+            }
+
+            &[data-subtype=d] {
+                &::before {
+                    /* 前半部分符号-动态锚文本 */
+                    content: var(--custom-ref-mark-d-l);
+                }
+
+                &::after {
+                    /* 后半部分符号-动态锚文本 */
+                    content: var(--custom-ref-mark-d-r);
+                }
+            }
+
+            &[data-subtype=s] {
+                &::before {
+                    /* 前半部分符号-静态锚文本 */
+                    content: var(--custom-ref-mark-s-l);
+                }
+
+                &::after {
+                    /* 后半部分符号-静态锚文本 */
+                    content: var(--custom-ref-mark-s-r);
+                }
             }
         }
     }

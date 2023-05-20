@@ -172,15 +172,26 @@
     --custom-h6-indentation: 3em;
 
     /* 块引用标记 | Block reference mark */
-    /* --custom-quote-l: "「";
-    --custom-quote-r: "」"; */
-
     /* 
      * ⸢: U+2E22
      * ⸥: U+2E25
+     * ⸤: U+2E24
+     * ⸣: U+2E23
+     * ⁅: U+2045
+     * ⁆: U+2046
      */
+    /* --custom-quote-l: "「"; */
+    /* --custom-quote-r: "」"; */
     --custom-quote-l: "⸢";
     --custom-quote-r: "⸥";
+
+    /* 块引用动态锚文本标记 | Block references dynamic anchor text mark */
+    --custom-ref-mark-d-l: var(--custom-quote-l);
+    --custom-ref-mark-d-r: var(--custom-quote-r);
+
+    /* 块引用静态锚文本标记 | Block references static anchor text mark */
+    --custom-ref-mark-s-l: var(--custom-quote-l);
+    --custom-ref-mark-s-r: var(--custom-quote-r);
 
     /* 最大高度层级 */
     --custom-z-index-max: 2147483647;

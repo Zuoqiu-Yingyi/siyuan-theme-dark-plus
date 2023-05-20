@@ -7,9 +7,7 @@
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]::before,
 .sy__outline [data-node-id] span[data-type~=block-ref]::before,
 .protyle-wysiwyg [data-node-id] span[data-type~=block-ref]::before {
-  /* 前半部分的符号 */
-  content: var(--custom-quote-l);
-  /* 修改前半部分颜色 */
+  /* 前半部分颜色 */
   color: var(--custom-ref-mark-color);
   font-weight: bold;
   display: inline-block;
@@ -19,9 +17,7 @@
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]::after,
 .sy__outline [data-node-id] span[data-type~=block-ref]::after,
 .protyle-wysiwyg [data-node-id] span[data-type~=block-ref]::after {
-  /* 后半部分的符号 */
-  content: var(--custom-quote-r);
-  /* 后改前半部分颜色 */
+  /* 后半部分颜色 */
   color: var(--custom-ref-mark-color);
   font-weight: bold;
   display: inline-block;
@@ -35,4 +31,28 @@
   animation: waveMove 1s infinite linear;
   background: var(--custom-span-ref-animation-icon) repeat-x 0 100%;
   background-size: 16px auto;
+}
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref][data-subtype=d]::before,
+.sy__outline [data-node-id] span[data-type~=block-ref][data-subtype=d]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref][data-subtype=d]::before {
+  /* 前半部分符号-动态锚文本 */
+  content: var(--custom-ref-mark-d-l);
+}
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref][data-subtype=d]::after,
+.sy__outline [data-node-id] span[data-type~=block-ref][data-subtype=d]::after,
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref][data-subtype=d]::after {
+  /* 后半部分符号-动态锚文本 */
+  content: var(--custom-ref-mark-d-r);
+}
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref][data-subtype=s]::before,
+.sy__outline [data-node-id] span[data-type~=block-ref][data-subtype=s]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref][data-subtype=s]::before {
+  /* 前半部分符号-静态锚文本 */
+  content: var(--custom-ref-mark-s-l);
+}
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref][data-subtype=s]::after,
+.sy__outline [data-node-id] span[data-type~=block-ref][data-subtype=s]::after,
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref][data-subtype=s]::after {
+  /* 后半部分符号-静态锚文本 */
+  content: var(--custom-ref-mark-s-r);
 }
