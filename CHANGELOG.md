@@ -3,6 +3,11 @@
 - 添加捐助方案 [Ko-fi](https://ko-fi.com/zuoqiu) | Added donation method [Ko-fi](https://ko-fi.com/zuoqiu).
 - [#194](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/194) 调整表格内图片的样式 | Adjust the style of the pictures in the table.
 - 调整设置面板背景颜色 | Adjust the background color of the settings panel.
+- 支持使用 CSS 变量分别自定义块引用的静态锚文本符号与动态锚文本符号 | Support using CSS variables to customize the static anchor text symbol and dynamic anchor text symbol of the block reference separately.
+  - `--custom-ref-mark-d-l`: 块引用动态锚文本标记 (左) | Block references dynamic anchor text mark (left)
+  - `--custom-ref-mark-d-r`: 块引用动态锚文本标记 (右) | Block references dynamic anchor text mark (right)
+  - `--custom-ref-mark-s-l`: 块引用静态锚文本标记 (左) | Block references static anchor text mark (left)
+  - `--custom-ref-mark-s-r`: 块引用静态锚文本标记 (右) | Block references static anchor text mark (right)
 
 ## v1.9.1/2023-05-17
 
