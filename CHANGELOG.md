@@ -2,6 +2,7 @@
 
 - 添加捐助方案 [Ko-fi](https://ko-fi.com/zuoqiu) | Added donation method [Ko-fi](https://ko-fi.com/zuoqiu).
 - [#194](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/194) 调整表格内图片的样式 | Adjust the style of the pictures in the table.
+- 调整设置面板背景颜色 | Adjust the background color of the settings panel.
 
 ## v1.9.1/2023-05-17
 

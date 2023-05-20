@@ -4,6 +4,9 @@
 # 发行包文件目录
 /release
 
+# 发行包文件
+/package.zip
+
 # 临时文件
 /temp
 
