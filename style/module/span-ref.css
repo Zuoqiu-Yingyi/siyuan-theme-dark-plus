@@ -6,22 +6,12 @@
 }
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]::before,
 .sy__outline [data-node-id] span[data-type~=block-ref]::before,
-.protyle-wysiwyg [data-node-id] span[data-type~=block-ref]::before {
-  /* 前半部分颜色 */
-  color: var(--custom-ref-mark-color);
-  font-weight: bold;
-  display: inline-block;
-  width: var(--custom-ref-mark-width);
-  text-align: center;
-}
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref]::before,
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]::after,
 .sy__outline [data-node-id] span[data-type~=block-ref]::after,
 .protyle-wysiwyg [data-node-id] span[data-type~=block-ref]::after {
-  /* 后半部分颜色 */
-  color: var(--custom-ref-mark-color);
   font-weight: bold;
   display: inline-block;
-  width: var(--custom-ref-mark-width);
   text-align: center;
 }
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]:hover,
@@ -35,24 +25,29 @@
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref][data-subtype=d]::before,
 .sy__outline [data-node-id] span[data-type~=block-ref][data-subtype=d]::before,
 .protyle-wysiwyg [data-node-id] span[data-type~=block-ref][data-subtype=d]::before {
-  /* 前半部分符号-动态锚文本 */
+  /* 左侧-动态锚文本 */
   content: var(--custom-ref-mark-d-l);
+  color: var(--custom-ref-mark-d-l-color);
+  width: var(--custom-ref-mark-d-l-width);
 }
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref][data-subtype=d]::after,
 .sy__outline [data-node-id] span[data-type~=block-ref][data-subtype=d]::after,
 .protyle-wysiwyg [data-node-id] span[data-type~=block-ref][data-subtype=d]::after {
-  /* 后半部分符号-动态锚文本 */
+  /* 右侧-动态锚文本 */
   content: var(--custom-ref-mark-d-r);
+  color: var(--custom-ref-mark-d-r-color);
 }
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref][data-subtype=s]::before,
 .sy__outline [data-node-id] span[data-type~=block-ref][data-subtype=s]::before,
 .protyle-wysiwyg [data-node-id] span[data-type~=block-ref][data-subtype=s]::before {
-  /* 前半部分符号-静态锚文本 */
+  /* 左侧-静态锚文本 */
   content: var(--custom-ref-mark-s-l);
+  width: var(--custom-ref-mark-s-l-width);
 }
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref][data-subtype=s]::after,
 .sy__outline [data-node-id] span[data-type~=block-ref][data-subtype=s]::after,
 .protyle-wysiwyg [data-node-id] span[data-type~=block-ref][data-subtype=s]::after {
-  /* 后半部分符号-静态锚文本 */
+  /* 右侧-静态锚文本 */
   content: var(--custom-ref-mark-s-r);
+  width: var(--custom-ref-mark-s-r-width);
 }
