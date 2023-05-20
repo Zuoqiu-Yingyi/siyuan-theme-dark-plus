@@ -168,8 +168,16 @@
   --custom-ref-mark-s-r: var(--custom-quote-r);
   /* 块引用标记颜色 | Block reference mark color */
   --custom-ref-mark-color: var(--b3-protyle-inline-link-color);
+  --custom-ref-mark-d-l-color: var(--custom-ref-mark-color);
+  --custom-ref-mark-s-l-color: var(--custom-ref-mark-color);
+  --custom-ref-mark-d-r-color: var(--custom-ref-mark-color);
+  --custom-ref-mark-s-r-color: var(--custom-ref-mark-color);
   /* 块引用标记宽度 | Block reference mark width */
   --custom-ref-mark-width: 0.5em;
+  --custom-ref-mark-d-l-width: var(--custom-ref-mark-width);
+  --custom-ref-mark-s-l-width: var(--custom-ref-mark-width);
+  --custom-ref-mark-d-r-width: var(--custom-ref-mark-width);
+  --custom-ref-mark-s-r-width: var(--custom-ref-mark-width);
   /* 最大高度层级 */
   --custom-z-index-max: 2147483647;
   /* 背景图片 | Background image */

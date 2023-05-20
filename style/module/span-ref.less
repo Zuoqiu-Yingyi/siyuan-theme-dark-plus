@@ -8,23 +8,10 @@
             color: var(--custom-span-block-ref-color);
 
             // REF https://github.com/Morganwan90/Lightblue-siyuan-theme/blob/d03e93da4130bfbc941cdd940683e97daf4d7bf1/theme.css#L786
-            &::before {
-                /* 前半部分颜色 */
-                color: var(--custom-ref-mark-color);
-
-                font-weight: bold;
-                display: inline-block;
-                width: var(--custom-ref-mark-width);
-                text-align: center;
-            }
-
+            &::before,
             &::after {
-                /* 后半部分颜色 */
-                color: var(--custom-ref-mark-color);
-
                 font-weight: bold;
                 display: inline-block;
-                width: var(--custom-ref-mark-width);
                 text-align: center;
             }
 
@@ -37,25 +24,33 @@
 
             &[data-subtype=d] {
                 &::before {
-                    /* 前半部分符号-动态锚文本 */
+                    /* 左侧-动态锚文本 */
                     content: var(--custom-ref-mark-d-l);
+                    color: var(--custom-ref-mark-d-l-color);
+                    width: var(--custom-ref-mark-d-l-width);
                 }
-
+                
                 &::after {
-                    /* 后半部分符号-动态锚文本 */
+                    /* 右侧-动态锚文本 */
                     content: var(--custom-ref-mark-d-r);
+                    color: var(--custom-ref-mark-d-r-color);
+                    color: var(--custom-ref-mark-d-r-color);
                 }
             }
-
+            
             &[data-subtype=s] {
                 &::before {
-                    /* 前半部分符号-静态锚文本 */
+                    /* 左侧-静态锚文本 */
                     content: var(--custom-ref-mark-s-l);
+                    width: var(--custom-ref-mark-s-l-width);
+                    width: var(--custom-ref-mark-s-l-width);
                 }
-
+                
                 &::after {
-                    /* 后半部分符号-静态锚文本 */
+                    /* 右侧-静态锚文本 */
                     content: var(--custom-ref-mark-s-r);
+                    width: var(--custom-ref-mark-s-r-width);
+                    width: var(--custom-ref-mark-s-r-width);
                 }
             }
         }
