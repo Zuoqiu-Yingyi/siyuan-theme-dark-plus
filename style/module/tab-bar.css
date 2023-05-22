@@ -21,13 +21,16 @@
   max-width: none;
   box-sizing: border-box;
 }
-.layout-tab-bar .item .item__icon {
+.layout-tab-bar .item .item__icon,
+.layout-tab-bar .item .item__graphic {
   /* 页签项图标 */
   padding: 0;
   padding-left: 8px;
 }
 .layout-tab-bar .item .item__icon svg,
-.layout-tab-bar .item .item__icon img {
+.layout-tab-bar .item .item__graphic svg,
+.layout-tab-bar .item .item__icon img,
+.layout-tab-bar .item .item__graphic img {
   width: var(--custom-tab-bar-icon-size);
   height: var(--custom-tab-bar-icon-size);
 }
