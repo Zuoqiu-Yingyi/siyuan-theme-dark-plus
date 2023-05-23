@@ -314,7 +314,10 @@ async function messageHandle(msg_id, msg_type, message, websocket) {
     }
 }
 
-/* 创建发送消息 */
+/**
+ * 创建发送消息
+ * REF https://ipython.org/ipython-doc/stable/development/messaging.html
+ */
 function createSendMessage(
     code,
     session_id,
