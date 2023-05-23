@@ -1,0 +1,97 @@
+/* 成功/信息/警告/错误 卡片样式 */
+.protyle-wysiwyg [data-node-id].p[style*="var(--b3-card-success-background)"] {
+  outline: 2px solid var(--b3-border-color);
+  border-radius: 4px;
+  border-left: 3px solid currentColor;
+  padding-left: calc(2em + 4px - 3px);
+}
+.protyle-wysiwyg [data-node-id].p[style*="var(--b3-card-success-background)"]::after {
+  content: "";
+  background-color: currentColor;
+  display: block;
+  position: absolute;
+  height: 1em;
+  width: 1em;
+  left: 0.5em;
+  top: 0.5em;
+  mask-image: url(/appearance/themes/Dark+/icon/card-success.svg);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-image: url(/appearance/themes/Dark+/icon/card-success.svg);
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+}
+.protyle-wysiwyg [data-node-id].p[style*="var(--b3-card-info-background)"] {
+  outline: 2px solid var(--b3-border-color);
+  border-radius: 4px;
+  border-left: 3px solid currentColor;
+  padding-left: calc(2em + 4px - 3px);
+}
+.protyle-wysiwyg [data-node-id].p[style*="var(--b3-card-info-background)"]::after {
+  content: "";
+  background-color: currentColor;
+  display: block;
+  position: absolute;
+  height: 1em;
+  width: 1em;
+  left: 0.5em;
+  top: 0.5em;
+  mask-image: url(/appearance/themes/Dark+/icon/card-info.svg);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-image: url(/appearance/themes/Dark+/icon/card-info.svg);
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+}
+.protyle-wysiwyg [data-node-id].p[style*="var(--b3-card-warning-background)"] {
+  outline: 2px solid var(--b3-border-color);
+  border-radius: 4px;
+  border-left: 3px solid currentColor;
+  padding-left: calc(2em + 4px - 3px);
+}
+.protyle-wysiwyg [data-node-id].p[style*="var(--b3-card-warning-background)"]::after {
+  content: "";
+  background-color: currentColor;
+  display: block;
+  position: absolute;
+  height: 1em;
+  width: 1em;
+  left: 0.5em;
+  top: 0.5em;
+  mask-image: url(/appearance/themes/Dark+/icon/card-warning.svg);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-image: url(/appearance/themes/Dark+/icon/card-warning.svg);
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+}
+.protyle-wysiwyg [data-node-id].p[style*="var(--b3-card-error-background)"] {
+  outline: 2px solid var(--b3-border-color);
+  border-radius: 4px;
+  border-left: 3px solid currentColor;
+  padding-left: calc(2em + 4px - 3px);
+}
+.protyle-wysiwyg [data-node-id].p[style*="var(--b3-card-error-background)"]::after {
+  content: "";
+  background-color: currentColor;
+  display: block;
+  position: absolute;
+  height: 1em;
+  width: 1em;
+  left: 0.5em;
+  top: 0.5em;
+  mask-image: url(/appearance/themes/Dark+/icon/card-error.svg);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-image: url(/appearance/themes/Dark+/icon/card-error.svg);
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+}
