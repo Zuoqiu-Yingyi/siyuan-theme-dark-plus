@@ -16,6 +16,8 @@
 @import url("style/module/block.css?v=1.9.2");
 /* 面包屑 */
 @import url("style/module/breadcrumb.css?v=1.9.2");
+/* 卡片 */
+@import url("style/module/card.css?v=1.9.2");
 /* 自定义属性 */
 @import url("style/module/custom-auto-num-f.css?v=1.9.2");
 @import url("style/module/custom-auto-num-h.css?v=1.9.2");

@@ -1,0 +1,43 @@
+/* 成功/信息/警告/错误 卡片样式 */
+
+// REF https://developer.mozilla.org/
+
+.card(@style, @icon-url, @color: currentColor, @width: 3px) {
+    &[style *="@{style}"] {
+        outline: 2px solid var(--b3-border-color);
+        border-radius: 4px;
+        border-left: @width solid @color;
+        padding-left: calc(2em + 4px - @width);
+
+        &::after {
+            content: "";
+            background-color: @color;
+            display: block;
+            position: absolute;
+
+            height: 1em;
+            width: 1em;
+            left: 0.5em;
+            top: 0.5em;
+
+            mask-image: @icon-url;
+            mask-position: center;
+            mask-repeat: no-repeat;
+            mask-size: contain;
+
+            -webkit-mask-image: @icon-url;
+            -webkit-mask-position: center;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-size: contain;
+        }
+    }
+}
+
+.protyle-wysiwyg {
+    [data-node-id].p {
+        .card("var(--b3-card-success-background)", url(/appearance/themes/Dark+/icon/card-success.svg));
+        .card("var(--b3-card-info-background)", url(/appearance/themes/Dark+/icon/card-info.svg));
+        .card("var(--b3-card-warning-background)", url(/appearance/themes/Dark+/icon/card-warning.svg));
+        .card("var(--b3-card-error-background)", url(/appearance/themes/Dark+/icon/card-error.svg));
+    }
+}
