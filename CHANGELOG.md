@@ -23,6 +23,7 @@
   - `--custom-ref-mark-s-r-color`: 块引用-`静态`锚文本标记-`右`-`颜色` | Block references - `static`  anchor text - `right` mark - `color`
   - `--custom-ref-mark-s-r-width`: 块引用-`静态`锚文本标记-`右`-`宽度` | Block references - `static`  anchor text - `right` mark - `width`
 - 调整使用内置图标的页签图标样式 | Adjust the style of the tab icon using the built-in icon.
+- 修复悬浮预览窗口背景背景颜色问题 | Fixed the background color problem of the floating preview window.
 
 ## v1.9.1/2023-05-17
 
