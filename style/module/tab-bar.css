@@ -72,11 +72,11 @@
   /* 多窗口被选中的页签项 & 集市被选中的页签项 */
   border-color: var(--custom-striking-color);
 }
-.layout-tab-bar .item:not(.item--pin) {
+.layout-tab-bar .item:not(.item--full):not(.item--pin) {
   /* 非钉住的页签项 */
   min-width: var(--custom-tab-bar-item-min-width);
 }
-.layout-tab-bar .item:not(.item--pin) .item__text {
+.layout-tab-bar .item:not(.item--full):not(.item--pin) .item__text {
   padding-right: 0;
 }
 .layout-tab-bar .item.item--pin .item__text {
