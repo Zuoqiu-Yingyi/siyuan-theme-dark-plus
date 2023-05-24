@@ -25,6 +25,7 @@
 - 调整使用内置图标的页签图标样式 | Adjust the style of the tab icon using the built-in icon.
 - 修复悬浮预览窗口背景背景颜色问题 | Fixed the background color problem of the floating preview window.
 - 添加卡片段落的样式 | Added the style of the card paragraph.
+- 修复对话框中页签文本的样式问题 | Fixed the style issue of the tab text in the dialog.
 
 ## v1.9.1/2023-05-17
 
