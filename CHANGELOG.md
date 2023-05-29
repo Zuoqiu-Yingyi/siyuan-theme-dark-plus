@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- [#195](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/195) 修复链接嵌套时标志重复问题 | Fixed the issue of repeated marks when the link is nested.
+
 ## v1.9.2/2023-05-23
 
 - [v1.9.1 ... v1.9.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.9.1...v1.9.2)
