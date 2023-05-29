@@ -83,12 +83,7 @@ async function middleClick(e, fn_id, fn_href = null, fn_inbox = null, fn_history
     const inbox = getTargetInboxID(e.target);
     if (inbox) {
         for (const dock of ['leftDock', 'rightDock', 'topDock', 'bottomDock']) {
-            if (window.siyuan.layout[dock]
-                && window.siyuan.layout[dock].data
-                && window.siyuan.layout[dock].data.inbox
-                && window.siyuan.layout[dock].data.inbox.data
-                && window.siyuan.layout[dock].data.inbox.data[inbox]
-            ) {
+            if (window.siyuan.layout[dock]?.data?.inbox?.data[inbox]) {
                 if (fn_inbox) {
                     fn_inbox(window.siyuan.layout[dock].data.inbox.data[inbox]);
                     return;

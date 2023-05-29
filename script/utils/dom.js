@@ -202,17 +202,17 @@ function getTargetBlockID(target) {
     while (element != null
         && !(element.localName === 'a' && element.href
             || element.dataset.href
-            || config.theme.regs.id.test(element.dataset.nodeId)
-            || config.theme.regs.id.test(element.dataset.oid)
-            || config.theme.regs.id.test(element.dataset.id)
-            || config.theme.regs.id.test(element.dataset.rootId)
+            || config.theme.regs.id.test(element.dataset.nodeId) // 块/块标/文档树项/面包屑项/大纲项/书签项/文档标题/文档背景
+            || config.theme.regs.id.test(element.dataset.id) // 块引用/面包屑项图标/大纲项图标/书签项图标/反链面板项
+            || config.theme.regs.id.test(element.dataset.oid) // 浮窗
+            || config.theme.regs.id.test(element.dataset.rootId) // 
         )) element = element.parentElement;
 
     if (element != null) {
         if (config.theme.regs.id.test(element.dataset.nodeId)) return element.dataset.nodeId;
-        if (config.theme.regs.id.test(element.dataset.oid)) return element.dataset.oid;
         if (config.theme.regs.id.test(element.dataset.id)) return element.dataset.id;
-        if (config.theme.regs.id.test(element.dataset.oid)) return element.dataset.rootId;
+        if (config.theme.regs.id.test(element.dataset.oid)) return element.dataset.oid;
+        if (config.theme.regs.id.test(element.dataset.rootId)) return element.dataset.rootId;
         if (config.theme.regs.url.test(element.dataset.href)) return url2id(element.dataset.href);
         if (config.theme.regs.url.test(element.href)) return url2id(element.href);
         return element.href || element.dataset.href || null;

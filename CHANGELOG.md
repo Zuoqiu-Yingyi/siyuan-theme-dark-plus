@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - [#195](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/195) 修复链接嵌套时标志重复问题 | Fixed the issue of repeated marks when the link is nested.
+- 默认禁用一些已迁移到插件的功能 | Some functions migrated to the plugin are disabled by default.
 
 ## v1.9.2/2023-05-23
 

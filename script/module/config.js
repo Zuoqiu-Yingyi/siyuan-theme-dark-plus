@@ -9,6 +9,7 @@ export {
 }
 
 import { merge } from './../utils/misc.js';
+import { compareVersion } from './../utils/string.js';
 import {
     getFile,
     putFile,
@@ -715,6 +716,14 @@ const config = {
             },
             menu: {
                 // 新窗口菜单
+                // template: [
+                //     {role: "appMenu"},
+                //     {role: "fileMenu"},
+                //     {role: "editMenu"},
+                //     {role: "viewMenu"},
+                //     {role: "windowMenu"},
+                //     {role: "shareMenu"},
+                // ],
                 template: [
                     // 新窗口菜单模板
                     // REF [菜单项 | Electron](https://www.electronjs.org/zh/docs/latest/api/menu-item)
@@ -848,7 +857,7 @@ const config = {
                     },
                 },
                 link: {
-                    enable: true, // 新窗口打开链接/块引用
+                    enable: (() => compareVersion(window.theme.kernelVersion, '2.8.9') <= 0), // 新窗口打开链接/块引用
                     outfocus: {
                         enable: true, // 不聚焦
                     },
