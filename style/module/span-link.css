@@ -39,6 +39,11 @@
   /* 思源聚焦超链接特化 */
   outline: 1px solid var(--custom-span-siyuan-link-color);
 }
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a] a::before,
+.sy__outline [data-node-id] span[data-type~=a] a::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a] a::before {
+  display: none;
+}
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a]:hover,
 .sy__outline [data-node-id] span[data-type~=a]:hover {
   border-bottom: 1px solid;
