@@ -1,5 +1,20 @@
 /* 块过长时设置块内纵向滚动条 */
 
+.table-head() {
+    &.table table {
+
+        >thead {
+            /* 冻结表头 */
+            position: sticky;
+            top: 1px;
+            z-index: 1;
+
+            outline: 1px solid var(--b3-theme-primary);
+            box-shadow: unset;
+        }
+    }
+}
+
 .protyle-content {
     [data-node-id] {
 
@@ -28,17 +43,12 @@
                 }
             }
 
-            &.table table {
+            .table-head();
+        }
 
-                >thead {
-                    /* 冻结表头 */
-                    position: sticky;
-                    top: 1px;
-                    outline: 1px solid var(--b3-theme-primary);
-                    z-index: 1;
-                }
-            }
-
+        // 冻结表头
+        &[custom-pinthead=true] {
+            .table-head();
         }
     }
 }
