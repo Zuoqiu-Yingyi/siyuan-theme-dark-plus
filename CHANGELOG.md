@@ -2,6 +2,8 @@
 
 - [#195](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/195) 修复链接嵌套时标志重复问题 | Fixed the issue of repeated marks when the link is nested.
 - 默认禁用一些已迁移到插件的功能 | Some functions migrated to the plugin are disabled by default.
+- 设置冻结表头的表格样式 | Set the table style with frozen header.
+  - Adapt: [Issue #8294 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/8294)
 
 ## v1.9.2/2023-05-23
 

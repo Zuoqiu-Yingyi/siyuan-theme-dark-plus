@@ -857,7 +857,7 @@ const config = {
                     },
                 },
                 link: {
-                    enable: (() => compareVersion(window.theme.kernelVersion, '2.8.9') <= 0), // 新窗口打开链接/块引用
+                    enable: (() => compareVersion(window.theme.kernelVersion, '2.8.9') <= 0)(), // 新窗口打开链接/块引用
                     outfocus: {
                         enable: true, // 不聚焦
                     },
@@ -2745,7 +2745,7 @@ const config = {
                 ],
             },
             tabbar: {
-                enable: true, // 标签页菜单功能开关
+                enable: false, // 标签页菜单功能开关
                 items: [ // 标签页菜单项
                     { // 归档所有打开的标签页
                         enable: true,
