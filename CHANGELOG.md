@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+- 设置全局背景图片透明度 | Set the global background image transparency.
+  - `--custom-background-transparent-color`: 背景 / 背景图片透明度 | background / background image transparency
+
 ## v1.9.3/2023-06-01
 
 - [v1.9.2 ... v1.9.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.9.2...v1.9.3)

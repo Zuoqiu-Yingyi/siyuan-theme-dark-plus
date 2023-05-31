@@ -180,6 +180,8 @@
   --custom-ref-mark-s-r-width: var(--custom-ref-mark-width);
   /* 最大高度层级 */
   --custom-z-index-max: 2147483647;
+  /* 全局背景透明颜色 | Global background transparent color */
+  --custom-background-transparent-color: rgba(0, 0, 0, 0.125);
   /* 背景图片 | Background image */
   --custom-background-image-landscape: url(/appearance/themes/Dark+/image/dark/background-main.jpg);
   --custom-background-image-portrait: var(--custom-background-image-landscape);
