@@ -1,13 +1,10 @@
 /* 全局页面 */
 
-
 /* 背景图片 */
 // 桌面端 & 移动端
-body.fn__flex-column,
+html,
 // 文档业内全屏模式
 .protyle.fullscreen {
-    border: none;
-
     background-image: var(--custom-background-image);
     background-attachment: var(--custom-background-attachment);
     background-blend-mode: var(--custom-background-blend-mode);
@@ -18,6 +15,11 @@ body.fn__flex-column,
     background-size: var(--custom-background-size);
 
     background-color: var(--custom-background-color);
+}
+
+body {
+    border: none;
+    background-color: var(--custom-background-transparent-color);
 }
 
 /* 文本选择 */
