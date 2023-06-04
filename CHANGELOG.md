@@ -2,6 +2,8 @@
 
 - 设置全局背景图片透明度 | Set the global background image transparency.
   - `--custom-background-transparent-color`: 背景 / 背景图片透明度 | background / background image transparency
+- 调整文档历史面板样式 | Adjust the style of the document history panel.
+  - Adapt: [Issue #8448 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/8448)
 
 ## v1.9.3/2023-06-01
 
