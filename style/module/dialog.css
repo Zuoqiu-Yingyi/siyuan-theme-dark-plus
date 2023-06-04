@@ -66,6 +66,10 @@
   background-color: transparent;
   border-left: 1px solid var(--b3-border-color);
 }
+.b3-dialog__container .history__panel .history__text {
+  /* 历史对话框内容框 */
+  background-color: transparent;
+}
 .b3-dialog__container .fn__flex-column {
   border-radius: inherit;
 }
