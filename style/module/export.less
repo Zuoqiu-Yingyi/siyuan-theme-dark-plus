@@ -13,7 +13,7 @@
 /* PDF 导出页面 */
 
 #action {
-    background: unset !important;
+    background-color: var(--custom-editor-background-color) !important;
 
     +#preview {
         /* 仅应用于导出预览界面的样式 */
@@ -22,6 +22,7 @@
 }
 
 #preview {
+    background-color: white;
 
     // 导出时显示高亮内容
     &.protyle-wysiwyg {

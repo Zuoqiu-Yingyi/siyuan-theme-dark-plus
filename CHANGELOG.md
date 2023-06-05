@@ -4,6 +4,7 @@
   - `--custom-background-transparent-color`: 背景 / 背景图片透明度 | background / background image transparency
 - 调整文档历史面板样式 | Adjust the style of the document history panel.
   - Adapt: [Issue #8448 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/8448)
+- 修复 PDF 导出时的背景样式 | Fixed the background style when exporting PDF.
 
 ## v1.9.3/2023-06-01
 

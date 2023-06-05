@@ -4,11 +4,14 @@
 }
 /* PDF 导出页面 */
 #action {
-  background: unset !important;
+  background-color: var(--custom-editor-background-color) !important;
 }
 #action + #preview {
   /* 仅应用于导出预览界面的样式 */
   border: 1px dashed var(--b3-theme-on-surface);
+}
+#preview {
+  background-color: white;
 }
 #preview.protyle-wysiwyg mark,
 #preview.protyle-wysiwyg span[data-type~=mark],
