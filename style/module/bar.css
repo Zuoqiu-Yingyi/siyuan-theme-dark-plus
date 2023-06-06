@@ -199,3 +199,8 @@ body:not(.body--win32) #toolbar:not(.toolbar--browser) {
   /* 左下右下菜单 */
   bottom: calc(var(--custom-dock-width) - var(--custom-dock-item-margin-width) * 2) !important;
 }
+#status .status__msg,
+#status .status__counter,
+#status .status__backgroundtask {
+  line-height: calc(var(--custom-dock-width) - var(--custom-dock-item-margin-width) * 2);
+}

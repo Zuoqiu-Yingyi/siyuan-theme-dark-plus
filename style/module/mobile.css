@@ -1,27 +1,23 @@
 /* 移动端优化 */
 /* 移动端编辑区 */
-/* 移动端工具栏 */
-#keyboardToolbar,
-.toolbar--border {
-  background-color: var(--custom-editor-background-color);
+#editor ~ #sidebar {
+  background-color: var(--custom-popover-background-color);
 }
-/* 移动端搜索面板 */
-#model #modelMain .toolbar {
+#editor ~ #model {
+  background-color: var(--custom-transparent-deeper);
+}
+#editor ~ #model #modelMain .toolbar {
   /* 移动端搜索控件栏 */
   background-color: transparent;
 }
-/* 底部控件栏 */
-/* 底部状态栏 */
-#status {
+#editor #status {
   height: initial;
 }
-#sidebar {
-  background-color: var(--custom-popover-background-color);
-}
-#model {
-  background-color: var(--custom-transparent-deeper);
-}
-/* 移动端隐藏状态栏 */
-.status--hide {
+#editor #status.status--hide {
+  /* 移动端隐藏状态栏 */
   bottom: -36px;
+}
+#editor ~ #keyboardToolbar,
+#editor .toolbar--border {
+  background-color: var(--custom-editor-background-color);
 }
