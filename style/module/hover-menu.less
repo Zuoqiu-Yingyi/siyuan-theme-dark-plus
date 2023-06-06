@@ -13,8 +13,7 @@
     // backdrop-filter: var(--custom-backdrop-popover-filter);
     background-color: transparent !important;
     backdrop-filter: none;
-    // 块引用搜索结果宽度设置为自动宽度
-    width: var(--custom-popover-menu-width) !important;
+
     outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
     overflow-x: visible !important;
 }
@@ -185,10 +184,16 @@
         border-radius: var(--custom-border-radius);
     }
 
+    // 引用搜索菜单
+    &.protyle-hint {
+        // 块引用搜索结果宽度设置为自动宽度
+        width: var(--custom-popover-menu-width) !important;
+    }
+
     // '/' 菜单
     &.b3-menu.hint--menu,
     // 引用搜索菜单
-    .protyle>&,
+    &.protyle-hint,
     // 历史搜索菜单
     &#searchHistoryList,
     // 历史替换菜单
