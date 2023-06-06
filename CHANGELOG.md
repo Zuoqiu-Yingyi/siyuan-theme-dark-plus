@@ -55,6 +55,7 @@
 - 新增 Logseq URL Scheme 超链接 `logseq://` 图标 | Added the URL Scheme link `logseq://` icon of Logseq.
 - 调整菜单项内元素样式 | Adjust the style of the elements in the menu item.
 - 移除对话框边框样式 | Removed the border style of the dialog.
+- 调整状态栏文本样式 | Adjust the style of the status bar text.
 
 ## v1.9.0/2023-05-10
 
