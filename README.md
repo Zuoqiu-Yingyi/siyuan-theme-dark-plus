@@ -32,11 +32,11 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
   - open the block or hyperlink in a new window
     - shortcut: <kbd>Middle Mouse Button</kbd>
     - SiYuan version: `v2.8.10+`
-    - Dark+ version: `v2.9.3+`
+    - Dark+ Theme version: `v1.9.3+`
   - open the block in a new window and focus
     - shortcut: <kbd>Shift + Middle Mouse Button</kbd>
     - SiYuan version: `v2.8.10+`
-    - Dark+ version: `v2.9.3+`
+    - Dark+ Theme version: `v1.9.3+`
 
 ## FEEDBACK
 

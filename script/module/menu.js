@@ -191,12 +191,12 @@ function menuOverride() {
                 }
             }
             /* 添加页签菜单项 */
-            else if (menu_item_last_origin?.firstChild?.firstChild?.getAttribute('xlink:href') === '#iconOpenWindow') {
-                const items = menuInit(config.theme.menu.tabbar.items);
-                if (items) {
-                    items.forEach(item => menu.append(item));
-                };
-            }
+            // else if (menu_item_last_origin?.firstChild?.firstChild?.getAttribute('xlink:href') === '#iconOpenWindow') {
+            //     const items = menuInit(config.theme.menu.tabbar.items);
+            //     if (items) {
+            //         items.forEach(item => menu.append(item));
+            //     };
+            // }
         }
         menu.__proto__.popup.call(this, ...args);
     }
