@@ -1,7 +1,5 @@
 # 更改日志 | CHANGE LOG
 
-- 调整图标鼠标悬浮缩放样式 | Adjust the style of icon with mouse hover zoom.
-
 ## v1.9.4/2023-06-07
 
 - [v1.9.3 ... v1.9.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.9.3...v1.9.4)
@@ -12,6 +10,7 @@
 - 修复 PDF 导出时的背景样式 | Fixed the background style when exporting PDF.
 - 优化导出为图片样式 | Optimize the style of exporting as an image.
 - 调整状态栏样式 | Adjust the style of the status bar.
+- 调整图标鼠标悬浮缩放样式 | Adjust the style of icon with mouse hover zoom.
 
 ## v1.9.3/2023-06-01
 
