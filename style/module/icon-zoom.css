@@ -5,12 +5,27 @@ svg.popover__block:hover,
   transform: scale(1.25);
   transition: all 0.1s ease-in-out;
 }
-.b3-list-item__icon:hover,
-.dock__item:hover,
-.b3-tooltips:hover,
-.toolbar__item:hover,
-.b3-list-item__action:hover,
-.block__icon:hover {
+.b3-list-item__icon:hover img,
+.dock__item:hover img,
+.b3-tooltips:hover img,
+.toolbar__item:hover img,
+.b3-list-item__action:hover img,
+.block__icon:hover img,
+.b3-list-item__icon:hover svg,
+.dock__item:hover svg,
+.b3-tooltips:hover svg,
+.toolbar__item:hover svg,
+.b3-list-item__action:hover svg,
+.block__icon:hover svg {
+  transform: scale(1.25);
+  transition: all 0.1s ease-in-out;
+}
+.b3-list-item__icon:hover:not(:has(img, svg)),
+.dock__item:hover:not(:has(img, svg)),
+.b3-tooltips:hover:not(:has(img, svg)),
+.toolbar__item:hover:not(:has(img, svg)),
+.b3-list-item__action:hover:not(:has(img, svg)),
+.block__icon:hover:not(:has(img, svg)) {
   transform: scale(1.25);
   transition: all 0.1s ease-in-out;
 }

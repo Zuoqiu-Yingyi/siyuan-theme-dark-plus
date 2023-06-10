@@ -30,6 +30,14 @@ svg,
 .b3-list-item__action,
 .block__icon {
     &:hover {
-        .popover();
+
+        img,
+        svg {
+            .popover();
+        }
+
+        &:not(:has(img, svg)) {
+            .popover();
+        }
     }
 }
