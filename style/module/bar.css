@@ -185,6 +185,7 @@ body:not(.body--win32) #toolbar:not(.toolbar--browser) {
 #toolbar #drag {
   /* 顶部工具栏标题 */
   padding: 0;
+  line-height: normal;
 }
 .toolbar__window #windowControls .b3-tooltips,
 #toolbar #windowControls .b3-tooltips {
