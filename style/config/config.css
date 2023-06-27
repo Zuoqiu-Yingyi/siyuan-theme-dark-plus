@@ -548,7 +548,7 @@
   /* 窗口标题栏背景颜色 | The window title bar background color */
   --custom-window-inactive-title-bar-background-color: var(--b3-theme-background);
   /* 窗口标题栏颜色 | The window title bar color */
-  --custom-window-inactive-title-bar-color: var(--b3-theme-on-surface-light);
+  --custom-window-inactive-title-bar-color: var(--b3-border-color);
 }
 @media (orientation: landscape) {
   :root {

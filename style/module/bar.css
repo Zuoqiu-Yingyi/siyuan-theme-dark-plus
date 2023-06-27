@@ -77,6 +77,14 @@ body.body--window .toolbar__window .b3-tooltips > svg {
   padding: 0;
   box-sizing: content-box;
 }
+#toolbar .toolbar__item,
+#dockTop .toolbar__item,
+#dockLeft .toolbar__item,
+#dockRight .toolbar__item,
+#dockBottom .toolbar__item,
+#status .toolbar__item {
+  height: unset;
+}
 #toolbar .b3-tooltips,
 #dockTop .b3-tooltips,
 #dockLeft .b3-tooltips,
@@ -165,7 +173,6 @@ body:not(.body--win32) #toolbar:not(.toolbar--browser) {
 }
 #toolbar #barWorkspace {
   /* 工作空间下拉菜单 */
-  margin: 0;
 }
 #toolbar #drag {
   /* 顶部工具栏标题 */

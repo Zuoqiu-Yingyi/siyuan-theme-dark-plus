@@ -20,6 +20,7 @@
   min-width: unset !important;
   max-width: none;
   box-sizing: border-box;
+  line-height: unset;
 }
 .layout-tab-bar .item .item__icon,
 .layout-tab-bar .item .item__graphic {
