@@ -18,10 +18,6 @@
 .inactive-window-title-bar .toolbar__item {
   color: var(--custom-window-inactive-title-bar-color);
 }
-.block__icons--active {
-  /* 聚焦的侧边面板标题 */
-  background-color: var(--b3-list-hover);
-}
 /* 页签新窗口 */
 body.body--window #layouts .layout-tab-bar--readonly {
   /* 页签栏 */

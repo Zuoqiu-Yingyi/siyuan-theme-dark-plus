@@ -120,6 +120,7 @@
 .layout-tab-container {
     .block__icons {
         height: var(--custom-panel-title-height);
+        min-height: var(--custom-dock-width);
 
         .counter {
             /* 计数器 */
@@ -138,6 +139,15 @@
 
     .plugin-sample__custom-tab {
         background-color: unset;
+    }
+}
+
+.layout-tab-container {
+    .layout__tab--active {
+        .block__icons {
+            /* 焦点所在面板的标题栏 */
+            background-color: var(--b3-list-hover);
+        }
     }
 }
 

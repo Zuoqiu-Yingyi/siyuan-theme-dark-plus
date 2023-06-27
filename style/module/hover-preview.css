@@ -12,14 +12,14 @@
 .block__popover.block__popover--top > .block__icons {
   background-color: var(--b3-list-hover);
 }
-.block__popover .block__icons--border {
+.block__popover .block__icons {
   background-color: var(--custom-popover-title-bar-background-color);
   padding: 0 6px;
 }
-.block__popover .block__icons--border .block__icon[data-type=close] {
+.block__popover .block__icons .block__icon[data-type=close] {
   width: 1em;
   /* 关闭按钮 */
 }
-.block__popover .block__icons--border .block__icon[data-type=close] > svg {
+.block__popover .block__icons .block__icon[data-type=close] > svg {
   width: unset !important;
 }
