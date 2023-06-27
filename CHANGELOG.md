@@ -3,6 +3,7 @@
 - 调整图标鼠标悬浮缩放样式 | Adjust the style of icon with mouse hover zoom.
 - 调整菜单栏按钮样式 | Adjust the style of the menu bar button.
 - 调整面板标题栏样式 | Adjust the style of the panel title bar.
+- 调整窗口标题栏样式 | Adjust the style of the window title bar.
 
 ## v1.9.4/2023-06-07
 
