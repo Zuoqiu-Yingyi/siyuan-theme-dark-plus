@@ -633,6 +633,8 @@
         "Android Emoji";
   /* 线条 */
   --b3-border-color: var(--custom-components-light);
+  /* 提示窗口背景颜色 */
+  --b3-tooltips-color: var(--custom-transparent-deep);
 }
 /* 👇动画效果👇 */
 /* 旋转 */

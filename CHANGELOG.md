@@ -5,6 +5,7 @@
 - 调整面板标题栏样式 | Adjust the style of the panel title bar.
 - 调整窗口标题栏样式 | Adjust the style of the window title bar.
 - 调整表格样式 | Adjust the style of the table.
+- 调整提示框背景颜色 | Adjust the background color of the prompt box.
 
 ## v1.9.4/2023-06-07
 
