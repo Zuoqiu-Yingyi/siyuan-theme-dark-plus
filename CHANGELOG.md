@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 调整图标鼠标悬浮缩放样式 | Adjust the style of icon with mouse hover zoom.
+- 调整菜单栏按钮样式 | Adjust the style of the menu bar button.
 
 ## v1.9.4/2023-06-07
 
