@@ -12,11 +12,14 @@
   border-color: var(--custom-block-table-cell-border-color);
   background-color: transparent !important;
 }
+.b3-typography table colgroup,
+.protyle-wysiwyg table colgroup {
+  border: 2px solid var(--b3-border-color);
+}
 .b3-typography table thead,
 .protyle-wysiwyg table thead {
   /* 表头 */
   background-color: var(--custom-block-table-thead-background-color);
-  border: 2px solid var(--b3-border-color);
 }
 .b3-typography table thead tr,
 .protyle-wysiwyg table thead tr {
