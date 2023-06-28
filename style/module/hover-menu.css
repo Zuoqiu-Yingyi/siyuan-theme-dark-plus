@@ -76,7 +76,6 @@
   /* 菜单项 */
   margin: 0 !important;
   border-radius: var(--custom-border-radius);
-  line-height: unset;
 }
 .b3-list.protyle-hint {
   width: var(--custom-popover-menu-width) !important;

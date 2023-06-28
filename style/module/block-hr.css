@@ -2,6 +2,11 @@
 .b3-typography hr,
 .protyle-wysiwyg [data-node-id].hr > div {
   border-bottom: 4px double var(--custom-line-color);
+  height: unset;
+}
+.b3-typography hr::after,
+.protyle-wysiwyg [data-node-id].hr > div::after {
+  content: none;
 }
 .protyle-wysiwyg [data-node-id].li > [data-node-id].hr:nth-of-type(2) > div {
   height: 0.75em;
