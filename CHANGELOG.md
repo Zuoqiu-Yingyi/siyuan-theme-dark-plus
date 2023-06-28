@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+- 修复搜索结果关键词显示问题 | Fixed the issue of keyword display in search results.
+- 调整分隔线样式 | Adjust the style of the separator.
+
 ## v1.9.5/2023-06-28
 
 - [v1.9.4 ... v1.9.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.9.4...v1.9.5)
