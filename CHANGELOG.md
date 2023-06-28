@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.9.5/2023-06-28
+
+- [v1.9.4 ... v1.9.5](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.9.4...v1.9.5)
 - 调整图标鼠标悬浮缩放样式 | Adjust the style of icon with mouse hover zoom.
 - 调整菜单栏按钮样式 | Adjust the style of the menu bar button.
 - 调整面板标题栏样式 | Adjust the style of the panel title bar.
