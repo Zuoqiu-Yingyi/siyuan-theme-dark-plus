@@ -2,6 +2,7 @@
 
 - 修复搜索结果关键词显示问题 | Fixed the issue of keyword display in search results.
 - 调整分隔线样式 | Adjust the style of the separator.
+- 调整菜单圆角样式 | Adjust the style of the menu rounded corners.
 
 ## v1.9.5/2023-06-28
 
