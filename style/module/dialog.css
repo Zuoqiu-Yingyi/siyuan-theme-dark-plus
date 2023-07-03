@@ -83,6 +83,8 @@
 }
 .b3-dialog__container .fn__flex-column .layout-tab-bar {
   background-color: transparent;
+  border-top-left-radius: var(--custom-border-radius) !important;
+  border-top-right-radius: var(--custom-border-radius) !important;
 }
 .b3-dialog__container .fn__flex-column .layout-tab-bar .item .item__text {
   /* 对话框页签 */
