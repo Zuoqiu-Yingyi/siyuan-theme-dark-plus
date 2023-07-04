@@ -410,7 +410,6 @@
   --custom-template-preview-min-width: none;
   /* --custom-template-preview-min-width: 25vw; */
   /* 搜索结果匹配的关键词样式 | The style of matched keywords in the search results */
-  --custom-matched-keyword-color: inherit;
   --custom-matched-keyword-background-color: transparent;
   /* 预览窗口 | preview window */
   /* 图片预览窗口背景颜色 | The background color of the image preview window */
