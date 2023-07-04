@@ -25,7 +25,6 @@
   background-position: center;
   background-attachment: fixed;
   background-color: transparent;
-  border-radius: var(--custom-border-radius) !important;
   border: unset;
 }
 .b3-dialog__container > .b3-dialog__close {
@@ -86,8 +85,6 @@
 }
 .b3-dialog__container .fn__flex-column .layout-tab-bar {
   background-color: transparent;
-  border-top-left-radius: var(--custom-border-radius) !important;
-  border-top-right-radius: var(--custom-border-radius) !important;
 }
 .b3-dialog__container .fn__flex-column .layout-tab-bar .item .item__text {
   /* 对话框页签 */

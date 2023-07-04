@@ -634,6 +634,9 @@
   --b3-border-color: var(--custom-components-light);
   /* 提示窗口背景颜色 */
   --b3-tooltips-color: #222C;
+  /* 圆角半径 */
+  --b3-border-radius: var(--custom-border-radius);
+  --b3-border-radius-b: var(--custom-border-radius);
 }
 /* 👇动画效果👇 */
 /* 旋转 */
