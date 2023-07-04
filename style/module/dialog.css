@@ -50,6 +50,9 @@
   margin: 0 0 0.5em;
   border-bottom: 2px solid var(--custom-popover-menu-separator-color);
 }
+.b3-dialog__container .config__panel .config__tab-wrap {
+  background-color: transparent;
+}
 .b3-dialog__container .config__panel .config__tab-container {
   background-color: transparent;
 }

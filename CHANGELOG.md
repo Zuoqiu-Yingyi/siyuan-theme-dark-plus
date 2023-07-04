@@ -6,6 +6,7 @@
 - 调整对话框圆角样式 | Adjust the style of the dialog rounded corners.
 - [#199](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/199) 修复明亮模式控件提示文本背景颜色 | Fixed the background color of the control prompt text in the light mode.
 - 调整搜索命中的关键字样式 | Adjust the style of the keywords hit by the search.
+- 调整设置对话框面板背景颜色 | Adjust the background color of the settings dialog panel.
 
 ## v1.9.5/2023-06-28
 
