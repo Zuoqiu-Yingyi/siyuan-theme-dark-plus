@@ -293,7 +293,6 @@
   margin: 0 0.25em;
   border: 0;
   padding: 0 0.125em;
-  color: var(--custom-matched-keyword-color);
   background-color: var(--custom-matched-keyword-background-color);
   outline-width: var(--custom-popover-menu-outline-width);
 }
