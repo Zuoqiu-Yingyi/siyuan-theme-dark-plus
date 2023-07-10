@@ -3,6 +3,7 @@
   "author": "Zuoqiu Yingyi",
   "url": "https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus",
   "version": "1.9.6",
+  "minAppVersion": "2.9.5",
   "modes": [
     "dark",
     "light"
