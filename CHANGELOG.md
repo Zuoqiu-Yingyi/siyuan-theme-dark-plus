@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+- 调整提示文本样式 | Adjust the style of the prompt text.
+  - Adapt: [Issue #8686 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/8686)
+
 ## v1.9.6/2023-07-04
 
 - [v1.9.5 ... v1.9.6](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.9.5...v1.9.6)
