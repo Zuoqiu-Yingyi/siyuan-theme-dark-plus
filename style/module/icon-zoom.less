@@ -9,7 +9,7 @@
 // 悬浮预览图标
 svg,
 // 文章引用计数
-.counter,
+// .counter,
 // 块引用计数
 .protyle-attr--refcount {
     &.popover__block:hover {
@@ -37,7 +37,11 @@ svg,
         }
 
         &:not(:has(*)) {
-            .popover();
+            // 放大整个元素
+            &:not(.counter) {
+                // 不放大数字
+                .popover();
+            }
         }
     }
 }
