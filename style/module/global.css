@@ -43,3 +43,7 @@ textarea.b3-text-field {
 input.b3-switch {
   border-radius: 12px;
 }
+/* 滑动器 */
+input.b3-slider {
+  border-radius: 12px;
+}
