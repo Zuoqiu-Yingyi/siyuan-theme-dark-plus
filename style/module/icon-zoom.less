@@ -1,9 +1,12 @@
 /* 引入参数配置 */
 
-
 .popover() {
     transform: scale(1.25);
     transition: all 0.1s ease-in-out;
+}
+
+.popover-font() {
+    font-size: 150%;
 }
 
 // 悬浮预览图标
@@ -41,6 +44,7 @@ svg,
             &:not(.counter) {
                 // 不放大数字
                 .popover();
+                // .popover-font();
             }
         }
     }

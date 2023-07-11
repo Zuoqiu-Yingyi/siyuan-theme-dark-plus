@@ -10,6 +10,7 @@
 - 调整滑动器样式 | Adjust the style of the slider.
 - 调整列表项标志样式 | Adjust the style of the list item mark.
 - 调整引用计数器样式 | Adjust the style of the reference counter.
+- 优化列表脑图视图 | Optimize the list mind map view.
 
 ## v1.9.6/2023-07-04
 
