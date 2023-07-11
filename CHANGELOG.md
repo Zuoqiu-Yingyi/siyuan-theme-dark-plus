@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.9.7/2023-07-11
+
+- [v1.9.6 ... v1.9.7](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.9.6...v1.9.7)
 - 调整提示文本样式 | Adjust the style of the prompt text.
   - Adapt: [Issue #8686 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/8686)
 - 调整面包屑样式 | Adjust the style of the breadcrumb.
