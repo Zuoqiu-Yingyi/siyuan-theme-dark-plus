@@ -5,11 +5,12 @@
 }
 .protyle-wysiwyg [data-node-id].li > .protyle-action {
   /* 列表标志 */
-  z-index: 0;
 }
 .protyle-wysiwyg [data-node-id].li > .protyle-action::after {
   /* 标志阴影 */
-  z-index: -1;
+}
+.protyle-wysiwyg [data-node-id].li > .protyle-action:hover::after {
+  background-color: var(--b3-list-hover);
 }
 .protyle-wysiwyg [data-node-id].li::before {
   /* 缩进辅助线样式 */

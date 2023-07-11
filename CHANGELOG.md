@@ -8,6 +8,7 @@
   - Adapt: [Issue #8685 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/8685)
 - 调整开关与关闭按钮样式 | Adjust the style of the switch and close button.
 - 调整滑动器样式 | Adjust the style of the slider.
+- 调整列表项标志样式 | Adjust the style of the list item mark.
 
 ## v1.9.6/2023-07-04
 
