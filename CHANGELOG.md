@@ -2,6 +2,8 @@
 
 - 调整提示文本样式 | Adjust the style of the prompt text.
   - Adapt: [Issue #8686 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/8686)
+- 调整面包屑样式 | Adjust the style of the breadcrumb.
+  - Adapt: [Issue #8654 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/8654)
 
 ## v1.9.6/2023-07-04
 
