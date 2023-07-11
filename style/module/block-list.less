@@ -10,11 +10,16 @@
     [data-node-id].li {
         >.protyle-action {
             /* 列表标志 */
-            z-index: 0;
+            // z-index: 0;
 
             &::after {
                 /* 标志阴影 */
-                z-index: -1;
+                // z-index: 0;
+            }
+            &:hover {
+                &::after {
+                    background-color: var(--b3-list-hover);
+                }
             }
         }
 
