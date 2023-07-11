@@ -6,6 +6,7 @@
   - Adapt: [Issue #8654 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/8654)
 - 调整设置面板样式 | Adjust the style of the settings panel.
   - Adapt: [Issue #8685 · siyuan-note/siyuan](https://github.com/siyuan-note/siyuan/issues/8685)
+- 调整开关与关闭按钮样式 | Adjust the style of the switch and close button.
 
 ## v1.9.6/2023-07-04
 

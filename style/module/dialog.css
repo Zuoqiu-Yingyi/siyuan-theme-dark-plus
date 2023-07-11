@@ -27,9 +27,6 @@
   background-color: transparent;
   border: unset;
 }
-.b3-dialog__container > .b3-dialog__close {
-  border-radius: 50%;
-}
 .b3-dialog__container > .b3-dialog__close:hover {
   /* 关闭按钮 */
 }

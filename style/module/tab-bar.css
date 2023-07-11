@@ -50,6 +50,9 @@
 .layout-tab-bar .item .item__close[data-type="more"] {
   margin: 0 4px;
 }
+.layout-tab-bar .item .item__close svg {
+  border-radius: 50%;
+}
 .layout-tab-bar .item .item__close:hover svg {
   /* 鼠标悬浮页签项关闭图标 */
   color: var(--b3-theme-surface);
