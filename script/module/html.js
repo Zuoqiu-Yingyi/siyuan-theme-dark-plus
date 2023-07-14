@@ -76,13 +76,19 @@ window.theme.This = function (customID) {
  */
 window.theme.urlFormat = function (url, ssl = true) {
     switch (true) { // 格式化 URL
-        case url.startsWith('assets/'):
-        case url.startsWith('widgets/'):
-        case url.startsWith('emojies/'):
-        case url.startsWith('history/'):
-        case url.startsWith('snippets/'):
-        case url.startsWith('appearance/'):
-        case url.startsWith('export/'):
+        case url.startsWith('stage/'): // 安装目录/resources/stage
+
+        case url.startsWith('appearance/'): // 工作空间/conf/appearance
+        case url.startsWith('export/'): // 工作空间/temp/export
+        case url.startsWith('history/'): // 工作空间/history
+
+        case url.startsWith('assets/'): // 工作空间/data/assets
+        case url.startsWith('emojies/'): // 工作空间/data/emojies
+        case url.startsWith('plugins/'): // 工作空间/data/plugins
+        case url.startsWith('plugins/'): // 工作空间/data/plugins
+        case url.startsWith('snippets/'): // 工作空间/data/snippets
+        case url.startsWith('templates/'): // 工作空间/data/templates
+        case url.startsWith('widgets/'): // 工作空间/data/widgets
             return new URL(`${window.location.origin}/${url}`);
         case url.startsWith('//'):
             return new URL(`${ssl ? 'https' : 'http'}:${url}`);

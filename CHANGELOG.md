@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 调整反向链接关键字过滤输入框样式 | Adjust the style of the reverse link keyword filter input field.
+
 ## v1.9.7/2023-07-11
 
 - [v1.9.6 ... v1.9.7](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.9.6...v1.9.7)
