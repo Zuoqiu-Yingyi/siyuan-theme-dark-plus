@@ -640,7 +640,6 @@
 .block__popover .block__icons .b3-text-field,
 .layout-tab-container .block__icons .b3-text-field {
   /* 关键字过滤 */
-  background-color: transparent;
   line-height: 22px;
 }
 .block__popover .plugin-sample__custom-tab,
