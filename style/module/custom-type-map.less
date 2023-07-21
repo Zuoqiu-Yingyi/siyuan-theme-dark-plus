@@ -28,6 +28,15 @@
     [custom-type~="脑图"],
     [custom-type~=mind-map],
     [custom-type~=map] {
+
+        &.protyle-wysiwyg,
+        [data-node-id]:not(.li) {
+            >[data-node-id].list {
+                /* 文档块样式 */
+                overflow-x: auto;
+            }
+        }
+
         &[data-node-id].list {
             /* 导图块样式 */
             overflow-x: auto;

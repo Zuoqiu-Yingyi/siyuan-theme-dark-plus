@@ -54,3 +54,7 @@
   /* 无内容的面包屑项 */
   margin-left: 0;
 }
+.protyle-breadcrumb__bar .protyle-breadcrumb__item .protyle-breadcrumb__text:first-child {
+  /* 无图标的面包屑项 */
+  margin-left: 0;
+}
