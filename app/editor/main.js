@@ -19,7 +19,6 @@ import {
     getBlockKramdown,
     getDocHistoryContent,
     openRepoSnapshotDoc,
-    getBlockDomByID,
     getDoc,
     getSnippet,
     setSnippet,
