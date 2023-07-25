@@ -2,6 +2,7 @@
 
 - 调整反向链接关键字过滤输入框样式 | Adjust the style of the reverse link keyword filter input field.
 - 修复列表导图视图样式问题 | Fixed the style issue of the list mind map view.
+- 调整嵌入块内的代码块控件栏样式 | Adjust the style of the code block control bar in the embedded block.
 
 ## v1.9.7/2023-07-11
 
