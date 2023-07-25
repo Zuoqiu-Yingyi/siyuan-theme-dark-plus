@@ -3120,7 +3120,7 @@ const config = {
                     },
                     editor: {
                         // 新窗口打开编辑器(Alt + 鼠标中键)
-                        enable: true,
+                        enable: false,
                         CtrlCmd: false,
                         WinCtrl: false,
                         Shift: false,
@@ -3129,7 +3129,7 @@ const config = {
                     },
                     markdown: {
                         // 以 markdown 模式在新窗口打开编辑器(Shift + Alt + 鼠标中键)
-                        enable: true,
+                        enable: false,
                         CtrlCmd: false,
                         WinCtrl: false,
                         Shift: true,

@@ -18,6 +18,11 @@
   border: 2px solid var(--custom-line-color) !important;
   background-color: var(--custom-block-embed-background-color);
 }
+.protyle-wysiwyg .render-node[data-node-id][data-type="NodeBlockQueryEmbed"] > .protyle-wysiwyg__embed .code-block:hover .protyle-icon,
+.protyle-wysiwyg .render-node[data-node-id][data-type="NodeBlockQueryEmbed"] > .protyle-wysiwyg__embed .code-block:hover .protyle-icons {
+  /* 嵌入块内部的代码块控件常显 */
+  opacity: unset !important;
+}
 .protyle-wysiwyg .render-node[data-node-id][data-type="NodeBlockQueryEmbed"] > .protyle-wysiwyg__embed:hover {
   /* 查询结果鼠标悬停时显示边框 */
   border-color: var(--b3-theme-on-surface) !important;

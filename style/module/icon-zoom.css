@@ -10,12 +10,12 @@ svg.popover__block:hover,
 .toolbar__item:hover img,
 .b3-list-item__action:hover img,
 .block__icon:hover img,
-.b3-list-item__icon:hover svg,
-.dock__item:hover svg,
-.b3-tooltips:hover svg,
-.toolbar__item:hover svg,
-.b3-list-item__action:hover svg,
-.block__icon:hover svg {
+.b3-list-item__icon:hover svg:not(.b3-list-item__arrow),
+.dock__item:hover svg:not(.b3-list-item__arrow),
+.b3-tooltips:hover svg:not(.b3-list-item__arrow),
+.toolbar__item:hover svg:not(.b3-list-item__arrow),
+.b3-list-item__action:hover svg:not(.b3-list-item__arrow),
+.block__icon:hover svg:not(.b3-list-item__arrow) {
   transform: scale(1.25);
   transition: all 0.1s ease-in-out;
 }
