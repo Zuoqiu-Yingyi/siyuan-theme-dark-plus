@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 调整上下文菜单样式 | Adjust the style of the context menu.
+
 ## v1.9.8/2023-08-02
 
 - [v1.9.7 ... v1.9.8](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.9.7...v1.9.8)
