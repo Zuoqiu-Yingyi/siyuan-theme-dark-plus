@@ -37,6 +37,15 @@
     - 快捷键: <kbd>Shift + 鼠标中键</kbd>
     - 思源版本: `v2.8.10+`
     - Dark+ 主题版本: `v1.9.3+`
+- **插件**: [集成编辑环境 `monaco-editor`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-monaco-editor)
+  - 在新窗口打开 Monaco 编辑器以查看
+    - 快捷键: <kbd>Alt + 鼠标中键</kbd>
+    - 思源版本: `v2.9.8+`
+    - Dark+ 主题版本: `v1.9.8+`
+  - 在新窗口打开 Monaco 编辑器以编辑
+    - 快捷键: <kbd>Shift + Alt 鼠标中键</kbd>
+    - 思源版本: `v2.9.8+`
+    - Dark+ 主题版本: `v1.9.8+`
 
 ## 反馈
 
@@ -110,42 +119,42 @@
 
 #### 主题快捷键
 
-| 快捷键                                                           | 操作对象                        | 功能                                                                                                                 |
-| :--------------------------------------------------------------- | :------------------------------ | :------------------------------------------------------------------------------------------------------------------- |
-| <kbd>鼠标中键</kbd><br/>在思源 `v2.8.10+` 版本中默认禁用         | 整个窗口                        | 在新窗口打开块或超链接<br/>已迁移至插件 [网页视图 `webview`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-webview) |
-| <kbd>鼠标右键</kbd>                                              | 文档右侧滑块 / 当前阅读进度标识 | 跳转到文档上次浏览位置                                                                                               |
-| <kbd>Shift + 鼠标中键</kbd><br/>在思源 `v2.8.10+` 版本中默认禁用 | 整个窗口                        | 在新窗口打开块并聚焦<br/>已迁移至插件 [网页视图 `webview`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-webview)   |
-| <kbd>Alt + 鼠标中键</kbd>                                        | 整个窗口                        | 在新窗口打开 Monaco 编辑器并编辑单击的内容                                                                           |
-| <kbd>Shift + Alt + 鼠标中键</kbd>                                | 整个窗口                        | 在新窗口打开 Monaco 编辑器并查看 markdown 源码                                                                       |
-| <kbd>Ctrl/⌘ + 鼠标滚轮</kbd>                                     | 整个窗口                        | 调整编辑区字体大小                                                                                                   |
-| <kbd>Ctrl/⌘ + 鼠标中键</kbd>                                     | 超链接                          | 设置自定义块属性                                                                                                     |
-| <kbd>Ctrl/⌘ + 鼠标中键</kbd>                                     | 视频块/音频块/iframe块          | 将当前时间戳写入剪贴板                                                                                               |
-| <kbd>Ctrl/⌘ + 鼠标左键</kbd>                                     | 视频块/音频块/iframe块          | 跳转到自定义块属性 `time` 所设置的时间点                                                                             |
-| <kbd>Ctrl/⌘ + 鼠标左键</kbd>                                     | 挂件块/iframe块                 | 重新加载块内容                                                                                                       |
-| <kbd>鼠标左键双击</kbd>                                          | 挂件块/iframe块                 | 全屏显示块内容                                                                                                       |
-| <kbd>Ctrl/⌘ + F1</kbd>                                           | 当前文档                        | 渲染当前文档所有块的自定义样式                                                                                       |
-| <kbd>Ctrl/⌘ + F5</kbd>                                           | 整个窗口                        | 重新加载整个窗口                                                                                                     |
-| <kbd>Shift + Alt + B</kbd><br/>需在自定义配置文件中启用          | 整个窗口                        | 启动/关闭页签纵向排列功能                                                                                            |
-| <kbd>Shift + Alt + E</kbd><br/>需在自定义配置文件中启用          | 整个窗口                        | 启动/关闭显示标记文本功能                                                                                            |
-| <kbd>Shift + Alt + F</kbd><br/>需在自定义配置文件中启用          | 整个窗口                        | 启动/关闭专注模式 (折叠/展开功能面板)                                                                                |
-| <kbd>Shift + Alt + G</kbd><br/>需在自定义配置文件中启用          | 整个窗口                        | 启动/关闭列表辅助线(列表, 表格列表, 思维导图列表)                                                                    |
-| <kbd>Shift + Alt + I</kbd><br/>需在自定义配置文件中启用          | 整个窗口                        | 启动/关闭反色模式                                                                                                    |
-| <kbd>Shift + Alt + L</kbd><br/>需在自定义配置文件中启用          | 整个窗口                        | 启动/关闭记录当前浏览位置功能                                                                                        |
-| <kbd>Shift + Alt + M</kbd><br/>需在自定义配置文件中启用          | 整个窗口                        | 启动/关闭块菜单增强功能                                                                                              |
-| <kbd>Shift + Alt + N</kbd><br/>需在自定义配置文件中启用          | 整个窗口                        | 在新窗口打开光标所在块                                                                                               |
-| <kbd>Shift + Alt + R</kbd><br/>需在自定义配置文件中启用          | 整个窗口                        | 使用网络背景图片                                                                                                     |
-| <kbd>Shift + Alt + T</kbd><br/>需在自定义配置文件中启用          | 整个窗口                        | 启动/关闭打字机模式                                                                                                  |
-| <kbd>Shift + Alt + C</kbd><br/>需在自定义配置文件中启用          | 当前文档                        | 复制当前文档 markdown 全文至剪贴板                                                                                   |
-| <kbd>Shift + Alt + X</kbd><br/>需在自定义配置文件中启用          | 当前文档                        | 剪切当前文档 markdown 全文至剪贴板                                                                                   |
-| <kbd>Shift + Alt + D</kbd><br/>需在自定义配置文件中启用          | 当前文档                        | 删除当前文档全文                                                                                                     |
-| <kbd>Shift + Alt + ↑</kbd><br/>需在自定义配置文件中启用          | 当前文档                        | 折叠当前文档所有子标题                                                                                               |
-| <kbd>Shift + Alt + ↓</kbd><br/>需在自定义配置文件中启用          | 当前文档                        | 展开当前文档所有子标题                                                                                               |
-| <kbd>Ctrl/⌘ + Shift + Alt + R</kbd><br/>需在自定义配置文件中启用 | 整个窗口                        | 使用自定义背景图片                                                                                                   |
-| <kbd>Ctrl/⌘ + Shift + Alt + N</kbd><br/>需在自定义配置文件中启用 | 整个窗口                        | 在新窗口打开光标所在块并聚焦                                                                                         |
-| <kbd>Ctrl/⌘ + Shift + Alt + L</kbd><br/>需在自定义配置文件中启用 | 整个窗口                        | 清除当前文档浏览位置记录                                                                                             |
-| <kbd>Ctrl/⌘ + Shift + Alt + O</kbd><br/>需在自定义配置文件中启用 | 当前文档                        | 复制当前文档大纲为有序列表                                                                                           |
-| <kbd>Ctrl/⌘ + Shift + Alt + U</kbd><br/>需在自定义配置文件中启用 | 当前文档                        | 复制当前文档大纲为无序列表                                                                                           |
-| <kbd>Ctrl/⌘ + Shift + Alt + T</kbd><br/>需在自定义配置文件中启用 | 当前文档                        | 复制当前文档大纲为任务列表                                                                                           |
+| 快捷键                                                                 | 操作对象                        | 功能                                                                                                                                                          |
+| :--------------------------------------------------------------------- | :------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| <kbd>鼠标中键</kbd><br/>❗在思源 `v2.8.10+` 版本中默认禁用              | 整个窗口                        | 在新窗口打开块或超链接<br/>❗已迁移至插件 [网页视图 `webview`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-webview)                                         |
+| <kbd>鼠标右键</kbd>                                                    | 文档右侧滑块 / 当前阅读进度标识 | 跳转到文档上次浏览位置                                                                                                                                        |
+| <kbd>Shift + 鼠标中键</kbd><br/>❗在思源 `v2.8.10+` 版本中默认禁用      | 整个窗口                        | 在新窗口打开块并聚焦<br/>❗已迁移至插件 [网页视图 `webview`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-webview)                                           |
+| <kbd>Alt + 鼠标中键</kbd><br/>❗在思源 `v2.9.8+` 版本中默认禁用         | 整个窗口                        | 在新窗口打开 Monaco 编辑器并编辑单击的内容<br/>❗已迁移至插件 [集成编辑环境 `monaco-editor`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-monaco-editor)     |
+| <kbd>Shift + Alt + 鼠标中键</kbd><br/>❗在思源 `v2.9.8+` 版本中默认禁用 | 整个窗口                        | 在新窗口打开 Monaco 编辑器并查看 markdown 源码<br/>❗已迁移至插件 [集成编辑环境 `monaco-editor`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-monaco-editor) |
+| <kbd>Ctrl/⌘ + 鼠标滚轮</kbd>                                           | 整个窗口                        | 调整编辑区字体大小                                                                                                                                            |
+| <kbd>Ctrl/⌘ + 鼠标中键</kbd>                                           | 超链接                          | 设置自定义块属性                                                                                                                                              |
+| <kbd>Ctrl/⌘ + 鼠标中键</kbd>                                           | 视频块/音频块/iframe块          | 将当前时间戳写入剪贴板                                                                                                                                        |
+| <kbd>Ctrl/⌘ + 鼠标左键</kbd>                                           | 视频块/音频块/iframe块          | 跳转到自定义块属性 `time` 所设置的时间点                                                                                                                      |
+| <kbd>Ctrl/⌘ + 鼠标左键</kbd>                                           | 挂件块/iframe块                 | 重新加载块内容                                                                                                                                                |
+| <kbd>鼠标左键双击</kbd>                                                | 挂件块/iframe块                 | 全屏显示块内容                                                                                                                                                |
+| <kbd>Ctrl/⌘ + F1</kbd>                                                 | 当前文档                        | 渲染当前文档所有块的自定义样式                                                                                                                                |
+| <kbd>Ctrl/⌘ + F5</kbd>                                                 | 整个窗口                        | 重新加载整个窗口                                                                                                                                              |
+| <kbd>Shift + Alt + B</kbd><br/>需在自定义配置文件中启用                | 整个窗口                        | 启动/关闭页签纵向排列功能                                                                                                                                     |
+| <kbd>Shift + Alt + E</kbd><br/>需在自定义配置文件中启用                | 整个窗口                        | 启动/关闭显示标记文本功能                                                                                                                                     |
+| <kbd>Shift + Alt + F</kbd><br/>需在自定义配置文件中启用                | 整个窗口                        | 启动/关闭专注模式 (折叠/展开功能面板)                                                                                                                         |
+| <kbd>Shift + Alt + G</kbd><br/>需在自定义配置文件中启用                | 整个窗口                        | 启动/关闭列表辅助线(列表, 表格列表, 思维导图列表)                                                                                                             |
+| <kbd>Shift + Alt + I</kbd><br/>需在自定义配置文件中启用                | 整个窗口                        | 启动/关闭反色模式                                                                                                                                             |
+| <kbd>Shift + Alt + L</kbd><br/>需在自定义配置文件中启用                | 整个窗口                        | 启动/关闭记录当前浏览位置功能                                                                                                                                 |
+| <kbd>Shift + Alt + M</kbd><br/>需在自定义配置文件中启用                | 整个窗口                        | 启动/关闭块菜单增强功能                                                                                                                                       |
+| <kbd>Shift + Alt + N</kbd><br/>需在自定义配置文件中启用                | 整个窗口                        | 在新窗口打开光标所在块                                                                                                                                        |
+| <kbd>Shift + Alt + R</kbd><br/>需在自定义配置文件中启用                | 整个窗口                        | 使用网络背景图片                                                                                                                                              |
+| <kbd>Shift + Alt + T</kbd><br/>需在自定义配置文件中启用                | 整个窗口                        | 启动/关闭打字机模式                                                                                                                                           |
+| <kbd>Shift + Alt + C</kbd><br/>需在自定义配置文件中启用                | 当前文档                        | 复制当前文档 markdown 全文至剪贴板                                                                                                                            |
+| <kbd>Shift + Alt + X</kbd><br/>需在自定义配置文件中启用                | 当前文档                        | 剪切当前文档 markdown 全文至剪贴板                                                                                                                            |
+| <kbd>Shift + Alt + D</kbd><br/>需在自定义配置文件中启用                | 当前文档                        | 删除当前文档全文                                                                                                                                              |
+| <kbd>Shift + Alt + ↑</kbd><br/>需在自定义配置文件中启用                | 当前文档                        | 折叠当前文档所有子标题                                                                                                                                        |
+| <kbd>Shift + Alt + ↓</kbd><br/>需在自定义配置文件中启用                | 当前文档                        | 展开当前文档所有子标题                                                                                                                                        |
+| <kbd>Ctrl/⌘ + Shift + Alt + R</kbd><br/>需在自定义配置文件中启用       | 整个窗口                        | 使用自定义背景图片                                                                                                                                            |
+| <kbd>Ctrl/⌘ + Shift + Alt + N</kbd><br/>需在自定义配置文件中启用       | 整个窗口                        | 在新窗口打开光标所在块并聚焦                                                                                                                                  |
+| <kbd>Ctrl/⌘ + Shift + Alt + L</kbd><br/>需在自定义配置文件中启用       | 整个窗口                        | 清除当前文档浏览位置记录                                                                                                                                      |
+| <kbd>Ctrl/⌘ + Shift + Alt + O</kbd><br/>需在自定义配置文件中启用       | 当前文档                        | 复制当前文档大纲为有序列表                                                                                                                                    |
+| <kbd>Ctrl/⌘ + Shift + Alt + U</kbd><br/>需在自定义配置文件中启用       | 当前文档                        | 复制当前文档大纲为无序列表                                                                                                                                    |
+| <kbd>Ctrl/⌘ + Shift + Alt + T</kbd><br/>需在自定义配置文件中启用       | 当前文档                        | 复制当前文档大纲为任务列表                                                                                                                                    |
 
 #### 编辑器快捷键
 
@@ -321,13 +330,15 @@
 - 使用 URL 参数 `id=<内容块 ID>` 从浏览器外跳转到 Web 端的指定块(必须已经打开至少一个页签)
   - 示例: `http(s)://host:port/stage/build/desktop/?id=20220128124308-bancmue`
 - 使用 <kbd>鼠标中键</kbd> 单击块/超链接/块引用在新窗口打开
-  - 已迁移至插件 [网页视图 `webview`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-webview)
-  - 在思源 `v2.8.10+` 版本中默认禁用
+  - ❗已迁移至插件 [网页视图 `webview`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-webview)
+  - ❗在思源 `v2.8.10+` 版本中默认禁用
 - 使用 <kbd>鼠标右键</kbd> 单击文档右侧的滑块或当前阅读进度标识, 跳转到文档上次浏览位置
 - 使用 <kbd>Shift + 鼠标中键</kbd> 单击块/超链接/块引用在新窗口打开并聚焦
-  - 已迁移至插件 [网页视图 `webview`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-webview)
-  - 在思源 `v2.8.10+` 版本中默认禁用
+  - ❗已迁移至插件 [网页视图 `webview`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-webview)
+  - ❗在思源 `v2.8.10+` 版本中默认禁用
 - 使用 <kbd>Alt + 鼠标中键</kbd> 单击界面的元素在新窗口打开 [Monaco 编辑器](https://github.com/microsoft/monaco-editor)并编辑单击的内容的源码
+  - ❗已迁移至插件 [集成编辑环境 `monaco-editor`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-monaco-editor)
+  - ❗在思源 `v2.9.8+` 版本中默认禁用
   - 可点击的内容
     - 块
       - 块 `Markdown` 源码
@@ -352,6 +363,8 @@
       - `CSS` 与 `JS` 代码片段源码
       - 可编辑
 - 使用 <kbd>Shift + Alt + 鼠标中键</kbd> 单击界面的元素在新窗口打开 [Monaco 编辑器](https://github.com/microsoft/monaco-editor)并编辑单击的内容的源码
+  - ❗已迁移至插件 [集成编辑环境 `monaco-editor`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-monaco-editor)
+  - ❗在思源 `v2.9.8+` 版本中默认禁用
   - 可点击的内容
     - 块
       - 块 `Karmdown` 源码
