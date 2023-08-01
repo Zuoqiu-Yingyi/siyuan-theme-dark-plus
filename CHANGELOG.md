@@ -1,5 +1,9 @@
 # 更改日志 | CHANGE LOG
 
+## v1.9.8/2023-08-02
+
+- [v1.9.7 ... v1.9.8](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.9.7...v1.9.8)
+- 调整提示文本样式 | Adjust the style of the prompt text.
 - 调整反向链接关键字过滤输入框样式 | Adjust the style of the reverse link keyword filter input field.
 - 修复列表导图视图样式问题 | Fixed the style issue of the list mind map view.
 - 调整嵌入块内的代码块控件栏样式 | Adjust the style of the code block control bar in the embedded block.
