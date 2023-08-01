@@ -5,3 +5,9 @@
   border-left: 3px solid var(--custom-line-color);
   padding-left: calc(0.5em - 3px);
 }
+.b3-typography blockquote + blockquote,
+.protyle-wysiwyg [data-node-id].bq + blockquote,
+.b3-typography blockquote + [data-node-id].bq,
+.protyle-wysiwyg [data-node-id].bq + [data-node-id].bq {
+  margin-top: 0.5em;
+}
