@@ -857,7 +857,7 @@ const config = {
                     },
                 },
                 link: {
-                    enable: (() => compareVersion(window.theme.kernelVersion, '2.8.9') <= 0)(), // 新窗口打开链接/块引用
+                    enable: compareVersion(window.theme.kernelVersion, '2.8.9') <= 0, // 新窗口打开链接/块引用
                     outfocus: {
                         enable: true, // 不聚焦
                     },
@@ -866,7 +866,7 @@ const config = {
                     },
                 },
                 editor: {
-                    enable: true, // 启用新窗口打开编辑器
+                    enable: compareVersion(window.theme.kernelVersion, '2.9.7') <= 0, // 启用新窗口打开编辑器
                     labels: {
                         openFile: {
                             zh_CN: '打开文件',
