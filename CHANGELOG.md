@@ -4,6 +4,7 @@
 - 修复列表导图视图样式问题 | Fixed the style issue of the list mind map view.
 - 调整嵌入块内的代码块控件栏样式 | Adjust the style of the code block control bar in the embedded block.
 - 修复 `/` 菜单样式问题 | Fixed the style issue of the `/` menu.
+- [#201](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/201) 相邻引述块之间添加间隔 | Add spacing between adjacent quote blocks.
 
 ## v1.9.7/2023-07-11
 
