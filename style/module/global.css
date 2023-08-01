@@ -22,7 +22,6 @@ body {
   color: var(--custom-selection-color);
 }
 .b3-list-item__toggle {
-  padding-right: 3px;
   border-radius: 2px;
   z-index: 2;
 }
