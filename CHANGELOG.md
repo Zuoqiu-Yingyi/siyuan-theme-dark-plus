@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 调整上下文菜单样式 | Adjust the style of the context menu.
+- 调整侧边面板辅助线样式 | Adjust the style of the guides in the dock panel.
 
 ## v1.9.8/2023-08-02
 
