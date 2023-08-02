@@ -32,7 +32,7 @@ body {
 /* 悬浮提示 */
 .tooltip {
   word-wrap: normal;
-  max-width: none !important;
+  max-width: none;
 }
 /* 文本输入框 */
 textarea.b3-text-field {
