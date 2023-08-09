@@ -33,5 +33,9 @@
 }
 .layout-tab-container .sy__backlink .protyle-content[data-fullwidth="true"] > .protyle-wysiwyg {
   /* 反链面板编辑区 */
-  margin-right: 2px !important;
+  padding: 1px !important;
+}
+.layout-tab-container .sy__backlink .protyle-content[data-fullwidth="true"] > .protyle-wysiwyg > *:not(.protyle-breadcrumb__bar) {
+  /* 内容块 */
+  margin-left: 16px;
 }
