@@ -3,6 +3,7 @@
 - 调整上下文菜单样式 | Adjust the style of the context menu.
 - 调整侧边面板辅助线样式 | Adjust the style of the guides in the dock panel.
 - 调整块引用计数器样式 | Adjust the style of the block reference counter.
+- 调整列表项样式 | Adjust the style of the list item.
 
 ## v1.9.8/2023-08-02
 

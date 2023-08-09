@@ -18,9 +18,9 @@
     overflow-x: visible !important;
 }
 
-// 单层列表项
-.single-level-list-item() {
-    >.b3-list-item {
+// 列表项
+.list-item() {
+    .b3-list-item {
         &:first-child {
             /* 补偿第一项 */
             margin-top: 0 !important;
@@ -196,6 +196,15 @@
     &.protyle-hint {
         // 块引用搜索结果宽度设置为自动宽度
         width: var(--custom-popover-menu-width) !important;
+
+        // 引用搜索菜单项容器
+        >div {
+            overflow: unset !important;
+        }
+
+        .b3-list-item {
+            width: 100% !important;
+        }
     }
 
     // '/' 菜单
@@ -211,14 +220,6 @@
         background-color: var(--custom-popover-function-menu-background-color) !important;
         // backdrop-filter: var(--custom-backdrop-popover-filter);
         box-sizing: border-box;
-    }
-
-    &.protyle-hint {
-
-        /* 块引用搜索菜单 */
-        >.b3-list-item {
-            width: 100% !important;
-        }
     }
 
     &.hint--menu {
@@ -332,14 +333,14 @@
         //     &:extend(#searchPanel>.b3-list-item all);
         // }
 
-        .single-level-list-item();
+        .list-item();
     }
 
     // 按文档分组的搜索结果
     &.search__list {
         >.b3-list-item {
             +div:not(.b3-list-item) {
-                .single-level-list-item();
+                .list-item();
             }
         }
     }
@@ -372,7 +373,7 @@
 // 移动端搜索面板
 #searchPanel {
     .single-level-list();
-    .single-level-list-item();
+    .list-item();
 }
 
 // 搜索结果列表匹配关键词

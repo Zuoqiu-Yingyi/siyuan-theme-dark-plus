@@ -29,32 +29,22 @@
 
 // 快捷键设置列表
 #keymapList {
-    .b3-list--border {
+    .b3-list {
 
-        // 最顶层的项
-        >.b3-list-item.toggle {
-            margin: 0 !important;
+        .b3-list-item {
 
-            ~div {
-
-                // 次级项
-                .b3-list-item {
-                    &::before {
-                        left: -23px;
-                        border-left: var(--custom-list-guides-line-width) solid var(--custom-list-guides-line-color);
-                    }
-
-                    // 次级项的子项
-                    +div {
-                        &::before {
-                            left: -57px;
-                            border-left: var(--custom-list-guides-line-width) solid var(--custom-list-guides-line-color);
-                        }
-                    }
-                }
-            }
+            // 可展开的项
+            &.toggle {}
         }
 
+        // 列表项容器
+        .b3-list__panel {
+
+            // 辅助线
+            &::before {
+                border-left: var(--custom-list-guides-line-width) solid var(--custom-list-guides-line-color);
+            }
+        }
     }
 }
 
