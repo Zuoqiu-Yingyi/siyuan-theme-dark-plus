@@ -30,6 +30,7 @@
 }
 .sy__backlink .protyle-breadcrumb__bar {
   outline: 1px dotted var(--b3-theme-on-surface);
+  margin-bottom: 4px;
 }
 .protyle-wysiwyg__embed .protyle-breadcrumb__bar {
   position: sticky;
