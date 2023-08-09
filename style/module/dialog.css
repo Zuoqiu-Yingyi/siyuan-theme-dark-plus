@@ -7,15 +7,7 @@
   background-attachment: fixed;
   background-color: transparent;
 }
-#keymapList .b3-list--border > .b3-list-item.toggle {
-  margin: 0 !important;
-}
-#keymapList .b3-list--border > .b3-list-item.toggle ~ div .b3-list-item::before {
-  left: -23px;
-  border-left: var(--custom-list-guides-line-width) solid var(--custom-list-guides-line-color);
-}
-#keymapList .b3-list--border > .b3-list-item.toggle ~ div .b3-list-item + div::before {
-  left: -57px;
+#keymapList .b3-list .b3-list__panel::before {
   border-left: var(--custom-list-guides-line-width) solid var(--custom-list-guides-line-color);
 }
 .b3-dialog__container {

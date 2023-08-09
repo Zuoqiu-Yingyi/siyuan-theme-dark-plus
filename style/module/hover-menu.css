@@ -84,6 +84,12 @@
 .b3-list.protyle-hint {
   width: var(--custom-popover-menu-width) !important;
 }
+.b3-list.protyle-hint > div {
+  overflow: unset !important;
+}
+.b3-list.protyle-hint .b3-list-item {
+  width: 100% !important;
+}
 .b3-list.b3-menu.hint--menu,
 .b3-list.protyle-hint,
 .b3-list#searchHistoryList,
@@ -91,12 +97,6 @@
 .b3-list#menu {
   background-color: var(--custom-popover-function-menu-background-color) !important;
   box-sizing: border-box;
-}
-.b3-list.protyle-hint {
-  /* 块引用搜索菜单 */
-}
-.b3-list.protyle-hint > .b3-list-item {
-  width: 100% !important;
 }
 .b3-list.hint--menu.protyle-hint > div {
   /* '/' 菜单 */
@@ -145,94 +145,94 @@
   /* REF https: //github.com/siyuan-note/siyuan/issues/4575#issuecomment-1152490468 */
   column-span: all;
 }
-.b3-list:not(ul) > .b3-list-item,
-.b3-list.b3-tab-bar > .b3-list-item,
-.sy__backlink .b3-list > .b3-list-item,
-.b3-dialog__container .b3-list > .b3-list-item,
-#historyContainer .b3-list > .b3-list-item {
+.b3-list:not(ul) .b3-list-item,
+.b3-list.b3-tab-bar .b3-list-item,
+.sy__backlink .b3-list .b3-list-item,
+.b3-dialog__container .b3-list .b3-list-item,
+#historyContainer .b3-list .b3-list-item {
   /* padding-top: var(--custom-popover-menu-margin-width); */
   /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
   margin: var(--custom-popover-menu-margin-width) 0 !important;
   border-radius: var(--custom-border-radius);
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
 }
-.b3-list:not(ul) > .b3-list-item:first-child,
-.b3-list.b3-tab-bar > .b3-list-item:first-child,
-.sy__backlink .b3-list > .b3-list-item:first-child,
-.b3-dialog__container .b3-list > .b3-list-item:first-child,
-#historyContainer .b3-list > .b3-list-item:first-child {
+.b3-list:not(ul) .b3-list-item:first-child,
+.b3-list.b3-tab-bar .b3-list-item:first-child,
+.sy__backlink .b3-list .b3-list-item:first-child,
+.b3-dialog__container .b3-list .b3-list-item:first-child,
+#historyContainer .b3-list .b3-list-item:first-child {
   /* 补偿第一项 */
   margin-top: 0 !important;
 }
-.b3-list:not(ul) > .b3-list-item:last-child:not(.fn_none),
-.b3-list.b3-tab-bar > .b3-list-item:last-child:not(.fn_none),
-.sy__backlink .b3-list > .b3-list-item:last-child:not(.fn_none),
-.b3-dialog__container .b3-list > .b3-list-item:last-child:not(.fn_none),
-#historyContainer .b3-list > .b3-list-item:last-child:not(.fn_none) {
+.b3-list:not(ul) .b3-list-item:last-child:not(.fn_none),
+.b3-list.b3-tab-bar .b3-list-item:last-child:not(.fn_none),
+.sy__backlink .b3-list .b3-list-item:last-child:not(.fn_none),
+.b3-dialog__container .b3-list .b3-list-item:last-child:not(.fn_none),
+#historyContainer .b3-list .b3-list-item:last-child:not(.fn_none) {
   /* 补偿最后一项 */
   margin-bottom: 0 !important;
 }
-.b3-list:not(ul) > .b3-list-itembutton,
-.b3-list.b3-tab-bar > .b3-list-itembutton,
-.sy__backlink .b3-list > .b3-list-itembutton,
-.b3-dialog__container .b3-list > .b3-list-itembutton,
-#historyContainer .b3-list > .b3-list-itembutton {
+.b3-list:not(ul) .b3-list-itembutton,
+.b3-list.b3-tab-bar .b3-list-itembutton,
+.sy__backlink .b3-list .b3-list-itembutton,
+.b3-dialog__container .b3-list .b3-list-itembutton,
+#historyContainer .b3-list .b3-list-itembutton {
   margin: var(--custom-popover-menu-margin-width) auto !important;
 }
-.b3-list:not(ul) > .b3-list-item .b3-list-item__meta:not(.fn__flex),
-.b3-list.b3-tab-bar > .b3-list-item .b3-list-item__meta:not(.fn__flex),
-.sy__backlink .b3-list > .b3-list-item .b3-list-item__meta:not(.fn__flex),
-.b3-dialog__container .b3-list > .b3-list-item .b3-list-item__meta:not(.fn__flex),
-#historyContainer .b3-list > .b3-list-item .b3-list-item__meta:not(.fn__flex) {
+.b3-list:not(ul) .b3-list-item .b3-list-item__meta:not(.fn__flex),
+.b3-list.b3-tab-bar .b3-list-item .b3-list-item__meta:not(.fn__flex),
+.sy__backlink .b3-list .b3-list-item .b3-list-item__meta:not(.fn__flex),
+.b3-dialog__container .b3-list .b3-list-item .b3-list-item__meta:not(.fn__flex),
+#historyContainer .b3-list .b3-list-item .b3-list-item__meta:not(.fn__flex) {
   /* 文档可读路径 */
   color: var(--custom-popover-menu-path-color);
   margin: 0;
   border: 0;
   padding: 0;
 }
-.b3-list:not(ul) > .b3-list-item .b3-list-item__meta.fn__flex,
-.b3-list.b3-tab-bar > .b3-list-item .b3-list-item__meta.fn__flex,
-.sy__backlink .b3-list > .b3-list-item .b3-list-item__meta.fn__flex,
-.b3-dialog__container .b3-list > .b3-list-item .b3-list-item__meta.fn__flex,
-#historyContainer .b3-list > .b3-list-item .b3-list-item__meta.fn__flex {
+.b3-list:not(ul) .b3-list-item .b3-list-item__meta.fn__flex,
+.b3-list.b3-tab-bar .b3-list-item .b3-list-item__meta.fn__flex,
+.sy__backlink .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
+.b3-dialog__container .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
+#historyContainer .b3-list .b3-list-item .b3-list-item__meta.fn__flex {
   color: var(--custom-popover-menu-attribute-color);
 }
-.b3-list:not(ul) > .b3-list-item .b3-list-item__meta.fn__flex,
-.b3-list.b3-tab-bar > .b3-list-item .b3-list-item__meta.fn__flex,
-.sy__backlink .b3-list > .b3-list-item .b3-list-item__meta.fn__flex,
-.b3-dialog__container .b3-list > .b3-list-item .b3-list-item__meta.fn__flex,
-#historyContainer .b3-list > .b3-list-item .b3-list-item__meta.fn__flex {
+.b3-list:not(ul) .b3-list-item .b3-list-item__meta.fn__flex,
+.b3-list.b3-tab-bar .b3-list-item .b3-list-item__meta.fn__flex,
+.sy__backlink .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
+.b3-dialog__container .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
+#historyContainer .b3-list .b3-list-item .b3-list-item__meta.fn__flex {
   padding: 0.5em;
 }
-.b3-list.search__list > .b3-list-item + div:not(.b3-list-item) > .b3-list-item {
+.b3-list.search__list > .b3-list-item + div:not(.b3-list-item) .b3-list-item {
   /* padding-top: var(--custom-popover-menu-margin-width); */
   /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
   margin: var(--custom-popover-menu-margin-width) 0 !important;
   border-radius: var(--custom-border-radius);
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
 }
-.b3-list.search__list > .b3-list-item + div:not(.b3-list-item) > .b3-list-item:first-child {
+.b3-list.search__list > .b3-list-item + div:not(.b3-list-item) .b3-list-item:first-child {
   /* 补偿第一项 */
   margin-top: 0 !important;
 }
-.b3-list.search__list > .b3-list-item + div:not(.b3-list-item) > .b3-list-item:last-child:not(.fn_none) {
+.b3-list.search__list > .b3-list-item + div:not(.b3-list-item) .b3-list-item:last-child:not(.fn_none) {
   /* 补偿最后一项 */
   margin-bottom: 0 !important;
 }
-.b3-list.search__list > .b3-list-item + div:not(.b3-list-item) > .b3-list-itembutton {
+.b3-list.search__list > .b3-list-item + div:not(.b3-list-item) .b3-list-itembutton {
   margin: var(--custom-popover-menu-margin-width) auto !important;
 }
-.b3-list.search__list > .b3-list-item + div:not(.b3-list-item) > .b3-list-item .b3-list-item__meta:not(.fn__flex) {
+.b3-list.search__list > .b3-list-item + div:not(.b3-list-item) .b3-list-item .b3-list-item__meta:not(.fn__flex) {
   /* 文档可读路径 */
   color: var(--custom-popover-menu-path-color);
   margin: 0;
   border: 0;
   padding: 0;
 }
-.b3-list.search__list > .b3-list-item + div:not(.b3-list-item) > .b3-list-item .b3-list-item__meta.fn__flex {
+.b3-list.search__list > .b3-list-item + div:not(.b3-list-item) .b3-list-item .b3-list-item__meta.fn__flex {
   color: var(--custom-popover-menu-attribute-color);
 }
-.b3-list.search__list > .b3-list-item + div:not(.b3-list-item) > .b3-list-item .b3-list-item__meta.fn__flex {
+.b3-list.search__list > .b3-list-item + div:not(.b3-list-item) .b3-list-item .b3-list-item__meta.fn__flex {
   padding: 0.5em;
 }
 #historyContainer .b3-list {
@@ -258,35 +258,35 @@
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
   overflow-x: visible !important;
 }
-#searchPanel > .b3-list-item {
+#searchPanel .b3-list-item {
   /* padding-top: var(--custom-popover-menu-margin-width); */
   /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
   margin: var(--custom-popover-menu-margin-width) 0 !important;
   border-radius: var(--custom-border-radius);
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
 }
-#searchPanel > .b3-list-item:first-child {
+#searchPanel .b3-list-item:first-child {
   /* 补偿第一项 */
   margin-top: 0 !important;
 }
-#searchPanel > .b3-list-item:last-child:not(.fn_none) {
+#searchPanel .b3-list-item:last-child:not(.fn_none) {
   /* 补偿最后一项 */
   margin-bottom: 0 !important;
 }
-#searchPanel > .b3-list-itembutton {
+#searchPanel .b3-list-itembutton {
   margin: var(--custom-popover-menu-margin-width) auto !important;
 }
-#searchPanel > .b3-list-item .b3-list-item__meta:not(.fn__flex) {
+#searchPanel .b3-list-item .b3-list-item__meta:not(.fn__flex) {
   /* 文档可读路径 */
   color: var(--custom-popover-menu-path-color);
   margin: 0;
   border: 0;
   padding: 0;
 }
-#searchPanel > .b3-list-item .b3-list-item__meta.fn__flex {
+#searchPanel .b3-list-item .b3-list-item__meta.fn__flex {
   color: var(--custom-popover-menu-attribute-color);
 }
-#searchPanel > .b3-list-item .b3-list-item__meta.fn__flex {
+#searchPanel .b3-list-item .b3-list-item__meta.fn__flex {
   padding: 0.5em;
 }
 .b3-list-item mark:not(:empty),
