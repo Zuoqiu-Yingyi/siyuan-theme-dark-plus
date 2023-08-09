@@ -70,11 +70,16 @@
 }
 .b3-list {
   /* REF: [第一个子元素在未超过父元素高度的情况下设置margin-top导致出现竖向滚动条的问题_Andrasen的博客-CSDN博客](https://blog.csdn.net/Andrasen/article/details/105676175) */
-  padding: var(--custom-popover-menu-padding-width) !important;
-  background-color: transparent !important;
+  padding: var(--custom-popover-menu-padding-width);
+  background-color: transparent;
   backdrop-filter: none;
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
-  overflow-x: visible !important;
+  overflow-x: visible;
+  /* 多层列表 */
+}
+.b3-list .b3-list {
+  padding: unset;
+  outline: unset;
 }
 .b3-list .b3-list-item {
   /* 菜单项 */
@@ -252,11 +257,11 @@
 }
 #searchPanel {
   /* REF: [第一个子元素在未超过父元素高度的情况下设置margin-top导致出现竖向滚动条的问题_Andrasen的博客-CSDN博客](https://blog.csdn.net/Andrasen/article/details/105676175) */
-  padding: var(--custom-popover-menu-padding-width) !important;
-  background-color: transparent !important;
+  padding: var(--custom-popover-menu-padding-width);
+  background-color: transparent;
   backdrop-filter: none;
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
-  overflow-x: visible !important;
+  overflow-x: visible;
 }
 #searchPanel .b3-list-item {
   /* padding-top: var(--custom-popover-menu-margin-width); */
