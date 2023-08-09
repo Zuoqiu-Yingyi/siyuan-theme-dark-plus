@@ -34,11 +34,17 @@
         .b3-list-item {
 
             // 可展开的项
-            &.toggle {}
+            &.toggle {
+                &:nth-last-child(2) {
+                    /* 最后一项可展开的项 */
+                    margin-bottom: 0 !important;
+                }
+            }
         }
 
         // 列表项容器
         .b3-list__panel {
+            margin-top: 4px;
 
             // 辅助线
             &::before {
