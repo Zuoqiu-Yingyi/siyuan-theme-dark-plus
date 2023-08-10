@@ -5,6 +5,7 @@
 - 调整块引用计数器样式 | Adjust the style of the block reference counter.
 - 调整列表项样式 | Adjust the style of the list item.
 - 调整反链面板样式 | Adjust the style of the reverse link panel.
+- 调整 `/` 菜单样式 | Adjust the style of the `/` menu.
 
 ## v1.9.8/2023-08-02
 
