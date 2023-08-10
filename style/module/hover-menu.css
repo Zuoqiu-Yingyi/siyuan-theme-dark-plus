@@ -103,12 +103,14 @@
   background-color: var(--custom-popover-function-menu-background-color) !important;
   box-sizing: border-box;
 }
+.b3-list.hint--menu.protyle-hint {
+  max-height: unset !important;
+}
 .b3-list.hint--menu.protyle-hint > div {
   /* '/' 菜单 */
   column-count: 4;
   column-gap: 1em;
   column-rule: var(--custom-list-guides-line-width) solid var(--b3-border-color);
-  max-height: none !important;
 }
 .b3-list.hint--menu.protyle-hint > div > .b3-list-item {
   width: 100% !important;
