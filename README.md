@@ -26,7 +26,7 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
 
 ## **NOTICE**
 
-**❗Some functions has been migrated to my plugins and disabled by default in this theme❗**
+**❗The functions have been migrated to plugins and disabled by default in this theme❗**
 
 - **Plugin**: [Web Page View `webview`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-webview)
   - open the block or hyperlink in a new window
@@ -46,6 +46,46 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     - shortcut: <kbd>Shift + Alt + Middle Mouse Button</kbd>
     - SiYuan version: `v2.9.8+`
     - Dark+ Theme version: `v1.9.8+`
+
+**⚠️The functions have been migrated to plugins but can still be used in the theme⚠️**
+
+- **Plugin**: [Custom Fonts `custom-fonts`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-custom-fonts)
+  - Block Menu Items
+    - Common fonts
+- **Plugin**: [Custom Block Styles `custom-block`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-custom-block)
+  - Block Menu Items
+    - Full-screen Display
+    - List - Kanban View
+    - List - Default View
+    - List - Mind-Map View
+    - List - Table View
+    - Display Block Content
+    - Bullet Screen
+    - Display Block ID
+    - Display Block Index
+    - Display Block Outline
+    - Scrolling Display
+    - Block Style
+    - Table - Auto Width
+    - Table - Default Width
+    - Table - Equally Cells Width
+    - Full-width Display
+    - Text Layout Mode
+  - Block Attributes
+    - List - Kanban View
+    - List - Mind-Map View
+    - List - Table View
+    - Display Block Content
+    - Bullet Screen
+    - Display Block ID
+    - Display Block Index
+    - Display Block Outline
+    - Scrolling Display
+    - Table - Auto Width
+    - Table - Default Width
+    - Table - Equally Cells Width
+    - Full-width Display
+    - Text Layout Mode
 
 ## FEEDBACK
 
@@ -132,7 +172,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 | <kbd>Ctrl/⌘ + Left Mouse Button</kbd>                                                                    | video block/audio block/iframe block                                          | jump to the point in time set by the custom block attribute `time`                                                                                                                                           |
 | <kbd>Ctrl/⌘ + Left Mouse Button</kbd>                                                                    | widget block/iframe block                                                     | reload the block contents                                                                                                                                                                                    |
 | <kbd>Double-click with Left Mouse Button</kbd>                                                           | widget block/iframe block                                                     | reload the block contents                                                                                                                                                                                    |
-| <kbd>Ctrl/⌘ + F1</kbd>                                                                                   | current document                                                              | render the custom style for all blocks in the current document                                                                                                                                               |
+| <kbd>Ctrl/⌘ + F1</kbd><br/>Requires to be enabled in a custom profile                                    | current document                                                              | render the custom style for all blocks in the current document                                                                                                                                               |
 | <kbd>Ctrl/⌘ + F5</kbd>                                                                                   | entire window                                                                 | display block content in full screen                                                                                                                                                                         |
 | <kbd>Shift + Alt + B</kbd><br/>Requires to be enabled in a custom profile                                | entire window                                                                 | turn on/off the feature of tabs are arranged vertically                                                                                                                                                      |
 | <kbd>Shift + Alt + E</kbd><br/>Requires to be enabled in a custom profile                                | entire window                                                                 | turn on/off the feature of displaying the mark text                                                                                                                                                          |
