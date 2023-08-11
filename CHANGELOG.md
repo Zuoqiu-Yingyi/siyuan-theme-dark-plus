@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.10.0/2023-08-11
+
+- [v1.9.8 ... v1.10.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.9.8...v1.10.0)
 - 调整上下文菜单样式 | Adjust the style of the context menu.
 - 调整侧边面板辅助线样式 | Adjust the style of the guides in the dock panel.
 - 调整块引用计数器样式 | Adjust the style of the block reference counter.
