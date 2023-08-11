@@ -901,8 +901,8 @@ const config = {
                 },
             },
         },
-        wheel: {
-            enable: true, // 滚轮功能开关
+        wheel: { // @deprecated
+            enable: false, // 滚轮功能开关
             zoom: {
                 enable: true, // 滚轮缩放功能开关
                 threshold: 100, // 滚轮缩放阈值
@@ -1829,8 +1829,8 @@ const config = {
                                         type: null,
                                         mode: "separator",
                                     },
-                                    {
-                                        enable: true,
+                                    { // @deprecated
+                                        enable: false,
                                         type: null,
                                         mode: "button",
                                         icon: "#iconPreview",
@@ -1857,8 +1857,8 @@ const config = {
                                             ],
                                         },
                                     },
-                                    {
-                                        enable: true,
+                                    { // @deprecated
+                                        enable: false,
                                         type: null,
                                         mode: "button",
                                         icon: "#iconEdit",
@@ -1886,7 +1886,7 @@ const config = {
                                         },
                                     },
                                     {
-                                        enable: true,
+                                        enable: false,
                                         type: {
                                             NodeDocument: { enable: false },
                                             default: { enable: true },
@@ -3079,7 +3079,7 @@ const config = {
             window: {
                 open: {
                     block: {
-                        outfocus: {
+                        outfocus: { // @deprecated
                             // 新窗口打开当前块, 否则打开当前文档(Shift + Alt + N)
                             enable: true,
                             CtrlCmd: false,
@@ -3088,7 +3088,7 @@ const config = {
                             Alt: true,
                             key: 'N',
                         },
-                        infocus: {
+                        infocus: { // @deprecated
                             // 新窗口打开当前块并聚焦, 否则打开当前文档(Ctrl + Shift + Alt + N)
                             enable: true,
                             CtrlCmd: true,
@@ -3099,18 +3099,18 @@ const config = {
                         },
                     },
                     link: {
-                        outfocus: {
+                        outfocus: { // @deprecated
                             // 新窗口打开链接(鼠标中键)
-                            enable: true,
+                            enable: false,
                             CtrlCmd: false,
                             WinCtrl: false,
                             Shift: false,
                             Alt: false,
                             button: 1, // 鼠标中键
                         },
-                        infocus: {
+                        infocus: { // @deprecated
                             // 新窗口打开链接并聚焦(Shift + 鼠标中键)
-                            enable: true,
+                            enable: false,
                             CtrlCmd: false,
                             WinCtrl: false,
                             Shift: true,
@@ -3118,7 +3118,7 @@ const config = {
                             button: 1, // 鼠标中键
                         },
                     },
-                    editor: {
+                    editor: { // @deprecated
                         // 新窗口打开编辑器(Alt + 鼠标中键)
                         enable: false,
                         CtrlCmd: false,
@@ -3127,7 +3127,7 @@ const config = {
                         Alt: true,
                         button: 1, // 鼠标中键
                     },
-                    markdown: {
+                    markdown: { // @deprecated
                         // 以 markdown 模式在新窗口打开编辑器(Shift + Alt + 鼠标中键)
                         enable: false,
                         CtrlCmd: false,
@@ -3139,9 +3139,9 @@ const config = {
                 },
             },
             wheel: {
-                zoom: {
+                zoom: { // @deprecated
                     // 鼠标滚轮缩放(Ctrl + wheel)
-                    enable: true,
+                    enable: false,
                     CtrlCmd: true,
                     WinCtrl: false,
                     Shift: false,
