@@ -44,6 +44,9 @@
   z-index: 1;
   right: 4px;
 }
+.protyle-content > .protyle-title .protyle-title__icon {
+  left: calc(var(--custom-editor-padding-left) - 20px);
+}
 .protyle-content > .protyle-title .protyle-title__input {
   /*编辑区文件名*/
   background: transparent;

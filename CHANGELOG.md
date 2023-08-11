@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 修复文档块标位置问题 | Fixed the issue of block label position.
+
 ## v1.10.0/2023-08-11
 
 - [v1.9.8 ... v1.10.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.9.8...v1.10.0)
