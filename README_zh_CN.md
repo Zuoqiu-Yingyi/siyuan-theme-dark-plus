@@ -126,7 +126,7 @@
 | <kbd>Shift + 鼠标中键</kbd><br/>❗在思源 `v2.8.10+` 版本中默认禁用      | 整个窗口                        | 在新窗口打开块并聚焦<br/>❗已迁移至插件 [网页视图 `webview`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-webview)                                           |
 | <kbd>Alt + 鼠标中键</kbd><br/>❗在思源 `v2.9.8+` 版本中默认禁用         | 整个窗口                        | 在新窗口打开 Monaco 编辑器并编辑单击的内容<br/>❗已迁移至插件 [集成编辑环境 `monaco-editor`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-monaco-editor)     |
 | <kbd>Shift + Alt + 鼠标中键</kbd><br/>❗在思源 `v2.9.8+` 版本中默认禁用 | 整个窗口                        | 在新窗口打开 Monaco 编辑器并查看 markdown 源码<br/>❗已迁移至插件 [集成编辑环境 `monaco-editor`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-monaco-editor) |
-| <kbd>Ctrl/⌘ + 鼠标滚轮</kbd>                                           | 整个窗口                        | 调整编辑区字体大小                                                                                                                                            |
+| <kbd>Ctrl/⌘ + 鼠标滚轮</kbd><br/>❗在思源 `v2.9.8+` 版本中默认禁用      | 整个窗口                        | 调整编辑区字体大小                                                                                                                                            |
 | <kbd>Ctrl/⌘ + 鼠标中键</kbd>                                           | 超链接                          | 设置自定义块属性                                                                                                                                              |
 | <kbd>Ctrl/⌘ + 鼠标中键</kbd>                                           | 视频块/音频块/iframe块          | 将当前时间戳写入剪贴板                                                                                                                                        |
 | <kbd>Ctrl/⌘ + 鼠标左键</kbd>                                           | 视频块/音频块/iframe块          | 跳转到自定义块属性 `time` 所设置的时间点                                                                                                                      |
@@ -380,6 +380,8 @@
       - 差异对比编辑两个快照文档 `Karmdown` 源码documents `Karmdown` source code
       - 可编辑
 - 使用快捷键 <kbd>Ctrl/⌘ + 鼠标滚轮</kbd> 可以调整编辑区字体大小
+  - ❗思源 `v2.8.8+` 版本内置该功能
+  - ❗在思源 `v2.9.8+` 版本中默认禁用
 - 使用超链接设置块属性
   - `超文本引用`: 指向想要设置块属性的块的超链接
     - 示例: `siyuan://blocks/20220213230830-g1amobi`

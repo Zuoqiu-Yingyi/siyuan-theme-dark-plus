@@ -390,7 +390,7 @@ import(window.theme.addURLParam(`${window.theme.root}/script/module/style.js`));
 import(window.theme.addURLParam(`${window.theme.root}/script/module/timestamp.js`));
 import(window.theme.addURLParam(`${window.theme.root}/script/module/typewriter.js`));
 import(window.theme.addURLParam(`${window.theme.root}/script/module/wheel.js`));
-import(window.theme.addURLParam(`${window.theme.root}/script/module/window.js`));
+import(window.theme.addURLParam(`${window.theme.root}/script/module/window.js`)); // @deprecated
 
 /* 加载独立应用 */
 import(window.theme.addURLParam(`${window.theme.root}/app/comment/index.js`));

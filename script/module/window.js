@@ -132,8 +132,11 @@ async function createTempDir(path) {
 
 setTimeout(async () => {
     try {
+        // @deprecated
         if (config.theme.window.enable) { // 窗口功能
+            // @deprecated
             if (config.theme.window.open.enable) { // 打开新窗口
+                // @deprecated
                 if (config.theme.window.open.panel.enable) { // 打开一个新窗口
                     toolbarItemInit(
                         config.theme.window.open.panel.toolbar,
@@ -171,6 +174,8 @@ setTimeout(async () => {
                         },
                     );
                 }
+
+                // @deprecated
                 if (config.theme.window.open.block.enable) { // 新窗口打开大当前块
                     if (config.theme.window.open.block.outfocus.enable) { // 新窗口打开当前块不聚焦
                         const Fn_outfocus = toolbarItemInit(
@@ -199,6 +204,8 @@ setTimeout(async () => {
                         );
                     }
                 }
+
+                // @deprecated
                 if (config.theme.window.open.link.enable) { // 新窗口打开链接/块引用
                     if (config.theme.window.open.link.outfocus.enable) {
                         globalEventHandler.addEventHandler(
@@ -215,6 +222,8 @@ setTimeout(async () => {
                         );
                     }
                 }
+
+                // @deprecated
                 if (config.theme.window.open.editor.enable) { // 新窗口打开编辑器
                     // 新窗口打开编辑器
 
