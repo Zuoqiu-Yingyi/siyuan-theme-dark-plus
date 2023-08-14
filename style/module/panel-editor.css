@@ -34,6 +34,10 @@
   padding-left: var(--custom-editor-padding-left) !important;
   padding-right: var(--custom-editor-padding-right) !important;
 }
+.protyle-content[data-fullwidth="true"] > .protyle-title .protyle-title__icon {
+  /* 调整文档块标位置 */
+  left: calc(var(--custom-editor-padding-left) - 22px);
+}
 .protyle-content > .protyle-title {
   /* 标题 */
 }
@@ -43,9 +47,6 @@
   box-shadow: 0 0 var(--custom-toolbar-tiem-active-box-shadow-spread) 0 var(--custom-box-shadow-color);
   z-index: 1;
   right: 4px;
-}
-.protyle-content > .protyle-title .protyle-title__icon {
-  left: calc(var(--custom-editor-padding-left) - 20px);
 }
 .protyle-content > .protyle-title .protyle-title__input {
   /*编辑区文件名*/
