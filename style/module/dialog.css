@@ -163,7 +163,8 @@
 #searchInput,
 #replaceInput,
 #searchList,
-#searchPreview {
+#searchPreview,
+#searchAssetPreview {
   background-color: transparent;
 }
 /* 历史容器 */
