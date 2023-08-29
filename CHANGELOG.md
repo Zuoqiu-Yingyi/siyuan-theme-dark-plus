@@ -2,6 +2,7 @@
 
 - [#203](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/203) 修复文档块标位置问题 | Fixed the issue of block label position.
 - 调整资源文件搜索结果预览样式 | Adjust the style of the resource file search result preview.
+- 调整代码块样式 | Adjust the style of the code block.
 
 ## v1.10.0/2023-08-11
 
