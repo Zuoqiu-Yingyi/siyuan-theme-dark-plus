@@ -18,12 +18,10 @@
 }
 .protyle-wysiwyg [fold="1"][data-node-id][data-type="NodeHeading"]::before {
   /* 移除子标题折叠原有样式 */
-  height: unset;
+  height: unset !important;
   width: unset;
   background: unset;
   position: unset;
-  left: unset;
-  top: unset;
   border-radius: unset;
   margin-top: unset;
 }
