@@ -4,6 +4,7 @@
 - 调整资源文件搜索结果预览样式 | Adjust the style of the resource file search result preview.
 - 调整代码块样式 | Adjust the style of the code block.
 - [#206](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/206) 修复超级块内折叠标题块样式问题 | Fixed the style issue of the folded heading block in the super block.
+- 调整分割线样式 | Adjust the style of the separator.
 
 ## v1.10.0/2023-08-11
 
