@@ -113,4 +113,3 @@
 /* 自定义配置文件 */
 @import url("/widgets/custom.css?v=1.10.0");
 /* 其他应用样式配置文件(方便导出时渲染) */
-@import url("app/jupyter/css/jupyter.css?v=1.10.0");

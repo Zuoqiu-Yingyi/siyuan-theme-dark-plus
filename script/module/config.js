@@ -1002,6 +1002,28 @@ const config = {
                 },
             },
         },
+        jupyter: {
+            enable: false,
+            worker: {
+                enable: false,
+                main: {
+                    enable: false,
+                    url: '/appearance/themes/Dark+/app/jupyter/js/run.js',
+                    options: {
+                        type: 'module',
+                        name: 'ui',
+                    },
+                },
+                import: {
+                    enable: false,
+                    url: '/appearance/themes/Dark+/app/jupyter/js/import.js',
+                    options: {
+                        type: 'module',
+                        name: 'ui',
+                    },
+                },
+            },
+        },
         menu: {
             enable: true, // 菜单功能开关
             block: {
@@ -1151,7 +1173,7 @@ const config = {
                                 ],
                             },
                             { // jupyter 设置
-                                enable: true,
+                                enable: false,
                                 prefixSeparator: true,
                                 suffixSeparator: false,
                                 type: {

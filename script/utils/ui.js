@@ -48,72 +48,77 @@ import {
     pushErrMsg,
 } from './api.js';
 
-// const jupyterConfig = getConf();
-// REF [Web Workers API - Web API 接口参考 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API)
-const jupyterWorker = new Worker(
-    '/appearance/themes/Dark+/app/jupyter/js/run.js',
-    {
-        type: 'module',
-        name: 'ui',
-    },
-);
-const jupyterImportWorker = new Worker(
-    '/appearance/themes/Dark+/app/jupyter/js/import.js',
-    {
-        type: 'module',
-        name: 'ui',
-    },
-);
-
 var jupyterConfig;
+var jupyterWorker;
+var jupyterImportWorker;
 
-/* worker 错误捕获 */
-const worker_error_handler = e => {
-    console.error(e);
-};
+if (config.theme.jupyter.enable) {
+    if (config.theme.jupyter.worker.enable) {
+        /* worker 错误捕获 */
+        const worker_error_handler = e => {
+            console.error(e);
+        };
 
-jupyterWorker.addEventListener('error', worker_error_handler);
-jupyterWorker.addEventListener('messageerror', worker_error_handler);
+        if (config.theme.jupyter.worker.main.enable) {
+            // const jupyterConfig = getConf();
+            // REF [Web Workers API - Web API 接口参考 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API)
+            jupyterWorker = new Worker(
+                config.theme.jupyter.worker.main.url,
+                config.theme.jupyter.worker.main.options,
+            );
 
-jupyterImportWorker.addEventListener('error', worker_error_handler);
-jupyterImportWorker.addEventListener('messageerror', worker_error_handler);
+            jupyterWorker.addEventListener('error', worker_error_handler);
+            jupyterWorker.addEventListener('messageerror', worker_error_handler);
 
-jupyterWorker.addEventListener('message', e => {
-    // console.log(e);
-    const data = JSON.parse(e.data);
-    switch (data.type) {
-        case 'status':
-            switch (data.status) {
-                case 'ready':
-                    /* 是否就绪 */
-                    jupyterWorker.postMessage(JSON.stringify({
-                        type: 'call',
-                        handle: 'getConf',
-                        params: [],
-                    }));
-                    jupyterWorker.postMessage(JSON.stringify({
-                        type: 'call',
-                        handle: 'setLang',
-                        params: [window.theme.languageMode],
-                    }));
-                    break;
-                default:
-                    break;
-            }
-            break;
-        case 'call':
-            switch (data.handle) {
-                case 'getConf':
-                    jupyterConfig = data.return;
-                    break;
-                default:
-                    break;
-            }
-            break;
-        default:
-            break;
+            jupyterWorker.addEventListener('message', e => {
+                // console.log(e);
+                const data = JSON.parse(e.data);
+                switch (data.type) {
+                    case 'status':
+                        switch (data.status) {
+                            case 'ready':
+                                /* 是否就绪 */
+                                jupyterWorker.postMessage(JSON.stringify({
+                                    type: 'call',
+                                    handle: 'getConf',
+                                    params: [],
+                                }));
+                                jupyterWorker.postMessage(JSON.stringify({
+                                    type: 'call',
+                                    handle: 'setLang',
+                                    params: [window.theme.languageMode],
+                                }));
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'call':
+                        switch (data.handle) {
+                            case 'getConf':
+                                jupyterConfig = data.return;
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            });
+        }
+
+        if (config.theme.jupyter.worker.import.enable) {
+            jupyterImportWorker = new Worker(
+                config.theme.jupyter.worker.import.url,
+                config.theme.jupyter.worker.import.options,
+            );
+
+            jupyterImportWorker.addEventListener('error', worker_error_handler);
+            jupyterImportWorker.addEventListener('messageerror', worker_error_handler);
+        }
     }
-});
+}
 
 var toolbarItemList = [];
 var toolbar_timeout_id = null; // 工具栏延时显示定时器
