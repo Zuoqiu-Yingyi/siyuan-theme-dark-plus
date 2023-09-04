@@ -46,6 +46,10 @@
     - 快捷键: <kbd>Shift + Alt 鼠标中键</kbd>
     - 思源版本: `v2.9.8+`
     - Dark+ 主题版本: `v1.9.8+`
+- **插件**: [Jupyter 客户端 `jupyter-client`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-jupyter-client)
+  - Jupyter 功能
+    - 思源版本: `v2.10.2+`
+    - Dark+ 主题版本: `v1.10.1+`
 
 **⚠️已迁移到插件, 但仍可以在主题中使用的功能⚠️**
 
@@ -120,9 +124,6 @@
 示意图中使用的中西文 2:1 等宽字体:
 - 界面 & 代码块: `更纱黑体等宽` [GitHub - be5invis/Sarasa-Gothic](https://github.com/be5invis/Sarasa-Gothic)
 - 编辑器正文: `霞鹜文楷等宽` [GitHub - lxgw/LxgwWenKai](https://github.com/lxgw/LxgwWenKai)
-
-![Jupyter-relative](./image/README/1654240321941.png)
-![Jupyter-location](/appearance/themes/Dark+/image/README/1654240321941.png)
 
 ## 介绍 | INTRODUCTION
 
@@ -257,59 +258,6 @@
 - [为笔记内视频块 / 音频块快速创建时间戳 - 链滴](https://ld246.com/article/1645210285263)
 - [为笔记内视频块 / 音频块设置多个时间戳 - 链滴](https://ld246.com/article/1644814136903)
 - [为笔记内视频块 / 音频块设置时间戳 - 链滴](https://ld246.com/article/1644759207850)
-
-#### Jupyter 功能
-
-注意: 使用浏览器访问思源时该功能可能会被浏览器安全策略阻止, 请使用桌面客户端访问思源以使用该功能
-
-- 添加 Jupyter 服务对思源的信任
-  1. 打开文件 `jupyter_lab_config.py` 或 `jupyter_notebook_config.py`
-  2. 找到 `c.ServerApp.allow_origin` 或 `c.NotebookApp.allow_origin` 字段
-  3. 将该字段设置为思源 `'location.origin'` 或 `'*'`
-     - <kbd>Ctrl + Shift + I</kbd> 打开思源的开发者工具, 在控制台中输入 `location.origin` 后回车即可获得
-  4. 将 `c.ServerApp.disable_check_xsrf` 或 `c.NotebookApp.disable_check_xsrf` 字段值设置为 `True`.
-  5. (可选, Token 认证方案) 找到 `c.ServerApp.token` 字段并将该字段设置为一个足够安全的值
-  6. 保存文件并启动 jupyter 服务
-- 登录 Jupyter 服务
-  1. <kbd>文档块菜单</kbd> > <kbd>Jupyter</kbd> > <kbd>全局设置</kbd>
-  2. 打开全局设置窗口
-  3. 输入服务器 URL 并点击 <kbd>确定</kbd>
-     - `http(s)://hostname(:port)`
-  4. (可选, Cookie 认证方案) 点击 <kbd>测试</kbd> 链接跳转到登录页面并登录
-  5. (可选, Cookie 认证方案) <kbd>Ctrl + Shift + I</kbd> 打开开发者工具, 获得 `Cookies`
-     - 方案1: 在控制台输入 `document.cookie` 并从输出结果复制 `_xsrf` 字段
-     - 方案2: 选择一个网络链接并从 HTTP 请求头的 `Cookies` 字段复制 `_xsrf` 字段
-     - `_xsrf` 字段完整格式为 `_xsrf=d|xxxxxxxx|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|dddddddddd`
-       - `d`: 一个十进制数字
-       - `x`: 一个十六进制数字
-  6. 关闭 Jupyter 窗口并重新打开全局设置窗口
-  7. 输入 `Cookies` 或 `Token` 并点击 <kbd>确定</kbd>
-     - `Cookies` 认证方案仅适用于 Jupyter 服务与思源服务 URL host 相同的情况
-       - 示例:
-         - 思源服务 URL: `http://127.0.0.1:6806`
-         - Jupyter 服务 URL: `http://127.0.0.1:8888`
-  8. 关闭全局设置窗口
-  9.  单击 <kbd>重新加载窗口</kbd> 按钮或 <kbd>Ctrl + F5</kbd> 刷新页面
-- 建立会话
-  1. <kbd>文档块菜单</kbd> > <kbd>Jupyter</kbd> > <kbd>文档设置</kbd>
-  2. 打开文档设置窗口
-  3. 选择内核, 输入 `会话名称` 与 `会话目录`, 单击 <kbd>新建</kbd>
-  4. 单击 <kbd>重启</kbd> 按钮, 若没有弹窗则表示成功与服务器建立连接
-  5. 单击 <kbd>连接</kbd> 按钮
-  6. <kbd>F5</kbd> 刷新文档, 若文档右上角内核状态正确显示则表示会话建立并连接成功
-- 运行代码
-  - <kbd>代码块菜单</kbd> > <kbd>Jupyter</kbd> > <kbd>运行代码</kbd>
-    - 输出结果会以 Markdown 格式渲染
-  - <kbd>代码块菜单</kbd> > <kbd>Jupyter</kbd> > <kbd>运行代码 (转义输出结果)</kbd>
-    - 输出结果所有符号使用 `\` 转义
-- 关闭连接
-  - <kbd>文档块菜单</kbd> > <kbd>Jupyter</kbd> > <kbd>关闭连接</kbd>
-    - 不会关闭内核与会话
-    - 重置运行序号
-- 关闭内核
-  1. <kbd>文档块菜单</kbd> > <kbd>Jupyter</kbd> > <kbd>文档设置</kbd>
-  2. 单击 <kbd>关闭</kbd> 按钮
-  3. <kbd>F5</kbd> 刷新文档, 若文档右上角内核状态显示 `No Kernel` 则表示关闭成功
 
 #### 其他功能
 

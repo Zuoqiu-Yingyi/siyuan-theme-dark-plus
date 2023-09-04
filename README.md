@@ -46,6 +46,10 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     - shortcut: <kbd>Shift + Alt + Middle Mouse Button</kbd>
     - SiYuan version: `v2.9.8+`
     - Dark+ Theme version: `v1.9.8+`
+- **Plugin**: [Jupyter Client `jupyter-client`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-jupyter-client)
+  - Jupyter function
+    - SiYuan version: `v2.10.2+`
+    - Dark+ Theme version: `v1.10.1+`
 
 **⚠️The functions have been migrated to plugins but can still be used in the theme⚠️**
 
@@ -120,9 +124,6 @@ Common 2:1 monospace font for Chinese and Western languages.: `仿宋`, `黑体`
 The 2:1 monospaced font in Chinese and Western characters used in the schematic diagram:
 - Interface & Code block: `Sarasa Gothic Mono` [GitHub - be5invis/Sarasa-Gothic](https://github.com/be5invis/Sarasa-Gothic)
 - Editor body: `LxgwWenKai Mono` [GitHub - lxgw/LxgwWenKai](https://github.com/lxgw/LxgwWenKai)
-
-![Jupyter-relative](./image/README/1654240321941.png)
-![Jupyter-location](/appearance/themes/Dark+/image/README/1654240321941.png)
 
 ## INTRODUCTION
 
@@ -257,59 +258,6 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 - [为笔记内视频块 / 音频块快速创建时间戳 - 链滴](https://ld246.com/article/1645210285263)
 - [为笔记内视频块 / 音频块设置多个时间戳 - 链滴](https://ld246.com/article/1644814136903)
 - [为笔记内视频块 / 音频块设置时间戳 - 链滴](https://ld246.com/article/1644759207850)
-
-#### JUPYTER FEATURES
-
-Note: When using the browser to access SiYuan, this feature may be blocked by the browser's security policy. Please use the desktop client to access SiYuan to use this feature.
-
-- Add the Jupyter service's trust for Siyuan.
-  1. Open file `jupyter_lab_config.py` or `jupyter_notebook_config.py`.
-  2. Find `c.ServerApp.allow_origin` or `c.NotebookApp.allow_origin` field.
-  3. Set the field to Siyuan `location.origin` or `*`.
-     - <kbd>Ctrl + Shift + I</kbd> open Siyuan's developer tools, then enter `location.origin` in the console.
-  4. Set the value of field `c.ServerApp.disable_check_xsrf` or `c.NotebookApp.disable_check_xsrf` to `True`.
-  5. (Optional, Token certification scheme) Find `c.ServerApp.token` field and set it to a sufficiently secure value.
-  6. Save the file and start jupyter service.
-- Log in to the jupyter service.
-  1. <kbd>Doc Block Menu</kbd> > <kbd>Jupyter</kbd> > <kbd>Global Settings</kbd>
-  2. Open the Global Settings Window.
-  3. Enter the `Service Address` and click <kbd>OK</kbd> Button.
-     - `http(s)://hostname(:port)`
-  4. (Optional, Cookie certification scheme) Click <kbd>Test</kbd> link to jump to the login page and sign in.
-  5. (Optional, Cookie certification scheme) <kbd>Ctrl + Shift + I</kbd> open jupyter's developer tools, get `Cookies`.
-     - Scheme 1: input `document.cookie` to console and copy `_xsrf` field from output.
-     - Scheme 2: select a HTTP request and copy `_xsrf` field from the HTTP header field `Cookies`
-     - The style of `_xsrf` field full format is `_xsrf=d|xxxxxxxx|xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|dddddddddd`
-       - `d`: A decimal number.
-       - `x`: A hexadecimal number.
-  6. Close the Jupyter window and reopen the Global Settings Window.
-  7. Input `Cookies` or `Token` and click <kbd>OK</kbd> button.
-     - `Cookies` authentication scheme only applies if the Jupyter service is the same as the SiYuan service URL host.
-       - Examples:
-         - SiYuan service URL: `http://127.0.0.1:6806`
-         - Jupyter service URL: `http://127.0.0.1:8888`
-  8. Close the Global Settings Window.
-  9.  Click <kbd>Reload the Window</kbd> button or <kbd>Ctrl + F5</kbd> to reload window.
-- Establish a session.
-  1. <kbd>Doc Block Menu</kbd> > <kbd>Jupyter</kbd> > <kbd>Document Settings</kbd>
-  2. Open the Document Settings Window.
-  3. Select a kernel and input `Session Name'` 与 `Session Path`, then click <kbd>Create</kbd> buytton.
-  4. Click <kbd>Restart</kbd> button, if there is no pop-up window, the connection to the server is successful.
-  5. Click <kbd>Connect</kbd> button
-  6. <kbd>F5</kbd> Refresh document, if the kernel state is displayed in the upper-right corner of the document, the session is established and connected successfully.
-- Run code.
-  - <kbd>Code Block Menu</kbd> > <kbd>Jupyter</kbd> > <kbd>Run Code</kbd>
-    - The output is rendered in Markdown format.
-  - <kbd>Code Block Menu</kbd> > <kbd>Jupyter</kbd> > <kbd>Run Code (Escape Output)</kbd>
-    - The output are used `\` for all symbols to escape.
-- Close connection.
-  - <kbd>Doc Block Menu</kbd> > <kbd>Jupyter</kbd> > <kbd>Close Connection</kbd>
-    - The operate well not close session and kernel.
-    - The index number of blocks well be reset.
-- Close kernel.
-  1. <kbd>Doc Block Menu</kbd> > <kbd>Jupyter</kbd> > <kbd>Document Settings</kbd>
-  2. Click <kbd>Close</kbd> button
-  3. <kbd>F5</kbd> Refresh document, if the kernel state `No Kernel` is displayed in the upper-right corner of the document, the kernel is closed successfully.
 
 #### OTHER FEATURES
 
