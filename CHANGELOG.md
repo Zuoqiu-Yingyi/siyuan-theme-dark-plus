@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.10.1/2023-09-06
+
+- [v1.10.0 ... v1.10.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.10.0...v1.10.1)
 - [#203](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/203) 修复文档块标位置问题 | Fixed the issue of block label position.
 - 调整资源文件搜索结果预览样式 | Adjust the style of the resource file search result preview.
 - 调整代码块样式 | Adjust the style of the code block.
