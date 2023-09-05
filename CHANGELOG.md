@@ -6,6 +6,7 @@
 - [#206](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/206) 修复超级块内折叠标题块样式问题 | Fixed the style issue of the folded heading block in the super block.
 - 调整分割线样式 | Adjust the style of the separator.
 - 默认禁用 `jupyter` 功能 | Disable `jupyter` function by default.
+- 调整工作空间菜单图标样式 | Adjust the style of the workspace menu icon.
 
 ## v1.10.0/2023-08-11
 

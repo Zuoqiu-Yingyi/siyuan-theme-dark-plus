@@ -85,25 +85,25 @@ body.body--window .toolbar__window .b3-tooltips > svg {
 #status .toolbar__item {
   height: unset;
 }
-.toolbar__window .b3-tooltips,
-#toolbar .b3-tooltips,
-#dockTop .b3-tooltips,
-#dockLeft .b3-tooltips,
-#dockRight .b3-tooltips,
-#dockBottom .b3-tooltips,
-#status .b3-tooltips {
+.toolbar__window .b3-tooltips:not(#barWorkspace),
+#toolbar .b3-tooltips:not(#barWorkspace),
+#dockTop .b3-tooltips:not(#barWorkspace),
+#dockLeft .b3-tooltips:not(#barWorkspace),
+#dockRight .b3-tooltips:not(#barWorkspace),
+#dockBottom .b3-tooltips:not(#barWorkspace),
+#status .b3-tooltips:not(#barWorkspace) {
   /* 边栏按钮 */
   margin: var(--custom-dock-item-margin-width);
   padding: var(--custom-dock-item-padding-width);
   border-radius: var(--custom-border-radius);
 }
-.toolbar__window .b3-tooltips > svg,
-#toolbar .b3-tooltips > svg,
-#dockTop .b3-tooltips > svg,
-#dockLeft .b3-tooltips > svg,
-#dockRight .b3-tooltips > svg,
-#dockBottom .b3-tooltips > svg,
-#status .b3-tooltips > svg {
+.toolbar__window .b3-tooltips:not(#barWorkspace) > svg,
+#toolbar .b3-tooltips:not(#barWorkspace) > svg,
+#dockTop .b3-tooltips:not(#barWorkspace) > svg,
+#dockLeft .b3-tooltips:not(#barWorkspace) > svg,
+#dockRight .b3-tooltips:not(#barWorkspace) > svg,
+#dockBottom .b3-tooltips:not(#barWorkspace) > svg,
+#status .b3-tooltips:not(#barWorkspace) > svg {
   /* 边栏按钮图标 */
   width: var(--custom-dock-item-icon-size);
   height: var(--custom-dock-item-icon-size);
