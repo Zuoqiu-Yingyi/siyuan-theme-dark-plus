@@ -7,6 +7,7 @@
 - 调整分割线样式 | Adjust the style of the separator.
 - 默认禁用 `jupyter` 功能 | Disable `jupyter` function by default.
 - 调整工作空间菜单图标样式 | Adjust the style of the workspace menu icon.
+- 调整资源文件搜索结果路径样式 | Adjust the style of the resource file search result path.
 
 ## v1.10.0/2023-08-11
 

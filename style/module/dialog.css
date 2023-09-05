@@ -128,10 +128,10 @@
 .search__list > .b3-list-item[data-type="search-item"] .b3-list-item__text {
   display: var(--custom-search-display);
 }
-#searchList > .b3-list-item[data-type="search-item"] .b3-list-item__meta,
-.search__list > .b3-list-item[data-type="search-item"] .b3-list-item__meta {
+#searchList > .b3-list-item[data-type="search-item"] .b3-list-item__meta.b3-list-item__meta--ellipsis,
+.search__list > .b3-list-item[data-type="search-item"] .b3-list-item__meta.b3-list-item__meta--ellipsis {
   position: absolute;
-  right: 8px;
+  right: 4px;
   bottom: 0.25em;
   max-width: calc(100% - 12px);
   line-height: 1.25em;
@@ -151,9 +151,9 @@
 .b3-list.b3-list--background > .b3-list-item[data-type="card-item"] .b3-list-item__text {
   display: var(--custom-search-display);
 }
-.b3-list.b3-list--background > .b3-list-item[data-type="card-item"] .b3-list-item__meta {
+.b3-list.b3-list--background > .b3-list-item[data-type="card-item"] .b3-list-item__meta.b3-list-item__meta--ellipsis {
   position: absolute;
-  right: 8px;
+  right: 4px;
   bottom: 0.25em;
   max-width: calc(100% - 12px);
   line-height: 1.25em;
