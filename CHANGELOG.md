@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 调整 `custom-prompt` 样式 | Adjust the style of `custom-prompt`.
+
 ## v1.10.1/2023-09-06
 
 - [v1.10.0 ... v1.10.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.10.0...v1.10.1)
