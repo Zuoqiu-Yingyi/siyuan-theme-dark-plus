@@ -68,7 +68,7 @@
 .protyle-content {
 
     // 开启自适应宽度
-    &[data-fullwidth="true"] {
+    &[data-fullwidth=true] {
         >.protyle-background {
             >.protyle-background__iconw {
                 /* 文档标志 */
@@ -99,6 +99,11 @@
                 left: calc(var(--custom-editor-padding-left) - 22px);
             }
         }
+    }
+
+    // 单页面自适应宽度
+    >.protyle-wysiwyg[custom-sy-fullwidth=true] {
+        .page-padding();
     }
 
     // deprecated: 使用 [data-fullwidth="true"] 判断是否开启自适应宽度
