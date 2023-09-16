@@ -516,7 +516,7 @@ const config = {
         },
         typewriter: {
             // 打字机模式开关
-            enable: true,
+            enable: false,
             switch: {
                 enable: true, // 是否启用打字机模式开关
                 toolbar: { // 菜单栏
@@ -928,9 +928,9 @@ const config = {
                 },
             },
             focus: {
-                enable: true, // 当前光标所在块开关
-                id: 'theme-focus-block', // 当前光标所在块的 HTML 元素 id
-                className: 'theme-focus', // 光标所在块 CSS 类名
+                enable: false, // 当前光标所在块开关
+                id: 'plugin-focus-unique-id', // 当前光标所在块的 HTML 元素 id
+                className: 'plugin-focus-classname', // 光标所在块 CSS 类名
             },
             record: {
                 enable: true, // 记录浏览位置开关

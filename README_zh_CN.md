@@ -90,6 +90,8 @@
     - 表格-单元格等宽
     - 全宽显示
     - 文本排版模式
+- **插件**: [打字机模式 `typewriter`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-typewriter)
+  - 打字机模式
 
 ## 反馈
 
