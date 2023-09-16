@@ -10,7 +10,7 @@
 .protyle-wysiwyg table td {
   /* 单元格 */
   border-color: var(--custom-block-table-cell-border-color);
-  background-color: transparent !important;
+  background-color: transparent;
 }
 .b3-typography table colgroup,
 .protyle-wysiwyg table colgroup {
@@ -57,5 +57,5 @@
 .b3-typography table tr td:hover,
 .protyle-wysiwyg table tr td:hover {
   /* 鼠标悬浮单元格 */
-  box-shadow: 0 0 0 1px var(--b3-theme-secondary) inset !important;
+  box-shadow: 0 0 0 1px var(--b3-theme-secondary) inset;
 }

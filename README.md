@@ -90,6 +90,8 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     - Table - Equally Cells Width
     - Full-width Display
     - Text Layout Mode
+- **Plugin**: [Typewriter Mode `typewriter`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-typewriter)
+  - Typewriter Mode
 
 ## FEEDBACK
 
