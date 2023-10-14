@@ -20,7 +20,7 @@
   padding-bottom: 2px;
   animation: waveMove 1s infinite linear;
   background: var(--custom-span-ref-animation-icon) repeat-x 0 100%;
-  background-size: 16px auto;
+  background-size: 1em auto;
 }
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref][data-subtype=d]::before,
 .sy__outline [data-node-id] span[data-type~=block-ref][data-subtype=d]::before,

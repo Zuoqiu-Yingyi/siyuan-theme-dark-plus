@@ -1,0 +1,80 @@
+/* 属性视图 */
+
+.protyle-wysiwyg {
+    .av[data-node-id] {
+        background-color: var(--custom-block-av-background-color);
+
+        .av__header {
+            // 控件栏
+        }
+
+        .av__scroll {
+
+            .av__row--header,
+            .av__row--footer {
+                border-top: 1px solid var(--custom-block-av-cell-color);
+                border-bottom: 1px solid var(--custom-block-av-cell-color);
+            }
+
+            // 表格首
+            .av__row--header {
+
+                // 列宽调节控件
+                .av__widthdrag {
+                    &:not(:hover) {}
+                }
+            }
+
+            .av__row {
+
+                .av__cell {
+                    border-right-color: var(--custom-block-av-cell-color);
+
+                    // 文档引用按钮
+                    .b3-chip {
+                        background-color: transparent;
+                    }
+                }
+            }
+
+            // 内容行
+            .av__row:not(.av__row--header) {
+                border-bottom-color: var(--custom-block-av-cell-color);
+
+                // 非选中的行
+                &:not(.av__row--select) {
+                    &:hover {
+                        /* 鼠标悬浮行 */
+                        background-color: var(--b3-list-icon-hover);
+                    }
+                }
+
+
+                .av__cell {
+                    &:hover {
+                        /* 鼠标悬浮单元格 */
+                        box-shadow: 0 0 0 1px var(--b3-theme-secondary) inset;
+                    }
+                }
+            }
+
+            // 添加新行
+            .av__row--add {}
+
+            // 表格尾
+            .av__row--footer {
+
+                .av__calc--ashow,
+                &:hover .av__calc {
+                    outline: 1px solid var(--custom-block-av-cell-color);
+                }
+            }
+
+            // 第一列
+            .av__firstcol {
+                // background-color: var(--b3-theme-background);
+                border-right: 1px solid var(--custom-block-av-cell-color);
+            }
+        }
+    }
+}

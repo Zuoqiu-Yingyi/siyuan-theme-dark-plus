@@ -80,7 +80,7 @@
   /* 非钉住的页签项 */
   min-width: var(--custom-tab-bar-item-min-width);
 }
-.layout-tab-bar .item:not(.item--full):not(.item--pin) .item__text {
+.layout-tab-bar .item:not(.item--full):not(.item--pin) .item__text:not(:last-child) {
   padding-right: 0;
 }
 .layout-tab-bar .item.item--pin .item__text {
