@@ -154,6 +154,40 @@
         }
     }
 
+    // 块属性对话框
+    .custom-attr {
+
+        // 常规属性
+        &[data-type=attr] {
+            .b3-label {
+                border-bottom: 1px solid var(--b3-border-color);
+            }
+        }
+
+        // 属性视图属性
+        &[data-type=NodeAttributeView] {
+
+            // 属性视图标题
+            .custom-attr__avheader {
+                &:not(:first-child) {
+                    border-top: 2px solid var(--b3-border-color);
+                }
+            }
+
+            // 属性视图属性
+            .block__icons {
+                border-bottom: 1px solid var(--b3-border-color);
+            }
+        }
+
+        // 自定义属性
+        &[data-type=custom] {
+            .b3-label {
+                border-bottom: 1px solid var(--b3-border-color);
+            }
+        }
+    }
+
     .fn__flex-column {
         border-radius: inherit;
 

@@ -73,6 +73,18 @@
   /* 历史对话框内容框 */
   background-color: transparent;
 }
+.b3-dialog__container .custom-attr[data-type=attr] .b3-label {
+  border-bottom: 1px solid var(--b3-border-color);
+}
+.b3-dialog__container .custom-attr[data-type=NodeAttributeView] .custom-attr__avheader:not(:first-child) {
+  border-top: 2px solid var(--b3-border-color);
+}
+.b3-dialog__container .custom-attr[data-type=NodeAttributeView] .block__icons {
+  border-bottom: 1px solid var(--b3-border-color);
+}
+.b3-dialog__container .custom-attr[data-type=custom] .b3-label {
+  border-bottom: 1px solid var(--b3-border-color);
+}
 .b3-dialog__container .fn__flex-column {
   border-radius: inherit;
 }

@@ -103,7 +103,9 @@
             min-width: var(--custom-tab-bar-item-min-width);
 
             .item__text {
-                padding-right: 0;
+                &:not(:last-child) {
+                    padding-right: 0;
+                }
             }
         }
 

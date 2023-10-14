@@ -1,0 +1,33 @@
+/* 属性视图 */
+.protyle-wysiwyg .av[data-node-id] {
+  background-color: var(--custom-block-av-background-color);
+}
+.protyle-wysiwyg .av[data-node-id] .av__scroll .av__row--header,
+.protyle-wysiwyg .av[data-node-id] .av__scroll .av__row--footer {
+  border-top: 1px solid var(--custom-block-av-cell-color);
+  border-bottom: 1px solid var(--custom-block-av-cell-color);
+}
+.protyle-wysiwyg .av[data-node-id] .av__scroll .av__row .av__cell {
+  border-right-color: var(--custom-block-av-cell-color);
+}
+.protyle-wysiwyg .av[data-node-id] .av__scroll .av__row .av__cell .b3-chip {
+  background-color: transparent;
+}
+.protyle-wysiwyg .av[data-node-id] .av__scroll .av__row:not(.av__row--header) {
+  border-bottom-color: var(--custom-block-av-cell-color);
+}
+.protyle-wysiwyg .av[data-node-id] .av__scroll .av__row:not(.av__row--header):not(.av__row--select):hover {
+  /* 鼠标悬浮行 */
+  background-color: var(--b3-list-icon-hover);
+}
+.protyle-wysiwyg .av[data-node-id] .av__scroll .av__row:not(.av__row--header) .av__cell:hover {
+  /* 鼠标悬浮单元格 */
+  box-shadow: 0 0 0 1px var(--b3-theme-secondary) inset;
+}
+.protyle-wysiwyg .av[data-node-id] .av__scroll .av__row--footer .av__calc--ashow,
+.protyle-wysiwyg .av[data-node-id] .av__scroll .av__row--footer:hover .av__calc {
+  outline: 1px solid var(--custom-block-av-cell-color);
+}
+.protyle-wysiwyg .av[data-node-id] .av__scroll .av__firstcol {
+  border-right: 1px solid var(--custom-block-av-cell-color);
+}
