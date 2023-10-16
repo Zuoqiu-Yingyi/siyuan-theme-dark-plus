@@ -30,9 +30,20 @@
                 .av__cell {
                     border-right-color: var(--custom-block-av-cell-color);
 
-                    // 文档引用按钮
                     .b3-chip {
-                        background-color: transparent;
+
+                        // 文档引用按钮
+                        &[data-type~=block-ref] {
+                            background-color: transparent;
+                        }
+                    }
+
+                    .av__celltext {
+
+                        // 标签
+                        .b3-chip {
+                            outline: 1px solid currentColor;
+                        }
                     }
                 }
             }
