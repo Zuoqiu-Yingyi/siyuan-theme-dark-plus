@@ -47,7 +47,9 @@
 .sy__outline,
 .protyle-wysiwyg {
     [data-node-id] {
-        span[data-type~=a] {
+
+        span[data-type~=a],
+        span[data-type~=url] {
             .link();
 
             &[data-href ^="siyuan:"] {
