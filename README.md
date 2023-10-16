@@ -308,6 +308,7 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   - <img alt="marginnote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/marginnote.svg" style="height: 1em; width: 1em;" />: `marginnote3app:` [Marginnote](https://www.marginnote.com/)
   - <img alt="obsidian" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/obsidian.ico" style="height: 1em; width: 1em;" />: `obsidian:` [Obsidian](https://obsidian.md/)
   - <img alt="onenote" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/onenote.svg" style="height: 1em; width: 1em;" />: `onenote:` [OneNote](https://www.onenote.com/)
+  - <img alt="otpauth" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/otpauth.svg" style="height: 1em; width: 1em;" />: `onenote:` [OTP Auth](https://github.com/google/google-authenticator/wiki/Key-Uri-Format)
   - <img alt="quicker" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/quicker.svg" style="height: 1em; width: 1em;" />: `quicker:` [Quicker](https://getquicker.net/)
   - <img alt="pwsh" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/pwsh.svg" style="height: 1em; width: 1em;" />: `runpwsh:` `runcmd:` [url-run-command](https://github.com/Zuoqiu-Yingyi/url-run-command)
   - <img alt="siyuan" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/siyuan.svg" style="height: 1em; width: 1em;" />: `siyuan:` [思源笔记](https://b3log.org/siyuan/)
