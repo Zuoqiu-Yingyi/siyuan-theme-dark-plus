@@ -7,6 +7,7 @@
 - 调整属性视图超链接样式 | Adjust the style of the hyperlink in the attribute view.
 - 调整属性视图标签样式 | Adjust the style of the label in the attribute view.
 - 新增 OTP URL Scheme 超链接 `otpauth://` 图标 | Added the URL Scheme link `otpauth://` icon of OTP.
+- 添加部分超链接图标 | Added some hyperlink icons.
 
 ## v1.10.1/2023-09-06
 
