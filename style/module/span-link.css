@@ -1,7 +1,10 @@
 /* 超链接 */
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a],
 .sy__outline [data-node-id] span[data-type~=a],
-.protyle-wysiwyg [data-node-id] span[data-type~=a] {
+.protyle-wysiwyg [data-node-id] span[data-type~=a],
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=url],
+.sy__outline [data-node-id] span[data-type~=url],
+.protyle-wysiwyg [data-node-id] span[data-type~=url] {
   /* 默认样式 */
   margin: 0;
   padding: 0;
@@ -10,7 +13,10 @@
 }
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a]::before,
 .sy__outline [data-node-id] span[data-type~=a]::before,
-.protyle-wysiwyg [data-node-id] span[data-type~=a]::before {
+.protyle-wysiwyg [data-node-id] span[data-type~=a]::before,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=url]::before,
+.sy__outline [data-node-id] span[data-type~=url]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=url]::before {
   /* 超链接前标志 */
   content: "";
   display: inline-block;
@@ -26,22 +32,34 @@
 }
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href^="siyuan:"],
 .sy__outline [data-node-id] span[data-type~=a][data-href^="siyuan:"],
-.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href^="siyuan:"] {
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href^="siyuan:"],
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=url][data-href^="siyuan:"],
+.sy__outline [data-node-id] span[data-type~=url][data-href^="siyuan:"],
+.protyle-wysiwyg [data-node-id] span[data-type~=url][data-href^="siyuan:"] {
   /* 思源内部的超链接特化 */
   color: var(--custom-span-siyuan-link-color);
 }
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href^="siyuan:"][data-href*="focus=1"]::before,
 .sy__outline [data-node-id] span[data-type~=a][data-href^="siyuan:"][data-href*="focus=1"]::before,
 .protyle-wysiwyg [data-node-id] span[data-type~=a][data-href^="siyuan:"][data-href*="focus=1"]::before,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=url][data-href^="siyuan:"][data-href*="focus=1"]::before,
+.sy__outline [data-node-id] span[data-type~=url][data-href^="siyuan:"][data-href*="focus=1"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=url][data-href^="siyuan:"][data-href*="focus=1"]::before,
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href^="siyuan:"][href*="focus=1"]::before,
 .sy__outline [data-node-id] span[data-type~=a][data-href^="siyuan:"][href*="focus=1"]::before,
-.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href^="siyuan:"][href*="focus=1"]::before {
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href^="siyuan:"][href*="focus=1"]::before,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=url][data-href^="siyuan:"][href*="focus=1"]::before,
+.sy__outline [data-node-id] span[data-type~=url][data-href^="siyuan:"][href*="focus=1"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=url][data-href^="siyuan:"][href*="focus=1"]::before {
   /* 思源聚焦超链接特化 */
   outline: 1px solid var(--custom-span-siyuan-link-color);
 }
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a] a::before,
 .sy__outline [data-node-id] span[data-type~=a] a::before,
-.protyle-wysiwyg [data-node-id] span[data-type~=a] a::before {
+.protyle-wysiwyg [data-node-id] span[data-type~=a] a::before,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=url] a::before,
+.sy__outline [data-node-id] span[data-type~=url] a::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=url] a::before {
   display: none;
 }
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a]:hover,

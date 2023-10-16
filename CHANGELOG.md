@@ -4,6 +4,7 @@
 - 调整单页面自适应宽度样式 | Adjust the style of single page adaptive width.
 - 默认禁用 `打字机模式` 功能 | Disable `Typewriter Mode` function by default.
 - 添加属性视图样式 | Added the style of the property view.
+- 调整属性视图超链接样式 | Adjust the style of the hyperlink in the attribute view.
 
 ## v1.10.1/2023-09-06
 

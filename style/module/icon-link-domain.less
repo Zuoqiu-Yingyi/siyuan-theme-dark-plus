@@ -13,7 +13,7 @@
     // %(".%s:", @domain);
 
     @domains: %("/%s", @domain),
-    %(".%s", @domain);
+        %(".%s", @domain);
 
     .style() {
         &::before {
@@ -26,7 +26,9 @@
         .sy__outline,
         .protyle-wysiwyg {
             [data-node-id] {
-                span[data-type~=a] {
+
+                span[data-type~=a],
+                span[data-type~=url] {
                     &[data-href *=@{value}] {
                         .style();
                     }
