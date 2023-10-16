@@ -180,6 +180,18 @@
 .b3-typography a[href^="onenote:"]::before {
   background-image: url(/appearance/themes/Dark+/icon/onenote.svg);
 }
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href^="otpauth:"]::before,
+.sy__outline [data-node-id] span[data-type~=a][data-href^="otpauth:"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href^="otpauth:"]::before,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=url][data-href^="otpauth:"]::before,
+.sy__outline [data-node-id] span[data-type~=url][data-href^="otpauth:"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=url][data-href^="otpauth:"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/otpauth.svg);
+}
+.protyle-wysiwyg a[href^="otpauth:"]::before,
+.b3-typography a[href^="otpauth:"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/otpauth.svg);
+}
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href^="quicker:"]::before,
 .sy__outline [data-node-id] span[data-type~=a][data-href^="quicker:"]::before,
 .protyle-wysiwyg [data-node-id] span[data-type~=a][data-href^="quicker:"]::before,
