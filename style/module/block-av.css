@@ -10,8 +10,11 @@
 .protyle-wysiwyg .av[data-node-id] .av__scroll .av__row .av__cell {
   border-right-color: var(--custom-block-av-cell-color);
 }
-.protyle-wysiwyg .av[data-node-id] .av__scroll .av__row .av__cell .b3-chip {
+.protyle-wysiwyg .av[data-node-id] .av__scroll .av__row .av__cell .b3-chip[data-type~=block-ref] {
   background-color: transparent;
+}
+.protyle-wysiwyg .av[data-node-id] .av__scroll .av__row .av__cell .av__celltext .b3-chip {
+  outline: 1px solid currentColor;
 }
 .protyle-wysiwyg .av[data-node-id] .av__scroll .av__row:not(.av__row--header) {
   border-bottom-color: var(--custom-block-av-cell-color);
