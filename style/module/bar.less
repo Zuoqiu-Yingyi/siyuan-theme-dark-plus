@@ -1,6 +1,3 @@
-/* 边栏 */
-@tool-height: calc(var(--custom-dock-width) - var(--custom-dock-item-margin-width) * 2);
-
 /* 窗口控件 */
 .toolbar__window,
 .window-tools {
@@ -25,7 +22,8 @@
     /* 未激活的窗口标题栏 */
     background-color: var(--custom-window-inactive-title-bar-background-color);
 
-    .toolbar__item {
+    .toolbar__item,
+    .protyle-toolbar__divider {
         color: var(--custom-window-inactive-title-bar-color);
     }
 }
@@ -33,7 +31,7 @@
 /* 页签新窗口 */
 body.body--window {
     #layouts {
-        // padding-top: @tool-height;
+        // padding-top: var(--custom-bar-height);
 
         .layout-tab-bar--readonly {
             /* 页签栏 */
@@ -96,18 +94,27 @@ body.body--window {
     padding: 0;
     box-sizing: content-box;
 
-    .toolbar__item {
-        height: unset;
+    .protyle-toolbar__divider {
+        // 分割线
+        color: var(--b3-toolbar-color);
+        border-color: currentColor;
     }
 
-    .b3-tooltips:not(#barWorkspace) {
+    .toolbar__item {
+        height: auto;
+    }
+
+    .b3-tooltips {
         /* 边栏按钮 */
         margin: var(--custom-dock-item-margin-width);
         padding: var(--custom-dock-item-padding-width);
         border-radius: var(--custom-border-radius);
+    }
 
+    .toolbar__item:not(#barWorkspace),
+    .b3-tooltips {
         >svg {
-            /* 边栏按钮图标 */
+            /* 按钮图标 */
             width: var(--custom-dock-item-icon-size);
             height: var(--custom-dock-item-icon-size);
         }
@@ -133,12 +140,11 @@ body.body--window {
 .toolbar__window,
 #toolbar,
 #status {
-    height: @tool-height;
+    height: var(--custom-bar-height);
 
-    .b3-tooltips {
-        /* 边栏按钮 */
-        margin-top: 0;
-        margin-bottom: 0;
+    .toolbar__item {
+        /* 工具栏 & 状态栏按钮 */
+        margin: 0 var(--custom-dock-item-margin-width);
     }
 }
 
@@ -175,10 +181,7 @@ body.body--window {
 
     .toolbar__item {
         /* 顶部工具栏按钮 */
-        @margin-height: 0px;
-        @margin-width: 4px;
-
-        margin: @margin-height @margin-width;
+        margin: 0 var(--custom-dock-item-margin-width);
 
 
         &:not(.toolbar__item--disabled):not(.toolbar__item--close):hover {
@@ -189,8 +192,8 @@ body.body--window {
             /* 顶部工具栏激活的按钮 */
             @offset: 2px; // 调整量
 
-            margin: (calc(@margin-height + @offset)) calc(@margin-width + @offset);
-            padding: calc(var(--custom-dock-item-padding-width) - @offset)
+            margin: (calc(0px + @offset)) calc(var(--custom-dock-item-margin-width) + @offset);
+            padding: calc(var(--custom-dock-item-padding-width) - @offset);
         }
     }
 
@@ -231,13 +234,13 @@ body.body--window {
     #barHelp {
         .b3-menu {
             /* 左下右下菜单 */
-            bottom: @tool-height !important;
+            bottom: var(--custom-bar-height) !important;
         }
     }
 
     .status__msg,
     .status__counter,
     .status__backgroundtask {
-        line-height: @tool-height;
+        line-height: var(--custom-bar-height);
     }
 }

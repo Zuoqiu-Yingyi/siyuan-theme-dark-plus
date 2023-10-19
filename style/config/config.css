@@ -267,11 +267,13 @@
   /* 边栏按钮外边距 | Side bar (dock) button margin */
   --custom-dock-item-margin-width: 4px;
   /* 边栏按钮内边距 | Side bar (dock) button padding */
-  --custom-dock-item-padding-width: 6px;
+  --custom-dock-item-padding-width: 5px;
   /* 边栏图标宽高 | Side bar (dock) icon size */
   --custom-dock-item-icon-size: 16px;
   /* 边栏宽度 | Side bar (dock) width */
   --custom-dock-width: calc(var(--custom-dock-item-icon-size) + var(--custom-dock-item-margin-width) * 2 + var(--custom-dock-item-padding-width) * 2);
+  /* 工具栏与状态栏高度 | The hieght of toolbar and status bar */
+  --custom-bar-height: calc(var(--custom-dock-width) - var(--custom-dock-item-margin-width) * 2);
   /* 顶部工具栏背景颜色 | The background color of the top toolbar */
   --custom-tool-bar-background-color: var(--custom-transparent);
   /* 顶部工具栏被激活控件阴影散布 | The box shadow spread of toolbar item which is activated */

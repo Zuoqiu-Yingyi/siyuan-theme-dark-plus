@@ -7,9 +7,8 @@
 .float-tooldock {
   position: absolute;
   width: var(--custom-dock-width);
-  height: auto;
+  height: var(--custom-bar-height);
   z-index: 201;
-  line-height: normal;
   -webkit-app-region: no-drag;
 }
 .float-tooldock > * {
@@ -17,15 +16,11 @@
 }
 #toolbar .float-tooldock .toolbar__item {
   display: inline;
-  box-sizing: content-box;
-  width: var(--custom-dock-item-icon-size);
-  height: var(--custom-dock-item-icon-size);
-  margin: 4px 8px !important;
-  padding: 2px !important;
+  height: -webkit-fill-available;
+  height: -moz-available;
+  height: fill-available;
 }
 #toolbar .float-tooldock .toolbar__item#custom-toolbar-more {
-  margin: 2px 6px !important;
-  padding: 4px !important;
   box-shadow: 0 0 2px 2px var(--custom-striking-color);
 }
 /* 自定义工具栏 */

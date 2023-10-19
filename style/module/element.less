@@ -14,11 +14,8 @@
     // right: var(--custom-dock-width);
 
     width: var(--custom-dock-width);
-    height: auto;
+    height: var(--custom-bar-height);
     z-index: 201;
-
-    // line-height: @tool-height;
-    line-height: normal;
 
     // overflow: visible;
     // outline: 1px solid white;
@@ -32,15 +29,12 @@
 
     #toolbar & .toolbar__item {
         display: inline;
-        box-sizing: content-box;
-        width: var(--custom-dock-item-icon-size);
-        height: var(--custom-dock-item-icon-size);
-        margin: 4px 8px !important;
-        padding: 2px !important;
+        height: -webkit-fill-available;
+        height: -moz-available;
+        height: fill-available;
+        // box-sizing: content-box;
 
         &#custom-toolbar-more {
-            margin: 2px 6px !important;
-            padding: 4px !important;
             // box-shadow: 0 0 2px 2px var(--b3-theme-on-surface-light);
             box-shadow: 0 0 2px 2px var(--custom-striking-color);
         }
