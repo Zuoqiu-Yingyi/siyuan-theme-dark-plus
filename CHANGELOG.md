@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.10.2/2023-10-20
+
+- [v1.10.1 ... v1.10.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.10.1...v1.10.2)
 - 调整 `custom-prompt` 样式 | Adjust the style of `custom-prompt`.
 - 调整单页面自适应宽度样式 | Adjust the style of single page adaptive width.
 - 默认禁用 `打字机模式` 功能 | Disable `Typewriter Mode` function by default.
