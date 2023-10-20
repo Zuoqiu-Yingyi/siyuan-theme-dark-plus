@@ -282,6 +282,18 @@
   --custom-toolbar-tiem-active-color: var(--b3-theme-on-background);
   /* 顶部工具栏被激活控件背景颜色 | The background color of toolbar item which is activated */
   --custom-toolbar-tiem-active-background-color: var(--b3-theme-background-light);
+  /* 窗口控件尺寸偏移量 | Window control size offset */
+  --custom-window-tool-size-offset: 2px;
+  /* 窗口控件图标高度 | The height of window control icon */
+  --custom-window-tool-icon-height: calc(var(--custom-dock-item-icon-size) - var(--custom-window-tool-size-offset) * 2);
+  /* 窗口控件图标宽度 | The width of window control icon */
+  --custom-window-tool-icon-width: calc(var(--custom-dock-item-icon-size) - var(--custom-window-tool-size-offset) * 2);
+  /* 窗口控件填充高度 | The padding height of window control tool */
+  --custom-window-tool-padding-height: calc(var(--custom-dock-item-padding-width) + var(--custom-window-tool-size-offset));
+  /* 窗口控件填充宽度 | The padding width of window control tool */
+  --custom-window-tool-padding-width: calc(var(--custom-dock-item-margin-width) + var(--custom-dock-item-padding-width) + var(--custom-window-tool-size-offset));
+  /* 单个窗口控件宽度 | The width of a window control tool */
+  --custom-window-tool-width: calc(var(--custom-window-tool-icon-width) + var(--custom-window-tool-padding-width) * 2);
   /* 底部状态栏背景颜色 | The background color of the bottom status bar */
   --custom-status-bar-background-color: var(--custom-transparent);
   /* 收集箱内容预览背景颜色 | The background color of inbox contents preview */

@@ -12,6 +12,24 @@
 [data-node-id]:not(:root):fullscreen:not([style *="background-color"]) {
   background-color: var(--b3-theme-background) !important;
 }
+body.body--win32 {
+  /* 主窗口 3 个窗口控件 */
+  /* 副窗口 4 个控件 */
+}
+body.body--win32:not(.body--window) .fullscreen .protyle-breadcrumb {
+  padding: 0;
+  height: auto;
+}
+body.body--win32:not(.body--window) .fullscreen .protyle-breadcrumb:first-child {
+  padding-right: calc(var(--custom-window-tool-width) * 3);
+}
+body.body--win32.body--window .fullscreen .protyle-breadcrumb {
+  padding: 0;
+  height: auto;
+}
+body.body--win32.body--window .fullscreen .protyle-breadcrumb:first-child {
+  padding-right: calc(var(--custom-window-tool-width) * 4);
+}
 /* 闪卡全屏样式 */
 .card__main.fullscreen {
   /* 全屏 */

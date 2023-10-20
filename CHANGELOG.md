@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 修复窗口控件控件样式问题 | Fixed the style issue of the window control.
+
 ## v1.10.2/2023-10-20
 
 - [v1.10.1 ... v1.10.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.10.1...v1.10.2)

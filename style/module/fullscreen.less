@@ -17,12 +17,43 @@
     }
 }
 
+.breadcrumb-padding(@window-tool-count) {
+    .fullscreen {
+        .protyle-breadcrumb {
+            padding: 0;
+            height: auto;
+
+            &:first-child {
+                padding-right: calc(var(--custom-window-tool-width) * @window-tool-count);
+            }
+        }
+    }
+}
+
+body {
+
+    // Windows 系统
+    &.body--win32 {
+        /* 主窗口 3 个窗口控件 */
+        &:not(.body--window) {
+            .breadcrumb-padding(3);
+        }
+
+        /* 副窗口 4 个控件 */
+        &.body--window {
+            .breadcrumb-padding(4);
+        }
+    }
+
+}
+
 /* 闪卡全屏样式 */
 .card__main {
     &.fullscreen {
         /* 全屏 */
         background-color: var(--custom-card-main-fullscreen-background-color);
     }
+
     &:not(.fullscreen) {
         /* 非全屏 */
         background-color: unset;
