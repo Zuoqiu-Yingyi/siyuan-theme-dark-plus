@@ -1,18 +1,15 @@
 /* 窗口控件 */
-.toolbar__window,
-.window-tools {
-    .b3-tooltips {
-        @offset: 2px; // 窗口控件大小调整量
-
+.window-tools() {
+    .toolbar__item {
         margin: 0;
         // padding: calc(var(--custom-dock-item-margin-width) + var(--custom-dock-item-padding-width)) !important;
-        padding: calc(var(--custom-dock-item-padding-width) + @offset) calc(var(--custom-dock-item-margin-width) + var(--custom-dock-item-padding-width) + @offset);
+        padding: var(--custom-window-tool-padding-height) var(--custom-window-tool-padding-width);
         border-radius: 0;
 
         >svg {
             /* 按钮图标 */
-            width: calc(var(--custom-dock-item-icon-size) - @offset * 2) !important;
-            height: calc(var(--custom-dock-item-icon-size) - @offset * 2) !important;
+            width: var(--custom-window-tool-icon-width) !important;
+            height: var(--custom-window-tool-icon-height) !important;
         }
     }
 }
@@ -60,10 +57,10 @@ body.body--window {
     .toolbar__window {
         /* 新窗口标题栏 */
         width: 100%;
-        position: unset;
+        position: initial;
+        z-index: initial;
 
         // 按钮靠右
-        display: flex;
         justify-content: flex-end;
 
         border-bottom: 1px solid var(--b3-border-color);
@@ -72,6 +69,13 @@ body.body--window {
 
         >* {
             app-region: no-drag;
+        }
+
+        // 窗口控件
+        >.toolbar__item {
+            // 避免在页内全屏时被遮挡
+            position: relative;
+            z-index: 502;
         }
 
         >.toolbar__item--active {
