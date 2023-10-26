@@ -12,6 +12,9 @@
   /* 菜单项组 */
   padding: 0;
 }
+.b3-menu .b3-menu__items .b3-chips .b3-chip {
+  outline: 1px solid currentColor;
+}
 .b3-menu .b3-menu__item {
   /* 菜单项 */
   background-color: transparent;
@@ -43,6 +46,10 @@
   /* 菜单按钮控件 */
   color: var(--b3-theme-surface);
   background-color: var(--b3-theme-on-surface);
+}
+.b3-menu .b3-menu__item .b3-chip {
+  outline: 1px solid currentColor;
+  margin: 3px;
 }
 .b3-menu .b3-menu__separator {
   /* 菜单分割线 */
