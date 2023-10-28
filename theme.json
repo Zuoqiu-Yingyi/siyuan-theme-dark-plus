@@ -3,7 +3,26 @@
   "author": "Zuoqiu Yingyi",
   "url": "https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus",
   "version": "1.10.2",
-  "minAppVersion": "2.10.2",
+  "minAppVersion": "2.10.13",
+  "keywords": [
+    "暗",
+    "黑暗",
+    "暗色",
+    "夜间",
+    "夜間",
+    "夜晚",
+    "黑夜",
+    "dark",
+    "亮",
+    "明亮",
+    "亮色",
+    "日间",
+    "日間",
+    "白天",
+    "light",
+    "多功能",
+    "multifunction"
+  ],
   "modes": [
     "dark",
     "light"
