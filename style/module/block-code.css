@@ -24,13 +24,14 @@
 /* 👇编辑区样式👇 */
 .protyle-wysiwyg [data-node-id].code-block {
   margin: 0.5em 0;
+  flex-wrap: wrap;
 }
 .protyle-wysiwyg [data-node-id].code-block > .protyle-action {
   /* 功能按钮栏 */
   position: sticky;
   width: 100%;
   justify-content: end;
-  left: 0;
+  right: 0;
   top: 0;
 }
 .protyle-wysiwyg [data-node-id].code-block > .protyle-action > span {
@@ -42,11 +43,9 @@
 }
 .protyle-wysiwyg [data-node-id].code-block > .protyle-action > span.protyle-action__language {
   /* 语言标签 */
-  margin-left: 0.5em !important;
-  margin-right: 0.5em;
-  margin-top: -6px;
-  font-size: 16px;
-  padding-top: 4px;
+  margin: 3px 0.5em 0 !important;
+  font-size: 75%;
+  line-height: normal;
 }
 .protyle-wysiwyg [data-node-id].code-block > .protyle-action > span.fn__flex-1 {
   /* 间隔 */
@@ -55,13 +54,15 @@
 .protyle-wysiwyg [data-node-id].code-block > .hljs {
   /* 代码块主体 */
   background-color: transparent;
-  padding-top: 0;
+  margin-top: -24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 .protyle-wysiwyg [data-node-id].code-block > .protyle-linenumber__rows {
   /* 行号 */
-  padding-top: 1.625em;
-  padding-bottom: 1.625em;
-  height: unset !important;
+  margin-top: -24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
   border-right: var(--custom-block-code-linenumber-separator-width) solid var(--custom-block-code-linenumber-separator-color);
   background-color: var(--custom-block-code-linenumber-background-color);
 }
