@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.10.3/2023-10-31
+
+- [v1.10.2 ... v1.10.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.10.2...v1.10.3)
 - 修复窗口控件控件样式问题 | Fixed the style issue of the window control.
 - 调整代码块行号样式 | Adjust the style of the code block line number.
 - 调整菜单中标签样式 | Adjust the style of the tag in the menu.
