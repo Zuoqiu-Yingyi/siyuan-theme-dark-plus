@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 调整只读菜单项端宽度 | Adjust the width of the read-only menu item.
+
 ## v1.10.3/2023-10-31
 
 - [v1.10.2 ... v1.10.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.10.2...v1.10.3)
