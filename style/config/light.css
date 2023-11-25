@@ -13,6 +13,7 @@
   /* 块引用波浪线动画图标 | The icon of wavy line animation */
   --custom-span-ref-animation-icon: url(/appearance/themes/Dark+/icon/wavy-line-light.svg);
   /* 透明组件颜色 | Transparent component color */
+  --custom-transparent-lightest: #AAA1;
   --custom-transparent-lighter: #1111;
   --custom-transparent-light: #2222;
   --custom-transparent: #EEEC;

@@ -2,6 +2,7 @@
 
 - 调整只读菜单项端宽度 | Adjust the width of the read-only menu item.
 - 调整最近的文档对话框样式 | Adjust the style of the recent documents dialog.
+- 调整属性视图样式 | Adjust the style of attribute view.
 
 ## v1.10.3/2023-10-31
 
