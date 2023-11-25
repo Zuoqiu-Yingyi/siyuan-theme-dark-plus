@@ -30,20 +30,28 @@
                 .av__cell {
                     border-right-color: var(--custom-block-av-cell-color);
 
+                    &[data-wrap=true] {
+                        img.av__cellassetimg {
+                            max-height: none;
+                            max-width: 100%;
+                            margin: 0;
+                        }
+                    }
+
                     .b3-chip {
 
                         // 文档引用按钮
                         &[data-type~=block-ref] {
                             background-color: transparent;
                             padding: 0;
-                            top: 10px;
-                            right: 0;
+                            top: 8px;
                         }
 
                         // 文档更多按钮
                         &[data-type~=block-more] {
                             outline: 1px solid currentColor;
                             padding: 0 0.25em;
+                            top: 8px;
                         }
                     }
 

@@ -99,6 +99,7 @@
   --custom-color-qidian-2-6: #D4D4D4;
   --custom-color-qidian-2-7: #0F1011;
   /* 透明组件颜色 | Transparent component color */
+  --custom-transparent-lightest: #3334;
   --custom-transparent-lighter: #3338;
   --custom-transparent-light: #222A;
   --custom-transparent: #222C;
@@ -348,7 +349,7 @@
   /* iframe 块背景颜色 | The background color of iframe block */
   --custom-block-iframe-background-color: var(--custom-transparent);
   /* 属性视图背景颜色 | The background color of attribute view */
-  --custom-block-av-background-color: var(--custom-transparent-lighter);
+  --custom-block-av-background-color: var(--custom-transparent-lightest);
   /* 属性视图单元格边框颜色 | The border color of attribute view cell */
   --custom-block-av-cell-color: var(--b3-border-color);
   /* 代码块背景颜色 | The background color of code block */
