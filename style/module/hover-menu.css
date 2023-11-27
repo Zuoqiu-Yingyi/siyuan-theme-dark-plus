@@ -88,6 +88,12 @@
   overflow-x: visible;
   /* 多层列表 */
 }
+.switch-doc .b3-list {
+  /* 最近的文档 */
+  padding: var(--custom-popover-menu-padding-width);
+  border: initial;
+  margin: 1px;
+}
 .b3-list .b3-list {
   padding: unset;
   outline: unset;
