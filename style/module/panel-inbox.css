@@ -1,6 +1,6 @@
 /* 收集箱 */
-.sy__inbox > .inbox__details {
-  background-color: var(--custom-inbox-background-color);
+.sy__inbox > .inboxDetails {
+  background-color: transparent !important;
 }
 .sy__inbox .inbox__list {
   background-color: transparent;
