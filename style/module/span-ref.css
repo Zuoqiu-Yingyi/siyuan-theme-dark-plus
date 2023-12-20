@@ -1,54 +1,78 @@
 /* 块引用 */
-#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref],
-.sy__outline [data-node-id] span[data-type~=block-ref],
-.protyle-wysiwyg [data-node-id] span[data-type~=block-ref] {
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref].av__celltext,
+.sy__outline [data-node-id] span[data-type~=block-ref].av__celltext,
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref].av__celltext,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]:not(.av__celltext),
+.sy__outline [data-node-id] span[data-type~=block-ref]:not(.av__celltext),
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref]:not(.av__celltext) {
   color: var(--custom-span-block-ref-color);
 }
-#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]::before,
-.sy__outline [data-node-id] span[data-type~=block-ref]::before,
-.protyle-wysiwyg [data-node-id] span[data-type~=block-ref]::before,
-#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]::after,
-.sy__outline [data-node-id] span[data-type~=block-ref]::after,
-.protyle-wysiwyg [data-node-id] span[data-type~=block-ref]::after {
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref].av__celltext::before,
+.sy__outline [data-node-id] span[data-type~=block-ref].av__celltext::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref].av__celltext::before,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]:not(.av__celltext)::before,
+.sy__outline [data-node-id] span[data-type~=block-ref]:not(.av__celltext)::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref]:not(.av__celltext)::before,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref].av__celltext::after,
+.sy__outline [data-node-id] span[data-type~=block-ref].av__celltext::after,
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref].av__celltext::after,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]:not(.av__celltext)::after,
+.sy__outline [data-node-id] span[data-type~=block-ref]:not(.av__celltext)::after,
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref]:not(.av__celltext)::after {
   font-weight: bold;
   display: inline-block;
   text-align: center;
 }
-#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]:hover,
-.sy__outline [data-node-id] span[data-type~=block-ref]:hover,
-.protyle-wysiwyg [data-node-id] span[data-type~=block-ref]:hover {
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref].av__celltext:hover,
+.sy__outline [data-node-id] span[data-type~=block-ref].av__celltext:hover,
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref].av__celltext:hover,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]:not(.av__celltext):hover,
+.sy__outline [data-node-id] span[data-type~=block-ref]:not(.av__celltext):hover,
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref]:not(.av__celltext):hover {
   padding-bottom: 2px;
   animation: waveMove 1s infinite linear;
   background: var(--custom-span-ref-animation-icon) repeat-x 0 100%;
   background-size: 1em auto;
 }
-#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref][data-subtype=d]::before,
-.sy__outline [data-node-id] span[data-type~=block-ref][data-subtype=d]::before,
-.protyle-wysiwyg [data-node-id] span[data-type~=block-ref][data-subtype=d]::before {
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref].av__celltext[data-subtype=d]::before,
+.sy__outline [data-node-id] span[data-type~=block-ref].av__celltext[data-subtype=d]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref].av__celltext[data-subtype=d]::before,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]:not(.av__celltext)[data-subtype=d]::before,
+.sy__outline [data-node-id] span[data-type~=block-ref]:not(.av__celltext)[data-subtype=d]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref]:not(.av__celltext)[data-subtype=d]::before {
   /* 左侧-动态锚文本 */
   content: var(--custom-ref-mark-d-l);
   color: var(--custom-ref-mark-d-l-color);
   width: var(--custom-ref-mark-d-l-width);
 }
-#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref][data-subtype=d]::after,
-.sy__outline [data-node-id] span[data-type~=block-ref][data-subtype=d]::after,
-.protyle-wysiwyg [data-node-id] span[data-type~=block-ref][data-subtype=d]::after {
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref].av__celltext[data-subtype=d]::after,
+.sy__outline [data-node-id] span[data-type~=block-ref].av__celltext[data-subtype=d]::after,
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref].av__celltext[data-subtype=d]::after,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]:not(.av__celltext)[data-subtype=d]::after,
+.sy__outline [data-node-id] span[data-type~=block-ref]:not(.av__celltext)[data-subtype=d]::after,
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref]:not(.av__celltext)[data-subtype=d]::after {
   /* 右侧-动态锚文本 */
   content: var(--custom-ref-mark-d-r);
   color: var(--custom-ref-mark-d-r-color);
   width: var(--custom-ref-mark-d-r-width);
 }
-#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref][data-subtype=s]::before,
-.sy__outline [data-node-id] span[data-type~=block-ref][data-subtype=s]::before,
-.protyle-wysiwyg [data-node-id] span[data-type~=block-ref][data-subtype=s]::before {
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref].av__celltext[data-subtype=s]::before,
+.sy__outline [data-node-id] span[data-type~=block-ref].av__celltext[data-subtype=s]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref].av__celltext[data-subtype=s]::before,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]:not(.av__celltext)[data-subtype=s]::before,
+.sy__outline [data-node-id] span[data-type~=block-ref]:not(.av__celltext)[data-subtype=s]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref]:not(.av__celltext)[data-subtype=s]::before {
   /* 左侧-静态锚文本 */
   content: var(--custom-ref-mark-s-l);
   color: var(--custom-ref-mark-s-l-color);
   width: var(--custom-ref-mark-s-l-width);
 }
-#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref][data-subtype=s]::after,
-.sy__outline [data-node-id] span[data-type~=block-ref][data-subtype=s]::after,
-.protyle-wysiwyg [data-node-id] span[data-type~=block-ref][data-subtype=s]::after {
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref].av__celltext[data-subtype=s]::after,
+.sy__outline [data-node-id] span[data-type~=block-ref].av__celltext[data-subtype=s]::after,
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref].av__celltext[data-subtype=s]::after,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=block-ref]:not(.av__celltext)[data-subtype=s]::after,
+.sy__outline [data-node-id] span[data-type~=block-ref]:not(.av__celltext)[data-subtype=s]::after,
+.protyle-wysiwyg [data-node-id] span[data-type~=block-ref]:not(.av__celltext)[data-subtype=s]::after {
   /* 右侧-静态锚文本 */
   content: var(--custom-ref-mark-s-r);
   color: var(--custom-ref-mark-s-r-color);
