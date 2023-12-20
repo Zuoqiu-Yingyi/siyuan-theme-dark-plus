@@ -4,6 +4,7 @@
 - 调整最近的文档对话框样式 | Adjust the style of the recent documents dialog.
 - 调整属性视图样式 | Adjust the style of attribute view.
 - 调整收集箱面板背景颜色 | Adjust the background color of the collection box panel.
+- 调整块引用样式 | Adjust the style of block reference.
 
 ## v1.10.3/2023-10-31
 

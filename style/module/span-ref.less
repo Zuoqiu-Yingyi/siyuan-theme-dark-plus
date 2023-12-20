@@ -5,52 +5,55 @@
 .protyle-wysiwyg {
     [data-node-id] {
         span[data-type~=block-ref] {
-            color: var(--custom-span-block-ref-color);
+            &.av__celltext,
+            &:not(.av__celltext) {
+                color: var(--custom-span-block-ref-color);
 
-            // REF https://github.com/Morganwan90/Lightblue-siyuan-theme/blob/d03e93da4130bfbc941cdd940683e97daf4d7bf1/theme.css#L786
-            &::before,
-            &::after {
-                font-weight: bold;
-                display: inline-block;
-                text-align: center;
-            }
-
-            &:hover {
-                padding-bottom: 2px;
-                animation: waveMove 1s infinite linear;
-                background: var(--custom-span-ref-animation-icon) repeat-x 0 100%;
-                background-size: 1em auto;
-            }
-
-            &[data-subtype=d] {
-                &::before {
-                    /* 左侧-动态锚文本 */
-                    content: var(--custom-ref-mark-d-l);
-                    color: var(--custom-ref-mark-d-l-color);
-                    width: var(--custom-ref-mark-d-l-width);
-                }
-                
+                // REF https://github.com/Morganwan90/Lightblue-siyuan-theme/blob/d03e93da4130bfbc941cdd940683e97daf4d7bf1/theme.css#L786
+                &::before,
                 &::after {
-                    /* 右侧-动态锚文本 */
-                    content: var(--custom-ref-mark-d-r);
-                    color: var(--custom-ref-mark-d-r-color);
-                    width: var(--custom-ref-mark-d-r-width);
+                    font-weight: bold;
+                    display: inline-block;
+                    text-align: center;
                 }
-            }
-            
-            &[data-subtype=s] {
-                &::before {
-                    /* 左侧-静态锚文本 */
-                    content: var(--custom-ref-mark-s-l);
-                    color: var(--custom-ref-mark-s-l-color);
-                    width: var(--custom-ref-mark-s-l-width);
+
+                &:hover {
+                    padding-bottom: 2px;
+                    animation: waveMove 1s infinite linear;
+                    background: var(--custom-span-ref-animation-icon) repeat-x 0 100%;
+                    background-size: 1em auto;
                 }
-                
-                &::after {
-                    /* 右侧-静态锚文本 */
-                    content: var(--custom-ref-mark-s-r);
-                    color: var(--custom-ref-mark-s-r-color);
-                    width: var(--custom-ref-mark-s-r-width);
+
+                &[data-subtype=d] {
+                    &::before {
+                        /* 左侧-动态锚文本 */
+                        content: var(--custom-ref-mark-d-l);
+                        color: var(--custom-ref-mark-d-l-color);
+                        width: var(--custom-ref-mark-d-l-width);
+                    }
+
+                    &::after {
+                        /* 右侧-动态锚文本 */
+                        content: var(--custom-ref-mark-d-r);
+                        color: var(--custom-ref-mark-d-r-color);
+                        width: var(--custom-ref-mark-d-r-width);
+                    }
+                }
+
+                &[data-subtype=s] {
+                    &::before {
+                        /* 左侧-静态锚文本 */
+                        content: var(--custom-ref-mark-s-l);
+                        color: var(--custom-ref-mark-s-l-color);
+                        width: var(--custom-ref-mark-s-l-width);
+                    }
+
+                    &::after {
+                        /* 右侧-静态锚文本 */
+                        content: var(--custom-ref-mark-s-r);
+                        color: var(--custom-ref-mark-s-r-color);
+                        width: var(--custom-ref-mark-s-r-width);
+                    }
                 }
             }
         }
