@@ -316,6 +316,7 @@
   - <img alt="telegram" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/telegram.ico" style="height: 1em; width: 1em;" />: `tg:` [TickTick](https://telegram.org/)
   - <img alt="ticktick" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/ticktick.svg" style="height: 1em; width: 1em;" />: `ticktick:` [TickTick](https://ticktick.com/)
   - <img alt="vscode" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/vscode.svg" style="height: 1em; width: 1em;" />: `vscode:` [Visual Studio Code](https://code.visualstudio.com/)
+  - <img alt="wsa" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/wsa.ico" style="height: 1em; width: 1em;" />: `wsa:` [Windows Subsystem for Android](https://learn.microsoft.com/zh-cn/windows/android/wsa/)
   - <img alt="zotero" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/zotero.svg" style="height: 1em; width: 1em;" />: `zotero:` [Zotero](https://www.zotero.org/)
     - <img alt="zotero-PDF" src="https://cdn.jsdelivr.net/gh/Zuoqiu-Yingyi/siyuan-theme-dark-plus/icon/zotero-light.ico" style="height: 1em; width: 1em;" />: `zotero://open-pdf/`
 - 使用 URL 参数 `id=<内容块 ID>` 从浏览器外跳转到 Web 端的指定块(必须已经打开至少一个页签)

@@ -300,6 +300,18 @@
 .b3-typography a[href^="vscode:"]::before {
   background-image: url(/appearance/themes/Dark+/icon/vscode.svg);
 }
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href^="wsa:"]::before,
+.sy__outline [data-node-id] span[data-type~=a][data-href^="wsa:"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href^="wsa:"]::before,
+#sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=url][data-href^="wsa:"]::before,
+.sy__outline [data-node-id] span[data-type~=url][data-href^="wsa:"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=url][data-href^="wsa:"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/wsa.ico);
+}
+.protyle-wysiwyg a[href^="wsa:"]::before,
+.b3-typography a[href^="wsa:"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/wsa.ico);
+}
 #sidebar [data-type="sidebar-outline"] [data-node-id] span[data-type~=a][data-href^="zotero:"]::before,
 .sy__outline [data-node-id] span[data-type~=a][data-href^="zotero:"]::before,
 .protyle-wysiwyg [data-node-id] span[data-type~=a][data-href^="zotero:"]::before,
