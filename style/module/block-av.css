@@ -25,7 +25,7 @@
   padding: 0 0.25em;
   top: 8px;
 }
-.protyle-wysiwyg .av[data-node-id] .av__scroll .av__row .av__cell .av__celltext .b3-chip {
+.protyle-wysiwyg .av[data-node-id] .av__scroll .av__row .av__cell .b3-chip {
   outline: 1px solid currentColor;
 }
 .protyle-wysiwyg .av[data-node-id] .av__scroll .av__row:not(.av__row--header) {
