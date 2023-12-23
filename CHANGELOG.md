@@ -5,6 +5,7 @@
 - 调整属性视图样式 | Adjust the style of attribute view.
 - 调整收集箱面板背景颜色 | Adjust the background color of the collection box panel.
 - 调整块引用样式 | Adjust the style of block reference.
+- 调整设置面板中设置项的样式 | Adjust the style of the setting item in the settings panel.
 
 ## v1.10.3/2023-10-31
 
