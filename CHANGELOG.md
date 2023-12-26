@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v1.10.4/2023-12-27
+
+- [v1.10.3 ... v1.10.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.10.3...v1.10.4)
 - 调整只读菜单项端宽度 | Adjust the width of the read-only menu item.
 - 调整最近的文档对话框样式 | Adjust the style of the recent documents dialog.
 - 调整属性视图样式 | Adjust the style of attribute view.
