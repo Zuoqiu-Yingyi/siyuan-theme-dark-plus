@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 调整行内代码文本颜色 | Adjust the color of inline code text.
+
 ## v1.10.4/2023-12-27
 
 - [v1.10.3 ... v1.10.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.10.3...v1.10.4)
