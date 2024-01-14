@@ -39,6 +39,10 @@
   /* 鼠标悬浮单元格 */
   box-shadow: 0 0 0 1px var(--b3-theme-secondary) inset;
 }
+.protyle-wysiwyg .av[data-node-id] .av__scroll .av__row--util .b3-button:hover,
+.protyle-wysiwyg .av[data-node-id] .av__scroll .av__row--util .b3-button svg[data-type=set-page-size]:hover {
+  outline: 1px solid var(--b3-theme-on-surface-light);
+}
 .protyle-wysiwyg .av[data-node-id] .av__scroll .av__row--footer .av__calc--ashow,
 .protyle-wysiwyg .av[data-node-id] .av__scroll .av__row--footer:hover .av__calc {
   outline: 1px solid var(--custom-block-av-cell-color);
