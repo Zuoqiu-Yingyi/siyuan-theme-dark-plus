@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 调整行内代码文本颜色 | Adjust the color of inline code text.
+- 调整属性视图控件行内按钮样式 | Adjust the style of the button in the attribute view utils rows.
 
 ## v1.10.4/2023-12-27
 

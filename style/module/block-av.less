@@ -83,8 +83,19 @@
                 }
             }
 
-            // 添加新行
-            .av__row--add {}
+            // 功能行
+            .av__row--util {
+                .b3-button {
+
+                    &,
+                    & svg[data-type=set-page-size] {
+                        &:hover {
+                            outline: 1px solid var(--b3-theme-on-surface-light);
+                        }
+                    }
+                }
+
+            }
 
             // 表格尾
             .av__row--footer {
