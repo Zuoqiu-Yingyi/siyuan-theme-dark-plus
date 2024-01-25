@@ -69,7 +69,7 @@
   background-color: transparent;
   border-left: 1px solid var(--b3-border-color);
 }
-.b3-dialog__container .config__panel .config__tab-container .b3-label:not(.b3-label--inner) {
+.b3-dialog__container .b3-label:not(.b3-label--inner) {
   box-shadow: initial;
   padding-bottom: 16px;
   border-bottom: 1px solid var(--b3-border-color);
