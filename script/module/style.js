@@ -97,7 +97,7 @@ setTimeout(() => {
         if (config.theme.style.enable) {
             if (config.theme.style.save.enable) {
                 // 块属性编辑窗口确认按钮保存自定义样式
-                window.addEventListener('click', (e) => {
+                window.theme.addEventListener(window, 'click', (e) => {
                     let target = e.target;
                     if (target.nodeName.toLocaleLowerCase() == 'button' && target.className === 'b3-button b3-button--text') {
                         setTimeout(saveCustomStyle, 0);

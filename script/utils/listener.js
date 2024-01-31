@@ -65,7 +65,7 @@ class EventHandler {
 
         for (const listener in this.listeners) {
             // 在指定元素中为每个事件注册一个监听器
-            this.node.addEventListener(listener, (e) => {
+            window.theme.addEventListener(this.node, listener, (e) => {
                 // console.log(listener, e);
                 for (const handler of this.listeners[listener].handlers) {
                     // 如果事件符合监听器的条件，则执行回调函数

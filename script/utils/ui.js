@@ -197,21 +197,26 @@ function toolbarItemListPush(item) {
         if (!custom_toolbar) {
             /* 自定义工具栏按钮的容器 */
             custom_toolbar = document.createElement('div');
+            window.theme.elements.add(custom_toolbar);
             custom_toolbar.id = config.theme.toolbar.id;
             custom_toolbar.style.display = 'none';
-
+            
             /* 分割线 */
             const divider_before = document.createElement('div');
             const divider_after = document.createElement('div');
+            window.theme.elements.add(divider_before);
+            window.theme.elements.add(divider_after);
             divider_before.className = 'protyle-toolbar__divider';
             divider_after.className = 'protyle-toolbar__divider';
-
+            
             /* 将自定义工具栏添加到自定义悬浮菜单栏中 */
             const custom_tooldock = document.createElement('div');
+            window.theme.elements.add(custom_tooldock);
             custom_tooldock.id = config.theme.tooldock.id;
-
+            
             /* 重置工具栏按钮 */
             const reset = createToolbarItem(config.theme.tooldock.reset);
+            window.theme.elements.add(reset);
             reset.style.display = 'none'; // 默认隐藏
 
             /* 更多按钮 */

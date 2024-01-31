@@ -3,6 +3,7 @@
 - 调整行内代码文本颜色 | Adjust the color of inline code text.
 - 调整属性视图控件行内按钮样式 | Adjust the style of the button in the attribute view utils rows.
 - 调整对话框中设置项的分割线样式 | Adjust the style of the separator of the setting item in the dialog.
+- 实现 `window.destroyTheme` 方法以卸载主题 | Implemented the `window.destroyTheme` method to uninstall the theme.
 
 ## v1.10.4/2023-12-27
 

@@ -296,8 +296,8 @@ setTimeout(() => {
             if (config.theme.location.focus.enable) {
                 // 跟踪当前所在块
                 const handler = _ => setTimeout(focusHandler, 0);
-                window.addEventListener('mouseup', handler, true);
-                window.addEventListener('keyup', handler, true);
+                window.theme.addEventListener(window, 'mouseup', handler, true);
+                window.theme.addEventListener(window, 'keyup', handler, true);
             }
             if (config.theme.location.record.enable) {
                 // 开关浏览位置记录功能

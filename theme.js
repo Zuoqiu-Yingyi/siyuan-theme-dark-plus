@@ -12,6 +12,14 @@ window.theme = {
         iconDefaultScript: document.getElementById('iconDefaultScript'),
         iconScript: document.getElementById('iconScript'),
     },
+    elements: new Set(), // 需要移除的 HTML 元素集合
+    eventTarget: new EventTarget(), // 事件总线目标
+    addEventListener: function (target, ...args) {
+        target.addEventListener(...args);
+        this.eventTarget.addEventListener("destroy", () => {
+            target.removeEventListener(...args);
+        });
+    }, // 添加在主题销毁时自动移除的监听器
     // REF https://developer.mozilla.org/zh-CN/docs/Web/API/MouseEvent
     coords: { // 鼠标坐标
         screenX: undefined, // 鼠标指针相对于全局（屏幕）的 X 坐标
@@ -28,6 +36,16 @@ window.theme = {
     },
 };
 
+// REF: https://github.com/siyuan-note/siyuan/issues/8178
+window.destroyTheme = function () {
+    window.theme?.elements.forEach(element => {
+        element.remove();
+    });
+    window.theme?.eventTarget.dispatchEvent(new Event("destroy"));
+    delete window.theme;
+    delete window.destroyTheme;
+}
+
 /**
  * 静态资源请求 URL 添加参数
  * @params {string} url 资源请求 URL
@@ -36,7 +54,7 @@ window.theme = {
 window.theme.addURLParam = function (
     url,
     param = {
-        // t: Date.now().toString(),
+        t: Date.now().toString(),
         v: window.siyuan.config.appearance.themeVer,
     },
 ) {
@@ -79,13 +97,14 @@ window.theme.addURLParam = function (
  * @params {HTMLElementNode} element 节点插入锚点
  */
 window.theme.loadMeta = function (attributes, position = "afterbegin", element = document.head) {
-    let meta = document.createElement('meta');
+    const meta = document.createElement('meta');
     for (let [key, value] of Object.entries(attributes)) {
         meta.setAttribute(key, value);
     }
     // document.head.insertBefore(meta, document.head.firstChild);
     // [Element.insertAdjacentElement() - Web API 接口参考 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/insertAdjacentElement)
     element.insertAdjacentElement(position, meta);
+    window.theme.elements.add(meta);
 }
 
 /**
@@ -112,6 +131,7 @@ window.theme.loadScript = function (
     script.src = src;
     // document.head.appendChild(script);
     element.insertAdjacentElement(position, script);
+    window.theme.elements.add(script);
 }
 
 /**
@@ -127,11 +147,12 @@ window.theme.loadStyle = function (
     position = "afterend",
     element = window.theme.element.themeStyle,
 ) {
-    let style = document.createElement('style');
+    const style = document.createElement('style');
     if (id) style.id = id;
     style.innerHTML = innerHTML;
     // document.head.appendChild(style);
     element.insertAdjacentElement(position, style);
+    window.theme.elements.add(style);
 }
 
 /**
@@ -147,13 +168,14 @@ window.theme.loadLink = function (
     position = "afterend",
     element = window.theme.element.themeStyle,
 ) {
-    let link = document.createElement('link');
+    const link = document.createElement('link');
     if (id) link.id = id;
     link.type = 'text/css';
     link.rel = 'stylesheet';
     link.href = href;
     // document.head.appendChild(link);
     element.insertAdjacentElement(position, link);
+    window.theme.elements.add(link);
 }
 
 /**
@@ -162,7 +184,7 @@ window.theme.loadLink = function (
  * @params {string} href 样式文件地址
  */
 window.theme.updateStyle = function (id, href) {
-    let style = document.getElementById(id);
+    const style = document.getElementById(id);
     if (style) {
         style.setAttribute('href', href);
     }
