@@ -200,6 +200,11 @@ function menuOverride() {
         }
         menu.__proto__.popup.call(this, ...args);
     }
+
+    window.theme.eventTarget.addEventListener("destroy", () => {
+        delete menu.append;
+        delete menu.popup;
+    });
 }
 
 /* 加载字体 */

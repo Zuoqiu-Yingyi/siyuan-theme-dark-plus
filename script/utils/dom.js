@@ -884,12 +884,12 @@ function disableMouseWheelZoomDom(chromium = true, firefox = true) {
 
     if (chromium) {
         /* chromium */
-        window.addEventListener('mousewheel', blocker, options);
+        window.theme.addEventListener(window, 'mousewheel', blocker, options);
     }
 
     if (firefox) {
         /* firefox */
-        window.addEventListener('DOMMouseScroll', blocker, options);
+        window.theme.addEventListener(window, 'DOMMouseScroll', blocker, options);
     }
 
     return () => {
