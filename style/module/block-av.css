@@ -7,6 +7,9 @@
   border-top: 1px solid var(--custom-block-av-cell-color);
   border-bottom: 1px solid var(--custom-block-av-cell-color);
 }
+.protyle-wysiwyg .av[data-node-id] .av__scroll .av__row:hover .av__firstcol svg {
+  opacity: initial;
+}
 .protyle-wysiwyg .av[data-node-id] .av__scroll .av__row .av__cell {
   border-right-color: var(--custom-block-av-cell-color);
 }

@@ -5,6 +5,7 @@
 - 调整对话框中设置项的分割线样式 | Adjust the style of the separator of the setting item in the dialog.
 - 实现 `window.destroyTheme` 方法以卸载主题 | Implemented the `window.destroyTheme` method to uninstall the theme.
 - 优化脚本加载方案 | Optimize the script loading scheme.
+- 调整属性视图行选择框样式 | Adjust the style of the select box in the attribute view row.
 
 ## v1.10.4/2023-12-27
 
