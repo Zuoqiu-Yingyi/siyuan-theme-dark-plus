@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v2.0.0/2024-02-08
+
+- [v1.10.4 ... v2.0.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.10.4...v2.0.0)
 - 调整行内代码文本颜色 | Adjust the color of inline code text.
 - 调整属性视图控件行内按钮样式 | Adjust the style of the button in the attribute view utils rows.
 - 调整对话框中设置项的分割线样式 | Adjust the style of the separator of the setting item in the dialog.
