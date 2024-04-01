@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 更新列表辅助线功能介绍 | Updated the list guide function introduction.
+
 ## v2.0.0/2024-02-08
 
 - [v1.10.4 ... v2.0.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v1.10.4...v2.0.0)
