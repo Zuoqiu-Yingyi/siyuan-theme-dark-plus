@@ -92,6 +92,8 @@ It is now on the shelves of the [Siyuan Notes Community Bazaar](https://github.c
     - Text Layout Mode
 - **Plugin**: [Typewriter Mode `typewriter`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-typewriter)
   - Typewriter Mode
+  - List guides
+    - The plug-in needs to enable the `Focus Setting` > `Show Current Focus` function
 
 ## FEEDBACK
 
@@ -396,6 +398,8 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
   - Shortcut keys need to be enabled in the custom profile.
 - Use the shortcut keys <kbd>Shift + Alt + G</kbd> to turn on/off list guides (list, table list, mind map list).
   - Shortcut keys need to be enabled in the custom profile.
+  - It needs to be used with plug-in [Typewriter Mode `typewriter`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-typewriter).
+    - The plug-in needs to enable the `Focus Setting` > `Show Current Focus` function
 - Use the shortcut keys <kbd>Shift + Alt + L</kbd> to turn on/off record the current browsing location.
   - Shortcut keys need to be enabled in the custom profile.
   - Use button <kbd>Left Mouse Button</kbd> double-click a block to record this location when turned on.

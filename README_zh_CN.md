@@ -92,6 +92,8 @@
     - 文本排版模式
 - **插件**: [打字机模式 `typewriter`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-typewriter)
   - 打字机模式
+  - 列表辅助线
+    - 需开启插件 `焦点设置` > `显示当前焦点` 功能
 
 ## 反馈
 
@@ -396,6 +398,8 @@
   - 需在自定义配置文件中启用快捷键
 - 使用快捷键 <kbd>Shift + Alt + G</kbd> 启动/关闭列表辅助线(列表, 表格列表, 思维导图列表)
   - 需在自定义配置文件中启用快捷键
+  - 需配合插件A使用 [打字机模式 `typewriter`](https://github.com/Zuoqiu-Yingyi/siyuan-plugin-typewriter) 使用
+    - 插件需开启 `焦点设置` > `显示当前焦点` 功能
 - 使用快捷键 <kbd>Shift + Alt + L</kbd> 启动/关闭记录当前浏览位置功能
   - 需在自定义配置文件中启用快捷键
   - 开启后可以使用 <kbd>鼠标左键</kbd> 双击文档中的某个块以记住当前位置
