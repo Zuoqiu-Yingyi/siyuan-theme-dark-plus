@@ -2,6 +2,7 @@
 
 - 更新列表辅助线功能介绍 | Updated the list guide function introduction.
 - 调整属性视图标签样式 | Adjust the style of the label in the attribute view.
+- 调整文档题头与标题自适应宽度样式 | Adjust the style of the document header and title adaptive width.
 
 ## v2.0.0/2024-02-08
 

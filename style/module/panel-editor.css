@@ -19,24 +19,34 @@
 .wysiwygLoading {
   background-color: transparent !important;
 }
-.protyle-content[data-fullwidth=true] > .protyle-background > .protyle-background__iconw {
-  /* 文档标志 */
-  left: var(--custom-editor-padding-left) !important;
-}
-.protyle-content[data-fullwidth=true] > .protyle-background .protyle-icons .protyle-icon input[type=file] {
-  /* 上传文件控件 */
-  z-index: 1;
-}
-.protyle-content[data-fullwidth=true] > .protyle-title,
-.protyle-content[data-fullwidth=true] > .protyle-wysiwyg {
+.protyle-content[data-fullwidth=true] > .protyle-top > .protyle-background .protyle-background__ia {
   margin-left: 0 !important;
   margin-right: 0 !important;
   padding-left: var(--custom-editor-padding-left) !important;
   padding-right: var(--custom-editor-padding-right) !important;
 }
-.protyle-content[data-fullwidth=true] > .protyle-title .protyle-title__icon {
+.protyle-content[data-fullwidth=true] > .protyle-top > .protyle-background .protyle-icons .protyle-icon input[type=file] {
+  /* 上传文件控件 */
+  z-index: 1;
+}
+.protyle-content[data-fullwidth=true] > .protyle-top > .protyle-title {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: var(--custom-editor-padding-left) !important;
+  padding-right: var(--custom-editor-padding-right) !important;
+}
+.protyle-content[data-fullwidth=true] > .protyle-top > .protyle-title .protyle-title__icon {
   /* 调整文档块标位置 */
   left: calc(var(--custom-editor-padding-left) - 22px);
+}
+.protyle-content[data-fullwidth=true] > .protyle-top > .protyle-title .protyle-attr {
+  right: var(--custom-editor-padding-right);
+}
+.protyle-content[data-fullwidth=true] > .protyle-wysiwyg {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: var(--custom-editor-padding-left) !important;
+  padding-right: var(--custom-editor-padding-right) !important;
 }
 .protyle-content > .protyle-wysiwyg[custom-sy-fullwidth=true] {
   margin-left: 0 !important;
