@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 更新列表辅助线功能介绍 | Updated the list guide function introduction.
+- 调整属性视图标签样式 | Adjust the style of the label in the attribute view.
 
 ## v2.0.0/2024-02-08
 

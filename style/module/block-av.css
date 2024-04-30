@@ -18,6 +18,10 @@
   max-width: 100%;
   margin: 0;
 }
+.protyle-wysiwyg .av[data-node-id] .av__scroll .av__row .av__cell .b3-chip {
+  outline: 1px solid currentColor;
+  margin: 3px;
+}
 .protyle-wysiwyg .av[data-node-id] .av__scroll .av__row .av__cell .b3-chip[data-type~=block-ref] {
   background-color: transparent;
   padding: 0;
@@ -27,9 +31,6 @@
   outline: 1px solid currentColor;
   padding: 0 0.25em;
   top: 8px;
-}
-.protyle-wysiwyg .av[data-node-id] .av__scroll .av__row .av__cell .b3-chip {
-  outline: 1px solid currentColor;
 }
 .protyle-wysiwyg .av[data-node-id] .av__scroll .av__row:not(.av__row--header) {
   border-bottom-color: var(--custom-block-av-cell-color);
