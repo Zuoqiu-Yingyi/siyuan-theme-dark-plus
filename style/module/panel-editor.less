@@ -69,35 +69,46 @@
 
     // 开启自适应宽度
     &[data-fullwidth=true] {
-        >.protyle-background {
-            >.protyle-background__iconw {
-                /* 文档标志 */
-                left: var(--custom-editor-padding-left) !important;
+        >.protyle-top {
+            >.protyle-background {
+
+                // 文档图标
+                .protyle-background__ia {
+                    .page-padding();
+                }
+
+                // 题头图控件组
+                .protyle-icons {
+
+                    // 题头图控件
+                    .protyle-icon {
+                        input[type=file] {
+                            /* 上传文件控件 */
+                            z-index: 1; // position: absolute, 需要设置 z-index, 否则无法捕获点击事件
+                        }
+                    }
+                }
             }
 
-            // 题头图控件组
-            .protyle-icons {
+            // 文档标题
+            >.protyle-title {
+                .page-padding();
 
-                // 题头图控件
-                .protyle-icon {
-                    input[type=file] {
-                        /* 上传文件控件 */
-                        z-index: 1; // position: absolute, 需要设置 z-index, 否则无法捕获点击事件
-                    }
+                // 文档块块标
+                .protyle-title__icon {
+                    /* 调整文档块标位置 */
+                    left: calc(var(--custom-editor-padding-left) - 22px);
+                }
+
+                // 文档属性与引用信息
+                .protyle-attr {
+                    right: var(--custom-editor-padding-right);
                 }
             }
         }
 
-        >.protyle-title,
         >.protyle-wysiwyg {
             .page-padding();
-        }
-
-        >.protyle-title {
-            .protyle-title__icon {
-                /* 调整文档块标位置 */
-                left: calc(var(--custom-editor-padding-left) - 22px);
-            }
         }
     }
 
