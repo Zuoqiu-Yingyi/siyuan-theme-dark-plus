@@ -71,7 +71,6 @@ async function 向思源请求数据(url, data) {
         body: JSON.stringify(data),
         method: 'POST',
         headers: {
-            Authorization: `Token ${config.token}`,
         }
     }).then(function (response) { resData = response.json() })
     return resData
@@ -500,7 +499,6 @@ async function 获取文件(path) {
         '/api/file/getFile', {
         method: "POST",
         headers: {
-            Authorization: `Token ${config.token}`,
         },
         body: JSON.stringify({
             path: path,
@@ -524,7 +522,6 @@ async function 写入文件(path, filedata, isDir = false, modTime = Date.now())
         body: formdata,
         method: "POST",
         headers: {
-            Authorization: `Token ${config.token}`,
         },
     });
     if (response.ok)

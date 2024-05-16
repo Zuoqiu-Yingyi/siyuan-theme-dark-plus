@@ -2,7 +2,6 @@
 
 import { config } from './config.js';
 import { getSysFonts } from './../utils/api.js';
-import { compareVersion } from './../utils/string.js';
 import { globalEventHandler } from './../utils/listener.js';
 import {
     getBlockMark, // 获得块标记 ID
@@ -137,6 +136,7 @@ function blockMenuEnable() {
  */
 function menuOverride() {
     const menu = window.siyuan.menus.menu;
+    const menu_prototype = Object.getPrototypeOf(menu);
     var menu_item_append_recently = null; // 最近添加的菜单项
 
     /* 复写 append 方法 */
@@ -152,7 +152,9 @@ function menuOverride() {
         /* 启用扩展菜单 */
         if (block_menu_enable) {
         }
-        menu.__proto__.append.call(this, ...args);
+
+        // menu.__proto__.append.call(this, ...args);
+        menu_prototype.append.call(this, ...args);
     }
 
     /* 复写 popup 方法 */
@@ -198,7 +200,9 @@ function menuOverride() {
             //     };
             // }
         }
-        menu.__proto__.popup.call(this, ...args);
+
+        // menu.__proto__.popup.call(this, ...args);
+        menu_prototype.popup.call(this, ...args);
     }
 
     window.theme.eventTarget.addEventListener("destroy", () => {
