@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 添加链接图标 `ctrip.com` | Added hyperlink icon `ctrip.com`.
+
 ## v2.0.1/2024-05-02
 
 - [v2.0.0 ... v2.0.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v2.0.0...v2.0.1)

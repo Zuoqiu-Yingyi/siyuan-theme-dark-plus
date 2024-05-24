@@ -419,6 +419,26 @@
 .b3-typography a[href*=".cloud.tencent.com"]::before {
   background-image: url(/appearance/themes/Dark+/icon/tencentcloud.png);
 }
+.sy__outline [data-node-id] span[data-type~=a][data-href*="/ctrip.com"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href*="/ctrip.com"]::before,
+.sy__outline [data-node-id] span[data-type~=url][data-href*="/ctrip.com"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=url][data-href*="/ctrip.com"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/ctrip.svg);
+}
+.protyle-wysiwyg a[href*="/ctrip.com"]::before,
+.b3-typography a[href*="/ctrip.com"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/ctrip.svg);
+}
+.sy__outline [data-node-id] span[data-type~=a][data-href*=".ctrip.com"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=a][data-href*=".ctrip.com"]::before,
+.sy__outline [data-node-id] span[data-type~=url][data-href*=".ctrip.com"]::before,
+.protyle-wysiwyg [data-node-id] span[data-type~=url][data-href*=".ctrip.com"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/ctrip.svg);
+}
+.protyle-wysiwyg a[href*=".ctrip.com"]::before,
+.b3-typography a[href*=".ctrip.com"]::before {
+  background-image: url(/appearance/themes/Dark+/icon/ctrip.svg);
+}
 .sy__outline [data-node-id] span[data-type~=a][data-href*="/cnblogs.com"]::before,
 .protyle-wysiwyg [data-node-id] span[data-type~=a][data-href*="/cnblogs.com"]::before,
 .sy__outline [data-node-id] span[data-type~=url][data-href*="/cnblogs.com"]::before,
