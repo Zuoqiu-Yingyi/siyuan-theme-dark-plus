@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 添加链接图标 `ctrip.com` | Added hyperlink icon `ctrip.com`.
+- [#219](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/219) 修复无法获取当前文档文档背景的问题 | Fixed the issue of unable to get the background of the current document.
 
 ## v2.0.1/2024-05-02
 

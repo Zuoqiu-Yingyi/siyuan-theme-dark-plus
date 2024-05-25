@@ -124,12 +124,17 @@ function getFocusedDocBackground() {
     const wysiwyg = getFocusedDoc();
     // console.log(wysiwyg);
 
-    var background = wysiwyg;
-    while (background != null && background.classList.contains('protyle-background') === false)
-        background = background.previousElementSibling;
-    return background
-        ? background
-        : null;
+    var top = wysiwyg;
+    while (top != null && top.classList.contains('protyle-top') === false) {
+        top = top.previousElementSibling;
+    }
+    if (top) {
+        const background = top.querySelector('.protyle-background');
+        return background
+            ? background
+            : null;
+    }
+    return null;
 }
 
 /**
