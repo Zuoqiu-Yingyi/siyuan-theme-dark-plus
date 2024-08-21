@@ -19,6 +19,33 @@
         }
     }
 
+    // 被钉住的面板
+    &[data-pin=true] {
+        .block__icons {
+            .block__icon {
+                &[data-type=pin] {
+                    /* 钉住/取消钉住 按钮 */
+                    box-shadow: 0 0 var(--custom-toolbar-tiem-active-box-shadow-spread) var(--custom-box-shadow-color);
+                }
+            }
+        }
+    }
+
+    // 面板尺寸调节控件
+    >.resize__rd,
+    >.resize__ld,
+    >.resize__lt,
+    >.resize__rt,
+    >.resize__r,
+    >.resize__d,
+    >.resize__t,
+    >.resize__l {
+        border-radius: 1em;
+        &:hover {
+            background-color: var(--b3-theme-primary-lightest);
+        }
+    }
+
     // 窗口标题栏
     .block__icons {
         background-color: var(--custom-popover-title-bar-background-color);
@@ -33,5 +60,4 @@
             }
         }
     }
-
 }

@@ -19,9 +19,7 @@
 }
 .layout__resize:hover {
   /* 鼠标悬浮样式 */
-}
-.layout__resize:hover::after {
-  background-color: var(--b3-theme-primary);
+  background-color: var(--b3-theme-primary-lightest);
 }
 .layout__resize::after {
   /* 移除原有分隔线 */
