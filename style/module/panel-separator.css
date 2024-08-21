@@ -17,6 +17,12 @@
   /* 调整纵向分隔线位置 */
   left: calc(var(--custom-panel-distance) / 2);
 }
+.layout__resize:hover {
+  /* 鼠标悬浮样式 */
+}
+.layout__resize:hover::after {
+  background-color: var(--b3-theme-primary);
+}
 .layout__resize::after {
   /* 移除原有分隔线 */
   background-color: transparent;
