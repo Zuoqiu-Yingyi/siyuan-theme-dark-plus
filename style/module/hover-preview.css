@@ -11,6 +11,30 @@
 .block__popover.block__popover--top > .block__icons {
   background-color: var(--b3-list-hover);
 }
+.block__popover[data-pin=true] .block__icons .block__icon[data-type=pin] {
+  /* 钉住/取消钉住 按钮 */
+  box-shadow: 0 0 var(--custom-toolbar-tiem-active-box-shadow-spread) var(--custom-box-shadow-color);
+}
+.block__popover > .resize__rd,
+.block__popover > .resize__ld,
+.block__popover > .resize__lt,
+.block__popover > .resize__rt,
+.block__popover > .resize__r,
+.block__popover > .resize__d,
+.block__popover > .resize__t,
+.block__popover > .resize__l {
+  border-radius: 1em;
+}
+.block__popover > .resize__rd:hover,
+.block__popover > .resize__ld:hover,
+.block__popover > .resize__lt:hover,
+.block__popover > .resize__rt:hover,
+.block__popover > .resize__r:hover,
+.block__popover > .resize__d:hover,
+.block__popover > .resize__t:hover,
+.block__popover > .resize__l:hover {
+  background-color: var(--b3-theme-primary-lightest);
+}
 .block__popover .block__icons {
   background-color: var(--custom-popover-title-bar-background-color);
   padding: 0 6px;

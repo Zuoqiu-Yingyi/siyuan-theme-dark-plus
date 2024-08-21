@@ -650,14 +650,6 @@
   /* 焦点所在面板的标题栏 */
   background-color: var(--b3-list-hover);
 }
-/* 悬浮预览面板 */
-.block__popover[data-pin=true] {
-  /* 钉住的悬浮预览面板 */
-}
-.block__popover[data-pin=true] .block__icons .block__icon[data-type=pin] {
-  /* 钉住/取消钉住 按钮 */
-  box-shadow: 0 0 var(--custom-toolbar-tiem-active-box-shadow-spread) var(--custom-box-shadow-color);
-}
 /* 设置标签页面板 */
 .config__tab-container {
   background-color: transparent;
