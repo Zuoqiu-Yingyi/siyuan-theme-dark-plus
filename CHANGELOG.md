@@ -5,6 +5,7 @@
 - 调整悬浮预览面板钉住按钮样式 | Adjust the style of the pin button in the floating preview panel.
 - 调整面板边框样式 | Adjust the style of the panel border.
 - 调整面板尺寸调节手柄样式 | Adjust the style of the panel size adjustment handle.
+- [#222](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/222) 修复 Mermaid 超链接锚文本显示不完整问题 | Fixed the issue of incomplete display of Mermaid hyperlink anchor text.
 
 ## v2.0.1/2024-05-02
 

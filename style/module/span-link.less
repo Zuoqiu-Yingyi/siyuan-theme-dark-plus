@@ -91,4 +91,17 @@
             }
         }
     }
+
+    // 渲染节点
+    .render-node {
+        // FIX: https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/222
+        // 移除 Mermaid 图中链接的图标, 避免导致超链接锚文本显示不完整
+        .graphics-document {
+            a {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
 }
