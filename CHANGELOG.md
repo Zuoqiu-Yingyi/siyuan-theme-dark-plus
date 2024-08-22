@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v2.0.2/2024-08-22
+
+- [v2.0.1 ... v2.0.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v2.0.1...v2.0.2)
 - 添加链接图标 `ctrip.com` | Added hyperlink icon `ctrip.com`.
 - [#219](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/219) 修复无法获取当前文档文档背景的问题 | Fixed the issue of unable to get the background of the current document.
 - 调整悬浮预览面板钉住按钮样式 | Adjust the style of the pin button in the floating preview panel.
