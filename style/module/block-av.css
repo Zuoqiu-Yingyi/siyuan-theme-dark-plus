@@ -18,6 +18,9 @@
   max-width: 100%;
   margin: 0;
 }
+.protyle-wysiwyg .av[data-node-id] .av__scroll .av__row .av__cell.av__cell-check {
+  box-shadow: 0 0 0.25em 0 var(--b3-theme-on-surface) inset;
+}
 .protyle-wysiwyg .av[data-node-id] .av__scroll .av__row .av__cell .b3-chip {
   outline: 1px solid currentColor;
   margin: 3px;

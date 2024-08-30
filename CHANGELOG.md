@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 添加属性视图勾选框样式 | Added the style of the checkbox in the attribute view.
+
 ## v2.0.2/2024-08-22
 
 - [v2.0.1 ... v2.0.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v2.0.1...v2.0.2)
