@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v2.0.2/2024-09-03
+
+- [v2.0.2 ... v2.0.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v2.0.2...v2.0.2)
 - 添加属性视图勾选框样式 | Added the style of the checkbox in the attribute view.
 - [#223](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/223) 修复代码块内容无法显示问题 | Fixed the issue of code block content not displayed.
 
