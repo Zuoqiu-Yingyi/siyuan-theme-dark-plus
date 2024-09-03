@@ -24,15 +24,16 @@
 /* 👇编辑区样式👇 */
 .protyle-wysiwyg [data-node-id].code-block {
   margin: 0.5em 0;
+  padding: 0;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 .protyle-wysiwyg [data-node-id].code-block > .protyle-action {
   /* 功能按钮栏 */
   position: sticky;
   width: 100%;
+  height: 1em;
   justify-content: end;
-  right: 0;
-  top: 0;
 }
 .protyle-wysiwyg [data-node-id].code-block > .protyle-action > span {
   /* 功能按钮 */
@@ -43,7 +44,7 @@
 }
 .protyle-wysiwyg [data-node-id].code-block > .protyle-action > span.protyle-action__language {
   /* 语言标签 */
-  margin: 3px 0.5em 0 !important;
+  margin: 0 0.5em;
   font-size: 75%;
   line-height: normal;
 }
@@ -53,18 +54,20 @@
 }
 .protyle-wysiwyg [data-node-id].code-block > .hljs {
   /* 代码块主体 */
+  margin-top: -1em;
+  padding: 1em 0;
   background-color: transparent;
-  margin-top: -24px;
-  padding-top: 24px;
-  padding-bottom: 24px;
 }
-.protyle-wysiwyg [data-node-id].code-block > .protyle-linenumber__rows {
+.protyle-wysiwyg [data-node-id].code-block > .hljs > .protyle-linenumber__rows {
   /* 行号 */
-  margin-top: -24px;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  font-size: unset;
+  margin-top: -1em;
+  padding: 1em 0.5em;
   border-right: var(--custom-block-code-linenumber-separator-width) solid var(--custom-block-code-linenumber-separator-color);
   background-color: var(--custom-block-code-linenumber-background-color);
+}
+.protyle-wysiwyg [data-node-id].code-block > .hljs > div[contenteditable][spellcheck] {
+  min-height: unset;
 }
 .protyle-wysiwyg [data-node-id].code-block > .protyle-attr {
   /* 块属性 */
