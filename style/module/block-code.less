@@ -75,25 +75,28 @@
 
         >.hljs {
             /* 代码块主体 */
-            margin-top: -1em;
-            padding: 1em 0;
+            margin-bottom: 1em;
             background-color: transparent;
+            flex-direction: row;
+            width: 100%;
 
             >.protyle-linenumber__rows {
                 /* 行号 */
-                // bottom: 0;
+                position: unset;
+                // left: 0;
                 font-size: unset;
-                margin-top: -1em;
-                padding: 1em 0.5em;
+                padding: 0 0.5em;
                 border-right: var(--custom-block-code-linenumber-separator-width) solid var(--custom-block-code-linenumber-separator-color);
-                background-color: var(--custom-block-code-linenumber-background-color);
+                // background-color: var(--custom-block-code-linenumber-background-color);
             }
 
             >div[contenteditable][spellcheck] {
                 min-height: unset;
+                padding-left: 0.5em !important;
+                padding-right: 0.5em;
+                overflow-y: auto;
             }
         }
-
 
         >.protyle-attr {
             /* 块属性 */
@@ -105,10 +108,25 @@
         // 被选中的样式
         &.protyle-wysiwyg--select {
 
-            >.hljs,
-            >.protyle-linenumber__rows {
+            .hljs,
+            .protyle-linenumber__rows {
                 /* 被选中代码块的样式 */
                 background-color: transparent !important;
+                border-color: var(--b3-theme-primary-lighter);
+            }
+        }
+
+        // 焦点位于该代码块
+        &[data-plugin-focus=true] {
+            .protyle-linenumber__rows {
+                border-color: var(--custom-focus-shadow-color);
+            }
+        }
+
+        // 唯一焦点位于该代码块
+        &#plugin-focus-unique-id {
+            .protyle-linenumber__rows {
+                border-color: var(--custom-focus-unique-shadow-color);
             }
         }
     }

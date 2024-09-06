@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 调整代码块样式 | Adjust the style of the code block.
+
 ## v2.0.2/2024-09-03
 
 - [v2.0.2 ... v2.0.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v2.0.2...v2.0.2)
