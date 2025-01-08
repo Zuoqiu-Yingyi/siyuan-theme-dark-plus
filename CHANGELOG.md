@@ -1,6 +1,7 @@
 # 更改日志 | CHANGE LOG
 
 - 调整代码块样式 | Adjust the style of the code block.
+- [#228](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/228) 调整停靠栏按钮样式 | Adjust the style of the dock bar button.
 
 ## v2.0.2/2024-09-03
 

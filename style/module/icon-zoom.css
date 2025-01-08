@@ -4,6 +4,10 @@ svg.popover__block:hover,
   transform: scale(1.25);
   transition: all 0.1s ease-in-out;
 }
+.dock__item {
+  margin: 4px;
+  padding: 6px;
+}
 .b3-list-item__icon:hover img,
 .dock__item:hover img,
 .b3-tooltips:hover img,
