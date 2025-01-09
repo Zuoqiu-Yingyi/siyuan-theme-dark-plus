@@ -94,6 +94,16 @@
                         /* 鼠标悬浮单元格 */
                         box-shadow: 0 0 0 1px var(--b3-theme-secondary) inset;
                     }
+
+                    // 超链接
+                    .av__celltext--url[data-type=url] {
+                        // 未设置目标的超链接
+                        &[data-href=""] {
+                            &::before {
+                                content: none;
+                            }
+                        }
+                    }
                 }
             }
 
