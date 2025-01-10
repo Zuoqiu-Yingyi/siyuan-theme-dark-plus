@@ -3,6 +3,7 @@
 - 调整代码块样式 | Adjust the style of the code block.
 - [#228](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/228) 调整停靠栏按钮样式 | Adjust the style of the dock bar button.
 - [#226](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/226) 调整属性视图中超链接样式 | Adjust the style of the hyperlink in the attribute view.
+- 调整当前焦点页签栏样式 | Adjust the style of the current focus tab bar.
 
 ## v2.0.2/2024-09-03
 

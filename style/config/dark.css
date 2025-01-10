@@ -24,7 +24,7 @@
   --custom-components: #222;
   --custom-components-deep: #111;
   /* 鲜明颜色 | Striking color */
-  --custom-striking-color: var(--b3-font-color12);
+  --custom-striking-color: #ff9632;
   /* 编辑区背景颜色 | The background color of the edit area */
   --custom-editor-background-color: var(--custom-transparent);
   /* 弹出窗口背景颜色 | The background color of the popover */
