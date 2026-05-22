@@ -16,6 +16,9 @@ body {
   border: none;
   background-color: var(--custom-background-transparent-color);
 }
+body > .fn__flex-1 {
+  overflow-x: hidden;
+}
 /* 文本选择 */
 ::selection {
   background-color: var(--custom-selection-background-color);
