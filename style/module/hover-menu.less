@@ -28,7 +28,7 @@
 
         /* padding-top: var(--custom-popover-menu-margin-width); */
         /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
-        margin: var(--custom-popover-menu-margin-width) 0 !important;
+        margin: var(--custom-popover-menu-margin-width) 0;
         border-radius: var(--custom-border-radius);
         // padding: 0.5em;
 
@@ -206,6 +206,11 @@
         margin: 1px;
     }
 
+    /* 设置面板分类列表 */
+    .config__side>& {
+        outline: unset;
+    }
+
     /* 多层列表 */
     & & {
         padding: unset;
@@ -214,7 +219,7 @@
 
     .b3-list-item {
         /* 菜单项 */
-        margin: 0 !important;
+        // margin: 0 !important;
         // border-radius: 0;
         border-radius: var(--custom-border-radius);
         // line-height: unset;

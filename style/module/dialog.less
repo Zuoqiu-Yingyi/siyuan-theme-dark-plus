@@ -88,6 +88,7 @@
 
     // 设置对话框
     .config__panel {
+        background-color: transparent;
 
         // 设置对话框侧边栏
         .b3-tab-bar {
@@ -109,6 +110,11 @@
         // 设置主面板包裹容器
         .config__tab-wrap {
             background-color: transparent;
+
+            // 设置项填充
+            .fn__hr--b {
+                // height: 0;
+            }
         }
 
         // 设置主面板
@@ -144,15 +150,25 @@
                 border-left: 1px solid var(--b3-border-color);
             }
 
+            // 设置项分组
+            .config-group {
+                background-color: transparent;
+                border: 1px solid var(--b3-border-color);
+            }
         }
     }
 
     // 设置项
-    .b3-label:not(.b3-label--inner) {
-        box-shadow: initial;
-        padding-bottom: 16px;
-        border-bottom: 1px solid var(--b3-border-color);
-        margin-bottom: 16px;
+    .b3-label {
+        &:not(.b3-label--inner) {
+            box-shadow: initial;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--b3-border-color);
+        }
+
+        &:last-child {
+            border-bottom: unset;
+        }
     }
 
     // 文件历史对话框

@@ -86,6 +86,7 @@
   backdrop-filter: none;
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
   overflow-x: visible;
+  /* 设置面板分类列表 */
   /* 多层列表 */
 }
 .switch-doc .b3-list {
@@ -94,13 +95,15 @@
   border: initial;
   margin: 1px;
 }
+.config__side > .b3-list {
+  outline: unset;
+}
 .b3-list .b3-list {
   padding: unset;
   outline: unset;
 }
 .b3-list .b3-list-item {
   /* 菜单项 */
-  margin: 0 !important;
   border-radius: var(--custom-border-radius);
 }
 .b3-list.protyle-hint {
@@ -176,7 +179,7 @@
 #historyContainer .b3-list .b3-list-item {
   /* padding-top: var(--custom-popover-menu-margin-width); */
   /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
-  margin: var(--custom-popover-menu-margin-width) 0 !important;
+  margin: var(--custom-popover-menu-margin-width) 0;
   border-radius: var(--custom-border-radius);
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
 }
@@ -231,7 +234,7 @@
 .b3-list.search__list > .b3-list-item + div:not(.b3-list-item) .b3-list-item {
   /* padding-top: var(--custom-popover-menu-margin-width); */
   /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
-  margin: var(--custom-popover-menu-margin-width) 0 !important;
+  margin: var(--custom-popover-menu-margin-width) 0;
   border-radius: var(--custom-border-radius);
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
 }
@@ -285,7 +288,7 @@
 #searchPanel .b3-list-item {
   /* padding-top: var(--custom-popover-menu-margin-width); */
   /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
-  margin: var(--custom-popover-menu-margin-width) 0 !important;
+  margin: var(--custom-popover-menu-margin-width) 0;
   border-radius: var(--custom-border-radius);
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
 }

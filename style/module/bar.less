@@ -186,10 +186,6 @@ body.body--window {
     }
 
     .toolbar__item {
-        /* 顶部工具栏按钮 */
-        margin: 0 var(--custom-dock-item-margin-width);
-
-
         &:not(.toolbar__item--disabled):not(.toolbar__item--close):hover {
             background-color: var(--b3-theme-background-light);
         }
@@ -206,6 +202,9 @@ body.body--window {
     #barWorkspace {
         /* 工作空间下拉菜单 */
         // margin: 0;
+        outline: 1px solid var(--b3-theme-on-surface);
+        padding: 2px 0.25em;
+        // margin: 4px;
     }
 
     #drag {

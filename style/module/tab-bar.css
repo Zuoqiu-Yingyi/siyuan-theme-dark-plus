@@ -7,6 +7,7 @@
 /* .fn__flex-column.fn__flex.fn__flex-1 .layout-tab-bar { */
 .layout-tab-bar {
   background-color: transparent;
+  border-bottom: unset;
   flex-wrap: var(--custom-tab-bar-flex-wrap);
 }
 .layout-tab-bar .item {

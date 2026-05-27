@@ -170,11 +170,6 @@ body:not(.body--win32) #toolbar:not(.toolbar--browser) {
 #toolbar .toolbar__text {
   color: var(--b3-theme-on-background);
 }
-.toolbar__window .toolbar__item,
-#toolbar .toolbar__item {
-  /* 顶部工具栏按钮 */
-  margin: 0 var(--custom-dock-item-margin-width);
-}
 .toolbar__window .toolbar__item:not(.toolbar__item--disabled):not(.toolbar__item--close):hover,
 #toolbar .toolbar__item:not(.toolbar__item--disabled):not(.toolbar__item--close):hover {
   background-color: var(--b3-theme-background-light);
@@ -188,6 +183,8 @@ body:not(.body--win32) #toolbar:not(.toolbar--browser) {
 .toolbar__window #barWorkspace,
 #toolbar #barWorkspace {
   /* 工作空间下拉菜单 */
+  outline: 1px solid var(--b3-theme-on-surface);
+  padding: 2px 0.25em;
 }
 .toolbar__window #drag,
 #toolbar #drag {

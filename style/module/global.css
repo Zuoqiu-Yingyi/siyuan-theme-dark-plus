@@ -38,8 +38,17 @@ body > .fn__flex-1 {
   max-width: none;
 }
 /* 文本输入框 */
+input.b3-text-field {
+  background-color: transparent;
+}
+/* 多行文本输入框 */
 textarea.b3-text-field {
   max-width: 100%;
+  background-color: transparent;
+}
+/* 下拉选择框 */
+select.b3-select {
+  background-color: transparent;
 }
 /* 开关 */
 input.b3-switch {

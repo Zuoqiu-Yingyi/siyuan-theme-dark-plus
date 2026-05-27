@@ -7,7 +7,7 @@
 }
 .protyle-breadcrumb .protyle-breadcrumb__space {
   /* 面包屑与右侧按钮之间的间距 */
-  min-width: none;
+  background-color: transparent;
 }
 .protyle-breadcrumb .block__icon {
   /* 面包屑右侧按钮 */
@@ -23,6 +23,7 @@
 }
 .protyle-breadcrumb .protyle-breadcrumb__bar {
   margin: 0 4px;
+  min-height: unset;
 }
 .protyle-wysiwyg .protyle-breadcrumb__bar {
   margin: 0;
