@@ -87,6 +87,7 @@ body.body--window .toolbar__window .toolbar__item > svg {
 #dockBottom .toolbar__item,
 #status .toolbar__item {
   height: auto;
+  padding: var(--custom-dock-item-padding-width);
 }
 .toolbar__window .b3-tooltips,
 #toolbar .b3-tooltips,

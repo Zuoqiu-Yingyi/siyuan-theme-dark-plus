@@ -1,0 +1,8 @@
+.dock .dock__item {
+  width: var(--custom-dock-item-icon-size);
+  height: var(--custom-dock-item-icon-size);
+  padding: var(--custom-dock-item-padding-width);
+}
+.dock .dock__split::after {
+  left: 3px;
+}

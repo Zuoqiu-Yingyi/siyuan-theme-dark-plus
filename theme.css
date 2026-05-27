@@ -46,6 +46,8 @@
 @import url("style/module/custom-writing-mode.css?v=2.0.4");
 /* 对话框元素 */
 @import url("style/module/dialog.css?v=2.0.4");
+/* 侧边栏 */
+@import url("style/module/dock.css?v=2.0.4");
 /* 折叠 */
 @import url("style/module/fold.css?v=2.0.4");
 /* 空白页面与空白行 */
