@@ -27,6 +27,7 @@ body > .fn__flex-1 {
 .b3-list-item__toggle {
   border-radius: 2px;
   z-index: 2;
+  transition: unset;
 }
 .b3-list-item__toggle:hover {
   outline: 1px solid var(--b3-theme-on-surface-light);
