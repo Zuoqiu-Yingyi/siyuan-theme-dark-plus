@@ -1,4 +1,5 @@
 /* 功能区分隔线 */
+.layout:not(.layout__center) > .layout__resize,
 .layout__resize:not(.layout__resize--lr) {
   /* 横向分割线 */
   cursor: row-resize;

@@ -69,16 +69,6 @@ body.body--window .toolbar__window .toolbar__item > svg {
   padding: 0;
   box-sizing: content-box;
 }
-.toolbar__window .protyle-toolbar__divider,
-#toolbar .protyle-toolbar__divider,
-#dockTop .protyle-toolbar__divider,
-#dockLeft .protyle-toolbar__divider,
-#dockRight .protyle-toolbar__divider,
-#dockBottom .protyle-toolbar__divider,
-#status .protyle-toolbar__divider {
-  color: var(--b3-toolbar-color);
-  border-color: currentColor;
-}
 .toolbar__window .toolbar__item,
 #toolbar .toolbar__item,
 #dockTop .toolbar__item,
@@ -155,6 +145,11 @@ body.body--window .toolbar__window .toolbar__item > svg {
   /* ↑顶部工具栏↑ */
   background-color: var(--custom-tool-bar-background-color);
   border-bottom: 0.5px solid var(--b3-border-color);
+}
+.toolbar__window .protyle-toolbar__divider,
+#toolbar .protyle-toolbar__divider {
+  color: var(--b3-toolbar-color);
+  border-color: currentColor;
 }
 .body--blur .toolbar__window,
 .body--blur #toolbar {

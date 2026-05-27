@@ -98,12 +98,6 @@ body.body--window {
     padding: 0;
     box-sizing: content-box;
 
-    .protyle-toolbar__divider {
-        // 分割线
-        color: var(--b3-toolbar-color);
-        border-color: currentColor;
-    }
-
     .toolbar__item {
         height: auto;
         padding: var(--custom-dock-item-padding-width);
@@ -171,6 +165,12 @@ body.body--window {
     /* ↑顶部工具栏↑ */
     background-color: var(--custom-tool-bar-background-color);
     border-bottom: .5px solid var(--b3-border-color);
+
+    .protyle-toolbar__divider {
+        // 分割线
+        color: var(--b3-toolbar-color);
+        border-color: currentColor;
+    }
 
     .body--blur & {
         .inactive-window-title-bar();
@@ -252,7 +252,7 @@ body.body--window {
     }
 }
 
-#dockLeft{
+#dockLeft {
     border-right: .5px solid var(--b3-border-color);
 }
 

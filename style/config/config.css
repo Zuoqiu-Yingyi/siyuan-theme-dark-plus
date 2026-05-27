@@ -231,7 +231,7 @@
   /* 悬浮菜单宽度 | The width of popover menu */
   --custom-popover-menu-width: auto;
   /* 功能面板间隔距离 | Function panel spacing distance */
-  --custom-panel-distance: 8px;
+  --custom-panel-distance: 4px;
   /* 功能面板标题栏高度 | Feature panel title bar height */
   --custom-panel-title-height: var(--custom-dock-width);
   /* 全屏关系图工具栏背景颜色 | Full-screen graph toolbar background color */
@@ -602,53 +602,11 @@
 /* 更改原属性 */
 :root {
   /* 字体 */
-  --b3-font-family: "Sarasa Mono SC",
-        "quote",
-        "Helvetica Neue",
-        "Luxi Sans",
-        "DejaVu Sans",
-        "Hiragino Sans GB",
-        "Microsoft Yahei",
-        sans-serif,
-
-        "Win10 Emoji",
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Noto Color Emoji",
-        "Segoe UI Symbol",
-        "Android Emoji",
-        "EmojiSymbols";
-  --b3-font-family-code: "Sarasa Mono SC",
-
-        "JetBrainsMono-Regular",
-        mononoki,
-        Consolas,
-        "Liberation Mono",
-        Menlo,
-        Courier,
-        monospace,
-
-        "SimHei",
-
-        "Win10 Emoji",
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        "Noto Color Emoji",
-        "Segoe UI Symbol",
-        "Android Emoji",
-        "EmojiSymbols";
-  --b3-font-family-graph: "Sarasa Mono SC",
-        mononoki;
-  --b3-font-family-math: KaTeX_Math,
-        KaTeX_Main;
-  --b3-font-family-emoji: "Win10 Emoji",
-        "Segoe UI Emoji",
-        "Segoe UI Symbol",
-        "Segoe UI",
-        "Apple Color Emoji",
-        "Twemoji Mozilla",
-        "Noto Color Emoji",
-        "Android Emoji";
+  --b3-font-family: "Sarasa Mono SC", "quote", "Helvetica Neue", "Luxi Sans", "DejaVu Sans", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Win10 Emoji", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
+  --b3-font-family-code: "Sarasa Mono SC", "JetBrainsMono-Regular", mononoki, Consolas, "Liberation Mono", Menlo, Courier, monospace, "SimHei", "Win10 Emoji", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
+  --b3-font-family-graph: "Sarasa Mono SC", mononoki;
+  --b3-font-family-math: KaTeX_Math, KaTeX_Main;
+  --b3-font-family-emoji: "Win10 Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Segoe UI", "Apple Color Emoji", "Twemoji Mozilla", "Noto Color Emoji", "Android Emoji";
   /* 线条 */
   --b3-border-color: var(--custom-components-light);
   /* 提示窗口背景颜色 */

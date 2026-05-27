@@ -2,7 +2,15 @@
   width: var(--custom-dock-item-icon-size);
   height: var(--custom-dock-item-icon-size);
   padding: var(--custom-dock-item-padding-width);
+  margin: var(--custom-dock-item-margin-width);
 }
 .dock .dock__split::after {
-  left: 3px;
+  width: calc(var(--custom-dock-item-icon-size) + var(--custom-dock-item-padding-width) * 2);
+  left: var(--custom-dock-item-margin-width);
+}
+.layout__dockl,
+.layout__dockr,
+.layout__dockb {
+  background: transparent;
+  margin: 0 !important;
 }
