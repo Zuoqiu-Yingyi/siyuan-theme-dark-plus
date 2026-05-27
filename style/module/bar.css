@@ -154,6 +154,7 @@ body.body--window .toolbar__window .toolbar__item > svg {
 #toolbar {
   /* ↑顶部工具栏↑ */
   background-color: var(--custom-tool-bar-background-color);
+  border-bottom: 0.5px solid var(--b3-border-color);
 }
 .body--blur .toolbar__window,
 .body--blur #toolbar {
@@ -223,6 +224,7 @@ body:not(.body--win32) #toolbar:not(.toolbar--browser) {
 /* ↓底部状态栏↓ */
 #status {
   background-color: var(--custom-status-bar-background-color);
+  border-top: 0.5px solid var(--b3-border-color);
 }
 #status #barDock .b3-menu,
 #status #barHelp .b3-menu {
@@ -233,4 +235,10 @@ body:not(.body--win32) #toolbar:not(.toolbar--browser) {
 #status .status__counter,
 #status .status__backgroundtask {
   line-height: var(--custom-bar-height);
+}
+#dockLeft {
+  border-right: 0.5px solid var(--b3-border-color);
+}
+#dockRight {
+  border-left: 0.5px solid var(--b3-border-color);
 }

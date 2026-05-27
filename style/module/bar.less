@@ -170,6 +170,7 @@ body.body--window {
 #toolbar {
     /* ↑顶部工具栏↑ */
     background-color: var(--custom-tool-bar-background-color);
+    border-bottom: .5px solid var(--b3-border-color);
 
     .body--blur & {
         .inactive-window-title-bar();
@@ -234,6 +235,7 @@ body.body--window {
 
 #status {
     background-color: var(--custom-status-bar-background-color);
+    border-top: .5px solid var(--b3-border-color);
 
     #barDock,
     #barHelp {
@@ -248,4 +250,12 @@ body.body--window {
     .status__backgroundtask {
         line-height: var(--custom-bar-height);
     }
+}
+
+#dockLeft{
+    border-right: .5px solid var(--b3-border-color);
+}
+
+#dockRight {
+    border-left: .5px solid var(--b3-border-color);
 }

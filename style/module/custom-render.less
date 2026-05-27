@@ -1,4 +1,6 @@
 /* 文档自定义属性 custom-render 渲染样式 */
+
+
 /*
  * content: data-content (输入框中的内容)
  * marker: data-marker (标志符)
@@ -9,69 +11,84 @@
  * subtype: data-subtype (块子类型)
  * type: data-type (块类型)
  */
+
 /* 👇👇👇 块级元素 👇👇👇 */
+
 /* 鼠标悬浮显示轮廓 */
 .protyle-wysiwyg[custom-render~=outline] [data-node-id] {
-  padding: 3px !important;
+    padding: 3px !important;
 }
+
 .protyle-wysiwyg[custom-render~=outline] [data-node-id]:hover {
-  outline: 1px dotted var(--b3-theme-on-surface);
+    outline: 1px dotted var(--b3-theme-on-surface);
 }
-.protyle-wysiwyg[custom-render~=content] [data-content]::after {
-  content: attr(data-content);
-  font-size: 0.75em;
-  text-align: right;
+
+.protyle-wysiwyg[custom-render~=content] [data-content]::after{
+    content: attr(data-content);
+    font-size: 0.75em;
+    text-align: right;
 }
+
 .protyle-wysiwyg[custom-render~=marker] [data-marker]::after {
-  content: attr(data-marker);
-  font-size: 0.75em;
-  text-align: right;
+    content: attr(data-marker);
+    font-size: 0.75em;
+    text-align: right;
 }
+
 .protyle-wysiwyg[custom-render~=id] [data-node-id]::after {
-  content: attr(data-node-id);
-  font-size: 0.75em;
-  text-align: right;
+    content: attr(data-node-id);
+    font-size: 0.75em;
+    text-align: right;
 }
+
 .protyle-wysiwyg[custom-render~=index] [data-node-index]::after {
-  content: attr(data-node-index);
-  font-size: 0.75em;
-  text-align: right;
+    content: attr(data-node-index);
+    font-size: 0.75em;
+    text-align: right;
 }
+
 .protyle-wysiwyg[custom-render~=render] [data-render]::after {
-  content: attr(data-render);
-  font-size: 0.75em;
-  text-align: right;
+    content: attr(data-render);
+    font-size: 0.75em;
+    text-align: right;
 }
+
 .protyle-wysiwyg[custom-render~=layout] [data-sb-layout]::after {
-  content: attr(data-sb-layout);
-  font-size: 0.75em;
-  text-align: right;
+    content: attr(data-sb-layout);
+    font-size: 0.75em;
+    text-align: right;
 }
+
 .protyle-wysiwyg[custom-render~=subtype] [data-subtype]::after {
-  content: attr(data-subtype);
-  font-size: 0.75em;
-  text-align: right;
+    content: attr(data-subtype);
+    font-size: 0.75em;
+    text-align: right;
 }
+
 .protyle-wysiwyg[custom-render~=type] [data-type]::after {
-  content: attr(data-type);
-  font-size: 0.75em;
-  text-align: right;
+    content: attr(data-type);
+    font-size: 0.75em;
+    text-align: right;
 }
+
 /* 👆👆👆 块级元素 👆👆👆 */
+
 /* 👇👇👇 行级元素 👇👇👇 */
 .protyle-wysiwyg[custom-render~=id] span[data-id]::after {
-  content: attr(data-id);
-  font-size: 0.75em;
-  text-align: right;
+    content: attr(data-id);
+    font-size: 0.75em;
+    text-align: right;
 }
+
 .protyle-wysiwyg[custom-render~=href] span[data-href]::after {
-  content: attr(data-href);
-  font-size: 0.75em;
-  text-align: right;
+    content: attr(data-href);
+    font-size: 0.75em;
+    text-align: right;
 }
+
 .protyle-wysiwyg[custom-render~=title] span[data-title]::after {
-  content: attr(data-title);
-  font-size: 0.75em;
-  text-align: right;
+    content: attr(data-title);
+    font-size: 0.75em;
+    text-align: right;
 }
 /* 👆👆👆 行级元素 👆👆👆 */

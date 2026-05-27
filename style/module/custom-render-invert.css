@@ -1,8 +1,6 @@
 /* 反色 */
-
-
 /* 图片反色 */
 .protyle-content [data-node-id][custom-render~=invert] img:not(.emoji),
-.protyle-content [data-node-id][custom-render~=反色] img:not(.emoji) {
-    filter: var(--custom-image-filter-invert);
+.protyle-content [data-node-id][custom-render~="反色"] img:not(.emoji) {
+  filter: var(--custom-image-filter-invert);
 }
