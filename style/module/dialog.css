@@ -44,7 +44,6 @@
 }
 .b3-dialog__container .config__panel .config__side .config__tab-head,
 .b3-dialog__container .config__panel .b3-tab-bar .config__tab-head {
-  padding: 0.25em;
   margin-bottom: 8px;
 }
 .b3-dialog__container .config__panel .config__side .config__tab-head .config__tab-title,
@@ -56,10 +55,6 @@
 .b3-dialog__container .config__panel .b3-tab-bar .config__tab-head .b3-form__icon {
   /* 设置搜索输入框 */
   margin: 0;
-}
-.b3-dialog__container .config__panel .config__side .config__tab-scroll,
-.b3-dialog__container .config__panel .b3-tab-bar .config__tab-scroll {
-  padding: 0.25em;
 }
 .b3-dialog__container .config__panel .config__side .config__tab-hr,
 .b3-dialog__container .config__panel .b3-tab-bar .config__tab-hr {

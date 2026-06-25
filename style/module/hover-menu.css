@@ -107,10 +107,11 @@
   border-radius: var(--custom-border-radius);
 }
 .b3-list.protyle-hint {
+  padding: calc(var(--custom-popover-menu-padding-width) / 2);
   width: var(--custom-popover-menu-width) !important;
 }
 .b3-list.protyle-hint > div {
-  overflow: unset !important;
+  padding: calc(var(--custom-popover-menu-padding-width) / 2);
 }
 .b3-list.protyle-hint .b3-list-item {
   width: 100% !important;
@@ -173,6 +174,8 @@
   column-span: all;
 }
 .b3-list.b3-tab-bar .b3-list-item,
+.b3-list.protyle-hint .b3-list-item,
+.sy__inbox .b3-list .b3-list-item,
 .sy__backlink .b3-list .b3-list-item,
 .b3-dialog__container .b3-list .b3-list-item,
 #historyContainer .b3-list .b3-list-item {
@@ -181,8 +184,11 @@
   margin: calc(var(--custom-popover-menu-margin-width) + var(--custom-popover-menu-outline-width) * 2) 0;
   border-radius: var(--custom-border-radius);
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
+  outline-offset: calc(var(--custom-popover-menu-outline-width) * -1);
 }
 .b3-list.b3-tab-bar .b3-list-item:first-child,
+.b3-list.protyle-hint .b3-list-item:first-child,
+.sy__inbox .b3-list .b3-list-item:first-child,
 .sy__backlink .b3-list .b3-list-item:first-child,
 .b3-dialog__container .b3-list .b3-list-item:first-child,
 #historyContainer .b3-list .b3-list-item:first-child {
@@ -190,6 +196,8 @@
   margin-top: 0 !important;
 }
 .b3-list.b3-tab-bar .b3-list-item:last-child:not(.fn_none),
+.b3-list.protyle-hint .b3-list-item:last-child:not(.fn_none),
+.sy__inbox .b3-list .b3-list-item:last-child:not(.fn_none),
 .sy__backlink .b3-list .b3-list-item:last-child:not(.fn_none),
 .b3-dialog__container .b3-list .b3-list-item:last-child:not(.fn_none),
 #historyContainer .b3-list .b3-list-item:last-child:not(.fn_none) {
@@ -197,12 +205,16 @@
   margin-bottom: 0 !important;
 }
 .b3-list.b3-tab-bar .b3-list-itembutton,
+.b3-list.protyle-hint .b3-list-itembutton,
+.sy__inbox .b3-list .b3-list-itembutton,
 .sy__backlink .b3-list .b3-list-itembutton,
 .b3-dialog__container .b3-list .b3-list-itembutton,
 #historyContainer .b3-list .b3-list-itembutton {
   margin: calc(var(--custom-popover-menu-margin-width) + var(--custom-popover-menu-outline-width) * 2) auto !important;
 }
 .b3-list.b3-tab-bar .b3-list-item .b3-list-item__meta:not(.fn__flex),
+.b3-list.protyle-hint .b3-list-item .b3-list-item__meta:not(.fn__flex),
+.sy__inbox .b3-list .b3-list-item .b3-list-item__meta:not(.fn__flex),
 .sy__backlink .b3-list .b3-list-item .b3-list-item__meta:not(.fn__flex),
 .b3-dialog__container .b3-list .b3-list-item .b3-list-item__meta:not(.fn__flex),
 #historyContainer .b3-list .b3-list-item .b3-list-item__meta:not(.fn__flex) {
@@ -213,12 +225,16 @@
   padding: 0;
 }
 .b3-list.b3-tab-bar .b3-list-item .b3-list-item__meta.fn__flex,
+.b3-list.protyle-hint .b3-list-item .b3-list-item__meta.fn__flex,
+.sy__inbox .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
 .sy__backlink .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
 .b3-dialog__container .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
 #historyContainer .b3-list .b3-list-item .b3-list-item__meta.fn__flex {
   color: var(--custom-popover-menu-attribute-color);
 }
 .b3-list.b3-tab-bar .b3-list-item .b3-list-item__meta.fn__flex,
+.b3-list.protyle-hint .b3-list-item .b3-list-item__meta.fn__flex,
+.sy__inbox .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
 .sy__backlink .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
 .b3-dialog__container .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
 #historyContainer .b3-list .b3-list-item .b3-list-item__meta.fn__flex {
@@ -230,6 +246,7 @@
   margin: calc(var(--custom-popover-menu-margin-width) + var(--custom-popover-menu-outline-width) * 2) 0;
   border-radius: var(--custom-border-radius);
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
+  outline-offset: calc(var(--custom-popover-menu-outline-width) * -1);
 }
 .b3-list.search__list > .b3-list-item + div:not(.b3-list-item) .b3-list-item:first-child {
   /* 补偿第一项 */
@@ -284,6 +301,7 @@
   margin: calc(var(--custom-popover-menu-margin-width) + var(--custom-popover-menu-outline-width) * 2) 0;
   border-radius: var(--custom-border-radius);
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
+  outline-offset: calc(var(--custom-popover-menu-outline-width) * -1);
 }
 #searchPanel .b3-list-item:first-child {
   /* 补偿第一项 */

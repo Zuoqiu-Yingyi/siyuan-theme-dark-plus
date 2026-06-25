@@ -33,6 +33,7 @@
         // padding: 0.5em;
 
         outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
+        outline-offset: calc(var(--custom-popover-menu-outline-width) * -1);
 
         &:last-child:not(.fn_none) {
             /* 补偿最后一项 */
@@ -228,11 +229,12 @@
     // 引用搜索菜单
     &.protyle-hint {
         // 块引用搜索结果宽度设置为自动宽度
+        padding: calc(var(--custom-popover-menu-padding-width) / 2);
         width: var(--custom-popover-menu-width) !important;
 
         // 引用搜索菜单项容器
         >div {
-            overflow: unset !important;
+            padding: calc(var(--custom-popover-menu-padding-width) / 2);
         }
 
         .b3-list-item {
@@ -359,6 +361,9 @@
     &:not(ul) {}
 
     &.b3-tab-bar,
+    &.protyle-hint,
+    // 悬浮搜索菜单/功能菜单/设置菜单
+    .sy__inbox &,
     .sy__backlink &,
     .b3-dialog__container &,
     #historyContainer & {
