@@ -1,0 +1,4 @@
+#historyContainer .history__repo .history__panel .history__side.b3-list > ul > li.b3-list-item {
+  /* 文件项 */
+  padding-left: calc(8px + 1em) !important;
+}
