@@ -67,9 +67,14 @@
         .subtree(@base-root, @interval, @depth);
 
         // 鼠标悬浮更改辅助线颜色
-        ul:hover::before {
-            background-color: var(--b3-theme-primary-lighter);
+        ul:has(>li.b3-list-item--focus)::before {
+            background-color: var(--custom-list-guides-line-focus-color);
         }
+
+        // 鼠标悬浮更改辅助线颜色
+        // ul:hover::before {
+        //     background-color: var(--b3-theme-primary-lighter);
+        // }
     }
 }
 
@@ -87,7 +92,7 @@
 }
 
 // 桌面端侧边分栏
-[data-type='wnd'][data-id] {
+.fn__flex[data-type='wnd'][data-id] {
     min-height: 0%;
     margin: var(--custom-panel-distance);
     border-radius: var(--custom-border-radius);
@@ -95,19 +100,10 @@
     /* 侧边分栏面板 */
     .file-tree.fn__flex-column {
         .tree-indent(18px);
-
-        &:not(.sy__file, .sy__tag, .sy__outline) {
-            // .tree-guides(16px, 14px);
-            .tree-guides(12px);
-        }
+        .tree-guides(22px);
 
         &.sy__tag,
-        &.sy__outline {
-            &:hover {
-                // .tree-guides(16px, 14px);
-                .tree-guides(12px);
-            }
-        }
+        &.sy__outline {}
 
         // 文档树面板
         // .sy__file {
