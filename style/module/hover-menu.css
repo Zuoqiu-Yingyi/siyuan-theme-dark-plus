@@ -172,18 +172,16 @@
   /* REF https: //github.com/siyuan-note/siyuan/issues/4575#issuecomment-1152490468 */
   column-span: all;
 }
-.b3-list:not(ul) .b3-list-item,
 .b3-list.b3-tab-bar .b3-list-item,
 .sy__backlink .b3-list .b3-list-item,
 .b3-dialog__container .b3-list .b3-list-item,
 #historyContainer .b3-list .b3-list-item {
   /* padding-top: var(--custom-popover-menu-margin-width); */
   /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
-  margin: var(--custom-popover-menu-margin-width) 0;
+  margin: calc(var(--custom-popover-menu-margin-width) + var(--custom-popover-menu-outline-width) * 2) 0;
   border-radius: var(--custom-border-radius);
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
 }
-.b3-list:not(ul) .b3-list-item:first-child,
 .b3-list.b3-tab-bar .b3-list-item:first-child,
 .sy__backlink .b3-list .b3-list-item:first-child,
 .b3-dialog__container .b3-list .b3-list-item:first-child,
@@ -191,7 +189,6 @@
   /* 补偿第一项 */
   margin-top: 0 !important;
 }
-.b3-list:not(ul) .b3-list-item:last-child:not(.fn_none),
 .b3-list.b3-tab-bar .b3-list-item:last-child:not(.fn_none),
 .sy__backlink .b3-list .b3-list-item:last-child:not(.fn_none),
 .b3-dialog__container .b3-list .b3-list-item:last-child:not(.fn_none),
@@ -199,14 +196,12 @@
   /* 补偿最后一项 */
   margin-bottom: 0 !important;
 }
-.b3-list:not(ul) .b3-list-itembutton,
 .b3-list.b3-tab-bar .b3-list-itembutton,
 .sy__backlink .b3-list .b3-list-itembutton,
 .b3-dialog__container .b3-list .b3-list-itembutton,
 #historyContainer .b3-list .b3-list-itembutton {
-  margin: var(--custom-popover-menu-margin-width) auto !important;
+  margin: calc(var(--custom-popover-menu-margin-width) + var(--custom-popover-menu-outline-width) * 2) auto !important;
 }
-.b3-list:not(ul) .b3-list-item .b3-list-item__meta:not(.fn__flex),
 .b3-list.b3-tab-bar .b3-list-item .b3-list-item__meta:not(.fn__flex),
 .sy__backlink .b3-list .b3-list-item .b3-list-item__meta:not(.fn__flex),
 .b3-dialog__container .b3-list .b3-list-item .b3-list-item__meta:not(.fn__flex),
@@ -217,14 +212,12 @@
   border: 0;
   padding: 0;
 }
-.b3-list:not(ul) .b3-list-item .b3-list-item__meta.fn__flex,
 .b3-list.b3-tab-bar .b3-list-item .b3-list-item__meta.fn__flex,
 .sy__backlink .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
 .b3-dialog__container .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
 #historyContainer .b3-list .b3-list-item .b3-list-item__meta.fn__flex {
   color: var(--custom-popover-menu-attribute-color);
 }
-.b3-list:not(ul) .b3-list-item .b3-list-item__meta.fn__flex,
 .b3-list.b3-tab-bar .b3-list-item .b3-list-item__meta.fn__flex,
 .sy__backlink .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
 .b3-dialog__container .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
@@ -234,7 +227,7 @@
 .b3-list.search__list > .b3-list-item + div:not(.b3-list-item) .b3-list-item {
   /* padding-top: var(--custom-popover-menu-margin-width); */
   /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
-  margin: var(--custom-popover-menu-margin-width) 0;
+  margin: calc(var(--custom-popover-menu-margin-width) + var(--custom-popover-menu-outline-width) * 2) 0;
   border-radius: var(--custom-border-radius);
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
 }
@@ -247,7 +240,7 @@
   margin-bottom: 0 !important;
 }
 .b3-list.search__list > .b3-list-item + div:not(.b3-list-item) .b3-list-itembutton {
-  margin: var(--custom-popover-menu-margin-width) auto !important;
+  margin: calc(var(--custom-popover-menu-margin-width) + var(--custom-popover-menu-outline-width) * 2) auto !important;
 }
 .b3-list.search__list > .b3-list-item + div:not(.b3-list-item) .b3-list-item .b3-list-item__meta:not(.fn__flex) {
   /* 文档可读路径 */
@@ -288,7 +281,7 @@
 #searchPanel .b3-list-item {
   /* padding-top: var(--custom-popover-menu-margin-width); */
   /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
-  margin: var(--custom-popover-menu-margin-width) 0;
+  margin: calc(var(--custom-popover-menu-margin-width) + var(--custom-popover-menu-outline-width) * 2) 0;
   border-radius: var(--custom-border-radius);
   outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
 }
@@ -301,7 +294,7 @@
   margin-bottom: 0 !important;
 }
 #searchPanel .b3-list-itembutton {
-  margin: var(--custom-popover-menu-margin-width) auto !important;
+  margin: calc(var(--custom-popover-menu-margin-width) + var(--custom-popover-menu-outline-width) * 2) auto !important;
 }
 #searchPanel .b3-list-item .b3-list-item__meta:not(.fn__flex) {
   /* 文档可读路径 */

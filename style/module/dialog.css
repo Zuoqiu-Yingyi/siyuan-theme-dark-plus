@@ -42,16 +42,29 @@
 .b3-dialog__container .config__panel {
   background-color: transparent;
 }
-.b3-dialog__container .config__panel .b3-tab-bar .b3-form__icon {
-  /* 设置搜索输入框 */
+.b3-dialog__container .config__panel .config__side .config__tab-head,
+.b3-dialog__container .config__panel .b3-tab-bar .config__tab-head {
+  padding: 0.25em;
+  margin-bottom: 8px;
 }
+.b3-dialog__container .config__panel .config__side .config__tab-head .config__tab-title,
+.b3-dialog__container .config__panel .b3-tab-bar .config__tab-head .config__tab-title {
+  /* 设置对话框标题 */
+  padding: 0;
+}
+.b3-dialog__container .config__panel .config__side .config__tab-head .b3-form__icon,
+.b3-dialog__container .config__panel .b3-tab-bar .config__tab-head .b3-form__icon {
+  /* 设置搜索输入框 */
+  margin: 0;
+}
+.b3-dialog__container .config__panel .config__side .config__tab-scroll,
+.b3-dialog__container .config__panel .b3-tab-bar .config__tab-scroll {
+  padding: 0.25em;
+}
+.b3-dialog__container .config__panel .config__side .config__tab-hr,
 .b3-dialog__container .config__panel .b3-tab-bar .config__tab-hr {
   /* 设置对话框分割线 */
   margin: 8px 0;
-}
-.b3-dialog__container .config__panel .b3-tab-bar .b3-list-item {
-  /* 设置页签项 */
-  margin: 8px !important;
 }
 .b3-dialog__container .config__panel .config__tab-wrap {
   background-color: transparent;
@@ -75,6 +88,17 @@
 .b3-dialog__container .config__panel .config__tab-container .config-group {
   background-color: transparent;
   border: 1px solid var(--b3-border-color);
+  border-radius: var(--custom-border-radius);
+}
+.b3-dialog__container .config__panel .config__tab-container .config-group .config-title {
+  /* 设置项分组标题 */
+  margin: 0;
+  padding: 16px;
+  border-bottom: 1px solid var(--b3-border-color);
+}
+.b3-dialog__container .config__panel .config__tab-container .config-group .config-items {
+  /* 设置项分组项 */
+  background-color: transparent;
 }
 .b3-dialog__container .b3-label:not(.b3-label--inner) {
   box-shadow: initial;

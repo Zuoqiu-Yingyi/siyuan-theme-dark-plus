@@ -91,19 +91,33 @@
         background-color: transparent;
 
         // 设置对话框侧边栏
+        .config__side,
         .b3-tab-bar {
-            .b3-form__icon {
-                /* 设置搜索输入框 */
+
+            // 设置对话框头部
+            .config__tab-head {
+                padding: 0.25em;
+                margin-bottom: 8px;
+
+                .config__tab-title {
+                    /* 设置对话框标题 */
+                    padding: 0;
+                }
+
+                .b3-form__icon {
+                    /* 设置搜索输入框 */
+                    margin: 0;
+                }
+            }
+
+            // 设置对话框页签列表
+            .config__tab-scroll {
+                padding: 0.25em;
             }
 
             .config__tab-hr {
                 /* 设置对话框分割线 */
                 margin: 8px 0;
-            }
-
-            .b3-list-item {
-                /* 设置页签项 */
-                margin: 8px !important;
             }
         }
 
@@ -154,6 +168,19 @@
             .config-group {
                 background-color: transparent;
                 border: 1px solid var(--b3-border-color);
+                border-radius: var(--custom-border-radius);
+
+                .config-title {
+                    /* 设置项分组标题 */
+                    margin: 0;
+                    padding: 16px;
+                    border-bottom: 1px solid var(--b3-border-color);
+                }
+
+                .config-items {
+                    /* 设置项分组项 */
+                    background-color: transparent;
+                }
             }
         }
     }
