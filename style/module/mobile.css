@@ -1,23 +1,26 @@
 /* 移动端优化 */
 /* 移动端编辑区 */
-#editor ~ #sidebar {
-  background-color: var(--custom-popover-background-color);
-}
-#editor ~ #model {
-  background-color: var(--custom-transparent-deeper);
-}
-#editor ~ #model #modelMain .toolbar {
-  /* 移动端搜索控件栏 */
-  background-color: transparent;
-}
-#editor #status {
-  height: initial;
-}
-#editor #status.status--hide {
-  /* 移动端隐藏状态栏 */
-  bottom: -36px;
-}
 #editor ~ #keyboardToolbar,
 #editor .toolbar--border {
   background-color: var(--custom-editor-background-color);
+}
+#sidebar {
+  background-color: var(--custom-popover-background-color);
+}
+#model {
+  background-color: var(--custom-transparent-deeper);
+}
+#model #modelMain > div.fn__flex-column {
+  background-color: transparent !important;
+}
+#model #modelMain .toolbar {
+  /* 移动端搜索控件栏 */
+  background-color: transparent;
+}
+#status {
+  height: initial;
+}
+#status.status--hide {
+  /* 移动端隐藏状态栏 */
+  bottom: -36px;
 }

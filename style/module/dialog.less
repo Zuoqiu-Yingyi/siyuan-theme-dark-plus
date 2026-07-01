@@ -12,7 +12,7 @@
 
 // 搜索结果列表项
 .search-list-item() {
-    padding-bottom: calc(1.25em + 1px);
+    // padding-bottom: calc(1.25em + 1px);
 
     .b3-list-item__text {
         display: var(--custom-search-display);
@@ -112,8 +112,7 @@
             }
 
             // 设置对话框页签列表
-            .config__tab-scroll {
-            }
+            .config__tab-scroll {}
 
             .config__tab-hr {
                 /* 设置对话框分割线 */
@@ -162,25 +161,6 @@
             .config-account__center--text {
                 background-color: transparent;
                 border-left: 1px solid var(--b3-border-color);
-            }
-
-            // 设置项分组
-            .config-group {
-                background-color: transparent;
-                border: 1px solid var(--b3-border-color);
-                border-radius: var(--custom-border-radius);
-
-                .config-title {
-                    /* 设置项分组标题 */
-                    margin: 0;
-                    padding: 16px;
-                    border-bottom: 1px solid var(--b3-border-color);
-                }
-
-                .config-items {
-                    /* 设置项分组项 */
-                    background-color: transparent;
-                }
             }
         }
     }
@@ -301,6 +281,40 @@
             /* 自定义属性名称全宽显示 */
             min-width: 100px;
             width: auto !important;
+        }
+    }
+}
+
+// 设置项分组
+.config-group {
+    background-color: transparent;
+    border: 1px solid var(--b3-border-color);
+    border-radius: var(--custom-border-radius);
+
+    #model & {
+        margin: 24px 16px;
+    }
+
+    // 设置项分组标题
+    .config-title {
+        margin: 0;
+        padding: 16px;
+        border-bottom: 1px solid var(--b3-border-color);
+
+        #model & {
+            margin: 0;
+        }
+    }
+
+    // 设置项分组项
+    .config-items {
+        background-color: transparent;
+
+        .config-item {
+            #model & {
+                margin: 0 16px;
+                padding: 16px 0;
+            }
         }
     }
 }
