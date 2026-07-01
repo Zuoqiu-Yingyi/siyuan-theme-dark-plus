@@ -24,6 +24,9 @@ body > .fn__flex-1 {
   background-color: var(--custom-selection-background-color);
   color: var(--custom-selection-color);
 }
+.b3-list-item {
+  margin: 0;
+}
 .b3-list-item__toggle {
   border-radius: 2px;
   z-index: 2;
