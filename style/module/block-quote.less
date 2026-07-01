@@ -7,6 +7,10 @@
     border-left: 3px solid var(--custom-line-color);
     padding-left: calc(0.5em - 3px);
 
+    &::before {
+        content: unset;
+    }
+
     +blockquote,
     +[data-node-id].bq {
         margin-top: 0.5em;
