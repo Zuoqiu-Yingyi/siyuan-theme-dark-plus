@@ -1,16 +1,40 @@
 # 更改日志 | CHANGE LOG
 
+## v3.0.0/2026-07-01
+
+- [v2.0.4 ... v3.0.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v2.0.4...v3.0.0)
+- 隐藏主面板水平溢出 | Hide horizontal overflow on main panel
+- 添加页签项 2px 边距 | Add 2px margin to tab bar items
+- 新增停靠栏模块样式 | Add dock module with item styles
+- 增强工具栏与状态栏边框样式；添加停靠栏边框 | Enhance toolbar and status bar with border styles; add dock borders
+- 更新面板间距与背景颜色；重构工具栏分隔线样式 | Update panel spacing and background colors; refactor toolbar divider styles
+- 更新各组件为透明背景并调整边距 | Update various components to have transparent backgrounds and adjust margins
+- 为切换项添加过渡属性以实现更平滑的交互 | Add transition property to toggle items for smoother interactions
+- 为智能体聊天输入区添加透明背景样式；重构对话框与悬浮菜单样式 | Add transparent background styles for agent chat input area; refactor dialog and hover menu styles
+- 移除对话框页签头部与滚动区域不必要的内边距；调整悬浮菜单内边距以改善对齐 | Remove unnecessary padding from dialog tab headers and scroll areas; adjust hover menu padding for better alignment
+- 为列表辅助线添加聚焦颜色；更新悬浮样式以提升可见性 | Add focus color for list guides line; update hover styles for better visibility
+- 添加对话框历史样式 | Add dialog history styles
+- 调整缩进与辅助线样式以提升布局一致性 | Adjust indentation and guide line styles for improved layout consistency
+- 优化智能体提及菜单样式并改善悬浮菜单中列表项处理 | Refine agent mention menu styles and improve list item handling in hover menu
+- 新增提示块（callout）样式 | Add block callout styles
+- 为引用块伪元素添加 unset 内容 | Add unset content for blockquote before pseudo-element
+- 优化对话框与全局样式以提升布局一致性 | Refine dialog and global styles for improved layout and consistency
+- 增强侧边栏移动端列表样式 | Enhance sidebar mobile list styles
+- 增强悬浮菜单移动端文档列表与搜索列表样式 | Enhance hover menu styles for mobile document and search lists
+- 重构对话框与移动端样式以提升布局一致性 | Refactor dialog and mobile styles for improved layout and consistency
+- 更新主题版本至 3.0.0 并调整模块导入以保持一致性 | Update theme version to 3.0.0 and adjust module imports for consistency
+
 ## v2.0.4/2025-01-14
 
-- [v2.0.4 ... v2.0.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v2.0.3...v2.0.4)
+- [v2.0.3 ... v2.0.4](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v2.0.3...v2.0.4)
 - 调整代码块样式 | Adjust the style of the code block.
 - [#228](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/228) 调整停靠栏按钮样式 | Adjust the style of the dock bar button.
 - [#226](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/226) 调整属性视图中超链接样式 | Adjust the style of the hyperlink in the attribute view.
 - 调整当前焦点页签栏样式 | Adjust the style of the current focus tab bar.
 
-## v2.0.2/2024-09-03
+## v2.0.3/2024-09-03
 
-- [v2.0.2 ... v2.0.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v2.0.2...v2.0.2)
+- [v2.0.2 ... v2.0.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v2.0.2...v2.0.3)
 - 添加属性视图勾选框样式 | Added the style of the checkbox in the attribute view.
 - [#223](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/issues/223) 修复代码块内容无法显示问题 | Fixed the issue of code block content not displayed.
 
