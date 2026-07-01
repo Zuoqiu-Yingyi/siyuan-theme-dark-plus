@@ -24,6 +24,9 @@
     }
 
     ul.b3-list {
+        // 顶层列表项的缩进
+        .indent(@base-root, @interval, -1);
+
         // 设置前 16 级的样式
         .subtree(@base-root, @interval, @depth);
     }
@@ -85,7 +88,7 @@
             .tree-indent(30px);
 
             &:not([data-type="sidebar-file"]) {
-                .tree-guides(23px, 1rem);
+                .tree-guides(15px, 1em);
             }
         }
     }
@@ -100,7 +103,7 @@
     /* 侧边分栏面板 */
     .file-tree.fn__flex-column {
         .tree-indent(18px);
-        .tree-guides(22px);
+        .tree-guides(14px);
 
         &.sy__tag,
         &.sy__outline {}
