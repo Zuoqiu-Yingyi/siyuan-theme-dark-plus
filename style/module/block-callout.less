@@ -1,0 +1,32 @@
+/* 提示块 */
+
+
+.b3-typography blockquote,
+.protyle-wysiwyg [data-node-id].callout {
+    border-left: 3px solid var(--custom-line-color);
+    padding-left: calc(0.5em - 3px);
+
+    &::before {
+        content: unset;
+    }
+
+    &[data-subtype=NOTE] {
+        border-color: var(--b3-callout-note)
+    }
+
+    &[data-subtype=TIP] {
+        border-color: var(--b3-callout-tip)
+    }
+
+    &[data-subtype=IMPORTANT] {
+        border-color: var(--b3-callout-important)
+    }
+
+    &[data-subtype=WARNING] {
+        border-color: var(--b3-callout-warning)
+    }
+
+    &[data-subtype=CAUTION] {
+        border-color: var(--b3-callout-caution)
+    }
+}

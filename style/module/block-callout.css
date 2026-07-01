@@ -1,0 +1,30 @@
+/* 提示块 */
+.b3-typography blockquote,
+.protyle-wysiwyg [data-node-id].callout {
+  border-left: 3px solid var(--custom-line-color);
+  padding-left: calc(0.5em - 3px);
+}
+.b3-typography blockquote::before,
+.protyle-wysiwyg [data-node-id].callout::before {
+  content: unset;
+}
+.b3-typography blockquote[data-subtype=NOTE],
+.protyle-wysiwyg [data-node-id].callout[data-subtype=NOTE] {
+  border-color: var(--b3-callout-note);
+}
+.b3-typography blockquote[data-subtype=TIP],
+.protyle-wysiwyg [data-node-id].callout[data-subtype=TIP] {
+  border-color: var(--b3-callout-tip);
+}
+.b3-typography blockquote[data-subtype=IMPORTANT],
+.protyle-wysiwyg [data-node-id].callout[data-subtype=IMPORTANT] {
+  border-color: var(--b3-callout-important);
+}
+.b3-typography blockquote[data-subtype=WARNING],
+.protyle-wysiwyg [data-node-id].callout[data-subtype=WARNING] {
+  border-color: var(--b3-callout-warning);
+}
+.b3-typography blockquote[data-subtype=CAUTION],
+.protyle-wysiwyg [data-node-id].callout[data-subtype=CAUTION] {
+  border-color: var(--b3-callout-caution);
+}

@@ -2,6 +2,7 @@
 /* 边栏 */
 @import url("style/module/bar.css?v=2.0.4");
 /* 块级元素 */
+@import url("style/module/block-callout.css?v=2.0.4");
 @import url("style/module/block-av.css?v=2.0.4");
 @import url("style/module/block-code.css?v=2.0.4");
 @import url("style/module/block-echarts.css?v=2.0.4");
