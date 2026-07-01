@@ -9,3 +9,7 @@
   /* 过长收集箱标题显示样式 */
   display: var(--custom-inbox-display);
 }
+.sy__inbox ul.b3-list,
+#sidebar .b3-list--mobile [data-type="sidebar-inbox"] ul.b3-list {
+  padding: 0.25em !important;
+}
