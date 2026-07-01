@@ -226,19 +226,33 @@
         // line-height: unset;
     }
 
+
+
+
+
     // 引用搜索菜单
     &.protyle-hint {
         // 块引用搜索结果宽度设置为自动宽度
         padding: calc(var(--custom-popover-menu-padding-width) / 2);
         width: var(--custom-popover-menu-width) !important;
 
-        // 引用搜索菜单项容器
-        >div {
-            padding: calc(var(--custom-popover-menu-padding-width) / 2);
+        // agent 弹出菜单
+        &.agent-mention-menu {
+            .b3-list-item {
+                border: unset;
+            }
         }
 
-        .b3-list-item {
-            width: 100% !important;
+        &:not(.agent-mention-menu) {
+            .b3-list-item {
+                width: 100% !important;
+            }
+        }
+
+        // 引用搜索菜单项容器
+        >div {
+            // 预留滚动条宽度
+            padding: calc(var(--custom-popover-menu-padding-width) / 2);
         }
     }
 
@@ -269,68 +283,46 @@
                 // column-fill: auto;
                 // height: 32em !important;
 
-                >.b3-list-item {
-                    width: 100% !important;
+                .b3-list-item {
+                    &[data-id="heading1"] {
+                        /* 一级子标题 */
+                        color: var(--custom-h1-color);
+                    }
+
+                    &[data-id="heading2"] {
+                        /* 一级子标题 */
+                        color: var(--custom-h2-color);
+                    }
+
+                    &[data-id="heading3"] {
+                        /* 一级子标题 */
+                        color: var(--custom-h3-color);
+                    }
+
+                    &[data-id="heading4"] {
+                        /* 一级子标题 */
+                        color: var(--custom-h4-color);
+                    }
+
+                    &[data-id="heading5"] {
+                        /* 一级子标题 */
+                        color: var(--custom-h5-color);
+                    }
+
+                    &[data-id="heading6"] {
+                        /* 一级子标题 */
+                        color: var(--custom-h6-color);
+                    }
+
+                    .color__square {
+                        width: 1.25em;
+                        height: 1.25em;
+                    }
                 }
 
-                >div.b3-menu__separator {
+                .b3-menu__separator {
                     /* 分割线 */
-                    background-color: var(--b3-theme-on-surface);
-
-                    // 第1条分割线
-                    &:first-of-type {
-                        // height: 34px;
-                        // background-color: transparent;
-
-                        +button {
-                            *:is(.b3-list-item__graphic, .b3-list-item__text) {
-                                /* 一级子标题 */
-                                color: var(--custom-h1-color);
-                            }
-
-                            +button {
-                                *:is(.b3-list-item__graphic, .b3-list-item__text) {
-                                    /* 二级子标题 */
-                                    color: var(--custom-h2-color);
-                                }
-
-                                +button {
-                                    *:is(.b3-list-item__graphic, .b3-list-item__text) {
-                                        /* 三级子标题 */
-                                        color: var(--custom-h3-color);
-                                    }
-
-                                    +button {
-                                        *:is(.b3-list-item__graphic, .b3-list-item__text) {
-                                            /* 四级子标题 */
-                                            color: var(--custom-h4-color);
-                                        }
-
-                                        +button {
-                                            *:is(.b3-list-item__graphic, .b3-list-item__text) {
-                                                /* 五级子标题 */
-                                                color: var(--custom-h5-color);
-                                            }
-
-                                            +button {
-                                                *:is(.b3-list-item__graphic, .b3-list-item__text) {
-                                                    /* 六级子标题 */
-                                                    color: var(--custom-h6-color);
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    &:nth-of-type(4) {
-                        /* 第4条分割线 */
-                        display: none;
-                        // height: 0;
-                        // background-color: transparent;
-                    }
+                    // background-color: var(--b3-theme-on-surface);
                 }
             }
         }
