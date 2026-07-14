@@ -6,7 +6,6 @@
 }
 .dock .dock__split::after {
   width: calc(var(--custom-dock-item-icon-size) + var(--custom-dock-item-padding-width) * 2);
-  left: var(--custom-dock-item-margin-width);
 }
 .layout__dockl,
 .layout__dockr,
