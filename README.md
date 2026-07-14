@@ -591,12 +591,12 @@ PS: The table is generated automatically using [All Contributors · GitHub](http
 
 ## CUSTOM CONFIG
 
-| Custom configuration files                  | Product                                                                                                                                                   |
-| :------------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<workspace>/data/widgets/custom.js`        | Theme feature configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/module/config.js`           |
-| `<workspace>/data/widgets/custom.css`       | Themes share style configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/module/config.css`     |
-| `<workspace>/data/widgets/custom-light.css` | Theme light color style configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/config/light.css` |
-| `<workspace>/data/widgets/custom-dark.css`  | Theme dark config style configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/color/dark.css`   |
+| Custom configuration files           | Product                                                                                                                                                   |
+| :----------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `<workspace>/data/widgets/custom.js` | Theme feature configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/module/config.js`           |
+| Code Snippet `custom.css`            | Themes share style configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/module/config.css`     |
+| Code Snippet `custom-light.css`      | Theme light color style configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/config/light.css` |
+| Code Snippet `custom-dark.css`       | Theme dark config style configuration, which overwrites the corresponding value in file `<workspace>/conf/appearance/themes/Dark+/style/color/dark.css`   |
 
 ### CONFIG EXAMPLE
 
@@ -666,8 +666,8 @@ For more configuration items, see [config.js](./script/module/config.js).
 
 ```css
 /**
- * File Path
- *    <workspace>/data/widgets/custom.css
+ * Code Snippet
+ *    SiYuan Settings -> Appearance -> Code Snippet -> CSS -> Add CSS (code snippet title can be customized)
  * Example function:
  *    Custom the blank line prompt text
  */
@@ -706,8 +706,8 @@ Code snippets can be set in Siyuan <kbd>Settings > Appearance > Code Snippet > C
 
 ```css
 /**
- * File Path
- *    <workspace>/data/widgets/custom-light.css
+ * Code Snippet
+ *    SiYuan Settings -> Appearance -> Code Snippet -> CSS -> Add CSS (code snippet title can be customized)
  * Example function:
  *    Custom default light theme background image
  *        The path of the light background image in the example is
@@ -745,8 +745,8 @@ Code snippets can be set in Siyuan <kbd>Settings > Appearance > Code Snippet > C
 
 ```css
 /**
- * File Path
- *    <workspace>/data/widgets/custom-dark.css
+ * Code Snippet
+ *    SiYuan Settings -> Appearance -> Code Snippet -> CSS -> Add CSS (code snippet title can be customized)
  * Example function:
  *    Custom default dark theme background image
  *        The path of the dark background image in the example is

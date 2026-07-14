@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 完善文档中关于自定义样式的说明 | Improve the description of custom styles in the document.
+
 ## v3.0.0/2026-07-01
 
 - [v2.0.4 ... v3.0.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v2.0.4...v3.0.0)

@@ -591,12 +591,12 @@
 
 ## 自定义配置
 
-| 自定义配置文件                             | 说明                                                                                                |
-| :----------------------------------------- | :-------------------------------------------------------------------------------------------------- |
-| `<工作空间>/data/widgets/custom.js`        | 主题功能配置选项, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/module/config.js` 中对应的值  |
-| `<工作空间>/data/widgets/custom.css`       | 主题共用样式配置, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/module/config.css` 中对应的值 |
-| `<工作空间>/data/widgets/custom-light.css` | 主题浅色样式配置, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/config/light.css` 中对应的值  |
-| `<工作空间>/data/widgets/custom-dark.css`  | 主题深色样式配置, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/config/dark.css` 中对应的值   |
+| 自定义配置文件                      | 说明                                                                                                |
+| :---------------------------------- | :-------------------------------------------------------------------------------------------------- |
+| `<工作空间>/data/widgets/custom.js` | 主题功能配置选项, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/module/config.js` 中对应的值  |
+| 代码片段 `custom.css`               | 主题共用样式配置, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/module/config.css` 中对应的值 |
+| 代码片段 `custom-light.css`         | 主题浅色样式配置, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/config/light.css` 中对应的值  |
+| 代码片段 `custom-dark.css`          | 主题深色样式配置, 覆盖 `<工作空间>/conf/appearance/themes/Dark+/style/config/dark.css` 中对应的值   |
 
 ### 配置示例
 
@@ -666,8 +666,8 @@ export async function callback(config) {
 
 ```css
 /**
- * 文件路径
- *    <工作空间>/data/widgets/custom.css
+ * 代码片段
+ *    思源设置面板 -> 外观 -> 代码片段 -> CSS -> 添加 CSS (代码片段标题可自定义)
  * 示例功能:
  *    自定义空行提示文字
  */
@@ -706,8 +706,8 @@ export async function callback(config) {
 
 ```css
 /**
- * 文件路径
- *    <工作空间>/data/widgets/custom-light.css
+ * 代码片段
+ *    思源设置面板 -> 外观 -> 代码片段 -> CSS -> 添加 CSS (代码片段标题可自定义)
  * 示例功能:
  *    自定义默认浅色主题背景图片
  *        示例中浅色背景图片的路径为
@@ -745,8 +745,8 @@ export async function callback(config) {
 
 ```css
 /**
- * 文件路径
- *    <工作空间>/data/widgets/custom-dark.css
+ * 代码片段
+ *    思源设置面板 -> 外观 -> 代码片段 -> CSS -> 添加 CSS (代码片段标题可自定义)
  * 示例功能:
  *    自定义默认深色主题背景图片
  *        示例中深色背景图片的路径为
