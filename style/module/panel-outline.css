@@ -1,7 +1,9 @@
 /* 大纲面板 */
 .sy__outline .b3-list-item__graphic {
   /* 标题图标样式 */
-  padding: 0;
+  padding: 0 3px;
+  margin: 0;
+  border-radius: var(--custom-border-radius);
 }
 .sy__outline .b3-list-item__text {
   /* 过长子标题名显示样式 */

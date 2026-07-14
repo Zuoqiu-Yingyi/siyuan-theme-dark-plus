@@ -3,6 +3,7 @@
 - 完善文档中关于自定义样式的说明 | Improve the description of custom styles in the document.
 - 调整侧边栏分隔线样式 | Adjust the style of the sidebar separator.
 - 调整面包屑与文档标签栏样式 | Adjust the style of the breadcrumb and document tab bar.
+- 调整图标按钮的悬浮样式 | Adjust the hover style of icon buttons.
 
 ## v3.0.0/2026-07-01
 

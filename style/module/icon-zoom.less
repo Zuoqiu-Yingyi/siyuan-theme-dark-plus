@@ -9,14 +9,40 @@
     font-size: 150%;
 }
 
-// 悬浮预览图标
-svg,
-// 文章引用计数
-// .counter,
+// 内容块控件图标
+.protyle-gutters {
+    button.ariaLabel {
+
+        // 插入块按钮
+        &.protyle-gutters__plus {
+            border-radius: var(--custom-border-radius);
+            outline: 1px solid var(--custom-control-button-hover-outline-color);
+        }
+
+        // 块控件按钮
+        &:not(.protyle-gutters__plus) {
+            &:hover {
+                &::before {
+                    padding: 2px;
+                    outline: 1px solid var(--custom-control-button-hover-outline-color);
+                }
+            }
+        }
+
+
+    }
+}
+
 // 块引用计数
+// .counter,
+// 文章引用计数
 .protyle-attr--refcount {
-    &.popover__block:hover {
-        .popover();
+    &.popover__block {
+        padding: 4px 8px;
+
+        &:hover {
+            // .popover();
+        }
     }
 }
 
@@ -31,21 +57,55 @@ svg,
 .toolbar__item,
 // 按钮
 .b3-list-item__action,
+// 文档块菜单
+.protyle-title__icon,
+// 文档树中的引用计数
+.counter,
+// 文档标题的引用计数
+.protyle-attr--refcount,
+// 标题面板图标
+.b3-list-item__graphic,
+// 面包屑按钮
 .block__icon {
+    transition: unset;
+
     &:hover {
+        outline: 1px solid var(--custom-control-button-hover-outline-color);
+        outline-offset: -1px;
 
         img,
         svg:not(.b3-list-item__arrow) {
-            .popover();
+            // .popover();
         }
 
         &:not(:has(*)) {
+
             // 放大整个元素
             &:not(.counter) {
                 // 不放大数字
-                .popover();
+                // .popover();
                 // .popover-font();
             }
         }
     }
+}
+
+// 文档树图标
+.b3-list-item__icon,
+// 文档树中的引用计数
+.counter,
+// 文档标题的引用计数
+.protyle-attr--refcount,
+// 标题面板图标
+.b3-list-item__graphic {
+    &.popover__block {
+        &:hover {
+            outline-color: var(--custom-control-button-hover-preview-outline-color);
+        }
+    }
+}
+
+// 面包屑按钮
+.protyle-breadcrumb__item:has(>.popover__block:hover) {
+    border-color: var(--custom-control-button-hover-preview-outline-color);
 }

@@ -1,4 +1,5 @@
 /* 虚拟引用 */
 .protyle-wysiwyg [data-node-id] span[data-type="virtual-block-ref"]:hover {
   background-color: var(--custom-span-virtual-ref-background-color);
+  border-bottom-color: var(--custom-span-virtual-ref-hover-border-color);
 }

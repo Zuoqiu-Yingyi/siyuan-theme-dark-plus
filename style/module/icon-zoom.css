@@ -1,30 +1,46 @@
 /* 引入参数配置 */
-svg.popover__block:hover,
-.protyle-attr--refcount.popover__block:hover {
-  transform: scale(1.25);
-  transition: all 0.1s ease-in-out;
+.protyle-gutters button.ariaLabel.protyle-gutters__plus {
+  border-radius: var(--custom-border-radius);
+  outline: 1px solid var(--custom-control-button-hover-outline-color);
 }
-.b3-list-item__icon:hover img,
-.dock__item:hover img,
-.b3-tooltips:hover img,
-.toolbar__item:hover img,
-.b3-list-item__action:hover img,
-.block__icon:hover img,
-.b3-list-item__icon:hover svg:not(.b3-list-item__arrow),
-.dock__item:hover svg:not(.b3-list-item__arrow),
-.b3-tooltips:hover svg:not(.b3-list-item__arrow),
-.toolbar__item:hover svg:not(.b3-list-item__arrow),
-.b3-list-item__action:hover svg:not(.b3-list-item__arrow),
-.block__icon:hover svg:not(.b3-list-item__arrow) {
-  transform: scale(1.25);
-  transition: all 0.1s ease-in-out;
+.protyle-gutters button.ariaLabel:not(.protyle-gutters__plus):hover::before {
+  padding: 2px;
+  outline: 1px solid var(--custom-control-button-hover-outline-color);
 }
-.b3-list-item__icon:hover:not(:has(*)):not(.counter),
-.dock__item:hover:not(:has(*)):not(.counter),
-.b3-tooltips:hover:not(:has(*)):not(.counter),
-.toolbar__item:hover:not(:has(*)):not(.counter),
-.b3-list-item__action:hover:not(:has(*)):not(.counter),
-.block__icon:hover:not(:has(*)):not(.counter) {
-  transform: scale(1.25);
-  transition: all 0.1s ease-in-out;
+.protyle-attr--refcount.popover__block {
+  padding: 4px 8px;
+}
+.b3-list-item__icon,
+.dock__item,
+.b3-tooltips,
+.toolbar__item,
+.b3-list-item__action,
+.protyle-title__icon,
+.counter,
+.protyle-attr--refcount,
+.b3-list-item__graphic,
+.block__icon {
+  transition: unset;
+}
+.b3-list-item__icon:hover,
+.dock__item:hover,
+.b3-tooltips:hover,
+.toolbar__item:hover,
+.b3-list-item__action:hover,
+.protyle-title__icon:hover,
+.counter:hover,
+.protyle-attr--refcount:hover,
+.b3-list-item__graphic:hover,
+.block__icon:hover {
+  outline: 1px solid var(--custom-control-button-hover-outline-color);
+  outline-offset: -1px;
+}
+.b3-list-item__icon.popover__block:hover,
+.counter.popover__block:hover,
+.protyle-attr--refcount.popover__block:hover,
+.b3-list-item__graphic.popover__block:hover {
+  outline-color: var(--custom-control-button-hover-preview-outline-color);
+}
+.protyle-breadcrumb__item:has(>.popover__block:hover) {
+  border-color: var(--custom-control-button-hover-preview-outline-color);
 }

@@ -1,13 +1,18 @@
 /* 图标 */
 .b3-list-item__icon {
   width: 1em;
-  padding-left: 2px;
-  padding-right: 6px;
+  margin: 0 2px;
 }
 .b3-list-item__icon svg,
 .b3-list-item__icon img {
   margin-left: 2px;
   margin-right: -2px;
+}
+.protyle-title__icon {
+  margin: 0;
+  padding: 4px;
+  top: calc(50% - 10px);
+  border-radius: var(--custom-border-radius);
 }
 .emojis .emojis__panel .emojis__content .emojis__item {
   /* 图标 */
