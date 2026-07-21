@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 修复折叠列表序号样式问题 | Fixed the style issue of the folded list number.
+
 ## v3.1.0/2026-07-14
 
 - [v3.0.0 ... v3.1.0](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v3.0.0...v3.1.0)
