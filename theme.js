@@ -372,13 +372,13 @@ window.theme.changeThemeMode = function (
 //     "content": "0",
 // });
 
-/* 根据当前主题模式加载样式配置文件 */
-if (window.siyuan.config.appearance[window.siyuan.config.appearance.mode ? "themeDark" : "themeLight"] === "Dark+") {
-    window.theme.changeThemeMode(
-        `/widgets/custom-light.css`,
-        `/widgets/custom-dark.css`,
-    );
-}
+/* @deprecated 根据当前主题模式加载样式配置文件, 替换为代码片段方案 */
+// if (window.siyuan.config.appearance[window.siyuan.config.appearance.mode ? "themeDark" : "themeLight"] === "Dark+") {
+//     window.theme.changeThemeMode(
+//         `/widgets/custom-light.css`,
+//         `/widgets/custom-dark.css`,
+//     );
+// }
 
 switch (window.theme.clientMode) {
     case "window":
