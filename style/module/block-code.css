@@ -32,7 +32,7 @@
   /* 功能按钮栏 */
   position: sticky;
   width: 100%;
-  height: 1em;
+  height: 24px;
   justify-content: end;
 }
 .protyle-wysiwyg [data-node-id].code-block > .protyle-action > span {
@@ -45,7 +45,6 @@
 .protyle-wysiwyg [data-node-id].code-block > .protyle-action > span.protyle-action__language {
   /* 语言标签 */
   margin: 0 0.5em;
-  font-size: 75%;
   line-height: normal;
 }
 .protyle-wysiwyg [data-node-id].code-block > .protyle-action > span.fn__flex-1 {
@@ -56,25 +55,11 @@
   /* 代码块主体 */
   padding: 0 0 1em;
   background-color: transparent;
-  flex-direction: row;
-  width: 100%;
 }
 .protyle-wysiwyg [data-node-id].code-block > .hljs > .protyle-linenumber__rows {
   /* 行号 */
-  position: unset;
-  font-size: unset;
-  padding: 0 0.5em;
+  padding: 0 1em;
   border-right: var(--custom-block-code-linenumber-separator-width) solid var(--custom-block-code-linenumber-separator-color);
-}
-.protyle-wysiwyg [data-node-id].code-block > .hljs > div[contenteditable][spellcheck] {
-  min-height: unset;
-  padding-left: 0.5em !important;
-  padding-right: 0.5em;
-  overflow-y: auto;
-}
-.protyle-wysiwyg [data-node-id].code-block > .protyle-attr {
-  /* 块属性 */
-  top: -16px;
 }
 .protyle-wysiwyg [data-node-id].code-block.protyle-wysiwyg--hl .hljs,
 .protyle-wysiwyg [data-node-id].code-block.protyle-wysiwyg--select .hljs,
