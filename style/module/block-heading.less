@@ -19,10 +19,10 @@
         counter-reset: e(%("h%d-counter", @level + 1)) 0;
 
         &::before {
-            display: block !important;
             float: left;
             font-size: var(--custom-h-num-font-size);
             content: .heading-content[@@level];
+            line-height: normal;
 
             // 显示标题级别
             // content: var(e(%("--custom-h%d-mark", @level)));
@@ -65,3 +65,17 @@
 .heading(5);
 .heading(6);
 /* 👆标题自动编号👆 */
+
+.protyle-wysiwyg[data-heading-number-scope] {
+    [data-node-id][data-type="NodeHeading"]>[contenteditable]:first-child {
+        padding-inline-start: unset !important;
+
+        &::before {
+            color: inherit !important;
+            top: unset !important;
+
+            font-size: var(--custom-h-num-font-size);
+            bottom: 0;
+        }
+    }
+}

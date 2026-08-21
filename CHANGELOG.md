@@ -5,6 +5,7 @@
 - 优化代码块样式 | Optimize the style of the code block.
 - 优化标题页签栏的样式 | Optimize the style of the title tab bar.
 - 调整图标按钮样式 | Adjust the style of the icon button.
+- 兼容思源内置的标题自动编号功能 | Compatible with Siyuan's built-in title auto-numbering feature.
 
 ## v3.1.0/2026-07-14
 

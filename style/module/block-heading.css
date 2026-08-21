@@ -16,10 +16,10 @@
 .protyle-wysiwyg > [data-node-id].h1::before,
 .protyle-wysiwyg > [data-node-id][fold="1"].h1::before,
 .b3-typography > h1::before {
-  display: block !important;
   float: left;
   font-size: var(--custom-h-num-font-size);
   content: counter(h1-counter) "\00A0";
+  line-height: normal;
 }
 .protyle-wysiwyg [data-node-id].h1,
 .b3-typography h1 {
@@ -40,10 +40,10 @@
 .protyle-wysiwyg > [data-node-id].h2::before,
 .protyle-wysiwyg > [data-node-id][fold="1"].h2::before,
 .b3-typography > h2::before {
-  display: block !important;
   float: left;
   font-size: var(--custom-h-num-font-size);
   content: counter(h1-counter) "." counter(h2-counter) "\00A0";
+  line-height: normal;
 }
 .protyle-wysiwyg [data-node-id].h2,
 .b3-typography h2 {
@@ -64,10 +64,10 @@
 .protyle-wysiwyg > [data-node-id].h3::before,
 .protyle-wysiwyg > [data-node-id][fold="1"].h3::before,
 .b3-typography > h3::before {
-  display: block !important;
   float: left;
   font-size: var(--custom-h-num-font-size);
   content: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) "\00A0";
+  line-height: normal;
 }
 .protyle-wysiwyg [data-node-id].h3,
 .b3-typography h3 {
@@ -88,10 +88,10 @@
 .protyle-wysiwyg > [data-node-id].h4::before,
 .protyle-wysiwyg > [data-node-id][fold="1"].h4::before,
 .b3-typography > h4::before {
-  display: block !important;
   float: left;
   font-size: var(--custom-h-num-font-size);
   content: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) "\00A0";
+  line-height: normal;
 }
 .protyle-wysiwyg [data-node-id].h4,
 .b3-typography h4 {
@@ -112,10 +112,10 @@
 .protyle-wysiwyg > [data-node-id].h5::before,
 .protyle-wysiwyg > [data-node-id][fold="1"].h5::before,
 .b3-typography > h5::before {
-  display: block !important;
   float: left;
   font-size: var(--custom-h-num-font-size);
   content: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) "." counter(h5-counter) "\00A0";
+  line-height: normal;
 }
 .protyle-wysiwyg [data-node-id].h5,
 .b3-typography h5 {
@@ -136,10 +136,10 @@
 .protyle-wysiwyg > [data-node-id].h6::before,
 .protyle-wysiwyg > [data-node-id][fold="1"].h6::before,
 .b3-typography > h6::before {
-  display: block !important;
   float: left;
   font-size: var(--custom-h-num-font-size);
   content: counter(h1-counter) "." counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter) "." counter(h5-counter) "." counter(h6-counter) "\00A0";
+  line-height: normal;
 }
 .protyle-wysiwyg [data-node-id].h6,
 .b3-typography h6 {
@@ -152,3 +152,12 @@
   padding-left: var(--custom-h6-indentation);
 }
 /* 👆标题自动编号👆 */
+.protyle-wysiwyg[data-heading-number-scope] [data-node-id][data-type="NodeHeading"] > [contenteditable]:first-child {
+  padding-inline-start: unset !important;
+}
+.protyle-wysiwyg[data-heading-number-scope] [data-node-id][data-type="NodeHeading"] > [contenteditable]:first-child::before {
+  color: inherit !important;
+  top: unset !important;
+  font-size: var(--custom-h-num-font-size);
+  bottom: 0;
+}
