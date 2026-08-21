@@ -8,7 +8,6 @@
 .layout-tab-bar {
   background-color: transparent;
   padding: 0;
-  border-bottom: unset;
   flex-wrap: var(--custom-tab-bar-flex-wrap);
 }
 .layout-tab-bar .item {
