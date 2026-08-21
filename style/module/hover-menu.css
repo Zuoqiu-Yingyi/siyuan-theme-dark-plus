@@ -79,14 +79,6 @@
   /* 背景颜色 */
   border-radius: unset;
 }
-.b3-menu__items.b3-menu__items--menu {
-  /* REF: [第一个子元素在未超过父元素高度的情况下设置margin-top导致出现竖向滚动条的问题_Andrasen的博客-CSDN博客](https://blog.csdn.net/Andrasen/article/details/105676175) */
-  padding: var(--custom-popover-menu-padding-width);
-  background-color: transparent;
-  backdrop-filter: none;
-  outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
-  overflow-x: visible;
-}
 .b3-menu__items.b3-menu__items--menu .b3-menu__item:not(.b3-menu__item--readonly) {
   /* padding-top: var(--custom-popover-menu-margin-width); */
   /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */

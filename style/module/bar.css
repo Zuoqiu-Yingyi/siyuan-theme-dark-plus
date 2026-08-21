@@ -8,6 +8,9 @@
 .inactive-window-title-bar .protyle-toolbar__divider {
   color: var(--custom-window-inactive-title-bar-color);
 }
+#layouts > .fn__flex-1 {
+  margin: unset !important;
+}
 /* 页签新窗口 */
 body.body--window #layouts .layout-tab-bar--readonly {
   /* 页签栏 */
