@@ -79,6 +79,30 @@
   /* 背景颜色 */
   border-radius: unset;
 }
+.b3-menu__items.b3-menu__items--menu {
+  /* REF: [第一个子元素在未超过父元素高度的情况下设置margin-top导致出现竖向滚动条的问题_Andrasen的博客-CSDN博客](https://blog.csdn.net/Andrasen/article/details/105676175) */
+  padding: var(--custom-popover-menu-padding-width);
+  background-color: transparent;
+  backdrop-filter: none;
+  outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
+  overflow-x: visible;
+}
+.b3-menu__items.b3-menu__items--menu .b3-menu__item:not(.b3-menu__item--readonly) {
+  /* padding-top: var(--custom-popover-menu-margin-width); */
+  /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
+  margin: calc(var(--custom-popover-menu-margin-width) + var(--custom-popover-menu-outline-width) * 2) 0;
+  border-radius: var(--custom-border-radius);
+  outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
+  outline-offset: calc(var(--custom-popover-menu-outline-width) * -1);
+}
+.b3-menu__items.b3-menu__items--menu .b3-menu__item:not(.b3-menu__item--readonly):first-child {
+  /* 补偿第一项 */
+  margin-top: 0 !important;
+}
+.b3-menu__items.b3-menu__items--menu .b3-menu__item:not(.b3-menu__item--readonly):last-child:not(.fn_none) {
+  /* 补偿最后一项 */
+  margin-bottom: 0 !important;
+}
 .b3-list {
   /* REF: [第一个子元素在未超过父元素高度的情况下设置margin-top导致出现竖向滚动条的问题_Andrasen的博客-CSDN博客](https://blog.csdn.net/Andrasen/article/details/105676175) */
   padding: var(--custom-popover-menu-padding-width);
@@ -177,6 +201,7 @@
 .sy__inbox .b3-list .b3-list-item,
 .sy__backlink .b3-list .b3-list-item,
 .b3-dialog__container .b3-list .b3-list-item,
+.b3-menu__filter .b3-list .b3-list-item,
 .protyle-util .b3-list .b3-list-item,
 #historyContainer .b3-list .b3-list-item,
 #modelMain .b3-list .b3-list-item,
@@ -194,6 +219,7 @@
 .sy__inbox .b3-list .b3-list-item:first-child,
 .sy__backlink .b3-list .b3-list-item:first-child,
 .b3-dialog__container .b3-list .b3-list-item:first-child,
+.b3-menu__filter .b3-list .b3-list-item:first-child,
 .protyle-util .b3-list .b3-list-item:first-child,
 #historyContainer .b3-list .b3-list-item:first-child,
 #modelMain .b3-list .b3-list-item:first-child,
@@ -207,6 +233,7 @@
 .sy__inbox .b3-list .b3-list-item:last-child:not(.fn_none),
 .sy__backlink .b3-list .b3-list-item:last-child:not(.fn_none),
 .b3-dialog__container .b3-list .b3-list-item:last-child:not(.fn_none),
+.b3-menu__filter .b3-list .b3-list-item:last-child:not(.fn_none),
 .protyle-util .b3-list .b3-list-item:last-child:not(.fn_none),
 #historyContainer .b3-list .b3-list-item:last-child:not(.fn_none),
 #modelMain .b3-list .b3-list-item:last-child:not(.fn_none),
@@ -220,6 +247,7 @@
 .sy__inbox .b3-list .b3-list-itembutton,
 .sy__backlink .b3-list .b3-list-itembutton,
 .b3-dialog__container .b3-list .b3-list-itembutton,
+.b3-menu__filter .b3-list .b3-list-itembutton,
 .protyle-util .b3-list .b3-list-itembutton,
 #historyContainer .b3-list .b3-list-itembutton,
 #modelMain .b3-list .b3-list-itembutton,
@@ -232,6 +260,7 @@
 .sy__inbox .b3-list .b3-list-item .b3-list-item__meta:not(.fn__flex),
 .sy__backlink .b3-list .b3-list-item .b3-list-item__meta:not(.fn__flex),
 .b3-dialog__container .b3-list .b3-list-item .b3-list-item__meta:not(.fn__flex),
+.b3-menu__filter .b3-list .b3-list-item .b3-list-item__meta:not(.fn__flex),
 .protyle-util .b3-list .b3-list-item .b3-list-item__meta:not(.fn__flex),
 #historyContainer .b3-list .b3-list-item .b3-list-item__meta:not(.fn__flex),
 #modelMain .b3-list .b3-list-item .b3-list-item__meta:not(.fn__flex),
@@ -248,6 +277,7 @@
 .sy__inbox .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
 .sy__backlink .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
 .b3-dialog__container .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
+.b3-menu__filter .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
 .protyle-util .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
 #historyContainer .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
 #modelMain .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
@@ -260,6 +290,7 @@
 .sy__inbox .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
 .sy__backlink .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
 .b3-dialog__container .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
+.b3-menu__filter .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
 .protyle-util .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
 #historyContainer .b3-list .b3-list-item .b3-list-item__meta.fn__flex,
 #modelMain .b3-list .b3-list-item .b3-list-item__meta.fn__flex,

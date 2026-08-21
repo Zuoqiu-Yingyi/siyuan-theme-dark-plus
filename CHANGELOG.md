@@ -7,6 +7,7 @@
 - 调整图标按钮样式 | Adjust the style of the icon button.
 - 兼容思源内置的标题自动编号功能 | Compatible with Siyuan's built-in title auto-numbering feature.
 - 调整设置面板中卡片的样式 | Adjust the style of the card in the settings panel.
+- 调整下拉列表菜单的样式 | Adjust the style of the dropdown list menu.
 
 ## v3.1.0/2026-07-14
 

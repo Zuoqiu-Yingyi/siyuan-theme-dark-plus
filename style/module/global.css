@@ -41,18 +41,17 @@ body > .fn__flex-1 {
   word-wrap: normal;
   max-width: none;
 }
-/* 文本输入框 */
-input.b3-text-field {
-  background-color: transparent;
-}
-/* 多行文本输入框 */
-textarea.b3-text-field {
-  max-width: 100%;
-  background-color: transparent;
-}
-/* 下拉选择框 */
+input.b3-text-field,
+textarea.b3-text-field,
+input.b3-select,
 select.b3-select {
   background-color: transparent;
+}
+input.b3-text-field:hover,
+textarea.b3-text-field:hover,
+input.b3-select:hover,
+select.b3-select:hover {
+  background-color: var(--b3-list-hover);
 }
 /* 开关 */
 input.b3-switch {

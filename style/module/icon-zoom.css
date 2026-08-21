@@ -12,7 +12,7 @@
 }
 .b3-list-item__icon,
 .dock__item,
-.b3-tooltips,
+.b3-tooltips:not(.config-range__desktop),
 .toolbar__item,
 .b3-list-item__action,
 .protyle-title__icon,
@@ -25,7 +25,7 @@
 }
 .b3-list-item__icon:hover,
 .dock__item:hover,
-.b3-tooltips:hover,
+.b3-tooltips:not(.config-range__desktop):hover,
 .toolbar__item:hover,
 .b3-list-item__action:hover,
 .protyle-title__icon:hover,

@@ -21,24 +21,7 @@
 // 列表项
 .list-item() {
     .b3-list-item {
-        &:first-child {
-            /* 补偿第一项 */
-            margin-top: 0 !important;
-        }
-
-        /* padding-top: var(--custom-popover-menu-margin-width); */
-        /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
-        margin: calc(var(--custom-popover-menu-margin-width) + var(--custom-popover-menu-outline-width) * 2) 0;
-        border-radius: var(--custom-border-radius);
-        // padding: 0.5em;
-
-        outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
-        outline-offset: calc(var(--custom-popover-menu-outline-width) * -1);
-
-        &:last-child:not(.fn_none) {
-            /* 补偿最后一项 */
-            margin-bottom: 0 !important;
-        }
+        .list-item-style();
 
         &button {
             margin: calc(var(--custom-popover-menu-margin-width) + var(--custom-popover-menu-outline-width) * 2) auto !important;
@@ -63,6 +46,27 @@
                 padding: 0.5em;
             }
         }
+    }
+}
+
+.list-item-style() {
+    &:first-child {
+        /* 补偿第一项 */
+        margin-top: 0 !important;
+    }
+
+    /* padding-top: var(--custom-popover-menu-margin-width); */
+    /* border-bottom: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--b3-theme-on-surface); */
+    margin: calc(var(--custom-popover-menu-margin-width) + var(--custom-popover-menu-outline-width) * 2) 0;
+    border-radius: var(--custom-border-radius);
+    // padding: 0.5em;
+
+    outline: var(--custom-popover-menu-outline-width) var(--custom-popover-menu-outline-style) var(--custom-popover-menu-outline-color);
+    outline-offset: calc(var(--custom-popover-menu-outline-width) * -1);
+
+    &:last-child:not(.fn_none) {
+        /* 补偿最后一项 */
+        margin-bottom: 0 !important;
     }
 }
 
@@ -196,6 +200,15 @@
     }
 }
 
+// 下拉选择菜单
+.b3-menu__items.b3-menu__items--menu {
+    .list();
+
+    .b3-menu__item:not(.b3-menu__item--readonly) {
+        .list-item-style();
+    }
+}
+
 // 搜索结果列表
 .b3-list {
     .list();
@@ -225,10 +238,6 @@
         border-radius: var(--custom-border-radius);
         // line-height: unset;
     }
-
-
-
-
 
     // 引用搜索菜单
     &.protyle-hint {
@@ -358,6 +367,8 @@
     .sy__inbox &,
     .sy__backlink &,
     .b3-dialog__container &,
+    // 字体选择菜单
+    .b3-menu__filter &,
     // 模板预览菜单
     .protyle-util &,
     #historyContainer &,
