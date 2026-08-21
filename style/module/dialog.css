@@ -70,9 +70,12 @@
 }
 .b3-dialog__container .config__panel .config__tab-container .b3-card {
   background-color: transparent;
+  box-shadow: unset;
+  border-radius: var(--custom-border-radius);
+  outline: 1px solid var(--custom-card-outline-color);
 }
 .b3-dialog__container .config__panel .config__tab-container .b3-card:hover {
-  background-color: var(--b3-theme-surface);
+  background-color: var(--b3-list-hover);
 }
 .b3-dialog__container .config__panel .config__tab-container .config__view {
   /* 视图面板 */
