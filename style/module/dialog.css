@@ -68,8 +68,19 @@
 .b3-dialog__container .config__panel .config__tab-container {
   background-color: transparent;
 }
-.b3-dialog__container .config__panel .config__tab-container[data-name=bazaar] .b3-card {
+.b3-dialog__container .config__panel .config__tab-container .b3-card {
   background-color: transparent;
+}
+.b3-dialog__container .config__panel .config__tab-container .b3-card:hover {
+  background-color: var(--b3-theme-surface);
+}
+.b3-dialog__container .config__panel .config__tab-container .config__view {
+  /* 视图面板 */
+  background-color: var(--custom-dialog-view-background-color);
+}
+.b3-dialog__container .config__panel .config__tab-container .config-bazaar__readme {
+  /* 主题预览对话框 */
+  background-color: var(--custom-dialog-readme-background-color);
 }
 .b3-dialog__container .config__panel .config__tab-container[data-name=bazaar] .config-bazaar__readme {
   background-color: var(--custom-dialog-bazaar-readme-background-color);
@@ -129,10 +140,6 @@
 .b3-dialog__container .fn__flex > .b3-tab-container,
 .b3-dialog__container .fn__flex > .b3-tab-container .config-account__center--text {
   background-color: transparent;
-}
-.b3-dialog__container .fn__flex > .b3-tab-container .config-bazaar__readme {
-  /* 主题预览对话框 */
-  background-color: var(--custom-dialog-readme-background-color);
 }
 .b3-dialog__container label.customItem > span.ft__on-surface.fn__flex-center {
   /* 自定义属性名称全宽显示 */

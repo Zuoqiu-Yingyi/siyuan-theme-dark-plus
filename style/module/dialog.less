@@ -134,13 +134,27 @@
         .config__tab-container {
             background-color: transparent;
 
+            // 卡片
+            .b3-card {
+                background-color: transparent;
+
+                &:hover {
+                    background-color: var(--b3-theme-surface);
+                }
+            }
+
+            .config__view {
+                /* 视图面板 */
+                background-color: var(--custom-dialog-view-background-color);
+            }
+
+            .config-bazaar__readme {
+                /* 主题预览对话框 */
+                background-color: var(--custom-dialog-readme-background-color);
+            }
+
             // 集市面板
             &[data-name=bazaar] {
-
-                // 集市资源卡片
-                .b3-card {
-                    background-color: transparent;
-                }
 
                 // 集市内容详情对话框
                 .config-bazaar__readme {
@@ -267,12 +281,6 @@
             .config-account__center--text {
                 background-color: transparent;
             }
-
-            .config-bazaar__readme {
-                /* 主题预览对话框 */
-                background-color: var(--custom-dialog-readme-background-color);
-            }
-
         }
     }
 

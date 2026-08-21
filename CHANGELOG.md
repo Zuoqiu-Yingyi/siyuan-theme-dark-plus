@@ -6,6 +6,7 @@
 - 优化标题页签栏的样式 | Optimize the style of the title tab bar.
 - 调整图标按钮样式 | Adjust the style of the icon button.
 - 兼容思源内置的标题自动编号功能 | Compatible with Siyuan's built-in title auto-numbering feature.
+- 调整设置面板中卡片的样式 | Adjust the style of the card in the settings panel.
 
 ## v3.1.0/2026-07-14
 
