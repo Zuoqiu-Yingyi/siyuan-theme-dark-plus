@@ -4,6 +4,7 @@
 - 移除通过 `widgets/custom-light.css` 和 `widgets/custom-dark.css` 样式文件自定义样式的功能 | Removed the functionality to customize styles via `widgets/custom-light.css` and `widgets/custom-dark.css` style files.
 - 优化代码块样式 | Optimize the style of the code block.
 - 优化标题页签栏的样式 | Optimize the style of the title tab bar.
+- 调整图标按钮样式 | Adjust the style of the icon button.
 
 ## v3.1.0/2026-07-14
 

@@ -19,6 +19,7 @@
 .counter,
 .protyle-attr--refcount,
 .b3-list-item__graphic,
+.block__logoicon,
 .block__icon {
   transition: unset;
 }
@@ -31,6 +32,7 @@
 .counter:hover,
 .protyle-attr--refcount:hover,
 .b3-list-item__graphic:hover,
+.block__logoicon:hover,
 .block__icon:hover {
   outline: 1px solid var(--custom-control-button-hover-outline-color);
   outline-offset: -1px;
