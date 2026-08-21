@@ -2,8 +2,8 @@
   "name": "Dark+",
   "author": "Zuoqiu Yingyi",
   "url": "https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus",
-  "version": "3.1.0",
-  "minAppVersion": "3.7.2",
+  "version": "3.1.1",
+  "minAppVersion": "3.8.1",
   "keywords": [
     "暗",
     "黑暗",
@@ -29,18 +29,18 @@
   ],
   "displayName": {
     "default": "Dark+",
-    "zh_CN": "暗色+",
-    "zh_CHT": "暗色+"
+    "zh-CN": "暗色+",
+    "zh-TW": "暗色+"
   },
   "description": {
     "default": "This is a multifunctional dual-mode theme",
-    "zh_CN": "这是一款多功能双模式主题",
-    "zh_CHT": "這是一款多功能雙模式主題"
+    "zh-CN": "这是一款多功能双模式主题",
+    "zh-TW": "這是一款多功能雙模式主題"
   },
   "readme": {
     "default": "README.md",
-    "zh_CN": "README_zh_CN.md",
-    "zh_CHT": "README_zh_CN.md"
+    "zh-CN": "README.zh-CN.md",
+    "zh-TW": "README.zh-CN.md"
   },
   "funding": {
     "openCollective": "",

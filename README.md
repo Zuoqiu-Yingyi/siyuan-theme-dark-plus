@@ -13,7 +13,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ---
-[简体中文](./README_zh_CN.md) \| English
+[简体中文](./README.zh-CN.md) \| English
 
 ---
 </div>

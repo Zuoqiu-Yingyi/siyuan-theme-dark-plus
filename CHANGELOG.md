@@ -1,5 +1,8 @@
 # 更改日志 | CHANGE LOG
 
+## v3.1.1/2026-08-21
+
+- [v3.1.0 ... v3.1.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v3.1.0...v3.1.1)
 - 修复折叠列表序号样式问题 | Fixed the style issue of the folded list number.
 - 移除通过 `widgets/custom-light.css` 和 `widgets/custom-dark.css` 样式文件自定义样式的功能 | Removed the functionality to customize styles via `widgets/custom-light.css` and `widgets/custom-dark.css` style files.
 - 优化代码块样式 | Optimize the style of the code block.
