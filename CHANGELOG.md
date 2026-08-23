@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 调整弹出菜单项的样式 | Adjust the style of the pop-up menu item.
+
 ## v3.1.1/2026-08-21
 
 - [v3.1.0 ... v3.1.1](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v3.1.0...v3.1.1)
