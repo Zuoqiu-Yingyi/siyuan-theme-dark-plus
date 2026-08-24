@@ -4,6 +4,7 @@
 
 - [v3.1.1 ... v3.1.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v3.1.1...v3.1.2)
 - 调整弹出菜单项的样式 | Adjust the style of the pop-up menu item.
+- 压缩 `preview.png` 图片文件大小 | Compress the file size of `preview.png` image.
 
 ## v3.1.1/2026-08-21
 
