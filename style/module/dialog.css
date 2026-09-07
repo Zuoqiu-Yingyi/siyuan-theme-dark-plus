@@ -68,6 +68,12 @@
 .b3-dialog__container .config__panel .config__tab-container {
   background-color: transparent;
 }
+.b3-dialog__container .config__panel .config__tab-container .layout-tab-bar {
+  padding: 0;
+}
+.b3-dialog__container .config__panel .config__tab-container .config-bazaar__title {
+  background-color: transparent;
+}
 .b3-dialog__container .config__panel .config__tab-container .b3-card {
   background-color: transparent;
   box-shadow: unset;

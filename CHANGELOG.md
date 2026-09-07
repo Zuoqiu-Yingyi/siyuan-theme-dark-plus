@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+- 调整设置面板中页签栏的样式 | Adjust the style of the tab bar in the settings panel.
+
 ## v3.1.2/2026-08-23
 
 - [v3.1.1 ... v3.1.2](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v3.1.1...v3.1.2)
