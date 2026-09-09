@@ -65,6 +65,13 @@
 .b3-dialog__container .config__panel .config__tab-wrap {
   background-color: transparent;
 }
+.b3-dialog__container .config__panel .config__tab-wrap .config__tab-container {
+  margin: 0;
+  padding: 1em;
+}
+.b3-dialog__container .config__panel .config__tab-wrap .config__tab-container:has(.layout-tab-bar) {
+  padding: 0;
+}
 .b3-dialog__container .config__panel .config__tab-container {
   background-color: transparent;
 }
