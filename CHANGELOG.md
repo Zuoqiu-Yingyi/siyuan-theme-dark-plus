@@ -1,5 +1,7 @@
 # 更改日志 | CHANGE LOG
 
+## v3.1.3/2026-09-15
+
 - 调整设置面板中页签栏的样式 | Adjust the style of the tab bar in the settings panel.
 
 ## v3.1.2/2026-08-23
