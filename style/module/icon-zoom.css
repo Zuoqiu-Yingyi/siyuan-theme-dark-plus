@@ -6,6 +6,7 @@
 .protyle-gutters button.ariaLabel:not(.protyle-gutters__plus):hover::before {
   padding: 2px;
   outline: 1px solid var(--custom-control-button-hover-outline-color);
+  outline-offset: -2px;
 }
 .protyle-attr--refcount.popover__block {
   padding: 4px 8px;
