@@ -99,10 +99,11 @@
 
     /* 侧边分栏面板 */
     .file-tree.fn__flex-column {
-        .tree-indent(18px);
-        .tree-guides(14px);
+        // .tree-indent(18px);
+        // .tree-guides(14px);
 
-        &.sy__tag,
+        &.sy__tag {}
+
         &.sy__outline {}
 
         // 文档树面板
@@ -155,4 +156,11 @@
 /* 各个面板 */
 .layout-tab-container {
     background-color: var(--custom-editor-background-color);
+}
+
+/* 文件树行 */
+.file-tree__row {
+    --file-tree-indent: 1em;
+    // --file-tree-toggle-size: 22px;
+    // --file-tree-toggle-padding: 4px;
 }

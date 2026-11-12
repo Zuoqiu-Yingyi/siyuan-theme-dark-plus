@@ -1,7 +1,10 @@
 # 更改日志 | CHANGE LOG
 
+- 调整文档树与大纲面板中多级辅助线的样式 | Adjust the style of multi-level guides in the document tree and outline panels.
+
 ## v3.1.3/2026-09-15
 
+- [v3.1.2 ... v3.1.3](https://github.com/Zuoqiu-Yingyi/siyuan-theme-dark-plus/compare/v3.1.2...v3.1.3)
 - 调整设置面板中页签栏的样式 | Adjust the style of the tab bar in the settings panel.
 
 ## v3.1.2/2026-08-23

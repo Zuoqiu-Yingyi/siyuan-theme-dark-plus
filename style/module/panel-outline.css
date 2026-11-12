@@ -9,6 +9,85 @@
   /* 过长子标题名显示样式 */
   display: var(--custom-outline-display);
 }
+.sy__outline ul {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.sy__outline ul.b3-list > .b3-list-item > .b3-list-item__toggle {
+  padding-left: 0 !important;
+  margin-right: 0 !important;
+}
+.sy__outline ul.b3-list > ul > .b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(1em * 1) !important;
+  margin-right: 0 !important;
+}
+.sy__outline ul.b3-list > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(10px + 1em * (1 - 1));
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+.sy__outline ul.b3-list > ul > ul > .b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(1em * 2) !important;
+  margin-right: 0 !important;
+}
+.sy__outline ul.b3-list > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(10px + 1em * (2 - 1));
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+.sy__outline ul.b3-list > ul > ul > ul > .b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(1em * 3) !important;
+  margin-right: 0 !important;
+}
+.sy__outline ul.b3-list > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(10px + 1em * (3 - 1));
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+.sy__outline ul.b3-list > ul > ul > ul > ul > .b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(1em * 4) !important;
+  margin-right: 0 !important;
+}
+.sy__outline ul.b3-list > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(10px + 1em * (4 - 1));
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
+.sy__outline ul.b3-list > ul > ul > ul > ul > ul > .b3-list-item > .b3-list-item__toggle {
+  padding-left: calc(1em * 5) !important;
+  margin-right: 0 !important;
+}
+.sy__outline ul.b3-list > ul > ul > ul > ul > ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(10px + 1em * (5 - 1));
+  width: var(--custom-list-guides-line-width);
+  height: 100%;
+  background-color: var(--custom-list-guides-line-color);
+  z-index: 1;
+}
 /* 文档标题 */
 #sidebar [data-type="sidebar-outline"] ul.b3-list.b3-list--background [data-type="NodeDocument"],
 .sy__outline ul.b3-list.b3-list--background [data-type="NodeDocument"],

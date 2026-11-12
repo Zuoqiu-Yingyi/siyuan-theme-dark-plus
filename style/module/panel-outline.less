@@ -1,6 +1,58 @@
 /* 大纲面板 */
 
 
+// 多级辅助线
+.outline-guides(@base-root, @interval: 1em, @depth: 6) {
+
+    // 添加 1 级辅助线
+    .guides(@base, @interval, @depth) {
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: calc(@base + @interval * (@depth - 1));
+            width: var(--custom-list-guides-line-width);
+            height: 100%;
+            // background-color: white;
+            background-color: var(--custom-list-guides-line-color);
+            z-index: 1;
+        }
+    }
+
+    // 递归添加辅助线
+    .subtree(@base, @interval, @depth, @index: 1) when (@index < @depth) {
+        >ul {
+            >.b3-list-item {
+                >.b3-list-item__toggle {
+                    padding-left: calc(@interval * @index) !important;
+                    margin-right: 0 !important;
+                }
+            }
+
+            .guides(@base, @interval, @index);
+            .subtree(@base, @interval, @depth, (@index + 1));
+        }
+    }
+
+    // absolute 定位需要上级元素使用 absolute 或 relative 定位方法
+    ul {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    ul.b3-list {
+        >.b3-list-item {
+            >.b3-list-item__toggle {
+                padding-left: 0 !important;
+                margin-right: 0 !important;
+            }
+        }
+
+        .subtree(@base-root, @interval, @depth);
+    }
+}
+
 .sy__outline {
     .b3-list-item__graphic {
         /* 标题图标样式 */
@@ -13,6 +65,8 @@
         /* 过长子标题名显示样式 */
         display: var(--custom-outline-display);
     }
+
+    .outline-guides(10px);
 }
 
 .heading(@selector, @color) {
