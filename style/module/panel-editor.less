@@ -65,7 +65,7 @@
 }
 
 // 编辑区内容
-.protyle-content {
+.protyle:not(.protyle-title__rich)>.protyle-content {
 
     // 开启自适应宽度
     &[data-fullwidth=true] {
@@ -92,17 +92,18 @@
 
             // 文档标题
             >.protyle-title {
-                .page-padding();
+                margin-left: var(--custom-editor-padding-left);
+                margin-right: var(--custom-editor-padding-right);
 
                 // 文档块块标
                 .protyle-title__icon {
                     /* 调整文档块标位置 */
-                    left: calc(var(--custom-editor-padding-left) - 22px);
+                    // left: calc(var(--custom-editor-padding-left) - 22px);
                 }
 
                 // 文档属性与引用信息
                 .protyle-attr {
-                    right: var(--custom-editor-padding-right);
+                    // right: var(--custom-editor-padding-right);
                 }
             }
         }
@@ -164,7 +165,6 @@
             box-shadow: 4px 0 0 var(--custom-drag-right-shadow-color) !important;
         }
     }
-
 }
 
 .protyle-scroll {
